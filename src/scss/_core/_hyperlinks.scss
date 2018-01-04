@@ -1,0 +1,35 @@
+/**
+ * Hyperlinks
+ */
+
+// Dependencies
+@import 'fonts.mixins';
+
+// Declarations
+a {
+  @include all-caps;
+  color: inherit;
+  text-decoration: none;
+  position: relative;
+
+  &:not(.btn) {
+    border-bottom: 2px solid;
+    border-bottom-color: transparent;
+  }
+
+  &:not(.btn):hover {
+    border-bottom-color: inherit;
+  }
+
+  &:not(.btn):visited {
+    color: inherit;
+  }
+}
+
+p a:not(.btn) {
+  font-family: $font-family;
+  text-transform: none;
+  letter-spacing: 0;
+  border-bottom: 1px solid;
+  border-bottom-color: inherit;
+}

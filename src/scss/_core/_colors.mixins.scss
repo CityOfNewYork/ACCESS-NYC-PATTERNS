@@ -1,0 +1,98 @@
+//
+// Mixins
+//
+
+// Dependencies
+@import 'colors.vars';
+
+// Mixins
+@mixin background-color($colors, $set) {
+
+  @each $setting in $set {
+
+    $namespace: map-get($setting, namespace);
+    $color: map-get($colors, map-get($setting, color));
+    $text: map-get($colors, map-get($setting, text));
+    $hyperlink: map-get($colors, map-get($setting, hyperlink));
+
+    .bg-#{$namespace} {
+      color: $text;
+      background-color: $color
+    }
+
+    .bg-#{$namespace}:not(.bg-a-inherit) a:not(.inherit):not(.btn) {
+      color: $hyperlink
+    }
+
+    .bg-#{$namespace}:not(.bg-a-inherit)  a:hover:not(.inherit):not(.btn) {
+      color: $hyperlink
+    }
+
+    html:not(.touchevents) .btn.bg-#{$namespace}\@hover:hover {
+      color: $text;
+      border-color: $color;
+      background-color: $color
+    }
+
+    .c-checkbox.bg-#{$namespace}\@hover input:checked ~ .c-checkbox__input {
+      background-color: $color;
+    }
+
+    .c-checkbox.bg-#{$namespace}\@hover input:checked ~ .c-checkbox__input .c-checkbox__checkmark__path {
+      stroke: $text;
+    }
+
+    .c-checkbox.bg-#{$namespace}\@hover:hover .c-checkbox__bg {
+      background-color: $color;
+    }
+
+    .c-checkbox.bg-#{$namespace}\@hover:hover .c-checkbox__input {
+      background-color: $text !important;
+    }
+
+    .c-checkbox.bg-#{$namespace}\@hover:hover .c-checkbox__checkmark .c-checkbox__checkmark__path {
+      stroke: $color !important;
+    }
+
+    .backgroundblendmode .filter-#{$namespace}::before,
+    .no-backgroundblendmode .filter-fallback-#{$namespace}::before {
+      background: $color
+    }
+
+    .filter-#{$namespace}.filter-fade::after {
+      background: linear-gradient(to bottom, rgba($color, 0) 0%, rgba($color, 0) 30%, rgba($color, 0.5) 60%, $color 100%);
+    }
+
+  }
+
+}
+
+@mixin color($colors, $set) {
+
+  @each $setting in $set {
+
+    $namespace: map-get($setting, namespace);
+    $color: map-get($colors, map-get($setting, color));
+    $text: map-get($colors, map-get($setting, text));
+    $hyperlink: map-get($colors, map-get($setting, hyperlink));
+
+    .c-#{$namespace} {
+      color: $color !important
+    }
+
+    .b-#{$namespace} {
+      border-color: $color
+    }
+
+    .fill-#{$namespace} {
+      fill: $color
+    }
+
+    .stroke-#{$namespace} {
+      stroke: $color
+    }
+
+  }
+
+}
+

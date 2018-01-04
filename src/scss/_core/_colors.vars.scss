@@ -1,0 +1,105 @@
+//
+// Vars
+//
+
+// Dependencies
+@import 'vars';
+
+// Creates a flattened map of colors with the name as key and color as value
+$colors: ();
+@each $color in map-get($vars, 'colors') {
+  $name: map-get($color, 'name');
+  $hex: map-get($color, 'hex');
+  $colors: map-merge($colors, ($name: $hex));
+}
+
+// Tints
+$delta-tints: map-get($vars, 'tints');
+
+// Hover and Focus Delta
+$delta-psuedo: 15%;
+
+// Shades
+// $shades: (..., ..., ...);
+
+// Appearance
+// This is where the color assignments are managed. This object can be fed into
+// the main color mixin for batch setting color utility classes.
+// (namespace, color, text, hyperlinks)
+//
+// namespace    string - the name of the color attribute reference. Colors
+//                       automatically generate
+// color        hex code - the main hex color assignment to the namespace.
+// text         hex code - the color assignment to text on top of the color.
+// hyperlinks   hex code - the color assignment to hyperlinked text on top of
+//                         the color.
+$base:
+  (
+    namespace: 'base-white',
+    color: 'base-white',
+    text: 'base-black',
+    hyperlinks: 'secondary-orange'
+  ),
+  (
+    namespace: 'base-black',
+    color: 'base-black',
+    text: 'base-white',
+    hyperlinks: 'secondary-orange'
+  );
+
+$primary:
+  (
+    namespace: 'blue-light',
+    color: 'blue-light',
+    text: 'blue-dark',
+    hyperlinks: 'blue-dark'
+  ),
+  (
+    namespace: 'blue-mid',
+    color: 'blue-mid',
+    text: 'blue-light',
+    hyperlinks: 'blue-light'
+  ),
+  (
+    namespace: 'blue-dark',
+    color: 'blue-dark',
+    text: 'blue-light',
+    hyperlinks: 'blue-light'
+  ),
+  (
+    namespace: 'green-dark',
+    color: 'green-dark',
+    text: 'green-light',
+    hyperlinks: 'green-light'
+  ),
+  (
+    namespace: 'green-mid',
+    color: 'green-mid',
+    text: 'green-dark',
+    hyperlinks: 'green-dark'
+  ),
+  (
+    namespace: 'green-light',
+    color: 'green-light',
+    text: 'green-dark',
+    hyperlinks: 'green-dark'
+  ),
+  (
+    namespace: 'red-dark',
+    color: 'red-dark',
+    text: 'red-light',
+    hyperlinks: 'red-light'
+  ),
+  (
+    namespace: 'red-mid',
+    color: 'red-mid',
+    text: 'red-dark',
+    hyperlinks: 'red-dark'
+  ),
+  (
+    namespace: 'red-light',
+    color: 'red-light',
+    text: 'red-dark',
+    hyperlinks: 'red-dark'
+  );
+

@@ -1,0 +1,31 @@
+//
+// Variables
+//
+
+// Dependencies
+// @import '../variables';
+// This depends on Bourban Neat global vars in imports around line 11.
+
+// Variables
+$text-direction: ltr;
+$text-direction-start: left;
+$text-direction-end: right;
+
+@if $language == 'kr' {
+
+}
+
+@if $language == 'tc' {
+
+}
+
+@if $language == 'ar' {
+  $default-layout-direction: RTL !global;
+  // Below variable is used for the USWDS grid which built on an old version
+  // of Neat where $layout-direction is used rather than the current name
+  // above.
+  $layout-direction: $default-layout-direction !global;
+  $text-direction: rtl;
+  $text-direction-start: right;
+  $text-direction-end: left;
+}

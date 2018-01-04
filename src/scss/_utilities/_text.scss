@@ -1,0 +1,25 @@
+/**
+ * Text
+ */
+
+// Dependencies
+@import '../core/utility.mixins';
+
+// Declarations
+$text: (
+  text-align: (
+    (ta-right, right),
+    (ta-left, left),
+    (ta-center, center)
+  ),
+  text-transform: (
+    (tt-uppercase, uppercase),
+    (tt-none, none)
+  ),
+  white-space: (
+    (ws-nowrap, nowrap),
+    (ws-prewrap, prewrap)
+  )
+);
+
+@include make-utilities($text);

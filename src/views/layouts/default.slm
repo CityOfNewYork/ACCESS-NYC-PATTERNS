@@ -1,0 +1,21 @@
+= partial('../partials/footer.mixin.slm')
+= partial('../partials/nav.mixin.slm')
+
+doctype html
+html lang='en'
+
+  = content('head')
+
+body style='visibility: hidden;' onload='load()'
+
+  header class='page-wrapper'
+    = content('header')
+
+  main class='page-wrapper'
+    = content('content')
+
+  footer class='page-wrapper'
+    = mixin('footer')
+
+  / script src='scripts/main.dist.js'
+  = content('script')

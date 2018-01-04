@@ -1,0 +1,23 @@
+/**
+ * Base
+ */
+
+// Dependencies
+@import 'colors.vars';
+@import 'grid.vars';
+@import 'clearfix';
+
+// Declarations
+body {
+  margin: 0;
+  padding: 0;
+}
+
+path {
+  fill: none
+}
+
+header, main, footer, fieldset, section, div, h1, h2, h3, h4, h5, h6 {
+  display: block;
+  @include clearfix;
+}

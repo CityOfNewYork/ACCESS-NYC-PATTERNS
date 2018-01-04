@@ -1,0 +1,32 @@
+/**
+ * Backgrounds
+ */
+
+// Dependencies
+@import '../core/utility.mixins';
+
+// Declarations
+$backgrounds: (
+  background-repeat: (
+    (br-no-repeat, no-repeat),
+    (br-repeat-y, repeat-y),
+    (br-repeat-x, repeat-x)
+  ),
+  background-size: (
+    (bs-cover, cover),
+    (bs-contain, contain)
+  ),
+  background-position: (
+    (bp-center, center center),
+    (bp-right-center, right center),
+    (bp-left-center, left center),
+    (bp-center-bottom, center bottom)
+  ),
+  background-attachment: (
+    (ba-scroll, scroll),
+    (ba-fixed, fixed),
+    (ba-local, local)
+  )
+);
+
+@include make-utilities($backgrounds, ());

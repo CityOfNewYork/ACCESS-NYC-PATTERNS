@@ -1,0 +1,13 @@
+# MAC #
+#######
+.DS_Store
+profile
+
+# SVN #
+#######
+.svn
+
+# NPM #
+#######
+node_modules
+npm-debug.log

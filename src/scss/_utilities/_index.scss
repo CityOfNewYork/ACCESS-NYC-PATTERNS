@@ -1,0 +1,12 @@
+/**
+ * Index
+ */
+
+// Dependencies
+@import '../core/vars';
+@import '../core/uitility.mixins';
+
+// Declarations
+$indexes: map-get($vars, 'indexes');
+
+@include make-uitilities($indexes, ());

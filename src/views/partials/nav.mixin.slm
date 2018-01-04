@@ -1,0 +1,4 @@
+= mixin('nav')
+  nav
+    a href='/' Home
+    a href='typography' Typography

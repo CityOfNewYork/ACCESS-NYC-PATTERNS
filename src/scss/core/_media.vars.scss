@@ -1,0 +1,59 @@
+//
+// Variables
+//
+
+// Dependencies
+@import 'bourbon-neat/app/assets/stylesheets/functions/new-breakpoint';
+
+//
+// USWDS START
+//
+
+// Mobile First Breakpoints
+$small-screen: 481px;
+$medium-screen: 600px;
+$large-screen: 1201px;
+
+// Grid column counts by screen size
+$grid-columns-small: 1;
+$grid-columns-medium: 6;
+$grid-columns-large: 12;
+
+// @media single-keyword helpers
+$bp-small: new-breakpoint(min-width $small-screen $grid-columns-small);
+$bp-medium: new-breakpoint(min-width $medium-screen $grid-columns-medium);
+$bp-large: new-breakpoint(min-width $large-screen $grid-columns-large);
+
+$small: (
+  nth($bp-small, 1),
+  nth($bp-small, 2),
+  nth($bp-small, 3)
+);
+
+$medium: (
+  nth($bp-medium, 1),
+  nth($bp-medium, 2),
+  nth($bp-medium, 3)
+);
+
+$large: (
+  nth($bp-large, 1),
+  nth($bp-large, 2),
+  nth($bp-large, 3)
+);
+
+//
+// USWDS END
+//
+
+$screen-desktop: 960px;
+$screen-tablet: 768px;
+$screen-mobile: 480px;
+$screen-sm-mobile: 400px;
+
+// Declarations
+$bp-desktop-up: new-breakpoint(min-width $screen-desktop);
+$bp-below-desktop: new-breakpoint(max-width ($screen-desktop - 1));
+$bp-tablet-up: new-breakpoint(min-width $screen-tablet);
+$bp-below-tablet: new-breakpoint(max-width ($screen-tablet - 1));
+$bp-mobile-up: new-breakpoint(min-width $screen-mobile);

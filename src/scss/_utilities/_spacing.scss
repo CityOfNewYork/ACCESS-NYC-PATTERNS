@@ -1,0 +1,38 @@
+/**
+ * Grid
+ */
+
+// Dependencies
+@import '../core/vars';
+@import '../core/spacing.vars';
+@import '../core/spacing.mixins';
+@import '../core/media.mixins';
+
+// Declarations
+.wrap {
+
+  $padding: $spacing-base * 2;
+
+  max-width: ($wrap-width - ($padding*2));
+  padding-left: $padding;
+  padding-right: $padding;
+  margin-left: auto;
+  margin-right: auto;
+
+}
+
+.wrap--full {
+  max-width: 100%
+}
+
+@include make-gutters($spacing-base, 'm', 'margin', $spacing-multiplier);
+
+@include make-gutters($spacing-base, 'p', 'padding', $spacing-multiplier);
+
+@include make-breakpoints {
+
+  @include make-gutters($spacing-base, 'm', 'margin', $spacing-multiplier, $breakpoint);
+
+  @include make-gutters($spacing-base, 'p', 'padding', $spacing-multiplier, $breakpoint);
+
+}

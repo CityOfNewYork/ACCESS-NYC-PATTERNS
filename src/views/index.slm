@@ -1,0 +1,17 @@
+/ Layout
+= extend('layouts/default')
+
+/ Partials
+= partial('partials/head.mixin.slm')
+= partial('partials/header.mixin.slm')
+= partial('partials/nav.mixin.slm')
+
+/ Content blocks
+= content('head')
+  = mixin('head', 'Patterns')
+
+= content('header')
+  = mixin('header', 'Patterns')
+
+= content('content')
+  h1 Hello World!

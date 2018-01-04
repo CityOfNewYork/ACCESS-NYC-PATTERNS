@@ -1,0 +1,3 @@
+= mixin('header', 'title = Patterns')
+  h1 ACCESS NYC Patterns
+  h2 == this.title

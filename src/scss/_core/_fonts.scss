@@ -1,0 +1,84 @@
+/**
+ * Fonts
+ */
+
+// Dependencies
+@import 'fonts.vars';
+@import 'fonts.mixins';
+@import 'colors.vars';
+@import '../functions/em';
+
+// Import
+@font-face { @include font-face('Cormorant Regular', '../fonts/Cormorant-Regular', normal, normal); }
+@font-face { @include font-face('Cormorant Bold', '../fonts/Cormorant-Bold', normal, bold); }
+
+// Declarations
+body {
+  color: map-get($colors, 'base-black');
+  font-family: $font-family;
+  font-size: $font-size-base;
+  line-height: $line-height-base
+}
+
+p {
+  margin-top: 0
+}
+
+h1, h2, h3, h4, h5, h6,
+.h1, .h2, .h3, .h4, .h5, .h6 {
+  margin: 10px 0;
+  font-family: $font-bold;
+  line-height: $line-height-base;
+  color: inherit;
+  text-rendering: optimizelegibility
+}
+
+h1, .h1 {
+  font-size: em(38px, $font-size-base);
+  line-height: 40px;
+  @include regular-caps
+}
+
+h2, .h2 {
+  font-size: em($font-size-base, $font-size-base);
+  line-height: $line-height-base;
+  @include all-caps
+}
+
+h3, .h3 {
+  font-family: $font-family;
+  font-weight: normal;
+  font-size: em(26px, $font-size-base);
+  line-height: 28px;
+  @include regular-caps
+}
+
+h4, .h4 {
+  font-size: em(18px, $font-size-base);
+  line-height: 20px;
+  @include regular-caps
+}
+
+h5, .h5 {
+  font-size: em(14px, $font-size-base);
+  line-height: 16px;
+  @include regular-caps
+}
+
+h6, .h6 {
+  font-size: em(12px, $font-size-base);
+  line-height: 14px;
+  @include regular-caps
+}
+
+.regular-caps {
+  @include regular-caps
+}
+
+.all-caps {
+  @include all-caps
+}
+
+pre, code {
+  @include font-smooth
+}

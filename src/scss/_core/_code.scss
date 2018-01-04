@@ -1,0 +1,25 @@
+/**
+ * Code
+ */
+
+// Dependencies
+@import 'colors.vars';
+@import 'grid.vars';
+
+// Declarations
+pre {
+  display: block;
+  padding: ($grid-base * 2) ($grid-base * 2);
+}
+
+code {
+  display: inline-block;
+  white-space: nowrap;
+  padding: ($grid-base * .5) $grid-base;
+}
+
+pre, code {
+  color: map-get($colors, 'base-white');
+  background-color: map-get($colors, 'base-black');
+  border-radius: 3px;
+}

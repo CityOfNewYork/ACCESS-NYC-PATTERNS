@@ -1,0 +1,26 @@
+/**
+ * Animate
+ */
+
+// Dependencies
+@import 'vars';
+
+$animate: map-get($vars, animate);
+
+// Declarations
+@mixin animate($animation: none, $speed: map-get($animate, animate-scss-speed), $timing: map-get($animate, animate-timing-function)) {
+  @if $animation != none {
+    animation-name: $animation;
+  }
+  animation-duration: $speed;
+  animation-fill-mode: both;
+  animation-timing-function: $timing;
+}
+
+body { /* Addresses a small issue in webkit: http://bit.ly/NEdoDq */
+  -webkit-backface-visibility: hidden;
+}
+
+.animated {
+  @include animate();
+}
