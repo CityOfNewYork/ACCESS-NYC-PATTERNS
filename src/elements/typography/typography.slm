@@ -1,0 +1,50 @@
+
+
+= mixin('type-jumbo', 'code = false', 'text = Find help in NYC with food, money, housing, work and more on ACCESS NYC.')
+  - if this.code
+    div
+      code class='code' .type-jumbo
+  h1 class='type-jumbo' = this.text
+
+= mixin('headings', 'code = false', 'text = Find help in NYC with food, money, housing, work and more on ACCESS NYC.')
+  - if this.code
+    div
+      code class='code' h1/.type-h1
+  h1 = this.text
+
+  - if this.code
+    div
+      code class='code' h2/.type-h2
+  h2 = this.text
+
+  - if this.code
+    div
+      code class='code' h3/.type-h3
+  h3 = this.text
+
+  - if this.code
+    div
+      code class='code' h4/.type-h4
+  h4 = this.text
+
+  - if this.code
+    div
+      code class='code' h5/.type-h5
+  h5 = this.text
+
+  - if this.code
+    div
+      code class='code' h6/.type-h6
+  h6 = this.text
+
+= mixin('small', 'code = false', 'text = Find help in NYC with food, money, housing, work and more on ACCESS NYC.')
+  - if this.code
+    div
+      code class='code' small/.type-small
+  small = this.text
+
+= mixin('blockquote', 'code = false', 'text = Find help in NYC with food, money, housing, work and more on ACCESS NYC.')
+  - if this.code
+    div
+      code class='code' blockquote
+  blockquote = this.text

@@ -1,0 +1,47 @@
+/ Layout
+= extend('layouts/default')
+
+/ Partials
+= partial('partials/head.mixin.slm')
+= partial('partials/header.mixin.slm')
+= partial('partials/nav.mixin.slm')
+= partial('../elements/buttons/btn.slm')
+
+/ Content blocks
+= content('head')
+  = mixin('head', 'Buttons')
+
+= content('header')
+  = mixin('header', 'Buttons')
+
+= content('content')
+  div
+    = mixin('btn', true)
+
+  div
+    = mixin('btn-primary', true)
+
+  div
+    = mixin('btn-secondary', true)
+
+  div
+    = mixin('btn-primary--next', true)
+
+  div
+    = mixin('btn-primary--previous', true)
+
+  div
+    = mixin('btn-tag', true)
+
+  div
+    = mixin('btn-toggle', true)
+
+  div
+    = mixin('btn--text', true)
+
+  div
+    = mixin('btn--block', true)
+
+  div
+    = mixin('btn--small', true)
+

@@ -1,0 +1,21 @@
+/**
+ * Code
+ */
+
+// Dependencies
+@import 'config/colors';
+
+// Declarations
+code, pre {
+  font-size: .727em;
+  font-family: monospace;
+}
+
+.code {
+  color: $color-grey-light;
+  background-color: $color-grey-dark;
+  display: inline-block;
+  border: 1px solid $color-black;
+  padding: 8px 16px;
+  border-radius: 3px;
+}

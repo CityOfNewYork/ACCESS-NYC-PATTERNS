@@ -1,0 +1,17 @@
+//
+// Variables
+//
+
+// Dependencies
+@import 'scss/functions/rem';
+
+// Variables
+$helvetica: '';
+$georgia: '';
+
+$font-sans: 'Source Sans Pro', $helvetica;
+$font-serif: 'Merriweather', $georgia;
+
+$h5-font-size: rem(15px, $em-base);
+
+$image-path: '../img';

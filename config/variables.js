@@ -37,11 +37,11 @@ const variables = {
     'font-size-largest': '1.81rem',
     'font-size-jumbo': '2.54rem'
   },
-  'em-base': 22,
+  emBase: 22,
   colors: {
-    'color-black': '#000',
-    'color-white': '#fff',
-    'color-transparent': 'transparent',
+    'color-black': '#000000',
+    'color-white': '#ffffff',
+    'color-transparent': 'rgba(255, 255, 255, 0)',
     'color-blue': '#184e9e',
     'color-blue-bright': '#118df0',
     'color-blue-dark': '#112e51',

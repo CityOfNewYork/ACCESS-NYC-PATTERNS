@@ -13,7 +13,7 @@ const fs = require('fs');
 
 const prefix = '$variables';
 const data = jsSass(variables);
-const dir = path.join(__dirname, '../', 'src/scss/');
+const dir = path.join(__dirname, '../', 'src/config/');
 const filename = '_variables.scss';
 
 /**

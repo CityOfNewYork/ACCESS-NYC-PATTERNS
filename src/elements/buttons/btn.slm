@@ -1,0 +1,89 @@
+
+
+= mixin('btn', 'code = false')
+  - if this.code
+    div
+      code class='code' button.btn
+  button class='btn'
+    | Button
+
+/ **
+/ Primary Buttons
+/ **
+
+= mixin('btn-primary', 'code = false')
+  - if this.code
+    div
+      code class='code' button.btn-primary
+  button class='btn-primary'
+    | Primary Button
+
+/ **
+/ Secondary Buttons
+/ **
+= mixin('btn-secondary', 'code = false')
+  - if this.code
+    div
+      code class='code' button.btn-secondary
+  button class='btn-secondary'
+    | Secondary Button
+
+/ **
+/ Other Buttons
+/ **
+= mixin('btn-primary--previous', 'code = false')
+  - if this.code
+    div
+      code class='code' .btn-primary--previous
+  button class='btn-primary--previous'
+    | Primary Button (primary)
+
+= mixin('btn-primary--next', 'code = false')
+  - if this.code
+    div
+      code class='code' button.btn-primary--next
+  button class='btn-primary--next'
+    | Button Next (primary)
+
+= mixin('btn-tag', 'code = false')
+  - if this.code
+    div
+      code class='code' button.btn-tag
+  button class='btn-primary--tag'
+    | Tag (primary)
+
+= mixin('btn-toggle', 'code = false')
+  - if this.code
+    div
+      code class='code' button.btn-toggle
+  button class='btn-toggle'
+    | Toggle Button
+  - if this.code
+    div
+      code class='code' button.btn-toggle.active
+  button class='btn-toggle active'
+    | Toggle Button
+
+/ **
+/ Modifiers
+/ **
+= mixin('btn--text', 'code = false')
+  - if this.code
+    div
+      code class='code' a.btn--text
+  a class='btn--text'
+    | Plain Text Button
+
+= mixin('btn--block', 'code = false')
+  - if this.code
+    div
+      code class='code' button.btn-primary--block
+  button class='btn-primary--block'
+    | Block Level Button (primary)
+
+= mixin('btn--small', 'code = false')
+  - if this.code
+    div
+      code class='code' button.btn-primary--small
+  button class='btn-primary--small'
+    | Small Button (primary)

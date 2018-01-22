@@ -1,0 +1,160 @@
+/**
+ * Buttons
+ */
+
+// Dependencies
+@import 'config/colors';
+@import 'config/dimensions';
+@import 'config/direction';
+@import 'config/buttons';
+@import 'elements/typography/typography.mixins';
+@import 'bourbon/app/assets/stylesheets/addons/triangle';
+@import 'bourbon/app/assets/stylesheets/addons/size';
+
+// Declarations
+// Base styles for buttons
+.btn, [class*='btn-'] {
+  appearance: none;
+  transition: background .2s ease-in, color .2s ease-in;
+  @include typography-h4();
+  background: $color-white;
+  border: 0;
+  border-radius: $btn-radius;
+  display: inline-block;
+  line-height: 1;
+  padding: .75*$spacing-base $spacing-base;
+  text-align: center;
+  text-decoration: none;
+
+  .btn__icon {
+    vertical-align: middle;
+  }
+}
+
+//
+// Types
+//
+[class*='btn-'][class*='-tag'] {
+  @include typography-supplemental();
+  border-radius: 15px;
+  margin: 5px 2px;
+  padding: 8px;
+
+  &:first-of-type {
+    margin-#{$text-direction-start}: 0;
+  }
+
+  &:last-of-type {
+    margin-#{$text-direction-end}: 0;
+  }
+}
+
+[class*='btn-'][class*='-toggle'] {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  border-radius: 0;
+  font-size: $font-size-small;
+  padding: $spacing-base;
+  text-align: $text-direction-start;
+  border-radius: $btn-radius;
+
+  &::after {
+    position: relative;
+    top: -.1em;
+    @include size(0 0);
+    @include triangle(.8em .6em, $color-blue, down);
+    content: '';
+    display: inline-block;
+    margin-#{$text-direction-start}: .5em;
+  }
+
+  &.active {
+    &::after {
+      @include triangle(.8em .6em, $color-blue, up);
+      border-top: 0;
+    }
+  }
+}
+
+//
+// Modifiers
+//
+[class*='btn-'][class*='--block'] {
+  display: block;
+  width: 100%;
+}
+
+[class*='btn-'][class*='--small'] {
+  font-size: .727rem;
+}
+
+//
+// Button types that should override top level styling
+//
+[class*='btn-'][class*='-primary'] {
+  color: $color-white;
+  background: $color-blue;
+
+  &:hover,
+  &:focus {
+    background: $color-blue-bright;
+  }
+
+  &:active {
+    background: $color-blue-dark;
+  }
+}
+
+[class*='btn-'][class*='-secondary'] {
+  color: $color-white;
+  background: $color-green-mid;
+
+  &:hover,
+  &:focus {
+    background: $color-green-dark;
+  }
+
+  &:active {
+    background: $color-green;
+  }
+}
+
+[class*='btn-'][class*='--next'],
+[class*='btn-'][class*='--previous'] {
+  color: $color-white;
+
+  &:link,
+  &:visited,
+  &:hover,
+  &:focus,
+  &:active {
+    color: $color-white;
+  }
+
+  &[class*='--next'] {
+    &::after {
+      @include triangle(.6em .4em, $color-white, $text-direction-end);
+      content: '';
+      display: inline-block;
+      margin-#{$text-direction-start}: .3em;
+    }
+  }
+
+  &[class*='--previous'] {
+    &::before {
+      @include triangle(.6em .4em, $color-white, $text-direction-start);
+      content: '';
+      display: inline-block;
+      margin-#{$text-direction-end}: .3em;
+    }
+  }
+}
+
+[class*='btn-'][class*='--text'] {
+  color: inherit;
+  background: none;
+  border: 0;
+  border-radius: 0;
+  padding: 0;
+}

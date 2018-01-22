@@ -5,6 +5,7 @@
 = partial('partials/head.mixin.slm')
 = partial('partials/header.mixin.slm')
 = partial('partials/nav.mixin.slm')
+= partial('../elements/typography/typography.slm')
 
 / Content blocks
 = content('head')
@@ -16,32 +17,13 @@
 = content('content')
   - text = 'Find help in NYC with food, money, housing, work and more on ACCESS NYC.'
   div
-    code .type-jumbo
-    h1 class='type-jumbo' = text
+    = mixin('type-jumbo', true)
 
   div
-    code h1, .type-h1
-    h1 = text
-
-    code h2, .type-h2
-    h2 = text
-
-    code h3, .type-h3
-    h3 = text
-
-    code h4, .type-h4
-    h4 = text
-
-    code h5, .type-h5
-    h5 = text
-
-    code h6, .type-h6
-    h6 = text
+    = mixin('headings', true)
 
   div
-    code small, .type-small
-    small class='block' = text
+    = mixin('small', true)
 
   div
-    code blockquote
-    blockquote = text
+    = mixin('blockquote', true)

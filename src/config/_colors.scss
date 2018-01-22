@@ -1,0 +1,31 @@
+//
+// Variables
+//
+
+// Dependencies
+@import 'config/variables';
+
+$colors: map-get($variables, 'colors');
+
+// Variables
+$color-black: map-get($colors, 'color-black');
+$color-blue: map-get($colors, 'color-blue');
+$color-blue-bright: map-get($colors, 'color-blue-bright');
+$color-blue-dark: map-get($colors, 'color-blue-dark');
+$color-blue-light: map-get($colors, 'color-blue-light');
+$color-green: map-get($colors, 'color-green');
+$color-green-dark: map-get($colors, 'color-green-dark');
+$color-green-mid: map-get($colors, 'color-green-mid');
+$color-green-light: map-get($colors, 'color-green-light');
+$color-grey-dark: map-get($colors, 'color-grey-dark');
+$color-grey-light: map-get($colors, 'color-grey-light');
+$color-grey-lightest: map-get($colors, 'color-grey-lightest');
+$color-grey-mid: map-get($colors, 'color-grey-mid');
+$color-pink: map-get($colors, 'color-pink');
+$color-pink-light: map-get($colors, 'color-pink-light');
+$color-purple: map-get($colors, 'color-purple');
+$color-red: map-get($colors, 'color-red');
+$color-yellow-access: map-get($colors, 'color-yellow-access');
+$color-yellow-light: map-get($colors, 'color-yellow-light');
+$color-white: map-get($colors, 'color-white');
+$color-transparent: map-get($colors, 'color-transparent');

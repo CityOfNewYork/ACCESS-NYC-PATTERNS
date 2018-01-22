@@ -33,9 +33,9 @@
     "sync": "browser-sync start --files 'src' --no-open --no-ui --reload-delay 2000 --proxy \"http://localhost:$npm_package_config_port\"",
     "styles": "npm run styles:variables && npm run styles:sass && npm run styles:postcss",
     "styles:variables": "node .app/variables.js",
-    "styles:sass": "node-sass --sourceMapEmbed true --include-path node_modules $npm_package_config_style_src $npm_package_config_style_bundle",
+    "styles:sass": "node .app/sass.js",
     "styles:postcss": "postcss $npm_package_config_style_bundle --config $npm_package_config_postcss -o $npm_package_config_style_dist",
-    "styles:watch": "nodemon --ext scss --watch src/scss --ignore _variables.scss -x 'npm run styles'"
+    "styles:watch": "nodemon --ext scss --watch src --ignore _variables.scss -x 'npm run styles'"
   },
   "devDependencies": {
     "ajv": "^5.5.1",
