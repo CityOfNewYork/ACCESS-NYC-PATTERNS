@@ -1,3 +1,4 @@
 = mixin('header', 'title = Patterns')
-  h1 ACCESS NYC Patterns
+  h1 class='type-jumbo' ACCESS NYC Patterns
   h2 == this.title
+  a href='#main' Skip to main content

@@ -1,12 +1,15 @@
 / Layout
 = extend('layouts/default')
 
+/ Styles
 = partial('partials/styles.slm')
 
 / Partials
 = partial('partials/head.mixin.slm')
 = partial('partials/header.mixin.slm')
 = partial('partials/nav.mixin.slm')
+
+/ Elements
 = partial('../elements/buttons/btn.slm')
 
 / Content blocks

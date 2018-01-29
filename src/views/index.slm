@@ -1,6 +1,9 @@
 / Layout
 = extend('layouts/default')
 
+/ Styles
+= partial('partials/styles.slm')
+
 / Partials
 = partial('partials/head.mixin.slm')
 = partial('partials/header.mixin.slm')
@@ -11,7 +14,9 @@
   = mixin('head', 'Patterns')
 
 = content('header')
-  = mixin('header', 'Patterns')
+  = mixin('header', 'Welcome to the ACCESS NYC Patterns Guide')
 
 = content('content')
-  h1 Hello World!
+  section
+    = mixin('nav')
+

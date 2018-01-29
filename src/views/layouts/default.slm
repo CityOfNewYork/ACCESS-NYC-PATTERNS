@@ -9,10 +9,12 @@ html lang='en'
 body style='visibility: hidden;' onload='load()'
 
   header class='page-wrapper py-4'
-    = content('header')
+    div class='px-2'
+      = content('header')
 
-  main class='page-wrapper'
-    = content('content')
+  main#main class='page-wrapper'
+    div class='px-1'
+      = content('content')
 
   footer class='page-wrapper py-4 text-center'
     = mixin('footer')
