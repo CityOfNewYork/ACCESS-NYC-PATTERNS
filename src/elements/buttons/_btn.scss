@@ -80,12 +80,12 @@
 //
 // Modifiers
 //
-[class*='btn-'][class*='--block'] {
+[class*='btn-'][class*='-block'] {
   display: block;
   width: 100%;
 }
 
-[class*='btn-'][class*='--small'] {
+[class*='btn-'][class*='-small'] {
   font-size: .727rem;
 }
 
@@ -120,8 +120,8 @@
   }
 }
 
-[class*='btn-'][class*='--next'],
-[class*='btn-'][class*='--previous'] {
+[class*='btn-'][class*='-next'],
+[class*='btn-'][class*='-previous'] {
   color: $color-white;
 
   &:link,
@@ -132,7 +132,7 @@
     color: $color-white;
   }
 
-  &[class*='--next'] {
+  &[class*='-next'] {
     &::after {
       @include triangle(.6em .4em, $color-white, $text-direction-end);
       content: '';
@@ -141,7 +141,7 @@
     }
   }
 
-  &[class*='--previous'] {
+  &[class*='-previous'] {
     &::before {
       @include triangle(.6em .4em, $color-white, $text-direction-start);
       content: '';
@@ -151,7 +151,7 @@
   }
 }
 
-[class*='btn-'][class*='--text'] {
+[class*='btn-'][class*='-text'] {
   color: inherit;
   background: none;
   border: 0;

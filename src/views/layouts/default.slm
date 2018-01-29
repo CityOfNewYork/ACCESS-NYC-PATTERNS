@@ -8,13 +8,13 @@ html lang='en'
 
 body style='visibility: hidden;' onload='load()'
 
-  header class='page-wrapper'
+  header class='page-wrapper py-4'
     = content('header')
 
   main class='page-wrapper'
     = content('content')
 
-  footer class='page-wrapper'
+  footer class='page-wrapper py-4 text-center'
     = mixin('footer')
 
   / script src='scripts/main.dist.js'

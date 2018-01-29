@@ -16,14 +16,23 @@
 
 = content('content')
   - text = 'Find help in NYC with food, money, housing, work and more on ACCESS NYC.'
-  div
-    = mixin('type-jumbo', true)
 
-  div
-    = mixin('headings', true)
+  section class='${class_demo}'
+    header class='${class_demo_headers}'
+      h2 Headings
+    div class='${class_demo_content}'
+      = mixin('headings', true)
 
-  div
-    = mixin('small', true)
+  section class='${class_demo}'
+    header class='${class_demo_headers}'
+      h2 Custom
+    div class='${class_demo_content}'
+      = mixin('type-jumbo', true)
 
-  div
-    = mixin('blockquote', true)
+  section class='${class_demo}'
+    header class='${class_demo_headers}'
+      h2 Other
+    div class='${class_demo_content}'
+      = mixin('small', true)
+    div class='${class_demo_content}'
+      = mixin('blockquote', true)

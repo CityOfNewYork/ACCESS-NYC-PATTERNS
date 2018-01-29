@@ -1,0 +1,4 @@
+- class_demo = 'pb-4'
+- class_demo_headers = 'pt-1 px-1 border-b mb-3'
+- class_demo_content = 'pb-3 px-1'
+- class_demo_code_containers = 'pb-1'

@@ -2,8 +2,8 @@
 
 = mixin('btn', 'code = false')
   - if this.code
-    div
-      code class='code' button.btn
+    div class='${class_demo_code_containers}'
+      code class='code' btn
   button class='btn'
     | Button
 
@@ -13,8 +13,8 @@
 
 = mixin('btn-primary', 'code = false')
   - if this.code
-    div
-      code class='code' button.btn-primary
+    div class='${class_demo_code_containers}'
+      code class='code' btn-primary
   button class='btn-primary'
     | Primary Button
 
@@ -23,8 +23,8 @@
 / **
 = mixin('btn-secondary', 'code = false')
   - if this.code
-    div
-      code class='code' button.btn-secondary
+    div class='${class_demo_code_containers}'
+      code class='code' btn-secondary
   button class='btn-secondary'
     | Secondary Button
 
@@ -33,57 +33,59 @@
 / **
 = mixin('btn-primary--previous', 'code = false')
   - if this.code
-    div
-      code class='code' .btn-primary--previous
-  button class='btn-primary--previous'
+    div class='${class_demo_code_containers}'
+      code class='code' btn-primary btn-previous
+  button class='btn-primary btn-previous'
     | Primary Button (primary)
 
 = mixin('btn-primary--next', 'code = false')
   - if this.code
-    div
-      code class='code' button.btn-primary--next
-  button class='btn-primary--next'
+    div class='${class_demo_code_containers}'
+      code class='code' btn-primary btn-next
+  button class='btn-primary btn-next'
     | Button Next (primary)
 
 = mixin('btn-tag', 'code = false')
   - if this.code
-    div
-      code class='code' button.btn-tag
-  button class='btn-primary--tag'
+    div class='${class_demo_code_containers}'
+      code class='code' btn-tag
+  button class='btn-primary btn-tag'
     | Tag (primary)
 
 = mixin('btn-toggle', 'code = false')
   - if this.code
-    div
-      code class='code' button.btn-toggle
+    div class='${class_demo_code_containers}'
+      code class='code' btn-toggle
   button class='btn-toggle'
     | Toggle Button
+
+= mixin('btn-toggle.active', 'code = false')
   - if this.code
-    div
-      code class='code' button.btn-toggle.active
+    div class='${class_demo_code_containers}'
+      code class='code' btn-toggle active
   button class='btn-toggle active'
     | Toggle Button
+
+= mixin('btn-text', 'code = false')
+  - if this.code
+    div class='${class_demo_code_containers}'
+      code class='code' btn-text
+  a class='btn-text'
+    | Plain Text Button
 
 / **
 / Modifiers
 / **
-= mixin('btn--text', 'code = false')
+= mixin('btn-block', 'code = false')
   - if this.code
-    div
-      code class='code' a.btn--text
-  a class='btn--text'
-    | Plain Text Button
-
-= mixin('btn--block', 'code = false')
-  - if this.code
-    div
-      code class='code' button.btn-primary--block
-  button class='btn-primary--block'
+    div class='${class_demo_code_containers}'
+      code class='code' button btn-primary btn-block
+  button class='btn-primary btn-block'
     | Block Level Button (primary)
 
-= mixin('btn--small', 'code = false')
+= mixin('btn-small', 'code = false')
   - if this.code
-    div
-      code class='code' button.btn-primary--small
-  button class='btn-primary--small'
+    div class='${class_demo_code_containers}'
+      code class='code' button btn-primary btn-small
+  button class='btn-primary btn-small'
     | Small Button (primary)

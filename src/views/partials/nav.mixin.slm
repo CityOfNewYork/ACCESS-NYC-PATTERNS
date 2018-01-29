@@ -1,5 +1,5 @@
 = mixin('nav')
   nav
-    a href='/' Home
-    a href='typography' Typography
-    a href='buttons' Buttons
+    a class='px-1' href='/' Home
+    a class='px-1' href='typography' Typography
+    a class='px-1' href='buttons' Buttons

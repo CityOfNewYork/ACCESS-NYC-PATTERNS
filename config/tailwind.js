@@ -22,13 +22,9 @@ module.exports = {
   fonts: variables.fonts,
   textSizes: variables.fontSizes,
   fontWeights: variables.fontWeights,
-  borderWidths: {
-    0: '0',
-    1: '1px',
-    2: '2px',
-    4: '4px',
-    8: '8px'
-  },
+  borderWidths: variables.borderWidths,
+  margin: variables.margin,
+  padding: variables.padding,
   modules: {
     backgroundColors: ['hover'],
     borderColors: ['hover'],
@@ -36,6 +32,8 @@ module.exports = {
     borderWidths: ['responsive'],
     fonts: [],
     fontWeights: [],
+    margin: ['responsive'],
+    padding: ['responsive'],
     textColors: ['hover'],
     textSizes: [],
     textStyle: []

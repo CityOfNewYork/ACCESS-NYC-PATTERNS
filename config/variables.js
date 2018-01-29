@@ -80,6 +80,27 @@ const variables = {
     'ease-out-quint': 'cubic-bezier(0.23, 1, 0.32, 1)',
     'animate-scss-speed': '0.75s',
     'animate-timing-function': 'cubic-bezier(0.23, 1, 0.32, 1)'
+  },
+  borderWidths: {
+    0: '0',
+    'default': '1px',
+    2: '2px',
+    4: '4px',
+    8: '8px'
+  },
+  padding: {
+    0: '0',
+    1: '8px',
+    2: '16px',
+    3: '24px',
+    4: '32px'
+  },
+  margin: {
+    0: '0',
+    1: '8px',
+    2: '16px',
+    3: '24px',
+    4: '32px'
   }
 };
 
