@@ -2,19 +2,32 @@
 
 = mixin('btn', 'code = false')
   - if this.code
-    div class='${class_demo_code_containers}'
+    div class='${class_demo_class_containers}'
       code class='code' btn
+    div class='${class_demo_class_containers}'
+      pre class='code'
+        | &lt;button class="btn">
+        br
+        |   Button
+        br
+        | &lt;/button>
   button class='btn'
     | Button
 
 / **
 / Primary Buttons
 / **
-
 = mixin('btn-primary', 'code = false')
   - if this.code
-    div class='${class_demo_code_containers}'
+    div class='${class_demo_class_containers}'
       code class='code' btn-primary
+    div class='${class_demo_class_containers}'
+      pre class='code'
+        | &lt;button class="btn-primary">
+        br
+        |   Primary Button
+        br
+        | &lt;/button>
   button class='btn-primary'
     | Primary Button
 
@@ -23,8 +36,15 @@
 / **
 = mixin('btn-secondary', 'code = false')
   - if this.code
-    div class='${class_demo_code_containers}'
+    div class='${class_demo_class_containers}'
       code class='code' btn-secondary
+    div class='${class_demo_class_containers}'
+      pre class='code'
+        | &lt;button class="btn-secondary">
+        br
+        |   Secondary Button
+        br
+        | &lt;/button>
   button class='btn-secondary'
     | Secondary Button
 
@@ -33,43 +53,85 @@
 / **
 = mixin('btn-primary--previous', 'code = false')
   - if this.code
-    div class='${class_demo_code_containers}'
+    div class='${class_demo_class_containers}'
       code class='code' btn-primary btn-previous
+    div class='${class_demo_class_containers}'
+      pre class='code'
+        | &lt;button class="btn-primary btn-previous">
+        br
+        |   Previous Button
+        br
+        | &lt;/button>
   button class='btn-primary btn-previous'
-    | Primary Button (primary)
+    | Previous Button
 
 = mixin('btn-primary--next', 'code = false')
   - if this.code
-    div class='${class_demo_code_containers}'
+    div class='${class_demo_class_containers}'
       code class='code' btn-primary btn-next
+    div class='${class_demo_class_containers}'
+      pre class='code'
+        | &lt;button class="btn-primary btn-next">
+        br
+        |   Next Button
+        br
+        | &lt;/button>
   button class='btn-primary btn-next'
-    | Button Next (primary)
+    | Next Button
 
 = mixin('btn-tag', 'code = false')
   - if this.code
-    div class='${class_demo_code_containers}'
+    div class='${class_demo_class_containers}'
       code class='code' btn-tag
+    div class='${class_demo_class_containers}'
+      pre class='code'
+        | &lt;button class="btn-primary btn-tag">
+        br
+        |   Tag
+        br
+        | &lt;/button>
   button class='btn-primary btn-tag'
-    | Tag (primary)
+    | Tag
 
 = mixin('btn-toggle', 'code = false')
   - if this.code
-    div class='${class_demo_code_containers}'
+    div class='${class_demo_class_containers}'
       code class='code' btn-toggle
+    div class='${class_demo_class_containers}'
+      pre class='code'
+        | &lt;button class="btn-toggle">
+        br
+        |   Toggle Button
+        br
+        | &lt;/button>
   button class='btn-toggle'
     | Toggle Button
 
 = mixin('btn-toggle.active', 'code = false')
   - if this.code
-    div class='${class_demo_code_containers}'
+    div class='${class_demo_class_containers}'
       code class='code' btn-toggle active
+    div class='${class_demo_class_containers}'
+      pre class='code'
+        | &lt;button class="btn-toggle active">
+        br
+        |   Toggle Button
+        br
+        | &lt;/button>
   button class='btn-toggle active'
     | Toggle Button
 
 = mixin('btn-text', 'code = false')
   - if this.code
-    div class='${class_demo_code_containers}'
+    div class='${class_demo_class_containers}'
       code class='code' btn-text
+    div class='${class_demo_class_containers}'
+      pre class='code'
+        | &lt;a class="btn-text">
+        br
+        |   Plain Text Button
+        br
+        | &lt;/a>
   a class='btn-text'
     | Plain Text Button
 
@@ -78,14 +140,28 @@
 / **
 = mixin('btn-block', 'code = false')
   - if this.code
-    div class='${class_demo_code_containers}'
-      code class='code' button btn-primary btn-block
+    div class='${class_demo_class_containers}'
+      code class='code' btn-primary btn-block
+    div class='${class_demo_class_containers}'
+      pre class='code'
+        | &lt;button class="btn-primary btn-block">
+        br
+        |   Block Level Button
+        br
+        | &lt;/button>
   button class='btn-primary btn-block'
-    | Block Level Button (primary)
+    | Block Level Button
 
 = mixin('btn-small', 'code = false')
   - if this.code
-    div class='${class_demo_code_containers}'
-      code class='code' button btn-primary btn-small
+    div class='${class_demo_class_containers}'
+      code class='code' btn-primary btn-small
+    div class='${class_demo_class_containers}'
+      pre class='code'
+        | &lt;button class="btn-primary btn-small">
+        br
+        |   Small Button
+        br
+        | &lt;/button>
   button class='btn-primary btn-small'
-    | Small Button (primary)
+    | Small Button

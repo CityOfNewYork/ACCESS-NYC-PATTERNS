@@ -14,10 +14,10 @@ module.exports = {
   textColors: variables.colors,
   backgroundColors: variables.colors,
   screens: {
-    'screen-desktop': `${variables.screens.screenDesktop}px`,
-    'screen-tablet': `${variables.screens.screenTablet}px`,
-    'screen-mobile': `${variables.screens.screenMobile}px`,
-    'screen-sm-mobile': `${variables.screens.screenDesktop}px`
+    'screen-desktop': `${variables.screens['screen-desktop']}px`,
+    'screen-tablet': `${variables.screens['screen-tablet']}px`,
+    'screen-mobile': `${variables.screens['screen-mobile']}px`,
+    'screen-sm-mobile': `${variables.screens['screen-desktop']}px`
   },
   fonts: variables.fonts,
   textSizes: variables.fontSizes,
@@ -26,10 +26,12 @@ module.exports = {
   margin: variables.margin,
   padding: variables.padding,
   modules: {
-    backgroundColors: ['hover'],
-    borderColors: ['hover'],
-    borderStyle: ['responsive'],
-    borderWidths: ['responsive'],
+    backgroundColors: ['hover', 'focus'],
+    borderColors: ['hover', 'focus'],
+    borderStyle: ['hover', 'focus'],
+    borderWidths: ['responsive', 'hover', 'focus'],
+    display: ['responsive'],
+    flexbox: ['responsive'],
     fonts: [],
     fontWeights: [],
     margin: ['responsive'],

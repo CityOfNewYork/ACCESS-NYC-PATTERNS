@@ -9,11 +9,11 @@ html lang='en'
 body style='visibility: hidden;' onload='load()'
 
   header class='page-wrapper py-4'
-    div class='px-2'
+    div class='px-4'
       = content('header')
 
-  main#main class='page-wrapper'
-    div class='px-1'
+  main#main class='page-wrapper bg-color-white border border-color-grey'
+    div class='p-3'
       = content('content')
 
   footer class='page-wrapper py-4 text-center'

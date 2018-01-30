@@ -2,48 +2,48 @@
 
 = mixin('type-jumbo', 'code = false', 'text = Find help in NYC with food, money, housing, work and more on ACCESS NYC.')
   - if this.code
-    div class='${class_demo_code_containers}'
+    div class='${class_demo_class_containers}'
       code class='code' .type-jumbo
   h1 class='type-jumbo' = this.text
 
 = mixin('headings', 'code = false', 'text = Find help in NYC with food, money, housing, work and more on ACCESS NYC.')
   - if this.code
-    div class='${class_demo_code_containers}'
+    div class='${class_demo_class_containers}'
       code class='code' h1
       span class='px-1' or
       code class='code' .type-h1
   h1 = this.text
 
   - if this.code
-    div class='${class_demo_code_containers}'
+    div class='${class_demo_class_containers}'
       code class='code' h2
       span class='px-1' or
       code class='code' .type-h2
   h2 = this.text
 
   - if this.code
-    div class='${class_demo_code_containers}'
+    div class='${class_demo_class_containers}'
       code class='code' h3
       span class='px-1' or
       code class='code' .type-h3
   h3 = this.text
 
   - if this.code
-    div class='${class_demo_code_containers}'
+    div class='${class_demo_class_containers}'
       code class='code' h4
       span class='px-1' or
       code class='code' .type-h4
   h4 = this.text
 
   - if this.code
-    div class='${class_demo_code_containers}'
+    div class='${class_demo_class_containers}'
       code class='code' h5
       span class='px-1' or
       code class='code' .type-h5
   h5 = this.text
 
   - if this.code
-    div class='${class_demo_code_containers}'
+    div class='${class_demo_class_containers}'
       code class='code' h6
       span class='px-1' or
       code class='code' .type-h6
@@ -51,7 +51,7 @@
 
 = mixin('small', 'code = false', 'text = Find help in NYC with food, money, housing, work and more on ACCESS NYC.')
   - if this.code
-    div class='${class_demo_code_containers}'
+    div class='${class_demo_class_containers}'
       code class='code' small
       span class='px-1' or
       code class='code' .type-small
@@ -59,6 +59,6 @@
 
 = mixin('blockquote', 'code = false', 'text = Find help in NYC with food, money, housing, work and more on ACCESS NYC.')
   - if this.code
-    div class='${class_demo_code_containers}'
+    div class='${class_demo_class_containers}'
       code class='code' blockquote
   blockquote = this.text

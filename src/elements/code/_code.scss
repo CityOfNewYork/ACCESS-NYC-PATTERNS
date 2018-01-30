@@ -12,10 +12,15 @@ code, pre {
 }
 
 .code {
-  color: $color-grey-light;
-  background-color: $color-grey-dark;
+  color: $color-pink;
+  background-color: $color-grey-lightest;
   display: inline-block;
-  border: 1px solid $color-black;
+  border: 1px solid $color-grey-light;
   padding: 8px 16px;
   border-radius: 3px;
+}
+
+pre.code {
+  display: block;
+  padding: 16px 16px;
 }

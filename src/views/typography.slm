@@ -22,22 +22,43 @@
 = content('content')
   - text = 'Find help in NYC with food, money, housing, work and more on ACCESS NYC.'
 
-  section class='${class_demo}'
+  section#headings class='${class_demo}'
     header class='${class_demo_headers}'
       h2 Headings
-    div class='${class_demo_content}'
-      = mixin('headings', true)
 
-  section class='${class_demo}'
+    div class='${class_demo_cols}'
+      div class='${class_demo_col1}'
+        div class='${class_demo_spec}'
+          p Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+
+      div class='${class_demo_col2}'
+        div class='${class_demo_content}'
+          = mixin('headings', true)
+
+  section#custom-type-settings class='${class_demo}'
     header class='${class_demo_headers}'
-      h2 Custom
-    div class='${class_demo_content}'
-      = mixin('type-jumbo', true)
+      h2 Custom Type Settings
 
-  section class='${class_demo}'
+    div class='${class_demo_cols}'
+      div class='${class_demo_col1}'
+        div class='${class_demo_spec}'
+          p Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+
+      div class='${class_demo_col2}'
+        div class='${class_demo_content}'
+          = mixin('type-jumbo', true)
+
+  section#other class='${class_demo}'
     header class='${class_demo_headers}'
       h2 Other
-    div class='${class_demo_content}'
-      = mixin('small', true)
-    div class='${class_demo_content}'
-      = mixin('blockquote', true)
+
+    div class='${class_demo_cols}'
+      div class='${class_demo_col1}'
+        div class='${class_demo_spec}'
+          p Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+
+      div class='${class_demo_col2}'
+        div class='${class_demo_content}'
+          = mixin('small', true)
+        div class='${class_demo_content}'
+          = mixin('blockquote', true)

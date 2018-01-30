@@ -20,46 +20,58 @@
   = mixin('header', 'Buttons')
 
 = content('content')
-  section class='${class_demo}'
+  section#default-styling class='${class_demo}'
     header class='${class_demo_headers}'
-      h2 Default
-    div class='${class_demo_content}'
-      = mixin('btn', true)
+      h2 Default Styling
 
-  section class='${class_demo}'
+    div class='${class_demo_cols}'
+      div class='${class_demo_col1}'
+        div class='${class_demo_spec}'
+          p Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+
+      div class='${class_demo_col2}'
+        div class='${class_demo_content}'
+          = mixin('btn', true)
+
+  section#button-types class='${class_demo}'
     header class='${class_demo_headers}'
-      h2 Types
-    div class='${class_demo_content}'
-      = mixin('btn-primary', true)
+      h2 Button Types
 
-    div class='${class_demo_content}'
-      = mixin('btn-secondary', true)
+    div class='${class_demo_cols}'
+      div class='${class_demo_col1}'
+        div class='${class_demo_spec}'
+          p Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 
-    div class='${class_demo_content}'
-      = mixin('btn-tag', true)
+      div class='${class_demo_col2}'
+        div class='${class_demo_content}'
+          = mixin('btn-primary', true)
+        div class='${class_demo_content}'
+          = mixin('btn-secondary', true)
+        div class='${class_demo_content}'
+          = mixin('btn-tag', true)
+        div class='${class_demo_content}'
+          = mixin('btn-toggle', true)
+        div class='${class_demo_content}'
+          = mixin('btn-toggle.active', true)
+        div class='${class_demo_content}'
+          = mixin('btn-text', true)
 
-    div class='${class_demo_content}'
-      = mixin('btn-toggle', true)
-
-    div class='${class_demo_content}'
-      = mixin('btn-toggle.active', true)
-
-    div class='${class_demo_content}'
-      = mixin('btn-text', true)
-
-  section class='${class_demo}'
+  section#modifyers class='${class_demo}'
     header class='${class_demo_headers}'
       h2 Modifyers
 
-    div class='${class_demo_content}'
-      = mixin('btn-primary--next', true)
+    div class='${class_demo_cols}'
+      div class='${class_demo_col1}'
+        div class='${class_demo_spec}'
+          p Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 
-    div class='${class_demo_content}'
-      = mixin('btn-primary--previous', true)
-
-    div class='${class_demo_content}'
-      = mixin('btn-block', true)
-
-    div class='${class_demo_content}'
-      = mixin('btn-small', true)
+      div class='${class_demo_col2}'
+        div class='${class_demo_content}'
+          = mixin('btn-primary--next', true)
+        div class='${class_demo_content}'
+          = mixin('btn-primary--previous', true)
+        div class='${class_demo_content}'
+          = mixin('btn-block', true)
+        div class='${class_demo_content}'
+          = mixin('btn-small', true)
 
