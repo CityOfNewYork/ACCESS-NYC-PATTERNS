@@ -1,0 +1,39 @@
+/ Layout
+= extend('layouts/default')
+
+/ Styles
+= partial('partials/styles.slm')
+
+/ Partials
+= partial('partials/head.mixin.slm')
+= partial('partials/header.mixin.slm')
+= partial('partials/nav.mixin.slm')
+
+/ Elements
+= partial('../elements/links/links.slm')
+
+/ Content blocks
+= content('head')
+  = mixin('head', 'Links')
+
+= content('header')
+  = mixin('header', 'Links')
+
+= content('content')
+  - text = 'Click here to learn more about tax relief for parents'
+
+  section#headings class='${class_demo}'
+    header class='${class_demo_headers}'
+      h2 Links
+
+    div class='${class_demo_cols}'
+      div class='${class_demo_col1}'
+        div class='${class_demo_spec}'
+          p Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+
+      div class='${class_demo_col2}'
+        div class='${class_demo_content}'
+          = mixin('links', true, text)
+        div class='${class_demo_content}'
+          = mixin('links-inverted', true, text)
+

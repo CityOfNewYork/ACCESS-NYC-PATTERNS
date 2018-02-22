@@ -1,6 +1,7 @@
 = mixin('nav')
   nav
     a class='px-1' href='.' Home
+    a class='px-1' href='links' Links
     a class='px-1' href='typography' Typography
     a class='px-1' href='buttons' Buttons
     a class='px-1' href='https://github.com/CityOfNewYork/ACCESS-NYC-PATTERNS' Source
