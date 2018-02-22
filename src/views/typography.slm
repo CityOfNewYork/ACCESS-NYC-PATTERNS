@@ -62,3 +62,5 @@
           = mixin('small', true)
         div class='${class_demo_content}'
           = mixin('blockquote', true)
+        div class='${class_demo_content}'
+          = mixin('text-size', true)

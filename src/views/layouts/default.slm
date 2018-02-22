@@ -8,9 +8,11 @@ html lang='en'
 
 body style='visibility: hidden;' onload='load()'
 
-  header class='page-wrapper py-4'
+  header class='page-wrapper py-4 my-3 bg-color-blue-dark text-color-white links-invert'
     div class='px-4'
       = content('header')
+    section class='pt-3 px-3'
+      = mixin('nav')
 
   main#main class='page-wrapper bg-color-white border border-color-grey'
     div class='p-3'
