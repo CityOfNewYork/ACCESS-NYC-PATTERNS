@@ -40,13 +40,13 @@ a, .btn-link {
   }
 
   &:visited {
-    color: map-get(map-get($variables, 'colors'), 'color-pink');
+    color: map-get(map-get($variables, 'colors'), 'color-blue-light');
   }
 
   &:hover,
   &:active,
   &:focus {
-    color: map-get(map-get($variables, 'colors'), 'color-blue');
+    color: map-get(map-get($variables, 'colors'), 'color-blue-bright');
   }
 }
 

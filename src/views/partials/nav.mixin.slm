@@ -1,7 +1,17 @@
 = mixin('nav')
-  nav
-    a class='px-1' href='.' Home
-    a class='px-1' href='links' Links
-    a class='px-1' href='typography' Typography
-    a class='px-1' href='buttons' Buttons
-    a class='px-1' href='https://github.com/CityOfNewYork/ACCESS-NYC-PATTERNS' Source
+  p
+    nav
+      a class='px-1' href='.' Home
+      a class='px-1' href='https://github.com/CityOfNewYork/ACCESS-NYC-PATTERNS' Source
+  p
+    nav
+      span class='px-1' Elements;
+      a class='px-1' href='typography' Typography
+      a class='px-1' href='buttons' Buttons
+      a class='px-1' href='links' Links
+  p
+    nav
+      span class='px-1' Components;
+      a class='px-1' href='#' Alert Box
+      a class='px-1' href='#' Accordions
+      a class='px-1' href='#' Cards

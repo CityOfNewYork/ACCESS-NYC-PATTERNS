@@ -69,8 +69,8 @@
     "rollup-plugin-uglify": "^2.0.1",
     "rollup-watch": "^4.0.0",
     "slm": "^1.0.0",
-    "stylelint": "^8.3.1",
-    "stylelint-config-standard": "^9.0.0",
+    "stylelint": "^8.3.0",
+    "stylelint-config-standard": "^18.0.0",
     "uglify-js": "^3.0.15"
   },
   "dependencies": {
@@ -78,7 +78,7 @@
     "bourbon": "^4.3.4",
     "bourbon-neat": "^1.9.0",
     "lodash": "^4.17.4",
-    "tailwindcss": "^0.3.0",
+    "tailwindcss": "^0.4.1",
     "uswds": "^0.13.3"
   },
   "babel": {
@@ -112,7 +112,7 @@
     "extends": "stylelint-config-standard",
     "rules": {
       "comment-whitespace-inside": null,
-      "no-missing-eof-newline": null,
+      "no-missing-end-of-source-newline": null,
       "at-rule-empty-line-before": null,
       "number-leading-zero": "never",
       "selector-pseudo-element-colon-notation": null
