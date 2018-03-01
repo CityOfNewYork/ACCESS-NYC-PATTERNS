@@ -1,4 +1,5 @@
 = mixin('header', 'title = Patterns')
-  h1 class='type-jumbo' ACCESS NYC Patterns
-  h2 == this.title
-  a href='#main' Skip to main content
+  h1
+    svg class='icon icon-logo-full--large' style='background: url("images/icon-logo-full.svg") no-repeat;'
+    span class='hidden' ACCESS NYC
+  h2 class='type-jumbo' Pattern Library

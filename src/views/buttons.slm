@@ -20,6 +20,7 @@
   = mixin('header', 'Buttons')
 
 = content('content')
+  h1 class='px-1' Buttons
   section#default-styling class='${class_demo}'
     header class='${class_demo_headers}'
       h2 Default Styling

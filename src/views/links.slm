@@ -22,9 +22,10 @@
 = content('content')
   - text = 'Click here to learn more about tax relief for parents'
 
-  section#headings class='${class_demo}'
+  h1 class='px-1' Links
+  section#default-styling class='${class_demo}'
     header class='${class_demo_headers}'
-      h2 Links
+      h2 Default Styling
 
     div class='${class_demo_cols}'
       div class='${class_demo_col1}'
