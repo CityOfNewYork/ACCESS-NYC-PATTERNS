@@ -6,11 +6,10 @@
       code class='code' btn
     div class='${class_demo_class_containers}'
       pre class='code'
-        | &lt;button class="btn">
-        br
-        |   Button
-        br
-        | &lt;/button>
+        div = '<button class="btn">'
+        div = '  Button'
+        div = '</button>'
+
   button class='btn'
     | Button
 
@@ -23,11 +22,10 @@
       code class='code' btn-primary
     div class='${class_demo_class_containers}'
       pre class='code'
-        | &lt;button class="btn-primary">
-        br
-        |   Primary Button
-        br
-        | &lt;/button>
+        div = '<button class"btn-primary">'
+        div = '  Primary Button'
+        div = '</button>'
+
   button class='btn-primary'
     | Primary Button
 
@@ -40,11 +38,10 @@
       code class='code' btn-secondary
     div class='${class_demo_class_containers}'
       pre class='code'
-        | &lt;button class="btn-secondary">
-        br
-        |   Secondary Button
-        br
-        | &lt;/button>
+        div = '<button class="btn-secondary">'
+        div = '  Secondary Button'
+        div = '</button>'
+
   button class='btn-secondary'
     | Secondary Button
 
@@ -57,11 +54,10 @@
       code class='code' btn-primary btn-previous
     div class='${class_demo_class_containers}'
       pre class='code'
-        | &lt;button class="btn-primary btn-previous">
-        br
-        |   Previous Button
-        br
-        | &lt;/button>
+        div = '<button class="btn-primary btn-previous">'
+        div = '  Previous Button'
+        div = '</button>'
+
   button class='btn-primary btn-previous'
     | Previous Button
 
@@ -71,11 +67,10 @@
       code class='code' btn-primary btn-next
     div class='${class_demo_class_containers}'
       pre class='code'
-        | &lt;button class="btn-primary btn-next">
-        br
-        |   Next Button
-        br
-        | &lt;/button>
+        div = '<button class="btn-primary btn-next">'
+        div = '  Next Button'
+        div = '</button>'
+
   button class='btn-primary btn-next'
     | Next Button
 
@@ -85,11 +80,10 @@
       code class='code' btn-tag
     div class='${class_demo_class_containers}'
       pre class='code'
-        | &lt;button class="btn-primary btn-tag">
-        br
-        |   Tag
-        br
-        | &lt;/button>
+        div = '<button class="btn-primary btn-tag">'
+        div = '  Tag'
+        div = '</button>'
+
   button class='btn-primary btn-tag'
     | Tag
 
@@ -99,11 +93,10 @@
       code class='code' btn-toggle
     div class='${class_demo_class_containers}'
       pre class='code'
-        | &lt;button class="btn-toggle">
-        br
-        |   Toggle Button
-        br
-        | &lt;/button>
+        div = '<button class="btn-toggle">'
+        div = '  Toggle Button'
+        div = '</button>'
+
   button class='btn-toggle'
     | Toggle Button
 
@@ -113,11 +106,10 @@
       code class='code' btn-toggle active
     div class='${class_demo_class_containers}'
       pre class='code'
-        | &lt;button class="btn-toggle active">
-        br
-        |   Toggle Button
-        br
-        | &lt;/button>
+        div = '<button class="btn-toggle active">'
+        div = '  Toggle Button'
+        div = '</button>'
+
   button class='btn-toggle active'
     | Toggle Button
 
@@ -127,11 +119,10 @@
       code class='code' btn-text
     div class='${class_demo_class_containers}'
       pre class='code'
-        | &lt;a class="btn-text">
-        br
-        |   Plain Text Button
-        br
-        | &lt;/a>
+        div = '<a class="btn-text">'
+        div = '  Plain Text Button'
+        div = '</a>'
+
   a class='btn-text'
     | Plain Text Button
 
@@ -144,11 +135,10 @@
       code class='code' btn-primary btn-block
     div class='${class_demo_class_containers}'
       pre class='code'
-        | &lt;button class="btn-primary btn-block">
-        br
-        |   Block Level Button
-        br
-        | &lt;/button>
+        div = '<button class="btn-primary btn-block">'
+        div = '  Block Level Button'
+        div = '</button>'
+
   button class='btn-primary btn-block'
     | Block Level Button
 
@@ -158,10 +148,9 @@
       code class='code' btn-primary btn-small
     div class='${class_demo_class_containers}'
       pre class='code'
-        | &lt;button class="btn-primary btn-small">
-        br
-        |   Small Button
-        br
-        | &lt;/button>
+        div = '<button class="btn-primary btn-small">'
+        div = '  Small Button'
+        div = '</button>'
+
   button class='btn-primary btn-small'
     | Small Button

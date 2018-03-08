@@ -1,3 +1,4 @@
+/ This is the layout styling
 - class_demo = 'pb-4'
 -   class_demo_headers = 'pt-1 px-1 border-b mb-3'
 /     The title of the demo
@@ -6,7 +7,12 @@
 -       class_demo_spec = 'pb-3 pl-1 pr-4'
 /         Specification content goes here. Long form text
 -     class_demo_col2 = 'flex-1'
--       class_demo_content = 'pb-4 px-1'
+-       class_demo_content = 'pb-4 screen-tablet:px-1'
 -         class_demo_class_containers = 'pb-1'
 /           The class container goes here
 /         The rendered markup container goes here
+
+/ This is the styling for the color swatches
+- class_swatch = 'my-1 p-1 border border-color-grey-light'
+-   class_swatch__block = 'p-4'
+-   class_swatch__label = 'mt-1'

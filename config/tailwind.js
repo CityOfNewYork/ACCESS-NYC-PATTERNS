@@ -38,7 +38,9 @@ module.exports = {
     padding: ['responsive'],
     textColors: ['hover'],
     textSizes: [],
-    textStyle: []
+    textStyle: [],
+    whitespace: ['responsive'],
+    width: ['responsive']
   },
   options: {
     prefix: '',

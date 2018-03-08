@@ -6,6 +6,7 @@
       code class='code' a
       span class='px-1' or
       code class='code' btn-link
+
   div class='p-3 bg-color-grey-lightest'
     a href='#' = text
 
@@ -17,10 +18,9 @@
       code class='code' links-invert btn-link
     div class='${class_demo_class_containers}'
       pre class='code'
-        | &lt;div class="bg-color-blue-dark links-invert">
-        br
-        |   &lt;a href="#">${text}&lt;/a>
-        br
-        | &lt;/div>
+        div = '<div class="bg-color-blue-dark links-invert">'
+        div = '  <a href="#">' + text + '</a>'
+        div = '</div>'
+
   div class='p-3 bg-color-blue-dark links-invert'
     a href='#' = text

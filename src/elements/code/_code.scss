@@ -4,11 +4,17 @@
 
 // Dependencies
 @import 'config/colors';
+@import 'config/fonts';
+@import 'elements/typography/typography.mixins';
 
 // Declarations
 code, pre {
-  font-size: .727em;
+  font-weight: $font-weight-normal;
+  font-size: #{$font-size-base};
+  line-height: 1.3;
   font-family: monospace;
+  // line-height: 1.8;
+  white-space: pre-wrap;
 }
 
 .code {
