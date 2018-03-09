@@ -4,6 +4,9 @@
 / Styles
 = partial('partials/styles.slm')
 
+/ Links
+= partial('partials/links.slm')
+
 / Partials
 = partial('partials/head.mixin.slm')
 = partial('partials/header.mixin.slm')
@@ -26,13 +29,30 @@
       div class='${class_demo_col1}'
         div class='${class_demo_spec}'
           p Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+          h3 Utility Class Usage
+          p You can use every color as a utility class for static and hover states. These are the prefixes that are available;
+          p
+            code class='code' = 'bg-<color>'
+            = '   =   Background color'
+          p
+            code class='code' = 'text-<color>'
+            = '   =   Text color'
+          p
+            code class='code' = 'border-<color>'
+            = '   =   Border color'
+          p
+            | Refer to
+            a<> href='${link_tailwind_docs}' Tailwind CSS docs
+            | for full details.
 
       div class='${class_demo_col2}'
         div class='${class_demo_content}'
           - for key in this.vars.colors
-            div class='inline-block p-1 w-full screen-tablet:w-1/2 mb-3'
+            div class='inline-block p-1 w-full mb-3'
+              code class='code' = '<prefix>-' + key
+              span class='px-1' ,
+              code class='code' = '$' + key
               div class='${class_swatch}'
                 div class='bg-${key} ${class_swatch__block}'
                 div class='${class_swatch__label}' = this.vars.colors[key]
-              pre class='code' = '.bg-' + key
 

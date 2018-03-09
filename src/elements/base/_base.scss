@@ -4,15 +4,9 @@
 
 // Dependencies
 @import 'config/variables';
-@import 'config/direction';
-@import 'elements/typography/typography.mixins';
 
 // Declarations
 html {
-  @include typography-base();
-  @if $text-direction == 'rtl' {
-    direction: rtl;
-  }
   box-sizing: border-box;
 }
 

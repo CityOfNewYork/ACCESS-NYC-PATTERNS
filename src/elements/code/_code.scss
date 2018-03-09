@@ -10,10 +10,9 @@
 // Declarations
 code, pre {
   font-weight: $font-weight-normal;
-  font-size: #{$font-size-base};
+  font-size: #{$font-size-small};
   line-height: 1.3;
   font-family: monospace;
-  // line-height: 1.8;
   white-space: pre-wrap;
 }
 
@@ -24,6 +23,10 @@ code, pre {
   border: 1px solid $color-grey-light;
   padding: 8px 16px;
   border-radius: 3px;
+}
+
+code.code {
+  color: $color-purple;
 }
 
 pre.code {

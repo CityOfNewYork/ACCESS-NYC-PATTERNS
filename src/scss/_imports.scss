@@ -72,14 +72,17 @@
 // include classes that assign color, modify the display of elements, or set up
 // scaffolding like typography or grid systems. Uitilities will have their own
 // namespace prefixes based on their attributes.
-@import 'elements/code/code';
 @import 'elements/base/base';
+@import 'elements/animate/animate';
+@import 'elements/code/code';
 @import 'elements/layouts/layouts';
 @import 'elements/links/links';
 @import 'elements/typography/typography';
 @import 'elements/grid/grid';
 @import 'elements/forms/forms';
+@import 'elements/labels/labels';
 @import 'elements/buttons/btn';
+@import 'elements/radios/radios';
 @import 'elements/icons/icons';
 
 /*************************

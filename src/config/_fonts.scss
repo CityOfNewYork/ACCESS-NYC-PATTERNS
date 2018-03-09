@@ -17,7 +17,7 @@ $em-base: map-get($variables, 'emBase');
 
 $font-size-xsmall: map-get($font-sizes, 'font-size-xsmall');
 $font-size-small: map-get($font-sizes, 'font-size-small');
-$font-size-base: map-get($font-sizes, 'font-size-base');
+$font-size-base: #{$em-base}px;
 $font-size-medium: map-get($font-sizes, 'font-size-medium');
 $font-size-large: map-get($font-sizes, 'font-size-large');
 $font-size-larger: map-get($font-sizes, 'font-size-larger');

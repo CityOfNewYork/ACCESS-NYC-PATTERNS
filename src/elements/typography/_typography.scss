@@ -13,48 +13,56 @@
 @import 'bourbon/app/assets/stylesheets/addons/margin';
 
 // Declarations
+html {
+  @include typography-base();
+  @if $text-direction == 'rtl' {
+    direction: rtl;
+  }
+}
+
 .type-jumbo {
   @include typography-jumbo();
 }
 
 h1,
 .type-h1 {
-  @include margin(0 null rem(strip-units($spacing-base), $em-base));
+  @debug $em-base;
+  @include margin(0 null rem($spacing-base, $em-base));
   @include typography-h1();
 }
 
 h2,
 .type-h2 {
-  @include margin(0 null rem(strip-units($spacing-base), $em-base));
+  @include margin(0 null rem($spacing-base, $em-base));
   @include typography-h2();
 }
 
 h3,
 .type-h3 {
-  @include margin(0 null rem(strip-units($spacing-base), $em-base));
+  @include margin(0 null rem($spacing-base, $em-base));
   @include typography-h3();
 }
 
 h4,
 .type-h4 {
-  @include margin(0 null rem(strip-units($spacing-base), $em-base));
+  @include margin(0 null rem($spacing-base, $em-base));
   @include typography-h4();
 }
 
 h5,
 .type-h5 {
-  @include margin(0 null rem(strip-units($spacing-base), $em-base));
+  @include margin(0 null rem($spacing-base, $em-base));
   @include typography-h5();
 }
 
 small,
 .type-small {
-  @include margin(0 null rem(strip-units($spacing-base), $em-base));
+  @include margin(0 null rem($spacing-base, $em-base));
   @include typography-supplemental();
 }
 
 blockquote {
-  @include margin(rem(strip-units(.5*$spacing-base), $em-base) null rem(strip-units(1.5*$spacing-base), $em-base));
+  @include margin(rem((.5 * $spacing-base), $em-base) null rem((1.5 * $spacing-base), $em-base));
   @include typography-blockquote();
 }
 

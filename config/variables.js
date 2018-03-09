@@ -27,17 +27,16 @@ const variables = {
     normal: 'normal',
     bold: 'bold'
   },
+  emBase: 22,
   fontSizes: {
     'font-size-xsmall': '0.54rem',
     'font-size-small': '0.72rem',
-    'font-size-base': '1rem',
     'font-size-medium': '1.09rem',
     'font-size-large': '1.25rem',
     'font-size-larger': '1.45rem',
     'font-size-largest': '1.81rem',
     'font-size-jumbo': '2.54rem'
   },
-  emBase: 22,
   colors: {
     'color-black': '#000000',
     'color-white': '#ffffff',
@@ -68,12 +67,12 @@ const variables = {
     'screen-sm-mobile': 400
   },
   dimensions: {
-    'spacing-base': 20,
-    'homepage-max-width': 800,
-    'site-max-width': 1200,
-    'site-margins': 20,
-    'site-margins-mobile': 15,
-    'site-min-width': 320
+    'spacing-base': '20px',
+    'homepage-max-width': '800px',
+    'site-max-width': '1200px',
+    'site-margins': '20px',
+    'site-margins-mobile': '15px',
+    'site-min-width': '320px'
   },
   animate: {
     'ease-in-quint': 'cubic-bezier(0.755, 0.05, 0.855, 0.06)',
@@ -118,6 +117,10 @@ const variables = {
     'icon-success': '32px',
     'icon-urgent': '32px',
     'icon-warning': '32px'
+  },
+  inputs: {
+    'checkbox-radius': '8px',
+    'checkbox-size': '30px'
   }
 };
 

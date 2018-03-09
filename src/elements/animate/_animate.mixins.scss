@@ -1,0 +1,16 @@
+//
+// Mixins
+//
+
+// Dependencies
+@import 'config/variables';
+
+// Declarations
+@mixin animate($animation: none, $speed: map-get(map-get($variables, 'animate'), 'animate-scss-speed')) {
+  @if $animation != none {
+    animation-name: $animation;
+  }
+  animation-duration: $speed;
+  animation-fill-mode: both;
+  animation-timing-function: map-get(map-get($variables, 'animate'), 'animate-timing-function');
+}

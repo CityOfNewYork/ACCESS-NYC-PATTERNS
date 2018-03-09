@@ -11,3 +11,32 @@
 @import 'uswds/src/stylesheets/components/forms';
 
 // Declarations
+fieldset {
+  border-width: 0;
+  padding: 0;
+}
+
+[type='checkbox'],
+[type='radio'] {
+  display: inline;
+}
+
+input,
+textarea,
+select {
+  appearance: none;
+  border: 1px solid $color-grey-mid;
+  border-radius: 0;
+  display: block;
+  max-width: 100%;
+  min-width: 200px;
+  width: 100%;
+
+  @include media($bp-tablet-up) {
+    width: auto;
+  }
+
+  .error & {
+    border-color: $color-red;
+  }
+}

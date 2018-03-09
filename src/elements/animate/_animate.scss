@@ -1,0 +1,16 @@
+/**
+ * Animate
+ */
+
+// Dependencies
+@import 'config/variables';
+@import 'elements/animate/animate.mixins';
+
+// Declarations
+body { /* Addresses a small issue in webkit: http://bit.ly/NEdoDq */
+  -webkit-backface-visibility: hidden;
+}
+
+.animated {
+  @include animate();
+}

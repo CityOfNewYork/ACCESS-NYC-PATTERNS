@@ -12,19 +12,21 @@
 = partial('partials/header.mixin.slm')
 = partial('partials/nav.mixin.slm')
 
+/ Elements
+= partial('../elements/radios/radios.slm')
+
 / Content blocks
 = content('head')
-  = mixin('head', 'Fonts')
+  = mixin('head', 'Radios')
 
 = content('header')
-  = mixin('header', 'Fonts')
+  = mixin('header', 'Radios')
 
 = content('content')
-  h1 class='px-1' Fonts
-
-  section#font-stacks class='${class_demo}'
+  h1 class='px-1' Radios
+  section#default-styling class='${class_demo}'
     header class='${class_demo_headers}'
-      h2 Font Family Stacks
+      h2 Default Styling
 
     div class='${class_demo_cols}'
       div class='${class_demo_col1}'
@@ -32,13 +34,5 @@
           p Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 
       div class='${class_demo_col2}'
-        - for key in this.vars.fonts
-          div class='${class_demo_content}'
-            div class='${class_demo_class_containers}'
-              code class='code' = 'font-' + key
-            pre class='code'
-              | font-family:&nbsp;
-              - for font in this.vars.fonts[key]
-                span class='whitespace-no-wrap' = this.vars.fonts[key][font]
-                = ', '
-
+        div class='${class_demo_content}'
+          = mixin('radios', true)

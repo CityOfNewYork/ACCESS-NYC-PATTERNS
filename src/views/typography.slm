@@ -4,6 +4,9 @@
 / Styles
 = partial('partials/styles.slm')
 
+/ Links
+= partial('partials/links.slm')
+
 / Partials
 = partial('partials/head.mixin.slm')
 = partial('partials/header.mixin.slm')

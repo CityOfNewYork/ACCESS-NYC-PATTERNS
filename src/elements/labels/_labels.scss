@@ -1,0 +1,13 @@
+/**
+ * Labels
+ */
+
+// Dependencies
+@import 'config/dimensions';
+@import 'config/fonts';
+
+// Declarations
+.label {
+  display: inline-block;
+  margin-bottom: rem($spacing-base, $em-base)
+}

@@ -1,0 +1,51 @@
+/**
+ * Radios
+ */
+
+// Dependencies
+@import 'config/direction';
+@import 'config/dimensions';
+@import 'config/fonts';
+@import 'config/colors';
+@import 'config/accessibility';
+
+// Declarations
+.radio {
+  font-size: $font-size-base;
+  font-weight: $font-weight-bold;
+
+  cursor: pointer;
+  display: block;
+  padding-#{$text-direction-start}: 40px;
+  margin-bottom: rem($spacing-base, $em-base);
+  position: relative;
+}
+
+.radio > input {
+  @include sr-only();
+}
+
+.radio > input + .radio__label::before {
+  @include size( map-get(map-get($variables, 'inputs'), 'checkbox-size') );
+  transition: all .2s;
+  position: absolute;
+  top: 0;
+  @if $text-direction == 'rtl' { right: 0; } @else { left: 0; }
+  background: $color-white;
+  border: 1px solid $color-grey-mid;
+  border-radius: 50%;
+  content: '';
+  display: inline-block;
+  min-width: map-get(map-get($variables, 'inputs'), 'checkbox-size');
+}
+
+.radio > input:checked + .radio__label::before {
+  background-color: $color-blue;
+  box-shadow: 0 0 0 2px $color-blue inset, 0 0 0 4px $color-white inset;
+  border: 0;
+}
+
+.radio > input:focus + .radio__label::before {
+  border: 0;
+  box-shadow: 0 0 0 2px $color-blue inset, 0 0 0 4px $color-white inset;
+}

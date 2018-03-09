@@ -5,6 +5,7 @@
 // Dependencies
 @import 'config/variables';
 @import 'config/dimensions';
+@import 'scss/functions/strip-units';
 
 // Declarations
 .page-wrapper {
@@ -26,6 +27,7 @@
 }
 
 .home-body {
+  @debug $spacing-base;
   margin: (1.5 * $spacing-base) auto;
   max-width: $homepage-max-width + ($spacing-base * 2);
   padding: 0 $spacing-base;

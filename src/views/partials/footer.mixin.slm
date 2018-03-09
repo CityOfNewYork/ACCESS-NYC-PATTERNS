@@ -3,6 +3,6 @@
 = mixin('footer')
   p
     | Maintained by&nbsp;
-    a href='https://github.com/orgs/CityOfNewYork/teams/nycopportunity' NYC Opportunity
+    a href='${link_github_team}' NYC Opportunity
 
   = mixin('nav')
