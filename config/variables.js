@@ -120,7 +120,8 @@ const variables = {
   },
   inputs: {
     'checkbox-radius': '8px',
-    'checkbox-size': '30px'
+    'checkbox-size': '30px',
+    'toggle-size': '25px'
   }
 };
 

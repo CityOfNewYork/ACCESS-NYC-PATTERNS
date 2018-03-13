@@ -16,62 +16,80 @@
 // if @font-face is used it needs to be first imported first.
 @import 'elements/fonts/fonts';
 
-/*************************
+
+/************
  * Normalize
- *************************/
+ ************/
+
 // This injects Tailwind's base styles, which is a combination of
 // Normalize.css and some additional base styles.
 // https://github.com/tailwindcss/tailwindcss/blob/master/css/preflight.css
+
 @tailwind preflight;
 
-/*************************
+
+/*******
  * Core
- *************************/
+ *******/
+
 // Core mixins, variables, and utilities not stored in config.js. Mixin files should
 // be postfixed with '.mixin.scss' and variables should be postfixed with '.vars.scss'.
 // Most core files are dependencies for components and utilites and don't need to be
 // included here. All dependencies should be referenced where they are needed.
+
 // @import 'core/base';
 
-/*************************
+
+/************************
  * External Dependencies
- *************************/
+ ************************/
+
 // Any external dependency can be included here. It may also make sense to include
 // it within specific component and object styles if it is a dependency. Be sure
 // to add 'node_modules' to your include paths if you are using npm to manage
 // dependencies (recommended). Dependency examples include Bootstrap or Material
 // Components Web.
+
 @import 'animate.scss/vendor/assets/stylesheets/animate/fadeInUp';
 @import 'animate.scss/vendor/assets/stylesheets/animate/fadeIn';
 
-/*************************
+
+/*************
  * Components
- *************************/
+ *************/
+
 // Components are elements that require isolated styling. Examples include buttons,
 // textfields, select boxes, grouped navigation, dropdowns, etc. They may include
 // utilities within them. Not all components are required for each application.
 // Component namespaces are prefixed with 'c-'.
+
 // @import 'c-navs';
 // @import 'c-cells';
 // @import 'c-textfield';
 // @import 'c-checkbox';
 
-/*************************
+
+/**********
  * Objects
- *************************/
+ **********/
+
 // Objects are elements with more robust styling requirements. They may include
 // Components and utilities within them. Examples include headers, footers, modals,
 // sliders, and charts. Not all Objects are required for each application and some
 // will require their own Objects. Object namespaces are prefixed with 'o-'.
+
 // @import 'o-modals';
 
-/*************************
+
+/**********
 * Elements
-**************************/
+***********/
+
 // Elements include universal styles, atomic patterns, and css systems. Examples
 // include classes that assign color, modify the display of elements, or set up
 // scaffolding like typography or grid systems. Uitilities will have their own
 // namespace prefixes based on their attributes.
+
 @import 'elements/base/base';
 @import 'elements/animate/animate';
 @import 'elements/code/code';
@@ -82,12 +100,17 @@
 @import 'elements/forms/forms';
 @import 'elements/labels/labels';
 @import 'elements/buttons/btn';
+@import 'elements/checkboxes/checkboxes';
 @import 'elements/radios/radios';
+@import 'elements/toggles/toggles';
 @import 'elements/icons/icons';
 
-/*************************
+
+/***********
 * Utilities
-**************************/
+************/
+
 // This injects all of Tailwind's utility classes, generated based on your
 // config file. View docs for usage; https://tailwindcss.com/docs/
+
 @tailwind utilities;

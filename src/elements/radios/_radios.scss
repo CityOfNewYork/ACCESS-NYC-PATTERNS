@@ -8,6 +8,7 @@
 @import 'config/fonts';
 @import 'config/colors';
 @import 'config/accessibility';
+@import 'config/media';
 
 // Declarations
 .radio {
@@ -17,15 +18,24 @@
   cursor: pointer;
   display: block;
   padding-#{$text-direction-start}: 40px;
-  margin-bottom: rem($spacing-base, $em-base);
   position: relative;
+
+  margin-bottom: $spacing-base;
+
+  @include media($bp-tablet-up) {
+    margin-bottom: $spacing-base * 1.5
+  }
+
+  &:last-of-type {
+    margin-bottom: 0
+  }
+
+  > input {
+    @include sr-only()
+  }
 }
 
-.radio > input {
-  @include sr-only();
-}
-
-.radio > input + .radio__label::before {
+input + .radio__label::before {
   @include size( map-get(map-get($variables, 'inputs'), 'checkbox-size') );
   transition: all .2s;
   position: absolute;
@@ -39,13 +49,13 @@
   min-width: map-get(map-get($variables, 'inputs'), 'checkbox-size');
 }
 
-.radio > input:checked + .radio__label::before {
+input:checked + .radio__label::before {
   background-color: $color-blue;
   box-shadow: 0 0 0 2px $color-blue inset, 0 0 0 4px $color-white inset;
   border: 0;
 }
 
-.radio > input:focus + .radio__label::before {
+input:focus + .radio__label::before {
   border: 0;
   box-shadow: 0 0 0 2px $color-blue inset, 0 0 0 4px $color-white inset;
 }

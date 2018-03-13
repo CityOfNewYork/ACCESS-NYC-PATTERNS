@@ -3,48 +3,61 @@
  */
 
 // Dependencies
+@import 'config/variables';
+@import 'config/direction';
+@import 'config/dimensions';
+@import 'config/fonts';
+@import 'config/colors';
+@import 'config/accessibility';
+@import 'config/media';
 
 // Declarations
-.styled-checkbox {
+.checkbox {
   cursor: pointer;
   display: block;
   padding-#{$text-direction-start}: 40px;
   position: relative;
 
+  margin-bottom: $spacing-base;
+
+  @include media($bp-tablet-up) {
+    margin-bottom: $spacing-base * 1.5
+  }
+
+  &:last-of-type {
+    margin-bottom: 0
+  }
+
   input {
-    @include sr-only();
+    @include sr-only()
   }
 }
 
-.styled-checkbox-label {
+.checkbox__label::before {
+  @include size(map-get(map-get($variables, 'inputs'), 'checkbox-size'));
+  transition: all .2s;
+  position: absolute;
+  top: 0;
+  @if $text-direction == 'rtl' { right: 0; } @else { left: 0; }
+  background: $color-white;
+  border: 1px solid $color-grey-mid;
+  border-radius: map-get(map-get($variables, 'inputs'), 'checkbox-radius');
+  content: '';
+  display: inline-block;
+  min-width: map-get(map-get($variables, 'inputs'), 'checkbox-size');
+}
+
+input:checked + .checkbox__label {
   &::before {
-    @include size($checkbox-size);
-    transition: all .2s;
-    @if $text-direction == 'rtl' {
-      @include position(absolute, 0 0 null null);
-    } @else {
-      @include position(absolute, 0 null null 0);
-    }
-    background: $color-white;
-    border: 1px solid $color-grey-mid;
-    border-radius: $checkbox-radius;
-    content: '';
-    display: inline-block;
-    min-width: $checkbox-size;
+    background: $color-blue url('../images/icon-checkmark.svg') no-repeat;
+    background-size: cover;
+    border: 0;
   }
+}
 
-  input:checked + & {
-    &::before {
-      background: $color-blue url('/wp-content/themes/access/assets/img/icon-checkmark.svg') no-repeat;
-      background-size: cover;
-      border: 0;
-    }
-  }
-
-  input:focus + & {
-    &::before {
-      border: 0;
-      box-shadow: 0 0 0 1px #ffffff, 0 0 0 3px #0071bc;
-    }
+input:focus + .checkbox__label {
+  &::before {
+    border: 0;
+    box-shadow: 0 0 0 1px $color-white, 0 0 0 3px $color-blue;
   }
 }

@@ -7,11 +7,16 @@
     nav
       span class='px-1' Elements;
       a class='px-1' href='colors' Colors
-      a class='px-1' href='typography' Typography
       a class='px-1' href='font-families' Fonts
-      a class='px-1' href='buttons' Buttons
-      a class='px-1' href='radios' Radios
+      a class='px-1' href='typography' Typography
+      a class='px-1' href='icons' Icons
       a class='px-1' href='links' Links
+      a class='px-1' href='buttons' Buttons
+      a class='px-1' href='checkboxes' Checkboxes
+      a class='px-1' href='radios' Radios
+      a class='px-1' href='toggles' Toggles
+
+
   p
     nav
       span class='px-1' Components;

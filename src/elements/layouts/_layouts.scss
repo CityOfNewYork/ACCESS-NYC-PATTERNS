@@ -27,7 +27,6 @@
 }
 
 .home-body {
-  @debug $spacing-base;
   margin: (1.5 * $spacing-base) auto;
   max-width: $homepage-max-width + ($spacing-base * 2);
   padding: 0 $spacing-base;

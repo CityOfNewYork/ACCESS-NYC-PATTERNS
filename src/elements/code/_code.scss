@@ -9,27 +9,38 @@
 
 // Declarations
 code, pre {
-  font-weight: $font-weight-normal;
-  font-size: #{$font-size-small};
-  line-height: 1.3;
-  font-family: monospace;
-  white-space: pre-wrap;
+  display: inline-block;
 }
 
-.code {
-  color: $color-pink;
+.code,
+.code-block {
+  font-weight: $font-weight-normal;
+  font-size: $font-size-small;
+  line-height: 1.3;
+  font-family: monospace;
+
   background-color: $color-grey-lightest;
-  display: inline-block;
   border: 1px solid $color-grey-light;
-  padding: 8px 16px;
   border-radius: 3px;
 }
 
-code.code {
+.code {
   color: $color-purple;
+  padding: 8px 16px;
+  display: inline-block;
+  overflow: initial;
+  line-height: inherit;
+  max-width: 100%;
+  text-overflow: ellipsis;
 }
 
-pre.code {
+.code-block {
+  color: $color-pink;
+  display: inline-block;
   display: block;
-  padding: 16px 16px;
+  max-width: 100%;
+  overflow-y: auto;
+  pre {
+    padding: 16px 16px;
+  }
 }

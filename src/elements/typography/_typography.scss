@@ -26,7 +26,6 @@ html {
 
 h1,
 .type-h1 {
-  @debug $em-base;
   @include margin(0 null rem($spacing-base, $em-base));
   @include typography-h1();
 }

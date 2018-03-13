@@ -24,6 +24,10 @@ module.exports = {
   fontWeights: variables.fontWeights,
   borderWidths: variables.borderWidths,
   margin: variables.margin,
+  maxWidth: {
+    '1/2': '50%',
+    'full': '100%'
+  },
   padding: variables.padding,
   modules: {
     backgroundColors: ['hover', 'focus'],
@@ -35,6 +39,8 @@ module.exports = {
     fonts: [],
     fontWeights: [],
     margin: ['responsive'],
+    maxWidth: ['responsive'],
+    overflow: ['responsive'],
     padding: ['responsive'],
     textColors: ['hover'],
     textSizes: [],
