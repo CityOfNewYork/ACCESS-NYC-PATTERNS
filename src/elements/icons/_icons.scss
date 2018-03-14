@@ -4,17 +4,27 @@
 
 // Dependencies
 @import 'config/variables';
+@import 'scss/functions/str-replace';
 @import 'bourbon/app/assets/stylesheets/addons/size';
 
 // Declarations
-@each $key, $var in map-get($variables, 'icons') {
-  .#{$key} {
-    @include size($var);
+[class*='icon-'] {
+  display: inline-block;
+  svg {
+    fill: currentColor
   }
 }
 
-#icon-logo-full {
-  .logo-name {
-    fill: currentColor;
+@each $key, $var in map-get($variables, 'icons') {
+
+  $path: $key;
+  $path: str-replace($path, '--large');
+  $path: str-replace($path, '--small');
+
+  .#{$key} {
+    @include size($var);
+    background-image: url('../svg/#{$path}.svg');
+    background-repeat: no-repeat;
+    background-size: 100%;
   }
 }

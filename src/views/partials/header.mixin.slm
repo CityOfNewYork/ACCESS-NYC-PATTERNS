@@ -1,5 +1,5 @@
 = mixin('header', 'title = Patterns')
   h1
-    svg class='icon icon-logo-full--large' style='background: url("images/icon-logo-full.svg") no-repeat;'
+    div class='icon-logo-full-white--large'
     span class='hidden' ACCESS NYC
   h2 class='type-jumbo' Pattern Library

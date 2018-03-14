@@ -39,11 +39,5 @@
             div class='${class_demo_class_containers}'
               div class='code-block'
                 pre
-                  div = '<svg class="icon ' + key + '">'
-                  div = '  <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#' + key + '"></use>'
-                  div = '</svg>'
-            svg class='icon ${key}'
-              use xmlns:xlink='http://www.w3.org/1999/xlink' xlink:href='#${key}'
-
-  = partial('partials/icons.slm')
-
+                  div = '<div class="' + key + '"></div>'
+            div class='${key}'

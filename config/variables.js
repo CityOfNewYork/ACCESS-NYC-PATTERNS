@@ -5,23 +5,62 @@
 const variables = {
   fonts: {
     'system': [
-      '-apple-system', 'BlinkMacSystemFont', '"Segoe UI"', 'Roboto',
-      'Oxygen-Sans', 'Ubuntu', 'Cantarell', '"Helvetica Neue"', 'sans-serif'
+      '-apple-system',
+      'BlinkMacSystemFont',
+      '"Segoe UI"',
+      'Roboto',
+      'Oxygen-Sans',
+      'Ubuntu',
+      'Cantarell',
+      '"Helvetica Neue"',
+      'sans-serif'
     ],
-    'default-sans': ['"Noto Sans"', 'sans-serif'],
-    'default-serif': ['"Noto Serif"', 'serif'],
-    'kr-sans': ['"Noto Sans"', '"Noto Sans CJK KR"', 'sans-serif'],
-    'kr-serif': ['"Noto Serif"', '"Noto Sans CJK KR"', 'serif'],
+    'default-sans': [
+      '"Noto Sans"',
+      'sans-serif'
+    ],
+    'default-serif': [
+      '"Noto Serif"',
+      'serif'
+    ],
+    'kr-sans': [
+      '"Noto Sans"',
+      '"Noto Sans CJK KR"',
+      'sans-serif'
+    ],
+    'kr-serif': [
+      '"Noto Serif"',
+      '"Noto Sans CJK KR"',
+      'serif'
+    ],
     'tc-sans': [
-      '"Noto Sans"', '"Noto Sans CJK TC"', '"Microsoft Yahei"', '"微软雅黑"',
-      'STXihei', '"华文细黑"', 'sans-serif'
+      '"Noto Sans"',
+      '"Noto Sans CJK TC"',
+      '"Microsoft Yahei"',
+      '"微软雅黑"',
+      'STXihei',
+      '"华文细黑"',
+      'sans-serif'
     ],
     'tc-serif': [
-      '"Noto Serif"', '"Noto Sans CJK TC"', '"Microsoft Yahei"', '"微软雅黑"',
-      'STXihei', '"华文细黑"', 'serif'
+      '"Noto Serif"',
+      '"Noto Sans CJK TC"',
+      '"Microsoft Yahei"',
+      '"微软雅黑"',
+      'STXihei',
+      '"华文细黑"',
+      'serif'
     ],
-    'ar-sans': ['"Noto Sans"', '"Noto Naskh Arabic"', 'sans-serif'],
-    'ar-serif': ['"Noto Serif"', '"Noto Naskh Arabic"', 'serif']
+    'ar-sans': [
+      '"Noto Sans"',
+      '"Noto Naskh Arabic"',
+      'sans-serif'
+    ],
+    'ar-serif': [
+      '"Noto Serif"',
+      '"Noto Naskh Arabic"',
+      'serif'
+    ]
   },
   fontWeights: {
     normal: 'normal',
@@ -101,22 +140,59 @@ const variables = {
     3: '24px',
     4: '32px'
   },
+  iconVariants: ['--large', '--small'],
   icons: {
+    // Logos
+    'icon-logo-full': '180px 30px',
+    'icon-logo-full-white': '180px 30px',
+    'icon-logo-full--large': '270px 45px',
+    'icon-logo-full-white--large': '270px 45px',
+    'icon-logo-mark': '30px',
+    'icon-logo-nyc': '48px 16px',
+    // UI
     'icon-close': '20px',
     'icon-contact': '22px 20px',
     'icon-gear': '23px',
-    'icon-info': '32px',
-    'icon-logo-full': '180px 30px',
-    'icon-logo-full--large': '270px 45px',
-    'icon-logo-mark': '30px',
-    'icon-logo-nyc': '48px 16px',
-    'icon-minus': '32px',
-    'icon-plus': '32px',
+    'icon-minus': '32px 32px',
+    'icon-plus': '32px 32px',
     'icon-screening': '30px',
     'icon-search': '16px',
-    'icon-success': '32px',
-    'icon-urgent': '32px',
-    'icon-warning': '32px'
+    // Sizes weren't documented
+    'icon-printer': '32px 32px',
+    'icon-share': '32px 32px',
+    'icon-eligibilitycheck': '32px 32px',
+    'icon-checkmark': '32px 32px',
+    'icon-arrow-down': '32px 32px',
+    // Alert Icons
+    'icon-info': '32px 32px',
+    'icon-success': '32px 32px',
+    'icon-urgent': '32px 32px',
+    'icon-warning': '32px 32px',
+    // Program Card Icons
+    'icon-card-cash-expenses': '50px 50px',
+    'icon-card-child-care': '50px 50px',
+    'icon-card-city-id-card': '50px 50px',
+    'icon-card-education': '50px 50px',
+    'icon-card-enrichment': '50px 50px',
+    'icon-card-expenses': '50px 50px',
+    'icon-card-family-services': '50px 50px',
+    'icon-card-food': '50px 50px',
+    'icon-card-health': '50px 50px',
+    'icon-card-housing': '50px 50px',
+    'icon-card-special-needs': '50px 50px',
+    'icon-card-work': '50px 50px',
+    // Program Type Icons
+    'icon-cash-expenses': '50px 50px',
+    'icon-child-care': '50px 52px',
+    'icon-city-id-card': '50px 50px',
+    'icon-education': '50px 50px',
+    'icon-enrichment': '50px 50px',
+    'icon-family-services': '50px 50px',
+    'icon-food': '50px 52px',
+    'icon-health': '50px 50px',
+    'icon-housing': '50px 50px',
+    'icon-special-needs': '50px 50px',
+    'icon-work': '50px 52px'
   },
   inputs: {
     'checkbox-radius': '8px',
