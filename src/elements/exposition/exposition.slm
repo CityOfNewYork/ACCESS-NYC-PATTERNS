@@ -1,0 +1,17 @@
+
+
+= mixin('exposition', 'code = false', 'text = "Default Text"')
+  - if this.code
+    div class='${class_demo_class_containers}'
+      code.code exposition p
+    div class='${class_demo_class_containers}'
+      div class='code-block mb-1'
+        pre
+          div = '<div class="exposition">'
+          div = '  <p>'
+          div = '    ' + text
+          div = '  </p>'
+          div = '</div>'
+
+  div class='exposition'
+    p = text

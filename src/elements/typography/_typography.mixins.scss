@@ -60,7 +60,7 @@
   font-family: $font-family-sans
 }
 
-@mixin typography-lead() {
+@mixin typography-exposition() {
   font-size: #{$font-size-base};
   line-height: 1.3;
   font-family: $font-family-serif;

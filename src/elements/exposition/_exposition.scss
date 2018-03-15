@@ -1,0 +1,13 @@
+/**
+ * Exposition
+ */
+
+// Dependencies
+@import 'config/dimensions';
+@import 'elements/typography/typography.mixins';
+
+// Declarations
+.exposition {
+  @include typography-exposition();
+  margin-bottom: $spacing-base * 2;
+}
