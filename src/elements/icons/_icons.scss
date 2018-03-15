@@ -9,22 +9,30 @@
 
 // Declarations
 [class*='icon-'] {
+  overflow: visible !important;
+}
+
+[class*='bg-icon-'] {
   display: inline-block;
-  svg {
-    fill: currentColor
-  }
 }
 
 @each $key, $var in map-get($variables, 'icons') {
 
   $path: $key;
-  $path: str-replace($path, '--large');
-  $path: str-replace($path, '--small');
 
-  .#{$key} {
+  @each $str in map-get($variables, 'iconVariants') {
+    $path: str-replace($path, $str);
+  }
+
+  .bg-#{$key} {
     @include size($var);
     background-image: url('../svg/#{$path}.svg');
     background-repeat: no-repeat;
     background-size: 100%;
   }
+
+  .#{$key} {
+    @include size($var);
+  }
+
 }

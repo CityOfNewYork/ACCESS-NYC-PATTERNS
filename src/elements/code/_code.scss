@@ -26,12 +26,24 @@ code, pre {
 
 .code {
   color: $color-purple;
-  padding: 8px 16px;
+  padding: 4px 8px;
   display: inline-block;
   overflow: initial;
   line-height: inherit;
   max-width: 100%;
   text-overflow: ellipsis;
+}
+
+p code {
+  color: $color-purple;
+  font-size: 85%;
+  font-family: inherit;
+  letter-spacing: 0.01em;
+  background-color: $color-grey-lightest;
+  border-radius: 3px;
+  padding: 0.2em 0.4em;
+  margin: 0;
+  display: inline;
 }
 
 .code-block {

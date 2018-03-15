@@ -21,11 +21,12 @@
     "style_bundle": "bundle/styles/site.concat.css",
     "style_dist": "dist/styles/site.min.css",
     "svg_src": "./src/svg",
-    "svg_dist": "./dist/svg"
+    "svg_dist": "./dist/svg",
+    "svg_partial": "./src/views/partials/icons.slm"
   },
   "scripts": {
     "test": "",
-    "start": "PORT=$npm_package_config_port concurrently 'npm run styles:watch' 'npm run scripts:watch' 'npm run build:watch' 'npm run svgs:watch' 'npm run serve' 'npm run sync'",
+    "start": "PORT=$npm_package_config_port concurrently 'npm run svgs:watch' 'npm run styles:watch' 'npm run scripts:watch' 'npm run build:watch' 'npm run serve' 'npm run sync'",
     "serve": "PORT=$npm_package_config_port node .app/serve.js --ext slm --watch src",
     "build": "VARS=$npm_package_config_vars node .app/build.js",
     "build:watch": "nodemon --ext slm --watch src/views -x 'npm run build'",
@@ -38,7 +39,9 @@
     "styles:sass": "node .app/sass.js",
     "styles:postcss": "postcss $npm_package_config_style_bundle --config $npm_package_config_postcss -o $npm_package_config_style_dist",
     "styles:watch": "nodemon --ext scss --watch src --ignore _variables.scss -x 'npm run styles'",
-    "svgs": "svgo -f $npm_package_config_svg_src -o $npm_package_config_svg_dist",
+    "svgs": "npm run svgs:optimize && npm run svgs:symbol",
+    "svgs:optimize": "svgo -f $npm_package_config_svg_src -o $npm_package_config_svg_dist",
+    "svgs:symbol": "svgstore -o $npm_package_config_svg_partial $npm_package_config_svg_dist/*.svg",
     "svgs:watch": "nodemon --ext svg --watch $npm_package_config_svg_src -x 'npm run svgs'"
   },
   "devDependencies": {
@@ -76,6 +79,7 @@
     "stylelint": "^8.3.0",
     "stylelint-config-standard": "^18.0.0",
     "svgo": "^1.0.5",
+    "svgstore-cli": "^1.3.1",
     "uglify-js": "^3.0.15"
   },
   "dependencies": {

@@ -12,6 +12,9 @@
 = partial('partials/header.mixin.slm')
 = partial('partials/nav.mixin.slm')
 
+/ Elements
+= partial('../elements/icons/icons.slm')
+
 / Content blocks
 = content('head')
   = mixin('head', 'Icons')
@@ -22,22 +25,18 @@
 = content('content')
   h1 class='px-1' Icons
 
-  section#icons class='${class_demo}'
+  section#usage class='${class_demo}'
     header class='${class_demo_headers}'
-      h2 Icons
+      h2 Usage
 
     div class='${class_demo_cols}'
       div class='${class_demo_col1}'
         div class='${class_demo_spec}'
           p Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+          p There are two options for using icons, either as an inline <code>svg</code> with the <code>use</code> tag, or as a utility class that sets the background image of the icon (<code>bg-</code>). The tradeoff for both cases is that you can change the color of inline svg icon shapes that have their fill set as <code>currentColor</code>. Icons with background images require less markup and their shape fill color will default to black or whatever fill color the shape is set to.
+          p To use the inline <code>svgs</code>, include the icon symbol in your page markup. This can be found in this repositories source under <code>./src/views/partials/icons.slm</code>.
 
       div class='${class_demo_col2}'
         - for key in this.vars.icons
           div class='${class_demo_content}'
-            div class='${class_demo_class_containers}'
-              code.code = key
-            div class='${class_demo_class_containers}'
-              div class='code-block'
-                pre
-                  div = '<div class="' + key + '"></div>'
-            div class='${key}'
+            = mixin('icons', true, key)

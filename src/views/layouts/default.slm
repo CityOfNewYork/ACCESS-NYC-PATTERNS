@@ -2,11 +2,14 @@
 = partial('../partials/nav.mixin.slm')
 
 doctype html
-html lang='en'
+html lang='en' class='text-size-0'
 
   = content('head')
 
 body style='visibility: hidden;' onload='load()'
+
+  div style='display: none'
+    = partial('../partials/icons.slm')
 
   header class='page-wrapper my-3'
     div class='bg-color-blue-dark text-color-white links-invert py-4'

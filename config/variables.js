@@ -144,9 +144,7 @@ const variables = {
   icons: {
     // Logos
     'icon-logo-full': '180px 30px',
-    'icon-logo-full-white': '180px 30px',
     'icon-logo-full--large': '270px 45px',
-    'icon-logo-full-white--large': '270px 45px',
     'icon-logo-mark': '30px',
     'icon-logo-nyc': '48px 16px',
     // UI
