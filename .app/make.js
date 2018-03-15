@@ -90,6 +90,8 @@ function fnFiles(dir, type, pattern) {
   fnStyles(dir, type, pattern);
   fnMarkup(dir, pattern);
   console.log(`Made the "${pattern}" ${process.argv[2]}.`);
+  console.log(`Remember to add "@import ${type}/${pattern}/${pattern};" to you imports.`);
+  console.log(`Create "views/${pattern}.slm" markup demonstration.`);
   return true;
 }
 
