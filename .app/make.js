@@ -11,7 +11,7 @@ const Path = require('path');
 
 // Templates
 const slm = "\n\n= mixin('{{ pattern }}', 'code = false', 'text = \"\"')\n  - if this.code\n    // code Selectors\n    // pre Markup\n\n  // Demonstration\n";
-const scss = "/**\n * {{ Pattern }}\n */\n\n// Dependencies\n// import '...';\n\n// Declarations\n.{{ prefix }}{{ pattern }} { }\n";
+const scss = "/**\n * {{ Pattern }}\n */\n\n// Dependencies\n// @import '...';\n\n// Declarations\n.{{ prefix }}{{ pattern }} { }\n";
 const type = `${process.argv[2]}s`;
 const dir = Path.join(__dirname, '../', 'src', type, process.argv[3]);
 const pattern = process.argv[3];
