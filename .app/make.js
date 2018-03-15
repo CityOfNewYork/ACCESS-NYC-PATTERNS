@@ -4,6 +4,7 @@
 
 const fs = require('fs');
 const Path = require('path');
+const Readline = require('readline');
 
 /**
  * Constants
@@ -12,14 +13,21 @@ const Path = require('path');
 // Templates
 const slm = "\n\n= mixin('{{ pattern }}', 'code = false', 'text = \"\"')\n  - if this.code\n    // code Selectors\n    // pre Markup\n\n  // Demonstration\n";
 const scss = "/**\n * {{ Pattern }}\n */\n\n// Dependencies\n// @import '...';\n\n// Declarations\n.{{ prefix }}{{ pattern }} { }\n";
+const configscss = "//\n// Variables\n//\n\n// Dependencies\n// @import '...';\n\n// Declarations\n";
 const type = `${process.argv[2]}s`;
-const dir = Path.join(__dirname, '../', 'src', type, process.argv[3]);
+const src = 'src';
+const config = 'config';
+const dir = Path.join(__dirname, '../', src, type, process.argv[3]);
 const pattern = process.argv[3];
 const prefixes = {
   'elements': '',
   'components': 'c-',
   'objects': 'o-'
 };
+const configPrompt = Readline.createInterface({
+  input: process.stdin,
+  output: process.stdout
+});;
 
 /**
  * Functions
@@ -58,7 +66,6 @@ function fnStyles(dir, type, pattern) {
       console.log(err);
       return;
     }
-    // console.log(`Created ${pattern} stylesheet.`);
   });
 }
 
@@ -77,8 +84,30 @@ function fnMarkup(dir, pattern) {
       console.log(err);
       return;
     }
-    // console.log(`Created ${pattern} markup file.`);
   });
+}
+
+/**
+ * Make the config file for the pattern if it doesn't exist
+ * @param  {string} dir     The directory to write
+ * @param  {string} type    The pattern type: elements, components, objects
+ * @param  {string} pattern The name of the pattern
+ * @return {boolean}        false if already exists, true if created
+ */
+function fnConfig(dir, type, pattern, callback) {
+  let file = `${dir}/_${pattern}.scss`;
+  if (!fs.existsSync(file)) {
+    fs.writeFile(file, configscss, err => {
+      if (err) {
+        console.log(err);
+        return false;
+      }
+    });
+    callback(`${src}/${config}/_${pattern}.scss`);
+    return true;
+  } else {
+    return false;
+  }
 }
 
 /**
@@ -102,10 +131,37 @@ function fnFiles(dir, type, pattern) {
  * @return {boolean}         False if nothing is created
  */
 function fnMake(dir, type, pattern) {
-  if (!fnDirectory(dir, type, pattern, fnFiles)) {
+  let make = fnDirectory(dir, type, pattern, fnFiles);
+  if (!make) {
     console.log(`The "${pattern}" ${process.argv[2]} already exists.`);
     return false;
   }
+  return make;
+}
+
+/**
+ * Ask if we wan to make the configuration file.
+ * @param  {string} dir     The directory to write
+ * @param  {string} type    The pattern type: elements, components, objects
+ * @param  {string} pattern The name of the pattern
+ * @param  {[type]} prompt  The Readline prompt to ask if you want to creat a config
+ */
+function fnMakeConfig(dir, type, pattern, prompt) {
+  prompt.question('Would you like to create a config stylesheet? ', (answer) => {
+    if (
+      answer.toLowerCase() == 'yes' ||
+      answer.toLowerCase() == 'ye' ||
+      answer.toLowerCase() == 'y'
+    ) {
+      let c = fnConfig(dir, type, pattern, function(file) {
+        console.log(`"${file}" was made.`);
+      });
+      if (!c) {
+        console.log(`The "${pattern}" config already exists.`);
+      }
+    }
+    prompt.close();
+  });
 }
 
 /**
@@ -113,3 +169,4 @@ function fnMake(dir, type, pattern) {
  */
 
 fnMake(dir, type, pattern);
+fnMakeConfig(Path.join(__dirname, '../', src, config), type, pattern, configPrompt);
