@@ -42,7 +42,8 @@
     "svgs": "npm run svgs:optimize && npm run svgs:symbol",
     "svgs:optimize": "svgo -f $npm_package_config_svg_src -o $npm_package_config_svg_dist",
     "svgs:symbol": "svgstore -o $npm_package_config_svg_partial $npm_package_config_svg_dist/*.svg",
-    "svgs:watch": "nodemon --ext svg --watch $npm_package_config_svg_src -x 'npm run svgs'"
+    "svgs:watch": "nodemon --ext svg --watch $npm_package_config_svg_src -x 'npm run svgs'",
+    "make": "node .app/make.js"
   },
   "devDependencies": {
     "ajv": "^5.5.1",
