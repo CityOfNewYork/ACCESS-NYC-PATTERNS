@@ -10,7 +10,9 @@
 @import 'config/colors';
 
 // Declarations
-table {
+.table,
+.content-body table {
+
   font-size: $font-size-small;
   margin-bottom: $spacing-base * 2;
   max-width: 100%;
@@ -18,33 +20,34 @@ table {
   @include media($bp-tablet-up) {
     font-size: $font-size-base;
   }
-}
 
-thead {
-  border-bottom: 1px solid $color-grey-dark;
-  color: $color-blue;
+  thead {
+    border-bottom: 1px solid $color-grey-dark;
+    color: $color-blue;
 
-  tr {
-    background-color: none;
-  }
-}
-
-tbody {
-  tr {
-    &:nth-child(odd) {
-      background-color: $color-grey-lightest;
+    tr {
+      background-color: none;
     }
   }
-}
 
-th {
-  vertical-align: top;
-}
-
-th,
-td {
-  padding: $spacing-base * .5;
-  @include media($bp-tablet-up) {
-    padding: $spacing-base * .5 $spacing-base * 2;
+  tbody {
+    tr {
+      &:nth-child(odd) {
+        background-color: $color-grey-lightest;
+      }
+    }
   }
+
+  th {
+    vertical-align: top;
+  }
+
+  th,
+  td {
+    padding: $spacing-base * .5;
+    @include media($bp-tablet-up) {
+      padding: $spacing-base * .5 $spacing-base * 2;
+    }
+  }
+
 }

@@ -2,10 +2,33 @@
 
 = mixin('tables', 'code = false', 'text = ""')
   - if this.code
-    // code Selectors
-    // pre Markup
+    div class='${class_demo_class_containers}'
+      code.code = 'table, content-body <table>'
+    div class='${class_demo_class_containers}'
+      div class='code-block'
+        pre
+          div = '<table class="table">'
+          div = '  <thead>'
+          div = '    <tr>'
+          div = '      <td><strong>Family Size</strong></td>'
+          div = '      <td><strong>Yearly Income</strong></td>'
+          div = '      <td><strong>Weekly Income</strong></td>'
+          div = '    </tr>'
+          div = '  </thead>'
+          div = '  <tbody>'
+          div = '    <tr>'
+          div = '      <td>1</td>'
+          div = '      <td>$27,816</td>'
+          div = '      <td>$535</td>'
+          div = '    </tr>'
+          div = '    <tr><td>2</td><td>$36,372</td><td>$699</td></tr>'
+          div = '    <tr><td>3</td><td>$44,928</td><td>$864</td></tr>'
+          div = '    <tr><td>4</td><td>$53,484</td><td>$1,029</td></tr>'
+          div = '    <tr><td>...</td><td>...</td><td>...</td></tr>'
+          div = '  </tbody>'
+          div = '</table>'
 
-  table
+  table class='table'
     thead
       tr
         td
