@@ -6,6 +6,7 @@
   p
     nav
       span class='px-1' Elements;
+      br
       a class='px-1' href='colors' Colors
       a class='px-1' href='font-families' Fonts
       a class='px-1' href='typography' Typography
@@ -16,11 +17,11 @@
       a class='px-1' href='checkboxes' Checkboxes
       a class='px-1' href='radios' Radios
       a class='px-1' href='toggles' Toggles
-
-
+      a class='px-1' href='tables' Tables
   p
     nav
       span class='px-1' Components;
+      br
       a class='px-1' href='#' Alert Box
       a class='px-1' href='#' Accordions
       a class='px-1' href='#' Cards
