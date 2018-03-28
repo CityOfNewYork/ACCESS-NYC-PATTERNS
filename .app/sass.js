@@ -11,8 +11,8 @@ const Fs = require('fs');
  * Constants
  */
 
-const bundle = Path.join(__dirname, '../', 'bundle/styles/');
-const name = 'site.concat.css';
+const bundle = Path.join(__dirname, '../', config.outDir);
+const name = config.outFile;
 
 /**
  * Functions

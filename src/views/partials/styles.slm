@@ -1,6 +1,6 @@
 / This is the layout styling
 - class_demo = 'pb-4'
--   class_demo_headers = 'pt-1 px-1 border-b mb-3'
+-   class_demo_headers = 'pt-1 px-1 border-b border-color-grey-light mb-3'
 /     The title of the demo
 -   class_demo_cols = 'block screen-tablet:flex'
 -     class_demo_col1 = 'flex-1'

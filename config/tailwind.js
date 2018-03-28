@@ -13,6 +13,7 @@ module.exports = {
   colors: variables.colors,
   textColors: variables.colors,
   backgroundColors: variables.colors,
+  borderColors: global.Object.assign({ default: '' }, variables.colors),
   screens: {
     'screen-desktop': `${variables.screens['screen-desktop']}px`,
     'screen-tablet': `${variables.screens['screen-tablet']}px`,

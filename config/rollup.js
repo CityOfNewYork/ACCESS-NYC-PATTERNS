@@ -12,21 +12,63 @@ import eslint from 'rollup-plugin-eslint';
  * Config
  */
 
-export default {
-  moduleName: 'main',
-  entry: './src/js/main.js',
-  dest: './dist/scripts/main.dist.js',
-  sourceMap: 'inline',
-  format: 'iife',
-  plugins: [
-    eslint(),
-    resolve(),
-    babel({
-      exclude: '../node_modules/**'
-    }),
-    replace({
-      'process.env.NODE_ENV': JSON.stringify('production')
-    }),
-    uglify()
-  ]
+// Name of the main script
+const name = 'AccessNyc';
+
+// Our list of modules we are exporting
+const modules = [
+  // {
+  //   name: 'ModuleName',
+  //   path: './src/objects/module-name'
+  // }
+];
+
+// Rollup Configuration
+const plugins = [
+  eslint(),
+  resolve(),
+  babel({
+    exclude: '../node_modules/**'
+  }),
+  uglify()
+];
+
+const sourcemap = 'inline';
+const format = 'iife';
+const strict = true;
+
+/**
+ *
+ */
+
+// Create main package
+const Main = {
+  input: './src/js/main.js',
+  output: {
+    name: name,
+    file: `./dist/scripts/${name}.js`,
+    sourcemap: sourcemap,
+    format: format,
+    strict: strict
+  },
+  plugins: plugins
 };
+
+// Create packages for our other modules
+for (let i = 0; i < modules.length; i++) {
+  modules[i] = {
+    input: `${modules[i].path}/${modules[i].name}.js`,
+    output: {
+      name: modules[i].name,
+      file: `./dist/scripts/modules/${modules[i].name}.js`,
+      sourcemap: sourcemap,
+      format: format,
+      strict: strict
+    },
+    plugins: plugins
+  }
+};
+
+modules.push(Main);
+
+export default modules;

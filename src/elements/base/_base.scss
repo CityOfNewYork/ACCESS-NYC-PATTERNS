@@ -40,3 +40,9 @@ body {
 use {
   pointer-events: none;
 }
+
+// Tailwind.css requires this border setting for it's borders to work properly
+[class*='border'] {
+  border-style: solid;
+  border-width: 0
+}

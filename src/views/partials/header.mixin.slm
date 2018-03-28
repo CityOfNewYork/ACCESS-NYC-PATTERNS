@@ -1,6 +1,3 @@
 = mixin('header', 'title = Patterns')
-  h1
-    svg class='icon-logo-full--large text-color-white'
-      use xlink:href='#icon-logo-full'
-    span class='hidden' ACCESS NYC
-  h2 class='type-jumbo' Pattern Library
+  h2 Pattern Library
+  a href='#main-content' Skip to main content

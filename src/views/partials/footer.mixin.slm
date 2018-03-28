@@ -1,8 +1,6 @@
 = partial('nav.mixin.slm')
 
 = mixin('footer')
-  p
+  p class='m-0'
     | Maintained by&nbsp;
     a href='${link_github_team}' NYC Opportunity
-
-  = mixin('nav')
