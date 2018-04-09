@@ -12,63 +12,32 @@ import eslint from 'rollup-plugin-eslint';
  * Config
  */
 
-// Name of the main script
-const name = 'AccessNyc';
+const rollup = {
+  sourcemap: 'inline',
+  format: 'iife',
+  strict: true,
+  plugins: [
+    // eslint(),
+    resolve(),
+    babel({
+      exclude: '../node_modules/**'
+    }),
+    uglify()
+  ]
+}
 
-// Our list of modules we are exporting
 const modules = [
-  // {
-  //   name: 'ModuleName',
-  //   path: './src/objects/module-name'
-  // }
-];
-
-// Rollup Configuration
-const plugins = [
-  eslint(),
-  resolve(),
-  babel({
-    exclude: '../node_modules/**'
-  }),
-  uglify()
-];
-
-const sourcemap = 'inline';
-const format = 'iife';
-const strict = true;
-
-/**
- *
- */
-
-// Create main package
-const Main = {
-  input: './src/js/main.js',
-  output: {
-    name: name,
-    file: `./dist/scripts/${name}.js`,
-    sourcemap: sourcemap,
-    format: format,
-    strict: strict
-  },
-  plugins: plugins
-};
-
-// Create packages for our other modules
-for (let i = 0; i < modules.length; i++) {
-  modules[i] = {
-    input: `${modules[i].path}/${modules[i].name}.js`,
+  {
+    input: './src/js/main.js',
     output: {
-      name: modules[i].name,
-      file: `./dist/scripts/modules/${modules[i].name}.js`,
-      sourcemap: sourcemap,
-      format: format,
-      strict: strict
+      name: 'AccessNyc',
+      file: `./dist/scripts/AccessNyc.js`,
+      sourcemap: rollup.sourcemap,
+      format: rollup.format,
+      strict: rollup.strict
     },
-    plugins: plugins
+    plugins: rollup.plugins
   }
-};
-
-modules.push(Main);
+];
 
 export default modules;
