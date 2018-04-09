@@ -1,0 +1,35 @@
+/**
+ * Alert-box
+ */
+
+// Dependencies
+@import 'config/alert-box';
+@import 'config/colors';
+@import 'config/dimensions';
+@import 'config/direction';
+@import 'config/layouts';
+
+// Declarations
+.alert-box {
+  display: flex;
+  @include full-width-home-margins;
+  background: $color-grey-lightest;
+  margin-bottom: $spacing-base;
+  padding: $spacing-base
+}
+
+.alert-box__icon {
+  padding-#{$text-direction-end}: $spacing-base;
+}
+
+.alert-box__svg {
+  display: block
+}
+
+.alert-box__body {
+  flex: 1 1 auto;
+  p:last-child {
+    margin-bottom: 0
+  }
+}
+

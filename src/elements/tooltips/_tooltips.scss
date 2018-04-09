@@ -1,0 +1,23 @@
+/**
+ * Tooltips
+ */
+
+// Dependencies
+@import 'config/tooltips';
+@import 'config/colors';
+@import 'config/fonts';
+@import 'config/dimensions';
+
+// Declarations
+.tooltip {
+  background-color: $color-blue-light;
+  font-size: $font-size-small;
+  padding: $spacing-base;
+  margin-top: .5 * $spacing-base;
+  max-width: 100%;
+  width: $tooltip-width;
+  z-index: 3;
+  :last-child {
+    margin-bottom: 0;
+  }
+}

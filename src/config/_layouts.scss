@@ -1,0 +1,27 @@
+//
+// Variables
+//
+
+// Dependencies
+@import 'config/media';
+@import 'bourbon-neat/app/assets/stylesheets/grid/media';
+
+// Declarations
+$homepage-max-width: 800px;
+
+/*
+ * Homepage Margin Fix
+ * Removes the margins on flush elements at mobile sizes to keep
+ * up with the larger max-width element
+ */
+@mixin full-width-home-margins() {
+  .home-body & {
+    margin-left: -#{$spacing-base};
+    margin-right: -#{$spacing-base};
+
+    @include media($bp-tablet-up) {
+      margin-left: 0;
+      margin-right: 0;
+    }
+  }
+}

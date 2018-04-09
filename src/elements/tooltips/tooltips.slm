@@ -1,0 +1,19 @@
+
+
+= mixin('tooltips', 'code = false', 'text = ""')
+  - if this.code
+    div class='${class_demo_class_containers}'
+      code.code = 'tooltip <p>'
+    div class='${class_demo_class_containers}'
+      div.code-block
+        pre
+          div = '<div class="tooltip" aria-hidden="false" role="tooltip">'
+          div = '  <p>'
+          div = '    ' + this.text
+          div = '  </p>'
+          div = '</div>'
+
+  // Demonstration
+  div class='tooltip' aria-hidden='false' role='tooltip'
+    p
+      = this.text

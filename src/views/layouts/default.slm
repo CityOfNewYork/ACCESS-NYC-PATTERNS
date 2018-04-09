@@ -11,7 +11,7 @@ body style='visibility: hidden;' onload='load()'
   div style='display: none'
     = partial('../partials/icons.slm')
 
-  header class='layout screen-tablet:flex'
+  header class='layout--sidebar screen-tablet:flex'
     div class='flex items-center justify-center bg-color-blue-dark text-base-white screen-tablet:w-64 p-3 screen-tablet:p-4'
       h1 class='m-0 p-0'
         span class='hidden'
@@ -22,7 +22,7 @@ body style='visibility: hidden;' onload='load()'
     div class='flex-1 flex flex-col content-center bg-color-gray-light screen-tablet:border-b-4 border-color-grey-light justify-center p-3 screen-tablet:p-4'
       = content('header')
 
-  main#main-content class='layout screen-tablet:flex items-stretch m-0 p-0 min-h-screen screen-tablet:border-b-4 border-color-grey-light'
+  main#main-content class='layout--sidebar screen-tablet:flex items-stretch m-0 p-0 min-h-screen screen-tablet:border-b-4 border-color-grey-light'
     aside class='bg-secondary-white py-2 px-3'
       = mixin('nav')
 

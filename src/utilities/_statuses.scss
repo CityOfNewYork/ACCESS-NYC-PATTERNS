@@ -1,0 +1,23 @@
+/**
+ * Statuses
+ */
+
+// Dependencies
+@import 'config/colors.scss';
+
+// Declarations
+.bg-status-success {
+  background-color: $color-green-light;
+}
+
+.bg-status-info {
+  background-color: $color-blue-light;
+}
+
+.bg-status-warning {
+  background-color: $color-yellow-light;
+}
+
+.bg-status-urgent {
+  background-color: $color-pink-light;
+}

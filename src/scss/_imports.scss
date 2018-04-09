@@ -63,10 +63,7 @@
 // utilities within them. Not all components are required for each application.
 // Component namespaces are prefixed with 'c-'.
 
-// @import 'c-navs';
-// @import 'c-cells';
-// @import 'c-textfield';
-// @import 'c-checkbox';
+@import 'components/alert-box/alert-box';
 // components - end
 
 
@@ -108,6 +105,8 @@
 @import 'elements/toggles/toggles';
 @import 'elements/icons/icons';
 @import 'elements/tables/tables';
+@import 'elements/tooltips/tooltips';
+@import 'elements/program-labels/program-labels';
 // elements - end
 
 
@@ -115,7 +114,8 @@
 * Utilities
 ************/
 
+@import 'utilities/statuses';
+
 // This injects all of Tailwind's utility classes, generated based on your
 // config file. View docs for usage; https://tailwindcss.com/docs/
-
 @tailwind utilities;

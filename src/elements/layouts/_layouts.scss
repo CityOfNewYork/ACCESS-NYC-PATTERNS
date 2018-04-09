@@ -4,6 +4,7 @@
 
 // Dependencies
 @import 'config/variables';
+@import 'config/layouts';
 @import 'config/dimensions';
 @import 'scss/functions/strip-units';
 
@@ -32,8 +33,44 @@
   padding: 0 $spacing-base;
 }
 
-// Patterns Layout
+// Declarations
 .layout {
+  position: relative;
+  height: calc(100vh - 90px);
+  overflow: hidden;
+}
+
+.layout__body {
+  width: 100%;
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 100%;
+  overflow: scroll;
+  -webkit-overflow-scrolling: touch;
+}
+
+.layout__body:after {
+  content: '';
+  height: 100%;
+  display: block;
+}
+
+@media print {
+
+  .layout {
+    height: auto;
+    overflow: visible;
+  }
+
+  .layout__body {
+    position: static;
+  }
+
+}
+
+// Patterns Layout
+.layout--sidebar {
 
   $min-width: map-get(map-get($variables, 'screens'), 'screen-tablet');
 
@@ -50,3 +87,4 @@
   }
 
 }
+

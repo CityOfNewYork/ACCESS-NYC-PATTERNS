@@ -1,0 +1,31 @@
+
+
+= mixin('alert-box', 'code = false', 'text = ""')
+  - if this.code
+    // code Selectors
+    // pre Markup
+
+  // Demonstration
+  div class='alert-box bg-status-success animated fadeInUp m-top'
+    div class='alert-box__icon'
+      svg class='alert-box__svg icon icon-warning block'
+        use xmlns:xlink='http://www.w3.org/1999/xlink' xlink:href='#icon-warning'
+    div class='alert-box__body' Some required fields are not filled out.
+
+  div class='alert-box bg-status-info animated fadeInUp m-top'
+    div class='alert-box__icon'
+      svg class='alert-box__svg icon icon-warning block'
+        use xmlns:xlink='http://www.w3.org/1999/xlink' xlink:href='#icon-warning'
+    div class='alert-box__body' Some required fields are not filled out.
+
+  div class='alert-box bg-status-warning animated fadeInUp m-top'
+    div class='alert-box__icon'
+      svg class='alert-box__svg icon icon-warning block'
+        use xmlns:xlink='http://www.w3.org/1999/xlink' xlink:href='#icon-warning'
+    div class='alert-box__body' Some required fields are not filled out.
+
+  div class='alert-box bg-status-urgent animated fadeInUp m-top'
+    div class='alert-box__icon'
+      svg class='alert-box__svg icon icon-warning block'
+        use xmlns:xlink='http://www.w3.org/1999/xlink' xlink:href='#icon-warning'
+    div class='alert-box__body' Some required fields are not filled out.
