@@ -3,7 +3,11 @@
 //
 
 // Dependencies
-// @import This depends on Bourban Neat global vars in imports around line 11.
+@import 'config/language';
+@import 'bourbon-neat/app/assets/stylesheets/settings/grid';
+@import 'bourbon-neat/app/assets/stylesheets/settings/visual-grid';
+@import 'bourbon-neat/app/assets/stylesheets/functions/private';
+@import 'bourbon-neat/app/assets/stylesheets/grid/private';
 
 // Variables
 $text-direction: ltr;

@@ -1,0 +1,68 @@
+/**
+ * Card
+ */
+
+// Dependencies
+@import 'config/colors';
+@import 'config/dimensions';
+@import 'config/direction';
+@import 'config/media';
+@import 'bourbon-neat/app/assets/stylesheets/grid/media';
+
+// Declarations
+.c-card {
+
+}
+
+.card--small {
+  background: $color-white;
+  margin-bottom: $spacing-base;
+  padding: $spacing-base;
+
+  @include media($bp-mobile-up) {
+    align-items: flex-start;
+    display: flex;
+    padding: 1.5*$spacing-base;
+  }
+}
+
+.card--small__title {
+  margin-bottom: 0;
+
+  .label {
+    display: none;
+
+    @include media($bp-mobile-up) {
+      display: inline-block;
+    }
+  }
+}
+
+.card--small__summary {
+  :last-child {
+    margin-bottom: 0;
+  }
+}
+
+.card--small__icon {
+  $icon-height: 50px;
+  $icon-width: 50px;
+  margin-bottom: $spacing-base;
+
+  .icon {
+    width: $icon-width;
+    heigh: $icon-height;
+    display: inline-block;
+    vertical-align: middle;
+  }
+
+  @include media($bp-mobile-up) {
+    margin-#{$text-direction-end}: $spacing-base;
+    min-width: $icon-width; // Fixes an iOS 9 flexbox bug.
+    width: $icon-width;
+
+    .program-label {
+      display: none;
+    }
+  }
+}

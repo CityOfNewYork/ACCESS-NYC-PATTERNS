@@ -2,30 +2,74 @@
 
 = mixin('alert-box', 'code = false', 'text = ""')
   - if this.code
-    // code Selectors
-    // pre Markup
+    div class='${class_demo_class_containers}'
+      div class='code-block mb-1'
+        pre
+          div = '<div class="alert-box bg-status-success">'
+          div = '  <div class="alert-box__icon">'
+          div = '    <div class="alert-box__svg bg-icon-success"></div>'
+          div = '  </div>'
+          div = '  <div class="alert-box__body">'
+          div = '    Success'
+          div = '  </div>'
+          div = '</div>'
 
   // Demonstration
-  div class='alert-box bg-status-success animated fadeInUp m-top'
+  div class='alert-box bg-status-success'
     div class='alert-box__icon'
-      svg class='alert-box__svg icon icon-warning block'
-        use xmlns:xlink='http://www.w3.org/1999/xlink' xlink:href='#icon-warning'
-    div class='alert-box__body' Some required fields are not filled out.
+      div class='alert-box__svg bg-icon-success'
+    div class='alert-box__body' Success
 
-  div class='alert-box bg-status-info animated fadeInUp m-top'
-    div class='alert-box__icon'
-      svg class='alert-box__svg icon icon-warning block'
-        use xmlns:xlink='http://www.w3.org/1999/xlink' xlink:href='#icon-warning'
-    div class='alert-box__body' Some required fields are not filled out.
+  - if this.code
+    div class='${class_demo_class_containers}'
+      div class='code-block mb-1'
+        pre
+          div = '<div class="alert-box bg-status-info">'
+          div = '  <div class="alert-box__icon">'
+          div = '    <div class="alert-box__svg bg-icon-info"></div>'
+          div = '  </div>'
+          div = '  <div class="alert-box__body">'
+          div = '    Information'
+          div = '  </div>'
+          div = '</div>'
 
-  div class='alert-box bg-status-warning animated fadeInUp m-top'
+  div class='alert-box bg-status-info'
     div class='alert-box__icon'
-      svg class='alert-box__svg icon icon-warning block'
-        use xmlns:xlink='http://www.w3.org/1999/xlink' xlink:href='#icon-warning'
-    div class='alert-box__body' Some required fields are not filled out.
+      div class='alert-box__svg bg-icon-info'
+    div class='alert-box__body' Information
 
-  div class='alert-box bg-status-urgent animated fadeInUp m-top'
+  - if this.code
+    div class='${class_demo_class_containers}'
+      div class='code-block mb-1'
+        pre
+          div = '<div class="alert-box bg-status-warning">'
+          div = '  <div class="alert-box__icon">'
+          div = '    <div class="alert-box__svg bg-icon-warning"></div>'
+          div = '  </div>'
+          div = '  <div class="alert-box__body">'
+          div = '    Warning'
+          div = '  </div>'
+          div = '</div>'
+
+  div class='alert-box bg-status-warning'
     div class='alert-box__icon'
-      svg class='alert-box__svg icon icon-warning block'
-        use xmlns:xlink='http://www.w3.org/1999/xlink' xlink:href='#icon-warning'
-    div class='alert-box__body' Some required fields are not filled out.
+      div class='alert-box__svg bg-icon-warning'
+    div class='alert-box__body' Warning
+
+  - if this.code
+    div class='${class_demo_class_containers}'
+      div class='code-block mb-1'
+        pre
+          div = '<div class="alert-box bg-status-urgent">'
+          div = '  <div class="alert-box__icon">'
+          div = '    <div class="alert-box__svg bg-icon-urgent"></div>'
+          div = '  </div>'
+          div = '  <div class="alert-box__body">'
+          div = '    Urgent'
+          div = '  </div>'
+          div = '</div>'
+
+  div class='alert-box bg-status-urgent'
+    div class='alert-box__icon'
+      div class='alert-box__svg bg-icon-urgent'
+    div class='alert-box__body' Urgent

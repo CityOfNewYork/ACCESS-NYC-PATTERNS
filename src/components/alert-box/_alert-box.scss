@@ -3,6 +3,7 @@
  */
 
 // Dependencies
+@import 'config/language';
 @import 'config/alert-box';
 @import 'config/colors';
 @import 'config/dimensions';
@@ -22,7 +23,8 @@
   padding-#{$text-direction-end}: $spacing-base;
 }
 
-.alert-box__svg {
+.alert-box__svg,
+[class*='bg-icon-'].alert-box__svg {
   display: block
 }
 

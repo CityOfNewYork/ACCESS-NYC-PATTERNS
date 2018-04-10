@@ -24,6 +24,20 @@ const modules = [
     sourceMapEmbed: sass.sourceMapEmbed,
     precision: sass.precision,
     includePaths: sass.includePaths
+  },
+  {
+    file: './src/components/alert-box/_alert-box.scss',
+    outDir: './dist/components/alert-box/',
+    outFile: 'alert-box.css',
+    precision: sass.precision,
+    includePaths: sass.includePaths
+  },
+  {
+    file: './src/components/card/_card.scss',
+    outDir: './dist/components/card/',
+    outFile: 'card.css',
+    precision: sass.precision,
+    includePaths: sass.includePaths
   }
 ];
 

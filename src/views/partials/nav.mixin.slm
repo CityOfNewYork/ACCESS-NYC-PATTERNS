@@ -24,4 +24,4 @@
     span class='screen-tablet:block pb-1' Components;
     a class='screen-tablet:block screen-tablet:border-b border-color-white p-2' href='alert-box' Alert Box
     a class='screen-tablet:block screen-tablet:border-b border-color-white p-2' href='#' Accordions
-    a class='screen-tablet:block screen-tablet:border-b border-color-white p-2' href='#' Cards
+    a class='screen-tablet:block screen-tablet:border-b border-color-white p-2' href='card' Cards

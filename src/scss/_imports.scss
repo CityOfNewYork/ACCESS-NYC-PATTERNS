@@ -1,21 +1,14 @@
 @charset 'utf-8';
 
 // Global Dependencies
-// These are settings that are needed globaly for some styles.
-// Should/can we move these into their dependants styles files?
+// Bourbon: These are settings that are needed globaly for the Bourbon integration
 @import 'bourbon/app/assets/stylesheets/bourbon-deprecate';
 @import 'bourbon/app/assets/stylesheets/settings/deprecation-warnings';
 @import 'bourbon/app/assets/stylesheets/settings/asset-pipeline';
 @import 'bourbon/app/assets/stylesheets/helpers/directional-values';
 
-@import 'bourbon-neat/app/assets/stylesheets/settings/grid';
-@import 'bourbon-neat/app/assets/stylesheets/settings/visual-grid';
-@import 'bourbon-neat/app/assets/stylesheets/functions/private';
-@import 'bourbon-neat/app/assets/stylesheets/grid/private';
-
 // if @font-face is used it needs to be first imported first.
 @import 'elements/fonts/fonts';
-
 
 /************
  * Normalize
@@ -26,7 +19,6 @@
 // https://github.com/tailwindcss/tailwindcss/blob/master/css/preflight.css
 
 // @tailwind preflight;
-
 
 /*******
  * Core
@@ -52,7 +44,7 @@
 
 @import 'animate.scss/vendor/assets/stylesheets/animate/fadeInUp';
 @import 'animate.scss/vendor/assets/stylesheets/animate/fadeIn';
-
+// components - end
 
 /*************
  * Components
@@ -64,8 +56,8 @@
 // Component namespaces are prefixed with 'c-'.
 
 @import 'components/alert-box/alert-box';
+@import 'components/card/card';
 // components - end
-
 
 /**********
  * Objects
@@ -78,7 +70,6 @@
 
 // @import 'o-modals';
 // objects - end
-
 
 /**********
 * Elements
@@ -108,7 +99,6 @@
 @import 'elements/tooltips/tooltips';
 @import 'elements/program-labels/program-labels';
 // elements - end
-
 
 /***********
 * Utilities
