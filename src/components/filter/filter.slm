@@ -1,0 +1,11 @@
+
+= mixin('filter', 'code = false', 'text = ""')
+  - if this.code
+    div class='${class_demo_class_containers}'
+      div class='code-block mb-1'
+        code.code Code
+    div class='${class_demo_class_containers}'
+      div class='code-block mb-1'
+        pre Markup
+
+  // Demonstration
