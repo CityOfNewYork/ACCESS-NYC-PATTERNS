@@ -55,9 +55,10 @@
 // utilities within them. Not all components are required for each application.
 // Component namespaces are prefixed with 'c-'.
 
+@import 'components/accordion/accordion';
 @import 'components/alert-box/alert-box';
 @import 'components/card/card';
-@import 'components/list/list';
+@import 'components/checklist/checklist';
 // components - end
 
 /**********
