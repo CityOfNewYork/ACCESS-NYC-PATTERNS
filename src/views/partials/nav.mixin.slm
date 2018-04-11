@@ -25,4 +25,5 @@
     a class='${class_nav_item}' href='accordion' Accordion
     a class='${class_nav_item}' href='alert-box' Alert Box
     a class='${class_nav_item}' href='card' Card
-    a class='${class_nav_item}' href='list' List
+    a class='${class_nav_item}' href='filter' Filter
+    a class='${class_nav_item}' href='checklist' Checklist

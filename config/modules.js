@@ -45,6 +45,13 @@ const modules = [
     outFile: 'checklist.css',
     precision: sass.precision,
     includePaths: sass.includePaths
+  },
+  {
+    file: './src/components/filter/_filter.scss',
+    outDir: './dist/components/filter/',
+    outFile: 'filter.css',
+    precision: sass.precision,
+    includePaths: sass.includePaths
   }
 ];
 

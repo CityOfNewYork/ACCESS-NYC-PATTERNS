@@ -3,9 +3,56 @@
   - if this.code
     div class='${class_demo_class_containers}'
       div class='code-block mb-1'
-        code.code Code
-    div class='${class_demo_class_containers}'
-      div class='code-block mb-1'
-        pre Markup
+        pre
+          div = '<div class="c-filter js-c-filter active">'
+          div = '  <div class="c-filter__header js-toggle-filter">'
+          div = '    <a href="#">All Programs</a>'
+          div = '  </div>'
+          div = '  <div class="c-filter__body">'
+          div = '    <ul class="c-filter__list">'
+          div = '      <li><span class="c-filter__item">All Programs</span></li>'
+          div = '      <li><a class="c-filter__item" href="#">Cash &amp; Expenses</a></li>'
+          div = '      <li><a class="c-filter__item" href="#">Child Care</a></li>'
+          div = '      <li><a class="c-filter__item" href="#">City ID Card</a></li>'
+          div = '      <li><a class="c-filter__item" href="#">Education</a></li>'
+          div = '      <li><a class="c-filter__item" href="#">Enrichment</a></li>'
+          div = '      <li><a class="c-filter__item" href="#">Family Services</a></li>'
+          div = '      <li><a class="c-filter__item" href="#">Food</a></li>'
+          div = '      <li><a class="c-filter__item" href="#">Health</a></li>'
+          div = '      <li><a class="c-filter__item" href="#">Housing</a></li>'
+          div = '      <li><a class="c-filter__item" href="#">Special Needs</a></li>'
+          div = '      <li><a class="c-filter__item" href="#">Work</a></li>'
+          div = '    </ul>'
+          div = '  </div>'
+          div = '</div>'
 
   // Demonstration
+  div class='c-filter js-c-filter active'
+    div class='c-filter__header js-toggle-filter'
+      a href='#' All Programs
+    div class='c-filter__body'
+      ul class='c-filter__list'
+        li
+          span class='c-filter__item' All Programs
+        li
+          a class='c-filter__item' href='#' Cash &amp; Expenses
+        li
+          a class='c-filter__item' href='#' Child Care
+        li
+          a class='c-filter__item' href='#' City ID Card
+        li
+          a class='c-filter__item' href='#' Education
+        li
+          a class='c-filter__item' href='#' Enrichment
+        li
+          a class='c-filter__item' href='#' Family Services
+        li
+          a class='c-filter__item' href='#' Food
+        li
+          a class='c-filter__item' href='#' Health
+        li
+          a class='c-filter__item' href='#' Housing
+        li
+          a class='c-filter__item' href='#' Special Needs
+        li
+          a class='c-filter__item' href='#' Work
