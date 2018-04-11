@@ -6,6 +6,7 @@ const package = require('../package.json');
 
 const variables = {
   version: package.version,
+  cdn: '"https://cdn.rawgit.com/CityOfNewYork/ACCESS-NYC-PATTERNS/v' + package.version + '/dist"',
   fonts: {
     'system': [
       '-apple-system',

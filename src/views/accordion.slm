@@ -1,0 +1,7 @@
+/ Layout
+= extend('layouts/default')
+
+/ Component
+= partial('../components/accordion/accordion.slm')
+- mixin_id = 'accordion'
+- title = 'Accordion'

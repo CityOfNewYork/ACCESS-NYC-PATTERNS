@@ -19,6 +19,7 @@
 @each $key, $var in map-get($variables, 'icons') {
 
   $path: $key;
+  $cdn: map-get($variables, 'cdn');
 
   @each $str in map-get($variables, 'iconVariants') {
     $path: str-replace($path, $str);
@@ -26,7 +27,7 @@
 
   .bg-#{$key} {
     @include size($var);
-    background-image: url('../svg/#{$path}.svg');
+    background-image: url('#{$cdn}/svg/#{$path}.svg');
     background-repeat: no-repeat;
     background-size: 100%;
   }

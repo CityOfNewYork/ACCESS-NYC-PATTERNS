@@ -1,6 +1,6 @@
 
 
-= mixin('list', 'code = false', 'text = ""')
+= mixin('accordion', 'code = false', 'text = ""')
   - if this.code
     // code Selectors
     // pre Markup

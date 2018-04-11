@@ -1,0 +1,46 @@
+/**
+ * Checklist
+ */
+
+// Dependencies
+@import 'config/variables';
+@import 'config/direction';
+@import 'config/dimensions';
+
+$cdn: map-get($variables, 'cdn');
+
+// Declarations
+.c-checklist {
+  list-style: none;
+  padding: 0;
+
+  > li {
+    background-image: url('#{$cdn}/images/icon-eligibilitycheck.png');
+    background-position: $text-direction-start top;
+    background-repeat: no-repeat;
+    background-size: $em-base * 1.5 + px auto;
+    padding-#{$text-direction-start}: $spacing-base * 2.25;
+    padding-bottom: $spacing-base * 1.5;
+  }
+
+}
+
+.c-checklist__item-application {
+  background-image: url('#{$cdn}/images/headsup_application_25px-1.png') !important
+}
+
+.c-checklist__item-badge {
+  background-image: url('#{$cdn}/images/headsup_badge_30px-1.png') !important
+}
+
+.c-checklist__item-flag {
+  background-image: url('#{$cdn}/images/headsup_flag_30px-1.png') !important
+}
+
+.c-checklist__item-calendar {
+  background-image: url('#{$cdn}/images/headsup_calendar_25px-1.png') !important
+}
+
+.c-checklist__item-generic {
+  background-image: url('#{$cdn}/images/headsup_generic_30px-1.png') !important
+}

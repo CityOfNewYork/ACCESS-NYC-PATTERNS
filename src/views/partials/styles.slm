@@ -20,4 +20,4 @@
 / Styling for the nav
 - class_nav = 'pb-2'
 -   class_nav_heading = 'screen-tablet:block pb-1'
--   class_nav_item = 'screen-tablet:block screen-tablet:border-b border-color-white'
+-   class_nav_item = 'screen-tablet:block screen-tablet:border-b border-color-white p-2'

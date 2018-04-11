@@ -38,6 +38,13 @@ const modules = [
     outFile: 'card.css',
     precision: sass.precision,
     includePaths: sass.includePaths
+  },
+  {
+    file: './src/components/checklist/_checklist.scss',
+    outDir: './dist/components/checklist/',
+    outFile: 'checklist.css',
+    precision: sass.precision,
+    includePaths: sass.includePaths
   }
 ];
 
