@@ -5,6 +5,7 @@
 const fs = require('fs');
 const Path = require('path');
 const Readline = require('readline');
+const config = require('../config/make');
 
 /**
  * Constants
@@ -15,25 +16,11 @@ const type = `${process.argv[2]}s`;
 const pattern = process.argv[3];
 const base = '../';
 const src = 'src';
-const config = 'config';
+const configuration = 'config';
 const views = 'views';
-const templates = {
-  markup: "\n\n= mixin('{{ pattern }}', 'code = false', 'text = \"\"')\n  - if this.code\n    // code Selectors\n    // pre Markup\n\n  // Demonstration\n",
-  styles: "/**\n * {{ Pattern }}\n */\n\n// Dependencies\n// @import '...';\n\n// Declarations\n.{{ prefix }}{{ pattern }} { }\n",
-  config: "//\n// Variables\n//\n\n// Dependencies\n// @import '...';\n\n// Declarations\n",
-  views: "/ Layout\n= extend('layouts/default')\n\n/ Component\n= partial('../{{ type }}/{{ pattern }}/{{ pattern }}.slm')\n- mixin_id = '{{ pattern }}'\n- title = '{{ Pattern }}'"
-};
-const files = {
-  markup: '{{ pattern }}.slm',
-  styles: '_{{ pattern }}.scss',
-  config: '_{{ pattern }}.scss',
-  views: '{{ pattern }}.slm'
-};
-const prefixes = {
-  elements: '',
-  components: 'c-',
-  objects: 'o-'
-};
+const templates = config.templates;
+const files = config.files;
+const prefixes = config.prefixes;
 let prompt = Readline.createInterface({
   input: process.stdin,
   output: process.stdout
@@ -182,8 +169,8 @@ function fnPromptMake(dir, type, template, pattern, prompt, callback = false) {
 let dir = Path.join(__dirname, base, src, type, process.argv[3]);
 
 fnMake(dir, type, pattern, () => {
-  dir = Path.join(__dirname, base, src, config);
-  fnPromptMake(dir, type, config, pattern, prompt, () => {
+  dir = Path.join(__dirname, base, src, configuration);
+  fnPromptMake(dir, type, configuration, pattern, prompt, () => {
     dir = Path.join(__dirname, base, src, views);
     fnPromptMake(dir, type, views, pattern, prompt, () => {
       prompt.close();
