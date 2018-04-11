@@ -16,3 +16,8 @@
 - class_swatch = 'my-1 p-1 border border-color-grey-light'
 -   class_swatch__block = 'p-4'
 -   class_swatch__label = 'mt-1'
+
+/ Styling for the nav
+- class_nav = 'pb-2'
+-   class_nav_heading = 'screen-tablet:block pb-1'
+-   class_nav_item = 'screen-tablet:block screen-tablet:border-b border-color-white'

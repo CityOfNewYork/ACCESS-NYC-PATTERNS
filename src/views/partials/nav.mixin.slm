@@ -1,27 +1,27 @@
 = mixin('nav')
 
-  nav class='pb-2'
-    a class='screen-tablet:block screen-tablet:border-b border-color-white pr-2 screen-tablet:p-2' href='index' Home
-    a class='screen-tablet:block screen-tablet:border-b border-color-white p-2' href='${link_source}' Source
+  nav class='${class_nav}'
+    a class='${class_nav_item} pr-2 screen-tablet:p-2' href='index' Home
+    a class='${class_nav_item}' href='${link_source}' Source
 
-  nav class='pb-2'
-    span class='screen-tablet:block pb-1' Elements;
-    a class='screen-tablet:block screen-tablet:border-b border-color-white p-2' href='colors' Colors
-    a class='screen-tablet:block screen-tablet:border-b border-color-white p-2' href='font-families' Fonts
-    a class='screen-tablet:block screen-tablet:border-b border-color-white p-2' href='typography' Typography
-    a class='screen-tablet:block screen-tablet:border-b border-color-white p-2' href='exposition' Exposition
-    a class='screen-tablet:block screen-tablet:border-b border-color-white p-2' href='icons' Icons
-    a class='screen-tablet:block screen-tablet:border-b border-color-white p-2' href='links' Links
-    a class='screen-tablet:block screen-tablet:border-b border-color-white p-2' href='buttons' Buttons
-    a class='screen-tablet:block screen-tablet:border-b border-color-white p-2' href='checkboxes' Checkboxes
-    a class='screen-tablet:block screen-tablet:border-b border-color-white p-2' href='radios' Radios
-    a class='screen-tablet:block screen-tablet:border-b border-color-white p-2' href='toggles' Toggles
-    a class='screen-tablet:block screen-tablet:border-b border-color-white p-2' href='tables' Tables
-    a class='screen-tablet:block screen-tablet:border-b border-color-white p-2' href='tooltips' Tooltips
-    a class='screen-tablet:block screen-tablet:border-b border-color-white p-2' href='program-labels' Program Labels
+  nav class='${class_nav}'
+    span class='${class_nav_heading}' Elements;
+    a class='${class_nav_item}' href='colors' Colors
+    a class='${class_nav_item}' href='font-families' Fonts
+    a class='${class_nav_item}' href='typography' Typography
+    a class='${class_nav_item}' href='exposition' Exposition
+    a class='${class_nav_item}' href='icons' Icons
+    a class='${class_nav_item}' href='links' Links
+    a class='${class_nav_item}' href='buttons' Buttons
+    a class='${class_nav_item}' href='checkboxes' Checkboxes
+    a class='${class_nav_item}' href='radios' Radios
+    a class='${class_nav_item}' href='toggles' Toggles
+    a class='${class_nav_item}' href='tables' Tables
+    a class='${class_nav_item}' href='tooltips' Tooltips
+    a class='${class_nav_item}' href='program-labels' Program Labels
 
-  nav class='pb-2'
-    span class='screen-tablet:block pb-1' Components;
-    a class='screen-tablet:block screen-tablet:border-b border-color-white p-2' href='accordion' Accordion
-    a class='screen-tablet:block screen-tablet:border-b border-color-white p-2' href='alert-box' Alert Box
-    a class='screen-tablet:block screen-tablet:border-b border-color-white p-2' href='card' Card
+  nav class='${class_nav}'
+    span class='${class_nav_heading}' Components;
+    a class='${class_nav_item}' href='accordion' Accordion
+    a class='${class_nav_item}' href='alert-box' Alert Box
+    a class='${class_nav_item}' href='card' Card

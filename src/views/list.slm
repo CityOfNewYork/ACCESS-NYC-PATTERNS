@@ -1,0 +1,2 @@
+/ Layout
+= extend('layouts/default')

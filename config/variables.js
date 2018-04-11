@@ -2,7 +2,10 @@
  * Config
  */
 
+const package = require('../package.json');
+
 const variables = {
+  version: package.version,
   fonts: {
     'system': [
       '-apple-system',
