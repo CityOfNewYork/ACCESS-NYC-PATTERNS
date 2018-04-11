@@ -22,6 +22,11 @@ body style='visibility: hidden;' onload='load()'
     div class='flex-1 flex flex-col content-center bg-color-grey-lightest screen-tablet:border-b-4 border-color-grey-light justify-center p-3 screen-tablet:p-4'
       = content('header')
 
+    div class='flex flex-col content-center justify-center bg-color-grey-lightest screen-tablet:border-b-4 border-color-grey-light px-3 pb-3 screen-tablet:p-4'
+      h3 class='mr-3'
+        a href='${link_source}' class='border-2 py-1 px-2 inline rounded-lg'
+          = 'Pre-release v' + this.vars.version
+
   main#main-content class='layout--sidebar screen-tablet:flex items-stretch m-0 p-0 min-h-screen screen-tablet:border-b-4 border-color-grey-light'
     aside class='bg-secondary-white py-2 px-3'
       = mixin('nav')
