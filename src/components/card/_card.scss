@@ -7,26 +7,67 @@
 @import 'config/dimensions';
 @import 'config/direction';
 @import 'config/media';
+@import 'elements/typography/typography.mixins';
 @import 'bourbon-neat/app/assets/stylesheets/grid/media';
 
 // Declarations
 .c-card {
-
-}
-
-.card--small {
   background: $color-white;
-  margin-bottom: $spacing-base;
   padding: $spacing-base;
 
   @include media($bp-mobile-up) {
-    align-items: flex-start;
+    align-items: stretch;
     display: flex;
-    padding: 1.5*$spacing-base;
+    padding: 1.5 * $spacing-base;
   }
 }
 
-.card--small__title {
+[class*='c-card__icon'] {
+  $icon-height: 50px;
+  $icon-width: 50px;
+  margin-bottom: $spacing-base;
+
+  .icon {
+    width: $icon-width;
+    height: $icon-height;
+    display: inline-block;
+    vertical-align: middle;
+  }
+
+  @include media($bp-mobile-up) {
+    margin-bottom: 0;
+    margin-#{$text-direction-end}: $spacing-base;
+    min-width: $icon-width; // Fixes an iOS 9 flexbox bug.
+    width: $icon-width;
+
+    .program-label {
+      display: none;
+    }
+  }
+}
+
+.c-card__icon-large {
+  $icon-height: 80px;
+  $icon-width: 80px;
+
+  .icon {
+    width: $icon-width;
+    height: $icon-height;
+  }
+
+  @include media($bp-mobile-up) {
+    min-width: $icon-width; // Fixes an iOS 9 flexbox bug.
+    width: $icon-width;
+  }
+}
+
+.c-card__body {
+
+}
+
+.c-card__title {
+  color: $color-black;
+  @include typography-h4();
   margin-bottom: 0;
 
   .label {
@@ -38,31 +79,12 @@
   }
 }
 
-.card--small__summary {
-  :last-child {
-    margin-bottom: 0;
-  }
+.c-card__subtitle {
+  @include typography-base;
 }
 
-.card--small__icon {
-  $icon-height: 50px;
-  $icon-width: 50px;
-  margin-bottom: $spacing-base;
-
-  .icon {
-    width: $icon-width;
-    heigh: $icon-height;
-    display: inline-block;
-    vertical-align: middle;
-  }
-
-  @include media($bp-mobile-up) {
-    margin-#{$text-direction-end}: $spacing-base;
-    min-width: $icon-width; // Fixes an iOS 9 flexbox bug.
-    width: $icon-width;
-
-    .program-label {
-      display: none;
-    }
+.c-card__summary {
+  :last-child {
+    margin-bottom: 0;
   }
 }

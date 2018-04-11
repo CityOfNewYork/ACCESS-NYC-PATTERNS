@@ -5,71 +5,71 @@
     div class='${class_demo_class_containers}'
       div class='code-block mb-1'
         pre
-          div = '<div class="alert-box bg-status-success">'
-          div = '  <div class="alert-box__icon">'
-          div = '    <div class="alert-box__svg bg-icon-success"></div>'
+          div = '<div class="c-alert-box bg-status-success">'
+          div = '  <div class="c-alert-box__icon">'
+          div = '    <div class="c-alert-box__svg bg-icon-success"></div>'
           div = '  </div>'
-          div = '  <div class="alert-box__body">'
+          div = '  <div class="c-alert-box__body">'
           div = '    Success'
           div = '  </div>'
           div = '</div>'
 
   // Demonstration
-  div class='alert-box bg-status-success'
-    div class='alert-box__icon'
-      div class='alert-box__svg bg-icon-success'
-    div class='alert-box__body' Success
+  div class='c-alert-box bg-status-success'
+    div class='c-alert-box__icon'
+      div class='c-alert-box__svg bg-icon-success'
+    div class='c-alert-box__body' Success
 
   - if this.code
     div class='${class_demo_class_containers}'
       div class='code-block mb-1'
         pre
-          div = '<div class="alert-box bg-status-info">'
-          div = '  <div class="alert-box__icon">'
-          div = '    <div class="alert-box__svg bg-icon-info"></div>'
+          div = '<div class="c-alert-box bg-status-info">'
+          div = '  <div class="c-alert-box__icon">'
+          div = '    <div class="c-alert-box__svg bg-icon-info"></div>'
           div = '  </div>'
-          div = '  <div class="alert-box__body">'
+          div = '  <div class="c-alert-box__body">'
           div = '    Information'
           div = '  </div>'
           div = '</div>'
 
-  div class='alert-box bg-status-info'
-    div class='alert-box__icon'
-      div class='alert-box__svg bg-icon-info'
-    div class='alert-box__body' Information
+  div class='c-alert-box bg-status-info'
+    div class='c-alert-box__icon'
+      div class='c-alert-box__svg bg-icon-info'
+    div class='c-alert-box__body' Information
 
   - if this.code
     div class='${class_demo_class_containers}'
       div class='code-block mb-1'
         pre
-          div = '<div class="alert-box bg-status-warning">'
-          div = '  <div class="alert-box__icon">'
-          div = '    <div class="alert-box__svg bg-icon-warning"></div>'
+          div = '<div class="c-alert-box bg-status-warning">'
+          div = '  <div class="c-alert-box__icon">'
+          div = '    <div class="c-alert-box__svg bg-icon-warning"></div>'
           div = '  </div>'
-          div = '  <div class="alert-box__body">'
+          div = '  <div class="c-alert-box__body">'
           div = '    Warning'
           div = '  </div>'
           div = '</div>'
 
-  div class='alert-box bg-status-warning'
-    div class='alert-box__icon'
-      div class='alert-box__svg bg-icon-warning'
-    div class='alert-box__body' Warning
+  div class='c-alert-box bg-status-warning'
+    div class='c-alert-box__icon'
+      div class='c-alert-box__svg bg-icon-warning'
+    div class='c-alert-box__body' Warning
 
   - if this.code
     div class='${class_demo_class_containers}'
       div class='code-block mb-1'
         pre
-          div = '<div class="alert-box bg-status-urgent">'
-          div = '  <div class="alert-box__icon">'
-          div = '    <div class="alert-box__svg bg-icon-urgent"></div>'
+          div = '<div class="c-alert-box bg-status-urgent">'
+          div = '  <div class="c-alert-box__icon">'
+          div = '    <div class="c-alert-box__svg bg-icon-urgent"></div>'
           div = '  </div>'
-          div = '  <div class="alert-box__body">'
+          div = '  <div class="c-alert-box__body">'
           div = '    Urgent'
           div = '  </div>'
           div = '</div>'
 
-  div class='alert-box bg-status-urgent'
-    div class='alert-box__icon'
-      div class='alert-box__svg bg-icon-urgent'
-    div class='alert-box__body' Urgent
+  div class='c-alert-box bg-status-urgent'
+    div class='c-alert-box__icon'
+      div class='c-alert-box__svg bg-icon-urgent'
+    div class='c-alert-box__body' Urgent

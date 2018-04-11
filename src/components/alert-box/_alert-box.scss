@@ -11,7 +11,7 @@
 @import 'config/layouts';
 
 // Declarations
-.alert-box {
+.c-alert-box {
   display: flex;
   @include full-width-home-margins;
   background: $color-grey-lightest;
@@ -19,16 +19,16 @@
   padding: $spacing-base
 }
 
-.alert-box__icon {
+.c-alert-box__icon {
   padding-#{$text-direction-end}: $spacing-base;
 }
 
-.alert-box__svg,
-[class*='bg-icon-'].alert-box__svg {
+.c-alert-box__svg,
+[class*='bg-icon-'].c-alert-box__svg {
   display: block
 }
 
-.alert-box__body {
+.c-alert-box__body {
   flex: 1 1 auto;
   p:last-child {
     margin-bottom: 0

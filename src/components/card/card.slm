@@ -1,8 +1,165 @@
 
 
 = mixin('card', 'code = false', 'text = ""')
-  - if this.code
-    // code Selectors
-    // pre Markup
 
-  // Demonstration
+  - if this.code
+    div class='${class_demo_class_containers}'
+      div class='code-block mb-1'
+        pre
+          div = '<article class="c-card">'
+          div = '  <div class="c-card__body">'
+          div = '    <h3 class="c-card__title mb-3">'
+          div = '      Apply for Pre-K for All'
+          div = '    </h3>'
+          div = '    <div class="c-card__summary">'
+          div = '      <a href="#">New York City families with a child born in 2014 can apply to Pre-K from February 5 - March 30, 2018.</a>'
+          div = '    </div>'
+          div = '  </div>'
+          div = '</article>'
+
+  div class='${class_demo_class_containers}'
+    div class='bg-color-grey-lightest p-4'
+      article class='c-card'
+        div class='c-card__body'
+          h3 class='c-card__title mb-3'
+            | Apply for Pre-K for All
+          div class='c-card__summary'
+            a href='#'
+              | New York City families with a child born in 2014 can apply to Pre-K from February 5 - March 30, 2018.
+
+  - if this.code
+    div class='${class_demo_class_containers}'
+      div class='code-block mb-1'
+        pre
+          div = '<article class="c-card">'
+          div = '  <div class="c-card__icon">'
+          div = '    <a href="#">'
+          div = '      <div class="icon bg-icon-card-cash-expenses"></div>'
+          div = '    </a>'
+          div = '  </div>'
+          div = '  <div class="c-card__body">'
+          div = '    <a href="#">'
+          div = '      <h3 class="c-card__title">'
+          div = '        Tax relief for dependent care'
+          div = '      </h3>'
+          div = '    </a>'
+          div = '    <div class="c-card__summary hide-for-print">'
+          div = '      <a href="#">Learn more</a>'
+          div = '    </div>'
+          div = '  </div>'
+          div = '</article>'
+
+  div class='${class_demo_class_containers}'
+    div class='bg-color-grey-lightest p-4'
+      article class='c-card'
+        div class='c-card__icon'
+          a href='#'
+            div class='icon bg-icon-card-cash-expenses'
+        div class='c-card__body'
+          a href='#'
+            h3 class='c-card__title'
+              | Tax relief for dependent care
+          div class='c-card__summary hide-for-print'
+            a href='#'
+              | Learn more
+
+  - if this.code
+    div class='${class_demo_class_containers}'
+      div class='code-block mb-1'
+        pre
+          div = '<article class="c-card">'
+          div = '  <div class="c-card__icon">'
+          div = '    <a href="#">'
+          div = '      <div class="icon bg-icon-card-cash-expenses"></div>'
+          div = '    </a>'
+          div = '  </div>'
+          div = '  <div class="c-card__body">'
+          div = '    <a href="#">'
+          div = '      <h3 class="c-card__title">Money for heat and utility expenses</h3>'
+          div = '    </a>'
+          div = '    <p class="c-card__subtitle type-small text-color-grey-mid">'
+          div = '      Home Energy Assistance Program (HEAP)'
+          div = '    </p>'
+          div = '    <div class="c-card__summary">'
+          div = '      <p>HEAP can help you pay for the costs of heating your home during the winter months.</p>'
+          div = '      <p class="hide-for-print"><a href="#">Learn more</a></p>'
+          div = '      <p class="hide-for-print"><a class="btn btn-secondary btn-next" href="#?step=how-to-apply">Apply</a></p>'
+          div = '    </div>'
+          div = '  </div>'
+          div = '</article>'
+
+  div class='${class_demo_class_containers}'
+    div class='bg-color-grey-lightest p-4'
+      article class='c-card'
+        div class='c-card__icon'
+          a href='#'
+            div class='icon bg-icon-card-cash-expenses'
+        div class='c-card__body'
+          a href='#'
+            h3 class='c-card__title'
+              | Money for heat and utility expenses
+          p class='c-card__subtitle type-small text-color-grey-mid'
+            | Home Energy Assistance Program (HEAP)
+            div class='c-card__summary'
+              p
+                | HEAP can help you pay for the costs of heating your home during the winter months.
+              p class='hide-for-print'
+                a href='#'
+                  | Learn more
+              p class='hide-for-print'
+                a class='btn btn-secondary btn-next' href='#?step=how-to-apply'
+                  | Apply
+
+  - if this.code
+    div class='${class_demo_class_containers}'
+      div class='code-block mb-1'
+        pre
+          div = '<article>'
+          div = '  <div class="c-card items-stretch bg-color-grey-lightest p-2">'
+          div = '    <div class="c-card__icon-large">'
+          div = '      <a href="#" rel="noopener noreferrer" target="_blank">'
+          div = '        <div class="icon bg-icon-card-cash-expenses"></div>'
+          div = '      </a>'
+          div = '    </div>'
+          div = '    <div class="c-card__body w-100">'
+          div = '      <a href="#" rel="noopener noreferrer" target="_blank">'
+          div = '        <h3 class="c-card__title">Money for heat and utility expenses</h3>'
+          div = '      </a>'
+          div = '      <p class="c-card__subtitle type-small">Home Energy Assistance Program (HEAP)</p>'
+          div = '      <p>HEAP can help you pay for the costs of heating your home during the winter months.</p>'
+          div = '    </div>'
+          div = '    <div class="flex flex-col justify-between hide-for-print">'
+          div = '      <div class="pb-1" style="width:232px">'
+          div = '        <div id="remove-S2R019">'
+          div = '          <a class="btn btn-primary btn-small d-block" data-hide="#remove-S2R019" data-js="simple-toggle" href="#confirm-S2R019">Remove Program</a>'
+          div = '        </div>'
+          div = '      </div>'
+          div = '      <div>'
+          div = '        <a class="btn-toggle btn" data-js="simple-toggle" href="#program-detail-S2R019">Learn More</a>'
+          div = '      </div>'
+          div = '    </div>'
+          div = '  </div>'
+          div = '</article>'
+
+  div class='${class_demo_class_containers}'
+    article
+      div class='c-card items-stretch bg-color-grey-lightest p-2'
+        div class='c-card__icon-large'
+          a href='#' target='_blank' rel='noopener noreferrer'
+            div class='icon bg-icon-card-cash-expenses'
+        div class='c-card__body w-100'
+          a href='#' target='_blank' rel='noopener noreferrer'
+            h3 class='c-card__title'
+              | Money for heat and utility expenses
+          p class='c-card__subtitle type-small'
+            | Home Energy Assistance Program (HEAP)
+          p
+            | HEAP can help you pay for the costs of heating your home during the winter months.
+        div class='flex flex-col justify-between hide-for-print'
+          div style='width:232px' class='pb-1'
+            div id='remove-S2R019'
+              a class='btn btn-primary btn-small d-block' href='#confirm-S2R019' data-js='simple-toggle' data-hide='#remove-S2R019'
+                | Remove Program
+          div
+            a class='btn-toggle btn' href='#program-detail-S2R019' data-js='simple-toggle'
+              | Learn More
