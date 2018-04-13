@@ -3,7 +3,60 @@
  */
 
 // Dependencies
-// @import 'config/variables';
+@import 'config/dimensions';
+@import 'config/direction';
+@import 'config/media';
+@import 'config/typography';
 
 // Declarations
-// .c-header { }
+.c-header {
+  padding: $spacing-base;
+  // margin-top: 2 * $spacing-base;
+  // margin-bottom: $spacing-base / 2;
+
+  @include media($bp-mobile-up) {
+    align-items: flex-start;
+    display: flex;
+  }
+
+  // p {
+  //   @include typography-lead();
+  // }
+}
+
+.c-header__icon {
+  $icon-height: 50px;
+  $icon-width: 50px;
+  margin-bottom: $spacing-base;
+
+  .icon {
+    width: $icon-width;
+    height: $icon-height;
+    display: inline-block;
+    vertical-align: middle;
+  }
+
+  @include media($bp-mobile-up) {
+    margin-#{$text-direction-end}: $spacing-base;
+    min-width: $icon-width; // Fixes an iOS 9 flexbox bug.
+    width: $icon-width;
+
+    .c-header__label {
+      display: none;
+    }
+  }
+}
+
+.c-header__descriptor {
+  @include typography-h1()
+  margin-bottom: 2px;
+}
+
+.c-header__information {
+  @include typography-supplemental();
+}
+
+.c-header__disclaimer {
+  font-size: $font-size-small;
+  margin-bottom: 0;
+}

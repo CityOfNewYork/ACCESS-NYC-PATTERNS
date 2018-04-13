@@ -4,6 +4,7 @@
 
 // Dependencies
 @import 'config/variables';
+@import 'config/language';
 @import 'scss/functions/rem';
 
 $fonts: map-get($variables, 'fonts');

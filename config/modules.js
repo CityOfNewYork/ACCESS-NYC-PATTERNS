@@ -26,6 +26,13 @@ const modules = [
     includePaths: sass.includePaths
   },
   {
+    file: './src/components/accordion/_accordion.scss',
+    outDir: './dist/components/accordion/',
+    outFile: 'accordion.css',
+    precision: sass.precision,
+    includePaths: sass.includePaths
+  },
+  {
     file: './src/components/alert-box/_alert-box.scss',
     outDir: './dist/components/alert-box/',
     outFile: 'alert-box.css',
@@ -50,6 +57,13 @@ const modules = [
     file: './src/components/filter/_filter.scss',
     outDir: './dist/components/filter/',
     outFile: 'filter.css',
+    precision: sass.precision,
+    includePaths: sass.includePaths
+  },
+  {
+    file: './src/components/header/_header.scss',
+    outDir: './dist/components/header/',
+    outFile: 'header.css',
     precision: sass.precision,
     includePaths: sass.includePaths
   }

@@ -3,7 +3,7 @@
 //
 
 // Dependencies
-// @import '...';
+@import 'config/variables';
 
 // Variables
 $spacing-base: map-get(map-get($variables, 'dimensions'), 'spacing-base');
