@@ -6,6 +6,7 @@ const jsSass = require('../node_modules/json-sass/lib/jsToSassString');
 const variables = require('../config/variables');
 const path = require('path');
 const fs = require('fs');
+const alerts = require('../config/alerts');
 
 /**
  * Constants
@@ -30,8 +31,8 @@ let message = [
 
 fs.writeFile(`${dir}${filename}`, `${message}${prefix}: ${data};`, err => {
   if (err) {
-    console.log(err);
+    console.log(`${alerts.error} ${err}`);
     return;
   }
-  console.log(`Compiled`);
+  console.log(`${alerts.success} Variables compiled to ${dir}${filename}`);
 });

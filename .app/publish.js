@@ -4,6 +4,7 @@
 
 const ghpages = require('gh-pages');
 const Path = require('path');
+const alerts = require('../config/alerts');
 
 /**
  * Constants
@@ -21,9 +22,9 @@ const dist = Path.join(__dirname, '../', 'dist/');
  */
 function fnCallback(err) {
   if (err) {
-    console.log(err);
+    console.log(`${alerts.error} ${err}`);
   }
-  console.log('Published!');
+  console.log(`${alerts.success} Published to GitHub Pages`);
 }
 
 /**

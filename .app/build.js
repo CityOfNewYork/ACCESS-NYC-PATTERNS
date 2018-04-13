@@ -3,20 +3,25 @@
  */
 
 const slm = require('slm').compile;
-const path = require('path');
-const fs = require('fs');
+const Path = require('path');
+const Fs = require('fs');
+const alerts = require('../config/alerts');
+const pretty = require('pretty');
+const escape = require('escape-html');
 
 /**
  * Constants
  */
 
-const views = path.join(__dirname, '../', 'src/views/');
-const dist = path.join(__dirname, '../', 'dist/');
+const source = Path.join(__dirname, '../', './src/');
+const views = Path.join(__dirname, '../', './src/views/');
+const dist = Path.join(__dirname, '../', './dist/');
 const locals = {vars: require('../config/variables')};
 
 /**
  * Functions
  */
+
 
 /**
  * Write the html file to the distribution folder
@@ -25,13 +30,36 @@ const locals = {vars: require('../config/variables')};
  */
 function fnWrite(filename, data) {
   let rename = `${filename.split('.')[0]}.html`;
-  fs.writeFile(`${dist}${rename}`, data, err => {
+  Fs.writeFile(`${dist}${rename}`, data, err => {
     if (err) {
-      console.log(err);
+      console.log(`${alerts.error} ${err}`);
       return;
     }
-    console.log(`Compiled ${rename}`);
+    console.log(`${alerts.success} Slm compiled to ./dist/${rename}`);
   });
+}
+
+/**
+ * Replace code blocks with the desired slm template
+ * @param  {string} filename - the filename to write
+ * @param  {object} data     - the data to pass to the file
+ */
+function fnCode(filename, data) {
+  let code = data.match(/code{{(.*)}}/g);
+  if (code) {
+    code.forEach(function(element, index) {
+      let file = element.replace('code{{', '').replace('}}', '').trim();
+      let path = `${source}${file}`;
+      let src = Fs.readFileSync(path, 'utf-8');
+      let compiled = slm(src, {
+        filename: path
+      })(locals);
+      data = data.replace(element, escape(pretty(compiled)));
+    });
+    fnWrite(filename, data);
+  } else {
+    fnWrite(filename, data);
+  }
 }
 
 /**
@@ -41,15 +69,15 @@ function fnWrite(filename, data) {
  */
 function fnRead(filename, fnCallback) {
   let path = `${views}${filename}`;
-  fs.readFile(path, 'utf-8', (err, src) => {
+  Fs.readFile(path, 'utf-8', (err, src) => {
     if (err) {
-      console.log(err);
+      console.log(`${alerts.error} ${err}`);
       return;
     }
     let compiled = slm(src, {
       filename: path
     })(locals);
-    fnCallback(filename, compiled);
+    fnCallback(filename, pretty(compiled));
   });
 }
 
@@ -60,12 +88,12 @@ function fnRead(filename, fnCallback) {
  */
 function fnReadDir(err, files) {
   if (err) {
-    console.log(err);
+    console.log(`${alerts.error} ${err}`);
     return;
   }
   for (let i = files.length - 1; i >= 0; i--) {
     if (files[i].indexOf('.slm') > -1) {
-      fnRead(files[i], fnWrite);
+      fnRead(files[i], fnCode);
     }
   }
 }
@@ -74,4 +102,4 @@ function fnReadDir(err, files) {
  * Init
  */
 
-fs.readdir(views, 'utf-8', fnReadDir);
+Fs.readdir(views, 'utf-8', fnReadDir);

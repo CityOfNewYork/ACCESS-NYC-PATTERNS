@@ -10,16 +10,9 @@
 
 const templates = {
   markup: [
-      "",
-      "= mixin('{{ pattern }}', 'code = false', 'text = \"\"')",
-      "  - if this.code",
-      "    div class='${class_demo_class_containers}'",
-      "      code.code Code",
-      "    div class='${class_demo_class_containers}'",
-      "      div class='code-block mb-1'",
-      "        pre Markup",
-      "",
-      "  // Demonstration"
+      "/",
+      "/ {{ Pattern }}",
+      "/"
     ].join("\n"),
   styles: [
       "/**",
@@ -82,7 +75,13 @@ const templates = {
       "",
       "       div class='${class_demo_col2}'",
       "         div class='${class_demo_content}'",
-      "           = mixin(mixin_id, true)"
+      "",
+      "            div class='${class_demo_class_containers}'",
+      "              div class='code-block mb-1'",
+      "                pre",
+      "                  = 'code{{ components/filter/filter.slm }}'",
+      "",
+      "           = partial('../{{ type }}/{{ pattern }}/{{ pattern }}.slm')"
     ].join("\n")
 };
 

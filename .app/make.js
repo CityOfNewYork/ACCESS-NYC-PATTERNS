@@ -6,6 +6,7 @@ const fs = require('fs');
 const Path = require('path');
 const Readline = require('readline');
 const config = require('../config/make');
+const alerts = require('../config/alerts');
 
 /**
  * Constants
@@ -25,11 +26,6 @@ let prompt = Readline.createInterface({
   input: process.stdin,
   output: process.stdout
 });
-let alerts = {
-  info: 'ℹ',
-  error: '✕',
-  success: '✓'
-}
 
 /**
  * Functions

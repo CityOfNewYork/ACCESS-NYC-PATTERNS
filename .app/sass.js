@@ -7,6 +7,7 @@ const Path = require('path');
 const Fs = require('fs');
 const modules = require('../config/modules');
 const mkdirp = require('mkdirp');
+const alerts = require('../config/alerts');
 
 /**
  * Init
@@ -17,13 +18,13 @@ function write(module) {
   let name = module.outFile;
   Sass.render(module, (err, result) => {
     if (err) {
-      console.log(`${err.formatted}`);
+      console.log(`${alerts.error} ${err.formatted}`);
     } else {
       Fs.writeFile(`${outDir}${name}`, result.css, (err) => {
         if (err) {
-          console.log(err);
+          console.log(`${alerts.error} ${err}`);
         } else {
-          console.log(`SASS written to ${outDir}${name}`);
+          console.log(`${alerts.success} Sass compiled to ${module.outDir}${name}`);
         }
       });
     }
@@ -35,7 +36,7 @@ modules.forEach(function(module) {
   if (!Fs.existsSync(outDir)) {
     mkdirp(outDir, (err) => {
       if (err) {
-        console.error(err);
+        console.error(`${alerts.error} ${err}`);
       } else {
         write(module);
       }
