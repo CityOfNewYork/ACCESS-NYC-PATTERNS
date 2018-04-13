@@ -11,8 +11,6 @@
 // Declarations
 .c-header {
   padding: $spacing-base;
-  // margin-top: 2 * $spacing-base;
-  // margin-bottom: $spacing-base / 2;
 
   @include media($bp-mobile-up) {
     align-items: flex-start;
