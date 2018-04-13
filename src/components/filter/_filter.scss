@@ -3,6 +3,8 @@
  */
 
 // Dependencies
+@import 'config/variables';
+@import 'config/accessibility';
 @import 'config/colors';
 @import 'config/buttons';
 @import 'config/dimensions';
@@ -11,7 +13,10 @@
 @import 'bourbon/app/assets/stylesheets/addons/triangle';
 
 // Declarations
-// .c-filter { }
+.c-filter {
+
+}
+
 .c-filter__header {
   background: $color-blue-bright;
   border-radius: $btn-radius;
@@ -26,7 +31,7 @@
     margin-top: .5em;
   }
 
-  a{
+  a {
     color: $color-white;
     font-weight: $font-weight-bold;
     text-decoration: none;
@@ -67,7 +72,6 @@
 .c-filter__list {
   transition: all .3s ease-out;
   list-style: none;
-  /*margin: 0 0 $spacing-base;*/
   margin: 20 20;
   max-height: 0;
   overflow: hidden;
@@ -118,4 +122,108 @@ a.c-filter__item {
       cursor: default;
     }
   }
+}
+
+
+/**
+ * Filter Multi
+ */
+
+.c-filter-multi {
+  transition: max-height .4s ease-in;
+  max-height: 0;
+  overflow: hidden;
+
+  &.active {
+    max-height: 3000px;
+  }
+}
+
+.c-filter-multi__list {
+  padding: 0 $spacing-base;
+  list-style: none;
+  margin: 0
+}
+
+.c-filter-multi__item {
+  border-bottom: 1px solid $color-grey-light;
+  font-weight: $font-weight-bold;
+  padding: $spacing-base 0;
+
+  &:last-child {
+    border: 0;
+  }
+}
+
+.c-filter-multi__item-header {
+  display: flex;
+  justify-content: space-between;
+}
+
+.c-filter-multi__item-header-toggle {
+  padding: .5 * $spacing-base;
+
+  &::after {
+    width: 0;
+    height: 0;
+    @include triangle(.6em .4em, $color-blue, down);
+    content: '';
+    display: inline-block;
+    float: $text-direction-end;
+  }
+
+  &.active {
+    &::after {
+      @include triangle(.6em .4em, $color-blue, up);
+      border-top: 0
+    }
+
+    .c-filter-multi__item-header-collapse {
+      display: inline
+    }
+
+    .c-filter-multi__item-header-expand {
+      display: none
+    }
+  }
+
+  .c-filter-multi__item-header-collapse {
+    display: none
+  }
+}
+
+.c-filter-multi__item-header-expand,
+.c-filter-multi__item-header-collapse {
+  @include sr-only
+}
+
+.c-filter-multi__item-group {
+  transition: max-height .4s ease-in;
+  max-height: 0;
+  overflow: hidden;
+
+  &.active {
+    max-height: 3000px
+  }
+}
+
+.c-filter-multi__item-group-list {
+  list-style: none;
+  margin: 0;
+  padding: 0
+}
+
+.c-filter-multi__item-group-subitem {
+  font-size: $font-size-small;
+  font-weight: $font-weight-normal;
+  margin: (.5 * $spacing-base) 0;
+  min-height: map-get(map-get($variables, 'inputs'), 'checkbox-size');
+
+  .checkbox {
+    padding-top: .25 * $spacing-base
+  }
+}
+
+.c-filter-multi__programs .checkbox {
+  padding-top: 5px
 }

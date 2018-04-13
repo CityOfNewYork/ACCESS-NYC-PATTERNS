@@ -11,6 +11,8 @@
 @import 'config/accessibility';
 @import 'config/media';
 
+$cdn: map-get($variables, 'cdn');
+
 // Declarations
 .checkbox {
   cursor: pointer;
@@ -49,7 +51,7 @@
 
 input:checked + .checkbox__label {
   &::before {
-    background: $color-blue url('../images/icon-checkmark.svg') no-repeat;
+    background: $color-blue url('#{$cdn}/svg/icon-checkmark-white.svg') no-repeat;
     background-size: cover;
     border: 0;
   }

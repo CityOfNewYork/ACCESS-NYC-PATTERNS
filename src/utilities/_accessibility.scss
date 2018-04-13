@@ -1,0 +1,15 @@
+/**
+ * Accessibility
+ */
+
+// Dependencies
+@import 'config/colors.scss';
+
+// Declarations
+.sr-only {
+  @include sr-only();
+}
+
+.sr-only-focusable {
+  @include sr-only-focusable();
+}
