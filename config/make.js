@@ -41,7 +41,6 @@ const templates = {
       "= extend('layouts/default')",
       "",
       "/ Component",
-      "= partial('../{{ type }}/{{ pattern }}/{{ pattern }}.slm')",
       "- mixin_id = '{{ pattern }}'",
       "- title = '{{ Pattern }}'",
       "",
