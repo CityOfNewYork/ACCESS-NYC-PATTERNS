@@ -80,7 +80,7 @@ const templates = {
       "                pre",
       "                  = 'code{{ components/filter/filter.slm }}'",
       "",
-      "           = partial('../{{ type }}/{{ pattern }}/{{ pattern }}.slm')"
+      "            = partial('../{{ type }}/{{ pattern }}/{{ pattern }}.slm')"
     ].join("\n")
 };
 
