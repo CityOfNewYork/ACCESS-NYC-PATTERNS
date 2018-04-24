@@ -14,8 +14,10 @@ const port = process.env.PORT;
 const dist = Path.join(__dirname, '../', 'dist');
 const views = Path.join(__dirname, '../', 'src/views');
 const engine = 'slm';
-const locals = {vars: require('../config/variables')};
-const alerts = require('../config/alerts');
+const locals = {
+  vars: require('../config/variables'),
+  site: require('../config/site')
+};
 
 /**
  * Functions
@@ -35,7 +37,7 @@ function fnGet(request, resolve) {
  */
 function fnListenCallback() {
   let p = app.get('port');
-  console.log(`${alerts.success} Server running and listening on port ${p}`);
+  console.log(`Listening on port ${p}!`);
 }
 
 /**

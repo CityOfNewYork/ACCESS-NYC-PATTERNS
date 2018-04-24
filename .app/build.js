@@ -16,7 +16,10 @@ const escape = require('escape-html');
 const source = Path.join(__dirname, '../', './src/');
 const views = Path.join(__dirname, '../', './src/views/');
 const dist = Path.join(__dirname, '../', './dist/');
-const locals = {vars: require('../config/variables')};
+const locals = {
+  vars: require('../config/variables'),
+  site: require('../config/site')
+};
 
 /**
  * Functions
