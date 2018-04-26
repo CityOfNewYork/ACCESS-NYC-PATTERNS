@@ -6,7 +6,7 @@
 -     class_demo_col1 = 'flex-1'
 -       class_demo_spec = 'pb-3 pl-1 pr-4'
 /         Specification content goes here. Long form text
--     class_demo_col2 = 'flex-1 max-w-1/2'
+-     class_demo_col2 = 'flex-1 screen-tablet:max-w-1/2'
 -       class_demo_content = 'pb-4 screen-tablet:px-1'
 -         class_demo_class_containers = 'mb-2'
 /           The class container goes here
