@@ -15,11 +15,6 @@ $small-screen: 481px;
 $medium-screen: 600px;
 $large-screen: 1201px;
 
-// Grid column counts by screen size
-$grid-columns-small: 1;
-$grid-columns-medium: 6;
-$grid-columns-large: 12;
-
 // @media single-keyword helpers
 $bp-small: new-breakpoint(min-width $small-screen $grid-columns-small);
 $bp-medium: new-breakpoint(min-width $medium-screen $grid-columns-medium);
