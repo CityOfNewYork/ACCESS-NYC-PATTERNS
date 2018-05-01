@@ -33,7 +33,7 @@
       div class='${class_demo_col2}'
         div class='${class_demo_content}'
           div class='${class_demo_class_containers}'
-            code.code .checkbox .checkbox__input
+            code.code checkbox checkbox__input
           div class='${class_demo_class_containers}'
             div class='code-block'
               pre
@@ -53,7 +53,7 @@
       div class='${class_demo_col2}'
         div class='${class_demo_content}'
           div class='${class_demo_class_containers}'
-            code.code .checkbox .checkbox__input.items-center
+            code.code checkbox checkbox__input.items-center checkbox__icon
           div class='${class_demo_class_containers}'
             div class='code-block'
               pre
