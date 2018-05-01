@@ -6,7 +6,7 @@
     <meta content="IE=edge" http-equiv="X-UA-Compatible" />
     <meta content="width=device-width, initial-scale=1" name="viewport" />
     <link href="styles/site.min.css" rel="stylesheet" />
-    <title>Checkboxes</title>
+    <title>Disclaimer</title>
     <noscript>
       <style>
         body {
@@ -432,7 +432,7 @@
       </nav>
     </aside>
     <article class="bg-color-white py-2 px-4 screen-desktop:px-6">
-      <h1 class="px-1">Checkboxes</h1>
+      <h1 class="px-1">Disclaimer</h1>
       <section class="pb-4" id="default-styling">
         <header class="pt-1 px-1 border-b border-color-grey-light mb-3">
           <h2>Default Styling</h2>
@@ -446,30 +446,39 @@
           </div>
           <div class="flex-1 screen-tablet:max-w-1/2">
             <div class="pb-4 screen-tablet:px-1">
-              <div class="mb-2"><code class="code">checkbox checkbox__input</code></div>
               <div class="mb-2">
-                <div class="code-block"><pre>&lt;label class=&quot;label&quot;&gt;Is anyone in your household currently enrolled in these programs?&lt;/label&gt;
-&lt;label class=&quot;checkbox&quot;&gt;
-  &lt;input checked=&quot;true&quot; name=&quot;application&quot; type=&quot;checkbox&quot; value=&quot;wic&quot; /&gt;&lt;span class=&quot;checkbox__label&quot;&gt;SNAP (Supplemental Nutrition Assistance Program)&lt;/span&gt;&lt;/label&gt;
-&lt;label class=&quot;checkbox&quot;&gt;
-  &lt;input checked=&quot;true&quot; name=&quot;application&quot; type=&quot;checkbox&quot; value=&quot;wic&quot; /&gt;&lt;span class=&quot;checkbox__label&quot;&gt;WIC (Women, Infants, and Children)&lt;/span&gt;&lt;/label&gt;
-&lt;label class=&quot;checkbox&quot;&gt;
-  &lt;input name=&quot;application&quot; type=&quot;checkbox&quot; value=&quot;scrie&quot; /&gt;&lt;span class=&quot;checkbox__label&quot;&gt;SCRIE (Senior Citizen Rent Increase Exemption)&lt;/span&gt;&lt;/label&gt;</pre></div>
+                <div class="code-block mb-1"><pre>&lt;div class=&quot;c-disclaimer&quot;&gt;
+  &lt;h4&gt;ACCESS NYC Disclaimer for Public Benefit Program Screening&lt;/h4&gt;
+  &lt;p&gt;ACCESS NYC offers a screening tool that recommends public benefits programs for you to consider based upon information you provide about your household.&lt;/p&gt;
+  &lt;/p&gt;
+  &lt;p&gt;To enroll in a benefit, you need to apply through the appropriate administering agency. ACCESS NYC will tell you how to apply for any benefit on this website, but cannot guarantee eligibility. The administering agency will determine final eligibility
+    upon your submission of an application for each program.&lt;/p&gt;
+  &lt;/p&gt;
+  &lt;p&gt;The information you share for purposes of public benefits screening will be anonymous and can be shared with City agencies to improve access to benefits and programs. To find out more about how the City might use the data you share with ACCESS NYC,
+    visit the
+    &lt;a href=&quot;#&quot;&gt;Terms of Use for NYC.gov&lt;/a&gt;, and
+    &lt;a href=&quot;#&quot;&gt;Privacy Policy for NYC.gov&lt;/a&gt;.&lt;/p&gt;
+&lt;/div&gt;</pre></div>
               </div>
-              <label class="label">Is anyone in your household currently enrolled in these programs?</label>
-              <label class="checkbox">
-                <input checked="true" name="application" type="checkbox" value="wic" /><span class="checkbox__label">SNAP (Supplemental Nutrition Assistance Program)</span></label>
-              <label class="checkbox">
-                <input checked="true" name="application" type="checkbox" value="wic" /><span class="checkbox__label">WIC (Women, Infants, and Children)</span></label>
-              <label class="checkbox">
-                <input name="application" type="checkbox" value="scrie" /><span class="checkbox__label">SCRIE (Senior Citizen Rent Increase Exemption)</span></label>
+              <div class="c-disclaimer">
+                <h4>ACCESS NYC Disclaimer for Public Benefit Program Screening</h4>
+                <p>ACCESS NYC offers a screening tool that recommends public benefits programs for you to consider based upon information you provide about your household.</p>
+                </p>
+                <p>To enroll in a benefit, you need to apply through the appropriate administering agency. ACCESS NYC will tell you how to apply for any benefit on this website, but cannot guarantee eligibility. The administering agency will determine final
+                  eligibility upon your submission of an application for each program.</p>
+                </p>
+                <p>The information you share for purposes of public benefits screening will be anonymous and can be shared with City agencies to improve access to benefits and programs. To find out more about how the City might use the data you share with
+                  ACCESS NYC, visit the
+                  <a href="#">Terms of Use for NYC.gov</a>, and
+                  <a href="#">Privacy Policy for NYC.gov</a>.</p>
+              </div>
             </div>
           </div>
         </div>
       </section>
-      <section class="pb-4" id="default-styling">
+      <section class="pb-4" id="smaller-variation">
         <header class="pt-1 px-1 border-b border-color-grey-light mb-3">
-          <h2>Checkboxes With Icons</h2>
+          <h2>Smaller Variation</h2>
         </header>
         <div class="block screen-tablet:flex">
           <div class="flex-1">
@@ -480,29 +489,26 @@
           </div>
           <div class="flex-1 screen-tablet:max-w-1/2">
             <div class="pb-4 screen-tablet:px-1">
-              <div class="mb-2"><code class="code">checkbox checkbox__input.items-center checkbox__icon</code></div>
               <div class="mb-2">
-                <div class="code-block"><pre>&lt;label class=&quot;label&quot;&gt;What kind of help are you looking for?&lt;/label&gt;
-&lt;label class=&quot;checkbox&quot;&gt;
-  &lt;input name=&quot;category&quot; type=&quot;checkbox&quot; value=&quot;cash-expenses&quot; /&gt;&lt;span class=&quot;checkbox__label items-center&quot;&gt;&lt;span class=&quot;checkbox__icon bg-icon-cash-expenses&quot;&gt;&lt;/span&gt;&lt;span&gt;Cash &amp; Expenses&lt;/span&gt;&lt;/span&gt;
-&lt;/label&gt;
-&lt;label class=&quot;checkbox&quot;&gt;
-  &lt;input name=&quot;category&quot; type=&quot;checkbox&quot; value=&quot;cash-expenses&quot; /&gt;&lt;span class=&quot;checkbox__label items-center&quot;&gt;&lt;span class=&quot;checkbox__icon bg-icon-city-id-card&quot;&gt;&lt;/span&gt;&lt;span&gt;City ID Card&lt;/span&gt;&lt;/span&gt;
-&lt;/label&gt;
-&lt;label class=&quot;checkbox&quot;&gt;
-  &lt;input name=&quot;category&quot; type=&quot;checkbox&quot; value=&quot;cash-expenses&quot; /&gt;&lt;span class=&quot;checkbox__label items-center&quot;&gt;&lt;span class=&quot;checkbox__icon bg-icon-enrichment&quot;&gt;&lt;/span&gt;&lt;span&gt;Enrichment&lt;/span&gt;&lt;/span&gt;
-&lt;/label&gt;</pre></div>
+                <div class="code-block mb-1"><pre>&lt;div class=&quot;c-disclaimer&quot;&gt;
+  &lt;p&gt;
+    &lt;small&gt;&lt;span class=&quot;icon bg-icon-info c-disclaimer__icon c-disclaimer__icon--pre&quot;&gt;&lt;/span&gt;By providing your email address or phone number, you agree to be contacted by the City of New York regarding your ACCESS NYC public benefit screening results. Your activity
+      on ACCESS NYC is anonymous, but providing your phone number may identify you and reveal that you used the website. To find out more about how the City might use the data you share with ACCESS NYC, visit the
+      &lt;a href=&quot;http://www1.nyc.gov/home/terms-of-use.page&quot;
+        target=&quot;_blank&quot; rel=&quot;noopener noreferrer&quot;&gt; Terms of Use for NYC.gov&lt;/a&gt;, and
+      &lt;a href=&quot;http://www1.nyc.gov/home/privacy-policy.page&quot; target=&quot;_blank&quot; rel=&quot;noopener noreferrer&quot;&gt; Privacy Policy for NYC.gov&lt;/a&gt;.&lt;/small&gt;
+  &lt;/p&gt;
+&lt;/div&gt;</pre></div>
               </div>
-              <label class="label">What kind of help are you looking for?</label>
-              <label class="checkbox">
-                <input name="category" type="checkbox" value="cash-expenses" /><span class="checkbox__label items-center"><span class="checkbox__icon bg-icon-cash-expenses"></span><span>Cash & Expenses</span></span>
-              </label>
-              <label class="checkbox">
-                <input name="category" type="checkbox" value="cash-expenses" /><span class="checkbox__label items-center"><span class="checkbox__icon bg-icon-city-id-card"></span><span>City ID Card</span></span>
-              </label>
-              <label class="checkbox">
-                <input name="category" type="checkbox" value="cash-expenses" /><span class="checkbox__label items-center"><span class="checkbox__icon bg-icon-enrichment"></span><span>Enrichment</span></span>
-              </label>
+              <div class="c-disclaimer">
+                <p>
+                  <small><span class="icon bg-icon-info c-disclaimer__icon c-disclaimer__icon--pre"></span>By providing your email address or phone number, you agree to be contacted by the City of New York regarding your ACCESS NYC public benefit screening results.
+                    Your activity on ACCESS NYC is anonymous, but providing your phone number may identify you and reveal that you used the website. To find out more about how the City might use the data you share with ACCESS NYC, visit the
+                    <a href="http://www1.nyc.gov/home/terms-of-use.page"
+                      target="_blank" rel="noopener noreferrer"> Terms of Use for NYC.gov</a>, and
+                    <a href="http://www1.nyc.gov/home/privacy-policy.page" target="_blank" rel="noopener noreferrer"> Privacy Policy for NYC.gov</a>.</small>
+                </p>
+              </div>
             </div>
           </div>
         </div>
