@@ -1,26 +1,14 @@
+/
+/ Checkboxes
+/
 
-
-= mixin('checkboxes', 'code = false')
-  - if this.code
-    div class='${class_demo_class_containers}'
-      code.code checkbox checkbox__input
-    div class='${class_demo_class_containers}'
-      div class='code-block'
-        pre
-          div = '<label class="label">Is anyone in your household currently enrolled in these programs?</label>'
-          div = '<label class="checkbox">'
-          div = '  <input checked name="application" value="wic" type="checkbox">'
-          div = '  <span class="checkbox__label">WIC (Women, Infants, and Children)</span>'
-          div = '</label>'
-          div = '<label class="checkbox">'
-          div = '  <input name="application" value="scrie" type="checkbox">'
-          div = '  <span class="checkbox__label">SCRIE (Senior Citizen Rent Increase Exemption)</span>'
-          div = '</label>'
-
-  label class='label' Is anyone in your household currently enrolled in these programs?
-  label class='checkbox'
-    input value='wic' type='checkbox' name='application' checked='true'
-    span class='checkbox__label' WIC (Women, Infants, and Children)
-  label class='checkbox'
-    input value='scrie' type='checkbox' name='application'
-    span class='checkbox__label' SCRIE (Senior Citizen Rent Increase Exemption)
+label class='label' Is anyone in your household currently enrolled in these programs?
+label class='checkbox'
+  input value='wic' type='checkbox' name='application' checked='true'
+  span class='checkbox__label' SNAP (Supplemental Nutrition Assistance Program)
+label class='checkbox'
+  input value='wic' type='checkbox' name='application' checked='true'
+  span class='checkbox__label' WIC (Women, Infants, and Children)
+label class='checkbox'
+  input value='scrie' type='checkbox' name='application'
+  span class='checkbox__label' SCRIE (Senior Citizen Rent Increase Exemption)

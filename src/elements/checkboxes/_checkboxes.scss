@@ -12,13 +12,13 @@
 @import 'config/media';
 
 $cdn: map-get($variables, 'cdn');
+$checkbox-size: map-get(map-get($variables, 'inputs'), 'checkbox-size');
+$checkbox-radius: map-get(map-get($variables, 'inputs'), 'checkbox-radius');
 
 // Declarations
 .checkbox {
   cursor: pointer;
   display: block;
-  padding-#{$text-direction-start}: 40px;
-  position: relative;
 
   margin-bottom: $spacing-base;
 
@@ -35,18 +35,23 @@ $cdn: map-get($variables, 'cdn');
   }
 }
 
+.checkbox__label {
+  display: flex;
+}
+
 .checkbox__label::before {
-  @include size(map-get(map-get($variables, 'inputs'), 'checkbox-size'));
   transition: all .2s;
-  position: absolute;
-  top: 0;
-  @if $text-direction == 'rtl' { right: 0; } @else { left: 0; }
+
   background: $color-white;
   border: 1px solid $color-grey-mid;
-  border-radius: map-get(map-get($variables, 'inputs'), 'checkbox-radius');
+  border-radius: $checkbox-radius;
   content: '';
   display: inline-block;
-  min-width: map-get(map-get($variables, 'inputs'), 'checkbox-size');
+
+  width: $checkbox-size;
+  height: $checkbox-size;
+  min-width: $checkbox-size;
+  margin-#{$text-direction-end}: .5 * $spacing-base;
 }
 
 input:checked + .checkbox__label {
@@ -62,4 +67,9 @@ input:focus + .checkbox__label {
     border: 0;
     box-shadow: 0 0 0 1px $color-white, 0 0 0 3px $color-blue;
   }
+}
+
+.checkbox__icon {
+  margin-bottom: 0;
+  margin-#{$text-direction-end}: .5 * $spacing-base;
 }
