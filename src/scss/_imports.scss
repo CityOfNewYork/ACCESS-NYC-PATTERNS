@@ -31,7 +31,6 @@
 
 // @import 'core/base';
 
-
 /************************
  * External Dependencies
  ************************/
@@ -46,6 +45,35 @@
 @import 'animate.scss/vendor/assets/stylesheets/animate/fadeIn';
 // components - end
 
+/**********
+* Elements
+***********/
+
+// Elements include universal styles, atomic patterns, and css systems. Examples
+// include classes that assign color, modify the display of elements, or set up
+// scaffolding like typography or grid systems. Uitilities will have their own
+// namespace prefixes based on their attributes.
+
+@import 'elements/base/base';
+@import 'elements/typography/typography';
+@import 'elements/animate/animate';
+@import 'elements/code/code';
+@import 'elements/layouts/layouts';
+@import 'elements/links/links';
+@import 'elements/exposition/exposition';
+@import 'elements/grid/grid';
+@import 'elements/forms/forms';
+@import 'elements/labels/labels';
+@import 'elements/buttons/btn';
+@import 'elements/checkboxes/checkboxes';
+@import 'elements/radios/radios';
+@import 'elements/toggles/toggles';
+@import 'elements/icons/icons';
+@import 'elements/tables/tables';
+@import 'elements/tooltips/tooltips';
+@import 'elements/program-labels/program-labels';
+// elements - end
+
 /*************
  * Components
  *************/
@@ -59,6 +87,7 @@
 @import 'components/alert-box/alert-box';
 @import 'components/card/card';
 @import 'components/checklist/checklist';
+@import 'components/disclaimer/disclaimer';
 @import 'components/filter/filter';
 @import 'components/header/header';
 @import 'components/side-nav/side-nav';
@@ -76,35 +105,6 @@
 
 // @import 'o-modals';
 // objects - end
-
-/**********
-* Elements
-***********/
-
-// Elements include universal styles, atomic patterns, and css systems. Examples
-// include classes that assign color, modify the display of elements, or set up
-// scaffolding like typography or grid systems. Uitilities will have their own
-// namespace prefixes based on their attributes.
-
-@import 'elements/base/base';
-@import 'elements/animate/animate';
-@import 'elements/code/code';
-@import 'elements/layouts/layouts';
-@import 'elements/links/links';
-@import 'elements/typography/typography';
-@import 'elements/exposition/exposition';
-@import 'elements/grid/grid';
-@import 'elements/forms/forms';
-@import 'elements/labels/labels';
-@import 'elements/buttons/btn';
-@import 'elements/checkboxes/checkboxes';
-@import 'elements/radios/radios';
-@import 'elements/toggles/toggles';
-@import 'elements/icons/icons';
-@import 'elements/tables/tables';
-@import 'elements/tooltips/tooltips';
-@import 'elements/program-labels/program-labels';
-// elements - end
 
 /***********
 * Utilities
