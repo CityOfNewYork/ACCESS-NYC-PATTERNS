@@ -6,7 +6,7 @@
     <meta content="IE=edge" http-equiv="X-UA-Compatible" />
     <meta content="width=device-width, initial-scale=1" name="viewport" />
     <link href="styles/site.min.css" rel="stylesheet" />
-    <title>Alert Box</title>
+    <title>Side Nav and Share Links</title>
     <noscript>
       <style>
         body {
@@ -431,10 +431,10 @@
       </nav>
     </aside>
     <article class="bg-color-white py-2 px-4 screen-desktop:px-6">
-      <h1 class="px-1">Alert Box</h1>
+      <h1 class="px-1">Side Nav and Share Links</h1>
       <section class="pb-4" id="default-styling">
         <header class="pt-1 px-1 border-b border-color-grey-light mb-3">
-          <h2>Default Styling</h2>
+          <h2>Side Nav</h2>
         </header>
         <div class="block screen-tablet:flex">
           <div class="flex-1">
@@ -446,41 +446,76 @@
           <div class="flex-1 screen-tablet:max-w-1/2">
             <div class="pb-4 screen-tablet:px-1">
               <div class="mb-2">
-                <div class="code-block mb-1"><pre><div>&lt;div class=&quot;c-alert-box bg-status-success&quot;&gt;</div><div>  &lt;div class=&quot;c-alert-box__icon&quot;&gt;</div><div>    &lt;div class=&quot;c-alert-box__svg bg-icon-success&quot;&gt;&lt;/div&gt;</div><div>  &lt;/div&gt;</div><div>  &lt;div class=&quot;c-alert-box__body&quot;&gt;</div><div>    Success</div><div>  &lt;/div&gt;</div><div>&lt;/div&gt;</div></pre></div>
+                <div class="code-block mb-1"><pre>&lt;nav class=&quot;c-side-nav hide-for-print&quot;&gt;
+  &lt;ol&gt;
+    &lt;li&gt;
+      &lt;a class=&quot;active&quot; href=&quot;#&quot;&gt;How It Works&lt;/a&gt;
+    &lt;/li&gt;
+    &lt;li&gt;
+      &lt;a href=&quot;#&quot;&gt;Determine Your Eligibility&lt;/a&gt;
+    &lt;/li&gt;
+    &lt;li&gt;
+      &lt;a href=&quot;#&quot;&gt;What You Need to Include&lt;/a&gt;
+    &lt;/li&gt;
+    &lt;li&gt;
+      &lt;a href=&quot;#&quot;&gt;How to Apply&lt;/a&gt;
+    &lt;/li&gt;
+    &lt;li&gt;
+      &lt;a href=&quot;#&quot;&gt;Determine Your Eligibility&lt;/a&gt;
+    &lt;/li&gt;
+  &lt;/ol&gt;
+&lt;/nav&gt;</pre></div>
               </div>
-              <div class="c-alert-box bg-status-success">
-                <div class="c-alert-box__icon">
-                  <div class="c-alert-box__svg bg-icon-success"></div>
-                </div>
-                <div class="c-alert-box__body">Success</div>
-              </div>
+              <nav class="c-side-nav hide-for-print">
+                <ol>
+                  <li>
+                    <a class="active" href="#">How It Works</a>
+                  </li>
+                  <li>
+                    <a href="#">Determine Your Eligibility</a>
+                  </li>
+                  <li>
+                    <a href="#">What You Need to Include</a>
+                  </li>
+                  <li>
+                    <a href="#">How to Apply</a>
+                  </li>
+                  <li>
+                    <a href="#">Determine Your Eligibility</a>
+                  </li>
+                </ol>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="pb-4" id="default-styling">
+        <header class="pt-1 px-1 border-b border-color-grey-light mb-3">
+          <h2>Share Links</h2>
+        </header>
+        <div class="block screen-tablet:flex">
+          <div class="flex-1">
+            <div class="pb-3 pl-1 pr-4">
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis
+                aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+            </div>
+          </div>
+          <div class="flex-1 screen-tablet:max-w-1/2">
+            <div class="pb-4 screen-tablet:px-1">
               <div class="mb-2">
-                <div class="code-block mb-1"><pre><div>&lt;div class=&quot;c-alert-box bg-status-info&quot;&gt;</div><div>  &lt;div class=&quot;c-alert-box__icon&quot;&gt;</div><div>    &lt;div class=&quot;c-alert-box__svg bg-icon-info&quot;&gt;&lt;/div&gt;</div><div>  &lt;/div&gt;</div><div>  &lt;div class=&quot;c-alert-box__body&quot;&gt;</div><div>    Information</div><div>  &lt;/div&gt;</div><div>&lt;/div&gt;</div></pre></div>
+                <div class="code-block mb-1"><pre>&lt;nav class=&quot;c-share hide-for-print&quot;&gt;
+  &lt;a class=&quot;c-share__link&quot; href=&quot;#&quot;&gt;
+    &lt;svg class=&quot;icon icon-printer&quot;&gt;
+      &lt;use xlink:href=&quot;#icon-printer&quot;&gt;&lt;/use&gt;
+    &lt;/svg&gt;Print the whole guide&lt;/a&gt;
+&lt;/nav&gt;</pre></div>
               </div>
-              <div class="c-alert-box bg-status-info">
-                <div class="c-alert-box__icon">
-                  <div class="c-alert-box__svg bg-icon-info"></div>
-                </div>
-                <div class="c-alert-box__body">Information</div>
-              </div>
-              <div class="mb-2">
-                <div class="code-block mb-1"><pre><div>&lt;div class=&quot;c-alert-box bg-status-warning&quot;&gt;</div><div>  &lt;div class=&quot;c-alert-box__icon&quot;&gt;</div><div>    &lt;div class=&quot;c-alert-box__svg bg-icon-warning&quot;&gt;&lt;/div&gt;</div><div>  &lt;/div&gt;</div><div>  &lt;div class=&quot;c-alert-box__body&quot;&gt;</div><div>    Warning</div><div>  &lt;/div&gt;</div><div>&lt;/div&gt;</div></pre></div>
-              </div>
-              <div class="c-alert-box bg-status-warning">
-                <div class="c-alert-box__icon">
-                  <div class="c-alert-box__svg bg-icon-warning"></div>
-                </div>
-                <div class="c-alert-box__body">Warning</div>
-              </div>
-              <div class="mb-2">
-                <div class="code-block mb-1"><pre><div>&lt;div class=&quot;c-alert-box bg-status-urgent&quot;&gt;</div><div>  &lt;div class=&quot;c-alert-box__icon&quot;&gt;</div><div>    &lt;div class=&quot;c-alert-box__svg bg-icon-urgent&quot;&gt;&lt;/div&gt;</div><div>  &lt;/div&gt;</div><div>  &lt;div class=&quot;c-alert-box__body&quot;&gt;</div><div>    Urgent</div><div>  &lt;/div&gt;</div><div>&lt;/div&gt;</div></pre></div>
-              </div>
-              <div class="c-alert-box bg-status-urgent">
-                <div class="c-alert-box__icon">
-                  <div class="c-alert-box__svg bg-icon-urgent"></div>
-                </div>
-                <div class="c-alert-box__body">Urgent</div>
-              </div>
+              <nav class="c-share hide-for-print">
+                <a class="c-share__link" href="#">
+                  <svg class="icon icon-printer">
+                    <use xlink:href="#icon-printer"></use>
+                  </svg>Print the whole guide</a>
+              </nav>
             </div>
           </div>
         </div>

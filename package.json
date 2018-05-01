@@ -44,7 +44,6 @@
   "devDependencies": {
     "ajv": "^6.4.0",
     "autoprefixer": "^8.2.0",
-    "babel-cli": "^6.26.0",
     "babel-core": "^6.26.0",
     "babel-plugin-external-helpers": "^6.22.0",
     "babel-plugin-lodash": "^3.3.2",
@@ -88,7 +87,7 @@
     "bourbon-neat": "^1.8.0",
     "lodash": "^4.17.5",
     "tailwindcss": "^0.5.1",
-    "uswds": "^0.13.3"
+    "uswds": "^0.14.0"
   },
   "babel": {
     "plugins": [
