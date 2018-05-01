@@ -28,4 +28,5 @@
     a class='${class_nav_item}' href='checklist' Checklist
     a class='${class_nav_item}' href='header' Header
     a class='${class_nav_item}' href='filter' Filter
+    a class='${class_nav_item}' href='side-nav' Side Nav
 

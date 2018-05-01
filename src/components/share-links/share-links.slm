@@ -1,0 +1,9 @@
+/
+/ Share-links
+/
+
+nav class='c-share hide-for-print'
+  a class='c-share__link' href='#'
+    svg class='icon icon-printer'
+      use xlink:href='#icon-printer'
+    | Print the whole guide

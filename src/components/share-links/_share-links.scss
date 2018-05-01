@@ -1,0 +1,37 @@
+/**
+ * Share Links
+ */
+
+// Dependencies
+@import 'config/direction';
+@import 'config/dimensions';
+@import 'config/media';
+@import 'config/colors';
+@import 'config/typography';
+
+// Declarations
+.c-share {
+  @include typography-nav();
+  border-top: 4px solid $color-blue-dark;
+  padding-top: $spacing-base;
+  text-align: $text-direction-end;
+
+  .icon {
+    display: inline-block;
+    height: $spacing-base;
+    margin-#{$text-direction-end}: $spacing-base / 2;
+    vertical-align: middle;
+  }
+
+  @include media($bp-desktop-up) {
+    padding-top: $spacing-base * 2;
+    text-align: $text-direction-start;
+  }
+}
+
+.c-share__link {
+  @include media($bp-desktop-up) {
+    display: block;
+    margin-bottom: $spacing-base;
+  }
+}

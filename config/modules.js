@@ -66,6 +66,20 @@ const modules = [
     outFile: 'header.css',
     precision: sass.precision,
     includePaths: sass.includePaths
+  },
+  {
+    file: './src/components/side-nav/_side-nav.scss',
+    outDir: './dist/components/side-nav/',
+    outFile: 'side-nav.css',
+    precision: sass.precision,
+    includePaths: sass.includePaths
+  },
+  {
+    file: './src/components/share-links/_share-links.scss',
+    outDir: './dist/components/share-links/',
+    outFile: 'share-links.css',
+    precision: sass.precision,
+    includePaths: sass.includePaths
   }
 ];
 

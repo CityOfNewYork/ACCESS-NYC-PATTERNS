@@ -1,0 +1,55 @@
+/**
+ * Side-nav
+ */
+
+// Dependencies
+@import 'config/direction';
+@import 'config/dimensions';
+@import 'config/media';
+@import 'config/colors';
+@import 'config/typography';
+
+// Declarations
+.c-side-nav {
+  @include typography-nav();
+  margin-bottom: $spacing-base;
+
+  ol {
+    list-style-type: none;
+    list-style-position: inside;
+    padding-left: 0;
+    padding-right: 0;
+    counter-reset: li;
+  }
+
+  li {
+    display: flex;
+    margin-bottom: 14px;
+
+    @include media($bp-desktop-up) {
+      border-bottom: 1px solid $color-blue-dark;
+      margin-bottom: $spacing-base;
+      padding-bottom: $spacing-base;
+
+      &:last-of-type {
+        border-bottom: 0;
+        margin-bottom: 0;
+        padding-bottom: 0;
+      }
+    }
+
+    &:before {
+      content: '' counter(li) '. ';
+      counter-increment: li;
+      flex-shrink: 0;
+      width: $spacing-base * 2.5;
+      padding-#{$text-direction-end}: 8px;
+      text-align: $text-direction-end;
+    }
+  }
+
+  .active {
+    font-weight: bold;
+    text-decoration: none;
+  }
+}
