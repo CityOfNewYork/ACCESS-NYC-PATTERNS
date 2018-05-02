@@ -7,6 +7,8 @@ const package = require('../package.json');
 const variables = {
   version: package.version,
   cdn: '"https://cdn.rawgit.com/CityOfNewYork/ACCESS-NYC-PATTERNS/v' + package.version + '/dist"',
+  languages: ['default', 'ar', 'es', 'kr', 'ur', 'tc'],
+  rtlLanguages: ['ar'],
   fonts: {
     'system': [
       '-apple-system',
@@ -28,41 +30,41 @@ const variables = {
       'serif'
     ],
     'kr-sans': [
-      '"Noto Sans"',
       '"Noto Sans CJK KR"',
+      '"Noto Sans"',
       'sans-serif'
     ],
     'kr-serif': [
-      '"Noto Serif"',
       '"Noto Sans CJK KR"',
+      '"Noto Serif"',
       'serif'
     ],
     'tc-sans': [
-      '"Noto Sans"',
       '"Noto Sans CJK TC"',
       '"Microsoft Yahei"',
       '"微软雅黑"',
       'STXihei',
       '"华文细黑"',
+      '"Noto Sans"',
       'sans-serif'
     ],
     'tc-serif': [
-      '"Noto Serif"',
       '"Noto Sans CJK TC"',
       '"Microsoft Yahei"',
       '"微软雅黑"',
       'STXihei',
       '"华文细黑"',
+      '"Noto Serif"',
       'serif'
     ],
     'ar-sans': [
-      '"Noto Sans"',
       '"Noto Naskh Arabic"',
+      '"Noto Sans"',
       'sans-serif'
     ],
     'ar-serif': [
-      '"Noto Serif"',
       '"Noto Naskh Arabic"',
+      '"Noto Serif"',
       'serif'
     ]
   },

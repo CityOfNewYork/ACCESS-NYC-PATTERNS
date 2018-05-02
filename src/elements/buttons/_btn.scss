@@ -25,8 +25,9 @@
   padding: .75*$spacing-base $spacing-base;
   text-align: center;
   text-decoration: none;
+  cursor: pointer;
 
-  .btn__icon {
+  .icon {
     vertical-align: middle;
   }
 }
@@ -166,7 +167,7 @@
 }
 
 [class*='btn-'][class*='-text'] {
-  color: inherit;
+  // color: inherit;
   background: none;
   border: 0;
   border-radius: 0;

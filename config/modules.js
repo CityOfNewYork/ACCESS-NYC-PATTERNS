@@ -20,7 +20,7 @@ const modules = [
   {
     file: './src/scss/site-default.scss',
     outDir: './dist/styles/',
-    outFile: 'site.min.css',
+    outFile: 'site-default.css',
     sourceMapEmbed: sass.sourceMapEmbed,
     precision: sass.precision,
     includePaths: sass.includePaths
@@ -78,6 +78,13 @@ const modules = [
     file: './src/components/share-links/_share-links.scss',
     outDir: './dist/components/share-links/',
     outFile: 'share-links.css',
+    precision: sass.precision,
+    includePaths: sass.includePaths
+  },
+  {
+    file: './src/components/question/_question.scss',
+    outDir: './dist/components/question/',
+    outFile: 'question.css',
     precision: sass.precision,
     includePaths: sass.includePaths
   }

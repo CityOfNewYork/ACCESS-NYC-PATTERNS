@@ -1,0 +1,67 @@
+/**
+ * Question
+ */
+
+// Dependencies
+@import 'config/direction';
+@import 'config/fonts';
+@import 'config/dimensions';
+@import 'config/colors';
+
+// Declarations
+.c-question {
+  margin-bottom: 30px;
+
+  input {
+    margin-top: 10px;
+  }
+}
+
+.c-question__container {
+  &.error {
+    position: relative;
+
+    &::before {
+      position: absolute;
+      top: .5 * -$spacing-base;
+      bottom: -$spacing-base;
+      @if $text-direction == 'rtl' {
+        right: .5 * -$spacing-base;
+      } @else {
+        left: -$spacing-base;
+      }
+      border-left: 3px solid $color-red;
+      content: '';
+      display: block;
+      width: 0;
+    }
+  }
+
+  .error-message {
+    color: $color-red;
+    font-size: $font-size-small;
+    margin-bottom: (.5 * $spacing-base);
+    width: 100%;
+  }
+}
+
+.c-question__label {
+  font-size: $font-size-base;
+  font-weight: $font-weight-bold;
+}
+
+.c-question__info {
+  font-size: 12px;
+  text-decoration: none;
+
+  .icon {
+    width: 1.5em;
+    height: 1.5em;
+    position: relative;
+    top: -.1em;
+
+    use {
+      fill: currentColor;
+    }
+  }
+}

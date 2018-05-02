@@ -6,16 +6,18 @@
 $variables: (
   version: 0.0.3,
   cdn: "https://cdn.rawgit.com/CityOfNewYork/ACCESS-NYC-PATTERNS/v0.0.3/dist",
+  languages: (default, ar, es, kr, ur, tc),
+  rtlLanguages: (ar),
   fonts: (
     system: (-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif),
     default-sans: ("Noto Sans", sans-serif),
     default-serif: ("Noto Serif", serif),
-    kr-sans: ("Noto Sans", "Noto Sans CJK KR", sans-serif),
-    kr-serif: ("Noto Serif", "Noto Sans CJK KR", serif),
-    tc-sans: ("Noto Sans", "Noto Sans CJK TC", "Microsoft Yahei", "微软雅黑", STXihei, "华文细黑", sans-serif),
-    tc-serif: ("Noto Serif", "Noto Sans CJK TC", "Microsoft Yahei", "微软雅黑", STXihei, "华文细黑", serif),
-    ar-sans: ("Noto Sans", "Noto Naskh Arabic", sans-serif),
-    ar-serif: ("Noto Serif", "Noto Naskh Arabic", serif)
+    kr-sans: ("Noto Sans CJK KR", "Noto Sans", sans-serif),
+    kr-serif: ("Noto Sans CJK KR", "Noto Serif", serif),
+    tc-sans: ("Noto Sans CJK TC", "Microsoft Yahei", "微软雅黑", STXihei, "华文细黑", "Noto Sans", sans-serif),
+    tc-serif: ("Noto Sans CJK TC", "Microsoft Yahei", "微软雅黑", STXihei, "华文细黑", "Noto Serif", serif),
+    ar-sans: ("Noto Naskh Arabic", "Noto Sans", sans-serif),
+    ar-serif: ("Noto Naskh Arabic", "Noto Serif", serif)
   ),
   fontWeights: (
     normal: normal,

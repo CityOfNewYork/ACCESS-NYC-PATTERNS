@@ -3,6 +3,7 @@
  */
 
 // Dependencies
+@import 'config/variables';
 @import 'config/forms';
 @import 'config/dimensions';
 @import 'config/media';
@@ -10,20 +11,39 @@
 @import 'bourbon-neat/app/assets/stylesheets/grid/media';
 @import 'uswds/src/stylesheets/components/forms';
 
+$cdn: map-get($variables, 'cdn');
+
 // Declarations
 fieldset {
   border-width: 0;
   padding: 0;
 }
 
-[type='checkbox'],
-[type='radio'] {
-  display: inline;
+input,
+textarea,
+select,
+optgroup {
+  cursor: pointer;
+  color: inherit;
+  font: inherit;
+  margin: 0;
+}
+
+input {
+  color: $color-grey-mid;
+}
+
+input,
+textarea {
+  &::placeholder {
+    color: $color-grey-mid;
+  }
 }
 
 input,
 textarea,
-select {
+select,
+optgroup {
   appearance: none;
   border: 1px solid $color-grey-mid;
   border-radius: 0;
@@ -38,5 +58,33 @@ select {
 
   .error & {
     border-color: $color-red;
+  }
+}
+
+input {
+  &.w-input-double {
+    @include media($bp-tablet-up) {
+      min-width: 400px
+    }
+  }
+}
+
+[type='checkbox'],
+[type='radio'] {
+  display: inline;
+}
+
+input,
+textarea {
+  padding: (.75 * $spacing-base);
+}
+
+input[type='number'] {
+  appearance: textfield;
+
+  &::-webkit-outer-spin-button,
+  &::-webkit-inner-spin-button {
+    appearance: none;
+    margin: 0;
   }
 }

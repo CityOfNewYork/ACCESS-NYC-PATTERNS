@@ -10,6 +10,12 @@ html {
   box-sizing: border-box;
 }
 
+@each $lang in map-get($variables, 'rtlLanguages') {
+  [lang='#{$lang}'] {
+    direction: rtl;
+  }
+}
+
 *,
 *::before,
 *::after {

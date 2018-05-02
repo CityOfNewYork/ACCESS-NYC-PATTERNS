@@ -16,6 +16,7 @@
     a class='${class_nav_item}' href='checkboxes' Checkboxes
     a class='${class_nav_item}' href='radios' Radios
     a class='${class_nav_item}' href='toggles' Toggles
+    a class='${class_nav_item}' href='selects' Selects
     a class='${class_nav_item}' href='tables' Tables
     a class='${class_nav_item}' href='tooltips' Tooltips
     a class='${class_nav_item}' href='program-labels' Program Labels
@@ -30,4 +31,5 @@
     a class='${class_nav_item}' href='header' Header
     a class='${class_nav_item}' href='filter' Filter
     a class='${class_nav_item}' href='side-nav' Side Nav
+    a class='${class_nav_item}' href='question' Question
 
