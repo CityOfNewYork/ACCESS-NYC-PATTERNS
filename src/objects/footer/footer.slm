@@ -1,0 +1,70 @@
+/
+/ Footer
+/
+
+footer class='o-footer'
+  nav class='o-footer__nav'
+    ul class='o-footer__nav-list'
+      li
+        div class='type-h3' Get Help Now
+        ul
+          li
+            a href='#' Am I Eligible?
+          li
+            a href='#' Find Help Nearby
+          li
+            a href='#' Search
+          li
+            a href='#' Contact Us
+
+        div class='type-h3' For Caseworkers
+        ul
+            li
+              a href='#' Applications &amp; Forms
+
+      li
+        div class='type-h3' Programs
+        ul
+            li
+              a href='#' Cash &amp; Expenses
+            li
+              a href='#' Child Care
+            li
+              a href='#' City ID Card
+            li
+              a href='#' Education
+            li
+              a href='#' Enrichment
+            li
+              a href='#' Food
+            li
+              a href='#' Health
+            li
+              a href='#' Housing
+            li
+              a href='#' Special Needs
+            li
+              a href='#' Work
+
+      li
+        div class='type-h3' About ACCESS NYC
+        ul
+            li
+              a href='#' Training &amp; Support
+            li
+              a href='#' NYC.gov Privacy Policy
+            li
+              a href='#' NYC.gov Terms of Use
+
+      li
+        svg class='icon icon-logo-full'
+          use xlink:href='#icon-logo-full'
+
+  div class='o-footer__copyright'
+    svg class='icon icon-logo-nyc'
+      use xlink:href='#icon-logo-nyc'
+
+    p
+      | City of New York, 2018 All Rights Reserved.
+      br
+      | NYC is a trademark and service mark of the City of New York.

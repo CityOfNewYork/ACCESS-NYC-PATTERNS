@@ -2,8 +2,7 @@
 = extend('layouts/default')
 
 / Component
-- mixin_id = 'card-list-grid'
-- title = 'Card List Grid'
+- title = 'Card Lists'
 
 / Styles
 = partial('partials/styles.slm')
@@ -24,9 +23,9 @@
 
 = content('content')
   h1 class='px-1' = title
-  section#default-styling class='${class_demo}'
+  section#single-column-list class='${class_demo}'
     header class='${class_demo_headers}'
-      h2 Default Styling
+      h2 Single Column List
 
     div class='${class_demo_cols}'
       div class='${class_demo_col1}'

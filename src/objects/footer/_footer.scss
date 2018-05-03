@@ -1,0 +1,93 @@
+/**
+ * Footer
+ */
+
+// Dependencies
+@import 'config/colors';
+@import 'config/dimensions';
+@import 'config/media';
+@import 'config/direction';
+@import 'config/typography';
+@import 'bourbon/app/assets/stylesheets/addons/clearfix';
+@import 'bourbon-neat/app/assets/stylesheets/grid/row';
+@import 'bourbon-neat/app/assets/stylesheets/grid/span-columns';
+@import 'bourbon-neat/app/assets/stylesheets/grid/omega';
+
+// Declarations
+// .o-footer { }
+
+.o-footer {
+  padding: 2*$spacing-base 0;
+  border-top: 3px solid $color-blue-dark;
+
+  .o-footer__nav-list {
+    @include clearfix();
+    @include row();
+    @include typography-nav();
+    list-style: none;
+    margin: 0 0 $spacing-base;
+    padding: 0;
+
+    .type-h3 {
+      margin-bottom: $spacing-base;
+    }
+
+    ul {
+      list-style: none;
+      margin: 0 0 2*$spacing-base;
+      padding: 0;
+
+      > li {
+        margin-bottom: $spacing-base;
+      }
+    }
+
+    > li {
+      @include span-columns(12);
+      display: block;
+      padding: 0 $spacing-base;
+
+      @include media($bp-tablet-up) {
+        @include span-columns(4);
+
+        &:nth-child(3n) {
+          @include omega();
+        }
+
+        &:last-child {
+          @include span-columns(12);
+        }
+      }
+
+      @include media($bp-desktop-up) {
+        @include span-columns(3);
+
+        &:last-child {
+          @include omega();
+          @include span-columns(3);
+        }
+      }
+    }
+  }
+
+  .o-footer__copyright {
+    margin: 0 $spacing-base;
+  }
+}
+
+.o-footer__copyright {
+  align-items: stretch;
+  @include clearfix();
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  color: $color-grey-dark;
+  font-size: 12px; // TODO(jjandoc): Variable?
+
+  .icon-logo-nyc {
+    width: 90px;
+    height: 30px;
+    float: $text-direction-start;
+    margin-#{$text-direction-end}: .5*$spacing-base;
+  }
+}

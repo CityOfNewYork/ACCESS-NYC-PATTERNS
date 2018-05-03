@@ -37,6 +37,7 @@
     span class='${class_nav_heading}' Objects;
     a class='${class_nav_item}' href='announcements' Announcements
     a class='${class_nav_item}' href='banner' Banner
-    a class='${class_nav_item}' href='card-list-grid' Card List Grid
+    a class='${class_nav_item}' href='card-list' Card Lists
     a class='${class_nav_item}' href='search-box' Search Box
+    a class='${class_nav_item}' href='footer' Footer
 

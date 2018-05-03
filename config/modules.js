@@ -94,6 +94,13 @@ const modules = [
     outFile: 'search-box.css',
     precision: sass.precision,
     includePaths: sass.includePaths
+  },
+  {
+    file: './src/objects/footer/_footer.scss',
+    outDir: './dist/objects/footer/',
+    outFile: 'footer.css',
+    precision: sass.precision,
+    includePaths: sass.includePaths
   }
 ];
 
