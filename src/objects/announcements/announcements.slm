@@ -1,0 +1,11 @@
+/
+/ Announcements
+/
+
+div class='py-4'
+  h2 class='type-h5 divider m-0' Announcements
+  div class='layout--columns'
+    = partial('../../components/card/card-flush.slm')
+    = partial('../../components/card/card-flush.slm')
+    = partial('../../components/card/card-flush.slm')
+    = partial('../../components/card/card-flush.slm')

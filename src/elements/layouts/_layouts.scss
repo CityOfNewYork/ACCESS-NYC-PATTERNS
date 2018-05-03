@@ -6,6 +6,7 @@
 @import 'config/variables';
 @import 'config/layouts';
 @import 'config/dimensions';
+@import 'config/media';
 @import 'scss/functions/strip-units';
 
 // Declarations
@@ -33,14 +34,16 @@
   padding: 0 $spacing-base;
 }
 
-// Declarations
-.layout {
+//
+// Topbar layout for tablets or other mobile devices (Field Screener).
+//
+.layout--topbar {
   position: relative;
   height: calc(100vh - 90px);
   overflow: hidden;
 }
 
-.layout__body {
+.layout--topbar__body {
   width: 100%;
   position: absolute;
   top: 0;
@@ -50,32 +53,68 @@
   -webkit-overflow-scrolling: touch;
 }
 
-.layout__body:after {
+.layout--topbar__body:after {
   content: '';
   height: 100%;
   display: block;
 }
 
 @media print {
-
-  .layout {
+  .layout--topbar {
     height: auto;
     overflow: visible;
   }
 
-  .layout__body {
+  .layout--topbar__body {
     position: static;
   }
-
 }
 
-// Patterns Layout
+//
+// General layout for two equal columns
+//
+.layout--columns {
+  @media (min-width: $screen-tablet) {
+    display: flex;
+    flex-wrap: wrap;
+    > * {
+      width: 50%;
+    }
+  }
+}
+
+//
+// General layout for two equal columns with x and y gutters
+//
+.layout--columns-gutter {
+  > * {
+    margin-bottom: $spacing-base;
+  }
+
+  > *:nth-last-child(1) {
+    margin-bottom: 0;
+  }
+
+  @media (min-width: $screen-tablet) {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+
+    > * {
+      width: calc(50% - #{$spacing-base/2});
+    }
+
+    > *:nth-last-child(2) {
+      margin-bottom: 0;
+    }
+  }
+}
+
+//
+// Layout for single sidebar
+//
 .layout--sidebar {
-
-  $min-width: map-get(map-get($variables, 'screens'), 'screen-tablet');
-
-  @media (min-width: '#{$min-width}px') {
-
+  @media (min-width: $screen-tablet) {
     > *:first-child {
       width: 16rem
     }
@@ -83,8 +122,6 @@
     > *:first-child + * {
       width: calc(100% - 16rem)
     }
-
   }
-
 }
 

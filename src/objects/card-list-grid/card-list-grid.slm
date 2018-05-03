@@ -1,12 +1,11 @@
 /
-/ Card-list-grid
+/ Card List Grid
 /
 
-div class='o-card-list-grid'
-  h2 class='o-card-list-grid__title type-h3' Featured Programs
-  h3 class='o-card-list-grid__subtitle type-h4' Each year, over 1 million New Yorkers use ACCESS NYC to get:
-  div class='o-card-list-grid__cards'
-
+div class='p-4 bg-color-grey-lightest'
+  h2 class='type-h3 m-0' Featured Programs
+  h3 class='type-supplemental text-color-grey-mid' Each year, over 1 million New Yorkers use ACCESS NYC to get:
+  div class='layout--columns-gutter'
     = partial('../../components/card/card-icon.slm')
     = partial('../../components/card/card-icon.slm')
     = partial('../../components/card/card-icon.slm')

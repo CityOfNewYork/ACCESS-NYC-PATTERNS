@@ -1,0 +1,28 @@
+/**
+ * Divider
+ */
+
+// Dependencies
+@import 'config/colors';
+@import 'config/dimensions';
+@import 'config/direction';
+
+// Declarations
+.divider {
+  border-bottom: 1px solid;
+  border-color: inherit;
+  margin-bottom: $spacing-base;
+  padding-bottom: $spacing-base;
+  position: relative;
+
+  &::after {
+    width: 130px;
+    height: 5px;
+    #{$text-direction-start}: 0;
+    background: $color-yellow-access;
+    bottom: -3px;
+    content: '';
+    display: block;
+    position: absolute;
+  }
+}

@@ -2,8 +2,8 @@
 = extend('layouts/default')
 
 / Component
-- mixin_id = 'card-list-grid'
-- title = 'Card List Grid'
+- mixin_id = 'announcements'
+- title = 'Announcements'
 
 / Styles
 = partial('partials/styles.slm')
@@ -40,6 +40,7 @@
     div class='${class_demo_class_containers}'
       div class='code-block mb-1'
         pre
-          = 'code{{ objects/card-list-grid/card-list-grid.slm }}'
+          = 'code{{ objects/announcements/announcements.slm }}'
 
-    = partial('../objects/card-list-grid/card-list-grid.slm')
+      = partial('../objects/announcements/announcements.slm')
+

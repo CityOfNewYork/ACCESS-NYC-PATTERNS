@@ -60,6 +60,10 @@ small,
   @include typography-supplemental();
 }
 
+.type-supplemental {
+  @include typography-supplemental();
+}
+
 blockquote {
   @include margin(rem((.5 * $spacing-base), $em-base) null rem((1.5 * $spacing-base), $em-base));
   @include typography-blockquote();

@@ -72,6 +72,7 @@
 @import 'elements/icons/icons';
 @import 'elements/tables/tables';
 @import 'elements/tooltips/tooltips';
+@import 'elements/divider/divider';
 @import 'elements/program-labels/program-labels';
 // elements - end
 
@@ -106,7 +107,6 @@
 // will require their own Objects. Object namespaces are prefixed with 'o-'.
 
 @import 'objects/banner/banner';
-@import 'objects/card-list-grid/card-list-grid';
 @import 'objects/search-box/search-box';
 // objects - end
 
