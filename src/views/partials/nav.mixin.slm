@@ -36,5 +36,6 @@
   nav class='${class_nav}'
     span class='${class_nav_heading}' Objects;
     a class='${class_nav_item}' href='banner' Banner
+    a class='${class_nav_item}' href='card-list-grid' Card List Grid
     a class='${class_nav_item}' href='search-box' Search Box
 

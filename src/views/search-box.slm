@@ -38,6 +38,6 @@
     div class='${class_demo_class_containers}'
       div class='code-block mb-1'
         pre
-          = 'code{{ components/search-box/search-box.slm }}'
+          = 'code{{ objects/search-box/search-box.slm }}'
 
     = partial('../objects/search-box/search-box.slm')

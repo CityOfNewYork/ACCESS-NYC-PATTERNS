@@ -1,0 +1,51 @@
+/**
+ * Card-list-grid
+ */
+
+// Dependencies
+@import 'config/dimensions';
+@import 'config/direction';
+@import 'config/typography';
+
+// Declarations
+.o-card-list-grid { }
+
+.o-card-list-grid__title {
+  margin-bottom: 0;
+
+  + .o-card-list-grid__cards {
+    margin-top: $spacing-base;
+  }
+}
+
+.o-card-list-grid__subtitle {
+  @include typography-supplemental;
+  margin-bottom: 0;
+
+  + .o-card-list-grid__cards {
+    margin-top: $spacing-base;
+  }
+}
+
+.o-card-list-grid__cards {
+  @include media($bp-tablet-up) {
+    $cards-per-row: 2;
+    display: flex;
+    flex-wrap: wrap;
+
+    .c-card {
+      width: calc(#{percentage(1/$cards-per-row)} - #{$spacing-base/$cards-per-row});
+      margin-#{$text-direction-end}: $spacing-base;
+      margin-bottom: $spacing-base;
+
+      &:nth-child(#{$cards-per-row}n) {
+        margin-#{$text-direction-end}: 0;
+      }
+    }
+
+    .c-card:nth-last-child(1),
+    .c-card:nth-last-child(2) {
+      margin-bottom: 0;
+    }
+  }
+}

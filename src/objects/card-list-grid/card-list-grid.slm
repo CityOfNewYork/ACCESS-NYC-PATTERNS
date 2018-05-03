@@ -1,0 +1,13 @@
+/
+/ Card-list-grid
+/
+
+div class='o-card-list-grid'
+  h2 class='o-card-list-grid__title type-h3' Featured Programs
+  h3 class='o-card-list-grid__subtitle type-h4' Each year, over 1 million New Yorkers use ACCESS NYC to get:
+  div class='o-card-list-grid__cards'
+
+    = partial('../../components/card/card-icon.slm')
+    = partial('../../components/card/card-icon.slm')
+    = partial('../../components/card/card-icon.slm')
+    = partial('../../components/card/card-icon.slm')

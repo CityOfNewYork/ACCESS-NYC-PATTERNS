@@ -78,7 +78,7 @@ const templates = {
       "          div class='${class_demo_class_containers}'",
       "            div class='code-block mb-1'",
       "              pre",
-      "                = 'code{{ components/{{ pattern }}/{{ pattern }}.slm }}'",
+      "                = 'code{{ {{ type }}/{{ pattern }}/{{ pattern }}.slm }}'",
       "",
       "          = partial('../{{ type }}/{{ pattern }}/{{ pattern }}.slm')"
     ].join("\n")

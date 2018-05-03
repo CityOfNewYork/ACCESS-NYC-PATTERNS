@@ -1,0 +1,24 @@
+/
+/ Card with Removable Functionality
+/
+
+article class='c-card items-stretch bg-color-grey-lightest p-2'
+  div class='c-card__icon-large'
+    a href='#'
+      div class='icon bg-icon-card-cash-expenses'
+  div class='c-card__body w-100'
+    a href='#'
+      h3 class='c-card__title'
+        | Money for heat and utility expenses
+    p class='c-card__subtitle type-small'
+      | Home Energy Assistance Program (HEAP)
+    p
+      | HEAP can help you pay for the costs of heating your home during the winter months.
+  div class='flex flex-col justify-between hide-for-print'
+    div style='width:232px' class='pb-1'
+      div
+        a class='btn btn-primary btn-small d-block'
+          | Remove Program
+    div
+      a class='btn-toggle btn' href='#'
+        | Learn More

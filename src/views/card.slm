@@ -12,9 +12,6 @@
 = partial('partials/header.mixin.slm')
 = partial('partials/nav.mixin.slm')
 
-/ Elements
-= partial('../components/card/card.slm')
-
 / Content blocks
 = content('head')
   = mixin('head', 'Card')
@@ -35,4 +32,38 @@
 
       div class='${class_demo_col2}'
         div class='${class_demo_content}'
-          = mixin('card', true)
+
+          div class='${class_demo_class_containers}'
+            div class='code-block mb-1'
+              pre
+                = 'code{{ components/card/card.slm }}'
+
+          div class='${class_demo_class_containers}'
+            div class='bg-color-grey-lightest p-4'
+              = partial('../components/card/card.slm')
+
+          div class='${class_demo_class_containers}'
+            div class='code-block mb-1'
+              pre
+                = 'code{{ components/card/card-icon.slm }}'
+
+          div class='${class_demo_class_containers}'
+            div class='bg-color-grey-lightest p-4'
+              = partial('../components/card/card-icon.slm')
+
+          div class='${class_demo_class_containers}'
+            div class='code-block mb-1'
+              pre
+                = 'code{{ components/card/card-icon-info.slm }}'
+
+          div class='${class_demo_class_containers}'
+            div class='bg-color-grey-lightest p-4'
+              = partial('../components/card/card-icon-info.slm')
+
+          div class='${class_demo_class_containers}'
+            div class='code-block mb-1'
+              pre
+                = 'code{{ components/card/card-removable.slm }}'
+
+          div class='${class_demo_class_containers}'
+            = partial('../components/card/card-removable.slm')
