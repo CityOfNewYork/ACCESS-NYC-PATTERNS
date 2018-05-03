@@ -18,3 +18,6 @@ article class='c-card'
         p class='hide-for-print'
           a href='#'
             | Learn more
+        p class='hide-for-print'
+          a class='btn btn-secondary btn-next' href='#?step=how-to-apply'
+            | Apply

@@ -1,0 +1,9 @@
+/
+/ Card List Grid
+/
+
+div class='p-4 bg-color-grey-lightest'
+  div class='layout--gutter'
+    = partial('../../components/card/card-icon-info.slm')
+    = partial('../../components/card/card-icon-info.slm')
+    = partial('../../components/card/card-icon-info.slm')

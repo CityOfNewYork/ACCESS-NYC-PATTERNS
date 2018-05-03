@@ -6,7 +6,7 @@
     <meta content="IE=edge" http-equiv="X-UA-Compatible" />
     <meta content="width=device-width, initial-scale=1" name="viewport" />
     <link href="styles/site-default.css" rel="stylesheet" />
-    <title>Card</title>
+    <title>Card List Grid</title>
     <noscript>
       <style>
         body {
@@ -440,7 +440,7 @@
       </nav>
     </aside>
     <article class="bg-color-white py-2 px-4 screen-desktop:px-6">
-      <h1 class="px-1">Card</h1>
+      <h1 class="px-1">Card List Grid</h1>
       <section class="pb-4" id="default-styling">
         <header class="pt-1 px-1 border-b border-color-grey-light mb-3">
           <h2>Default Styling</h2>
@@ -453,164 +453,287 @@
             </div>
           </div>
           <div class="flex-1 screen-tablet:max-w-1/2">
-            <div class="pb-4 screen-tablet:px-1">
-              <div class="mb-2">
-                <div class="code-block mb-1"><pre>&lt;article class=&quot;c-card&quot;&gt;
-  &lt;div class=&quot;c-card__body&quot;&gt;
-    &lt;h3 class=&quot;c-card__title mb-3&quot;&gt;Apply for Pre-K for All&lt;/h3&gt;
-    &lt;div class=&quot;c-card__summary&quot;&gt;
-      &lt;a href=&quot;#&quot;&gt;New York City families with a child born in 2014 can apply to Pre-K from February 5 - March 30, 2018.&lt;/a&gt;
-    &lt;/div&gt;
-  &lt;/div&gt;
-&lt;/article&gt;</pre></div>
-              </div>
-              <div class="mb-2">
-                <div class="bg-color-grey-lightest p-4">
-                  <article class="c-card">
-                    <div class="c-card__body">
-                      <h3 class="c-card__title mb-3">Apply for Pre-K for All</h3>
-                      <div class="c-card__summary">
-                        <a href="#">New York City families with a child born in 2014 can apply to Pre-K from February 5 - March 30, 2018.</a>
-                      </div>
-                    </div>
-                  </article>
-                </div>
-              </div>
-              <div class="mb-2">
-                <div class="code-block mb-1"><pre>&lt;article class=&quot;c-card&quot;&gt;
-  &lt;div class=&quot;c-card__icon&quot;&gt;
-    &lt;a href=&quot;#&quot;&gt;
-      &lt;div class=&quot;icon bg-icon-card-cash-expenses&quot;&gt;&lt;/div&gt;
-    &lt;/a&gt;
-  &lt;/div&gt;
-  &lt;div class=&quot;c-card__body&quot;&gt;
-    &lt;a href=&quot;#&quot;&gt;
-      &lt;h3 class=&quot;c-card__title&quot;&gt;Tax relief for dependent care&lt;/h3&gt;
-    &lt;/a&gt;
-    &lt;div class=&quot;c-card__summary hide-for-print&quot;&gt;
-      &lt;a href=&quot;#&quot;&gt;Learn more&lt;/a&gt;
-    &lt;/div&gt;
-  &lt;/div&gt;
-&lt;/article&gt;</pre></div>
-              </div>
-              <div class="mb-2">
-                <div class="bg-color-grey-lightest p-4">
-                  <article class="c-card">
-                    <div class="c-card__icon">
-                      <a href="#">
-                        <div class="icon bg-icon-card-cash-expenses"></div>
-                      </a>
-                    </div>
-                    <div class="c-card__body">
-                      <a href="#">
-                        <h3 class="c-card__title">Tax relief for dependent care</h3>
-                      </a>
-                      <div class="c-card__summary hide-for-print">
-                        <a href="#">Learn more</a>
-                      </div>
-                    </div>
-                  </article>
-                </div>
-              </div>
-              <div class="mb-2">
-                <div class="code-block mb-1"><pre>&lt;article class=&quot;c-card&quot;&gt;
-  &lt;div class=&quot;c-card__icon&quot;&gt;
-    &lt;a href=&quot;#&quot;&gt;
-      &lt;div class=&quot;icon bg-icon-card-cash-expenses&quot;&gt;&lt;/div&gt;
-    &lt;/a&gt;
-  &lt;/div&gt;
-  &lt;div class=&quot;c-card__body&quot;&gt;
-    &lt;a href=&quot;#&quot;&gt;
-      &lt;h3 class=&quot;c-card__title&quot;&gt;Money for heat and utility expenses&lt;/h3&gt;
-    &lt;/a&gt;
-    &lt;p class=&quot;c-card__subtitle type-small text-color-grey-mid&quot;&gt;Home Energy Assistance Program (HEAP)
-      &lt;div class=&quot;c-card__summary&quot;&gt;
-        &lt;p&gt;HEAP can help you pay for the costs of heating your home during the winter months.&lt;/p&gt;
-        &lt;p class=&quot;hide-for-print&quot;&gt;
-          &lt;a href=&quot;#&quot;&gt;Learn more&lt;/a&gt;
+            <div class="pb-4 screen-tablet:px-1">&nbsp;</div>
+          </div>
+        </div>
+        <div class="mb-2">
+          <div class="code-block mb-1"><pre>&lt;div class=&quot;p-4 bg-color-grey-lightest&quot;&gt;
+  &lt;div class=&quot;layout--gutter&quot;&gt;
+    &lt;article class=&quot;c-card&quot;&gt;
+      &lt;div class=&quot;c-card__icon&quot;&gt;
+        &lt;a href=&quot;#&quot;&gt;
+          &lt;div class=&quot;icon bg-icon-card-cash-expenses&quot;&gt;&lt;/div&gt;
+        &lt;/a&gt;
+      &lt;/div&gt;
+      &lt;div class=&quot;c-card__body&quot;&gt;
+        &lt;a href=&quot;#&quot;&gt;
+          &lt;h3 class=&quot;c-card__title&quot;&gt;Money for heat and utility expenses&lt;/h3&gt;
+        &lt;/a&gt;
+        &lt;p class=&quot;c-card__subtitle type-small text-color-grey-mid&quot;&gt;Home Energy Assistance Program (HEAP)
+          &lt;div class=&quot;c-card__summary&quot;&gt;
+            &lt;p&gt;HEAP can help you pay for the costs of heating your home during the winter months.&lt;/p&gt;
+            &lt;p class=&quot;hide-for-print&quot;&gt;
+              &lt;a href=&quot;#&quot;&gt;Learn more&lt;/a&gt;
+            &lt;/p&gt;
+          &lt;/div&gt;
         &lt;/p&gt;
       &lt;/div&gt;
-    &lt;/p&gt;
+    &lt;/article&gt;
+    &lt;article class=&quot;c-card&quot;&gt;
+      &lt;div class=&quot;c-card__icon&quot;&gt;
+        &lt;a href=&quot;#&quot;&gt;
+          &lt;div class=&quot;icon bg-icon-card-cash-expenses&quot;&gt;&lt;/div&gt;
+        &lt;/a&gt;
+      &lt;/div&gt;
+      &lt;div class=&quot;c-card__body&quot;&gt;
+        &lt;a href=&quot;#&quot;&gt;
+          &lt;h3 class=&quot;c-card__title&quot;&gt;Money for heat and utility expenses&lt;/h3&gt;
+        &lt;/a&gt;
+        &lt;p class=&quot;c-card__subtitle type-small text-color-grey-mid&quot;&gt;Home Energy Assistance Program (HEAP)
+          &lt;div class=&quot;c-card__summary&quot;&gt;
+            &lt;p&gt;HEAP can help you pay for the costs of heating your home during the winter months.&lt;/p&gt;
+            &lt;p class=&quot;hide-for-print&quot;&gt;
+              &lt;a href=&quot;#&quot;&gt;Learn more&lt;/a&gt;
+            &lt;/p&gt;
+          &lt;/div&gt;
+        &lt;/p&gt;
+      &lt;/div&gt;
+    &lt;/article&gt;
+    &lt;article class=&quot;c-card&quot;&gt;
+      &lt;div class=&quot;c-card__icon&quot;&gt;
+        &lt;a href=&quot;#&quot;&gt;
+          &lt;div class=&quot;icon bg-icon-card-cash-expenses&quot;&gt;&lt;/div&gt;
+        &lt;/a&gt;
+      &lt;/div&gt;
+      &lt;div class=&quot;c-card__body&quot;&gt;
+        &lt;a href=&quot;#&quot;&gt;
+          &lt;h3 class=&quot;c-card__title&quot;&gt;Money for heat and utility expenses&lt;/h3&gt;
+        &lt;/a&gt;
+        &lt;p class=&quot;c-card__subtitle type-small text-color-grey-mid&quot;&gt;Home Energy Assistance Program (HEAP)
+          &lt;div class=&quot;c-card__summary&quot;&gt;
+            &lt;p&gt;HEAP can help you pay for the costs of heating your home during the winter months.&lt;/p&gt;
+            &lt;p class=&quot;hide-for-print&quot;&gt;
+              &lt;a href=&quot;#&quot;&gt;Learn more&lt;/a&gt;
+            &lt;/p&gt;
+          &lt;/div&gt;
+        &lt;/p&gt;
+      &lt;/div&gt;
+    &lt;/article&gt;
   &lt;/div&gt;
-&lt;/article&gt;</pre></div>
+&lt;/div&gt;</pre></div>
+        </div>
+        <div class="p-4 bg-color-grey-lightest">
+          <div class="layout--gutter">
+            <article class="c-card">
+              <div class="c-card__icon">
+                <a href="#">
+                  <div class="icon bg-icon-card-cash-expenses"></div>
+                </a>
               </div>
-              <div class="mb-2">
-                <div class="bg-color-grey-lightest p-4">
-                  <article class="c-card">
-                    <div class="c-card__icon">
-                      <a href="#">
-                        <div class="icon bg-icon-card-cash-expenses"></div>
-                      </a>
-                    </div>
-                    <div class="c-card__body">
-                      <a href="#">
-                        <h3 class="c-card__title">Money for heat and utility expenses</h3>
-                      </a>
-                      <p class="c-card__subtitle type-small text-color-grey-mid">Home Energy Assistance Program (HEAP)
-                        <div class="c-card__summary">
-                          <p>HEAP can help you pay for the costs of heating your home during the winter months.</p>
-                          <p class="hide-for-print">
-                            <a href="#">Learn more</a>
-                          </p>
-                        </div>
-                      </p>
-                    </div>
-                  </article>
+              <div class="c-card__body">
+                <a href="#">
+                  <h3 class="c-card__title">Money for heat and utility expenses</h3>
+                </a>
+                <p class="c-card__subtitle type-small text-color-grey-mid">Home Energy Assistance Program (HEAP)
+                  <div class="c-card__summary">
+                    <p>HEAP can help you pay for the costs of heating your home during the winter months.</p>
+                    <p class="hide-for-print">
+                      <a href="#">Learn more</a>
+                    </p>
+                  </div>
+                </p>
+              </div>
+            </article>
+            <article class="c-card">
+              <div class="c-card__icon">
+                <a href="#">
+                  <div class="icon bg-icon-card-cash-expenses"></div>
+                </a>
+              </div>
+              <div class="c-card__body">
+                <a href="#">
+                  <h3 class="c-card__title">Money for heat and utility expenses</h3>
+                </a>
+                <p class="c-card__subtitle type-small text-color-grey-mid">Home Energy Assistance Program (HEAP)
+                  <div class="c-card__summary">
+                    <p>HEAP can help you pay for the costs of heating your home during the winter months.</p>
+                    <p class="hide-for-print">
+                      <a href="#">Learn more</a>
+                    </p>
+                  </div>
+                </p>
+              </div>
+            </article>
+            <article class="c-card">
+              <div class="c-card__icon">
+                <a href="#">
+                  <div class="icon bg-icon-card-cash-expenses"></div>
+                </a>
+              </div>
+              <div class="c-card__body">
+                <a href="#">
+                  <h3 class="c-card__title">Money for heat and utility expenses</h3>
+                </a>
+                <p class="c-card__subtitle type-small text-color-grey-mid">Home Energy Assistance Program (HEAP)
+                  <div class="c-card__summary">
+                    <p>HEAP can help you pay for the costs of heating your home during the winter months.</p>
+                    <p class="hide-for-print">
+                      <a href="#">Learn more</a>
+                    </p>
+                  </div>
+                </p>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+      <section class="pb-4" id="grid-list">
+        <header class="pt-1 px-1 border-b border-color-grey-light mb-3">
+          <h2>Grid List</h2>
+        </header>
+        <div class="block screen-tablet:flex">
+          <div class="flex-1">
+            <div class="pb-3 pl-1 pr-4">
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis
+                aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+            </div>
+          </div>
+          <div class="flex-1 screen-tablet:max-w-1/2">
+            <div class="pb-4 screen-tablet:px-1">&nbsp;</div>
+          </div>
+        </div>
+        <div class="mb-2">
+          <div class="code-block mb-1"><pre>&lt;div class=&quot;p-4 bg-color-grey-lightest&quot;&gt;
+  &lt;h2 class=&quot;type-h3 m-0&quot;&gt;Featured Programs&lt;/h2&gt;
+  &lt;h3 class=&quot;type-supplemental text-color-grey-mid&quot;&gt;Each year, over 1 million New Yorkers use ACCESS NYC to get:&lt;/h3&gt;
+  &lt;div class=&quot;layout--columns-gutter&quot;&gt;
+    &lt;article class=&quot;c-card&quot;&gt;
+      &lt;div class=&quot;c-card__icon&quot;&gt;
+        &lt;a href=&quot;#&quot;&gt;
+          &lt;div class=&quot;icon bg-icon-card-cash-expenses&quot;&gt;&lt;/div&gt;
+        &lt;/a&gt;
+      &lt;/div&gt;
+      &lt;div class=&quot;c-card__body&quot;&gt;
+        &lt;a href=&quot;#&quot;&gt;
+          &lt;h3 class=&quot;c-card__title&quot;&gt;Tax relief for dependent care&lt;/h3&gt;
+        &lt;/a&gt;
+        &lt;div class=&quot;c-card__summary hide-for-print&quot;&gt;
+          &lt;a href=&quot;#&quot;&gt;Learn more&lt;/a&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/article&gt;
+    &lt;article class=&quot;c-card&quot;&gt;
+      &lt;div class=&quot;c-card__icon&quot;&gt;
+        &lt;a href=&quot;#&quot;&gt;
+          &lt;div class=&quot;icon bg-icon-card-cash-expenses&quot;&gt;&lt;/div&gt;
+        &lt;/a&gt;
+      &lt;/div&gt;
+      &lt;div class=&quot;c-card__body&quot;&gt;
+        &lt;a href=&quot;#&quot;&gt;
+          &lt;h3 class=&quot;c-card__title&quot;&gt;Tax relief for dependent care&lt;/h3&gt;
+        &lt;/a&gt;
+        &lt;div class=&quot;c-card__summary hide-for-print&quot;&gt;
+          &lt;a href=&quot;#&quot;&gt;Learn more&lt;/a&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/article&gt;
+    &lt;article class=&quot;c-card&quot;&gt;
+      &lt;div class=&quot;c-card__icon&quot;&gt;
+        &lt;a href=&quot;#&quot;&gt;
+          &lt;div class=&quot;icon bg-icon-card-cash-expenses&quot;&gt;&lt;/div&gt;
+        &lt;/a&gt;
+      &lt;/div&gt;
+      &lt;div class=&quot;c-card__body&quot;&gt;
+        &lt;a href=&quot;#&quot;&gt;
+          &lt;h3 class=&quot;c-card__title&quot;&gt;Tax relief for dependent care&lt;/h3&gt;
+        &lt;/a&gt;
+        &lt;div class=&quot;c-card__summary hide-for-print&quot;&gt;
+          &lt;a href=&quot;#&quot;&gt;Learn more&lt;/a&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/article&gt;
+    &lt;article class=&quot;c-card&quot;&gt;
+      &lt;div class=&quot;c-card__icon&quot;&gt;
+        &lt;a href=&quot;#&quot;&gt;
+          &lt;div class=&quot;icon bg-icon-card-cash-expenses&quot;&gt;&lt;/div&gt;
+        &lt;/a&gt;
+      &lt;/div&gt;
+      &lt;div class=&quot;c-card__body&quot;&gt;
+        &lt;a href=&quot;#&quot;&gt;
+          &lt;h3 class=&quot;c-card__title&quot;&gt;Tax relief for dependent care&lt;/h3&gt;
+        &lt;/a&gt;
+        &lt;div class=&quot;c-card__summary hide-for-print&quot;&gt;
+          &lt;a href=&quot;#&quot;&gt;Learn more&lt;/a&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/article&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</pre></div>
+        </div>
+        <div class="p-4 bg-color-grey-lightest">
+          <h2 class="type-h3 m-0">Featured Programs</h2>
+          <h3 class="type-supplemental text-color-grey-mid">Each year, over 1 million New Yorkers use ACCESS NYC to get:</h3>
+          <div class="layout--columns-gutter">
+            <article class="c-card">
+              <div class="c-card__icon">
+                <a href="#">
+                  <div class="icon bg-icon-card-cash-expenses"></div>
+                </a>
+              </div>
+              <div class="c-card__body">
+                <a href="#">
+                  <h3 class="c-card__title">Tax relief for dependent care</h3>
+                </a>
+                <div class="c-card__summary hide-for-print">
+                  <a href="#">Learn more</a>
                 </div>
               </div>
-              <div class="mb-2">
-                <div class="code-block mb-1"><pre>&lt;article class=&quot;c-card items-stretch bg-color-grey-lightest p-2&quot;&gt;
-  &lt;div class=&quot;c-card__icon-large&quot;&gt;
-    &lt;a href=&quot;#&quot;&gt;
-      &lt;div class=&quot;icon bg-icon-card-cash-expenses&quot;&gt;&lt;/div&gt;
-    &lt;/a&gt;
-  &lt;/div&gt;
-  &lt;div class=&quot;c-card__body w-100&quot;&gt;
-    &lt;a href=&quot;#&quot;&gt;
-      &lt;h3 class=&quot;c-card__title&quot;&gt;Money for heat and utility expenses&lt;/h3&gt;
-    &lt;/a&gt;
-    &lt;p class=&quot;c-card__subtitle type-small&quot;&gt;Home Energy Assistance Program (HEAP)&lt;/p&gt;
-    &lt;p&gt;HEAP can help you pay for the costs of heating your home during the winter months.&lt;/p&gt;
-  &lt;/div&gt;
-  &lt;div class=&quot;flex flex-col justify-between hide-for-print&quot;&gt;
-    &lt;div class=&quot;pb-1&quot; style=&quot;width:232px&quot;&gt;
-      &lt;div&gt;
-        &lt;a class=&quot;btn btn-primary btn-small d-block&quot;&gt;Remove Program&lt;/a&gt;
-      &lt;/div&gt;
-    &lt;/div&gt;
-    &lt;div&gt;
-      &lt;a class=&quot;btn-toggle btn&quot; href=&quot;#&quot;&gt;Learn More&lt;/a&gt;
-    &lt;/div&gt;
-  &lt;/div&gt;
-&lt;/article&gt;</pre></div>
+            </article>
+            <article class="c-card">
+              <div class="c-card__icon">
+                <a href="#">
+                  <div class="icon bg-icon-card-cash-expenses"></div>
+                </a>
               </div>
-              <div class="mb-2">
-                <article class="c-card items-stretch bg-color-grey-lightest p-2">
-                  <div class="c-card__icon-large">
-                    <a href="#">
-                      <div class="icon bg-icon-card-cash-expenses"></div>
-                    </a>
-                  </div>
-                  <div class="c-card__body w-100">
-                    <a href="#">
-                      <h3 class="c-card__title">Money for heat and utility expenses</h3>
-                    </a>
-                    <p class="c-card__subtitle type-small">Home Energy Assistance Program (HEAP)</p>
-                    <p>HEAP can help you pay for the costs of heating your home during the winter months.</p>
-                  </div>
-                  <div class="flex flex-col justify-between hide-for-print">
-                    <div class="pb-1" style="width:232px">
-                      <div>
-                        <a class="btn btn-primary btn-small d-block">Remove Program</a>
-                      </div>
-                    </div>
-                    <div>
-                      <a class="btn-toggle btn" href="#">Learn More</a>
-                    </div>
-                  </div>
-                </article>
+              <div class="c-card__body">
+                <a href="#">
+                  <h3 class="c-card__title">Tax relief for dependent care</h3>
+                </a>
+                <div class="c-card__summary hide-for-print">
+                  <a href="#">Learn more</a>
+                </div>
               </div>
-            </div>
+            </article>
+            <article class="c-card">
+              <div class="c-card__icon">
+                <a href="#">
+                  <div class="icon bg-icon-card-cash-expenses"></div>
+                </a>
+              </div>
+              <div class="c-card__body">
+                <a href="#">
+                  <h3 class="c-card__title">Tax relief for dependent care</h3>
+                </a>
+                <div class="c-card__summary hide-for-print">
+                  <a href="#">Learn more</a>
+                </div>
+              </div>
+            </article>
+            <article class="c-card">
+              <div class="c-card__icon">
+                <a href="#">
+                  <div class="icon bg-icon-card-cash-expenses"></div>
+                </a>
+              </div>
+              <div class="c-card__body">
+                <a href="#">
+                  <h3 class="c-card__title">Tax relief for dependent care</h3>
+                </a>
+                <div class="c-card__summary hide-for-print">
+                  <a href="#">Learn more</a>
+                </div>
+              </div>
+            </article>
           </div>
         </div>
       </section>

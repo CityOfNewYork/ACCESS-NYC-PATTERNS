@@ -111,6 +111,26 @@
 }
 
 //
+// General layout for single column with x and y gutters
+//
+.layout--gutter {
+  > * {
+    width: 100%;
+    margin-bottom: $spacing-base;
+  }
+
+  > *:last-of-type {
+    margin-bottom: 0;
+  }
+
+  @media (min-width: $screen-tablet) {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+}
+
+//
 // Layout for single sidebar
 //
 .layout--sidebar {
