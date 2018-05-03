@@ -87,6 +87,13 @@ const modules = [
     outFile: 'question.css',
     precision: sass.precision,
     includePaths: sass.includePaths
+  },
+  {
+    file: './src/objects/search-box/_search-box.scss',
+    outDir: './dist/objects/search-box/',
+    outFile: 'search-box.css',
+    precision: sass.precision,
+    includePaths: sass.includePaths
   }
 ];
 

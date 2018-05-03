@@ -66,7 +66,7 @@ function fnMakeOtherFiles(dir, type, template, pattern, callback) {
         pattern
         .split('-').join(' ')
         .split('_').join(' ')
-        .charAt(0).toUpperCase()+pattern.slice(1)
+        .charAt(0).toUpperCase() + pattern.slice(1)
       );
     fs.writeFile(`${dir}/${file}`, content, err => {
       if (err) {

@@ -105,7 +105,8 @@
 // sliders, and charts. Not all Objects are required for each application and some
 // will require their own Objects. Object namespaces are prefixed with 'o-'.
 
-// @import 'o-modals';
+@import 'objects/banner/banner';
+@import 'objects/search-box/search-box';
 // objects - end
 
 /***********

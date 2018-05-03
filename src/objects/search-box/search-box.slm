@@ -1,0 +1,33 @@
+/
+/ Search-box
+/
+
+div class='o-search-box active static' id='search' aria-hidden='true'
+  div class='o-search-box__inner'
+    div class='usa-grid'
+      div class='usa-width-one-whole'
+
+        a class='o-search-box__close js-hide-search' href='#content'
+          svg class='icon icon-close'
+            use xlink:href='#icon-close'
+          span class='sr-only'  Close search
+
+        form class='o-search-box__form'
+          input name='lang' value='en' type='hidden'
+          label class='type-small' for='search-field' Search
+          div class='o-search-box__form-field-container'
+            input class='o-search-box__form-field' name='s' value='' placeholder='Search for programs or services' id='search-field' type='text'
+            button class='btn-text o-search-box__form-submit' type='submit'
+              span class='icon bg-icon-search'
+
+        div class='o-search-box__suggestions'
+          div class='o-search-box__suggestions-header'
+            h3 Programs
+            a class='link-more' href='#' see all programs
+          div class='o-search-box__suggestions-body'
+            div class='o-search-box__suggestions-item'
+              a href='#' Money to buy food
+            div class='o-search-box__suggestions-item'
+              a href='#' Cash help when you are in need
+            div class='o-search-box__suggestions-item'
+              a href='#' Low-cost and free health insurance

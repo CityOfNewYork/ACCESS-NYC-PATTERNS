@@ -33,3 +33,8 @@
     a class='${class_nav_item}' href='side-nav' Side Nav
     a class='${class_nav_item}' href='question' Question
 
+  nav class='${class_nav}'
+    span class='${class_nav_heading}' Objects;
+    a class='${class_nav_item}' href='banner' Banner
+    a class='${class_nav_item}' href='search-box' Search Box
+
