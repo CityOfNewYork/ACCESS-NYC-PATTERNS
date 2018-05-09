@@ -13,9 +13,10 @@ const escape = require('escape-html');
  * Constants
  */
 
-const source = Path.join(__dirname, '../', './src/');
-const views = Path.join(__dirname, '../', './src/views/');
-const dist = Path.join(__dirname, '../', './dist/');
+const source = Path.join(__dirname, '../', 'src/');
+const views = 'src/views/';
+const dist ='dist/';
+const whitelist = ['partials', 'layouts'];
 const locals = {
   vars: require('../config/variables'),
   site: require('../config/site')
@@ -25,20 +26,23 @@ const locals = {
  * Functions
  */
 
-
 /**
  * Write the html file to the distribution folder
  * @param  {string} filename - the filename to write
  * @param  {object} data     - the data to pass to the file
  */
-function fnWrite(filename, data) {
+function fnWrite(filename, viewsPath, data) {
   let rename = `${filename.split('.')[0]}.html`;
-  Fs.writeFile(`${dist}${rename}`, data, err => {
+  let distPath = viewsPath.replace(views, dist);
+  let distFile = Path.join(distPath, rename);
+
+  Fs.writeFile(distFile, data, err => {
     if (err) {
       console.log(`${alerts.error} ${err}`);
       return;
     }
-    console.log(`${alerts.success} Slm compiled to ./dist/${rename}`);
+    distFile = distFile.replace(Path.join(__dirname, '../'), '');
+    console.log(`${alerts.success} Slm compiled to ${distFile}`);
   });
 }
 
@@ -47,7 +51,7 @@ function fnWrite(filename, data) {
  * @param  {string} filename - the filename to write
  * @param  {object} data     - the data to pass to the file
  */
-function fnCode(filename, data) {
+function fnCode(filename, viewsPath, data) {
   let code = data.match(/code{{(.*)}}/g);
   if (code) {
     code.forEach(function(element, index) {
@@ -59,9 +63,9 @@ function fnCode(filename, data) {
       })(locals);
       data = data.replace(element, escape(pretty(compiled)));
     });
-    fnWrite(filename, data);
+    fnWrite(filename, viewsPath, data);
   } else {
-    fnWrite(filename, data);
+    fnWrite(filename, viewsPath, data);
   }
 }
 
@@ -70,8 +74,8 @@ function fnCode(filename, data) {
  * @param  {string} filename     - the path of the file
  * @param  {function} fnCallback - the callback function after read
  */
-function fnRead(filename, fnCallback) {
-  let path = `${views}${filename}`;
+function fnReadFile(filename, viewsPath, fnCallback) {
+  let path = `${viewsPath}/${filename}`;
   Fs.readFile(path, 'utf-8', (err, src) => {
     if (err) {
       console.log(`${alerts.error} ${err}`);
@@ -80,29 +84,42 @@ function fnRead(filename, fnCallback) {
     let compiled = slm(src, {
       filename: path
     })(locals);
-    fnCallback(filename, pretty(compiled));
+    fnCallback(filename, viewsPath, pretty(compiled));
   });
 }
 
 /**
  * Read the views directory
  * @param  {string} err   - the error from reading the directory, if any
- * @param  {array} files  - the list of files in the directory
+ * @param  {array}  files - the list of files in the directory
  */
-function fnReadDir(err, files) {
-  if (err) {
-    console.log(`${alerts.error} ${err}`);
-    return;
-  }
+function fnReadFiles(files, viewsPath) {
   for (let i = files.length - 1; i >= 0; i--) {
     if (files[i].indexOf('.slm') > -1) {
-      fnRead(files[i], fnCode);
+      fnReadFile(files[i], viewsPath, fnCode);
+    } else if (whitelist.indexOf(files[i]) === -1) {
+      fnReadDir(Path.join(viewsPath, files[i]));
     }
   }
+}
+
+/**
+ * [fnReadDir description]
+ * @param  {[type]} views [description]
+ * @return {[type]}       [description]
+ */
+function fnReadDir(viewsPath) {
+  Fs.readdir(viewsPath, 'utf-8', (err, files) => {
+    if (err) {
+      console.log(`${alerts.error} ${err}`);
+      return;
+    }
+    fnReadFiles(files, viewsPath);
+  });
 }
 
 /**
  * Init
  */
 
-Fs.readdir(views, 'utf-8', fnReadDir);
+fnReadDir(Path.join(__dirname, '../', views));
