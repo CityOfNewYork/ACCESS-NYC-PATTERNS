@@ -9,14 +9,15 @@ const Path = require('path');
  * Constants
  */
 
-const app = new Express();
-const port = process.env.PORT;
-const dist = Path.join(__dirname, '../', 'dist');
-const views = Path.join(__dirname, '../', 'src/views');
-const engine = 'slm';
-const locals = {
+const APP = new Express();
+const PORT = process.env.PORT;
+const DIST = Path.join(__dirname, '../', 'dist');
+const VIEWS = Path.join(__dirname, '../', 'src/views');
+const ENGINE = 'slm';
+const LOCALS = {
   vars: require('../config/variables'),
-  site: require('../config/site')
+  site: require('../config/site'),
+  views: VIEWS
 };
 
 /**
@@ -29,14 +30,14 @@ const locals = {
  * @param  {function} resolve - the callback function
  */
 function fnGet(request, resolve) {
-  resolve.render(request.params[0], locals);
+  resolve.render(request.params[0], LOCALS);
 }
 
 /**
  * The callback function to signal the app is running
  */
 function fnListenCallback() {
-  let p = app.get('port');
+  let p = APP.get('port');
   console.log(`Listening on port ${p}!`);
 }
 
@@ -44,9 +45,9 @@ function fnListenCallback() {
  * Init
  */
 
-app.set('views', views); // set the views directory
-app.set('view engine', engine); // set the template engine
-app.set('port', port); // set the port
-app.use(Express.static(dist)); // choose the static file directory
-app.get('/*', fnGet); // request handler
-app.listen(app.get('port'), fnListenCallback); // set the port to listen on
+APP.set('views', VIEWS); // set the views directory
+APP.set('view engine', ENGINE); // set the template engine
+APP.set('port', PORT); // set the port
+APP.use(Express.static(DIST)); // choose the static file directory
+APP.get('/*', fnGet); // request handler
+APP.listen(APP.get('port'), fnListenCallback); // set the port to listen on

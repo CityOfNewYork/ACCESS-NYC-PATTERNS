@@ -5,19 +5,20 @@
 const slm = require('slm').compile;
 const Path = require('path');
 const Fs = require('fs');
-const alerts = require('../config/alerts');
 const pretty = require('pretty');
 const escape = require('escape-html');
+const alerts = require('../config/alerts');
 
 /**
  * Constants
  */
 
-const source = Path.join(__dirname, '../', 'src/');
-const views = 'src/views/';
-const dist ='dist/';
-const whitelist = ['partials', 'layouts'];
-const locals = {
+const SOURCE = Path.join(__dirname, '../', 'src/');
+const BASE_PATH = `${SOURCE}/views`;
+const VIEWS = 'src/views/';
+const DIST ='dist/';
+const WHITELIST = ['partials', 'layouts'];
+const LOCALS = {
   vars: require('../config/variables'),
   site: require('../config/site')
 };
@@ -31,9 +32,9 @@ const locals = {
  * @param  {string} filename - the filename to write
  * @param  {object} data     - the data to pass to the file
  */
-function fnWrite(filename, viewsPath, data) {
+function fnWrite(filename, path, data) {
   let rename = `${filename.split('.')[0]}.html`;
-  let distPath = viewsPath.replace(views, dist);
+  let distPath = path.replace(VIEWS, DIST);
   let distFile = Path.join(distPath, rename);
 
   Fs.writeFile(distFile, data, err => {
@@ -51,21 +52,21 @@ function fnWrite(filename, viewsPath, data) {
  * @param  {string} filename - the filename to write
  * @param  {object} data     - the data to pass to the file
  */
-function fnCode(filename, viewsPath, data) {
+function fnCode(filename, path, data) {
   let code = data.match(/code{{(.*)}}/g);
   if (code) {
     code.forEach(function(element, index) {
       let file = element.replace('code{{', '').replace('}}', '').trim();
-      let path = `${source}${file}`;
+      let path = `${SOURCE}${file}`;
       let src = Fs.readFileSync(path, 'utf-8');
       let compiled = slm(src, {
         filename: path
-      })(locals);
+      })(LOCALS);
       data = data.replace(element, escape(pretty(compiled)));
     });
-    fnWrite(filename, viewsPath, data);
+    fnWrite(filename, path, data);
   } else {
-    fnWrite(filename, viewsPath, data);
+    fnWrite(filename, path, data);
   }
 }
 
@@ -74,17 +75,18 @@ function fnCode(filename, viewsPath, data) {
  * @param  {string} filename     - the path of the file
  * @param  {function} fnCallback - the callback function after read
  */
-function fnReadFile(filename, viewsPath, fnCallback) {
-  let path = `${viewsPath}/${filename}`;
-  Fs.readFile(path, 'utf-8', (err, src) => {
+function fnReadFile(filename, path, fnCallback) {
+  let fullPath = `${path}/${filename}`;
+  Fs.readFile(fullPath, 'utf-8', (err, src) => {
     if (err) {
       console.log(`${alerts.error} ${err}`);
       return;
     }
     let compiled = slm(src, {
-      filename: path
-    })(locals);
-    fnCallback(filename, viewsPath, pretty(compiled));
+      filename: fullPath,
+      basePath: BASE_PATH
+    })(LOCALS);
+    fnCallback(filename, path, pretty(compiled));
   });
 }
 
@@ -93,12 +95,12 @@ function fnReadFile(filename, viewsPath, fnCallback) {
  * @param  {string} err   - the error from reading the directory, if any
  * @param  {array}  files - the list of files in the directory
  */
-function fnReadFiles(files, viewsPath) {
+function fnReadFiles(files, path) {
   for (let i = files.length - 1; i >= 0; i--) {
     if (files[i].indexOf('.slm') > -1) {
-      fnReadFile(files[i], viewsPath, fnCode);
-    } else if (whitelist.indexOf(files[i]) === -1) {
-      fnReadDir(Path.join(viewsPath, files[i]));
+      fnReadFile(files[i], path, fnCode);
+    } else if (WHITELIST.indexOf(files[i]) === -1) {
+      fnReadDir(Path.join(path, files[i]));
     }
   }
 }
@@ -108,13 +110,13 @@ function fnReadFiles(files, viewsPath) {
  * @param  {[type]} views [description]
  * @return {[type]}       [description]
  */
-function fnReadDir(viewsPath) {
-  Fs.readdir(viewsPath, 'utf-8', (err, files) => {
+function fnReadDir(path) {
+  Fs.readdir(path, 'utf-8', (err, files) => {
     if (err) {
       console.log(`${alerts.error} ${err}`);
       return;
     }
-    fnReadFiles(files, viewsPath);
+    fnReadFiles(files, path);
   });
 }
 
@@ -122,4 +124,4 @@ function fnReadDir(viewsPath) {
  * Init
  */
 
-fnReadDir(Path.join(__dirname, '../', views));
+fnReadDir(Path.join(__dirname, '../', VIEWS));
