@@ -1,5 +1,5 @@
 / Layout
-= extend('layouts/default')
+= extend('/layouts/default')
 
 / Component
 = partial('../components/accordion/accordion.slm')
@@ -7,14 +7,14 @@
 - title = 'Accordion'
 
 / Styles
-= partial('partials/styles.slm')
+= partial('/partials/styles.slm')
 / Links
-= partial('partials/links.slm')
+= partial('/partials/links.slm')
 
 / Partials
-= partial('partials/head.mixin.slm')
-= partial('partials/header.mixin.slm')
-= partial('partials/nav.mixin.slm')
+= partial('/partials/head.mixin.slm')
+= partial('/partials/header.mixin.slm')
+= partial('/partials/nav.mixin.slm')
 
 / Content blocks
 = content('head')
