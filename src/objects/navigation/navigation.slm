@@ -2,47 +2,47 @@
 / Navigation
 /
 
-nav class='site-nav'
+nav class='o-navigation'
   div class='logo-access'
     a href='/'
       svg class='icon icon-logo-full'
         use xlink:href='#icon-logo-full'
       span class='sr-only' Access NYC
 
-  div class='site-nav-toggle'
+  div class='o-navigation__toggle'
     a class='js-show-nav' href='#mobile-nav' Menu
 
-  ul class='nav-list site-desktop-nav'
+  ul class='nav-list c-desktop-nav'
     li
-      a href='/eligibility' Am I eligible?
+      a href='/eligibility' class='active' Am I eligible?
     li
       a href='/programs' Programs
     li
       a href='/locations' Find help
 
-  div class='site-search-toggle'
+  div class='o-navigation__search-toggle'
     a class='js-toggle-search' href='#search'
       svg class='icon icon-search'
         use xlink:href='#icon-search'
       | Search
 
-  div class='site-mobile-nav' id='mobile-nav'
-    a class='site-nav-close js-hide-nav' href='#content'
+  div#mobile-nav class='c-mobile-nav'
+    a class='c-mobile-nav__close js-hide-nav' href='#content'
       | close &amp; return to site
       svg class='icon icon-close'
         use xlink:href='#icon-close'
 
-    div class='site-mobile-nav-inner'
-      h4 class='site-mobile-nav-header' Get help now
-      ul class='nav-list'
+    div class='c-mobile-nav__inner'
+      h4 class='c-mobile-nav__header' Get help now
+      ul class='c-mobile-nav__list'
         li
-          a href='/eligibility' Am I eligible?
+          a href='/eligibility' class='active' Am I eligible?
         li
           a href='/programs' Programs
         li
           a href='/locations' Find help
 
-      div class='site-search-toggle'
+      div class='c-mobile-nav__search-toggle'
         a href='/?s='
           svg class='icon icon-search'
             use xlink:href='#icon-search'

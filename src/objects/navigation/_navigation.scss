@@ -3,11 +3,15 @@
  */
 
 // Dependencies
-// @import 'config/variables';
+@import 'config/colors';
+@import 'config/direction';
+@import 'config/dimensions';
+@import 'config/fonts';
+@import 'config/media';
+@import 'config/typography';
 
 // Declarations
-// .o-navigation { }
-.site-nav {
+.o-navigation {
   align-items: center;
   display: flex;
   background: $color-blue-dark;
@@ -18,55 +22,23 @@
     a {
       color: $color-white;
     }
-
     .icon-logo-full {
-      @include size(135px 23px);
+      width: 135px;
+      height: 23px;
       display: block;
 
       @include media($bp-desktop-up) {
         .home & {
-          @include size(270px 45px);
+          width: 270px;
+          height: 45px;
         }
       }
     }
   }
-
-  .nav-list {
-    @include typography-nav();
-    list-style: none;
-    margin: 0;
-    padding: 0;
-  }
-
-  .site-desktop-nav {
-    flex: 1 1 auto;
-    display: none;
-    text-align: $text-direction-end;
-
-    @include media($bp-desktop-up) {
-      display: block;
-    }
-
-    li {
-      display: inline-block;
-      margin-#{$text-direction-start}: 1em;
-    }
-  }
 }
 
-.site-desktop-nav {
-  a {
-    &:link,
-    &:visited,
-    &:hover,
-    &:active {
-      color: $color-white;
-    }
-  }
-}
-
-.site-nav-toggle,
-.site-search-toggle {
+.o-navigation__toggle,
+.o-navigation__search-toggle {
   @include typography-nav();
   margin-#{$text-direction-start}: 1em;
 
@@ -84,104 +56,19 @@
   }
 }
 
-.site-nav-toggle {
+.o-navigation__toggle {
   flex: 1 1 auto;
   text-align: $text-direction-end;
-
   @include media($bp-desktop-up) {
     display: none;
   }
 }
 
-.site-mobile-nav {
-  transform: translateX(0);
-  transition: transform .2s ease-in;
-  @if $text-direction == 'rtl' {
-    // @include position(fixed, 0 null 0 -300px);
-    position: fixed;
-    top: 0;
-    bottom: 0;
-    right: 0;
-    padding: $spacing-base $spacing-base $spacing-base 0;
-  } @else {
-    // @include position(fixed, 0 -300px 0 null);
-    position: fixed;
-    top: 0;
-    left: 0;
-    padding: $spacing-base 0 $spacing-base $spacing-base;
-  }
-  background: $color-grey-lightest;
-  color: $color-grey-dark;
-  display: block;
-  width: 300px;
-  z-index: 10;
-
-  @include media($bp-desktop-up) {
-    display: none;
-  }
-
-  a {
-    &.site-nav-close {
-      color: $color-blue-dark;
-      margin-#{$text-direction-end}: $spacing-base;
-      margin-bottom: $spacing-base;
-      text-decoration: none;
-
-      .icon {
-        margin-#{$text-direction-start}: .3em;
-        vertical-align: middle;
-      }
-    }
-  }
-
-  .nav-active & {
-    @if $text-direction == 'rtl' {
-      transform: translateX(100%)
-    } @else {
-      transform: translateX(-100%)
-    }
-  }
-
-  .nav-list {
-    li {
-      border-bottom: 1px solid $color-grey-dark;
-      padding: $spacing-base 0;
-    }
-  }
-
-  .site-search-toggle {
-    border-bottom: 1px solid $color-grey-dark;
-    margin-left: 0;
-    padding: $spacing-base 0;
-
-    a {
-      color: $color-blue;
-      text-decoration: underline;
-
-      svg {
-        text-decoration: none;
-      }
-
-      &:hover,
-      &:active,
-      &:focus {
-        color: $color-blue-dark;
-      }
-    }
-  }
-}
-
-.nav-list {
-  .active {
-    font-weight: $font-weight-bold;
-  }
-}
-
-.nav-active {
+// active state and overlay
+.o-navigation-overlay.o-navigation\@active {
   overflow: hidden;
 
   &::before {
-    // @include position(absolute, 0 0 0 0);
     position: absolute;
     top: 0;
     left: 0;
@@ -199,7 +86,122 @@
   }
 }
 
-.site-mobile-nav-inner {
+.c-desktop-nav {
+  @include typography-nav();
+  list-style: none;
+  text-align: $text-direction-end;
+  flex: 1 1 auto;
+  margin: 0;
+  padding: 0;
+
+  display: none;
+  @include media($bp-desktop-up) {
+    display: block;
+  }
+
+  li {
+    display: inline-block;
+    margin-#{$text-direction-start}: 1em;
+  }
+
+  a {
+    &:link,
+    &:visited,
+    &:hover,
+    &:active {
+      color: $color-white;
+    }
+  }
+
+  .active {
+    font-weight: $font-weight-bold;
+  }
+}
+
+.c-mobile-nav {
+  transform: translateX(0);
+  transition: transform .2s ease-in;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  @if $text-direction == 'rtl' {
+    left: -300px;
+    padding: $spacing-base $spacing-base $spacing-base 0;
+  } @else {
+    right: -300px;
+    padding: $spacing-base 0 $spacing-base $spacing-base;
+  }
+  background: $color-grey-lightest;
+  color: $color-grey-dark;
+  display: block;
+  width: 300px;
+  z-index: 10;
+
+  @include media($bp-desktop-up) {
+    display: none;
+  }
+}
+
+// Active state for the mobile navigation
+.o-navigation\@active .c-mobile-nav {
+  @if $text-direction == 'rtl' {
+    transform: translateX(100%)
+  } @else {
+    transform: translateX(-100%)
+  }
+}
+
+.c-mobile-nav__search-toggle {
+  @include typography-nav();
+  margin-#{$text-direction-start}: 1em;
+  margin-left: 0;
+  padding: $spacing-base 0;
+  border-bottom: 1px solid $color-grey-dark;
+
+  a {
+    color: $color-blue;
+    text-decoration: underline;
+
+    &:hover,
+    &:active,
+    &:focus {
+      color: $color-blue-dark;
+    }
+  }
+
+  svg {
+    text-decoration: none;
+    fill: currentColor;
+  }
+
+  .icon {
+    margin-#{$text-direction-end}: .3em;
+    vertical-align: middle;
+  }
+}
+
+.c-mobile-nav__close {
+  @include typography-nav();
+  font-style: italic;
+  text-align: $text-direction-end;
+  text-decoration: none;
+
+  color: $color-blue-dark;
+  margin-#{$text-direction-end}: $spacing-base;
+  margin-bottom: $spacing-base;
+  display: block;
+
+  @include media($bp-desktop-up) {
+    display: none;
+  }
+
+  .icon {
+    margin-#{$text-direction-start}: .3em;
+    vertical-align: middle;
+  }
+}
+
+.c-mobile-nav__inner {
   @if $text-direction == 'rtl' {
     padding: $spacing-base 0 2*$spacing-base $spacing-base;
   } @else {
@@ -207,19 +209,25 @@
   }
   height: 100%;
   overflow-y: scroll;
-
-  .site-mobile-nav-header {
-    margin-bottom: 0;
-  }
 }
 
-.site-nav-close {
+.c-mobile-nav__header {
+  margin-bottom: 0;
+}
+
+.c-mobile-nav__list {
   @include typography-nav();
-  display: block;
-  font-style: italic;
-  text-align: $text-direction-end;
+  list-style: none;
+  margin: 0;
+  padding: 0;
 
-  @include media($bp-desktop-up) {
-    display: none;
+  li {
+    border-bottom: 1px solid $color-grey-dark;
+    padding: $spacing-base 0;
+  }
+
+  .active {
+    font-weight: $font-weight-bold;
   }
 }
+

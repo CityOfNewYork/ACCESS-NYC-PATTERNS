@@ -101,6 +101,13 @@ const modules = [
     outFile: 'footer.css',
     precision: sass.precision,
     includePaths: sass.includePaths
+  },
+  {
+    file: './src/objects/navigation/_navigation.scss',
+    outDir: './dist/objects/navigation/',
+    outFile: 'navigation.css',
+    precision: sass.precision,
+    includePaths: sass.includePaths
   }
 ];
 

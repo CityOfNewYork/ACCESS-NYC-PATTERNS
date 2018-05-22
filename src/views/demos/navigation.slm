@@ -1,0 +1,20 @@
+/ Layout
+= extend('/layouts/demos')
+
+/ Styles
+= partial('/partials/styles.slm')
+/ Links
+= partial('/partials/links.slm')
+
+/ Partials
+= partial('/partials/head.mixin.slm')
+= partial('/partials/header.mixin.slm')
+= partial('/partials/nav.mixin.slm')
+
+/ Content blocks
+= content('head')
+  = mixin('head', 'Navigation Demo')
+
+= content('content')
+  div class='o-navigation-overlay o-navigation@active'
+    = partial('../../objects/navigation/navigation.slm')
