@@ -10,40 +10,31 @@ nav class='o-navigation'
       span class='sr-only' Access NYC
 
   div class='o-navigation__toggle'
-    a class='js-show-nav' href='#mobile-nav' Menu
+    a href='#c-mobile-nav' Menu
 
-  ul class='nav-list c-desktop-nav'
-    li
-      a href='/eligibility' class='active' Am I eligible?
-    li
-      a href='/programs' Programs
-    li
-      a href='/locations' Find help
-
-  div class='o-navigation__search-toggle'
-    a class='js-toggle-search' href='#search'
+  nav class='nav-inline'
+    a href='#' class='active' Am I eligible?
+    a href='#' Programs
+    a href='#' Find help
+    a href='#search' class='td-inherit'
       svg class='icon icon-search'
         use xlink:href='#icon-search'
       | Search
 
-  div#mobile-nav class='c-mobile-nav'
-    a class='c-mobile-nav__close js-hide-nav' href='#content'
+  div#c-mobile-nav class='c-mobile-nav c-mobile-nav@active'
+    a class='c-mobile-nav__close js-hide-nav' href='#c-mobile-nav'
       | close &amp; return to site
       svg class='icon icon-close'
         use xlink:href='#icon-close'
 
     div class='c-mobile-nav__inner'
       h4 class='c-mobile-nav__header' Get help now
-      ul class='c-mobile-nav__list'
-        li
-          a href='/eligibility' class='active' Am I eligible?
-        li
-          a href='/programs' Programs
-        li
-          a href='/locations' Find help
-
-      div class='c-mobile-nav__search-toggle'
-        a href='/?s='
+      nav class='nav-block'
+        a href='#' class='active' Am I eligible?
+        a href='#' Programs
+        a href='#' Find help
+        a href='#search' class='td-inherit'
           svg class='icon icon-search'
             use xlink:href='#icon-search'
           | Search
+

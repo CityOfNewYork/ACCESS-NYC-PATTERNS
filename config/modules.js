@@ -75,6 +75,13 @@ const modules = [
     includePaths: sass.includePaths
   },
   {
+    file: './src/components/mobile-nav/_mobile-nav.scss',
+    outDir: './dist/components/mobile-nav/',
+    outFile: 'mobile-nav.css',
+    precision: sass.precision,
+    includePaths: sass.includePaths
+  },
+  {
     file: './src/components/share-links/_share-links.scss',
     outDir: './dist/components/share-links/',
     outFile: 'share-links.css',

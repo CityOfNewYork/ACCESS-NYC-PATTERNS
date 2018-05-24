@@ -1,0 +1,41 @@
+/**
+ * Overlay
+ */
+
+// Dependencies
+@import 'config/colors';
+@import 'config/media';
+
+// Declarations
+.overlay {
+  overflow: hidden;
+
+  &::before {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: $color-black;
+    content: '';
+    opacity: .6;
+    z-index: 9;
+
+    display: none;
+
+    @include media($bp-desktop-up) {
+      display: none;
+    }
+  }
+}
+
+.overlay\@active {
+  &::before {
+    display: block;
+    @include media($bp-desktop-up) {
+      display: none;
+    }
+  }
+}
+
+

@@ -1,0 +1,70 @@
+/**
+ * Nav
+ */
+
+// Dependencies
+@import 'config/fonts';
+@import 'config/colors';
+@import 'config/typography';
+@import 'config/media';
+@import 'config/direction';
+@import 'config/dimensions';
+
+// Declarations
+@mixin nav-icon {
+  svg {
+    text-decoration: none;
+    fill: currentColor;
+  }
+
+  .icon {
+    margin-#{$text-direction-end}: .3em;
+    vertical-align: middle;
+    margin-top: -2px
+  }
+}
+
+.nav-inline {
+  @include typography-nav();
+  list-style: none;
+  text-align: $text-direction-end;
+  flex: 1 1 auto;
+  margin: 0;
+  padding: 0;
+
+  a {
+    display: inline-block;
+    margin-#{$text-direction-start}: 1em;
+    &:link,
+    &:visited,
+    &:hover,
+    &:active {
+      color: $color-white;
+    }
+  }
+
+  .active {
+    font-weight: $font-weight-bold;
+  }
+
+  @include nav-icon;
+}
+
+.nav-block {
+  @include typography-nav();
+  list-style: none;
+  margin: 0;
+  padding: 0;
+
+  a {
+    display: block;
+    border-bottom: 1px solid $color-grey-dark;
+    padding: $spacing-base 0
+  }
+
+  .active {
+    font-weight: $font-weight-bold;
+  }
+
+  @include nav-icon;
+}

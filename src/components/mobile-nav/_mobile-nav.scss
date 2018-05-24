@@ -1,0 +1,80 @@
+/**
+ * Mobile-nav
+ */
+
+// Dependencies
+@import 'config/colors';
+@import 'config/direction';
+@import 'config/dimensions';
+@import 'config/fonts';
+@import 'config/media';
+@import 'config/typography';
+
+// Declarations
+.c-mobile-nav {
+  transform: translateX(0);
+  transition: transform .2s ease-in;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  @if $text-direction == 'rtl' {
+    left: -300px;
+    padding: $spacing-base $spacing-base $spacing-base 0;
+  } @else {
+    right: -300px;
+    padding: $spacing-base 0 $spacing-base $spacing-base;
+  }
+  background: $color-grey-lightest;
+  color: $color-grey-dark;
+  display: block;
+  width: 300px;
+  z-index: 10;
+
+  @include media($bp-desktop-up) {
+    display: none;
+  }
+}
+
+.c-mobile-nav__close {
+  @include typography-nav();
+  font-style: italic;
+  text-align: $text-direction-end;
+  text-decoration: none;
+
+  color: $color-blue-dark;
+  margin-#{$text-direction-end}: $spacing-base;
+  margin-bottom: $spacing-base;
+  display: block;
+
+  @include media($bp-desktop-up) {
+    display: none;
+  }
+
+  .icon {
+    margin-#{$text-direction-start}: .3em;
+    vertical-align: middle;
+  }
+}
+
+.c-mobile-nav__inner {
+  @if $text-direction == 'rtl' {
+    padding: $spacing-base 0 2*$spacing-base $spacing-base;
+  } @else {
+    padding: $spacing-base $spacing-base 2*$spacing-base 0;
+  }
+  height: 100%;
+  overflow-y: scroll;
+}
+
+.c-mobile-nav__header {
+  margin-bottom: 0;
+}
+
+// Active state for the mobile navigation
+.c-mobile-nav\@active {
+  @if $text-direction == 'rtl' {
+    transform: translateX(100%)
+  } @else {
+    transform: translateX(-100%)
+  }
+}

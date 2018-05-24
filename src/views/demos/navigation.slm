@@ -16,5 +16,5 @@
   = mixin('head', 'Navigation Demo')
 
 = content('content')
-  div class='o-navigation-overlay o-navigation@active'
+  div class='overlay overlay@active'
     = partial('../../objects/navigation/navigation.slm')
