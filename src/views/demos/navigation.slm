@@ -7,7 +7,7 @@
 = partial('/partials/links.slm')
 
 / Partials
-= partial('/partials/head.mixin.slm')
+= partial('/partials/head-demos.mixin.slm')
 = partial('/partials/header.mixin.slm')
 = partial('/partials/nav.mixin.slm')
 
