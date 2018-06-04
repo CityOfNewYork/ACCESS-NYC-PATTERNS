@@ -6,7 +6,7 @@
     <meta content="IE=edge" http-equiv="X-UA-Compatible" />
     <meta content="width=device-width, initial-scale=1" name="viewport" />
     <link href="/styles/site-default.css" rel="stylesheet" />
-    <title>Navigation Demo</title>
+    <title>Nav</title>
     <noscript>
       <style>
         body {
@@ -379,48 +379,89 @@
         </symbol>
       </svg>
     </div>
-    <main class="min-h-screen bg-color-white" id="demo-content">
-      <div class="overlay overlay@active">
-        <nav class="o-navigation">
-          <div class="logo-access">
-            <a href="/">
-              <svg class="icon icon-logo-full">
-                <use xlink:href="#icon-logo-full"></use>
-              </svg><span class="sr-only">Access NYC</span></a>
-          </div>
-          <div class="o-navigation__toggle">
-            <a href="#c-mobile-nav">Menu</a>
-          </div>
-          <nav class="nav-inline">
-            <a class="active" href="#">Am I eligible?</a>
-            <a href="#">Programs</a>
-            <a href="#">Find help</a>
-            <a class="td-inherit" href="#search">
-              <svg class="icon icon-search">
-                <use xlink:href="#icon-search"></use>
-              </svg>Search</a>
-          </nav>
-          <div class="c-mobile-nav c-mobile-nav@active" id="c-mobile-nav">
-            <a class="c-mobile-nav__close js-hide-nav" href="#c-mobile-nav">close &amp; return to site
-              <svg class="icon icon-close">
-                <use xlink:href="#icon-close"></use>
-              </svg>
-            </a>
-            <div class="c-mobile-nav__inner">
-              <h4 class="c-mobile-nav__header">Get help now</h4>
-              <nav class="nav-block">
-                <a class="active" href="#">Am I eligible?</a>
-                <a href="#">Programs</a>
-                <a href="#">Find help</a>
-                <a class="td-inherit" href="#search">
-                  <svg class="icon icon-search">
-                    <use xlink:href="#icon-search"></use>
-                  </svg>Search</a>
-              </nav>
+    <header class="layout--sidebar screen-tablet:flex">
+      <div class="flex items-center justify-center bg-color-blue-dark text-base-white screen-tablet:w-64 p-3 screen-tablet:p-4">
+        <h1 class="m-0 p-0"><span class="hidden">ACCESS NYC</span>
+          <svg aria-hidden="true" class="icon-logo-full--large text-color-white">
+            <use xlink:href="#icon-logo-full"></use>
+          </svg>
+        </h1>
+      </div>
+      <div class="flex-1 flex flex-col content-center bg-color-grey-lightest screen-tablet:border-b-4 border-color-grey-light justify-center p-3 screen-tablet:p-4">
+        <h2>Pattern Library</h2>
+        <a href="#main-content">Skip to main content</a>
+      </div>
+      <div class="flex flex-col content-center justify-center bg-color-grey-lightest screen-tablet:border-b-4 border-color-grey-light px-3 pb-3 screen-tablet:p-4">
+        <h3 class="mr-3">
+          <a class="border-2 py-1 px-2 inline rounded-lg" href="https://github.com/CityOfNewYork/ACCESS-NYC-PATTERNS">Pre-release v0.0.3</a>
+        </h3>
+      </div>
+    </header>
+    <main class="layout--sidebar screen-tablet:flex items-stretch m-0 p-0 min-h-screen screen-tablet:border-b-4 border-color-grey-light" id="main-content">
+      <aside class="bg-secondary-white py-2 px-3">
+        <nav class="pb-2">
+          <a class="screen-tablet:block screen-tablet:border-b border-color-white p-2 pr-2 screen-tablet:p-2" href="index">Home</a>
+          <a class="screen-tablet:block screen-tablet:border-b border-color-white p-2" href="https://github.com/CityOfNewYork/ACCESS-NYC-PATTERNS">Source</a>
+        </nav>
+        <nav class="pb-2"><span class="screen-tablet:block pb-1">Elements;</span>
+          <a class="screen-tablet:block screen-tablet:border-b border-color-white p-2" href="colors">Colors</a>
+          <a class="screen-tablet:block screen-tablet:border-b border-color-white p-2" href="font-families">Fonts</a>
+          <a class="screen-tablet:block screen-tablet:border-b border-color-white p-2" href="typography">Typography</a>
+          <a class="screen-tablet:block screen-tablet:border-b border-color-white p-2" href="exposition">Exposition</a>
+          <a class="screen-tablet:block screen-tablet:border-b border-color-white p-2" href="icons">Icons</a>
+          <a class="screen-tablet:block screen-tablet:border-b border-color-white p-2" href="links">Links</a>
+          <a class="screen-tablet:block screen-tablet:border-b border-color-white p-2" href="buttons">Buttons</a>
+          <a class="screen-tablet:block screen-tablet:border-b border-color-white p-2" href="checkboxes">Checkboxes</a>
+          <a class="screen-tablet:block screen-tablet:border-b border-color-white p-2" href="radios">Radios</a>
+          <a class="screen-tablet:block screen-tablet:border-b border-color-white p-2" href="toggles">Toggles</a>
+          <a class="screen-tablet:block screen-tablet:border-b border-color-white p-2" href="selects">Selects</a>
+          <a class="screen-tablet:block screen-tablet:border-b border-color-white p-2" href="tables">Tables</a>
+          <a class="screen-tablet:block screen-tablet:border-b border-color-white p-2" href="tooltips">Tooltips</a>
+          <a class="screen-tablet:block screen-tablet:border-b border-color-white p-2" href="program-labels">Program Labels</a>
+        </nav>
+        <nav class="pb-2"><span class="screen-tablet:block pb-1">Components;</span>
+          <a class="screen-tablet:block screen-tablet:border-b border-color-white p-2" href="accordion">Accordion</a>
+          <a class="screen-tablet:block screen-tablet:border-b border-color-white p-2" href="alert-box">Alert Box</a>
+          <a class="screen-tablet:block screen-tablet:border-b border-color-white p-2" href="card">Card</a>
+          <a class="screen-tablet:block screen-tablet:border-b border-color-white p-2" href="checklist">Checklist</a>
+          <a class="screen-tablet:block screen-tablet:border-b border-color-white p-2" href="disclaimer">Disclaimer</a>
+          <a class="screen-tablet:block screen-tablet:border-b border-color-white p-2" href="header">Header</a>
+          <a class="screen-tablet:block screen-tablet:border-b border-color-white p-2" href="filter">Filter</a>
+          <a class="screen-tablet:block screen-tablet:border-b border-color-white p-2" href="side-nav">Side Nav</a>
+          <a class="screen-tablet:block screen-tablet:border-b border-color-white p-2" href="question">Question</a>
+        </nav>
+        <nav class="pb-2"><span class="screen-tablet:block pb-1">Objects;</span>
+          <a class="screen-tablet:block screen-tablet:border-b border-color-white p-2" href="announcements">Announcements</a>
+          <a class="screen-tablet:block screen-tablet:border-b border-color-white p-2" href="banner">Banner</a>
+          <a class="screen-tablet:block screen-tablet:border-b border-color-white p-2" href="card-list">Card Lists</a>
+          <a class="screen-tablet:block screen-tablet:border-b border-color-white p-2" href="search-box">Search Box</a>
+          <a class="screen-tablet:block screen-tablet:border-b border-color-white p-2" href="footer">Footer</a>
+          <a class="screen-tablet:block screen-tablet:border-b border-color-white p-2" href="navigation">Navigation</a>
+        </nav>
+      </aside>
+      <article class="bg-color-white py-2 px-4 screen-desktop:px-6">
+        <h1 class="px-1">Nav</h1>
+        <section class="pb-4" id="default-styling">
+          <header class="pt-1 px-1 border-b border-color-grey-light mb-3">
+            <h2>Default Styling</h2>
+          </header>
+          <div class="block screen-tablet:flex">
+            <div class="flex-1">
+              <div class="pb-3 pl-1 pr-4">
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis
+                  aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+              </div>
+            </div>
+            <div class="flex-1 screen-tablet:max-w-1/2">
+              <div class="pb-4 screen-tablet:px-1">
+                <div class="mb-2">
+                  <div class="code-block mb-1"><pre></pre></div>
+                </div>
+              </div>
             </div>
           </div>
-        </nav>
-      </div>
+        </section>
+      </article>
     </main>
     <footer class="py-4 text-center bg-color-blue-dark text-color-white links-invert">
       <p class="m-0">Maintained by&nbsp;
