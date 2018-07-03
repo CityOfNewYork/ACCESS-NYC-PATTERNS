@@ -77,10 +77,12 @@ const variables = {
     'font-size-xsmall': '0.54rem',
     'font-size-small': '0.72rem',
     'font-size-medium': '1.09rem',
+    'font-size-normal': '1rem',
     'font-size-large': '1.25rem',
     'font-size-larger': '1.45rem',
     'font-size-largest': '1.81rem',
-    'font-size-jumbo': '2.54rem'
+    'font-size-jumbo': '2.54rem',
+    'font-size-print': '16px'
   },
   colors: {
     'color-black': '#000000',

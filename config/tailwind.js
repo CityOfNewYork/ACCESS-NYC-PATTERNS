@@ -18,7 +18,8 @@ module.exports = {
     'screen-desktop': `${variables.screens['screen-desktop']}px`,
     'screen-tablet': `${variables.screens['screen-tablet']}px`,
     'screen-mobile': `${variables.screens['screen-mobile']}px`,
-    'screen-sm-mobile': `${variables.screens['screen-desktop']}px`
+    'screen-sm-mobile': `${variables.screens['screen-desktop']}px`,
+    'print': {'raw': 'print'}
   },
   fonts: variables.fonts,
   textSizes: variables.fontSizes,
