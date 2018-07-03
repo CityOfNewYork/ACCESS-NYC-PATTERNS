@@ -9,22 +9,20 @@ nav class='o-navigation'
         use xlink:href='#icon-logo-full'
       span class='sr-only' Access NYC
 
-  div class='o-navigation__toggle'
-    a href='#c-mobile-nav' Menu
-
   nav class='nav-inline'
-    a href='#' class='active' Am I eligible?
-    a href='#' Programs
-    a href='#' Find help
-    a href='#search' class='td-inherit'
-      svg class='icon icon-search'
+    a class='screen-desktop:hidden' href='#c-mobile-nav' Menu
+    a class='hidden screen-desktop:inline active' href='#' Am I eligible?
+    a class='hidden screen-desktop:inline' href='#' Programs
+    a class='hidden screen-desktop:inline' href='#' Find help
+    a class='td-inherit o-navigation__search' href='#search'
+      svg class='icon icon-search' aria-hidden='true'
         use xlink:href='#icon-search'
       | Search
 
   div#c-mobile-nav class='c-mobile-nav c-mobile-nav@active'
     a class='c-mobile-nav__close js-hide-nav' href='#c-mobile-nav'
       | close &amp; return to site
-      svg class='icon icon-close'
+      svg class='icon icon-close' aria-hidden='true'
         use xlink:href='#icon-close'
 
     div class='c-mobile-nav__inner'

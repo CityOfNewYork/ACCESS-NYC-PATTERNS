@@ -35,13 +35,6 @@
       }
     }
   }
-
-  .nav-inline {
-    display: none;
-    @include media($bp-desktop-up) {
-      display: block;
-    }
-  }
 }
 
 .o-navigation__toggle,

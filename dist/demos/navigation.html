@@ -388,21 +388,19 @@
                 <use xlink:href="#icon-logo-full"></use>
               </svg><span class="sr-only">Access NYC</span></a>
           </div>
-          <div class="o-navigation__toggle">
-            <a href="#c-mobile-nav">Menu</a>
-          </div>
           <nav class="nav-inline">
-            <a class="active" href="#">Am I eligible?</a>
-            <a href="#">Programs</a>
-            <a href="#">Find help</a>
-            <a class="td-inherit" href="#search">
-              <svg class="icon icon-search">
+            <a class="screen-desktop:hidden" href="#c-mobile-nav">Menu</a>
+            <a class="hidden screen-desktop:inline active" href="#">Am I eligible?</a>
+            <a class="hidden screen-desktop:inline" href="#">Programs</a>
+            <a class="hidden screen-desktop:inline" href="#">Find help</a>
+            <a class="td-inherit o-navigation__search" href="#search">
+              <svg aria-hidden="true" class="icon icon-search">
                 <use xlink:href="#icon-search"></use>
               </svg>Search</a>
           </nav>
           <div class="c-mobile-nav c-mobile-nav@active" id="c-mobile-nav">
             <a class="c-mobile-nav__close js-hide-nav" href="#c-mobile-nav">close &amp; return to site
-              <svg class="icon icon-close">
+              <svg aria-hidden="true" class="icon icon-close">
                 <use xlink:href="#icon-close"></use>
               </svg>
             </a>
