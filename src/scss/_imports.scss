@@ -10,27 +10,6 @@
 // if @font-face is used it needs to be first imported first.
 @import 'elements/fonts/fonts';
 
-/************
- * Normalize
- ************/
-
-// This injects Tailwind's base styles, which is a combination of
-// Normalize.css and some additional base styles.
-// https://github.com/tailwindcss/tailwindcss/blob/master/css/preflight.css
-
-// @tailwind preflight;
-
-/*******
- * Core
- *******/
-
-// Core mixins, variables, and utilities not stored in config.js. Mixin files should
-// be postfixed with '.mixin.scss' and variables should be postfixed with '.vars.scss'.
-// Most core files are dependencies for components and utilites and don't need to be
-// included here. All dependencies should be referenced where they are needed.
-
-// @import 'core/base';
-
 /************************
  * External Dependencies
  ************************/
@@ -115,15 +94,8 @@
 @import 'objects/footer/footer';
 // objects - end
 
-/***********
-* Utilities
-************/
+/************
+ * Utilities
+ ************/
 
-@import 'utilities/accessibility';
-@import 'utilities/inherit';
-@import 'utilities/language';
-@import 'utilities/statuses';
-
-// This injects all of Tailwind's utility classes, generated based on your
-// config file. View docs for usage; https://tailwindcss.com/docs/
-@tailwind utilities;
+@import 'utilities';

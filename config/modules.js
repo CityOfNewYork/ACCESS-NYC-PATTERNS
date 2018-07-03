@@ -26,6 +26,13 @@ const modules = [
     includePaths: sass.includePaths
   },
   {
+    file: './src/scss/_utilities.scss',
+    outDir: './dist/styles/',
+    outFile: 'utilities.css',
+    precision: sass.precision,
+    includePaths: sass.includePaths
+  },
+  {
     file: './src/components/accordion/_accordion.scss',
     outDir: './dist/components/accordion/',
     outFile: 'accordion.css',

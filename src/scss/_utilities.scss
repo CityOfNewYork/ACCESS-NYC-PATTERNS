@@ -1,0 +1,14 @@
+/************
+ * Utilities
+ ************/
+
+// This is for exporting all and only the utilities as a module.
+
+@import 'utilities/accessibility';
+@import 'utilities/inherit';
+@import 'utilities/language';
+@import 'utilities/statuses';
+
+// This injects all of Tailwind's utility classes, generated based on your
+// config file. View docs for usage; https://tailwindcss.com/docs/
+@tailwind utilities;
