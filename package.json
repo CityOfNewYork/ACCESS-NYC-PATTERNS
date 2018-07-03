@@ -1,6 +1,6 @@
 {
   "name": "access-nyc-patterns",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "description": "",
   "author": "Mayor's Office for Economic Opportunity",
   "license": "GPL-3.0+",
@@ -25,6 +25,7 @@
     "start": "PORT=$npm_package_config_port concurrently 'npm run svgs:watch' 'npm run styles:watch' 'npm run scripts:watch' 'npm run build:watch' 'npm run serve' 'npm run sync'",
     "serve": "PORT=$npm_package_config_port node .app/serve.js --ext slm --watch src",
     "build": "VARS=$npm_package_config_vars node .app/build.js",
+    "compile": "concurrently 'npm run svgs' 'npm run styles' 'npm run scripts' 'npm run build'",
     "build:watch": "nodemon --ext slm --watch src/views -x 'npm run build'",
     "ghpages": "node .app/publish.js",
     "scripts": "rollup -c $npm_package_config_rollup",
