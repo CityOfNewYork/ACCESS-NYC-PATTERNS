@@ -1,0 +1,119 @@
+/**
+ * Text-controller
+ */
+
+// Dependencies
+@import 'config/colors';
+@import 'config/fonts';
+@import 'config/direction';
+@import 'config/media';
+@import 'config/dimensions';
+
+// Declarations
+.c-text-controller {
+  font-size: 18px; // px value freezes the font size for the controller
+
+  display: flex;
+  flex-direction: column;
+  @if $text-direction == 'rtl' {
+    align-items: start;
+  } @else {
+    align-items: end;
+  }
+
+  .icon,
+  .c-text-controller__title-full,
+  .c-text-controller__title-short {
+    font-style: italic;
+    vertical-align: middle;
+  }
+}
+
+.c-text-controller__toggle {
+  margin-bottom: $spacing-base * .5;
+  .icon {
+    margin-#{$text-direction-end}: 0.3em;
+  }
+}
+
+.c-text-controller__title-full {
+  display: none;
+
+  @include media($bp-desktop-up) {
+    display: inline-block;
+  }
+}
+
+.c-text-controller__title-short {
+  display: inline-block;
+
+  @include media($bp-desktop-up) {
+    display: none;
+  }
+}
+
+.c-text-controller__options {
+  display: flex;
+  flex-direction: column;
+}
+
+.c-text-controller__languages .wpml-ls {
+  margin-bottom: $spacing-base * 0.5;
+  text-align: $text-direction-end;
+
+  ul {
+    list-style: none;
+    display: inline;
+    margin: 0;
+    padding: 0;
+  }
+
+  li {
+    display: inline-block;
+    padding: 0;
+
+    @if $text-direction == 'rtl' {
+      margin-right: 1em;
+    } @else {
+      margin-left: 1em;
+    }
+  }
+}
+
+.c-text-controller__sizer {
+  display: none;
+
+  @include media($bp-desktop-up) {
+    color: $color-grey-mid;
+    display: flex;
+    align-items: center;
+    @if $text-direction == 'rtl' {
+      justify-content: start;
+    } @else {
+      justify-content: end;
+    }
+  }
+}
+
+.c-text-controller__sizer-text {
+  margin-left: 0.3em;
+  margin-right: 0.3em;
+}
+
+.c-text-controller__sizer-btn {
+  color: $color-blue-dark;
+  margin-left: 0.15em;
+  margin-right: 0.15em;
+
+  &:first-of-type {
+    margin-left: 0;
+  }
+
+  &:last-of-type {
+    margin-right: 0;
+  }
+
+  &:disabled {
+    color: $color-grey-light;
+  }
+}

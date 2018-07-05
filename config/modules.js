@@ -110,6 +110,13 @@ const modules = [
     includePaths: sass.includePaths
   },
   {
+    file: './src/components/text-controller/_text-controller.scss',
+    outDir: './dist/components/text-controller/',
+    outFile: 'text-controller.css',
+    precision: sass.precision,
+    includePaths: sass.includePaths
+  },
+  {
     file: './src/objects/search-box/_search-box.scss',
     outDir: './dist/objects/search-box/',
     outFile: 'search-box.css',

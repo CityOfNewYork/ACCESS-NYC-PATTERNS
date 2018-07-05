@@ -6,7 +6,7 @@
     <meta content="IE=edge" http-equiv="X-UA-Compatible" />
     <meta content="width=device-width, initial-scale=1" name="viewport" />
     <link href="styles/site-default.css" rel="stylesheet" />
-    <title>Exposition</title>
+    <title>Text Controller</title>
     <noscript>
       <style>
         body {
@@ -441,7 +441,7 @@
         </nav>
       </aside>
       <article class="bg-color-white py-2 px-4 screen-desktop:px-6">
-        <h1 class="px-1">Exposition</h1>
+        <h1 class="px-1">Text Controller</h1>
         <section class="pb-4" id="default-styling">
           <header class="pt-1 px-1 border-b border-color-grey-light mb-3">
             <h2>Default Styling</h2>
@@ -453,15 +453,130 @@
                   aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
               </div>
             </div>
-            <div class="flex-1 screen-tablet:max-w-1/2">
-              <div class="pb-4 screen-tablet:px-1">
-                <div class="mb-2"><code class="code">exposition p</code></div>
-                <div class="mb-2">
-                  <div class="code-block mb-1"><pre><div>&lt;div class=&quot;exposition&quot;&gt;</div><div>  &lt;p&gt;</div><div>    HEAP helps eligible households meet their home energy needs in the winter season. The money can pay for fuel, your utility source, equipment and/or repairs. The City pays the costs either directly to the company (heating benefit and/or utility benefit) or to the household (utility benefit only).</div><div>  &lt;/p&gt;</div><div>&lt;/div&gt;</div></pre></div>
+            <div class="flex-1 screen-tablet:max-w-1/2"></div>
+          </div>
+          <div class="pb-4 screen-tablet:px-1">
+            <div class="mb-2">
+              <div class="code-block mb-1"><pre>&lt;div class=&quot;c-text-controller&quot;&gt;
+  &lt;a class=&quot;c-text-controller__toggle&quot; href=&quot;#text-controls&quot;&gt;
+    &lt;svg class=&quot;icon icon-gear&quot;&gt;
+      &lt;use xlink:href=&quot;#icon-gear&quot;&gt;&lt;/use&gt;
+    &lt;/svg&gt;&lt;span class=&quot;c-text-controller__title-full&quot;&gt;Translate &amp;amp; Adjust Text&lt;/span&gt;&lt;span class=&quot;c-text-controller__title-short&quot;&gt;Translate Text&lt;/span&gt;&lt;/a&gt;
+  &lt;div class=&quot;c-text-controller__options&quot; id=&quot;text-controls&quot;&gt;
+    &lt;div class=&quot;c-text-controller__languages&quot;&gt;
+      &lt;div class=&quot;wpml-ls-statics-shortcode_actions wpml-ls wpml-ls-legacy-list-horizontal&quot;&gt;
+        &lt;ul&gt;
+          &lt;li class=&quot;wpml-ls-slot-shortcode_actions wpml-ls-item wpml-ls-item-en wpml-ls-current-language wpml-ls-first-item wpml-ls-item-legacy-list-horizontal&quot;&gt;
+            &lt;a class=&quot;wpml-ls-link&quot; href=&quot;#&quot;&gt;&lt;span class=&quot;wpml-ls-native&quot;&gt;English&lt;/span&gt;&lt;/a&gt;
+          &lt;/li&gt;
+          &lt;li class=&quot;wpml-ls-slot-shortcode_actions wpml-ls-item wpml-ls-item-es wpml-ls-item-legacy-list-horizontal&quot;&gt;
+            &lt;a class=&quot;wpml-ls-link&quot; href=&quot;#&quot;&gt;&lt;span class=&quot;wpml-ls-native&quot;&gt;Español&lt;/span&gt;&lt;/a&gt;
+          &lt;/li&gt;
+          &lt;li class=&quot;wpml-ls-slot-shortcode_actions wpml-ls-item wpml-ls-item-ru wpml-ls-item-legacy-list-horizontal&quot;&gt;
+            &lt;a class=&quot;wpml-ls-link&quot; href=&quot;#&quot;&gt;&lt;span class=&quot;wpml-ls-native&quot;&gt;Русский&lt;/span&gt;&lt;/a&gt;
+          &lt;/li&gt;
+          &lt;li class=&quot;wpml-ls-slot-shortcode_actions wpml-ls-item wpml-ls-item-ko wpml-ls-item-legacy-list-horizontal&quot;&gt;
+            &lt;a class=&quot;wpml-ls-link&quot; href=&quot;#&quot;&gt;&lt;span class=&quot;wpml-ls-native&quot;&gt;한국어&lt;/span&gt;&lt;/a&gt;
+          &lt;/li&gt;
+          &lt;li class=&quot;wpml-ls-slot-shortcode_actions wpml-ls-item wpml-ls-item-ar wpml-ls-item-legacy-list-horizontal&quot;&gt;
+            &lt;a class=&quot;wpml-ls-link&quot; href=&quot;#&quot;&gt;&lt;span class=&quot;wpml-ls-native&quot;&gt;العربية&lt;/span&gt;&lt;/a&gt;
+          &lt;/li&gt;
+          &lt;li class=&quot;wpml-ls-slot-shortcode_actions wpml-ls-item wpml-ls-item-ht wpml-ls-item-legacy-list-horizontal&quot;&gt;
+            &lt;a class=&quot;wpml-ls-link&quot; href=&quot;#&quot;&gt;&lt;span class=&quot;wpml-ls-native&quot;&gt;Kreyol&lt;/span&gt;&lt;/a&gt;
+          &lt;/li&gt;
+          &lt;li class=&quot;wpml-ls-slot-shortcode_actions wpml-ls-item wpml-ls-item-zh-hant wpml-ls-item-legacy-list-horizontal&quot;&gt;
+            &lt;a class=&quot;wpml-ls-link&quot; href=&quot;#&quot;&gt;&lt;span class=&quot;wpml-ls-native&quot;&gt;繁體中文&lt;/span&gt;&lt;/a&gt;
+          &lt;/li&gt;
+          &lt;li class=&quot;wpml-ls-slot-shortcode_actions wpml-ls-item wpml-ls-item-fr wpml-ls-item-legacy-list-horizontal&quot;&gt;
+            &lt;a class=&quot;wpml-ls-link&quot; href=&quot;#&quot;&gt;&lt;span class=&quot;wpml-ls-native&quot;&gt;Français&lt;/span&gt;&lt;/a&gt;
+          &lt;/li&gt;
+          &lt;li class=&quot;wpml-ls-slot-shortcode_actions wpml-ls-item wpml-ls-item-pl wpml-ls-item-legacy-list-horizontal&quot;&gt;
+            &lt;a class=&quot;wpml-ls-link&quot; href=&quot;#&quot;&gt;&lt;span class=&quot;wpml-ls-native&quot;&gt;polski&lt;/span&gt;&lt;/a&gt;
+          &lt;/li&gt;
+          &lt;li class=&quot;wpml-ls-slot-shortcode_actions wpml-ls-item wpml-ls-item-ur wpml-ls-item-legacy-list-horizontal&quot;&gt;
+            &lt;a class=&quot;wpml-ls-link&quot; href=&quot;#&quot;&gt;&lt;span class=&quot;wpml-ls-native&quot;&gt;اردو&lt;/span&gt;&lt;/a&gt;
+          &lt;/li&gt;
+          &lt;li class=&quot;wpml-ls-slot-shortcode_actions wpml-ls-item wpml-ls-item-bn wpml-ls-last-item wpml-ls-item-legacy-list-horizontal&quot;&gt;
+            &lt;a class=&quot;wpml-ls-link&quot; href=&quot;#&quot;&gt;&lt;span class=&quot;wpml-ls-native&quot;&gt;বাংলা&lt;/span&gt;&lt;/a&gt;
+          &lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;c-text-controller__sizer&quot;&gt;&lt;em class=&quot;c-text-controller__sizer-text&quot;&gt;Adjust text size&lt;/em&gt;
+      &lt;button class=&quot;c-text-controller__sizer-btn btn-text js-text-larger&quot;&gt;
+        &lt;svg class=&quot;icon icon-plus&quot;&gt;
+          &lt;use xlink:href=&quot;#icon-plus&quot;&gt;&lt;/use&gt;
+        &lt;/svg&gt;
+        &lt;div class=&quot;sr-only&quot;&gt;Larger&lt;/div&gt;
+      &lt;/button&gt;
+      &lt;button class=&quot;c-text-controller__sizer-btn btn-text js-text-smaller&quot;&gt;
+        &lt;svg class=&quot;icon icon-minus&quot;&gt;
+          &lt;use xlink:href=&quot;#icon-minus&quot;&gt;&lt;/use&gt;
+        &lt;/svg&gt;
+        &lt;div class=&quot;sr-only&quot;&gt;Smaller&lt;/div&gt;
+      &lt;/button&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</pre></div>
+            </div>
+            <div class="c-text-controller">
+              <a class="c-text-controller__toggle" href="#text-controls">
+                <svg class="icon icon-gear">
+                  <use xlink:href="#icon-gear"></use>
+                </svg><span class="c-text-controller__title-full">Translate &amp; Adjust Text</span><span class="c-text-controller__title-short">Translate Text</span></a>
+              <div class="c-text-controller__options" id="text-controls">
+                <div class="c-text-controller__languages">
+                  <div class="wpml-ls-statics-shortcode_actions wpml-ls wpml-ls-legacy-list-horizontal">
+                    <ul>
+                      <li class="wpml-ls-slot-shortcode_actions wpml-ls-item wpml-ls-item-en wpml-ls-current-language wpml-ls-first-item wpml-ls-item-legacy-list-horizontal">
+                        <a class="wpml-ls-link" href="#"><span class="wpml-ls-native">English</span></a>
+                      </li>
+                      <li class="wpml-ls-slot-shortcode_actions wpml-ls-item wpml-ls-item-es wpml-ls-item-legacy-list-horizontal">
+                        <a class="wpml-ls-link" href="#"><span class="wpml-ls-native">Español</span></a>
+                      </li>
+                      <li class="wpml-ls-slot-shortcode_actions wpml-ls-item wpml-ls-item-ru wpml-ls-item-legacy-list-horizontal">
+                        <a class="wpml-ls-link" href="#"><span class="wpml-ls-native">Русский</span></a>
+                      </li>
+                      <li class="wpml-ls-slot-shortcode_actions wpml-ls-item wpml-ls-item-ko wpml-ls-item-legacy-list-horizontal">
+                        <a class="wpml-ls-link" href="#"><span class="wpml-ls-native">한국어</span></a>
+                      </li>
+                      <li class="wpml-ls-slot-shortcode_actions wpml-ls-item wpml-ls-item-ar wpml-ls-item-legacy-list-horizontal">
+                        <a class="wpml-ls-link" href="#"><span class="wpml-ls-native">العربية</span></a>
+                      </li>
+                      <li class="wpml-ls-slot-shortcode_actions wpml-ls-item wpml-ls-item-ht wpml-ls-item-legacy-list-horizontal">
+                        <a class="wpml-ls-link" href="#"><span class="wpml-ls-native">Kreyol</span></a>
+                      </li>
+                      <li class="wpml-ls-slot-shortcode_actions wpml-ls-item wpml-ls-item-zh-hant wpml-ls-item-legacy-list-horizontal">
+                        <a class="wpml-ls-link" href="#"><span class="wpml-ls-native">繁體中文</span></a>
+                      </li>
+                      <li class="wpml-ls-slot-shortcode_actions wpml-ls-item wpml-ls-item-fr wpml-ls-item-legacy-list-horizontal">
+                        <a class="wpml-ls-link" href="#"><span class="wpml-ls-native">Français</span></a>
+                      </li>
+                      <li class="wpml-ls-slot-shortcode_actions wpml-ls-item wpml-ls-item-pl wpml-ls-item-legacy-list-horizontal">
+                        <a class="wpml-ls-link" href="#"><span class="wpml-ls-native">polski</span></a>
+                      </li>
+                      <li class="wpml-ls-slot-shortcode_actions wpml-ls-item wpml-ls-item-ur wpml-ls-item-legacy-list-horizontal">
+                        <a class="wpml-ls-link" href="#"><span class="wpml-ls-native">اردو</span></a>
+                      </li>
+                      <li class="wpml-ls-slot-shortcode_actions wpml-ls-item wpml-ls-item-bn wpml-ls-last-item wpml-ls-item-legacy-list-horizontal">
+                        <a class="wpml-ls-link" href="#"><span class="wpml-ls-native">বাংলা</span></a>
+                      </li>
+                    </ul>
+                  </div>
                 </div>
-                <div class="exposition">
-                  <p>HEAP helps eligible households meet their home energy needs in the winter season. The money can pay for fuel, your utility source, equipment and/or repairs. The City pays the costs either directly to the company (heating benefit and/or
-                    utility benefit) or to the household (utility benefit only).</p>
+                <div class="c-text-controller__sizer"><em class="c-text-controller__sizer-text">Adjust text size</em>
+                  <button class="c-text-controller__sizer-btn btn-text js-text-larger">
+                    <svg class="icon icon-plus">
+                      <use xlink:href="#icon-plus"></use>
+                    </svg>
+                    <div class="sr-only">Larger</div>
+                  </button>
+                  <button class="c-text-controller__sizer-btn btn-text js-text-smaller">
+                    <svg class="icon icon-minus">
+                      <use xlink:href="#icon-minus"></use>
+                    </svg>
+                    <div class="sr-only">Smaller</div>
+                  </button>
                 </div>
               </div>
             </div>

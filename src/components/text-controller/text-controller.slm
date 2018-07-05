@@ -1,0 +1,65 @@
+/
+/ c-Text-controller
+/
+
+div class='c-text-controller'
+
+  a class='c-text-controller__toggle' href='#text-controls'
+    svg class='icon icon-gear'
+      use xlink:href='#icon-gear'
+
+    span class='c-text-controller__title-full' Translate &amp; Adjust Text
+    span class='c-text-controller__title-short' Translate Text
+
+  div#text-controls class='c-text-controller__options'
+
+    div class='c-text-controller__languages'
+      div class='wpml-ls-statics-shortcode_actions wpml-ls wpml-ls-legacy-list-horizontal'
+        ul
+          li class='wpml-ls-slot-shortcode_actions wpml-ls-item wpml-ls-item-en wpml-ls-current-language wpml-ls-first-item wpml-ls-item-legacy-list-horizontal'
+            a href='#' class='wpml-ls-link'
+              span class='wpml-ls-native' English
+          li class='wpml-ls-slot-shortcode_actions wpml-ls-item wpml-ls-item-es wpml-ls-item-legacy-list-horizontal'
+            a href='#' class='wpml-ls-link'
+              span class='wpml-ls-native' Español
+          li class='wpml-ls-slot-shortcode_actions wpml-ls-item wpml-ls-item-ru wpml-ls-item-legacy-list-horizontal'
+            a href='#' class='wpml-ls-link'
+              span class='wpml-ls-native' Русский
+          li class='wpml-ls-slot-shortcode_actions wpml-ls-item wpml-ls-item-ko wpml-ls-item-legacy-list-horizontal'
+            a href='#' class='wpml-ls-link'
+              span class='wpml-ls-native' 한국어
+          li class='wpml-ls-slot-shortcode_actions wpml-ls-item wpml-ls-item-ar wpml-ls-item-legacy-list-horizontal'
+            a href='#' class='wpml-ls-link'
+              span class='wpml-ls-native' العربية
+          li class='wpml-ls-slot-shortcode_actions wpml-ls-item wpml-ls-item-ht wpml-ls-item-legacy-list-horizontal'
+            a href='#' class='wpml-ls-link'
+              span class='wpml-ls-native' Kreyol
+          li class='wpml-ls-slot-shortcode_actions wpml-ls-item wpml-ls-item-zh-hant wpml-ls-item-legacy-list-horizontal'
+            a href='#' class='wpml-ls-link'
+              span class='wpml-ls-native' 繁體中文
+          li class='wpml-ls-slot-shortcode_actions wpml-ls-item wpml-ls-item-fr wpml-ls-item-legacy-list-horizontal'
+            a href='#' class='wpml-ls-link'
+              span class='wpml-ls-native' Français
+          li class='wpml-ls-slot-shortcode_actions wpml-ls-item wpml-ls-item-pl wpml-ls-item-legacy-list-horizontal'
+            a href='#' class='wpml-ls-link'
+              span class='wpml-ls-native' polski
+          li class='wpml-ls-slot-shortcode_actions wpml-ls-item wpml-ls-item-ur wpml-ls-item-legacy-list-horizontal'
+            a href='#' class='wpml-ls-link'
+              span class='wpml-ls-native' اردو
+          li class='wpml-ls-slot-shortcode_actions wpml-ls-item wpml-ls-item-bn wpml-ls-last-item wpml-ls-item-legacy-list-horizontal'
+            a href='#' class='wpml-ls-link'
+              span class='wpml-ls-native' বাংলা
+
+    div class='c-text-controller__sizer'
+      em class='c-text-controller__sizer-text' Adjust text size
+      button class='c-text-controller__sizer-btn btn-text js-text-larger'
+        svg class='icon icon-plus'
+          use xlink:href='#icon-plus'
+        div class='sr-only' Larger
+      button class='c-text-controller__sizer-btn btn-text js-text-smaller'
+        svg class='icon icon-minus'
+          use xlink:href='#icon-minus'
+        div class='sr-only' Smaller
+
+
+
