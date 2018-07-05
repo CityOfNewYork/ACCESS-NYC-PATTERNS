@@ -8,6 +8,7 @@
 @import 'config/direction';
 @import 'config/media';
 @import 'config/dimensions';
+@import 'config/accessibility';
 
 // Declarations
 .c-text-controller {
@@ -58,6 +59,7 @@
 }
 
 .c-text-controller__languages .wpml-ls {
+  padding: 0;
   margin-bottom: $spacing-base * 0.5;
   text-align: $text-direction-end;
 
@@ -77,6 +79,10 @@
     } @else {
       margin-left: 1em;
     }
+  }
+
+  a {
+    padding: 0
   }
 }
 
@@ -116,4 +122,14 @@
   &:disabled {
     color: $color-grey-light;
   }
+}
+
+// ====================================
+// WPML Language Switcher Styles
+// ====================================
+
+// Hides the current language translation in the language switcher
+.wpml-ls-current-language,
+.wpml-ls-display {
+  @include sr-only();
 }
