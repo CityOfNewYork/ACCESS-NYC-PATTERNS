@@ -4,7 +4,7 @@
 
 div class='c-text-controller'
 
-  a class='c-text-controller__toggle' href='#text-controls'
+  a class='c-text-controller__toggle mb-1' href='#text-controls'
     svg class='icon icon-gear'
       use xlink:href='#icon-gear'
 
