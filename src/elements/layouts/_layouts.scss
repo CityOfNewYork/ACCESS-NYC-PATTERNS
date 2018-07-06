@@ -28,10 +28,9 @@
   width: 100%;
 }
 
-.home-body {
+.layout--home-body {
   margin: (1.5 * $spacing-base) auto;
   max-width: $homepage-max-width + ($spacing-base * 2);
-  padding: 0 $spacing-base;
 }
 
 //
