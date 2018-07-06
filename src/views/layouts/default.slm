@@ -8,9 +8,6 @@ html lang='en' class='text-size-0'
 
   body style='visibility: hidden;' onload='load()'
 
-    div style='display: none' aria-hidden='true'
-      = partial('/partials/icons.slm')
-
     header class='layout--sidebar'
       div class='flex items-center justify-center bg-color-blue-dark text-base-white screen-desktop:w-64 p-3 screen-desktop:p-4'
         h1 class='m-0 p-0'
@@ -36,6 +33,9 @@ html lang='en' class='text-size-0'
 
     footer class='py-4 text-center bg-color-blue-dark text-color-white links-invert'
       = mixin('footer')
+
+    div class='hidden' aria-hidden='true'
+      = partial('/partials/icons.slm')
 
     / script src='scripts/main.dist.js'
     = content('script')

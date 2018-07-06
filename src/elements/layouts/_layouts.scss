@@ -6,26 +6,18 @@
 @import 'config/variables';
 @import 'config/layouts';
 @import 'config/dimensions';
+@import 'config/direction';
 @import 'config/media';
 @import 'scss/functions/strip-units';
 
 // Declarations
-.page-wrapper {
+.page-wrapper, .wrap {
   display: flex;
   flex-direction: column;
   margin: 0 auto;
   max-width: $site-max-width;
   min-height: 100%;
   min-width: $site-min-width;
-}
-
-.main-content {
-  flex: 1 1 auto;
-  background: map-get(map-get($variables, 'colors'), 'color-white');
-}
-
-.usa-grid {
-  width: 100%;
 }
 
 //
@@ -149,6 +141,33 @@
 }
 
 //
+// Layout for single sidebar with 16rem width. No gutters. Stacks sidebar on
+// top for screens smaller than desktop width.
+//
+//  .-------------------.
+//  |.----..-----------.|
+//  ||    ||           ||
+//  ||    ||           ||
+//  ||    ||           ||
+//  |.----..-----------.|
+//  .-------------------.
+//
+.layout--sidebar {
+  @media screen and (min-width: $screen-desktop) {
+    display: flex;
+    align-items: stretch;
+
+    > *:first-child {
+      width: 16rem
+    }
+
+    > *:first-child + * {
+      width: calc(100% - 16rem)
+    }
+  }
+}
+
+//
 // Layout for smaller single sidebar with 12rem width. No gutters. Stacks
 // sidebar on top for screens smaller than desktop width.
 //
@@ -160,17 +179,46 @@
 //  |.--..-------------.|
 //  .-------------------.
 //
-.layout--sidebar-small {
+.layout--sidebar-gutter {
   @media screen and (min-width: $screen-desktop) {
     display: flex;
     align-items: stretch;
 
     > *:first-child {
-      width: 12rem
+      width: 16rem;
+      margin-#{$text-direction-end}: $spacing-base;
     }
 
     > *:first-child + * {
-      width: calc(100% - 12rem)
+      width: calc(100% - 16rem - #{$spacing-base})
+    }
+  }
+}
+
+//
+// Layout for smaller single sidebar with 12rem width. No gutters. Stacks
+// sidebar on top for screens smaller than desktop width.
+//
+//  .-------------------.
+//  |.--. .------------.|
+//  ||  | |            ||
+//  ||  | |            ||
+//  ||  | |            ||
+//  |.--. .------------.|
+//  .-------------------.
+//
+.layout--sidebar-small-gutter {
+  @media screen and (min-width: $screen-desktop) {
+    display: flex;
+    align-items: stretch;
+
+    > *:first-child {
+      width: 12.5rem;
+      margin-#{$text-direction-end}: $spacing-base;
+    }
+
+    > *:first-child + * {
+      width: calc(100% - 12.5rem - #{$spacing-base})
     }
   }
 }
@@ -194,7 +242,8 @@
 
 //
 // Fixed topbar layout for tablets or other mobile devices (Field Screener).
-// The main content scrolls while the topbar remains at the top of the page.
+// The main content overflow scrolls while the topbar remains at the top of
+// the page. For print, the main content overflow is fully visible.
 //
 //  .------------------.
 //  |.----------------.|
