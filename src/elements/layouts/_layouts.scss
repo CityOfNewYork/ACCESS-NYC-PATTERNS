@@ -135,6 +135,9 @@
 //
 .layout--sidebar {
   @media screen and (min-width: $screen-desktop) {
+    display: flex;
+    align-items: stretch;
+
     > *:first-child {
       width: 16rem
     }
@@ -159,12 +162,15 @@
 //
 .layout--sidebar-small {
   @media screen and (min-width: $screen-desktop) {
+    display: flex;
+    align-items: stretch;
+
     > *:first-child {
       width: 12rem
     }
 
     > *:first-child + * {
-      width: calc(100% - 16rem)
+      width: calc(100% - 12rem)
     }
   }
 }
