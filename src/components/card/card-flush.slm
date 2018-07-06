@@ -2,7 +2,7 @@
 / Card
 /
 
-article class='c-card screen-tablet:p'
+article class='c-card px-0 screen-tablet:px-2 screen-tablet:py-3'
   div class='c-card__body'
     h3 class='c-card__title mb-3'
       | Apply for Pre-K for All

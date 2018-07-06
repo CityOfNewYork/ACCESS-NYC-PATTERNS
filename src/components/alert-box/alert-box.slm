@@ -15,7 +15,7 @@
           div = '</div>'
 
   // Demonstration
-  div class='c-alert-box bg-status-success'
+  div class='c-alert-box bg-status-success mb-4'
     div class='c-alert-box__icon'
       div class='c-alert-box__svg bg-icon-success'
     div class='c-alert-box__body' Success
@@ -33,7 +33,7 @@
           div = '  </div>'
           div = '</div>'
 
-  div class='c-alert-box bg-status-info'
+  div class='c-alert-box bg-status-info mb-4'
     div class='c-alert-box__icon'
       div class='c-alert-box__svg bg-icon-info'
     div class='c-alert-box__body' Information
@@ -51,7 +51,7 @@
           div = '  </div>'
           div = '</div>'
 
-  div class='c-alert-box bg-status-warning'
+  div class='c-alert-box bg-status-warning mb-4'
     div class='c-alert-box__icon'
       div class='c-alert-box__svg bg-icon-warning'
     div class='c-alert-box__body' Warning
@@ -69,7 +69,7 @@
           div = '  </div>'
           div = '</div>'
 
-  div class='c-alert-box bg-status-urgent'
+  div class='c-alert-box bg-status-urgent mb-4'
     div class='c-alert-box__icon'
       div class='c-alert-box__svg bg-icon-urgent'
     div class='c-alert-box__body' Urgent
