@@ -9,8 +9,7 @@
 @import 'config/media';
 @import 'config/dimensions';
 @import 'config/accessibility';
-@debug $language;
-@debug ($text-direction == rtl);
+
 // Declarations
 .c-text-controller {
   font-size: 18px; // px value freezes the font size for the controller
