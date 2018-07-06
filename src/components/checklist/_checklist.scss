@@ -10,11 +10,11 @@
 $cdn: map-get($variables, 'cdn');
 
 // Declarations
-.c-checklist {
+.c-checklist, .c-checklist > ul {
   list-style: none;
   padding: 0;
 
-  > li {
+  li {
     background-image: url('#{$cdn}/images/icon-eligibilitycheck.png');
     background-position: $text-direction-start top;
     background-repeat: no-repeat;
@@ -22,7 +22,6 @@ $cdn: map-get($variables, 'cdn');
     padding-#{$text-direction-start}: $spacing-base * 2.25;
     padding-bottom: $spacing-base * 1.5;
   }
-
 }
 
 .c-checklist__item-application {
