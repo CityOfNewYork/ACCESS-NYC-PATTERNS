@@ -9,18 +9,15 @@
 @import 'config/media';
 @import 'config/dimensions';
 @import 'config/accessibility';
-
+@debug $language;
+@debug ($text-direction == rtl);
 // Declarations
 .c-text-controller {
   font-size: 18px; // px value freezes the font size for the controller
 
   display: flex;
   flex-direction: column;
-  @if $text-direction == 'rtl' {
-    align-items: start;
-  } @else {
-    align-items: end;
-  }
+  align-items: end;
 
   .icon,
   .c-text-controller__title-full,
@@ -73,7 +70,7 @@
     display: inline-block;
     padding: 0;
 
-    @if $text-direction == 'rtl' {
+    @if ($text-direction == rtl) {
       margin-right: 1em;
     } @else {
       margin-left: 1em;
@@ -92,11 +89,7 @@
     color: $color-grey-mid;
     display: flex;
     align-items: center;
-    @if $text-direction == 'rtl' {
-      justify-content: flex-start;
-    } @else {
-      justify-content: flex-end;
-    }
+    justify-content: flex-end;
   }
 }
 
@@ -111,11 +104,11 @@
   margin-right: 0.15em;
 
   &:first-of-type {
-    margin-left: 0;
+    margin-#{$text-direction-start}: 0;
   }
 
   &:last-of-type {
-    margin-right: 0;
+    margin-#{$text-direction-end}: 0;
   }
 
   &:disabled {

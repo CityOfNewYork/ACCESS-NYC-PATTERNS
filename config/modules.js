@@ -26,6 +26,14 @@ const modules = [
     includePaths: sass.includePaths
   },
   {
+    file: './src/scss/site-ar.scss',
+    outDir: './dist/styles/',
+    outFile: 'site-ar.css',
+    sourceMapEmbed: sass.sourceMapEmbed,
+    precision: sass.precision,
+    includePaths: sass.includePaths
+  },
+  {
     file: './src/scss/_utilities.scss',
     outDir: './dist/styles/',
     outFile: 'utilities.css',

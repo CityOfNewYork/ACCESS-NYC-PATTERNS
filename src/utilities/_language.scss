@@ -11,3 +11,11 @@
     direction: rtl;
   }
 }
+
+.text-align-start {
+  text-align: $text-direction-start
+}
+
+.text-align-end {
+  text-align: $text-direction-end
+}
