@@ -11,12 +11,11 @@
 @import 'bourbon-neat/app/assets/stylesheets/grid/media';
 
 // Declarations
-.c-card,
-.c-card.screen-tablet\:p {
+.c-card {
   background: $color-white;
   padding: $spacing-base;
 
-  @include media($bp-tablet-up) {
+  @include media($bp-mobile-up) {
     align-items: stretch;
     display: flex;
     padding: 1.5 * $spacing-base;
