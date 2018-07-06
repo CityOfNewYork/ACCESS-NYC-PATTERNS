@@ -28,13 +28,179 @@
   width: 100%;
 }
 
+//
+// General layout for two equal columns, no gutters
+//
+//  .------------------.
+//  |.-------..-------.|
+//  ||       ||       ||
+//  ||       ||       ||
+//  ||       ||       ||
+//  |.-------..-------.|
+//  .------------------.
+//
+.layout--columns {
+  @media (min-width: $screen-tablet) {
+    display: flex;
+    flex-wrap: wrap;
+    > * {
+      width: 50%;
+    }
+  }
+}
+
+//
+// General layout for single column with horizontal gutters (margin bottom)
+// on nested elements (the rows), except for the last row.
+//
+//  .-------------------.
+//  |.-----------------.|
+//  ||                 ||
+//  |.-----------------.|
+//  |                   |
+//  |.-----------------.|
+//  ||                 ||
+//  |.-----------------.|
+//  |                   |
+//  |.-----------------.|
+//  ||                 ||
+//  |.-----------------.|
+//  .-------------------.
+//
+.layout--gutter {
+  > * {
+    width: 100%;
+    margin-bottom: $spacing-base;
+  }
+
+  > *:last-of-type {
+    margin-bottom: 0;
+  }
+}
+
+//
+// General layout for two equal columns with gutter down the middle and
+// horizontal gutter between rows. No gutter beneath the last row. Stacks
+// elements on top of each other for screens smaller than desktop.
+//
+//  .-------------------.
+//  |.------.  .-------.|
+//  ||      |  |       ||
+//  |.------.  .-------.|
+//  |                   |
+//  |.------.  .-------.|
+//  ||      |  |       ||
+//  |.------.  .-------.|
+//  |                   |
+//  |.------.  .-------.|
+//  ||      |  |       ||
+//  |.------.  .-------.|
+//  .-------------------.
+//
+.layout--columns-gutter {
+  > * {
+    margin-bottom: $spacing-base;
+  }
+
+  > *:nth-last-child(1) {
+    margin-bottom: 0;
+  }
+
+  @media (min-width: $screen-tablet) {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+
+    > * {
+      width: calc(50% - #{$spacing-base/2});
+    }
+
+    > *:nth-last-child(2) {
+      margin-bottom: 0;
+    }
+  }
+}
+
+//
+// Layout for single sidebar with 16rem width. No gutters. Stacks sidebar on
+// top for screens smaller than desktop width.
+//
+//  .-------------------.
+//  |.----..-----------.|
+//  ||    ||           ||
+//  ||    ||           ||
+//  ||    ||           ||
+//  |.----..-----------.|
+//  .-------------------.
+//
+.layout--sidebar {
+  @media screen and (min-width: $screen-desktop) {
+    > *:first-child {
+      width: 16rem
+    }
+
+    > *:first-child + * {
+      width: calc(100% - 16rem)
+    }
+  }
+}
+
+//
+// Layout for smaller single sidebar with 12rem width. No gutters. Stacks
+// sidebar on top for screens smaller than desktop width.
+//
+//  .-------------------.
+//  |.--..-------------.|
+//  ||  ||             ||
+//  ||  ||             ||
+//  ||  ||             ||
+//  |.--..-------------.|
+//  .-------------------.
+//
+.layout--sidebar-small {
+  @media screen and (min-width: $screen-desktop) {
+    > *:first-child {
+      width: 12rem
+    }
+
+    > *:first-child + * {
+      width: calc(100% - 16rem)
+    }
+  }
+}
+
+//
+// Layout for the home body which is a smaller centered column.
+//
+//  .------------------.
+//  |    .--------.    |
+//  |    |        |    |
+//  |    |        |    |
+//  |    |        |    |
+//  |    |        |    |
+//  |    .--------.    |
+//  .------------------.
+//
 .layout--home-body {
   margin: (1.5 * $spacing-base) auto;
   max-width: $homepage-max-width + ($spacing-base * 2);
 }
 
 //
-// Topbar layout for tablets or other mobile devices (Field Screener).
+// Fixed topbar layout for tablets or other mobile devices (Field Screener).
+// The main content scrolls while the topbar remains at the top of the page.
+//
+//  .------------------.
+//  |.----------------.|
+//  ||                ||
+//  |.----------------.|
+//  |.----------------.|
+//  ||                ||
+//  ||                ||
+//  ||                ||
+//  ||                ||
+//  |.----------------.|
+//  .------------------.
 //
 .layout--topbar {
   position: relative;
@@ -68,79 +234,3 @@
     position: static;
   }
 }
-
-//
-// General layout for two equal columns
-//
-.layout--columns {
-  @media (min-width: $screen-tablet) {
-    display: flex;
-    flex-wrap: wrap;
-    > * {
-      width: 50%;
-    }
-  }
-}
-
-//
-// General layout for two equal columns with x and y gutters
-//
-.layout--columns-gutter {
-  > * {
-    margin-bottom: $spacing-base;
-  }
-
-  > *:nth-last-child(1) {
-    margin-bottom: 0;
-  }
-
-  @media (min-width: $screen-tablet) {
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-
-    > * {
-      width: calc(50% - #{$spacing-base/2});
-    }
-
-    > *:nth-last-child(2) {
-      margin-bottom: 0;
-    }
-  }
-}
-
-//
-// General layout for single column with x and y gutters
-//
-.layout--gutter {
-  > * {
-    width: 100%;
-    margin-bottom: $spacing-base;
-  }
-
-  > *:last-of-type {
-    margin-bottom: 0;
-  }
-
-  @media (min-width: $screen-tablet) {
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-  }
-}
-
-//
-// Layout for single sidebar
-//
-.layout--sidebar {
-  @media (min-width: $screen-tablet) {
-    > *:first-child {
-      width: 16rem
-    }
-
-    > *:first-child + * {
-      width: calc(100% - 16rem)
-    }
-  }
-}
-
