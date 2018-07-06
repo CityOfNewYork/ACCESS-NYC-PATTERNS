@@ -4,6 +4,7 @@
 
 // Dependencies
 @import 'config/accessibility';
+@import 'config/direction';
 
 // Declarations
 .sr-only {
@@ -12,4 +13,12 @@
 
 .sr-only-focusable {
   @include sr-only-focusable();
+}
+
+.text-direction-start {
+  text-align: $text-direction-start;
+}
+
+.text-direction-end {
+  text-align: $text-direction-end;
 }
