@@ -6,7 +6,7 @@
     <meta content="IE=edge" http-equiv="X-UA-Compatible" />
     <meta content="width=device-width, initial-scale=1" name="viewport" />
     <link href="styles/site-default.css" rel="stylesheet" />
-    <title>Navigation</title>
+    <title>Text Controller</title>
     <noscript>
       <style>
         body {
@@ -441,7 +441,7 @@
         </nav>
       </aside>
       <article class="bg-color-white py-2 px-4 screen-desktop:px-6">
-        <h1 class="px-1">Navigation</h1>
+        <h1 class="px-1">Text Controller</h1>
         <section class="pb-4" id="default-styling">
           <header class="pt-1 px-1 border-b border-color-grey-light mb-3">
             <h2>Default Styling</h2>
@@ -449,54 +449,137 @@
           <div class="block screen-desktop:flex">
             <div class="flex-1">
               <div class="pb-3 pl-1 pr-4">
-                <p>
-                  <a href='/demos/navigation' target='_blank'>View the demonstration for the Navigation Object</a>. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
-                  laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt
-                  mollit anim id est laborum.</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis
+                  aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
               </div>
             </div>
-            <div class="flex-1 screen-desktop:max-w-1/2">
-              <div class="pb-4 screen-desktop:px-1"></div>
-            </div>
+            <div class="flex-1 screen-desktop:max-w-1/2"></div>
           </div>
-          <div class="mb-2">
-            <div class="code-block mb-1"><pre>&lt;nav class=&quot;o-navigation&quot;&gt;
-  &lt;div class=&quot;logo-access&quot;&gt;
-    &lt;a href=&quot;/&quot;&gt;
-      &lt;svg class=&quot;icon icon-logo-full&quot;&gt;
-        &lt;use xlink:href=&quot;#icon-logo-full&quot;&gt;&lt;/use&gt;
-      &lt;/svg&gt;&lt;span class=&quot;sr-only&quot;&gt;Access NYC&lt;/span&gt;&lt;/a&gt;
-  &lt;/div&gt;
-  &lt;nav class=&quot;nav-inline&quot;&gt;
-    &lt;a class=&quot;screen-desktop:hidden&quot; href=&quot;#c-mobile-nav&quot;&gt;Menu&lt;/a&gt;
-    &lt;a class=&quot;hidden screen-desktop:inline active&quot; href=&quot;#&quot;&gt;Am I eligible?&lt;/a&gt;
-    &lt;a class=&quot;hidden screen-desktop:inline&quot; href=&quot;#&quot;&gt;Programs&lt;/a&gt;
-    &lt;a class=&quot;hidden screen-desktop:inline&quot; href=&quot;#&quot;&gt;Find help&lt;/a&gt;
-    &lt;a class=&quot;td-inherit o-navigation__search&quot; href=&quot;#search&quot;&gt;
-      &lt;svg aria-hidden=&quot;true&quot; class=&quot;icon icon-search&quot;&gt;
-        &lt;use xlink:href=&quot;#icon-search&quot;&gt;&lt;/use&gt;
-      &lt;/svg&gt;Search&lt;/a&gt;
-  &lt;/nav&gt;
-  &lt;div class=&quot;c-mobile-nav c-mobile-nav@active&quot; id=&quot;c-mobile-nav&quot;&gt;
-    &lt;a class=&quot;c-mobile-nav__close js-hide-nav&quot; href=&quot;#c-mobile-nav&quot;&gt;close &amp;amp; return to site
-      &lt;svg aria-hidden=&quot;true&quot; class=&quot;icon icon-close&quot;&gt;
-        &lt;use xlink:href=&quot;#icon-close&quot;&gt;&lt;/use&gt;
-      &lt;/svg&gt;
-    &lt;/a&gt;
-    &lt;div class=&quot;c-mobile-nav__inner&quot;&gt;
-      &lt;h4 class=&quot;c-mobile-nav__header&quot;&gt;Get help now&lt;/h4&gt;
-      &lt;nav class=&quot;nav-block&quot;&gt;
-        &lt;a class=&quot;active&quot; href=&quot;#&quot;&gt;Am I eligible?&lt;/a&gt;
-        &lt;a href=&quot;#&quot;&gt;Programs&lt;/a&gt;
-        &lt;a href=&quot;#&quot;&gt;Find help&lt;/a&gt;
-        &lt;a class=&quot;td-inherit&quot; href=&quot;#search&quot;&gt;
-          &lt;svg class=&quot;icon icon-search&quot;&gt;
-            &lt;use xlink:href=&quot;#icon-search&quot;&gt;&lt;/use&gt;
-          &lt;/svg&gt;Search&lt;/a&gt;
-      &lt;/nav&gt;
+          <div class="pb-4 screen-desktop:px-1">
+            <div class="mb-2">
+              <div class="code-block mb-1"><pre>&lt;div class=&quot;c-text-controller&quot;&gt;
+  &lt;a class=&quot;c-text-controller__toggle mb-1&quot; href=&quot;#text-controls&quot;&gt;
+    &lt;svg class=&quot;icon icon-gear&quot;&gt;
+      &lt;use xlink:href=&quot;#icon-gear&quot;&gt;&lt;/use&gt;
+    &lt;/svg&gt;&lt;span class=&quot;c-text-controller__title-full&quot;&gt;Translate &amp;amp; Adjust Text&lt;/span&gt;&lt;span class=&quot;c-text-controller__title-short&quot;&gt;Translate Text&lt;/span&gt;&lt;/a&gt;
+  &lt;div class=&quot;c-text-controller__options&quot; id=&quot;text-controls&quot;&gt;
+    &lt;div class=&quot;c-text-controller__languages&quot;&gt;
+      &lt;div class=&quot;wpml-ls-statics-shortcode_actions wpml-ls wpml-ls-legacy-list-horizontal&quot;&gt;
+        &lt;ul&gt;
+          &lt;li class=&quot;wpml-ls-slot-shortcode_actions wpml-ls-item wpml-ls-item-en wpml-ls-current-language wpml-ls-first-item wpml-ls-item-legacy-list-horizontal&quot;&gt;
+            &lt;a class=&quot;wpml-ls-link&quot; href=&quot;#&quot;&gt;&lt;span class=&quot;wpml-ls-native&quot;&gt;English&lt;/span&gt;&lt;/a&gt;
+          &lt;/li&gt;
+          &lt;li class=&quot;wpml-ls-slot-shortcode_actions wpml-ls-item wpml-ls-item-es wpml-ls-item-legacy-list-horizontal&quot;&gt;
+            &lt;a class=&quot;wpml-ls-link&quot; href=&quot;#&quot;&gt;&lt;span class=&quot;wpml-ls-native&quot;&gt;Español&lt;/span&gt;&lt;/a&gt;
+          &lt;/li&gt;
+          &lt;li class=&quot;wpml-ls-slot-shortcode_actions wpml-ls-item wpml-ls-item-ru wpml-ls-item-legacy-list-horizontal&quot;&gt;
+            &lt;a class=&quot;wpml-ls-link&quot; href=&quot;#&quot;&gt;&lt;span class=&quot;wpml-ls-native&quot;&gt;Русский&lt;/span&gt;&lt;/a&gt;
+          &lt;/li&gt;
+          &lt;li class=&quot;wpml-ls-slot-shortcode_actions wpml-ls-item wpml-ls-item-ko wpml-ls-item-legacy-list-horizontal&quot;&gt;
+            &lt;a class=&quot;wpml-ls-link&quot; href=&quot;#&quot;&gt;&lt;span class=&quot;wpml-ls-native&quot;&gt;한국어&lt;/span&gt;&lt;/a&gt;
+          &lt;/li&gt;
+          &lt;li class=&quot;wpml-ls-slot-shortcode_actions wpml-ls-item wpml-ls-item-ar wpml-ls-item-legacy-list-horizontal&quot;&gt;
+            &lt;a class=&quot;wpml-ls-link&quot; href=&quot;#&quot;&gt;&lt;span class=&quot;wpml-ls-native&quot;&gt;العربية&lt;/span&gt;&lt;/a&gt;
+          &lt;/li&gt;
+          &lt;li class=&quot;wpml-ls-slot-shortcode_actions wpml-ls-item wpml-ls-item-ht wpml-ls-item-legacy-list-horizontal&quot;&gt;
+            &lt;a class=&quot;wpml-ls-link&quot; href=&quot;#&quot;&gt;&lt;span class=&quot;wpml-ls-native&quot;&gt;Kreyol&lt;/span&gt;&lt;/a&gt;
+          &lt;/li&gt;
+          &lt;li class=&quot;wpml-ls-slot-shortcode_actions wpml-ls-item wpml-ls-item-zh-hant wpml-ls-item-legacy-list-horizontal&quot;&gt;
+            &lt;a class=&quot;wpml-ls-link&quot; href=&quot;#&quot;&gt;&lt;span class=&quot;wpml-ls-native&quot;&gt;繁體中文&lt;/span&gt;&lt;/a&gt;
+          &lt;/li&gt;
+          &lt;li class=&quot;wpml-ls-slot-shortcode_actions wpml-ls-item wpml-ls-item-fr wpml-ls-item-legacy-list-horizontal&quot;&gt;
+            &lt;a class=&quot;wpml-ls-link&quot; href=&quot;#&quot;&gt;&lt;span class=&quot;wpml-ls-native&quot;&gt;Français&lt;/span&gt;&lt;/a&gt;
+          &lt;/li&gt;
+          &lt;li class=&quot;wpml-ls-slot-shortcode_actions wpml-ls-item wpml-ls-item-pl wpml-ls-item-legacy-list-horizontal&quot;&gt;
+            &lt;a class=&quot;wpml-ls-link&quot; href=&quot;#&quot;&gt;&lt;span class=&quot;wpml-ls-native&quot;&gt;polski&lt;/span&gt;&lt;/a&gt;
+          &lt;/li&gt;
+          &lt;li class=&quot;wpml-ls-slot-shortcode_actions wpml-ls-item wpml-ls-item-ur wpml-ls-item-legacy-list-horizontal&quot;&gt;
+            &lt;a class=&quot;wpml-ls-link&quot; href=&quot;#&quot;&gt;&lt;span class=&quot;wpml-ls-native&quot;&gt;اردو&lt;/span&gt;&lt;/a&gt;
+          &lt;/li&gt;
+          &lt;li class=&quot;wpml-ls-slot-shortcode_actions wpml-ls-item wpml-ls-item-bn wpml-ls-last-item wpml-ls-item-legacy-list-horizontal&quot;&gt;
+            &lt;a class=&quot;wpml-ls-link&quot; href=&quot;#&quot;&gt;&lt;span class=&quot;wpml-ls-native&quot;&gt;বাংলা&lt;/span&gt;&lt;/a&gt;
+          &lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;c-text-controller__sizer&quot;&gt;&lt;em class=&quot;c-text-controller__sizer-text&quot;&gt;Adjust text size&lt;/em&gt;
+      &lt;button class=&quot;c-text-controller__sizer-btn btn-text js-text-larger&quot;&gt;
+        &lt;svg class=&quot;icon icon-plus&quot;&gt;
+          &lt;use xlink:href=&quot;#icon-plus&quot;&gt;&lt;/use&gt;
+        &lt;/svg&gt;
+        &lt;div class=&quot;sr-only&quot;&gt;Larger&lt;/div&gt;
+      &lt;/button&gt;
+      &lt;button class=&quot;c-text-controller__sizer-btn btn-text js-text-smaller&quot;&gt;
+        &lt;svg class=&quot;icon icon-minus&quot;&gt;
+          &lt;use xlink:href=&quot;#icon-minus&quot;&gt;&lt;/use&gt;
+        &lt;/svg&gt;
+        &lt;div class=&quot;sr-only&quot;&gt;Smaller&lt;/div&gt;
+      &lt;/button&gt;
     &lt;/div&gt;
   &lt;/div&gt;
-&lt;/nav&gt;</pre></div>
+&lt;/div&gt;</pre></div>
+            </div>
+            <div class="c-text-controller">
+              <a class="c-text-controller__toggle mb-1" href="#text-controls">
+                <svg class="icon icon-gear">
+                  <use xlink:href="#icon-gear"></use>
+                </svg><span class="c-text-controller__title-full">Translate &amp; Adjust Text</span><span class="c-text-controller__title-short">Translate Text</span></a>
+              <div class="c-text-controller__options" id="text-controls">
+                <div class="c-text-controller__languages">
+                  <div class="wpml-ls-statics-shortcode_actions wpml-ls wpml-ls-legacy-list-horizontal">
+                    <ul>
+                      <li class="wpml-ls-slot-shortcode_actions wpml-ls-item wpml-ls-item-en wpml-ls-current-language wpml-ls-first-item wpml-ls-item-legacy-list-horizontal">
+                        <a class="wpml-ls-link" href="#"><span class="wpml-ls-native">English</span></a>
+                      </li>
+                      <li class="wpml-ls-slot-shortcode_actions wpml-ls-item wpml-ls-item-es wpml-ls-item-legacy-list-horizontal">
+                        <a class="wpml-ls-link" href="#"><span class="wpml-ls-native">Español</span></a>
+                      </li>
+                      <li class="wpml-ls-slot-shortcode_actions wpml-ls-item wpml-ls-item-ru wpml-ls-item-legacy-list-horizontal">
+                        <a class="wpml-ls-link" href="#"><span class="wpml-ls-native">Русский</span></a>
+                      </li>
+                      <li class="wpml-ls-slot-shortcode_actions wpml-ls-item wpml-ls-item-ko wpml-ls-item-legacy-list-horizontal">
+                        <a class="wpml-ls-link" href="#"><span class="wpml-ls-native">한국어</span></a>
+                      </li>
+                      <li class="wpml-ls-slot-shortcode_actions wpml-ls-item wpml-ls-item-ar wpml-ls-item-legacy-list-horizontal">
+                        <a class="wpml-ls-link" href="#"><span class="wpml-ls-native">العربية</span></a>
+                      </li>
+                      <li class="wpml-ls-slot-shortcode_actions wpml-ls-item wpml-ls-item-ht wpml-ls-item-legacy-list-horizontal">
+                        <a class="wpml-ls-link" href="#"><span class="wpml-ls-native">Kreyol</span></a>
+                      </li>
+                      <li class="wpml-ls-slot-shortcode_actions wpml-ls-item wpml-ls-item-zh-hant wpml-ls-item-legacy-list-horizontal">
+                        <a class="wpml-ls-link" href="#"><span class="wpml-ls-native">繁體中文</span></a>
+                      </li>
+                      <li class="wpml-ls-slot-shortcode_actions wpml-ls-item wpml-ls-item-fr wpml-ls-item-legacy-list-horizontal">
+                        <a class="wpml-ls-link" href="#"><span class="wpml-ls-native">Français</span></a>
+                      </li>
+                      <li class="wpml-ls-slot-shortcode_actions wpml-ls-item wpml-ls-item-pl wpml-ls-item-legacy-list-horizontal">
+                        <a class="wpml-ls-link" href="#"><span class="wpml-ls-native">polski</span></a>
+                      </li>
+                      <li class="wpml-ls-slot-shortcode_actions wpml-ls-item wpml-ls-item-ur wpml-ls-item-legacy-list-horizontal">
+                        <a class="wpml-ls-link" href="#"><span class="wpml-ls-native">اردو</span></a>
+                      </li>
+                      <li class="wpml-ls-slot-shortcode_actions wpml-ls-item wpml-ls-item-bn wpml-ls-last-item wpml-ls-item-legacy-list-horizontal">
+                        <a class="wpml-ls-link" href="#"><span class="wpml-ls-native">বাংলা</span></a>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="c-text-controller__sizer"><em class="c-text-controller__sizer-text">Adjust text size</em>
+                  <button class="c-text-controller__sizer-btn btn-text js-text-larger">
+                    <svg class="icon icon-plus">
+                      <use xlink:href="#icon-plus"></use>
+                    </svg>
+                    <div class="sr-only">Larger</div>
+                  </button>
+                  <button class="c-text-controller__sizer-btn btn-text js-text-smaller">
+                    <svg class="icon icon-minus">
+                      <use xlink:href="#icon-minus"></use>
+                    </svg>
+                    <div class="sr-only">Smaller</div>
+                  </button>
+                </div>
+              </div>
+            </div>
           </div>
         </section>
       </article>
