@@ -11,7 +11,7 @@ html lang='en' class='text-size-0'
     div style='display: none' aria-hidden='true'
       = partial('/partials/icons.slm')
 
-    header class='layout--sidebar screen-desktop:flex'
+    header class='layout--sidebar'
       div class='flex items-center justify-center bg-color-blue-dark text-base-white screen-desktop:w-64 p-3 screen-desktop:p-4'
         h1 class='m-0 p-0'
           span class='hidden'
@@ -27,7 +27,7 @@ html lang='en' class='text-size-0'
           a href='${link_source}' class='border-2 py-1 px-2 inline rounded-lg'
             = 'Pre-release v' + this.vars.version
 
-    main#main-content class='layout--sidebar screen-desktop:flex items-stretch m-0 p-0 min-h-screen screen-desktop:border-b-4 border-color-grey-light'
+    main#main-content class='layout--sidebar m-0 p-0 min-h-screen screen-desktop:border-b-4 border-color-grey-light'
       aside class='bg-secondary-white py-2 px-3'
         = mixin('nav')
 
