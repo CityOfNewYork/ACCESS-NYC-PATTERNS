@@ -99,4 +99,8 @@
  * Utilities
  ************/
 
-@import 'utilities';
+@import 'utilities/accessibility';
+@import 'utilities/inherit';
+@import 'utilities/language';
+@import 'utilities/statuses';
+@import 'tailwind';

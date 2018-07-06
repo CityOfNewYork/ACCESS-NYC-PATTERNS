@@ -34,16 +34,16 @@ const modules = [
     includePaths: sass.includePaths
   },
   {
-    file: './src/scss/_utilities.scss',
+    file: './src/scss/_tailwind.scss',
     outDir: './dist/styles/',
-    outFile: 'utilities.css',
+    outFile: 'tailwind.css',
     precision: sass.precision,
     includePaths: sass.includePaths
   },
   {
-    file: './src/scss/_utilities.scss',
+    file: './src/scss/_tailwind.scss',
     outDir: './dist/styles/',
-    outFile: '_utilities.scss',
+    outFile: '_tailwind.scss',
     precision: sass.precision,
     includePaths: sass.includePaths
   },
