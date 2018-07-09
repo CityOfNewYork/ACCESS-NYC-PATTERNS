@@ -118,6 +118,13 @@ const modules = [
     includePaths: sass.includePaths
   },
   {
+    file: './src/components/share-form/_share-form.scss',
+    outDir: './dist/components/share-form/',
+    outFile: 'share-form.css',
+    precision: sass.precision,
+    includePaths: sass.includePaths
+  },
+  {
     file: './src/components/text-controller/_text-controller.scss',
     outDir: './dist/components/text-controller/',
     outFile: 'text-controller.css',

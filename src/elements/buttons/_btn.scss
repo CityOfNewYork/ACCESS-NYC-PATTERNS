@@ -35,7 +35,7 @@
 //
 // Types
 //
-[class*='btn-'][class*='-tag'] {
+.btn-tag {
   @include typography-supplemental();
   border-radius: 15px;
   margin: 5px 2px;
@@ -50,7 +50,7 @@
   }
 }
 
-[class*='btn-'][class*='-toggle'] {
+.btn-toggle {
   align-items: center;
   display: flex;
   justify-content: space-between;
@@ -61,11 +61,12 @@
   border-radius: $btn-radius;
 
   &::after {
+    content: '';
     position: relative;
     top: -.1em;
     @include size(0 0);
-    @include triangle(.8em .6em, $color-blue, down);
-    content: '';
+    // @include triangle(.8em .6em, $color-blue, down);
+    border-top: .6em solid;
     display: inline-block;
     margin-#{$text-direction-start}: .5em;
   }
@@ -81,19 +82,19 @@
 //
 // Modifiers
 //
-[class*='btn-'][class*='-block'] {
+.btn-block {
   display: block;
   width: 100%;
 }
 
-[class*='btn-'][class*='-small'] {
+.btn-small {
   font-size: .727rem;
 }
 
 //
 // Button types that should override top level styling
 //
-[class*='btn-'][class*='-primary'] {
+.btn-primary {
   color: $color-white;
   background: $color-blue;
 
@@ -107,7 +108,7 @@
   }
 }
 
-[class*='btn-'][class*='-secondary'] {
+.btn-secondary {
   color: $color-white;
   background: $color-green-mid;
 
@@ -121,8 +122,8 @@
   }
 }
 
-[class*='btn-'][class*='-next'],
-[class*='btn-'][class*='-previous'] {
+.btn-next,
+.btn-previous {
   color: $color-white;
 
   &:link,

@@ -6,7 +6,7 @@
     <meta content="IE=edge" http-equiv="X-UA-Compatible" />
     <meta content="width=device-width, initial-scale=1" name="viewport" />
     <link href="styles/site-default.css" rel="stylesheet" />
-    <title>Text Controller</title>
+    <title>Share Form</title>
     <noscript>
       <style>
         body {
@@ -85,7 +85,7 @@
         </nav>
       </aside>
       <article class="bg-color-white py-2 px-4 screen-desktop:px-6">
-        <h1 class="px-1">Text Controller</h1>
+        <h1 class="px-1">Share Form</h1>
         <section class="pb-4" id="default-styling">
           <header class="pt-1 px-1 border-b border-color-grey-light mb-3">
             <h2>Default Styling</h2>
@@ -97,130 +97,89 @@
                   aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
               </div>
             </div>
-            <div class="flex-1 screen-desktop:max-w-1/2"></div>
-          </div>
-          <div class="pb-4 screen-desktop:px-1">
-            <div class="mb-2">
-              <div class="code-block mb-1"><pre>&lt;div class=&quot;c-text-controller&quot;&gt;
-  &lt;a class=&quot;c-text-controller__toggle mb-1&quot; href=&quot;#text-controls&quot;&gt;
-    &lt;svg class=&quot;icon icon-gear&quot;&gt;
-      &lt;use xlink:href=&quot;#icon-gear&quot;&gt;&lt;/use&gt;
-    &lt;/svg&gt;&lt;span class=&quot;c-text-controller__title-full&quot;&gt;Translate &amp;amp; Adjust Text&lt;/span&gt;&lt;span class=&quot;c-text-controller__title-short&quot;&gt;Translate Text&lt;/span&gt;&lt;/a&gt;
-  &lt;div class=&quot;c-text-controller__options&quot; id=&quot;text-controls&quot;&gt;
-    &lt;div class=&quot;c-text-controller__languages&quot;&gt;
-      &lt;div class=&quot;wpml-ls-statics-shortcode_actions wpml-ls wpml-ls-legacy-list-horizontal&quot;&gt;
-        &lt;ul&gt;
-          &lt;li class=&quot;wpml-ls-slot-shortcode_actions wpml-ls-item wpml-ls-item-en wpml-ls-current-language wpml-ls-first-item wpml-ls-item-legacy-list-horizontal&quot;&gt;
-            &lt;a class=&quot;wpml-ls-link&quot; href=&quot;#&quot;&gt;&lt;span class=&quot;wpml-ls-native&quot;&gt;English&lt;/span&gt;&lt;/a&gt;
-          &lt;/li&gt;
-          &lt;li class=&quot;wpml-ls-slot-shortcode_actions wpml-ls-item wpml-ls-item-es wpml-ls-item-legacy-list-horizontal&quot;&gt;
-            &lt;a class=&quot;wpml-ls-link&quot; href=&quot;#&quot;&gt;&lt;span class=&quot;wpml-ls-native&quot;&gt;Español&lt;/span&gt;&lt;/a&gt;
-          &lt;/li&gt;
-          &lt;li class=&quot;wpml-ls-slot-shortcode_actions wpml-ls-item wpml-ls-item-ru wpml-ls-item-legacy-list-horizontal&quot;&gt;
-            &lt;a class=&quot;wpml-ls-link&quot; href=&quot;#&quot;&gt;&lt;span class=&quot;wpml-ls-native&quot;&gt;Русский&lt;/span&gt;&lt;/a&gt;
-          &lt;/li&gt;
-          &lt;li class=&quot;wpml-ls-slot-shortcode_actions wpml-ls-item wpml-ls-item-ko wpml-ls-item-legacy-list-horizontal&quot;&gt;
-            &lt;a class=&quot;wpml-ls-link&quot; href=&quot;#&quot;&gt;&lt;span class=&quot;wpml-ls-native&quot;&gt;한국어&lt;/span&gt;&lt;/a&gt;
-          &lt;/li&gt;
-          &lt;li class=&quot;wpml-ls-slot-shortcode_actions wpml-ls-item wpml-ls-item-ar wpml-ls-item-legacy-list-horizontal&quot;&gt;
-            &lt;a class=&quot;wpml-ls-link&quot; href=&quot;#&quot;&gt;&lt;span class=&quot;wpml-ls-native&quot;&gt;العربية&lt;/span&gt;&lt;/a&gt;
-          &lt;/li&gt;
-          &lt;li class=&quot;wpml-ls-slot-shortcode_actions wpml-ls-item wpml-ls-item-ht wpml-ls-item-legacy-list-horizontal&quot;&gt;
-            &lt;a class=&quot;wpml-ls-link&quot; href=&quot;#&quot;&gt;&lt;span class=&quot;wpml-ls-native&quot;&gt;Kreyol&lt;/span&gt;&lt;/a&gt;
-          &lt;/li&gt;
-          &lt;li class=&quot;wpml-ls-slot-shortcode_actions wpml-ls-item wpml-ls-item-zh-hant wpml-ls-item-legacy-list-horizontal&quot;&gt;
-            &lt;a class=&quot;wpml-ls-link&quot; href=&quot;#&quot;&gt;&lt;span class=&quot;wpml-ls-native&quot;&gt;繁體中文&lt;/span&gt;&lt;/a&gt;
-          &lt;/li&gt;
-          &lt;li class=&quot;wpml-ls-slot-shortcode_actions wpml-ls-item wpml-ls-item-fr wpml-ls-item-legacy-list-horizontal&quot;&gt;
-            &lt;a class=&quot;wpml-ls-link&quot; href=&quot;#&quot;&gt;&lt;span class=&quot;wpml-ls-native&quot;&gt;Français&lt;/span&gt;&lt;/a&gt;
-          &lt;/li&gt;
-          &lt;li class=&quot;wpml-ls-slot-shortcode_actions wpml-ls-item wpml-ls-item-pl wpml-ls-item-legacy-list-horizontal&quot;&gt;
-            &lt;a class=&quot;wpml-ls-link&quot; href=&quot;#&quot;&gt;&lt;span class=&quot;wpml-ls-native&quot;&gt;polski&lt;/span&gt;&lt;/a&gt;
-          &lt;/li&gt;
-          &lt;li class=&quot;wpml-ls-slot-shortcode_actions wpml-ls-item wpml-ls-item-ur wpml-ls-item-legacy-list-horizontal&quot;&gt;
-            &lt;a class=&quot;wpml-ls-link&quot; href=&quot;#&quot;&gt;&lt;span class=&quot;wpml-ls-native&quot;&gt;اردو&lt;/span&gt;&lt;/a&gt;
-          &lt;/li&gt;
-          &lt;li class=&quot;wpml-ls-slot-shortcode_actions wpml-ls-item wpml-ls-item-bn wpml-ls-last-item wpml-ls-item-legacy-list-horizontal&quot;&gt;
-            &lt;a class=&quot;wpml-ls-link&quot; href=&quot;#&quot;&gt;&lt;span class=&quot;wpml-ls-native&quot;&gt;বাংলা&lt;/span&gt;&lt;/a&gt;
-          &lt;/li&gt;
-        &lt;/ul&gt;
+            <div class="flex-1 screen-desktop:max-w-1/2">
+              <div class="pb-4 screen-desktop:px-1">
+                <div class="mb-2">
+                  <div class="code-block mb-1"><pre>&lt;div class=&quot;c-share-form mb-2&quot;&gt;
+  &lt;a class=&quot;btn btn-primary c-share-form__toggle&quot; data-scroll-offset=&quot;20&quot; href=&quot;#share-by-text&quot;&gt;Text&lt;/a&gt;
+  &lt;div class=&quot;c-share-form__input hidden&quot; id=&quot;share-by-text&quot;&gt;
+    &lt;form&gt;
+      &lt;div class=&quot;c-share-form__controls&quot;&gt;
+        &lt;input name=&quot;to&quot; placeholder=&quot;Phone Number&quot; required=&quot;true&quot; type=&quot;tel&quot; /&gt;
+        &lt;div class=&quot;c-share-form__button&quot;&gt;
+          &lt;button class=&quot;btn btn-primary btn-small btn-submit&quot; type=&quot;submit&quot;&gt;Send&lt;/button&gt;
+          &lt;svg class=&quot;share-form__spinner js-spinner&quot; height=&quot;40px&quot; style=&quot;display: none&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 50 50&quot; width=&quot;69.89px&quot; x=&quot;0px&quot; xml:space=&quot;preserve&quot; xmlns=&quot;http://www.w3.org/2000/svg&quot; xmlns:xlink=&quot;http://www.w3.org/1999/xlink&quot;
+            y=&quot;0px&quot;&gt;
+            &lt;path d=&quot;M43.935,25.145c0-10.318-8.364-18.683-18.683-18.683c-10.318,0-18.683,8.365-18.683,18.683h4.068c0-8.071,6.543-14.615,14.615-14.615c8.072,0,14.615,6.543,14.615,14.615H43.935z&quot; fill=&quot;#184e9e&quot; transform=&quot;rotate(109.079 25 25)&quot;&gt;
+              &lt;animateTransform attributeName=&quot;transform&quot; attributeType=&quot;xml&quot; dur=&quot;1s&quot; from=&quot;0 25 25&quot; repeatCount=&quot;indefinite&quot; to=&quot;360 25 25&quot; type=&quot;rotate&quot;&gt;&lt;/animateTransform&gt;
+            &lt;/path&gt;
+          &lt;/svg&gt;
+          &lt;div class=&quot;success-message&quot;&gt;Sent!&lt;/div&gt;
+        &lt;/div&gt;
       &lt;/div&gt;
-    &lt;/div&gt;
-    &lt;div class=&quot;c-text-controller__sizer&quot;&gt;&lt;em class=&quot;c-text-controller__sizer-text&quot;&gt;Adjust text size&lt;/em&gt;
-      &lt;button class=&quot;c-text-controller__sizer-btn btn-text js-text-larger&quot;&gt;
-        &lt;svg class=&quot;icon icon-plus&quot;&gt;
-          &lt;use xlink:href=&quot;#icon-plus&quot;&gt;&lt;/use&gt;
-        &lt;/svg&gt;
-        &lt;div class=&quot;sr-only&quot;&gt;Larger&lt;/div&gt;
-      &lt;/button&gt;
-      &lt;button class=&quot;c-text-controller__sizer-btn btn-text js-text-smaller&quot;&gt;
-        &lt;svg class=&quot;icon icon-minus&quot;&gt;
-          &lt;use xlink:href=&quot;#icon-minus&quot;&gt;&lt;/use&gt;
-        &lt;/svg&gt;
-        &lt;div class=&quot;sr-only&quot;&gt;Smaller&lt;/div&gt;
-      &lt;/button&gt;
-    &lt;/div&gt;
+    &lt;/form&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;c-share-form&quot;&gt;
+  &lt;a class=&quot;btn btn-primary c-share-form__toggle active&quot; data-scroll-offset=&quot;20&quot; href=&quot;#share-by-text&quot;&gt;Email&lt;/a&gt;
+  &lt;div class=&quot;c-share-form__input&quot; id=&quot;share-by-text&quot;&gt;
+    &lt;form&gt;
+      &lt;div class=&quot;c-share-form__controls&quot;&gt;
+        &lt;input name=&quot;to&quot; placeholder=&quot;Email&quot; required=&quot;true&quot; type=&quot;email&quot; /&gt;
+        &lt;div class=&quot;c-share-form__button&quot;&gt;
+          &lt;button class=&quot;btn btn-primary btn-small btn-submit&quot; type=&quot;submit&quot;&gt;Send&lt;/button&gt;
+          &lt;svg class=&quot;share-form__spinner js-spinner&quot; height=&quot;40px&quot; style=&quot;display: none&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 50 50&quot; width=&quot;69.89px&quot; x=&quot;0px&quot; xml:space=&quot;preserve&quot; xmlns=&quot;http://www.w3.org/2000/svg&quot; xmlns:xlink=&quot;http://www.w3.org/1999/xlink&quot;
+            y=&quot;0px&quot;&gt;
+            &lt;path d=&quot;M43.935,25.145c0-10.318-8.364-18.683-18.683-18.683c-10.318,0-18.683,8.365-18.683,18.683h4.068c0-8.071,6.543-14.615,14.615-14.615c8.072,0,14.615,6.543,14.615,14.615H43.935z&quot; fill=&quot;#184e9e&quot; transform=&quot;rotate(109.079 25 25)&quot;&gt;
+              &lt;animateTransform attributeName=&quot;transform&quot; attributeType=&quot;xml&quot; dur=&quot;1s&quot; from=&quot;0 25 25&quot; repeatCount=&quot;indefinite&quot; to=&quot;360 25 25&quot; type=&quot;rotate&quot;&gt;&lt;/animateTransform&gt;
+            &lt;/path&gt;
+          &lt;/svg&gt;
+          &lt;div class=&quot;success-message&quot;&gt;Sent!&lt;/div&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/form&gt;
   &lt;/div&gt;
 &lt;/div&gt;</pre></div>
-            </div>
-            <div class="c-text-controller">
-              <a class="c-text-controller__toggle mb-1" href="#text-controls">
-                <svg class="icon icon-gear">
-                  <use xlink:href="#icon-gear"></use>
-                </svg><span class="c-text-controller__title-full">Translate &amp; Adjust Text</span><span class="c-text-controller__title-short">Translate Text</span></a>
-              <div class="c-text-controller__options" id="text-controls">
-                <div class="c-text-controller__languages">
-                  <div class="wpml-ls-statics-shortcode_actions wpml-ls wpml-ls-legacy-list-horizontal">
-                    <ul>
-                      <li class="wpml-ls-slot-shortcode_actions wpml-ls-item wpml-ls-item-en wpml-ls-current-language wpml-ls-first-item wpml-ls-item-legacy-list-horizontal">
-                        <a class="wpml-ls-link" href="#"><span class="wpml-ls-native">English</span></a>
-                      </li>
-                      <li class="wpml-ls-slot-shortcode_actions wpml-ls-item wpml-ls-item-es wpml-ls-item-legacy-list-horizontal">
-                        <a class="wpml-ls-link" href="#"><span class="wpml-ls-native">Español</span></a>
-                      </li>
-                      <li class="wpml-ls-slot-shortcode_actions wpml-ls-item wpml-ls-item-ru wpml-ls-item-legacy-list-horizontal">
-                        <a class="wpml-ls-link" href="#"><span class="wpml-ls-native">Русский</span></a>
-                      </li>
-                      <li class="wpml-ls-slot-shortcode_actions wpml-ls-item wpml-ls-item-ko wpml-ls-item-legacy-list-horizontal">
-                        <a class="wpml-ls-link" href="#"><span class="wpml-ls-native">한국어</span></a>
-                      </li>
-                      <li class="wpml-ls-slot-shortcode_actions wpml-ls-item wpml-ls-item-ar wpml-ls-item-legacy-list-horizontal">
-                        <a class="wpml-ls-link" href="#"><span class="wpml-ls-native">العربية</span></a>
-                      </li>
-                      <li class="wpml-ls-slot-shortcode_actions wpml-ls-item wpml-ls-item-ht wpml-ls-item-legacy-list-horizontal">
-                        <a class="wpml-ls-link" href="#"><span class="wpml-ls-native">Kreyol</span></a>
-                      </li>
-                      <li class="wpml-ls-slot-shortcode_actions wpml-ls-item wpml-ls-item-zh-hant wpml-ls-item-legacy-list-horizontal">
-                        <a class="wpml-ls-link" href="#"><span class="wpml-ls-native">繁體中文</span></a>
-                      </li>
-                      <li class="wpml-ls-slot-shortcode_actions wpml-ls-item wpml-ls-item-fr wpml-ls-item-legacy-list-horizontal">
-                        <a class="wpml-ls-link" href="#"><span class="wpml-ls-native">Français</span></a>
-                      </li>
-                      <li class="wpml-ls-slot-shortcode_actions wpml-ls-item wpml-ls-item-pl wpml-ls-item-legacy-list-horizontal">
-                        <a class="wpml-ls-link" href="#"><span class="wpml-ls-native">polski</span></a>
-                      </li>
-                      <li class="wpml-ls-slot-shortcode_actions wpml-ls-item wpml-ls-item-ur wpml-ls-item-legacy-list-horizontal">
-                        <a class="wpml-ls-link" href="#"><span class="wpml-ls-native">اردو</span></a>
-                      </li>
-                      <li class="wpml-ls-slot-shortcode_actions wpml-ls-item wpml-ls-item-bn wpml-ls-last-item wpml-ls-item-legacy-list-horizontal">
-                        <a class="wpml-ls-link" href="#"><span class="wpml-ls-native">বাংলা</span></a>
-                      </li>
-                    </ul>
+                </div>
+                <div class="c-share-form mb-2">
+                  <a class="btn btn-primary c-share-form__toggle" data-scroll-offset="20" href="#share-by-text">Text</a>
+                  <div class="c-share-form__input hidden" id="share-by-text">
+                    <form>
+                      <div class="c-share-form__controls">
+                        <input name="to" placeholder="Phone Number" required="true" type="tel" />
+                        <div class="c-share-form__button">
+                          <button class="btn btn-primary btn-small btn-submit" type="submit">Send</button>
+                          <svg class="share-form__spinner js-spinner" height="40px" style="display: none" version="1.1" viewBox="0 0 50 50" width="69.89px" x="0px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                            y="0px">
+                            <path d="M43.935,25.145c0-10.318-8.364-18.683-18.683-18.683c-10.318,0-18.683,8.365-18.683,18.683h4.068c0-8.071,6.543-14.615,14.615-14.615c8.072,0,14.615,6.543,14.615,14.615H43.935z" fill="#184e9e" transform="rotate(109.079 25 25)">
+                              <animateTransform attributeName="transform" attributeType="xml" dur="1s" from="0 25 25" repeatCount="indefinite" to="360 25 25" type="rotate"></animateTransform>
+                            </path>
+                          </svg>
+                          <div class="success-message">Sent!</div>
+                        </div>
+                      </div>
+                    </form>
                   </div>
                 </div>
-                <div class="c-text-controller__sizer"><em class="c-text-controller__sizer-text">Adjust text size</em>
-                  <button class="c-text-controller__sizer-btn btn-text js-text-larger">
-                    <svg class="icon icon-plus">
-                      <use xlink:href="#icon-plus"></use>
-                    </svg>
-                    <div class="sr-only">Larger</div>
-                  </button>
-                  <button class="c-text-controller__sizer-btn btn-text js-text-smaller">
-                    <svg class="icon icon-minus">
-                      <use xlink:href="#icon-minus"></use>
-                    </svg>
-                    <div class="sr-only">Smaller</div>
-                  </button>
+                <div class="c-share-form">
+                  <a class="btn btn-primary c-share-form__toggle active" data-scroll-offset="20" href="#share-by-text">Email</a>
+                  <div class="c-share-form__input" id="share-by-text">
+                    <form>
+                      <div class="c-share-form__controls">
+                        <input name="to" placeholder="Email" required="true" type="email" />
+                        <div class="c-share-form__button">
+                          <button class="btn btn-primary btn-small btn-submit" type="submit">Send</button>
+                          <svg class="share-form__spinner js-spinner" height="40px" style="display: none" version="1.1" viewBox="0 0 50 50" width="69.89px" x="0px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                            y="0px">
+                            <path d="M43.935,25.145c0-10.318-8.364-18.683-18.683-18.683c-10.318,0-18.683,8.365-18.683,18.683h4.068c0-8.071,6.543-14.615,14.615-14.615c8.072,0,14.615,6.543,14.615,14.615H43.935z" fill="#184e9e" transform="rotate(109.079 25 25)">
+                              <animateTransform attributeName="transform" attributeType="xml" dur="1s" from="0 25 25" repeatCount="indefinite" to="360 25 25" type="rotate"></animateTransform>
+                            </path>
+                          </svg>
+                          <div class="success-message">Sent!</div>
+                        </div>
+                      </div>
+                    </form>
+                  </div>
                 </div>
               </div>
             </div>

@@ -9,12 +9,12 @@
 @import 'bourbon/app/assets/stylesheets/addons/triangle';
 
 // Declarations
-a, .btn-link {
+a:not(.btn), .btn-link {
   color: map-get(map-get($variables, 'colors'), 'color-blue');
   text-decoration: underline;
   transition: color .2s ease-in;
 
-  &:link {
+  &:not(.btn):link {
     color: map-get(map-get($variables, 'colors'), 'color-blue');
   }
 

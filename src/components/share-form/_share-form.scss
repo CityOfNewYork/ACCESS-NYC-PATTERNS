@@ -1,0 +1,110 @@
+/**
+ * Share Form
+ */
+
+// Dependencies
+@import 'config/colors';
+@import 'config/dimensions';
+@import 'config/fonts';
+@import 'config/direction';
+@import 'bourbon/app/assets/stylesheets/addons/triangle';
+
+// Declarations
+.c-share-form { }
+
+.c-share-form__toggle {
+  display: block;
+
+  &.active {
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+    background: $color-blue-dark;
+    margin-bottom: -1px;
+    position: relative;
+    z-index: 1;
+
+    &::after {
+      position: absolute;
+      @if $text-direction == 'rtl' {
+        left: 34px;
+        bottom: (.3 * -$spacing-base);
+      } @else {
+        right: 34px;
+        bottom: (.3 * -$spacing-base);
+      }
+      @include triangle($spacing-base (.3 * $spacing-base), $color-blue-dark, down);
+      content: '';
+      display: block;
+      z-index: 0;
+    }
+  }
+}
+
+.c-share-form__input {
+  .program-detail-status-buttons & {
+    margin-bottom: $spacing-base;
+  }
+
+  .error-message {
+    color: $color-red;
+    font-size: $font-size-small;
+    margin-top: (.5 * $spacing-base);
+    width: 100%;
+  }
+
+  .success-message {
+    color: $color-green-mid;
+    display: none;
+    font-size: $font-size-small;
+    font-weight: $font-weight-bold;
+  }
+
+  .success {
+    .success-message {
+      display: block;
+      padding: (.75 * $spacing-base);
+    }
+  }
+
+  &.active {
+    margin-bottom: $spacing-base;
+  }
+}
+
+.c-share-form__controls {
+  align-items: center;
+  display: flex;
+  background: $color-white;
+  border: 1px solid $color-grey-mid;
+
+  .error & {
+    border-color: $color-red;
+  }
+
+  input {
+    flex-grow: 1;
+    border: none;
+    min-width: 0px;
+    width: 100%;
+    text-overflow: ellipsis;
+    padding-#{$text-direction-end}: 0;
+  }
+
+  .btn-submit {
+    margin: 0;
+    padding: (.75 * $spacing-base);
+
+    .success & {
+      display: none;
+    }
+  }
+}
+
+.c-share-form__button {
+  flex: 0 0 69.89px;
+  padding: 0 10px;
+}
+
+// .share-form__spinner {
+//   flex: 0 0 69.89px; // same width as send button
+// }

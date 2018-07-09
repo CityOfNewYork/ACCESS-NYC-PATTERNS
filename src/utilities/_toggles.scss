@@ -28,7 +28,7 @@ $animate: map-get($variables, 'animate');
 }
 
 .active.hidden-by-overflow {
-  max-height: 10000px;
+  max-height: auto;
 }
 
 .animated.hidden-by-overflow {
@@ -41,6 +41,7 @@ $animate: map-get($variables, 'animate');
 }
 
 .animated.active.hidden-by-overflow {
+  max-height: 10000px;
   transition-duration: 0.75s;
   transition-timing-function: map-get($animate, 'ease-in-quint');
 }

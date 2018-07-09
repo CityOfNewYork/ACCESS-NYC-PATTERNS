@@ -33,6 +33,7 @@
     a class='${class_nav_item}' href='filter' Filter
     a class='${class_nav_item}' href='side-nav' Side Nav
     a class='${class_nav_item}' href='question' Question
+    a class='${class_nav_item}' href='share-form' Share Form
 
   nav class='${class_nav}'
     span class='${class_nav_heading}' Objects;
