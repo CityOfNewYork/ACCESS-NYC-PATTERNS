@@ -22,7 +22,227 @@
   </head>
 
   <body onload="load()" style="visibility: hidden;">
-    <div aria-hidden="true" style="display: none">
+    <header class="layout--sidebar">
+      <div class="flex items-center justify-center bg-color-blue-dark text-base-white screen-desktop:w-64 p-3 screen-desktop:p-4">
+        <h1 class="m-0 p-0"><span class="hidden">ACCESS NYC</span>
+          <svg aria-hidden="true" class="icon-logo-full--large text-color-white">
+            <use xlink:href="#icon-logo-full"></use>
+          </svg>
+        </h1>
+      </div>
+      <div class="flex-1 flex flex-col content-center bg-color-grey-lightest screen-desktop:border-b-4 border-color-grey-light justify-center p-3 screen-desktop:p-4">
+        <h2>Pattern Library</h2>
+        <a href="#main-content">Skip to main content</a>
+      </div>
+      <div class="flex flex-col content-center justify-center bg-color-grey-lightest screen-desktop:border-b-4 border-color-grey-light px-3 pb-3 screen-desktop:p-4">
+        <h3 class="mr-3">
+          <a class="border-2 py-1 px-2 inline rounded-lg" href="https://github.com/CityOfNewYork/ACCESS-NYC-PATTERNS">Pre-release v0.0.10</a>
+        </h3>
+      </div>
+    </header>
+    <main class="layout--sidebar m-0 p-0 min-h-screen screen-desktop:border-b-4 border-color-grey-light" id="main-content">
+      <aside class="bg-secondary-white py-2 px-3">
+        <nav class="pb-2">
+          <a class="screen-desktop:block screen-desktop:border-b border-color-white p-2 pr-2 screen-tablet:p-2" href="index">Home</a>
+          <a class="screen-desktop:block screen-desktop:border-b border-color-white p-2" href="https://github.com/CityOfNewYork/ACCESS-NYC-PATTERNS">Source</a>
+        </nav>
+        <nav class="pb-2"><span class="screen-desktop:block pb-1">Elements;</span>
+          <a class="screen-desktop:block screen-desktop:border-b border-color-white p-2" href="colors">Colors</a>
+          <a class="screen-desktop:block screen-desktop:border-b border-color-white p-2" href="font-families">Fonts</a>
+          <a class="screen-desktop:block screen-desktop:border-b border-color-white p-2" href="typography">Typography</a>
+          <a class="screen-desktop:block screen-desktop:border-b border-color-white p-2" href="exposition">Exposition</a>
+          <a class="screen-desktop:block screen-desktop:border-b border-color-white p-2" href="icons">Icons</a>
+          <a class="screen-desktop:block screen-desktop:border-b border-color-white p-2" href="links">Links</a>
+          <a class="screen-desktop:block screen-desktop:border-b border-color-white p-2" href="buttons">Buttons</a>
+          <a class="screen-desktop:block screen-desktop:border-b border-color-white p-2" href="checkboxes">Checkboxes</a>
+          <a class="screen-desktop:block screen-desktop:border-b border-color-white p-2" href="radios">Radios</a>
+          <a class="screen-desktop:block screen-desktop:border-b border-color-white p-2" href="toggles">Toggles</a>
+          <a class="screen-desktop:block screen-desktop:border-b border-color-white p-2" href="selects">Selects</a>
+          <a class="screen-desktop:block screen-desktop:border-b border-color-white p-2" href="tables">Tables</a>
+          <a class="screen-desktop:block screen-desktop:border-b border-color-white p-2" href="tooltips">Tooltips</a>
+          <a class="screen-desktop:block screen-desktop:border-b border-color-white p-2" href="program-labels">Program Labels</a>
+        </nav>
+        <nav class="pb-2"><span class="screen-desktop:block pb-1">Components;</span>
+          <a class="screen-desktop:block screen-desktop:border-b border-color-white p-2" href="accordion">Accordion</a>
+          <a class="screen-desktop:block screen-desktop:border-b border-color-white p-2" href="alert-box">Alert Box</a>
+          <a class="screen-desktop:block screen-desktop:border-b border-color-white p-2" href="card">Card</a>
+          <a class="screen-desktop:block screen-desktop:border-b border-color-white p-2" href="checklist">Checklist</a>
+          <a class="screen-desktop:block screen-desktop:border-b border-color-white p-2" href="disclaimer">Disclaimer</a>
+          <a class="screen-desktop:block screen-desktop:border-b border-color-white p-2" href="header">Header</a>
+          <a class="screen-desktop:block screen-desktop:border-b border-color-white p-2" href="text-controller">Text Controller</a>
+          <a class="screen-desktop:block screen-desktop:border-b border-color-white p-2" href="filter">Filter</a>
+          <a class="screen-desktop:block screen-desktop:border-b border-color-white p-2" href="side-nav">Side Nav</a>
+          <a class="screen-desktop:block screen-desktop:border-b border-color-white p-2" href="question">Question</a>
+        </nav>
+        <nav class="pb-2"><span class="screen-desktop:block pb-1">Objects;</span>
+          <a class="screen-desktop:block screen-desktop:border-b border-color-white p-2" href="announcements">Announcements</a>
+          <a class="screen-desktop:block screen-desktop:border-b border-color-white p-2" href="banner">Banner</a>
+          <a class="screen-desktop:block screen-desktop:border-b border-color-white p-2" href="card-list">Card Lists</a>
+          <a class="screen-desktop:block screen-desktop:border-b border-color-white p-2" href="search-box">Search Box</a>
+          <a class="screen-desktop:block screen-desktop:border-b border-color-white p-2" href="footer">Footer</a>
+          <a class="screen-desktop:block screen-desktop:border-b border-color-white p-2" href="navigation">Navigation</a>
+        </nav>
+      </aside>
+      <article class="bg-color-white py-2 px-4 screen-desktop:px-6">
+        <h1 class="px-1">Colors</h1>
+        <section class="pb-4" id="default-styling">
+          <header class="pt-1 px-1 border-b border-color-grey-light mb-3">
+            <h2>Site colors</h2>
+          </header>
+          <div class="block screen-desktop:flex">
+            <div class="flex-1">
+              <div class="pb-3 pl-1 pr-4">
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis
+                  aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                <h3>Utility Class Usage</h3>
+                <p>You can use every color as a utility class for static and hover states. These are the prefixes that are available;</p>
+                <p><code class="code">bg-&lt;color&gt;</code> = Background color</p>
+                <p><code class="code">text-&lt;color&gt;</code> = Text color</p>
+                <p><code class="code">border-&lt;color&gt;</code> = Border color</p>
+                <p>Refer to
+                  <a href="https://tailwindcss.com">Tailwind CSS docs</a> for full details.</p>
+              </div>
+            </div>
+            <div class="flex-1 screen-desktop:max-w-1/2">
+              <div class="pb-4 screen-desktop:px-1">
+                <div class="inline-block p-1 w-full mb-3"><code class="code">&lt;prefix&gt;-color-black</code><span class="px-1">,</span><code class="code">$color-black</code>
+                  <div class="my-1 p-1 border border-color-grey-light">
+                    <div class="bg-color-black p-4"></div>
+                    <div class="mt-1">#000000</div>
+                  </div>
+                </div>
+                <div class="inline-block p-1 w-full mb-3"><code class="code">&lt;prefix&gt;-color-white</code><span class="px-1">,</span><code class="code">$color-white</code>
+                  <div class="my-1 p-1 border border-color-grey-light">
+                    <div class="bg-color-white p-4"></div>
+                    <div class="mt-1">#ffffff</div>
+                  </div>
+                </div>
+                <div class="inline-block p-1 w-full mb-3"><code class="code">&lt;prefix&gt;-color-transparent</code><span class="px-1">,</span><code class="code">$color-transparent</code>
+                  <div class="my-1 p-1 border border-color-grey-light">
+                    <div class="bg-color-transparent p-4"></div>
+                    <div class="mt-1">rgba(255, 255, 255, 0)</div>
+                  </div>
+                </div>
+                <div class="inline-block p-1 w-full mb-3"><code class="code">&lt;prefix&gt;-color-blue</code><span class="px-1">,</span><code class="code">$color-blue</code>
+                  <div class="my-1 p-1 border border-color-grey-light">
+                    <div class="bg-color-blue p-4"></div>
+                    <div class="mt-1">#184e9e</div>
+                  </div>
+                </div>
+                <div class="inline-block p-1 w-full mb-3"><code class="code">&lt;prefix&gt;-color-blue-bright</code><span class="px-1">,</span><code class="code">$color-blue-bright</code>
+                  <div class="my-1 p-1 border border-color-grey-light">
+                    <div class="bg-color-blue-bright p-4"></div>
+                    <div class="mt-1">#118df0</div>
+                  </div>
+                </div>
+                <div class="inline-block p-1 w-full mb-3"><code class="code">&lt;prefix&gt;-color-blue-dark</code><span class="px-1">,</span><code class="code">$color-blue-dark</code>
+                  <div class="my-1 p-1 border border-color-grey-light">
+                    <div class="bg-color-blue-dark p-4"></div>
+                    <div class="mt-1">#112e51</div>
+                  </div>
+                </div>
+                <div class="inline-block p-1 w-full mb-3"><code class="code">&lt;prefix&gt;-color-blue-light</code><span class="px-1">,</span><code class="code">$color-blue-light</code>
+                  <div class="my-1 p-1 border border-color-grey-light">
+                    <div class="bg-color-blue-light p-4"></div>
+                    <div class="mt-1">#e1eeff</div>
+                  </div>
+                </div>
+                <div class="inline-block p-1 w-full mb-3"><code class="code">&lt;prefix&gt;-color-green</code><span class="px-1">,</span><code class="code">$color-green</code>
+                  <div class="my-1 p-1 border border-color-grey-light">
+                    <div class="bg-color-green p-4"></div>
+                    <div class="mt-1">#05ce7c</div>
+                  </div>
+                </div>
+                <div class="inline-block p-1 w-full mb-3"><code class="code">&lt;prefix&gt;-color-green-dark</code><span class="px-1">,</span><code class="code">$color-green-dark</code>
+                  <div class="my-1 p-1 border border-color-grey-light">
+                    <div class="bg-color-green-dark p-4"></div>
+                    <div class="mt-1">#094727</div>
+                  </div>
+                </div>
+                <div class="inline-block p-1 w-full mb-3"><code class="code">&lt;prefix&gt;-color-green-mid</code><span class="px-1">,</span><code class="code">$color-green-mid</code>
+                  <div class="my-1 p-1 border border-color-grey-light">
+                    <div class="bg-color-green-mid p-4"></div>
+                    <div class="mt-1">#0d6b3b</div>
+                  </div>
+                </div>
+                <div class="inline-block p-1 w-full mb-3"><code class="code">&lt;prefix&gt;-color-green-light</code><span class="px-1">,</span><code class="code">$color-green-light</code>
+                  <div class="my-1 p-1 border border-color-grey-light">
+                    <div class="bg-color-green-light p-4"></div>
+                    <div class="mt-1">#d4ffe7</div>
+                  </div>
+                </div>
+                <div class="inline-block p-1 w-full mb-3"><code class="code">&lt;prefix&gt;-color-grey-dark</code><span class="px-1">,</span><code class="code">$color-grey-dark</code>
+                  <div class="my-1 p-1 border border-color-grey-light">
+                    <div class="bg-color-grey-dark p-4"></div>
+                    <div class="mt-1">#172129</div>
+                  </div>
+                </div>
+                <div class="inline-block p-1 w-full mb-3"><code class="code">&lt;prefix&gt;-color-grey-light</code><span class="px-1">,</span><code class="code">$color-grey-light</code>
+                  <div class="my-1 p-1 border border-color-grey-light">
+                    <div class="bg-color-grey-light p-4"></div>
+                    <div class="mt-1">#d1d5d9</div>
+                  </div>
+                </div>
+                <div class="inline-block p-1 w-full mb-3"><code class="code">&lt;prefix&gt;-color-grey-lightest</code><span class="px-1">,</span><code class="code">$color-grey-lightest</code>
+                  <div class="my-1 p-1 border border-color-grey-light">
+                    <div class="bg-color-grey-lightest p-4"></div>
+                    <div class="mt-1">#eef3f7</div>
+                  </div>
+                </div>
+                <div class="inline-block p-1 w-full mb-3"><code class="code">&lt;prefix&gt;-color-grey-mid</code><span class="px-1">,</span><code class="code">$color-grey-mid</code>
+                  <div class="my-1 p-1 border border-color-grey-light">
+                    <div class="bg-color-grey-mid p-4"></div>
+                    <div class="mt-1">#505c66</div>
+                  </div>
+                </div>
+                <div class="inline-block p-1 w-full mb-3"><code class="code">&lt;prefix&gt;-color-pink</code><span class="px-1">,</span><code class="code">$color-pink</code>
+                  <div class="my-1 p-1 border border-color-grey-light">
+                    <div class="bg-color-pink p-4"></div>
+                    <div class="mt-1">#f1647c</div>
+                  </div>
+                </div>
+                <div class="inline-block p-1 w-full mb-3"><code class="code">&lt;prefix&gt;-color-pink-light</code><span class="px-1">,</span><code class="code">$color-pink-light</code>
+                  <div class="my-1 p-1 border border-color-grey-light">
+                    <div class="bg-color-pink-light p-4"></div>
+                    <div class="mt-1">#f1b3bd</div>
+                  </div>
+                </div>
+                <div class="inline-block p-1 w-full mb-3"><code class="code">&lt;prefix&gt;-color-purple</code><span class="px-1">,</span><code class="code">$color-purple</code>
+                  <div class="my-1 p-1 border border-color-grey-light">
+                    <div class="bg-color-purple p-4"></div>
+                    <div class="mt-1">#4c2c92</div>
+                  </div>
+                </div>
+                <div class="inline-block p-1 w-full mb-3"><code class="code">&lt;prefix&gt;-color-red</code><span class="px-1">,</span><code class="code">$color-red</code>
+                  <div class="my-1 p-1 border border-color-grey-light">
+                    <div class="bg-color-red p-4"></div>
+                    <div class="mt-1">#c6252b</div>
+                  </div>
+                </div>
+                <div class="inline-block p-1 w-full mb-3"><code class="code">&lt;prefix&gt;-color-yellow-access</code><span class="px-1">,</span><code class="code">$color-yellow-access</code>
+                  <div class="my-1 p-1 border border-color-grey-light">
+                    <div class="bg-color-yellow-access p-4"></div>
+                    <div class="mt-1">#fbb720</div>
+                  </div>
+                </div>
+                <div class="inline-block p-1 w-full mb-3"><code class="code">&lt;prefix&gt;-color-yellow-light</code><span class="px-1">,</span><code class="code">$color-yellow-light</code>
+                  <div class="my-1 p-1 border border-color-grey-light">
+                    <div class="bg-color-yellow-light p-4"></div>
+                    <div class="mt-1">#ffe6a9</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </article>
+    </main>
+    <footer class="py-4 text-center bg-color-blue-dark text-color-white links-invert">
+      <p class="m-0">Maintained by&nbsp;
+        <a href="https://github.com/orgs/CityOfNewYork/teams/nycopportunity">NYC Opportunity</a>
+      </p>
+    </footer>
+    <div aria-hidden="true" class="hidden">
       <?xml version="1.0" encoding="UTF-8"?>
       <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
       <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
@@ -379,226 +599,6 @@
         </symbol>
       </svg>
     </div>
-    <header class="layout--sidebar">
-      <div class="flex items-center justify-center bg-color-blue-dark text-base-white screen-desktop:w-64 p-3 screen-desktop:p-4">
-        <h1 class="m-0 p-0"><span class="hidden">ACCESS NYC</span>
-          <svg aria-hidden="true" class="icon-logo-full--large text-color-white">
-            <use xlink:href="#icon-logo-full"></use>
-          </svg>
-        </h1>
-      </div>
-      <div class="flex-1 flex flex-col content-center bg-color-grey-lightest screen-desktop:border-b-4 border-color-grey-light justify-center p-3 screen-desktop:p-4">
-        <h2>Pattern Library</h2>
-        <a href="#main-content">Skip to main content</a>
-      </div>
-      <div class="flex flex-col content-center justify-center bg-color-grey-lightest screen-desktop:border-b-4 border-color-grey-light px-3 pb-3 screen-desktop:p-4">
-        <h3 class="mr-3">
-          <a class="border-2 py-1 px-2 inline rounded-lg" href="https://github.com/CityOfNewYork/ACCESS-NYC-PATTERNS">Pre-release v0.0.10</a>
-        </h3>
-      </div>
-    </header>
-    <main class="layout--sidebar m-0 p-0 min-h-screen screen-desktop:border-b-4 border-color-grey-light" id="main-content">
-      <aside class="bg-secondary-white py-2 px-3">
-        <nav class="pb-2">
-          <a class="screen-desktop:block screen-desktop:border-b border-color-white p-2 pr-2 screen-tablet:p-2" href="index">Home</a>
-          <a class="screen-desktop:block screen-desktop:border-b border-color-white p-2" href="https://github.com/CityOfNewYork/ACCESS-NYC-PATTERNS">Source</a>
-        </nav>
-        <nav class="pb-2"><span class="screen-desktop:block pb-1">Elements;</span>
-          <a class="screen-desktop:block screen-desktop:border-b border-color-white p-2" href="colors">Colors</a>
-          <a class="screen-desktop:block screen-desktop:border-b border-color-white p-2" href="font-families">Fonts</a>
-          <a class="screen-desktop:block screen-desktop:border-b border-color-white p-2" href="typography">Typography</a>
-          <a class="screen-desktop:block screen-desktop:border-b border-color-white p-2" href="exposition">Exposition</a>
-          <a class="screen-desktop:block screen-desktop:border-b border-color-white p-2" href="icons">Icons</a>
-          <a class="screen-desktop:block screen-desktop:border-b border-color-white p-2" href="links">Links</a>
-          <a class="screen-desktop:block screen-desktop:border-b border-color-white p-2" href="buttons">Buttons</a>
-          <a class="screen-desktop:block screen-desktop:border-b border-color-white p-2" href="checkboxes">Checkboxes</a>
-          <a class="screen-desktop:block screen-desktop:border-b border-color-white p-2" href="radios">Radios</a>
-          <a class="screen-desktop:block screen-desktop:border-b border-color-white p-2" href="toggles">Toggles</a>
-          <a class="screen-desktop:block screen-desktop:border-b border-color-white p-2" href="selects">Selects</a>
-          <a class="screen-desktop:block screen-desktop:border-b border-color-white p-2" href="tables">Tables</a>
-          <a class="screen-desktop:block screen-desktop:border-b border-color-white p-2" href="tooltips">Tooltips</a>
-          <a class="screen-desktop:block screen-desktop:border-b border-color-white p-2" href="program-labels">Program Labels</a>
-        </nav>
-        <nav class="pb-2"><span class="screen-desktop:block pb-1">Components;</span>
-          <a class="screen-desktop:block screen-desktop:border-b border-color-white p-2" href="accordion">Accordion</a>
-          <a class="screen-desktop:block screen-desktop:border-b border-color-white p-2" href="alert-box">Alert Box</a>
-          <a class="screen-desktop:block screen-desktop:border-b border-color-white p-2" href="card">Card</a>
-          <a class="screen-desktop:block screen-desktop:border-b border-color-white p-2" href="checklist">Checklist</a>
-          <a class="screen-desktop:block screen-desktop:border-b border-color-white p-2" href="disclaimer">Disclaimer</a>
-          <a class="screen-desktop:block screen-desktop:border-b border-color-white p-2" href="header">Header</a>
-          <a class="screen-desktop:block screen-desktop:border-b border-color-white p-2" href="text-controller">Text Controller</a>
-          <a class="screen-desktop:block screen-desktop:border-b border-color-white p-2" href="filter">Filter</a>
-          <a class="screen-desktop:block screen-desktop:border-b border-color-white p-2" href="side-nav">Side Nav</a>
-          <a class="screen-desktop:block screen-desktop:border-b border-color-white p-2" href="question">Question</a>
-        </nav>
-        <nav class="pb-2"><span class="screen-desktop:block pb-1">Objects;</span>
-          <a class="screen-desktop:block screen-desktop:border-b border-color-white p-2" href="announcements">Announcements</a>
-          <a class="screen-desktop:block screen-desktop:border-b border-color-white p-2" href="banner">Banner</a>
-          <a class="screen-desktop:block screen-desktop:border-b border-color-white p-2" href="card-list">Card Lists</a>
-          <a class="screen-desktop:block screen-desktop:border-b border-color-white p-2" href="search-box">Search Box</a>
-          <a class="screen-desktop:block screen-desktop:border-b border-color-white p-2" href="footer">Footer</a>
-          <a class="screen-desktop:block screen-desktop:border-b border-color-white p-2" href="navigation">Navigation</a>
-        </nav>
-      </aside>
-      <article class="bg-color-white py-2 px-4 screen-desktop:px-6">
-        <h1 class="px-1">Colors</h1>
-        <section class="pb-4" id="default-styling">
-          <header class="pt-1 px-1 border-b border-color-grey-light mb-3">
-            <h2>Site colors</h2>
-          </header>
-          <div class="block screen-desktop:flex">
-            <div class="flex-1">
-              <div class="pb-3 pl-1 pr-4">
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis
-                  aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-                <h3>Utility Class Usage</h3>
-                <p>You can use every color as a utility class for static and hover states. These are the prefixes that are available;</p>
-                <p><code class="code">bg-&lt;color&gt;</code> = Background color</p>
-                <p><code class="code">text-&lt;color&gt;</code> = Text color</p>
-                <p><code class="code">border-&lt;color&gt;</code> = Border color</p>
-                <p>Refer to
-                  <a href="https://tailwindcss.com">Tailwind CSS docs</a> for full details.</p>
-              </div>
-            </div>
-            <div class="flex-1 screen-desktop:max-w-1/2">
-              <div class="pb-4 screen-desktop:px-1">
-                <div class="inline-block p-1 w-full mb-3"><code class="code">&lt;prefix&gt;-color-black</code><span class="px-1">,</span><code class="code">$color-black</code>
-                  <div class="my-1 p-1 border border-color-grey-light">
-                    <div class="bg-color-black p-4"></div>
-                    <div class="mt-1">#000000</div>
-                  </div>
-                </div>
-                <div class="inline-block p-1 w-full mb-3"><code class="code">&lt;prefix&gt;-color-white</code><span class="px-1">,</span><code class="code">$color-white</code>
-                  <div class="my-1 p-1 border border-color-grey-light">
-                    <div class="bg-color-white p-4"></div>
-                    <div class="mt-1">#ffffff</div>
-                  </div>
-                </div>
-                <div class="inline-block p-1 w-full mb-3"><code class="code">&lt;prefix&gt;-color-transparent</code><span class="px-1">,</span><code class="code">$color-transparent</code>
-                  <div class="my-1 p-1 border border-color-grey-light">
-                    <div class="bg-color-transparent p-4"></div>
-                    <div class="mt-1">rgba(255, 255, 255, 0)</div>
-                  </div>
-                </div>
-                <div class="inline-block p-1 w-full mb-3"><code class="code">&lt;prefix&gt;-color-blue</code><span class="px-1">,</span><code class="code">$color-blue</code>
-                  <div class="my-1 p-1 border border-color-grey-light">
-                    <div class="bg-color-blue p-4"></div>
-                    <div class="mt-1">#184e9e</div>
-                  </div>
-                </div>
-                <div class="inline-block p-1 w-full mb-3"><code class="code">&lt;prefix&gt;-color-blue-bright</code><span class="px-1">,</span><code class="code">$color-blue-bright</code>
-                  <div class="my-1 p-1 border border-color-grey-light">
-                    <div class="bg-color-blue-bright p-4"></div>
-                    <div class="mt-1">#118df0</div>
-                  </div>
-                </div>
-                <div class="inline-block p-1 w-full mb-3"><code class="code">&lt;prefix&gt;-color-blue-dark</code><span class="px-1">,</span><code class="code">$color-blue-dark</code>
-                  <div class="my-1 p-1 border border-color-grey-light">
-                    <div class="bg-color-blue-dark p-4"></div>
-                    <div class="mt-1">#112e51</div>
-                  </div>
-                </div>
-                <div class="inline-block p-1 w-full mb-3"><code class="code">&lt;prefix&gt;-color-blue-light</code><span class="px-1">,</span><code class="code">$color-blue-light</code>
-                  <div class="my-1 p-1 border border-color-grey-light">
-                    <div class="bg-color-blue-light p-4"></div>
-                    <div class="mt-1">#e1eeff</div>
-                  </div>
-                </div>
-                <div class="inline-block p-1 w-full mb-3"><code class="code">&lt;prefix&gt;-color-green</code><span class="px-1">,</span><code class="code">$color-green</code>
-                  <div class="my-1 p-1 border border-color-grey-light">
-                    <div class="bg-color-green p-4"></div>
-                    <div class="mt-1">#05ce7c</div>
-                  </div>
-                </div>
-                <div class="inline-block p-1 w-full mb-3"><code class="code">&lt;prefix&gt;-color-green-dark</code><span class="px-1">,</span><code class="code">$color-green-dark</code>
-                  <div class="my-1 p-1 border border-color-grey-light">
-                    <div class="bg-color-green-dark p-4"></div>
-                    <div class="mt-1">#094727</div>
-                  </div>
-                </div>
-                <div class="inline-block p-1 w-full mb-3"><code class="code">&lt;prefix&gt;-color-green-mid</code><span class="px-1">,</span><code class="code">$color-green-mid</code>
-                  <div class="my-1 p-1 border border-color-grey-light">
-                    <div class="bg-color-green-mid p-4"></div>
-                    <div class="mt-1">#0d6b3b</div>
-                  </div>
-                </div>
-                <div class="inline-block p-1 w-full mb-3"><code class="code">&lt;prefix&gt;-color-green-light</code><span class="px-1">,</span><code class="code">$color-green-light</code>
-                  <div class="my-1 p-1 border border-color-grey-light">
-                    <div class="bg-color-green-light p-4"></div>
-                    <div class="mt-1">#d4ffe7</div>
-                  </div>
-                </div>
-                <div class="inline-block p-1 w-full mb-3"><code class="code">&lt;prefix&gt;-color-grey-dark</code><span class="px-1">,</span><code class="code">$color-grey-dark</code>
-                  <div class="my-1 p-1 border border-color-grey-light">
-                    <div class="bg-color-grey-dark p-4"></div>
-                    <div class="mt-1">#172129</div>
-                  </div>
-                </div>
-                <div class="inline-block p-1 w-full mb-3"><code class="code">&lt;prefix&gt;-color-grey-light</code><span class="px-1">,</span><code class="code">$color-grey-light</code>
-                  <div class="my-1 p-1 border border-color-grey-light">
-                    <div class="bg-color-grey-light p-4"></div>
-                    <div class="mt-1">#d1d5d9</div>
-                  </div>
-                </div>
-                <div class="inline-block p-1 w-full mb-3"><code class="code">&lt;prefix&gt;-color-grey-lightest</code><span class="px-1">,</span><code class="code">$color-grey-lightest</code>
-                  <div class="my-1 p-1 border border-color-grey-light">
-                    <div class="bg-color-grey-lightest p-4"></div>
-                    <div class="mt-1">#eef3f7</div>
-                  </div>
-                </div>
-                <div class="inline-block p-1 w-full mb-3"><code class="code">&lt;prefix&gt;-color-grey-mid</code><span class="px-1">,</span><code class="code">$color-grey-mid</code>
-                  <div class="my-1 p-1 border border-color-grey-light">
-                    <div class="bg-color-grey-mid p-4"></div>
-                    <div class="mt-1">#505c66</div>
-                  </div>
-                </div>
-                <div class="inline-block p-1 w-full mb-3"><code class="code">&lt;prefix&gt;-color-pink</code><span class="px-1">,</span><code class="code">$color-pink</code>
-                  <div class="my-1 p-1 border border-color-grey-light">
-                    <div class="bg-color-pink p-4"></div>
-                    <div class="mt-1">#f1647c</div>
-                  </div>
-                </div>
-                <div class="inline-block p-1 w-full mb-3"><code class="code">&lt;prefix&gt;-color-pink-light</code><span class="px-1">,</span><code class="code">$color-pink-light</code>
-                  <div class="my-1 p-1 border border-color-grey-light">
-                    <div class="bg-color-pink-light p-4"></div>
-                    <div class="mt-1">#f1b3bd</div>
-                  </div>
-                </div>
-                <div class="inline-block p-1 w-full mb-3"><code class="code">&lt;prefix&gt;-color-purple</code><span class="px-1">,</span><code class="code">$color-purple</code>
-                  <div class="my-1 p-1 border border-color-grey-light">
-                    <div class="bg-color-purple p-4"></div>
-                    <div class="mt-1">#4c2c92</div>
-                  </div>
-                </div>
-                <div class="inline-block p-1 w-full mb-3"><code class="code">&lt;prefix&gt;-color-red</code><span class="px-1">,</span><code class="code">$color-red</code>
-                  <div class="my-1 p-1 border border-color-grey-light">
-                    <div class="bg-color-red p-4"></div>
-                    <div class="mt-1">#c6252b</div>
-                  </div>
-                </div>
-                <div class="inline-block p-1 w-full mb-3"><code class="code">&lt;prefix&gt;-color-yellow-access</code><span class="px-1">,</span><code class="code">$color-yellow-access</code>
-                  <div class="my-1 p-1 border border-color-grey-light">
-                    <div class="bg-color-yellow-access p-4"></div>
-                    <div class="mt-1">#fbb720</div>
-                  </div>
-                </div>
-                <div class="inline-block p-1 w-full mb-3"><code class="code">&lt;prefix&gt;-color-yellow-light</code><span class="px-1">,</span><code class="code">$color-yellow-light</code>
-                  <div class="my-1 p-1 border border-color-grey-light">
-                    <div class="bg-color-yellow-light p-4"></div>
-                    <div class="mt-1">#ffe6a9</div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-      </article>
-    </main>
-    <footer class="py-4 text-center bg-color-blue-dark text-color-white links-invert">
-      <p class="m-0">Maintained by&nbsp;
-        <a href="https://github.com/orgs/CityOfNewYork/teams/nycopportunity">NYC Opportunity</a>
-      </p>
-    </footer>
   </body>
 
 </html>
