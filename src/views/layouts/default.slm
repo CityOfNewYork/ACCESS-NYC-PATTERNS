@@ -37,5 +37,5 @@ html lang='en' class='text-size-0'
     div class='hidden' aria-hidden='true'
       = partial('/partials/icons.slm')
 
-    / script src='scripts/main.dist.js'
+    script src='scripts/AccessNyc.js'
     = content('script')

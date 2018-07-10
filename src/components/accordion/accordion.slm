@@ -2,12 +2,13 @@
 / Accordion
 /
 
-article class='c-accordion'
+article id='what-you-need-to-include-1' class='c-accordion' data-js='accordion' data-js-active='active'
   header class='c-accordion__header'
     p Proof of who you are
-    a class='c-accordion__toggle print:hidden active js-simple-toggle' href='#what-you-need-to-include-1'
-      span data-css-text='+ show this list' data-css-active-text='- hide this list'
-  div class='c-accordion__body hidden:overflow animated active print:active' id='what-you-need-to-include-1'
+    a href='#what-you-need-to-include-1__body' class="c-accordion__toggle print:hidden" v-on:click="toggle"
+      span v-if='active' - hide this list
+      span v-else='' + show this list
+  div id='what-you-need-to-include-1__body' class='c-accordion__body print:active hidden:overflow animated' v-bind:class='{active: active}' v-bind:aria-hidden='ariaHidden(active)'
     div class='c-accordion__padding'
       p
         | For each person applying, <strong>any one document:</strong>

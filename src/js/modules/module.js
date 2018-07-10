@@ -2,7 +2,18 @@
 
 import Constants from './constants';
 
+/**
+ * The Module styleguide
+ * @class
+ */
 class Module {
+  /**
+   * @param  {object} settings This could be some configuration options for the
+   *                           component or module.
+   * @param  {object} data     This could be a set of data that is needed for
+   *                           the component or module to render.
+   * @constructor
+   */
   constructor(settings, data) {
     this.data = data;
     this.settings = settings;

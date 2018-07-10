@@ -44,3 +44,8 @@
           div class='${class_demo_class_containers}'
             = partial('../components/accordion/accordion.slm')
 
+= content('script')
+  javascript:
+    var access = new AccessNyc();
+    access.accordion();
+

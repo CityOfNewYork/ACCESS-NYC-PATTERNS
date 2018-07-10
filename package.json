@@ -69,7 +69,8 @@
     "pretty": "^2.0.0",
     "promise-polyfill": "^7.1.1",
     "rollup": "^0.57.1",
-    "rollup-plugin-babel": "^3.0.3",
+    "rollup-plugin-alias": "^1.4.0",
+    "rollup-plugin-babel": "^3.0.7",
     "rollup-plugin-eslint": "^4.0.0",
     "rollup-plugin-node-resolve": "^3.3.0",
     "rollup-plugin-replace": "^2.0.0",
@@ -88,21 +89,8 @@
     "bourbon-neat": "^1.8.0",
     "lodash": "^4.17.5",
     "tailwindcss": "^0.5.1",
-    "uswds": "^0.14.0"
-  },
-  "babel": {
-    "plugins": [
-      "external-helpers",
-      "lodash"
-    ],
-    "presets": [
-      [
-        "es2015",
-        {
-          "modules": false
-        }
-      ]
-    ]
+    "uswds": "^0.14.0",
+    "vue": "^2.5.16"
   },
   "eslintConfig": {
     "extends": "google",
@@ -114,7 +102,8 @@
       "FB": false
     },
     "rules": {
-      "one-var": 0
+      "one-var": 0,
+      "comma-dangle": 0
     }
   },
   "stylelint": {

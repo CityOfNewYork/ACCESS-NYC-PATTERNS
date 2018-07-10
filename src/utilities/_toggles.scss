@@ -18,6 +18,18 @@ $animate: map-get($variables, 'animate');
   content: attr(data-css-active-text)
 }
 
+// .active__shown {
+//   display: none
+// }
+
+// .active > .active__shown {
+//   display: inherit !important
+// }
+
+// .active > .active__hidden {
+//   content: attr(data-css-text)
+// }
+
 .hidden\:overflow {
   // display: inherit !important;
   max-height: 0;
