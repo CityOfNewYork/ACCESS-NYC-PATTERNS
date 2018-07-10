@@ -2,7 +2,6 @@
 = extend('/layouts/default')
 
 / Component
-= partial('../components/accordion/accordion.slm')
 - mixin_id = 'accordion'
 - title = 'Accordion'
 
@@ -36,4 +35,12 @@
 
       div class='${class_demo_col2}'
         div class='${class_demo_content}'
-          = mixin(mixin_id, true)
+
+          div class='${class_demo_class_containers}'
+            div class='code-block mb-1'
+              pre
+                = 'code{{ components/accordion/accordion.slm }}'
+
+          div class='${class_demo_class_containers}'
+            = partial('../components/accordion/accordion.slm')
+

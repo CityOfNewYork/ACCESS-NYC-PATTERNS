@@ -1,60 +1,27 @@
+/
+/ Accordion
+/
 
-
-= mixin('accordion', 'code = false', 'text = ""')
-  - if this.code
-    div class='${class_demo_class_containers}'
-      div class='code-block mb-1'
-        pre
-          div = '<article class="c-accordion">'
-          div = '  <header class="c-accordion__header">'
-          div = '    <p>Proof of who you are</p>'
-          div = '    <a class="c-accordion__toggle hide-for-print active js-simple-toggle" href="#what-you-need-to-include-1">'
-          div = '      <span data-css-active-text="- hide this list" data-css-text="+ show this list"></span>'
-          div = '    </a>'
-          div = '  </header>'
-          div = '    <div class="c-accordion__body active hidden-by-overflow animated active-for-print" id="what-you-need-to-include-1">'
-          div = '    <div class="c-accordion__padding">'
-          div = '      <p>For each person applying, <strong>any one document:</strong></p>'
-          div = '      <ul>'
-          div = '        <li>Driver license or official photo ID</li>'
-          div = '        <li>Birth certificate</li>'
-          div = '        <li>Passport</li>'
-          div = '        <li>Social Security card for dependents</li>'
-          div = '        <li>Social security card or ITIN</li>'
-          div = '        <li>Naturalization certificate</li>'
-          div = '        <li>Adoption records</li>'
-          div = '        <li>Baptismal or another religious certificate</li>'
-          div = '        <li>Marriage records</li>'
-          div = '        <li>Medicaid card</li>'
-          div = '        <li>Official birth records</li>'
-          div = '        <li>Official school records</li>'
-          div = '        <li>Other official record showing birth date</li>'
-          div = '      </ul>'
-          div = '    </div>'
-          div = '  </div>'
-          div = '</article>'
-
-  // Demonstration
-  article class='c-accordion'
-    header class='c-accordion__header'
-      p Proof of who you are
-      a class='c-accordion__toggle hide-for-print active js-simple-toggle' href='#what-you-need-to-include-1'
-        span data-css-text='+ show this list' data-css-active-text='- hide this list'
-    div class='c-accordion__body active hidden-by-overflow animated active-for-print' id='what-you-need-to-include-1'
-      div class='c-accordion__padding'
-        p
-          | For each person applying, <strong>any one document:</strong>
-        ul
-          li Driver license or official photo ID
-          li Birth certificate
-          li Passport
-          li Social Security card for dependents
-          li Social security card or ITIN
-          li Naturalization certificate
-          li Adoption records
-          li Baptismal or another religious certificate
-          li Marriage records
-          li Medicaid card
-          li Official birth records
-          li Official school records
-          li Other official record showing birth date
+article class='c-accordion'
+  header class='c-accordion__header'
+    p Proof of who you are
+    a class='c-accordion__toggle print:hidden active js-simple-toggle' href='#what-you-need-to-include-1'
+      span data-css-text='+ show this list' data-css-active-text='- hide this list'
+  div class='c-accordion__body hidden:overflow animated active print:active' id='what-you-need-to-include-1'
+    div class='c-accordion__padding'
+      p
+        | For each person applying, <strong>any one document:</strong>
+      ul
+        li Driver license or official photo ID
+        li Birth certificate
+        li Passport
+        li Social Security card for dependents
+        li Social security card or ITIN
+        li Naturalization certificate
+        li Adoption records
+        li Baptismal or another religious certificate
+        li Marriage records
+        li Medicaid card
+        li Official birth records
+        li Official school records
+        li Other official record showing birth date

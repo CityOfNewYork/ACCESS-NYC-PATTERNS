@@ -18,29 +18,30 @@ $animate: map-get($variables, 'animate');
   content: attr(data-css-active-text)
 }
 
-.hidden-by-overflow {
-  display: inherit !important;
+.hidden\:overflow {
+  // display: inherit !important;
+  max-height: 0;
   overflow: hidden;
 }
 
-.hidden.hidden-by-overflow {
-  max-height: 0;
-}
+// .hidden.hidden\:overflow {
+//   max-height: 0;
+// }
 
-.active.hidden-by-overflow {
+.active.hidden\:overflow {
   max-height: auto;
 }
 
-.animated.hidden-by-overflow {
+.animated.hidden\:overflow {
   transition-property: max-height;
 }
 
-.animated.hidden.hidden-by-overflow {
+.animated.hidden\:overflow {
   transition-duration: 0.5s;
   transition-timing-function: map-get($animate, 'ease-out-quint');
 }
 
-.animated.active.hidden-by-overflow {
+.animated.active.hidden\:overflow {
   max-height: 10000px;
   transition-duration: 0.75s;
   transition-timing-function: map-get($animate, 'ease-in-quint');
@@ -48,11 +49,11 @@ $animate: map-get($variables, 'animate');
 
 @media print {
 
-  .active-for-print {
+  .print\:active {
     display: inherit !important;
   }
 
-  .active-for-print.hidden-by-overflow {
+  .print\:active.hidden\:overflow {
     max-height: inherit !important;
     overflow: visible !important;
   }
