@@ -29,6 +29,8 @@ const rollup = {
       exclude: 'node_modules/**'
     }),
     alias({
+      // ACCESS currently uses CommonJS Modules so this alias allows
+      // for compatibility with it's main script.
       'vue/dist/vue.common': 'node_modules/vue/dist/vue.esm.js'
     }),
     resolve(),
