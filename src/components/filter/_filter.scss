@@ -31,7 +31,7 @@
     margin-top: .5em;
   }
 
-  a {
+  a:link:not(.btn) {
     color: $color-white;
     font-weight: $font-weight-bold;
     text-decoration: none;
@@ -99,9 +99,10 @@ label.c-filter__item,
 a.c-filter__item {
   transition: background .2s ease-in;
 
-  &:link,
+  &:link:not(.btn),
   &:visited {
     color: $color-white;
+    text-decoration: none;
   }
 
   &:hover,
