@@ -106,7 +106,7 @@
     &lt;a class=&quot;c-accordion__toggle print:hidden&quot; href=&quot;#what-you-need-to-include-1__body&quot; v-on:click=&quot;toggle&quot;&gt;&lt;span v-if=&quot;active&quot;&gt;- hide this list&lt;/span&gt;&lt;span v-else=&quot;&quot;&gt;+ show this list&lt;/span&gt;&lt;/a&gt;
   &lt;/header&gt;
   &lt;div class=&quot;c-accordion__body print:active hidden:overflow animated&quot; id=&quot;what-you-need-to-include-1__body&quot; v-bind:aria-hidden=&quot;ariaHidden(active)&quot; v-bind:class=&quot;{active: active}&quot;&gt;
-    &lt;div class=&quot;c-accordion__padding&quot;&gt;
+    &lt;div class=&quot;c-accordion__padding&quot; v-bind:class=&quot;{&#39;animated fadeInUp&#39;: active}&quot;&gt;
       &lt;p&gt;For each person applying, &lt;strong&gt;any one document:&lt;/strong&gt;&lt;/p&gt;
       &lt;ul&gt;
         &lt;li&gt;Driver license or official photo ID&lt;/li&gt;
@@ -134,7 +134,7 @@
                       <a class="c-accordion__toggle print:hidden" href="#what-you-need-to-include-1__body" v-on:click="toggle"><span v-if="active">- hide this list</span><span v-else="">+ show this list</span></a>
                     </header>
                     <div class="c-accordion__body print:active hidden:overflow animated" id="what-you-need-to-include-1__body" v-bind:aria-hidden="ariaHidden(active)" v-bind:class="{active: active}">
-                      <div class="c-accordion__padding">
+                      <div class="c-accordion__padding" v-bind:class="{'animated fadeInUp': active}">
                         <p>For each person applying, <strong>any one document:</strong></p>
                         <ul>
                           <li>Driver license or official photo ID</li>
