@@ -8,12 +8,12 @@ html lang='en' class='text-size-0'
 
   body style='visibility: hidden;' onload='load()'
 
-    header class='layout--sidebar'
-      div class='flex items-center justify-center bg-color-blue-dark text-base-white screen-desktop:w-64 p-3 screen-desktop:p-4'
+    header class='layout--sidebar-small'
+      div class='flex items-center justify-center bg-color-blue-dark text-base-white p-3 screen-desktop:p-4'
         h1 class='m-0 p-0'
           span class='hidden'
             | ACCESS NYC
-          svg class='icon-logo-full--large text-color-white' aria-hidden='true'
+          svg class='icon-logo-full--large text-color-white' style='width:200px;' aria-hidden='true'
             use xlink:href='#icon-logo-full'
 
       div class='flex-1 flex flex-col content-center bg-color-grey-lightest screen-desktop:border-b-4 border-color-grey-light justify-center p-3 screen-desktop:p-4'
@@ -24,7 +24,7 @@ html lang='en' class='text-size-0'
           a href='${link_source}' class='border-2 py-1 px-2 inline rounded-lg'
             = 'Pre-release v' + this.vars.version
 
-    main#main-content class='layout--sidebar m-0 p-0 min-h-screen screen-desktop:border-b-4 border-color-grey-light'
+    main#main-content class='layout--sidebar-small m-0 p-0 min-h-screen screen-desktop:border-b-4 border-color-grey-light'
       aside class='bg-secondary-white py-2 px-3'
         = mixin('nav')
 

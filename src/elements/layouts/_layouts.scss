@@ -131,11 +131,11 @@
     align-items: stretch;
 
     > *:first-child {
-      width: 16rem
+      width: 18.5rem
     }
 
     > *:first-child + * {
-      width: calc(100% - 16rem)
+      width: calc(100% - 18.5rem)
     }
   }
 }
@@ -152,17 +152,17 @@
 //  |.----..-----------.|
 //  .-------------------.
 //
-.layout--sidebar {
+.layout--sidebar-small {
   @media screen and (min-width: $screen-desktop) {
     display: flex;
     align-items: stretch;
 
     > *:first-child {
-      width: 16rem
+      width: 12.5rem
     }
 
     > *:first-child + * {
-      width: calc(100% - 16rem)
+      width: calc(100% - 12.5rem)
     }
   }
 }
@@ -172,11 +172,11 @@
 // sidebar on top for screens smaller than desktop width.
 //
 //  .-------------------.
-//  |.--..-------------.|
-//  ||  ||             ||
-//  ||  ||             ||
-//  ||  ||             ||
-//  |.--..-------------.|
+//  |.--. .------------.|
+//  ||  | |            ||
+//  ||  | |            ||
+//  ||  | |            ||
+//  |.--. .------------.|
 //  .-------------------.
 //
 .layout--sidebar-gutter {
@@ -185,12 +185,12 @@
     align-items: stretch;
 
     > *:first-child {
-      width: 16rem;
+      width: 18.5rem;
       margin-#{$text-direction-end}: $spacing-base;
     }
 
     > *:first-child + * {
-      width: calc(100% - 16rem - #{$spacing-base})
+      width: calc(100% - 18.5rem - #{$spacing-base})
     }
   }
 }

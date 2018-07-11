@@ -22,10 +22,10 @@
   </head>
 
   <body onload="load()" style="visibility: hidden;">
-    <header class="layout--sidebar">
-      <div class="flex items-center justify-center bg-color-blue-dark text-base-white screen-desktop:w-64 p-3 screen-desktop:p-4">
+    <header class="layout--sidebar-small">
+      <div class="flex items-center justify-center bg-color-blue-dark text-base-white p-3 screen-desktop:p-4">
         <h1 class="m-0 p-0"><span class="hidden">ACCESS NYC</span>
-          <svg aria-hidden="true" class="icon-logo-full--large text-color-white">
+          <svg aria-hidden="true" class="icon-logo-full--large text-color-white" style="width:200px;">
             <use xlink:href="#icon-logo-full"></use>
           </svg>
         </h1>
@@ -40,7 +40,7 @@
         </h3>
       </div>
     </header>
-    <main class="layout--sidebar m-0 p-0 min-h-screen screen-desktop:border-b-4 border-color-grey-light" id="main-content">
+    <main class="layout--sidebar-small m-0 p-0 min-h-screen screen-desktop:border-b-4 border-color-grey-light" id="main-content">
       <aside class="bg-secondary-white py-2 px-3">
         <nav class="pb-2">
           <a class="screen-desktop:block screen-desktop:border-b border-color-white p-2 pr-2 screen-tablet:p-2" href="index">Home</a>
@@ -94,7 +94,7 @@
             <div class="flex-1">
               <div class="pb-3 pl-1 pr-4">
                 <p>
-                  <a href='/demos/navigation' target='_blank'>View the demonstration for the Navigation Object</a>. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
+                  <a href='./demos/navigation' target='_blank'>View the demonstration for the Navigation Object</a>. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
                   laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt
                   mollit anim id est laborum.</p>
               </div>
@@ -111,7 +111,7 @@
         &lt;use xlink:href=&quot;#icon-logo-full&quot;&gt;&lt;/use&gt;
       &lt;/svg&gt;&lt;span class=&quot;sr-only&quot;&gt;Access NYC&lt;/span&gt;&lt;/a&gt;
   &lt;/div&gt;
-  &lt;nav class=&quot;nav-inline&quot;&gt;
+  &lt;nav class=&quot;o-navigation__nav nav-inline&quot;&gt;
     &lt;a class=&quot;screen-desktop:hidden&quot; href=&quot;#c-mobile-nav&quot;&gt;Menu&lt;/a&gt;
     &lt;a class=&quot;hidden screen-desktop:inline active&quot; href=&quot;#&quot;&gt;Am I eligible?&lt;/a&gt;
     &lt;a class=&quot;hidden screen-desktop:inline&quot; href=&quot;#&quot;&gt;Programs&lt;/a&gt;

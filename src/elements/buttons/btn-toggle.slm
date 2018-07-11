@@ -1,0 +1,8 @@
+/
+/
+/
+button class='btn-toggle btn-primary w-full mb-2'
+  | Toggle Button
+
+button class='btn-toggle btn-primary w-full active'
+  | Toggle Button (active)

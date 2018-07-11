@@ -35,7 +35,10 @@
 
       div class='${class_demo_col2}'
         div class='${class_demo_content}'
-          = mixin('btn', true)
+          div class='code-block mb-1'
+            pre
+              = 'code{{ elements/buttons/btn.slm }}'
+          = partial('../elements/buttons/btn.slm')
 
   section#button-types class='${class_demo}'
     header class='${class_demo_headers}'
@@ -48,17 +51,34 @@
 
       div class='${class_demo_col2}'
         div class='${class_demo_content}'
-          = mixin('btn-primary', true)
+          div class='code-block mb-1'
+            pre
+              = 'code{{ elements/buttons/btn-primary.slm }}'
+          = partial('../elements/buttons/btn-primary.slm')
+
         div class='${class_demo_content}'
-          = mixin('btn-secondary', true)
+          div class='code-block mb-1'
+            pre
+              = 'code{{ elements/buttons/btn-secondary.slm }}'
+          = partial('../elements/buttons/btn-secondary.slm')
+
         div class='${class_demo_content}'
-          = mixin('btn-tag', true)
+          div class='code-block mb-1'
+            pre
+              = 'code{{ elements/buttons/btn-tag.slm }}'
+          = partial('../elements/buttons/btn-tag.slm')
+
         div class='${class_demo_content}'
-          = mixin('btn-toggle', true)
+          div class='code-block mb-1'
+            pre
+              = 'code{{ elements/buttons/btn-toggle.slm }}'
+          = partial('../elements/buttons/btn-toggle.slm')
+
         div class='${class_demo_content}'
-          = mixin('btn-toggle.active', true)
-        div class='${class_demo_content}'
-          = mixin('btn-text', true)
+          div class='code-block mb-1'
+            pre
+              = 'code{{ elements/buttons/btn-text.slm }}'
+          = partial('../elements/buttons/btn-text.slm')
 
   section#modifyers class='${class_demo}'
     header class='${class_demo_headers}'
@@ -71,11 +91,20 @@
 
       div class='${class_demo_col2}'
         div class='${class_demo_content}'
-          = mixin('btn-primary--next', true)
+          div class='code-block mb-1'
+            pre
+              = 'code{{ elements/buttons/btn-next.slm }}'
+          = partial('../elements/buttons/btn-next.slm')
+
         div class='${class_demo_content}'
-          = mixin('btn-primary--previous', true)
+          div class='code-block mb-1'
+            pre
+              = 'code{{ elements/buttons/btn-previous.slm }}'
+          = partial('../elements/buttons/btn-previous.slm')
+
         div class='${class_demo_content}'
-          = mixin('btn-block', true)
-        div class='${class_demo_content}'
-          = mixin('btn-small', true)
+          div class='code-block mb-1'
+            pre
+              = 'code{{ elements/buttons/btn-small.slm }}'
+          = partial('../elements/buttons/btn-small.slm')
 
