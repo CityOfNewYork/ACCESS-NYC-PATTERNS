@@ -2,7 +2,7 @@
 
 function _interopDefault (ex) { return (ex && (typeof ex === 'object') && 'default' in ex) ? ex['default'] : ex; }
 
-var Vue = _interopDefault(require('node_modules/vue/dist/vue.esm.js'));
+var Vue = _interopDefault(require('vue/dist/vue.common'));
 
 var classCallCheck = function (instance, Constructor) {
   if (!(instance instanceof Constructor)) {

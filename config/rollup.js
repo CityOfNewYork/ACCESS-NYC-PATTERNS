@@ -12,62 +12,100 @@ import eslint from 'rollup-plugin-eslint';
  * Config
  */
 
-// Configuration
-const rollup = {
+/**
+ * General configuration for Rollup
+ * @type {Object}
+ */
+let rollup = {
   sourcemap: 'inline',
   format: 'iife',
-  strict: true,
-  plugins: [
-    eslint({
-      parserOptions: {
-        ecmaVersion: 6,
-        sourceType: 'module'
-      }}
-    ),
-    babel({
-      exclude: 'node_modules/**'
-    }),
-    alias({
-      // ACCESS currently uses CommonJS Modules so this alias allows
-      // for compatibility with it's main script.
-      'vue/dist/vue.common': 'node_modules/vue/dist/vue.esm.js'
-    }),
-    resolve({
-      browser: true,
-      customResolveOptions: {
-        moduleDirectory: 'node_modules'
-      }
-    }),
-    replace({
-      'process.env.NODE_ENV': JSON.stringify('development')
-    })
-  ]
-}
+  strict: true
+};
 
-// Our list of modules we are exporting
+/**
+ * Plugin configuration
+ * @type {Object}
+ */
+const plugins = {
+  eslint: eslint({
+    parserOptions: {
+      ecmaVersion: 6,
+      sourceType: 'module'
+    }}
+  ),
+  babel: babel({
+    exclude: 'node_modules/**'
+  }),
+  resolve: resolve({
+    browser: true,
+    customResolveOptions: {
+      moduleDirectory: 'node_modules'
+    }
+  }),
+  alias: alias({
+    // ACCESS currently uses CommonJS Modules so this alias plugin allows
+    // us to write libriaries that import peer dependencies in the ACCESS
+    // environment in the CommonJS format, and utilize ES6 modules in the
+    // local ACCESS Patterns development environment.
+    'vue/dist/vue.common': 'node_modules/vue/dist/vue.esm.js'
+  }),
+  replace: replace({
+    'process.env.NODE_ENV': JSON.stringify('production')
+  })
+};
+
+/**
+ * Distribution plugin settings. Order matters here.
+ * @type {Array}
+ */
+rollup.local = [
+  plugins.eslint,
+  plugins.babel,
+  plugins.alias,
+  plugins.resolve,
+  plugins.replace
+];
+
+rollup.dist = [
+  plugins.eslint,
+  plugins.babel,
+  plugins.resolve
+];
+
+/**
+ * Our list of modules we are exporting
+ * @type {Array}
+ */
 const modules = [
   {
+    // This is the mega distribution that packages all modules and peer dependencies
     input: './src/js/main.js',
     output: {
       name: 'AccessNyc',
       file: `./dist/scripts/AccessNyc.js`,
       sourcemap: rollup.sourcemap,
       format: rollup.format,
-      strict: rollup.strict
+      strict: rollup.strict,
+      globals: rollup.globals
     },
-    plugins: rollup.plugins
+    plugins: rollup.local
   },
   {
     input: './src/components/accordion/accordion.js',
-    plugins: rollup.plugins,
-    external: ['node_modules/vue/dist/vue.esm.js'],
+    plugins: rollup.dist,
+    // This enables us to declare peer dependencies and avoid packaging them
+    // with our module libraries!
+    external: ['vue/dist/vue.common'],
     output: [
       {
         name: 'Accordion',
         file: `./dist/components/accordion/accordion.iffe.js`,
         sourcemap: rollup.sourcemap,
         format: 'iife',
-        strict: rollup.strict
+        strict: rollup.strict,
+        globals: { // This suppressess a warning regarding using a global peer
+          'vue/dist/vue.common': 'Vue'
+        }
       },
       {
         name: 'Accordion',
