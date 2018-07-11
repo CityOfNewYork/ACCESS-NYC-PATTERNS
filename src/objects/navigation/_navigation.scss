@@ -19,7 +19,7 @@
   padding: (.5 * $spacing-base) $spacing-base;
 
   .logo-access {
-    a {
+    a:link {
       color: $color-white;
     }
     .icon-logo-full {
@@ -37,12 +37,16 @@
   }
 }
 
+.o-navigation__nav a:not(.btn):link {
+  color: $color-white;
+}
+
 .o-navigation__toggle,
 .o-navigation__search-toggle {
   @include typography-nav();
   margin-#{$text-direction-start}: 1em;
 
-  a {
+  a:link {
     color: $color-white;
     text-decoration: none;
   }

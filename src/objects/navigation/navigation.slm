@@ -9,7 +9,7 @@ nav class='o-navigation'
         use xlink:href='#icon-logo-full'
       span class='sr-only' Access NYC
 
-  nav class='nav-inline'
+  nav class='o-navigation__nav nav-inline'
     a class='screen-desktop:hidden' href='#c-mobile-nav' Menu
     a class='hidden screen-desktop:inline active' href='#' Am I eligible?
     a class='hidden screen-desktop:inline' href='#' Programs

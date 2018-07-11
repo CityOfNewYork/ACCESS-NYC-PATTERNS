@@ -9,7 +9,7 @@ article id='what-you-need-to-include-1' class='c-accordion' data-js='accordion' 
       span v-if='active' - hide this list
       span v-else='' + show this list
   div id='what-you-need-to-include-1__body' class='c-accordion__body print:active hidden:overflow animated' v-bind:class='{active: active}' v-bind:aria-hidden='ariaHidden(active)'
-    div class='c-accordion__padding'
+    div class='c-accordion__padding' v-bind:class="{'animated fadeInUp': active}"
       p
         | For each person applying, <strong>any one document:</strong>
       ul
