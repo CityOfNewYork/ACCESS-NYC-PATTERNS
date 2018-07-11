@@ -22,10 +22,10 @@
   </head>
 
   <body onload="load()" style="visibility: hidden;">
-    <header class="layout--sidebar">
-      <div class="flex items-center justify-center bg-color-blue-dark text-base-white screen-desktop:w-64 p-3 screen-desktop:p-4">
+    <header class="layout--sidebar-small">
+      <div class="flex items-center justify-center bg-color-blue-dark text-base-white p-3 screen-desktop:p-4">
         <h1 class="m-0 p-0"><span class="hidden">ACCESS NYC</span>
-          <svg aria-hidden="true" class="icon-logo-full--large text-color-white">
+          <svg aria-hidden="true" class="icon-logo-full--large text-color-white" style="width:200px;">
             <use xlink:href="#icon-logo-full"></use>
           </svg>
         </h1>
@@ -40,7 +40,7 @@
         </h3>
       </div>
     </header>
-    <main class="layout--sidebar m-0 p-0 min-h-screen screen-desktop:border-b-4 border-color-grey-light" id="main-content">
+    <main class="layout--sidebar-small m-0 p-0 min-h-screen screen-desktop:border-b-4 border-color-grey-light" id="main-content">
       <aside class="bg-secondary-white py-2 px-3">
         <nav class="pb-2">
           <a class="screen-desktop:block screen-desktop:border-b border-color-white p-2 pr-2 screen-tablet:p-2" href="index">Home</a>
@@ -99,10 +99,7 @@
             </div>
             <div class="flex-1 screen-desktop:max-w-1/2">
               <div class="pb-4 screen-desktop:px-1">
-                <div class="mb-2"><code class="code">btn</code></div>
-                <div class="mb-2">
-                  <div class="code-block"><pre><div>&lt;button class=&quot;btn&quot;&gt;</div><div>  Button</div><div>&lt;/button&gt;</div></pre></div>
-                </div>
+                <div class="code-block mb-1"><pre>&lt;button class=&quot;btn&quot;&gt;Button&lt;/button&gt;</pre></div>
                 <button class="btn">Button</button>
               </div>
             </div>
@@ -121,48 +118,26 @@
             </div>
             <div class="flex-1 screen-desktop:max-w-1/2">
               <div class="pb-4 screen-desktop:px-1">
-                <div class="mb-2"><code class="code">btn-primary</code></div>
-                <div class="mb-2">
-                  <div class="code-block"><pre><div>&lt;button class&quot;btn-primary&quot;&gt;</div><div>  Primary Button</div><div>&lt;/button&gt;</div></pre></div>
-                </div>
+                <div class="code-block mb-1"><pre>&lt;button class=&quot;btn-primary&quot;&gt;Primary Button&lt;/button&gt;</pre></div>
                 <button class="btn-primary">Primary Button</button>
               </div>
               <div class="pb-4 screen-desktop:px-1">
-                <div class="mb-2"><code class="code">btn-secondary</code></div>
-                <div class="mb-2">
-                  <div class="code-block"><pre><div>&lt;button class=&quot;btn-secondary&quot;&gt;</div><div>  Secondary Button</div><div>&lt;/button&gt;</div></pre></div>
-                </div>
+                <div class="code-block mb-1"><pre>&lt;button class=&quot;btn-secondary&quot;&gt;Secondary Button&lt;/button&gt;</pre></div>
                 <button class="btn-secondary">Secondary Button</button>
               </div>
               <div class="pb-4 screen-desktop:px-1">
-                <div class="mb-2"><code class="code">btn-tag</code></div>
-                <div class="mb-2">
-                  <div class="code-block"><pre><div>&lt;button class=&quot;btn-primary btn-tag&quot;&gt;</div><div>  Tag</div><div>&lt;/button&gt;</div></pre></div>
-                </div>
+                <div class="code-block mb-1"><pre>&lt;button class=&quot;btn-primary btn-tag&quot;&gt;Tag&lt;/button&gt;</pre></div>
                 <button class="btn-primary btn-tag">Tag</button>
               </div>
               <div class="pb-4 screen-desktop:px-1">
-                <div class="mb-2"><code class="code">btn-toggle</code></div>
-                <div class="mb-2">
-                  <div class="code-block"><pre><div>&lt;button class=&quot;btn-toggle&quot;&gt;</div><div>  Toggle Button</div><div>&lt;/button&gt;</div></pre></div>
-                </div>
-                <button class="btn-toggle">Toggle Button</button>
+                <div class="code-block mb-1"><pre>&lt;button class=&quot;btn-toggle btn-primary w-full mb-2&quot;&gt;Toggle Button&lt;/button&gt;
+&lt;button class=&quot;btn-toggle btn-primary w-full active&quot;&gt;Toggle Button (active)&lt;/button&gt;</pre></div>
+                <button class="btn-toggle btn-primary w-full mb-2">Toggle Button</button>
+                <button class="btn-toggle btn-primary w-full active">Toggle Button (active)</button>
               </div>
               <div class="pb-4 screen-desktop:px-1">
-                <div class="mb-2">
-                  <div class="code"><code>btn-toggle active</code></div>
-                </div>
-                <div class="mb-2">
-                  <div class="code-block"><pre><div>&lt;button class=&quot;btn-toggle active&quot;&gt;</div><div>  Toggle Button</div><div>&lt;/button&gt;</div></pre></div>
-                </div>
-                <button class="btn-toggle active">Toggle Button</button>
-              </div>
-              <div class="pb-4 screen-desktop:px-1">
-                <div class="mb-2"><code class="code">btn-text</code></div>
-                <div class="mb-2">
-                  <div class="code-block"><pre><div>&lt;a class=&quot;btn-text&quot;&gt;</div><div>  Plain Text Button</div><div>&lt;/a&gt;</div></pre></div>
-                </div>
-                <a class="btn-text">Plain Text Button</a>
+                <div class="code-block mb-1"><pre>&lt;button class=&quot;btn-text&quot;&gt;Plain Text Button&lt;/button&gt;</pre></div>
+                <button class="btn-text">Plain Text Button</button>
               </div>
             </div>
           </div>
@@ -180,31 +155,15 @@
             </div>
             <div class="flex-1 screen-desktop:max-w-1/2">
               <div class="pb-4 screen-desktop:px-1">
-                <div class="mb-2"><code class="code">btn-primary btn-next</code></div>
-                <div class="mb-2">
-                  <div class="code-block"><pre><div>&lt;button class=&quot;btn-primary btn-next&quot;&gt;</div><div>  Next Button</div><div>&lt;/button&gt;</div></pre></div>
-                </div>
+                <div class="code-block mb-1"><pre>&lt;button class=&quot;btn-primary btn-next&quot;&gt;Next Button&lt;/button&gt;</pre></div>
                 <button class="btn-primary btn-next">Next Button</button>
               </div>
               <div class="pb-4 screen-desktop:px-1">
-                <div class="mb-2"><code class="code">btn-primary btn-previous</code></div>
-                <div class="mb-2">
-                  <div class="code-block"><pre><div>&lt;button class=&quot;btn-primary btn-previous&quot;&gt;</div><div>  Previous Button</div><div>&lt;/button&gt;</div></pre></div>
-                </div>
+                <div class="code-block mb-1"><pre>&lt;button class=&quot;btn-primary btn-previous&quot;&gt;Previous Button&lt;/button&gt;</pre></div>
                 <button class="btn-primary btn-previous">Previous Button</button>
               </div>
               <div class="pb-4 screen-desktop:px-1">
-                <div class="mb-2"><code class="code">btn-primary btn-block</code></div>
-                <div class="mb-2">
-                  <div class="code-block"><pre><div>&lt;button class=&quot;btn-primary btn-block&quot;&gt;</div><div>  Block Level Button</div><div>&lt;/button&gt;</div></pre></div>
-                </div>
-                <button class="btn-primary btn-block">Block Level Button</button>
-              </div>
-              <div class="pb-4 screen-desktop:px-1">
-                <div class="mb-2"><code class="code">btn-primary btn-small</code></div>
-                <div class="mb-2">
-                  <div class="code-block"><pre><div>&lt;button class=&quot;btn-primary btn-small&quot;&gt;</div><div>  Small Button</div><div>&lt;/button&gt;</div></pre></div>
-                </div>
+                <div class="code-block mb-1"><pre>&lt;button class=&quot;btn-primary btn-small&quot;&gt;Small Button&lt;/button&gt;</pre></div>
                 <button class="btn-primary btn-small">Small Button</button>
               </div>
             </div>
