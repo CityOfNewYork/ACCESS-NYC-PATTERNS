@@ -57,7 +57,7 @@
   padding-bottom: 0;
 }
 
-@media print {
+@mixin accordion-print {
   .c-accordion {
     color: inherit;
     background-color: transparent;
@@ -74,3 +74,12 @@
     padding: 0;
   }
 }
+
+.print-view {
+  @include accordion-print
+}
+
+@media print {
+  @include accordion-print
+}
+

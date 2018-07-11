@@ -29,7 +29,7 @@ a:not(.btn), .btn-link {
   }
 }
 
-.links-invert a,
+.links-invert a:not(.btn),
 .links-invert .btn-link {
   color: map-get(map-get($variables, 'colors'), 'color-white');
   text-decoration: underline;

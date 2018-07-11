@@ -46,3 +46,21 @@ use {
   border-style: solid;
   border-width: 0
 }
+
+@mixin base-print {
+  html, body {
+    overflow: visible !important;
+  }
+
+  * {
+    -webkit-print-color-adjust: exact;
+  }
+}
+
+.print-view {
+  @include base-print
+}
+
+@media print {
+  @include base-print
+}

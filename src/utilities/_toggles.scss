@@ -59,8 +59,7 @@ $animate: map-get($variables, 'animate');
   transition-timing-function: map-get($animate, 'ease-in-quint');
 }
 
-@media print {
-
+@mixin toggles-print {
   .print\:active {
     display: inherit !important;
   }
@@ -69,5 +68,12 @@ $animate: map-get($variables, 'animate');
     max-height: inherit !important;
     overflow: visible !important;
   }
+}
 
+.print-view {
+  @include toggles-print
+}
+
+@media print {
+  @include toggles-print
 }

@@ -279,13 +279,25 @@
   display: block;
 }
 
-@media print {
+@mixin layout-print {
+  .page-wrapper {
+    display: block
+  }
+
   .layout--topbar {
     height: auto;
-    overflow: visible;
+    overflow: visible
   }
 
   .layout--topbar__body {
-    position: static;
+    position: static
   }
+}
+
+.print-view {
+  @include layout-print
+}
+
+@media print {
+  @include layout-print
 }
