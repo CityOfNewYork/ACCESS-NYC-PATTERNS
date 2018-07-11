@@ -19,7 +19,8 @@
   padding: (.5 * $spacing-base) $spacing-base;
 
   .logo-access {
-    a:link {
+    a:link,
+    a:visited {
       color: $color-white;
     }
     .icon-logo-full {
