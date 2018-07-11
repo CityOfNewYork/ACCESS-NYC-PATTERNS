@@ -41,7 +41,7 @@ $animate: map-get($variables, 'animate');
 // }
 
 .active.hidden\:overflow {
-  max-height: auto;
+  max-height: inherit;
 }
 
 .animated.hidden\:overflow {
