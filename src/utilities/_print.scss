@@ -5,39 +5,39 @@
  */
 
 .print-view {
-  .print:\block {
+  .print\:block {
     display: block
   }
 
-  .print:\inline-block {
+  .print\:inline-block {
     display: inline-block
   }
 
-  .print:\inline {
+  .print\:inline {
     display: inline
   }
 
-  .print:\table {
+  .print\:table {
     isplay: table
   }
 
-  .print:\table-row {
+  .print\:table-row {
     isplay: table-row
   }
 
-  .print:\table-cell {
+  .print\:table-cell {
     display: table-cell
   }
 
-  .print:\hidden {
+  .print\:hidden {
     display: none
   }
 
-  .print:\flex {
+  .print\:flex {
     display: flex
   }
 
-  .print:\inline-flex {
+  .print\:inline-flex {
     display: inline-flex
   }
 }
