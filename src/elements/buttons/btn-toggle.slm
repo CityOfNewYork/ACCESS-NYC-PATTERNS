@@ -4,5 +4,11 @@
 button class='btn-toggle btn-primary w-full mb-2'
   | Toggle Button
 
-button class='btn-toggle btn-primary w-full active'
+button class='btn-toggle btn-primary w-full active mb-2'
   | Toggle Button (active)
+
+a class='btn-toggle btn-primary w-full mb-2'
+  | Toggle Link
+
+a class='btn-toggle btn-primary w-full active'
+  | Toggle Link (active)

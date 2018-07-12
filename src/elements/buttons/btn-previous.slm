@@ -1,5 +1,10 @@
 /
 /
 /
-button class='btn-primary btn-previous'
+button class='btn-primary btn-previous mb-2'
   | Previous Button
+
+br
+
+a class='btn-primary btn-previous'
+  | Previous Link

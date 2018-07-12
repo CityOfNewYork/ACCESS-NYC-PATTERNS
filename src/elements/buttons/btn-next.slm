@@ -1,5 +1,10 @@
 /
 /
 /
-button class='btn-primary btn-next'
+button class='btn-primary btn-next mb-2'
   | Next Button
+
+br
+
+a class='btn-primary btn-next'
+  | Next Link

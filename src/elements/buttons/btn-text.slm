@@ -1,5 +1,10 @@
 /
 /
 /
-button class='btn-text'
+button class='btn-text mb-2'
   | Plain Text Button
+
+br
+
+a class='btn-text'
+  | Plain Text Link

@@ -1,5 +1,10 @@
 /
 /
 /
-button class='btn-primary btn-small'
+button class='btn-primary btn-small mb-2'
   | Small Button
+
+br
+
+a class='btn-primary btn-small'
+  | Small Link

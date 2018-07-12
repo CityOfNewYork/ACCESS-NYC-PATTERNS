@@ -1,5 +1,10 @@
 /
 / Primary Button
 /
-button class='btn-primary'
+button class='btn-primary mb-2'
   | Primary Button
+
+br
+
+a class='btn-primary'
+  | Primary Link

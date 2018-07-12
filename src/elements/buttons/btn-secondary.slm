@@ -1,5 +1,10 @@
 /
 / Secondary Buttons
 /
-button class='btn-secondary'
+button class='btn-secondary mb-2'
   | Secondary Button
+
+br
+
+a class='btn-secondary'
+  | Secondary Link
