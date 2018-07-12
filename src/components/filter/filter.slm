@@ -1,4 +1,4 @@
-div class='c-filter js-c-filter active'
+div class='c-filter active'
   div class='c-filter__header'
     a href='#' All Programs
   div class='c-filter__body'

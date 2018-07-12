@@ -30,6 +30,12 @@ module.exports = {
     '1/2': '50%',
     'full': '100%'
   },
+  height: {
+    'auto': 'auto',
+    'full': '100%',
+    '90vh': '90vh',
+    '100vh': '100vh'
+  },
   padding: variables.padding,
   modules: {
     backgroundColors: ['hover', 'focus'],
@@ -48,7 +54,8 @@ module.exports = {
     textSizes: [],
     textStyle: [],
     whitespace: ['responsive'],
-    width: ['responsive']
+    width: ['responsive'],
+    height: ['responsive']
   },
   options: {
     prefix: '',

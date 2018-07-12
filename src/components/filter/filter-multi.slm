@@ -1,4 +1,4 @@
-div class='c-filter-multi active bg-color-white' aria-hidden='false'
+div class='c-filter-multi active bg-color-white'
   ul class='c-filter-multi__list'
     li class='c-filter-multi__item'
       div class='c-filter-multi__item-header'
