@@ -47,6 +47,10 @@ use {
   border-width: 0
 }
 
+img {
+  max-width: 100%
+}
+
 @mixin base-print {
   html, body {
     overflow: visible !important;
