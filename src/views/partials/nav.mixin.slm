@@ -9,6 +9,7 @@
     a class='${class_nav_item}' href='colors' Colors
     a class='${class_nav_item}' href='font-families' Fonts
     a class='${class_nav_item}' href='typography' Typography
+    a class='${class_nav_item}' href='layouts' Layouts
     a class='${class_nav_item}' href='exposition' Exposition
     a class='${class_nav_item}' href='icons' Icons
     a class='${class_nav_item}' href='links' Links

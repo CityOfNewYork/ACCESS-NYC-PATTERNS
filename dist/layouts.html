@@ -50,6 +50,7 @@
           <a class="screen-desktop:block screen-desktop:border-b border-color-white p-2" href="colors">Colors</a>
           <a class="screen-desktop:block screen-desktop:border-b border-color-white p-2" href="font-families">Fonts</a>
           <a class="screen-desktop:block screen-desktop:border-b border-color-white p-2" href="typography">Typography</a>
+          <a class="screen-desktop:block screen-desktop:border-b border-color-white p-2" href="layouts">Layouts</a>
           <a class="screen-desktop:block screen-desktop:border-b border-color-white p-2" href="exposition">Exposition</a>
           <a class="screen-desktop:block screen-desktop:border-b border-color-white p-2" href="icons">Icons</a>
           <a class="screen-desktop:block screen-desktop:border-b border-color-white p-2" href="links">Links</a>
@@ -157,12 +158,12 @@
           <div class="mb-2">
             <div class="code-block mb-1"><pre>&lt;div class=&quot;layout--sidebar text-center&quot;&gt;
   &lt;aside class=&quot;bg-color-grey-light p-4&quot;&gt;Sidebar&lt;/aside&gt;
-  &lt;article class=&quot;bg-color-grey-lightest p-4&quot;&gt;Content&lt;/article&gt;
+  &lt;article class=&quot;layout--topbar__body bg-color-grey-lightest p-4&quot;&gt;Content&lt;/article&gt;
 &lt;/div&gt;</pre></div>
           </div>
           <div class="layout--sidebar text-center">
             <aside class="bg-color-grey-light p-4">Sidebar</aside>
-            <article class="bg-color-grey-lightest p-4">Content</article>
+            <article class="layout--topbar__body bg-color-grey-lightest p-4">Content</article>
           </div>
         </section>
         <section class="pb-4" id="layout-sidebar-small">
@@ -228,10 +229,12 @@
             <h2>Layout Topbar</h2>
           </header>
           <div class="mb-2">
-            <div class="code-block mb-1"><pre>&lt;main class=&quot;layout--topbar bg-color-grey-light text-center&quot;&gt;
-  &lt;header class=&quot;bg-color-blue-dark p-4&quot;&gt;Topbar&lt;/header&gt;
-  &lt;article class=&quot;bg-color-white p-4&quot;&gt;Content&lt;/article&gt;
-&lt;/main&gt;</pre></div>
+            <div class="code-block mb-1"><pre>&lt;div class=&quot;wrap&quot;&gt;
+  &lt;article class=&quot;layout--topbar text-center&quot;&gt;
+    &lt;header class=&quot;bg-color-blue-dark text-color-white p-4&quot;&gt;Topbar&lt;/header&gt;
+    &lt;div class=&quot;bg-color-grey-lightest p-4&quot;&gt;Body&lt;/div&gt;
+  &lt;/article&gt;
+&lt;/div&gt;</pre></div>
           </div>
           <a href="./demos/layout-topbar">View the Topbar Layout demo</a>
         </section>
