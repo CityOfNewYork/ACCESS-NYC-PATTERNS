@@ -1,0 +1,21 @@
+/ Layout
+= extend('/layouts/demos')
+
+/ Styles
+= partial('/partials/styles.slm')
+/ Links
+= partial('/partials/links.slm')
+
+/ Partials
+= partial('/partials/head-demos.mixin.slm')
+= partial('/partials/header.mixin.slm')
+= partial('/partials/nav.mixin.slm')
+
+/ Content blocks
+= content('head')
+  = mixin('head', 'Layout Demo')
+
+= content('content')
+  div class='h-100vh layout--rows flex-col-reverse screen-desktop:layout--sidebar screen-desktop:flex-row'
+    div class='bg-color-blue'
+    div class='bg-color-yellow-access'
