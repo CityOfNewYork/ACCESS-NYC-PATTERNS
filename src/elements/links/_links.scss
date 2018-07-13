@@ -14,9 +14,9 @@ a, .btn-link {
   text-decoration: underline;
   transition: color .2s ease-in;
 
-  &:link {
-    color: map-get(map-get($variables, 'colors'), 'color-blue');
-  }
+  // &:link {
+  //   color: map-get(map-get($variables, 'colors'), 'color-blue');
+  // }
 
   &:visited {
     color: map-get(map-get($variables, 'colors'), 'color-purple');
@@ -35,9 +35,9 @@ a, .btn-link {
   text-decoration: underline;
   transition: color .2s ease-in;
 
-  &:link {
-    color: map-get(map-get($variables, 'colors'), 'color-white');
-  }
+  // &:link {
+  //   color: map-get(map-get($variables, 'colors'), 'color-white');
+  // }
 
   &:visited {
     color: map-get(map-get($variables, 'colors'), 'color-blue-light');

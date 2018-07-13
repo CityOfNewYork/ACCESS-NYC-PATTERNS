@@ -243,8 +243,10 @@ $breakpoints: map-get($variables, 'screens');
   //  .------------------.
   //
   .#{$variant}layout--home-body {
-    margin: (1.5 * $spacing-base) auto;
-    max-width: $homepage-max-width + ($spacing-base * 2);
+    > *:first-child {
+      margin: (1.5 * $spacing-base) auto;
+      max-width: $homepage-max-width + ($spacing-base * 2);
+    }
   }
 
   //
@@ -265,25 +267,31 @@ $breakpoints: map-get($variables, 'screens');
   //  .------------------.
   //
   .#{$variant}layout--topbar {
-    position: relative;
-    height: calc(100vh - 90px);
-    overflow: hidden;
+    > *:first-child + * {
+      position: relative;
+      height: calc(100vh - 90px);
+      overflow: hidden;
+    }
   }
 
-  .#{$variant}layout--topbar__body {
-    width: 100%;
-    position: absolute;
-    top: 0;
-    right: 0;
-    height: 100%;
-    overflow: scroll;
-    -webkit-overflow-scrolling: touch;
+  .#{$variant}layout--topbar {
+    > *:first-child + * > *:first-child {
+      width: 100%;
+      position: absolute;
+      top: 0;
+      right: 0;
+      height: 100%;
+      overflow: scroll;
+      -webkit-overflow-scrolling: touch;
+    }
   }
 
-  .#{$variant}layout--topbar__body:after {
-    content: '';
-    height: 100%;
-    display: block;
+  .#{$variant}layout--topbar {
+    > *:first-child + * > *:first-child:after
+      content: '';
+      height: 100%;
+      display: block;
+    }
   }
 
 }

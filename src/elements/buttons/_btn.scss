@@ -100,7 +100,11 @@
   color: $color-white;
   background: $color-blue;
 
-  &:link,
+  &:link {
+    color: $color-white;
+    background: $color-blue;
+  }
+
   &:hover,
   &:focus,
   &:visited {
@@ -118,7 +122,11 @@
   color: $color-white;
   background: $color-green-mid;
 
-  &:link,
+  &:link {
+    color: $color-white;
+    background: $color-green-mid;
+  }
+
   &:hover,
   &:focus,
   &:visited {

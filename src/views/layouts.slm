@@ -1,0 +1,135 @@
+/ Layout
+= extend('layouts/default')
+
+/ Component
+- mixin_id = 'layouts'
+- title = 'Layouts'
+
+/ Styles
+= partial('partials/styles.slm')
+/ Links
+= partial('partials/links.slm')
+
+/ Partials
+= partial('partials/head.mixin.slm')
+= partial('partials/header.mixin.slm')
+= partial('partials/nav.mixin.slm')
+
+/ Content blocks
+= content('head')
+  = mixin('head', title)
+
+= content('header')
+  = mixin('header', title)
+
+= content('content')
+  h1 class='px-1' = title
+  section#layout-columns class='${class_demo}'
+    header class='${class_demo_headers}'
+      h2 Layout Columns
+
+    div class='${class_demo_class_containers}'
+      div class='code-block mb-1'
+        pre
+          = 'code{{ elements/layouts/layout--columns.slm }}'
+
+    = partial('../elements/layouts/layout--columns.slm')
+
+  section#layout-rows class='${class_demo}'
+    header class='${class_demo_headers}'
+      h2 Layout Rows
+
+    div class='${class_demo_class_containers}'
+      div class='code-block mb-1'
+        pre
+          = 'code{{ elements/layouts/layout--rows.slm }}'
+
+    = partial('../elements/layouts/layout--rows.slm')
+
+  section#layout-gutter class='${class_demo}'
+    header class='${class_demo_headers}'
+      h2 Layout Gutter
+
+    div class='${class_demo_class_containers}'
+      div class='code-block mb-1'
+        pre
+          = 'code{{ elements/layouts/layout--gutter.slm }}'
+
+    = partial('../elements/layouts/layout--gutter.slm')
+
+  section#layout-columns-gutter class='${class_demo}'
+    header class='${class_demo_headers}'
+      h2 Layout Columns Gutter
+
+    div class='${class_demo_class_containers}'
+      div class='code-block mb-1'
+        pre
+          = 'code{{ elements/layouts/layout--columns-gutter.slm }}'
+
+    = partial('../elements/layouts/layout--columns-gutter.slm')
+
+  section#layout-sidebar class='${class_demo}'
+    header class='${class_demo_headers}'
+      h2 Layout Sidebar
+
+    div class='${class_demo_class_containers}'
+      div class='code-block mb-1'
+        pre
+          = 'code{{ elements/layouts/layout--sidebar.slm }}'
+
+    = partial('../elements/layouts/layout--sidebar.slm')
+
+  section#layout-sidebar-small class='${class_demo}'
+    header class='${class_demo_headers}'
+      h2 Layout Sidebar Small
+
+    div class='${class_demo_class_containers}'
+      div class='code-block mb-1'
+        pre
+          = 'code{{ elements/layouts/layout--sidebar-small.slm }}'
+
+    = partial('../elements/layouts/layout--sidebar-small.slm')
+
+  section#layout-sidebar-small class='${class_demo}'
+    header class='${class_demo_headers}'
+      h2 Layout Sidebar Gutter
+
+    div class='${class_demo_class_containers}'
+      div class='code-block mb-1'
+        pre
+          = 'code{{ elements/layouts/layout--sidebar-gutter.slm }}'
+
+    = partial('../elements/layouts/layout--sidebar-gutter.slm')
+
+  section#layout-sidebar-small-gutter class='${class_demo}'
+    header class='${class_demo_headers}'
+      h2 Layout Sidebar Small Gutter
+
+    div class='${class_demo_class_containers}'
+      div class='code-block mb-1'
+        pre
+          = 'code{{ elements/layouts/layout--sidebar-small-gutter.slm }}'
+
+    = partial('../elements/layouts/layout--sidebar-small-gutter.slm')
+
+  section#layout-home-body class='${class_demo}'
+    header class='${class_demo_headers}'
+      h2 Layout Home Body
+
+    div class='${class_demo_class_containers}'
+      div class='code-block mb-1'
+        pre
+          = 'code{{ elements/layouts/layout--home-body.slm }}'
+
+    = partial('../elements/layouts/layout--home-body.slm')
+
+  section#layout-topbar class='${class_demo}'
+    header class='${class_demo_headers}'
+      h2 Layout Topbar
+
+    div class='${class_demo_class_containers}'
+      div class='code-block mb-1'
+        pre
+          = 'code{{ elements/layouts/layout--topbar.slm }}'
+
+    a href="./demos/layout-topbar" View the Topbar Layout demo

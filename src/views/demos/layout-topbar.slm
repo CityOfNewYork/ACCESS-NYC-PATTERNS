@@ -13,9 +13,7 @@
 
 / Content blocks
 = content('head')
-  = mixin('head', 'Layout Demo')
+  = mixin('head', 'Layout Topbar Demo')
 
 = content('content')
-  div class='h-100vh layout--rows flex-col-reverse screen-desktop:layout--sidebar screen-desktop:flex-row'
-    div class='bg-color-blue'
-    div class='bg-color-yellow-access'
+  = partial('../../elements/layouts/layout--topbar.slm')

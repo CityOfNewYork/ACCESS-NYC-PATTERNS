@@ -1,0 +1,6 @@
+
+div class='layout--sidebar-small-gutter bg-color-grey-lightest text-center p-4'
+  aside class='bg-color-grey-light p-4'
+    | Sidebar
+  article class='bg-color-grey-light p-4'
+    | Content
