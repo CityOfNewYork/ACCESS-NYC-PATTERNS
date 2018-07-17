@@ -5,6 +5,7 @@
 // Dependencies
 @import 'config/colors';
 @import 'config/dimensions';
+@import 'config/media';
 @import 'config/direction';
 
 // Declarations
@@ -24,5 +25,18 @@
     content: '';
     display: block;
     position: absolute;
+  }
+}
+
+.divider-light {
+  background: $color-grey-light;
+  border: 0;
+  display: block;
+  height: 1px;
+  margin: (1.5 * $spacing-base) 0;
+  width: 100%;
+
+  @media screen and (min-width: $screen-tablet) {
+    margin: (2.5 * $spacing-base) 0;
   }
 }

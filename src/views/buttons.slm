@@ -12,9 +12,6 @@
 = partial('partials/header.mixin.slm')
 = partial('partials/nav.mixin.slm')
 
-/ Elements
-= partial('../elements/buttons/btn.slm')
-
 / Content blocks
 = content('head')
   = mixin('head', 'Buttons')
