@@ -1,0 +1,5 @@
+/
+/ Inputs
+/
+div class='input-currency-usd'
+  input type='text'

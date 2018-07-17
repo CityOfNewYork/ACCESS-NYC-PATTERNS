@@ -1,0 +1,55 @@
+/**
+ * Inputs
+ */
+
+// Dependencies
+@import 'config/variables';
+
+// Declarations
+.input-currency-usd {
+  display: inline-block;
+  position: relative;
+
+  input {
+    margin: 0;
+    padding-left: 30px;
+    z-index: 3;
+  }
+
+  &::before {
+    position: absolute;
+    top: 50%;
+    left: 10px;
+    transform: translateY(-50%);
+    color: $color-green-mid;
+    content: '$';
+    font-size: 22px;
+    font-weight: $font-weight-bold;
+    text-align: left;
+    z-index: 2;
+  }
+}
+
+.input-phone-us {
+  display: inline-block;
+  position: relative;
+
+  input {
+    margin: 0;
+    padding-left: 42px;
+    z-index: 3;
+  }
+
+  &::before {
+    position: absolute;
+    top: 50%;
+    left: 10px;
+    transform: translateY(-50%);
+    color: $color-blue;
+    content: '+1';
+    font-size: 22px;
+    font-weight: $font-weight-bold;
+    text-align: left;
+    z-index: 2;
+  }
+}
