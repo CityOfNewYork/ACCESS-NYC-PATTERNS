@@ -13,6 +13,7 @@
     a class='${class_nav_item}' href='exposition' Exposition
     a class='${class_nav_item}' href='font-families' Fonts
     a class='${class_nav_item}' href='icons' Icons
+    a class='${class_nav_item}' href='inputs' Inputs
     a class='${class_nav_item}' href='layouts' Layouts
     a class='${class_nav_item}' href='links' Links
     a class='${class_nav_item}' href='program-labels' Program Labels
