@@ -26,7 +26,7 @@
   h1 class='px-1' = title
   section#layout-columns class='${class_demo}'
     header class='${class_demo_headers}'
-      h2 Layout Columns
+      h2 Columns
 
     div class='${class_demo_class_containers}'
       div class='code-block mb-1'
@@ -37,7 +37,7 @@
 
   section#layout-rows class='${class_demo}'
     header class='${class_demo_headers}'
-      h2 Layout Rows
+      h2 Rows
 
     div class='${class_demo_class_containers}'
       div class='code-block mb-1'
@@ -48,7 +48,7 @@
 
   section#layout-gutter class='${class_demo}'
     header class='${class_demo_headers}'
-      h2 Layout Gutter
+      h2 Gutter
 
     div class='${class_demo_class_containers}'
       div class='code-block mb-1'
@@ -59,7 +59,7 @@
 
   section#layout-columns-gutter class='${class_demo}'
     header class='${class_demo_headers}'
-      h2 Layout Columns Gutter
+      h2 Columns Gutter
 
     div class='${class_demo_class_containers}'
       div class='code-block mb-1'
@@ -70,7 +70,7 @@
 
   section#layout-sidebar class='${class_demo}'
     header class='${class_demo_headers}'
-      h2 Layout Sidebar
+      h2 Sidebar
 
     div class='${class_demo_class_containers}'
       div class='code-block mb-1'
@@ -81,7 +81,7 @@
 
   section#layout-sidebar-small class='${class_demo}'
     header class='${class_demo_headers}'
-      h2 Layout Sidebar Small
+      h2 Sidebar Small
 
     div class='${class_demo_class_containers}'
       div class='code-block mb-1'
@@ -92,7 +92,7 @@
 
   section#layout-sidebar-small class='${class_demo}'
     header class='${class_demo_headers}'
-      h2 Layout Sidebar Gutter
+      h2 Sidebar Gutter
 
     div class='${class_demo_class_containers}'
       div class='code-block mb-1'
@@ -103,7 +103,7 @@
 
   section#layout-sidebar-small-gutter class='${class_demo}'
     header class='${class_demo_headers}'
-      h2 Layout Sidebar Small Gutter
+      h2 Sidebar Small Gutter
 
     div class='${class_demo_class_containers}'
       div class='code-block mb-1'
@@ -114,7 +114,7 @@
 
   section#layout-home-body class='${class_demo}'
     header class='${class_demo_headers}'
-      h2 Layout Home Body
+      h2 Home Body
 
     div class='${class_demo_class_containers}'
       div class='code-block mb-1'
@@ -125,7 +125,7 @@
 
   section#layout-topbar class='${class_demo}'
     header class='${class_demo_headers}'
-      h2 Layout Topbar
+      h2 Topbar
 
     div class='${class_demo_class_containers}'
       div class='code-block mb-1'

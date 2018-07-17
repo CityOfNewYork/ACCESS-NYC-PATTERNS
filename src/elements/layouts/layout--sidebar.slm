@@ -1,5 +1,5 @@
 
-div class='layout--sidebar text-center'
+div class='screen-tablet:layout--sidebar layout--rows text-center'
   aside class='bg-color-grey-light p-4'
     | Sidebar
   article class='layout--topbar__body bg-color-grey-lightest p-4'
