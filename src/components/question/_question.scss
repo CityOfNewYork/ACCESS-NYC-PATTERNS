@@ -11,13 +11,11 @@
 // Declarations
 .c-question {
   margin-bottom: 30px;
-
-  input, select, textarea {
-    margin-top: 10px;
-  }
 }
 
 .c-question__container {
+  margin-top: 10px;
+
   &.error {
     position: relative;
 
