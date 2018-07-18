@@ -9,6 +9,7 @@
 .list-inline-comma {
   margin: 0;
   padding: 0;
+  display: inline-block;
 
   > li {
     display: inline;
@@ -24,6 +25,7 @@
 .list-inline-semicolon {
   margin: 0;
   padding: 0;
+  display: inline-block;
 
   > li {
     display: inline;
