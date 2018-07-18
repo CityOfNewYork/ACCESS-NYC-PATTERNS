@@ -16,6 +16,7 @@
     a class='${class_nav_item}' href='inputs' Inputs
     a class='${class_nav_item}' href='layouts' Layouts
     a class='${class_nav_item}' href='links' Links
+    a class='${class_nav_item}' href='lists' Lists
     a class='${class_nav_item}' href='program-labels' Program Labels
     a class='${class_nav_item}' href='radios' Radios
     a class='${class_nav_item}' href='tables' Tables
