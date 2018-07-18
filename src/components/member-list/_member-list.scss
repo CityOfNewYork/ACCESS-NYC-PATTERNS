@@ -17,18 +17,26 @@
 
   > li {
     font-weight: $font-weight-bold;
-    display: flex;
-    align-items: top;
+    line-height: $spacing-base;
+
+    position: relative;
+    padding-#{$text-direction-start}: $spacing-base + 8px;
+    margin-bottom: 8px;
 
     &::before {
       content: '';
-      width: 20px;
-      height: 20px;
+      width: $spacing-base;
+      height: $spacing-base;
       border-radius: 500px;
-      margin-#{$text-direction-end}: 10px;
-      margin-top: 6px;
       background-color: $color-blue;
-      flex-shrink: 0;
+
+      display: inline-block;
+      position: absolute;
+      @if $text-direction == 'rtl' {
+        right: 0;
+      } @else {
+        left: 0;
+      }
     }
 
     &:nth-child(8n+2) {
@@ -83,6 +91,26 @@
     }
   }
 }
+
+.c-member-list__item {
+  vertical-align: text-top;
+
+  &::after {
+    content: ', '
+  }
+
+  &:last-of-type::after {
+    content: none
+  }
+}
+
+// .c-member-list__item::after {
+//   content: ', ';
+// }
+
+// .c-member-list__item:last-of-type::after {
+//   content: none
+// }
 
 .c-member-list__icon {
 
