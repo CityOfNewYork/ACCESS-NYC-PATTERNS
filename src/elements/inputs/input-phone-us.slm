@@ -1,5 +1,9 @@
 /
 / Inputs
 /
-div class='input-phone-us'
+div class='input-phone-us mb-3'
   input type='text'
+
+div class='error'
+  div class='input-phone-us'
+    input type='text'

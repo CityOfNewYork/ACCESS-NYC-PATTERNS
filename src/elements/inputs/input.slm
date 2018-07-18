@@ -1,4 +1,8 @@
 /
 / Inputs
 /
-input type='text'
+div class='mb-3'
+  input type='text'
+
+div class='error'
+  input type='text'

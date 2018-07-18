@@ -1,5 +1,9 @@
 /
 / Inputs
 /
-div class='input-currency-usd'
+div class='input-currency-usd mb-3'
   input type='text'
+
+div class='error'
+  div class='input-currency-usd'
+    input type='text'
