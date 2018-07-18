@@ -125,6 +125,13 @@ const modules = [
     includePaths: sass.includePaths
   },
   {
+    file: './src/components/member-list/_member-list.scss',
+    outDir: './dist/components/member-list/',
+    outFile: 'member-list.css',
+    precision: sass.precision,
+    includePaths: sass.includePaths
+  },
+  {
     file: './src/components/text-controller/_text-controller.scss',
     outDir: './dist/components/text-controller/',
     outFile: 'text-controller.css',

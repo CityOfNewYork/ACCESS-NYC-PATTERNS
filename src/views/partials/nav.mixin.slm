@@ -33,6 +33,7 @@
     a class='${class_nav_item}' href='disclaimer' Disclaimer
     a class='${class_nav_item}' href='filter' Filter
     a class='${class_nav_item}' href='header' Header
+    a class='${class_nav_item}' href='member-list' Member List
     a class='${class_nav_item}' href='text-controller' Text Controller
     a class='${class_nav_item}' href='share-form' Share Form
     a class='${class_nav_item}' href='side-nav' Side Nav
