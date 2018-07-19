@@ -142,30 +142,18 @@
 
 .btn-next,
 .btn-previous {
-  // color: $color-white;
-
-  // &:link,
-  // &:visited,
-  // &:hover,
-  // &:focus,
-  // &:active {
-  //   color: $color-white;
-  // }
-
   &[class*='-next'] {
     position: relative;
     padding-#{$text-direction-end}: $spacing-base + 16px;
     &::after {
+      content: '';
       position: absolute;
-      // @include triangle(.6em .4em, $color-white, $text-direction-end);
+      display: inline-block;
 
       border-bottom: .3em solid transparent;
-      border-left: .4em solid;
-      border-left-color: inherit;
+      border-#{$text-direction-start}: .4em solid;
+      border-#{$text-direction-start}-color: inherit;
       border-top: .3em solid transparent;
-
-      content: '';
-      display: inline-block;
 
       top: 50%;
       margin-top: -.3em;
@@ -178,16 +166,14 @@
     position: relative;
     padding-#{$text-direction-start}: $spacing-base + 16px;
     &::before {
+      content: '';
       position: absolute;
-      // @include triangle(.6em .4em, $color-white, $text-direction-start);
+      display: inline-block;
 
       border-bottom: .3em solid transparent;
-      border-right: .4em solid;
-      border-right-color: inherit;
+      border-#{$text-direction-end}: .4em solid;
+      border-#{$text-direction-end}-color: inherit;
       border-top: .3em solid transparent;
-
-      content: '';
-      display: inline-block;
 
       top: 50%;
       margin-top: -.3em;
@@ -198,7 +184,6 @@
 }
 
 .btn-text {
-  // color: inherit;
   background: none;
   border: 0;
   border-radius: 0;
