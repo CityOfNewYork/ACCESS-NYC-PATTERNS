@@ -1,7 +1,6 @@
 /
 / Header
 /
-
 header class='c-header'
   div class='c-header__icon'
     a href='#'
@@ -9,13 +8,3 @@ header class='c-header'
   div
     h1 class='c-header__descriptor' Money for heat and utility expenses
     h2 class='c-header__information' Home Energy Assistance Program (HEAP) | NYC Human Resource Administration
-
-div class='c-header bg-color-blue-dark text-color-white'
-  div class='c-header__icon hide-for-print'
-    svg class='icon icon-success rounded-full text-color-green bg-color-white'
-      use xlink:href='#icon-success'
-  div
-    h1 class='c-header__descriptor'
-      | 40 programs for you to look at.
-    p class='c-header__disclaimer'
-      | Remember that we can’t guarantee eligibility, but can only recommend programs for you to consider.
