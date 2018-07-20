@@ -46,12 +46,15 @@
 .c-question__label {
   display: inline-block;
   font-size: $font-size-base;
+  line-height: $font-size-base;
   font-weight: $font-weight-bold;
+  vertical-align: top
 }
 
 .c-question__info {
-  font-size: 12px;
+  font-size: $font-size-xsmall;
   text-decoration: none;
+  vertical-align: middle;
 
   .icon {
     width: 1.5em;
