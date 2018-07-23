@@ -275,6 +275,12 @@ $breakpoints: map-get($variables, 'screens');
   //  .------------------.
   //
   .#{$variant}layout--topbar {
+    > *:first-child {
+      height: 90px;
+    }
+  }
+
+  .#{$variant}layout--topbar {
     > *:first-child + * {
       position: relative;
       height: calc(100vh - 90px);
