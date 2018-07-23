@@ -39,7 +39,7 @@ module.exports = {
   },
   padding: variables.padding,
   modules: {
-    backgroundColors: ['hover', 'focus'],
+    backgroundColors: ['responsive', 'hover', 'focus'],
     borderColors: ['hover', 'focus'],
     borderStyle: ['hover', 'focus'],
     borderWidths: ['responsive', 'hover', 'focus'],

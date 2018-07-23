@@ -10,7 +10,7 @@ article class='c-card items-stretch bg-color-grey-lightest p-2'
     a href='#'
       h3 class='c-card__title'
         | Money for heat and utility expenses
-    p class='c-card__subtitle type-small'
+    p class='c-card__subtitle text-color-grey-mid'
       | Home Energy Assistance Program (HEAP)
     p
       | HEAP can help you pay for the costs of heating your home during the winter months.
