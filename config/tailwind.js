@@ -24,6 +24,7 @@ module.exports = {
   fonts: variables.fonts,
   textSizes: variables.fontSizes,
   fontWeights: variables.fontWeights,
+  leading: variables.leading,
   borderWidths: variables.borderWidths,
   margin: variables.margin,
   maxWidth: {
@@ -46,6 +47,7 @@ module.exports = {
     flexbox: ['responsive'],
     fonts: [],
     fontWeights: [],
+    leading: [],
     margin: ['responsive'],
     maxWidth: ['responsive'],
     overflow: ['responsive'],

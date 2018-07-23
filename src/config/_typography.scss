@@ -9,11 +9,13 @@
 @import 'config/direction';
 @import 'bourbon-neat/app/assets/stylesheets/grid/media';
 
+$leading: map-get($variables, 'leading');
+
 // Declarations
 @mixin typography-jumbo() {
   font-weight: $font-weight-normal;
   font-size: #{$font-size-largest};
-  line-height: 1.3;
+  line-height: map-get($leading, 'medium');
   font-family: $font-family-serif;
   @include media($bp-tablet-up) {
     font-size: $font-size-jumbo
@@ -24,7 +26,7 @@
   // color: map-get(map-get($variables, 'colors'), 'color-blue-dark');
   font-weight: $font-weight-normal;
   font-size: #{$font-size-larger};
-  line-height: 1.3;
+  line-height: map-get($leading, 'medium');
   font-family: $font-family-serif;
   @include media($bp-tablet-up) {
     font-size: $font-size-largest
@@ -34,7 +36,7 @@
 @mixin typography-h2() {
   font-weight: $font-weight-bold;
   font-size: #{$font-size-larger};
-  line-height: 1.3;
+  line-height: map-get($leading, 'medium');
   font-family: $font-family-serif
 }
 
@@ -42,14 +44,14 @@
   // color: map-get(map-get($variables, 'colors'), 'color-blue-dark');
   font-weight: $font-weight-bold;
   font-size: #{$font-size-large};
-  line-height: 1.3;
+  line-height: map-get($leading, 'medium');
   font-family: $font-family-serif
 }
 
 @mixin typography-h4() {
   font-weight: $font-weight-bold;
   font-size: #{$font-size-medium};
-  line-height: 1.3;
+  line-height: map-get($leading, 'medium');
   font-family: $font-family-sans
 }
 
@@ -57,12 +59,12 @@
   // color: map-get(map-get($variables, 'colors'), 'color-grey-mid');
   font-weight: $font-weight-normal;
   font-size: #{$font-size-normal};
-  line-height: 1.3;
+  line-height: map-get($leading, 'medium');
   font-family: $font-family-sans
 }
 
 @mixin typography-lead() {
-  font: #{$font-size-normal}/1.3 $font-family-serif;
+  font: #{$font-size-normal}/#{map-get($leading, 'medium')} $font-family-serif;
 
   @include media($bp-tablet-up) {
     font-size: $font-size-larger;
@@ -71,7 +73,7 @@
 
 @mixin typography-exposition() {
   font-size: #{$font-size-base};
-  line-height: 1.3;
+  line-height: map-get($leading, 'medium');
   font-family: $font-family-serif;
   @include media($bp-tablet-up) {
     font-size: $font-size-larger
@@ -81,7 +83,7 @@
 @mixin typography-base() {
   // color: map-get(map-get($variables, 'colors'), 'color-black');
   font-size: #{$font-size-base};
-  line-height: 1.4;
+  line-height: map-get($leading, 'large');
   font-family: $font-family-sans
 }
 
@@ -89,14 +91,14 @@
   // color: map-get(map-get($variables, 'colors'), 'color-grey-mid');
   font-weight: $font-weight-normal;
   font-size: #{$font-size-normal};
-  line-height: 1.3;
+  line-height: map-get($leading, 'medium');
   font-family: $font-family-sans;
 }
 
 @mixin typography-nav() {
   font-weight: $font-weight-normal;
   font-size: #{$font-size-small};
-  line-height: 1.3;
+  line-height: map-get($leading, 'medium');
   font-family: $font-family-sans;
   @include media($bp-tablet-up) {
     font-size: $font-size-normal
@@ -106,7 +108,7 @@
 @mixin typography-blockquote() {
   // color: map-get(map-get($variables, 'colors'), 'color-black');
   font: #{$font-size-large};
-  line-height: 1.3;
+  line-height: map-get($leading, 'medium');
   font-family: $font-family-serif
 }
 
@@ -114,13 +116,13 @@
   // color: map-get(map-get($variables, 'colors'), 'color-grey-mid');
   font-weight: $font-weight-normal;
   font-size: #{$font-size-small};
-  line-height: 1.3;
+  line-height: map-get($leading, 'medium');
   font-family: $font-family-sans
 }
 
 @mixin typography-dislaimer-small() {
   font-size: $font-size-xsmall;
-  line-height: 1.4;
+  line-height: map-get($leading, 'large');
 }
 
 @mixin typography-print() {
