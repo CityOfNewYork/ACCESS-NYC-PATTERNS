@@ -316,12 +316,16 @@ $breakpoints: map-get($variables, 'screens');
   }
 
   .layout--topbar {
-    height: auto;
-    overflow: visible
+    > *:first-child + * {
+      position: static;
+      height: auto;
+    }
   }
 
-  .layout--topbar__body {
-    position: static
+  .layout--topbar {
+    > *:first-child + * > *:first-child {
+      position: static
+    }
   }
 }
 
