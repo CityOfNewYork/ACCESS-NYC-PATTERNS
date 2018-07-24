@@ -15,10 +15,7 @@ div class='o-search-box active static' id='search' aria-hidden='true'
         form class='o-search-box__form'
           input name='lang' value='en' type='hidden'
           label class='type-small' for='search-field' Search
-          div class='o-search-box__form-field-container'
-            input class='o-search-box__form-field' name='s' value='' placeholder='Search for programs or services' id='search-field' type='text'
-            button class='btn-text o-search-box__form-submit' type='submit'
-              span class='icon bg-icon-search'
+          = partial('../../elements/inputs/input-search.slm')
 
         div class='o-search-box__suggestions'
           div class='o-search-box__suggestions-header'

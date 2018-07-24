@@ -61,14 +61,6 @@ optgroup {
   }
 }
 
-input {
-  &.w-input-double {
-    @include media($bp-tablet-up) {
-      min-width: 400px
-    }
-  }
-}
-
 [type='checkbox'],
 [type='radio'] {
   display: inline;
