@@ -1,0 +1,18 @@
+/
+/ Side Nav
+/
+
+nav class='c-side-nav hide-for-print'
+  ul
+    li
+      a class='active' href='#'
+        | Training Sessions & Events
+    li
+      a href='#'
+        | Promotional Materials
+    li
+      a href='#'
+        | Newsletter
+    li
+      a href='#'
+        | Link to ACCESS NYC

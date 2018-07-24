@@ -14,11 +14,17 @@
   @include typography-nav();
   margin-bottom: $spacing-base;
 
-  ol {
+  border-bottom: 4px solid $color-blue-dark;
+  // padding-top: $spacing-base;
+
+  ol, ul {
     list-style-type: none;
     list-style-position: inside;
     padding-left: 0;
     padding-right: 0;
+  }
+
+  ol {
     counter-reset: li;
   }
 
@@ -37,7 +43,9 @@
         padding-bottom: 0;
       }
     }
+  }
 
+  ol > li {
     &:before {
       content: '' counter(li) '. ';
       counter-increment: li;
@@ -46,6 +54,10 @@
       padding-#{$text-direction-end}: 8px;
       text-align: $text-direction-end;
     }
+  }
+
+  ul > li {
+    padding-#{$text-direction-start}: 50px;
   }
 
   .active {
