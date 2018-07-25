@@ -6,8 +6,12 @@ article id='what-you-need-to-include-1' class='c-accordion' data-js='accordion' 
   header class='c-accordion__header'
     p Proof of who you are
     a href='#what-you-need-to-include-1__body' class="c-accordion__toggle print:hidden" v-on:click="toggle"
-      span v-if='active' - hide this list
-      span v-else='' + show this list
+      span v-if='active'
+        span class='hidden screen-tablet:inline' -&nbsp;
+        | hide this list
+      span v-else=''
+        span class='hidden screen-tablet:inline' +&nbsp;
+        | show this list
   div id='what-you-need-to-include-1__body' class='c-accordion__body print:active hidden:overflow animated' v-bind:class='{active: active}' v-bind:aria-hidden='ariaHidden(active)'
     div class='c-accordion__padding' v-bind:class="{'animated fadeInUp': active}"
       p

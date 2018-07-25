@@ -6,6 +6,7 @@
 @import 'config/colors';
 @import 'config/fonts';
 @import 'config/dimensions';
+@import 'config/media';
 
 // Declarations
 .c-accordion {
@@ -14,12 +15,20 @@
 }
 
 .c-accordion__header {
-  align-items: center;
+
   background-color: $color-blue-dark;
   color: $color-white;
   display: flex;
   overflow: hidden;
   padding: $spacing-base;
+
+  flex-direction: column;
+  align-items: start;
+
+  @media screen and (min-width: $screen-tablet) {
+    flex-direction: row;
+    align-items: center;
+  }
 
   p {
     flex: 1;
@@ -35,7 +44,6 @@
 }
 
 .c-accordion__body {
-
   h5 {
     color: $color-black;
     font-weight: bold;
@@ -45,11 +53,10 @@
   li {
     margin: .25rem 0;
   }
-
 }
 
 .c-accordion__padding {
-  padding: ($spacing-base * 2) $spacing-base;
+  padding: $spacing-base;
 }
 
 .c-accordion__padding > *:last-child {
