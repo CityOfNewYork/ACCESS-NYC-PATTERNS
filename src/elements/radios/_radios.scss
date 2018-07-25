@@ -35,6 +35,11 @@
   }
 }
 
+.radio__label {
+  display: flex;
+  line-height: map-get(map-get($variables, 'inputs'), 'checkbox-size');
+}
+
 input + .radio__label::before {
   @include size( map-get(map-get($variables, 'inputs'), 'checkbox-size') );
   transition: all .2s;

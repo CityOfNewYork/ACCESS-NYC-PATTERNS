@@ -39,7 +39,8 @@ $checkbox-radius: map-get(map-get($variables, 'inputs'), 'checkbox-radius');
 }
 
 .checkbox__label {
-  display: flex
+  display: flex;
+  line-height: $checkbox-size;
 }
 
 .checkbox__label::before {
