@@ -53,7 +53,7 @@ module.exports = {
     overflow: ['responsive'],
     padding: ['responsive'],
     textColors: ['hover'],
-    textSizes: [],
+    textSizes: ['responsive'],
     textStyle: [],
     whitespace: ['responsive'],
     width: ['responsive'],
