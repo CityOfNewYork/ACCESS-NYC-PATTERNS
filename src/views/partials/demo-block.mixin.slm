@@ -1,0 +1,8 @@
+= mixin('demo-block', 'markup');
+  div class='${class_demo_cols}'
+    div class='${class_demo_col1} ${class_demo_spec}'
+      = partial('../' + this.markup);
+    div class='${class_demo_col2} ${class_demo_content}'
+      div class='code-block mb-1'
+        pre
+          = 'code{{ '+ this.markup +' }}';

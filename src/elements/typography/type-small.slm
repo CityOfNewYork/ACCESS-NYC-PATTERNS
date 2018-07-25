@@ -1,0 +1,3 @@
+small = text
+br
+div class='type-small' = text

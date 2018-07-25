@@ -3,12 +3,29 @@
  */
 
 // Dependencies
+@import 'config/language';
 @import 'config/variables.scss';
 
 // Declarations
 @each $lang in map-get($variables, 'rtlLanguages') {
   :lang(#{$lang}) {
     direction: rtl;
+  }
+}
+
+.font-serif {
+  @if $language == '' {
+    font-family: map-get(map-get($variables, 'fonts'), 'default-serif');
+  } @else {
+    font-family: map-get(map-get($variables, 'fonts'), '#{$language}-serif');
+  }
+}
+
+.font-sans {
+  @if $language == '' {
+    font-family: map-get(map-get($variables, 'fonts'), 'default-sans');
+  } @else {
+    font-family: map-get(map-get($variables, 'fonts'), '#{$language}-sans');
   }
 }
 
@@ -19,3 +36,5 @@
 .text-align-end {
   text-align: $text-direction-end
 }
+
+
