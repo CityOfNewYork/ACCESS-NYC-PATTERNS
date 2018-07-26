@@ -18,6 +18,14 @@ const sass = {
 
 const modules = [
   {
+    file: './src/scss/site-ar.scss',
+    outDir: './dist/styles/',
+    outFile: 'site-ar.css',
+    sourceMapEmbed: sass.sourceMapEmbed,
+    precision: sass.precision,
+    includePaths: sass.includePaths
+  },
+  {
     file: './src/scss/site-default.scss',
     outDir: './dist/styles/',
     outFile: 'site-default.css',
@@ -26,9 +34,33 @@ const modules = [
     includePaths: sass.includePaths
   },
   {
-    file: './src/scss/site-ar.scss',
+    file: './src/scss/site-es.scss',
     outDir: './dist/styles/',
-    outFile: 'site-ar.css',
+    outFile: 'site-es.css',
+    sourceMapEmbed: sass.sourceMapEmbed,
+    precision: sass.precision,
+    includePaths: sass.includePaths
+  },
+  {
+    file: './src/scss/site-ko.scss',
+    outDir: './dist/styles/',
+    outFile: 'site-ko.css',
+    sourceMapEmbed: sass.sourceMapEmbed,
+    precision: sass.precision,
+    includePaths: sass.includePaths
+  },
+  {
+    file: './src/scss/site-ur.scss',
+    outDir: './dist/styles/',
+    outFile: 'site-ur.css',
+    sourceMapEmbed: sass.sourceMapEmbed,
+    precision: sass.precision,
+    includePaths: sass.includePaths
+  },
+  {
+    file: './src/scss/site-zh-hant.scss',
+    outDir: './dist/styles/',
+    outFile: 'site-zh-hant.css',
     sourceMapEmbed: sass.sourceMapEmbed,
     precision: sass.precision,
     includePaths: sass.includePaths
