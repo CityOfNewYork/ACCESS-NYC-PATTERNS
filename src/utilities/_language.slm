@@ -1,10 +1,17 @@
-h1 class='font-serif' = text
-h1 class='font-sans' = text
-h1 class='font-default-serif' = text
-h1 class='font-default-sans' = text
-h1 class='font-kr-serif' lang='ko' ACCESS NYC에서 식품, 자금, 주택, 일자리 등에 대한 도움을 확인해보세요.
-h1 class='font-kr-sans' lang='ko' ACCESS NYC에서 식품, 자금, 주택, 일자리 등에 대한 도움을 확인해보세요.
-h1 class='font-tc-serif' lang='zh-hant' 於 ACCESS NYC 取得食物、金錢、住房、工作及其他協助。
-h1 class='font-tc-sans' lang='zh-hant' 於 ACCESS NYC 取得食物、金錢、住房、工作及其他協助。
-h1 class='font-ar-serif' lang='ar' العثور على مساعدة الطعام والنقود والمسكن والعمل والمزيد على موقع ACCESS NYC.
-h1 class='font-ar-sans'lang='ar' العثور على مساعدة الطعام والنقود والمسكن والعمل والمزيد على موقع ACCESS NYC.
+p class='font-serif' Inherit Stylesheet Language
+p class='font-sans' Inherit Stylesheet Language
+br
+p class='font-default-serif' Default (English, LTR)
+p class='font-default-sans' Default (English, LTR)
+br
+p class='font-kr-serif' lang='ko' 한국어 (Korean, LTR)
+p class='font-kr-sans' lang='ko' 한국어 (Korean, LTR)
+br
+p class='font-tc-serif' lang='zh-hant' 繁體中文 (Chinese, LTR)
+p class='font-tc-sans' lang='zh-hant' 繁體中文 (Chinese, LTR)
+br
+p class='font-ar-serif' lang='ar' العربية (Arabic, RTL)
+p class='font-ar-sans'lang='ar' العربية (Arabic, RTL)
+br
+p class='font-ur-serif' lang='ur' اردو  (Urdu, RTL)
+p class='font-ur-sans'lang='ur' اردو  (Urdu, RTL)

@@ -8,7 +8,7 @@ const variables = {
   version: package.version,
   cdn: '"https://cdn.rawgit.com/CityOfNewYork/ACCESS-NYC-PATTERNS/v' + package.version + '/dist"',
   languages: ['default', 'ar', 'es', 'kr', 'ur', 'tc'],
-  rtlLanguages: ['ar'],
+  rtlLanguages: ['ar', 'ur'],
   fonts: {
     'system': [
       '-apple-system',

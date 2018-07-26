@@ -4,6 +4,7 @@
 
 // Dependencies
 @import 'config/language';
+@import 'config/variables';
 @import 'bourbon-neat/app/assets/stylesheets/settings/grid';
 @import 'bourbon-neat/app/assets/stylesheets/settings/visual-grid';
 @import 'bourbon-neat/app/assets/stylesheets/functions/private';
@@ -14,21 +15,15 @@ $text-direction: ltr;
 $text-direction-start: left;
 $text-direction-end: right;
 
-@if $language == 'kr' {
-
-}
-
-@if $language == 'tc' {
-
-}
-
-@if $language == 'ar' {
-  $default-layout-direction: RTL !global;
-  // Below variable is used for the USWDS grid which built on an old version
-  // of Neat where $layout-direction is used rather than the current name
-  // above.
-  $layout-direction: $default-layout-direction !global;
-  $text-direction: rtl;
-  $text-direction-start: right;
-  $text-direction-end: left;
+@each $lang in map-get($variables, 'rtlLanguages') {
+  @if $language == $lang {
+    $default-layout-direction: RTL !global;
+    // Below variable is used for the USWDS grid which built on an old
+    // version of Neat where $layout-direction is used rather than the
+    // current name above.
+    $layout-direction: $default-layout-direction !global;
+    $text-direction: rtl;
+    $text-direction-start: right;
+    $text-direction-end: left;
+  }
 }
