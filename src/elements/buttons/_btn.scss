@@ -100,21 +100,17 @@
   color: $color-white;
   background: $color-blue;
 
-  &:link {
+  &:link,
+  &:visited {
     color: $color-white;
     background: $color-blue;
   }
 
   &:hover,
   &:focus,
-  &:visited {
-    color: $color-white;
-    background: $color-blue-bright;
-  }
-
   &:active {
     color: $color-white;
-    background: $color-blue-dark;
+    background: $color-blue-bright;
   }
 }
 
@@ -122,18 +118,14 @@
   color: $color-white;
   background: $color-green-mid;
 
-  &:link {
+  &:link,
+  &:visited {
     color: $color-white;
     background: $color-green-mid;
   }
 
   &:hover,
   &:focus,
-  &:visited {
-    color: $color-white;
-    background: $color-green-dark;
-  }
-
   &:active {
     color: $color-white;
     background: $color-green;

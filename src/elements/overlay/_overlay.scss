@@ -29,7 +29,7 @@
   }
 }
 
-.overlay\@active {
+.overlay\:active {
   &::before {
     display: block;
     @include media($bp-desktop-up) {
