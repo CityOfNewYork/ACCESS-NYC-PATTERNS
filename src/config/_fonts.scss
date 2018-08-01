@@ -48,3 +48,8 @@ $font-family-serif: map-get($fonts, default-serif);
   $font-family-sans: map-get($fonts, ar-sans);
   $font-family-serif: map-get($fonts, ar-serif);
 }
+
+@mixin font-smooth() {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}

@@ -23,8 +23,8 @@
 }
 
 .c-header__icon {
-  $icon-height: 50px;
-  $icon-width: 50px;
+  $icon-height: $spacing-base * 2;
+  $icon-width: $spacing-base * 2;
   margin-bottom: $spacing-base;
 
   .icon {

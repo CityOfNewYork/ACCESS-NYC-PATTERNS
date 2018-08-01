@@ -25,9 +25,9 @@ $checkbox-radius: map-get(map-get($variables, 'inputs'), 'checkbox-radius');
 
   margin-bottom: $spacing-base;
 
-  @include media($bp-tablet-up) {
-    margin-bottom: $spacing-base * 1.5
-  }
+  // @include media($bp-tablet-up) {
+  //   margin-bottom: $spacing-base * 1.5
+  // }
 
   &:last-of-type {
     margin-bottom: 0

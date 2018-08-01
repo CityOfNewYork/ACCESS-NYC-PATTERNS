@@ -46,14 +46,30 @@ p code {
   display: inline;
 }
 
+pre {
+  color: $color-pink;
+  background-color: $color-grey-lightest;
+  display: block;
+  padding: 16px 16px;
+  border: 1px solid $color-grey-light;
+  border-radius: 3px;
+  max-width: 100%;
+  overflow: hidden;
+  overflow-x: auto;
+}
+
 .code-block {
   color: $color-pink;
   display: inline-block;
   display: block;
   max-width: 100%;
-  overflow-y: auto;
+  overflow: hidden;
+  overflow-x: auto;
   pre {
+    color: inherit;
+    background-color: transparent;
     margin: 0;
     padding: 16px 16px;
+    border: none;
   }
 }

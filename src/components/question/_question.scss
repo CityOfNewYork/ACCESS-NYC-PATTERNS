@@ -10,7 +10,7 @@
 
 // Declarations
 .c-question {
-  margin-bottom: 30px;
+  margin-bottom: $spacing-base;
 }
 
 .c-question__container {
@@ -48,7 +48,7 @@
   font-size: $font-size-base;
   font-weight: $font-weight-bold;
   vertical-align: top;
-  margin-bottom: 8px
+  margin-bottom: $spacing-base/3;
 }
 
 .c-question__info {

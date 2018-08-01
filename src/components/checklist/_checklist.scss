@@ -14,13 +14,20 @@ $cdn: map-get($variables, 'cdn');
   list-style: none;
   padding: 0;
 
+  ul, ol {
+    padding-bottom: $spacing-base;
+  }
+
   li {
+    padding-#{$text-direction-start}: $spacing-base * 2;
+    padding-bottom: $spacing-base;
+  }
+
+  > li {
     background-image: url('#{$cdn}/images/icon-eligibilitycheck.png');
     background-position: $text-direction-start top;
     background-repeat: no-repeat;
     background-size: map-get($variables, 'emBase') * 1.5 + px auto;
-    padding-#{$text-direction-start}: $spacing-base * 2.25;
-    padding-bottom: $spacing-base * 1.5;
   }
 }
 

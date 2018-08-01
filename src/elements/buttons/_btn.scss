@@ -4,6 +4,7 @@
 
 // Dependencies
 @import 'config/colors';
+@import 'config/fonts';
 @import 'config/dimensions';
 @import 'config/direction';
 @import 'config/buttons';
@@ -99,6 +100,7 @@
 .btn-primary {
   color: $color-white;
   background: $color-blue;
+  @include font-smooth;
 
   &:link,
   &:visited {
@@ -117,6 +119,7 @@
 .btn-secondary {
   color: $color-white;
   background: $color-green-mid;
+  @include font-smooth;
 
   &:link,
   &:visited {
@@ -137,6 +140,7 @@
   &[class*='-next'] {
     position: relative;
     padding-#{$text-direction-end}: $spacing-base + 16px;
+
     &::after {
       content: '';
       position: absolute;
@@ -157,6 +161,7 @@
   &[class*='-previous'] {
     position: relative;
     padding-#{$text-direction-start}: $spacing-base + 16px;
+
     &::before {
       content: '';
       position: absolute;

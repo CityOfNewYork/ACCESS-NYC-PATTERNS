@@ -1,0 +1,11 @@
+/**
+ * Font
+ */
+
+// Dependencies
+@import 'config/fonts';
+
+// Declarations
+.font-smooth {
+  @include font-smooth
+}
