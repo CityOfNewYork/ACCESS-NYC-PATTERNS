@@ -10,24 +10,9 @@
 $cdn: map-get($variables, 'cdn');
 
 // Declarations
-.c-checklist, .c-checklist > ul {
+.c-checklist > ul {
   list-style: none;
   padding: 0;
-
-  ul, ol {
-    margin-top: $spacing-base;
-    padding-bottom: 0;
-    margin-bottom: 0;
-    padding-#{$text-direction-start}: $spacing-base;
-  }
-
-  ul > li, ol > li {
-    background-image: none !important;
-
-    &:last-of-type {
-      padding-bottom: 0
-    }
-  }
 
   li {
     padding-bottom: $spacing-base
@@ -39,6 +24,23 @@ $cdn: map-get($variables, 'cdn');
     background-position: $text-direction-start top;
     background-repeat: no-repeat;
     background-size: map-get($variables, 'emBase') * 1.5 + px auto;
+  }
+
+  // Nested lists
+  ul, ol {
+    margin-top: $spacing-base;
+    padding-bottom: 0;
+    margin-bottom: 0;
+    padding-#{$text-direction-start}: $spacing-base;
+  }
+
+  ul > li,
+  ol > li {
+    background-image: none !important;
+
+    &:last-of-type {
+      padding-bottom: 0
+    }
   }
 }
 
