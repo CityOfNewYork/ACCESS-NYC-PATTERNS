@@ -15,15 +15,20 @@ $cdn: map-get($variables, 'cdn');
   padding: 0;
 
   ul, ol {
-    padding-bottom: $spacing-base;
+    margin-top: $spacing-base;
+    padding-bottom: $spacing-base
+
+    > li {
+      background-image: none !important
+    }
   }
 
   li {
-    padding-#{$text-direction-start}: $spacing-base * 2;
-    padding-bottom: $spacing-base;
+    padding-bottom: $spacing-base
   }
 
   > li {
+    padding-#{$text-direction-start}: $spacing-base * 2;
     background-image: url('#{$cdn}/images/icon-eligibilitycheck.png');
     background-position: $text-direction-start top;
     background-repeat: no-repeat;
