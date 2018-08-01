@@ -16,10 +16,16 @@ $cdn: map-get($variables, 'cdn');
 
   ul, ol {
     margin-top: $spacing-base;
-    padding-bottom: $spacing-base;
+    padding-bottom: 0;
+    margin-bottom: 0;
+    padding-#{$text-direction-start}: $spacing-base;
+  }
 
-    > li {
-      background-image: none !important
+  ul > li, ol > li {
+    background-image: none !important;
+
+    &:last-of-type {
+      padding-bottom: 0
     }
   }
 
