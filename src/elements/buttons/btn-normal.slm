@@ -1,0 +1,2 @@
+button class='btn-primary btn-small screen-desktop:btn-normal mb-2'
+  | Normal Button

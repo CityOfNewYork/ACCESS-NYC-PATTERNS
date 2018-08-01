@@ -9,21 +9,26 @@
 @import 'config/direction';
 @import 'config/buttons';
 @import 'config/typography';
+@import 'config/media';
 @import 'bourbon/app/assets/stylesheets/addons/triangle';
 @import 'bourbon/app/assets/stylesheets/addons/size';
 
 // Declarations
+@mixin btn-normal() {
+  @include typography-h4();
+}
+
 // Base styles for buttons
 .btn, [class*='btn-'] {
   appearance: none;
   transition: background .2s ease-in, color .2s ease-in;
-  @include typography-h4();
+  @include btn-normal();
   background: $color-white;
   border: 0;
   border-radius: $btn-radius;
   display: inline-block;
   line-height: 1;
-  padding: .75*$spacing-base $spacing-base;
+  padding: (.6666 * $spacing-base) $spacing-base;
   text-align: center;
   text-decoration: none;
   cursor: pointer;
@@ -92,6 +97,21 @@
 //
 .btn-small {
   font-size: .727rem;
+}
+
+//
+// Responsive types for button size
+//
+.screen-tablet\:btn-normal {
+  @media screen and (min-width: $screen-tablet) {
+    @include btn-normal();
+  }
+}
+
+.screen-desktop\:btn-normal {
+  @media screen and (min-width: $screen-desktop) {
+    @include btn-normal();
+  }
 }
 
 //
