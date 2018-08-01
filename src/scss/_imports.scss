@@ -75,7 +75,6 @@
 @import 'components/filter/filter';
 @import 'components/text-controller/text-controller';
 @import 'components/header/header';
-@import 'components/mobile-nav/mobile-nav';
 @import 'components/side-nav/side-nav';
 @import 'components/share-links/share-links';
 @import 'components/question/question';
@@ -93,6 +92,7 @@
 // will require their own Objects. Object namespaces are prefixed with 'o-'.
 
 @import 'objects/navigation/navigation';
+@import 'objects/mobile-nav/mobile-nav';
 @import 'objects/banner/banner';
 @import 'objects/search-box/search-box';
 @import 'objects/footer/footer';

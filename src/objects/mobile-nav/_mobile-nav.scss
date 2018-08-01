@@ -11,7 +11,7 @@
 @import 'config/typography';
 
 // Declarations
-.c-mobile-nav {
+.o-mobile-nav {
   transform: translateX(0);
   transition: transform .2s ease-in;
   position: fixed;
@@ -36,7 +36,7 @@
   }
 }
 
-.c-mobile-nav__close {
+.o-mobile-nav__close {
   @include typography-nav();
   font-style: italic;
   text-align: $text-direction-end;
@@ -57,7 +57,7 @@
   }
 }
 
-.c-mobile-nav__inner {
+.o-mobile-nav__inner {
   @if $text-direction == 'rtl' {
     padding: $spacing-base 0 2*$spacing-base $spacing-base;
   } @else {
@@ -67,12 +67,12 @@
   overflow-y: scroll;
 }
 
-.c-mobile-nav__header {
+.o-mobile-nav__header {
   margin-bottom: 0;
 }
 
 // Active state for the mobile navigation
-.c-mobile-nav\@active {
+.active\:o-mobile-nav {
   @if $text-direction == 'rtl' {
     transform: translateX(100%)
   } @else {
