@@ -64,9 +64,10 @@
   }
 }
 
-// .o-banner__tout-cta {
-//   .btn {
-//     min-height: 60px;
-//     line-height: 30px;
-//   }
-// }
+// Make the cta buttons the same height
+.o-banner__tout-cta {
+  .btn {
+    min-height: 60px;
+    line-height: 30px;
+  }
+}
