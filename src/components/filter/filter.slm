@@ -1,6 +1,5 @@
-div class='c-filter active'
-  div class='c-filter__header'
-    a href='#' All Programs
+div#filter class='c-filter active'
+  a href='#filter' class='c-filter__header' All Programs
   div class='c-filter__body'
     ul class='c-filter__list'
       li

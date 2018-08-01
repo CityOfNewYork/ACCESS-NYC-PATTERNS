@@ -112,7 +112,7 @@
   &:focus,
   &:active {
     color: $color-white;
-    background: $color-blue-bright;
+    background: saturate(lighten($color-blue, 5%), 5%);
   }
 }
 
@@ -131,7 +131,7 @@
   &:focus,
   &:active {
     color: $color-white;
-    background: $color-green;
+    background: saturate(lighten($color-green-mid, 5%), 5%);
   }
 }
 
