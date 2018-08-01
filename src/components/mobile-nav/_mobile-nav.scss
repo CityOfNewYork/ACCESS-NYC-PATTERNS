@@ -26,6 +26,7 @@
   }
   background: $color-grey-lightest;
   color: $color-grey-dark;
+  @include font-smooth-auto;
   display: block;
   width: 300px;
   z-index: 10;

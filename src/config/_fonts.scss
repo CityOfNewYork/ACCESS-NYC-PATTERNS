@@ -53,3 +53,8 @@ $font-family-serif: map-get($fonts, default-serif);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+
+@mixin font-smooth-auto() {
+  -webkit-font-smoothing: auto;
+  -moz-osx-font-smoothing: auto;
+}

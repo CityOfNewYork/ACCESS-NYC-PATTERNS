@@ -4,6 +4,7 @@
 
 // Dependencies
 @import 'config/colors';
+@import 'config/fonts';
 @import 'config/direction';
 @import 'config/dimensions';
 @import 'config/fonts';
@@ -16,6 +17,7 @@
   display: flex;
   background: $color-blue-dark;
   color: $color-white;
+  @include font-smooth;
   padding: (.5 * $spacing-base) $spacing-base;
 
   .logo-access {
