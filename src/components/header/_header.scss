@@ -35,7 +35,7 @@
   }
 
   @include media($bp-mobile-up) {
-    margin-#{$text-direction-end}: $spacing-base;
+    margin-#{$text-direction-end}: $spacing-base * 0.6666;
     min-width: $icon-width; // Fixes an iOS 9 flexbox bug.
     width: $icon-width;
 
