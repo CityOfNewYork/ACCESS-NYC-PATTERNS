@@ -308,6 +308,50 @@ $breakpoints: map-get($variables, 'screens');
     }
   }
 
+  //
+  // Layout for the map.
+  //
+  //  .------------------.
+  //  |.----------------.|
+  //  ||                ||
+  //  |.----------------.|
+  //  ||                ||
+  //  ||                ||
+  //  ||                ||
+  //  |.----------------.|
+  //  .------------------.
+  //
+  .#{$variant}layout--map {
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column-reverse;
+
+    @media screen and (min-width: $screen-desktop) {
+      height: 90vh;
+      flex-direction: row;
+    }
+
+    .layout--map__filter {
+      width: 100%;
+
+      @media screen and (min-width: $screen-desktop) {
+        height: 90vh;
+        overflow: hidden;
+        overflow-y: auto;
+      }
+    }
+
+    .layout--map__map {
+      height: 50vh;
+      width: 100%;
+
+      @media screen and (min-width: $screen-desktop) {
+        height: 100%;
+      }
+    }
+  }
+
 }
 
 @mixin layout-print {
