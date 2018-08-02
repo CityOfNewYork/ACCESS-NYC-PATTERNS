@@ -1,0 +1,7 @@
+/
+/ Content
+/
+
+div class='o-content'
+  = partial('../../components/checklist/checklist.slm');
+  = partial('../../elements/tables/tables.slm');

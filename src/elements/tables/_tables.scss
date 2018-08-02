@@ -10,9 +10,7 @@
 @import 'config/colors';
 
 // Declarations
-.table,
-.content-body table {
-
+@mixin table() {
   font-size: $font-size-small;
   margin-bottom: $spacing-base * 2;
   max-width: 100%;
@@ -49,5 +47,8 @@
       padding: $spacing-base * .5 $spacing-base * 2;
     }
   }
+}
 
+.table table {
+  @include table;
 }

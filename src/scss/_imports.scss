@@ -91,6 +91,7 @@
 // sliders, and charts. Not all Objects are required for each application and some
 // will require their own Objects. Object namespaces are prefixed with 'o-'.
 
+@import 'objects/content/content';
 @import 'objects/navigation/navigation';
 @import 'objects/mobile-nav/mobile-nav';
 @import 'objects/banner/banner';

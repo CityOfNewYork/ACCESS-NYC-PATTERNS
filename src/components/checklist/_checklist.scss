@@ -10,7 +10,7 @@
 $cdn: map-get($variables, 'cdn');
 
 // Declarations
-.c-checklist > ul {
+@mixin checklist {
   list-style: none;
   padding: 0;
 
@@ -42,6 +42,10 @@ $cdn: map-get($variables, 'cdn');
       padding-bottom: 0
     }
   }
+}
+
+.c-checklist > ul {
+  @include checklist;
 }
 
 .c-checklist__item-application {

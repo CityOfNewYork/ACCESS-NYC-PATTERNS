@@ -1,0 +1,18 @@
+/**
+ * Content
+ */
+
+// Dependencies
+@import 'elements/tables/tables';
+@import 'components/checklist/checklist';
+
+// Declarations
+.o-content {
+  > ul {
+    @include checklist;
+  }
+
+  table {
+    @include table;
+  }
+}
