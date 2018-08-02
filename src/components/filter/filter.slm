@@ -1,7 +1,7 @@
-div#filter class='c-filter active'
-  a href='#filter' class='c-filter__header' All Programs
+div class='c-filter'
+  a href='#filter__list' class='c-filter__header active' data-js='filter' All Programs
   div class='c-filter__body'
-    ul class='c-filter__list'
+    ul#filter__list class='c-filter__list active'
       li
         span class='c-filter__item' All Programs
       li

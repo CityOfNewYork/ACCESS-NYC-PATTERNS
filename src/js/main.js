@@ -1,6 +1,7 @@
 'use strict';
 
 import Module from './modules/module';
+import Toggle from './modules/toggle';
 import Accordion from '../components/accordion/accordion';
 /** import components here as they are written. */
 
@@ -19,6 +20,26 @@ class main {
    */
   module(settings, data) {
     return new Module(settings, data).init();
+  }
+
+  /**
+   * [toggle description]
+   * @return {[type]} [description]
+   */
+  toggle() {
+    return new Toggle().init();
+  }
+
+  /**
+   * [filter description]
+   * @return {[type]} [description]
+   */
+  filter() {
+    return new Toggle({
+      selector: '[data-js="filter"]',
+      namespace: 'filter',
+      inactiveClass: 'inactive'
+    }).init();
   }
 
   /**

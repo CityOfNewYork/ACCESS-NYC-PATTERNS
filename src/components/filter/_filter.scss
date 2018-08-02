@@ -43,20 +43,7 @@
     margin-top: .5em;
   }
 
-  // a {
-  //   overflow-wrap: normal;
-  //   display: inline-block;
-  //   width: 80%;
-  //   &:link,
-  //   &:visited,
-  //   &:hover,
-  //   &:active,
-  //   &:focus {
-  //     color: $color-white;
-  //   }
-  // }
-
-  .c-filter.active & {
+  &.active {
     border-radius: $btn-radius $btn-radius 0 0;
 
     &::after {
@@ -70,13 +57,13 @@
   }
 }
 
-.c-filter__body {
-  visibility: hidden;
+// .c-filter__body {
+//   visibility: hidden;
 
-  .c-filter.active & {
-    visibility: visible;
-  }
-}
+//   &.active {
+//     visibility: visible;
+//   }
+// }
 
 .c-filter__list {
   transition: all .3s ease-out;
@@ -85,8 +72,11 @@
   max-height: 0;
   overflow: hidden;
   padding: 0;
+  // visibility: hidden;
+  backface-visibility: hidden; // prevents glitch on Win7 Chrome
 
-  .c-filter.active & {
+  &.active {
+    // visibility: visible;
     max-height: 2000px;
   }
 }
