@@ -13,8 +13,8 @@
 $breakpoints: map-get($variables, 'screens');
 
 // Mixins
+// Do not include any layouts in here that require custom responsive breakpoints
 @mixin layouts($variant: '') {
-
   .#{$variant}page-wrapper,
   .#{$variant}wrap {
     display: flex;
@@ -307,51 +307,50 @@ $breakpoints: map-get($variables, 'screens');
       display: block;
     }
   }
+} // END Responsive Layouts
 
-  //
-  // Layout for the map.
-  //
-  //  .------------------.
-  //  |.----------------.|
-  //  ||                ||
-  //  |.----------------.|
-  //  ||                ||
-  //  ||                ||
-  //  ||                ||
-  //  |.----------------.|
-  //  .------------------.
-  //
-  .#{$variant}layout--map {
-    position: relative;
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: column-reverse;
+//
+// Layout for the map
+//
+//  .------------------.
+//  |.----------------.|
+//  ||                ||
+//  |.----------------.|
+//  ||                ||
+//  ||                ||
+//  ||                ||
+//  |.----------------.|
+//  .------------------.
+//
+.layout--map {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column-reverse;
+
+  @media screen and (min-width: $screen-desktop) {
+    height: 90vh;
+    flex-direction: row;
+  }
+
+  .layout--map__filter {
+    width: 100%;
 
     @media screen and (min-width: $screen-desktop) {
       height: 90vh;
-      flex-direction: row;
-    }
-
-    .layout--map__sidebar {
-      width: 100%;
-
-      @media screen and (min-width: $screen-desktop) {
-        height: 90vh;
-        overflow: hidden;
-        overflow-y: auto;
-      }
-    }
-
-    .layout--map__map {
-      height: 50vh;
-      width: 100%;
-
-      @media screen and (min-width: $screen-desktop) {
-        height: 100%;
-      }
+      overflow: hidden;
+      overflow-y: auto;
     }
   }
 
+  .layout--map__map {
+    height: 50vh;
+    width: 100%;
+
+    @media screen and (min-width: $screen-desktop) {
+      height: 100%;
+    }
+  }
 }
 
 @mixin layout-print {
