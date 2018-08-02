@@ -110,5 +110,4 @@ Toggle.inactiveClass = 'hidden';
 /** @type {String} The active class */
 Toggle.activeClass = 'active';
 
-
 export default Toggle;

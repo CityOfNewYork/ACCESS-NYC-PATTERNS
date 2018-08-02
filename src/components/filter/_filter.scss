@@ -57,14 +57,6 @@
   }
 }
 
-// .c-filter__body {
-//   visibility: hidden;
-
-//   &.active {
-//     visibility: visible;
-//   }
-// }
-
 .c-filter__list {
   transition: all .3s ease-out;
   list-style: none;
@@ -72,11 +64,11 @@
   max-height: 0;
   overflow: hidden;
   padding: 0;
-  // visibility: hidden;
+  visibility: hidden;
   backface-visibility: hidden; // prevents glitch on Win7 Chrome
 
   &.active {
-    // visibility: visible;
+    visibility: visible;
     max-height: 2000px;
   }
 }
