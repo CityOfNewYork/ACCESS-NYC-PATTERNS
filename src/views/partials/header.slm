@@ -1,0 +1,17 @@
+header class='px-2'
+  div class='border-b border-color-grey-light'
+    div class='flex items-center justify-between py-4 px-2'
+      div
+        h1 class='m-0 p-0 leading-normal'
+          span class='hidden'
+            | ACCESS NYC
+          svg class='icon-logo-full--large text-color-blue-dark' aria-hidden='true'
+            use xlink:href='#icon-logo-full'
+
+      div class='flex items-center'
+        h2 class='type-h1 m-0 text-color-blue-dark'
+          | Patterns
+        nav class='text-font-size-small'
+          a href='${link_source}' class='text-color-blue-dark border-2 rounded-lg no-underline px-1 ml-2'
+            = this.vars.version;
+          a class='ml-2' href='#main-menu' data-js='toggle' Menu

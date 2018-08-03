@@ -1,0 +1,4 @@
+div class='c-alert-box bg-status-urgent mb-4'
+  div class='c-alert-box__icon'
+    div class='c-alert-box__svg bg-icon-urgent'
+  div class='c-alert-box__body' Urgent

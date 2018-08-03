@@ -2,7 +2,7 @@
 / Accordion
 /
 
-article id='what-you-need-to-include-1' class='c-accordion' data-js='accordion' data-js-active='active'
+article id='what-you-need-to-include-1' class='c-accordion mt-0' data-js='accordion' data-js-active='active'
   header class='c-accordion__header'
     p Proof of who you are
     a href='#what-you-need-to-include-1__body' class="c-accordion__toggle print:hidden" v-on:click="toggle"

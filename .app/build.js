@@ -7,7 +7,8 @@ const Path = require('path');
 const Fs = require('fs');
 const pretty = require('pretty');
 const escape = require('escape-html');
-const alerts = require('../config/alerts');
+const markdown = require('markdown').markdown;
+const alerts = require(Path.join(__dirname, 'alerts'));
 
 /**
  * Constants
@@ -43,6 +44,7 @@ function fnWrite(filename, path, data) {
       return;
     }
     distFile = distFile.replace(Path.join(__dirname, '../'), '');
+
     console.log(`${alerts.success} Slm compiled to ${distFile}`);
   });
 }
@@ -63,6 +65,32 @@ function fnCode(filename, path, data) {
         filename: path
       })(LOCALS);
       data = data.replace(element, escape(pretty(compiled)));
+    });
+    fnMarkdown(filename, path, data);
+  } else {
+    fnMarkdown(filename, path, data);
+  }
+}
+
+/**
+ * Replace Markdown blocks with the desired md template
+ * @param  {string} filename - the filename to write
+ * @param  {string} path     - [description]
+ * @param  {object} data     - the data to pass to the file
+ */
+function fnMarkdown(filename, path, data) {
+  let md = data.match(/md{{(.*)}}/g);
+  if (md) {
+    md.forEach(function(element, index) {
+      let file = element.replace('md{{', '').replace('}}', '').trim();
+      let path = `${SOURCE}${file}`;
+      if (Fs.existsSync(path)) {
+        let src = Fs.readFileSync(path, 'utf-8');
+        let compiled = markdown.toHTML(src);
+        data = data.replace(element, pretty(compiled));
+      } else {
+        data = data.replace(element, '');
+      }
     });
     fnWrite(filename, path, data);
   } else {
@@ -107,8 +135,8 @@ function fnReadFiles(files, path) {
 
 /**
  * [fnReadDir description]
- * @param  {[type]} views [description]
- * @return {[type]}       [description]
+ * @param  {[type]} path [description]
+ * @return {[type]}      [description]
  */
 function fnReadDir(path) {
   Fs.readdir(path, 'utf-8', (err, files) => {

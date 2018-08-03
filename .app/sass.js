@@ -7,7 +7,7 @@ const Path = require('path');
 const Fs = require('fs');
 const modules = require('../config/modules');
 const mkdirp = require('mkdirp');
-const alerts = require('../config/alerts');
+const alerts = require(Path.join(__dirname, 'alerts'));
 
 /**
  * Init

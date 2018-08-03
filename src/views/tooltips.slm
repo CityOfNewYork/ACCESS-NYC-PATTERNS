@@ -1,29 +1,25 @@
 / Layout
-= extend('layouts/default')
-
-/ Styles
-= partial('partials/styles.slm')
-
-/ Links
-= partial('partials/links.slm')
+= extend('layouts/default');
 
 / Partials
-= partial('partials/head.mixin.slm')
-= partial('partials/header.mixin.slm')
-= partial('partials/nav.mixin.slm')
+= partial('partials/styles.slm');
+= partial('partials/links.slm');
+= partial('partials/head.mixin.slm');
+= partial('partials/demo-specs.mixin.slm');
+= partial('partials/demo-block.mixin.slm');
 
 / Elements
-= partial('../elements/tooltips/tooltips.slm')
+= partial('../elements/tooltips/tooltips.slm');
 
 / Content blocks
-= content('head')
-  = mixin('head', 'Tooltips')
+= content('head');
+  = mixin('head', 'Tooltips');
 
-= content('header')
-  = mixin('header', 'Tooltips')
+= content('header');
+  = mixin('header', 'Tooltips');
 
-= content('content')
-  - text = 'Many benefit programs are meant for people of a specific age group. Sharing your age will help us choose the programs that will be most helpful to you right now. The information you share for the purposes of public benefits screening will be anonymous.'
+= content('content');
+  - text = 'Many benefit programs are meant for people of a specific age group. Sharing your age will help us choose the programs that will be most helpful to you right now. The information you share for the purposes of public benefits screening will be anonymous.';
 
   h1 class='px-1' Tooltips
 
@@ -38,5 +34,5 @@
 
       div class='${class_demo_col2}'
         div class='${class_demo_content}'
-          = mixin('tooltips', true, text)
+          = mixin('tooltips', true, text);
 

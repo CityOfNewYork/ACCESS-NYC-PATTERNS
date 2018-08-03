@@ -1,107 +1,34 @@
 / Layout
-= extend('layouts/default')
+= extend('layouts/default');
 
-/ Styles
-= partial('partials/styles.slm')
-
-/ Links
-= partial('partials/links.slm')
+/ Component
+- title = 'Buttons';
 
 / Partials
-= partial('partials/head.mixin.slm')
-= partial('partials/header.mixin.slm')
-= partial('partials/nav.mixin.slm')
+= partial('partials/styles.slm');
+= partial('partials/links.slm');
+= partial('partials/head.mixin.slm');
+= partial('partials/content-header.mixin.slm');
+= partial('partials/section.mixin.slm');
+= partial('partials/demo-specs.mixin.slm');
+= partial('partials/demo-block.mixin.slm');
 
 / Content blocks
-= content('head')
-  = mixin('head', 'Buttons')
+= content('head');
+  = mixin('head', title);
 
-= content('header')
-  = mixin('header', 'Buttons')
+= content('header');
+  = mixin('header', title);
 
-= content('content')
-  h1 class='px-1' Buttons
-  section#default-styling class='${class_demo}'
-    header class='${class_demo_headers}'
-      h2 Default Styling
-
-    div class='${class_demo_cols}'
-      div class='${class_demo_col1}'
-        div class='${class_demo_spec}'
-          p Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-
-      div class='${class_demo_col2}'
-        div class='${class_demo_content}'
-          div class='code-block mb-1'
-            pre
-              = 'code{{ elements/buttons/btn.slm }}'
-          = partial('../elements/buttons/btn.slm')
-
-  section#button-types class='${class_demo}'
-    header class='${class_demo_headers}'
-      h2 Button Types
-
-    div class='${class_demo_cols}'
-      div class='${class_demo_col1}'
-        div class='${class_demo_spec}'
-          p Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-
-      div class='${class_demo_col2}'
-        div class='${class_demo_content}'
-          div class='code-block mb-1'
-            pre
-              = 'code{{ elements/buttons/btn-primary.slm }}'
-          = partial('../elements/buttons/btn-primary.slm')
-
-        div class='${class_demo_content}'
-          div class='code-block mb-1'
-            pre
-              = 'code{{ elements/buttons/btn-secondary.slm }}'
-          = partial('../elements/buttons/btn-secondary.slm')
-
-        div class='${class_demo_content}'
-          div class='code-block mb-1'
-            pre
-              = 'code{{ elements/buttons/btn-tag.slm }}'
-          = partial('../elements/buttons/btn-tag.slm')
-
-        div class='${class_demo_content}'
-          div class='code-block mb-1'
-            pre
-              = 'code{{ elements/buttons/btn-toggle.slm }}'
-          = partial('../elements/buttons/btn-toggle.slm')
-
-        div class='${class_demo_content}'
-          div class='code-block mb-1'
-            pre
-              = 'code{{ elements/buttons/btn-text.slm }}'
-          = partial('../elements/buttons/btn-text.slm')
-
-  section#modifyers class='${class_demo}'
-    header class='${class_demo_headers}'
-      h2 Modifyers
-
-    div class='${class_demo_cols}'
-      div class='${class_demo_col1}'
-        div class='${class_demo_spec}'
-          p Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-
-      div class='${class_demo_col2}'
-        div class='${class_demo_content}'
-          div class='code-block mb-1'
-            pre
-              = 'code{{ elements/buttons/btn-next.slm }}'
-          = partial('../elements/buttons/btn-next.slm')
-
-        div class='${class_demo_content}'
-          div class='code-block mb-1'
-            pre
-              = 'code{{ elements/buttons/btn-previous.slm }}'
-          = partial('../elements/buttons/btn-previous.slm')
-
-        div class='${class_demo_content}'
-          div class='code-block mb-1'
-            pre
-              = 'code{{ elements/buttons/btn-small.slm }}'
-          = partial('../elements/buttons/btn-small.slm')
-
+= content('content');
+  = mixin('content-header', title);
+  = mixin('section', 'Base Styling', 'elements/buttons/btn');
+  = mixin('section', 'Primary Button', 'elements/buttons/btn-primary');
+  = mixin('section', 'Secondary Button', 'elements/buttons/btn-secondary');
+  = mixin('section', 'Small Button', 'elements/buttons/btn-small');
+  = mixin('section', 'Normal Button', 'elements/buttons/btn-normal');
+  = mixin('section', 'Tag Button', 'elements/buttons/btn-tag');
+  = mixin('section', 'Toggle Button', 'elements/buttons/btn-toggle');
+  = mixin('section', 'Text Button', 'elements/buttons/btn-text');
+  = mixin('section', 'Next Button', 'elements/buttons/btn-next');
+  = mixin('section', 'Previous Button', 'elements/buttons/btn-previous');

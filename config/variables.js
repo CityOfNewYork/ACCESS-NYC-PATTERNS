@@ -100,7 +100,7 @@ const variables = {
     'color-blue-bright': '#118df0',
     'color-blue-dark': '#112e51',
     'color-blue-light': '#e1eeff',
-    'color-green': '#05ce7c',
+    'color-green': '#05CE7C',
     'color-green-dark': '#094727',
     'color-green-mid': '#0d6b3b',
     'color-green-light': '#d4ffe7',
@@ -122,11 +122,11 @@ const variables = {
     'screen-sm-mobile': 400
   },
   dimensions: {
-    'spacing-base': '20px',
+    'spacing-base': '24px',
     'homepage-max-width': '800px',
     'site-max-width': '1200px',
-    'site-margins': '20px',
-    'site-margins-mobile': '15px',
+    'site-margins': '24px',
+    'site-margins-mobile': '16px',
     'site-min-width': '320px'
   },
   animate: {

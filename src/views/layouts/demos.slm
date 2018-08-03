@@ -1,20 +1,15 @@
-= partial('/partials/footer.mixin.slm')
-= partial('/partials/nav.mixin.slm')
-
 doctype html
 html lang='en' class='text-size-0'
-
-  = content('head')
+  = content('head');
 
   body style='visibility: hidden;' onload='load()'
-
     div style='display: none' aria-hidden='true'
-      = partial('/partials/icons.slm')
+      = partial('/partials/icons.slm');
 
     main#demo-content class='min-h-screen bg-color-white'
-      = content('content')
+      = content('content');
 
     footer class='py-4 text-center bg-color-blue-dark text-color-white links-invert'
-      = mixin('footer')
+      = partial('/partials/footer');
 
-    = content('script')
+    = content('script');

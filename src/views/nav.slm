@@ -1,28 +1,25 @@
 / Layout
-= extend('layouts/default')
+= extend('layouts/default');
 
 / Component
-- mixin_id = 'nav'
-- title = 'Nav'
-
-/ Styles
-= partial('partials/styles.slm')
-/ Links
-= partial('partials/links.slm')
+- mixin_id = 'nav';
+- title = 'Nav';
 
 / Partials
-= partial('partials/head.mixin.slm')
-= partial('partials/header.mixin.slm')
-= partial('partials/nav.mixin.slm')
+= partial('partials/styles.slm');
+= partial('partials/links.slm');
+= partial('partials/head.mixin.slm');
+= partial('partials/demo-specs.mixin.slm');
+= partial('partials/demo-block.mixin.slm');
 
 / Content blocks
-= content('head')
-  = mixin('head', title)
+= content('head');
+  = mixin('head', title);
 
-= content('header')
-  = mixin('header', title)
+= content('header');
+  = mixin('header', title);
 
-= content('content')
+= content('content');
   h1 class='px-1' = title
   section#default-styling class='${class_demo}'
     header class='${class_demo_headers}'
@@ -39,6 +36,6 @@
           div class='${class_demo_class_containers}'
             div class='code-block mb-1'
               pre
-                = 'code{{ elements/nav/nav.slm }}'
+                = 'code{{ elements/nav/nav.slm }}';
 
-          = partial('../elements/nav/nav.slm')
+          = partial('../elements/nav/nav.slm');

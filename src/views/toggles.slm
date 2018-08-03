@@ -1,28 +1,24 @@
 / Layout
-= extend('layouts/default')
-
-/ Styles
-= partial('partials/styles.slm')
-
-/ Links
-= partial('partials/links.slm')
+= extend('layouts/default');
 
 / Partials
-= partial('partials/head.mixin.slm')
-= partial('partials/header.mixin.slm')
-= partial('partials/nav.mixin.slm')
+= partial('partials/styles.slm');
+= partial('partials/links.slm');
+= partial('partials/head.mixin.slm');
+= partial('partials/demo-specs.mixin.slm');
+= partial('partials/demo-block.mixin.slm');
 
 / Elements
-= partial('../elements/toggles/toggles.slm')
+= partial('../elements/toggles/toggles.slm');
 
 / Content blocks
-= content('head')
-  = mixin('head', 'Toggles')
+= content('head');
+  = mixin('head', 'Toggles');
 
-= content('header')
-  = mixin('header', 'Toggles')
+= content('header');
+  = mixin('header', 'Toggles');
 
-= content('content')
+= content('content');
   h1 class='px-1' Toggles
   section#default-styling class='${class_demo}'
     header class='${class_demo_headers}'
@@ -35,4 +31,4 @@
 
       div class='${class_demo_col2}'
         div class='${class_demo_content}'
-          = mixin('toggles', true)
+          = mixin('toggles', true);

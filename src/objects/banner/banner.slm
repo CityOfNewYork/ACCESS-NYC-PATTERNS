@@ -5,12 +5,12 @@
 div class='o-banner'
   div class='o-banner__inner'
 
-    h2 class='o-banner__title type-h1'
+    h1 class='o-banner__title'
       | Find help in NYC with food, money, housing, work and more on ACCESS NYC.
 
     div class='o-banner__touts'
       div class='o-banner__tout'
-        h3 class='o-banner__tout-title' What am I eligible for? h3
+        h3 class='o-banner__tout-title' What am I eligible for?
         div class='o-banner__tout-body'
           p class='p1' There are over 30 programs you or your family may be eligible for regardless of immigration status and even if you’re already receiving benefits or have a job.
 
@@ -21,7 +21,7 @@ div class='o-banner'
             | &nbsp;Am I eligible?
 
       div class='o-banner__tout'
-        h3 class='o-banner__tout-title' Apply now for benefits.
+        h2 class='o-banner__tout-title type-h3' Apply now for benefits.
         div class='o-banner__tout-body'
           p Apply directly for SNAP, Cash Assistance and Medicaid renewal. Log into your HRA account.
         div class='o-banner__tout-cta'

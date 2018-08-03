@@ -1,28 +1,25 @@
 / Layout
-= extend('layouts/default')
+= extend('layouts/default');
 
 / Component
-- mixin_id = 'inputs'
-- title = 'Inputs'
-
-/ Styles
-= partial('partials/styles.slm')
-/ Links
-= partial('partials/links.slm')
+- mixin_id = 'inputs';
+- title = 'Inputs';
 
 / Partials
-= partial('partials/head.mixin.slm')
-= partial('partials/header.mixin.slm')
-= partial('partials/nav.mixin.slm')
+= partial('partials/styles.slm');
+= partial('partials/links.slm');
+= partial('partials/head.mixin.slm');
+= partial('partials/demo-specs.mixin.slm');
+= partial('partials/demo-block.mixin.slm');
 
 / Content blocks
-= content('head')
-  = mixin('head', title)
+= content('head');
+  = mixin('head', title);
 
-= content('header')
-  = mixin('header', title)
+= content('header');
+  = mixin('header', title);
 
-= content('content')
+= content('content');
   h1 class='px-1' = title
   section#default-styling class='${class_demo}'
     header class='${class_demo_headers}'
@@ -39,9 +36,9 @@
           div class='${class_demo_class_containers}'
             div class='code-block mb-1'
               pre
-                = 'code{{ elements/inputs/input.slm }}'
+                = 'code{{ elements/inputs/input.slm }}';
 
-          = partial('../elements/inputs/input.slm')
+          = partial('../elements/inputs/input.slm');
 
   section#width-400px class='${class_demo}'
     header class='${class_demo_headers}'
@@ -58,9 +55,9 @@
           div class='${class_demo_class_containers}'
             div class='code-block mb-1'
               pre
-                = 'code{{ elements/inputs/input-mw-400px.slm }}'
+                = 'code{{ elements/inputs/input-mw-400px.slm }}';
 
-          = partial('../elements/inputs/input-mw-400px.slm')
+          = partial('../elements/inputs/input-mw-400px.slm');
 
   section#currency class='${class_demo}'
     header class='${class_demo_headers}'
@@ -77,9 +74,9 @@
           div class='${class_demo_class_containers}'
             div class='code-block mb-1'
               pre
-                = 'code{{ elements/inputs/input-currency-usd.slm }}'
+                = 'code{{ elements/inputs/input-currency-usd.slm }}';
 
-          = partial('../elements/inputs/input-currency-usd.slm')
+          = partial('../elements/inputs/input-currency-usd.slm');
 
   section#currency class='${class_demo}'
     header class='${class_demo_headers}'
@@ -96,9 +93,9 @@
           div class='${class_demo_class_containers}'
             div class='code-block mb-1'
               pre
-                = 'code{{ elements/inputs/input-phone-us.slm }}'
+                = 'code{{ elements/inputs/input-phone-us.slm }}';
 
-          = partial('../elements/inputs/input-phone-us.slm')
+          = partial('../elements/inputs/input-phone-us.slm');
 
   section#search class='${class_demo}'
     header class='${class_demo_headers}'
@@ -115,6 +112,6 @@
           div class='${class_demo_class_containers}'
             div class='code-block mb-1'
               pre
-                = 'code{{ elements/inputs/input-search.slm }}'
+                = 'code{{ elements/inputs/input-search.slm }}';
 
-          = partial('../elements/inputs/input-search.slm')
+          = partial('../elements/inputs/input-search.slm');

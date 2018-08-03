@@ -4,9 +4,9 @@
 
 const jsSass = require('../node_modules/json-sass/lib/jsToSassString');
 const variables = require('../config/variables');
-const path = require('path');
+const Path = require('path');
 const fs = require('fs');
-const alerts = require('../config/alerts');
+const alerts = require(Path.join(__dirname, 'alerts'));
 
 /**
  * Constants
@@ -14,7 +14,7 @@ const alerts = require('../config/alerts');
 
 const prefix = '$variables';
 const data = jsSass(variables);
-const dir = path.join(__dirname, '../', 'src/config/');
+const dir = Path.join(__dirname, '../', 'src/config/');
 const filename = '_variables.scss';
 
 /**

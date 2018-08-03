@@ -6,5 +6,5 @@ button class='btn-primary btn-small mb-2'
 
 br
 
-a class='btn-primary btn-small'
+a class='btn-primary btn-small' role='button'
   | Small Link

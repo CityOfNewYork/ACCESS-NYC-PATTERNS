@@ -1,0 +1,4 @@
+div class='c-alert-box bg-status-success mb-4'
+  div class='c-alert-box__icon'
+    div class='c-alert-box__svg bg-icon-success'
+  div class='c-alert-box__body' Success

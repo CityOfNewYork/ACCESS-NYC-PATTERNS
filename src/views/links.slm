@@ -1,29 +1,25 @@
 / Layout
-= extend('layouts/default')
-
-/ Styles
-= partial('partials/styles.slm')
-
-/ Links
-= partial('partials/links.slm')
+= extend('layouts/default');
 
 / Partials
-= partial('partials/head.mixin.slm')
-= partial('partials/header.mixin.slm')
-= partial('partials/nav.mixin.slm')
+= partial('partials/styles.slm');
+= partial('partials/links.slm');
+= partial('partials/head.mixin.slm');
+= partial('partials/demo-specs.mixin.slm');
+= partial('partials/demo-block.mixin.slm');
 
 / Elements
-= partial('../elements/links/links.slm')
+= partial('../elements/links/links.slm');
 
 / Content blocks
-= content('head')
-  = mixin('head', 'Links')
+= content('head');
+  = mixin('head', 'Links');
 
-= content('header')
-  = mixin('header', 'Links')
+= content('header');
+  = mixin('header', 'Links');
 
-= content('content')
-  - text = 'Click here to learn more about tax relief for parents'
+= content('content');
+  - text = 'Click here to learn more about tax relief for parents';
 
   h1 class='px-1' Links
   section#default-styling class='${class_demo}'
@@ -37,7 +33,7 @@
 
       div class='${class_demo_col2}'
         div class='${class_demo_content}'
-          = mixin('links', true, text)
+          = mixin('links', true, text);
         div class='${class_demo_content}'
-          = mixin('links-inverted', true, text)
+          = mixin('links-inverted', true, text);
 

@@ -6,5 +6,5 @@ button class='btn mb-2'
 
 br
 
-a class='btn'
+a class='btn' role='button'
   | Button

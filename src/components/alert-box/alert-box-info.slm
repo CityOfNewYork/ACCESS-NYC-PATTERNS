@@ -1,0 +1,4 @@
+div class='c-alert-box bg-status-info mb-4'
+  div class='c-alert-box__icon'
+    div class='c-alert-box__svg bg-icon-info'
+  div class='c-alert-box__body' Information

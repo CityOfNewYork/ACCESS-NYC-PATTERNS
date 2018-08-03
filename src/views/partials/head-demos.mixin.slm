@@ -1,4 +1,4 @@
-= mixin('head', 'title = Page Title')
+= mixin('head', 'title = Page Title');
   head
     meta charset='utf-8'
     meta http-equiv='X-UA-Compatible' content='IE=edge'
@@ -10,7 +10,7 @@
 
     noscript
       style
-        = 'body { visibility: visible !important; }'
+        = 'body { visibility: visible !important; }';
 
     javascript:
       function load() { document.body.style.visibility = 'visible' };

@@ -1,6 +1,4 @@
-= partial('nav.mixin.slm')
-
-= mixin('footer')
+footer class='py-4 text-center bg-color-blue-dark text-color-white links-invert'
   p class='m-0'
     | Maintained by&nbsp;
     a href='${link_github_team}' NYC Opportunity

@@ -1,0 +1,1 @@
+There is no specific stylesheet for the Announcements Object. It can be built using the layout and divider elements and the card component. See the markup below.

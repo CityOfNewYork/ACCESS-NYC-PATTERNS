@@ -5,9 +5,9 @@
 const Fs = require('fs');
 const Path = require('path');
 const Postcss = require('postcss');
+const alerts = require(Path.join(__dirname, 'alerts'));
 const config = require('../config/postcss');
 const modules = require('../config/modules');
-const alerts = require('../config/alerts');
 
 /**
  * Init

@@ -1,0 +1,1 @@
+The small button modifier will decrease any button font size to .727rem.

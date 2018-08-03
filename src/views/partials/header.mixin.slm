@@ -1,3 +1,0 @@
-= mixin('header', 'title = Patterns')
-  h2 Pattern Library
-  a href='#main-content' Skip to main content

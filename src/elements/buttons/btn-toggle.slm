@@ -1,14 +1,14 @@
 /
 /
 /
-button class='btn-toggle btn-primary w-full mb-2'
+button class='btn-toggle btn-primary mb-2'
   | Toggle Button
 
-button class='btn-toggle btn-primary w-full active mb-2'
+button class='btn-toggle btn-primary active mb-2'
   | Toggle Button (active)
 
-a class='btn-toggle btn-primary w-full mb-2'
+a class='btn-toggle btn-primary mb-2'
   | Toggle Link
 
-a class='btn-toggle btn-primary w-full active'
+a class='btn-toggle btn-primary active'
   | Toggle Link (active)

@@ -23,9 +23,7 @@
 
   <body onload="load()" style="visibility: hidden;">
     <div aria-hidden="true" style="display: none">
-      <?xml version="1.0" encoding="UTF-8"?>
-      <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
-      <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+      <svg>
         <defs/>
         <symbol id="icon-arrow-down" viewBox="0 0 444.8 444.8">
           <path fill="currentColor" d="M248.1 352L434 165.9c7.2-6.9 10.8-15.4 10.8-25.7 0-10.3-3.6-18.8-10.8-25.7l-21.4-21.7c-7-7-15.6-10.6-25.7-10.6-9.9 0-18.6 3.5-26 10.6L222.4 231.5 83.7 92.8c-7-7-15.6-10.6-25.7-10.6-9.9 0-18.6 3.5-26 10.6l-21.4 21.7c-7 7-10.6 15.6-10.6 25.7s3.5 18.7 10.6 25.7L196.4 352c7.4 7 16.1 10.6 26 10.6 10.1 0 18.7-3.5 25.7-10.6z"
@@ -380,7 +378,7 @@
       </svg>
     </div>
     <main class="min-h-screen bg-color-white" id="demo-content">
-      <div class="overlay overlay@active">
+      <div class="overlay active:overlay">
         <nav class="o-navigation">
           <div class="logo-access">
             <a href="/">
@@ -389,7 +387,7 @@
               </svg><span class="sr-only">Access NYC</span></a>
           </div>
           <nav class="o-navigation__nav nav-inline">
-            <a class="screen-desktop:hidden" href="#c-mobile-nav">Menu</a>
+            <a class="screen-desktop:hidden" href="#o-mobile-nav">Menu</a>
             <a class="hidden screen-desktop:inline-block active" href="#">Am I eligible?</a>
             <a class="hidden screen-desktop:inline-block" href="#">Programs</a>
             <a class="hidden screen-desktop:inline-block" href="#">Find help</a>
@@ -398,14 +396,14 @@
                 <use xlink:href="#icon-search"></use>
               </svg>Search</a>
           </nav>
-          <div class="c-mobile-nav c-mobile-nav@active" id="c-mobile-nav">
-            <a class="c-mobile-nav__close js-hide-nav" href="#c-mobile-nav">close &amp; return to site
+          <div class="o-mobile-nav active:o-mobile-nav" id="o-mobile-nav">
+            <a class="o-mobile-nav__close js-hide-nav" href="#o-mobile-nav">close &amp; return to site
               <svg aria-hidden="true" class="icon icon-close">
                 <use xlink:href="#icon-close"></use>
               </svg>
             </a>
-            <div class="c-mobile-nav__inner">
-              <h4 class="c-mobile-nav__header">Get help now</h4>
+            <div class="o-mobile-nav__inner">
+              <h4 class="o-mobile-nav__header">Get help now</h4>
               <nav class="nav-block">
                 <a class="active" href="#">Am I eligible?</a>
                 <a href="#">Programs</a>
@@ -421,9 +419,11 @@
       </div>
     </main>
     <footer class="py-4 text-center bg-color-blue-dark text-color-white links-invert">
-      <p class="m-0">Maintained by&nbsp;
-        <a href="https://github.com/orgs/CityOfNewYork/teams/nycopportunity">NYC Opportunity</a>
-      </p>
+      <footer class="py-4 text-center bg-color-blue-dark text-color-white links-invert">
+        <p class="m-0">Maintained by&nbsp;
+          <a href="https://github.com/orgs/CityOfNewYork/teams/nycopportunity">NYC Opportunity</a>
+        </p>
+      </footer>
     </footer>
   </body>
 

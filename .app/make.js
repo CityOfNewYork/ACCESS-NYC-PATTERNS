@@ -6,7 +6,7 @@ const fs = require('fs');
 const Path = require('path');
 const Readline = require('readline');
 const config = require('../config/make');
-const alerts = require('../config/alerts');
+const alerts = require(Path.join(__dirname, 'alerts'));
 
 /**
  * Constants

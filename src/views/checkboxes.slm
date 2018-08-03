@@ -1,63 +1,26 @@
 / Layout
-= extend('layouts/default')
+= extend('layouts/default');
 
-/ Styles
-= partial('partials/styles.slm')
-
-/ Links
-= partial('partials/links.slm')
+/ Component
+- title = 'Checkboxes';
 
 / Partials
-= partial('partials/head.mixin.slm')
-= partial('partials/header.mixin.slm')
-= partial('partials/nav.mixin.slm')
+= partial('partials/styles.slm');
+= partial('partials/links.slm');
+= partial('partials/head.mixin.slm');
+= partial('partials/content-header.mixin.slm');
+= partial('partials/section.mixin.slm');
+= partial('partials/demo-specs.mixin.slm');
+= partial('partials/demo-block.mixin.slm');
 
 / Content blocks
-= content('head')
-  = mixin('head', 'Checkboxes')
+= content('head');
+  = mixin('head', title);
 
-= content('header')
-  = mixin('header', 'Checkboxes')
+= content('header');
+  = mixin('header', title);
 
-= content('content')
-  h1 class='px-1' Checkboxes
-  section#default-styling class='${class_demo}'
-    header class='${class_demo_headers}'
-      h2 Default Styling
-
-    div class='${class_demo_cols}'
-      div class='${class_demo_col1}'
-        div class='${class_demo_spec}'
-          p Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-
-      div class='${class_demo_col2}'
-        div class='${class_demo_content}'
-          div class='${class_demo_class_containers}'
-            code.code checkbox checkbox__input
-          div class='${class_demo_class_containers}'
-            div class='code-block'
-              pre
-                = 'code{{ elements/checkboxes/checkboxes.slm }}'
-
-          = partial('../elements/checkboxes/checkboxes.slm')
-
-  section#default-styling class='${class_demo}'
-    header class='${class_demo_headers}'
-      h2 Checkboxes With Icons
-
-    div class='${class_demo_cols}'
-      div class='${class_demo_col1}'
-        div class='${class_demo_spec}'
-          p Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-
-      div class='${class_demo_col2}'
-        div class='${class_demo_content}'
-          div class='${class_demo_class_containers}'
-            code.code checkbox checkbox__input.items-center checkbox__icon
-          div class='${class_demo_class_containers}'
-            div class='code-block'
-              pre
-                = 'code{{ elements/checkboxes/checkboxes-with-icons.slm }}'
-
-          = partial('../elements/checkboxes/checkboxes-with-icons.slm')
-
+= content('content');
+  = mixin('content-header', title);
+  = mixin('section', 'Default Styling', 'elements/checkboxes/checkboxes');
+  = mixin('section', 'Checkboxes With Icons', 'elements/checkboxes/checkboxes-with-icons');

@@ -1,25 +1,21 @@
 / Layout
-= extend('layouts/default')
-
-/ Styles
-= partial('partials/styles.slm')
-
-/ Links
-= partial('partials/links.slm')
+= extend('layouts/default');
 
 / Partials
-= partial('partials/head.mixin.slm')
-= partial('partials/header.mixin.slm')
-= partial('partials/nav.mixin.slm')
+= partial('partials/styles.slm');
+= partial('partials/links.slm');
+= partial('partials/head.mixin.slm');
+= partial('partials/demo-specs.mixin.slm');
+= partial('partials/demo-block.mixin.slm');
 
 / Content blocks
-= content('head')
-  = mixin('head', 'Dividers')
+= content('head');
+  = mixin('head', 'Dividers');
 
-= content('header')
-  = mixin('header', 'Dividers')
+= content('header');
+  = mixin('header', 'Dividers');
 
-= content('content')
+= content('content');
   h1 class='px-1' Dividers
   section#default-styling class='${class_demo}'
     header class='${class_demo_headers}'
@@ -34,8 +30,8 @@
         div class='${class_demo_content}'
           div class='code-block mb-1'
             pre
-              = 'code{{ elements/divider/divider.slm }}'
-          = partial('../elements/divider/divider.slm')
+              = 'code{{ elements/divider/divider.slm }}';
+          = partial('../elements/divider/divider.slm');
 
   section#button-types class='${class_demo}'
     header class='${class_demo_headers}'
@@ -50,6 +46,6 @@
         div class='${class_demo_content}'
           div class='code-block mb-1'
             pre
-              = 'code{{ elements/divider/divider-light.slm }}'
-          = partial('../elements/divider/divider-light.slm')
+              = 'code{{ elements/divider/divider-light.slm }}';
+          = partial('../elements/divider/divider-light.slm');
 

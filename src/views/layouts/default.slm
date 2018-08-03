@@ -1,41 +1,29 @@
-= partial('/partials/footer.mixin.slm')
-= partial('/partials/nav.mixin.slm')
-
 doctype html
-html lang='en' class='text-size-0'
+html lang='en' class='bg-color-white text-size-0'
+  = content('head');
 
-  = content('head')
+  body class='bg-color-white' style='visibility: hidden;' onload='load()'
+    a class='hidden' href='#main-content' Skip to main content
 
-  body style='visibility: hidden;' onload='load()'
+    = partial('/partials/header.slm');
 
-    header class='screen-desktop:layout--sidebar-small'
-      div class='flex items-center justify-center bg-color-blue-dark text-base-white p-3 screen-desktop:p-4'
-        h1 class='m-0 p-0'
-          span class='hidden'
-            | ACCESS NYC
-          svg class='icon-logo-full--large text-color-white' style='width:200px;' aria-hidden='true'
-            use xlink:href='#icon-logo-full'
+    aside#main-menu class='text-font-size-small bg-color-blue-light hidden' style='position:relative;top:-1px' aria-hidden='true'
+      div class='page-wrapper'
+        div class='flex py-4'
+          = partial('/partials/nav.slm');
 
-      div class='flex-1 flex flex-col content-center bg-color-grey-lightest screen-desktop:border-b-4 border-color-grey-light justify-center p-3 screen-desktop:p-4'
-        = content('header')
+    main#main-content class='pt-4'
+      article class='py-4'
+        = content('content');
 
-      div class='flex flex-col content-center justify-center bg-color-grey-lightest screen-desktop:border-b-4 border-color-grey-light px-3 pb-3 screen-desktop:p-4'
-        h3 class='mr-3'
-          a href='${link_source}' class='border-2 py-1 px-2 inline rounded-lg'
-            = 'Pre-release v' + this.vars.version
-
-    main#main-content class='screen-desktop:layout--sidebar-small m-0 p-0 min-h-screen screen-desktop:border-b-4 border-color-grey-light'
-      aside class='bg-secondary-white py-2 px-3'
-        = mixin('nav')
-
-      article class='bg-color-white py-2 px-4 screen-desktop:px-6'
-        = content('content')
-
-    footer class='py-4 text-center bg-color-blue-dark text-color-white links-invert'
-      = mixin('footer')
+    = partial('/partials/footer.slm');
 
     div class='hidden' aria-hidden='true'
-      = partial('/partials/icons.slm')
+      = partial('/partials/icons.slm');
 
     script src='scripts/AccessNyc.js'
-    = content('script')
+    javascript:
+      var access = new AccessNyc();
+      access.toggle();
+      access.filter();
+    = content('script');
