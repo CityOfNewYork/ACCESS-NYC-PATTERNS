@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html class="text-size-0" lang="en">
+<html class="bg-color-white text-size-0" lang="en">
 
   <head>
     <meta charset="utf-8" />
@@ -21,88 +21,97 @@
     </script>
   </head>
 
-  <body onload="load()" style="visibility: hidden;">
-    <header class="screen-desktop:layout--sidebar-small">
-      <div class="flex items-center justify-center bg-color-blue-dark text-base-white p-3 screen-desktop:p-4">
-        <h1 class="m-0 p-0"><span class="hidden">ACCESS NYC</span>
-          <svg aria-hidden="true" class="icon-logo-full--large text-color-white" style="width:200px;">
-            <use xlink:href="#icon-logo-full"></use>
-          </svg>
-        </h1>
-      </div>
-      <div class="flex-1 flex flex-col content-center bg-color-grey-lightest screen-desktop:border-b-4 border-color-grey-light justify-center p-3 screen-desktop:p-4">
-        <h2>Pattern Library</h2>
-        <a href="#main-content">Skip to main content</a>
-      </div>
-      <div class="flex flex-col content-center justify-center bg-color-grey-lightest screen-desktop:border-b-4 border-color-grey-light px-3 pb-3 screen-desktop:p-4">
-        <h3 class="mr-3">
-          <a class="border-2 py-1 px-2 inline rounded-lg" href="https://github.com/CityOfNewYork/ACCESS-NYC-PATTERNS">Pre-release v0.0.10</a>
-        </h3>
+  <body class="bg-color-white" onload="load()" style="visibility: hidden;">
+    <a class="hidden" href="#main-content">Skip to main content</a>
+    <header class="px-2">
+      <div class="border-b border-color-grey-light">
+        <div class="flex items-center justify-between py-4 px-2">
+          <div>
+            <h1 class="m-0 p-0 leading-normal"><span class="hidden">ACCESS NYC</span>
+              <svg aria-hidden="true" class="icon-logo-full--large text-color-blue-dark">
+                <use xlink:href="#icon-logo-full"></use>
+              </svg>
+            </h1>
+          </div>
+          <div class="flex items-center">
+            <h2 class="type-h1 m-0 text-color-blue-dark">Patterns</h2>
+            <nav class="text-font-size-small">
+              <a class="text-color-blue-dark border-2 rounded-lg no-underline px-1 ml-2" href="https://github.com/CityOfNewYork/ACCESS-NYC-PATTERNS">0.0.10</a>
+              <a class="ml-2" data-js="toggle" href="#main-menu">Menu</a>
+            </nav>
+          </div>
+        </div>
       </div>
     </header>
-    <main class="screen-desktop:layout--sidebar-small m-0 p-0 min-h-screen screen-desktop:border-b-4 border-color-grey-light" id="main-content">
-      <aside class="bg-secondary-white py-2 px-3">
-        <nav class="pb-2">
-          <a class="screen-desktop:block screen-desktop:border-b border-color-white p-2 pr-2 screen-tablet:p-2" href="index">Home</a>
-          <a class="screen-desktop:block screen-desktop:border-b border-color-white p-2" href="https://github.com/CityOfNewYork/ACCESS-NYC-PATTERNS">Source</a>
-        </nav>
-        <nav class="pb-2"><span class="screen-desktop:block pb-1">Elements;</span>
-          <a class="screen-desktop:block screen-desktop:border-b border-color-white p-2" href="buttons">Buttons</a>
-          <a class="screen-desktop:block screen-desktop:border-b border-color-white p-2" href="checkboxes">Checkboxes</a>
-          <a class="screen-desktop:block screen-desktop:border-b border-color-white p-2" href="colors">Colors</a>
-          <a class="screen-desktop:block screen-desktop:border-b border-color-white p-2" href="dividers">Dividers</a>
-          <a class="screen-desktop:block screen-desktop:border-b border-color-white p-2" href="font-families">Fonts</a>
-          <a class="screen-desktop:block screen-desktop:border-b border-color-white p-2" href="icons">Icons</a>
-          <a class="screen-desktop:block screen-desktop:border-b border-color-white p-2" href="inputs">Inputs</a>
-          <a class="screen-desktop:block screen-desktop:border-b border-color-white p-2" href="layouts">Layouts</a>
-          <a class="screen-desktop:block screen-desktop:border-b border-color-white p-2" href="links">Links</a>
-          <a class="screen-desktop:block screen-desktop:border-b border-color-white p-2" href="lists">Lists</a>
-          <a class="screen-desktop:block screen-desktop:border-b border-color-white p-2" href="program-labels">Program Labels</a>
-          <a class="screen-desktop:block screen-desktop:border-b border-color-white p-2" href="radios">Radios</a>
-          <a class="screen-desktop:block screen-desktop:border-b border-color-white p-2" href="tables">Tables</a>
-          <a class="screen-desktop:block screen-desktop:border-b border-color-white p-2" href="tooltips">Tooltips</a>
-          <a class="screen-desktop:block screen-desktop:border-b border-color-white p-2" href="toggles">Toggles</a>
-          <a class="screen-desktop:block screen-desktop:border-b border-color-white p-2" href="typography">Typography</a>
-          <a class="screen-desktop:block screen-desktop:border-b border-color-white p-2" href="selects">Selects</a>
-        </nav>
-        <nav class="pb-2"><span class="screen-desktop:block pb-1">Components;</span>
-          <a class="screen-desktop:block screen-desktop:border-b border-color-white p-2" href="accordion">Accordion</a>
-          <a class="screen-desktop:block screen-desktop:border-b border-color-white p-2" href="alert-box">Alert Box</a>
-          <a class="screen-desktop:block screen-desktop:border-b border-color-white p-2" href="card">Card</a>
-          <a class="screen-desktop:block screen-desktop:border-b border-color-white p-2" href="checklist">Checklist</a>
-          <a class="screen-desktop:block screen-desktop:border-b border-color-white p-2" href="disclaimer">Disclaimer</a>
-          <a class="screen-desktop:block screen-desktop:border-b border-color-white p-2" href="filter">Filter</a>
-          <a class="screen-desktop:block screen-desktop:border-b border-color-white p-2" href="header">Header</a>
-          <a class="screen-desktop:block screen-desktop:border-b border-color-white p-2" href="member-list">Member List</a>
-          <a class="screen-desktop:block screen-desktop:border-b border-color-white p-2" href="text-controller">Text Controller</a>
-          <a class="screen-desktop:block screen-desktop:border-b border-color-white p-2" href="share-form">Share Form</a>
-          <a class="screen-desktop:block screen-desktop:border-b border-color-white p-2" href="side-nav">Side Nav</a>
-          <a class="screen-desktop:block screen-desktop:border-b border-color-white p-2" href="question">Question</a>
-        </nav>
-        <nav class="pb-2"><span class="screen-desktop:block pb-1">Objects;</span>
-          <a class="screen-desktop:block screen-desktop:border-b border-color-white p-2" href="announcements">Announcements</a>
-          <a class="screen-desktop:block screen-desktop:border-b border-color-white p-2" href="banner">Banner</a>
-          <a class="screen-desktop:block screen-desktop:border-b border-color-white p-2" href="card-list">Card Lists</a>
-          <a class="screen-desktop:block screen-desktop:border-b border-color-white p-2" href="footer">Footer</a>
-          <a class="screen-desktop:block screen-desktop:border-b border-color-white p-2" href="navigation">Navigation</a>
-          <a class="screen-desktop:block screen-desktop:border-b border-color-white p-2" href="search-box">Search Box</a>
-        </nav>
-      </aside>
-      <article class="bg-color-white py-2 px-4 screen-desktop:px-6">
+    <aside aria-hidden="true" class="text-font-size-small bg-color-blue-light hidden" id="main-menu" style="position:relative;top:-1px">
+      <div class="page-wrapper">
+        <div class="flex py-4">
+          <nav class="flex-1"><span class="screen-desktop:block border-b border-color-white p-1">Main;</span>
+            <a class="screen-desktop:block p-1" href="index">Home</a>
+            <a class="screen-desktop:block p-1" href="https://www.npmjs.com/package/access-nyc-patterns">NPM</a>
+            <a class="screen-desktop:block p-1" href="https://github.com/CityOfNewYork/ACCESS-NYC-PATTERNS">GitHub</a>
+          </nav>
+          <nav class="flex-1 pl-4"><span class="screen-desktop:block border-b border-color-white p-1">Elements;</span>
+            <a class="screen-desktop:block p-1" href="buttons">Buttons</a>
+            <a class="screen-desktop:block p-1" href="checkboxes">Checkboxes</a>
+            <a class="screen-desktop:block p-1" href="colors">Colors</a>
+            <a class="screen-desktop:block p-1" href="dividers">Dividers</a>
+            <a class="screen-desktop:block p-1" href="font-families">Fonts</a>
+            <a class="screen-desktop:block p-1" href="icons">Icons</a>
+            <a class="screen-desktop:block p-1" href="inputs">Inputs</a>
+            <a class="screen-desktop:block p-1" href="layouts">Layouts</a>
+            <a class="screen-desktop:block p-1" href="links">Links</a>
+            <a class="screen-desktop:block p-1" href="lists">Lists</a>
+            <a class="screen-desktop:block p-1" href="program-labels">Program Labels</a>
+            <a class="screen-desktop:block p-1" href="radios">Radios</a>
+            <a class="screen-desktop:block p-1" href="tables">Tables</a>
+            <a class="screen-desktop:block p-1" href="tooltips">Tooltips</a>
+            <a class="screen-desktop:block p-1" href="toggles">Toggles</a>
+            <a class="screen-desktop:block p-1" href="typography">Typography</a>
+            <a class="screen-desktop:block p-1" href="selects">Selects</a>
+          </nav>
+          <nav class="flex-1 pl-4"><span class="screen-desktop:block border-b border-color-white p-1">Components;</span>
+            <a class="screen-desktop:block p-1" href="accordion">Accordion</a>
+            <a class="screen-desktop:block p-1" href="alert-box">Alert Box</a>
+            <a class="screen-desktop:block p-1" href="card">Card</a>
+            <a class="screen-desktop:block p-1" href="checklist">Checklist</a>
+            <a class="screen-desktop:block p-1" href="disclaimer">Disclaimer</a>
+            <a class="screen-desktop:block p-1" href="filter">Filter</a>
+            <a class="screen-desktop:block p-1" href="header">Header</a>
+            <a class="screen-desktop:block p-1" href="member-list">Member List</a>
+            <a class="screen-desktop:block p-1" href="text-controller">Text Controller</a>
+            <a class="screen-desktop:block p-1" href="share-form">Share Form</a>
+            <a class="screen-desktop:block p-1" href="side-nav">Side Nav</a>
+            <a class="screen-desktop:block p-1" href="question">Question</a>
+          </nav>
+          <nav class="flex-1 pl-4"><span class="screen-desktop:block border-b border-color-white p-1">Objects;</span>
+            <a class="screen-desktop:block p-1" href="announcements">Announcements</a>
+            <a class="screen-desktop:block p-1" href="banner">Banner</a>
+            <a class="screen-desktop:block p-1" href="card-list">Card Lists</a>
+            <a class="screen-desktop:block p-1" href="content">Content</a>
+            <a class="screen-desktop:block p-1" href="footer">Footer</a>
+            <a class="screen-desktop:block p-1" href="navigation">Navigation</a>
+            <a class="screen-desktop:block p-1" href="search-box">Search Box</a>
+          </nav>
+        </div>
+      </div>
+    </aside>
+    <main class="pt-4" id="main-content">
+      <article class="py-4">
         <h1 class="px-1">Typography</h1>
         <section class="pb-4" id="headings">
-          <header class="pt-1 px-1 border-b border-color-grey-light mb-3">
+          <header class="pt-1 px-2 border-b border-color-grey-light mb-3">
             <h2>Headings</h2>
           </header>
-          <div class="block screen-desktop:flex">
-            <div class="flex-1 pb-3 pl-1 pr-4">
+          <div class="layout--columns">
+            <div class=" page-wrapper pb-3 px-2 text-font-size-small">
               <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis
                 aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
             </div>
-            <div class="flex-1 screen-desktop:max-w-1/2">&nbsp;</div>
+            <div>&nbsp;</div>
           </div>
-          <div class="block screen-desktop:flex">
-            <div class="flex-1 pb-3 pl-1 pr-4">
+          <div class="layout--columns justify-between">
+            <div class="pr-2">
               <h1>Find help in NYC with food, money, housing, work and more on ACCESS NYC.</h1>
               <div class="type-h1">Find help in NYC with food, money, housing, work and more on ACCESS NYC.</div>
               <h2>Find help in NYC with food, money, housing, work and more on ACCESS NYC.</h2>
@@ -114,7 +123,7 @@
               <h5>Find help in NYC with food, money, housing, work and more on ACCESS NYC.</h5>
               <div class="type-h5">Find help in NYC with food, money, housing, work and more on ACCESS NYC.</div>
             </div>
-            <div class="flex-1 screen-desktop:max-w-1/2 pb-4 screen-desktop:px-1">
+            <div>
               <div class="code-block mb-1"><pre>&lt;h1&gt;Find help in NYC with food, money, housing, work and more on ACCESS NYC.&lt;/h1&gt;
 &lt;div class=&quot;type-h1&quot;&gt;Find help in NYC with food, money, housing, work and more on ACCESS NYC.&lt;/div&gt;
 &lt;h2&gt;Find help in NYC with food, money, housing, work and more on ACCESS NYC.&lt;/h2&gt;
@@ -129,72 +138,72 @@
           </div>
         </section>
         <section class="pb-4" id="custom-type-settings">
-          <header class="pt-1 px-1 border-b border-color-grey-light mb-3">
+          <header class="pt-1 px-2 border-b border-color-grey-light mb-3">
             <h2>Custom Type Settings</h2>
           </header>
-          <div class="block screen-desktop:flex">
-            <div class="flex-1 pb-3 pl-1 pr-4">
+          <div class="layout--columns">
+            <div class=" page-wrapper pb-3 px-2 text-font-size-small">
               <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis
                 aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
             </div>
-            <div class="flex-1 screen-desktop:max-w-1/2">&nbsp;</div>
+            <div>&nbsp;</div>
           </div>
           <h3 class="px-1">Jumbo</h3>
-          <div class="block screen-desktop:flex">
-            <div class="flex-1 pb-3 pl-1 pr-4">
+          <div class="layout--columns justify-between">
+            <div class="pr-2">
               <h1 class="type-jumbo">Find help in NYC with food, money, housing, work and more on ACCESS NYC.</h1>
             </div>
-            <div class="flex-1 screen-desktop:max-w-1/2 pb-4 screen-desktop:px-1">
+            <div>
               <div class="code-block mb-1"><pre>&lt;h1 class=&quot;type-jumbo&quot;&gt;Find help in NYC with food, money, housing, work and more on ACCESS NYC.&lt;/h1&gt;</pre></div>
             </div>
           </div>
           <h3 class="px-1">Small</h3>
-          <div class="block screen-desktop:flex">
-            <div class="flex-1 pb-3 pl-1 pr-4">
+          <div class="layout--columns justify-between">
+            <div class="pr-2">
               <small>Find help in NYC with food, money, housing, work and more on ACCESS NYC.</small>
               <br />
               <div class="type-small">Find help in NYC with food, money, housing, work and more on ACCESS NYC.</div>
             </div>
-            <div class="flex-1 screen-desktop:max-w-1/2 pb-4 screen-desktop:px-1">
+            <div>
               <div class="code-block mb-1"><pre>&lt;small&gt;Find help in NYC with food, money, housing, work and more on ACCESS NYC.&lt;/small&gt;
 &lt;br /&gt;
 &lt;div class=&quot;type-small&quot;&gt;Find help in NYC with food, money, housing, work and more on ACCESS NYC.&lt;/div&gt;</pre></div>
             </div>
           </div>
           <h3 class="px-1">Blockquote</h3>
-          <div class="block screen-desktop:flex">
-            <div class="flex-1 pb-3 pl-1 pr-4">
+          <div class="layout--columns justify-between">
+            <div class="pr-2">
               <blockquote>Find help in NYC with food, money, housing, work and more on ACCESS NYC.</blockquote>
               <br />
               <div class="type-blockquote">Find help in NYC with food, money, housing, work and more on ACCESS NYC.</div>
             </div>
-            <div class="flex-1 screen-desktop:max-w-1/2 pb-4 screen-desktop:px-1">
+            <div>
               <div class="code-block mb-1"><pre>&lt;blockquote&gt;Find help in NYC with food, money, housing, work and more on ACCESS NYC.&lt;/blockquote&gt;
 &lt;br /&gt;
 &lt;div class=&quot;type-blockquote&quot;&gt;Find help in NYC with food, money, housing, work and more on ACCESS NYC.&lt;/div&gt;</pre></div>
             </div>
           </div>
           <h3 class="px-1">Exposition</h3>
-          <div class="block screen-desktop:flex">
-            <div class="flex-1 pb-3 pl-1 pr-4">
+          <div class="layout--columns justify-between">
+            <div class="pr-2">
               <div class="type-exposition">
                 <p>Find help in NYC with food, money, housing, work and more on ACCESS NYC.</p>
               </div>
             </div>
-            <div class="flex-1 screen-desktop:max-w-1/2 pb-4 screen-desktop:px-1">
+            <div>
               <div class="code-block mb-1"><pre>&lt;div class=&quot;type-exposition&quot;&gt;
   &lt;p&gt;Find help in NYC with food, money, housing, work and more on ACCESS NYC.&lt;/p&gt;
 &lt;/div&gt;</pre></div>
             </div>
           </div>
           <h3 class="px-1">Supplemental</h3>
-          <div class="block screen-desktop:flex">
-            <div class="flex-1 pb-3 pl-1 pr-4">
+          <div class="layout--columns justify-between">
+            <div class="pr-2">
               <div class="type-supplemental">
                 <p>Find help in NYC with food, money, housing, work and more on ACCESS NYC.</p>
               </div>
             </div>
-            <div class="flex-1 screen-desktop:max-w-1/2 pb-4 screen-desktop:px-1">
+            <div>
               <div class="code-block mb-1"><pre>&lt;div class=&quot;type-supplemental&quot;&gt;
   &lt;p&gt;Find help in NYC with food, money, housing, work and more on ACCESS NYC.&lt;/p&gt;
 &lt;/div&gt;</pre></div>
@@ -202,40 +211,54 @@
           </div>
         </section>
         <section class="pb-4" id="other">
-          <header class="pt-1 px-1 border-b border-color-grey-light mb-3">
+          <header class="pt-1 px-2 border-b border-color-grey-light mb-3">
             <h2>Language Utilities</h2>
           </header>
-          <div class="block screen-desktop:flex">
-            <div class="flex-1 pb-3 pl-1 pr-4">
+          <div class="layout--columns">
+            <div class=" page-wrapper pb-3 px-2 text-font-size-small">
               <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis
                 aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
             </div>
-            <div class="flex-1 screen-desktop:max-w-1/2">&nbsp;</div>
+            <div>&nbsp;</div>
           </div>
-          <div class="block screen-desktop:flex">
-            <div class="flex-1 pb-3 pl-1 pr-4">
-              <h1 class="font-serif">Find help in NYC with food, money, housing, work and more on ACCESS NYC.</h1>
-              <h1 class="font-sans">Find help in NYC with food, money, housing, work and more on ACCESS NYC.</h1>
-              <h1 class="font-default-serif">Find help in NYC with food, money, housing, work and more on ACCESS NYC.</h1>
-              <h1 class="font-default-sans">Find help in NYC with food, money, housing, work and more on ACCESS NYC.</h1>
-              <h1 class="font-kr-serif" lang="ko">ACCESS NYC에서 식품, 자금, 주택, 일자리 등에 대한 도움을 확인해보세요.</h1>
-              <h1 class="font-kr-sans" lang="ko">ACCESS NYC에서 식품, 자금, 주택, 일자리 등에 대한 도움을 확인해보세요.</h1>
-              <h1 class="font-tc-serif" lang="zh-hant">於 ACCESS NYC 取得食物、金錢、住房、工作及其他協助。</h1>
-              <h1 class="font-tc-sans" lang="zh-hant">於 ACCESS NYC 取得食物、金錢、住房、工作及其他協助。</h1>
-              <h1 class="font-ar-serif" lang="ar">العثور على مساعدة الطعام والنقود والمسكن والعمل والمزيد على موقع ACCESS NYC.</h1>
-              <h1 class="font-ar-sans" lang="ar">العثور على مساعدة الطعام والنقود والمسكن والعمل والمزيد على موقع ACCESS NYC.</h1>
+          <div class="layout--columns justify-between">
+            <div class="pr-2">
+              <p class="font-serif">Inherit Stylesheet Language</p>
+              <p class="font-sans">Inherit Stylesheet Language</p>
+              <br />
+              <p class="font-default-serif">Default (English, LTR)</p>
+              <p class="font-default-sans">Default (English, LTR)</p>
+              <br />
+              <p class="font-kr-serif" lang="ko">한국어 (Korean, LTR)</p>
+              <p class="font-kr-sans" lang="ko">한국어 (Korean, LTR)</p>
+              <br />
+              <p class="font-tc-serif" lang="zh-hant">繁體中文 (Chinese, LTR)</p>
+              <p class="font-tc-sans" lang="zh-hant">繁體中文 (Chinese, LTR)</p>
+              <br />
+              <p class="font-ar-serif" lang="ar">العربية (Arabic, RTL)</p>
+              <p class="font-ar-sans" lang="ar">العربية (Arabic, RTL)</p>
+              <br />
+              <p class="font-ur-serif" lang="ur">اردو (Urdu, RTL)</p>
+              <p class="font-ur-sans" lang="ur">اردو (Urdu, RTL)</p>
             </div>
-            <div class="flex-1 screen-desktop:max-w-1/2 pb-4 screen-desktop:px-1">
-              <div class="code-block mb-1"><pre>&lt;h1 class=&quot;font-serif&quot;&gt;Find help in NYC with food, money, housing, work and more on ACCESS NYC.&lt;/h1&gt;
-&lt;h1 class=&quot;font-sans&quot;&gt;Find help in NYC with food, money, housing, work and more on ACCESS NYC.&lt;/h1&gt;
-&lt;h1 class=&quot;font-default-serif&quot;&gt;Find help in NYC with food, money, housing, work and more on ACCESS NYC.&lt;/h1&gt;
-&lt;h1 class=&quot;font-default-sans&quot;&gt;Find help in NYC with food, money, housing, work and more on ACCESS NYC.&lt;/h1&gt;
-&lt;h1 class=&quot;font-kr-serif&quot; lang=&quot;ko&quot;&gt;ACCESS NYC에서 식품, 자금, 주택, 일자리 등에 대한 도움을 확인해보세요.&lt;/h1&gt;
-&lt;h1 class=&quot;font-kr-sans&quot; lang=&quot;ko&quot;&gt;ACCESS NYC에서 식품, 자금, 주택, 일자리 등에 대한 도움을 확인해보세요.&lt;/h1&gt;
-&lt;h1 class=&quot;font-tc-serif&quot; lang=&quot;zh-hant&quot;&gt;於 ACCESS NYC 取得食物、金錢、住房、工作及其他協助。&lt;/h1&gt;
-&lt;h1 class=&quot;font-tc-sans&quot; lang=&quot;zh-hant&quot;&gt;於 ACCESS NYC 取得食物、金錢、住房、工作及其他協助。&lt;/h1&gt;
-&lt;h1 class=&quot;font-ar-serif&quot; lang=&quot;ar&quot;&gt;العثور على مساعدة الطعام والنقود والمسكن والعمل والمزيد على موقع ACCESS NYC.&lt;/h1&gt;
-&lt;h1 class=&quot;font-ar-sans&quot; lang=&quot;ar&quot;&gt;العثور على مساعدة الطعام والنقود والمسكن والعمل والمزيد على موقع ACCESS NYC.&lt;/h1&gt;</pre></div>
+            <div>
+              <div class="code-block mb-1"><pre>&lt;p class=&quot;font-serif&quot;&gt;Inherit Stylesheet Language&lt;/p&gt;
+&lt;p class=&quot;font-sans&quot;&gt;Inherit Stylesheet Language&lt;/p&gt;
+&lt;br /&gt;
+&lt;p class=&quot;font-default-serif&quot;&gt;Default (English, LTR)&lt;/p&gt;
+&lt;p class=&quot;font-default-sans&quot;&gt;Default (English, LTR)&lt;/p&gt;
+&lt;br /&gt;
+&lt;p class=&quot;font-kr-serif&quot; lang=&quot;ko&quot;&gt;한국어 (Korean, LTR)&lt;/p&gt;
+&lt;p class=&quot;font-kr-sans&quot; lang=&quot;ko&quot;&gt;한국어 (Korean, LTR)&lt;/p&gt;
+&lt;br /&gt;
+&lt;p class=&quot;font-tc-serif&quot; lang=&quot;zh-hant&quot;&gt;繁體中文 (Chinese, LTR)&lt;/p&gt;
+&lt;p class=&quot;font-tc-sans&quot; lang=&quot;zh-hant&quot;&gt;繁體中文 (Chinese, LTR)&lt;/p&gt;
+&lt;br /&gt;
+&lt;p class=&quot;font-ar-serif&quot; lang=&quot;ar&quot;&gt;العربية (Arabic, RTL)&lt;/p&gt;
+&lt;p class=&quot;font-ar-sans&quot; lang=&quot;ar&quot;&gt;العربية (Arabic, RTL)&lt;/p&gt;
+&lt;br /&gt;
+&lt;p class=&quot;font-ur-serif&quot; lang=&quot;ur&quot;&gt;اردو (Urdu, RTL)&lt;/p&gt;
+&lt;p class=&quot;font-ur-sans&quot; lang=&quot;ur&quot;&gt;اردو (Urdu, RTL)&lt;/p&gt;</pre></div>
             </div>
           </div>
         </section>
@@ -247,9 +270,7 @@
       </p>
     </footer>
     <div aria-hidden="true" class="hidden">
-      <?xml version="1.0" encoding="UTF-8"?>
-      <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
-      <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+      <svg>
         <defs/>
         <symbol id="icon-arrow-down" viewBox="0 0 444.8 444.8">
           <path fill="currentColor" d="M248.1 352L434 165.9c7.2-6.9 10.8-15.4 10.8-25.7 0-10.3-3.6-18.8-10.8-25.7l-21.4-21.7c-7-7-15.6-10.6-25.7-10.6-9.9 0-18.6 3.5-26 10.6L222.4 231.5 83.7 92.8c-7-7-15.6-10.6-25.7-10.6-9.9 0-18.6 3.5-26 10.6l-21.4 21.7c-7 7-10.6 15.6-10.6 25.7s3.5 18.7 10.6 25.7L196.4 352c7.4 7 16.1 10.6 26 10.6 10.1 0 18.7-3.5 25.7-10.6z"
@@ -604,6 +625,11 @@
       </svg>
     </div>
     <script src="scripts/AccessNyc.js"></script>
+    <script type="text/javascript">
+      var access = new AccessNyc();
+      access.toggle();
+      access.filter();
+    </script>
   </body>
 
 </html>

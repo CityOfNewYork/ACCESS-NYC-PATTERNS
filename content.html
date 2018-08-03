@@ -6,7 +6,7 @@
     <meta content="IE=edge" http-equiv="X-UA-Compatible" />
     <meta content="width=device-width, initial-scale=1" name="viewport" />
     <link href="styles/site-default.css" rel="stylesheet" />
-    <title>Checkboxes</title>
+    <title>Content</title>
     <noscript>
       <style>
         body {
@@ -100,7 +100,7 @@
       <article class="py-4">
         <header class="page-wrapper layout--home-body">
           <div class="my-0 w-full">
-            <h1 class="text-color-blue-dark px-2 m-0">Checkboxes</h1>
+            <h1 class="text-color-blue-dark px-2 m-0">Content</h1>
           </div>
         </header>
         <section class="pb-4 mb-4" id="default-styling">
@@ -113,66 +113,128 @@
               </div>
             </header>
             <div class="layout--home-body">
-              <div class="px-2 text-font-size-small"></div>
+              <div class="px-2 text-font-size-small"><p>The object is a collection of elements to be styled when they can&#39;t be easily wrapped individually with their class names. For example, content formatted and displayed from a WYSIWYG editor. All that needs to be done is add the <code>.o-content</code>  class to the parent of the content.</p></div>
             </div>
             <div class="layout--columns justify-between">
               <div class="pr-2">
-                <label class="label">Is anyone in your household currently enrolled in these programs?</label>
-                <label class="checkbox">
-                  <input checked="true" name="application" type="checkbox" value="wic" /><span class="checkbox__label">SNAP (Supplemental Nutrition Assistance Program)</span></label>
-                <label class="checkbox">
-                  <input checked="true" name="application" type="checkbox" value="wic" /><span class="checkbox__label">WIC (Women, Infants, and Children)</span></label>
-                <label class="checkbox">
-                  <input name="application" type="checkbox" value="scrie" /><span class="checkbox__label">SCRIE (Senior Citizen Rent Increase Exemption)</span></label>
+                <div class="o-content">
+                  <ul>
+                    <li>Checklist item default
+                      <ul>
+                        <li>Nested checklist item</li>
+                        <li>Nested checklist item</li>
+                        <li>Nested checklist item</li>
+                      </ul>
+                    </li>
+                    <li class="c-checklist__item-application">Checklist item Application
+                      <ul>
+                        <li>Nested checklist item</li>
+                        <li>Nested checklist item</li>
+                        <li>Nested checklist item</li>
+                      </ul>
+                    </li>
+                    <li class="c-checklist__item-badge">Checklist item Badge</li>
+                    <li class="c-checklist__item-flag">Checklist item Flag</li>
+                    <li class="c-checklist__item-calendar">Checklist item Calendar</li>
+                    <li class="c-checklist__item-generic">Checklist item Generic</li>
+                  </ul>
+                  <table>
+                    <thead>
+                      <tr>
+                        <td><strong>Family Size</strong></td>
+                        <td><strong>Yearly Income</strong></td>
+                        <td><strong>Weekly Income</strong></td>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>1</td>
+                        <td>$27,816</td>
+                        <td>$535</td>
+                      </tr>
+                      <tr>
+                        <td>2</td>
+                        <td>$36,372</td>
+                        <td>$699</td>
+                      </tr>
+                      <tr>
+                        <td>3</td>
+                        <td>$44,928</td>
+                        <td>$864</td>
+                      </tr>
+                      <tr>
+                        <td>4</td>
+                        <td>$53,484</td>
+                        <td>$1,029</td>
+                      </tr>
+                      <tr>
+                        <td>...</td>
+                        <td>...</td>
+                        <td>...</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
               </div>
               <div>
-                <div class="code-block mb-1"><pre>&lt;label class=&quot;label&quot;&gt;Is anyone in your household currently enrolled in these programs?&lt;/label&gt;
-&lt;label class=&quot;checkbox&quot;&gt;
-  &lt;input checked=&quot;true&quot; name=&quot;application&quot; type=&quot;checkbox&quot; value=&quot;wic&quot; /&gt;&lt;span class=&quot;checkbox__label&quot;&gt;SNAP (Supplemental Nutrition Assistance Program)&lt;/span&gt;&lt;/label&gt;
-&lt;label class=&quot;checkbox&quot;&gt;
-  &lt;input checked=&quot;true&quot; name=&quot;application&quot; type=&quot;checkbox&quot; value=&quot;wic&quot; /&gt;&lt;span class=&quot;checkbox__label&quot;&gt;WIC (Women, Infants, and Children)&lt;/span&gt;&lt;/label&gt;
-&lt;label class=&quot;checkbox&quot;&gt;
-  &lt;input name=&quot;application&quot; type=&quot;checkbox&quot; value=&quot;scrie&quot; /&gt;&lt;span class=&quot;checkbox__label&quot;&gt;SCRIE (Senior Citizen Rent Increase Exemption)&lt;/span&gt;&lt;/label&gt;</pre></div>
-              </div>
-            </div>
-          </div>
-        </section>
-        <section class="pb-4 mb-4" id="checkboxes-with-icons">
-          <div class="page-wrapper">
-            <header class="layout--home-body">
-              <div class="my-0 pt-1 px-2 border-b border-color-grey-light">
-                <h2>
-                  <a class="text-color-grey-mid font-normal no-underline" href="#checkboxes-with-icons">Checkboxes With Icons</a>
-                </h2>
-              </div>
-            </header>
-            <div class="layout--home-body">
-              <div class="px-2 text-font-size-small"></div>
-            </div>
-            <div class="layout--columns justify-between">
-              <div class="pr-2">
-                <label class="label">What kind of help are you looking for?</label>
-                <label class="checkbox">
-                  <input name="category" type="checkbox" value="cash-expenses" /><span class="checkbox__label items-center"><span class="checkbox__icon bg-icon-cash-expenses"></span><span>Cash & Expenses</span></span>
-                </label>
-                <label class="checkbox">
-                  <input name="category" type="checkbox" value="cash-expenses" /><span class="checkbox__label items-center"><span class="checkbox__icon bg-icon-city-id-card"></span><span>City ID Card</span></span>
-                </label>
-                <label class="checkbox">
-                  <input name="category" type="checkbox" value="cash-expenses" /><span class="checkbox__label items-center"><span class="checkbox__icon bg-icon-enrichment"></span><span>Enrichment</span></span>
-                </label>
-              </div>
-              <div>
-                <div class="code-block mb-1"><pre>&lt;label class=&quot;label&quot;&gt;What kind of help are you looking for?&lt;/label&gt;
-&lt;label class=&quot;checkbox&quot;&gt;
-  &lt;input name=&quot;category&quot; type=&quot;checkbox&quot; value=&quot;cash-expenses&quot; /&gt;&lt;span class=&quot;checkbox__label items-center&quot;&gt;&lt;span class=&quot;checkbox__icon bg-icon-cash-expenses&quot;&gt;&lt;/span&gt;&lt;span&gt;Cash &amp; Expenses&lt;/span&gt;&lt;/span&gt;
-&lt;/label&gt;
-&lt;label class=&quot;checkbox&quot;&gt;
-  &lt;input name=&quot;category&quot; type=&quot;checkbox&quot; value=&quot;cash-expenses&quot; /&gt;&lt;span class=&quot;checkbox__label items-center&quot;&gt;&lt;span class=&quot;checkbox__icon bg-icon-city-id-card&quot;&gt;&lt;/span&gt;&lt;span&gt;City ID Card&lt;/span&gt;&lt;/span&gt;
-&lt;/label&gt;
-&lt;label class=&quot;checkbox&quot;&gt;
-  &lt;input name=&quot;category&quot; type=&quot;checkbox&quot; value=&quot;cash-expenses&quot; /&gt;&lt;span class=&quot;checkbox__label items-center&quot;&gt;&lt;span class=&quot;checkbox__icon bg-icon-enrichment&quot;&gt;&lt;/span&gt;&lt;span&gt;Enrichment&lt;/span&gt;&lt;/span&gt;
-&lt;/label&gt;</pre></div>
+                <div class="code-block mb-1"><pre>&lt;div class=&quot;o-content&quot;&gt;
+  &lt;ul&gt;
+    &lt;li&gt;Checklist item default
+      &lt;ul&gt;
+        &lt;li&gt;Nested checklist item&lt;/li&gt;
+        &lt;li&gt;Nested checklist item&lt;/li&gt;
+        &lt;li&gt;Nested checklist item&lt;/li&gt;
+      &lt;/ul&gt;
+    &lt;/li&gt;
+    &lt;li class=&quot;c-checklist__item-application&quot;&gt;Checklist item Application
+      &lt;ul&gt;
+        &lt;li&gt;Nested checklist item&lt;/li&gt;
+        &lt;li&gt;Nested checklist item&lt;/li&gt;
+        &lt;li&gt;Nested checklist item&lt;/li&gt;
+      &lt;/ul&gt;
+    &lt;/li&gt;
+    &lt;li class=&quot;c-checklist__item-badge&quot;&gt;Checklist item Badge&lt;/li&gt;
+    &lt;li class=&quot;c-checklist__item-flag&quot;&gt;Checklist item Flag&lt;/li&gt;
+    &lt;li class=&quot;c-checklist__item-calendar&quot;&gt;Checklist item Calendar&lt;/li&gt;
+    &lt;li class=&quot;c-checklist__item-generic&quot;&gt;Checklist item Generic&lt;/li&gt;
+  &lt;/ul&gt;
+  &lt;table&gt;
+    &lt;thead&gt;
+      &lt;tr&gt;
+        &lt;td&gt;&lt;strong&gt;Family Size&lt;/strong&gt;&lt;/td&gt;
+        &lt;td&gt;&lt;strong&gt;Yearly Income&lt;/strong&gt;&lt;/td&gt;
+        &lt;td&gt;&lt;strong&gt;Weekly Income&lt;/strong&gt;&lt;/td&gt;
+      &lt;/tr&gt;
+    &lt;/thead&gt;
+    &lt;tbody&gt;
+      &lt;tr&gt;
+        &lt;td&gt;1&lt;/td&gt;
+        &lt;td&gt;$27,816&lt;/td&gt;
+        &lt;td&gt;$535&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+        &lt;td&gt;2&lt;/td&gt;
+        &lt;td&gt;$36,372&lt;/td&gt;
+        &lt;td&gt;$699&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+        &lt;td&gt;3&lt;/td&gt;
+        &lt;td&gt;$44,928&lt;/td&gt;
+        &lt;td&gt;$864&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+        &lt;td&gt;4&lt;/td&gt;
+        &lt;td&gt;$53,484&lt;/td&gt;
+        &lt;td&gt;$1,029&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+        &lt;td&gt;...&lt;/td&gt;
+        &lt;td&gt;...&lt;/td&gt;
+        &lt;td&gt;...&lt;/td&gt;
+      &lt;/tr&gt;
+    &lt;/tbody&gt;
+  &lt;/table&gt;
+&lt;/div&gt;</pre></div>
               </div>
             </div>
           </div>
