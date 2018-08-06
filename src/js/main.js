@@ -2,7 +2,8 @@
 
 import Module from './modules/module'; // sample module
 import Toggle from './modules/toggle';
-// import Accordion from '../components/accordion/accordion';
+import Accordion from '../components/accordion/accordion';
+import Filter from '../components/filter/filter';
 /** import components here as they are written. */
 
 /**
@@ -24,33 +25,26 @@ class main {
 
   /**
    * [toggle description]
-   * @return {[type]} [description]
+   * @return {object} instance of toggling method
    */
   toggle() {
     return new Toggle().init();
   }
 
   /**
-   * [filter description]
-   * @return {[type]} [description]
+   * An API for the Filter Component
+   * @return {object} instance of Filter
    */
   filter() {
-    return new Toggle({
-      selector: '[data-js="filter"]',
-      namespace: 'filter',
-      inactiveClass: 'inactive'
-    }).init();
+    return new Filter();
   }
 
   /**
    * An API for the Accordion Component
+   * @return {object} instance of Accordion
    */
   accordion() {
-    return new Toggle({
-      selector: '[data-js="accordion"]',
-      namespace: 'accordion',
-      inactiveClass: 'inactive'
-    }).init();
+    return new Accordion();
   }
   /** add APIs here as they are written */
 }

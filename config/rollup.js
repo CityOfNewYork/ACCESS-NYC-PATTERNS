@@ -115,6 +115,26 @@ const modules = [
         strict: rollup.strict
       }
     ]
+  },
+  {
+    input: './src/components/filter/filter.js',
+    plugins: rollup.dist,
+    output: [
+      {
+        name: 'Filter',
+        file: `./dist/components/filter/filter.iffe.js`,
+        sourcemap: rollup.sourcemap,
+        format: 'iife',
+        strict: rollup.strict
+      },
+      {
+        name: 'Filter',
+        file: `./dist/components/filter/filter.common.js`,
+        sourcemap: rollup.sourcemap,
+        format: 'cjs',
+        strict: rollup.strict
+      }
+    ]
   }
 ];
 

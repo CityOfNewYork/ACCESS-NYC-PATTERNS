@@ -5,10 +5,10 @@ div class='c-filter-multi active bg-color-white'
         label class='checkbox'
           input data-toggles='#' type='checkbox'
           span class='checkbox__label' Cash &amp; Expenses
-        a href='#' class='c-filter-multi__item-header-toggle active'
+        a href='#cash-and-expenses' class='c-filter-multi__item-header-toggle active' data-js='filter'
           span class='c-filter-multi__item-header-expand' Expand category
           span class='c-filter-multi__item-header-collapse' Collapse category
-      div class='c-filter-multi__item-group active' aria-hidden='false'
+      div#cash-and-expenses class='c-filter-multi__item-group active' aria-hidden='false'
         ul class='c-filter-multi__item-group-list'
           li class='c-filter-multi__item-group-subitem'
             label class='checkbox'
@@ -23,10 +23,10 @@ div class='c-filter-multi active bg-color-white'
         label class='checkbox'
           input data-toggles='#program-child-care' type='checkbox'
           span class='checkbox__label' Child Care
-        a href='#' class='c-filter-multi__item-header-toggle active'
+        a href='#child-care' class='c-filter-multi__item-header-toggle active' data-js='filter'
           span class='c-filter-multi__item-header-expand' Expand category
           span class='c-filter-multi__item-header-collapse' Collapse category
-      div class='c-filter-multi__item-group active' aria-hidden='false'
+      div#child-care class='c-filter-multi__item-group active' aria-hidden='false'
         ul class='c-filter-multi__item-group-list'
           li class='c-filter-multi__item-group-subitem'
             label class='checkbox'
@@ -41,10 +41,10 @@ div class='c-filter-multi active bg-color-white'
           label class='checkbox'
             input data-toggles='#program-child-care' type='checkbox'
             span class='checkbox__label' City ID Card
-          a href='#' class='c-filter-multi__item-header-toggle'
+          a href='#city-id-card' class='c-filter-multi__item-header-toggle' data-js='filter'
             span class='c-filter-multi__item-header-expand' Expand category
             span class='c-filter-multi__item-header-collapse' Collapse category
-        div class='c-filter-multi__item-group' aria-hidden='true'
+        div#city-id-card class='c-filter-multi__item-group' aria-hidden='true'
           ul class='c-filter-multi__item-group-list'
             li class='c-filter-multi__item-group-subitem'
               label class='checkbox'
