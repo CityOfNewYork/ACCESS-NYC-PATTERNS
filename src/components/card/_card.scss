@@ -8,14 +8,15 @@
 @import 'config/direction';
 @import 'config/media';
 @import 'config/typography';
-@import 'bourbon-neat/app/assets/stylesheets/grid/media';
+// @import 'bourbon-neat/app/assets/stylesheets/grid/media';
 
 // Declarations
 .c-card {
   background: $color-white;
   padding: $spacing-base;
 
-  @include media($bp-mobile-up) {
+  // @include media($bp-mobile-up) {
+  @media screen and (min-width: $screen-tablet) {
     align-items: stretch;
     display: flex;
     // padding: 1.5 * $spacing-base;
@@ -40,7 +41,8 @@
     vertical-align: middle;
   }
 
-  @include media($bp-mobile-up) {
+  // @include media($bp-mobile-up) {
+  @media screen and (min-width: $screen-mobile) {
     margin-bottom: 0;
     margin-#{$text-direction-end}: $spacing-base;
     min-width: $icon-width; // Fixes an iOS 9 flexbox bug.
@@ -61,7 +63,8 @@
     height: $icon-height;
   }
 
-  @include media($bp-mobile-up) {
+  // @include media($bp-mobile-up) {
+  @media screen and (min-width: $screen-mobile) {
     min-width: $icon-width; // Fixes an iOS 9 flexbox bug.
     width: $icon-width;
   }
@@ -79,7 +82,8 @@
   .label {
     display: none;
 
-    @include media($bp-mobile-up) {
+    // @include media($bp-mobile-up) {
+    @media screen and (min-width: $screen-mobile) {
       display: inline-block;
     }
   }

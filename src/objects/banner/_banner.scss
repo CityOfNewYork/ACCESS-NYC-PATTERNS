@@ -38,7 +38,8 @@
 }
 
 .o-banner__touts {
-  @include media($bp-tablet-up) {
+  // @include media($bp-tablet-up) {
+  @media screen and (min-width: $screen-tablet) {
     display: flex;
   }
 }
@@ -46,7 +47,8 @@
 .o-banner__tout {
   margin-bottom: $spacing-base;
 
-  @include media($bp-tablet-up) {
+  // @include media($bp-tablet-up) {
+  @media screen and (min-width: $screen-tablet) {
     display: flex;
     flex-direction: column;
     padding-#{$text-direction-end}: $spacing-base;
@@ -59,7 +61,8 @@
 }
 
 .o-banner__tout-body {
-  @include media($bp-tablet-up) {
+  // @include media($bp-tablet-up) {
+  @media screen and (min-width: $screen-tablet) {
     flex: 1 1 auto;
   }
 }

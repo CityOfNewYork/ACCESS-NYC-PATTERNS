@@ -8,8 +8,8 @@
 @import 'config/dimensions';
 @import 'config/media';
 @import 'scss/functions/strip-units';
-@import 'bourbon-neat/app/assets/stylesheets/grid/media';
-@import 'uswds/src/stylesheets/components/forms';
+// @import 'bourbon-neat/app/assets/stylesheets/grid/media';
+// @import 'uswds/src/stylesheets/components/forms';
 
 $cdn: map-get($variables, 'cdn');
 
@@ -52,7 +52,10 @@ optgroup {
   min-width: 200px;
   width: 100%;
 
-  @include media($bp-tablet-up) {
+  // @include media($bp-tablet-up) {
+  //   width: auto;
+  // }
+  @media screen and (min-width: $screen-tablet) {
     width: auto;
   }
 

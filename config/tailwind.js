@@ -15,10 +15,10 @@ module.exports = {
   backgroundColors: variables.colors,
   borderColors: global.Object.assign({ default: '' }, variables.colors),
   screens: {
-    'screen-desktop': `${variables.screens['screen-desktop']}px`,
-    'screen-tablet': `${variables.screens['screen-tablet']}px`,
-    'screen-mobile': `${variables.screens['screen-mobile']}px`,
-    'screen-sm-mobile': `${variables.screens['screen-sm-mobile']}px`,
+    'screen-desktop': {'raw': `screen and (min-width: ${variables.screens['screen-desktop']}px)`},
+    'screen-tablet': {'raw': `screen and (min-width: ${variables.screens['screen-tablet']}px)`},
+    'screen-mobile': {'raw': `screen and (min-width: ${variables.screens['screen-mobile']}px)`},
+    //'screen-sm-mobile': {'raw': `screen and (min-width: ${variables.screens['screen-sm-mobile']}px)`},
     'print': {'raw': 'print'}
   },
   fonts: variables.fonts,

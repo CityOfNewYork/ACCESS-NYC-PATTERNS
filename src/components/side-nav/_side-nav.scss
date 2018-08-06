@@ -31,7 +31,8 @@
     display: flex;
     margin-bottom: 14px;
 
-    @include media($bp-desktop-up) {
+    // @include media($bp-desktop-up) {
+    @media screen and (min-width: $screen-desktop) {
       border-bottom: 1px solid $color-blue-dark;
       margin-bottom: $spacing-base;
       padding-bottom: $spacing-base;

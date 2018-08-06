@@ -133,14 +133,14 @@ document.querySelectorAll(Accordion.selector)
             </div>
             <div class="layout--columns justify-between">
               <div class="pr-2">
-                <article class="c-accordion mt-0" data-js="accordion" data-js-active="active" id="what-you-need-to-include-1">
+                <article class="c-accordion mt-0" id="what-you-need-to-include">
                   <header class="c-accordion__header">
                     <p>Proof of who you are</p>
-                    <a class="c-accordion__toggle print:hidden" href="#what-you-need-to-include-1__body" v-on:click="toggle"><span v-if="active"><span class="hidden screen-tablet:inline">-&nbsp;</span>hide this list</span><span v-else=""><span class="hidden screen-tablet:inline">+&nbsp;</span>show this list</span>
+                    <a class="c-accordion__toggle print:hidden" data-js="accordion" href="#what-you-need-to-include__body"><span class="c-accordion__toggle-active"><span class="hidden screen-tablet:inline">-&nbsp;</span>hide this list</span><span class="c-accordion__toggle-inactive"><span class="hidden screen-tablet:inline">+&nbsp;</span>show this list</span>
                     </a>
                   </header>
-                  <div class="c-accordion__body print:active hidden:overflow animated" id="what-you-need-to-include-1__body" v-bind:aria-hidden="ariaHidden(active)" v-bind:class="{active: active}">
-                    <div class="c-accordion__padding" v-bind:class="{'animated fadeInUp': active}">
+                  <div class="c-accordion__body print:active hidden:overflow animated inactive" id="what-you-need-to-include__body">
+                    <div class="c-accordion__padding">
                       <p>For each person applying, <strong>any one document:</strong></p>
                       <ul>
                         <li>Driver license or official photo ID</li>
@@ -162,14 +162,14 @@ document.querySelectorAll(Accordion.selector)
                 </article>
               </div>
               <div>
-                <div class="code-block mb-1"><pre>&lt;article class=&quot;c-accordion mt-0&quot; data-js=&quot;accordion&quot; data-js-active=&quot;active&quot; id=&quot;what-you-need-to-include-1&quot;&gt;
+                <div class="code-block mb-1"><pre>&lt;article class=&quot;c-accordion mt-0&quot; id=&quot;what-you-need-to-include&quot;&gt;
   &lt;header class=&quot;c-accordion__header&quot;&gt;
     &lt;p&gt;Proof of who you are&lt;/p&gt;
-    &lt;a class=&quot;c-accordion__toggle print:hidden&quot; href=&quot;#what-you-need-to-include-1__body&quot; v-on:click=&quot;toggle&quot;&gt;&lt;span v-if=&quot;active&quot;&gt;&lt;span class=&quot;hidden screen-tablet:inline&quot;&gt;-&amp;nbsp;&lt;/span&gt;hide this list&lt;/span&gt;&lt;span v-else=&quot;&quot;&gt;&lt;span class=&quot;hidden screen-tablet:inline&quot;&gt;+&amp;nbsp;&lt;/span&gt;show this list&lt;/span&gt;
+    &lt;a class=&quot;c-accordion__toggle print:hidden&quot; data-js=&quot;accordion&quot; href=&quot;#what-you-need-to-include__body&quot;&gt;&lt;span class=&quot;c-accordion__toggle-active&quot;&gt;&lt;span class=&quot;hidden screen-tablet:inline&quot;&gt;-&amp;nbsp;&lt;/span&gt;hide this list&lt;/span&gt;&lt;span class=&quot;c-accordion__toggle-inactive&quot;&gt;&lt;span class=&quot;hidden screen-tablet:inline&quot;&gt;+&amp;nbsp;&lt;/span&gt;show this list&lt;/span&gt;
     &lt;/a&gt;
   &lt;/header&gt;
-  &lt;div class=&quot;c-accordion__body print:active hidden:overflow animated&quot; id=&quot;what-you-need-to-include-1__body&quot; v-bind:aria-hidden=&quot;ariaHidden(active)&quot; v-bind:class=&quot;{active: active}&quot;&gt;
-    &lt;div class=&quot;c-accordion__padding&quot; v-bind:class=&quot;{&#39;animated fadeInUp&#39;: active}&quot;&gt;
+  &lt;div class=&quot;c-accordion__body print:active hidden:overflow animated inactive&quot; id=&quot;what-you-need-to-include__body&quot;&gt;
+    &lt;div class=&quot;c-accordion__padding&quot;&gt;
       &lt;p&gt;For each person applying, &lt;strong&gt;any one document:&lt;/strong&gt;&lt;/p&gt;
       &lt;ul&gt;
         &lt;li&gt;Driver license or official photo ID&lt;/li&gt;
@@ -202,6 +202,7 @@ document.querySelectorAll(Accordion.selector)
     </footer>
     <div aria-hidden="true" class="hidden">
       <svg>
+        <defs/>
         <symbol id="icon-arrow-down" viewBox="0 0 444.8 444.8">
           <path fill="currentColor" d="M248.1 352L434 165.9c7.2-6.9 10.8-15.4 10.8-25.7 0-10.3-3.6-18.8-10.8-25.7l-21.4-21.7c-7-7-15.6-10.6-25.7-10.6-9.9 0-18.6 3.5-26 10.6L222.4 231.5 83.7 92.8c-7-7-15.6-10.6-25.7-10.6-9.9 0-18.6 3.5-26 10.6l-21.4 21.7c-7 7-10.6 15.6-10.6 25.7s3.5 18.7 10.6 25.7L196.4 352c7.4 7 16.1 10.6 26 10.6 10.1 0 18.7-3.5 25.7-10.6z"
           />
@@ -481,7 +482,7 @@ document.querySelectorAll(Accordion.selector)
             fill="#fbb720" fill-rule="nonzero" />
         </symbol>
         <symbol id="icon-logo-nyc" viewBox="0 0 350 117">
-          <g fill="currentColor">
+          <g fill="currentColor" fill-rule="nonzero">
             <path d="M327.9 0H255l-21.8 21.9v72.8l21.8 21.9h72.9l21.8-21.9V72.9l-7.2-7.3H306v7.3h-29.1V43.7H306v7.2h36.5l7.2-7.2V21.9L327.9 0zM109.3 0H80.1l-7.2 7.3v29.1L36.4 0H7.3L0 7.3v102l7.3 7.3h29.1l7.3-7.3V80.1l36.4 36.5h29.2l7.3-7.3V7.3L109.3 0zM160.3 116.6h29.1l7.3-7.3V87.4L233.2 51V7.3L225.9 0h-29.2l-7.3 7.3v14.6l-14.5 14.5-14.6-14.5V7.3L153 0h-29.1l-7.3 7.3V51L153 87.4v21.9l7.3 7.3z"
             />
           </g>
@@ -558,10 +559,8 @@ document.querySelectorAll(Accordion.selector)
     <script type="text/javascript">
       var access = new AccessNyc();
       access.toggle();
-      access.filter();
     </script>
     <script type="text/javascript">
-      var access = new AccessNyc();
       access.accordion();
     </script>
   </body>

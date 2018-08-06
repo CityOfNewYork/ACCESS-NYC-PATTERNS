@@ -47,7 +47,8 @@
       display: block;
       padding: 0 $spacing-base;
 
-      @include media($bp-tablet-up) {
+      // @include media($bp-tablet-up) {
+      @media screen and (min-width: $screen-tablet) {
         @include span-columns(4);
 
         &:nth-child(3n) {
@@ -59,7 +60,8 @@
         }
       }
 
-      @include media($bp-desktop-up) {
+      // @include media($bp-desktop-up) {
+      @media screen and (min-width: $screen-desktop) {
         @include span-columns(3);
 
         &:last-child {

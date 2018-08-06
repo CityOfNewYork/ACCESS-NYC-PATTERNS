@@ -35,7 +35,8 @@
 .c-text-controller__title-full {
   display: none;
 
-  @include media($bp-desktop-up) {
+  // @include media($bp-desktop-up) {
+  @media screen and (min-width: $screen-desktop) {
     display: inline-block;
   }
 }
@@ -43,7 +44,8 @@
 .c-text-controller__title-short {
   display: inline-block;
 
-  @include media($bp-desktop-up) {
+  // @include media($bp-desktop-up) {
+  @media screen and (min-width: $screen-desktop) {
     display: none;
   }
 }
@@ -84,7 +86,8 @@
 .c-text-controller__sizer {
   display: none;
 
-  @include media($bp-desktop-up) {
+  // @include media($bp-desktop-up) {
+  @media screen and (min-width: $screen-desktop) {
     color: $color-grey-mid;
     display: flex;
     align-items: center;

@@ -8,7 +8,7 @@ class Toggle {
   /**
    * @constructor
    * @param  {object} s Settings for this Toggle instance
-   * @return {object}   The Toggle class
+   * @return {object}   The class
    */
   constructor(s) {
     s = (!s) ? {} : s;
@@ -25,6 +25,7 @@ class Toggle {
 
   /**
    * Initializes the module
+   * @return {object}   The class
    */
   init() {
     const body = document.querySelector('body');
@@ -46,7 +47,7 @@ class Toggle {
   /**
    * Logs constants to the debugger
    * @param  {object} event  The main click event
-   * @return {class}         The Toggle class
+   * @return {object}        The class
    */
   _toggle(event) {
     let el = event.target;
@@ -88,7 +89,7 @@ class Toggle {
    * The main toggling method
    * @param  {object} el     The current element to toggle active
    * @param  {object} target The target element to toggle active/hidden
-   * @return {class}         The Toggle class
+   * @return {object}        The class
    */
   _elementToggle(el, target) {
     el.classList.toggle(this._settings.activeClass);

@@ -7,7 +7,7 @@
 @import 'config/fonts';
 @import 'config/media';
 @import 'config/direction';
-@import 'bourbon-neat/app/assets/stylesheets/grid/media';
+// @import 'bourbon-neat/app/assets/stylesheets/grid/media';
 
 $leading: map-get($variables, 'leading');
 
@@ -17,7 +17,8 @@ $leading: map-get($variables, 'leading');
   font-size: #{$font-size-largest};
   line-height: map-get($leading, 'medium');
   font-family: $font-family-serif;
-  @include media($bp-tablet-up) {
+  //@include media($bp-tablet-up) {
+  @media screen and (min-width: $screen-tablet) {
     font-size: $font-size-jumbo
   }
 }
@@ -28,7 +29,8 @@ $leading: map-get($variables, 'leading');
   font-size: #{$font-size-larger};
   line-height: map-get($leading, 'medium');
   font-family: $font-family-serif;
-  @include media($bp-tablet-up) {
+  //@include media($bp-tablet-up) {
+  @media screen and (min-width: $screen-tablet) {
     font-size: $font-size-largest
   }
 }
@@ -66,7 +68,8 @@ $leading: map-get($variables, 'leading');
 @mixin typography-lead() {
   font: #{$font-size-normal}/#{map-get($leading, 'medium')} $font-family-serif;
 
-  @include media($bp-tablet-up) {
+  //@include media($bp-tablet-up) {
+  @media screen and (min-width: $screen-tablet) {
     font-size: $font-size-larger;
   }
 }
@@ -75,7 +78,8 @@ $leading: map-get($variables, 'leading');
   font-size: #{$font-size-base};
   line-height: map-get($leading, 'medium');
   font-family: $font-family-serif;
-  @include media($bp-tablet-up) {
+  //@include media($bp-tablet-up) {
+  @media screen and (min-width: $screen-tablet) {
     font-size: $font-size-larger
   }
 }
@@ -100,7 +104,8 @@ $leading: map-get($variables, 'leading');
   font-size: #{$font-size-small};
   line-height: map-get($leading, 'medium');
   font-family: $font-family-sans;
-  @include media($bp-tablet-up) {
+  //@include media($bp-tablet-up) {
+  @media screen and (min-width: $screen-tablet) {
     font-size: $font-size-normal
   }
 }

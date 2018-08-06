@@ -12,7 +12,8 @@
 .c-header {
   padding: $spacing-base;
 
-  @include media($bp-mobile-up) {
+  // @include media($bp-mobile-up) {
+  @media screen and (min-width: $screen-mobile) {
     align-items: flex-start;
     display: flex;
   }
@@ -34,7 +35,8 @@
     vertical-align: middle;
   }
 
-  @include media($bp-mobile-up) {
+  // @include media($bp-mobile-up) {
+  @media screen and (min-width: $screen-mobile) {
     margin-#{$text-direction-end}: $spacing-base * 0.6666;
     min-width: $icon-width; // Fixes an iOS 9 flexbox bug.
     width: $icon-width;

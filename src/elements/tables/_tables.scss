@@ -15,7 +15,9 @@
   margin-bottom: $spacing-base;
   max-width: 100%;
   text-align: $text-direction-end;
-  @include media($bp-tablet-up) {
+
+  // @include media($bp-tablet-up) {
+  @media screen and (min-width: $screen-tablet) {
     font-size: $font-size-base;
   }
 
@@ -43,7 +45,9 @@
   th,
   td {
     padding: $spacing-base * .5;
-    @include media($bp-tablet-up) {
+
+    // @include media($bp-tablet-up) {
+    @media screen and (min-width: $screen-tablet) {
       padding: $spacing-base * .5 $spacing-base * 2;
     }
   }

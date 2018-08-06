@@ -93,8 +93,8 @@ const modules = [
   {
     input: './src/components/accordion/accordion.js',
     plugins: rollup.dist,
-    // This enables us to declare peer dependencies and avoid packaging them
-    // with our module libraries!
+    // This enables us to declare peer dependencies and
+    // avoid packaging them with our module libraries!
     external: ['vue/dist/vue.common'],
     output: [
       {

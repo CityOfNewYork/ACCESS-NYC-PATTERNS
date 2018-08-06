@@ -25,12 +25,14 @@
     a:visited {
       color: $color-white;
     }
+
     .icon-logo-full {
       width: 135px;
       height: 23px;
       display: block;
 
-      @include media($bp-desktop-up) {
+      // @include media($bp-desktop-up) {
+      @media screen and (min-width: $screen-desktop) {
         .home & {
           width: 270px;
           height: 45px;
@@ -66,7 +68,9 @@
 .o-navigation__toggle {
   flex: 1 1 auto;
   text-align: $text-direction-end;
-  @include media($bp-desktop-up) {
+
+  // @include media($bp-desktop-up) {
+  @media screen and (min-width: $screen-desktop) {
     display: none;
   }
 }

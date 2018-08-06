@@ -3,54 +3,55 @@
 //
 
 // Dependencies
-@import 'config/grid';
-@import 'bourbon-neat/app/assets/stylesheets/grid/media';
-@import 'bourbon-neat/app/assets/stylesheets/functions/new-breakpoint';
+@import 'config/variables';
+// @import 'config/grid';
+// @import 'bourbon-neat/app/assets/stylesheets/grid/media';
+// @import 'bourbon-neat/app/assets/stylesheets/functions/new-breakpoint';
 
 //
 // USWDS START
 //
 
 // Mobile First Breakpoints
-$small-screen: 481px;
-$medium-screen: 600px;
-$large-screen: 1201px;
+// $small-screen: 481px;
+// $medium-screen: 600px;
+// $large-screen: 1201px;
 
 // @media single-keyword helpers
-$bp-small: new-breakpoint(min-width $small-screen $grid-columns-small);
-$bp-medium: new-breakpoint(min-width $medium-screen $grid-columns-medium);
-$bp-large: new-breakpoint(min-width $large-screen $grid-columns-large);
+// $bp-small: new-breakpoint(min-width $small-screen $grid-columns-small);
+// $bp-medium: new-breakpoint(min-width $medium-screen $grid-columns-medium);
+// $bp-large: new-breakpoint(min-width $large-screen $grid-columns-large);
 
-$small: (
-  nth($bp-small, 1),
-  nth($bp-small, 2),
-  nth($bp-small, 3)
-);
+// $small: (
+//   nth($bp-small, 1),
+//   nth($bp-small, 2),
+//   nth($bp-small, 3)
+// );
 
-$medium: (
-  nth($bp-medium, 1),
-  nth($bp-medium, 2),
-  nth($bp-medium, 3)
-);
+// $medium: (
+//   nth($bp-medium, 1),
+//   nth($bp-medium, 2),
+//   nth($bp-medium, 3)
+// );
 
-$large: (
-  nth($bp-large, 1),
-  nth($bp-large, 2),
-  nth($bp-large, 3)
-);
+// $large: (
+//   nth($bp-large, 1),
+//   nth($bp-large, 2),
+//   nth($bp-large, 3)
+// );
 
 //
 // USWDS END
 //
 
-$screen-desktop: 960px;
-$screen-tablet: 768px;
-$screen-mobile: 480px;
-$screen-sm-mobile: 400px;
+$screen-desktop: #{map-get(map-get($variables, 'screens'), 'screen-desktop')}px;
+$screen-tablet: #{map-get(map-get($variables, 'screens'), 'screen-tablet')}px;
+$screen-mobile: #{map-get(map-get($variables, 'screens'), 'screen-mobile')}px;
+$screen-sm-mobile: #{map-get(map-get($variables, 'screens'), 'screen-sm-mobile')}px;
 
 // Declarations
-$bp-desktop-up: new-breakpoint(min-width $screen-desktop);
-$bp-below-desktop: new-breakpoint(max-width ($screen-desktop - 1));
-$bp-tablet-up: new-breakpoint(min-width $screen-tablet);
-$bp-below-tablet: new-breakpoint(max-width ($screen-tablet - 1));
-$bp-mobile-up: new-breakpoint(min-width $screen-mobile);
+// $bp-desktop-up: new-breakpoint(min-width $screen-desktop);
+// $bp-below-desktop: new-breakpoint(max-width ($screen-desktop - 1));
+// $bp-tablet-up: new-breakpoint(min-width $screen-tablet);
+// $bp-below-tablet: new-breakpoint(max-width ($screen-tablet - 1));
+// $bp-mobile-up: new-breakpoint(min-width $screen-mobile);

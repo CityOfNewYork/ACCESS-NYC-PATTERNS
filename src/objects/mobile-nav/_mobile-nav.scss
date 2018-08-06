@@ -31,7 +31,8 @@
   width: 300px;
   z-index: 10;
 
-  @include media($bp-desktop-up) {
+  // @include media($bp-desktop-up) {
+  @media screen and (min-width: $screen-desktop) {
     display: none;
   }
 }
@@ -47,7 +48,8 @@
   margin-bottom: $spacing-base;
   display: block;
 
-  @include media($bp-desktop-up) {
+  // @include media($bp-desktop-up) {
+  @media screen and (min-width: $screen-desktop) {
     display: none;
   }
 
