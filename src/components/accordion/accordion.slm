@@ -1,19 +1,15 @@
-/
-/ Accordion
-/
-
-article id='what-you-need-to-include-1' class='c-accordion mt-0' data-js='accordion' data-js-active='active'
+article id='what-you-need-to-include' class='c-accordion mt-0'
   header class='c-accordion__header'
     p Proof of who you are
-    a href='#what-you-need-to-include-1__body' class="c-accordion__toggle print:hidden" v-on:click="toggle"
-      span v-if='active'
+    a data-js='accordion' href='#what-you-need-to-include__body' class="c-accordion__toggle print:hidden"
+      span class='c-accordion__toggle-active'
         span class='hidden screen-tablet:inline' -&nbsp;
         | hide this list
-      span v-else=''
+      span class='c-accordion__toggle-inactive'
         span class='hidden screen-tablet:inline' +&nbsp;
         | show this list
-  div id='what-you-need-to-include-1__body' class='c-accordion__body print:active hidden:overflow animated' v-bind:class='{active: active}' v-bind:aria-hidden='ariaHidden(active)'
-    div class='c-accordion__padding' v-bind:class="{'animated fadeInUp': active}"
+  div id='what-you-need-to-include__body' class='c-accordion__body print:active hidden:overflow animated inactive'
+    div class='c-accordion__padding'
       p
         | For each person applying, <strong>any one document:</strong>
       ul

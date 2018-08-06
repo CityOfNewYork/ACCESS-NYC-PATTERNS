@@ -26,6 +26,5 @@
 
 = content('script');
   javascript:
-    var access = new AccessNyc();
     access.accordion();
 

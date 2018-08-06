@@ -15,9 +15,9 @@
 }
 
 .c-accordion__header {
-
   background-color: $color-blue-dark;
   color: $color-white;
+  @include font-smooth();
   display: flex;
   overflow: hidden;
   padding: $spacing-base;
@@ -41,6 +41,30 @@
   color: $color-white !important;
   text-decoration: none;
   font-style: italic;
+
+  * {
+    pointer-events: none;
+  }
+}
+
+.c-accordion__toggle-active {
+  display: none;
+  visibility: hidden;
+
+  .c-accordion__toggle.active & {
+    display: inline;
+    visibility: visible;
+  }
+}
+
+.c-accordion__toggle-inactive {
+  display: inline;
+  visibility: visible;
+
+  .c-accordion__toggle.active & {
+    display: none;
+    visibility: hidden;
+  }
 }
 
 .c-accordion__body {

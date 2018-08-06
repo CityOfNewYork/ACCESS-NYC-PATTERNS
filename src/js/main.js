@@ -1,8 +1,8 @@
 'use strict';
 
-import Module from './modules/module';
+import Module from './modules/module'; // sample module
 import Toggle from './modules/toggle';
-import Accordion from '../components/accordion/accordion';
+// import Accordion from '../components/accordion/accordion';
 /** import components here as they are written. */
 
 /**
@@ -46,11 +46,11 @@ class main {
    * An API for the Accordion Component
    */
   accordion() {
-    document.querySelectorAll(Accordion.selector)
-      .forEach((element) => {
-        const accordion = new Accordion(element);
-        accordion.init();
-      });
+    return new Toggle({
+      selector: '[data-js="accordion"]',
+      namespace: 'accordion',
+      inactiveClass: 'inactive'
+    }).init();
   }
   /** add APIs here as they are written */
 }

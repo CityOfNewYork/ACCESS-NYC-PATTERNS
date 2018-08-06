@@ -28,6 +28,7 @@ class Toggle {
    */
   init() {
     const body = document.querySelector('body');
+
     body.addEventListener('click', (event) => {
       let method = (!event.target.matches) ? 'msMatchesSelector' : 'matches';
 
@@ -38,6 +39,8 @@ class Toggle {
 
       this._toggle(event);
     });
+
+    return this;
   }
 
   /**

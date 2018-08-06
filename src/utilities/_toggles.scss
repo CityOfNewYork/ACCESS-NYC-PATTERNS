@@ -11,34 +11,17 @@ $animate: map-get($variables, 'animate');
 
 // Declarations
 [data-css-text]:before {
-  content: attr(data-css-text)
+  content: attr(data-css-text) // can't be read by screen readers
 }
 
 .active > [data-css-active-text]:before {
-  content: attr(data-css-active-text)
+  content: attr(data-css-active-text) // can't be read by screen readers
 }
 
-// .active__shown {
-//   display: none
-// }
-
-// .active > .active__shown {
-//   display: inherit !important
-// }
-
-// .active > .active__hidden {
-//   content: attr(data-css-text)
-// }
-
 .hidden\:overflow {
-  // display: inherit !important;
   max-height: 0;
   overflow: hidden;
 }
-
-// .hidden.hidden\:overflow {
-//   max-height: 0;
-// }
 
 .active.hidden\:overflow {
   max-height: inherit;

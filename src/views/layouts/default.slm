@@ -25,5 +25,4 @@ html lang='en' class='bg-color-white text-size-0'
     javascript:
       var access = new AccessNyc();
       access.toggle();
-      access.filter();
     = content('script');

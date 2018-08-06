@@ -24,3 +24,7 @@
   = mixin('content-header', title);
   = mixin('section', 'Default Styling', 'components/filter/filter');
   = mixin('section', 'Multi Filter', 'components/filter/filter-multi');
+
+= content('script');
+  javascript:
+    access.filter();
