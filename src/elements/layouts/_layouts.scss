@@ -346,7 +346,7 @@ $breakpoints: map-get($variables, 'screens');
     flex-direction: row;
   }
 
-  .layout--map__filter {
+  .layout--map__sidebar {
     width: 100%;
 
     @media screen and (min-width: $screen-desktop) {
