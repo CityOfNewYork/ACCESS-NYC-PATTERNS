@@ -18,7 +18,7 @@ module.exports = {
     'screen-desktop': {'raw': `screen and (min-width: ${variables.screens['screen-desktop']}px)`},
     'screen-tablet': {'raw': `screen and (min-width: ${variables.screens['screen-tablet']}px)`},
     'screen-mobile': {'raw': `screen and (min-width: ${variables.screens['screen-mobile']}px)`},
-    //'screen-sm-mobile': {'raw': `screen and (min-width: ${variables.screens['screen-sm-mobile']}px)`},
+    'screen-sm-mobile': {'raw': `screen and (min-width: ${variables.screens['screen-sm-mobile']}px)`},
     'print': {'raw': 'print'}
   },
   fonts: variables.fonts,
