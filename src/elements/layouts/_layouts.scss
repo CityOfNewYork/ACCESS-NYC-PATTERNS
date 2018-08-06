@@ -311,14 +311,14 @@ $breakpoints: map-get($variables, 'screens');
 
 .usa-grid {
   // @include padding(null $site-margins-mobile);
-  padding-left: $spacing-base * 2;
-  padding-right: $spacing-base * 2;
+  padding-left: ($spacing-base / 3) * 2;
+  padding-right: ($spacing-base / 3) * 2;
   margin-left: auto;
   margin-right: auto;
 
   @media screen and (min-width: $screen-tablet) {
-    padding-left: $spacing-base * 3;
-    padding-right: $spacing-base * 3;
+    padding-left: $spacing-base;
+    padding-right: $spacing-base;
   }
 }
 
