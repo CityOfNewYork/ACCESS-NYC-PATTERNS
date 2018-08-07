@@ -19,6 +19,7 @@
 
 .c-filter__header {
   color: $color-white;
+  @include font-smooth;
   font-weight: $font-weight-bold;
   text-decoration: none;
 
@@ -74,8 +75,9 @@
 }
 
 .c-filter__item {
-  background: $color-blue-dark;
   color: $color-white;
+  @include font-smooth;
+  background: $color-blue-dark;
   display: block;
   margin: 0;
   padding: .75*$spacing-base $spacing-base;
