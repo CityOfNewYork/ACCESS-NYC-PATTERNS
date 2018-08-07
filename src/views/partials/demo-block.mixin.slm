@@ -3,19 +3,19 @@
     - if (this.layout === 'columns')
       - this.padding = 'screen-tablet:pr-2';
 
-    - if (!this.grid)
+    - if (this.grid === 'false')
       - ;
       div class='${this.padding}'
         = partial('../' + this.markup);
 
-    - if (!this.grid)
+    - if (this.grid === 'false')
       - ;
       div
         div class='code-block mb-1'
           pre
             = 'code{{ '+ this.markup +' }}';
 
-    - if (this.grid)
+    - if (typeof this.grid === 'object')
       - ;
       div class='layout--gutter screen-mobile:layout--columns-gutter screen-tablet:layout--three-columns-gutter screen-desktop:layout--four-columns-gutter'
         - for (key in this.grid)
