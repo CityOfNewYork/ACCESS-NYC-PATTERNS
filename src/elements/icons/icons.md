@@ -1,0 +1,3 @@
+There are two options for using icons, either as an inline <code>svg</code> with the <code>use</code> tag, or as a utility class that sets the background image of the icon (<code>bg-</code>). The tradeoff for both cases is that you can change the color of inline svg icon shapes that have their fill set as <code>currentColor</code>. Icons with background images require less markup and their shape fill color will default to black or whatever fill color the shape is set to.
+
+To use the inline <code>svgs</code>, include the icon symbol in your page markup. This can be found in this repositories source under <code>./src/views/partials/icons.slm</code>.

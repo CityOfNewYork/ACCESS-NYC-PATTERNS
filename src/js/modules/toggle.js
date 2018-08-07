@@ -1,5 +1,7 @@
 'use strict';
 
+import Utility from './utility';
+
 /**
  * The Simple Toggle class
  * @class
@@ -39,6 +41,12 @@ class Toggle {
       event.preventDefault();
 
       this._toggle(event);
+
+      // eslint-disable-next-line no-console
+      if (Utility.debug()) console.dir({
+          'event': event,
+          'settings': this._settings
+        });
     });
 
     return this;

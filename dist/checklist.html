@@ -25,19 +25,24 @@
     <a class="hidden" href="#main-content">Skip to main content</a>
     <header class="px-2">
       <div class="border-b border-color-grey-light">
-        <div class="flex items-center justify-between py-4 px-2">
+        <div class="flex items-center justify-between p-2 screen-tablet:py-4 screen-tablet:px-2">
           <div>
             <h1 class="m-0 p-0 leading-normal"><span class="hidden">ACCESS NYC</span>
-              <svg aria-hidden="true" class="icon-logo-full--large text-color-blue-dark">
+              <svg aria-hidden="true" class="icon-logo-mark screen-tablet:hidden">
+                <use xlink:href="#icon-logo-mark"></use>
+              </svg>
+              <svg aria-hidden="true" class="icon-logo-full--large text-color-blue-dark hidden screen-tablet:inline-block">
                 <use xlink:href="#icon-logo-full"></use>
               </svg>
             </h1>
           </div>
           <div class="flex items-center">
-            <h2 class="type-h1 m-0 text-color-blue-dark">Patterns</h2>
+            <h2 class="text-font-size-small m-0 text-color-blue-dark screen-tablet:hidden">Patterns</h2>
+            <h2 aria-hidden="true" class="type-h1 m-0 text-color-blue-dark hidden screen-tablet:inline-block">Patterns</h2>
             <nav class="text-font-size-small">
-              <a class="text-color-blue-dark border-2 rounded-lg no-underline px-1 ml-2" href="https://github.com/CityOfNewYork/ACCESS-NYC-PATTERNS">0.0.10</a>
-              <a class="ml-2" data-js="toggle" href="#main-menu">Menu</a>
+              <a class="rounded-lg text-color-blue-dark border-2 no-underline px-1 ml-2 hidden screen-tablet:inline-block" href="https://github.com/CityOfNewYork/ACCESS-NYC-PATTERNS">0.0.10</a>
+              <a aria-hidden="true" class="ml-1 screen-tablet:ml-2 screen-tablet:hidden" href="https://github.com/CityOfNewYork/ACCESS-NYC-PATTERNS">0.0.10</a>
+              <a class="ml-1 screen-tablet:ml-2" data-js="toggle" href="#main-menu">Menu</a>
             </nav>
           </div>
         </div>
@@ -98,13 +103,13 @@
     </aside>
     <main class="pt-4" id="main-content">
       <article class="py-4">
-        <header class="page-wrapper layout--home-body">
+        <header class="page-wrapper px-2 screen-desktop:px-0 layout--home-body">
           <div class="my-0 w-full">
             <h1 class="text-color-blue-dark px-2 m-0">Checklist</h1>
           </div>
         </header>
         <section class="pb-4 mb-4" id="default-styling">
-          <div class="page-wrapper">
+          <div class="page-wrapper px-2 screen-desktop:px-0">
             <header class="layout--home-body">
               <div class="my-0 pt-1 px-2 border-b border-color-grey-light">
                 <h2>
@@ -115,33 +120,34 @@
             <div class="layout--home-body">
               <div class="px-2 text-font-size-small"></div>
             </div>
-            <div class="layout--columns justify-between">
-              <div class="pr-2">
-                <div class="c-checklist">
-                  <ul>
-                    <li>Checklist item default
+            <div class="layout--gutter screen-tablet:layout--columns justify-between">
+              <div class="layout--gutter screen-mobile:layout--columns-gutter screen-tablet:layout--three-columns-gutter screen-desktop:layout--four-columns-gutter">
+                <div class="flex flex-col justify-between items-center border border-color-grey-light p-3">
+                  <div class="pb-2">
+                    <div class="c-checklist">
                       <ul>
-                        <li>Nested checklist item</li>
-                        <li>Nested checklist item</li>
-                        <li>Nested checklist item</li>
+                        <li>Checklist item default
+                          <ul>
+                            <li>Nested checklist item</li>
+                            <li>Nested checklist item</li>
+                            <li>Nested checklist item</li>
+                          </ul>
+                        </li>
+                        <li class="c-checklist__item-application">Checklist item Application
+                          <ul>
+                            <li>Nested checklist item</li>
+                            <li>Nested checklist item</li>
+                            <li>Nested checklist item</li>
+                          </ul>
+                        </li>
+                        <li class="c-checklist__item-badge">Checklist item Badge</li>
+                        <li class="c-checklist__item-flag">Checklist item Flag</li>
+                        <li class="c-checklist__item-calendar">Checklist item Calendar</li>
+                        <li class="c-checklist__item-generic">Checklist item Generic</li>
                       </ul>
-                    </li>
-                    <li class="c-checklist__item-application">Checklist item Application
-                      <ul>
-                        <li>Nested checklist item</li>
-                        <li>Nested checklist item</li>
-                        <li>Nested checklist item</li>
-                      </ul>
-                    </li>
-                    <li class="c-checklist__item-badge">Checklist item Badge</li>
-                    <li class="c-checklist__item-flag">Checklist item Flag</li>
-                    <li class="c-checklist__item-calendar">Checklist item Calendar</li>
-                    <li class="c-checklist__item-generic">Checklist item Generic</li>
-                  </ul>
-                </div>
-              </div>
-              <div>
-                <div class="code-block mb-1"><pre>&lt;div class=&quot;c-checklist&quot;&gt;
+                    </div>
+                  </div>
+                  <div class="code-block mb-1"><pre>&lt;div class=&quot;c-checklist&quot;&gt;
   &lt;ul&gt;
     &lt;li&gt;Checklist item default
       &lt;ul&gt;
@@ -163,6 +169,199 @@
     &lt;li class=&quot;c-checklist__item-generic&quot;&gt;Checklist item Generic&lt;/li&gt;
   &lt;/ul&gt;
 &lt;/div&gt;</pre></div>
+                </div>
+                <div class="flex flex-col justify-between items-center border border-color-grey-light p-3">
+                  <div class="pb-2">
+                    <div class="c-checklist">
+                      <ul>
+                        <li>Checklist item default
+                          <ul>
+                            <li>Nested checklist item</li>
+                            <li>Nested checklist item</li>
+                            <li>Nested checklist item</li>
+                          </ul>
+                        </li>
+                        <li class="c-checklist__item-application">Checklist item Application
+                          <ul>
+                            <li>Nested checklist item</li>
+                            <li>Nested checklist item</li>
+                            <li>Nested checklist item</li>
+                          </ul>
+                        </li>
+                        <li class="c-checklist__item-badge">Checklist item Badge</li>
+                        <li class="c-checklist__item-flag">Checklist item Flag</li>
+                        <li class="c-checklist__item-calendar">Checklist item Calendar</li>
+                        <li class="c-checklist__item-generic">Checklist item Generic</li>
+                      </ul>
+                    </div>
+                  </div>
+                  <div class="code-block mb-1"><pre>&lt;div class=&quot;c-checklist&quot;&gt;
+  &lt;ul&gt;
+    &lt;li&gt;Checklist item default
+      &lt;ul&gt;
+        &lt;li&gt;Nested checklist item&lt;/li&gt;
+        &lt;li&gt;Nested checklist item&lt;/li&gt;
+        &lt;li&gt;Nested checklist item&lt;/li&gt;
+      &lt;/ul&gt;
+    &lt;/li&gt;
+    &lt;li class=&quot;c-checklist__item-application&quot;&gt;Checklist item Application
+      &lt;ul&gt;
+        &lt;li&gt;Nested checklist item&lt;/li&gt;
+        &lt;li&gt;Nested checklist item&lt;/li&gt;
+        &lt;li&gt;Nested checklist item&lt;/li&gt;
+      &lt;/ul&gt;
+    &lt;/li&gt;
+    &lt;li class=&quot;c-checklist__item-badge&quot;&gt;Checklist item Badge&lt;/li&gt;
+    &lt;li class=&quot;c-checklist__item-flag&quot;&gt;Checklist item Flag&lt;/li&gt;
+    &lt;li class=&quot;c-checklist__item-calendar&quot;&gt;Checklist item Calendar&lt;/li&gt;
+    &lt;li class=&quot;c-checklist__item-generic&quot;&gt;Checklist item Generic&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/div&gt;</pre></div>
+                </div>
+                <div class="flex flex-col justify-between items-center border border-color-grey-light p-3">
+                  <div class="pb-2">
+                    <div class="c-checklist">
+                      <ul>
+                        <li>Checklist item default
+                          <ul>
+                            <li>Nested checklist item</li>
+                            <li>Nested checklist item</li>
+                            <li>Nested checklist item</li>
+                          </ul>
+                        </li>
+                        <li class="c-checklist__item-application">Checklist item Application
+                          <ul>
+                            <li>Nested checklist item</li>
+                            <li>Nested checklist item</li>
+                            <li>Nested checklist item</li>
+                          </ul>
+                        </li>
+                        <li class="c-checklist__item-badge">Checklist item Badge</li>
+                        <li class="c-checklist__item-flag">Checklist item Flag</li>
+                        <li class="c-checklist__item-calendar">Checklist item Calendar</li>
+                        <li class="c-checklist__item-generic">Checklist item Generic</li>
+                      </ul>
+                    </div>
+                  </div>
+                  <div class="code-block mb-1"><pre>&lt;div class=&quot;c-checklist&quot;&gt;
+  &lt;ul&gt;
+    &lt;li&gt;Checklist item default
+      &lt;ul&gt;
+        &lt;li&gt;Nested checklist item&lt;/li&gt;
+        &lt;li&gt;Nested checklist item&lt;/li&gt;
+        &lt;li&gt;Nested checklist item&lt;/li&gt;
+      &lt;/ul&gt;
+    &lt;/li&gt;
+    &lt;li class=&quot;c-checklist__item-application&quot;&gt;Checklist item Application
+      &lt;ul&gt;
+        &lt;li&gt;Nested checklist item&lt;/li&gt;
+        &lt;li&gt;Nested checklist item&lt;/li&gt;
+        &lt;li&gt;Nested checklist item&lt;/li&gt;
+      &lt;/ul&gt;
+    &lt;/li&gt;
+    &lt;li class=&quot;c-checklist__item-badge&quot;&gt;Checklist item Badge&lt;/li&gt;
+    &lt;li class=&quot;c-checklist__item-flag&quot;&gt;Checklist item Flag&lt;/li&gt;
+    &lt;li class=&quot;c-checklist__item-calendar&quot;&gt;Checklist item Calendar&lt;/li&gt;
+    &lt;li class=&quot;c-checklist__item-generic&quot;&gt;Checklist item Generic&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/div&gt;</pre></div>
+                </div>
+                <div class="flex flex-col justify-between items-center border border-color-grey-light p-3">
+                  <div class="pb-2">
+                    <div class="c-checklist">
+                      <ul>
+                        <li>Checklist item default
+                          <ul>
+                            <li>Nested checklist item</li>
+                            <li>Nested checklist item</li>
+                            <li>Nested checklist item</li>
+                          </ul>
+                        </li>
+                        <li class="c-checklist__item-application">Checklist item Application
+                          <ul>
+                            <li>Nested checklist item</li>
+                            <li>Nested checklist item</li>
+                            <li>Nested checklist item</li>
+                          </ul>
+                        </li>
+                        <li class="c-checklist__item-badge">Checklist item Badge</li>
+                        <li class="c-checklist__item-flag">Checklist item Flag</li>
+                        <li class="c-checklist__item-calendar">Checklist item Calendar</li>
+                        <li class="c-checklist__item-generic">Checklist item Generic</li>
+                      </ul>
+                    </div>
+                  </div>
+                  <div class="code-block mb-1"><pre>&lt;div class=&quot;c-checklist&quot;&gt;
+  &lt;ul&gt;
+    &lt;li&gt;Checklist item default
+      &lt;ul&gt;
+        &lt;li&gt;Nested checklist item&lt;/li&gt;
+        &lt;li&gt;Nested checklist item&lt;/li&gt;
+        &lt;li&gt;Nested checklist item&lt;/li&gt;
+      &lt;/ul&gt;
+    &lt;/li&gt;
+    &lt;li class=&quot;c-checklist__item-application&quot;&gt;Checklist item Application
+      &lt;ul&gt;
+        &lt;li&gt;Nested checklist item&lt;/li&gt;
+        &lt;li&gt;Nested checklist item&lt;/li&gt;
+        &lt;li&gt;Nested checklist item&lt;/li&gt;
+      &lt;/ul&gt;
+    &lt;/li&gt;
+    &lt;li class=&quot;c-checklist__item-badge&quot;&gt;Checklist item Badge&lt;/li&gt;
+    &lt;li class=&quot;c-checklist__item-flag&quot;&gt;Checklist item Flag&lt;/li&gt;
+    &lt;li class=&quot;c-checklist__item-calendar&quot;&gt;Checklist item Calendar&lt;/li&gt;
+    &lt;li class=&quot;c-checklist__item-generic&quot;&gt;Checklist item Generic&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/div&gt;</pre></div>
+                </div>
+                <div class="flex flex-col justify-between items-center border border-color-grey-light p-3">
+                  <div class="pb-2">
+                    <div class="c-checklist">
+                      <ul>
+                        <li>Checklist item default
+                          <ul>
+                            <li>Nested checklist item</li>
+                            <li>Nested checklist item</li>
+                            <li>Nested checklist item</li>
+                          </ul>
+                        </li>
+                        <li class="c-checklist__item-application">Checklist item Application
+                          <ul>
+                            <li>Nested checklist item</li>
+                            <li>Nested checklist item</li>
+                            <li>Nested checklist item</li>
+                          </ul>
+                        </li>
+                        <li class="c-checklist__item-badge">Checklist item Badge</li>
+                        <li class="c-checklist__item-flag">Checklist item Flag</li>
+                        <li class="c-checklist__item-calendar">Checklist item Calendar</li>
+                        <li class="c-checklist__item-generic">Checklist item Generic</li>
+                      </ul>
+                    </div>
+                  </div>
+                  <div class="code-block mb-1"><pre>&lt;div class=&quot;c-checklist&quot;&gt;
+  &lt;ul&gt;
+    &lt;li&gt;Checklist item default
+      &lt;ul&gt;
+        &lt;li&gt;Nested checklist item&lt;/li&gt;
+        &lt;li&gt;Nested checklist item&lt;/li&gt;
+        &lt;li&gt;Nested checklist item&lt;/li&gt;
+      &lt;/ul&gt;
+    &lt;/li&gt;
+    &lt;li class=&quot;c-checklist__item-application&quot;&gt;Checklist item Application
+      &lt;ul&gt;
+        &lt;li&gt;Nested checklist item&lt;/li&gt;
+        &lt;li&gt;Nested checklist item&lt;/li&gt;
+        &lt;li&gt;Nested checklist item&lt;/li&gt;
+      &lt;/ul&gt;
+    &lt;/li&gt;
+    &lt;li class=&quot;c-checklist__item-badge&quot;&gt;Checklist item Badge&lt;/li&gt;
+    &lt;li class=&quot;c-checklist__item-flag&quot;&gt;Checklist item Flag&lt;/li&gt;
+    &lt;li class=&quot;c-checklist__item-calendar&quot;&gt;Checklist item Calendar&lt;/li&gt;
+    &lt;li class=&quot;c-checklist__item-generic&quot;&gt;Checklist item Generic&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/div&gt;</pre></div>
+                </div>
               </div>
             </div>
           </div>

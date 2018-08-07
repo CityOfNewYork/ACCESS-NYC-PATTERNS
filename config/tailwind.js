@@ -52,9 +52,9 @@ module.exports = {
     maxWidth: ['responsive'],
     overflow: ['responsive'],
     padding: ['responsive'],
-    textColors: ['hover'],
+    textColors: ['responsive', 'hover'],
     textSizes: ['responsive'],
-    textStyle: [],
+    textStyle: ['responsive'],
     whitespace: ['responsive'],
     width: ['responsive'],
     height: ['responsive']

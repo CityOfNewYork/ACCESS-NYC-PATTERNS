@@ -25,19 +25,24 @@
     <a class="hidden" href="#main-content">Skip to main content</a>
     <header class="px-2">
       <div class="border-b border-color-grey-light">
-        <div class="flex items-center justify-between py-4 px-2">
+        <div class="flex items-center justify-between p-2 screen-tablet:py-4 screen-tablet:px-2">
           <div>
             <h1 class="m-0 p-0 leading-normal"><span class="hidden">ACCESS NYC</span>
-              <svg aria-hidden="true" class="icon-logo-full--large text-color-blue-dark">
+              <svg aria-hidden="true" class="icon-logo-mark screen-tablet:hidden">
+                <use xlink:href="#icon-logo-mark"></use>
+              </svg>
+              <svg aria-hidden="true" class="icon-logo-full--large text-color-blue-dark hidden screen-tablet:inline-block">
                 <use xlink:href="#icon-logo-full"></use>
               </svg>
             </h1>
           </div>
           <div class="flex items-center">
-            <h2 class="type-h1 m-0 text-color-blue-dark">Patterns</h2>
+            <h2 class="text-font-size-small m-0 text-color-blue-dark screen-tablet:hidden">Patterns</h2>
+            <h2 aria-hidden="true" class="type-h1 m-0 text-color-blue-dark hidden screen-tablet:inline-block">Patterns</h2>
             <nav class="text-font-size-small">
-              <a class="text-color-blue-dark border-2 rounded-lg no-underline px-1 ml-2" href="https://github.com/CityOfNewYork/ACCESS-NYC-PATTERNS">0.0.10</a>
-              <a class="ml-2" data-js="toggle" href="#main-menu">Menu</a>
+              <a class="rounded-lg text-color-blue-dark border-2 no-underline px-1 ml-2 hidden screen-tablet:inline-block" href="https://github.com/CityOfNewYork/ACCESS-NYC-PATTERNS">0.0.10</a>
+              <a aria-hidden="true" class="ml-1 screen-tablet:ml-2 screen-tablet:hidden" href="https://github.com/CityOfNewYork/ACCESS-NYC-PATTERNS">0.0.10</a>
+              <a class="ml-1 screen-tablet:ml-2" data-js="toggle" href="#main-menu">Menu</a>
             </nav>
           </div>
         </div>
@@ -98,13 +103,13 @@
     </aside>
     <main class="pt-4" id="main-content">
       <article class="py-4">
-        <header class="page-wrapper layout--home-body">
+        <header class="page-wrapper px-2 screen-desktop:px-0 layout--home-body">
           <div class="my-0 w-full">
             <h1 class="text-color-blue-dark px-2 m-0">Buttons</h1>
           </div>
         </header>
         <section class="pb-4 mb-4" id="base-styling">
-          <div class="page-wrapper">
+          <div class="page-wrapper px-2 screen-desktop:px-0">
             <header class="layout--home-body">
               <div class="my-0 pt-1 px-2 border-b border-color-grey-light">
                 <h2>
@@ -118,22 +123,64 @@
 <p>For the most part, buttons should be marked up with the <code>&lt;button&gt;</code> tag for screen readers. If a button has link functionality, however, the <code>role</code> attribute can be set to <code>button</code>. This documentation displays both
   markup types for reference.</p></div>
             </div>
-            <div class="layout--columns justify-between">
-              <div class="pr-2">
-                <button class="btn mb-2">Button</button>
-                <br />
-                <a class="btn" role="button">Button</a>
-              </div>
-              <div>
-                <div class="code-block mb-1"><pre>&lt;button class=&quot;btn mb-2&quot;&gt;Button&lt;/button&gt;
+            <div class="layout--gutter screen-tablet:layout--columns justify-between">
+              <div class="layout--gutter screen-mobile:layout--columns-gutter screen-tablet:layout--three-columns-gutter screen-desktop:layout--four-columns-gutter">
+                <div class="flex flex-col justify-between items-center border border-color-grey-light p-3">
+                  <div class="pb-2">
+                    <button class="btn mb-2">Button</button>
+                    <br />
+                    <a class="btn" role="button">Button</a>
+                  </div>
+                  <div class="code-block mb-1"><pre>&lt;button class=&quot;btn mb-2&quot;&gt;Button&lt;/button&gt;
 &lt;br /&gt;
 &lt;a class=&quot;btn&quot; role=&quot;button&quot;&gt;Button&lt;/a&gt;</pre></div>
+                </div>
+                <div class="flex flex-col justify-between items-center border border-color-grey-light p-3">
+                  <div class="pb-2">
+                    <button class="btn mb-2">Button</button>
+                    <br />
+                    <a class="btn" role="button">Button</a>
+                  </div>
+                  <div class="code-block mb-1"><pre>&lt;button class=&quot;btn mb-2&quot;&gt;Button&lt;/button&gt;
+&lt;br /&gt;
+&lt;a class=&quot;btn&quot; role=&quot;button&quot;&gt;Button&lt;/a&gt;</pre></div>
+                </div>
+                <div class="flex flex-col justify-between items-center border border-color-grey-light p-3">
+                  <div class="pb-2">
+                    <button class="btn mb-2">Button</button>
+                    <br />
+                    <a class="btn" role="button">Button</a>
+                  </div>
+                  <div class="code-block mb-1"><pre>&lt;button class=&quot;btn mb-2&quot;&gt;Button&lt;/button&gt;
+&lt;br /&gt;
+&lt;a class=&quot;btn&quot; role=&quot;button&quot;&gt;Button&lt;/a&gt;</pre></div>
+                </div>
+                <div class="flex flex-col justify-between items-center border border-color-grey-light p-3">
+                  <div class="pb-2">
+                    <button class="btn mb-2">Button</button>
+                    <br />
+                    <a class="btn" role="button">Button</a>
+                  </div>
+                  <div class="code-block mb-1"><pre>&lt;button class=&quot;btn mb-2&quot;&gt;Button&lt;/button&gt;
+&lt;br /&gt;
+&lt;a class=&quot;btn&quot; role=&quot;button&quot;&gt;Button&lt;/a&gt;</pre></div>
+                </div>
+                <div class="flex flex-col justify-between items-center border border-color-grey-light p-3">
+                  <div class="pb-2">
+                    <button class="btn mb-2">Button</button>
+                    <br />
+                    <a class="btn" role="button">Button</a>
+                  </div>
+                  <div class="code-block mb-1"><pre>&lt;button class=&quot;btn mb-2&quot;&gt;Button&lt;/button&gt;
+&lt;br /&gt;
+&lt;a class=&quot;btn&quot; role=&quot;button&quot;&gt;Button&lt;/a&gt;</pre></div>
+                </div>
               </div>
             </div>
           </div>
         </section>
         <section class="pb-4 mb-4" id="primary-button">
-          <div class="page-wrapper">
+          <div class="page-wrapper px-2 screen-desktop:px-0">
             <header class="layout--home-body">
               <div class="my-0 pt-1 px-2 border-b border-color-grey-light">
                 <h2>
@@ -144,22 +191,64 @@
             <div class="layout--home-body">
               <div class="px-2 text-font-size-small"></div>
             </div>
-            <div class="layout--columns justify-between">
-              <div class="pr-2">
-                <button class="btn-primary mb-2">Primary Button</button>
-                <br />
-                <a class="btn-primary">Primary Link</a>
-              </div>
-              <div>
-                <div class="code-block mb-1"><pre>&lt;button class=&quot;btn-primary mb-2&quot;&gt;Primary Button&lt;/button&gt;
+            <div class="layout--gutter screen-tablet:layout--columns justify-between">
+              <div class="layout--gutter screen-mobile:layout--columns-gutter screen-tablet:layout--three-columns-gutter screen-desktop:layout--four-columns-gutter">
+                <div class="flex flex-col justify-between items-center border border-color-grey-light p-3">
+                  <div class="pb-2">
+                    <button class="btn-primary mb-2">Primary Button</button>
+                    <br />
+                    <a class="btn-primary">Primary Link</a>
+                  </div>
+                  <div class="code-block mb-1"><pre>&lt;button class=&quot;btn-primary mb-2&quot;&gt;Primary Button&lt;/button&gt;
 &lt;br /&gt;
 &lt;a class=&quot;btn-primary&quot;&gt;Primary Link&lt;/a&gt;</pre></div>
+                </div>
+                <div class="flex flex-col justify-between items-center border border-color-grey-light p-3">
+                  <div class="pb-2">
+                    <button class="btn-primary mb-2">Primary Button</button>
+                    <br />
+                    <a class="btn-primary">Primary Link</a>
+                  </div>
+                  <div class="code-block mb-1"><pre>&lt;button class=&quot;btn-primary mb-2&quot;&gt;Primary Button&lt;/button&gt;
+&lt;br /&gt;
+&lt;a class=&quot;btn-primary&quot;&gt;Primary Link&lt;/a&gt;</pre></div>
+                </div>
+                <div class="flex flex-col justify-between items-center border border-color-grey-light p-3">
+                  <div class="pb-2">
+                    <button class="btn-primary mb-2">Primary Button</button>
+                    <br />
+                    <a class="btn-primary">Primary Link</a>
+                  </div>
+                  <div class="code-block mb-1"><pre>&lt;button class=&quot;btn-primary mb-2&quot;&gt;Primary Button&lt;/button&gt;
+&lt;br /&gt;
+&lt;a class=&quot;btn-primary&quot;&gt;Primary Link&lt;/a&gt;</pre></div>
+                </div>
+                <div class="flex flex-col justify-between items-center border border-color-grey-light p-3">
+                  <div class="pb-2">
+                    <button class="btn-primary mb-2">Primary Button</button>
+                    <br />
+                    <a class="btn-primary">Primary Link</a>
+                  </div>
+                  <div class="code-block mb-1"><pre>&lt;button class=&quot;btn-primary mb-2&quot;&gt;Primary Button&lt;/button&gt;
+&lt;br /&gt;
+&lt;a class=&quot;btn-primary&quot;&gt;Primary Link&lt;/a&gt;</pre></div>
+                </div>
+                <div class="flex flex-col justify-between items-center border border-color-grey-light p-3">
+                  <div class="pb-2">
+                    <button class="btn-primary mb-2">Primary Button</button>
+                    <br />
+                    <a class="btn-primary">Primary Link</a>
+                  </div>
+                  <div class="code-block mb-1"><pre>&lt;button class=&quot;btn-primary mb-2&quot;&gt;Primary Button&lt;/button&gt;
+&lt;br /&gt;
+&lt;a class=&quot;btn-primary&quot;&gt;Primary Link&lt;/a&gt;</pre></div>
+                </div>
               </div>
             </div>
           </div>
         </section>
         <section class="pb-4 mb-4" id="secondary-button">
-          <div class="page-wrapper">
+          <div class="page-wrapper px-2 screen-desktop:px-0">
             <header class="layout--home-body">
               <div class="my-0 pt-1 px-2 border-b border-color-grey-light">
                 <h2>
@@ -170,22 +259,64 @@
             <div class="layout--home-body">
               <div class="px-2 text-font-size-small"></div>
             </div>
-            <div class="layout--columns justify-between">
-              <div class="pr-2">
-                <button class="btn-secondary mb-2">Secondary Button</button>
-                <br />
-                <a class="btn-secondary">Secondary Link</a>
-              </div>
-              <div>
-                <div class="code-block mb-1"><pre>&lt;button class=&quot;btn-secondary mb-2&quot;&gt;Secondary Button&lt;/button&gt;
+            <div class="layout--gutter screen-tablet:layout--columns justify-between">
+              <div class="layout--gutter screen-mobile:layout--columns-gutter screen-tablet:layout--three-columns-gutter screen-desktop:layout--four-columns-gutter">
+                <div class="flex flex-col justify-between items-center border border-color-grey-light p-3">
+                  <div class="pb-2">
+                    <button class="btn-secondary mb-2">Secondary Button</button>
+                    <br />
+                    <a class="btn-secondary">Secondary Link</a>
+                  </div>
+                  <div class="code-block mb-1"><pre>&lt;button class=&quot;btn-secondary mb-2&quot;&gt;Secondary Button&lt;/button&gt;
 &lt;br /&gt;
 &lt;a class=&quot;btn-secondary&quot;&gt;Secondary Link&lt;/a&gt;</pre></div>
+                </div>
+                <div class="flex flex-col justify-between items-center border border-color-grey-light p-3">
+                  <div class="pb-2">
+                    <button class="btn-secondary mb-2">Secondary Button</button>
+                    <br />
+                    <a class="btn-secondary">Secondary Link</a>
+                  </div>
+                  <div class="code-block mb-1"><pre>&lt;button class=&quot;btn-secondary mb-2&quot;&gt;Secondary Button&lt;/button&gt;
+&lt;br /&gt;
+&lt;a class=&quot;btn-secondary&quot;&gt;Secondary Link&lt;/a&gt;</pre></div>
+                </div>
+                <div class="flex flex-col justify-between items-center border border-color-grey-light p-3">
+                  <div class="pb-2">
+                    <button class="btn-secondary mb-2">Secondary Button</button>
+                    <br />
+                    <a class="btn-secondary">Secondary Link</a>
+                  </div>
+                  <div class="code-block mb-1"><pre>&lt;button class=&quot;btn-secondary mb-2&quot;&gt;Secondary Button&lt;/button&gt;
+&lt;br /&gt;
+&lt;a class=&quot;btn-secondary&quot;&gt;Secondary Link&lt;/a&gt;</pre></div>
+                </div>
+                <div class="flex flex-col justify-between items-center border border-color-grey-light p-3">
+                  <div class="pb-2">
+                    <button class="btn-secondary mb-2">Secondary Button</button>
+                    <br />
+                    <a class="btn-secondary">Secondary Link</a>
+                  </div>
+                  <div class="code-block mb-1"><pre>&lt;button class=&quot;btn-secondary mb-2&quot;&gt;Secondary Button&lt;/button&gt;
+&lt;br /&gt;
+&lt;a class=&quot;btn-secondary&quot;&gt;Secondary Link&lt;/a&gt;</pre></div>
+                </div>
+                <div class="flex flex-col justify-between items-center border border-color-grey-light p-3">
+                  <div class="pb-2">
+                    <button class="btn-secondary mb-2">Secondary Button</button>
+                    <br />
+                    <a class="btn-secondary">Secondary Link</a>
+                  </div>
+                  <div class="code-block mb-1"><pre>&lt;button class=&quot;btn-secondary mb-2&quot;&gt;Secondary Button&lt;/button&gt;
+&lt;br /&gt;
+&lt;a class=&quot;btn-secondary&quot;&gt;Secondary Link&lt;/a&gt;</pre></div>
+                </div>
               </div>
             </div>
           </div>
         </section>
         <section class="pb-4 mb-4" id="small-button">
-          <div class="page-wrapper">
+          <div class="page-wrapper px-2 screen-desktop:px-0">
             <header class="layout--home-body">
               <div class="my-0 pt-1 px-2 border-b border-color-grey-light">
                 <h2>
@@ -196,22 +327,64 @@
             <div class="layout--home-body">
               <div class="px-2 text-font-size-small"><p>The small button modifier will decrease any button font size to .727rem.</p></div>
             </div>
-            <div class="layout--columns justify-between">
-              <div class="pr-2">
-                <button class="btn-primary btn-small mb-2">Small Button</button>
-                <br />
-                <a class="btn-primary btn-small" role="button">Small Link</a>
-              </div>
-              <div>
-                <div class="code-block mb-1"><pre>&lt;button class=&quot;btn-primary btn-small mb-2&quot;&gt;Small Button&lt;/button&gt;
+            <div class="layout--gutter screen-tablet:layout--columns justify-between">
+              <div class="layout--gutter screen-mobile:layout--columns-gutter screen-tablet:layout--three-columns-gutter screen-desktop:layout--four-columns-gutter">
+                <div class="flex flex-col justify-between items-center border border-color-grey-light p-3">
+                  <div class="pb-2">
+                    <button class="btn-primary btn-small mb-2">Small Button</button>
+                    <br />
+                    <a class="btn-primary btn-small" role="button">Small Link</a>
+                  </div>
+                  <div class="code-block mb-1"><pre>&lt;button class=&quot;btn-primary btn-small mb-2&quot;&gt;Small Button&lt;/button&gt;
 &lt;br /&gt;
 &lt;a class=&quot;btn-primary btn-small&quot; role=&quot;button&quot;&gt;Small Link&lt;/a&gt;</pre></div>
+                </div>
+                <div class="flex flex-col justify-between items-center border border-color-grey-light p-3">
+                  <div class="pb-2">
+                    <button class="btn-primary btn-small mb-2">Small Button</button>
+                    <br />
+                    <a class="btn-primary btn-small" role="button">Small Link</a>
+                  </div>
+                  <div class="code-block mb-1"><pre>&lt;button class=&quot;btn-primary btn-small mb-2&quot;&gt;Small Button&lt;/button&gt;
+&lt;br /&gt;
+&lt;a class=&quot;btn-primary btn-small&quot; role=&quot;button&quot;&gt;Small Link&lt;/a&gt;</pre></div>
+                </div>
+                <div class="flex flex-col justify-between items-center border border-color-grey-light p-3">
+                  <div class="pb-2">
+                    <button class="btn-primary btn-small mb-2">Small Button</button>
+                    <br />
+                    <a class="btn-primary btn-small" role="button">Small Link</a>
+                  </div>
+                  <div class="code-block mb-1"><pre>&lt;button class=&quot;btn-primary btn-small mb-2&quot;&gt;Small Button&lt;/button&gt;
+&lt;br /&gt;
+&lt;a class=&quot;btn-primary btn-small&quot; role=&quot;button&quot;&gt;Small Link&lt;/a&gt;</pre></div>
+                </div>
+                <div class="flex flex-col justify-between items-center border border-color-grey-light p-3">
+                  <div class="pb-2">
+                    <button class="btn-primary btn-small mb-2">Small Button</button>
+                    <br />
+                    <a class="btn-primary btn-small" role="button">Small Link</a>
+                  </div>
+                  <div class="code-block mb-1"><pre>&lt;button class=&quot;btn-primary btn-small mb-2&quot;&gt;Small Button&lt;/button&gt;
+&lt;br /&gt;
+&lt;a class=&quot;btn-primary btn-small&quot; role=&quot;button&quot;&gt;Small Link&lt;/a&gt;</pre></div>
+                </div>
+                <div class="flex flex-col justify-between items-center border border-color-grey-light p-3">
+                  <div class="pb-2">
+                    <button class="btn-primary btn-small mb-2">Small Button</button>
+                    <br />
+                    <a class="btn-primary btn-small" role="button">Small Link</a>
+                  </div>
+                  <div class="code-block mb-1"><pre>&lt;button class=&quot;btn-primary btn-small mb-2&quot;&gt;Small Button&lt;/button&gt;
+&lt;br /&gt;
+&lt;a class=&quot;btn-primary btn-small&quot; role=&quot;button&quot;&gt;Small Link&lt;/a&gt;</pre></div>
+                </div>
               </div>
             </div>
           </div>
         </section>
         <section class="pb-4 mb-4" id="normal-button">
-          <div class="page-wrapper">
+          <div class="page-wrapper px-2 screen-desktop:px-0">
             <header class="layout--home-body">
               <div class="my-0 pt-1 px-2 border-b border-color-grey-light">
                 <h2>
@@ -222,18 +395,44 @@
             <div class="layout--home-body">
               <div class="px-2 text-font-size-small"><p>The <code>btn-normal</code> class allows for setting responsive button sizes for tablet and desktop screens. This button will appear smaller on screens less than desktop width.</p></div>
             </div>
-            <div class="layout--columns justify-between">
-              <div class="pr-2">
-                <button class="btn-primary btn-small screen-desktop:btn-normal mb-2">Normal Button</button>
-              </div>
-              <div>
-                <div class="code-block mb-1"><pre>&lt;button class=&quot;btn-primary btn-small screen-desktop:btn-normal mb-2&quot;&gt;Normal Button&lt;/button&gt;</pre></div>
+            <div class="layout--gutter screen-tablet:layout--columns justify-between">
+              <div class="layout--gutter screen-mobile:layout--columns-gutter screen-tablet:layout--three-columns-gutter screen-desktop:layout--four-columns-gutter">
+                <div class="flex flex-col justify-between items-center border border-color-grey-light p-3">
+                  <div class="pb-2">
+                    <button class="btn-primary btn-small screen-desktop:btn-normal mb-2">Normal Button</button>
+                  </div>
+                  <div class="code-block mb-1"><pre>&lt;button class=&quot;btn-primary btn-small screen-desktop:btn-normal mb-2&quot;&gt;Normal Button&lt;/button&gt;</pre></div>
+                </div>
+                <div class="flex flex-col justify-between items-center border border-color-grey-light p-3">
+                  <div class="pb-2">
+                    <button class="btn-primary btn-small screen-desktop:btn-normal mb-2">Normal Button</button>
+                  </div>
+                  <div class="code-block mb-1"><pre>&lt;button class=&quot;btn-primary btn-small screen-desktop:btn-normal mb-2&quot;&gt;Normal Button&lt;/button&gt;</pre></div>
+                </div>
+                <div class="flex flex-col justify-between items-center border border-color-grey-light p-3">
+                  <div class="pb-2">
+                    <button class="btn-primary btn-small screen-desktop:btn-normal mb-2">Normal Button</button>
+                  </div>
+                  <div class="code-block mb-1"><pre>&lt;button class=&quot;btn-primary btn-small screen-desktop:btn-normal mb-2&quot;&gt;Normal Button&lt;/button&gt;</pre></div>
+                </div>
+                <div class="flex flex-col justify-between items-center border border-color-grey-light p-3">
+                  <div class="pb-2">
+                    <button class="btn-primary btn-small screen-desktop:btn-normal mb-2">Normal Button</button>
+                  </div>
+                  <div class="code-block mb-1"><pre>&lt;button class=&quot;btn-primary btn-small screen-desktop:btn-normal mb-2&quot;&gt;Normal Button&lt;/button&gt;</pre></div>
+                </div>
+                <div class="flex flex-col justify-between items-center border border-color-grey-light p-3">
+                  <div class="pb-2">
+                    <button class="btn-primary btn-small screen-desktop:btn-normal mb-2">Normal Button</button>
+                  </div>
+                  <div class="code-block mb-1"><pre>&lt;button class=&quot;btn-primary btn-small screen-desktop:btn-normal mb-2&quot;&gt;Normal Button&lt;/button&gt;</pre></div>
+                </div>
               </div>
             </div>
           </div>
         </section>
         <section class="pb-4 mb-4" id="tag-button">
-          <div class="page-wrapper">
+          <div class="page-wrapper px-2 screen-desktop:px-0">
             <header class="layout--home-body">
               <div class="my-0 pt-1 px-2 border-b border-color-grey-light">
                 <h2>
@@ -244,22 +443,64 @@
             <div class="layout--home-body">
               <div class="px-2 text-font-size-small"></div>
             </div>
-            <div class="layout--columns justify-between">
-              <div class="pr-2">
-                <button class="btn-primary btn-tag mb-2">Tag</button>
-                <br />
-                <a class="btn-primary btn-tag">Tag</a>
-              </div>
-              <div>
-                <div class="code-block mb-1"><pre>&lt;button class=&quot;btn-primary btn-tag mb-2&quot;&gt;Tag&lt;/button&gt;
+            <div class="layout--gutter screen-tablet:layout--columns justify-between">
+              <div class="layout--gutter screen-mobile:layout--columns-gutter screen-tablet:layout--three-columns-gutter screen-desktop:layout--four-columns-gutter">
+                <div class="flex flex-col justify-between items-center border border-color-grey-light p-3">
+                  <div class="pb-2">
+                    <button class="btn-primary btn-tag mb-2">Tag</button>
+                    <br />
+                    <a class="btn-primary btn-tag">Tag</a>
+                  </div>
+                  <div class="code-block mb-1"><pre>&lt;button class=&quot;btn-primary btn-tag mb-2&quot;&gt;Tag&lt;/button&gt;
 &lt;br /&gt;
 &lt;a class=&quot;btn-primary btn-tag&quot;&gt;Tag&lt;/a&gt;</pre></div>
+                </div>
+                <div class="flex flex-col justify-between items-center border border-color-grey-light p-3">
+                  <div class="pb-2">
+                    <button class="btn-primary btn-tag mb-2">Tag</button>
+                    <br />
+                    <a class="btn-primary btn-tag">Tag</a>
+                  </div>
+                  <div class="code-block mb-1"><pre>&lt;button class=&quot;btn-primary btn-tag mb-2&quot;&gt;Tag&lt;/button&gt;
+&lt;br /&gt;
+&lt;a class=&quot;btn-primary btn-tag&quot;&gt;Tag&lt;/a&gt;</pre></div>
+                </div>
+                <div class="flex flex-col justify-between items-center border border-color-grey-light p-3">
+                  <div class="pb-2">
+                    <button class="btn-primary btn-tag mb-2">Tag</button>
+                    <br />
+                    <a class="btn-primary btn-tag">Tag</a>
+                  </div>
+                  <div class="code-block mb-1"><pre>&lt;button class=&quot;btn-primary btn-tag mb-2&quot;&gt;Tag&lt;/button&gt;
+&lt;br /&gt;
+&lt;a class=&quot;btn-primary btn-tag&quot;&gt;Tag&lt;/a&gt;</pre></div>
+                </div>
+                <div class="flex flex-col justify-between items-center border border-color-grey-light p-3">
+                  <div class="pb-2">
+                    <button class="btn-primary btn-tag mb-2">Tag</button>
+                    <br />
+                    <a class="btn-primary btn-tag">Tag</a>
+                  </div>
+                  <div class="code-block mb-1"><pre>&lt;button class=&quot;btn-primary btn-tag mb-2&quot;&gt;Tag&lt;/button&gt;
+&lt;br /&gt;
+&lt;a class=&quot;btn-primary btn-tag&quot;&gt;Tag&lt;/a&gt;</pre></div>
+                </div>
+                <div class="flex flex-col justify-between items-center border border-color-grey-light p-3">
+                  <div class="pb-2">
+                    <button class="btn-primary btn-tag mb-2">Tag</button>
+                    <br />
+                    <a class="btn-primary btn-tag">Tag</a>
+                  </div>
+                  <div class="code-block mb-1"><pre>&lt;button class=&quot;btn-primary btn-tag mb-2&quot;&gt;Tag&lt;/button&gt;
+&lt;br /&gt;
+&lt;a class=&quot;btn-primary btn-tag&quot;&gt;Tag&lt;/a&gt;</pre></div>
+                </div>
               </div>
             </div>
           </div>
         </section>
         <section class="pb-4 mb-4" id="toggle-button">
-          <div class="page-wrapper">
+          <div class="page-wrapper px-2 screen-desktop:px-0">
             <header class="layout--home-body">
               <div class="my-0 pt-1 px-2 border-b border-color-grey-light">
                 <h2>
@@ -270,24 +511,74 @@
             <div class="layout--home-body">
               <div class="px-2 text-font-size-small"></div>
             </div>
-            <div class="layout--columns justify-between">
-              <div class="pr-2">
-                <button class="btn-toggle btn-primary mb-2">Toggle Button</button>
-                <button class="btn-toggle btn-primary active mb-2">Toggle Button (active)</button>
-                <a class="btn-toggle btn-primary mb-2">Toggle Link</a>
-                <a class="btn-toggle btn-primary active">Toggle Link (active)</a>
-              </div>
-              <div>
-                <div class="code-block mb-1"><pre>&lt;button class=&quot;btn-toggle btn-primary mb-2&quot;&gt;Toggle Button&lt;/button&gt;
+            <div class="layout--gutter screen-tablet:layout--columns justify-between">
+              <div class="layout--gutter screen-mobile:layout--columns-gutter screen-tablet:layout--three-columns-gutter screen-desktop:layout--four-columns-gutter">
+                <div class="flex flex-col justify-between items-center border border-color-grey-light p-3">
+                  <div class="pb-2">
+                    <button class="btn-toggle btn-primary mb-2">Toggle Button</button>
+                    <button class="btn-toggle btn-primary active mb-2">Toggle Button (active)</button>
+                    <a class="btn-toggle btn-primary mb-2">Toggle Link</a>
+                    <a class="btn-toggle btn-primary active">Toggle Link (active)</a>
+                  </div>
+                  <div class="code-block mb-1"><pre>&lt;button class=&quot;btn-toggle btn-primary mb-2&quot;&gt;Toggle Button&lt;/button&gt;
 &lt;button class=&quot;btn-toggle btn-primary active mb-2&quot;&gt;Toggle Button (active)&lt;/button&gt;
 &lt;a class=&quot;btn-toggle btn-primary mb-2&quot;&gt;Toggle Link&lt;/a&gt;
 &lt;a class=&quot;btn-toggle btn-primary active&quot;&gt;Toggle Link (active)&lt;/a&gt;</pre></div>
+                </div>
+                <div class="flex flex-col justify-between items-center border border-color-grey-light p-3">
+                  <div class="pb-2">
+                    <button class="btn-toggle btn-primary mb-2">Toggle Button</button>
+                    <button class="btn-toggle btn-primary active mb-2">Toggle Button (active)</button>
+                    <a class="btn-toggle btn-primary mb-2">Toggle Link</a>
+                    <a class="btn-toggle btn-primary active">Toggle Link (active)</a>
+                  </div>
+                  <div class="code-block mb-1"><pre>&lt;button class=&quot;btn-toggle btn-primary mb-2&quot;&gt;Toggle Button&lt;/button&gt;
+&lt;button class=&quot;btn-toggle btn-primary active mb-2&quot;&gt;Toggle Button (active)&lt;/button&gt;
+&lt;a class=&quot;btn-toggle btn-primary mb-2&quot;&gt;Toggle Link&lt;/a&gt;
+&lt;a class=&quot;btn-toggle btn-primary active&quot;&gt;Toggle Link (active)&lt;/a&gt;</pre></div>
+                </div>
+                <div class="flex flex-col justify-between items-center border border-color-grey-light p-3">
+                  <div class="pb-2">
+                    <button class="btn-toggle btn-primary mb-2">Toggle Button</button>
+                    <button class="btn-toggle btn-primary active mb-2">Toggle Button (active)</button>
+                    <a class="btn-toggle btn-primary mb-2">Toggle Link</a>
+                    <a class="btn-toggle btn-primary active">Toggle Link (active)</a>
+                  </div>
+                  <div class="code-block mb-1"><pre>&lt;button class=&quot;btn-toggle btn-primary mb-2&quot;&gt;Toggle Button&lt;/button&gt;
+&lt;button class=&quot;btn-toggle btn-primary active mb-2&quot;&gt;Toggle Button (active)&lt;/button&gt;
+&lt;a class=&quot;btn-toggle btn-primary mb-2&quot;&gt;Toggle Link&lt;/a&gt;
+&lt;a class=&quot;btn-toggle btn-primary active&quot;&gt;Toggle Link (active)&lt;/a&gt;</pre></div>
+                </div>
+                <div class="flex flex-col justify-between items-center border border-color-grey-light p-3">
+                  <div class="pb-2">
+                    <button class="btn-toggle btn-primary mb-2">Toggle Button</button>
+                    <button class="btn-toggle btn-primary active mb-2">Toggle Button (active)</button>
+                    <a class="btn-toggle btn-primary mb-2">Toggle Link</a>
+                    <a class="btn-toggle btn-primary active">Toggle Link (active)</a>
+                  </div>
+                  <div class="code-block mb-1"><pre>&lt;button class=&quot;btn-toggle btn-primary mb-2&quot;&gt;Toggle Button&lt;/button&gt;
+&lt;button class=&quot;btn-toggle btn-primary active mb-2&quot;&gt;Toggle Button (active)&lt;/button&gt;
+&lt;a class=&quot;btn-toggle btn-primary mb-2&quot;&gt;Toggle Link&lt;/a&gt;
+&lt;a class=&quot;btn-toggle btn-primary active&quot;&gt;Toggle Link (active)&lt;/a&gt;</pre></div>
+                </div>
+                <div class="flex flex-col justify-between items-center border border-color-grey-light p-3">
+                  <div class="pb-2">
+                    <button class="btn-toggle btn-primary mb-2">Toggle Button</button>
+                    <button class="btn-toggle btn-primary active mb-2">Toggle Button (active)</button>
+                    <a class="btn-toggle btn-primary mb-2">Toggle Link</a>
+                    <a class="btn-toggle btn-primary active">Toggle Link (active)</a>
+                  </div>
+                  <div class="code-block mb-1"><pre>&lt;button class=&quot;btn-toggle btn-primary mb-2&quot;&gt;Toggle Button&lt;/button&gt;
+&lt;button class=&quot;btn-toggle btn-primary active mb-2&quot;&gt;Toggle Button (active)&lt;/button&gt;
+&lt;a class=&quot;btn-toggle btn-primary mb-2&quot;&gt;Toggle Link&lt;/a&gt;
+&lt;a class=&quot;btn-toggle btn-primary active&quot;&gt;Toggle Link (active)&lt;/a&gt;</pre></div>
+                </div>
               </div>
             </div>
           </div>
         </section>
         <section class="pb-4 mb-4" id="text-button">
-          <div class="page-wrapper">
+          <div class="page-wrapper px-2 screen-desktop:px-0">
             <header class="layout--home-body">
               <div class="my-0 pt-1 px-2 border-b border-color-grey-light">
                 <h2>
@@ -298,22 +589,64 @@
             <div class="layout--home-body">
               <div class="px-2 text-font-size-small"></div>
             </div>
-            <div class="layout--columns justify-between">
-              <div class="pr-2">
-                <button class="btn-text mb-2">Plain Text Button</button>
-                <br />
-                <a class="btn-text">Plain Text Link</a>
-              </div>
-              <div>
-                <div class="code-block mb-1"><pre>&lt;button class=&quot;btn-text mb-2&quot;&gt;Plain Text Button&lt;/button&gt;
+            <div class="layout--gutter screen-tablet:layout--columns justify-between">
+              <div class="layout--gutter screen-mobile:layout--columns-gutter screen-tablet:layout--three-columns-gutter screen-desktop:layout--four-columns-gutter">
+                <div class="flex flex-col justify-between items-center border border-color-grey-light p-3">
+                  <div class="pb-2">
+                    <button class="btn-text mb-2">Plain Text Button</button>
+                    <br />
+                    <a class="btn-text">Plain Text Link</a>
+                  </div>
+                  <div class="code-block mb-1"><pre>&lt;button class=&quot;btn-text mb-2&quot;&gt;Plain Text Button&lt;/button&gt;
 &lt;br /&gt;
 &lt;a class=&quot;btn-text&quot;&gt;Plain Text Link&lt;/a&gt;</pre></div>
+                </div>
+                <div class="flex flex-col justify-between items-center border border-color-grey-light p-3">
+                  <div class="pb-2">
+                    <button class="btn-text mb-2">Plain Text Button</button>
+                    <br />
+                    <a class="btn-text">Plain Text Link</a>
+                  </div>
+                  <div class="code-block mb-1"><pre>&lt;button class=&quot;btn-text mb-2&quot;&gt;Plain Text Button&lt;/button&gt;
+&lt;br /&gt;
+&lt;a class=&quot;btn-text&quot;&gt;Plain Text Link&lt;/a&gt;</pre></div>
+                </div>
+                <div class="flex flex-col justify-between items-center border border-color-grey-light p-3">
+                  <div class="pb-2">
+                    <button class="btn-text mb-2">Plain Text Button</button>
+                    <br />
+                    <a class="btn-text">Plain Text Link</a>
+                  </div>
+                  <div class="code-block mb-1"><pre>&lt;button class=&quot;btn-text mb-2&quot;&gt;Plain Text Button&lt;/button&gt;
+&lt;br /&gt;
+&lt;a class=&quot;btn-text&quot;&gt;Plain Text Link&lt;/a&gt;</pre></div>
+                </div>
+                <div class="flex flex-col justify-between items-center border border-color-grey-light p-3">
+                  <div class="pb-2">
+                    <button class="btn-text mb-2">Plain Text Button</button>
+                    <br />
+                    <a class="btn-text">Plain Text Link</a>
+                  </div>
+                  <div class="code-block mb-1"><pre>&lt;button class=&quot;btn-text mb-2&quot;&gt;Plain Text Button&lt;/button&gt;
+&lt;br /&gt;
+&lt;a class=&quot;btn-text&quot;&gt;Plain Text Link&lt;/a&gt;</pre></div>
+                </div>
+                <div class="flex flex-col justify-between items-center border border-color-grey-light p-3">
+                  <div class="pb-2">
+                    <button class="btn-text mb-2">Plain Text Button</button>
+                    <br />
+                    <a class="btn-text">Plain Text Link</a>
+                  </div>
+                  <div class="code-block mb-1"><pre>&lt;button class=&quot;btn-text mb-2&quot;&gt;Plain Text Button&lt;/button&gt;
+&lt;br /&gt;
+&lt;a class=&quot;btn-text&quot;&gt;Plain Text Link&lt;/a&gt;</pre></div>
+                </div>
               </div>
             </div>
           </div>
         </section>
         <section class="pb-4 mb-4" id="next-button">
-          <div class="page-wrapper">
+          <div class="page-wrapper px-2 screen-desktop:px-0">
             <header class="layout--home-body">
               <div class="my-0 pt-1 px-2 border-b border-color-grey-light">
                 <h2>
@@ -324,22 +657,64 @@
             <div class="layout--home-body">
               <div class="px-2 text-font-size-small"></div>
             </div>
-            <div class="layout--columns justify-between">
-              <div class="pr-2">
-                <button class="btn-primary btn-next mb-2">Next Button</button>
-                <br />
-                <a class="btn-primary btn-next" role="button">Next Link</a>
-              </div>
-              <div>
-                <div class="code-block mb-1"><pre>&lt;button class=&quot;btn-primary btn-next mb-2&quot;&gt;Next Button&lt;/button&gt;
+            <div class="layout--gutter screen-tablet:layout--columns justify-between">
+              <div class="layout--gutter screen-mobile:layout--columns-gutter screen-tablet:layout--three-columns-gutter screen-desktop:layout--four-columns-gutter">
+                <div class="flex flex-col justify-between items-center border border-color-grey-light p-3">
+                  <div class="pb-2">
+                    <button class="btn-primary btn-next mb-2">Next Button</button>
+                    <br />
+                    <a class="btn-primary btn-next" role="button">Next Link</a>
+                  </div>
+                  <div class="code-block mb-1"><pre>&lt;button class=&quot;btn-primary btn-next mb-2&quot;&gt;Next Button&lt;/button&gt;
 &lt;br /&gt;
 &lt;a class=&quot;btn-primary btn-next&quot; role=&quot;button&quot;&gt;Next Link&lt;/a&gt;</pre></div>
+                </div>
+                <div class="flex flex-col justify-between items-center border border-color-grey-light p-3">
+                  <div class="pb-2">
+                    <button class="btn-primary btn-next mb-2">Next Button</button>
+                    <br />
+                    <a class="btn-primary btn-next" role="button">Next Link</a>
+                  </div>
+                  <div class="code-block mb-1"><pre>&lt;button class=&quot;btn-primary btn-next mb-2&quot;&gt;Next Button&lt;/button&gt;
+&lt;br /&gt;
+&lt;a class=&quot;btn-primary btn-next&quot; role=&quot;button&quot;&gt;Next Link&lt;/a&gt;</pre></div>
+                </div>
+                <div class="flex flex-col justify-between items-center border border-color-grey-light p-3">
+                  <div class="pb-2">
+                    <button class="btn-primary btn-next mb-2">Next Button</button>
+                    <br />
+                    <a class="btn-primary btn-next" role="button">Next Link</a>
+                  </div>
+                  <div class="code-block mb-1"><pre>&lt;button class=&quot;btn-primary btn-next mb-2&quot;&gt;Next Button&lt;/button&gt;
+&lt;br /&gt;
+&lt;a class=&quot;btn-primary btn-next&quot; role=&quot;button&quot;&gt;Next Link&lt;/a&gt;</pre></div>
+                </div>
+                <div class="flex flex-col justify-between items-center border border-color-grey-light p-3">
+                  <div class="pb-2">
+                    <button class="btn-primary btn-next mb-2">Next Button</button>
+                    <br />
+                    <a class="btn-primary btn-next" role="button">Next Link</a>
+                  </div>
+                  <div class="code-block mb-1"><pre>&lt;button class=&quot;btn-primary btn-next mb-2&quot;&gt;Next Button&lt;/button&gt;
+&lt;br /&gt;
+&lt;a class=&quot;btn-primary btn-next&quot; role=&quot;button&quot;&gt;Next Link&lt;/a&gt;</pre></div>
+                </div>
+                <div class="flex flex-col justify-between items-center border border-color-grey-light p-3">
+                  <div class="pb-2">
+                    <button class="btn-primary btn-next mb-2">Next Button</button>
+                    <br />
+                    <a class="btn-primary btn-next" role="button">Next Link</a>
+                  </div>
+                  <div class="code-block mb-1"><pre>&lt;button class=&quot;btn-primary btn-next mb-2&quot;&gt;Next Button&lt;/button&gt;
+&lt;br /&gt;
+&lt;a class=&quot;btn-primary btn-next&quot; role=&quot;button&quot;&gt;Next Link&lt;/a&gt;</pre></div>
+                </div>
               </div>
             </div>
           </div>
         </section>
         <section class="pb-4 mb-4" id="previous-button">
-          <div class="page-wrapper">
+          <div class="page-wrapper px-2 screen-desktop:px-0">
             <header class="layout--home-body">
               <div class="my-0 pt-1 px-2 border-b border-color-grey-light">
                 <h2>
@@ -350,16 +725,58 @@
             <div class="layout--home-body">
               <div class="px-2 text-font-size-small"></div>
             </div>
-            <div class="layout--columns justify-between">
-              <div class="pr-2">
-                <button class="btn-primary btn-previous mb-2">Previous Button</button>
-                <br />
-                <a class="btn-primary btn-previous">Previous Link</a>
-              </div>
-              <div>
-                <div class="code-block mb-1"><pre>&lt;button class=&quot;btn-primary btn-previous mb-2&quot;&gt;Previous Button&lt;/button&gt;
+            <div class="layout--gutter screen-tablet:layout--columns justify-between">
+              <div class="layout--gutter screen-mobile:layout--columns-gutter screen-tablet:layout--three-columns-gutter screen-desktop:layout--four-columns-gutter">
+                <div class="flex flex-col justify-between items-center border border-color-grey-light p-3">
+                  <div class="pb-2">
+                    <button class="btn-primary btn-previous mb-2">Previous Button</button>
+                    <br />
+                    <a class="btn-primary btn-previous">Previous Link</a>
+                  </div>
+                  <div class="code-block mb-1"><pre>&lt;button class=&quot;btn-primary btn-previous mb-2&quot;&gt;Previous Button&lt;/button&gt;
 &lt;br /&gt;
 &lt;a class=&quot;btn-primary btn-previous&quot;&gt;Previous Link&lt;/a&gt;</pre></div>
+                </div>
+                <div class="flex flex-col justify-between items-center border border-color-grey-light p-3">
+                  <div class="pb-2">
+                    <button class="btn-primary btn-previous mb-2">Previous Button</button>
+                    <br />
+                    <a class="btn-primary btn-previous">Previous Link</a>
+                  </div>
+                  <div class="code-block mb-1"><pre>&lt;button class=&quot;btn-primary btn-previous mb-2&quot;&gt;Previous Button&lt;/button&gt;
+&lt;br /&gt;
+&lt;a class=&quot;btn-primary btn-previous&quot;&gt;Previous Link&lt;/a&gt;</pre></div>
+                </div>
+                <div class="flex flex-col justify-between items-center border border-color-grey-light p-3">
+                  <div class="pb-2">
+                    <button class="btn-primary btn-previous mb-2">Previous Button</button>
+                    <br />
+                    <a class="btn-primary btn-previous">Previous Link</a>
+                  </div>
+                  <div class="code-block mb-1"><pre>&lt;button class=&quot;btn-primary btn-previous mb-2&quot;&gt;Previous Button&lt;/button&gt;
+&lt;br /&gt;
+&lt;a class=&quot;btn-primary btn-previous&quot;&gt;Previous Link&lt;/a&gt;</pre></div>
+                </div>
+                <div class="flex flex-col justify-between items-center border border-color-grey-light p-3">
+                  <div class="pb-2">
+                    <button class="btn-primary btn-previous mb-2">Previous Button</button>
+                    <br />
+                    <a class="btn-primary btn-previous">Previous Link</a>
+                  </div>
+                  <div class="code-block mb-1"><pre>&lt;button class=&quot;btn-primary btn-previous mb-2&quot;&gt;Previous Button&lt;/button&gt;
+&lt;br /&gt;
+&lt;a class=&quot;btn-primary btn-previous&quot;&gt;Previous Link&lt;/a&gt;</pre></div>
+                </div>
+                <div class="flex flex-col justify-between items-center border border-color-grey-light p-3">
+                  <div class="pb-2">
+                    <button class="btn-primary btn-previous mb-2">Previous Button</button>
+                    <br />
+                    <a class="btn-primary btn-previous">Previous Link</a>
+                  </div>
+                  <div class="code-block mb-1"><pre>&lt;button class=&quot;btn-primary btn-previous mb-2&quot;&gt;Previous Button&lt;/button&gt;
+&lt;br /&gt;
+&lt;a class=&quot;btn-primary btn-previous&quot;&gt;Previous Link&lt;/a&gt;</pre></div>
+                </div>
               </div>
             </div>
           </div>

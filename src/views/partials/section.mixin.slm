@@ -1,7 +1,7 @@
-= mixin('section', 'title', 'path', 'layout = columns');
+= mixin('section', 'title', 'path', 'layout = columns', 'grid = false');
   - this.id = this.title.toLowerCase().split(' ').join('-');
   section id='${this.id}' class='pb-4 mb-4'
-    div class='page-wrapper'
+    div class='page-wrapper px-2 screen-desktop:px-0'
       header class='layout--home-body'
         div class='my-0 pt-1 px-2 border-b border-color-grey-light'
           h2
@@ -9,4 +9,4 @@
               = this.title;
 
       = mixin('demo-specs', this.path + '.md');
-      = mixin('demo-block', this.path + '.slm', this.layout);
+      = mixin('demo-block', this.path + '.slm', this.layout, this.grid);

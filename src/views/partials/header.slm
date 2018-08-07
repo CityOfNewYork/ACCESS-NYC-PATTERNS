@@ -1,17 +1,23 @@
 header class='px-2'
   div class='border-b border-color-grey-light'
-    div class='flex items-center justify-between py-4 px-2'
+    div class='flex items-center justify-between p-2 screen-tablet:py-4 screen-tablet:px-2'
       div
         h1 class='m-0 p-0 leading-normal'
           span class='hidden'
             | ACCESS NYC
-          svg class='icon-logo-full--large text-color-blue-dark' aria-hidden='true'
-            use xlink:href='#icon-logo-full'
+          svg class='icon-logo-mark screen-tablet:hidden' aria-hidden='true'
+            use xlink:href='#icon-logo-mark'
+          svg class='icon-logo-full--large text-color-blue-dark hidden screen-tablet:inline-block' aria-hidden='true'
+              use xlink:href='#icon-logo-full'
 
       div class='flex items-center'
-        h2 class='type-h1 m-0 text-color-blue-dark'
+        h2 class='text-font-size-small m-0 text-color-blue-dark screen-tablet:hidden'
+          | Patterns
+        h2 class='type-h1 m-0 text-color-blue-dark hidden screen-tablet:inline-block' aria-hidden='true'
           | Patterns
         nav class='text-font-size-small'
-          a href='${link_source}' class='text-color-blue-dark border-2 rounded-lg no-underline px-1 ml-2'
+          a href='${link_source}' class='rounded-lg text-color-blue-dark border-2 no-underline px-1 ml-2 hidden screen-tablet:inline-block'
             = this.vars.version;
-          a class='ml-2' href='#main-menu' data-js='toggle' Menu
+          a href='${link_source}' class='ml-1 screen-tablet:ml-2 screen-tablet:hidden' aria-hidden='true'
+            = this.vars.version;
+          a class='ml-1 screen-tablet:ml-2' href='#main-menu' data-js='toggle' Menu

@@ -103,6 +103,7 @@
       "FB": false
     },
     "rules": {
+      "no-console": 1,
       "one-var": 0,
       "comma-dangle": 0,
       "curly": [

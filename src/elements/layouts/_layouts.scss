@@ -129,6 +129,78 @@ $breakpoints: map-get($variables, 'screens');
   }
 
   //
+  // A layout for four column grid with gutter
+  //
+  //  .-------------------.
+  //  |.--. .--. .--. .--.|
+  //  ||  | |  | |  | |  ||
+  //  |.--. .--. .--. .--.|
+  //  |                   |
+  //  |.--. .--. .--. .--.|
+  //  ||  | |  | |  | |  ||
+  //  |.--. .--. .--. .--.|
+  //  |                   |
+  //  |.--. .--. .--. .--.|
+  //  ||  | |  | |  | |  ||
+  //  |.--. .--. .--. .--.|
+  //  .-------------------.
+  //
+  .#{$variant}layout--four-columns-gutter {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+
+    > *, &:after {
+      width: calc(25% - #{$spacing-base / 2});
+    }
+
+    > * {
+      margin-bottom: $spacing-base / 2;
+    }
+
+    &:after {
+      content: '';
+      margin-bottom: 0;
+    }
+  }
+
+  //
+  // A layout for four column grid with gutter
+  //
+  //  .-------------------.
+  //  |.--. .--. .--. .--.|
+  //  ||  | |  | |  | |  ||
+  //  |.--. .--. .--. .--.|
+  //  |                   |
+  //  |.--. .--. .--. .--.|
+  //  ||  | |  | |  | |  ||
+  //  |.--. .--. .--. .--.|
+  //  |                   |
+  //  |.--. .--. .--. .--.|
+  //  ||  | |  | |  | |  ||
+  //  |.--. .--. .--. .--.|
+  //  .-------------------.
+  //
+  .#{$variant}layout--three-columns-gutter {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+
+    > *, &:after {
+      width: calc(33.33% - #{$spacing-base / 2});
+    }
+
+    > * {
+      margin-bottom: $spacing-base / 2;
+    }
+
+    &:after {
+      content: '';
+      margin-bottom: 0;
+    }
+  }
+
+  //
   // Layout for single sidebar with 16rem width. No gutters. Stacks sidebar on
   // top for screens smaller than desktop width.
   //

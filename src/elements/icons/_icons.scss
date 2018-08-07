@@ -17,7 +17,6 @@
 }
 
 @each $key, $var in map-get($variables, 'icons') {
-
   $path: $key;
   $cdn: map-get($variables, 'cdn');
 
@@ -36,5 +35,4 @@
   .#{$key} {
     @include size($var);
   }
-
 }

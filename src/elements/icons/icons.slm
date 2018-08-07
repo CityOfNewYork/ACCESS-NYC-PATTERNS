@@ -1,27 +1,4 @@
+svg class='${key} text-color-blue-dark'
+  use xlink:href='#${key.split("--")[0]}'
 
-= mixin('icons', 'code = false', 'key')
-  - href = key
-  - for i in this.vars.iconVariants
-    - if href.indexOf(this.vars.iconVariants[i]) > 0
-      - href = href.replace(this.vars.iconVariants[i], '')
-
-  - if this.code
-    div class='${class_demo_class_containers}'
-      code.code
-        = key + ' #' + href + ','
-        br
-        = 'bg-' + key
-    div class='${class_demo_class_containers}'
-      div class='code-block mb-1'
-        pre
-          div = '<svg class="' + key + ' text-color-blue-dark">'
-          div = '  <use xlink:href="#' + href + '">'
-          div = '</svg>'
-          div = ' '
-          div = '<div class="bg-' + key + '"></div>'
-
-  div class='mb-1'
-    svg class='${key} text-color-blue-dark'
-      use xlink:href='#${href}'
-
-  div class='bg-${key}'
+div class='bg-${key}'

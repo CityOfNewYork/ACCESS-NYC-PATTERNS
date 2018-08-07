@@ -25,19 +25,24 @@
     <a class="hidden" href="#main-content">Skip to main content</a>
     <header class="px-2">
       <div class="border-b border-color-grey-light">
-        <div class="flex items-center justify-between py-4 px-2">
+        <div class="flex items-center justify-between p-2 screen-tablet:py-4 screen-tablet:px-2">
           <div>
             <h1 class="m-0 p-0 leading-normal"><span class="hidden">ACCESS NYC</span>
-              <svg aria-hidden="true" class="icon-logo-full--large text-color-blue-dark">
+              <svg aria-hidden="true" class="icon-logo-mark screen-tablet:hidden">
+                <use xlink:href="#icon-logo-mark"></use>
+              </svg>
+              <svg aria-hidden="true" class="icon-logo-full--large text-color-blue-dark hidden screen-tablet:inline-block">
                 <use xlink:href="#icon-logo-full"></use>
               </svg>
             </h1>
           </div>
           <div class="flex items-center">
-            <h2 class="type-h1 m-0 text-color-blue-dark">Patterns</h2>
+            <h2 class="text-font-size-small m-0 text-color-blue-dark screen-tablet:hidden">Patterns</h2>
+            <h2 aria-hidden="true" class="type-h1 m-0 text-color-blue-dark hidden screen-tablet:inline-block">Patterns</h2>
             <nav class="text-font-size-small">
-              <a class="text-color-blue-dark border-2 rounded-lg no-underline px-1 ml-2" href="https://github.com/CityOfNewYork/ACCESS-NYC-PATTERNS">0.0.10</a>
-              <a class="ml-2" data-js="toggle" href="#main-menu">Menu</a>
+              <a class="rounded-lg text-color-blue-dark border-2 no-underline px-1 ml-2 hidden screen-tablet:inline-block" href="https://github.com/CityOfNewYork/ACCESS-NYC-PATTERNS">0.0.10</a>
+              <a aria-hidden="true" class="ml-1 screen-tablet:ml-2 screen-tablet:hidden" href="https://github.com/CityOfNewYork/ACCESS-NYC-PATTERNS">0.0.10</a>
+              <a class="ml-1 screen-tablet:ml-2" data-js="toggle" href="#main-menu">Menu</a>
             </nav>
           </div>
         </div>
@@ -98,13 +103,13 @@
     </aside>
     <main class="pt-4" id="main-content">
       <article class="py-4">
-        <header class="page-wrapper layout--home-body">
+        <header class="page-wrapper px-2 screen-desktop:px-0 layout--home-body">
           <div class="my-0 w-full">
             <h1 class="text-color-blue-dark px-2 m-0">Checkboxes</h1>
           </div>
         </header>
         <section class="pb-4 mb-4" id="default-styling">
-          <div class="page-wrapper">
+          <div class="page-wrapper px-2 screen-desktop:px-0">
             <header class="layout--home-body">
               <div class="my-0 pt-1 px-2 border-b border-color-grey-light">
                 <h2>
@@ -115,30 +120,104 @@
             <div class="layout--home-body">
               <div class="px-2 text-font-size-small"></div>
             </div>
-            <div class="layout--columns justify-between">
-              <div class="pr-2">
-                <label class="label">Is anyone in your household currently enrolled in these programs?</label>
-                <label class="checkbox">
-                  <input checked="true" name="application" type="checkbox" value="wic" /><span class="checkbox__label">SNAP (Supplemental Nutrition Assistance Program)</span></label>
-                <label class="checkbox">
-                  <input checked="true" name="application" type="checkbox" value="wic" /><span class="checkbox__label">WIC (Women, Infants, and Children)</span></label>
-                <label class="checkbox">
-                  <input name="application" type="checkbox" value="scrie" /><span class="checkbox__label">SCRIE (Senior Citizen Rent Increase Exemption)</span></label>
-              </div>
-              <div>
-                <div class="code-block mb-1"><pre>&lt;label class=&quot;label&quot;&gt;Is anyone in your household currently enrolled in these programs?&lt;/label&gt;
+            <div class="layout--gutter screen-tablet:layout--columns justify-between">
+              <div class="layout--gutter screen-mobile:layout--columns-gutter screen-tablet:layout--three-columns-gutter screen-desktop:layout--four-columns-gutter">
+                <div class="flex flex-col justify-between items-center border border-color-grey-light p-3">
+                  <div class="pb-2">
+                    <label class="label">Is anyone in your household currently enrolled in these programs?</label>
+                    <label class="checkbox">
+                      <input checked="true" name="application" type="checkbox" value="wic" /><span class="checkbox__label">SNAP (Supplemental Nutrition Assistance Program)</span></label>
+                    <label class="checkbox">
+                      <input checked="true" name="application" type="checkbox" value="wic" /><span class="checkbox__label">WIC (Women, Infants, and Children)</span></label>
+                    <label class="checkbox">
+                      <input name="application" type="checkbox" value="scrie" /><span class="checkbox__label">SCRIE (Senior Citizen Rent Increase Exemption)</span></label>
+                  </div>
+                  <div class="code-block mb-1"><pre>&lt;label class=&quot;label&quot;&gt;Is anyone in your household currently enrolled in these programs?&lt;/label&gt;
 &lt;label class=&quot;checkbox&quot;&gt;
   &lt;input checked=&quot;true&quot; name=&quot;application&quot; type=&quot;checkbox&quot; value=&quot;wic&quot; /&gt;&lt;span class=&quot;checkbox__label&quot;&gt;SNAP (Supplemental Nutrition Assistance Program)&lt;/span&gt;&lt;/label&gt;
 &lt;label class=&quot;checkbox&quot;&gt;
   &lt;input checked=&quot;true&quot; name=&quot;application&quot; type=&quot;checkbox&quot; value=&quot;wic&quot; /&gt;&lt;span class=&quot;checkbox__label&quot;&gt;WIC (Women, Infants, and Children)&lt;/span&gt;&lt;/label&gt;
 &lt;label class=&quot;checkbox&quot;&gt;
   &lt;input name=&quot;application&quot; type=&quot;checkbox&quot; value=&quot;scrie&quot; /&gt;&lt;span class=&quot;checkbox__label&quot;&gt;SCRIE (Senior Citizen Rent Increase Exemption)&lt;/span&gt;&lt;/label&gt;</pre></div>
+                </div>
+                <div class="flex flex-col justify-between items-center border border-color-grey-light p-3">
+                  <div class="pb-2">
+                    <label class="label">Is anyone in your household currently enrolled in these programs?</label>
+                    <label class="checkbox">
+                      <input checked="true" name="application" type="checkbox" value="wic" /><span class="checkbox__label">SNAP (Supplemental Nutrition Assistance Program)</span></label>
+                    <label class="checkbox">
+                      <input checked="true" name="application" type="checkbox" value="wic" /><span class="checkbox__label">WIC (Women, Infants, and Children)</span></label>
+                    <label class="checkbox">
+                      <input name="application" type="checkbox" value="scrie" /><span class="checkbox__label">SCRIE (Senior Citizen Rent Increase Exemption)</span></label>
+                  </div>
+                  <div class="code-block mb-1"><pre>&lt;label class=&quot;label&quot;&gt;Is anyone in your household currently enrolled in these programs?&lt;/label&gt;
+&lt;label class=&quot;checkbox&quot;&gt;
+  &lt;input checked=&quot;true&quot; name=&quot;application&quot; type=&quot;checkbox&quot; value=&quot;wic&quot; /&gt;&lt;span class=&quot;checkbox__label&quot;&gt;SNAP (Supplemental Nutrition Assistance Program)&lt;/span&gt;&lt;/label&gt;
+&lt;label class=&quot;checkbox&quot;&gt;
+  &lt;input checked=&quot;true&quot; name=&quot;application&quot; type=&quot;checkbox&quot; value=&quot;wic&quot; /&gt;&lt;span class=&quot;checkbox__label&quot;&gt;WIC (Women, Infants, and Children)&lt;/span&gt;&lt;/label&gt;
+&lt;label class=&quot;checkbox&quot;&gt;
+  &lt;input name=&quot;application&quot; type=&quot;checkbox&quot; value=&quot;scrie&quot; /&gt;&lt;span class=&quot;checkbox__label&quot;&gt;SCRIE (Senior Citizen Rent Increase Exemption)&lt;/span&gt;&lt;/label&gt;</pre></div>
+                </div>
+                <div class="flex flex-col justify-between items-center border border-color-grey-light p-3">
+                  <div class="pb-2">
+                    <label class="label">Is anyone in your household currently enrolled in these programs?</label>
+                    <label class="checkbox">
+                      <input checked="true" name="application" type="checkbox" value="wic" /><span class="checkbox__label">SNAP (Supplemental Nutrition Assistance Program)</span></label>
+                    <label class="checkbox">
+                      <input checked="true" name="application" type="checkbox" value="wic" /><span class="checkbox__label">WIC (Women, Infants, and Children)</span></label>
+                    <label class="checkbox">
+                      <input name="application" type="checkbox" value="scrie" /><span class="checkbox__label">SCRIE (Senior Citizen Rent Increase Exemption)</span></label>
+                  </div>
+                  <div class="code-block mb-1"><pre>&lt;label class=&quot;label&quot;&gt;Is anyone in your household currently enrolled in these programs?&lt;/label&gt;
+&lt;label class=&quot;checkbox&quot;&gt;
+  &lt;input checked=&quot;true&quot; name=&quot;application&quot; type=&quot;checkbox&quot; value=&quot;wic&quot; /&gt;&lt;span class=&quot;checkbox__label&quot;&gt;SNAP (Supplemental Nutrition Assistance Program)&lt;/span&gt;&lt;/label&gt;
+&lt;label class=&quot;checkbox&quot;&gt;
+  &lt;input checked=&quot;true&quot; name=&quot;application&quot; type=&quot;checkbox&quot; value=&quot;wic&quot; /&gt;&lt;span class=&quot;checkbox__label&quot;&gt;WIC (Women, Infants, and Children)&lt;/span&gt;&lt;/label&gt;
+&lt;label class=&quot;checkbox&quot;&gt;
+  &lt;input name=&quot;application&quot; type=&quot;checkbox&quot; value=&quot;scrie&quot; /&gt;&lt;span class=&quot;checkbox__label&quot;&gt;SCRIE (Senior Citizen Rent Increase Exemption)&lt;/span&gt;&lt;/label&gt;</pre></div>
+                </div>
+                <div class="flex flex-col justify-between items-center border border-color-grey-light p-3">
+                  <div class="pb-2">
+                    <label class="label">Is anyone in your household currently enrolled in these programs?</label>
+                    <label class="checkbox">
+                      <input checked="true" name="application" type="checkbox" value="wic" /><span class="checkbox__label">SNAP (Supplemental Nutrition Assistance Program)</span></label>
+                    <label class="checkbox">
+                      <input checked="true" name="application" type="checkbox" value="wic" /><span class="checkbox__label">WIC (Women, Infants, and Children)</span></label>
+                    <label class="checkbox">
+                      <input name="application" type="checkbox" value="scrie" /><span class="checkbox__label">SCRIE (Senior Citizen Rent Increase Exemption)</span></label>
+                  </div>
+                  <div class="code-block mb-1"><pre>&lt;label class=&quot;label&quot;&gt;Is anyone in your household currently enrolled in these programs?&lt;/label&gt;
+&lt;label class=&quot;checkbox&quot;&gt;
+  &lt;input checked=&quot;true&quot; name=&quot;application&quot; type=&quot;checkbox&quot; value=&quot;wic&quot; /&gt;&lt;span class=&quot;checkbox__label&quot;&gt;SNAP (Supplemental Nutrition Assistance Program)&lt;/span&gt;&lt;/label&gt;
+&lt;label class=&quot;checkbox&quot;&gt;
+  &lt;input checked=&quot;true&quot; name=&quot;application&quot; type=&quot;checkbox&quot; value=&quot;wic&quot; /&gt;&lt;span class=&quot;checkbox__label&quot;&gt;WIC (Women, Infants, and Children)&lt;/span&gt;&lt;/label&gt;
+&lt;label class=&quot;checkbox&quot;&gt;
+  &lt;input name=&quot;application&quot; type=&quot;checkbox&quot; value=&quot;scrie&quot; /&gt;&lt;span class=&quot;checkbox__label&quot;&gt;SCRIE (Senior Citizen Rent Increase Exemption)&lt;/span&gt;&lt;/label&gt;</pre></div>
+                </div>
+                <div class="flex flex-col justify-between items-center border border-color-grey-light p-3">
+                  <div class="pb-2">
+                    <label class="label">Is anyone in your household currently enrolled in these programs?</label>
+                    <label class="checkbox">
+                      <input checked="true" name="application" type="checkbox" value="wic" /><span class="checkbox__label">SNAP (Supplemental Nutrition Assistance Program)</span></label>
+                    <label class="checkbox">
+                      <input checked="true" name="application" type="checkbox" value="wic" /><span class="checkbox__label">WIC (Women, Infants, and Children)</span></label>
+                    <label class="checkbox">
+                      <input name="application" type="checkbox" value="scrie" /><span class="checkbox__label">SCRIE (Senior Citizen Rent Increase Exemption)</span></label>
+                  </div>
+                  <div class="code-block mb-1"><pre>&lt;label class=&quot;label&quot;&gt;Is anyone in your household currently enrolled in these programs?&lt;/label&gt;
+&lt;label class=&quot;checkbox&quot;&gt;
+  &lt;input checked=&quot;true&quot; name=&quot;application&quot; type=&quot;checkbox&quot; value=&quot;wic&quot; /&gt;&lt;span class=&quot;checkbox__label&quot;&gt;SNAP (Supplemental Nutrition Assistance Program)&lt;/span&gt;&lt;/label&gt;
+&lt;label class=&quot;checkbox&quot;&gt;
+  &lt;input checked=&quot;true&quot; name=&quot;application&quot; type=&quot;checkbox&quot; value=&quot;wic&quot; /&gt;&lt;span class=&quot;checkbox__label&quot;&gt;WIC (Women, Infants, and Children)&lt;/span&gt;&lt;/label&gt;
+&lt;label class=&quot;checkbox&quot;&gt;
+  &lt;input name=&quot;application&quot; type=&quot;checkbox&quot; value=&quot;scrie&quot; /&gt;&lt;span class=&quot;checkbox__label&quot;&gt;SCRIE (Senior Citizen Rent Increase Exemption)&lt;/span&gt;&lt;/label&gt;</pre></div>
+                </div>
               </div>
             </div>
           </div>
         </section>
         <section class="pb-4 mb-4" id="checkboxes-with-icons">
-          <div class="page-wrapper">
+          <div class="page-wrapper px-2 screen-desktop:px-0">
             <header class="layout--home-body">
               <div class="my-0 pt-1 px-2 border-b border-color-grey-light">
                 <h2>
@@ -149,21 +228,22 @@
             <div class="layout--home-body">
               <div class="px-2 text-font-size-small"></div>
             </div>
-            <div class="layout--columns justify-between">
-              <div class="pr-2">
-                <label class="label">What kind of help are you looking for?</label>
-                <label class="checkbox">
-                  <input name="category" type="checkbox" value="cash-expenses" /><span class="checkbox__label items-center"><span class="checkbox__icon bg-icon-cash-expenses"></span><span>Cash & Expenses</span></span>
-                </label>
-                <label class="checkbox">
-                  <input name="category" type="checkbox" value="cash-expenses" /><span class="checkbox__label items-center"><span class="checkbox__icon bg-icon-city-id-card"></span><span>City ID Card</span></span>
-                </label>
-                <label class="checkbox">
-                  <input name="category" type="checkbox" value="cash-expenses" /><span class="checkbox__label items-center"><span class="checkbox__icon bg-icon-enrichment"></span><span>Enrichment</span></span>
-                </label>
-              </div>
-              <div>
-                <div class="code-block mb-1"><pre>&lt;label class=&quot;label&quot;&gt;What kind of help are you looking for?&lt;/label&gt;
+            <div class="layout--gutter screen-tablet:layout--columns justify-between">
+              <div class="layout--gutter screen-mobile:layout--columns-gutter screen-tablet:layout--three-columns-gutter screen-desktop:layout--four-columns-gutter">
+                <div class="flex flex-col justify-between items-center border border-color-grey-light p-3">
+                  <div class="pb-2">
+                    <label class="label">What kind of help are you looking for?</label>
+                    <label class="checkbox">
+                      <input name="category" type="checkbox" value="cash-expenses" /><span class="checkbox__label items-center"><span class="checkbox__icon bg-icon-cash-expenses"></span><span>Cash & Expenses</span></span>
+                    </label>
+                    <label class="checkbox">
+                      <input name="category" type="checkbox" value="cash-expenses" /><span class="checkbox__label items-center"><span class="checkbox__icon bg-icon-city-id-card"></span><span>City ID Card</span></span>
+                    </label>
+                    <label class="checkbox">
+                      <input name="category" type="checkbox" value="cash-expenses" /><span class="checkbox__label items-center"><span class="checkbox__icon bg-icon-enrichment"></span><span>Enrichment</span></span>
+                    </label>
+                  </div>
+                  <div class="code-block mb-1"><pre>&lt;label class=&quot;label&quot;&gt;What kind of help are you looking for?&lt;/label&gt;
 &lt;label class=&quot;checkbox&quot;&gt;
   &lt;input name=&quot;category&quot; type=&quot;checkbox&quot; value=&quot;cash-expenses&quot; /&gt;&lt;span class=&quot;checkbox__label items-center&quot;&gt;&lt;span class=&quot;checkbox__icon bg-icon-cash-expenses&quot;&gt;&lt;/span&gt;&lt;span&gt;Cash &amp; Expenses&lt;/span&gt;&lt;/span&gt;
 &lt;/label&gt;
@@ -173,6 +253,103 @@
 &lt;label class=&quot;checkbox&quot;&gt;
   &lt;input name=&quot;category&quot; type=&quot;checkbox&quot; value=&quot;cash-expenses&quot; /&gt;&lt;span class=&quot;checkbox__label items-center&quot;&gt;&lt;span class=&quot;checkbox__icon bg-icon-enrichment&quot;&gt;&lt;/span&gt;&lt;span&gt;Enrichment&lt;/span&gt;&lt;/span&gt;
 &lt;/label&gt;</pre></div>
+                </div>
+                <div class="flex flex-col justify-between items-center border border-color-grey-light p-3">
+                  <div class="pb-2">
+                    <label class="label">What kind of help are you looking for?</label>
+                    <label class="checkbox">
+                      <input name="category" type="checkbox" value="cash-expenses" /><span class="checkbox__label items-center"><span class="checkbox__icon bg-icon-cash-expenses"></span><span>Cash & Expenses</span></span>
+                    </label>
+                    <label class="checkbox">
+                      <input name="category" type="checkbox" value="cash-expenses" /><span class="checkbox__label items-center"><span class="checkbox__icon bg-icon-city-id-card"></span><span>City ID Card</span></span>
+                    </label>
+                    <label class="checkbox">
+                      <input name="category" type="checkbox" value="cash-expenses" /><span class="checkbox__label items-center"><span class="checkbox__icon bg-icon-enrichment"></span><span>Enrichment</span></span>
+                    </label>
+                  </div>
+                  <div class="code-block mb-1"><pre>&lt;label class=&quot;label&quot;&gt;What kind of help are you looking for?&lt;/label&gt;
+&lt;label class=&quot;checkbox&quot;&gt;
+  &lt;input name=&quot;category&quot; type=&quot;checkbox&quot; value=&quot;cash-expenses&quot; /&gt;&lt;span class=&quot;checkbox__label items-center&quot;&gt;&lt;span class=&quot;checkbox__icon bg-icon-cash-expenses&quot;&gt;&lt;/span&gt;&lt;span&gt;Cash &amp; Expenses&lt;/span&gt;&lt;/span&gt;
+&lt;/label&gt;
+&lt;label class=&quot;checkbox&quot;&gt;
+  &lt;input name=&quot;category&quot; type=&quot;checkbox&quot; value=&quot;cash-expenses&quot; /&gt;&lt;span class=&quot;checkbox__label items-center&quot;&gt;&lt;span class=&quot;checkbox__icon bg-icon-city-id-card&quot;&gt;&lt;/span&gt;&lt;span&gt;City ID Card&lt;/span&gt;&lt;/span&gt;
+&lt;/label&gt;
+&lt;label class=&quot;checkbox&quot;&gt;
+  &lt;input name=&quot;category&quot; type=&quot;checkbox&quot; value=&quot;cash-expenses&quot; /&gt;&lt;span class=&quot;checkbox__label items-center&quot;&gt;&lt;span class=&quot;checkbox__icon bg-icon-enrichment&quot;&gt;&lt;/span&gt;&lt;span&gt;Enrichment&lt;/span&gt;&lt;/span&gt;
+&lt;/label&gt;</pre></div>
+                </div>
+                <div class="flex flex-col justify-between items-center border border-color-grey-light p-3">
+                  <div class="pb-2">
+                    <label class="label">What kind of help are you looking for?</label>
+                    <label class="checkbox">
+                      <input name="category" type="checkbox" value="cash-expenses" /><span class="checkbox__label items-center"><span class="checkbox__icon bg-icon-cash-expenses"></span><span>Cash & Expenses</span></span>
+                    </label>
+                    <label class="checkbox">
+                      <input name="category" type="checkbox" value="cash-expenses" /><span class="checkbox__label items-center"><span class="checkbox__icon bg-icon-city-id-card"></span><span>City ID Card</span></span>
+                    </label>
+                    <label class="checkbox">
+                      <input name="category" type="checkbox" value="cash-expenses" /><span class="checkbox__label items-center"><span class="checkbox__icon bg-icon-enrichment"></span><span>Enrichment</span></span>
+                    </label>
+                  </div>
+                  <div class="code-block mb-1"><pre>&lt;label class=&quot;label&quot;&gt;What kind of help are you looking for?&lt;/label&gt;
+&lt;label class=&quot;checkbox&quot;&gt;
+  &lt;input name=&quot;category&quot; type=&quot;checkbox&quot; value=&quot;cash-expenses&quot; /&gt;&lt;span class=&quot;checkbox__label items-center&quot;&gt;&lt;span class=&quot;checkbox__icon bg-icon-cash-expenses&quot;&gt;&lt;/span&gt;&lt;span&gt;Cash &amp; Expenses&lt;/span&gt;&lt;/span&gt;
+&lt;/label&gt;
+&lt;label class=&quot;checkbox&quot;&gt;
+  &lt;input name=&quot;category&quot; type=&quot;checkbox&quot; value=&quot;cash-expenses&quot; /&gt;&lt;span class=&quot;checkbox__label items-center&quot;&gt;&lt;span class=&quot;checkbox__icon bg-icon-city-id-card&quot;&gt;&lt;/span&gt;&lt;span&gt;City ID Card&lt;/span&gt;&lt;/span&gt;
+&lt;/label&gt;
+&lt;label class=&quot;checkbox&quot;&gt;
+  &lt;input name=&quot;category&quot; type=&quot;checkbox&quot; value=&quot;cash-expenses&quot; /&gt;&lt;span class=&quot;checkbox__label items-center&quot;&gt;&lt;span class=&quot;checkbox__icon bg-icon-enrichment&quot;&gt;&lt;/span&gt;&lt;span&gt;Enrichment&lt;/span&gt;&lt;/span&gt;
+&lt;/label&gt;</pre></div>
+                </div>
+                <div class="flex flex-col justify-between items-center border border-color-grey-light p-3">
+                  <div class="pb-2">
+                    <label class="label">What kind of help are you looking for?</label>
+                    <label class="checkbox">
+                      <input name="category" type="checkbox" value="cash-expenses" /><span class="checkbox__label items-center"><span class="checkbox__icon bg-icon-cash-expenses"></span><span>Cash & Expenses</span></span>
+                    </label>
+                    <label class="checkbox">
+                      <input name="category" type="checkbox" value="cash-expenses" /><span class="checkbox__label items-center"><span class="checkbox__icon bg-icon-city-id-card"></span><span>City ID Card</span></span>
+                    </label>
+                    <label class="checkbox">
+                      <input name="category" type="checkbox" value="cash-expenses" /><span class="checkbox__label items-center"><span class="checkbox__icon bg-icon-enrichment"></span><span>Enrichment</span></span>
+                    </label>
+                  </div>
+                  <div class="code-block mb-1"><pre>&lt;label class=&quot;label&quot;&gt;What kind of help are you looking for?&lt;/label&gt;
+&lt;label class=&quot;checkbox&quot;&gt;
+  &lt;input name=&quot;category&quot; type=&quot;checkbox&quot; value=&quot;cash-expenses&quot; /&gt;&lt;span class=&quot;checkbox__label items-center&quot;&gt;&lt;span class=&quot;checkbox__icon bg-icon-cash-expenses&quot;&gt;&lt;/span&gt;&lt;span&gt;Cash &amp; Expenses&lt;/span&gt;&lt;/span&gt;
+&lt;/label&gt;
+&lt;label class=&quot;checkbox&quot;&gt;
+  &lt;input name=&quot;category&quot; type=&quot;checkbox&quot; value=&quot;cash-expenses&quot; /&gt;&lt;span class=&quot;checkbox__label items-center&quot;&gt;&lt;span class=&quot;checkbox__icon bg-icon-city-id-card&quot;&gt;&lt;/span&gt;&lt;span&gt;City ID Card&lt;/span&gt;&lt;/span&gt;
+&lt;/label&gt;
+&lt;label class=&quot;checkbox&quot;&gt;
+  &lt;input name=&quot;category&quot; type=&quot;checkbox&quot; value=&quot;cash-expenses&quot; /&gt;&lt;span class=&quot;checkbox__label items-center&quot;&gt;&lt;span class=&quot;checkbox__icon bg-icon-enrichment&quot;&gt;&lt;/span&gt;&lt;span&gt;Enrichment&lt;/span&gt;&lt;/span&gt;
+&lt;/label&gt;</pre></div>
+                </div>
+                <div class="flex flex-col justify-between items-center border border-color-grey-light p-3">
+                  <div class="pb-2">
+                    <label class="label">What kind of help are you looking for?</label>
+                    <label class="checkbox">
+                      <input name="category" type="checkbox" value="cash-expenses" /><span class="checkbox__label items-center"><span class="checkbox__icon bg-icon-cash-expenses"></span><span>Cash & Expenses</span></span>
+                    </label>
+                    <label class="checkbox">
+                      <input name="category" type="checkbox" value="cash-expenses" /><span class="checkbox__label items-center"><span class="checkbox__icon bg-icon-city-id-card"></span><span>City ID Card</span></span>
+                    </label>
+                    <label class="checkbox">
+                      <input name="category" type="checkbox" value="cash-expenses" /><span class="checkbox__label items-center"><span class="checkbox__icon bg-icon-enrichment"></span><span>Enrichment</span></span>
+                    </label>
+                  </div>
+                  <div class="code-block mb-1"><pre>&lt;label class=&quot;label&quot;&gt;What kind of help are you looking for?&lt;/label&gt;
+&lt;label class=&quot;checkbox&quot;&gt;
+  &lt;input name=&quot;category&quot; type=&quot;checkbox&quot; value=&quot;cash-expenses&quot; /&gt;&lt;span class=&quot;checkbox__label items-center&quot;&gt;&lt;span class=&quot;checkbox__icon bg-icon-cash-expenses&quot;&gt;&lt;/span&gt;&lt;span&gt;Cash &amp; Expenses&lt;/span&gt;&lt;/span&gt;
+&lt;/label&gt;
+&lt;label class=&quot;checkbox&quot;&gt;
+  &lt;input name=&quot;category&quot; type=&quot;checkbox&quot; value=&quot;cash-expenses&quot; /&gt;&lt;span class=&quot;checkbox__label items-center&quot;&gt;&lt;span class=&quot;checkbox__icon bg-icon-city-id-card&quot;&gt;&lt;/span&gt;&lt;span&gt;City ID Card&lt;/span&gt;&lt;/span&gt;
+&lt;/label&gt;
+&lt;label class=&quot;checkbox&quot;&gt;
+  &lt;input name=&quot;category&quot; type=&quot;checkbox&quot; value=&quot;cash-expenses&quot; /&gt;&lt;span class=&quot;checkbox__label items-center&quot;&gt;&lt;span class=&quot;checkbox__icon bg-icon-enrichment&quot;&gt;&lt;/span&gt;&lt;span&gt;Enrichment&lt;/span&gt;&lt;/span&gt;
+&lt;/label&gt;</pre></div>
+                </div>
               </div>
             </div>
           </div>

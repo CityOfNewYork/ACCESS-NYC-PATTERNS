@@ -25,19 +25,24 @@
     <a class="hidden" href="#main-content">Skip to main content</a>
     <header class="px-2">
       <div class="border-b border-color-grey-light">
-        <div class="flex items-center justify-between py-4 px-2">
+        <div class="flex items-center justify-between p-2 screen-tablet:py-4 screen-tablet:px-2">
           <div>
             <h1 class="m-0 p-0 leading-normal"><span class="hidden">ACCESS NYC</span>
-              <svg aria-hidden="true" class="icon-logo-full--large text-color-blue-dark">
+              <svg aria-hidden="true" class="icon-logo-mark screen-tablet:hidden">
+                <use xlink:href="#icon-logo-mark"></use>
+              </svg>
+              <svg aria-hidden="true" class="icon-logo-full--large text-color-blue-dark hidden screen-tablet:inline-block">
                 <use xlink:href="#icon-logo-full"></use>
               </svg>
             </h1>
           </div>
           <div class="flex items-center">
-            <h2 class="type-h1 m-0 text-color-blue-dark">Patterns</h2>
+            <h2 class="text-font-size-small m-0 text-color-blue-dark screen-tablet:hidden">Patterns</h2>
+            <h2 aria-hidden="true" class="type-h1 m-0 text-color-blue-dark hidden screen-tablet:inline-block">Patterns</h2>
             <nav class="text-font-size-small">
-              <a class="text-color-blue-dark border-2 rounded-lg no-underline px-1 ml-2" href="https://github.com/CityOfNewYork/ACCESS-NYC-PATTERNS">0.0.10</a>
-              <a class="ml-2" data-js="toggle" href="#main-menu">Menu</a>
+              <a class="rounded-lg text-color-blue-dark border-2 no-underline px-1 ml-2 hidden screen-tablet:inline-block" href="https://github.com/CityOfNewYork/ACCESS-NYC-PATTERNS">0.0.10</a>
+              <a aria-hidden="true" class="ml-1 screen-tablet:ml-2 screen-tablet:hidden" href="https://github.com/CityOfNewYork/ACCESS-NYC-PATTERNS">0.0.10</a>
+              <a class="ml-1 screen-tablet:ml-2" data-js="toggle" href="#main-menu">Menu</a>
             </nav>
           </div>
         </div>
@@ -98,13 +103,13 @@
     </aside>
     <main class="pt-4" id="main-content">
       <article class="py-4">
-        <header class="page-wrapper layout--home-body">
+        <header class="page-wrapper px-2 screen-desktop:px-0 layout--home-body">
           <div class="my-0 w-full">
             <h1 class="text-color-blue-dark px-2 m-0">Accordion</h1>
           </div>
         </header>
         <section class="pb-4 mb-4" id="javascript-component">
-          <div class="page-wrapper">
+          <div class="page-wrapper px-2 screen-desktop:px-0">
             <header class="layout--home-body">
               <div class="my-0 pt-1 px-2 border-b border-color-grey-light">
                 <h2>
@@ -113,56 +118,53 @@
               </div>
             </header>
             <div class="layout--home-body">
-              <div class="px-2 text-font-size-small"><p>The Accordion is a
-  <a href="https://vuejs.org/">Vue.js</a> component. That means it requires Javascript for functionality and screen reader accessibility. It also includes styling for print. To use the Accordion in the global ACCESS NYC Patterns script use the following code;</p>
+              <div class="px-2 text-font-size-small"><p>The Accordion Component requires Javascript for functionality and screen reader accessibility. It also includes styling for print. To use the Accordion in the global ACCESS NYC Patterns script use the following code;</p>
 
 <pre><code>var access = new AccessNyc();
 access.accordion();</code></pre>
 
-<p>This will loop through all of the Accordion components on the page and activate them. The ES6, CommonJS, and IFFE modules all require global activation to be written into your main script;</p>
+<p>This will attach the accordion toggling event to the body of the document. The ES6, CommonJS, and IFFE modules all require global activation to be written into your main script;</p>
 
 <pre><code>import Accordion from &#39;components/accordion/accordion.common&#39;;
 
-document.querySelectorAll(Accordion.selector)
-  .forEach((element) =&gt; {
-    const accordion = new Accordion(element);
-    accordion.init();
-  });</code></pre>
+new Accordion();</code></pre>
 
-<p>You must also have Vue.js installed as a parent dependency. There&#39;s no need to import it but you must have it installed as a dependency in your <code>package.json</code>. The module will attempt to import it when you bundle your script. The <code>data-js=&quot;accordion&quot;</code>  attribute and a unique identifier are required for script to function.</p></div>
+<p>The <code>data-js=&quot;accordion&quot;</code> attribute and a unique identifier are required for script to function.</p></div>
             </div>
-            <div class="layout--columns justify-between">
-              <div class="pr-2">
-                <article class="c-accordion mt-0" id="what-you-need-to-include">
-                  <header class="c-accordion__header">
-                    <p>Proof of who you are</p>
-                    <a class="c-accordion__toggle print:hidden" data-js="accordion" href="#what-you-need-to-include__body"><span class="c-accordion__toggle-active"><span class="hidden screen-tablet:inline">-&nbsp;</span>hide this list</span><span class="c-accordion__toggle-inactive"><span class="hidden screen-tablet:inline">+&nbsp;</span>show this list</span>
-                    </a>
-                  </header>
-                  <div class="c-accordion__body print:active hidden:overflow animated inactive" id="what-you-need-to-include__body">
-                    <div class="c-accordion__padding">
-                      <p>For each person applying, <strong>any one document:</strong></p>
-                      <ul>
-                        <li>Driver license or official photo ID</li>
-                        <li>Birth certificate</li>
-                        <li>Passport</li>
-                        <li>Social Security card for dependents</li>
-                        <li>Social security card or ITIN</li>
-                        <li>Naturalization certificate</li>
-                        <li>Adoption records</li>
-                        <li>Baptismal or another religious certificate</li>
-                        <li>Marriage records</li>
-                        <li>Medicaid card</li>
-                        <li>Official birth records</li>
-                        <li>Official school records</li>
-                        <li>Other official record showing birth date</li>
-                      </ul>
-                    </div>
+            <div class="layout--gutter screen-tablet:layout--columns justify-between">
+              <div class="layout--gutter screen-mobile:layout--columns-gutter screen-tablet:layout--three-columns-gutter screen-desktop:layout--four-columns-gutter">
+                <div class="flex flex-col justify-between items-center border border-color-grey-light p-3">
+                  <div class="pb-2">
+                    <article class="c-accordion mt-0" id="what-you-need-to-include">
+                      <header class="c-accordion__header">
+                        <p>Proof of who you are</p>
+                        <a class="c-accordion__toggle print:hidden" data-js="accordion" href="#what-you-need-to-include__body"><span class="c-accordion__toggle-active"><span class="hidden screen-tablet:inline">-&nbsp;</span>hide this list</span><span class="c-accordion__toggle-inactive"><span class="hidden screen-tablet:inline">+&nbsp;</span>show this
+                          list</span>
+                        </a>
+                      </header>
+                      <div class="c-accordion__body print:active hidden:overflow animated inactive" id="what-you-need-to-include__body">
+                        <div class="c-accordion__padding">
+                          <p>For each person applying, <strong>any one document:</strong></p>
+                          <ul>
+                            <li>Driver license or official photo ID</li>
+                            <li>Birth certificate</li>
+                            <li>Passport</li>
+                            <li>Social Security card for dependents</li>
+                            <li>Social security card or ITIN</li>
+                            <li>Naturalization certificate</li>
+                            <li>Adoption records</li>
+                            <li>Baptismal or another religious certificate</li>
+                            <li>Marriage records</li>
+                            <li>Medicaid card</li>
+                            <li>Official birth records</li>
+                            <li>Official school records</li>
+                            <li>Other official record showing birth date</li>
+                          </ul>
+                        </div>
+                      </div>
+                    </article>
                   </div>
-                </article>
-              </div>
-              <div>
-                <div class="code-block mb-1"><pre>&lt;article class=&quot;c-accordion mt-0&quot; id=&quot;what-you-need-to-include&quot;&gt;
+                  <div class="code-block mb-1"><pre>&lt;article class=&quot;c-accordion mt-0&quot; id=&quot;what-you-need-to-include&quot;&gt;
   &lt;header class=&quot;c-accordion__header&quot;&gt;
     &lt;p&gt;Proof of who you are&lt;/p&gt;
     &lt;a class=&quot;c-accordion__toggle print:hidden&quot; data-js=&quot;accordion&quot; href=&quot;#what-you-need-to-include__body&quot;&gt;&lt;span class=&quot;c-accordion__toggle-active&quot;&gt;&lt;span class=&quot;hidden screen-tablet:inline&quot;&gt;-&amp;nbsp;&lt;/span&gt;hide this list&lt;/span&gt;&lt;span class=&quot;c-accordion__toggle-inactive&quot;&gt;&lt;span class=&quot;hidden screen-tablet:inline&quot;&gt;+&amp;nbsp;&lt;/span&gt;show this list&lt;/span&gt;
@@ -189,6 +191,243 @@ document.querySelectorAll(Accordion.selector)
     &lt;/div&gt;
   &lt;/div&gt;
 &lt;/article&gt;</pre></div>
+                </div>
+                <div class="flex flex-col justify-between items-center border border-color-grey-light p-3">
+                  <div class="pb-2">
+                    <article class="c-accordion mt-0" id="what-you-need-to-include">
+                      <header class="c-accordion__header">
+                        <p>Proof of who you are</p>
+                        <a class="c-accordion__toggle print:hidden" data-js="accordion" href="#what-you-need-to-include__body"><span class="c-accordion__toggle-active"><span class="hidden screen-tablet:inline">-&nbsp;</span>hide this list</span><span class="c-accordion__toggle-inactive"><span class="hidden screen-tablet:inline">+&nbsp;</span>show this
+                          list</span>
+                        </a>
+                      </header>
+                      <div class="c-accordion__body print:active hidden:overflow animated inactive" id="what-you-need-to-include__body">
+                        <div class="c-accordion__padding">
+                          <p>For each person applying, <strong>any one document:</strong></p>
+                          <ul>
+                            <li>Driver license or official photo ID</li>
+                            <li>Birth certificate</li>
+                            <li>Passport</li>
+                            <li>Social Security card for dependents</li>
+                            <li>Social security card or ITIN</li>
+                            <li>Naturalization certificate</li>
+                            <li>Adoption records</li>
+                            <li>Baptismal or another religious certificate</li>
+                            <li>Marriage records</li>
+                            <li>Medicaid card</li>
+                            <li>Official birth records</li>
+                            <li>Official school records</li>
+                            <li>Other official record showing birth date</li>
+                          </ul>
+                        </div>
+                      </div>
+                    </article>
+                  </div>
+                  <div class="code-block mb-1"><pre>&lt;article class=&quot;c-accordion mt-0&quot; id=&quot;what-you-need-to-include&quot;&gt;
+  &lt;header class=&quot;c-accordion__header&quot;&gt;
+    &lt;p&gt;Proof of who you are&lt;/p&gt;
+    &lt;a class=&quot;c-accordion__toggle print:hidden&quot; data-js=&quot;accordion&quot; href=&quot;#what-you-need-to-include__body&quot;&gt;&lt;span class=&quot;c-accordion__toggle-active&quot;&gt;&lt;span class=&quot;hidden screen-tablet:inline&quot;&gt;-&amp;nbsp;&lt;/span&gt;hide this list&lt;/span&gt;&lt;span class=&quot;c-accordion__toggle-inactive&quot;&gt;&lt;span class=&quot;hidden screen-tablet:inline&quot;&gt;+&amp;nbsp;&lt;/span&gt;show this list&lt;/span&gt;
+    &lt;/a&gt;
+  &lt;/header&gt;
+  &lt;div class=&quot;c-accordion__body print:active hidden:overflow animated inactive&quot; id=&quot;what-you-need-to-include__body&quot;&gt;
+    &lt;div class=&quot;c-accordion__padding&quot;&gt;
+      &lt;p&gt;For each person applying, &lt;strong&gt;any one document:&lt;/strong&gt;&lt;/p&gt;
+      &lt;ul&gt;
+        &lt;li&gt;Driver license or official photo ID&lt;/li&gt;
+        &lt;li&gt;Birth certificate&lt;/li&gt;
+        &lt;li&gt;Passport&lt;/li&gt;
+        &lt;li&gt;Social Security card for dependents&lt;/li&gt;
+        &lt;li&gt;Social security card or ITIN&lt;/li&gt;
+        &lt;li&gt;Naturalization certificate&lt;/li&gt;
+        &lt;li&gt;Adoption records&lt;/li&gt;
+        &lt;li&gt;Baptismal or another religious certificate&lt;/li&gt;
+        &lt;li&gt;Marriage records&lt;/li&gt;
+        &lt;li&gt;Medicaid card&lt;/li&gt;
+        &lt;li&gt;Official birth records&lt;/li&gt;
+        &lt;li&gt;Official school records&lt;/li&gt;
+        &lt;li&gt;Other official record showing birth date&lt;/li&gt;
+      &lt;/ul&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/article&gt;</pre></div>
+                </div>
+                <div class="flex flex-col justify-between items-center border border-color-grey-light p-3">
+                  <div class="pb-2">
+                    <article class="c-accordion mt-0" id="what-you-need-to-include">
+                      <header class="c-accordion__header">
+                        <p>Proof of who you are</p>
+                        <a class="c-accordion__toggle print:hidden" data-js="accordion" href="#what-you-need-to-include__body"><span class="c-accordion__toggle-active"><span class="hidden screen-tablet:inline">-&nbsp;</span>hide this list</span><span class="c-accordion__toggle-inactive"><span class="hidden screen-tablet:inline">+&nbsp;</span>show this
+                          list</span>
+                        </a>
+                      </header>
+                      <div class="c-accordion__body print:active hidden:overflow animated inactive" id="what-you-need-to-include__body">
+                        <div class="c-accordion__padding">
+                          <p>For each person applying, <strong>any one document:</strong></p>
+                          <ul>
+                            <li>Driver license or official photo ID</li>
+                            <li>Birth certificate</li>
+                            <li>Passport</li>
+                            <li>Social Security card for dependents</li>
+                            <li>Social security card or ITIN</li>
+                            <li>Naturalization certificate</li>
+                            <li>Adoption records</li>
+                            <li>Baptismal or another religious certificate</li>
+                            <li>Marriage records</li>
+                            <li>Medicaid card</li>
+                            <li>Official birth records</li>
+                            <li>Official school records</li>
+                            <li>Other official record showing birth date</li>
+                          </ul>
+                        </div>
+                      </div>
+                    </article>
+                  </div>
+                  <div class="code-block mb-1"><pre>&lt;article class=&quot;c-accordion mt-0&quot; id=&quot;what-you-need-to-include&quot;&gt;
+  &lt;header class=&quot;c-accordion__header&quot;&gt;
+    &lt;p&gt;Proof of who you are&lt;/p&gt;
+    &lt;a class=&quot;c-accordion__toggle print:hidden&quot; data-js=&quot;accordion&quot; href=&quot;#what-you-need-to-include__body&quot;&gt;&lt;span class=&quot;c-accordion__toggle-active&quot;&gt;&lt;span class=&quot;hidden screen-tablet:inline&quot;&gt;-&amp;nbsp;&lt;/span&gt;hide this list&lt;/span&gt;&lt;span class=&quot;c-accordion__toggle-inactive&quot;&gt;&lt;span class=&quot;hidden screen-tablet:inline&quot;&gt;+&amp;nbsp;&lt;/span&gt;show this list&lt;/span&gt;
+    &lt;/a&gt;
+  &lt;/header&gt;
+  &lt;div class=&quot;c-accordion__body print:active hidden:overflow animated inactive&quot; id=&quot;what-you-need-to-include__body&quot;&gt;
+    &lt;div class=&quot;c-accordion__padding&quot;&gt;
+      &lt;p&gt;For each person applying, &lt;strong&gt;any one document:&lt;/strong&gt;&lt;/p&gt;
+      &lt;ul&gt;
+        &lt;li&gt;Driver license or official photo ID&lt;/li&gt;
+        &lt;li&gt;Birth certificate&lt;/li&gt;
+        &lt;li&gt;Passport&lt;/li&gt;
+        &lt;li&gt;Social Security card for dependents&lt;/li&gt;
+        &lt;li&gt;Social security card or ITIN&lt;/li&gt;
+        &lt;li&gt;Naturalization certificate&lt;/li&gt;
+        &lt;li&gt;Adoption records&lt;/li&gt;
+        &lt;li&gt;Baptismal or another religious certificate&lt;/li&gt;
+        &lt;li&gt;Marriage records&lt;/li&gt;
+        &lt;li&gt;Medicaid card&lt;/li&gt;
+        &lt;li&gt;Official birth records&lt;/li&gt;
+        &lt;li&gt;Official school records&lt;/li&gt;
+        &lt;li&gt;Other official record showing birth date&lt;/li&gt;
+      &lt;/ul&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/article&gt;</pre></div>
+                </div>
+                <div class="flex flex-col justify-between items-center border border-color-grey-light p-3">
+                  <div class="pb-2">
+                    <article class="c-accordion mt-0" id="what-you-need-to-include">
+                      <header class="c-accordion__header">
+                        <p>Proof of who you are</p>
+                        <a class="c-accordion__toggle print:hidden" data-js="accordion" href="#what-you-need-to-include__body"><span class="c-accordion__toggle-active"><span class="hidden screen-tablet:inline">-&nbsp;</span>hide this list</span><span class="c-accordion__toggle-inactive"><span class="hidden screen-tablet:inline">+&nbsp;</span>show this
+                          list</span>
+                        </a>
+                      </header>
+                      <div class="c-accordion__body print:active hidden:overflow animated inactive" id="what-you-need-to-include__body">
+                        <div class="c-accordion__padding">
+                          <p>For each person applying, <strong>any one document:</strong></p>
+                          <ul>
+                            <li>Driver license or official photo ID</li>
+                            <li>Birth certificate</li>
+                            <li>Passport</li>
+                            <li>Social Security card for dependents</li>
+                            <li>Social security card or ITIN</li>
+                            <li>Naturalization certificate</li>
+                            <li>Adoption records</li>
+                            <li>Baptismal or another religious certificate</li>
+                            <li>Marriage records</li>
+                            <li>Medicaid card</li>
+                            <li>Official birth records</li>
+                            <li>Official school records</li>
+                            <li>Other official record showing birth date</li>
+                          </ul>
+                        </div>
+                      </div>
+                    </article>
+                  </div>
+                  <div class="code-block mb-1"><pre>&lt;article class=&quot;c-accordion mt-0&quot; id=&quot;what-you-need-to-include&quot;&gt;
+  &lt;header class=&quot;c-accordion__header&quot;&gt;
+    &lt;p&gt;Proof of who you are&lt;/p&gt;
+    &lt;a class=&quot;c-accordion__toggle print:hidden&quot; data-js=&quot;accordion&quot; href=&quot;#what-you-need-to-include__body&quot;&gt;&lt;span class=&quot;c-accordion__toggle-active&quot;&gt;&lt;span class=&quot;hidden screen-tablet:inline&quot;&gt;-&amp;nbsp;&lt;/span&gt;hide this list&lt;/span&gt;&lt;span class=&quot;c-accordion__toggle-inactive&quot;&gt;&lt;span class=&quot;hidden screen-tablet:inline&quot;&gt;+&amp;nbsp;&lt;/span&gt;show this list&lt;/span&gt;
+    &lt;/a&gt;
+  &lt;/header&gt;
+  &lt;div class=&quot;c-accordion__body print:active hidden:overflow animated inactive&quot; id=&quot;what-you-need-to-include__body&quot;&gt;
+    &lt;div class=&quot;c-accordion__padding&quot;&gt;
+      &lt;p&gt;For each person applying, &lt;strong&gt;any one document:&lt;/strong&gt;&lt;/p&gt;
+      &lt;ul&gt;
+        &lt;li&gt;Driver license or official photo ID&lt;/li&gt;
+        &lt;li&gt;Birth certificate&lt;/li&gt;
+        &lt;li&gt;Passport&lt;/li&gt;
+        &lt;li&gt;Social Security card for dependents&lt;/li&gt;
+        &lt;li&gt;Social security card or ITIN&lt;/li&gt;
+        &lt;li&gt;Naturalization certificate&lt;/li&gt;
+        &lt;li&gt;Adoption records&lt;/li&gt;
+        &lt;li&gt;Baptismal or another religious certificate&lt;/li&gt;
+        &lt;li&gt;Marriage records&lt;/li&gt;
+        &lt;li&gt;Medicaid card&lt;/li&gt;
+        &lt;li&gt;Official birth records&lt;/li&gt;
+        &lt;li&gt;Official school records&lt;/li&gt;
+        &lt;li&gt;Other official record showing birth date&lt;/li&gt;
+      &lt;/ul&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/article&gt;</pre></div>
+                </div>
+                <div class="flex flex-col justify-between items-center border border-color-grey-light p-3">
+                  <div class="pb-2">
+                    <article class="c-accordion mt-0" id="what-you-need-to-include">
+                      <header class="c-accordion__header">
+                        <p>Proof of who you are</p>
+                        <a class="c-accordion__toggle print:hidden" data-js="accordion" href="#what-you-need-to-include__body"><span class="c-accordion__toggle-active"><span class="hidden screen-tablet:inline">-&nbsp;</span>hide this list</span><span class="c-accordion__toggle-inactive"><span class="hidden screen-tablet:inline">+&nbsp;</span>show this
+                          list</span>
+                        </a>
+                      </header>
+                      <div class="c-accordion__body print:active hidden:overflow animated inactive" id="what-you-need-to-include__body">
+                        <div class="c-accordion__padding">
+                          <p>For each person applying, <strong>any one document:</strong></p>
+                          <ul>
+                            <li>Driver license or official photo ID</li>
+                            <li>Birth certificate</li>
+                            <li>Passport</li>
+                            <li>Social Security card for dependents</li>
+                            <li>Social security card or ITIN</li>
+                            <li>Naturalization certificate</li>
+                            <li>Adoption records</li>
+                            <li>Baptismal or another religious certificate</li>
+                            <li>Marriage records</li>
+                            <li>Medicaid card</li>
+                            <li>Official birth records</li>
+                            <li>Official school records</li>
+                            <li>Other official record showing birth date</li>
+                          </ul>
+                        </div>
+                      </div>
+                    </article>
+                  </div>
+                  <div class="code-block mb-1"><pre>&lt;article class=&quot;c-accordion mt-0&quot; id=&quot;what-you-need-to-include&quot;&gt;
+  &lt;header class=&quot;c-accordion__header&quot;&gt;
+    &lt;p&gt;Proof of who you are&lt;/p&gt;
+    &lt;a class=&quot;c-accordion__toggle print:hidden&quot; data-js=&quot;accordion&quot; href=&quot;#what-you-need-to-include__body&quot;&gt;&lt;span class=&quot;c-accordion__toggle-active&quot;&gt;&lt;span class=&quot;hidden screen-tablet:inline&quot;&gt;-&amp;nbsp;&lt;/span&gt;hide this list&lt;/span&gt;&lt;span class=&quot;c-accordion__toggle-inactive&quot;&gt;&lt;span class=&quot;hidden screen-tablet:inline&quot;&gt;+&amp;nbsp;&lt;/span&gt;show this list&lt;/span&gt;
+    &lt;/a&gt;
+  &lt;/header&gt;
+  &lt;div class=&quot;c-accordion__body print:active hidden:overflow animated inactive&quot; id=&quot;what-you-need-to-include__body&quot;&gt;
+    &lt;div class=&quot;c-accordion__padding&quot;&gt;
+      &lt;p&gt;For each person applying, &lt;strong&gt;any one document:&lt;/strong&gt;&lt;/p&gt;
+      &lt;ul&gt;
+        &lt;li&gt;Driver license or official photo ID&lt;/li&gt;
+        &lt;li&gt;Birth certificate&lt;/li&gt;
+        &lt;li&gt;Passport&lt;/li&gt;
+        &lt;li&gt;Social Security card for dependents&lt;/li&gt;
+        &lt;li&gt;Social security card or ITIN&lt;/li&gt;
+        &lt;li&gt;Naturalization certificate&lt;/li&gt;
+        &lt;li&gt;Adoption records&lt;/li&gt;
+        &lt;li&gt;Baptismal or another religious certificate&lt;/li&gt;
+        &lt;li&gt;Marriage records&lt;/li&gt;
+        &lt;li&gt;Medicaid card&lt;/li&gt;
+        &lt;li&gt;Official birth records&lt;/li&gt;
+        &lt;li&gt;Official school records&lt;/li&gt;
+        &lt;li&gt;Other official record showing birth date&lt;/li&gt;
+      &lt;/ul&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/article&gt;</pre></div>
+                </div>
               </div>
             </div>
           </div>

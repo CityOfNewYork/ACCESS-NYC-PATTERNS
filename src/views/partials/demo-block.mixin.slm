@@ -1,12 +1,28 @@
-= mixin('demo-block', 'markup', 'layout = columns');
-  div class='layout--${this.layout} justify-between'
+= mixin('demo-block', 'markup', 'layout = columns', 'grid = false');
+  div class='layout--gutter screen-tablet:layout--${this.layout} justify-between'
     - if (this.layout === 'columns')
-      - this.padding = 'pr-2';
+      - this.padding = 'screen-tablet:pr-2';
 
-    div class='${this.padding}'
-      = partial('../' + this.markup);
+    - if (!this.grid)
+      - ;
+      div class='${this.padding}'
+        = partial('../' + this.markup);
 
-    div
-      div class='code-block mb-1'
-        pre
-          = 'code{{ '+ this.markup +' }}';
+    - if (!this.grid)
+      - ;
+      div
+        div class='code-block mb-1'
+          pre
+            = 'code{{ '+ this.markup +' }}';
+
+    - if (this.grid)
+      - ;
+      div class='layout--gutter screen-mobile:layout--columns-gutter screen-tablet:layout--three-columns-gutter screen-desktop:layout--four-columns-gutter'
+        - for (key in this.grid)
+          - ;
+          div class='flex flex-col justify-between items-center border border-color-grey-light p-3'
+            div class='pb-2'
+              = partial('../' + this.markup);
+            div class='code-block mb-1'
+              pre
+                = 'code{{ '+ this.markup +' }}';
