@@ -26,7 +26,7 @@
 .c-header__icon {
   $icon-height: $spacing-base * 2;
   $icon-width: $spacing-base * 2;
-  margin-bottom: $spacing-base;
+  margin-bottom: $spacing-base / 3;
 
   .icon {
     width: $icon-width;
