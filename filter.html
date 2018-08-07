@@ -25,19 +25,24 @@
     <a class="hidden" href="#main-content">Skip to main content</a>
     <header class="px-2">
       <div class="border-b border-color-grey-light">
-        <div class="flex items-center justify-between py-4 px-2">
+        <div class="flex items-center justify-between p-2 screen-tablet:py-4 screen-tablet:px-2">
           <div>
             <h1 class="m-0 p-0 leading-normal"><span class="hidden">ACCESS NYC</span>
-              <svg aria-hidden="true" class="icon-logo-full--large text-color-blue-dark">
+              <svg aria-hidden="true" class="icon-logo-mark screen-tablet:hidden">
+                <use xlink:href="#icon-logo-mark"></use>
+              </svg>
+              <svg aria-hidden="true" class="icon-logo-full--large text-color-blue-dark hidden screen-tablet:inline-block">
                 <use xlink:href="#icon-logo-full"></use>
               </svg>
             </h1>
           </div>
           <div class="flex items-center">
-            <h2 class="type-h1 m-0 text-color-blue-dark">Patterns</h2>
+            <h2 class="text-font-size-small m-0 text-color-blue-dark screen-tablet:hidden">Patterns</h2>
+            <h2 aria-hidden="true" class="type-h1 m-0 text-color-blue-dark hidden screen-tablet:inline-block">Patterns</h2>
             <nav class="text-font-size-small">
-              <a class="text-color-blue-dark border-2 rounded-lg no-underline px-1 ml-2" href="https://github.com/CityOfNewYork/ACCESS-NYC-PATTERNS">0.0.10</a>
-              <a class="ml-2" data-js="toggle" href="#main-menu">Menu</a>
+              <a class="rounded-lg text-color-blue-dark border-2 no-underline px-1 ml-2 hidden screen-tablet:inline-block" href="https://github.com/CityOfNewYork/ACCESS-NYC-PATTERNS">0.0.10</a>
+              <a aria-hidden="true" class="ml-1 screen-tablet:ml-2 screen-tablet:hidden" href="https://github.com/CityOfNewYork/ACCESS-NYC-PATTERNS">0.0.10</a>
+              <a class="ml-1 screen-tablet:ml-2" data-js="toggle" href="#main-menu">Menu</a>
             </nav>
           </div>
         </div>
@@ -98,13 +103,13 @@
     </aside>
     <main class="pt-4" id="main-content">
       <article class="py-4">
-        <header class="page-wrapper layout--home-body">
+        <header class="page-wrapper px-2 screen-desktop:px-0 layout--home-body">
           <div class="my-0 w-full">
             <h1 class="text-color-blue-dark px-2 m-0">Filter</h1>
           </div>
         </header>
         <section class="pb-4 mb-4" id="default-styling">
-          <div class="page-wrapper">
+          <div class="page-wrapper px-2 screen-desktop:px-0">
             <header class="layout--home-body">
               <div class="my-0 pt-1 px-2 border-b border-color-grey-light">
                 <h2>
@@ -115,98 +120,424 @@
             <div class="layout--home-body">
               <div class="px-2 text-font-size-small"></div>
             </div>
-            <div class="layout--columns justify-between">
-              <div class="pr-2">
-                <div class="c-filter">
-                  <a class="c-filter__header active" data-js="filter" href="#filter__list">All Programs</a>
-                  <div class="c-filter__body">
-                    <ul class="c-filter__list active" id="filter__list">
-                      <li><span class="c-filter__item">All Programs</span></li>
-                      <li>
-                        <a class="c-filter__item" href="#">Cash &amp; Expenses</a>
-                      </li>
-                      <li>
-                        <a class="c-filter__item" href="#">Child Care</a>
-                      </li>
-                      <li>
-                        <a class="c-filter__item" href="#">City ID Card</a>
-                      </li>
-                      <li>
-                        <a class="c-filter__item" href="#">Education</a>
-                      </li>
-                      <li>
-                        <a class="c-filter__item" href="#">Enrichment</a>
-                      </li>
-                      <li>
-                        <a class="c-filter__item" href="#">Family Services</a>
-                      </li>
-                      <li>
-                        <a class="c-filter__item" href="#">Food</a>
-                      </li>
-                      <li>
-                        <a class="c-filter__item" href="#">Health</a>
-                      </li>
-                      <li>
-                        <a class="c-filter__item" href="#">Housing</a>
-                      </li>
-                      <li>
-                        <a class="c-filter__item" href="#">Special Needs</a>
-                      </li>
-                      <li>
-                        <a class="c-filter__item" href="#">Work</a>
-                      </li>
-                    </ul>
+            <div class="layout--gutter screen-tablet:layout--columns justify-between">
+              <div class="layout--gutter screen-mobile:layout--columns-gutter screen-tablet:layout--three-columns-gutter screen-desktop:layout--four-columns-gutter">
+                <div class="flex flex-col justify-between items-center border border-color-grey-light p-3">
+                  <div class="pb-2">
+                    <div class="c-filter">
+                      <a class="c-filter__header active" data-js="filter" href="#filter__list">All Programs</a>
+                      <ul class="c-filter__list active" id="filter__list">
+                        <li><span class="c-filter__item">All Programs</span></li>
+                        <li>
+                          <a class="c-filter__item" href="#">Cash &amp; Expenses</a>
+                        </li>
+                        <li>
+                          <a class="c-filter__item" href="#">Child Care</a>
+                        </li>
+                        <li>
+                          <a class="c-filter__item" href="#">City ID Card</a>
+                        </li>
+                        <li>
+                          <a class="c-filter__item" href="#">Education</a>
+                        </li>
+                        <li>
+                          <a class="c-filter__item" href="#">Enrichment</a>
+                        </li>
+                        <li>
+                          <a class="c-filter__item" href="#">Family Services</a>
+                        </li>
+                        <li>
+                          <a class="c-filter__item" href="#">Food</a>
+                        </li>
+                        <li>
+                          <a class="c-filter__item" href="#">Health</a>
+                        </li>
+                        <li>
+                          <a class="c-filter__item" href="#">Housing</a>
+                        </li>
+                        <li>
+                          <a class="c-filter__item" href="#">Special Needs</a>
+                        </li>
+                        <li>
+                          <a class="c-filter__item" href="#">Work</a>
+                        </li>
+                      </ul>
+                    </div>
                   </div>
-                </div>
-              </div>
-              <div>
-                <div class="code-block mb-1"><pre>&lt;div class=&quot;c-filter&quot;&gt;
+                  <div class="code-block mb-1"><pre>&lt;div class=&quot;c-filter&quot;&gt;
   &lt;a class=&quot;c-filter__header active&quot; data-js=&quot;filter&quot; href=&quot;#filter__list&quot;&gt;All Programs&lt;/a&gt;
-  &lt;div class=&quot;c-filter__body&quot;&gt;
-    &lt;ul class=&quot;c-filter__list active&quot; id=&quot;filter__list&quot;&gt;
-      &lt;li&gt;&lt;span class=&quot;c-filter__item&quot;&gt;All Programs&lt;/span&gt;&lt;/li&gt;
-      &lt;li&gt;
-        &lt;a class=&quot;c-filter__item&quot; href=&quot;#&quot;&gt;Cash &amp;amp; Expenses&lt;/a&gt;
-      &lt;/li&gt;
-      &lt;li&gt;
-        &lt;a class=&quot;c-filter__item&quot; href=&quot;#&quot;&gt;Child Care&lt;/a&gt;
-      &lt;/li&gt;
-      &lt;li&gt;
-        &lt;a class=&quot;c-filter__item&quot; href=&quot;#&quot;&gt;City ID Card&lt;/a&gt;
-      &lt;/li&gt;
-      &lt;li&gt;
-        &lt;a class=&quot;c-filter__item&quot; href=&quot;#&quot;&gt;Education&lt;/a&gt;
-      &lt;/li&gt;
-      &lt;li&gt;
-        &lt;a class=&quot;c-filter__item&quot; href=&quot;#&quot;&gt;Enrichment&lt;/a&gt;
-      &lt;/li&gt;
-      &lt;li&gt;
-        &lt;a class=&quot;c-filter__item&quot; href=&quot;#&quot;&gt;Family Services&lt;/a&gt;
-      &lt;/li&gt;
-      &lt;li&gt;
-        &lt;a class=&quot;c-filter__item&quot; href=&quot;#&quot;&gt;Food&lt;/a&gt;
-      &lt;/li&gt;
-      &lt;li&gt;
-        &lt;a class=&quot;c-filter__item&quot; href=&quot;#&quot;&gt;Health&lt;/a&gt;
-      &lt;/li&gt;
-      &lt;li&gt;
-        &lt;a class=&quot;c-filter__item&quot; href=&quot;#&quot;&gt;Housing&lt;/a&gt;
-      &lt;/li&gt;
-      &lt;li&gt;
-        &lt;a class=&quot;c-filter__item&quot; href=&quot;#&quot;&gt;Special Needs&lt;/a&gt;
-      &lt;/li&gt;
-      &lt;li&gt;
-        &lt;a class=&quot;c-filter__item&quot; href=&quot;#&quot;&gt;Work&lt;/a&gt;
-      &lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/div&gt;
+  &lt;ul class=&quot;c-filter__list active&quot; id=&quot;filter__list&quot;&gt;
+    &lt;li&gt;&lt;span class=&quot;c-filter__item&quot;&gt;All Programs&lt;/span&gt;&lt;/li&gt;
+    &lt;li&gt;
+      &lt;a class=&quot;c-filter__item&quot; href=&quot;#&quot;&gt;Cash &amp;amp; Expenses&lt;/a&gt;
+    &lt;/li&gt;
+    &lt;li&gt;
+      &lt;a class=&quot;c-filter__item&quot; href=&quot;#&quot;&gt;Child Care&lt;/a&gt;
+    &lt;/li&gt;
+    &lt;li&gt;
+      &lt;a class=&quot;c-filter__item&quot; href=&quot;#&quot;&gt;City ID Card&lt;/a&gt;
+    &lt;/li&gt;
+    &lt;li&gt;
+      &lt;a class=&quot;c-filter__item&quot; href=&quot;#&quot;&gt;Education&lt;/a&gt;
+    &lt;/li&gt;
+    &lt;li&gt;
+      &lt;a class=&quot;c-filter__item&quot; href=&quot;#&quot;&gt;Enrichment&lt;/a&gt;
+    &lt;/li&gt;
+    &lt;li&gt;
+      &lt;a class=&quot;c-filter__item&quot; href=&quot;#&quot;&gt;Family Services&lt;/a&gt;
+    &lt;/li&gt;
+    &lt;li&gt;
+      &lt;a class=&quot;c-filter__item&quot; href=&quot;#&quot;&gt;Food&lt;/a&gt;
+    &lt;/li&gt;
+    &lt;li&gt;
+      &lt;a class=&quot;c-filter__item&quot; href=&quot;#&quot;&gt;Health&lt;/a&gt;
+    &lt;/li&gt;
+    &lt;li&gt;
+      &lt;a class=&quot;c-filter__item&quot; href=&quot;#&quot;&gt;Housing&lt;/a&gt;
+    &lt;/li&gt;
+    &lt;li&gt;
+      &lt;a class=&quot;c-filter__item&quot; href=&quot;#&quot;&gt;Special Needs&lt;/a&gt;
+    &lt;/li&gt;
+    &lt;li&gt;
+      &lt;a class=&quot;c-filter__item&quot; href=&quot;#&quot;&gt;Work&lt;/a&gt;
+    &lt;/li&gt;
+  &lt;/ul&gt;
 &lt;/div&gt;</pre></div>
+                </div>
+                <div class="flex flex-col justify-between items-center border border-color-grey-light p-3">
+                  <div class="pb-2">
+                    <div class="c-filter">
+                      <a class="c-filter__header active" data-js="filter" href="#filter__list">All Programs</a>
+                      <ul class="c-filter__list active" id="filter__list">
+                        <li><span class="c-filter__item">All Programs</span></li>
+                        <li>
+                          <a class="c-filter__item" href="#">Cash &amp; Expenses</a>
+                        </li>
+                        <li>
+                          <a class="c-filter__item" href="#">Child Care</a>
+                        </li>
+                        <li>
+                          <a class="c-filter__item" href="#">City ID Card</a>
+                        </li>
+                        <li>
+                          <a class="c-filter__item" href="#">Education</a>
+                        </li>
+                        <li>
+                          <a class="c-filter__item" href="#">Enrichment</a>
+                        </li>
+                        <li>
+                          <a class="c-filter__item" href="#">Family Services</a>
+                        </li>
+                        <li>
+                          <a class="c-filter__item" href="#">Food</a>
+                        </li>
+                        <li>
+                          <a class="c-filter__item" href="#">Health</a>
+                        </li>
+                        <li>
+                          <a class="c-filter__item" href="#">Housing</a>
+                        </li>
+                        <li>
+                          <a class="c-filter__item" href="#">Special Needs</a>
+                        </li>
+                        <li>
+                          <a class="c-filter__item" href="#">Work</a>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                  <div class="code-block mb-1"><pre>&lt;div class=&quot;c-filter&quot;&gt;
+  &lt;a class=&quot;c-filter__header active&quot; data-js=&quot;filter&quot; href=&quot;#filter__list&quot;&gt;All Programs&lt;/a&gt;
+  &lt;ul class=&quot;c-filter__list active&quot; id=&quot;filter__list&quot;&gt;
+    &lt;li&gt;&lt;span class=&quot;c-filter__item&quot;&gt;All Programs&lt;/span&gt;&lt;/li&gt;
+    &lt;li&gt;
+      &lt;a class=&quot;c-filter__item&quot; href=&quot;#&quot;&gt;Cash &amp;amp; Expenses&lt;/a&gt;
+    &lt;/li&gt;
+    &lt;li&gt;
+      &lt;a class=&quot;c-filter__item&quot; href=&quot;#&quot;&gt;Child Care&lt;/a&gt;
+    &lt;/li&gt;
+    &lt;li&gt;
+      &lt;a class=&quot;c-filter__item&quot; href=&quot;#&quot;&gt;City ID Card&lt;/a&gt;
+    &lt;/li&gt;
+    &lt;li&gt;
+      &lt;a class=&quot;c-filter__item&quot; href=&quot;#&quot;&gt;Education&lt;/a&gt;
+    &lt;/li&gt;
+    &lt;li&gt;
+      &lt;a class=&quot;c-filter__item&quot; href=&quot;#&quot;&gt;Enrichment&lt;/a&gt;
+    &lt;/li&gt;
+    &lt;li&gt;
+      &lt;a class=&quot;c-filter__item&quot; href=&quot;#&quot;&gt;Family Services&lt;/a&gt;
+    &lt;/li&gt;
+    &lt;li&gt;
+      &lt;a class=&quot;c-filter__item&quot; href=&quot;#&quot;&gt;Food&lt;/a&gt;
+    &lt;/li&gt;
+    &lt;li&gt;
+      &lt;a class=&quot;c-filter__item&quot; href=&quot;#&quot;&gt;Health&lt;/a&gt;
+    &lt;/li&gt;
+    &lt;li&gt;
+      &lt;a class=&quot;c-filter__item&quot; href=&quot;#&quot;&gt;Housing&lt;/a&gt;
+    &lt;/li&gt;
+    &lt;li&gt;
+      &lt;a class=&quot;c-filter__item&quot; href=&quot;#&quot;&gt;Special Needs&lt;/a&gt;
+    &lt;/li&gt;
+    &lt;li&gt;
+      &lt;a class=&quot;c-filter__item&quot; href=&quot;#&quot;&gt;Work&lt;/a&gt;
+    &lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/div&gt;</pre></div>
+                </div>
+                <div class="flex flex-col justify-between items-center border border-color-grey-light p-3">
+                  <div class="pb-2">
+                    <div class="c-filter">
+                      <a class="c-filter__header active" data-js="filter" href="#filter__list">All Programs</a>
+                      <ul class="c-filter__list active" id="filter__list">
+                        <li><span class="c-filter__item">All Programs</span></li>
+                        <li>
+                          <a class="c-filter__item" href="#">Cash &amp; Expenses</a>
+                        </li>
+                        <li>
+                          <a class="c-filter__item" href="#">Child Care</a>
+                        </li>
+                        <li>
+                          <a class="c-filter__item" href="#">City ID Card</a>
+                        </li>
+                        <li>
+                          <a class="c-filter__item" href="#">Education</a>
+                        </li>
+                        <li>
+                          <a class="c-filter__item" href="#">Enrichment</a>
+                        </li>
+                        <li>
+                          <a class="c-filter__item" href="#">Family Services</a>
+                        </li>
+                        <li>
+                          <a class="c-filter__item" href="#">Food</a>
+                        </li>
+                        <li>
+                          <a class="c-filter__item" href="#">Health</a>
+                        </li>
+                        <li>
+                          <a class="c-filter__item" href="#">Housing</a>
+                        </li>
+                        <li>
+                          <a class="c-filter__item" href="#">Special Needs</a>
+                        </li>
+                        <li>
+                          <a class="c-filter__item" href="#">Work</a>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                  <div class="code-block mb-1"><pre>&lt;div class=&quot;c-filter&quot;&gt;
+  &lt;a class=&quot;c-filter__header active&quot; data-js=&quot;filter&quot; href=&quot;#filter__list&quot;&gt;All Programs&lt;/a&gt;
+  &lt;ul class=&quot;c-filter__list active&quot; id=&quot;filter__list&quot;&gt;
+    &lt;li&gt;&lt;span class=&quot;c-filter__item&quot;&gt;All Programs&lt;/span&gt;&lt;/li&gt;
+    &lt;li&gt;
+      &lt;a class=&quot;c-filter__item&quot; href=&quot;#&quot;&gt;Cash &amp;amp; Expenses&lt;/a&gt;
+    &lt;/li&gt;
+    &lt;li&gt;
+      &lt;a class=&quot;c-filter__item&quot; href=&quot;#&quot;&gt;Child Care&lt;/a&gt;
+    &lt;/li&gt;
+    &lt;li&gt;
+      &lt;a class=&quot;c-filter__item&quot; href=&quot;#&quot;&gt;City ID Card&lt;/a&gt;
+    &lt;/li&gt;
+    &lt;li&gt;
+      &lt;a class=&quot;c-filter__item&quot; href=&quot;#&quot;&gt;Education&lt;/a&gt;
+    &lt;/li&gt;
+    &lt;li&gt;
+      &lt;a class=&quot;c-filter__item&quot; href=&quot;#&quot;&gt;Enrichment&lt;/a&gt;
+    &lt;/li&gt;
+    &lt;li&gt;
+      &lt;a class=&quot;c-filter__item&quot; href=&quot;#&quot;&gt;Family Services&lt;/a&gt;
+    &lt;/li&gt;
+    &lt;li&gt;
+      &lt;a class=&quot;c-filter__item&quot; href=&quot;#&quot;&gt;Food&lt;/a&gt;
+    &lt;/li&gt;
+    &lt;li&gt;
+      &lt;a class=&quot;c-filter__item&quot; href=&quot;#&quot;&gt;Health&lt;/a&gt;
+    &lt;/li&gt;
+    &lt;li&gt;
+      &lt;a class=&quot;c-filter__item&quot; href=&quot;#&quot;&gt;Housing&lt;/a&gt;
+    &lt;/li&gt;
+    &lt;li&gt;
+      &lt;a class=&quot;c-filter__item&quot; href=&quot;#&quot;&gt;Special Needs&lt;/a&gt;
+    &lt;/li&gt;
+    &lt;li&gt;
+      &lt;a class=&quot;c-filter__item&quot; href=&quot;#&quot;&gt;Work&lt;/a&gt;
+    &lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/div&gt;</pre></div>
+                </div>
+                <div class="flex flex-col justify-between items-center border border-color-grey-light p-3">
+                  <div class="pb-2">
+                    <div class="c-filter">
+                      <a class="c-filter__header active" data-js="filter" href="#filter__list">All Programs</a>
+                      <ul class="c-filter__list active" id="filter__list">
+                        <li><span class="c-filter__item">All Programs</span></li>
+                        <li>
+                          <a class="c-filter__item" href="#">Cash &amp; Expenses</a>
+                        </li>
+                        <li>
+                          <a class="c-filter__item" href="#">Child Care</a>
+                        </li>
+                        <li>
+                          <a class="c-filter__item" href="#">City ID Card</a>
+                        </li>
+                        <li>
+                          <a class="c-filter__item" href="#">Education</a>
+                        </li>
+                        <li>
+                          <a class="c-filter__item" href="#">Enrichment</a>
+                        </li>
+                        <li>
+                          <a class="c-filter__item" href="#">Family Services</a>
+                        </li>
+                        <li>
+                          <a class="c-filter__item" href="#">Food</a>
+                        </li>
+                        <li>
+                          <a class="c-filter__item" href="#">Health</a>
+                        </li>
+                        <li>
+                          <a class="c-filter__item" href="#">Housing</a>
+                        </li>
+                        <li>
+                          <a class="c-filter__item" href="#">Special Needs</a>
+                        </li>
+                        <li>
+                          <a class="c-filter__item" href="#">Work</a>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                  <div class="code-block mb-1"><pre>&lt;div class=&quot;c-filter&quot;&gt;
+  &lt;a class=&quot;c-filter__header active&quot; data-js=&quot;filter&quot; href=&quot;#filter__list&quot;&gt;All Programs&lt;/a&gt;
+  &lt;ul class=&quot;c-filter__list active&quot; id=&quot;filter__list&quot;&gt;
+    &lt;li&gt;&lt;span class=&quot;c-filter__item&quot;&gt;All Programs&lt;/span&gt;&lt;/li&gt;
+    &lt;li&gt;
+      &lt;a class=&quot;c-filter__item&quot; href=&quot;#&quot;&gt;Cash &amp;amp; Expenses&lt;/a&gt;
+    &lt;/li&gt;
+    &lt;li&gt;
+      &lt;a class=&quot;c-filter__item&quot; href=&quot;#&quot;&gt;Child Care&lt;/a&gt;
+    &lt;/li&gt;
+    &lt;li&gt;
+      &lt;a class=&quot;c-filter__item&quot; href=&quot;#&quot;&gt;City ID Card&lt;/a&gt;
+    &lt;/li&gt;
+    &lt;li&gt;
+      &lt;a class=&quot;c-filter__item&quot; href=&quot;#&quot;&gt;Education&lt;/a&gt;
+    &lt;/li&gt;
+    &lt;li&gt;
+      &lt;a class=&quot;c-filter__item&quot; href=&quot;#&quot;&gt;Enrichment&lt;/a&gt;
+    &lt;/li&gt;
+    &lt;li&gt;
+      &lt;a class=&quot;c-filter__item&quot; href=&quot;#&quot;&gt;Family Services&lt;/a&gt;
+    &lt;/li&gt;
+    &lt;li&gt;
+      &lt;a class=&quot;c-filter__item&quot; href=&quot;#&quot;&gt;Food&lt;/a&gt;
+    &lt;/li&gt;
+    &lt;li&gt;
+      &lt;a class=&quot;c-filter__item&quot; href=&quot;#&quot;&gt;Health&lt;/a&gt;
+    &lt;/li&gt;
+    &lt;li&gt;
+      &lt;a class=&quot;c-filter__item&quot; href=&quot;#&quot;&gt;Housing&lt;/a&gt;
+    &lt;/li&gt;
+    &lt;li&gt;
+      &lt;a class=&quot;c-filter__item&quot; href=&quot;#&quot;&gt;Special Needs&lt;/a&gt;
+    &lt;/li&gt;
+    &lt;li&gt;
+      &lt;a class=&quot;c-filter__item&quot; href=&quot;#&quot;&gt;Work&lt;/a&gt;
+    &lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/div&gt;</pre></div>
+                </div>
+                <div class="flex flex-col justify-between items-center border border-color-grey-light p-3">
+                  <div class="pb-2">
+                    <div class="c-filter">
+                      <a class="c-filter__header active" data-js="filter" href="#filter__list">All Programs</a>
+                      <ul class="c-filter__list active" id="filter__list">
+                        <li><span class="c-filter__item">All Programs</span></li>
+                        <li>
+                          <a class="c-filter__item" href="#">Cash &amp; Expenses</a>
+                        </li>
+                        <li>
+                          <a class="c-filter__item" href="#">Child Care</a>
+                        </li>
+                        <li>
+                          <a class="c-filter__item" href="#">City ID Card</a>
+                        </li>
+                        <li>
+                          <a class="c-filter__item" href="#">Education</a>
+                        </li>
+                        <li>
+                          <a class="c-filter__item" href="#">Enrichment</a>
+                        </li>
+                        <li>
+                          <a class="c-filter__item" href="#">Family Services</a>
+                        </li>
+                        <li>
+                          <a class="c-filter__item" href="#">Food</a>
+                        </li>
+                        <li>
+                          <a class="c-filter__item" href="#">Health</a>
+                        </li>
+                        <li>
+                          <a class="c-filter__item" href="#">Housing</a>
+                        </li>
+                        <li>
+                          <a class="c-filter__item" href="#">Special Needs</a>
+                        </li>
+                        <li>
+                          <a class="c-filter__item" href="#">Work</a>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                  <div class="code-block mb-1"><pre>&lt;div class=&quot;c-filter&quot;&gt;
+  &lt;a class=&quot;c-filter__header active&quot; data-js=&quot;filter&quot; href=&quot;#filter__list&quot;&gt;All Programs&lt;/a&gt;
+  &lt;ul class=&quot;c-filter__list active&quot; id=&quot;filter__list&quot;&gt;
+    &lt;li&gt;&lt;span class=&quot;c-filter__item&quot;&gt;All Programs&lt;/span&gt;&lt;/li&gt;
+    &lt;li&gt;
+      &lt;a class=&quot;c-filter__item&quot; href=&quot;#&quot;&gt;Cash &amp;amp; Expenses&lt;/a&gt;
+    &lt;/li&gt;
+    &lt;li&gt;
+      &lt;a class=&quot;c-filter__item&quot; href=&quot;#&quot;&gt;Child Care&lt;/a&gt;
+    &lt;/li&gt;
+    &lt;li&gt;
+      &lt;a class=&quot;c-filter__item&quot; href=&quot;#&quot;&gt;City ID Card&lt;/a&gt;
+    &lt;/li&gt;
+    &lt;li&gt;
+      &lt;a class=&quot;c-filter__item&quot; href=&quot;#&quot;&gt;Education&lt;/a&gt;
+    &lt;/li&gt;
+    &lt;li&gt;
+      &lt;a class=&quot;c-filter__item&quot; href=&quot;#&quot;&gt;Enrichment&lt;/a&gt;
+    &lt;/li&gt;
+    &lt;li&gt;
+      &lt;a class=&quot;c-filter__item&quot; href=&quot;#&quot;&gt;Family Services&lt;/a&gt;
+    &lt;/li&gt;
+    &lt;li&gt;
+      &lt;a class=&quot;c-filter__item&quot; href=&quot;#&quot;&gt;Food&lt;/a&gt;
+    &lt;/li&gt;
+    &lt;li&gt;
+      &lt;a class=&quot;c-filter__item&quot; href=&quot;#&quot;&gt;Health&lt;/a&gt;
+    &lt;/li&gt;
+    &lt;li&gt;
+      &lt;a class=&quot;c-filter__item&quot; href=&quot;#&quot;&gt;Housing&lt;/a&gt;
+    &lt;/li&gt;
+    &lt;li&gt;
+      &lt;a class=&quot;c-filter__item&quot; href=&quot;#&quot;&gt;Special Needs&lt;/a&gt;
+    &lt;/li&gt;
+    &lt;li&gt;
+      &lt;a class=&quot;c-filter__item&quot; href=&quot;#&quot;&gt;Work&lt;/a&gt;
+    &lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/div&gt;</pre></div>
+                </div>
               </div>
             </div>
           </div>
         </section>
         <section class="pb-4 mb-4" id="multi-filter">
-          <div class="page-wrapper">
+          <div class="page-wrapper px-2 screen-desktop:px-0">
             <header class="layout--home-body">
               <div class="my-0 pt-1 px-2 border-b border-color-grey-light">
                 <h2>
@@ -217,77 +548,78 @@
             <div class="layout--home-body">
               <div class="px-2 text-font-size-small"></div>
             </div>
-            <div class="layout--columns justify-between">
-              <div class="pr-2">
-                <div class="c-filter-multi active bg-color-white">
-                  <ul class="c-filter-multi__list">
-                    <li class="c-filter-multi__item">
-                      <div class="c-filter-multi__item-header">
-                        <label class="checkbox">
-                          <input data-toggles="#" type="checkbox" /><span class="checkbox__label">Cash &amp; Expenses</span></label>
-                        <a class="c-filter-multi__item-header-toggle active" href="#"><span class="c-filter-multi__item-header-expand">Expand category</span><span class="c-filter-multi__item-header-collapse">Collapse category</span></a>
-                      </div>
-                      <div aria-hidden="false" class="c-filter-multi__item-group active">
-                        <ul class="c-filter-multi__item-group-list">
-                          <li class="c-filter-multi__item-group-subitem">
+            <div class="layout--gutter screen-tablet:layout--columns justify-between">
+              <div class="layout--gutter screen-mobile:layout--columns-gutter screen-tablet:layout--three-columns-gutter screen-desktop:layout--four-columns-gutter">
+                <div class="flex flex-col justify-between items-center border border-color-grey-light p-3">
+                  <div class="pb-2">
+                    <div class="c-filter-multi active bg-color-white">
+                      <ul class="c-filter-multi__list">
+                        <li class="c-filter-multi__item">
+                          <div class="c-filter-multi__item-header">
                             <label class="checkbox">
-                              <input type="checkbox" value="6871" /><span class="checkbox__label text-font-size-small font-normal">Home Energy Assistance Program (HEAP)</span></label>
-                          </li>
-                          <li class="c-filter-multi__item-group-subitem">
+                              <input data-toggles="#" type="checkbox" /><span class="checkbox__label">Cash &amp; Expenses</span></label>
+                            <a class="c-filter-multi__item-header-toggle active" data-js="filter" href="#cash-and-expenses"><span class="c-filter-multi__item-header-expand">Expand category</span><span class="c-filter-multi__item-header-collapse">Collapse category</span></a>
+                          </div>
+                          <div aria-hidden="false" class="c-filter-multi__item-group active" id="cash-and-expenses">
+                            <ul class="c-filter-multi__item-group-list">
+                              <li class="c-filter-multi__item-group-subitem">
+                                <label class="checkbox">
+                                  <input type="checkbox" value="6871" /><span class="checkbox__label text-font-size-small font-normal">Home Energy Assistance Program (HEAP)</span></label>
+                              </li>
+                              <li class="c-filter-multi__item-group-subitem">
+                                <label class="checkbox">
+                                  <input type="checkbox" value="6868" /><span class="checkbox__label text-font-size-small font-normal">Earned Income Tax Credit (EITC)</span></label>
+                              </li>
+                            </ul>
+                          </div>
+                        </li>
+                        <li class="c-filter-multi__item">
+                          <div class="c-filter-multi__item-header">
                             <label class="checkbox">
-                              <input type="checkbox" value="6868" /><span class="checkbox__label text-font-size-small font-normal">Earned Income Tax Credit (EITC)</span></label>
-                          </li>
-                        </ul>
-                      </div>
-                    </li>
-                    <li class="c-filter-multi__item">
-                      <div class="c-filter-multi__item-header">
-                        <label class="checkbox">
-                          <input data-toggles="#program-child-care" type="checkbox" /><span class="checkbox__label">Child Care</span></label>
-                        <a class="c-filter-multi__item-header-toggle active" href="#"><span class="c-filter-multi__item-header-expand">Expand category</span><span class="c-filter-multi__item-header-collapse">Collapse category</span></a>
-                      </div>
-                      <div aria-hidden="false" class="c-filter-multi__item-group active">
-                        <ul class="c-filter-multi__item-group-list">
-                          <li class="c-filter-multi__item-group-subitem">
-                            <label class="checkbox">
-                              <input type="checkbox" value="6866" /><span class="checkbox__label text-font-size-small font-normal">EarlyLearn Child Car</span></label>
-                          </li>
-                          <li class="c-filter-multi__item-group-subitem">
-                            <label class="checkbox">
-                              <input type="checkbox" value="6867"><span class="checkbox__label text-font-size-small font-normal">EarlyLearn Head Start</span></input>
-                            </label>
-                          </li>
-                        </ul>
-                      </div>
-                      <li class="c-filter-multi__item">
-                        <div class="c-filter-multi__item-header">
-                          <label class="checkbox">
-                            <input data-toggles="#program-child-care" type="checkbox" /><span class="checkbox__label">City ID Card</span></label>
-                          <a class="c-filter-multi__item-header-toggle" href="#"><span class="c-filter-multi__item-header-expand">Expand category</span><span class="c-filter-multi__item-header-collapse">Collapse category</span></a>
-                        </div>
-                        <div aria-hidden="true" class="c-filter-multi__item-group">
-                          <ul class="c-filter-multi__item-group-list">
-                            <li class="c-filter-multi__item-group-subitem">
+                              <input data-toggles="#program-child-care" type="checkbox" /><span class="checkbox__label">Child Care</span></label>
+                            <a class="c-filter-multi__item-header-toggle active" data-js="filter" href="#child-care"><span class="c-filter-multi__item-header-expand">Expand category</span><span class="c-filter-multi__item-header-collapse">Collapse category</span></a>
+                          </div>
+                          <div aria-hidden="false" class="c-filter-multi__item-group active" id="child-care">
+                            <ul class="c-filter-multi__item-group-list">
+                              <li class="c-filter-multi__item-group-subitem">
+                                <label class="checkbox">
+                                  <input type="checkbox" value="6866" /><span class="checkbox__label text-font-size-small font-normal">EarlyLearn Child Car</span></label>
+                              </li>
+                              <li class="c-filter-multi__item-group-subitem">
+                                <label class="checkbox">
+                                  <input type="checkbox" value="6867"><span class="checkbox__label text-font-size-small font-normal">EarlyLearn Head Start</span></input>
+                                </label>
+                              </li>
+                            </ul>
+                          </div>
+                          <li class="c-filter-multi__item">
+                            <div class="c-filter-multi__item-header">
                               <label class="checkbox">
-                                <input type="checkbox" value="6871" /><span class="checkbox__label text-font-size-small font-normal">IDNYC</span></label>
-                            </li>
-                          </ul>
-                        </div>
-                      </li>
-                    </li>
-                  </ul>
-                </div>
-              </div>
-              <div>
-                <div class="code-block mb-1"><pre>&lt;div class=&quot;c-filter-multi active bg-color-white&quot;&gt;
+                                <input data-toggles="#program-child-care" type="checkbox" /><span class="checkbox__label">City ID Card</span></label>
+                              <a class="c-filter-multi__item-header-toggle" data-js="filter" href="#city-id-card"><span class="c-filter-multi__item-header-expand">Expand category</span><span class="c-filter-multi__item-header-collapse">Collapse category</span></a>
+                            </div>
+                            <div aria-hidden="true" class="c-filter-multi__item-group" id="city-id-card">
+                              <ul class="c-filter-multi__item-group-list">
+                                <li class="c-filter-multi__item-group-subitem">
+                                  <label class="checkbox">
+                                    <input type="checkbox" value="6871" /><span class="checkbox__label text-font-size-small font-normal">IDNYC</span></label>
+                                </li>
+                              </ul>
+                            </div>
+                          </li>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                  <div class="code-block mb-1"><pre>&lt;div class=&quot;c-filter-multi active bg-color-white&quot;&gt;
   &lt;ul class=&quot;c-filter-multi__list&quot;&gt;
     &lt;li class=&quot;c-filter-multi__item&quot;&gt;
       &lt;div class=&quot;c-filter-multi__item-header&quot;&gt;
         &lt;label class=&quot;checkbox&quot;&gt;
           &lt;input data-toggles=&quot;#&quot; type=&quot;checkbox&quot; /&gt;&lt;span class=&quot;checkbox__label&quot;&gt;Cash &amp;amp; Expenses&lt;/span&gt;&lt;/label&gt;
-        &lt;a class=&quot;c-filter-multi__item-header-toggle active&quot; href=&quot;#&quot;&gt;&lt;span class=&quot;c-filter-multi__item-header-expand&quot;&gt;Expand category&lt;/span&gt;&lt;span class=&quot;c-filter-multi__item-header-collapse&quot;&gt;Collapse category&lt;/span&gt;&lt;/a&gt;
+        &lt;a class=&quot;c-filter-multi__item-header-toggle active&quot; data-js=&quot;filter&quot; href=&quot;#cash-and-expenses&quot;&gt;&lt;span class=&quot;c-filter-multi__item-header-expand&quot;&gt;Expand category&lt;/span&gt;&lt;span class=&quot;c-filter-multi__item-header-collapse&quot;&gt;Collapse category&lt;/span&gt;&lt;/a&gt;
       &lt;/div&gt;
-      &lt;div aria-hidden=&quot;false&quot; class=&quot;c-filter-multi__item-group active&quot;&gt;
+      &lt;div aria-hidden=&quot;false&quot; class=&quot;c-filter-multi__item-group active&quot; id=&quot;cash-and-expenses&quot;&gt;
         &lt;ul class=&quot;c-filter-multi__item-group-list&quot;&gt;
           &lt;li class=&quot;c-filter-multi__item-group-subitem&quot;&gt;
             &lt;label class=&quot;checkbox&quot;&gt;
@@ -304,9 +636,9 @@
       &lt;div class=&quot;c-filter-multi__item-header&quot;&gt;
         &lt;label class=&quot;checkbox&quot;&gt;
           &lt;input data-toggles=&quot;#program-child-care&quot; type=&quot;checkbox&quot; /&gt;&lt;span class=&quot;checkbox__label&quot;&gt;Child Care&lt;/span&gt;&lt;/label&gt;
-        &lt;a class=&quot;c-filter-multi__item-header-toggle active&quot; href=&quot;#&quot;&gt;&lt;span class=&quot;c-filter-multi__item-header-expand&quot;&gt;Expand category&lt;/span&gt;&lt;span class=&quot;c-filter-multi__item-header-collapse&quot;&gt;Collapse category&lt;/span&gt;&lt;/a&gt;
+        &lt;a class=&quot;c-filter-multi__item-header-toggle active&quot; data-js=&quot;filter&quot; href=&quot;#child-care&quot;&gt;&lt;span class=&quot;c-filter-multi__item-header-expand&quot;&gt;Expand category&lt;/span&gt;&lt;span class=&quot;c-filter-multi__item-header-collapse&quot;&gt;Collapse category&lt;/span&gt;&lt;/a&gt;
       &lt;/div&gt;
-      &lt;div aria-hidden=&quot;false&quot; class=&quot;c-filter-multi__item-group active&quot;&gt;
+      &lt;div aria-hidden=&quot;false&quot; class=&quot;c-filter-multi__item-group active&quot; id=&quot;child-care&quot;&gt;
         &lt;ul class=&quot;c-filter-multi__item-group-list&quot;&gt;
           &lt;li class=&quot;c-filter-multi__item-group-subitem&quot;&gt;
             &lt;label class=&quot;checkbox&quot;&gt;
@@ -323,9 +655,9 @@
         &lt;div class=&quot;c-filter-multi__item-header&quot;&gt;
           &lt;label class=&quot;checkbox&quot;&gt;
             &lt;input data-toggles=&quot;#program-child-care&quot; type=&quot;checkbox&quot; /&gt;&lt;span class=&quot;checkbox__label&quot;&gt;City ID Card&lt;/span&gt;&lt;/label&gt;
-          &lt;a class=&quot;c-filter-multi__item-header-toggle&quot; href=&quot;#&quot;&gt;&lt;span class=&quot;c-filter-multi__item-header-expand&quot;&gt;Expand category&lt;/span&gt;&lt;span class=&quot;c-filter-multi__item-header-collapse&quot;&gt;Collapse category&lt;/span&gt;&lt;/a&gt;
+          &lt;a class=&quot;c-filter-multi__item-header-toggle&quot; data-js=&quot;filter&quot; href=&quot;#city-id-card&quot;&gt;&lt;span class=&quot;c-filter-multi__item-header-expand&quot;&gt;Expand category&lt;/span&gt;&lt;span class=&quot;c-filter-multi__item-header-collapse&quot;&gt;Collapse category&lt;/span&gt;&lt;/a&gt;
         &lt;/div&gt;
-        &lt;div aria-hidden=&quot;true&quot; class=&quot;c-filter-multi__item-group&quot;&gt;
+        &lt;div aria-hidden=&quot;true&quot; class=&quot;c-filter-multi__item-group&quot; id=&quot;city-id-card&quot;&gt;
           &lt;ul class=&quot;c-filter-multi__item-group-list&quot;&gt;
             &lt;li class=&quot;c-filter-multi__item-group-subitem&quot;&gt;
               &lt;label class=&quot;checkbox&quot;&gt;
@@ -337,6 +669,487 @@
     &lt;/li&gt;
   &lt;/ul&gt;
 &lt;/div&gt;</pre></div>
+                </div>
+                <div class="flex flex-col justify-between items-center border border-color-grey-light p-3">
+                  <div class="pb-2">
+                    <div class="c-filter-multi active bg-color-white">
+                      <ul class="c-filter-multi__list">
+                        <li class="c-filter-multi__item">
+                          <div class="c-filter-multi__item-header">
+                            <label class="checkbox">
+                              <input data-toggles="#" type="checkbox" /><span class="checkbox__label">Cash &amp; Expenses</span></label>
+                            <a class="c-filter-multi__item-header-toggle active" data-js="filter" href="#cash-and-expenses"><span class="c-filter-multi__item-header-expand">Expand category</span><span class="c-filter-multi__item-header-collapse">Collapse category</span></a>
+                          </div>
+                          <div aria-hidden="false" class="c-filter-multi__item-group active" id="cash-and-expenses">
+                            <ul class="c-filter-multi__item-group-list">
+                              <li class="c-filter-multi__item-group-subitem">
+                                <label class="checkbox">
+                                  <input type="checkbox" value="6871" /><span class="checkbox__label text-font-size-small font-normal">Home Energy Assistance Program (HEAP)</span></label>
+                              </li>
+                              <li class="c-filter-multi__item-group-subitem">
+                                <label class="checkbox">
+                                  <input type="checkbox" value="6868" /><span class="checkbox__label text-font-size-small font-normal">Earned Income Tax Credit (EITC)</span></label>
+                              </li>
+                            </ul>
+                          </div>
+                        </li>
+                        <li class="c-filter-multi__item">
+                          <div class="c-filter-multi__item-header">
+                            <label class="checkbox">
+                              <input data-toggles="#program-child-care" type="checkbox" /><span class="checkbox__label">Child Care</span></label>
+                            <a class="c-filter-multi__item-header-toggle active" data-js="filter" href="#child-care"><span class="c-filter-multi__item-header-expand">Expand category</span><span class="c-filter-multi__item-header-collapse">Collapse category</span></a>
+                          </div>
+                          <div aria-hidden="false" class="c-filter-multi__item-group active" id="child-care">
+                            <ul class="c-filter-multi__item-group-list">
+                              <li class="c-filter-multi__item-group-subitem">
+                                <label class="checkbox">
+                                  <input type="checkbox" value="6866" /><span class="checkbox__label text-font-size-small font-normal">EarlyLearn Child Car</span></label>
+                              </li>
+                              <li class="c-filter-multi__item-group-subitem">
+                                <label class="checkbox">
+                                  <input type="checkbox" value="6867"><span class="checkbox__label text-font-size-small font-normal">EarlyLearn Head Start</span></input>
+                                </label>
+                              </li>
+                            </ul>
+                          </div>
+                          <li class="c-filter-multi__item">
+                            <div class="c-filter-multi__item-header">
+                              <label class="checkbox">
+                                <input data-toggles="#program-child-care" type="checkbox" /><span class="checkbox__label">City ID Card</span></label>
+                              <a class="c-filter-multi__item-header-toggle" data-js="filter" href="#city-id-card"><span class="c-filter-multi__item-header-expand">Expand category</span><span class="c-filter-multi__item-header-collapse">Collapse category</span></a>
+                            </div>
+                            <div aria-hidden="true" class="c-filter-multi__item-group" id="city-id-card">
+                              <ul class="c-filter-multi__item-group-list">
+                                <li class="c-filter-multi__item-group-subitem">
+                                  <label class="checkbox">
+                                    <input type="checkbox" value="6871" /><span class="checkbox__label text-font-size-small font-normal">IDNYC</span></label>
+                                </li>
+                              </ul>
+                            </div>
+                          </li>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                  <div class="code-block mb-1"><pre>&lt;div class=&quot;c-filter-multi active bg-color-white&quot;&gt;
+  &lt;ul class=&quot;c-filter-multi__list&quot;&gt;
+    &lt;li class=&quot;c-filter-multi__item&quot;&gt;
+      &lt;div class=&quot;c-filter-multi__item-header&quot;&gt;
+        &lt;label class=&quot;checkbox&quot;&gt;
+          &lt;input data-toggles=&quot;#&quot; type=&quot;checkbox&quot; /&gt;&lt;span class=&quot;checkbox__label&quot;&gt;Cash &amp;amp; Expenses&lt;/span&gt;&lt;/label&gt;
+        &lt;a class=&quot;c-filter-multi__item-header-toggle active&quot; data-js=&quot;filter&quot; href=&quot;#cash-and-expenses&quot;&gt;&lt;span class=&quot;c-filter-multi__item-header-expand&quot;&gt;Expand category&lt;/span&gt;&lt;span class=&quot;c-filter-multi__item-header-collapse&quot;&gt;Collapse category&lt;/span&gt;&lt;/a&gt;
+      &lt;/div&gt;
+      &lt;div aria-hidden=&quot;false&quot; class=&quot;c-filter-multi__item-group active&quot; id=&quot;cash-and-expenses&quot;&gt;
+        &lt;ul class=&quot;c-filter-multi__item-group-list&quot;&gt;
+          &lt;li class=&quot;c-filter-multi__item-group-subitem&quot;&gt;
+            &lt;label class=&quot;checkbox&quot;&gt;
+              &lt;input type=&quot;checkbox&quot; value=&quot;6871&quot; /&gt;&lt;span class=&quot;checkbox__label text-font-size-small font-normal&quot;&gt;Home Energy Assistance Program (HEAP)&lt;/span&gt;&lt;/label&gt;
+          &lt;/li&gt;
+          &lt;li class=&quot;c-filter-multi__item-group-subitem&quot;&gt;
+            &lt;label class=&quot;checkbox&quot;&gt;
+              &lt;input type=&quot;checkbox&quot; value=&quot;6868&quot; /&gt;&lt;span class=&quot;checkbox__label text-font-size-small font-normal&quot;&gt;Earned Income Tax Credit (EITC)&lt;/span&gt;&lt;/label&gt;
+          &lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/div&gt;
+    &lt;/li&gt;
+    &lt;li class=&quot;c-filter-multi__item&quot;&gt;
+      &lt;div class=&quot;c-filter-multi__item-header&quot;&gt;
+        &lt;label class=&quot;checkbox&quot;&gt;
+          &lt;input data-toggles=&quot;#program-child-care&quot; type=&quot;checkbox&quot; /&gt;&lt;span class=&quot;checkbox__label&quot;&gt;Child Care&lt;/span&gt;&lt;/label&gt;
+        &lt;a class=&quot;c-filter-multi__item-header-toggle active&quot; data-js=&quot;filter&quot; href=&quot;#child-care&quot;&gt;&lt;span class=&quot;c-filter-multi__item-header-expand&quot;&gt;Expand category&lt;/span&gt;&lt;span class=&quot;c-filter-multi__item-header-collapse&quot;&gt;Collapse category&lt;/span&gt;&lt;/a&gt;
+      &lt;/div&gt;
+      &lt;div aria-hidden=&quot;false&quot; class=&quot;c-filter-multi__item-group active&quot; id=&quot;child-care&quot;&gt;
+        &lt;ul class=&quot;c-filter-multi__item-group-list&quot;&gt;
+          &lt;li class=&quot;c-filter-multi__item-group-subitem&quot;&gt;
+            &lt;label class=&quot;checkbox&quot;&gt;
+              &lt;input type=&quot;checkbox&quot; value=&quot;6866&quot; /&gt;&lt;span class=&quot;checkbox__label text-font-size-small font-normal&quot;&gt;EarlyLearn Child Car&lt;/span&gt;&lt;/label&gt;
+          &lt;/li&gt;
+          &lt;li class=&quot;c-filter-multi__item-group-subitem&quot;&gt;
+            &lt;label class=&quot;checkbox&quot;&gt;
+              &lt;input type=&quot;checkbox&quot; value=&quot;6867&quot;&gt;&lt;span class=&quot;checkbox__label text-font-size-small font-normal&quot;&gt;EarlyLearn Head Start&lt;/span&gt;&lt;/input&gt;
+            &lt;/label&gt;
+          &lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/div&gt;
+      &lt;li class=&quot;c-filter-multi__item&quot;&gt;
+        &lt;div class=&quot;c-filter-multi__item-header&quot;&gt;
+          &lt;label class=&quot;checkbox&quot;&gt;
+            &lt;input data-toggles=&quot;#program-child-care&quot; type=&quot;checkbox&quot; /&gt;&lt;span class=&quot;checkbox__label&quot;&gt;City ID Card&lt;/span&gt;&lt;/label&gt;
+          &lt;a class=&quot;c-filter-multi__item-header-toggle&quot; data-js=&quot;filter&quot; href=&quot;#city-id-card&quot;&gt;&lt;span class=&quot;c-filter-multi__item-header-expand&quot;&gt;Expand category&lt;/span&gt;&lt;span class=&quot;c-filter-multi__item-header-collapse&quot;&gt;Collapse category&lt;/span&gt;&lt;/a&gt;
+        &lt;/div&gt;
+        &lt;div aria-hidden=&quot;true&quot; class=&quot;c-filter-multi__item-group&quot; id=&quot;city-id-card&quot;&gt;
+          &lt;ul class=&quot;c-filter-multi__item-group-list&quot;&gt;
+            &lt;li class=&quot;c-filter-multi__item-group-subitem&quot;&gt;
+              &lt;label class=&quot;checkbox&quot;&gt;
+                &lt;input type=&quot;checkbox&quot; value=&quot;6871&quot; /&gt;&lt;span class=&quot;checkbox__label text-font-size-small font-normal&quot;&gt;IDNYC&lt;/span&gt;&lt;/label&gt;
+            &lt;/li&gt;
+          &lt;/ul&gt;
+        &lt;/div&gt;
+      &lt;/li&gt;
+    &lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/div&gt;</pre></div>
+                </div>
+                <div class="flex flex-col justify-between items-center border border-color-grey-light p-3">
+                  <div class="pb-2">
+                    <div class="c-filter-multi active bg-color-white">
+                      <ul class="c-filter-multi__list">
+                        <li class="c-filter-multi__item">
+                          <div class="c-filter-multi__item-header">
+                            <label class="checkbox">
+                              <input data-toggles="#" type="checkbox" /><span class="checkbox__label">Cash &amp; Expenses</span></label>
+                            <a class="c-filter-multi__item-header-toggle active" data-js="filter" href="#cash-and-expenses"><span class="c-filter-multi__item-header-expand">Expand category</span><span class="c-filter-multi__item-header-collapse">Collapse category</span></a>
+                          </div>
+                          <div aria-hidden="false" class="c-filter-multi__item-group active" id="cash-and-expenses">
+                            <ul class="c-filter-multi__item-group-list">
+                              <li class="c-filter-multi__item-group-subitem">
+                                <label class="checkbox">
+                                  <input type="checkbox" value="6871" /><span class="checkbox__label text-font-size-small font-normal">Home Energy Assistance Program (HEAP)</span></label>
+                              </li>
+                              <li class="c-filter-multi__item-group-subitem">
+                                <label class="checkbox">
+                                  <input type="checkbox" value="6868" /><span class="checkbox__label text-font-size-small font-normal">Earned Income Tax Credit (EITC)</span></label>
+                              </li>
+                            </ul>
+                          </div>
+                        </li>
+                        <li class="c-filter-multi__item">
+                          <div class="c-filter-multi__item-header">
+                            <label class="checkbox">
+                              <input data-toggles="#program-child-care" type="checkbox" /><span class="checkbox__label">Child Care</span></label>
+                            <a class="c-filter-multi__item-header-toggle active" data-js="filter" href="#child-care"><span class="c-filter-multi__item-header-expand">Expand category</span><span class="c-filter-multi__item-header-collapse">Collapse category</span></a>
+                          </div>
+                          <div aria-hidden="false" class="c-filter-multi__item-group active" id="child-care">
+                            <ul class="c-filter-multi__item-group-list">
+                              <li class="c-filter-multi__item-group-subitem">
+                                <label class="checkbox">
+                                  <input type="checkbox" value="6866" /><span class="checkbox__label text-font-size-small font-normal">EarlyLearn Child Car</span></label>
+                              </li>
+                              <li class="c-filter-multi__item-group-subitem">
+                                <label class="checkbox">
+                                  <input type="checkbox" value="6867"><span class="checkbox__label text-font-size-small font-normal">EarlyLearn Head Start</span></input>
+                                </label>
+                              </li>
+                            </ul>
+                          </div>
+                          <li class="c-filter-multi__item">
+                            <div class="c-filter-multi__item-header">
+                              <label class="checkbox">
+                                <input data-toggles="#program-child-care" type="checkbox" /><span class="checkbox__label">City ID Card</span></label>
+                              <a class="c-filter-multi__item-header-toggle" data-js="filter" href="#city-id-card"><span class="c-filter-multi__item-header-expand">Expand category</span><span class="c-filter-multi__item-header-collapse">Collapse category</span></a>
+                            </div>
+                            <div aria-hidden="true" class="c-filter-multi__item-group" id="city-id-card">
+                              <ul class="c-filter-multi__item-group-list">
+                                <li class="c-filter-multi__item-group-subitem">
+                                  <label class="checkbox">
+                                    <input type="checkbox" value="6871" /><span class="checkbox__label text-font-size-small font-normal">IDNYC</span></label>
+                                </li>
+                              </ul>
+                            </div>
+                          </li>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                  <div class="code-block mb-1"><pre>&lt;div class=&quot;c-filter-multi active bg-color-white&quot;&gt;
+  &lt;ul class=&quot;c-filter-multi__list&quot;&gt;
+    &lt;li class=&quot;c-filter-multi__item&quot;&gt;
+      &lt;div class=&quot;c-filter-multi__item-header&quot;&gt;
+        &lt;label class=&quot;checkbox&quot;&gt;
+          &lt;input data-toggles=&quot;#&quot; type=&quot;checkbox&quot; /&gt;&lt;span class=&quot;checkbox__label&quot;&gt;Cash &amp;amp; Expenses&lt;/span&gt;&lt;/label&gt;
+        &lt;a class=&quot;c-filter-multi__item-header-toggle active&quot; data-js=&quot;filter&quot; href=&quot;#cash-and-expenses&quot;&gt;&lt;span class=&quot;c-filter-multi__item-header-expand&quot;&gt;Expand category&lt;/span&gt;&lt;span class=&quot;c-filter-multi__item-header-collapse&quot;&gt;Collapse category&lt;/span&gt;&lt;/a&gt;
+      &lt;/div&gt;
+      &lt;div aria-hidden=&quot;false&quot; class=&quot;c-filter-multi__item-group active&quot; id=&quot;cash-and-expenses&quot;&gt;
+        &lt;ul class=&quot;c-filter-multi__item-group-list&quot;&gt;
+          &lt;li class=&quot;c-filter-multi__item-group-subitem&quot;&gt;
+            &lt;label class=&quot;checkbox&quot;&gt;
+              &lt;input type=&quot;checkbox&quot; value=&quot;6871&quot; /&gt;&lt;span class=&quot;checkbox__label text-font-size-small font-normal&quot;&gt;Home Energy Assistance Program (HEAP)&lt;/span&gt;&lt;/label&gt;
+          &lt;/li&gt;
+          &lt;li class=&quot;c-filter-multi__item-group-subitem&quot;&gt;
+            &lt;label class=&quot;checkbox&quot;&gt;
+              &lt;input type=&quot;checkbox&quot; value=&quot;6868&quot; /&gt;&lt;span class=&quot;checkbox__label text-font-size-small font-normal&quot;&gt;Earned Income Tax Credit (EITC)&lt;/span&gt;&lt;/label&gt;
+          &lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/div&gt;
+    &lt;/li&gt;
+    &lt;li class=&quot;c-filter-multi__item&quot;&gt;
+      &lt;div class=&quot;c-filter-multi__item-header&quot;&gt;
+        &lt;label class=&quot;checkbox&quot;&gt;
+          &lt;input data-toggles=&quot;#program-child-care&quot; type=&quot;checkbox&quot; /&gt;&lt;span class=&quot;checkbox__label&quot;&gt;Child Care&lt;/span&gt;&lt;/label&gt;
+        &lt;a class=&quot;c-filter-multi__item-header-toggle active&quot; data-js=&quot;filter&quot; href=&quot;#child-care&quot;&gt;&lt;span class=&quot;c-filter-multi__item-header-expand&quot;&gt;Expand category&lt;/span&gt;&lt;span class=&quot;c-filter-multi__item-header-collapse&quot;&gt;Collapse category&lt;/span&gt;&lt;/a&gt;
+      &lt;/div&gt;
+      &lt;div aria-hidden=&quot;false&quot; class=&quot;c-filter-multi__item-group active&quot; id=&quot;child-care&quot;&gt;
+        &lt;ul class=&quot;c-filter-multi__item-group-list&quot;&gt;
+          &lt;li class=&quot;c-filter-multi__item-group-subitem&quot;&gt;
+            &lt;label class=&quot;checkbox&quot;&gt;
+              &lt;input type=&quot;checkbox&quot; value=&quot;6866&quot; /&gt;&lt;span class=&quot;checkbox__label text-font-size-small font-normal&quot;&gt;EarlyLearn Child Car&lt;/span&gt;&lt;/label&gt;
+          &lt;/li&gt;
+          &lt;li class=&quot;c-filter-multi__item-group-subitem&quot;&gt;
+            &lt;label class=&quot;checkbox&quot;&gt;
+              &lt;input type=&quot;checkbox&quot; value=&quot;6867&quot;&gt;&lt;span class=&quot;checkbox__label text-font-size-small font-normal&quot;&gt;EarlyLearn Head Start&lt;/span&gt;&lt;/input&gt;
+            &lt;/label&gt;
+          &lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/div&gt;
+      &lt;li class=&quot;c-filter-multi__item&quot;&gt;
+        &lt;div class=&quot;c-filter-multi__item-header&quot;&gt;
+          &lt;label class=&quot;checkbox&quot;&gt;
+            &lt;input data-toggles=&quot;#program-child-care&quot; type=&quot;checkbox&quot; /&gt;&lt;span class=&quot;checkbox__label&quot;&gt;City ID Card&lt;/span&gt;&lt;/label&gt;
+          &lt;a class=&quot;c-filter-multi__item-header-toggle&quot; data-js=&quot;filter&quot; href=&quot;#city-id-card&quot;&gt;&lt;span class=&quot;c-filter-multi__item-header-expand&quot;&gt;Expand category&lt;/span&gt;&lt;span class=&quot;c-filter-multi__item-header-collapse&quot;&gt;Collapse category&lt;/span&gt;&lt;/a&gt;
+        &lt;/div&gt;
+        &lt;div aria-hidden=&quot;true&quot; class=&quot;c-filter-multi__item-group&quot; id=&quot;city-id-card&quot;&gt;
+          &lt;ul class=&quot;c-filter-multi__item-group-list&quot;&gt;
+            &lt;li class=&quot;c-filter-multi__item-group-subitem&quot;&gt;
+              &lt;label class=&quot;checkbox&quot;&gt;
+                &lt;input type=&quot;checkbox&quot; value=&quot;6871&quot; /&gt;&lt;span class=&quot;checkbox__label text-font-size-small font-normal&quot;&gt;IDNYC&lt;/span&gt;&lt;/label&gt;
+            &lt;/li&gt;
+          &lt;/ul&gt;
+        &lt;/div&gt;
+      &lt;/li&gt;
+    &lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/div&gt;</pre></div>
+                </div>
+                <div class="flex flex-col justify-between items-center border border-color-grey-light p-3">
+                  <div class="pb-2">
+                    <div class="c-filter-multi active bg-color-white">
+                      <ul class="c-filter-multi__list">
+                        <li class="c-filter-multi__item">
+                          <div class="c-filter-multi__item-header">
+                            <label class="checkbox">
+                              <input data-toggles="#" type="checkbox" /><span class="checkbox__label">Cash &amp; Expenses</span></label>
+                            <a class="c-filter-multi__item-header-toggle active" data-js="filter" href="#cash-and-expenses"><span class="c-filter-multi__item-header-expand">Expand category</span><span class="c-filter-multi__item-header-collapse">Collapse category</span></a>
+                          </div>
+                          <div aria-hidden="false" class="c-filter-multi__item-group active" id="cash-and-expenses">
+                            <ul class="c-filter-multi__item-group-list">
+                              <li class="c-filter-multi__item-group-subitem">
+                                <label class="checkbox">
+                                  <input type="checkbox" value="6871" /><span class="checkbox__label text-font-size-small font-normal">Home Energy Assistance Program (HEAP)</span></label>
+                              </li>
+                              <li class="c-filter-multi__item-group-subitem">
+                                <label class="checkbox">
+                                  <input type="checkbox" value="6868" /><span class="checkbox__label text-font-size-small font-normal">Earned Income Tax Credit (EITC)</span></label>
+                              </li>
+                            </ul>
+                          </div>
+                        </li>
+                        <li class="c-filter-multi__item">
+                          <div class="c-filter-multi__item-header">
+                            <label class="checkbox">
+                              <input data-toggles="#program-child-care" type="checkbox" /><span class="checkbox__label">Child Care</span></label>
+                            <a class="c-filter-multi__item-header-toggle active" data-js="filter" href="#child-care"><span class="c-filter-multi__item-header-expand">Expand category</span><span class="c-filter-multi__item-header-collapse">Collapse category</span></a>
+                          </div>
+                          <div aria-hidden="false" class="c-filter-multi__item-group active" id="child-care">
+                            <ul class="c-filter-multi__item-group-list">
+                              <li class="c-filter-multi__item-group-subitem">
+                                <label class="checkbox">
+                                  <input type="checkbox" value="6866" /><span class="checkbox__label text-font-size-small font-normal">EarlyLearn Child Car</span></label>
+                              </li>
+                              <li class="c-filter-multi__item-group-subitem">
+                                <label class="checkbox">
+                                  <input type="checkbox" value="6867"><span class="checkbox__label text-font-size-small font-normal">EarlyLearn Head Start</span></input>
+                                </label>
+                              </li>
+                            </ul>
+                          </div>
+                          <li class="c-filter-multi__item">
+                            <div class="c-filter-multi__item-header">
+                              <label class="checkbox">
+                                <input data-toggles="#program-child-care" type="checkbox" /><span class="checkbox__label">City ID Card</span></label>
+                              <a class="c-filter-multi__item-header-toggle" data-js="filter" href="#city-id-card"><span class="c-filter-multi__item-header-expand">Expand category</span><span class="c-filter-multi__item-header-collapse">Collapse category</span></a>
+                            </div>
+                            <div aria-hidden="true" class="c-filter-multi__item-group" id="city-id-card">
+                              <ul class="c-filter-multi__item-group-list">
+                                <li class="c-filter-multi__item-group-subitem">
+                                  <label class="checkbox">
+                                    <input type="checkbox" value="6871" /><span class="checkbox__label text-font-size-small font-normal">IDNYC</span></label>
+                                </li>
+                              </ul>
+                            </div>
+                          </li>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                  <div class="code-block mb-1"><pre>&lt;div class=&quot;c-filter-multi active bg-color-white&quot;&gt;
+  &lt;ul class=&quot;c-filter-multi__list&quot;&gt;
+    &lt;li class=&quot;c-filter-multi__item&quot;&gt;
+      &lt;div class=&quot;c-filter-multi__item-header&quot;&gt;
+        &lt;label class=&quot;checkbox&quot;&gt;
+          &lt;input data-toggles=&quot;#&quot; type=&quot;checkbox&quot; /&gt;&lt;span class=&quot;checkbox__label&quot;&gt;Cash &amp;amp; Expenses&lt;/span&gt;&lt;/label&gt;
+        &lt;a class=&quot;c-filter-multi__item-header-toggle active&quot; data-js=&quot;filter&quot; href=&quot;#cash-and-expenses&quot;&gt;&lt;span class=&quot;c-filter-multi__item-header-expand&quot;&gt;Expand category&lt;/span&gt;&lt;span class=&quot;c-filter-multi__item-header-collapse&quot;&gt;Collapse category&lt;/span&gt;&lt;/a&gt;
+      &lt;/div&gt;
+      &lt;div aria-hidden=&quot;false&quot; class=&quot;c-filter-multi__item-group active&quot; id=&quot;cash-and-expenses&quot;&gt;
+        &lt;ul class=&quot;c-filter-multi__item-group-list&quot;&gt;
+          &lt;li class=&quot;c-filter-multi__item-group-subitem&quot;&gt;
+            &lt;label class=&quot;checkbox&quot;&gt;
+              &lt;input type=&quot;checkbox&quot; value=&quot;6871&quot; /&gt;&lt;span class=&quot;checkbox__label text-font-size-small font-normal&quot;&gt;Home Energy Assistance Program (HEAP)&lt;/span&gt;&lt;/label&gt;
+          &lt;/li&gt;
+          &lt;li class=&quot;c-filter-multi__item-group-subitem&quot;&gt;
+            &lt;label class=&quot;checkbox&quot;&gt;
+              &lt;input type=&quot;checkbox&quot; value=&quot;6868&quot; /&gt;&lt;span class=&quot;checkbox__label text-font-size-small font-normal&quot;&gt;Earned Income Tax Credit (EITC)&lt;/span&gt;&lt;/label&gt;
+          &lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/div&gt;
+    &lt;/li&gt;
+    &lt;li class=&quot;c-filter-multi__item&quot;&gt;
+      &lt;div class=&quot;c-filter-multi__item-header&quot;&gt;
+        &lt;label class=&quot;checkbox&quot;&gt;
+          &lt;input data-toggles=&quot;#program-child-care&quot; type=&quot;checkbox&quot; /&gt;&lt;span class=&quot;checkbox__label&quot;&gt;Child Care&lt;/span&gt;&lt;/label&gt;
+        &lt;a class=&quot;c-filter-multi__item-header-toggle active&quot; data-js=&quot;filter&quot; href=&quot;#child-care&quot;&gt;&lt;span class=&quot;c-filter-multi__item-header-expand&quot;&gt;Expand category&lt;/span&gt;&lt;span class=&quot;c-filter-multi__item-header-collapse&quot;&gt;Collapse category&lt;/span&gt;&lt;/a&gt;
+      &lt;/div&gt;
+      &lt;div aria-hidden=&quot;false&quot; class=&quot;c-filter-multi__item-group active&quot; id=&quot;child-care&quot;&gt;
+        &lt;ul class=&quot;c-filter-multi__item-group-list&quot;&gt;
+          &lt;li class=&quot;c-filter-multi__item-group-subitem&quot;&gt;
+            &lt;label class=&quot;checkbox&quot;&gt;
+              &lt;input type=&quot;checkbox&quot; value=&quot;6866&quot; /&gt;&lt;span class=&quot;checkbox__label text-font-size-small font-normal&quot;&gt;EarlyLearn Child Car&lt;/span&gt;&lt;/label&gt;
+          &lt;/li&gt;
+          &lt;li class=&quot;c-filter-multi__item-group-subitem&quot;&gt;
+            &lt;label class=&quot;checkbox&quot;&gt;
+              &lt;input type=&quot;checkbox&quot; value=&quot;6867&quot;&gt;&lt;span class=&quot;checkbox__label text-font-size-small font-normal&quot;&gt;EarlyLearn Head Start&lt;/span&gt;&lt;/input&gt;
+            &lt;/label&gt;
+          &lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/div&gt;
+      &lt;li class=&quot;c-filter-multi__item&quot;&gt;
+        &lt;div class=&quot;c-filter-multi__item-header&quot;&gt;
+          &lt;label class=&quot;checkbox&quot;&gt;
+            &lt;input data-toggles=&quot;#program-child-care&quot; type=&quot;checkbox&quot; /&gt;&lt;span class=&quot;checkbox__label&quot;&gt;City ID Card&lt;/span&gt;&lt;/label&gt;
+          &lt;a class=&quot;c-filter-multi__item-header-toggle&quot; data-js=&quot;filter&quot; href=&quot;#city-id-card&quot;&gt;&lt;span class=&quot;c-filter-multi__item-header-expand&quot;&gt;Expand category&lt;/span&gt;&lt;span class=&quot;c-filter-multi__item-header-collapse&quot;&gt;Collapse category&lt;/span&gt;&lt;/a&gt;
+        &lt;/div&gt;
+        &lt;div aria-hidden=&quot;true&quot; class=&quot;c-filter-multi__item-group&quot; id=&quot;city-id-card&quot;&gt;
+          &lt;ul class=&quot;c-filter-multi__item-group-list&quot;&gt;
+            &lt;li class=&quot;c-filter-multi__item-group-subitem&quot;&gt;
+              &lt;label class=&quot;checkbox&quot;&gt;
+                &lt;input type=&quot;checkbox&quot; value=&quot;6871&quot; /&gt;&lt;span class=&quot;checkbox__label text-font-size-small font-normal&quot;&gt;IDNYC&lt;/span&gt;&lt;/label&gt;
+            &lt;/li&gt;
+          &lt;/ul&gt;
+        &lt;/div&gt;
+      &lt;/li&gt;
+    &lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/div&gt;</pre></div>
+                </div>
+                <div class="flex flex-col justify-between items-center border border-color-grey-light p-3">
+                  <div class="pb-2">
+                    <div class="c-filter-multi active bg-color-white">
+                      <ul class="c-filter-multi__list">
+                        <li class="c-filter-multi__item">
+                          <div class="c-filter-multi__item-header">
+                            <label class="checkbox">
+                              <input data-toggles="#" type="checkbox" /><span class="checkbox__label">Cash &amp; Expenses</span></label>
+                            <a class="c-filter-multi__item-header-toggle active" data-js="filter" href="#cash-and-expenses"><span class="c-filter-multi__item-header-expand">Expand category</span><span class="c-filter-multi__item-header-collapse">Collapse category</span></a>
+                          </div>
+                          <div aria-hidden="false" class="c-filter-multi__item-group active" id="cash-and-expenses">
+                            <ul class="c-filter-multi__item-group-list">
+                              <li class="c-filter-multi__item-group-subitem">
+                                <label class="checkbox">
+                                  <input type="checkbox" value="6871" /><span class="checkbox__label text-font-size-small font-normal">Home Energy Assistance Program (HEAP)</span></label>
+                              </li>
+                              <li class="c-filter-multi__item-group-subitem">
+                                <label class="checkbox">
+                                  <input type="checkbox" value="6868" /><span class="checkbox__label text-font-size-small font-normal">Earned Income Tax Credit (EITC)</span></label>
+                              </li>
+                            </ul>
+                          </div>
+                        </li>
+                        <li class="c-filter-multi__item">
+                          <div class="c-filter-multi__item-header">
+                            <label class="checkbox">
+                              <input data-toggles="#program-child-care" type="checkbox" /><span class="checkbox__label">Child Care</span></label>
+                            <a class="c-filter-multi__item-header-toggle active" data-js="filter" href="#child-care"><span class="c-filter-multi__item-header-expand">Expand category</span><span class="c-filter-multi__item-header-collapse">Collapse category</span></a>
+                          </div>
+                          <div aria-hidden="false" class="c-filter-multi__item-group active" id="child-care">
+                            <ul class="c-filter-multi__item-group-list">
+                              <li class="c-filter-multi__item-group-subitem">
+                                <label class="checkbox">
+                                  <input type="checkbox" value="6866" /><span class="checkbox__label text-font-size-small font-normal">EarlyLearn Child Car</span></label>
+                              </li>
+                              <li class="c-filter-multi__item-group-subitem">
+                                <label class="checkbox">
+                                  <input type="checkbox" value="6867"><span class="checkbox__label text-font-size-small font-normal">EarlyLearn Head Start</span></input>
+                                </label>
+                              </li>
+                            </ul>
+                          </div>
+                          <li class="c-filter-multi__item">
+                            <div class="c-filter-multi__item-header">
+                              <label class="checkbox">
+                                <input data-toggles="#program-child-care" type="checkbox" /><span class="checkbox__label">City ID Card</span></label>
+                              <a class="c-filter-multi__item-header-toggle" data-js="filter" href="#city-id-card"><span class="c-filter-multi__item-header-expand">Expand category</span><span class="c-filter-multi__item-header-collapse">Collapse category</span></a>
+                            </div>
+                            <div aria-hidden="true" class="c-filter-multi__item-group" id="city-id-card">
+                              <ul class="c-filter-multi__item-group-list">
+                                <li class="c-filter-multi__item-group-subitem">
+                                  <label class="checkbox">
+                                    <input type="checkbox" value="6871" /><span class="checkbox__label text-font-size-small font-normal">IDNYC</span></label>
+                                </li>
+                              </ul>
+                            </div>
+                          </li>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                  <div class="code-block mb-1"><pre>&lt;div class=&quot;c-filter-multi active bg-color-white&quot;&gt;
+  &lt;ul class=&quot;c-filter-multi__list&quot;&gt;
+    &lt;li class=&quot;c-filter-multi__item&quot;&gt;
+      &lt;div class=&quot;c-filter-multi__item-header&quot;&gt;
+        &lt;label class=&quot;checkbox&quot;&gt;
+          &lt;input data-toggles=&quot;#&quot; type=&quot;checkbox&quot; /&gt;&lt;span class=&quot;checkbox__label&quot;&gt;Cash &amp;amp; Expenses&lt;/span&gt;&lt;/label&gt;
+        &lt;a class=&quot;c-filter-multi__item-header-toggle active&quot; data-js=&quot;filter&quot; href=&quot;#cash-and-expenses&quot;&gt;&lt;span class=&quot;c-filter-multi__item-header-expand&quot;&gt;Expand category&lt;/span&gt;&lt;span class=&quot;c-filter-multi__item-header-collapse&quot;&gt;Collapse category&lt;/span&gt;&lt;/a&gt;
+      &lt;/div&gt;
+      &lt;div aria-hidden=&quot;false&quot; class=&quot;c-filter-multi__item-group active&quot; id=&quot;cash-and-expenses&quot;&gt;
+        &lt;ul class=&quot;c-filter-multi__item-group-list&quot;&gt;
+          &lt;li class=&quot;c-filter-multi__item-group-subitem&quot;&gt;
+            &lt;label class=&quot;checkbox&quot;&gt;
+              &lt;input type=&quot;checkbox&quot; value=&quot;6871&quot; /&gt;&lt;span class=&quot;checkbox__label text-font-size-small font-normal&quot;&gt;Home Energy Assistance Program (HEAP)&lt;/span&gt;&lt;/label&gt;
+          &lt;/li&gt;
+          &lt;li class=&quot;c-filter-multi__item-group-subitem&quot;&gt;
+            &lt;label class=&quot;checkbox&quot;&gt;
+              &lt;input type=&quot;checkbox&quot; value=&quot;6868&quot; /&gt;&lt;span class=&quot;checkbox__label text-font-size-small font-normal&quot;&gt;Earned Income Tax Credit (EITC)&lt;/span&gt;&lt;/label&gt;
+          &lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/div&gt;
+    &lt;/li&gt;
+    &lt;li class=&quot;c-filter-multi__item&quot;&gt;
+      &lt;div class=&quot;c-filter-multi__item-header&quot;&gt;
+        &lt;label class=&quot;checkbox&quot;&gt;
+          &lt;input data-toggles=&quot;#program-child-care&quot; type=&quot;checkbox&quot; /&gt;&lt;span class=&quot;checkbox__label&quot;&gt;Child Care&lt;/span&gt;&lt;/label&gt;
+        &lt;a class=&quot;c-filter-multi__item-header-toggle active&quot; data-js=&quot;filter&quot; href=&quot;#child-care&quot;&gt;&lt;span class=&quot;c-filter-multi__item-header-expand&quot;&gt;Expand category&lt;/span&gt;&lt;span class=&quot;c-filter-multi__item-header-collapse&quot;&gt;Collapse category&lt;/span&gt;&lt;/a&gt;
+      &lt;/div&gt;
+      &lt;div aria-hidden=&quot;false&quot; class=&quot;c-filter-multi__item-group active&quot; id=&quot;child-care&quot;&gt;
+        &lt;ul class=&quot;c-filter-multi__item-group-list&quot;&gt;
+          &lt;li class=&quot;c-filter-multi__item-group-subitem&quot;&gt;
+            &lt;label class=&quot;checkbox&quot;&gt;
+              &lt;input type=&quot;checkbox&quot; value=&quot;6866&quot; /&gt;&lt;span class=&quot;checkbox__label text-font-size-small font-normal&quot;&gt;EarlyLearn Child Car&lt;/span&gt;&lt;/label&gt;
+          &lt;/li&gt;
+          &lt;li class=&quot;c-filter-multi__item-group-subitem&quot;&gt;
+            &lt;label class=&quot;checkbox&quot;&gt;
+              &lt;input type=&quot;checkbox&quot; value=&quot;6867&quot;&gt;&lt;span class=&quot;checkbox__label text-font-size-small font-normal&quot;&gt;EarlyLearn Head Start&lt;/span&gt;&lt;/input&gt;
+            &lt;/label&gt;
+          &lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/div&gt;
+      &lt;li class=&quot;c-filter-multi__item&quot;&gt;
+        &lt;div class=&quot;c-filter-multi__item-header&quot;&gt;
+          &lt;label class=&quot;checkbox&quot;&gt;
+            &lt;input data-toggles=&quot;#program-child-care&quot; type=&quot;checkbox&quot; /&gt;&lt;span class=&quot;checkbox__label&quot;&gt;City ID Card&lt;/span&gt;&lt;/label&gt;
+          &lt;a class=&quot;c-filter-multi__item-header-toggle&quot; data-js=&quot;filter&quot; href=&quot;#city-id-card&quot;&gt;&lt;span class=&quot;c-filter-multi__item-header-expand&quot;&gt;Expand category&lt;/span&gt;&lt;span class=&quot;c-filter-multi__item-header-collapse&quot;&gt;Collapse category&lt;/span&gt;&lt;/a&gt;
+        &lt;/div&gt;
+        &lt;div aria-hidden=&quot;true&quot; class=&quot;c-filter-multi__item-group&quot; id=&quot;city-id-card&quot;&gt;
+          &lt;ul class=&quot;c-filter-multi__item-group-list&quot;&gt;
+            &lt;li class=&quot;c-filter-multi__item-group-subitem&quot;&gt;
+              &lt;label class=&quot;checkbox&quot;&gt;
+                &lt;input type=&quot;checkbox&quot; value=&quot;6871&quot; /&gt;&lt;span class=&quot;checkbox__label text-font-size-small font-normal&quot;&gt;IDNYC&lt;/span&gt;&lt;/label&gt;
+            &lt;/li&gt;
+          &lt;/ul&gt;
+        &lt;/div&gt;
+      &lt;/li&gt;
+    &lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/div&gt;</pre></div>
+                </div>
               </div>
             </div>
           </div>
@@ -350,6 +1163,7 @@
     </footer>
     <div aria-hidden="true" class="hidden">
       <svg>
+        <defs/>
         <symbol id="icon-arrow-down" viewBox="0 0 444.8 444.8">
           <path fill="currentColor" d="M248.1 352L434 165.9c7.2-6.9 10.8-15.4 10.8-25.7 0-10.3-3.6-18.8-10.8-25.7l-21.4-21.7c-7-7-15.6-10.6-25.7-10.6-9.9 0-18.6 3.5-26 10.6L222.4 231.5 83.7 92.8c-7-7-15.6-10.6-25.7-10.6-9.9 0-18.6 3.5-26 10.6l-21.4 21.7c-7 7-10.6 15.6-10.6 25.7s3.5 18.7 10.6 25.7L196.4 352c7.4 7 16.1 10.6 26 10.6 10.1 0 18.7-3.5 25.7-10.6z"
           />
@@ -629,7 +1443,7 @@
             fill="#fbb720" fill-rule="nonzero" />
         </symbol>
         <symbol id="icon-logo-nyc" viewBox="0 0 350 117">
-          <g fill="currentColor">
+          <g fill="currentColor" fill-rule="nonzero">
             <path d="M327.9 0H255l-21.8 21.9v72.8l21.8 21.9h72.9l21.8-21.9V72.9l-7.2-7.3H306v7.3h-29.1V43.7H306v7.2h36.5l7.2-7.2V21.9L327.9 0zM109.3 0H80.1l-7.2 7.3v29.1L36.4 0H7.3L0 7.3v102l7.3 7.3h29.1l7.3-7.3V80.1l36.4 36.5h29.2l7.3-7.3V7.3L109.3 0zM160.3 116.6h29.1l7.3-7.3V87.4L233.2 51V7.3L225.9 0h-29.2l-7.3 7.3v14.6l-14.5 14.5-14.6-14.5V7.3L153 0h-29.1l-7.3 7.3V51L153 87.4v21.9l7.3 7.3z"
             />
           </g>
@@ -706,6 +1520,8 @@
     <script type="text/javascript">
       var access = new AccessNyc();
       access.toggle();
+    </script>
+    <script type="text/javascript">
       access.filter();
     </script>
   </body>

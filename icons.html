@@ -25,19 +25,24 @@
     <a class="hidden" href="#main-content">Skip to main content</a>
     <header class="px-2">
       <div class="border-b border-color-grey-light">
-        <div class="flex items-center justify-between py-4 px-2">
+        <div class="flex items-center justify-between p-2 screen-tablet:py-4 screen-tablet:px-2">
           <div>
             <h1 class="m-0 p-0 leading-normal"><span class="hidden">ACCESS NYC</span>
-              <svg aria-hidden="true" class="icon-logo-full--large text-color-blue-dark">
+              <svg aria-hidden="true" class="icon-logo-mark screen-tablet:hidden">
+                <use xlink:href="#icon-logo-mark"></use>
+              </svg>
+              <svg aria-hidden="true" class="icon-logo-full--large text-color-blue-dark hidden screen-tablet:inline-block">
                 <use xlink:href="#icon-logo-full"></use>
               </svg>
             </h1>
           </div>
           <div class="flex items-center">
-            <h2 class="type-h1 m-0 text-color-blue-dark">Patterns</h2>
+            <h2 class="text-font-size-small m-0 text-color-blue-dark screen-tablet:hidden">Patterns</h2>
+            <h2 aria-hidden="true" class="type-h1 m-0 text-color-blue-dark hidden screen-tablet:inline-block">Patterns</h2>
             <nav class="text-font-size-small">
-              <a class="text-color-blue-dark border-2 rounded-lg no-underline px-1 ml-2" href="https://github.com/CityOfNewYork/ACCESS-NYC-PATTERNS">0.0.10</a>
-              <a class="ml-2" data-js="toggle" href="#main-menu">Menu</a>
+              <a class="rounded-lg text-color-blue-dark border-2 no-underline px-1 ml-2 hidden screen-tablet:inline-block" href="https://github.com/CityOfNewYork/ACCESS-NYC-PATTERNS">0.0.10</a>
+              <a aria-hidden="true" class="ml-1 screen-tablet:ml-2 screen-tablet:hidden" href="https://github.com/CityOfNewYork/ACCESS-NYC-PATTERNS">0.0.10</a>
+              <a class="ml-1 screen-tablet:ml-2" data-js="toggle" href="#main-menu">Menu</a>
             </nav>
           </div>
         </div>
@@ -98,32 +103,545 @@
     </aside>
     <main class="pt-4" id="main-content">
       <article class="py-4">
-        <h1 class="px-1">Icons</h1>
-        <section class="pb-4" id="usage">
-          <header class="pt-1 px-2 border-b border-color-grey-light mb-3">
-            <h2>Usage</h2>
-          </header>
-          <div class="layout--columns">
-            <div>
-              <div class="page-wrapper pb-3 px-2 text-font-size-small">
-                <p>There are two options for using icons, either as an inline <code>svg</code> with the <code>use</code> tag, or as a utility class that sets the background image of the icon (<code>bg-</code>). The tradeoff for both cases is that you can
-                  change the color of inline svg icon shapes that have their fill set as <code>currentColor</code>. Icons with background images require less markup and their shape fill color will default to black or whatever fill color the shape is set
-                  to.</p>
-                <p>To use the inline <code>svgs</code>, include the icon symbol in your page markup. This can be found in this repositories source under <code>./src/views/partials/icons.slm</code>.</p>
+        <header class="page-wrapper px-2 screen-desktop:px-0 layout--home-body">
+          <div class="my-0 w-full">
+            <h1 class="text-color-blue-dark px-2 m-0">Icons</h1>
+          </div>
+        </header>
+        <section class="pb-4 mb-4" id="default-icons">
+          <div class="page-wrapper px-2 screen-desktop:px-0">
+            <header class="layout--home-body">
+              <div class="my-0 pt-1 px-2 border-b border-color-grey-light">
+                <h2>
+                  <a class="text-color-grey-mid font-normal no-underline" href="#default-icons">Default Icons</a>
+                </h2>
               </div>
+            </header>
+            <div class="layout--home-body">
+              <div class="px-2 text-font-size-small"><p>There are two options for using icons, either as an inline &lt;code&gt;svg&lt;/code&gt; with the &lt;code&gt;use&lt;/code&gt; tag, or as a utility class that sets the background image of the icon (&lt;code&gt;bg-&lt;/code&gt;). The tradeoff for both cases
+  is that you can change the color of inline svg icon shapes that have their fill set as &lt;code&gt;currentColor&lt;/code&gt;. Icons with background images require less markup and their shape fill color will default to black or whatever fill color the
+  shape is set to.</p>
+
+<p>To use the inline &lt;code&gt;svgs&lt;/code&gt;, include the icon symbol in your page markup. This can be found in this repositories source under &lt;code&gt;./src/views/partials/icons.slm&lt;/code&gt;.</p></div>
             </div>
-            <div>
-              <div>
-                <div class="mb-2"><code class="code">icon-work #icon-work,<br />bg-icon-work</code></div>
-                <div class="mb-2">
-                  <div class="code-block mb-1"><pre><div>&lt;svg class=&quot;icon-work text-color-blue-dark&quot;&gt;</div><div>  &lt;use xlink:href=&quot;#icon-work&quot;&gt;</div><div>&lt;/svg&gt;</div><div> </div><div>&lt;div class=&quot;bg-icon-work&quot;&gt;&lt;/div&gt;</div></pre></div>
+            <div class="layout--gutter screen-tablet:layout--gutter justify-between">
+              <div class="layout--gutter screen-mobile:layout--columns-gutter screen-tablet:layout--three-columns-gutter screen-desktop:layout--four-columns-gutter">
+                <div class="flex flex-col justify-between items-center border border-color-grey-light p-3">
+                  <div class="pb-2">
+                    <svg class="icon-logo-full text-color-blue-dark">
+                      <use xlink:href="#icon-logo-full"></use>
+                    </svg>
+                    <div class="bg-icon-logo-full"></div>
+                  </div>
+                  <div class="code-block mb-1"><pre>&lt;svg class=&quot;icon-work text-color-blue-dark&quot;&gt;
+  &lt;use xlink:href=&quot;#icon-work&quot;&gt;&lt;/use&gt;
+&lt;/svg&gt;
+&lt;div class=&quot;bg-icon-work&quot;&gt;&lt;/div&gt;</pre></div>
                 </div>
-                <div class="mb-1">
-                  <svg class="icon-work text-color-blue-dark">
-                    <use xlink:href="#icon-work"></use>
-                  </svg>
+                <div class="flex flex-col justify-between items-center border border-color-grey-light p-3">
+                  <div class="pb-2">
+                    <svg class="icon-logo-full--large text-color-blue-dark">
+                      <use xlink:href="#icon-logo-full"></use>
+                    </svg>
+                    <div class="bg-icon-logo-full--large"></div>
+                  </div>
+                  <div class="code-block mb-1"><pre>&lt;svg class=&quot;icon-work text-color-blue-dark&quot;&gt;
+  &lt;use xlink:href=&quot;#icon-work&quot;&gt;&lt;/use&gt;
+&lt;/svg&gt;
+&lt;div class=&quot;bg-icon-work&quot;&gt;&lt;/div&gt;</pre></div>
                 </div>
-                <div class="bg-icon-work"></div>
+                <div class="flex flex-col justify-between items-center border border-color-grey-light p-3">
+                  <div class="pb-2">
+                    <svg class="icon-logo-mark text-color-blue-dark">
+                      <use xlink:href="#icon-logo-mark"></use>
+                    </svg>
+                    <div class="bg-icon-logo-mark"></div>
+                  </div>
+                  <div class="code-block mb-1"><pre>&lt;svg class=&quot;icon-work text-color-blue-dark&quot;&gt;
+  &lt;use xlink:href=&quot;#icon-work&quot;&gt;&lt;/use&gt;
+&lt;/svg&gt;
+&lt;div class=&quot;bg-icon-work&quot;&gt;&lt;/div&gt;</pre></div>
+                </div>
+                <div class="flex flex-col justify-between items-center border border-color-grey-light p-3">
+                  <div class="pb-2">
+                    <svg class="icon-logo-nyc text-color-blue-dark">
+                      <use xlink:href="#icon-logo-nyc"></use>
+                    </svg>
+                    <div class="bg-icon-logo-nyc"></div>
+                  </div>
+                  <div class="code-block mb-1"><pre>&lt;svg class=&quot;icon-work text-color-blue-dark&quot;&gt;
+  &lt;use xlink:href=&quot;#icon-work&quot;&gt;&lt;/use&gt;
+&lt;/svg&gt;
+&lt;div class=&quot;bg-icon-work&quot;&gt;&lt;/div&gt;</pre></div>
+                </div>
+                <div class="flex flex-col justify-between items-center border border-color-grey-light p-3">
+                  <div class="pb-2">
+                    <svg class="icon-close text-color-blue-dark">
+                      <use xlink:href="#icon-close"></use>
+                    </svg>
+                    <div class="bg-icon-close"></div>
+                  </div>
+                  <div class="code-block mb-1"><pre>&lt;svg class=&quot;icon-work text-color-blue-dark&quot;&gt;
+  &lt;use xlink:href=&quot;#icon-work&quot;&gt;&lt;/use&gt;
+&lt;/svg&gt;
+&lt;div class=&quot;bg-icon-work&quot;&gt;&lt;/div&gt;</pre></div>
+                </div>
+                <div class="flex flex-col justify-between items-center border border-color-grey-light p-3">
+                  <div class="pb-2">
+                    <svg class="icon-contact text-color-blue-dark">
+                      <use xlink:href="#icon-contact"></use>
+                    </svg>
+                    <div class="bg-icon-contact"></div>
+                  </div>
+                  <div class="code-block mb-1"><pre>&lt;svg class=&quot;icon-work text-color-blue-dark&quot;&gt;
+  &lt;use xlink:href=&quot;#icon-work&quot;&gt;&lt;/use&gt;
+&lt;/svg&gt;
+&lt;div class=&quot;bg-icon-work&quot;&gt;&lt;/div&gt;</pre></div>
+                </div>
+                <div class="flex flex-col justify-between items-center border border-color-grey-light p-3">
+                  <div class="pb-2">
+                    <svg class="icon-gear text-color-blue-dark">
+                      <use xlink:href="#icon-gear"></use>
+                    </svg>
+                    <div class="bg-icon-gear"></div>
+                  </div>
+                  <div class="code-block mb-1"><pre>&lt;svg class=&quot;icon-work text-color-blue-dark&quot;&gt;
+  &lt;use xlink:href=&quot;#icon-work&quot;&gt;&lt;/use&gt;
+&lt;/svg&gt;
+&lt;div class=&quot;bg-icon-work&quot;&gt;&lt;/div&gt;</pre></div>
+                </div>
+                <div class="flex flex-col justify-between items-center border border-color-grey-light p-3">
+                  <div class="pb-2">
+                    <svg class="icon-minus text-color-blue-dark">
+                      <use xlink:href="#icon-minus"></use>
+                    </svg>
+                    <div class="bg-icon-minus"></div>
+                  </div>
+                  <div class="code-block mb-1"><pre>&lt;svg class=&quot;icon-work text-color-blue-dark&quot;&gt;
+  &lt;use xlink:href=&quot;#icon-work&quot;&gt;&lt;/use&gt;
+&lt;/svg&gt;
+&lt;div class=&quot;bg-icon-work&quot;&gt;&lt;/div&gt;</pre></div>
+                </div>
+                <div class="flex flex-col justify-between items-center border border-color-grey-light p-3">
+                  <div class="pb-2">
+                    <svg class="icon-plus text-color-blue-dark">
+                      <use xlink:href="#icon-plus"></use>
+                    </svg>
+                    <div class="bg-icon-plus"></div>
+                  </div>
+                  <div class="code-block mb-1"><pre>&lt;svg class=&quot;icon-work text-color-blue-dark&quot;&gt;
+  &lt;use xlink:href=&quot;#icon-work&quot;&gt;&lt;/use&gt;
+&lt;/svg&gt;
+&lt;div class=&quot;bg-icon-work&quot;&gt;&lt;/div&gt;</pre></div>
+                </div>
+                <div class="flex flex-col justify-between items-center border border-color-grey-light p-3">
+                  <div class="pb-2">
+                    <svg class="icon-screening text-color-blue-dark">
+                      <use xlink:href="#icon-screening"></use>
+                    </svg>
+                    <div class="bg-icon-screening"></div>
+                  </div>
+                  <div class="code-block mb-1"><pre>&lt;svg class=&quot;icon-work text-color-blue-dark&quot;&gt;
+  &lt;use xlink:href=&quot;#icon-work&quot;&gt;&lt;/use&gt;
+&lt;/svg&gt;
+&lt;div class=&quot;bg-icon-work&quot;&gt;&lt;/div&gt;</pre></div>
+                </div>
+                <div class="flex flex-col justify-between items-center border border-color-grey-light p-3">
+                  <div class="pb-2">
+                    <svg class="icon-search text-color-blue-dark">
+                      <use xlink:href="#icon-search"></use>
+                    </svg>
+                    <div class="bg-icon-search"></div>
+                  </div>
+                  <div class="code-block mb-1"><pre>&lt;svg class=&quot;icon-work text-color-blue-dark&quot;&gt;
+  &lt;use xlink:href=&quot;#icon-work&quot;&gt;&lt;/use&gt;
+&lt;/svg&gt;
+&lt;div class=&quot;bg-icon-work&quot;&gt;&lt;/div&gt;</pre></div>
+                </div>
+                <div class="flex flex-col justify-between items-center border border-color-grey-light p-3">
+                  <div class="pb-2">
+                    <svg class="icon-printer text-color-blue-dark">
+                      <use xlink:href="#icon-printer"></use>
+                    </svg>
+                    <div class="bg-icon-printer"></div>
+                  </div>
+                  <div class="code-block mb-1"><pre>&lt;svg class=&quot;icon-work text-color-blue-dark&quot;&gt;
+  &lt;use xlink:href=&quot;#icon-work&quot;&gt;&lt;/use&gt;
+&lt;/svg&gt;
+&lt;div class=&quot;bg-icon-work&quot;&gt;&lt;/div&gt;</pre></div>
+                </div>
+                <div class="flex flex-col justify-between items-center border border-color-grey-light p-3">
+                  <div class="pb-2">
+                    <svg class="icon-share text-color-blue-dark">
+                      <use xlink:href="#icon-share"></use>
+                    </svg>
+                    <div class="bg-icon-share"></div>
+                  </div>
+                  <div class="code-block mb-1"><pre>&lt;svg class=&quot;icon-work text-color-blue-dark&quot;&gt;
+  &lt;use xlink:href=&quot;#icon-work&quot;&gt;&lt;/use&gt;
+&lt;/svg&gt;
+&lt;div class=&quot;bg-icon-work&quot;&gt;&lt;/div&gt;</pre></div>
+                </div>
+                <div class="flex flex-col justify-between items-center border border-color-grey-light p-3">
+                  <div class="pb-2">
+                    <svg class="icon-eligibilitycheck text-color-blue-dark">
+                      <use xlink:href="#icon-eligibilitycheck"></use>
+                    </svg>
+                    <div class="bg-icon-eligibilitycheck"></div>
+                  </div>
+                  <div class="code-block mb-1"><pre>&lt;svg class=&quot;icon-work text-color-blue-dark&quot;&gt;
+  &lt;use xlink:href=&quot;#icon-work&quot;&gt;&lt;/use&gt;
+&lt;/svg&gt;
+&lt;div class=&quot;bg-icon-work&quot;&gt;&lt;/div&gt;</pre></div>
+                </div>
+                <div class="flex flex-col justify-between items-center border border-color-grey-light p-3">
+                  <div class="pb-2">
+                    <svg class="icon-checkmark text-color-blue-dark">
+                      <use xlink:href="#icon-checkmark"></use>
+                    </svg>
+                    <div class="bg-icon-checkmark"></div>
+                  </div>
+                  <div class="code-block mb-1"><pre>&lt;svg class=&quot;icon-work text-color-blue-dark&quot;&gt;
+  &lt;use xlink:href=&quot;#icon-work&quot;&gt;&lt;/use&gt;
+&lt;/svg&gt;
+&lt;div class=&quot;bg-icon-work&quot;&gt;&lt;/div&gt;</pre></div>
+                </div>
+                <div class="flex flex-col justify-between items-center border border-color-grey-light p-3">
+                  <div class="pb-2">
+                    <svg class="icon-arrow-down text-color-blue-dark">
+                      <use xlink:href="#icon-arrow-down"></use>
+                    </svg>
+                    <div class="bg-icon-arrow-down"></div>
+                  </div>
+                  <div class="code-block mb-1"><pre>&lt;svg class=&quot;icon-work text-color-blue-dark&quot;&gt;
+  &lt;use xlink:href=&quot;#icon-work&quot;&gt;&lt;/use&gt;
+&lt;/svg&gt;
+&lt;div class=&quot;bg-icon-work&quot;&gt;&lt;/div&gt;</pre></div>
+                </div>
+                <div class="flex flex-col justify-between items-center border border-color-grey-light p-3">
+                  <div class="pb-2">
+                    <svg class="icon-info text-color-blue-dark">
+                      <use xlink:href="#icon-info"></use>
+                    </svg>
+                    <div class="bg-icon-info"></div>
+                  </div>
+                  <div class="code-block mb-1"><pre>&lt;svg class=&quot;icon-work text-color-blue-dark&quot;&gt;
+  &lt;use xlink:href=&quot;#icon-work&quot;&gt;&lt;/use&gt;
+&lt;/svg&gt;
+&lt;div class=&quot;bg-icon-work&quot;&gt;&lt;/div&gt;</pre></div>
+                </div>
+                <div class="flex flex-col justify-between items-center border border-color-grey-light p-3">
+                  <div class="pb-2">
+                    <svg class="icon-success text-color-blue-dark">
+                      <use xlink:href="#icon-success"></use>
+                    </svg>
+                    <div class="bg-icon-success"></div>
+                  </div>
+                  <div class="code-block mb-1"><pre>&lt;svg class=&quot;icon-work text-color-blue-dark&quot;&gt;
+  &lt;use xlink:href=&quot;#icon-work&quot;&gt;&lt;/use&gt;
+&lt;/svg&gt;
+&lt;div class=&quot;bg-icon-work&quot;&gt;&lt;/div&gt;</pre></div>
+                </div>
+                <div class="flex flex-col justify-between items-center border border-color-grey-light p-3">
+                  <div class="pb-2">
+                    <svg class="icon-urgent text-color-blue-dark">
+                      <use xlink:href="#icon-urgent"></use>
+                    </svg>
+                    <div class="bg-icon-urgent"></div>
+                  </div>
+                  <div class="code-block mb-1"><pre>&lt;svg class=&quot;icon-work text-color-blue-dark&quot;&gt;
+  &lt;use xlink:href=&quot;#icon-work&quot;&gt;&lt;/use&gt;
+&lt;/svg&gt;
+&lt;div class=&quot;bg-icon-work&quot;&gt;&lt;/div&gt;</pre></div>
+                </div>
+                <div class="flex flex-col justify-between items-center border border-color-grey-light p-3">
+                  <div class="pb-2">
+                    <svg class="icon-warning text-color-blue-dark">
+                      <use xlink:href="#icon-warning"></use>
+                    </svg>
+                    <div class="bg-icon-warning"></div>
+                  </div>
+                  <div class="code-block mb-1"><pre>&lt;svg class=&quot;icon-work text-color-blue-dark&quot;&gt;
+  &lt;use xlink:href=&quot;#icon-work&quot;&gt;&lt;/use&gt;
+&lt;/svg&gt;
+&lt;div class=&quot;bg-icon-work&quot;&gt;&lt;/div&gt;</pre></div>
+                </div>
+                <div class="flex flex-col justify-between items-center border border-color-grey-light p-3">
+                  <div class="pb-2">
+                    <svg class="icon-card-cash-expenses text-color-blue-dark">
+                      <use xlink:href="#icon-card-cash-expenses"></use>
+                    </svg>
+                    <div class="bg-icon-card-cash-expenses"></div>
+                  </div>
+                  <div class="code-block mb-1"><pre>&lt;svg class=&quot;icon-work text-color-blue-dark&quot;&gt;
+  &lt;use xlink:href=&quot;#icon-work&quot;&gt;&lt;/use&gt;
+&lt;/svg&gt;
+&lt;div class=&quot;bg-icon-work&quot;&gt;&lt;/div&gt;</pre></div>
+                </div>
+                <div class="flex flex-col justify-between items-center border border-color-grey-light p-3">
+                  <div class="pb-2">
+                    <svg class="icon-card-child-care text-color-blue-dark">
+                      <use xlink:href="#icon-card-child-care"></use>
+                    </svg>
+                    <div class="bg-icon-card-child-care"></div>
+                  </div>
+                  <div class="code-block mb-1"><pre>&lt;svg class=&quot;icon-work text-color-blue-dark&quot;&gt;
+  &lt;use xlink:href=&quot;#icon-work&quot;&gt;&lt;/use&gt;
+&lt;/svg&gt;
+&lt;div class=&quot;bg-icon-work&quot;&gt;&lt;/div&gt;</pre></div>
+                </div>
+                <div class="flex flex-col justify-between items-center border border-color-grey-light p-3">
+                  <div class="pb-2">
+                    <svg class="icon-card-city-id-card text-color-blue-dark">
+                      <use xlink:href="#icon-card-city-id-card"></use>
+                    </svg>
+                    <div class="bg-icon-card-city-id-card"></div>
+                  </div>
+                  <div class="code-block mb-1"><pre>&lt;svg class=&quot;icon-work text-color-blue-dark&quot;&gt;
+  &lt;use xlink:href=&quot;#icon-work&quot;&gt;&lt;/use&gt;
+&lt;/svg&gt;
+&lt;div class=&quot;bg-icon-work&quot;&gt;&lt;/div&gt;</pre></div>
+                </div>
+                <div class="flex flex-col justify-between items-center border border-color-grey-light p-3">
+                  <div class="pb-2">
+                    <svg class="icon-card-education text-color-blue-dark">
+                      <use xlink:href="#icon-card-education"></use>
+                    </svg>
+                    <div class="bg-icon-card-education"></div>
+                  </div>
+                  <div class="code-block mb-1"><pre>&lt;svg class=&quot;icon-work text-color-blue-dark&quot;&gt;
+  &lt;use xlink:href=&quot;#icon-work&quot;&gt;&lt;/use&gt;
+&lt;/svg&gt;
+&lt;div class=&quot;bg-icon-work&quot;&gt;&lt;/div&gt;</pre></div>
+                </div>
+                <div class="flex flex-col justify-between items-center border border-color-grey-light p-3">
+                  <div class="pb-2">
+                    <svg class="icon-card-enrichment text-color-blue-dark">
+                      <use xlink:href="#icon-card-enrichment"></use>
+                    </svg>
+                    <div class="bg-icon-card-enrichment"></div>
+                  </div>
+                  <div class="code-block mb-1"><pre>&lt;svg class=&quot;icon-work text-color-blue-dark&quot;&gt;
+  &lt;use xlink:href=&quot;#icon-work&quot;&gt;&lt;/use&gt;
+&lt;/svg&gt;
+&lt;div class=&quot;bg-icon-work&quot;&gt;&lt;/div&gt;</pre></div>
+                </div>
+                <div class="flex flex-col justify-between items-center border border-color-grey-light p-3">
+                  <div class="pb-2">
+                    <svg class="icon-card-expenses text-color-blue-dark">
+                      <use xlink:href="#icon-card-expenses"></use>
+                    </svg>
+                    <div class="bg-icon-card-expenses"></div>
+                  </div>
+                  <div class="code-block mb-1"><pre>&lt;svg class=&quot;icon-work text-color-blue-dark&quot;&gt;
+  &lt;use xlink:href=&quot;#icon-work&quot;&gt;&lt;/use&gt;
+&lt;/svg&gt;
+&lt;div class=&quot;bg-icon-work&quot;&gt;&lt;/div&gt;</pre></div>
+                </div>
+                <div class="flex flex-col justify-between items-center border border-color-grey-light p-3">
+                  <div class="pb-2">
+                    <svg class="icon-card-family-services text-color-blue-dark">
+                      <use xlink:href="#icon-card-family-services"></use>
+                    </svg>
+                    <div class="bg-icon-card-family-services"></div>
+                  </div>
+                  <div class="code-block mb-1"><pre>&lt;svg class=&quot;icon-work text-color-blue-dark&quot;&gt;
+  &lt;use xlink:href=&quot;#icon-work&quot;&gt;&lt;/use&gt;
+&lt;/svg&gt;
+&lt;div class=&quot;bg-icon-work&quot;&gt;&lt;/div&gt;</pre></div>
+                </div>
+                <div class="flex flex-col justify-between items-center border border-color-grey-light p-3">
+                  <div class="pb-2">
+                    <svg class="icon-card-food text-color-blue-dark">
+                      <use xlink:href="#icon-card-food"></use>
+                    </svg>
+                    <div class="bg-icon-card-food"></div>
+                  </div>
+                  <div class="code-block mb-1"><pre>&lt;svg class=&quot;icon-work text-color-blue-dark&quot;&gt;
+  &lt;use xlink:href=&quot;#icon-work&quot;&gt;&lt;/use&gt;
+&lt;/svg&gt;
+&lt;div class=&quot;bg-icon-work&quot;&gt;&lt;/div&gt;</pre></div>
+                </div>
+                <div class="flex flex-col justify-between items-center border border-color-grey-light p-3">
+                  <div class="pb-2">
+                    <svg class="icon-card-health text-color-blue-dark">
+                      <use xlink:href="#icon-card-health"></use>
+                    </svg>
+                    <div class="bg-icon-card-health"></div>
+                  </div>
+                  <div class="code-block mb-1"><pre>&lt;svg class=&quot;icon-work text-color-blue-dark&quot;&gt;
+  &lt;use xlink:href=&quot;#icon-work&quot;&gt;&lt;/use&gt;
+&lt;/svg&gt;
+&lt;div class=&quot;bg-icon-work&quot;&gt;&lt;/div&gt;</pre></div>
+                </div>
+                <div class="flex flex-col justify-between items-center border border-color-grey-light p-3">
+                  <div class="pb-2">
+                    <svg class="icon-card-housing text-color-blue-dark">
+                      <use xlink:href="#icon-card-housing"></use>
+                    </svg>
+                    <div class="bg-icon-card-housing"></div>
+                  </div>
+                  <div class="code-block mb-1"><pre>&lt;svg class=&quot;icon-work text-color-blue-dark&quot;&gt;
+  &lt;use xlink:href=&quot;#icon-work&quot;&gt;&lt;/use&gt;
+&lt;/svg&gt;
+&lt;div class=&quot;bg-icon-work&quot;&gt;&lt;/div&gt;</pre></div>
+                </div>
+                <div class="flex flex-col justify-between items-center border border-color-grey-light p-3">
+                  <div class="pb-2">
+                    <svg class="icon-card-special-needs text-color-blue-dark">
+                      <use xlink:href="#icon-card-special-needs"></use>
+                    </svg>
+                    <div class="bg-icon-card-special-needs"></div>
+                  </div>
+                  <div class="code-block mb-1"><pre>&lt;svg class=&quot;icon-work text-color-blue-dark&quot;&gt;
+  &lt;use xlink:href=&quot;#icon-work&quot;&gt;&lt;/use&gt;
+&lt;/svg&gt;
+&lt;div class=&quot;bg-icon-work&quot;&gt;&lt;/div&gt;</pre></div>
+                </div>
+                <div class="flex flex-col justify-between items-center border border-color-grey-light p-3">
+                  <div class="pb-2">
+                    <svg class="icon-card-work text-color-blue-dark">
+                      <use xlink:href="#icon-card-work"></use>
+                    </svg>
+                    <div class="bg-icon-card-work"></div>
+                  </div>
+                  <div class="code-block mb-1"><pre>&lt;svg class=&quot;icon-work text-color-blue-dark&quot;&gt;
+  &lt;use xlink:href=&quot;#icon-work&quot;&gt;&lt;/use&gt;
+&lt;/svg&gt;
+&lt;div class=&quot;bg-icon-work&quot;&gt;&lt;/div&gt;</pre></div>
+                </div>
+                <div class="flex flex-col justify-between items-center border border-color-grey-light p-3">
+                  <div class="pb-2">
+                    <svg class="icon-cash-expenses text-color-blue-dark">
+                      <use xlink:href="#icon-cash-expenses"></use>
+                    </svg>
+                    <div class="bg-icon-cash-expenses"></div>
+                  </div>
+                  <div class="code-block mb-1"><pre>&lt;svg class=&quot;icon-work text-color-blue-dark&quot;&gt;
+  &lt;use xlink:href=&quot;#icon-work&quot;&gt;&lt;/use&gt;
+&lt;/svg&gt;
+&lt;div class=&quot;bg-icon-work&quot;&gt;&lt;/div&gt;</pre></div>
+                </div>
+                <div class="flex flex-col justify-between items-center border border-color-grey-light p-3">
+                  <div class="pb-2">
+                    <svg class="icon-child-care text-color-blue-dark">
+                      <use xlink:href="#icon-child-care"></use>
+                    </svg>
+                    <div class="bg-icon-child-care"></div>
+                  </div>
+                  <div class="code-block mb-1"><pre>&lt;svg class=&quot;icon-work text-color-blue-dark&quot;&gt;
+  &lt;use xlink:href=&quot;#icon-work&quot;&gt;&lt;/use&gt;
+&lt;/svg&gt;
+&lt;div class=&quot;bg-icon-work&quot;&gt;&lt;/div&gt;</pre></div>
+                </div>
+                <div class="flex flex-col justify-between items-center border border-color-grey-light p-3">
+                  <div class="pb-2">
+                    <svg class="icon-city-id-card text-color-blue-dark">
+                      <use xlink:href="#icon-city-id-card"></use>
+                    </svg>
+                    <div class="bg-icon-city-id-card"></div>
+                  </div>
+                  <div class="code-block mb-1"><pre>&lt;svg class=&quot;icon-work text-color-blue-dark&quot;&gt;
+  &lt;use xlink:href=&quot;#icon-work&quot;&gt;&lt;/use&gt;
+&lt;/svg&gt;
+&lt;div class=&quot;bg-icon-work&quot;&gt;&lt;/div&gt;</pre></div>
+                </div>
+                <div class="flex flex-col justify-between items-center border border-color-grey-light p-3">
+                  <div class="pb-2">
+                    <svg class="icon-education text-color-blue-dark">
+                      <use xlink:href="#icon-education"></use>
+                    </svg>
+                    <div class="bg-icon-education"></div>
+                  </div>
+                  <div class="code-block mb-1"><pre>&lt;svg class=&quot;icon-work text-color-blue-dark&quot;&gt;
+  &lt;use xlink:href=&quot;#icon-work&quot;&gt;&lt;/use&gt;
+&lt;/svg&gt;
+&lt;div class=&quot;bg-icon-work&quot;&gt;&lt;/div&gt;</pre></div>
+                </div>
+                <div class="flex flex-col justify-between items-center border border-color-grey-light p-3">
+                  <div class="pb-2">
+                    <svg class="icon-enrichment text-color-blue-dark">
+                      <use xlink:href="#icon-enrichment"></use>
+                    </svg>
+                    <div class="bg-icon-enrichment"></div>
+                  </div>
+                  <div class="code-block mb-1"><pre>&lt;svg class=&quot;icon-work text-color-blue-dark&quot;&gt;
+  &lt;use xlink:href=&quot;#icon-work&quot;&gt;&lt;/use&gt;
+&lt;/svg&gt;
+&lt;div class=&quot;bg-icon-work&quot;&gt;&lt;/div&gt;</pre></div>
+                </div>
+                <div class="flex flex-col justify-between items-center border border-color-grey-light p-3">
+                  <div class="pb-2">
+                    <svg class="icon-family-services text-color-blue-dark">
+                      <use xlink:href="#icon-family-services"></use>
+                    </svg>
+                    <div class="bg-icon-family-services"></div>
+                  </div>
+                  <div class="code-block mb-1"><pre>&lt;svg class=&quot;icon-work text-color-blue-dark&quot;&gt;
+  &lt;use xlink:href=&quot;#icon-work&quot;&gt;&lt;/use&gt;
+&lt;/svg&gt;
+&lt;div class=&quot;bg-icon-work&quot;&gt;&lt;/div&gt;</pre></div>
+                </div>
+                <div class="flex flex-col justify-between items-center border border-color-grey-light p-3">
+                  <div class="pb-2">
+                    <svg class="icon-food text-color-blue-dark">
+                      <use xlink:href="#icon-food"></use>
+                    </svg>
+                    <div class="bg-icon-food"></div>
+                  </div>
+                  <div class="code-block mb-1"><pre>&lt;svg class=&quot;icon-work text-color-blue-dark&quot;&gt;
+  &lt;use xlink:href=&quot;#icon-work&quot;&gt;&lt;/use&gt;
+&lt;/svg&gt;
+&lt;div class=&quot;bg-icon-work&quot;&gt;&lt;/div&gt;</pre></div>
+                </div>
+                <div class="flex flex-col justify-between items-center border border-color-grey-light p-3">
+                  <div class="pb-2">
+                    <svg class="icon-health text-color-blue-dark">
+                      <use xlink:href="#icon-health"></use>
+                    </svg>
+                    <div class="bg-icon-health"></div>
+                  </div>
+                  <div class="code-block mb-1"><pre>&lt;svg class=&quot;icon-work text-color-blue-dark&quot;&gt;
+  &lt;use xlink:href=&quot;#icon-work&quot;&gt;&lt;/use&gt;
+&lt;/svg&gt;
+&lt;div class=&quot;bg-icon-work&quot;&gt;&lt;/div&gt;</pre></div>
+                </div>
+                <div class="flex flex-col justify-between items-center border border-color-grey-light p-3">
+                  <div class="pb-2">
+                    <svg class="icon-housing text-color-blue-dark">
+                      <use xlink:href="#icon-housing"></use>
+                    </svg>
+                    <div class="bg-icon-housing"></div>
+                  </div>
+                  <div class="code-block mb-1"><pre>&lt;svg class=&quot;icon-work text-color-blue-dark&quot;&gt;
+  &lt;use xlink:href=&quot;#icon-work&quot;&gt;&lt;/use&gt;
+&lt;/svg&gt;
+&lt;div class=&quot;bg-icon-work&quot;&gt;&lt;/div&gt;</pre></div>
+                </div>
+                <div class="flex flex-col justify-between items-center border border-color-grey-light p-3">
+                  <div class="pb-2">
+                    <svg class="icon-special-needs text-color-blue-dark">
+                      <use xlink:href="#icon-special-needs"></use>
+                    </svg>
+                    <div class="bg-icon-special-needs"></div>
+                  </div>
+                  <div class="code-block mb-1"><pre>&lt;svg class=&quot;icon-work text-color-blue-dark&quot;&gt;
+  &lt;use xlink:href=&quot;#icon-work&quot;&gt;&lt;/use&gt;
+&lt;/svg&gt;
+&lt;div class=&quot;bg-icon-work&quot;&gt;&lt;/div&gt;</pre></div>
+                </div>
+                <div class="flex flex-col justify-between items-center border border-color-grey-light p-3">
+                  <div class="pb-2">
+                    <svg class="icon-work text-color-blue-dark">
+                      <use xlink:href="#icon-work"></use>
+                    </svg>
+                    <div class="bg-icon-work"></div>
+                  </div>
+                  <div class="code-block mb-1"><pre>&lt;svg class=&quot;icon-work text-color-blue-dark&quot;&gt;
+  &lt;use xlink:href=&quot;#icon-work&quot;&gt;&lt;/use&gt;
+&lt;/svg&gt;
+&lt;div class=&quot;bg-icon-work&quot;&gt;&lt;/div&gt;</pre></div>
+                </div>
               </div>
             </div>
           </div>
@@ -137,6 +655,7 @@
     </footer>
     <div aria-hidden="true" class="hidden">
       <svg>
+        <defs/>
         <symbol id="icon-arrow-down" viewBox="0 0 444.8 444.8">
           <path fill="currentColor" d="M248.1 352L434 165.9c7.2-6.9 10.8-15.4 10.8-25.7 0-10.3-3.6-18.8-10.8-25.7l-21.4-21.7c-7-7-15.6-10.6-25.7-10.6-9.9 0-18.6 3.5-26 10.6L222.4 231.5 83.7 92.8c-7-7-15.6-10.6-25.7-10.6-9.9 0-18.6 3.5-26 10.6l-21.4 21.7c-7 7-10.6 15.6-10.6 25.7s3.5 18.7 10.6 25.7L196.4 352c7.4 7 16.1 10.6 26 10.6 10.1 0 18.7-3.5 25.7-10.6z"
           />
@@ -416,7 +935,7 @@
             fill="#fbb720" fill-rule="nonzero" />
         </symbol>
         <symbol id="icon-logo-nyc" viewBox="0 0 350 117">
-          <g fill="currentColor">
+          <g fill="currentColor" fill-rule="nonzero">
             <path d="M327.9 0H255l-21.8 21.9v72.8l21.8 21.9h72.9l21.8-21.9V72.9l-7.2-7.3H306v7.3h-29.1V43.7H306v7.2h36.5l7.2-7.2V21.9L327.9 0zM109.3 0H80.1l-7.2 7.3v29.1L36.4 0H7.3L0 7.3v102l7.3 7.3h29.1l7.3-7.3V80.1l36.4 36.5h29.2l7.3-7.3V7.3L109.3 0zM160.3 116.6h29.1l7.3-7.3V87.4L233.2 51V7.3L225.9 0h-29.2l-7.3 7.3v14.6l-14.5 14.5-14.6-14.5V7.3L153 0h-29.1l-7.3 7.3V51L153 87.4v21.9l7.3 7.3z"
             />
           </g>
@@ -493,7 +1012,6 @@
     <script type="text/javascript">
       var access = new AccessNyc();
       access.toggle();
-      access.filter();
     </script>
   </body>
 

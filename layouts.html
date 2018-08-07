@@ -25,19 +25,24 @@
     <a class="hidden" href="#main-content">Skip to main content</a>
     <header class="px-2">
       <div class="border-b border-color-grey-light">
-        <div class="flex items-center justify-between py-4 px-2">
+        <div class="flex items-center justify-between p-2 screen-tablet:py-4 screen-tablet:px-2">
           <div>
             <h1 class="m-0 p-0 leading-normal"><span class="hidden">ACCESS NYC</span>
-              <svg aria-hidden="true" class="icon-logo-full--large text-color-blue-dark">
+              <svg aria-hidden="true" class="icon-logo-mark screen-tablet:hidden">
+                <use xlink:href="#icon-logo-mark"></use>
+              </svg>
+              <svg aria-hidden="true" class="icon-logo-full--large text-color-blue-dark hidden screen-tablet:inline-block">
                 <use xlink:href="#icon-logo-full"></use>
               </svg>
             </h1>
           </div>
           <div class="flex items-center">
-            <h2 class="type-h1 m-0 text-color-blue-dark">Patterns</h2>
+            <h2 class="text-font-size-small m-0 text-color-blue-dark screen-tablet:hidden">Patterns</h2>
+            <h2 aria-hidden="true" class="type-h1 m-0 text-color-blue-dark hidden screen-tablet:inline-block">Patterns</h2>
             <nav class="text-font-size-small">
-              <a class="text-color-blue-dark border-2 rounded-lg no-underline px-1 ml-2" href="https://github.com/CityOfNewYork/ACCESS-NYC-PATTERNS">0.0.10</a>
-              <a class="ml-2" data-js="toggle" href="#main-menu">Menu</a>
+              <a class="rounded-lg text-color-blue-dark border-2 no-underline px-1 ml-2 hidden screen-tablet:inline-block" href="https://github.com/CityOfNewYork/ACCESS-NYC-PATTERNS">0.0.10</a>
+              <a aria-hidden="true" class="ml-1 screen-tablet:ml-2 screen-tablet:hidden" href="https://github.com/CityOfNewYork/ACCESS-NYC-PATTERNS">0.0.10</a>
+              <a class="ml-1 screen-tablet:ml-2" data-js="toggle" href="#main-menu">Menu</a>
             </nav>
           </div>
         </div>
@@ -98,13 +103,13 @@
     </aside>
     <main class="pt-4" id="main-content">
       <article class="py-4">
-        <header class="page-wrapper layout--home-body">
+        <header class="page-wrapper px-2 screen-desktop:px-0 layout--home-body">
           <div class="my-0 w-full">
             <h1 class="text-color-blue-dark px-2 m-0">Layouts</h1>
           </div>
         </header>
         <section class="pb-4 mb-4" id="columns">
-          <div class="page-wrapper">
+          <div class="page-wrapper px-2 screen-desktop:px-0">
             <header class="layout--home-body">
               <div class="my-0 pt-1 px-2 border-b border-color-grey-light">
                 <h2>
@@ -115,24 +120,74 @@
             <div class="layout--home-body">
               <div class="px-2 text-font-size-small"></div>
             </div>
-            <div class="layout--columns justify-between">
-              <div class="pr-2">
-                <div class="layout--columns flex text-center">
-                  <div class="bg-color-grey-light p-4">Column A</div>
-                  <div class="bg-color-grey-lightest p-4">Column B</div>
-                </div>
-              </div>
-              <div>
-                <div class="code-block mb-1"><pre>&lt;div class=&quot;layout--columns flex text-center&quot;&gt;
+            <div class="layout--gutter screen-tablet:layout--columns justify-between">
+              <div class="layout--gutter screen-mobile:layout--columns-gutter screen-tablet:layout--three-columns-gutter screen-desktop:layout--four-columns-gutter">
+                <div class="flex flex-col justify-between items-center border border-color-grey-light p-3">
+                  <div class="pb-2">
+                    <div class="layout--columns flex text-center">
+                      <div class="bg-color-grey-light p-4">Column A</div>
+                      <div class="bg-color-grey-lightest p-4">Column B</div>
+                    </div>
+                  </div>
+                  <div class="code-block mb-1"><pre>&lt;div class=&quot;layout--columns flex text-center&quot;&gt;
   &lt;div class=&quot;bg-color-grey-light p-4&quot;&gt;Column A&lt;/div&gt;
   &lt;div class=&quot;bg-color-grey-lightest p-4&quot;&gt;Column B&lt;/div&gt;
 &lt;/div&gt;</pre></div>
+                </div>
+                <div class="flex flex-col justify-between items-center border border-color-grey-light p-3">
+                  <div class="pb-2">
+                    <div class="layout--columns flex text-center">
+                      <div class="bg-color-grey-light p-4">Column A</div>
+                      <div class="bg-color-grey-lightest p-4">Column B</div>
+                    </div>
+                  </div>
+                  <div class="code-block mb-1"><pre>&lt;div class=&quot;layout--columns flex text-center&quot;&gt;
+  &lt;div class=&quot;bg-color-grey-light p-4&quot;&gt;Column A&lt;/div&gt;
+  &lt;div class=&quot;bg-color-grey-lightest p-4&quot;&gt;Column B&lt;/div&gt;
+&lt;/div&gt;</pre></div>
+                </div>
+                <div class="flex flex-col justify-between items-center border border-color-grey-light p-3">
+                  <div class="pb-2">
+                    <div class="layout--columns flex text-center">
+                      <div class="bg-color-grey-light p-4">Column A</div>
+                      <div class="bg-color-grey-lightest p-4">Column B</div>
+                    </div>
+                  </div>
+                  <div class="code-block mb-1"><pre>&lt;div class=&quot;layout--columns flex text-center&quot;&gt;
+  &lt;div class=&quot;bg-color-grey-light p-4&quot;&gt;Column A&lt;/div&gt;
+  &lt;div class=&quot;bg-color-grey-lightest p-4&quot;&gt;Column B&lt;/div&gt;
+&lt;/div&gt;</pre></div>
+                </div>
+                <div class="flex flex-col justify-between items-center border border-color-grey-light p-3">
+                  <div class="pb-2">
+                    <div class="layout--columns flex text-center">
+                      <div class="bg-color-grey-light p-4">Column A</div>
+                      <div class="bg-color-grey-lightest p-4">Column B</div>
+                    </div>
+                  </div>
+                  <div class="code-block mb-1"><pre>&lt;div class=&quot;layout--columns flex text-center&quot;&gt;
+  &lt;div class=&quot;bg-color-grey-light p-4&quot;&gt;Column A&lt;/div&gt;
+  &lt;div class=&quot;bg-color-grey-lightest p-4&quot;&gt;Column B&lt;/div&gt;
+&lt;/div&gt;</pre></div>
+                </div>
+                <div class="flex flex-col justify-between items-center border border-color-grey-light p-3">
+                  <div class="pb-2">
+                    <div class="layout--columns flex text-center">
+                      <div class="bg-color-grey-light p-4">Column A</div>
+                      <div class="bg-color-grey-lightest p-4">Column B</div>
+                    </div>
+                  </div>
+                  <div class="code-block mb-1"><pre>&lt;div class=&quot;layout--columns flex text-center&quot;&gt;
+  &lt;div class=&quot;bg-color-grey-light p-4&quot;&gt;Column A&lt;/div&gt;
+  &lt;div class=&quot;bg-color-grey-lightest p-4&quot;&gt;Column B&lt;/div&gt;
+&lt;/div&gt;</pre></div>
+                </div>
               </div>
             </div>
           </div>
         </section>
         <section class="pb-4 mb-4" id="rows">
-          <div class="page-wrapper">
+          <div class="page-wrapper px-2 screen-desktop:px-0">
             <header class="layout--home-body">
               <div class="my-0 pt-1 px-2 border-b border-color-grey-light">
                 <h2>
@@ -143,24 +198,74 @@
             <div class="layout--home-body">
               <div class="px-2 text-font-size-small"></div>
             </div>
-            <div class="layout--columns justify-between">
-              <div class="pr-2">
-                <div class="layout--rows text-center">
-                  <div class="bg-color-grey-light p-4">Row A</div>
-                  <div class="bg-color-grey-lightest p-4">Row B</div>
-                </div>
-              </div>
-              <div>
-                <div class="code-block mb-1"><pre>&lt;div class=&quot;layout--rows text-center&quot;&gt;
+            <div class="layout--gutter screen-tablet:layout--columns justify-between">
+              <div class="layout--gutter screen-mobile:layout--columns-gutter screen-tablet:layout--three-columns-gutter screen-desktop:layout--four-columns-gutter">
+                <div class="flex flex-col justify-between items-center border border-color-grey-light p-3">
+                  <div class="pb-2">
+                    <div class="layout--rows text-center">
+                      <div class="bg-color-grey-light p-4">Row A</div>
+                      <div class="bg-color-grey-lightest p-4">Row B</div>
+                    </div>
+                  </div>
+                  <div class="code-block mb-1"><pre>&lt;div class=&quot;layout--rows text-center&quot;&gt;
   &lt;div class=&quot;bg-color-grey-light p-4&quot;&gt;Row A&lt;/div&gt;
   &lt;div class=&quot;bg-color-grey-lightest p-4&quot;&gt;Row B&lt;/div&gt;
 &lt;/div&gt;</pre></div>
+                </div>
+                <div class="flex flex-col justify-between items-center border border-color-grey-light p-3">
+                  <div class="pb-2">
+                    <div class="layout--rows text-center">
+                      <div class="bg-color-grey-light p-4">Row A</div>
+                      <div class="bg-color-grey-lightest p-4">Row B</div>
+                    </div>
+                  </div>
+                  <div class="code-block mb-1"><pre>&lt;div class=&quot;layout--rows text-center&quot;&gt;
+  &lt;div class=&quot;bg-color-grey-light p-4&quot;&gt;Row A&lt;/div&gt;
+  &lt;div class=&quot;bg-color-grey-lightest p-4&quot;&gt;Row B&lt;/div&gt;
+&lt;/div&gt;</pre></div>
+                </div>
+                <div class="flex flex-col justify-between items-center border border-color-grey-light p-3">
+                  <div class="pb-2">
+                    <div class="layout--rows text-center">
+                      <div class="bg-color-grey-light p-4">Row A</div>
+                      <div class="bg-color-grey-lightest p-4">Row B</div>
+                    </div>
+                  </div>
+                  <div class="code-block mb-1"><pre>&lt;div class=&quot;layout--rows text-center&quot;&gt;
+  &lt;div class=&quot;bg-color-grey-light p-4&quot;&gt;Row A&lt;/div&gt;
+  &lt;div class=&quot;bg-color-grey-lightest p-4&quot;&gt;Row B&lt;/div&gt;
+&lt;/div&gt;</pre></div>
+                </div>
+                <div class="flex flex-col justify-between items-center border border-color-grey-light p-3">
+                  <div class="pb-2">
+                    <div class="layout--rows text-center">
+                      <div class="bg-color-grey-light p-4">Row A</div>
+                      <div class="bg-color-grey-lightest p-4">Row B</div>
+                    </div>
+                  </div>
+                  <div class="code-block mb-1"><pre>&lt;div class=&quot;layout--rows text-center&quot;&gt;
+  &lt;div class=&quot;bg-color-grey-light p-4&quot;&gt;Row A&lt;/div&gt;
+  &lt;div class=&quot;bg-color-grey-lightest p-4&quot;&gt;Row B&lt;/div&gt;
+&lt;/div&gt;</pre></div>
+                </div>
+                <div class="flex flex-col justify-between items-center border border-color-grey-light p-3">
+                  <div class="pb-2">
+                    <div class="layout--rows text-center">
+                      <div class="bg-color-grey-light p-4">Row A</div>
+                      <div class="bg-color-grey-lightest p-4">Row B</div>
+                    </div>
+                  </div>
+                  <div class="code-block mb-1"><pre>&lt;div class=&quot;layout--rows text-center&quot;&gt;
+  &lt;div class=&quot;bg-color-grey-light p-4&quot;&gt;Row A&lt;/div&gt;
+  &lt;div class=&quot;bg-color-grey-lightest p-4&quot;&gt;Row B&lt;/div&gt;
+&lt;/div&gt;</pre></div>
+                </div>
               </div>
             </div>
           </div>
         </section>
         <section class="pb-4 mb-4" id="gutter">
-          <div class="page-wrapper">
+          <div class="page-wrapper px-2 screen-desktop:px-0">
             <header class="layout--home-body">
               <div class="my-0 pt-1 px-2 border-b border-color-grey-light">
                 <h2>
@@ -171,24 +276,74 @@
             <div class="layout--home-body">
               <div class="px-2 text-font-size-small"></div>
             </div>
-            <div class="layout--columns justify-between">
-              <div class="pr-2">
-                <div class="layout--gutter bg-color-grey-lightest p-4 text-center">
-                  <div class="bg-color-grey-light p-4">Row A</div>
-                  <div class="bg-color-grey-light p-4">Row B</div>
-                </div>
-              </div>
-              <div>
-                <div class="code-block mb-1"><pre>&lt;div class=&quot;layout--gutter bg-color-grey-lightest p-4 text-center&quot;&gt;
+            <div class="layout--gutter screen-tablet:layout--columns justify-between">
+              <div class="layout--gutter screen-mobile:layout--columns-gutter screen-tablet:layout--three-columns-gutter screen-desktop:layout--four-columns-gutter">
+                <div class="flex flex-col justify-between items-center border border-color-grey-light p-3">
+                  <div class="pb-2">
+                    <div class="layout--gutter bg-color-grey-lightest p-4 text-center">
+                      <div class="bg-color-grey-light p-4">Row A</div>
+                      <div class="bg-color-grey-light p-4">Row B</div>
+                    </div>
+                  </div>
+                  <div class="code-block mb-1"><pre>&lt;div class=&quot;layout--gutter bg-color-grey-lightest p-4 text-center&quot;&gt;
   &lt;div class=&quot;bg-color-grey-light p-4&quot;&gt;Row A&lt;/div&gt;
   &lt;div class=&quot;bg-color-grey-light p-4&quot;&gt;Row B&lt;/div&gt;
 &lt;/div&gt;</pre></div>
+                </div>
+                <div class="flex flex-col justify-between items-center border border-color-grey-light p-3">
+                  <div class="pb-2">
+                    <div class="layout--gutter bg-color-grey-lightest p-4 text-center">
+                      <div class="bg-color-grey-light p-4">Row A</div>
+                      <div class="bg-color-grey-light p-4">Row B</div>
+                    </div>
+                  </div>
+                  <div class="code-block mb-1"><pre>&lt;div class=&quot;layout--gutter bg-color-grey-lightest p-4 text-center&quot;&gt;
+  &lt;div class=&quot;bg-color-grey-light p-4&quot;&gt;Row A&lt;/div&gt;
+  &lt;div class=&quot;bg-color-grey-light p-4&quot;&gt;Row B&lt;/div&gt;
+&lt;/div&gt;</pre></div>
+                </div>
+                <div class="flex flex-col justify-between items-center border border-color-grey-light p-3">
+                  <div class="pb-2">
+                    <div class="layout--gutter bg-color-grey-lightest p-4 text-center">
+                      <div class="bg-color-grey-light p-4">Row A</div>
+                      <div class="bg-color-grey-light p-4">Row B</div>
+                    </div>
+                  </div>
+                  <div class="code-block mb-1"><pre>&lt;div class=&quot;layout--gutter bg-color-grey-lightest p-4 text-center&quot;&gt;
+  &lt;div class=&quot;bg-color-grey-light p-4&quot;&gt;Row A&lt;/div&gt;
+  &lt;div class=&quot;bg-color-grey-light p-4&quot;&gt;Row B&lt;/div&gt;
+&lt;/div&gt;</pre></div>
+                </div>
+                <div class="flex flex-col justify-between items-center border border-color-grey-light p-3">
+                  <div class="pb-2">
+                    <div class="layout--gutter bg-color-grey-lightest p-4 text-center">
+                      <div class="bg-color-grey-light p-4">Row A</div>
+                      <div class="bg-color-grey-light p-4">Row B</div>
+                    </div>
+                  </div>
+                  <div class="code-block mb-1"><pre>&lt;div class=&quot;layout--gutter bg-color-grey-lightest p-4 text-center&quot;&gt;
+  &lt;div class=&quot;bg-color-grey-light p-4&quot;&gt;Row A&lt;/div&gt;
+  &lt;div class=&quot;bg-color-grey-light p-4&quot;&gt;Row B&lt;/div&gt;
+&lt;/div&gt;</pre></div>
+                </div>
+                <div class="flex flex-col justify-between items-center border border-color-grey-light p-3">
+                  <div class="pb-2">
+                    <div class="layout--gutter bg-color-grey-lightest p-4 text-center">
+                      <div class="bg-color-grey-light p-4">Row A</div>
+                      <div class="bg-color-grey-light p-4">Row B</div>
+                    </div>
+                  </div>
+                  <div class="code-block mb-1"><pre>&lt;div class=&quot;layout--gutter bg-color-grey-lightest p-4 text-center&quot;&gt;
+  &lt;div class=&quot;bg-color-grey-light p-4&quot;&gt;Row A&lt;/div&gt;
+  &lt;div class=&quot;bg-color-grey-light p-4&quot;&gt;Row B&lt;/div&gt;
+&lt;/div&gt;</pre></div>
+                </div>
               </div>
             </div>
           </div>
         </section>
         <section class="pb-4 mb-4" id="columns-with-gutter">
-          <div class="page-wrapper">
+          <div class="page-wrapper px-2 screen-desktop:px-0">
             <header class="layout--home-body">
               <div class="my-0 pt-1 px-2 border-b border-color-grey-light">
                 <h2>
@@ -199,28 +354,94 @@
             <div class="layout--home-body">
               <div class="px-2 text-font-size-small"></div>
             </div>
-            <div class="layout--columns justify-between">
-              <div class="pr-2">
-                <div class="layout--columns-gutter bg-color-grey-lightest p-4 text-center">
-                  <div class="bg-color-grey-light p-4">Cell A</div>
-                  <div class="bg-color-grey-light p-4">Cell B</div>
-                  <div class="bg-color-grey-light p-4">Cell C</div>
-                  <div class="bg-color-grey-light p-4">Cell D</div>
-                </div>
-              </div>
-              <div>
-                <div class="code-block mb-1"><pre>&lt;div class=&quot;layout--columns-gutter bg-color-grey-lightest p-4 text-center&quot;&gt;
+            <div class="layout--gutter screen-tablet:layout--columns justify-between">
+              <div class="layout--gutter screen-mobile:layout--columns-gutter screen-tablet:layout--three-columns-gutter screen-desktop:layout--four-columns-gutter">
+                <div class="flex flex-col justify-between items-center border border-color-grey-light p-3">
+                  <div class="pb-2">
+                    <div class="layout--columns-gutter bg-color-grey-lightest p-4 text-center">
+                      <div class="bg-color-grey-light p-4">Cell A</div>
+                      <div class="bg-color-grey-light p-4">Cell B</div>
+                      <div class="bg-color-grey-light p-4">Cell C</div>
+                      <div class="bg-color-grey-light p-4">Cell D</div>
+                    </div>
+                  </div>
+                  <div class="code-block mb-1"><pre>&lt;div class=&quot;layout--columns-gutter bg-color-grey-lightest p-4 text-center&quot;&gt;
   &lt;div class=&quot;bg-color-grey-light p-4&quot;&gt;Cell A&lt;/div&gt;
   &lt;div class=&quot;bg-color-grey-light p-4&quot;&gt;Cell B&lt;/div&gt;
   &lt;div class=&quot;bg-color-grey-light p-4&quot;&gt;Cell C&lt;/div&gt;
   &lt;div class=&quot;bg-color-grey-light p-4&quot;&gt;Cell D&lt;/div&gt;
 &lt;/div&gt;</pre></div>
+                </div>
+                <div class="flex flex-col justify-between items-center border border-color-grey-light p-3">
+                  <div class="pb-2">
+                    <div class="layout--columns-gutter bg-color-grey-lightest p-4 text-center">
+                      <div class="bg-color-grey-light p-4">Cell A</div>
+                      <div class="bg-color-grey-light p-4">Cell B</div>
+                      <div class="bg-color-grey-light p-4">Cell C</div>
+                      <div class="bg-color-grey-light p-4">Cell D</div>
+                    </div>
+                  </div>
+                  <div class="code-block mb-1"><pre>&lt;div class=&quot;layout--columns-gutter bg-color-grey-lightest p-4 text-center&quot;&gt;
+  &lt;div class=&quot;bg-color-grey-light p-4&quot;&gt;Cell A&lt;/div&gt;
+  &lt;div class=&quot;bg-color-grey-light p-4&quot;&gt;Cell B&lt;/div&gt;
+  &lt;div class=&quot;bg-color-grey-light p-4&quot;&gt;Cell C&lt;/div&gt;
+  &lt;div class=&quot;bg-color-grey-light p-4&quot;&gt;Cell D&lt;/div&gt;
+&lt;/div&gt;</pre></div>
+                </div>
+                <div class="flex flex-col justify-between items-center border border-color-grey-light p-3">
+                  <div class="pb-2">
+                    <div class="layout--columns-gutter bg-color-grey-lightest p-4 text-center">
+                      <div class="bg-color-grey-light p-4">Cell A</div>
+                      <div class="bg-color-grey-light p-4">Cell B</div>
+                      <div class="bg-color-grey-light p-4">Cell C</div>
+                      <div class="bg-color-grey-light p-4">Cell D</div>
+                    </div>
+                  </div>
+                  <div class="code-block mb-1"><pre>&lt;div class=&quot;layout--columns-gutter bg-color-grey-lightest p-4 text-center&quot;&gt;
+  &lt;div class=&quot;bg-color-grey-light p-4&quot;&gt;Cell A&lt;/div&gt;
+  &lt;div class=&quot;bg-color-grey-light p-4&quot;&gt;Cell B&lt;/div&gt;
+  &lt;div class=&quot;bg-color-grey-light p-4&quot;&gt;Cell C&lt;/div&gt;
+  &lt;div class=&quot;bg-color-grey-light p-4&quot;&gt;Cell D&lt;/div&gt;
+&lt;/div&gt;</pre></div>
+                </div>
+                <div class="flex flex-col justify-between items-center border border-color-grey-light p-3">
+                  <div class="pb-2">
+                    <div class="layout--columns-gutter bg-color-grey-lightest p-4 text-center">
+                      <div class="bg-color-grey-light p-4">Cell A</div>
+                      <div class="bg-color-grey-light p-4">Cell B</div>
+                      <div class="bg-color-grey-light p-4">Cell C</div>
+                      <div class="bg-color-grey-light p-4">Cell D</div>
+                    </div>
+                  </div>
+                  <div class="code-block mb-1"><pre>&lt;div class=&quot;layout--columns-gutter bg-color-grey-lightest p-4 text-center&quot;&gt;
+  &lt;div class=&quot;bg-color-grey-light p-4&quot;&gt;Cell A&lt;/div&gt;
+  &lt;div class=&quot;bg-color-grey-light p-4&quot;&gt;Cell B&lt;/div&gt;
+  &lt;div class=&quot;bg-color-grey-light p-4&quot;&gt;Cell C&lt;/div&gt;
+  &lt;div class=&quot;bg-color-grey-light p-4&quot;&gt;Cell D&lt;/div&gt;
+&lt;/div&gt;</pre></div>
+                </div>
+                <div class="flex flex-col justify-between items-center border border-color-grey-light p-3">
+                  <div class="pb-2">
+                    <div class="layout--columns-gutter bg-color-grey-lightest p-4 text-center">
+                      <div class="bg-color-grey-light p-4">Cell A</div>
+                      <div class="bg-color-grey-light p-4">Cell B</div>
+                      <div class="bg-color-grey-light p-4">Cell C</div>
+                      <div class="bg-color-grey-light p-4">Cell D</div>
+                    </div>
+                  </div>
+                  <div class="code-block mb-1"><pre>&lt;div class=&quot;layout--columns-gutter bg-color-grey-lightest p-4 text-center&quot;&gt;
+  &lt;div class=&quot;bg-color-grey-light p-4&quot;&gt;Cell A&lt;/div&gt;
+  &lt;div class=&quot;bg-color-grey-light p-4&quot;&gt;Cell B&lt;/div&gt;
+  &lt;div class=&quot;bg-color-grey-light p-4&quot;&gt;Cell C&lt;/div&gt;
+  &lt;div class=&quot;bg-color-grey-light p-4&quot;&gt;Cell D&lt;/div&gt;
+&lt;/div&gt;</pre></div>
+                </div>
               </div>
             </div>
           </div>
         </section>
         <section class="pb-4 mb-4" id="sidebar">
-          <div class="page-wrapper">
+          <div class="page-wrapper px-2 screen-desktop:px-0">
             <header class="layout--home-body">
               <div class="my-0 pt-1 px-2 border-b border-color-grey-light">
                 <h2>
@@ -231,24 +452,74 @@
             <div class="layout--home-body">
               <div class="px-2 text-font-size-small"></div>
             </div>
-            <div class="layout--gutter justify-between">
-              <div>
-                <div class="screen-tablet:layout--sidebar layout--rows text-center">
-                  <aside class="bg-color-grey-light p-4">Sidebar</aside>
-                  <article class="layout--topbar__body bg-color-grey-lightest p-4">Content</article>
-                </div>
-              </div>
-              <div>
-                <div class="code-block mb-1"><pre>&lt;div class=&quot;screen-tablet:layout--sidebar layout--rows text-center&quot;&gt;
+            <div class="layout--gutter screen-tablet:layout--gutter justify-between">
+              <div class="layout--gutter screen-mobile:layout--columns-gutter screen-tablet:layout--three-columns-gutter screen-desktop:layout--four-columns-gutter">
+                <div class="flex flex-col justify-between items-center border border-color-grey-light p-3">
+                  <div class="pb-2">
+                    <div class="screen-tablet:layout--sidebar layout--rows text-center">
+                      <aside class="bg-color-grey-light p-4">Sidebar</aside>
+                      <article class="layout--topbar__body bg-color-grey-lightest p-4">Content</article>
+                    </div>
+                  </div>
+                  <div class="code-block mb-1"><pre>&lt;div class=&quot;screen-tablet:layout--sidebar layout--rows text-center&quot;&gt;
   &lt;aside class=&quot;bg-color-grey-light p-4&quot;&gt;Sidebar&lt;/aside&gt;
   &lt;article class=&quot;layout--topbar__body bg-color-grey-lightest p-4&quot;&gt;Content&lt;/article&gt;
 &lt;/div&gt;</pre></div>
+                </div>
+                <div class="flex flex-col justify-between items-center border border-color-grey-light p-3">
+                  <div class="pb-2">
+                    <div class="screen-tablet:layout--sidebar layout--rows text-center">
+                      <aside class="bg-color-grey-light p-4">Sidebar</aside>
+                      <article class="layout--topbar__body bg-color-grey-lightest p-4">Content</article>
+                    </div>
+                  </div>
+                  <div class="code-block mb-1"><pre>&lt;div class=&quot;screen-tablet:layout--sidebar layout--rows text-center&quot;&gt;
+  &lt;aside class=&quot;bg-color-grey-light p-4&quot;&gt;Sidebar&lt;/aside&gt;
+  &lt;article class=&quot;layout--topbar__body bg-color-grey-lightest p-4&quot;&gt;Content&lt;/article&gt;
+&lt;/div&gt;</pre></div>
+                </div>
+                <div class="flex flex-col justify-between items-center border border-color-grey-light p-3">
+                  <div class="pb-2">
+                    <div class="screen-tablet:layout--sidebar layout--rows text-center">
+                      <aside class="bg-color-grey-light p-4">Sidebar</aside>
+                      <article class="layout--topbar__body bg-color-grey-lightest p-4">Content</article>
+                    </div>
+                  </div>
+                  <div class="code-block mb-1"><pre>&lt;div class=&quot;screen-tablet:layout--sidebar layout--rows text-center&quot;&gt;
+  &lt;aside class=&quot;bg-color-grey-light p-4&quot;&gt;Sidebar&lt;/aside&gt;
+  &lt;article class=&quot;layout--topbar__body bg-color-grey-lightest p-4&quot;&gt;Content&lt;/article&gt;
+&lt;/div&gt;</pre></div>
+                </div>
+                <div class="flex flex-col justify-between items-center border border-color-grey-light p-3">
+                  <div class="pb-2">
+                    <div class="screen-tablet:layout--sidebar layout--rows text-center">
+                      <aside class="bg-color-grey-light p-4">Sidebar</aside>
+                      <article class="layout--topbar__body bg-color-grey-lightest p-4">Content</article>
+                    </div>
+                  </div>
+                  <div class="code-block mb-1"><pre>&lt;div class=&quot;screen-tablet:layout--sidebar layout--rows text-center&quot;&gt;
+  &lt;aside class=&quot;bg-color-grey-light p-4&quot;&gt;Sidebar&lt;/aside&gt;
+  &lt;article class=&quot;layout--topbar__body bg-color-grey-lightest p-4&quot;&gt;Content&lt;/article&gt;
+&lt;/div&gt;</pre></div>
+                </div>
+                <div class="flex flex-col justify-between items-center border border-color-grey-light p-3">
+                  <div class="pb-2">
+                    <div class="screen-tablet:layout--sidebar layout--rows text-center">
+                      <aside class="bg-color-grey-light p-4">Sidebar</aside>
+                      <article class="layout--topbar__body bg-color-grey-lightest p-4">Content</article>
+                    </div>
+                  </div>
+                  <div class="code-block mb-1"><pre>&lt;div class=&quot;screen-tablet:layout--sidebar layout--rows text-center&quot;&gt;
+  &lt;aside class=&quot;bg-color-grey-light p-4&quot;&gt;Sidebar&lt;/aside&gt;
+  &lt;article class=&quot;layout--topbar__body bg-color-grey-lightest p-4&quot;&gt;Content&lt;/article&gt;
+&lt;/div&gt;</pre></div>
+                </div>
               </div>
             </div>
           </div>
         </section>
         <section class="pb-4 mb-4" id="sidebar-small">
-          <div class="page-wrapper">
+          <div class="page-wrapper px-2 screen-desktop:px-0">
             <header class="layout--home-body">
               <div class="my-0 pt-1 px-2 border-b border-color-grey-light">
                 <h2>
@@ -259,24 +530,74 @@
             <div class="layout--home-body">
               <div class="px-2 text-font-size-small"></div>
             </div>
-            <div class="layout--gutter justify-between">
-              <div>
-                <div class="screen-tablet:layout--sidebar-small layout--rows text-center">
-                  <aside class="bg-color-grey-light p-4">Sidebar</aside>
-                  <article class="bg-color-grey-lightest p-4">Content</article>
-                </div>
-              </div>
-              <div>
-                <div class="code-block mb-1"><pre>&lt;div class=&quot;screen-tablet:layout--sidebar-small layout--rows text-center&quot;&gt;
+            <div class="layout--gutter screen-tablet:layout--gutter justify-between">
+              <div class="layout--gutter screen-mobile:layout--columns-gutter screen-tablet:layout--three-columns-gutter screen-desktop:layout--four-columns-gutter">
+                <div class="flex flex-col justify-between items-center border border-color-grey-light p-3">
+                  <div class="pb-2">
+                    <div class="screen-tablet:layout--sidebar-small layout--rows text-center">
+                      <aside class="bg-color-grey-light p-4">Sidebar</aside>
+                      <article class="bg-color-grey-lightest p-4">Content</article>
+                    </div>
+                  </div>
+                  <div class="code-block mb-1"><pre>&lt;div class=&quot;screen-tablet:layout--sidebar-small layout--rows text-center&quot;&gt;
   &lt;aside class=&quot;bg-color-grey-light p-4&quot;&gt;Sidebar&lt;/aside&gt;
   &lt;article class=&quot;bg-color-grey-lightest p-4&quot;&gt;Content&lt;/article&gt;
 &lt;/div&gt;</pre></div>
+                </div>
+                <div class="flex flex-col justify-between items-center border border-color-grey-light p-3">
+                  <div class="pb-2">
+                    <div class="screen-tablet:layout--sidebar-small layout--rows text-center">
+                      <aside class="bg-color-grey-light p-4">Sidebar</aside>
+                      <article class="bg-color-grey-lightest p-4">Content</article>
+                    </div>
+                  </div>
+                  <div class="code-block mb-1"><pre>&lt;div class=&quot;screen-tablet:layout--sidebar-small layout--rows text-center&quot;&gt;
+  &lt;aside class=&quot;bg-color-grey-light p-4&quot;&gt;Sidebar&lt;/aside&gt;
+  &lt;article class=&quot;bg-color-grey-lightest p-4&quot;&gt;Content&lt;/article&gt;
+&lt;/div&gt;</pre></div>
+                </div>
+                <div class="flex flex-col justify-between items-center border border-color-grey-light p-3">
+                  <div class="pb-2">
+                    <div class="screen-tablet:layout--sidebar-small layout--rows text-center">
+                      <aside class="bg-color-grey-light p-4">Sidebar</aside>
+                      <article class="bg-color-grey-lightest p-4">Content</article>
+                    </div>
+                  </div>
+                  <div class="code-block mb-1"><pre>&lt;div class=&quot;screen-tablet:layout--sidebar-small layout--rows text-center&quot;&gt;
+  &lt;aside class=&quot;bg-color-grey-light p-4&quot;&gt;Sidebar&lt;/aside&gt;
+  &lt;article class=&quot;bg-color-grey-lightest p-4&quot;&gt;Content&lt;/article&gt;
+&lt;/div&gt;</pre></div>
+                </div>
+                <div class="flex flex-col justify-between items-center border border-color-grey-light p-3">
+                  <div class="pb-2">
+                    <div class="screen-tablet:layout--sidebar-small layout--rows text-center">
+                      <aside class="bg-color-grey-light p-4">Sidebar</aside>
+                      <article class="bg-color-grey-lightest p-4">Content</article>
+                    </div>
+                  </div>
+                  <div class="code-block mb-1"><pre>&lt;div class=&quot;screen-tablet:layout--sidebar-small layout--rows text-center&quot;&gt;
+  &lt;aside class=&quot;bg-color-grey-light p-4&quot;&gt;Sidebar&lt;/aside&gt;
+  &lt;article class=&quot;bg-color-grey-lightest p-4&quot;&gt;Content&lt;/article&gt;
+&lt;/div&gt;</pre></div>
+                </div>
+                <div class="flex flex-col justify-between items-center border border-color-grey-light p-3">
+                  <div class="pb-2">
+                    <div class="screen-tablet:layout--sidebar-small layout--rows text-center">
+                      <aside class="bg-color-grey-light p-4">Sidebar</aside>
+                      <article class="bg-color-grey-lightest p-4">Content</article>
+                    </div>
+                  </div>
+                  <div class="code-block mb-1"><pre>&lt;div class=&quot;screen-tablet:layout--sidebar-small layout--rows text-center&quot;&gt;
+  &lt;aside class=&quot;bg-color-grey-light p-4&quot;&gt;Sidebar&lt;/aside&gt;
+  &lt;article class=&quot;bg-color-grey-lightest p-4&quot;&gt;Content&lt;/article&gt;
+&lt;/div&gt;</pre></div>
+                </div>
               </div>
             </div>
           </div>
         </section>
         <section class="pb-4 mb-4" id="sidebar-with-gutter">
-          <div class="page-wrapper">
+          <div class="page-wrapper px-2 screen-desktop:px-0">
             <header class="layout--home-body">
               <div class="my-0 pt-1 px-2 border-b border-color-grey-light">
                 <h2>
@@ -287,24 +608,74 @@
             <div class="layout--home-body">
               <div class="px-2 text-font-size-small"></div>
             </div>
-            <div class="layout--gutter justify-between">
-              <div>
-                <div class="screen-tablet:layout--sidebar-gutter layout--gutter bg-color-grey-lightest text-center p-4">
-                  <aside class="bg-color-grey-light p-4">Sidebar</aside>
-                  <article class="bg-color-grey-light p-4">Content</article>
-                </div>
-              </div>
-              <div>
-                <div class="code-block mb-1"><pre>&lt;div class=&quot;screen-tablet:layout--sidebar-gutter layout--gutter bg-color-grey-lightest text-center p-4&quot;&gt;
+            <div class="layout--gutter screen-tablet:layout--gutter justify-between">
+              <div class="layout--gutter screen-mobile:layout--columns-gutter screen-tablet:layout--three-columns-gutter screen-desktop:layout--four-columns-gutter">
+                <div class="flex flex-col justify-between items-center border border-color-grey-light p-3">
+                  <div class="pb-2">
+                    <div class="screen-tablet:layout--sidebar-gutter layout--gutter bg-color-grey-lightest text-center p-4">
+                      <aside class="bg-color-grey-light p-4">Sidebar</aside>
+                      <article class="bg-color-grey-light p-4">Content</article>
+                    </div>
+                  </div>
+                  <div class="code-block mb-1"><pre>&lt;div class=&quot;screen-tablet:layout--sidebar-gutter layout--gutter bg-color-grey-lightest text-center p-4&quot;&gt;
   &lt;aside class=&quot;bg-color-grey-light p-4&quot;&gt;Sidebar&lt;/aside&gt;
   &lt;article class=&quot;bg-color-grey-light p-4&quot;&gt;Content&lt;/article&gt;
 &lt;/div&gt;</pre></div>
+                </div>
+                <div class="flex flex-col justify-between items-center border border-color-grey-light p-3">
+                  <div class="pb-2">
+                    <div class="screen-tablet:layout--sidebar-gutter layout--gutter bg-color-grey-lightest text-center p-4">
+                      <aside class="bg-color-grey-light p-4">Sidebar</aside>
+                      <article class="bg-color-grey-light p-4">Content</article>
+                    </div>
+                  </div>
+                  <div class="code-block mb-1"><pre>&lt;div class=&quot;screen-tablet:layout--sidebar-gutter layout--gutter bg-color-grey-lightest text-center p-4&quot;&gt;
+  &lt;aside class=&quot;bg-color-grey-light p-4&quot;&gt;Sidebar&lt;/aside&gt;
+  &lt;article class=&quot;bg-color-grey-light p-4&quot;&gt;Content&lt;/article&gt;
+&lt;/div&gt;</pre></div>
+                </div>
+                <div class="flex flex-col justify-between items-center border border-color-grey-light p-3">
+                  <div class="pb-2">
+                    <div class="screen-tablet:layout--sidebar-gutter layout--gutter bg-color-grey-lightest text-center p-4">
+                      <aside class="bg-color-grey-light p-4">Sidebar</aside>
+                      <article class="bg-color-grey-light p-4">Content</article>
+                    </div>
+                  </div>
+                  <div class="code-block mb-1"><pre>&lt;div class=&quot;screen-tablet:layout--sidebar-gutter layout--gutter bg-color-grey-lightest text-center p-4&quot;&gt;
+  &lt;aside class=&quot;bg-color-grey-light p-4&quot;&gt;Sidebar&lt;/aside&gt;
+  &lt;article class=&quot;bg-color-grey-light p-4&quot;&gt;Content&lt;/article&gt;
+&lt;/div&gt;</pre></div>
+                </div>
+                <div class="flex flex-col justify-between items-center border border-color-grey-light p-3">
+                  <div class="pb-2">
+                    <div class="screen-tablet:layout--sidebar-gutter layout--gutter bg-color-grey-lightest text-center p-4">
+                      <aside class="bg-color-grey-light p-4">Sidebar</aside>
+                      <article class="bg-color-grey-light p-4">Content</article>
+                    </div>
+                  </div>
+                  <div class="code-block mb-1"><pre>&lt;div class=&quot;screen-tablet:layout--sidebar-gutter layout--gutter bg-color-grey-lightest text-center p-4&quot;&gt;
+  &lt;aside class=&quot;bg-color-grey-light p-4&quot;&gt;Sidebar&lt;/aside&gt;
+  &lt;article class=&quot;bg-color-grey-light p-4&quot;&gt;Content&lt;/article&gt;
+&lt;/div&gt;</pre></div>
+                </div>
+                <div class="flex flex-col justify-between items-center border border-color-grey-light p-3">
+                  <div class="pb-2">
+                    <div class="screen-tablet:layout--sidebar-gutter layout--gutter bg-color-grey-lightest text-center p-4">
+                      <aside class="bg-color-grey-light p-4">Sidebar</aside>
+                      <article class="bg-color-grey-light p-4">Content</article>
+                    </div>
+                  </div>
+                  <div class="code-block mb-1"><pre>&lt;div class=&quot;screen-tablet:layout--sidebar-gutter layout--gutter bg-color-grey-lightest text-center p-4&quot;&gt;
+  &lt;aside class=&quot;bg-color-grey-light p-4&quot;&gt;Sidebar&lt;/aside&gt;
+  &lt;article class=&quot;bg-color-grey-light p-4&quot;&gt;Content&lt;/article&gt;
+&lt;/div&gt;</pre></div>
+                </div>
               </div>
             </div>
           </div>
         </section>
         <section class="pb-4 mb-4" id="sidebar-small-with-gutter">
-          <div class="page-wrapper">
+          <div class="page-wrapper px-2 screen-desktop:px-0">
             <header class="layout--home-body">
               <div class="my-0 pt-1 px-2 border-b border-color-grey-light">
                 <h2>
@@ -315,24 +686,74 @@
             <div class="layout--home-body">
               <div class="px-2 text-font-size-small"></div>
             </div>
-            <div class="layout--gutter justify-between">
-              <div>
-                <div class="screen-tablet:layout--sidebar-small-gutter layout--gutter bg-color-grey-lightest text-center p-4">
-                  <aside class="bg-color-grey-light p-4">Sidebar</aside>
-                  <article class="bg-color-grey-light p-4">Content</article>
-                </div>
-              </div>
-              <div>
-                <div class="code-block mb-1"><pre>&lt;div class=&quot;screen-tablet:layout--sidebar-small-gutter layout--gutter bg-color-grey-lightest text-center p-4&quot;&gt;
+            <div class="layout--gutter screen-tablet:layout--gutter justify-between">
+              <div class="layout--gutter screen-mobile:layout--columns-gutter screen-tablet:layout--three-columns-gutter screen-desktop:layout--four-columns-gutter">
+                <div class="flex flex-col justify-between items-center border border-color-grey-light p-3">
+                  <div class="pb-2">
+                    <div class="screen-tablet:layout--sidebar-small-gutter layout--gutter bg-color-grey-lightest text-center p-4">
+                      <aside class="bg-color-grey-light p-4">Sidebar</aside>
+                      <article class="bg-color-grey-light p-4">Content</article>
+                    </div>
+                  </div>
+                  <div class="code-block mb-1"><pre>&lt;div class=&quot;screen-tablet:layout--sidebar-small-gutter layout--gutter bg-color-grey-lightest text-center p-4&quot;&gt;
   &lt;aside class=&quot;bg-color-grey-light p-4&quot;&gt;Sidebar&lt;/aside&gt;
   &lt;article class=&quot;bg-color-grey-light p-4&quot;&gt;Content&lt;/article&gt;
 &lt;/div&gt;</pre></div>
+                </div>
+                <div class="flex flex-col justify-between items-center border border-color-grey-light p-3">
+                  <div class="pb-2">
+                    <div class="screen-tablet:layout--sidebar-small-gutter layout--gutter bg-color-grey-lightest text-center p-4">
+                      <aside class="bg-color-grey-light p-4">Sidebar</aside>
+                      <article class="bg-color-grey-light p-4">Content</article>
+                    </div>
+                  </div>
+                  <div class="code-block mb-1"><pre>&lt;div class=&quot;screen-tablet:layout--sidebar-small-gutter layout--gutter bg-color-grey-lightest text-center p-4&quot;&gt;
+  &lt;aside class=&quot;bg-color-grey-light p-4&quot;&gt;Sidebar&lt;/aside&gt;
+  &lt;article class=&quot;bg-color-grey-light p-4&quot;&gt;Content&lt;/article&gt;
+&lt;/div&gt;</pre></div>
+                </div>
+                <div class="flex flex-col justify-between items-center border border-color-grey-light p-3">
+                  <div class="pb-2">
+                    <div class="screen-tablet:layout--sidebar-small-gutter layout--gutter bg-color-grey-lightest text-center p-4">
+                      <aside class="bg-color-grey-light p-4">Sidebar</aside>
+                      <article class="bg-color-grey-light p-4">Content</article>
+                    </div>
+                  </div>
+                  <div class="code-block mb-1"><pre>&lt;div class=&quot;screen-tablet:layout--sidebar-small-gutter layout--gutter bg-color-grey-lightest text-center p-4&quot;&gt;
+  &lt;aside class=&quot;bg-color-grey-light p-4&quot;&gt;Sidebar&lt;/aside&gt;
+  &lt;article class=&quot;bg-color-grey-light p-4&quot;&gt;Content&lt;/article&gt;
+&lt;/div&gt;</pre></div>
+                </div>
+                <div class="flex flex-col justify-between items-center border border-color-grey-light p-3">
+                  <div class="pb-2">
+                    <div class="screen-tablet:layout--sidebar-small-gutter layout--gutter bg-color-grey-lightest text-center p-4">
+                      <aside class="bg-color-grey-light p-4">Sidebar</aside>
+                      <article class="bg-color-grey-light p-4">Content</article>
+                    </div>
+                  </div>
+                  <div class="code-block mb-1"><pre>&lt;div class=&quot;screen-tablet:layout--sidebar-small-gutter layout--gutter bg-color-grey-lightest text-center p-4&quot;&gt;
+  &lt;aside class=&quot;bg-color-grey-light p-4&quot;&gt;Sidebar&lt;/aside&gt;
+  &lt;article class=&quot;bg-color-grey-light p-4&quot;&gt;Content&lt;/article&gt;
+&lt;/div&gt;</pre></div>
+                </div>
+                <div class="flex flex-col justify-between items-center border border-color-grey-light p-3">
+                  <div class="pb-2">
+                    <div class="screen-tablet:layout--sidebar-small-gutter layout--gutter bg-color-grey-lightest text-center p-4">
+                      <aside class="bg-color-grey-light p-4">Sidebar</aside>
+                      <article class="bg-color-grey-light p-4">Content</article>
+                    </div>
+                  </div>
+                  <div class="code-block mb-1"><pre>&lt;div class=&quot;screen-tablet:layout--sidebar-small-gutter layout--gutter bg-color-grey-lightest text-center p-4&quot;&gt;
+  &lt;aside class=&quot;bg-color-grey-light p-4&quot;&gt;Sidebar&lt;/aside&gt;
+  &lt;article class=&quot;bg-color-grey-light p-4&quot;&gt;Content&lt;/article&gt;
+&lt;/div&gt;</pre></div>
+                </div>
               </div>
             </div>
           </div>
         </section>
         <section class="pb-4 mb-4" id="home-body">
-          <div class="page-wrapper">
+          <div class="page-wrapper px-2 screen-desktop:px-0">
             <header class="layout--home-body">
               <div class="my-0 pt-1 px-2 border-b border-color-grey-light">
                 <h2>
@@ -343,22 +764,64 @@
             <div class="layout--home-body">
               <div class="px-2 text-font-size-small"></div>
             </div>
-            <div class="layout--gutter justify-between">
-              <div>
-                <div class="layout--home-body bg-color-grey-lightest p-4 text-center">
-                  <div class="bg-color-grey-light p-4">Body</div>
-                </div>
-              </div>
-              <div>
-                <div class="code-block mb-1"><pre>&lt;div class=&quot;layout--home-body bg-color-grey-lightest p-4 text-center&quot;&gt;
+            <div class="layout--gutter screen-tablet:layout--gutter justify-between">
+              <div class="layout--gutter screen-mobile:layout--columns-gutter screen-tablet:layout--three-columns-gutter screen-desktop:layout--four-columns-gutter">
+                <div class="flex flex-col justify-between items-center border border-color-grey-light p-3">
+                  <div class="pb-2">
+                    <div class="layout--home-body bg-color-grey-lightest p-4 text-center">
+                      <div class="bg-color-grey-light p-4">Body</div>
+                    </div>
+                  </div>
+                  <div class="code-block mb-1"><pre>&lt;div class=&quot;layout--home-body bg-color-grey-lightest p-4 text-center&quot;&gt;
   &lt;div class=&quot;bg-color-grey-light p-4&quot;&gt;Body&lt;/div&gt;
 &lt;/div&gt;</pre></div>
+                </div>
+                <div class="flex flex-col justify-between items-center border border-color-grey-light p-3">
+                  <div class="pb-2">
+                    <div class="layout--home-body bg-color-grey-lightest p-4 text-center">
+                      <div class="bg-color-grey-light p-4">Body</div>
+                    </div>
+                  </div>
+                  <div class="code-block mb-1"><pre>&lt;div class=&quot;layout--home-body bg-color-grey-lightest p-4 text-center&quot;&gt;
+  &lt;div class=&quot;bg-color-grey-light p-4&quot;&gt;Body&lt;/div&gt;
+&lt;/div&gt;</pre></div>
+                </div>
+                <div class="flex flex-col justify-between items-center border border-color-grey-light p-3">
+                  <div class="pb-2">
+                    <div class="layout--home-body bg-color-grey-lightest p-4 text-center">
+                      <div class="bg-color-grey-light p-4">Body</div>
+                    </div>
+                  </div>
+                  <div class="code-block mb-1"><pre>&lt;div class=&quot;layout--home-body bg-color-grey-lightest p-4 text-center&quot;&gt;
+  &lt;div class=&quot;bg-color-grey-light p-4&quot;&gt;Body&lt;/div&gt;
+&lt;/div&gt;</pre></div>
+                </div>
+                <div class="flex flex-col justify-between items-center border border-color-grey-light p-3">
+                  <div class="pb-2">
+                    <div class="layout--home-body bg-color-grey-lightest p-4 text-center">
+                      <div class="bg-color-grey-light p-4">Body</div>
+                    </div>
+                  </div>
+                  <div class="code-block mb-1"><pre>&lt;div class=&quot;layout--home-body bg-color-grey-lightest p-4 text-center&quot;&gt;
+  &lt;div class=&quot;bg-color-grey-light p-4&quot;&gt;Body&lt;/div&gt;
+&lt;/div&gt;</pre></div>
+                </div>
+                <div class="flex flex-col justify-between items-center border border-color-grey-light p-3">
+                  <div class="pb-2">
+                    <div class="layout--home-body bg-color-grey-lightest p-4 text-center">
+                      <div class="bg-color-grey-light p-4">Body</div>
+                    </div>
+                  </div>
+                  <div class="code-block mb-1"><pre>&lt;div class=&quot;layout--home-body bg-color-grey-lightest p-4 text-center&quot;&gt;
+  &lt;div class=&quot;bg-color-grey-light p-4&quot;&gt;Body&lt;/div&gt;
+&lt;/div&gt;</pre></div>
+                </div>
               </div>
             </div>
           </div>
         </section>
         <section class="pb-4 mb-4" id="topbar">
-          <div class="page-wrapper">
+          <div class="page-wrapper px-2 screen-desktop:px-0">
             <header class="layout--home-body">
               <div class="my-0 pt-1 px-2 border-b border-color-grey-light">
                 <h2>
@@ -369,28 +832,94 @@
             <div class="layout--home-body">
               <div class="px-2 text-font-size-small"></div>
             </div>
-            <div class="layout--gutter justify-between">
-              <div>
-                <div class="wrap">
-                  <article class="layout--topbar text-center">
-                    <header class="bg-color-blue-dark text-color-white p-4">Topbar</header>
-                    <div class="bg-color-grey-lightest p-4">Body</div>
-                  </article>
-                </div>
-              </div>
-              <div>
-                <div class="code-block mb-1"><pre>&lt;div class=&quot;wrap&quot;&gt;
+            <div class="layout--gutter screen-tablet:layout--gutter justify-between">
+              <div class="layout--gutter screen-mobile:layout--columns-gutter screen-tablet:layout--three-columns-gutter screen-desktop:layout--four-columns-gutter">
+                <div class="flex flex-col justify-between items-center border border-color-grey-light p-3">
+                  <div class="pb-2">
+                    <div class="wrap">
+                      <article class="layout--topbar text-center">
+                        <header class="bg-color-blue-dark text-color-white p-4">Topbar</header>
+                        <div class="bg-color-grey-lightest p-4">Body</div>
+                      </article>
+                    </div>
+                  </div>
+                  <div class="code-block mb-1"><pre>&lt;div class=&quot;wrap&quot;&gt;
   &lt;article class=&quot;layout--topbar text-center&quot;&gt;
     &lt;header class=&quot;bg-color-blue-dark text-color-white p-4&quot;&gt;Topbar&lt;/header&gt;
     &lt;div class=&quot;bg-color-grey-lightest p-4&quot;&gt;Body&lt;/div&gt;
   &lt;/article&gt;
 &lt;/div&gt;</pre></div>
+                </div>
+                <div class="flex flex-col justify-between items-center border border-color-grey-light p-3">
+                  <div class="pb-2">
+                    <div class="wrap">
+                      <article class="layout--topbar text-center">
+                        <header class="bg-color-blue-dark text-color-white p-4">Topbar</header>
+                        <div class="bg-color-grey-lightest p-4">Body</div>
+                      </article>
+                    </div>
+                  </div>
+                  <div class="code-block mb-1"><pre>&lt;div class=&quot;wrap&quot;&gt;
+  &lt;article class=&quot;layout--topbar text-center&quot;&gt;
+    &lt;header class=&quot;bg-color-blue-dark text-color-white p-4&quot;&gt;Topbar&lt;/header&gt;
+    &lt;div class=&quot;bg-color-grey-lightest p-4&quot;&gt;Body&lt;/div&gt;
+  &lt;/article&gt;
+&lt;/div&gt;</pre></div>
+                </div>
+                <div class="flex flex-col justify-between items-center border border-color-grey-light p-3">
+                  <div class="pb-2">
+                    <div class="wrap">
+                      <article class="layout--topbar text-center">
+                        <header class="bg-color-blue-dark text-color-white p-4">Topbar</header>
+                        <div class="bg-color-grey-lightest p-4">Body</div>
+                      </article>
+                    </div>
+                  </div>
+                  <div class="code-block mb-1"><pre>&lt;div class=&quot;wrap&quot;&gt;
+  &lt;article class=&quot;layout--topbar text-center&quot;&gt;
+    &lt;header class=&quot;bg-color-blue-dark text-color-white p-4&quot;&gt;Topbar&lt;/header&gt;
+    &lt;div class=&quot;bg-color-grey-lightest p-4&quot;&gt;Body&lt;/div&gt;
+  &lt;/article&gt;
+&lt;/div&gt;</pre></div>
+                </div>
+                <div class="flex flex-col justify-between items-center border border-color-grey-light p-3">
+                  <div class="pb-2">
+                    <div class="wrap">
+                      <article class="layout--topbar text-center">
+                        <header class="bg-color-blue-dark text-color-white p-4">Topbar</header>
+                        <div class="bg-color-grey-lightest p-4">Body</div>
+                      </article>
+                    </div>
+                  </div>
+                  <div class="code-block mb-1"><pre>&lt;div class=&quot;wrap&quot;&gt;
+  &lt;article class=&quot;layout--topbar text-center&quot;&gt;
+    &lt;header class=&quot;bg-color-blue-dark text-color-white p-4&quot;&gt;Topbar&lt;/header&gt;
+    &lt;div class=&quot;bg-color-grey-lightest p-4&quot;&gt;Body&lt;/div&gt;
+  &lt;/article&gt;
+&lt;/div&gt;</pre></div>
+                </div>
+                <div class="flex flex-col justify-between items-center border border-color-grey-light p-3">
+                  <div class="pb-2">
+                    <div class="wrap">
+                      <article class="layout--topbar text-center">
+                        <header class="bg-color-blue-dark text-color-white p-4">Topbar</header>
+                        <div class="bg-color-grey-lightest p-4">Body</div>
+                      </article>
+                    </div>
+                  </div>
+                  <div class="code-block mb-1"><pre>&lt;div class=&quot;wrap&quot;&gt;
+  &lt;article class=&quot;layout--topbar text-center&quot;&gt;
+    &lt;header class=&quot;bg-color-blue-dark text-color-white p-4&quot;&gt;Topbar&lt;/header&gt;
+    &lt;div class=&quot;bg-color-grey-lightest p-4&quot;&gt;Body&lt;/div&gt;
+  &lt;/article&gt;
+&lt;/div&gt;</pre></div>
+                </div>
               </div>
             </div>
           </div>
         </section>
         <section class="pb-4 mb-4" id="map">
-          <div class="page-wrapper">
+          <div class="page-wrapper px-2 screen-desktop:px-0">
             <header class="layout--home-body">
               <div class="my-0 pt-1 px-2 border-b border-color-grey-light">
                 <h2>
@@ -401,18 +930,68 @@
             <div class="layout--home-body">
               <div class="px-2 text-font-size-small"></div>
             </div>
-            <div class="layout--gutter justify-between">
-              <div>
-                <div class="layout--map screen-desktop:layout--sidebar text-center">
-                  <div class="layout--map__sidebar bg-color-grey-lightest p-4">Sidebar</div>
-                  <div class="layout--map__map bg-color-grey-light p-4">Map</div>
-                </div>
-              </div>
-              <div>
-                <div class="code-block mb-1"><pre>&lt;div class=&quot;layout--map screen-desktop:layout--sidebar text-center&quot;&gt;
+            <div class="layout--gutter screen-tablet:layout--gutter justify-between">
+              <div class="layout--gutter screen-mobile:layout--columns-gutter screen-tablet:layout--three-columns-gutter screen-desktop:layout--four-columns-gutter">
+                <div class="flex flex-col justify-between items-center border border-color-grey-light p-3">
+                  <div class="pb-2">
+                    <div class="layout--map screen-desktop:layout--sidebar text-center">
+                      <div class="layout--map__sidebar bg-color-grey-lightest p-4">Sidebar</div>
+                      <div class="layout--map__map bg-color-grey-light p-4">Map</div>
+                    </div>
+                  </div>
+                  <div class="code-block mb-1"><pre>&lt;div class=&quot;layout--map screen-desktop:layout--sidebar text-center&quot;&gt;
   &lt;div class=&quot;layout--map__sidebar bg-color-grey-lightest p-4&quot;&gt;Sidebar&lt;/div&gt;
   &lt;div class=&quot;layout--map__map bg-color-grey-light p-4&quot;&gt;Map&lt;/div&gt;
 &lt;/div&gt;</pre></div>
+                </div>
+                <div class="flex flex-col justify-between items-center border border-color-grey-light p-3">
+                  <div class="pb-2">
+                    <div class="layout--map screen-desktop:layout--sidebar text-center">
+                      <div class="layout--map__sidebar bg-color-grey-lightest p-4">Sidebar</div>
+                      <div class="layout--map__map bg-color-grey-light p-4">Map</div>
+                    </div>
+                  </div>
+                  <div class="code-block mb-1"><pre>&lt;div class=&quot;layout--map screen-desktop:layout--sidebar text-center&quot;&gt;
+  &lt;div class=&quot;layout--map__sidebar bg-color-grey-lightest p-4&quot;&gt;Sidebar&lt;/div&gt;
+  &lt;div class=&quot;layout--map__map bg-color-grey-light p-4&quot;&gt;Map&lt;/div&gt;
+&lt;/div&gt;</pre></div>
+                </div>
+                <div class="flex flex-col justify-between items-center border border-color-grey-light p-3">
+                  <div class="pb-2">
+                    <div class="layout--map screen-desktop:layout--sidebar text-center">
+                      <div class="layout--map__sidebar bg-color-grey-lightest p-4">Sidebar</div>
+                      <div class="layout--map__map bg-color-grey-light p-4">Map</div>
+                    </div>
+                  </div>
+                  <div class="code-block mb-1"><pre>&lt;div class=&quot;layout--map screen-desktop:layout--sidebar text-center&quot;&gt;
+  &lt;div class=&quot;layout--map__sidebar bg-color-grey-lightest p-4&quot;&gt;Sidebar&lt;/div&gt;
+  &lt;div class=&quot;layout--map__map bg-color-grey-light p-4&quot;&gt;Map&lt;/div&gt;
+&lt;/div&gt;</pre></div>
+                </div>
+                <div class="flex flex-col justify-between items-center border border-color-grey-light p-3">
+                  <div class="pb-2">
+                    <div class="layout--map screen-desktop:layout--sidebar text-center">
+                      <div class="layout--map__sidebar bg-color-grey-lightest p-4">Sidebar</div>
+                      <div class="layout--map__map bg-color-grey-light p-4">Map</div>
+                    </div>
+                  </div>
+                  <div class="code-block mb-1"><pre>&lt;div class=&quot;layout--map screen-desktop:layout--sidebar text-center&quot;&gt;
+  &lt;div class=&quot;layout--map__sidebar bg-color-grey-lightest p-4&quot;&gt;Sidebar&lt;/div&gt;
+  &lt;div class=&quot;layout--map__map bg-color-grey-light p-4&quot;&gt;Map&lt;/div&gt;
+&lt;/div&gt;</pre></div>
+                </div>
+                <div class="flex flex-col justify-between items-center border border-color-grey-light p-3">
+                  <div class="pb-2">
+                    <div class="layout--map screen-desktop:layout--sidebar text-center">
+                      <div class="layout--map__sidebar bg-color-grey-lightest p-4">Sidebar</div>
+                      <div class="layout--map__map bg-color-grey-light p-4">Map</div>
+                    </div>
+                  </div>
+                  <div class="code-block mb-1"><pre>&lt;div class=&quot;layout--map screen-desktop:layout--sidebar text-center&quot;&gt;
+  &lt;div class=&quot;layout--map__sidebar bg-color-grey-lightest p-4&quot;&gt;Sidebar&lt;/div&gt;
+  &lt;div class=&quot;layout--map__map bg-color-grey-light p-4&quot;&gt;Map&lt;/div&gt;
+&lt;/div&gt;</pre></div>
+                </div>
               </div>
             </div>
           </div>
@@ -426,6 +1005,7 @@
     </footer>
     <div aria-hidden="true" class="hidden">
       <svg>
+        <defs/>
         <symbol id="icon-arrow-down" viewBox="0 0 444.8 444.8">
           <path fill="currentColor" d="M248.1 352L434 165.9c7.2-6.9 10.8-15.4 10.8-25.7 0-10.3-3.6-18.8-10.8-25.7l-21.4-21.7c-7-7-15.6-10.6-25.7-10.6-9.9 0-18.6 3.5-26 10.6L222.4 231.5 83.7 92.8c-7-7-15.6-10.6-25.7-10.6-9.9 0-18.6 3.5-26 10.6l-21.4 21.7c-7 7-10.6 15.6-10.6 25.7s3.5 18.7 10.6 25.7L196.4 352c7.4 7 16.1 10.6 26 10.6 10.1 0 18.7-3.5 25.7-10.6z"
           />
@@ -705,7 +1285,7 @@
             fill="#fbb720" fill-rule="nonzero" />
         </symbol>
         <symbol id="icon-logo-nyc" viewBox="0 0 350 117">
-          <g fill="currentColor">
+          <g fill="currentColor" fill-rule="nonzero">
             <path d="M327.9 0H255l-21.8 21.9v72.8l21.8 21.9h72.9l21.8-21.9V72.9l-7.2-7.3H306v7.3h-29.1V43.7H306v7.2h36.5l7.2-7.2V21.9L327.9 0zM109.3 0H80.1l-7.2 7.3v29.1L36.4 0H7.3L0 7.3v102l7.3 7.3h29.1l7.3-7.3V80.1l36.4 36.5h29.2l7.3-7.3V7.3L109.3 0zM160.3 116.6h29.1l7.3-7.3V87.4L233.2 51V7.3L225.9 0h-29.2l-7.3 7.3v14.6l-14.5 14.5-14.6-14.5V7.3L153 0h-29.1l-7.3 7.3V51L153 87.4v21.9l7.3 7.3z"
             />
           </g>
@@ -782,7 +1362,6 @@
     <script type="text/javascript">
       var access = new AccessNyc();
       access.toggle();
-      access.filter();
     </script>
   </body>
 
