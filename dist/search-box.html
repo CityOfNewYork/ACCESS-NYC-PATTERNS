@@ -103,22 +103,65 @@
     </aside>
     <main class="pt-4" id="main-content">
       <article class="py-4">
-        <h1 class="px-1">Search Box</h1>
-        <section class="pb-4" id="default-styling">
-          <header class="pt-1 px-2 border-b border-color-grey-light mb-3">
-            <h2>Default Styling</h2>
-          </header>
-          <div class="layout--columns">
-            <div>
-              <div class="page-wrapper pb-3 px-2 text-font-size-small">
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis
-                  aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-              </div>
-            </div>
-            <div>&nbsp;</div>
+        <header class="page-wrapper px-2 screen-desktop:px-0 layout--home-body">
+          <div class="my-0 w-full">
+            <h1 class="text-color-blue-dark px-2 m-0">Search Box</h1>
           </div>
-          <div class="mb-2">
-            <div class="code-block mb-1"><pre>&lt;div aria-hidden=&quot;true&quot; class=&quot;o-search-box active static&quot; id=&quot;search&quot;&gt;
+        </header>
+        <section class="pb-4 mb-4" id="default-styling">
+          <div class="page-wrapper px-2 screen-desktop:px-0">
+            <header class="layout--home-body">
+              <div class="my-0 pt-1 px-2 border-b border-color-grey-light">
+                <h2>
+                  <a class="text-color-grey-mid font-normal no-underline" href="#default-styling">Default Styling</a>
+                </h2>
+              </div>
+            </header>
+            <div class="layout--home-body">
+              <div class="px-2 text-font-size-small"></div>
+            </div>
+            <div class="layout--gutter screen-tablet:layout--gutter justify-between">
+              <div>
+                <div aria-hidden="true" class="o-search-box active static" id="search">
+                  <div class="o-search-box__inner">
+                    <div class="usa-grid">
+                      <div class="usa-width-one-whole">
+                        <a class="o-search-box__close js-hide-search" href="#content">
+                          <svg class="icon icon-close">
+                            <use xlink:href="#icon-close"></use>
+                          </svg><span class="sr-only"> Close search</span></a>
+                        <form class="o-search-box__form">
+                          <input name="lang" type="hidden" value="en" />
+                          <label class="type-small" for="search-field">Search</label>
+                          <div class="input-search">
+                            <input id="search-field" name="s" placeholder="Search for programs or services" type="text" value="" />
+                            <button class="btn-text input-search__submit" type="submit"><span class="icon bg-icon-search"></span></button>
+                          </div>
+                        </form>
+                        <div class="o-search-box__suggestions">
+                          <div class="o-search-box__suggestions-header">
+                            <h3>Programs</h3>
+                            <a class="link-more" href="#">see all programs</a>
+                          </div>
+                          <div class="o-search-box__suggestions-body">
+                            <div class="o-search-box__suggestions-item">
+                              <a href="#">Money to buy food</a>
+                            </div>
+                            <div class="o-search-box__suggestions-item">
+                              <a href="#">Cash help when you are in need</a>
+                            </div>
+                            <div class="o-search-box__suggestions-item">
+                              <a href="#">Low-cost and free health insurance</a>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div>
+                <div class="code-block mb-1"><pre>&lt;div aria-hidden=&quot;true&quot; class=&quot;o-search-box active static&quot; id=&quot;search&quot;&gt;
   &lt;div class=&quot;o-search-box__inner&quot;&gt;
     &lt;div class=&quot;usa-grid&quot;&gt;
       &lt;div class=&quot;usa-width-one-whole&quot;&gt;
@@ -155,41 +198,6 @@
     &lt;/div&gt;
   &lt;/div&gt;
 &lt;/div&gt;</pre></div>
-          </div>
-          <div aria-hidden="true" class="o-search-box active static" id="search">
-            <div class="o-search-box__inner">
-              <div class="usa-grid">
-                <div class="usa-width-one-whole">
-                  <a class="o-search-box__close js-hide-search" href="#content">
-                    <svg class="icon icon-close">
-                      <use xlink:href="#icon-close"></use>
-                    </svg><span class="sr-only"> Close search</span></a>
-                  <form class="o-search-box__form">
-                    <input name="lang" type="hidden" value="en" />
-                    <label class="type-small" for="search-field">Search</label>
-                    <div class="input-search">
-                      <input id="search-field" name="s" placeholder="Search for programs or services" type="text" value="" />
-                      <button class="btn-text input-search__submit" type="submit"><span class="icon bg-icon-search"></span></button>
-                    </div>
-                  </form>
-                  <div class="o-search-box__suggestions">
-                    <div class="o-search-box__suggestions-header">
-                      <h3>Programs</h3>
-                      <a class="link-more" href="#">see all programs</a>
-                    </div>
-                    <div class="o-search-box__suggestions-body">
-                      <div class="o-search-box__suggestions-item">
-                        <a href="#">Money to buy food</a>
-                      </div>
-                      <div class="o-search-box__suggestions-item">
-                        <a href="#">Cash help when you are in need</a>
-                      </div>
-                      <div class="o-search-box__suggestions-item">
-                        <a href="#">Low-cost and free health insurance</a>
-                      </div>
-                    </div>
-                  </div>
-                </div>
               </div>
             </div>
           </div>

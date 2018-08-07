@@ -53,27 +53,32 @@
 }
 
 .o-search-box__suggestions-header {
-  align-items: flex-end;
-  display: flex;
-  justify-content: space-between;
   margin-bottom: $spacing-base;
 
   h3 {
     margin-bottom: 0;
   }
+
+  @media screen and (min-width: $screen-tablet) {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+  }
 }
 
 .o-search-box__suggestions-body {
-  align-items: flex-start;
-  display: flex;
-  flex-wrap: wrap;
+  @media screen and (min-width: $screen-tablet) {
+    align-items: flex-start;
+    display: flex;
+    flex-wrap: wrap;
+  }
 }
 
 .o-search-box__suggestions-item {
   font-weight: $font-weight-bold;
   padding-#{$text-direction-end}: $spacing-base;
   margin-bottom: $spacing-base;
-  width: 50%;
+  // width: 50%;
 
   // @include media($bp-tablet-up) {
   @media screen and (min-width: $screen-tablet) {

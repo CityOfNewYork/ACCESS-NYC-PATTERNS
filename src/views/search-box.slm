@@ -1,14 +1,15 @@
 / Layout
-= extend('layouts/default');
+= extend('/layouts/default');
 
 / Component
-- mixin_id = 'search-box';
 - title = 'Search Box';
 
 / Partials
 = partial('partials/styles.slm');
 = partial('partials/links.slm');
 = partial('partials/head.mixin.slm');
+= partial('partials/content-header.mixin.slm');
+= partial('partials/section.mixin.slm');
 = partial('partials/demo-specs.mixin.slm');
 = partial('partials/demo-block.mixin.slm');
 
@@ -20,21 +21,5 @@
   = mixin('header', title);
 
 = content('content');
-  h1 class='px-1' = title
-  section#default-styling class='${class_demo}'
-    header class='${class_demo_headers}'
-      h2 Default Styling
-
-    div class='${class_demo_cols}'
-      div class='${class_demo_col1}'
-        div class='${class_demo_spec}'
-          p Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-
-      div class='${class_demo_col2}' &nbsp;
-
-    div class='${class_demo_class_containers}'
-      div class='code-block mb-1'
-        pre
-          = 'code{{ objects/search-box/search-box.slm }}';
-
-    = partial('../objects/search-box/search-box.slm');
+  = mixin('content-header', title);
+  = mixin('section', 'Default Styling', 'objects/search-box/search-box', 'gutter');

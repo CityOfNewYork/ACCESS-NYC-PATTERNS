@@ -53,8 +53,6 @@ optgroup {
   width: 100%;
 
   // @include media($bp-tablet-up) {
-  //   width: auto;
-  // }
   @media screen and (min-width: $screen-tablet) {
     width: auto;
   }

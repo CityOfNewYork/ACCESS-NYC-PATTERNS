@@ -82,9 +82,10 @@ $search-icon-width: 24px;
   position: relative;
 
   input {
+    text-overflow: ellipsis;
     display: block;
     padding: $spacing-base;
-    padding-#{$text-direction-end}: 2*$spacing-base + $search-icon-width;
+    padding-#{$text-direction-end}: $spacing-base + $search-icon-width;
     width: 100%;
   }
 }
