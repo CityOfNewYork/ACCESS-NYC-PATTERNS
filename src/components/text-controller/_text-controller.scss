@@ -57,7 +57,6 @@
 
 .c-text-controller__languages .wpml-ls {
   padding: 0;
-  margin-bottom: $spacing-base * 0.5;
   text-align: $text-direction-end;
 
   ul {
@@ -68,6 +67,7 @@
   }
 
   li {
+    margin-bottom: $spacing-base * 0.5;
     display: inline-block;
     padding: 0;
 
@@ -123,7 +123,7 @@
 // ====================================
 
 // Hides the current language translation in the language switcher
-.wpml-ls-current-language,
-.wpml-ls-display {
+.c-text-controller__languages .wpml-ls .wpml-ls-current-language,
+.c-text-controller__languages .wpml-ls .wpml-ls-display {
   @include sr-only();
 }
