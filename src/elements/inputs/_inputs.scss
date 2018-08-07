@@ -85,7 +85,7 @@ $search-icon-width: 24px;
     text-overflow: ellipsis;
     display: block;
     padding: $spacing-base;
-    padding-#{$text-direction-end}: $spacing-base + $search-icon-width;
+    padding-#{$text-direction-end}: ($spacing-base * 1.5) + $search-icon-width;
     width: 100%;
   }
 }

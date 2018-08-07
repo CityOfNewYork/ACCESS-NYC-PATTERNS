@@ -9,17 +9,29 @@
 @import 'config/dimensions';
 @import 'config/direction';
 @import 'config/layouts';
+@import 'config/media';
 
 // Declarations
 .c-alert-box {
-  display: flex;
-  @include full-width-home-margins;
+  // display: flex;
+  // @include full-width-home-margins;
   background: $color-grey-lightest;
-  padding: $spacing-base
+  padding: $spacing-base;
+
+  @media screen and (min-width: $screen-mobile) {
+    align-items: stretch;
+    display: flex;
+    // padding: 1.5 * $spacing-base;
+  }
 }
 
 .c-alert-box__icon {
-  padding-#{$text-direction-end}: $spacing-base;
+  margin-bottom: $spacing-base/3;
+
+  @media screen and (min-width: $screen-mobile) {
+    padding-#{$text-direction-end}: $spacing-base;
+    margin-bottom: 0;
+  }
 }
 
 .c-alert-box__svg,
