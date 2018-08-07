@@ -30,6 +30,7 @@ class Toggle {
    * @return {object}   The class
    */
   init() {
+    // Initialization logging
     // eslint-disable-next-line no-console
     if (Utility.debug()) console.dir({
         'init': this._settings.namespace,
@@ -40,10 +41,10 @@ class Toggle {
 
     body.addEventListener('click', (event) => {
       let method = (!event.target.matches) ? 'msMatchesSelector' : 'matches';
-
       if (!event.target[method](this._settings.selector))
         return;
 
+      // Click event logging
       // eslint-disable-next-line no-console
       if (Utility.debug()) console.dir({
           'event': event,
