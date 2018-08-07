@@ -30,6 +30,12 @@ class Toggle {
    * @return {object}   The class
    */
   init() {
+    // eslint-disable-next-line no-console
+    if (Utility.debug()) console.dir({
+        'init': this._settings.namespace,
+        'settings': this._settings
+      });
+
     const body = document.querySelector('body');
 
     body.addEventListener('click', (event) => {
@@ -38,15 +44,15 @@ class Toggle {
       if (!event.target[method](this._settings.selector))
         return;
 
-      event.preventDefault();
-
-      this._toggle(event);
-
       // eslint-disable-next-line no-console
       if (Utility.debug()) console.dir({
           'event': event,
           'settings': this._settings
         });
+
+      event.preventDefault();
+
+      this._toggle(event);
     });
 
     return this;
