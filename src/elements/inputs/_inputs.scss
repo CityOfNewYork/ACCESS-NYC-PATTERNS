@@ -91,11 +91,11 @@ $search-icon-width: 24px;
 }
 
 .input-search__submit {
-  width: $search-icon-width !important;
-  height: $search-icon-height !important;
+  // width: $search-icon-width !important;
+  // height: $search-icon-height !important;
   #{$text-direction-end}: $spacing-base;
   line-height: $search-icon-height;
-  margin: -$search-icon-height/2 0 0 0 !important;
+  margin: -($search-icon-height / 2 + 1) 0 0 0 !important;
   padding: 0 !important;
   position: absolute;
   top: 50%;
