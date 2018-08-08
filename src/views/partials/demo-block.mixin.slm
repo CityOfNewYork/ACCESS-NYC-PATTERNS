@@ -17,12 +17,9 @@
 
     - if (typeof this.grid === 'object')
       - ;
-      div class='layout--gutter screen-mobile:layout--columns-gutter screen-tablet:layout--three-columns-gutter screen-desktop:layout--four-columns-gutter'
+      div class='layout--gutter screen-mobile:layout--two-columns-gutter screen-tablet:layout--three-columns-gutter screen-desktop:layout--four-columns-gutter'
         - for (key in this.grid)
-          - ;
-          div class='flex flex-col justify-between items-center border border-color-grey-light p-3'
-            div class='pb-2'
+          - value = this.grid[key];
+          div class='flex flex-col justify-between items-center border border-color-grey-lightest p-2'
+            div class='w-full'
               = partial('../' + this.markup);
-            div class='code-block mb-1'
-              pre
-                = 'code{{ '+ this.markup +' }}';

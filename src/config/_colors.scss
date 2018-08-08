@@ -4,8 +4,10 @@
 
 // Dependencies
 @import 'config/variables';
+@import 'config/fonts';
 
 $colors: map-get($variables, 'colors');
+$combinations: map-get($variables, 'colorCombinations');
 
 // Variables
 $color-black: map-get($colors, 'color-black');
@@ -29,3 +31,32 @@ $color-yellow-access: map-get($colors, 'color-yellow-access');
 $color-yellow-light: map-get($colors, 'color-yellow-light');
 $color-white: map-get($colors, 'color-white');
 $color-transparent: map-get($colors, 'color-transparent');
+
+// Mixins
+@mixin combination($selector, $combination, $colors, $smoothing: false) {
+  color: map-get($colors, map-get($combination, 'color'));
+  background-color: map-get($colors, map-get($combination, 'background-color'));
+  @if $smoothing {
+    @include font-smooth;
+  }
+
+  #{$selector}__alt {
+    color: map-get($colors, map-get($combination, 'color-alt'));
+  }
+
+  a {
+    color: map-get($colors, map-get($combination, 'hyperlinks'));
+
+    &:visited {
+      color: map-get($colors, map-get($combination, 'visited'));
+    }
+
+    &:hover, &:active, &:focus {
+      color: map-get($colors, map-get($combination, 'hover'));
+    }
+  }
+
+  h1, h3, h5 {
+    color: map-get($colors, map-get($combination, 'headings'));
+  }
+}

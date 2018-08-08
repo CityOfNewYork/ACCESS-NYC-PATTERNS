@@ -1,0 +1,19 @@
+div class='color-${key} w-full text-font-size-small py-4 p-2 mb-2'
+  - if (value['headings'])
+    -;
+    h1 class='type-h4 text-font-size-normal m-0' Headings h1, h3, h5
+
+  - if (value['color-alt'])
+    -;
+    h2 class='type-h5 text-font-size-normal color-${key}__alt' Alternative Text
+
+  div class='capitalize' ${key.replace(/-/g," ")} Text
+
+  - if (value['hyperlinks'])
+    -;
+    a href='#' Hyperlinks
+
+
+p class='text-font-size-small mb-0 flex justify-between'
+  | Selector
+  code .color-${key}

@@ -165,21 +165,21 @@ $breakpoints: map-get($variables, 'screens');
   }
 
   //
-  // A layout for four column grid with gutter
+  // A layout for three column grid with gutter
   //
-  //  .-------------------.
-  //  |.--. .--. .--. .--.|
-  //  ||  | |  | |  | |  ||
-  //  |.--. .--. .--. .--.|
-  //  |                   |
-  //  |.--. .--. .--. .--.|
-  //  ||  | |  | |  | |  ||
-  //  |.--. .--. .--. .--.|
-  //  |                   |
-  //  |.--. .--. .--. .--.|
-  //  ||  | |  | |  | |  ||
-  //  |.--. .--. .--. .--.|
-  //  .-------------------.
+  //  .--------------.
+  //  |.--. .--. .--.|
+  //  ||  | |  | |  ||
+  //  |.--. .--. .--.|
+  //  |              |
+  //  |.--. .--. .--.|
+  //  ||  | |  | |  ||
+  //  |.--. .--. .--.|
+  //  |              |
+  //  |.--. .--. .--.|
+  //  ||  | |  | |  ||
+  //  |.--. .--. .--.|
+  //  .--------- ----.
   //
   .#{$variant}layout--three-columns-gutter {
     display: flex;
@@ -188,6 +188,42 @@ $breakpoints: map-get($variables, 'screens');
 
     > *, &:after {
       width: calc(33.33% - #{$spacing-base / 2});
+    }
+
+    > * {
+      margin-bottom: $spacing-base / 2;
+    }
+
+    &:after {
+      content: '';
+      margin-bottom: 0;
+    }
+  }
+
+  //
+  // A layout for two column grid with gutter
+  //
+  //  .---------.
+  //  |.--. .--.|
+  //  ||  | |  ||
+  //  |.--. .--.|
+  //  |         |
+  //  |.--. .--.|
+  //  ||  | |  ||
+  //  |.--. .--.|
+  //  |         |
+  //  |.--. .--.|
+  //  ||  | |  ||
+  //  |.--. .--.|
+  //  .---------.
+  //
+  .#{$variant}layout--two-columns-gutter {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+
+    > *, &:after {
+      width: calc(50% - #{$spacing-base / 2});
     }
 
     > * {

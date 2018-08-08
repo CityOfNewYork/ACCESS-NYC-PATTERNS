@@ -93,27 +93,73 @@ const variables = {
     'larger': '1.5'
   },
   colors: {
-    'color-black': '#000000',
-    'color-white': '#ffffff',
-    'color-transparent': 'rgba(255, 255, 255, 0)',
-    'color-blue': '#184e9e',
-    'color-blue-bright': '#118df0',
-    'color-blue-dark': '#112e51',
-    'color-blue-light': '#e1eeff',
+    'color-blue-light': '#E1EEFF',
+    'color-blue-bright': '#118DF0',
+    'color-blue': '#184E9E',
+    'color-blue-dark': '#112E51',
+
+    'color-yellow-light': '#FFE6A9',
+    'color-yellow-access': '#FBB720',
+
+    'color-green-light': '#D4FFE7',
     'color-green': '#05CE7C',
+    'color-green-mid': '#0D6D3B',
     'color-green-dark': '#094727',
-    'color-green-mid': '#0d6b3b',
-    'color-green-light': '#d4ffe7',
+
+    'color-pink-light': '#F1B3bD',
+    'color-pink': '#F1647C',
+    'color-red': '#C6252b',
+
+    'color-purple': '#4C2C92',
+
+    'color-grey-light': '#D1D5D9',
+    'color-grey-lightest': '#EEF3F7',
+    'color-grey-mid': '#505C66',
     'color-grey-dark': '#172129',
-    'color-grey-light': '#d1d5d9',
-    'color-grey-lightest': '#eef3f7',
-    'color-grey-mid': '#505c66',
-    'color-pink': '#f1647c',
-    'color-pink-light': '#f1b3bd',
-    'color-purple': '#4c2c92',
-    'color-red': '#c6252b',
-    'color-yellow-access': '#fbb720',
-    'color-yellow-light': '#ffe6a9'
+    'color-black': '#000000',
+
+    'color-white': '#ffffff',
+    'color-transparent': 'rgba(255,255,255,0)'
+  },
+  colorCombinations: {
+    'light-background': {
+      'color': 'color-black',
+      'headings': 'color-blue-dark',
+      'color-alt': 'color-grey-mid',
+      'hyperlinks': 'color-blue',
+      'visited': 'color-purple',
+      'hover': 'color-blue-dark',
+      'background-color': 'color-white'
+    },
+    'mid-background': {
+      'color': 'color-black',
+      'headings': 'color-blue-dark',
+      'color-alt': 'color-grey-mid',
+      'hyperlinks': 'color-blue',
+      'visited': 'color-purple',
+      'hover': 'color-blue-dark',
+      'background-color': 'color-grey-lightest'
+    },
+    'dark-background': {
+      'color': 'color-white',
+      'font-smooth': true,
+      'headings': 'color-white',
+      'color-alt': 'color-white',
+      'hyperlinks': 'color-white',
+      'visited': 'color-white',
+      'hover': 'color-white',
+      'background-color': 'color-blue-dark'
+    },
+    'primary-button': {
+      'color': 'color-white',
+      'font-smooth': true,
+      'background-color': 'color-blue'
+    },
+    'secondary-button': {
+      'color': 'color-white',
+      'font-smooth': true,
+      'background-color': 'color-green-mid'
+    }
   },
   screens: {
     'screen-desktop': 960,

@@ -26,7 +26,7 @@
     "serve": "PORT=$npm_package_config_port node .app/serve.js --ext slm --watch src",
     "build": "VARS=$npm_package_config_vars node .app/build.js",
     "compile": "concurrently 'npm run svgs' 'npm run styles' 'npm run scripts' 'npm run build'",
-    "build:watch": "nodemon --ext slm --watch src/views -x 'npm run build'",
+    "build:watch": "nodemon -e slm,md --watch src -x 'npm run build'",
     "ghpages": "node .app/publish.js",
     "scripts": "rollup -c $npm_package_config_rollup",
     "scripts:watch": "rollup -c $npm_package_config_rollup -w",
