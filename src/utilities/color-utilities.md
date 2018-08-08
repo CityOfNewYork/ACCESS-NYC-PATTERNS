@@ -8,4 +8,5 @@ and background colors must be tested for adequate contrast. This can be done eas
 with the [WebAIM Color Contrast Checker](https://webaim.org/resources/contrastchecker/).
 
 Below are are examples of the color utilities in use and their corresponding
-selectors (please note, not all of the text color examples are accessible).
+selectors. Please note, not all of the text color examples are accessible because
+they are examples of the color utility in use on a white background.

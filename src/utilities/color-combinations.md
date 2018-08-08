@@ -13,4 +13,4 @@ to the WCAG AA standard at a base level.
 
 Below are swatches with examples of the approved color combinations. Please note,
 WCAG AA compliance correlates with the base text size. The examples below may not
-be fully compliant.
+be fully compliant because their font-size is set to a smaller size.
