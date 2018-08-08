@@ -6,3 +6,6 @@ properties. Refer to the [Tailwind CSS Docs](https://tailwindcss.com/docs) for
 full details. In order to maintain WCAG AA compliance, custom combinations of text
 and background colors must be tested for adequate contrast. This can be done easily
 with the [WebAIM Color Contrast Checker](https://webaim.org/resources/contrastchecker/).
+
+Below are are examples of the color utilities in use and their corresponding
+selectors (please note, not all of the text color examples are accessible).
