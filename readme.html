@@ -67,6 +67,7 @@
             <a class="screen-desktop:block p-1" href="layouts">Layouts</a>
             <a class="screen-desktop:block p-1" href="links">Links</a>
             <a class="screen-desktop:block p-1" href="lists">Lists</a>
+            <a class="screen-desktop:block p-1" href="nav">Nav</a>
             <a class="screen-desktop:block p-1" href="program-labels">Program Labels</a>
             <a class="screen-desktop:block p-1" href="radios">Radios</a>
             <a class="screen-desktop:block p-1" href="tables">Tables</a>
@@ -95,6 +96,7 @@
             <a class="screen-desktop:block p-1" href="card-list">Card Lists</a>
             <a class="screen-desktop:block p-1" href="content">Content</a>
             <a class="screen-desktop:block p-1" href="footer">Footer</a>
+            <a class="screen-desktop:block p-1" href="mobile-nav">Mobile Nav</a>
             <a class="screen-desktop:block p-1" href="navigation">Navigation</a>
             <a class="screen-desktop:block p-1" href="search-box">Search Box</a>
           </nav>
@@ -190,13 +192,43 @@
 <h3>SASS Import</h3>
 
 <p>The main
-  <a href="https://github.com/CityOfNewYork/ACCESS-NYC-PATTERNS/blob/master/src/scss/_imports.scss">SASS import file</a> can give you an idea of how to include individual patterns into your project.</p>
+  <a href="https://github.com/CityOfNewYork/ACCESS-NYC-PATTERNS/blob/master/src/scss/_imports.scss">SASS import file</a> can give you an idea of how to include individual patterns into your project. Be sure to add <code>node_modules</code> to your include paths.</p>
 
 <h3>Javascript</h3>
 
-<p>The Javascript source is written as ES6 Modules. Using
-  <a href="https://rollupjs.org">Rollup.js</a>, components with javascript dependencies are distributed as CommonJS and iffe functions so that depending on the makeup of your project, you can use import any of the three. Thus far, the only component that requires Javascript is the
-  <a href="https://cityofnewyork.github.io/ACCESS-NYC-PATTERNS/accordion">Accordion Component</a>.</p>
+<p>The Javascript source is written as ES6 Modules and using
+  <a href="https://rollupjs.org">Rollup.js</a>, individual components with javascript dependencies are distributed as CommonJS and IFFE functions so that depending on the flavor of your project you can use import any of the three.</p>
+
+<h4>CommonJS and ES6 Component Import</h4>
+
+<p>Here is an example of importing only the accordion component and initializing it.</p>
+
+<pre><code>import Accordion from &#39;components/accordion/accordion&#39;;
+new Accordion();</code></pre>
+
+<h4>IFFE</h4>
+
+<p>Here is an example of the accordion IFFE script.</p>
+
+<pre><code>&lt;script src=&quot;dist/components/accordion.iffe.js&quot;&gt;&lt;/script&gt;
+&lt;script type=&quot;text/javascript&quot;&gt;
+  new Accordion();
+&lt;/script&gt;</code></pre>
+
+<h4>Global Pattern Script</h4>
+
+<p>You may also import the main ACCESS NYC Patterns script with all of the dependencies in it. This script is exported as an IFFE function so it doesn&#39;t need to be compiled. Components must be initialized individually.</p>
+
+<pre><code>&lt;script src=&quot;dist/scripts/AccessNyc.js&quot;&gt;&lt;/script&gt;
+&lt;script type=&quot;text/javascript&quot;&gt;
+  var access = new AccessNyc();
+  access.accordion();
+&lt;/script&gt;</code></pre>
+
+<p>The main
+  <a href="https://github.com/CityOfNewYork/ACCESS-NYC-PATTERNS/blob/master/src/js/main.js">Javascript import file</a> can give you an idea of how each component needs to be initialized.</p>
+
+<h3>Sketch Symbols (coming soon)</h3>
 
 <h1>About NYCO</h1>
 

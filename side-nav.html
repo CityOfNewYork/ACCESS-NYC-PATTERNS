@@ -6,7 +6,7 @@
     <meta content="IE=edge" http-equiv="X-UA-Compatible" />
     <meta content="width=device-width, initial-scale=1" name="viewport" />
     <link href="styles/site-default.css" rel="stylesheet" />
-    <title>Side Nav and Share Links</title>
+    <title>Share Form</title>
     <noscript>
       <style>
         body {
@@ -67,6 +67,7 @@
             <a class="screen-desktop:block p-1" href="layouts">Layouts</a>
             <a class="screen-desktop:block p-1" href="links">Links</a>
             <a class="screen-desktop:block p-1" href="lists">Lists</a>
+            <a class="screen-desktop:block p-1" href="nav">Nav</a>
             <a class="screen-desktop:block p-1" href="program-labels">Program Labels</a>
             <a class="screen-desktop:block p-1" href="radios">Radios</a>
             <a class="screen-desktop:block p-1" href="tables">Tables</a>
@@ -95,6 +96,7 @@
             <a class="screen-desktop:block p-1" href="card-list">Card Lists</a>
             <a class="screen-desktop:block p-1" href="content">Content</a>
             <a class="screen-desktop:block p-1" href="footer">Footer</a>
+            <a class="screen-desktop:block p-1" href="mobile-nav">Mobile Nav</a>
             <a class="screen-desktop:block p-1" href="navigation">Navigation</a>
             <a class="screen-desktop:block p-1" href="search-box">Search Box</a>
           </nav>
@@ -103,41 +105,25 @@
     </aside>
     <main class="pt-4" id="main-content">
       <article class="py-4">
-        <h1 class="px-1">Side Nav and Share Links</h1>
-        <section class="pb-4" id="default-styling">
-          <header class="pt-1 px-2 border-b border-color-grey-light mb-3">
-            <h2>Side Nav</h2>
-          </header>
-          <div class="layout--columns">
-            <div>
-              <div class="page-wrapper pb-3 px-2 text-font-size-small">
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis
-                  aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+        <header class="page-wrapper px-2 screen-desktop:px-0 layout--home-body">
+          <div class="my-0 w-full">
+            <h1 class="text-color-blue-dark px-2 m-0">Share Form</h1>
+          </div>
+        </header>
+        <section class="pb-4 mb-4" id="ordered-side-nav">
+          <div class="page-wrapper px-2 screen-desktop:px-0">
+            <header class="layout--home-body">
+              <div class="my-0 pt-1 px-2 border-b border-color-grey-light">
+                <h2>
+                  <a class="text-color-grey-mid font-normal no-underline" href="#ordered-side-nav">Ordered Side Nav</a>
+                </h2>
               </div>
+            </header>
+            <div class="layout--home-body">
+              <div class="px-2 text-font-size-small"></div>
             </div>
-            <div>
-              <div>
-                <div class="mb-2">
-                  <div class="code-block mb-1"><pre>&lt;nav class=&quot;c-side-nav hide-for-print&quot;&gt;
-  &lt;ol&gt;
-    &lt;li&gt;
-      &lt;a class=&quot;active&quot; href=&quot;#&quot;&gt;How It Works&lt;/a&gt;
-    &lt;/li&gt;
-    &lt;li&gt;
-      &lt;a href=&quot;#&quot;&gt;Determine Your Eligibility&lt;/a&gt;
-    &lt;/li&gt;
-    &lt;li&gt;
-      &lt;a href=&quot;#&quot;&gt;What You Need to Include&lt;/a&gt;
-    &lt;/li&gt;
-    &lt;li&gt;
-      &lt;a href=&quot;#&quot;&gt;How to Apply&lt;/a&gt;
-    &lt;/li&gt;
-    &lt;li&gt;
-      &lt;a href=&quot;#&quot;&gt;Determine Your Eligibility&lt;/a&gt;
-    &lt;/li&gt;
-  &lt;/ol&gt;
-&lt;/nav&gt;</pre></div>
-                </div>
+            <div class="layout--gutter screen-tablet:layout--columns justify-between">
+              <div class="screen-tablet:pr-2">
                 <nav class="c-side-nav hide-for-print">
                   <ol>
                     <li>
@@ -158,40 +144,44 @@
                   </ol>
                 </nav>
               </div>
+              <div>
+                <div class="code-block mb-1"><pre>&lt;nav class=&quot;c-side-nav hide-for-print&quot;&gt;
+  &lt;ol&gt;
+    &lt;li&gt;
+      &lt;a class=&quot;active&quot; href=&quot;#&quot;&gt;How It Works&lt;/a&gt;
+    &lt;/li&gt;
+    &lt;li&gt;
+      &lt;a href=&quot;#&quot;&gt;Determine Your Eligibility&lt;/a&gt;
+    &lt;/li&gt;
+    &lt;li&gt;
+      &lt;a href=&quot;#&quot;&gt;What You Need to Include&lt;/a&gt;
+    &lt;/li&gt;
+    &lt;li&gt;
+      &lt;a href=&quot;#&quot;&gt;How to Apply&lt;/a&gt;
+    &lt;/li&gt;
+    &lt;li&gt;
+      &lt;a href=&quot;#&quot;&gt;Determine Your Eligibility&lt;/a&gt;
+    &lt;/li&gt;
+  &lt;/ol&gt;
+&lt;/nav&gt;</pre></div>
+              </div>
             </div>
           </div>
         </section>
-        <section class="pb-4" id="default-styling">
-          <header class="pt-1 px-2 border-b border-color-grey-light mb-3">
-            <h2>Side Nav</h2>
-          </header>
-          <div class="layout--columns">
-            <div>
-              <div class="page-wrapper pb-3 px-2 text-font-size-small">
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis
-                  aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+        <section class="pb-4 mb-4" id="unordered-side-nav">
+          <div class="page-wrapper px-2 screen-desktop:px-0">
+            <header class="layout--home-body">
+              <div class="my-0 pt-1 px-2 border-b border-color-grey-light">
+                <h2>
+                  <a class="text-color-grey-mid font-normal no-underline" href="#unordered-side-nav">Unordered Side Nav</a>
+                </h2>
               </div>
+            </header>
+            <div class="layout--home-body">
+              <div class="px-2 text-font-size-small"></div>
             </div>
-            <div>
-              <div>
-                <div class="mb-2">
-                  <div class="code-block mb-1"><pre>&lt;nav class=&quot;c-side-nav hide-for-print&quot;&gt;
-  &lt;ul&gt;
-    &lt;li&gt;
-      &lt;a class=&quot;active&quot; href=&quot;#&quot;&gt;Training Sessions &amp; Events&lt;/a&gt;
-    &lt;/li&gt;
-    &lt;li&gt;
-      &lt;a href=&quot;#&quot;&gt;Promotional Materials&lt;/a&gt;
-    &lt;/li&gt;
-    &lt;li&gt;
-      &lt;a href=&quot;#&quot;&gt;Newsletter&lt;/a&gt;
-    &lt;/li&gt;
-    &lt;li&gt;
-      &lt;a href=&quot;#&quot;&gt;Link to ACCESS NYC&lt;/a&gt;
-    &lt;/li&gt;
-  &lt;/ul&gt;
-&lt;/nav&gt;</pre></div>
-                </div>
+            <div class="layout--gutter screen-tablet:layout--columns justify-between">
+              <div class="screen-tablet:pr-2">
                 <nav class="c-side-nav hide-for-print">
                   <ul>
                     <li>
@@ -209,36 +199,55 @@
                   </ul>
                 </nav>
               </div>
+              <div>
+                <div class="code-block mb-1"><pre>&lt;nav class=&quot;c-side-nav hide-for-print&quot;&gt;
+  &lt;ul&gt;
+    &lt;li&gt;
+      &lt;a class=&quot;active&quot; href=&quot;#&quot;&gt;Training Sessions &amp; Events&lt;/a&gt;
+    &lt;/li&gt;
+    &lt;li&gt;
+      &lt;a href=&quot;#&quot;&gt;Promotional Materials&lt;/a&gt;
+    &lt;/li&gt;
+    &lt;li&gt;
+      &lt;a href=&quot;#&quot;&gt;Newsletter&lt;/a&gt;
+    &lt;/li&gt;
+    &lt;li&gt;
+      &lt;a href=&quot;#&quot;&gt;Link to ACCESS NYC&lt;/a&gt;
+    &lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/nav&gt;</pre></div>
+              </div>
             </div>
           </div>
         </section>
-        <section class="pb-4" id="default-styling">
-          <header class="pt-1 px-2 border-b border-color-grey-light mb-3">
-            <h2>Share Links</h2>
-          </header>
-          <div class="layout--columns">
-            <div>
-              <div class="page-wrapper pb-3 px-2 text-font-size-small">
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis
-                  aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+        <section class="pb-4 mb-4" id="share-links">
+          <div class="page-wrapper px-2 screen-desktop:px-0">
+            <header class="layout--home-body">
+              <div class="my-0 pt-1 px-2 border-b border-color-grey-light">
+                <h2>
+                  <a class="text-color-grey-mid font-normal no-underline" href="#share-links">Share Links</a>
+                </h2>
               </div>
+            </header>
+            <div class="layout--home-body">
+              <div class="px-2 text-font-size-small"></div>
             </div>
-            <div>
-              <div>
-                <div class="mb-2">
-                  <div class="code-block mb-1"><pre>&lt;nav class=&quot;c-share hide-for-print&quot;&gt;
-  &lt;a class=&quot;c-share__link&quot; href=&quot;#&quot;&gt;
-    &lt;svg class=&quot;icon icon-printer&quot;&gt;
-      &lt;use xlink:href=&quot;#icon-printer&quot;&gt;&lt;/use&gt;
-    &lt;/svg&gt;Print the whole guide&lt;/a&gt;
-&lt;/nav&gt;</pre></div>
-                </div>
+            <div class="layout--gutter screen-tablet:layout--columns justify-between">
+              <div class="screen-tablet:pr-2">
                 <nav class="c-share hide-for-print">
                   <a class="c-share__link" href="#">
                     <svg class="icon icon-printer">
                       <use xlink:href="#icon-printer"></use>
                     </svg>Print the whole guide</a>
                 </nav>
+              </div>
+              <div>
+                <div class="code-block mb-1"><pre>&lt;nav class=&quot;c-share hide-for-print&quot;&gt;
+  &lt;a class=&quot;c-share__link&quot; href=&quot;#&quot;&gt;
+    &lt;svg class=&quot;icon icon-printer&quot;&gt;
+      &lt;use xlink:href=&quot;#icon-printer&quot;&gt;&lt;/use&gt;
+    &lt;/svg&gt;Print the whole guide&lt;/a&gt;
+&lt;/nav&gt;</pre></div>
               </div>
             </div>
           </div>

@@ -67,6 +67,7 @@
             <a class="screen-desktop:block p-1" href="layouts">Layouts</a>
             <a class="screen-desktop:block p-1" href="links">Links</a>
             <a class="screen-desktop:block p-1" href="lists">Lists</a>
+            <a class="screen-desktop:block p-1" href="nav">Nav</a>
             <a class="screen-desktop:block p-1" href="program-labels">Program Labels</a>
             <a class="screen-desktop:block p-1" href="radios">Radios</a>
             <a class="screen-desktop:block p-1" href="tables">Tables</a>
@@ -95,6 +96,7 @@
             <a class="screen-desktop:block p-1" href="card-list">Card Lists</a>
             <a class="screen-desktop:block p-1" href="content">Content</a>
             <a class="screen-desktop:block p-1" href="footer">Footer</a>
+            <a class="screen-desktop:block p-1" href="mobile-nav">Mobile Nav</a>
             <a class="screen-desktop:block p-1" href="navigation">Navigation</a>
             <a class="screen-desktop:block p-1" href="search-box">Search Box</a>
           </nav>
@@ -103,62 +105,25 @@
     </aside>
     <main class="pt-4" id="main-content">
       <article class="py-4">
-        <h1 class="px-1">Share Form</h1>
-        <section class="pb-4" id="default-styling">
-          <header class="pt-1 px-2 border-b border-color-grey-light mb-3">
-            <h2>Default Styling</h2>
-          </header>
-          <div class="layout--columns">
-            <div>
-              <div class="page-wrapper pb-3 px-2 text-font-size-small">
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis
-                  aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+        <header class="page-wrapper px-2 screen-desktop:px-0 layout--home-body">
+          <div class="my-0 w-full">
+            <h1 class="text-color-blue-dark px-2 m-0">Share Form</h1>
+          </div>
+        </header>
+        <section class="pb-4 mb-4" id="default-styling">
+          <div class="page-wrapper px-2 screen-desktop:px-0">
+            <header class="layout--home-body">
+              <div class="my-0 pt-1 px-2 border-b border-color-grey-light">
+                <h2>
+                  <a class="text-color-grey-mid font-normal no-underline" href="#default-styling">Default Styling</a>
+                </h2>
               </div>
+            </header>
+            <div class="layout--home-body">
+              <div class="px-2 text-font-size-small"></div>
             </div>
-            <div>
-              <div>
-                <div class="mb-2">
-                  <div class="code-block mb-1"><pre>&lt;div class=&quot;c-share-form mb-2&quot;&gt;
-  &lt;a class=&quot;btn btn-primary c-share-form__toggle&quot; data-scroll-offset=&quot;20&quot; href=&quot;#share-by-text&quot;&gt;Text&lt;/a&gt;
-  &lt;div class=&quot;c-share-form__input hidden&quot; id=&quot;share-by-text&quot;&gt;
-    &lt;form&gt;
-      &lt;div class=&quot;c-share-form__controls&quot;&gt;
-        &lt;input name=&quot;to&quot; placeholder=&quot;Phone Number&quot; required=&quot;true&quot; type=&quot;tel&quot; /&gt;
-        &lt;div class=&quot;c-share-form__button&quot;&gt;
-          &lt;button class=&quot;btn btn-primary btn-small btn-submit&quot; type=&quot;submit&quot;&gt;Send&lt;/button&gt;
-          &lt;svg class=&quot;share-form__spinner js-spinner&quot; height=&quot;40px&quot; style=&quot;display: none&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 50 50&quot; width=&quot;69.89px&quot; x=&quot;0px&quot; xml:space=&quot;preserve&quot; xmlns=&quot;http://www.w3.org/2000/svg&quot; xmlns:xlink=&quot;http://www.w3.org/1999/xlink&quot;
-            y=&quot;0px&quot;&gt;
-            &lt;path d=&quot;M43.935,25.145c0-10.318-8.364-18.683-18.683-18.683c-10.318,0-18.683,8.365-18.683,18.683h4.068c0-8.071,6.543-14.615,14.615-14.615c8.072,0,14.615,6.543,14.615,14.615H43.935z&quot; fill=&quot;#184e9e&quot; transform=&quot;rotate(109.079 25 25)&quot;&gt;
-              &lt;animateTransform attributeName=&quot;transform&quot; attributeType=&quot;xml&quot; dur=&quot;1s&quot; from=&quot;0 25 25&quot; repeatCount=&quot;indefinite&quot; to=&quot;360 25 25&quot; type=&quot;rotate&quot;&gt;&lt;/animateTransform&gt;
-            &lt;/path&gt;
-          &lt;/svg&gt;
-          &lt;div class=&quot;success-message&quot;&gt;Sent!&lt;/div&gt;
-        &lt;/div&gt;
-      &lt;/div&gt;
-    &lt;/form&gt;
-  &lt;/div&gt;
-&lt;/div&gt;
-&lt;div class=&quot;c-share-form&quot;&gt;
-  &lt;a class=&quot;btn btn-primary c-share-form__toggle active&quot; data-scroll-offset=&quot;20&quot; href=&quot;#share-by-text&quot;&gt;Email&lt;/a&gt;
-  &lt;div class=&quot;c-share-form__input&quot; id=&quot;share-by-text&quot;&gt;
-    &lt;form&gt;
-      &lt;div class=&quot;c-share-form__controls&quot;&gt;
-        &lt;input name=&quot;to&quot; placeholder=&quot;Email&quot; required=&quot;true&quot; type=&quot;email&quot; /&gt;
-        &lt;div class=&quot;c-share-form__button&quot;&gt;
-          &lt;button class=&quot;btn btn-primary btn-small btn-submit&quot; type=&quot;submit&quot;&gt;Send&lt;/button&gt;
-          &lt;svg class=&quot;share-form__spinner js-spinner&quot; height=&quot;40px&quot; style=&quot;display: none&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 50 50&quot; width=&quot;69.89px&quot; x=&quot;0px&quot; xml:space=&quot;preserve&quot; xmlns=&quot;http://www.w3.org/2000/svg&quot; xmlns:xlink=&quot;http://www.w3.org/1999/xlink&quot;
-            y=&quot;0px&quot;&gt;
-            &lt;path d=&quot;M43.935,25.145c0-10.318-8.364-18.683-18.683-18.683c-10.318,0-18.683,8.365-18.683,18.683h4.068c0-8.071,6.543-14.615,14.615-14.615c8.072,0,14.615,6.543,14.615,14.615H43.935z&quot; fill=&quot;#184e9e&quot; transform=&quot;rotate(109.079 25 25)&quot;&gt;
-              &lt;animateTransform attributeName=&quot;transform&quot; attributeType=&quot;xml&quot; dur=&quot;1s&quot; from=&quot;0 25 25&quot; repeatCount=&quot;indefinite&quot; to=&quot;360 25 25&quot; type=&quot;rotate&quot;&gt;&lt;/animateTransform&gt;
-            &lt;/path&gt;
-          &lt;/svg&gt;
-          &lt;div class=&quot;success-message&quot;&gt;Sent!&lt;/div&gt;
-        &lt;/div&gt;
-      &lt;/div&gt;
-    &lt;/form&gt;
-  &lt;/div&gt;
-&lt;/div&gt;</pre></div>
-                </div>
+            <div class="layout--gutter screen-tablet:layout--columns justify-between">
+              <div class="screen-tablet:pr-2">
                 <div class="c-share-form mb-2">
                   <a class="btn btn-primary c-share-form__toggle" data-scroll-offset="20" href="#share-by-text">Text</a>
                   <div class="c-share-form__input hidden" id="share-by-text">
@@ -199,6 +164,48 @@
                     </form>
                   </div>
                 </div>
+              </div>
+              <div>
+                <div class="code-block mb-1"><pre>&lt;div class=&quot;c-share-form mb-2&quot;&gt;
+  &lt;a class=&quot;btn btn-primary c-share-form__toggle&quot; data-scroll-offset=&quot;20&quot; href=&quot;#share-by-text&quot;&gt;Text&lt;/a&gt;
+  &lt;div class=&quot;c-share-form__input hidden&quot; id=&quot;share-by-text&quot;&gt;
+    &lt;form&gt;
+      &lt;div class=&quot;c-share-form__controls&quot;&gt;
+        &lt;input name=&quot;to&quot; placeholder=&quot;Phone Number&quot; required=&quot;true&quot; type=&quot;tel&quot; /&gt;
+        &lt;div class=&quot;c-share-form__button&quot;&gt;
+          &lt;button class=&quot;btn btn-primary btn-small btn-submit&quot; type=&quot;submit&quot;&gt;Send&lt;/button&gt;
+          &lt;svg class=&quot;share-form__spinner js-spinner&quot; height=&quot;40px&quot; style=&quot;display: none&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 50 50&quot; width=&quot;69.89px&quot; x=&quot;0px&quot; xml:space=&quot;preserve&quot; xmlns=&quot;http://www.w3.org/2000/svg&quot; xmlns:xlink=&quot;http://www.w3.org/1999/xlink&quot;
+            y=&quot;0px&quot;&gt;
+            &lt;path d=&quot;M43.935,25.145c0-10.318-8.364-18.683-18.683-18.683c-10.318,0-18.683,8.365-18.683,18.683h4.068c0-8.071,6.543-14.615,14.615-14.615c8.072,0,14.615,6.543,14.615,14.615H43.935z&quot; fill=&quot;#184e9e&quot; transform=&quot;rotate(109.079 25 25)&quot;&gt;
+              &lt;animateTransform attributeName=&quot;transform&quot; attributeType=&quot;xml&quot; dur=&quot;1s&quot; from=&quot;0 25 25&quot; repeatCount=&quot;indefinite&quot; to=&quot;360 25 25&quot; type=&quot;rotate&quot;&gt;&lt;/animateTransform&gt;
+            &lt;/path&gt;
+          &lt;/svg&gt;
+          &lt;div class=&quot;success-message&quot;&gt;Sent!&lt;/div&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/form&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;c-share-form&quot;&gt;
+  &lt;a class=&quot;btn btn-primary c-share-form__toggle active&quot; data-scroll-offset=&quot;20&quot; href=&quot;#share-by-text&quot;&gt;Email&lt;/a&gt;
+  &lt;div class=&quot;c-share-form__input&quot; id=&quot;share-by-text&quot;&gt;
+    &lt;form&gt;
+      &lt;div class=&quot;c-share-form__controls&quot;&gt;
+        &lt;input name=&quot;to&quot; placeholder=&quot;Email&quot; required=&quot;true&quot; type=&quot;email&quot; /&gt;
+        &lt;div class=&quot;c-share-form__button&quot;&gt;
+          &lt;button class=&quot;btn btn-primary btn-small btn-submit&quot; type=&quot;submit&quot;&gt;Send&lt;/button&gt;
+          &lt;svg class=&quot;share-form__spinner js-spinner&quot; height=&quot;40px&quot; style=&quot;display: none&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 50 50&quot; width=&quot;69.89px&quot; x=&quot;0px&quot; xml:space=&quot;preserve&quot; xmlns=&quot;http://www.w3.org/2000/svg&quot; xmlns:xlink=&quot;http://www.w3.org/1999/xlink&quot;
+            y=&quot;0px&quot;&gt;
+            &lt;path d=&quot;M43.935,25.145c0-10.318-8.364-18.683-18.683-18.683c-10.318,0-18.683,8.365-18.683,18.683h4.068c0-8.071,6.543-14.615,14.615-14.615c8.072,0,14.615,6.543,14.615,14.615H43.935z&quot; fill=&quot;#184e9e&quot; transform=&quot;rotate(109.079 25 25)&quot;&gt;
+              &lt;animateTransform attributeName=&quot;transform&quot; attributeType=&quot;xml&quot; dur=&quot;1s&quot; from=&quot;0 25 25&quot; repeatCount=&quot;indefinite&quot; to=&quot;360 25 25&quot; type=&quot;rotate&quot;&gt;&lt;/animateTransform&gt;
+            &lt;/path&gt;
+          &lt;/svg&gt;
+          &lt;div class=&quot;success-message&quot;&gt;Sent!&lt;/div&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/form&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</pre></div>
               </div>
             </div>
           </div>

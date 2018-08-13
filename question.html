@@ -67,6 +67,7 @@
             <a class="screen-desktop:block p-1" href="layouts">Layouts</a>
             <a class="screen-desktop:block p-1" href="links">Links</a>
             <a class="screen-desktop:block p-1" href="lists">Lists</a>
+            <a class="screen-desktop:block p-1" href="nav">Nav</a>
             <a class="screen-desktop:block p-1" href="program-labels">Program Labels</a>
             <a class="screen-desktop:block p-1" href="radios">Radios</a>
             <a class="screen-desktop:block p-1" href="tables">Tables</a>
@@ -95,6 +96,7 @@
             <a class="screen-desktop:block p-1" href="card-list">Card Lists</a>
             <a class="screen-desktop:block p-1" href="content">Content</a>
             <a class="screen-desktop:block p-1" href="footer">Footer</a>
+            <a class="screen-desktop:block p-1" href="mobile-nav">Mobile Nav</a>
             <a class="screen-desktop:block p-1" href="navigation">Navigation</a>
             <a class="screen-desktop:block p-1" href="search-box">Search Box</a>
           </nav>
@@ -103,35 +105,25 @@
     </aside>
     <main class="pt-4" id="main-content">
       <article class="py-4">
-        <h1 class="px-1">Question</h1>
-        <section class="pb-4" id="default-styling">
-          <header class="pt-1 px-2 border-b border-color-grey-light mb-3">
-            <h2>Default Styling</h2>
-          </header>
-          <div class="layout--columns">
-            <div>
-              <div class="page-wrapper pb-3 px-2 text-font-size-small">
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis
-                  aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+        <header class="page-wrapper px-2 screen-desktop:px-0 layout--home-body">
+          <div class="my-0 w-full">
+            <h1 class="text-color-blue-dark px-2 m-0">Question</h1>
+          </div>
+        </header>
+        <section class="pb-4 mb-4" id="default-styling">
+          <div class="page-wrapper px-2 screen-desktop:px-0">
+            <header class="layout--home-body">
+              <div class="my-0 pt-1 px-2 border-b border-color-grey-light">
+                <h2>
+                  <a class="text-color-grey-mid font-normal no-underline" href="#default-styling">Default Styling</a>
+                </h2>
               </div>
+            </header>
+            <div class="layout--home-body">
+              <div class="px-2 text-font-size-small"></div>
             </div>
-            <div>
-              <div>
-                <div class="mb-2">
-                  <div class="code-block mb-1"><pre>&lt;div class=&quot;c-question&quot;&gt;
-  &lt;label class=&quot;c-question__label&quot; for=&quot;person-0-age&quot;&gt;How old are you?&lt;/label&gt;
-  &lt;p&gt;
-    &lt;button aria-describedby=&quot;tooltip-age&quot; class=&quot;c-question__info btn btn-text btn-link js-tooltip-trigger&quot; type=&quot;button&quot;&gt;Here’s why we are asking.&amp;nbsp;
-      &lt;svg class=&quot;icon icon-info&quot;&gt;
-        &lt;use xlink:href=&quot;#icon-info&quot;&gt;&lt;/use&gt;
-      &lt;/svg&gt;
-    &lt;/button&gt;
-  &lt;/p&gt;
-  &lt;div class=&quot;c-question__container&quot;&gt;
-    &lt;input maxlength=&quot;3&quot; min=&quot;0&quot; pattern=&quot;[0-9]&quot; step=&quot;1&quot; type=&quot;number&quot; /&gt;
-  &lt;/div&gt;
-&lt;/div&gt;</pre></div>
-                </div>
+            <div class="layout--gutter screen-tablet:layout--columns justify-between">
+              <div class="screen-tablet:pr-2">
                 <div class="c-question">
                   <label class="c-question__label" for="person-0-age">How old are you?</label>
                   <p>
@@ -146,24 +138,8 @@
                   </div>
                 </div>
               </div>
-            </div>
-          </div>
-        </section>
-        <section class="pb-4" id="default-styling">
-          <header class="pt-1 px-2 border-b border-color-grey-light mb-3">
-            <h2>Errors</h2>
-          </header>
-          <div class="layout--columns">
-            <div>
-              <div class="page-wrapper pb-3 px-2 text-font-size-small">
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis
-                  aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-              </div>
-            </div>
-            <div>
               <div>
-                <div class="mb-2">
-                  <div class="code-block mb-1"><pre>&lt;div class=&quot;c-question&quot;&gt;
+                <div class="code-block mb-1"><pre>&lt;div class=&quot;c-question&quot;&gt;
   &lt;label class=&quot;c-question__label&quot; for=&quot;person-0-age&quot;&gt;How old are you?&lt;/label&gt;
   &lt;p&gt;
     &lt;button aria-describedby=&quot;tooltip-age&quot; class=&quot;c-question__info btn btn-text btn-link js-tooltip-trigger&quot; type=&quot;button&quot;&gt;Here’s why we are asking.&amp;nbsp;
@@ -172,12 +148,28 @@
       &lt;/svg&gt;
     &lt;/button&gt;
   &lt;/p&gt;
-  &lt;div class=&quot;c-question__container error&quot;&gt;
-    &lt;div class=&quot;error-message&quot;&gt;This entry is required to continue.&lt;/div&gt;
+  &lt;div class=&quot;c-question__container&quot;&gt;
     &lt;input maxlength=&quot;3&quot; min=&quot;0&quot; pattern=&quot;[0-9]&quot; step=&quot;1&quot; type=&quot;number&quot; /&gt;
   &lt;/div&gt;
 &lt;/div&gt;</pre></div>
-                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section class="pb-4 mb-4" id="errors">
+          <div class="page-wrapper px-2 screen-desktop:px-0">
+            <header class="layout--home-body">
+              <div class="my-0 pt-1 px-2 border-b border-color-grey-light">
+                <h2>
+                  <a class="text-color-grey-mid font-normal no-underline" href="#errors">Errors</a>
+                </h2>
+              </div>
+            </header>
+            <div class="layout--home-body">
+              <div class="px-2 text-font-size-small"></div>
+            </div>
+            <div class="layout--gutter screen-tablet:layout--columns justify-between">
+              <div class="screen-tablet:pr-2">
                 <div class="c-question">
                   <label class="c-question__label" for="person-0-age">How old are you?</label>
                   <p>
@@ -192,6 +184,22 @@
                     <input maxlength="3" min="0" pattern="[0-9]" step="1" type="number" />
                   </div>
                 </div>
+              </div>
+              <div>
+                <div class="code-block mb-1"><pre>&lt;div class=&quot;c-question&quot;&gt;
+  &lt;label class=&quot;c-question__label&quot; for=&quot;person-0-age&quot;&gt;How old are you?&lt;/label&gt;
+  &lt;p&gt;
+    &lt;button aria-describedby=&quot;tooltip-age&quot; class=&quot;c-question__info btn btn-text btn-link js-tooltip-trigger&quot; type=&quot;button&quot;&gt;Here’s why we are asking.&amp;nbsp;
+      &lt;svg class=&quot;icon icon-info&quot;&gt;
+        &lt;use xlink:href=&quot;#icon-info&quot;&gt;&lt;/use&gt;
+      &lt;/svg&gt;
+    &lt;/button&gt;
+  &lt;/p&gt;
+  &lt;div class=&quot;c-question__container error&quot;&gt;
+    &lt;div class=&quot;error-message&quot;&gt;This entry is required to continue.&lt;/div&gt;
+    &lt;input maxlength=&quot;3&quot; min=&quot;0&quot; pattern=&quot;[0-9]&quot; step=&quot;1&quot; type=&quot;number&quot; /&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</pre></div>
               </div>
             </div>
           </div>
