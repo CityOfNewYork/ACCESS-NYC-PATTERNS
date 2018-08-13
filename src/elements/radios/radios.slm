@@ -1,33 +1,10 @@
-
-
-= mixin('radios', 'code = false')
-  - if this.code
-    div class='${class_demo_class_containers}'
-      code.code radio radio__input
-    div class='${class_demo_class_containers}'
-      div class='code-block'
-        pre
-          div = '<label class="label">Select the type of phone number;</label>'
-          div = '<label class="radio">'
-          div = '  <input checked name="application" value="home" type="radio">'
-          div = '  <span class="radio__label">Home</span>'
-          div = '</label>'
-          div = '<label class="radio">'
-          div = '  <input name="application" value="work" type="radio">'
-          div = '  <span class="radio__label">Work</span>'
-          div = '</label>'
-          div = '<label class="radio">'
-          div = '  <input name="application" value="cell" type="radio">'
-          div = '  <span class="radio__label">Cell</span>'
-          div = '</label>'
-
-  label class='label' Select the type of phone number;
-  label class='radio'
-    input value='home' type='radio' name='application' checked='true'
-    span class='radio__label' Home
-  label class='radio'
-    input value='work' type='radio' name='application'
-    span class='radio__label' Work
-  label class='radio'
-    input value='cell' type='radio' name='application'
-    span class='radio__label' Cell Phone
+label class='label' Select the type of phone number;
+label class='radio'
+  input value='home' type='radio' name='application' checked='true'
+  span class='radio__label' Home
+label class='radio'
+  input value='work' type='radio' name='application'
+  span class='radio__label' Work
+label class='radio'
+  input value='cell' type='radio' name='application'
+  span class='radio__label' Cell Phone

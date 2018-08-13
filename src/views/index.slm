@@ -20,4 +20,3 @@
     div class='page-wrapper layout--home-body'
       div
         /= 'md{{ ../README.md }}';
-

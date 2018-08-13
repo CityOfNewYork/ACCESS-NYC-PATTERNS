@@ -20,7 +20,7 @@ Download an archive of this repository include within your project.
 ### CDN
 The global stylesheet (`style-default.css`) that includes all elements, components, objects, and utilities exists in the [`dist/styles`](https://github.com/CityOfNewYork/ACCESS-NYC-PATTERNS/tree/master/dist/styles) directory. This includes the English (default) stylesheet as well as 10 other individual language stylesheets.
 
-You can pick which stylesheet to use by linking to it through (RawGit)[https://rawgit.com/]. For example, after pasting in the link of the v1.0.0 default stylesheet;
+You can pick which stylesheet to use by linking to it through [RawGit](https://rawgit.com/). For example, after pasting in the link of the v1.0.0 default stylesheet;
 
 
     https://cdn.rawgit.com/CityOfNewYork/ACCESS-NYC-PATTERNS/v1.0.0/dist/styles/site-default.css
@@ -57,11 +57,41 @@ Utilities are reusable single attribute styles that are used to customize markup
 
 ### SASS Import
 
-The main [SASS import file](https://github.com/CityOfNewYork/ACCESS-NYC-PATTERNS/blob/master/src/scss/_imports.scss) can give you an idea of how to include individual patterns into your project.
+The main [SASS import file](https://github.com/CityOfNewYork/ACCESS-NYC-PATTERNS/blob/master/src/scss/_imports.scss) can give you an idea of how to include individual patterns into your project. Be sure to add `node_modules` to your include paths.
 
 ### Javascript
 
-The Javascript source is written as ES6 Modules. Using [Rollup.js](https://rollupjs.org), components with javascript dependencies are distributed as CommonJS and iffe functions so that depending on the makeup of your project, you can use import any of the three. Thus far, the only component that requires Javascript is the [Accordion Component](https://cityofnewyork.github.io/ACCESS-NYC-PATTERNS/accordion).
+The Javascript source is written as ES6 Modules and using [Rollup.js](https://rollupjs.org), individual components with javascript dependencies are distributed as CommonJS and IFFE functions so that depending on the flavor of your project you can use import any of the three.
+
+#### CommonJS and ES6 Component Import
+
+Here is an example of importing only the accordion component and initializing it.
+
+    import Accordion from 'components/accordion/accordion';
+    new Accordion();
+
+#### IFFE
+
+Here is an example of the accordion IFFE script.
+
+    <script src="dist/components/accordion.iffe.js"></script>
+    <script type="text/javascript">
+      new Accordion();
+    </script>
+
+#### Global Pattern Script
+
+You may also import the main ACCESS NYC Patterns script with all of the dependencies in it. This script is exported as an IFFE function so it doesn't need to be compiled. Components must be initialized individually.
+
+    <script src="dist/scripts/AccessNyc.js"></script>
+    <script type="text/javascript">
+      var access = new AccessNyc();
+      access.accordion();
+    </script>
+
+The main [Javascript import file](https://github.com/CityOfNewYork/ACCESS-NYC-PATTERNS/blob/master/src/js/main.js) can give you an idea of how each component needs to be initialized.
+
+### Sketch Symbols (coming soon)
 
 # About NYCO
 

@@ -1,16 +1,1 @@
-
-
-= mixin('program-labels', 'code = false', 'text = "New"')
-  - if this.code
-    div class='${class_demo_class_containers}'
-      code.code program-label program-label-secondary status-warning
-    div class='${class_demo_class_containers}'
-      div.code-block
-        pre
-          div = '<div class="program-label program-label-secondary status-warning">'
-          div = '  ' + this.text
-          div = '</div>'
-
-  // Demonstration
-  div class='program-label program-label-secondary status-warning'
-    = this.text
+div class='program-label program-label-secondary status-warning' NEW

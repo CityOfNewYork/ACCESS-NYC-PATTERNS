@@ -67,6 +67,7 @@
             <a class="screen-desktop:block p-1" href="layouts">Layouts</a>
             <a class="screen-desktop:block p-1" href="links">Links</a>
             <a class="screen-desktop:block p-1" href="lists">Lists</a>
+            <a class="screen-desktop:block p-1" href="nav">Nav</a>
             <a class="screen-desktop:block p-1" href="program-labels">Program Labels</a>
             <a class="screen-desktop:block p-1" href="radios">Radios</a>
             <a class="screen-desktop:block p-1" href="tables">Tables</a>
@@ -95,6 +96,7 @@
             <a class="screen-desktop:block p-1" href="card-list">Card Lists</a>
             <a class="screen-desktop:block p-1" href="content">Content</a>
             <a class="screen-desktop:block p-1" href="footer">Footer</a>
+            <a class="screen-desktop:block p-1" href="mobile-nav">Mobile Nav</a>
             <a class="screen-desktop:block p-1" href="navigation">Navigation</a>
             <a class="screen-desktop:block p-1" href="search-box">Search Box</a>
           </nav>
@@ -103,46 +105,25 @@
     </aside>
     <main class="pt-4" id="main-content">
       <article class="py-4">
-        <h1 class="px-1">Selects</h1>
-        <section class="pb-4" id="default-styling">
-          <header class="pt-1 px-2 border-b border-color-grey-light mb-3">
-            <h2>Default Styling</h2>
-          </header>
-          <div class="layout--columns">
-            <div>
-              <div class="page-wrapper pb-3 px-2 text-font-size-small">
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis
-                  aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+        <header class="page-wrapper px-2 screen-desktop:px-0 layout--home-body">
+          <div class="my-0 w-full">
+            <h1 class="text-color-blue-dark px-2 m-0">Selects</h1>
+          </div>
+        </header>
+        <section class="pb-4 mb-4" id="default-styling">
+          <div class="page-wrapper px-2 screen-desktop:px-0">
+            <header class="layout--home-body">
+              <div class="my-0 pt-1 px-2 border-b border-color-grey-light">
+                <h2>
+                  <a class="text-color-grey-mid font-normal no-underline" href="#default-styling">Default Styling</a>
+                </h2>
               </div>
+            </header>
+            <div class="layout--home-body">
+              <div class="px-2 text-font-size-small"></div>
             </div>
-            <div>
-              <div>
-                <div class="mb-2">
-                  <div class="code-block mb-1"><pre>&lt;select class=&quot;select&quot;&gt;
-  &lt;option selected=&quot;true&quot; value=&quot;&quot;&gt;Click to add an income type&lt;/option&gt;
-  &lt;option value=&quot;Wages&quot;&gt;wages, salaries, tips&lt;/option&gt;
-  &lt;option value=&quot;SelfEmployment&quot;&gt;self-employment Income&lt;/option&gt;
-  &lt;option value=&quot;Unemployment&quot;&gt;unemployment benefits&lt;/option&gt;
-  &lt;option value=&quot;CashAssistance&quot;&gt;Cash Assistance grant&lt;/option&gt;
-  &lt;option value=&quot;ChildSupport&quot;&gt;child support (received)&lt;/option&gt;
-  &lt;option value=&quot;DisabilityMedicaid&quot;&gt;disability-related Medicaid&lt;/option&gt;
-  &lt;option value=&quot;SSI&quot;&gt;Supplemental Security Income (SSI)&lt;/option&gt;
-  &lt;option value=&quot;SSDependent&quot;&gt;Social Security Dependent Benefits&lt;/option&gt;
-  &lt;option value=&quot;SSDisability&quot;&gt;Social Security Disability Benefits&lt;/option&gt;
-  &lt;option value=&quot;SSSurvivor&quot;&gt;Social Security Survivor’s Benefits&lt;/option&gt;
-  &lt;option value=&quot;SSRetirement&quot;&gt;Social Security Retirement Benefits&lt;/option&gt;
-  &lt;option value=&quot;NYSDisability&quot;&gt;New York State Disability Benefits&lt;/option&gt;
-  &lt;option value=&quot;Veteran&quot;&gt;Veteran’s Pension or Benefits&lt;/option&gt;
-  &lt;option value=&quot;Pension&quot;&gt;Government or Private Pension&lt;/option&gt;
-  &lt;option value=&quot;DeferredComp&quot;&gt;Withdrawals from Deferred Compensation (IRA, Keogh, etc.)&lt;/option&gt;
-  &lt;option value=&quot;WorkersComp&quot;&gt;Worker’s Compensation&lt;/option&gt;
-  &lt;option value=&quot;Alimony&quot;&gt;alimony (received)&lt;/option&gt;
-  &lt;option value=&quot;Boarder&quot;&gt;boarder or lodger&lt;/option&gt;
-  &lt;option value=&quot;Gifts&quot;&gt;gifts/contributions (received)&lt;/option&gt;
-  &lt;option value=&quot;Rental&quot;&gt;rental income&lt;/option&gt;
-  &lt;option value=&quot;Investment&quot;&gt;investment income (interest, dividends, and profit from selling stocks)&lt;/option&gt;
-&lt;/select&gt;</pre></div>
-                </div>
+            <div class="layout--gutter screen-tablet:layout--columns justify-between">
+              <div class="screen-tablet:pr-2">
                 <select class="select">
                   <option selected="true" value="">Click to add an income type</option>
                   <option value="Wages">wages, salaries, tips</option>
@@ -167,6 +148,32 @@
                   <option value="Rental">rental income</option>
                   <option value="Investment">investment income (interest, dividends, and profit from selling stocks)</option>
                 </select>
+              </div>
+              <div>
+                <div class="code-block mb-1"><pre>&lt;select class=&quot;select&quot;&gt;
+  &lt;option selected=&quot;true&quot; value=&quot;&quot;&gt;Click to add an income type&lt;/option&gt;
+  &lt;option value=&quot;Wages&quot;&gt;wages, salaries, tips&lt;/option&gt;
+  &lt;option value=&quot;SelfEmployment&quot;&gt;self-employment Income&lt;/option&gt;
+  &lt;option value=&quot;Unemployment&quot;&gt;unemployment benefits&lt;/option&gt;
+  &lt;option value=&quot;CashAssistance&quot;&gt;Cash Assistance grant&lt;/option&gt;
+  &lt;option value=&quot;ChildSupport&quot;&gt;child support (received)&lt;/option&gt;
+  &lt;option value=&quot;DisabilityMedicaid&quot;&gt;disability-related Medicaid&lt;/option&gt;
+  &lt;option value=&quot;SSI&quot;&gt;Supplemental Security Income (SSI)&lt;/option&gt;
+  &lt;option value=&quot;SSDependent&quot;&gt;Social Security Dependent Benefits&lt;/option&gt;
+  &lt;option value=&quot;SSDisability&quot;&gt;Social Security Disability Benefits&lt;/option&gt;
+  &lt;option value=&quot;SSSurvivor&quot;&gt;Social Security Survivor’s Benefits&lt;/option&gt;
+  &lt;option value=&quot;SSRetirement&quot;&gt;Social Security Retirement Benefits&lt;/option&gt;
+  &lt;option value=&quot;NYSDisability&quot;&gt;New York State Disability Benefits&lt;/option&gt;
+  &lt;option value=&quot;Veteran&quot;&gt;Veteran’s Pension or Benefits&lt;/option&gt;
+  &lt;option value=&quot;Pension&quot;&gt;Government or Private Pension&lt;/option&gt;
+  &lt;option value=&quot;DeferredComp&quot;&gt;Withdrawals from Deferred Compensation (IRA, Keogh, etc.)&lt;/option&gt;
+  &lt;option value=&quot;WorkersComp&quot;&gt;Worker’s Compensation&lt;/option&gt;
+  &lt;option value=&quot;Alimony&quot;&gt;alimony (received)&lt;/option&gt;
+  &lt;option value=&quot;Boarder&quot;&gt;boarder or lodger&lt;/option&gt;
+  &lt;option value=&quot;Gifts&quot;&gt;gifts/contributions (received)&lt;/option&gt;
+  &lt;option value=&quot;Rental&quot;&gt;rental income&lt;/option&gt;
+  &lt;option value=&quot;Investment&quot;&gt;investment income (interest, dividends, and profit from selling stocks)&lt;/option&gt;
+&lt;/select&gt;</pre></div>
               </div>
             </div>
           </div>

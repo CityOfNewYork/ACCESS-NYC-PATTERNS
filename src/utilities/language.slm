@@ -1,17 +1,12 @@
 p class='font-serif' Inherit Stylesheet Language
 p class='font-sans' Inherit Stylesheet Language
-br
 p class='font-default-serif' Default (English, LTR)
 p class='font-default-sans' Default (English, LTR)
-br
 p class='font-kr-serif' lang='ko' 한국어 (Korean, LTR)
 p class='font-kr-sans' lang='ko' 한국어 (Korean, LTR)
-br
 p class='font-tc-serif' lang='zh-hant' 繁體中文 (Chinese, LTR)
 p class='font-tc-sans' lang='zh-hant' 繁體中文 (Chinese, LTR)
-br
 p class='font-ar-serif' lang='ar' العربية (Arabic, RTL)
 p class='font-ar-sans'lang='ar' العربية (Arabic, RTL)
-br
 p class='font-ur-serif' lang='ur' اردو  (Urdu, RTL)
 p class='font-ur-sans'lang='ur' اردو  (Urdu, RTL)

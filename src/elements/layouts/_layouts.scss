@@ -151,11 +151,11 @@ $breakpoints: map-get($variables, 'screens');
     flex-wrap: wrap;
 
     > *, &:after {
-      width: calc(25% - #{$spacing-base / 2});
+      width: calc(25% - #{$spacing-base/2});
     }
 
     > * {
-      margin-bottom: $spacing-base / 2;
+      margin-bottom: $spacing-base;
     }
 
     &:after {
@@ -187,11 +187,11 @@ $breakpoints: map-get($variables, 'screens');
     flex-wrap: wrap;
 
     > *, &:after {
-      width: calc(33.33% - #{$spacing-base / 2});
+      width: calc(33.33% - #{$spacing-base/2});
     }
 
     > * {
-      margin-bottom: $spacing-base / 2;
+      margin-bottom: $spacing-base;
     }
 
     &:after {
@@ -223,11 +223,11 @@ $breakpoints: map-get($variables, 'screens');
     flex-wrap: wrap;
 
     > *, &:after {
-      width: calc(50% - #{$spacing-base / 2});
+      width: calc(50% - #{$spacing-base/2});
     }
 
     > * {
-      margin-bottom: $spacing-base / 2;
+      margin-bottom: $spacing-base;
     }
 
     &:after {

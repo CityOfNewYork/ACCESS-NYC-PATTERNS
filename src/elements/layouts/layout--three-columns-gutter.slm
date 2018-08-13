@@ -1,0 +1,14 @@
+
+div class='layout--three-columns-gutter bg-color-grey-lightest p-4 text-center'
+  div class='bg-color-grey-light p-4'
+    | Cell A
+  div class='bg-color-grey-light p-4'
+    | Cell B
+  div class='bg-color-grey-light p-4'
+    | Cell C
+  div class='bg-color-grey-light p-4'
+    | Cell D
+  div class='bg-color-grey-light p-4'
+    | Cell E
+  div class='bg-color-grey-light p-4'
+    | Cell F

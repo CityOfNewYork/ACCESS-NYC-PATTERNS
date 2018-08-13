@@ -1,14 +1,14 @@
-article id='what-you-need-to-include' class='c-accordion mt-0'
+article id='what-you-need-to-include' class='c-accordion mt-0' data-sketch-symbol="Component/Accordion"
   header class='c-accordion__header'
     p Proof of who you are
-    a data-js='accordion' href='#what-you-need-to-include__body' class="c-accordion__toggle print:hidden"
+    a data-js='accordion' href='#what-you-need-to-include__body' class="c-accordion__toggle print:hidden active"
       span class='c-accordion__toggle-active'
         span class='hidden screen-tablet:inline' -&nbsp;
         | hide this list
       span class='c-accordion__toggle-inactive'
         span class='hidden screen-tablet:inline' +&nbsp;
         | show this list
-  div id='what-you-need-to-include__body' class='c-accordion__body print:active hidden:overflow animated inactive'
+  div id='what-you-need-to-include__body' class='c-accordion__body print:active hidden:overflow animated active'
     div class='c-accordion__padding'
       p
         | For each person applying, <strong>any one document:</strong>

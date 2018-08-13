@@ -22,4 +22,4 @@
 
 = content('content');
   = mixin('content-header', title);
-  = mixin('section', 'Default Icons', 'elements/icons/icons', 'gutter', this.vars.icons);
+  = mixin('section', 'Usage and Icon Library', 'elements/icons/icons', 'gutter', this.vars.icons);

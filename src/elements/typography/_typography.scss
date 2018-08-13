@@ -68,6 +68,8 @@ blockquote,
 .type-blockquote {
   @include margin(rem((.5 * $spacing-base), $em-base) null rem((1.5 * $spacing-base), $em-base));
   @include typography-blockquote();
+  margin-left: 0;
+  margin-right: 0;
 }
 
 .type-exposition {

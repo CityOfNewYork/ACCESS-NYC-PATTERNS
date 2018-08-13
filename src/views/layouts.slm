@@ -26,6 +26,9 @@
   = mixin('section', 'Rows', 'elements/layouts/layout--rows');
   = mixin('section', 'Gutter', 'elements/layouts/layout--gutter');
   = mixin('section', 'Columns with Gutter', 'elements/layouts/layout--columns-gutter');
+  = mixin('section', 'Two Columns with Gutter', 'elements/layouts/layout--two-columns-gutter');
+  = mixin('section', 'Three Columns with Gutter', 'elements/layouts/layout--three-columns-gutter');
+  = mixin('section', 'Four Columns with Gutter', 'elements/layouts/layout--four-columns-gutter', 'gutter');
   = mixin('section', 'Sidebar', 'elements/layouts/layout--sidebar', 'gutter');
   = mixin('section', 'Sidebar Small', 'elements/layouts/layout--sidebar-small', 'gutter');
   = mixin('section', 'Sidebar with Gutter', 'elements/layouts/layout--sidebar-gutter', 'gutter');

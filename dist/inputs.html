@@ -67,6 +67,7 @@
             <a class="screen-desktop:block p-1" href="layouts">Layouts</a>
             <a class="screen-desktop:block p-1" href="links">Links</a>
             <a class="screen-desktop:block p-1" href="lists">Lists</a>
+            <a class="screen-desktop:block p-1" href="nav">Nav</a>
             <a class="screen-desktop:block p-1" href="program-labels">Program Labels</a>
             <a class="screen-desktop:block p-1" href="radios">Radios</a>
             <a class="screen-desktop:block p-1" href="tables">Tables</a>
@@ -95,6 +96,7 @@
             <a class="screen-desktop:block p-1" href="card-list">Card Lists</a>
             <a class="screen-desktop:block p-1" href="content">Content</a>
             <a class="screen-desktop:block p-1" href="footer">Footer</a>
+            <a class="screen-desktop:block p-1" href="mobile-nav">Mobile Nav</a>
             <a class="screen-desktop:block p-1" href="navigation">Navigation</a>
             <a class="screen-desktop:block p-1" href="search-box">Search Box</a>
           </nav>
@@ -103,28 +105,25 @@
     </aside>
     <main class="pt-4" id="main-content">
       <article class="py-4">
-        <h1 class="px-1">Inputs</h1>
-        <section class="pb-4" id="default-styling">
-          <header class="pt-1 px-2 border-b border-color-grey-light mb-3">
-            <h2>Default Styling</h2>
-          </header>
-          <div class="layout--columns">
-            <div>
-              <div class="page-wrapper pb-3 px-2 text-font-size-small">
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis
-                  aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+        <header class="page-wrapper px-2 screen-desktop:px-0 layout--home-body">
+          <div class="my-0 w-full">
+            <h1 class="text-color-blue-dark px-2 m-0">Inputs</h1>
+          </div>
+        </header>
+        <section class="pb-4 mb-4" id="default-styling">
+          <div class="page-wrapper px-2 screen-desktop:px-0">
+            <header class="layout--home-body">
+              <div class="my-0 pt-1 px-2 border-b border-color-grey-light">
+                <h2>
+                  <a class="text-color-grey-mid font-normal no-underline" href="#default-styling">Default Styling</a>
+                </h2>
               </div>
+            </header>
+            <div class="layout--home-body">
+              <div class="px-2 text-font-size-small"></div>
             </div>
-            <div>
-              <div>
-                <div class="mb-2">
-                  <div class="code-block mb-1"><pre>&lt;div class=&quot;mb-3&quot;&gt;
-  &lt;input type=&quot;text&quot; /&gt;
-&lt;/div&gt;
-&lt;div class=&quot;error&quot;&gt;
-  &lt;input type=&quot;text&quot; /&gt;
-&lt;/div&gt;</pre></div>
-                </div>
+            <div class="layout--gutter screen-tablet:layout--columns justify-between">
+              <div class="screen-tablet:pr-2">
                 <div class="mb-3">
                   <input type="text" />
                 </div>
@@ -132,57 +131,57 @@
                   <input type="text" />
                 </div>
               </div>
+              <div>
+                <div class="code-block mb-1"><pre>&lt;div class=&quot;mb-3&quot;&gt;
+  &lt;input type=&quot;text&quot; /&gt;
+&lt;/div&gt;
+&lt;div class=&quot;error&quot;&gt;
+  &lt;input type=&quot;text&quot; /&gt;
+&lt;/div&gt;</pre></div>
+              </div>
             </div>
           </div>
         </section>
-        <section class="pb-4" id="width-400px">
-          <header class="pt-1 px-2 border-b border-color-grey-light mb-3">
-            <h2>Width 400px</h2>
-          </header>
-          <div class="layout--columns">
-            <div>
-              <div class="page-wrapper pb-3 px-2 text-font-size-small">
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis
-                  aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+        <section class="pb-4 mb-4" id="min-width-400px">
+          <div class="page-wrapper px-2 screen-desktop:px-0">
+            <header class="layout--home-body">
+              <div class="my-0 pt-1 px-2 border-b border-color-grey-light">
+                <h2>
+                  <a class="text-color-grey-mid font-normal no-underline" href="#min-width-400px">Min-width 400px</a>
+                </h2>
               </div>
+            </header>
+            <div class="layout--home-body">
+              <div class="px-2 text-font-size-small"></div>
             </div>
-            <div>
-              <div>
-                <div class="mb-2">
-                  <div class="code-block mb-1"><pre>&lt;div class=&quot;screen-tablet:input-w-400px&quot;&gt;
-  &lt;input type=&quot;text&quot; /&gt;
-&lt;/div&gt;</pre></div>
-                </div>
+            <div class="layout--gutter screen-tablet:layout--columns justify-between">
+              <div class="screen-tablet:pr-2">
                 <div class="screen-tablet:input-w-400px">
                   <input type="text" />
                 </div>
               </div>
+              <div>
+                <div class="code-block mb-1"><pre>&lt;div class=&quot;screen-tablet:input-w-400px&quot;&gt;
+  &lt;input type=&quot;text&quot; /&gt;
+&lt;/div&gt;</pre></div>
+              </div>
             </div>
           </div>
         </section>
-        <section class="pb-4" id="currency">
-          <header class="pt-1 px-2 border-b border-color-grey-light mb-3">
-            <h2>Currency</h2>
-          </header>
-          <div class="layout--columns">
-            <div>
-              <div class="page-wrapper pb-3 px-2 text-font-size-small">
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis
-                  aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+        <section class="pb-4 mb-4" id="us-currency">
+          <div class="page-wrapper px-2 screen-desktop:px-0">
+            <header class="layout--home-body">
+              <div class="my-0 pt-1 px-2 border-b border-color-grey-light">
+                <h2>
+                  <a class="text-color-grey-mid font-normal no-underline" href="#us-currency">US Currency</a>
+                </h2>
               </div>
+            </header>
+            <div class="layout--home-body">
+              <div class="px-2 text-font-size-small"></div>
             </div>
-            <div>
-              <div>
-                <div class="mb-2">
-                  <div class="code-block mb-1"><pre>&lt;div class=&quot;input-currency-usd mb-3&quot;&gt;
-  &lt;input type=&quot;text&quot; /&gt;
-&lt;/div&gt;
-&lt;div class=&quot;error&quot;&gt;
-  &lt;div class=&quot;input-currency-usd&quot;&gt;
-    &lt;input type=&quot;text&quot; /&gt;
-  &lt;/div&gt;
-&lt;/div&gt;</pre></div>
-                </div>
+            <div class="layout--gutter screen-tablet:layout--columns justify-between">
+              <div class="screen-tablet:pr-2">
                 <div class="input-currency-usd mb-3">
                   <input type="text" />
                 </div>
@@ -192,32 +191,33 @@
                   </div>
                 </div>
               </div>
-            </div>
-          </div>
-        </section>
-        <section class="pb-4" id="currency">
-          <header class="pt-1 px-2 border-b border-color-grey-light mb-3">
-            <h2>Phone</h2>
-          </header>
-          <div class="layout--columns">
-            <div>
-              <div class="page-wrapper pb-3 px-2 text-font-size-small">
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis
-                  aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-              </div>
-            </div>
-            <div>
               <div>
-                <div class="mb-2">
-                  <div class="code-block mb-1"><pre>&lt;div class=&quot;input-phone-us mb-3&quot;&gt;
+                <div class="code-block mb-1"><pre>&lt;div class=&quot;input-currency-usd mb-3&quot;&gt;
   &lt;input type=&quot;text&quot; /&gt;
 &lt;/div&gt;
 &lt;div class=&quot;error&quot;&gt;
-  &lt;div class=&quot;input-phone-us&quot;&gt;
+  &lt;div class=&quot;input-currency-usd&quot;&gt;
     &lt;input type=&quot;text&quot; /&gt;
   &lt;/div&gt;
 &lt;/div&gt;</pre></div>
-                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section class="pb-4 mb-4" id="us-phone">
+          <div class="page-wrapper px-2 screen-desktop:px-0">
+            <header class="layout--home-body">
+              <div class="my-0 pt-1 px-2 border-b border-color-grey-light">
+                <h2>
+                  <a class="text-color-grey-mid font-normal no-underline" href="#us-phone">US Phone</a>
+                </h2>
+              </div>
+            </header>
+            <div class="layout--home-body">
+              <div class="px-2 text-font-size-small"></div>
+            </div>
+            <div class="layout--gutter screen-tablet:layout--columns justify-between">
+              <div class="screen-tablet:pr-2">
                 <div class="input-phone-us mb-3">
                   <input type="text" />
                 </div>
@@ -227,32 +227,43 @@
                   </div>
                 </div>
               </div>
+              <div>
+                <div class="code-block mb-1"><pre>&lt;div class=&quot;input-phone-us mb-3&quot;&gt;
+  &lt;input type=&quot;text&quot; /&gt;
+&lt;/div&gt;
+&lt;div class=&quot;error&quot;&gt;
+  &lt;div class=&quot;input-phone-us&quot;&gt;
+    &lt;input type=&quot;text&quot; /&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</pre></div>
+              </div>
             </div>
           </div>
         </section>
-        <section class="pb-4" id="search">
-          <header class="pt-1 px-2 border-b border-color-grey-light mb-3">
-            <h2>Search</h2>
-          </header>
-          <div class="layout--columns">
-            <div>
-              <div class="page-wrapper pb-3 px-2 text-font-size-small">
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis
-                  aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+        <section class="pb-4 mb-4" id="search">
+          <div class="page-wrapper px-2 screen-desktop:px-0">
+            <header class="layout--home-body">
+              <div class="my-0 pt-1 px-2 border-b border-color-grey-light">
+                <h2>
+                  <a class="text-color-grey-mid font-normal no-underline" href="#search">Search</a>
+                </h2>
               </div>
+            </header>
+            <div class="layout--home-body">
+              <div class="px-2 text-font-size-small"></div>
             </div>
-            <div>
-              <div>
-                <div class="mb-2">
-                  <div class="code-block mb-1"><pre>&lt;div class=&quot;input-search&quot;&gt;
-  &lt;input id=&quot;search-field&quot; name=&quot;s&quot; placeholder=&quot;Search for programs or services&quot; type=&quot;text&quot; value=&quot;&quot; /&gt;
-  &lt;button class=&quot;btn-text input-search__submit&quot; type=&quot;submit&quot;&gt;&lt;span class=&quot;icon bg-icon-search&quot;&gt;&lt;/span&gt;&lt;/button&gt;
-&lt;/div&gt;</pre></div>
-                </div>
+            <div class="layout--gutter screen-tablet:layout--columns justify-between">
+              <div class="screen-tablet:pr-2">
                 <div class="input-search">
                   <input id="search-field" name="s" placeholder="Search for programs or services" type="text" value="" />
                   <button class="btn-text input-search__submit" type="submit"><span class="icon bg-icon-search"></span></button>
                 </div>
+              </div>
+              <div>
+                <div class="code-block mb-1"><pre>&lt;div class=&quot;input-search&quot;&gt;
+  &lt;input id=&quot;search-field&quot; name=&quot;s&quot; placeholder=&quot;Search for programs or services&quot; type=&quot;text&quot; value=&quot;&quot; /&gt;
+  &lt;button class=&quot;btn-text input-search__submit&quot; type=&quot;submit&quot;&gt;&lt;span class=&quot;icon bg-icon-search&quot;&gt;&lt;/span&gt;&lt;/button&gt;
+&lt;/div&gt;</pre></div>
               </div>
             </div>
           </div>

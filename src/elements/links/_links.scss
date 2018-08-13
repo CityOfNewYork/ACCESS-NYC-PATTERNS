@@ -14,10 +14,6 @@ a, .btn-link {
   text-decoration: underline;
   transition: color .2s ease-in;
 
-  // &:link {
-  //   color: map-get(map-get($variables, 'colors'), 'color-blue');
-  // }
-
   &:visited {
     color: map-get(map-get($variables, 'colors'), 'color-purple');
   }
@@ -27,32 +23,6 @@ a, .btn-link {
   &:focus {
     color: map-get(map-get($variables, 'colors'), 'color-blue-dark');
   }
-}
-
-.links-invert a,
-.links-invert .btn-link {
-  color: map-get(map-get($variables, 'colors'), 'color-white');
-  text-decoration: underline;
-  transition: color .2s ease-in;
-
-  // &:link {
-  //   color: map-get(map-get($variables, 'colors'), 'color-white');
-  // }
-
-  &:visited {
-    color: map-get(map-get($variables, 'colors'), 'color-blue-light');
-  }
-
-  &:hover,
-  &:active,
-  &:focus {
-    color: map-get(map-get($variables, 'colors'), 'color-blue-bright');
-  }
-}
-
-a {
-  overflow-wrap: break-word;
-  word-wrap: break-word;
 }
 
 .link-more {
@@ -70,5 +40,35 @@ a {
     content: '';
     display: inline-block;
     margin-#{$text-direction-end}: .3em;
+  }
+}
+
+.links-invert a,
+.links-invert .btn-link {
+  color: map-get(map-get($variables, 'colors'), 'color-white');
+  text-decoration: underline;
+  transition: color .2s ease-in;
+
+  &:visited {
+    color: map-get(map-get($variables, 'colors'), 'color-blue-light');
+  }
+
+  &:hover,
+  &:active,
+  &:focus {
+    color: map-get(map-get($variables, 'colors'), 'color-blue-bright');
+  }
+
+}
+
+.links-invert .link-more {
+  &::after {
+    @include triangle(.6em .4em, $color-white, $text-direction-end);
+  }
+}
+
+.links-invert .link-back {
+  &::after {
+    @include triangle(.6em .4em, $color-white, $text-direction-start);
   }
 }

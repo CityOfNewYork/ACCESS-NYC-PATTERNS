@@ -67,6 +67,7 @@
             <a class="screen-desktop:block p-1" href="layouts">Layouts</a>
             <a class="screen-desktop:block p-1" href="links">Links</a>
             <a class="screen-desktop:block p-1" href="lists">Lists</a>
+            <a class="screen-desktop:block p-1" href="nav">Nav</a>
             <a class="screen-desktop:block p-1" href="program-labels">Program Labels</a>
             <a class="screen-desktop:block p-1" href="radios">Radios</a>
             <a class="screen-desktop:block p-1" href="tables">Tables</a>
@@ -95,6 +96,7 @@
             <a class="screen-desktop:block p-1" href="card-list">Card Lists</a>
             <a class="screen-desktop:block p-1" href="content">Content</a>
             <a class="screen-desktop:block p-1" href="footer">Footer</a>
+            <a class="screen-desktop:block p-1" href="mobile-nav">Mobile Nav</a>
             <a class="screen-desktop:block p-1" href="navigation">Navigation</a>
             <a class="screen-desktop:block p-1" href="search-box">Search Box</a>
           </nav>
@@ -103,32 +105,25 @@
     </aside>
     <main class="pt-4" id="main-content">
       <article class="py-4">
-        <h1 class="px-1">Member List</h1>
-        <section class="pb-4" id="default-styling">
-          <header class="pt-1 px-2 border-b border-color-grey-light mb-3">
-            <h2>Default Styling</h2>
-          </header>
-          <div class="layout--columns">
-            <div>
-              <div class="page-wrapper pb-3 px-2 text-font-size-small">
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis
-                  aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+        <header class="page-wrapper px-2 screen-desktop:px-0 layout--home-body">
+          <div class="my-0 w-full">
+            <h1 class="text-color-blue-dark px-2 m-0">Member List</h1>
+          </div>
+        </header>
+        <section class="pb-4 mb-4" id="default-styling">
+          <div class="page-wrapper px-2 screen-desktop:px-0">
+            <header class="layout--home-body">
+              <div class="my-0 pt-1 px-2 border-b border-color-grey-light">
+                <h2>
+                  <a class="text-color-grey-mid font-normal no-underline" href="#default-styling">Default Styling</a>
+                </h2>
               </div>
+            </header>
+            <div class="layout--home-body">
+              <div class="px-2 text-font-size-small"></div>
             </div>
-            <div>
-              <div>
-                <div class="mb-2">
-                  <div class="code-block mb-1"><pre>&lt;ul class=&quot;c-member-list screen-tablet:layout--columns&quot;&gt;
-  &lt;li&gt;&lt;span class=&quot;c-member-list__item&quot;&gt;You&lt;/span&gt;&lt;span class=&quot;c-member-list__item&quot;&gt;Head of Household&lt;/span&gt;&lt;span class=&quot;c-member-list__item&quot;&gt;30&lt;/span&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;span class=&quot;c-member-list__item&quot;&gt;Spouse&lt;/span&gt;&lt;span class=&quot;c-member-list__item&quot;&gt;30&lt;/span&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;span class=&quot;c-member-list__item&quot;&gt;Sister/Brother&lt;/span&gt;&lt;span class=&quot;c-member-list__item&quot;&gt;28&lt;/span&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;span class=&quot;c-member-list__item&quot;&gt;Sister/Brother&lt;/span&gt;&lt;span class=&quot;c-member-list__item&quot;&gt;31&lt;/span&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;span class=&quot;c-member-list__item&quot;&gt;Parent&lt;/span&gt;&lt;span class=&quot;c-member-list__item&quot;&gt;63&lt;/span&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;span class=&quot;c-member-list__item&quot;&gt;Parent&lt;/span&gt;&lt;span class=&quot;c-member-list__item&quot;&gt;67&lt;/span&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;span class=&quot;c-member-list__item&quot;&gt;Step-child&lt;/span&gt;&lt;span class=&quot;c-member-list__item&quot;&gt;6&lt;/span&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;span class=&quot;c-member-list__item&quot;&gt;Step-child&lt;/span&gt;&lt;span class=&quot;c-member-list__item&quot;&gt;10&lt;/span&gt;&lt;/li&gt;
-&lt;/ul&gt;</pre></div>
-                </div>
+            <div class="layout--gutter screen-tablet:layout--columns justify-between">
+              <div class="screen-tablet:pr-2">
                 <ul class="c-member-list screen-tablet:layout--columns">
                   <li><span class="c-member-list__item">You</span><span class="c-member-list__item">Head of Household</span><span class="c-member-list__item">30</span></li>
                   <li><span class="c-member-list__item">Spouse</span><span class="c-member-list__item">30</span></li>
@@ -139,6 +134,18 @@
                   <li><span class="c-member-list__item">Step-child</span><span class="c-member-list__item">6</span></li>
                   <li><span class="c-member-list__item">Step-child</span><span class="c-member-list__item">10</span></li>
                 </ul>
+              </div>
+              <div>
+                <div class="code-block mb-1"><pre>&lt;ul class=&quot;c-member-list screen-tablet:layout--columns&quot;&gt;
+  &lt;li&gt;&lt;span class=&quot;c-member-list__item&quot;&gt;You&lt;/span&gt;&lt;span class=&quot;c-member-list__item&quot;&gt;Head of Household&lt;/span&gt;&lt;span class=&quot;c-member-list__item&quot;&gt;30&lt;/span&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;span class=&quot;c-member-list__item&quot;&gt;Spouse&lt;/span&gt;&lt;span class=&quot;c-member-list__item&quot;&gt;30&lt;/span&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;span class=&quot;c-member-list__item&quot;&gt;Sister/Brother&lt;/span&gt;&lt;span class=&quot;c-member-list__item&quot;&gt;28&lt;/span&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;span class=&quot;c-member-list__item&quot;&gt;Sister/Brother&lt;/span&gt;&lt;span class=&quot;c-member-list__item&quot;&gt;31&lt;/span&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;span class=&quot;c-member-list__item&quot;&gt;Parent&lt;/span&gt;&lt;span class=&quot;c-member-list__item&quot;&gt;63&lt;/span&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;span class=&quot;c-member-list__item&quot;&gt;Parent&lt;/span&gt;&lt;span class=&quot;c-member-list__item&quot;&gt;67&lt;/span&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;span class=&quot;c-member-list__item&quot;&gt;Step-child&lt;/span&gt;&lt;span class=&quot;c-member-list__item&quot;&gt;6&lt;/span&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;span class=&quot;c-member-list__item&quot;&gt;Step-child&lt;/span&gt;&lt;span class=&quot;c-member-list__item&quot;&gt;10&lt;/span&gt;&lt;/li&gt;
+&lt;/ul&gt;</pre></div>
               </div>
             </div>
           </div>

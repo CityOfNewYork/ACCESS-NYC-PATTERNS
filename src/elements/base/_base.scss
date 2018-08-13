@@ -52,6 +52,11 @@ img {
   height: auto
 }
 
+a {
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+}
+
 @mixin base-print {
   html, body {
     overflow: visible !important;

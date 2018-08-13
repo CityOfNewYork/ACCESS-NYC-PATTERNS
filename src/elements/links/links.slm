@@ -1,23 +1,2 @@
-
-
-= mixin('links', 'code = false', 'text = Click here to learn more about tax relief for parents')
-  - if this.code
-    div class='${class_demo_class_containers}'
-      code.code = '<a>'
-
-  div class='p-3 bg-color-grey-lightest'
-    a href='#' = text
-
-= mixin('links-inverted', 'code = false', 'text = Click here to learn more about tax relief for parents')
-  - if this.code
-    div class='${class_demo_class_containers}'
-      code.code = 'links-invert <a>'
-    div class='${class_demo_class_containers}'
-      div class='code-block'
-        pre
-          div = '<div class="bg-color-blue-dark links-invert">'
-          div = '  <a href="#">' + text + '</a>'
-          div = '</div>'
-
-  div class='p-3 bg-color-blue-dark links-invert'
-    a href='#' = text
+div class='p-4 bg-color-grey-lightest'
+  a href='#' Learn more about tax relief for parents

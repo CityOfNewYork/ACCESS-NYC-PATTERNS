@@ -1,4 +1,11 @@
-svg class='${key} text-color-blue-dark'
-  use xlink:href='#${key.split("--")[0]}'
+div class='text-font-size-small'
 
-div class='bg-${key}'
+  h3 class='text-font-size-small capitalize mb-2' ${key.replace(/-/g," ")}
+
+  div class='py-4 text-center bg-color-grey-lightest px-2 mb-2 flex items-center justify-center' style='min-height:150px'
+    svg class='${key} text-color-blue-dark'
+      use xlink:href='#${key.split("--")[0]}'
+
+  p class='mb-0 flex justify-between'
+    | ID
+    code ${key}

@@ -16,6 +16,7 @@ nav class='${class_nav} pl-4'
   a class='${class_nav_item}' href='layouts' Layouts
   a class='${class_nav_item}' href='links' Links
   a class='${class_nav_item}' href='lists' Lists
+  a class='${class_nav_item}' href='nav' Nav
   a class='${class_nav_item}' href='program-labels' Program Labels
   a class='${class_nav_item}' href='radios' Radios
   a class='${class_nav_item}' href='tables' Tables
@@ -46,6 +47,7 @@ nav class='${class_nav} pl-4'
   a class='${class_nav_item}' href='card-list' Card Lists
   a class='${class_nav_item}' href='content' Content
   a class='${class_nav_item}' href='footer' Footer
+  a class='${class_nav_item}' href='mobile-nav' Mobile Nav
   a class='${class_nav_item}' href='navigation' Navigation
   a class='${class_nav_item}' href='search-box' Search Box
 

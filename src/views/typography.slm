@@ -1,66 +1,31 @@
 / Layout
-= extend('layouts/default');
+= extend('/layouts/default');
+
+/ Component
+- title = 'Typography';
 
 / Partials
 = partial('partials/styles.slm');
 = partial('partials/links.slm');
 = partial('partials/head.mixin.slm');
+= partial('partials/content-header.mixin.slm');
+= partial('partials/section.mixin.slm');
 = partial('partials/demo-specs.mixin.slm');
 = partial('partials/demo-block.mixin.slm');
 
 / Content blocks
 = content('head');
-  = mixin('head', 'Typography');
+  = mixin('head', title);
 
 = content('header');
-  = mixin('header', 'Typography');
+  = mixin('header', title);
 
 = content('content');
-  - text = 'Find help in NYC with food, money, housing, work and more on ACCESS NYC.';
-  h1 class='px-1' Typography
-
-  section#headings class='${class_demo}'
-    header class='${class_demo_headers}'
-      h2 Headings
-
-    div class='${class_demo_cols}'
-      div class='${class_demo_col1} ${class_demo_spec}'
-        p Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-      div class='${class_demo_col2}' &nbsp;
-
-    = mixin('demo-block', 'elements/typography/type-headings.slm');
-
-  section#custom-type-settings class='${class_demo}'
-    header class='${class_demo_headers}'
-      h2 Custom Type Settings
-
-    div class='${class_demo_cols}'
-      div class='${class_demo_col1} ${class_demo_spec}'
-        p Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-      div class='${class_demo_col2}' &nbsp;
-
-    h3 class="px-1" Jumbo
-    = mixin('demo-block', 'elements/typography/type-jumbo.slm');
-
-    h3 class="px-1" Small
-    = mixin('demo-block', 'elements/typography/type-small.slm');
-
-    h3 class="px-1" Blockquote
-    = mixin('demo-block', 'elements/typography/type-blockquote.slm');
-
-    h3 class="px-1" Exposition
-    = mixin('demo-block', 'elements/typography/type-exposition.slm');
-
-    h3 class="px-1" Supplemental
-    = mixin('demo-block', 'elements/typography/type-supplemental.slm');
-
-  section#other class='${class_demo}'
-    header class='${class_demo_headers}'
-      h2 Language Utilities
-
-    div class='${class_demo_cols}'
-      div class='${class_demo_col1} ${class_demo_spec}'
-        p Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-      div class='${class_demo_col2}' &nbsp;
-
-    = mixin('demo-block', 'utilities/language.slm');
+  = mixin('content-header', title);
+  = mixin('section', 'Headings', 'elements/typography/type-headings');
+  = mixin('section', 'Jumbo', 'elements/typography/type-jumbo');
+  = mixin('section', 'Small', 'elements/typography/type-small');
+  = mixin('section', 'Blockquote', 'elements/typography/type-blockquote');
+  = mixin('section', 'Exposition', 'elements/typography/type-exposition');
+  = mixin('section', 'Supplemental', 'elements/typography/type-supplemental');
+  = mixin('section', 'Language Utilities', 'utilities/language');

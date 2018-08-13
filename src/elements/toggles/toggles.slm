@@ -1,29 +1,8 @@
-
-
-= mixin('toggles', 'code = false')
-  - if this.code
-    div class='${class_demo_class_containers}'
-      code.code toggle toggle__input
-    div class='${class_demo_class_containers}'
-      div class='code-block'
-        pre
-          div = '<label class="label">Is this your first application?</label>'
-          div = '<div>'
-          div = '  <label class="toggle">'
-          div = '    <input checked name="application" value="Yes" type="radio">'
-          div = '    <span class="toggle__label">Yes</span>'
-          div = '  </label>'
-          div = '  <label class="toggle">'
-          div = '    <input name="application" value="No" type="radio">'
-          div = '    <span class="toggle__label">No</span>'
-          div = '  </label>'
-          div = '</div>'
-
-  label class='label' Is this your first application?
-  div
-    label class='toggle'
-      input value='Yes' type='radio' name='application' checked='true'
-      span class='toggle__label' Yes
-    label class='toggle'
-      input value='No' type='radio' name='application'
-      span class='toggle__label' No
+label class='label' Is this your first application?
+div
+  label class='toggle'
+    input value='Yes' type='radio' name='application' checked='true'
+    span class='toggle__label' Yes
+  label class='toggle'
+    input value='No' type='radio' name='application'
+    span class='toggle__label' No
