@@ -18,7 +18,8 @@
     "rollup": "./config/rollup.js",
     "svg_src": "./src/svg",
     "svg_dist": "./dist/svg",
-    "svg_partial": "./src/views/partials/icons.slm"
+    "svg_sprite_svg": "./src/views/partials/icons.slm",
+    "svg_sprite_partial": "./src/views/partials/icons.slm"
   },
   "scripts": {
     "test": "",
@@ -38,7 +39,7 @@
     "styles:watch": "nodemon --ext scss --watch src --ignore _variables.scss -x 'npm run styles'",
     "svgs": "npm run svgs:optimize && npm run svgs:symbol",
     "svgs:optimize": "svgo -f $npm_package_config_svg_src -o $npm_package_config_svg_dist",
-    "svgs:symbol": "svgstore -o $npm_package_config_svg_partial $npm_package_config_svg_dist/*.svg --inline",
+    "svgs:symbol": "svgstore -o $npm_package_config_svg_sprite_partial $npm_package_config_svg_dist/*.svg --inline && svgstore -o $npm_package_config_svg_sprite_svg $npm_package_config_svg_dist/*.svg --inline",
     "svgs:watch": "nodemon --ext svg --watch $npm_package_config_svg_src -x 'npm run svgs'",
     "make": "node .app/make.js"
   },
@@ -60,12 +61,14 @@
     "eslint-config-google": "^0.9.1",
     "express": "^4.16.3",
     "gh-pages": "^1.1.0",
+    "html-sketchapp-cli": "^0.6.1",
     "json-sass": "^1.3.5",
     "lodash-es": "^4.17.8",
     "markdown": "^0.5.0",
     "mkdirp": "^0.5.1",
     "node-sass": "^4.8.3",
     "nodemon": "^1.17.2",
+    "pa11y": "^5.0.4",
     "postcss": "^6.0.21",
     "pretty": "^2.0.0",
     "promise-polyfill": "^7.1.1",
@@ -88,7 +91,6 @@
     "bourbon": "^4.2.7",
     "bourbon-neat": "^1.8.0",
     "lodash": "^4.17.5",
-    "pa11y": "^5.0.4",
     "tailwindcss": "^0.5.1",
     "uswds": "^0.14.0",
     "vue": "^2.5.16"
