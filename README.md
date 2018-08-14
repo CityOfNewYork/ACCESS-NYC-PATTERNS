@@ -57,7 +57,7 @@ Utilities are reusable single attribute styles that are used to customize markup
 
 ### SASS Import
 
-The main [SASS import file](https://github.com/CityOfNewYork/ACCESS-NYC-PATTERNS/blob/master/src/scss/_imports.scss) can give you an idea of how to include individual patterns into your project. Be sure to add `node_modules` to your include paths.
+The ACCESS NYC main [SASS import file](https://github.com/CityOfNewYork/ACCESS-NYC/blob/master/wp-content/themes/access/src/scss/_imports.scss) can give you an idea of how to include individual patterns into your project. Be sure to add `node_modules` to your include paths.
 
 ### Javascript
 
