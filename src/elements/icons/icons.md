@@ -1,6 +1,6 @@
 ### The SVG Sprite
 
-To use the inline `svgs`, include the main icon sprite (`dist/icons.svg`) in your page markup. ACCESS NYC uses an [AJAX method](https://css-tricks.com/ajaxing-svg-sprite/) to cache the sprite file while not including it in the page cache. Below is the working script from ACCESS NYC.
+To use the inline `svgs`, include the main icon sprite (`dist/icons.svg`) in your page markup. ACCESS NYC uses an [AJAX method](https://css-tricks.com/ajaxing-svg-sprite/) to cache the sprite file while not including it in the page cache which would increase the size of each page. Below is the working script from ACCESS NYC.
 
     // JQuery
     $.get('/assets/svg/icons.svg', function(data) {

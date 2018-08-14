@@ -22,10 +22,8 @@
     div class='page-wrapper'
       header class='layout--home-body'
         div class='my-0 pt-1 px-2 border-b border-color-grey-light'
-          / h2
-          /   a href='#welcome' class='text-color-grey-mid font-normal no-underline' Welcome
 
       div class='layout--home-body'
-        div class='text-font-size-small'
+        div class='px-2 text-font-size-small'
           = 'md{{ ../README.md }}';
 
