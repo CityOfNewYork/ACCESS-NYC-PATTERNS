@@ -12,15 +12,10 @@
 .c-header {
   padding: $spacing-base;
 
-  // @include media($bp-mobile-up) {
   @media screen and (min-width: $screen-mobile) {
     align-items: flex-start;
     display: flex;
   }
-
-  // p {
-  //   @include typography-lead();
-  // }
 }
 
 .c-header__icon {
@@ -35,7 +30,6 @@
     vertical-align: middle;
   }
 
-  // @include media($bp-mobile-up) {
   @media screen and (min-width: $screen-mobile) {
     margin-#{$text-direction-end}: $spacing-base * 0.6666;
     min-width: $icon-width; // Fixes an iOS 9 flexbox bug.
@@ -48,7 +42,7 @@
 }
 
 .c-header__descriptor {
-  @include typography-h1()
+  @include typography-h1();
   margin-bottom: 2px;
 }
 
