@@ -1,0 +1,1 @@
+The object is a collection of elements to be styled when they can't be easily wrapped individually with their class names. For example, content formatted and displayed from a WYSIWYG editor. All that needs to be done is add the `.o-content` class to the parent of the content.
