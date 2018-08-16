@@ -9,7 +9,7 @@ import Toggle from '../../js/modules/toggle';
 class Accordion {
   /**
    * @constructor
-   * @return {object}   The class
+   * @return {object} The class
    */
   constructor() {
     this._toggle = new Toggle({

@@ -36,11 +36,53 @@ Utility.getUrlParameter = (name, queryString) => {
 };
 
 /**
+ * A markdown parsing method. It relies on the dist/markdown.min.js script
+ * which is a browser compatible version of markdown-js
+ * @url https://github.com/evilstreak/markdown-js
+ * @return {Object} The iteration over the markdown DOM parents
+ */
+Utility.parseMarkdown = () => {
+  if (typeof markdown === 'undefined') return false;
+
+  const mds = document.querySelectorAll(Utility.SELECTORS.parseMarkdown);
+
+  return mds.forEach(function(element, index) {
+    fetch(element.dataset.jsMarkdown)
+      .then((response) => {
+        if (response.ok)
+          return response.text();
+        else {
+          element.innerHTML = '';
+          // eslint-disable-next-line no-console
+          if (Utility.debug()) console.dir(response);
+        }
+      })
+      .catch((error) => {
+        // eslint-disable-next-line no-console
+        if (Utility.debug()) console.dir(error);
+      })
+      .then((data) => {
+        element.classList.toggle('animated');
+        element.classList.toggle('fadeIn');
+        element.innerHTML = markdown.toHTML(data);
+      });
+  });
+};
+
+/**
  * Application parameters
  * @type {Object}
  */
 Utility.PARAMS = {
   DEBUG: 'debug'
+};
+
+/**
+ * Selectors for the Utility module
+ * @type {Object}
+ */
+Utility.SELECTORS = {
+  parseMarkdown: '[data-js="markdown"]'
 };
 
 export default Utility;

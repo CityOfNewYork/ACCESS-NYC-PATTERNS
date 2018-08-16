@@ -1,9 +1,8 @@
 doctype html
 html lang='en' class='bg-color-white text-size-0'
   = content('head');
-
   body class='bg-color-white' style='visibility: hidden;' onload='load()'
-    a class='hidden' href='#main-content' Skip to main content
+    a class='sr-only' href='#main-content' Skip to main content
 
     = partial('/partials/header.slm');
 
@@ -18,11 +17,11 @@ html lang='en' class='bg-color-white text-size-0'
 
     = partial('/partials/footer.slm');
 
-    div class='hidden' aria-hidden='true'
-      = partial('/partials/icons.slm');
-
     script src='scripts/AccessNyc.js'
+    script src='scripts/markdown.min.js'
     javascript:
       var access = new AccessNyc();
+      access.markdown();
+      access.icons();
       access.toggle();
     = content('script');

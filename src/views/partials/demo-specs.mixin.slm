@@ -1,4 +1,4 @@
 = mixin('demo-specs', 'text');
   div class='layout--home-body'
-    div class='px-2 text-font-size-small'
-      = 'md{{ '+ this.text +' }}';
+    div class='px-2 text-font-size-small' data-js='markdown' data-js-markdown='${this.text}'
+      = partial('partials/content-placeholder.slm');

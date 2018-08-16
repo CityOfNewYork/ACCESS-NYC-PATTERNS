@@ -1,7 +1,9 @@
 'use strict';
 
-import Module from './modules/module'; // sample module
+// import Module from './modules/module'; // sample module import
+import Utility from './modules/utility.js';
 import Toggle from './modules/toggle';
+import Icons from '../elements/icons/icons';
 import Accordion from '../components/accordion/accordion';
 import Filter from '../components/filter/filter';
 /** import components here as they are written. */
@@ -18,13 +20,30 @@ class main {
    * @param  {object} data     This could be a set of data that is needed for
    *                           the component or module to render.
    * @return {object}          The module
+   * module(settings, data) {
+   *   return new Module(settings, data).init();
+   * }
    */
-  module(settings, data) {
-    return new Module(settings, data).init();
+
+  /**
+   * The markdown parsing method.
+   * @return {object} The event listener on the window
+   */
+  markdown() {
+    return window.addEventListener('load', Utility.parseMarkdown);
   }
 
   /**
-   * [toggle description]
+   * An API for the Icons Element
+   * @param  {String} path The path of the icon file
+   * @return {object} instance of Icons element
+   */
+  icons(path) {
+    return new Icons(path);
+  }
+
+  /**
+   * An API for the Toggling Method
    * @return {object} instance of toggling method
    */
   toggle() {
