@@ -2,6 +2,6 @@
 / Content
 /
 
-div class='o-content'
-  = partial('../../components/checklist/checklist.slm');
-  = partial('../../elements/tables/tables.slm');
+div class='o-content' data-sketch-symbol=symbol
+  = partial('../../components/checklist/checklist-markup.slm');
+  = partial('../../elements/tables/tables-markup.slm');

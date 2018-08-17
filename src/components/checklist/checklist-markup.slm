@@ -1,0 +1,17 @@
+ul
+  li
+    | Checklist item default
+    ul
+      li Nested checklist item
+      li Nested checklist item
+      li Nested checklist item
+  li class='c-checklist__item-application'
+    | Checklist item Application
+    ul
+      li Nested checklist item
+      li Nested checklist item
+      li Nested checklist item
+  li class='c-checklist__item-badge' Checklist item Badge
+  li class='c-checklist__item-flag' Checklist item Flag
+  li class='c-checklist__item-calendar' Checklist item Calendar
+  li class='c-checklist__item-generic' Checklist item Generic

@@ -1,14 +1,8 @@
 /
+/ Toggle Button
 /
-/
-button class='btn-toggle btn-primary mb-2'
+
+button class='btn-toggle btn-primary' data-js='toggle' data-toggle-target='#btn-toggle-target' data-sketch-symbol=symbol data-sketch-symbol-instance=instance
   | Toggle Button
 
-button class='btn-toggle btn-primary active mb-2'
-  | Toggle Button (active)
-
-a class='btn-toggle btn-primary mb-2'
-  | Toggle Link
-
-a class='btn-toggle btn-primary active'
-  | Toggle Link (active)
+div#btn-toggle-target

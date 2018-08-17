@@ -2,10 +2,12 @@
 / Announcements
 /
 
-div class='py-4'
+div class='py-4' data-sketch-symbol=symbol
   h2 class='type-h5 divider m-0' Announcements
   div class='screen-tablet:layout--columns'
-    = partial('../../components/card/card-flush.slm')
-    = partial('../../components/card/card-flush.slm')
-    = partial('../../components/card/card-flush.slm')
-    = partial('../../components/card/card-flush.slm')
+    - symbol = false;
+    - instance = 'components/card/card-flush';
+    = partial(`../../${instance}.slm`)
+    = partial(`../../${instance}.slm`)
+    = partial(`../../${instance}.slm`)
+    = partial(`../../${instance}.slm`)

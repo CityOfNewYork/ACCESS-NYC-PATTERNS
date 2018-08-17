@@ -1,9 +1,6 @@
 /
-/ Inputs
+/ Input Phone
 /
-div class='input-phone-us mb-3'
-  input type='text'
 
-div class='error'
-  div class='input-phone-us'
-    input type='text'
+div class='input-phone-us' data-sketch-symbol=symbol data-sketch-symbol-instance=instance
+  input type='text'

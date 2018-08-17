@@ -2,7 +2,7 @@
 / Share-links
 /
 
-nav class='c-share hide-for-print'
+nav class='c-share hide-for-print' data-sketch-symbol=symbol data-sketch-symbol-instance=instance
   a class='c-share__link' href='#'
     svg class='icon icon-printer'
       use xlink:href='#icon-printer'

@@ -1,8 +1,6 @@
 /
-/ Inputs
+/ Input
 /
-div class='mb-3'
-  input type='text'
 
-div class='error'
+div data-sketch-symbol=symbol data-sketch-symbol-instance=instance
   input type='text'

@@ -2,19 +2,8 @@
 / Checkboxes With Icons
 /
 
-label class='label' What kind of help are you looking for?
-label class='checkbox'
+label class='checkbox' data-sketch-symbol=symbol data-sketch-symbol-instance=instance
   input name='category' value='cash-expenses' type='checkbox'
   span class='checkbox__label items-center'
     span class='checkbox__icon bg-icon-cash-expenses'
     span Cash & Expenses
-label class='checkbox'
-  input name='category' value='cash-expenses' type='checkbox'
-  span class='checkbox__label items-center'
-    span class='checkbox__icon bg-icon-city-id-card'
-    span City ID Card
-label class='checkbox'
-  input name='category' value='cash-expenses' type='checkbox'
-  span class='checkbox__label items-center'
-    span class='checkbox__icon bg-icon-enrichment'
-    span Enrichment

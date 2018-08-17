@@ -2,7 +2,7 @@
 / Question
 /
 
-div class='c-question'
+div class='c-question' data-sketch-symbol=symbol data-sketch-symbol-instance=instance
   label class='c-question__label' for='person-0-age' How old are you?
 
   p

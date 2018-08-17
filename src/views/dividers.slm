@@ -1,51 +1,26 @@
 / Layout
 = extend('layouts/default');
 
+/ Component
+- title = 'Dividers';
+
 / Partials
 = partial('partials/styles.slm');
 = partial('partials/links.slm');
 = partial('partials/head.mixin.slm');
+= partial('partials/content-header.mixin.slm');
+= partial('partials/section.mixin.slm');
 = partial('partials/demo-specs.mixin.slm');
 = partial('partials/demo-block.mixin.slm');
 
 / Content blocks
 = content('head');
-  = mixin('head', 'Dividers');
+  = mixin('head', title);
 
 = content('header');
-  = mixin('header', 'Dividers');
+  = mixin('header', title);
 
 = content('content');
-  h1 class='px-1' Dividers
-  section#default-styling class='${class_demo}'
-    header class='${class_demo_headers}'
-      h2 Default Styling
-
-    div class='${class_demo_cols}'
-      div class='${class_demo_col1}'
-        div class='${class_demo_spec}'
-          p Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-
-      div class='${class_demo_col2}'
-        div class='${class_demo_content}'
-          div class='code-block mb-1'
-            pre
-              = 'code{{ elements/divider/divider.slm }}';
-          = partial('../elements/divider/divider.slm');
-
-  section#button-types class='${class_demo}'
-    header class='${class_demo_headers}'
-      h2 Light Divider
-
-    div class='${class_demo_cols}'
-      div class='${class_demo_col1}'
-        div class='${class_demo_spec}'
-          p Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-
-      div class='${class_demo_col2}'
-        div class='${class_demo_content}'
-          div class='code-block mb-1'
-            pre
-              = 'code{{ elements/divider/divider-light.slm }}';
-          = partial('../elements/divider/divider-light.slm');
-
+  = mixin('content-header', title);
+  = mixin('section', 'Default Styling', 'elements/divider/divider');
+  = mixin('section', 'Light Divider', 'elements/divider/divider-light');

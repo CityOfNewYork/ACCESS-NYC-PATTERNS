@@ -1,10 +1,6 @@
 /
+/ Previous Button
 /
-/
-button class='btn-primary btn-previous mb-2'
+
+button class='btn-primary btn-previous mb-2' data-sketch-symbol=symbol data-sketch-symbol-instance=instance
   | Previous Button
-
-br
-
-a class='btn-primary btn-previous'
-  | Previous Link

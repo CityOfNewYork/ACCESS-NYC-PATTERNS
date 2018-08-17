@@ -1,9 +1,11 @@
 /
-/ Card List Grid
+/ Card List
 /
 
-div class='p-4 bg-color-grey-lightest'
+div class='p-4 bg-color-grey-lightest' data-sketch-symbol=symbol
   div class='layout--gutter'
-    = partial('../../components/card/card-icon-info.slm')
-    = partial('../../components/card/card-icon-info.slm')
-    = partial('../../components/card/card-icon-info.slm')
+    - symbol = false;
+    - instance = 'components/card/card-icon-info';
+    = partial(`../../${instance}.slm`)
+    = partial(`../../${instance}.slm`)
+    = partial(`../../${instance}.slm`)

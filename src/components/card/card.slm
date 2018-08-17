@@ -1,11 +1,5 @@
-/
-/ Card
-/
-
-article class='c-card'
+article class='c-card' data-sketch-symbol=symbol data-sketch-symbol-instance=instance
   div class='c-card__body'
-    h3 class='c-card__title mb-3'
-      | Apply for Pre-K for All
+    h3 class='c-card__title mb-3' Apply for Pre-K for All
     div class='c-card__summary'
-      a href='#'
-        | New York City families with a child born in 2014 can apply to Pre-K from February 5 - March 30, 2018.
+      a href='#' New York City families with a child born in 2014 can apply to Pre-K from February 5 - March 30, 2018.

@@ -1,4 +1,4 @@
 /
 / Divider
 /
-hr class='divider-light'
+hr class='divider-light' data-sketch-symbol=symbol data-sketch-symbol-instance=instance

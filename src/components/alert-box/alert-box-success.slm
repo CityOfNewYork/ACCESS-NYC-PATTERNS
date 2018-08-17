@@ -1,4 +1,8 @@
-div class='c-alert-box bg-status-success mb-4'
+/
+/ Alert Box Success
+/
+
+div class='c-alert-box bg-status-success mb-4' data-sketch-symbol=symbol data-sketch-symbol-instance=instance
   div class='c-alert-box__icon'
     div class='c-alert-box__svg bg-icon-success'
   div class='c-alert-box__body' Success

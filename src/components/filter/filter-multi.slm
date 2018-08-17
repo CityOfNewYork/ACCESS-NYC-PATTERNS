@@ -1,4 +1,4 @@
-div class='c-filter-multi active bg-color-white'
+div class='c-filter-multi active bg-color-white' data-sketch-symbol=symbol data-sketch-symbol-instance=instance
   ul class='c-filter-multi__list'
     li class='c-filter-multi__item'
       div class='c-filter-multi__item-header'

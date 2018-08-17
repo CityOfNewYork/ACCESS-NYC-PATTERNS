@@ -1,4 +1,8 @@
-article id='what-you-need-to-include' class='c-accordion mt-0' data-sketch-symbol="Component/Accordion"
+/
+/ Accordion
+/
+
+article id='what-you-need-to-include' class='c-accordion mt-0' data-sketch-symbol=symbol data-sketch-symbol-instance=instance
   header class='c-accordion__header'
     p Proof of who you are
     a data-js='accordion' href='#what-you-need-to-include__body' class="c-accordion__toggle print:hidden active"

@@ -2,11 +2,13 @@
 / Card List Grid
 /
 
-div class='p-4 bg-color-grey-lightest'
+div class='p-4 bg-color-grey-lightest' data-sketch-symbol=symbol data-sketch-symbol-instance=instance
   h2 class='type-h3 m-0' Featured Programs
   h3 class='type-supplemental text-color-grey-mid' Each year, over 1 million New Yorkers use ACCESS NYC to get:
   div class='layout--gutter screen-desktop:layout--columns-gutter'
-    = partial('../../components/card/card-icon.slm')
-    = partial('../../components/card/card-icon.slm')
-    = partial('../../components/card/card-icon.slm')
-    = partial('../../components/card/card-icon.slm')
+    - symbol = false;
+    - instance = 'components/card/card-icon';
+    = partial(`../../${instance}.slm`)
+    = partial(`../../${instance}.slm`)
+    = partial(`../../${instance}.slm`)
+    = partial(`../../${instance}.slm`)

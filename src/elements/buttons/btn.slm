@@ -1,10 +1,6 @@
 /
+/ Button
 /
-/
-button class='btn mb-2'
-  | Button
 
-br
-
-a class='btn' role='button'
+button class='btn mb-2' data-sketch-symbol=symbol data-sketch-symbol-instance=instance
   | Button
