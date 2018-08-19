@@ -22,7 +22,7 @@
 
 = content('content');
   = mixin('content-header', title);
-  = mixin('section', 'Headings', 'elements/typography/type-headings');
+  = mixin('section', 'Headings', 'elements/typography/type-h');
   = mixin('section', 'Jumbo', 'elements/typography/type-jumbo');
   = mixin('section', 'Small', 'elements/typography/type-small');
   = mixin('section', 'Blockquote', 'elements/typography/type-blockquote');

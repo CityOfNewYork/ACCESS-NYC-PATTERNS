@@ -13,6 +13,8 @@ div class='c-share-form' data-sketch-symbol=symbol data-sketch-symbol-instance=i
         div class='c-share-form__button'
           button type='submit' class='btn btn-primary btn-small' data-sketch-symbol-instance='elements/buttons/btn-small' Send
 
-          = partial('../../elements/spinner/spinner.slm');
+          - symbol = false;
+          - instance = 'elements/spinner/spinner';
+          = partial(`../../${instance}.slm`);
 
           div class='success-message' Sent!

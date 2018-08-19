@@ -1,5 +1,5 @@
 
-div class='layout--map screen-desktop:layout--sidebar text-center'
+div class='layout--map screen-desktop:layout--sidebar text-center' data-sketch-symbol=symbol data-sketch-symbol-instance=instance
   div class='layout--map__sidebar bg-color-grey-lightest p-4'
     | Sidebar
   div class='layout--map__map bg-color-grey-light p-4'

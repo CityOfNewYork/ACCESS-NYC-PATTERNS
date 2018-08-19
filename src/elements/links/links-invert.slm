@@ -1,3 +1,6 @@
-div class='p-4 bg-color-blue-dark links-invert'
-  a href='#' class='link-more' Learn more about tax relief for parents
+/
+/ Inverted Links
+/
 
+div class='p-4 bg-color-blue-dark links-invert' data-sketch-symbol=symbol data-sketch-symbol-instance=instance
+  a href='#' class='link-more' data-sketch-text=symbol Learn more about tax relief for parents

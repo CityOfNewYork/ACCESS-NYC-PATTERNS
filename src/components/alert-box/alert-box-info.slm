@@ -4,5 +4,7 @@
 
 div class='c-alert-box bg-status-info mb-4' data-sketch-symbol=symbol data-sketch-symbol-instance=instance
   div class='c-alert-box__icon'
-    div class='c-alert-box__svg bg-icon-info'
+    svg class='icon icon-info'
+      use xlink:href='#icon-info'
+
   div class='c-alert-box__body' Information

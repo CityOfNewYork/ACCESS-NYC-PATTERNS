@@ -1,10 +1,15 @@
-label class='label' Select the type of phone number;
-label class='radio'
+/
+/ Radios
+/
+
+label class='radio' data-sketch-symbol=symbol data-sketch-symbol-instance=instance
   input value='home' type='radio' name='application' checked='true'
   span class='radio__label' Home
-label class='radio'
+
+label class='radio' data-sketch-symbol-instance=symbol
   input value='work' type='radio' name='application'
   span class='radio__label' Work
-label class='radio'
+
+label class='radio' data-sketch-symbol-instance=symbol
   input value='cell' type='radio' name='application'
   span class='radio__label' Cell Phone
