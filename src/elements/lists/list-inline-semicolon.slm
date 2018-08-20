@@ -2,7 +2,7 @@
 / Lists
 /
 
-ul class='list-inline-semicolon' data-sketch-symbol=symbol data-sketch-symbol-instance=instance
+ul class='list-inline-semicolon'
   li Student
   li Full-time student
   li Pregnant

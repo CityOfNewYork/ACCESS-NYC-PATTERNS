@@ -6,5 +6,6 @@ div class='c-alert-box bg-status-info mb-4' data-sketch-symbol=symbol data-sketc
   div class='c-alert-box__icon'
     svg class='icon icon-info'
       use xlink:href='#icon-info'
+    /= partial('../../svg/icon-info.svg');
 
   div class='c-alert-box__body' Information

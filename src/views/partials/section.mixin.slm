@@ -7,9 +7,6 @@
           h2
             a href='#${this.id}' class='text-color-grey-mid font-normal no-underline capitalize'
               = this.title;
-          h3
-            | Source
-            code class='code' ${this.path}
 
       - if (this.specs != 'false')
         = mixin('demo-specs', this.path + '.md');
