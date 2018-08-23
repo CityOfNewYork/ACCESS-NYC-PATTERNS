@@ -23,3 +23,7 @@
 = content('content');
   = mixin('content-header', title);
   = mixin('section', 'Default Styling', 'elements/program-labels/program-labels');
+  = mixin('section', 'Program Label Info', 'elements/program-labels/program-labels-info');
+  = mixin('section', 'Program Label Warning', 'elements/program-labels/program-labels-warning');
+  = mixin('section', 'Program Label Success', 'elements/program-labels/program-labels-success');
+  = mixin('section', 'Program Label Urgent', 'elements/program-labels/program-labels-urgent');

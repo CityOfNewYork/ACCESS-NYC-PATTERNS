@@ -2,7 +2,11 @@
 / Alert Box Success
 /
 
-div class='c-alert-box bg-status-success mb-4' data-sketch-symbol=symbol data-sketch-symbol-instance=instance
+article class='c-alert-box bg-status-success mb-4' data-sketch-symbol=symbol data-sketch-symbol-instance=instance
   div class='c-alert-box__icon'
     div class='c-alert-box__svg bg-icon-success'
-  div class='c-alert-box__body' Success
+  div class='c-alert-box__body'
+    header
+      h1 class='type-h4 m-0' Finished! We found 8 programs for you.
+    p
+      | Remember that we can't guarantee eligibility, but can only recommend programs for you to look at.

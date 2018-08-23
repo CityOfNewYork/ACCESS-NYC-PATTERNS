@@ -2,7 +2,11 @@
 / Alert Box Warning
 /
 
-div class='c-alert-box bg-status-warning mb-4' data-sketch-symbol=symbol data-sketch-symbol-instance=instance
+article class='c-alert-box bg-status-warning mb-4' data-sketch-symbol=symbol data-sketch-symbol-instance=instance
   div class='c-alert-box__icon'
     div class='c-alert-box__svg bg-icon-warning'
-  div class='c-alert-box__body' Warning
+  div class='c-alert-box__body'
+    header
+      h1 class='type-h4 m-0' You will need to apply from a desktop computer.
+    p
+      | The online application will not work on a mobile phone or tablet. We can <a href="#">email or text you a link</a> to this page to help you get back here more easily.
