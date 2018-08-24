@@ -61,7 +61,6 @@
             <a class="screen-desktop:block p-1" href="checkboxes">Checkboxes</a>
             <a class="screen-desktop:block p-1" href="colors">Colors</a>
             <a class="screen-desktop:block p-1" href="dividers">Dividers</a>
-            <a class="screen-desktop:block p-1" href="font-families">Fonts</a>
             <a class="screen-desktop:block p-1" href="icons">Icons</a>
             <a class="screen-desktop:block p-1" href="inputs">Inputs</a>
             <a class="screen-desktop:block p-1" href="layouts">Layouts</a>
@@ -115,12 +114,12 @@
             <header class="layout--home-body">
               <div class="my-0 pt-1 px-2 border-b border-color-grey-light">
                 <h2>
-                  <a class="text-color-grey-mid font-normal no-underline" href="#default-styling">Default Styling</a>
+                  <a class="text-color-grey-mid font-normal no-underline capitalize" href="#default-styling">Default Styling</a>
                 </h2>
               </div>
             </header>
             <div class="layout--home-body">
-              <div class="px-2 text-font-size-small" data-js="markdown" data-js-markdown="elements/checkboxes/checkboxes.md">
+              <div class="my-0 pt-4 px-2 text-font-size-small" data-js="markdown" data-js-markdown="elements/checkboxes/checkboxes.md">
                 <div class="p-1 mb-1 bg-color-grey-lightest"></div>
                 <div class="p-1 mb-1 bg-color-grey-lightest"></div>
                 <div class="p-1 mb-1 bg-color-grey-lightest"></div>
@@ -143,24 +142,14 @@
                 <div class="p-1 mb-1 bg-color-grey-lightest"></div>
               </div>
             </div>
-            <div class="layout--gutter screen-tablet:layout--columns justify-between">
+            <div class="layout--gutter screen-tablet:layout--columns justify-between pt-4">
               <div class="screen-tablet:pr-2">
-                <label class="label">Is anyone in your household currently enrolled in these programs?</label>
-                <label class="checkbox">
-                  <input checked="true" name="application" type="checkbox" value="wic" /><span class="checkbox__label">SNAP (Supplemental Nutrition Assistance Program)</span></label>
-                <label class="checkbox">
-                  <input checked="true" name="application" type="checkbox" value="wic" /><span class="checkbox__label">WIC (Women, Infants, and Children)</span></label>
-                <label class="checkbox">
-                  <input name="application" type="checkbox" value="scrie" /><span class="checkbox__label">SCRIE (Senior Citizen Rent Increase Exemption)</span></label>
+                <label class="checkbox" data-sketch-symbol="elements/checkboxes/checkboxes" for="person-0-unemployed">
+                  <input id="person-0-unemployed" name="Person[0].unemployed" type="checkbox" value="unemployed" /><span class="checkbox__label">Cell Phone</span></label>
               </div>
               <div>
-                <div class="code-block mb-1"><pre>&lt;label class=&quot;label&quot;&gt;Is anyone in your household currently enrolled in these programs?&lt;/label&gt;
-&lt;label class=&quot;checkbox&quot;&gt;
-  &lt;input checked=&quot;true&quot; name=&quot;application&quot; type=&quot;checkbox&quot; value=&quot;wic&quot; /&gt;&lt;span class=&quot;checkbox__label&quot;&gt;SNAP (Supplemental Nutrition Assistance Program)&lt;/span&gt;&lt;/label&gt;
-&lt;label class=&quot;checkbox&quot;&gt;
-  &lt;input checked=&quot;true&quot; name=&quot;application&quot; type=&quot;checkbox&quot; value=&quot;wic&quot; /&gt;&lt;span class=&quot;checkbox__label&quot;&gt;WIC (Women, Infants, and Children)&lt;/span&gt;&lt;/label&gt;
-&lt;label class=&quot;checkbox&quot;&gt;
-  &lt;input name=&quot;application&quot; type=&quot;checkbox&quot; value=&quot;scrie&quot; /&gt;&lt;span class=&quot;checkbox__label&quot;&gt;SCRIE (Senior Citizen Rent Increase Exemption)&lt;/span&gt;&lt;/label&gt;</pre></div>
+                <div class="code-block mb-1"><pre>&lt;label class=&quot;checkbox&quot; data-sketch-symbol=&quot;elements/checkboxes/checkboxes-with-icons&quot; for=&quot;person-0-unemployed&quot;&gt;
+  &lt;input id=&quot;person-0-unemployed&quot; name=&quot;Person[0].unemployed&quot; type=&quot;checkbox&quot; value=&quot;unemployed&quot; /&gt;&lt;span class=&quot;checkbox__label&quot;&gt;Cell Phone&lt;/span&gt;&lt;/label&gt;</pre></div>
               </div>
             </div>
           </div>
@@ -170,12 +159,12 @@
             <header class="layout--home-body">
               <div class="my-0 pt-1 px-2 border-b border-color-grey-light">
                 <h2>
-                  <a class="text-color-grey-mid font-normal no-underline" href="#checkboxes-with-icons">Checkboxes With Icons</a>
+                  <a class="text-color-grey-mid font-normal no-underline capitalize" href="#checkboxes-with-icons">Checkboxes With Icons</a>
                 </h2>
               </div>
             </header>
             <div class="layout--home-body">
-              <div class="px-2 text-font-size-small" data-js="markdown" data-js-markdown="elements/checkboxes/checkboxes-with-icons.md">
+              <div class="my-0 pt-4 px-2 text-font-size-small" data-js="markdown" data-js-markdown="elements/checkboxes/checkboxes-with-icons.md">
                 <div class="p-1 mb-1 bg-color-grey-lightest"></div>
                 <div class="p-1 mb-1 bg-color-grey-lightest"></div>
                 <div class="p-1 mb-1 bg-color-grey-lightest"></div>
@@ -198,29 +187,15 @@
                 <div class="p-1 mb-1 bg-color-grey-lightest"></div>
               </div>
             </div>
-            <div class="layout--gutter screen-tablet:layout--columns justify-between">
+            <div class="layout--gutter screen-tablet:layout--columns justify-between pt-4">
               <div class="screen-tablet:pr-2">
-                <label class="label">What kind of help are you looking for?</label>
-                <label class="checkbox">
+                <label class="checkbox" data-sketch-symbol="elements/checkboxes/checkboxes-with-icons">
                   <input name="category" type="checkbox" value="cash-expenses" /><span class="checkbox__label items-center"><span class="checkbox__icon bg-icon-cash-expenses"></span><span>Cash & Expenses</span></span>
-                </label>
-                <label class="checkbox">
-                  <input name="category" type="checkbox" value="cash-expenses" /><span class="checkbox__label items-center"><span class="checkbox__icon bg-icon-city-id-card"></span><span>City ID Card</span></span>
-                </label>
-                <label class="checkbox">
-                  <input name="category" type="checkbox" value="cash-expenses" /><span class="checkbox__label items-center"><span class="checkbox__icon bg-icon-enrichment"></span><span>Enrichment</span></span>
                 </label>
               </div>
               <div>
-                <div class="code-block mb-1"><pre>&lt;label class=&quot;label&quot;&gt;What kind of help are you looking for?&lt;/label&gt;
-&lt;label class=&quot;checkbox&quot;&gt;
+                <div class="code-block mb-1"><pre>&lt;label class=&quot;checkbox&quot; data-sketch-symbol=&quot;elements/checkboxes/checkboxes-with-icons&quot;&gt;
   &lt;input name=&quot;category&quot; type=&quot;checkbox&quot; value=&quot;cash-expenses&quot; /&gt;&lt;span class=&quot;checkbox__label items-center&quot;&gt;&lt;span class=&quot;checkbox__icon bg-icon-cash-expenses&quot;&gt;&lt;/span&gt;&lt;span&gt;Cash &amp; Expenses&lt;/span&gt;&lt;/span&gt;
-&lt;/label&gt;
-&lt;label class=&quot;checkbox&quot;&gt;
-  &lt;input name=&quot;category&quot; type=&quot;checkbox&quot; value=&quot;cash-expenses&quot; /&gt;&lt;span class=&quot;checkbox__label items-center&quot;&gt;&lt;span class=&quot;checkbox__icon bg-icon-city-id-card&quot;&gt;&lt;/span&gt;&lt;span&gt;City ID Card&lt;/span&gt;&lt;/span&gt;
-&lt;/label&gt;
-&lt;label class=&quot;checkbox&quot;&gt;
-  &lt;input name=&quot;category&quot; type=&quot;checkbox&quot; value=&quot;cash-expenses&quot; /&gt;&lt;span class=&quot;checkbox__label items-center&quot;&gt;&lt;span class=&quot;checkbox__icon bg-icon-enrichment&quot;&gt;&lt;/span&gt;&lt;span&gt;Enrichment&lt;/span&gt;&lt;/span&gt;
 &lt;/label&gt;</pre></div>
               </div>
             </div>
