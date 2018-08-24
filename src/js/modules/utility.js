@@ -46,7 +46,8 @@ Utility.parseMarkdown = () => {
 
   const mds = document.querySelectorAll(Utility.SELECTORS.parseMarkdown);
 
-  return mds.forEach(function(element, index) {
+  for (let i = 0; i < mds.length; i++) {
+    let element = mds[i];
     fetch(element.dataset.jsMarkdown)
       .then((response) => {
         if (response.ok)
@@ -62,11 +63,13 @@ Utility.parseMarkdown = () => {
         if (Utility.debug()) console.dir(error);
       })
       .then((data) => {
-        element.classList.toggle('animated');
-        element.classList.toggle('fadeIn');
-        element.innerHTML = markdown.toHTML(data);
+        try {
+          element.classList.toggle('animated');
+          element.classList.toggle('fadeIn');
+          element.innerHTML = markdown.toHTML(data);
+        } catch (error) {}
       });
-  });
+  }
 };
 
 /**

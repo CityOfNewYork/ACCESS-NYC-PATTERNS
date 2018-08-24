@@ -3,7 +3,7 @@
 /
 
 div class='c-question' data-sketch-symbol=symbol data-sketch-symbol-instance=instance
-  label class='c-question__label' for='person-0-age' How old are you?
+  label class='c-question__label' for='person-0-age-with-error' How old are you?
 
   p
     button type='button' class='c-question__info btn btn-text btn-link js-tooltip-trigger' aria-describedby='tooltip-age'

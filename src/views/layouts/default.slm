@@ -17,6 +17,7 @@ html lang='en' class='bg-color-white text-size-0'
 
     = partial('/partials/footer.slm');
 
+    script src='https://cdn.polyfill.io/v2/polyfill.js?features=fetch&flags=gated'
     script src='scripts/AccessNyc.js'
     script src='scripts/markdown.min.js'
     javascript:
