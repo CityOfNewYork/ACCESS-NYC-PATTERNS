@@ -1,0 +1,12 @@
+/
+/ Question Multiple Choice
+/
+
+div class='c-question'
+  label class='c-question__label' for='person-0-incomes-0-type' What type of income have you had most recently?
+  p Answer the best you can. You will be able to include additional types of income. The more you include, the more accurate your results will be.</p>
+
+  div class='c-question__container'
+    - symbol = false;
+    - instance = 'elements/selects/selects';
+    = partial(`../../${instance}.slm`);

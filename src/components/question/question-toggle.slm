@@ -1,0 +1,13 @@
+/
+/ Question Toggle
+/
+
+fieldset class='c-question' data-sketch-symbol=symbol data-sketch-symbol-instance=instance
+  legend class='c-question__label' Do you have an income?
+
+  p This includes money from jobs, alimony, investments, or gifts.
+
+  div class='c-question__container'
+    - symbol = false;
+    - instance = 'elements/toggles/toggles';
+    = partial(`../../elements/toggles/toggles.slm`);

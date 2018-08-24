@@ -25,6 +25,7 @@
   = mixin('section', 'Default Styling', 'elements/inputs/input');
   = mixin('section', 'Input Error', 'elements/inputs/input-error');
   = mixin('section', 'Min-width 400px', 'elements/inputs/input-mw-400px');
+  = mixin('section', 'Number', 'elements/inputs/input-number');
   = mixin('section', 'US Currency', 'elements/inputs/input-currency-usd');
   = mixin('section', 'US Currency Error', 'elements/inputs/input-currency-usd-error');
   = mixin('section', 'US Phone', 'elements/inputs/input-phone-us');

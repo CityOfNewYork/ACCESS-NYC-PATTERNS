@@ -1,5 +1,5 @@
 /
-/ Question
+/ Question Number Error
 /
 
 div class='c-question' data-sketch-symbol=symbol data-sketch-symbol-instance=instance
@@ -12,6 +12,8 @@ div class='c-question' data-sketch-symbol=symbol data-sketch-symbol-instance=ins
         use xlink:href='#icon-info'
 
   div class='c-question__container error'
-    div class='error-message' aria-live='polite'
+    div class='error-message' aria-live='polite' id='person-0-age-error'
       | This entry is required to continue.
-    input min='0' maxlength='3' pattern='[0-9]' step='1' type='number'
+    - symbol = false;
+    - instance = 'elements/inputs/input-number-error';
+    = partial(`../../${instance}.slm`);

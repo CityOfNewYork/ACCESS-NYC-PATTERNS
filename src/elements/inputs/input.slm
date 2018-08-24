@@ -3,4 +3,4 @@
 /
 
 div data-sketch-symbol=symbol data-sketch-symbol-instance=instance
-  input type='text'
+  input name='Client[0].email' type='text'
