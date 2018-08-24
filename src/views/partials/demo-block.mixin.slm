@@ -1,11 +1,13 @@
 = mixin('demo-block', 'markup', 'layout = columns', 'grid = false');
-  div class='layout--gutter screen-tablet:layout--${this.layout} justify-between'
+  div class='layout--gutter screen-tablet:layout--${this.layout} justify-between pt-4'
     - if (this.layout === 'columns')
       - this.padding = 'screen-tablet:pr-2';
 
     - if (this.grid === 'false')
       - ;
       div class='${this.padding}'
+        - symbol = this.markup.replace('.slm', '');
+        - instance = false;
         = partial('../' + this.markup);
 
     - if (this.grid === 'false')

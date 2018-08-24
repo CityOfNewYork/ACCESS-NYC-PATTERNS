@@ -1,7 +1,8 @@
 /
-/ Inputs
+/ Input Search
 /
-div class='input-search'
+
+div class='input-search' data-sketch-symbol=symbol data-sketch-symbol-instance=instance
   input name='s' value='' placeholder='Search for programs or services' id='search-field' type='text'
   button class='btn-text input-search__submit' type='submit'
     span class='icon bg-icon-search'

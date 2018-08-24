@@ -1,5 +1,5 @@
 
-div class='wrap'
+div class='wrap' data-sketch-symbol=symbol data-sketch-symbol-instance=instance
   article class='layout--topbar text-center'
     header class='bg-color-blue-dark text-color-white p-4'
       | Topbar

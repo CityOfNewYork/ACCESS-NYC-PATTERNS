@@ -1,5 +1,5 @@
 / Layout
-= extend('/layouts/default');
+= extend('layouts/default');
 
 / Component
 - title = 'Radios';

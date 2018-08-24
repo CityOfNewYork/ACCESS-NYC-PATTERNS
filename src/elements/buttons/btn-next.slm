@@ -1,10 +1,6 @@
 /
+/ Next Button
 /
-/
-button class='btn-primary btn-next mb-2'
+
+button class='btn-primary btn-next mb-2' data-sketch-symbol=symbol data-sketch-symbol-instance=instance
   | Next Button
-
-br
-
-a class='btn-primary btn-next' role='button'
-  | Next Link

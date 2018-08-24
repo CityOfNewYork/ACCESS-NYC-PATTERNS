@@ -1,8 +1,4 @@
-/
-/ Card with Icon and Info
-/
-
-article class='c-card'
+article class='c-card' data-sketch-symbol=symbol data-sketch-symbol-instance=instance
   div class='c-card__icon'
     a href='#'
       div class='icon bg-icon-card-cash-expenses'

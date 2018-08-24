@@ -1,0 +1,19 @@
+/
+/ Question Multiple Choice
+/
+
+fieldset class='c-question' data-sketch-symbol=symbol data-sketch-symbol-instance=instance
+  legend class='c-question__label' for='person-0-age' Do any of these apply to you?
+  p It’s OK to pick more than one. You can also leave this blank if none of these apply to you.
+
+  div class='c-question__container screen-tablet:layout--columns'
+    - values = [['Student', 'student'], ['Pregnant', 'pregnant'], ['Unemployed', 'unemployed'], ['Blind or visually impaired', 'blind'], ['Have any disabilities', 'disabled'], ['Served in the U.S. Armed Forces, National Guard or Reserves', 'military']];
+    - symbol = false;
+    - instance = 'elements/checkboxes/checkboxes';
+    - for (v in values)
+      - text = values[v];
+      = partial(`../../${instance}.slm`);
+
+    label class='checkbox' data-sketch-symbol-instance=instance
+      input type='checkbox' data-js='clear'
+      span class='checkbox__label' None of these apply

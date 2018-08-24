@@ -2,7 +2,7 @@
 / Banner
 /
 
-div class='o-banner'
+div class='o-banner' data-sketch-symbol=symbol
   div class='o-banner__inner'
 
     h1 class='o-banner__title'

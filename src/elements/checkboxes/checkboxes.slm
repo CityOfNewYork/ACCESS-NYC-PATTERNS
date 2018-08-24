@@ -2,13 +2,14 @@
 / Checkboxes
 /
 
-label class='label' Is anyone in your household currently enrolled in these programs?
-label class='checkbox'
-  input value='wic' type='checkbox' name='application' checked='true'
-  span class='checkbox__label' SNAP (Supplemental Nutrition Assistance Program)
-label class='checkbox'
-  input value='wic' type='checkbox' name='application' checked='true'
-  span class='checkbox__label' WIC (Women, Infants, and Children)
-label class='checkbox'
-  input value='scrie' type='checkbox' name='application'
-  span class='checkbox__label' SCRIE (Senior Citizen Rent Increase Exemption)
+- if (typeof text === 'undefined')
+  - ;
+  label class='checkbox' for='person-0-snap' data-sketch-symbol=symbol data-sketch-symbol-instance=instance
+    input id='person-0-snap' value='snap' type='checkbox' name='Person[0].snap'
+    span class='checkbox__label' SNAP (Supplemental Nutrition Assistance Program)
+- else
+  - ;
+  label class='checkbox' for='person-0-${text[1]}' data-sketch-symbol=symbol data-sketch-symbol-instance=instance
+    input id='person-0-${text[1]}' value='${text[1]}' type='checkbox' name='Person[0].${text[1]}'
+    span class='checkbox__label'
+      = text[0];

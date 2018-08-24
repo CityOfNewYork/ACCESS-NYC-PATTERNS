@@ -1,8 +1,12 @@
-label class='label' Is this your first application?
-div
+/
+/ Toggle
+/
+
+div data-sketch-symbol=symbol data-sketch-symbol-instance=instance
   label class='toggle'
-    input value='Yes' type='radio' name='application' checked='true'
+    input value='1' type='radio' name='application' data-type='boolean'
     span class='toggle__label' Yes
+
   label class='toggle'
-    input value='No' type='radio' name='application'
+    input value='0' type='radio' name='application' data-type='boolean' checked='true'
     span class='toggle__label' No

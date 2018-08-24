@@ -2,7 +2,7 @@
 / Disclaimer Small
 /
 
-div class='c-disclaimer'
+div class='c-disclaimer' data-sketch-symbol=symbol data-sketch-symbol-instance=instance
   p
     small
       span class="icon bg-icon-info c-disclaimer__icon c-disclaimer__icon--pre"

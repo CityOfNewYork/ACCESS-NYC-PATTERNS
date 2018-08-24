@@ -1,10 +1,6 @@
 /
+/ Tag Button
 /
-/
-button class='btn-primary btn-tag mb-2'
-  | Tag
 
-br
-
-a class='btn-primary btn-tag'
+button class='btn-primary btn-tag mb-2' data-sketch-symbol=symbol data-sketch-symbol-instance=instance
   | Tag

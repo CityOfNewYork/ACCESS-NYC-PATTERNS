@@ -1,5 +1,5 @@
 / Layout
-= extend('/layouts/default');
+= extend('layouts/default');
 
 / Component
 - title = 'Question';
@@ -22,5 +22,10 @@
 
 = content('content');
   = mixin('content-header', title);
-  = mixin('section', 'Default Styling', 'components/question/question');
-  = mixin('section', 'Errors', 'components/question/question-error');
+  = mixin('section', 'Number Question', 'components/question/question-number');
+  = mixin('section', 'Number Question Errors', 'components/question/question-number-error');
+  = mixin('section', 'Text Question', 'components/question/question-text');
+  = mixin('section', 'Multiple Choice Question', 'components/question/question-multiple-choice');
+  = mixin('section', 'Toggle Question', 'components/question/question-toggle');
+  = mixin('section', 'Select Question', 'components/question/question-select');
+  = mixin('section', 'Select Question', 'components/question/question-radio');

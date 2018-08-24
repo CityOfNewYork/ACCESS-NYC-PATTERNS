@@ -2,7 +2,7 @@
 / Select
 /
 
-select class='select'
+select class='select' id="person-0-incomes-0" name="Person[0].incomes[0].type" data-sketch-symbol=symbol data-sketch-symbol-instance=instance
   option value='' selected='true' Click to add an income type
   option value='Wages' wages, salaries, tips
   option value='SelfEmployment' self-employment Income

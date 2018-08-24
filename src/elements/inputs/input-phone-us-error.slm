@@ -1,0 +1,6 @@
+/
+/ Input Phone Error
+/
+
+div class='error input-phone-us' data-sketch-symbol=symbol data-sketch-symbol-instance=instance
+  input type='text' aria-invalid='true'

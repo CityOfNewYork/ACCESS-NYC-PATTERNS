@@ -10,7 +10,6 @@ nav class='${class_nav} pl-4'
   a class='${class_nav_item}' href='checkboxes' Checkboxes
   a class='${class_nav_item}' href='colors' Colors
   a class='${class_nav_item}' href='dividers' Dividers
-  a class='${class_nav_item}' href='font-families' Fonts
   a class='${class_nav_item}' href='icons' Icons
   a class='${class_nav_item}' href='inputs' Inputs
   a class='${class_nav_item}' href='layouts' Layouts

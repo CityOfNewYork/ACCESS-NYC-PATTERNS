@@ -71,8 +71,8 @@ $search-icon-width: 24px;
   }
 }
 
-.error .input-phone-us,
-.error .input-currency-usd {
+.error.input-phone-us,
+.error.input-currency-usd {
   &::after {
     color: $color-red;
   }

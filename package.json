@@ -41,6 +41,7 @@
     "svgs:optimize": "svgo -f $npm_package_config_svg_src -o $npm_package_config_svg_dist",
     "svgs:symbol": "svgstore -o $npm_package_config_svg_sprite_partial $npm_package_config_svg_dist/*.svg --inline && svgstore -o $npm_package_config_svg_sprite_svg $npm_package_config_svg_dist/*.svg --inline",
     "svgs:watch": "nodemon --ext svg --watch $npm_package_config_svg_src -x 'npm run svgs'",
+    "design:sketch": "html-sketchapp --viewports.Desktop 1024x768 --file dist/sketch.html --out-dir dist/design/sketch",
     "make": "node .app/make.js"
   },
   "devDependencies": {
@@ -56,6 +57,7 @@
     "css-mqpacker": "^6.0.2",
     "cssnano": "^3.10.0",
     "cssnano-cli": "^1.0.5",
+    "directory-tree": "^2.1.0",
     "escape-html": "^1.0.3",
     "eslint": "^4.19.1",
     "eslint-config-google": "^0.9.1",

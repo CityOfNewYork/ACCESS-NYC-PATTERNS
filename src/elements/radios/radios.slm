@@ -1,10 +1,15 @@
-label class='label' Select the type of phone number;
-label class='radio'
-  input value='home' type='radio' name='application' checked='true'
-  span class='radio__label' Home
-label class='radio'
-  input value='work' type='radio' name='application'
-  span class='radio__label' Work
-label class='radio'
-  input value='cell' type='radio' name='application'
-  span class='radio__label' Cell Phone
+/
+/ Radios
+/
+
+- if (typeof text === 'undefined')
+  - ;
+  label class='radio' for='client-phone-type-home' data-sketch-symbol=symbol data-sketch-symbol-instance=instance
+    input id='client-phone-type-home' value='home' type='radio' name='Client.phoneType'
+    span class='radio__label' Home
+- else
+  - ;
+  label class='radio' for='client-phone-type-${text[1]}' data-sketch-symbol=symbol data-sketch-symbol-instance=instance
+    input id='client-phone-type-${text[1]}' value='${text[1]}' type='radio' name='Client.phoneType'
+    span class='radio__label'
+      = text[0];

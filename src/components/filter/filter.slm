@@ -1,4 +1,4 @@
-div class='c-filter'
+div class='c-filter' data-sketch-symbol=symbol data-sketch-symbol-instance=instance
   a href='#filter__list' class='c-filter__header active' data-js='filter' All Programs
   ul#filter__list class='c-filter__list active'
     li

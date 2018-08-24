@@ -1,6 +1,7 @@
 /
 / Lists
 /
+
 ul class='list-inline-comma'
   li Student
   li Full-time student

@@ -2,7 +2,7 @@
 / Search-box
 /
 
-div class='o-search-box active static' id='search' aria-hidden='true'
+div class='o-search-box active static' id='search' aria-hidden='true' data-sketch-symbol=symbol data-sketch-symbol-instance=instance
   div class='o-search-box__inner'
     div class='usa-grid'
       div class='usa-width-one-whole'
@@ -15,7 +15,9 @@ div class='o-search-box active static' id='search' aria-hidden='true'
         form class='o-search-box__form'
           input name='lang' value='en' type='hidden'
           label class='type-small' for='search-field' Search
-          = partial('../../elements/inputs/input-search.slm');
+          - symbol = false;
+          - instance = 'elements/inputs/input-search';
+          = partial(`../../${instance}.slm`);
 
         div class='o-search-box__suggestions'
           div class='o-search-box__suggestions-header'

@@ -19,10 +19,7 @@ const BASE_PATH = `${SOURCE}/views`;
 const VIEWS = 'src/views/';
 const DIST ='dist/';
 const WHITELIST = ['partials', 'layouts'];
-const LOCALS = {
-  vars: require('../config/variables'),
-  site: require('../config/site')
-};
+const LOCALS = require('./locals');
 
 /**
  * Functions
@@ -119,7 +116,7 @@ function fnReadFile(filename, path, fnCallback) {
 }
 
 /**
- * Read the views directory
+ * Read a specific file or if it's a directory, reread all of the files in it.
  * @param  {string} err   - the error from reading the directory, if any
  * @param  {array}  files - the list of files in the directory
  */
@@ -134,9 +131,9 @@ function fnReadFiles(files, path) {
 }
 
 /**
- * [fnReadDir description]
- * @param  {[type]} path [description]
- * @return {[type]}      [description]
+ * Read the views directory
+ * @param  {string} path - The path of the directory to read
+ * @return {null}        - Only returns null if there is an error
  */
 function fnReadDir(path) {
   Fs.readdir(path, 'utf-8', (err, files) => {

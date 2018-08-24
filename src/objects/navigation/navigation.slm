@@ -2,7 +2,7 @@
 / Navigation
 /
 
-nav class='o-navigation'
+nav class='o-navigation' data-sketch-symbol=symbol
   div class='logo-access'
     a href='/'
       svg class='icon icon-logo-full'
@@ -19,4 +19,6 @@ nav class='o-navigation'
         use xlink:href='#icon-search'
       | Search
 
+  - symbol = false;
+  - instance = 'objects/mobile-nav/mobile-nav';
   = partial('../mobile-nav/mobile-nav');

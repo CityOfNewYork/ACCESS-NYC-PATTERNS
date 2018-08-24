@@ -1,2 +1,0 @@
-div class='table'
-  = partial('tables.slm');

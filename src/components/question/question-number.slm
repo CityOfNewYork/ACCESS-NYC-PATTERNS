@@ -1,8 +1,8 @@
 /
-/ Question
+/ Question Number
 /
 
-div class='c-question'
+div class='c-question' data-sketch-symbol=symbol data-sketch-symbol-instance=instance
   label class='c-question__label' for='person-0-age' How old are you?
 
   p
@@ -12,4 +12,6 @@ div class='c-question'
         use xlink:href='#icon-info'
 
   div class='c-question__container'
-    input min='0' maxlength='3' pattern='[0-9]' step='1' type='number'
+    - symbol = false;
+    - instance = 'elements/inputs/input-number';
+    = partial(`../../${instance}.slm`);

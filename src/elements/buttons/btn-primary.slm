@@ -1,10 +1,6 @@
 /
 / Primary Button
 /
-button class='btn-primary mb-2'
+
+button class='btn-primary mb-2' data-sketch-symbol=symbol data-sketch-symbol-instance=instance
   | Primary Button
-
-br
-
-a class='btn-primary'
-  | Primary Link

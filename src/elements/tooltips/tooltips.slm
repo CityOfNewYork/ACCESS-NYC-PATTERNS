@@ -1,2 +1,2 @@
-div class='tooltip' aria-hidden='false' role='tooltip'
+div class='tooltip' aria-hidden='false' role='tooltip' data-sketch-symbol=symbol data-sketch-symbol-instance=instance
   p Many benefit programs are meant for people of a specific age group. Sharing your age will help us choose the programs that will be most helpful to you right now. The information you share for the purposes of public benefits screening will be anonymous.

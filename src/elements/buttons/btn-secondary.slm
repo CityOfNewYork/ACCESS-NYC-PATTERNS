@@ -1,10 +1,6 @@
 /
 / Secondary Buttons
 /
-button class='btn-secondary mb-2'
+
+button class='btn-secondary mb-2' data-sketch-symbol=symbol data-sketch-symbol-instance=instance
   | Secondary Button
-
-br
-
-a class='btn-secondary'
-  | Secondary Link
