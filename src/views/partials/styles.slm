@@ -19,6 +19,6 @@
 -   class_swatch__label = 'mt-1';
 
 / Styling for the nav
-- class_nav = 'flex-1';
--   class_nav_heading = 'screen-desktop:block border-b border-color-white p-1';
--   class_nav_item = 'screen-desktop:block p-1';
+- class_nav = 'screen-tablet:flex-1 mb-1 px-2';
+-   class_nav_heading = 'screen-tablet:block screen-tablet:border-b border-color-white p-1';
+-   class_nav_item = 'inline-block p-1';

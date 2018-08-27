@@ -18,12 +18,18 @@ $animate: map-get($variables, 'animate');
   content: attr(data-css-active-text) // can't be read by screen readers
 }
 
-.hidden\:overflow {
+.hidden\:overflow,
+.hidden.hidden\:overflow {
   max-height: 0;
   overflow: hidden;
 }
 
-.active.hidden\:overflow {
+.hidden.hidden\:overflow {
+  display: inherit !important; // cancel out the .hidden display:none attribute.
+}
+
+.active.hidden\:overflow,
+.active.hidden.hidden\:overflow {
   max-height: inherit;
 }
 

@@ -4,7 +4,7 @@ nav class='${class_nav}'
   a class='${class_nav_item}' href='${link_npm}' NPM
   a class='${class_nav_item}' href='${link_source}' GitHub
 
-nav class='${class_nav} pl-4'
+nav class='${class_nav} screen-desktop:pl-4'
   span class='${class_nav_heading}' Elements;
   a class='${class_nav_item}' href='buttons' Buttons
   a class='${class_nav_item}' href='checkboxes' Checkboxes
@@ -24,7 +24,7 @@ nav class='${class_nav} pl-4'
   a class='${class_nav_item}' href='typography' Typography
   a class='${class_nav_item}' href='selects' Selects
 
-nav class='${class_nav} pl-4'
+nav class='${class_nav} screen-desktop:pl-4'
   span class='${class_nav_heading}' Components;
   a class='${class_nav_item}' href='accordion' Accordion
   a class='${class_nav_item}' href='alert-box' Alert Box
@@ -39,7 +39,7 @@ nav class='${class_nav} pl-4'
   a class='${class_nav_item}' href='side-nav' Side Nav
   a class='${class_nav_item}' href='question' Question
 
-nav class='${class_nav} pl-4'
+nav class='${class_nav} screen-desktop:pl-4'
   span class='${class_nav_heading}' Objects;
   a class='${class_nav_item}' href='announcements' Announcements
   a class='${class_nav_item}' href='banner' Banner

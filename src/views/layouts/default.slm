@@ -6,9 +6,9 @@ html lang='en' class='bg-color-white text-size-0'
 
     = partial('/partials/header.slm');
 
-    aside#main-menu class='text-font-size-small bg-color-blue-light hidden' style='position:relative;top:-1px' aria-hidden='true'
+    aside#main-menu class='text-font-size-small bg-color-blue-light hidden hidden:overflow animated' style='position:relative;top:-1px' aria-hidden='true'
       div class='page-wrapper'
-        div class='flex py-4'
+        div class='screen-tablet:flex py-4'
           = partial('/partials/nav.slm');
 
     main#main-content class='pt-4'
@@ -17,7 +17,7 @@ html lang='en' class='bg-color-white text-size-0'
 
     = partial('/partials/footer.slm');
 
-    script src='https://cdn.polyfill.io/v2/polyfill.js?features=fetch&flags=gated'
+    script src='https://cdn.polyfill.io/v2/polyfill.min.js?features=fetch,Element.prototype.matches,Promise&flags=gated'
     script src='scripts/AccessNyc.js'
     script src='scripts/markdown.min.js'
     javascript:

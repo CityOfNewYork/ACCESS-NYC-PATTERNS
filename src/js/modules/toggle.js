@@ -4,6 +4,8 @@ import Utility from './utility';
 
 /**
  * The Simple Toggle class
+ * This uses the .matches() method which will require a polyfill for IE
+ * https://polyfill.io/v2/docs/features/#Element_prototype_matches
  * @class
  */
 class Toggle {
@@ -40,8 +42,7 @@ class Toggle {
     const body = document.querySelector('body');
 
     body.addEventListener('click', (event) => {
-      let method = (!event.target.matches) ? 'msMatchesSelector' : 'matches';
-      if (!event.target[method](this._settings.selector))
+      if (!event.target.matches(this._settings.selector))
         return;
 
       // Click event logging
