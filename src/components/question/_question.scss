@@ -24,9 +24,9 @@
       top: .5 * -$spacing-base;
       bottom: -$spacing-base;
       @if $text-direction == 'rtl' {
-        right: .5 * -$spacing-base;
+        right: -19px;
       } @else {
-        left: -$spacing-base;
+        left: -19px;
       }
       border-left: 3px solid $color-red;
       content: '';
