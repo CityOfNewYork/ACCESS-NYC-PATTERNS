@@ -8,8 +8,6 @@
 @import 'config/dimensions';
 @import 'config/media';
 @import 'scss/functions/strip-units';
-// @import 'bourbon-neat/app/assets/stylesheets/grid/media';
-// @import 'uswds/src/stylesheets/components/forms';
 
 $cdn: map-get($variables, 'cdn');
 
@@ -17,6 +15,7 @@ $cdn: map-get($variables, 'cdn');
 fieldset {
   border-width: 0;
   padding: 0;
+  margin: 0;
 }
 
 input,
