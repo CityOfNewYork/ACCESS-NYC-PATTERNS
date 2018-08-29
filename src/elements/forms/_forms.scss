@@ -12,7 +12,7 @@
 $cdn: map-get($variables, 'cdn');
 
 // Declarations
-fieldset {
+fieldset, legend {
   border-width: 0;
   padding: 0;
   margin: 0;
