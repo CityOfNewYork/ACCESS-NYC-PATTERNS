@@ -23,692 +23,864 @@
 
   <body class="bg-color-white" onload="load()" style="visibility: hidden;">
     <a class="sr-only" href="#main-content">Skip to main content</a>
-    <header class="px-2">
-      <div class="border-b border-color-grey-light">
-        <div class="flex items-center justify-between p-2 screen-tablet:py-4 screen-tablet:px-2">
-          <div>
-            <h1 class="m-0 p-0 leading-normal"><span class="hidden">ACCESS NYC</span>
-              <svg aria-hidden="true" class="icon-logo-mark screen-tablet:hidden">
-                <use xlink:href="#icon-logo-mark"></use>
-              </svg>
-              <svg aria-hidden="true" class="icon-logo-full--large text-color-blue-dark hidden screen-tablet:inline-block">
-                <use xlink:href="#icon-logo-full"></use>
-              </svg>
-            </h1>
+    <div class="min-h-screen">
+      <header class="px-2">
+        <div class="border-b border-color-grey-light">
+          <div class="flex items-center justify-between p-2 screen-tablet:py-4 screen-tablet:px-2">
+            <div>
+              <h1 class="m-0 p-0 leading-normal"><span class="hidden">ACCESS NYC</span>
+                <svg aria-hidden="true" class="icon-logo-mark screen-tablet:hidden">
+                  <use xlink:href="#icon-logo-mark"></use>
+                </svg>
+                <svg aria-hidden="true" class="icon-logo-full--large text-color-blue-dark hidden screen-tablet:inline-block">
+                  <use xlink:href="#icon-logo-full"></use>
+                </svg>
+              </h1>
+            </div>
+            <div class="flex items-center">
+              <h2 class="text-font-size-small m-0 text-color-blue-dark screen-tablet:hidden">Patterns</h2>
+              <h2 aria-hidden="true" class="type-h1 m-0 text-color-blue-dark hidden screen-tablet:inline-block">Patterns</h2>
+              <nav class="text-font-size-small">
+                <a class="rounded-lg text-color-blue-dark border-2 no-underline px-1 ml-2 hidden screen-tablet:inline-block" href="https://github.com/CityOfNewYork/ACCESS-NYC-PATTERNS">0.0.11-6</a>
+                <a aria-hidden="true" class="ml-1 screen-tablet:ml-2 screen-tablet:hidden" href="https://github.com/CityOfNewYork/ACCESS-NYC-PATTERNS">0.0.11-6</a>
+                <a class="ml-1 screen-tablet:ml-2" data-js="toggle" href="#main-menu">Menu</a>
+              </nav>
+            </div>
           </div>
-          <div class="flex items-center">
-            <h2 class="text-font-size-small m-0 text-color-blue-dark screen-tablet:hidden">Patterns</h2>
-            <h2 aria-hidden="true" class="type-h1 m-0 text-color-blue-dark hidden screen-tablet:inline-block">Patterns</h2>
-            <nav class="text-font-size-small">
-              <a class="rounded-lg text-color-blue-dark border-2 no-underline px-1 ml-2 hidden screen-tablet:inline-block" href="https://github.com/CityOfNewYork/ACCESS-NYC-PATTERNS">0.0.11-5</a>
-              <a aria-hidden="true" class="ml-1 screen-tablet:ml-2 screen-tablet:hidden" href="https://github.com/CityOfNewYork/ACCESS-NYC-PATTERNS">0.0.11-5</a>
-              <a class="ml-1 screen-tablet:ml-2" data-js="toggle" href="#main-menu">Menu</a>
+        </div>
+      </header>
+      <aside aria-hidden="true" class="text-font-size-small bg-color-blue-light hidden hidden:overflow animated" id="main-menu" style="position:relative;top:-1px">
+        <div class="page-wrapper">
+          <div class="screen-tablet:flex py-4">
+            <nav class="screen-tablet:flex-1 mb-1 px-2"><span class="screen-tablet:block screen-tablet:border-b border-color-white p-1">Main;</span>
+              <a class="block p-1" href="index">Home</a>
+              <a class="block p-1" href="https://www.npmjs.com/package/access-nyc-patterns">NPM</a>
+              <a class="block p-1" href="https://github.com/CityOfNewYork/ACCESS-NYC-PATTERNS">GitHub</a>
+            </nav>
+            <nav class="screen-tablet:flex-1 mb-1 px-2 screen-desktop:pl-4"><span class="screen-tablet:block screen-tablet:border-b border-color-white p-1">Elements;</span>
+              <a class="block p-1" href="buttons">Buttons</a>
+              <a class="block p-1" href="checkboxes">Checkboxes</a>
+              <a class="block p-1" href="colors">Colors</a>
+              <a class="block p-1" href="dividers">Dividers</a>
+              <a class="block p-1" href="icons">Icons</a>
+              <a class="block p-1" href="inputs">Inputs</a>
+              <a class="block p-1" href="layouts">Layouts</a>
+              <a class="block p-1" href="links">Links</a>
+              <a class="block p-1" href="lists">Lists</a>
+              <a class="block p-1" href="nav">Nav</a>
+              <a class="block p-1" href="program-labels">Program Labels</a>
+              <a class="block p-1" href="radios">Radios</a>
+              <a class="block p-1" href="tables">Tables</a>
+              <a class="block p-1" href="tooltips">Tooltips</a>
+              <a class="block p-1" href="toggles">Toggles</a>
+              <a class="block p-1" href="typography">Typography</a>
+              <a class="block p-1" href="selects">Selects</a>
+            </nav>
+            <nav class="screen-tablet:flex-1 mb-1 px-2 screen-desktop:pl-4"><span class="screen-tablet:block screen-tablet:border-b border-color-white p-1">Components;</span>
+              <a class="block p-1" href="accordion">Accordion</a>
+              <a class="block p-1" href="alert-box">Alert Box</a>
+              <a class="block p-1" href="card">Card</a>
+              <a class="block p-1" href="checklist">Checklist</a>
+              <a class="block p-1" href="disclaimer">Disclaimer</a>
+              <a class="block p-1" href="filter">Filter</a>
+              <a class="block p-1" href="header">Header</a>
+              <a class="block p-1" href="member-list">Member List</a>
+              <a class="block p-1" href="nearby-stops">Nearby Stops</a>
+              <a class="block p-1" href="text-controller">Text Controller</a>
+              <a class="block p-1" href="share-form">Share Form</a>
+              <a class="block p-1" href="side-nav">Side Nav</a>
+              <a class="block p-1" href="question">Question</a>
+            </nav>
+            <nav class="screen-tablet:flex-1 mb-1 px-2 screen-desktop:pl-4"><span class="screen-tablet:block screen-tablet:border-b border-color-white p-1">Objects;</span>
+              <a class="block p-1" href="announcements">Announcements</a>
+              <a class="block p-1" href="banner">Banner</a>
+              <a class="block p-1" href="card-list">Card Lists</a>
+              <a class="block p-1" href="content">Content</a>
+              <a class="block p-1" href="footer">Footer</a>
+              <a class="block p-1" href="mobile-nav">Mobile Nav</a>
+              <a class="block p-1" href="navigation">Navigation</a>
+              <a class="block p-1" href="search-box">Search Box</a>
             </nav>
           </div>
         </div>
-      </div>
-    </header>
-    <aside aria-hidden="true" class="text-font-size-small bg-color-blue-light hidden hidden:overflow animated" id="main-menu" style="position:relative;top:-1px">
-      <div class="page-wrapper">
-        <div class="screen-tablet:flex py-4">
-          <nav class="screen-tablet:flex-1 mb-1 px-2"><span class="screen-tablet:block screen-tablet:border-b border-color-white p-1">Main;</span>
-            <a class="inline-block p-1" href="index">Home</a>
-            <a class="inline-block p-1" href="https://www.npmjs.com/package/access-nyc-patterns">NPM</a>
-            <a class="inline-block p-1" href="https://github.com/CityOfNewYork/ACCESS-NYC-PATTERNS">GitHub</a>
-          </nav>
-          <nav class="screen-tablet:flex-1 mb-1 px-2 screen-desktop:pl-4"><span class="screen-tablet:block screen-tablet:border-b border-color-white p-1">Elements;</span>
-            <a class="inline-block p-1" href="buttons">Buttons</a>
-            <a class="inline-block p-1" href="checkboxes">Checkboxes</a>
-            <a class="inline-block p-1" href="colors">Colors</a>
-            <a class="inline-block p-1" href="dividers">Dividers</a>
-            <a class="inline-block p-1" href="icons">Icons</a>
-            <a class="inline-block p-1" href="inputs">Inputs</a>
-            <a class="inline-block p-1" href="layouts">Layouts</a>
-            <a class="inline-block p-1" href="links">Links</a>
-            <a class="inline-block p-1" href="lists">Lists</a>
-            <a class="inline-block p-1" href="nav">Nav</a>
-            <a class="inline-block p-1" href="program-labels">Program Labels</a>
-            <a class="inline-block p-1" href="radios">Radios</a>
-            <a class="inline-block p-1" href="tables">Tables</a>
-            <a class="inline-block p-1" href="tooltips">Tooltips</a>
-            <a class="inline-block p-1" href="toggles">Toggles</a>
-            <a class="inline-block p-1" href="typography">Typography</a>
-            <a class="inline-block p-1" href="selects">Selects</a>
-          </nav>
-          <nav class="screen-tablet:flex-1 mb-1 px-2 screen-desktop:pl-4"><span class="screen-tablet:block screen-tablet:border-b border-color-white p-1">Components;</span>
-            <a class="inline-block p-1" href="accordion">Accordion</a>
-            <a class="inline-block p-1" href="alert-box">Alert Box</a>
-            <a class="inline-block p-1" href="card">Card</a>
-            <a class="inline-block p-1" href="checklist">Checklist</a>
-            <a class="inline-block p-1" href="disclaimer">Disclaimer</a>
-            <a class="inline-block p-1" href="filter">Filter</a>
-            <a class="inline-block p-1" href="header">Header</a>
-            <a class="inline-block p-1" href="member-list">Member List</a>
-            <a class="inline-block p-1" href="text-controller">Text Controller</a>
-            <a class="inline-block p-1" href="share-form">Share Form</a>
-            <a class="inline-block p-1" href="side-nav">Side Nav</a>
-            <a class="inline-block p-1" href="question">Question</a>
-          </nav>
-          <nav class="screen-tablet:flex-1 mb-1 px-2 screen-desktop:pl-4"><span class="screen-tablet:block screen-tablet:border-b border-color-white p-1">Objects;</span>
-            <a class="inline-block p-1" href="announcements">Announcements</a>
-            <a class="inline-block p-1" href="banner">Banner</a>
-            <a class="inline-block p-1" href="card-list">Card Lists</a>
-            <a class="inline-block p-1" href="content">Content</a>
-            <a class="inline-block p-1" href="footer">Footer</a>
-            <a class="inline-block p-1" href="mobile-nav">Mobile Nav</a>
-            <a class="inline-block p-1" href="navigation">Navigation</a>
-            <a class="inline-block p-1" href="search-box">Search Box</a>
-          </nav>
-        </div>
-      </div>
-    </aside>
-    <main class="pt-4" id="main-content">
-      <article class="py-4">
-        <header class="page-wrapper px-2 screen-desktop:px-0 layout--home-body">
-          <div class="my-0 w-full">
-            <h1 class="text-color-blue-dark px-2 m-0">Icons</h1>
-          </div>
-        </header>
-        <section class="pb-4 mb-4" id="usage-and-icon-library">
-          <div class="page-wrapper px-2 screen-desktop:px-0">
-            <header class="layout--home-body">
-              <div class="my-0 pt-1 px-2 border-b border-color-grey-light">
-                <h2>
-                  <a class="text-color-grey-mid font-normal no-underline capitalize" href="#usage-and-icon-library">Usage and Icon Library</a>
-                </h2>
-              </div>
-            </header>
-            <div class="layout--home-body">
-              <div class="my-0 pt-4 px-2 text-font-size-small" data-js="markdown" data-js-markdown="elements/icons/icons.md">
-                <div class="p-1 mb-1 bg-color-grey-lightest"></div>
-                <div class="p-1 mb-1 bg-color-grey-lightest"></div>
-                <div class="p-1 mb-1 bg-color-grey-lightest"></div>
-                <div class="p-1 mb-1 bg-color-grey-lightest"></div>
-                <div class="p-1 mb-1 bg-color-grey-lightest"></div>
-                <div class="p-1 mb-1 bg-color-grey-lightest"></div>
-                <div class="p-1 mb-1 bg-color-grey-lightest"></div>
-                <div class="p-1 mb-1 bg-color-grey-lightest"></div>
-                <div class="p-1 mb-1 bg-color-grey-lightest"></div>
-                <div class="p-1 mb-1 bg-color-grey-lightest"></div>
-                <div class="p-1 mb-1 bg-color-grey-lightest"></div>
-                <div class="p-1 mb-1 bg-color-grey-lightest"></div>
-                <div class="p-1 mb-1 bg-color-grey-lightest"></div>
-                <div class="p-1 mb-1 bg-color-grey-lightest"></div>
-                <div class="p-1 mb-1 bg-color-grey-lightest"></div>
-                <div class="p-1 mb-1 bg-color-grey-lightest"></div>
-                <div class="p-1 mb-1 bg-color-grey-lightest"></div>
-                <div class="p-1 mb-1 bg-color-grey-lightest"></div>
-                <div class="p-1 mb-1 bg-color-grey-lightest"></div>
-                <div class="p-1 mb-1 bg-color-grey-lightest"></div>
-              </div>
+      </aside>
+      <main class="pt-4" id="main-content">
+        <article class="py-4">
+          <header class="page-wrapper px-2 screen-desktop:px-0 layout--home-body">
+            <div class="my-0 w-full">
+              <h1 class="text-color-blue-dark px-2 m-0">Icons</h1>
             </div>
-            <div class="layout--gutter screen-tablet:layout--gutter justify-between pt-4">
-              <div class="layout--gutter screen-mobile:layout--two-columns-gutter screen-tablet:layout--three-columns-gutter screen-desktop:layout--four-columns-gutter">
-                <div class="flex flex-col justify-between items-center border border-color-grey-lightest p-2">
-                  <div class="w-full">
-                    <div class="text-font-size-small">
-                      <h3 class="text-font-size-small capitalize mb-2">icon logo full</h3>
-                      <div class="py-4 text-center bg-color-grey-lightest px-2 mb-2 flex items-center justify-center" style="min-height:150px">
-                        <svg class="icon-logo-full text-color-blue-dark">
-                          <use xlink:href="#icon-logo-full"></use>
-                        </svg>
+          </header>
+          <section class="pb-4 mb-4" id="usage-and-icon-library">
+            <div class="page-wrapper px-2 screen-desktop:px-0">
+              <header class="layout--home-body">
+                <div class="my-0 pt-1 px-2 border-b border-color-grey-light">
+                  <h2>
+                    <a class="text-color-grey-mid font-normal no-underline capitalize" href="#usage-and-icon-library">Usage and Icon Library</a>
+                  </h2>
+                </div>
+              </header>
+              <div class="layout--home-body">
+                <div class="my-0 pt-4 px-2 text-font-size-small" data-js="markdown" data-js-markdown="elements/icons/icons.md">
+                  <div class="p-1 mb-1 bg-color-grey-lightest"></div>
+                  <div class="p-1 mb-1 bg-color-grey-lightest"></div>
+                  <div class="p-1 mb-1 bg-color-grey-lightest"></div>
+                  <div class="p-1 mb-1 bg-color-grey-lightest"></div>
+                  <div class="p-1 mb-1 bg-color-grey-lightest"></div>
+                  <div class="p-1 mb-1 bg-color-grey-lightest"></div>
+                  <div class="p-1 mb-1 bg-color-grey-lightest"></div>
+                  <div class="p-1 mb-1 bg-color-grey-lightest"></div>
+                  <div class="p-1 mb-1 bg-color-grey-lightest"></div>
+                  <div class="p-1 mb-1 bg-color-grey-lightest"></div>
+                  <div class="p-1 mb-1 bg-color-grey-lightest"></div>
+                  <div class="p-1 mb-1 bg-color-grey-lightest"></div>
+                  <div class="p-1 mb-1 bg-color-grey-lightest"></div>
+                  <div class="p-1 mb-1 bg-color-grey-lightest"></div>
+                  <div class="p-1 mb-1 bg-color-grey-lightest"></div>
+                  <div class="p-1 mb-1 bg-color-grey-lightest"></div>
+                  <div class="p-1 mb-1 bg-color-grey-lightest"></div>
+                  <div class="p-1 mb-1 bg-color-grey-lightest"></div>
+                  <div class="p-1 mb-1 bg-color-grey-lightest"></div>
+                  <div class="p-1 mb-1 bg-color-grey-lightest"></div>
+                </div>
+              </div>
+              <div class="layout--gutter screen-tablet:layout--gutter justify-between pt-4">
+                <div class="layout--gutter screen-mobile:layout--two-columns-gutter screen-tablet:layout--three-columns-gutter screen-desktop:layout--four-columns-gutter">
+                  <div class="flex flex-col justify-between items-center border border-color-grey-lightest p-2">
+                    <div class="w-full">
+                      <div class="text-font-size-small">
+                        <h3 class="text-font-size-small capitalize mb-2">icon logo full</h3>
+                        <div class="py-4 text-center bg-color-grey-lightest px-2 mb-2 flex items-center justify-center" style="min-height:150px">
+                          <svg class="icon-logo-full text-color-blue-dark">
+                            <use xlink:href="#icon-logo-full"></use>
+                          </svg>
+                        </div>
+                        <p class="mb-0 flex justify-between">xlink:href<code>#icon-logo-full</code></p>
                       </div>
-                      <p class="mb-0 flex justify-between">ID<code>icon-logo-full</code></p>
                     </div>
                   </div>
-                </div>
-                <div class="flex flex-col justify-between items-center border border-color-grey-lightest p-2">
-                  <div class="w-full">
-                    <div class="text-font-size-small">
-                      <h3 class="text-font-size-small capitalize mb-2">icon logo full large</h3>
-                      <div class="py-4 text-center bg-color-grey-lightest px-2 mb-2 flex items-center justify-center" style="min-height:150px">
-                        <svg class="icon-logo-full--large text-color-blue-dark">
-                          <use xlink:href="#icon-logo-full"></use>
-                        </svg>
+                  <div class="flex flex-col justify-between items-center border border-color-grey-lightest p-2">
+                    <div class="w-full">
+                      <div class="text-font-size-small">
+                        <h3 class="text-font-size-small capitalize mb-2">icon logo full large</h3>
+                        <div class="py-4 text-center bg-color-grey-lightest px-2 mb-2 flex items-center justify-center" style="min-height:150px">
+                          <svg class="icon-logo-full--large text-color-blue-dark">
+                            <use xlink:href="#icon-logo-full"></use>
+                          </svg>
+                        </div>
+                        <p class="mb-0 flex justify-between">xlink:href<code>#icon-logo-full--large</code></p>
                       </div>
-                      <p class="mb-0 flex justify-between">ID<code>icon-logo-full--large</code></p>
                     </div>
                   </div>
-                </div>
-                <div class="flex flex-col justify-between items-center border border-color-grey-lightest p-2">
-                  <div class="w-full">
-                    <div class="text-font-size-small">
-                      <h3 class="text-font-size-small capitalize mb-2">icon logo mark</h3>
-                      <div class="py-4 text-center bg-color-grey-lightest px-2 mb-2 flex items-center justify-center" style="min-height:150px">
-                        <svg class="icon-logo-mark text-color-blue-dark">
-                          <use xlink:href="#icon-logo-mark"></use>
-                        </svg>
+                  <div class="flex flex-col justify-between items-center border border-color-grey-lightest p-2">
+                    <div class="w-full">
+                      <div class="text-font-size-small">
+                        <h3 class="text-font-size-small capitalize mb-2">icon logo mark</h3>
+                        <div class="py-4 text-center bg-color-grey-lightest px-2 mb-2 flex items-center justify-center" style="min-height:150px">
+                          <svg class="icon-logo-mark text-color-blue-dark">
+                            <use xlink:href="#icon-logo-mark"></use>
+                          </svg>
+                        </div>
+                        <p class="mb-0 flex justify-between">xlink:href<code>#icon-logo-mark</code></p>
                       </div>
-                      <p class="mb-0 flex justify-between">ID<code>icon-logo-mark</code></p>
                     </div>
                   </div>
-                </div>
-                <div class="flex flex-col justify-between items-center border border-color-grey-lightest p-2">
-                  <div class="w-full">
-                    <div class="text-font-size-small">
-                      <h3 class="text-font-size-small capitalize mb-2">icon logo nyc</h3>
-                      <div class="py-4 text-center bg-color-grey-lightest px-2 mb-2 flex items-center justify-center" style="min-height:150px">
-                        <svg class="icon-logo-nyc text-color-blue-dark">
-                          <use xlink:href="#icon-logo-nyc"></use>
-                        </svg>
+                  <div class="flex flex-col justify-between items-center border border-color-grey-lightest p-2">
+                    <div class="w-full">
+                      <div class="text-font-size-small">
+                        <h3 class="text-font-size-small capitalize mb-2">icon logo nyc</h3>
+                        <div class="py-4 text-center bg-color-grey-lightest px-2 mb-2 flex items-center justify-center" style="min-height:150px">
+                          <svg class="icon-logo-nyc text-color-blue-dark">
+                            <use xlink:href="#icon-logo-nyc"></use>
+                          </svg>
+                        </div>
+                        <p class="mb-0 flex justify-between">xlink:href<code>#icon-logo-nyc</code></p>
                       </div>
-                      <p class="mb-0 flex justify-between">ID<code>icon-logo-nyc</code></p>
                     </div>
                   </div>
-                </div>
-                <div class="flex flex-col justify-between items-center border border-color-grey-lightest p-2">
-                  <div class="w-full">
-                    <div class="text-font-size-small">
-                      <h3 class="text-font-size-small capitalize mb-2">icon close</h3>
-                      <div class="py-4 text-center bg-color-grey-lightest px-2 mb-2 flex items-center justify-center" style="min-height:150px">
-                        <svg class="icon-close text-color-blue-dark">
-                          <use xlink:href="#icon-close"></use>
-                        </svg>
+                  <div class="flex flex-col justify-between items-center border border-color-grey-lightest p-2">
+                    <div class="w-full">
+                      <div class="text-font-size-small">
+                        <h3 class="text-font-size-small capitalize mb-2">icon close</h3>
+                        <div class="py-4 text-center bg-color-grey-lightest px-2 mb-2 flex items-center justify-center" style="min-height:150px">
+                          <svg class="icon-close text-color-blue-dark">
+                            <use xlink:href="#icon-close"></use>
+                          </svg>
+                        </div>
+                        <p class="mb-0 flex justify-between">xlink:href<code>#icon-close</code></p>
                       </div>
-                      <p class="mb-0 flex justify-between">ID<code>icon-close</code></p>
                     </div>
                   </div>
-                </div>
-                <div class="flex flex-col justify-between items-center border border-color-grey-lightest p-2">
-                  <div class="w-full">
-                    <div class="text-font-size-small">
-                      <h3 class="text-font-size-small capitalize mb-2">icon contact</h3>
-                      <div class="py-4 text-center bg-color-grey-lightest px-2 mb-2 flex items-center justify-center" style="min-height:150px">
-                        <svg class="icon-contact text-color-blue-dark">
-                          <use xlink:href="#icon-contact"></use>
-                        </svg>
+                  <div class="flex flex-col justify-between items-center border border-color-grey-lightest p-2">
+                    <div class="w-full">
+                      <div class="text-font-size-small">
+                        <h3 class="text-font-size-small capitalize mb-2">icon contact</h3>
+                        <div class="py-4 text-center bg-color-grey-lightest px-2 mb-2 flex items-center justify-center" style="min-height:150px">
+                          <svg class="icon-contact text-color-blue-dark">
+                            <use xlink:href="#icon-contact"></use>
+                          </svg>
+                        </div>
+                        <p class="mb-0 flex justify-between">xlink:href<code>#icon-contact</code></p>
                       </div>
-                      <p class="mb-0 flex justify-between">ID<code>icon-contact</code></p>
                     </div>
                   </div>
-                </div>
-                <div class="flex flex-col justify-between items-center border border-color-grey-lightest p-2">
-                  <div class="w-full">
-                    <div class="text-font-size-small">
-                      <h3 class="text-font-size-small capitalize mb-2">icon gear</h3>
-                      <div class="py-4 text-center bg-color-grey-lightest px-2 mb-2 flex items-center justify-center" style="min-height:150px">
-                        <svg class="icon-gear text-color-blue-dark">
-                          <use xlink:href="#icon-gear"></use>
-                        </svg>
+                  <div class="flex flex-col justify-between items-center border border-color-grey-lightest p-2">
+                    <div class="w-full">
+                      <div class="text-font-size-small">
+                        <h3 class="text-font-size-small capitalize mb-2">icon gear</h3>
+                        <div class="py-4 text-center bg-color-grey-lightest px-2 mb-2 flex items-center justify-center" style="min-height:150px">
+                          <svg class="icon-gear text-color-blue-dark">
+                            <use xlink:href="#icon-gear"></use>
+                          </svg>
+                        </div>
+                        <p class="mb-0 flex justify-between">xlink:href<code>#icon-gear</code></p>
                       </div>
-                      <p class="mb-0 flex justify-between">ID<code>icon-gear</code></p>
                     </div>
                   </div>
-                </div>
-                <div class="flex flex-col justify-between items-center border border-color-grey-lightest p-2">
-                  <div class="w-full">
-                    <div class="text-font-size-small">
-                      <h3 class="text-font-size-small capitalize mb-2">icon minus</h3>
-                      <div class="py-4 text-center bg-color-grey-lightest px-2 mb-2 flex items-center justify-center" style="min-height:150px">
-                        <svg class="icon-minus text-color-blue-dark">
-                          <use xlink:href="#icon-minus"></use>
-                        </svg>
+                  <div class="flex flex-col justify-between items-center border border-color-grey-lightest p-2">
+                    <div class="w-full">
+                      <div class="text-font-size-small">
+                        <h3 class="text-font-size-small capitalize mb-2">icon minus</h3>
+                        <div class="py-4 text-center bg-color-grey-lightest px-2 mb-2 flex items-center justify-center" style="min-height:150px">
+                          <svg class="icon-minus text-color-blue-dark">
+                            <use xlink:href="#icon-minus"></use>
+                          </svg>
+                        </div>
+                        <p class="mb-0 flex justify-between">xlink:href<code>#icon-minus</code></p>
                       </div>
-                      <p class="mb-0 flex justify-between">ID<code>icon-minus</code></p>
                     </div>
                   </div>
-                </div>
-                <div class="flex flex-col justify-between items-center border border-color-grey-lightest p-2">
-                  <div class="w-full">
-                    <div class="text-font-size-small">
-                      <h3 class="text-font-size-small capitalize mb-2">icon plus</h3>
-                      <div class="py-4 text-center bg-color-grey-lightest px-2 mb-2 flex items-center justify-center" style="min-height:150px">
-                        <svg class="icon-plus text-color-blue-dark">
-                          <use xlink:href="#icon-plus"></use>
-                        </svg>
+                  <div class="flex flex-col justify-between items-center border border-color-grey-lightest p-2">
+                    <div class="w-full">
+                      <div class="text-font-size-small">
+                        <h3 class="text-font-size-small capitalize mb-2">icon plus</h3>
+                        <div class="py-4 text-center bg-color-grey-lightest px-2 mb-2 flex items-center justify-center" style="min-height:150px">
+                          <svg class="icon-plus text-color-blue-dark">
+                            <use xlink:href="#icon-plus"></use>
+                          </svg>
+                        </div>
+                        <p class="mb-0 flex justify-between">xlink:href<code>#icon-plus</code></p>
                       </div>
-                      <p class="mb-0 flex justify-between">ID<code>icon-plus</code></p>
                     </div>
                   </div>
-                </div>
-                <div class="flex flex-col justify-between items-center border border-color-grey-lightest p-2">
-                  <div class="w-full">
-                    <div class="text-font-size-small">
-                      <h3 class="text-font-size-small capitalize mb-2">icon screening</h3>
-                      <div class="py-4 text-center bg-color-grey-lightest px-2 mb-2 flex items-center justify-center" style="min-height:150px">
-                        <svg class="icon-screening text-color-blue-dark">
-                          <use xlink:href="#icon-screening"></use>
-                        </svg>
+                  <div class="flex flex-col justify-between items-center border border-color-grey-lightest p-2">
+                    <div class="w-full">
+                      <div class="text-font-size-small">
+                        <h3 class="text-font-size-small capitalize mb-2">icon screening</h3>
+                        <div class="py-4 text-center bg-color-grey-lightest px-2 mb-2 flex items-center justify-center" style="min-height:150px">
+                          <svg class="icon-screening text-color-blue-dark">
+                            <use xlink:href="#icon-screening"></use>
+                          </svg>
+                        </div>
+                        <p class="mb-0 flex justify-between">xlink:href<code>#icon-screening</code></p>
                       </div>
-                      <p class="mb-0 flex justify-between">ID<code>icon-screening</code></p>
                     </div>
                   </div>
-                </div>
-                <div class="flex flex-col justify-between items-center border border-color-grey-lightest p-2">
-                  <div class="w-full">
-                    <div class="text-font-size-small">
-                      <h3 class="text-font-size-small capitalize mb-2">icon search</h3>
-                      <div class="py-4 text-center bg-color-grey-lightest px-2 mb-2 flex items-center justify-center" style="min-height:150px">
-                        <svg class="icon-search text-color-blue-dark">
-                          <use xlink:href="#icon-search"></use>
-                        </svg>
+                  <div class="flex flex-col justify-between items-center border border-color-grey-lightest p-2">
+                    <div class="w-full">
+                      <div class="text-font-size-small">
+                        <h3 class="text-font-size-small capitalize mb-2">icon search</h3>
+                        <div class="py-4 text-center bg-color-grey-lightest px-2 mb-2 flex items-center justify-center" style="min-height:150px">
+                          <svg class="icon-search text-color-blue-dark">
+                            <use xlink:href="#icon-search"></use>
+                          </svg>
+                        </div>
+                        <p class="mb-0 flex justify-between">xlink:href<code>#icon-search</code></p>
                       </div>
-                      <p class="mb-0 flex justify-between">ID<code>icon-search</code></p>
                     </div>
                   </div>
-                </div>
-                <div class="flex flex-col justify-between items-center border border-color-grey-lightest p-2">
-                  <div class="w-full">
-                    <div class="text-font-size-small">
-                      <h3 class="text-font-size-small capitalize mb-2">icon printer</h3>
-                      <div class="py-4 text-center bg-color-grey-lightest px-2 mb-2 flex items-center justify-center" style="min-height:150px">
-                        <svg class="icon-printer text-color-blue-dark">
-                          <use xlink:href="#icon-printer"></use>
-                        </svg>
+                  <div class="flex flex-col justify-between items-center border border-color-grey-lightest p-2">
+                    <div class="w-full">
+                      <div class="text-font-size-small">
+                        <h3 class="text-font-size-small capitalize mb-2">icon printer</h3>
+                        <div class="py-4 text-center bg-color-grey-lightest px-2 mb-2 flex items-center justify-center" style="min-height:150px">
+                          <svg class="icon-printer text-color-blue-dark">
+                            <use xlink:href="#icon-printer"></use>
+                          </svg>
+                        </div>
+                        <p class="mb-0 flex justify-between">xlink:href<code>#icon-printer</code></p>
                       </div>
-                      <p class="mb-0 flex justify-between">ID<code>icon-printer</code></p>
                     </div>
                   </div>
-                </div>
-                <div class="flex flex-col justify-between items-center border border-color-grey-lightest p-2">
-                  <div class="w-full">
-                    <div class="text-font-size-small">
-                      <h3 class="text-font-size-small capitalize mb-2">icon share</h3>
-                      <div class="py-4 text-center bg-color-grey-lightest px-2 mb-2 flex items-center justify-center" style="min-height:150px">
-                        <svg class="icon-share text-color-blue-dark">
-                          <use xlink:href="#icon-share"></use>
-                        </svg>
+                  <div class="flex flex-col justify-between items-center border border-color-grey-lightest p-2">
+                    <div class="w-full">
+                      <div class="text-font-size-small">
+                        <h3 class="text-font-size-small capitalize mb-2">icon share</h3>
+                        <div class="py-4 text-center bg-color-grey-lightest px-2 mb-2 flex items-center justify-center" style="min-height:150px">
+                          <svg class="icon-share text-color-blue-dark">
+                            <use xlink:href="#icon-share"></use>
+                          </svg>
+                        </div>
+                        <p class="mb-0 flex justify-between">xlink:href<code>#icon-share</code></p>
                       </div>
-                      <p class="mb-0 flex justify-between">ID<code>icon-share</code></p>
                     </div>
                   </div>
-                </div>
-                <div class="flex flex-col justify-between items-center border border-color-grey-lightest p-2">
-                  <div class="w-full">
-                    <div class="text-font-size-small">
-                      <h3 class="text-font-size-small capitalize mb-2">icon eligibilitycheck</h3>
-                      <div class="py-4 text-center bg-color-grey-lightest px-2 mb-2 flex items-center justify-center" style="min-height:150px">
-                        <svg class="icon-eligibilitycheck text-color-blue-dark">
-                          <use xlink:href="#icon-eligibilitycheck"></use>
-                        </svg>
+                  <div class="flex flex-col justify-between items-center border border-color-grey-lightest p-2">
+                    <div class="w-full">
+                      <div class="text-font-size-small">
+                        <h3 class="text-font-size-small capitalize mb-2">icon eligibilitycheck</h3>
+                        <div class="py-4 text-center bg-color-grey-lightest px-2 mb-2 flex items-center justify-center" style="min-height:150px">
+                          <svg class="icon-eligibilitycheck text-color-blue-dark">
+                            <use xlink:href="#icon-eligibilitycheck"></use>
+                          </svg>
+                        </div>
+                        <p class="mb-0 flex justify-between">xlink:href<code>#icon-eligibilitycheck</code></p>
                       </div>
-                      <p class="mb-0 flex justify-between">ID<code>icon-eligibilitycheck</code></p>
                     </div>
                   </div>
-                </div>
-                <div class="flex flex-col justify-between items-center border border-color-grey-lightest p-2">
-                  <div class="w-full">
-                    <div class="text-font-size-small">
-                      <h3 class="text-font-size-small capitalize mb-2">icon checkmark</h3>
-                      <div class="py-4 text-center bg-color-grey-lightest px-2 mb-2 flex items-center justify-center" style="min-height:150px">
-                        <svg class="icon-checkmark text-color-blue-dark">
-                          <use xlink:href="#icon-checkmark"></use>
-                        </svg>
+                  <div class="flex flex-col justify-between items-center border border-color-grey-lightest p-2">
+                    <div class="w-full">
+                      <div class="text-font-size-small">
+                        <h3 class="text-font-size-small capitalize mb-2">icon checkmark</h3>
+                        <div class="py-4 text-center bg-color-grey-lightest px-2 mb-2 flex items-center justify-center" style="min-height:150px">
+                          <svg class="icon-checkmark text-color-blue-dark">
+                            <use xlink:href="#icon-checkmark"></use>
+                          </svg>
+                        </div>
+                        <p class="mb-0 flex justify-between">xlink:href<code>#icon-checkmark</code></p>
                       </div>
-                      <p class="mb-0 flex justify-between">ID<code>icon-checkmark</code></p>
                     </div>
                   </div>
-                </div>
-                <div class="flex flex-col justify-between items-center border border-color-grey-lightest p-2">
-                  <div class="w-full">
-                    <div class="text-font-size-small">
-                      <h3 class="text-font-size-small capitalize mb-2">icon arrow down</h3>
-                      <div class="py-4 text-center bg-color-grey-lightest px-2 mb-2 flex items-center justify-center" style="min-height:150px">
-                        <svg class="icon-arrow-down text-color-blue-dark">
-                          <use xlink:href="#icon-arrow-down"></use>
-                        </svg>
+                  <div class="flex flex-col justify-between items-center border border-color-grey-lightest p-2">
+                    <div class="w-full">
+                      <div class="text-font-size-small">
+                        <h3 class="text-font-size-small capitalize mb-2">icon arrow down</h3>
+                        <div class="py-4 text-center bg-color-grey-lightest px-2 mb-2 flex items-center justify-center" style="min-height:150px">
+                          <svg class="icon-arrow-down text-color-blue-dark">
+                            <use xlink:href="#icon-arrow-down"></use>
+                          </svg>
+                        </div>
+                        <p class="mb-0 flex justify-between">xlink:href<code>#icon-arrow-down</code></p>
                       </div>
-                      <p class="mb-0 flex justify-between">ID<code>icon-arrow-down</code></p>
                     </div>
                   </div>
-                </div>
-                <div class="flex flex-col justify-between items-center border border-color-grey-lightest p-2">
-                  <div class="w-full">
-                    <div class="text-font-size-small">
-                      <h3 class="text-font-size-small capitalize mb-2">icon info</h3>
-                      <div class="py-4 text-center bg-color-grey-lightest px-2 mb-2 flex items-center justify-center" style="min-height:150px">
-                        <svg class="icon-info text-color-blue-dark">
-                          <use xlink:href="#icon-info"></use>
-                        </svg>
+                  <div class="flex flex-col justify-between items-center border border-color-grey-lightest p-2">
+                    <div class="w-full">
+                      <div class="text-font-size-small">
+                        <h3 class="text-font-size-small capitalize mb-2">icon info</h3>
+                        <div class="py-4 text-center bg-color-grey-lightest px-2 mb-2 flex items-center justify-center" style="min-height:150px">
+                          <svg class="icon-info text-color-blue-dark">
+                            <use xlink:href="#icon-info"></use>
+                          </svg>
+                        </div>
+                        <p class="mb-0 flex justify-between">xlink:href<code>#icon-info</code></p>
                       </div>
-                      <p class="mb-0 flex justify-between">ID<code>icon-info</code></p>
                     </div>
                   </div>
-                </div>
-                <div class="flex flex-col justify-between items-center border border-color-grey-lightest p-2">
-                  <div class="w-full">
-                    <div class="text-font-size-small">
-                      <h3 class="text-font-size-small capitalize mb-2">icon success</h3>
-                      <div class="py-4 text-center bg-color-grey-lightest px-2 mb-2 flex items-center justify-center" style="min-height:150px">
-                        <svg class="icon-success text-color-blue-dark">
-                          <use xlink:href="#icon-success"></use>
-                        </svg>
+                  <div class="flex flex-col justify-between items-center border border-color-grey-lightest p-2">
+                    <div class="w-full">
+                      <div class="text-font-size-small">
+                        <h3 class="text-font-size-small capitalize mb-2">icon success</h3>
+                        <div class="py-4 text-center bg-color-grey-lightest px-2 mb-2 flex items-center justify-center" style="min-height:150px">
+                          <svg class="icon-success text-color-blue-dark">
+                            <use xlink:href="#icon-success"></use>
+                          </svg>
+                        </div>
+                        <p class="mb-0 flex justify-between">xlink:href<code>#icon-success</code></p>
                       </div>
-                      <p class="mb-0 flex justify-between">ID<code>icon-success</code></p>
                     </div>
                   </div>
-                </div>
-                <div class="flex flex-col justify-between items-center border border-color-grey-lightest p-2">
-                  <div class="w-full">
-                    <div class="text-font-size-small">
-                      <h3 class="text-font-size-small capitalize mb-2">icon urgent</h3>
-                      <div class="py-4 text-center bg-color-grey-lightest px-2 mb-2 flex items-center justify-center" style="min-height:150px">
-                        <svg class="icon-urgent text-color-blue-dark">
-                          <use xlink:href="#icon-urgent"></use>
-                        </svg>
+                  <div class="flex flex-col justify-between items-center border border-color-grey-lightest p-2">
+                    <div class="w-full">
+                      <div class="text-font-size-small">
+                        <h3 class="text-font-size-small capitalize mb-2">icon urgent</h3>
+                        <div class="py-4 text-center bg-color-grey-lightest px-2 mb-2 flex items-center justify-center" style="min-height:150px">
+                          <svg class="icon-urgent text-color-blue-dark">
+                            <use xlink:href="#icon-urgent"></use>
+                          </svg>
+                        </div>
+                        <p class="mb-0 flex justify-between">xlink:href<code>#icon-urgent</code></p>
                       </div>
-                      <p class="mb-0 flex justify-between">ID<code>icon-urgent</code></p>
                     </div>
                   </div>
-                </div>
-                <div class="flex flex-col justify-between items-center border border-color-grey-lightest p-2">
-                  <div class="w-full">
-                    <div class="text-font-size-small">
-                      <h3 class="text-font-size-small capitalize mb-2">icon warning</h3>
-                      <div class="py-4 text-center bg-color-grey-lightest px-2 mb-2 flex items-center justify-center" style="min-height:150px">
-                        <svg class="icon-warning text-color-blue-dark">
-                          <use xlink:href="#icon-warning"></use>
-                        </svg>
+                  <div class="flex flex-col justify-between items-center border border-color-grey-lightest p-2">
+                    <div class="w-full">
+                      <div class="text-font-size-small">
+                        <h3 class="text-font-size-small capitalize mb-2">icon warning</h3>
+                        <div class="py-4 text-center bg-color-grey-lightest px-2 mb-2 flex items-center justify-center" style="min-height:150px">
+                          <svg class="icon-warning text-color-blue-dark">
+                            <use xlink:href="#icon-warning"></use>
+                          </svg>
+                        </div>
+                        <p class="mb-0 flex justify-between">xlink:href<code>#icon-warning</code></p>
                       </div>
-                      <p class="mb-0 flex justify-between">ID<code>icon-warning</code></p>
                     </div>
                   </div>
-                </div>
-                <div class="flex flex-col justify-between items-center border border-color-grey-lightest p-2">
-                  <div class="w-full">
-                    <div class="text-font-size-small">
-                      <h3 class="text-font-size-small capitalize mb-2">icon card cash expenses</h3>
-                      <div class="py-4 text-center bg-color-grey-lightest px-2 mb-2 flex items-center justify-center" style="min-height:150px">
-                        <svg class="icon-card-cash-expenses text-color-blue-dark">
-                          <use xlink:href="#icon-card-cash-expenses"></use>
-                        </svg>
+                  <div class="flex flex-col justify-between items-center border border-color-grey-lightest p-2">
+                    <div class="w-full">
+                      <div class="text-font-size-small">
+                        <h3 class="text-font-size-small capitalize mb-2">icon card cash expenses</h3>
+                        <div class="py-4 text-center bg-color-grey-lightest px-2 mb-2 flex items-center justify-center" style="min-height:150px">
+                          <svg class="icon-card-cash-expenses text-color-blue-dark">
+                            <use xlink:href="#icon-card-cash-expenses"></use>
+                          </svg>
+                        </div>
+                        <p class="mb-0 flex justify-between">xlink:href<code>#icon-card-cash-expenses</code></p>
                       </div>
-                      <p class="mb-0 flex justify-between">ID<code>icon-card-cash-expenses</code></p>
                     </div>
                   </div>
-                </div>
-                <div class="flex flex-col justify-between items-center border border-color-grey-lightest p-2">
-                  <div class="w-full">
-                    <div class="text-font-size-small">
-                      <h3 class="text-font-size-small capitalize mb-2">icon card child care</h3>
-                      <div class="py-4 text-center bg-color-grey-lightest px-2 mb-2 flex items-center justify-center" style="min-height:150px">
-                        <svg class="icon-card-child-care text-color-blue-dark">
-                          <use xlink:href="#icon-card-child-care"></use>
-                        </svg>
+                  <div class="flex flex-col justify-between items-center border border-color-grey-lightest p-2">
+                    <div class="w-full">
+                      <div class="text-font-size-small">
+                        <h3 class="text-font-size-small capitalize mb-2">icon card child care</h3>
+                        <div class="py-4 text-center bg-color-grey-lightest px-2 mb-2 flex items-center justify-center" style="min-height:150px">
+                          <svg class="icon-card-child-care text-color-blue-dark">
+                            <use xlink:href="#icon-card-child-care"></use>
+                          </svg>
+                        </div>
+                        <p class="mb-0 flex justify-between">xlink:href<code>#icon-card-child-care</code></p>
                       </div>
-                      <p class="mb-0 flex justify-between">ID<code>icon-card-child-care</code></p>
                     </div>
                   </div>
-                </div>
-                <div class="flex flex-col justify-between items-center border border-color-grey-lightest p-2">
-                  <div class="w-full">
-                    <div class="text-font-size-small">
-                      <h3 class="text-font-size-small capitalize mb-2">icon card city id card</h3>
-                      <div class="py-4 text-center bg-color-grey-lightest px-2 mb-2 flex items-center justify-center" style="min-height:150px">
-                        <svg class="icon-card-city-id-card text-color-blue-dark">
-                          <use xlink:href="#icon-card-city-id-card"></use>
-                        </svg>
+                  <div class="flex flex-col justify-between items-center border border-color-grey-lightest p-2">
+                    <div class="w-full">
+                      <div class="text-font-size-small">
+                        <h3 class="text-font-size-small capitalize mb-2">icon card city id card</h3>
+                        <div class="py-4 text-center bg-color-grey-lightest px-2 mb-2 flex items-center justify-center" style="min-height:150px">
+                          <svg class="icon-card-city-id-card text-color-blue-dark">
+                            <use xlink:href="#icon-card-city-id-card"></use>
+                          </svg>
+                        </div>
+                        <p class="mb-0 flex justify-between">xlink:href<code>#icon-card-city-id-card</code></p>
                       </div>
-                      <p class="mb-0 flex justify-between">ID<code>icon-card-city-id-card</code></p>
                     </div>
                   </div>
-                </div>
-                <div class="flex flex-col justify-between items-center border border-color-grey-lightest p-2">
-                  <div class="w-full">
-                    <div class="text-font-size-small">
-                      <h3 class="text-font-size-small capitalize mb-2">icon card education</h3>
-                      <div class="py-4 text-center bg-color-grey-lightest px-2 mb-2 flex items-center justify-center" style="min-height:150px">
-                        <svg class="icon-card-education text-color-blue-dark">
-                          <use xlink:href="#icon-card-education"></use>
-                        </svg>
+                  <div class="flex flex-col justify-between items-center border border-color-grey-lightest p-2">
+                    <div class="w-full">
+                      <div class="text-font-size-small">
+                        <h3 class="text-font-size-small capitalize mb-2">icon card education</h3>
+                        <div class="py-4 text-center bg-color-grey-lightest px-2 mb-2 flex items-center justify-center" style="min-height:150px">
+                          <svg class="icon-card-education text-color-blue-dark">
+                            <use xlink:href="#icon-card-education"></use>
+                          </svg>
+                        </div>
+                        <p class="mb-0 flex justify-between">xlink:href<code>#icon-card-education</code></p>
                       </div>
-                      <p class="mb-0 flex justify-between">ID<code>icon-card-education</code></p>
                     </div>
                   </div>
-                </div>
-                <div class="flex flex-col justify-between items-center border border-color-grey-lightest p-2">
-                  <div class="w-full">
-                    <div class="text-font-size-small">
-                      <h3 class="text-font-size-small capitalize mb-2">icon card enrichment</h3>
-                      <div class="py-4 text-center bg-color-grey-lightest px-2 mb-2 flex items-center justify-center" style="min-height:150px">
-                        <svg class="icon-card-enrichment text-color-blue-dark">
-                          <use xlink:href="#icon-card-enrichment"></use>
-                        </svg>
+                  <div class="flex flex-col justify-between items-center border border-color-grey-lightest p-2">
+                    <div class="w-full">
+                      <div class="text-font-size-small">
+                        <h3 class="text-font-size-small capitalize mb-2">icon card enrichment</h3>
+                        <div class="py-4 text-center bg-color-grey-lightest px-2 mb-2 flex items-center justify-center" style="min-height:150px">
+                          <svg class="icon-card-enrichment text-color-blue-dark">
+                            <use xlink:href="#icon-card-enrichment"></use>
+                          </svg>
+                        </div>
+                        <p class="mb-0 flex justify-between">xlink:href<code>#icon-card-enrichment</code></p>
                       </div>
-                      <p class="mb-0 flex justify-between">ID<code>icon-card-enrichment</code></p>
                     </div>
                   </div>
-                </div>
-                <div class="flex flex-col justify-between items-center border border-color-grey-lightest p-2">
-                  <div class="w-full">
-                    <div class="text-font-size-small">
-                      <h3 class="text-font-size-small capitalize mb-2">icon card expenses</h3>
-                      <div class="py-4 text-center bg-color-grey-lightest px-2 mb-2 flex items-center justify-center" style="min-height:150px">
-                        <svg class="icon-card-expenses text-color-blue-dark">
-                          <use xlink:href="#icon-card-expenses"></use>
-                        </svg>
+                  <div class="flex flex-col justify-between items-center border border-color-grey-lightest p-2">
+                    <div class="w-full">
+                      <div class="text-font-size-small">
+                        <h3 class="text-font-size-small capitalize mb-2">icon card expenses</h3>
+                        <div class="py-4 text-center bg-color-grey-lightest px-2 mb-2 flex items-center justify-center" style="min-height:150px">
+                          <svg class="icon-card-expenses text-color-blue-dark">
+                            <use xlink:href="#icon-card-expenses"></use>
+                          </svg>
+                        </div>
+                        <p class="mb-0 flex justify-between">xlink:href<code>#icon-card-expenses</code></p>
                       </div>
-                      <p class="mb-0 flex justify-between">ID<code>icon-card-expenses</code></p>
                     </div>
                   </div>
-                </div>
-                <div class="flex flex-col justify-between items-center border border-color-grey-lightest p-2">
-                  <div class="w-full">
-                    <div class="text-font-size-small">
-                      <h3 class="text-font-size-small capitalize mb-2">icon card family services</h3>
-                      <div class="py-4 text-center bg-color-grey-lightest px-2 mb-2 flex items-center justify-center" style="min-height:150px">
-                        <svg class="icon-card-family-services text-color-blue-dark">
-                          <use xlink:href="#icon-card-family-services"></use>
-                        </svg>
+                  <div class="flex flex-col justify-between items-center border border-color-grey-lightest p-2">
+                    <div class="w-full">
+                      <div class="text-font-size-small">
+                        <h3 class="text-font-size-small capitalize mb-2">icon card family services</h3>
+                        <div class="py-4 text-center bg-color-grey-lightest px-2 mb-2 flex items-center justify-center" style="min-height:150px">
+                          <svg class="icon-card-family-services text-color-blue-dark">
+                            <use xlink:href="#icon-card-family-services"></use>
+                          </svg>
+                        </div>
+                        <p class="mb-0 flex justify-between">xlink:href<code>#icon-card-family-services</code></p>
                       </div>
-                      <p class="mb-0 flex justify-between">ID<code>icon-card-family-services</code></p>
                     </div>
                   </div>
-                </div>
-                <div class="flex flex-col justify-between items-center border border-color-grey-lightest p-2">
-                  <div class="w-full">
-                    <div class="text-font-size-small">
-                      <h3 class="text-font-size-small capitalize mb-2">icon card food</h3>
-                      <div class="py-4 text-center bg-color-grey-lightest px-2 mb-2 flex items-center justify-center" style="min-height:150px">
-                        <svg class="icon-card-food text-color-blue-dark">
-                          <use xlink:href="#icon-card-food"></use>
-                        </svg>
+                  <div class="flex flex-col justify-between items-center border border-color-grey-lightest p-2">
+                    <div class="w-full">
+                      <div class="text-font-size-small">
+                        <h3 class="text-font-size-small capitalize mb-2">icon card food</h3>
+                        <div class="py-4 text-center bg-color-grey-lightest px-2 mb-2 flex items-center justify-center" style="min-height:150px">
+                          <svg class="icon-card-food text-color-blue-dark">
+                            <use xlink:href="#icon-card-food"></use>
+                          </svg>
+                        </div>
+                        <p class="mb-0 flex justify-between">xlink:href<code>#icon-card-food</code></p>
                       </div>
-                      <p class="mb-0 flex justify-between">ID<code>icon-card-food</code></p>
                     </div>
                   </div>
-                </div>
-                <div class="flex flex-col justify-between items-center border border-color-grey-lightest p-2">
-                  <div class="w-full">
-                    <div class="text-font-size-small">
-                      <h3 class="text-font-size-small capitalize mb-2">icon card health</h3>
-                      <div class="py-4 text-center bg-color-grey-lightest px-2 mb-2 flex items-center justify-center" style="min-height:150px">
-                        <svg class="icon-card-health text-color-blue-dark">
-                          <use xlink:href="#icon-card-health"></use>
-                        </svg>
+                  <div class="flex flex-col justify-between items-center border border-color-grey-lightest p-2">
+                    <div class="w-full">
+                      <div class="text-font-size-small">
+                        <h3 class="text-font-size-small capitalize mb-2">icon card health</h3>
+                        <div class="py-4 text-center bg-color-grey-lightest px-2 mb-2 flex items-center justify-center" style="min-height:150px">
+                          <svg class="icon-card-health text-color-blue-dark">
+                            <use xlink:href="#icon-card-health"></use>
+                          </svg>
+                        </div>
+                        <p class="mb-0 flex justify-between">xlink:href<code>#icon-card-health</code></p>
                       </div>
-                      <p class="mb-0 flex justify-between">ID<code>icon-card-health</code></p>
                     </div>
                   </div>
-                </div>
-                <div class="flex flex-col justify-between items-center border border-color-grey-lightest p-2">
-                  <div class="w-full">
-                    <div class="text-font-size-small">
-                      <h3 class="text-font-size-small capitalize mb-2">icon card housing</h3>
-                      <div class="py-4 text-center bg-color-grey-lightest px-2 mb-2 flex items-center justify-center" style="min-height:150px">
-                        <svg class="icon-card-housing text-color-blue-dark">
-                          <use xlink:href="#icon-card-housing"></use>
-                        </svg>
+                  <div class="flex flex-col justify-between items-center border border-color-grey-lightest p-2">
+                    <div class="w-full">
+                      <div class="text-font-size-small">
+                        <h3 class="text-font-size-small capitalize mb-2">icon card housing</h3>
+                        <div class="py-4 text-center bg-color-grey-lightest px-2 mb-2 flex items-center justify-center" style="min-height:150px">
+                          <svg class="icon-card-housing text-color-blue-dark">
+                            <use xlink:href="#icon-card-housing"></use>
+                          </svg>
+                        </div>
+                        <p class="mb-0 flex justify-between">xlink:href<code>#icon-card-housing</code></p>
                       </div>
-                      <p class="mb-0 flex justify-between">ID<code>icon-card-housing</code></p>
                     </div>
                   </div>
-                </div>
-                <div class="flex flex-col justify-between items-center border border-color-grey-lightest p-2">
-                  <div class="w-full">
-                    <div class="text-font-size-small">
-                      <h3 class="text-font-size-small capitalize mb-2">icon card special needs</h3>
-                      <div class="py-4 text-center bg-color-grey-lightest px-2 mb-2 flex items-center justify-center" style="min-height:150px">
-                        <svg class="icon-card-special-needs text-color-blue-dark">
-                          <use xlink:href="#icon-card-special-needs"></use>
-                        </svg>
+                  <div class="flex flex-col justify-between items-center border border-color-grey-lightest p-2">
+                    <div class="w-full">
+                      <div class="text-font-size-small">
+                        <h3 class="text-font-size-small capitalize mb-2">icon card special needs</h3>
+                        <div class="py-4 text-center bg-color-grey-lightest px-2 mb-2 flex items-center justify-center" style="min-height:150px">
+                          <svg class="icon-card-special-needs text-color-blue-dark">
+                            <use xlink:href="#icon-card-special-needs"></use>
+                          </svg>
+                        </div>
+                        <p class="mb-0 flex justify-between">xlink:href<code>#icon-card-special-needs</code></p>
                       </div>
-                      <p class="mb-0 flex justify-between">ID<code>icon-card-special-needs</code></p>
                     </div>
                   </div>
-                </div>
-                <div class="flex flex-col justify-between items-center border border-color-grey-lightest p-2">
-                  <div class="w-full">
-                    <div class="text-font-size-small">
-                      <h3 class="text-font-size-small capitalize mb-2">icon card work</h3>
-                      <div class="py-4 text-center bg-color-grey-lightest px-2 mb-2 flex items-center justify-center" style="min-height:150px">
-                        <svg class="icon-card-work text-color-blue-dark">
-                          <use xlink:href="#icon-card-work"></use>
-                        </svg>
+                  <div class="flex flex-col justify-between items-center border border-color-grey-lightest p-2">
+                    <div class="w-full">
+                      <div class="text-font-size-small">
+                        <h3 class="text-font-size-small capitalize mb-2">icon card work</h3>
+                        <div class="py-4 text-center bg-color-grey-lightest px-2 mb-2 flex items-center justify-center" style="min-height:150px">
+                          <svg class="icon-card-work text-color-blue-dark">
+                            <use xlink:href="#icon-card-work"></use>
+                          </svg>
+                        </div>
+                        <p class="mb-0 flex justify-between">xlink:href<code>#icon-card-work</code></p>
                       </div>
-                      <p class="mb-0 flex justify-between">ID<code>icon-card-work</code></p>
                     </div>
                   </div>
-                </div>
-                <div class="flex flex-col justify-between items-center border border-color-grey-lightest p-2">
-                  <div class="w-full">
-                    <div class="text-font-size-small">
-                      <h3 class="text-font-size-small capitalize mb-2">icon cash expenses</h3>
-                      <div class="py-4 text-center bg-color-grey-lightest px-2 mb-2 flex items-center justify-center" style="min-height:150px">
-                        <svg class="icon-cash-expenses text-color-blue-dark">
-                          <use xlink:href="#icon-cash-expenses"></use>
-                        </svg>
+                  <div class="flex flex-col justify-between items-center border border-color-grey-lightest p-2">
+                    <div class="w-full">
+                      <div class="text-font-size-small">
+                        <h3 class="text-font-size-small capitalize mb-2">icon cash expenses</h3>
+                        <div class="py-4 text-center bg-color-grey-lightest px-2 mb-2 flex items-center justify-center" style="min-height:150px">
+                          <svg class="icon-cash-expenses text-color-blue-dark">
+                            <use xlink:href="#icon-cash-expenses"></use>
+                          </svg>
+                        </div>
+                        <p class="mb-0 flex justify-between">xlink:href<code>#icon-cash-expenses</code></p>
                       </div>
-                      <p class="mb-0 flex justify-between">ID<code>icon-cash-expenses</code></p>
                     </div>
                   </div>
-                </div>
-                <div class="flex flex-col justify-between items-center border border-color-grey-lightest p-2">
-                  <div class="w-full">
-                    <div class="text-font-size-small">
-                      <h3 class="text-font-size-small capitalize mb-2">icon child care</h3>
-                      <div class="py-4 text-center bg-color-grey-lightest px-2 mb-2 flex items-center justify-center" style="min-height:150px">
-                        <svg class="icon-child-care text-color-blue-dark">
-                          <use xlink:href="#icon-child-care"></use>
-                        </svg>
+                  <div class="flex flex-col justify-between items-center border border-color-grey-lightest p-2">
+                    <div class="w-full">
+                      <div class="text-font-size-small">
+                        <h3 class="text-font-size-small capitalize mb-2">icon child care</h3>
+                        <div class="py-4 text-center bg-color-grey-lightest px-2 mb-2 flex items-center justify-center" style="min-height:150px">
+                          <svg class="icon-child-care text-color-blue-dark">
+                            <use xlink:href="#icon-child-care"></use>
+                          </svg>
+                        </div>
+                        <p class="mb-0 flex justify-between">xlink:href<code>#icon-child-care</code></p>
                       </div>
-                      <p class="mb-0 flex justify-between">ID<code>icon-child-care</code></p>
                     </div>
                   </div>
-                </div>
-                <div class="flex flex-col justify-between items-center border border-color-grey-lightest p-2">
-                  <div class="w-full">
-                    <div class="text-font-size-small">
-                      <h3 class="text-font-size-small capitalize mb-2">icon city id card</h3>
-                      <div class="py-4 text-center bg-color-grey-lightest px-2 mb-2 flex items-center justify-center" style="min-height:150px">
-                        <svg class="icon-city-id-card text-color-blue-dark">
-                          <use xlink:href="#icon-city-id-card"></use>
-                        </svg>
+                  <div class="flex flex-col justify-between items-center border border-color-grey-lightest p-2">
+                    <div class="w-full">
+                      <div class="text-font-size-small">
+                        <h3 class="text-font-size-small capitalize mb-2">icon city id card</h3>
+                        <div class="py-4 text-center bg-color-grey-lightest px-2 mb-2 flex items-center justify-center" style="min-height:150px">
+                          <svg class="icon-city-id-card text-color-blue-dark">
+                            <use xlink:href="#icon-city-id-card"></use>
+                          </svg>
+                        </div>
+                        <p class="mb-0 flex justify-between">xlink:href<code>#icon-city-id-card</code></p>
                       </div>
-                      <p class="mb-0 flex justify-between">ID<code>icon-city-id-card</code></p>
                     </div>
                   </div>
-                </div>
-                <div class="flex flex-col justify-between items-center border border-color-grey-lightest p-2">
-                  <div class="w-full">
-                    <div class="text-font-size-small">
-                      <h3 class="text-font-size-small capitalize mb-2">icon education</h3>
-                      <div class="py-4 text-center bg-color-grey-lightest px-2 mb-2 flex items-center justify-center" style="min-height:150px">
-                        <svg class="icon-education text-color-blue-dark">
-                          <use xlink:href="#icon-education"></use>
-                        </svg>
+                  <div class="flex flex-col justify-between items-center border border-color-grey-lightest p-2">
+                    <div class="w-full">
+                      <div class="text-font-size-small">
+                        <h3 class="text-font-size-small capitalize mb-2">icon education</h3>
+                        <div class="py-4 text-center bg-color-grey-lightest px-2 mb-2 flex items-center justify-center" style="min-height:150px">
+                          <svg class="icon-education text-color-blue-dark">
+                            <use xlink:href="#icon-education"></use>
+                          </svg>
+                        </div>
+                        <p class="mb-0 flex justify-between">xlink:href<code>#icon-education</code></p>
                       </div>
-                      <p class="mb-0 flex justify-between">ID<code>icon-education</code></p>
                     </div>
                   </div>
-                </div>
-                <div class="flex flex-col justify-between items-center border border-color-grey-lightest p-2">
-                  <div class="w-full">
-                    <div class="text-font-size-small">
-                      <h3 class="text-font-size-small capitalize mb-2">icon enrichment</h3>
-                      <div class="py-4 text-center bg-color-grey-lightest px-2 mb-2 flex items-center justify-center" style="min-height:150px">
-                        <svg class="icon-enrichment text-color-blue-dark">
-                          <use xlink:href="#icon-enrichment"></use>
-                        </svg>
+                  <div class="flex flex-col justify-between items-center border border-color-grey-lightest p-2">
+                    <div class="w-full">
+                      <div class="text-font-size-small">
+                        <h3 class="text-font-size-small capitalize mb-2">icon enrichment</h3>
+                        <div class="py-4 text-center bg-color-grey-lightest px-2 mb-2 flex items-center justify-center" style="min-height:150px">
+                          <svg class="icon-enrichment text-color-blue-dark">
+                            <use xlink:href="#icon-enrichment"></use>
+                          </svg>
+                        </div>
+                        <p class="mb-0 flex justify-between">xlink:href<code>#icon-enrichment</code></p>
                       </div>
-                      <p class="mb-0 flex justify-between">ID<code>icon-enrichment</code></p>
                     </div>
                   </div>
-                </div>
-                <div class="flex flex-col justify-between items-center border border-color-grey-lightest p-2">
-                  <div class="w-full">
-                    <div class="text-font-size-small">
-                      <h3 class="text-font-size-small capitalize mb-2">icon family services</h3>
-                      <div class="py-4 text-center bg-color-grey-lightest px-2 mb-2 flex items-center justify-center" style="min-height:150px">
-                        <svg class="icon-family-services text-color-blue-dark">
-                          <use xlink:href="#icon-family-services"></use>
-                        </svg>
+                  <div class="flex flex-col justify-between items-center border border-color-grey-lightest p-2">
+                    <div class="w-full">
+                      <div class="text-font-size-small">
+                        <h3 class="text-font-size-small capitalize mb-2">icon family services</h3>
+                        <div class="py-4 text-center bg-color-grey-lightest px-2 mb-2 flex items-center justify-center" style="min-height:150px">
+                          <svg class="icon-family-services text-color-blue-dark">
+                            <use xlink:href="#icon-family-services"></use>
+                          </svg>
+                        </div>
+                        <p class="mb-0 flex justify-between">xlink:href<code>#icon-family-services</code></p>
                       </div>
-                      <p class="mb-0 flex justify-between">ID<code>icon-family-services</code></p>
                     </div>
                   </div>
-                </div>
-                <div class="flex flex-col justify-between items-center border border-color-grey-lightest p-2">
-                  <div class="w-full">
-                    <div class="text-font-size-small">
-                      <h3 class="text-font-size-small capitalize mb-2">icon food</h3>
-                      <div class="py-4 text-center bg-color-grey-lightest px-2 mb-2 flex items-center justify-center" style="min-height:150px">
-                        <svg class="icon-food text-color-blue-dark">
-                          <use xlink:href="#icon-food"></use>
-                        </svg>
+                  <div class="flex flex-col justify-between items-center border border-color-grey-lightest p-2">
+                    <div class="w-full">
+                      <div class="text-font-size-small">
+                        <h3 class="text-font-size-small capitalize mb-2">icon food</h3>
+                        <div class="py-4 text-center bg-color-grey-lightest px-2 mb-2 flex items-center justify-center" style="min-height:150px">
+                          <svg class="icon-food text-color-blue-dark">
+                            <use xlink:href="#icon-food"></use>
+                          </svg>
+                        </div>
+                        <p class="mb-0 flex justify-between">xlink:href<code>#icon-food</code></p>
                       </div>
-                      <p class="mb-0 flex justify-between">ID<code>icon-food</code></p>
                     </div>
                   </div>
-                </div>
-                <div class="flex flex-col justify-between items-center border border-color-grey-lightest p-2">
-                  <div class="w-full">
-                    <div class="text-font-size-small">
-                      <h3 class="text-font-size-small capitalize mb-2">icon health</h3>
-                      <div class="py-4 text-center bg-color-grey-lightest px-2 mb-2 flex items-center justify-center" style="min-height:150px">
-                        <svg class="icon-health text-color-blue-dark">
-                          <use xlink:href="#icon-health"></use>
-                        </svg>
+                  <div class="flex flex-col justify-between items-center border border-color-grey-lightest p-2">
+                    <div class="w-full">
+                      <div class="text-font-size-small">
+                        <h3 class="text-font-size-small capitalize mb-2">icon health</h3>
+                        <div class="py-4 text-center bg-color-grey-lightest px-2 mb-2 flex items-center justify-center" style="min-height:150px">
+                          <svg class="icon-health text-color-blue-dark">
+                            <use xlink:href="#icon-health"></use>
+                          </svg>
+                        </div>
+                        <p class="mb-0 flex justify-between">xlink:href<code>#icon-health</code></p>
                       </div>
-                      <p class="mb-0 flex justify-between">ID<code>icon-health</code></p>
                     </div>
                   </div>
-                </div>
-                <div class="flex flex-col justify-between items-center border border-color-grey-lightest p-2">
-                  <div class="w-full">
-                    <div class="text-font-size-small">
-                      <h3 class="text-font-size-small capitalize mb-2">icon housing</h3>
-                      <div class="py-4 text-center bg-color-grey-lightest px-2 mb-2 flex items-center justify-center" style="min-height:150px">
-                        <svg class="icon-housing text-color-blue-dark">
-                          <use xlink:href="#icon-housing"></use>
-                        </svg>
+                  <div class="flex flex-col justify-between items-center border border-color-grey-lightest p-2">
+                    <div class="w-full">
+                      <div class="text-font-size-small">
+                        <h3 class="text-font-size-small capitalize mb-2">icon housing</h3>
+                        <div class="py-4 text-center bg-color-grey-lightest px-2 mb-2 flex items-center justify-center" style="min-height:150px">
+                          <svg class="icon-housing text-color-blue-dark">
+                            <use xlink:href="#icon-housing"></use>
+                          </svg>
+                        </div>
+                        <p class="mb-0 flex justify-between">xlink:href<code>#icon-housing</code></p>
                       </div>
-                      <p class="mb-0 flex justify-between">ID<code>icon-housing</code></p>
                     </div>
                   </div>
-                </div>
-                <div class="flex flex-col justify-between items-center border border-color-grey-lightest p-2">
-                  <div class="w-full">
-                    <div class="text-font-size-small">
-                      <h3 class="text-font-size-small capitalize mb-2">icon special needs</h3>
-                      <div class="py-4 text-center bg-color-grey-lightest px-2 mb-2 flex items-center justify-center" style="min-height:150px">
-                        <svg class="icon-special-needs text-color-blue-dark">
-                          <use xlink:href="#icon-special-needs"></use>
-                        </svg>
+                  <div class="flex flex-col justify-between items-center border border-color-grey-lightest p-2">
+                    <div class="w-full">
+                      <div class="text-font-size-small">
+                        <h3 class="text-font-size-small capitalize mb-2">icon special needs</h3>
+                        <div class="py-4 text-center bg-color-grey-lightest px-2 mb-2 flex items-center justify-center" style="min-height:150px">
+                          <svg class="icon-special-needs text-color-blue-dark">
+                            <use xlink:href="#icon-special-needs"></use>
+                          </svg>
+                        </div>
+                        <p class="mb-0 flex justify-between">xlink:href<code>#icon-special-needs</code></p>
                       </div>
-                      <p class="mb-0 flex justify-between">ID<code>icon-special-needs</code></p>
                     </div>
                   </div>
-                </div>
-                <div class="flex flex-col justify-between items-center border border-color-grey-lightest p-2">
-                  <div class="w-full">
-                    <div class="text-font-size-small">
-                      <h3 class="text-font-size-small capitalize mb-2">icon work</h3>
-                      <div class="py-4 text-center bg-color-grey-lightest px-2 mb-2 flex items-center justify-center" style="min-height:150px">
-                        <svg class="icon-work text-color-blue-dark">
-                          <use xlink:href="#icon-work"></use>
-                        </svg>
+                  <div class="flex flex-col justify-between items-center border border-color-grey-lightest p-2">
+                    <div class="w-full">
+                      <div class="text-font-size-small">
+                        <h3 class="text-font-size-small capitalize mb-2">icon work</h3>
+                        <div class="py-4 text-center bg-color-grey-lightest px-2 mb-2 flex items-center justify-center" style="min-height:150px">
+                          <svg class="icon-work text-color-blue-dark">
+                            <use xlink:href="#icon-work"></use>
+                          </svg>
+                        </div>
+                        <p class="mb-0 flex justify-between">xlink:href<code>#icon-work</code></p>
                       </div>
-                      <p class="mb-0 flex justify-between">ID<code>icon-work</code></p>
                     </div>
                   </div>
                 </div>
               </div>
             </div>
-          </div>
-        </section>
-      </article>
-    </main>
+          </section>
+          <section class="pb-4 mb-4" id="subway-css-icons">
+            <div class="page-wrapper px-2 screen-desktop:px-0">
+              <header class="layout--home-body">
+                <div class="my-0 pt-1 px-2 border-b border-color-grey-light">
+                  <h2>
+                    <a class="text-color-grey-mid font-normal no-underline capitalize" href="#subway-css-icons">Subway CSS Icons</a>
+                  </h2>
+                </div>
+              </header>
+              <div class="layout--home-body">
+                <div class="my-0 pt-4 px-2 text-font-size-small" data-js="markdown" data-js-markdown="elements/icons/icons-subway.md">
+                  <div class="p-1 mb-1 bg-color-grey-lightest"></div>
+                  <div class="p-1 mb-1 bg-color-grey-lightest"></div>
+                  <div class="p-1 mb-1 bg-color-grey-lightest"></div>
+                  <div class="p-1 mb-1 bg-color-grey-lightest"></div>
+                  <div class="p-1 mb-1 bg-color-grey-lightest"></div>
+                  <div class="p-1 mb-1 bg-color-grey-lightest"></div>
+                  <div class="p-1 mb-1 bg-color-grey-lightest"></div>
+                  <div class="p-1 mb-1 bg-color-grey-lightest"></div>
+                  <div class="p-1 mb-1 bg-color-grey-lightest"></div>
+                  <div class="p-1 mb-1 bg-color-grey-lightest"></div>
+                  <div class="p-1 mb-1 bg-color-grey-lightest"></div>
+                  <div class="p-1 mb-1 bg-color-grey-lightest"></div>
+                  <div class="p-1 mb-1 bg-color-grey-lightest"></div>
+                  <div class="p-1 mb-1 bg-color-grey-lightest"></div>
+                  <div class="p-1 mb-1 bg-color-grey-lightest"></div>
+                  <div class="p-1 mb-1 bg-color-grey-lightest"></div>
+                  <div class="p-1 mb-1 bg-color-grey-lightest"></div>
+                  <div class="p-1 mb-1 bg-color-grey-lightest"></div>
+                  <div class="p-1 mb-1 bg-color-grey-lightest"></div>
+                  <div class="p-1 mb-1 bg-color-grey-lightest"></div>
+                </div>
+              </div>
+              <div class="layout--gutter screen-tablet:layout--gutter justify-between pt-4">
+                <div class="layout--gutter screen-mobile:layout--two-columns-gutter screen-tablet:layout--three-columns-gutter screen-desktop:layout--four-columns-gutter">
+                  <div class="flex flex-col justify-between items-center border border-color-grey-lightest p-2">
+                    <div class="w-full">
+                      <div class="text-font-size-small">
+                        <h3 class="text-font-size-small capitalize mb-2">eighth avenue</h3>
+                        <div class="py-4 text-center bg-color-grey-lightest px-2 mb-2 flex items-center justify-center" style="min-height:150px">
+                          <svg class="eighth-avenue text-color-blue-dark">
+                            <use xlink:href="#eighth-avenue"></use>
+                          </svg>
+                        </div>
+                        <p class="mb-0 flex justify-between">ID<code>eighth-avenue</code></p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="flex flex-col justify-between items-center border border-color-grey-lightest p-2">
+                    <div class="w-full">
+                      <div class="text-font-size-small">
+                        <h3 class="text-font-size-small capitalize mb-2">sixth avenue</h3>
+                        <div class="py-4 text-center bg-color-grey-lightest px-2 mb-2 flex items-center justify-center" style="min-height:150px">
+                          <svg class="sixth-avenue text-color-blue-dark">
+                            <use xlink:href="#sixth-avenue"></use>
+                          </svg>
+                        </div>
+                        <p class="mb-0 flex justify-between">ID<code>sixth-avenue</code></p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="flex flex-col justify-between items-center border border-color-grey-lightest p-2">
+                    <div class="w-full">
+                      <div class="text-font-size-small">
+                        <h3 class="text-font-size-small capitalize mb-2">crosstown</h3>
+                        <div class="py-4 text-center bg-color-grey-lightest px-2 mb-2 flex items-center justify-center" style="min-height:150px">
+                          <svg class="crosstown text-color-blue-dark">
+                            <use xlink:href="#crosstown"></use>
+                          </svg>
+                        </div>
+                        <p class="mb-0 flex justify-between">ID<code>crosstown</code></p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="flex flex-col justify-between items-center border border-color-grey-lightest p-2">
+                    <div class="w-full">
+                      <div class="text-font-size-small">
+                        <h3 class="text-font-size-small capitalize mb-2">canarsie</h3>
+                        <div class="py-4 text-center bg-color-grey-lightest px-2 mb-2 flex items-center justify-center" style="min-height:150px">
+                          <svg class="canarsie text-color-blue-dark">
+                            <use xlink:href="#canarsie"></use>
+                          </svg>
+                        </div>
+                        <p class="mb-0 flex justify-between">ID<code>canarsie</code></p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="flex flex-col justify-between items-center border border-color-grey-lightest p-2">
+                    <div class="w-full">
+                      <div class="text-font-size-small">
+                        <h3 class="text-font-size-small capitalize mb-2">nassau</h3>
+                        <div class="py-4 text-center bg-color-grey-lightest px-2 mb-2 flex items-center justify-center" style="min-height:150px">
+                          <svg class="nassau text-color-blue-dark">
+                            <use xlink:href="#nassau"></use>
+                          </svg>
+                        </div>
+                        <p class="mb-0 flex justify-between">ID<code>nassau</code></p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="flex flex-col justify-between items-center border border-color-grey-lightest p-2">
+                    <div class="w-full">
+                      <div class="text-font-size-small">
+                        <h3 class="text-font-size-small capitalize mb-2">broadway</h3>
+                        <div class="py-4 text-center bg-color-grey-lightest px-2 mb-2 flex items-center justify-center" style="min-height:150px">
+                          <svg class="broadway text-color-blue-dark">
+                            <use xlink:href="#broadway"></use>
+                          </svg>
+                        </div>
+                        <p class="mb-0 flex justify-between">ID<code>broadway</code></p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="flex flex-col justify-between items-center border border-color-grey-lightest p-2">
+                    <div class="w-full">
+                      <div class="text-font-size-small">
+                        <h3 class="text-font-size-small capitalize mb-2">broadway seventh avenue</h3>
+                        <div class="py-4 text-center bg-color-grey-lightest px-2 mb-2 flex items-center justify-center" style="min-height:150px">
+                          <svg class="broadway-seventh-avenue text-color-blue-dark">
+                            <use xlink:href="#broadway-seventh-avenue"></use>
+                          </svg>
+                        </div>
+                        <p class="mb-0 flex justify-between">ID<code>broadway-seventh-avenue</code></p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="flex flex-col justify-between items-center border border-color-grey-lightest p-2">
+                    <div class="w-full">
+                      <div class="text-font-size-small">
+                        <h3 class="text-font-size-small capitalize mb-2">lexington avenue</h3>
+                        <div class="py-4 text-center bg-color-grey-lightest px-2 mb-2 flex items-center justify-center" style="min-height:150px">
+                          <svg class="lexington-avenue text-color-blue-dark">
+                            <use xlink:href="#lexington-avenue"></use>
+                          </svg>
+                        </div>
+                        <p class="mb-0 flex justify-between">ID<code>lexington-avenue</code></p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="flex flex-col justify-between items-center border border-color-grey-lightest p-2">
+                    <div class="w-full">
+                      <div class="text-font-size-small">
+                        <h3 class="text-font-size-small capitalize mb-2">flushing</h3>
+                        <div class="py-4 text-center bg-color-grey-lightest px-2 mb-2 flex items-center justify-center" style="min-height:150px">
+                          <svg class="flushing text-color-blue-dark">
+                            <use xlink:href="#flushing"></use>
+                          </svg>
+                        </div>
+                        <p class="mb-0 flex justify-between">ID<code>flushing</code></p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="flex flex-col justify-between items-center border border-color-grey-lightest p-2">
+                    <div class="w-full">
+                      <div class="text-font-size-small">
+                        <h3 class="text-font-size-small capitalize mb-2">shuttles</h3>
+                        <div class="py-4 text-center bg-color-grey-lightest px-2 mb-2 flex items-center justify-center" style="min-height:150px">
+                          <svg class="shuttles text-color-blue-dark">
+                            <use xlink:href="#shuttles"></use>
+                          </svg>
+                        </div>
+                        <p class="mb-0 flex justify-between">ID<code>shuttles</code></p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+        </article>
+      </main>
+    </div>
     <footer class="py-4 text-center bg-color-blue-dark text-color-white links-invert font-smooth">
       <p class="m-0">Maintained by&nbsp;
         <a href="https://github.com/orgs/CityOfNewYork/teams/nycopportunity">NYC Opportunity</a>

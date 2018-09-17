@@ -21,7 +21,7 @@ This patterns site includes the sprite in a template file `src/views/partials/ic
 There are a few options for using icons after the sprite has been loaded on the page. Below is an example of an inline `svg` with the `use` tag. This is the preferred method for ACCESS NYC. Note, you can change the color of inline svg icon shapes that have their fill set as `currentColor` by using a text color utility. Note the `role="img"` attribute, `title` tag and title tag `id` for accessibility support.
 
     <svg class="icon-logo-full text-color-blue-dark" role="img">
-      <title id="icon-logo-full-title">ACCESS NYC Logo</title>
+      <title id="icon-logo-full__title">ACCESS NYC Logo</title>
       <use xlink:href="#icon-logo-full"></use>
     </svg>
 

@@ -23,220 +23,222 @@
 
   <body class="bg-color-white" onload="load()" style="visibility: hidden;">
     <a class="sr-only" href="#main-content">Skip to main content</a>
-    <header class="px-2">
-      <div class="border-b border-color-grey-light">
-        <div class="flex items-center justify-between p-2 screen-tablet:py-4 screen-tablet:px-2">
-          <div>
-            <h1 class="m-0 p-0 leading-normal"><span class="hidden">ACCESS NYC</span>
-              <svg aria-hidden="true" class="icon-logo-mark screen-tablet:hidden">
-                <use xlink:href="#icon-logo-mark"></use>
-              </svg>
-              <svg aria-hidden="true" class="icon-logo-full--large text-color-blue-dark hidden screen-tablet:inline-block">
-                <use xlink:href="#icon-logo-full"></use>
-              </svg>
-            </h1>
+    <div class="min-h-screen">
+      <header class="px-2">
+        <div class="border-b border-color-grey-light">
+          <div class="flex items-center justify-between p-2 screen-tablet:py-4 screen-tablet:px-2">
+            <div>
+              <h1 class="m-0 p-0 leading-normal"><span class="hidden">ACCESS NYC</span>
+                <svg aria-hidden="true" class="icon-logo-mark screen-tablet:hidden">
+                  <use xlink:href="#icon-logo-mark"></use>
+                </svg>
+                <svg aria-hidden="true" class="icon-logo-full--large text-color-blue-dark hidden screen-tablet:inline-block">
+                  <use xlink:href="#icon-logo-full"></use>
+                </svg>
+              </h1>
+            </div>
+            <div class="flex items-center">
+              <h2 class="text-font-size-small m-0 text-color-blue-dark screen-tablet:hidden">Patterns</h2>
+              <h2 aria-hidden="true" class="type-h1 m-0 text-color-blue-dark hidden screen-tablet:inline-block">Patterns</h2>
+              <nav class="text-font-size-small">
+                <a class="rounded-lg text-color-blue-dark border-2 no-underline px-1 ml-2 hidden screen-tablet:inline-block" href="https://github.com/CityOfNewYork/ACCESS-NYC-PATTERNS">0.0.11-6</a>
+                <a aria-hidden="true" class="ml-1 screen-tablet:ml-2 screen-tablet:hidden" href="https://github.com/CityOfNewYork/ACCESS-NYC-PATTERNS">0.0.11-6</a>
+                <a class="ml-1 screen-tablet:ml-2" data-js="toggle" href="#main-menu">Menu</a>
+              </nav>
+            </div>
           </div>
-          <div class="flex items-center">
-            <h2 class="text-font-size-small m-0 text-color-blue-dark screen-tablet:hidden">Patterns</h2>
-            <h2 aria-hidden="true" class="type-h1 m-0 text-color-blue-dark hidden screen-tablet:inline-block">Patterns</h2>
-            <nav class="text-font-size-small">
-              <a class="rounded-lg text-color-blue-dark border-2 no-underline px-1 ml-2 hidden screen-tablet:inline-block" href="https://github.com/CityOfNewYork/ACCESS-NYC-PATTERNS">0.0.11-5</a>
-              <a aria-hidden="true" class="ml-1 screen-tablet:ml-2 screen-tablet:hidden" href="https://github.com/CityOfNewYork/ACCESS-NYC-PATTERNS">0.0.11-5</a>
-              <a class="ml-1 screen-tablet:ml-2" data-js="toggle" href="#main-menu">Menu</a>
+        </div>
+      </header>
+      <aside aria-hidden="true" class="text-font-size-small bg-color-blue-light hidden hidden:overflow animated" id="main-menu" style="position:relative;top:-1px">
+        <div class="page-wrapper">
+          <div class="screen-tablet:flex py-4">
+            <nav class="screen-tablet:flex-1 mb-1 px-2"><span class="screen-tablet:block screen-tablet:border-b border-color-white p-1">Main;</span>
+              <a class="block p-1" href="index">Home</a>
+              <a class="block p-1" href="https://www.npmjs.com/package/access-nyc-patterns">NPM</a>
+              <a class="block p-1" href="https://github.com/CityOfNewYork/ACCESS-NYC-PATTERNS">GitHub</a>
+            </nav>
+            <nav class="screen-tablet:flex-1 mb-1 px-2 screen-desktop:pl-4"><span class="screen-tablet:block screen-tablet:border-b border-color-white p-1">Elements;</span>
+              <a class="block p-1" href="buttons">Buttons</a>
+              <a class="block p-1" href="checkboxes">Checkboxes</a>
+              <a class="block p-1" href="colors">Colors</a>
+              <a class="block p-1" href="dividers">Dividers</a>
+              <a class="block p-1" href="icons">Icons</a>
+              <a class="block p-1" href="inputs">Inputs</a>
+              <a class="block p-1" href="layouts">Layouts</a>
+              <a class="block p-1" href="links">Links</a>
+              <a class="block p-1" href="lists">Lists</a>
+              <a class="block p-1" href="nav">Nav</a>
+              <a class="block p-1" href="program-labels">Program Labels</a>
+              <a class="block p-1" href="radios">Radios</a>
+              <a class="block p-1" href="tables">Tables</a>
+              <a class="block p-1" href="tooltips">Tooltips</a>
+              <a class="block p-1" href="toggles">Toggles</a>
+              <a class="block p-1" href="typography">Typography</a>
+              <a class="block p-1" href="selects">Selects</a>
+            </nav>
+            <nav class="screen-tablet:flex-1 mb-1 px-2 screen-desktop:pl-4"><span class="screen-tablet:block screen-tablet:border-b border-color-white p-1">Components;</span>
+              <a class="block p-1" href="accordion">Accordion</a>
+              <a class="block p-1" href="alert-box">Alert Box</a>
+              <a class="block p-1" href="card">Card</a>
+              <a class="block p-1" href="checklist">Checklist</a>
+              <a class="block p-1" href="disclaimer">Disclaimer</a>
+              <a class="block p-1" href="filter">Filter</a>
+              <a class="block p-1" href="header">Header</a>
+              <a class="block p-1" href="member-list">Member List</a>
+              <a class="block p-1" href="nearby-stops">Nearby Stops</a>
+              <a class="block p-1" href="text-controller">Text Controller</a>
+              <a class="block p-1" href="share-form">Share Form</a>
+              <a class="block p-1" href="side-nav">Side Nav</a>
+              <a class="block p-1" href="question">Question</a>
+            </nav>
+            <nav class="screen-tablet:flex-1 mb-1 px-2 screen-desktop:pl-4"><span class="screen-tablet:block screen-tablet:border-b border-color-white p-1">Objects;</span>
+              <a class="block p-1" href="announcements">Announcements</a>
+              <a class="block p-1" href="banner">Banner</a>
+              <a class="block p-1" href="card-list">Card Lists</a>
+              <a class="block p-1" href="content">Content</a>
+              <a class="block p-1" href="footer">Footer</a>
+              <a class="block p-1" href="mobile-nav">Mobile Nav</a>
+              <a class="block p-1" href="navigation">Navigation</a>
+              <a class="block p-1" href="search-box">Search Box</a>
             </nav>
           </div>
         </div>
-      </div>
-    </header>
-    <aside aria-hidden="true" class="text-font-size-small bg-color-blue-light hidden hidden:overflow animated" id="main-menu" style="position:relative;top:-1px">
-      <div class="page-wrapper">
-        <div class="screen-tablet:flex py-4">
-          <nav class="screen-tablet:flex-1 mb-1 px-2"><span class="screen-tablet:block screen-tablet:border-b border-color-white p-1">Main;</span>
-            <a class="inline-block p-1" href="index">Home</a>
-            <a class="inline-block p-1" href="https://www.npmjs.com/package/access-nyc-patterns">NPM</a>
-            <a class="inline-block p-1" href="https://github.com/CityOfNewYork/ACCESS-NYC-PATTERNS">GitHub</a>
-          </nav>
-          <nav class="screen-tablet:flex-1 mb-1 px-2 screen-desktop:pl-4"><span class="screen-tablet:block screen-tablet:border-b border-color-white p-1">Elements;</span>
-            <a class="inline-block p-1" href="buttons">Buttons</a>
-            <a class="inline-block p-1" href="checkboxes">Checkboxes</a>
-            <a class="inline-block p-1" href="colors">Colors</a>
-            <a class="inline-block p-1" href="dividers">Dividers</a>
-            <a class="inline-block p-1" href="icons">Icons</a>
-            <a class="inline-block p-1" href="inputs">Inputs</a>
-            <a class="inline-block p-1" href="layouts">Layouts</a>
-            <a class="inline-block p-1" href="links">Links</a>
-            <a class="inline-block p-1" href="lists">Lists</a>
-            <a class="inline-block p-1" href="nav">Nav</a>
-            <a class="inline-block p-1" href="program-labels">Program Labels</a>
-            <a class="inline-block p-1" href="radios">Radios</a>
-            <a class="inline-block p-1" href="tables">Tables</a>
-            <a class="inline-block p-1" href="tooltips">Tooltips</a>
-            <a class="inline-block p-1" href="toggles">Toggles</a>
-            <a class="inline-block p-1" href="typography">Typography</a>
-            <a class="inline-block p-1" href="selects">Selects</a>
-          </nav>
-          <nav class="screen-tablet:flex-1 mb-1 px-2 screen-desktop:pl-4"><span class="screen-tablet:block screen-tablet:border-b border-color-white p-1">Components;</span>
-            <a class="inline-block p-1" href="accordion">Accordion</a>
-            <a class="inline-block p-1" href="alert-box">Alert Box</a>
-            <a class="inline-block p-1" href="card">Card</a>
-            <a class="inline-block p-1" href="checklist">Checklist</a>
-            <a class="inline-block p-1" href="disclaimer">Disclaimer</a>
-            <a class="inline-block p-1" href="filter">Filter</a>
-            <a class="inline-block p-1" href="header">Header</a>
-            <a class="inline-block p-1" href="member-list">Member List</a>
-            <a class="inline-block p-1" href="text-controller">Text Controller</a>
-            <a class="inline-block p-1" href="share-form">Share Form</a>
-            <a class="inline-block p-1" href="side-nav">Side Nav</a>
-            <a class="inline-block p-1" href="question">Question</a>
-          </nav>
-          <nav class="screen-tablet:flex-1 mb-1 px-2 screen-desktop:pl-4"><span class="screen-tablet:block screen-tablet:border-b border-color-white p-1">Objects;</span>
-            <a class="inline-block p-1" href="announcements">Announcements</a>
-            <a class="inline-block p-1" href="banner">Banner</a>
-            <a class="inline-block p-1" href="card-list">Card Lists</a>
-            <a class="inline-block p-1" href="content">Content</a>
-            <a class="inline-block p-1" href="footer">Footer</a>
-            <a class="inline-block p-1" href="mobile-nav">Mobile Nav</a>
-            <a class="inline-block p-1" href="navigation">Navigation</a>
-            <a class="inline-block p-1" href="search-box">Search Box</a>
-          </nav>
-        </div>
-      </div>
-    </aside>
-    <main class="pt-4" id="main-content">
-      <article class="py-4">
-        <header class="page-wrapper px-2 screen-desktop:px-0 layout--home-body">
-          <div class="my-0 w-full">
-            <h1 class="text-color-blue-dark px-2 m-0">Footer</h1>
-          </div>
-        </header>
-        <section class="pb-4 mb-4" id="default-styling">
-          <div class="page-wrapper px-2 screen-desktop:px-0">
-            <header class="layout--home-body">
-              <div class="my-0 pt-1 px-2 border-b border-color-grey-light">
-                <h2>
-                  <a class="text-color-grey-mid font-normal no-underline capitalize" href="#default-styling">Default Styling</a>
-                </h2>
-              </div>
-            </header>
-            <div class="layout--home-body">
-              <div class="my-0 pt-4 px-2 text-font-size-small" data-js="markdown" data-js-markdown="objects/footer/footer.md">
-                <div class="p-1 mb-1 bg-color-grey-lightest"></div>
-                <div class="p-1 mb-1 bg-color-grey-lightest"></div>
-                <div class="p-1 mb-1 bg-color-grey-lightest"></div>
-                <div class="p-1 mb-1 bg-color-grey-lightest"></div>
-                <div class="p-1 mb-1 bg-color-grey-lightest"></div>
-                <div class="p-1 mb-1 bg-color-grey-lightest"></div>
-                <div class="p-1 mb-1 bg-color-grey-lightest"></div>
-                <div class="p-1 mb-1 bg-color-grey-lightest"></div>
-                <div class="p-1 mb-1 bg-color-grey-lightest"></div>
-                <div class="p-1 mb-1 bg-color-grey-lightest"></div>
-                <div class="p-1 mb-1 bg-color-grey-lightest"></div>
-                <div class="p-1 mb-1 bg-color-grey-lightest"></div>
-                <div class="p-1 mb-1 bg-color-grey-lightest"></div>
-                <div class="p-1 mb-1 bg-color-grey-lightest"></div>
-                <div class="p-1 mb-1 bg-color-grey-lightest"></div>
-                <div class="p-1 mb-1 bg-color-grey-lightest"></div>
-                <div class="p-1 mb-1 bg-color-grey-lightest"></div>
-                <div class="p-1 mb-1 bg-color-grey-lightest"></div>
-                <div class="p-1 mb-1 bg-color-grey-lightest"></div>
-                <div class="p-1 mb-1 bg-color-grey-lightest"></div>
-              </div>
+      </aside>
+      <main class="pt-4" id="main-content">
+        <article class="py-4">
+          <header class="page-wrapper px-2 screen-desktop:px-0 layout--home-body">
+            <div class="my-0 w-full">
+              <h1 class="text-color-blue-dark px-2 m-0">Footer</h1>
             </div>
-            <div class="layout--gutter screen-tablet:layout--gutter justify-between pt-4">
-              <div>
-                <footer class="o-footer" data-sketch-symbol="objects/footer/footer">
-                  <nav class="o-footer__nav">
-                    <ul class="o-footer__nav-list">
-                      <li>
-                        <div class="type-h3">Get Help Now</div>
-                        <ul>
-                          <li>
-                            <a href="#">Am I Eligible?</a>
-                          </li>
-                          <li>
-                            <a href="#">Find Help Nearby</a>
-                          </li>
-                          <li>
-                            <a href="#">Search</a>
-                          </li>
-                          <li>
-                            <a href="#">Contact Us</a>
-                          </li>
-                        </ul>
-                        <div class="type-h3">For Caseworkers</div>
-                        <ul>
-                          <li>
-                            <a href="#">Applications &amp; Forms</a>
-                          </li>
-                        </ul>
-                      </li>
-                      <li>
-                        <div class="type-h3">Programs</div>
-                        <ul>
-                          <li>
-                            <a href="#">Cash &amp; Expenses</a>
-                          </li>
-                          <li>
-                            <a href="#">Child Care</a>
-                          </li>
-                          <li>
-                            <a href="#">City ID Card</a>
-                          </li>
-                          <li>
-                            <a href="#">Education</a>
-                          </li>
-                          <li>
-                            <a href="#">Enrichment</a>
-                          </li>
-                          <li>
-                            <a href="#">Food</a>
-                          </li>
-                          <li>
-                            <a href="#">Health</a>
-                          </li>
-                          <li>
-                            <a href="#">Housing</a>
-                          </li>
-                          <li>
-                            <a href="#">Special Needs</a>
-                          </li>
-                          <li>
-                            <a href="#">Work</a>
-                          </li>
-                        </ul>
-                      </li>
-                      <li>
-                        <div class="type-h3">About ACCESS NYC</div>
-                        <ul>
-                          <li>
-                            <a href="#">Training &amp; Support</a>
-                          </li>
-                          <li>
-                            <a href="#">NYC.gov Privacy Policy</a>
-                          </li>
-                          <li>
-                            <a href="#">NYC.gov Terms of Use</a>
-                          </li>
-                        </ul>
-                      </li>
-                      <li>
-                        <svg class="icon icon-logo-full">
-                          <use xlink:href="#icon-logo-full"></use>
-                        </svg>
-                      </li>
-                    </ul>
-                  </nav>
-                  <div class="o-footer__copyright">
-                    <svg class="icon icon-logo-nyc">
-                      <use xlink:href="#icon-logo-nyc"></use>
-                    </svg>
-                    <p>City of New York, 2018 All Rights Reserved.
-                      <br />NYC is a trademark and service mark of the City of New York.</p>
-                  </div>
-                </footer>
+          </header>
+          <section class="pb-4 mb-4" id="default-styling">
+            <div class="page-wrapper px-2 screen-desktop:px-0">
+              <header class="layout--home-body">
+                <div class="my-0 pt-1 px-2 border-b border-color-grey-light">
+                  <h2>
+                    <a class="text-color-grey-mid font-normal no-underline capitalize" href="#default-styling">Default Styling</a>
+                  </h2>
+                </div>
+              </header>
+              <div class="layout--home-body">
+                <div class="my-0 pt-4 px-2 text-font-size-small" data-js="markdown" data-js-markdown="objects/footer/footer.md">
+                  <div class="p-1 mb-1 bg-color-grey-lightest"></div>
+                  <div class="p-1 mb-1 bg-color-grey-lightest"></div>
+                  <div class="p-1 mb-1 bg-color-grey-lightest"></div>
+                  <div class="p-1 mb-1 bg-color-grey-lightest"></div>
+                  <div class="p-1 mb-1 bg-color-grey-lightest"></div>
+                  <div class="p-1 mb-1 bg-color-grey-lightest"></div>
+                  <div class="p-1 mb-1 bg-color-grey-lightest"></div>
+                  <div class="p-1 mb-1 bg-color-grey-lightest"></div>
+                  <div class="p-1 mb-1 bg-color-grey-lightest"></div>
+                  <div class="p-1 mb-1 bg-color-grey-lightest"></div>
+                  <div class="p-1 mb-1 bg-color-grey-lightest"></div>
+                  <div class="p-1 mb-1 bg-color-grey-lightest"></div>
+                  <div class="p-1 mb-1 bg-color-grey-lightest"></div>
+                  <div class="p-1 mb-1 bg-color-grey-lightest"></div>
+                  <div class="p-1 mb-1 bg-color-grey-lightest"></div>
+                  <div class="p-1 mb-1 bg-color-grey-lightest"></div>
+                  <div class="p-1 mb-1 bg-color-grey-lightest"></div>
+                  <div class="p-1 mb-1 bg-color-grey-lightest"></div>
+                  <div class="p-1 mb-1 bg-color-grey-lightest"></div>
+                  <div class="p-1 mb-1 bg-color-grey-lightest"></div>
+                </div>
               </div>
-              <div>
-                <div class="code-block mb-1"><pre>&lt;footer class=&quot;o-footer&quot; data-sketch-symbol=&quot;objects/footer/footer&quot;&gt;
+              <div class="layout--gutter screen-tablet:layout--gutter justify-between pt-4">
+                <div>
+                  <footer class="o-footer" data-sketch-symbol="objects/footer/footer">
+                    <nav class="o-footer__nav">
+                      <ul class="o-footer__nav-list">
+                        <li>
+                          <div class="type-h3">Get Help Now</div>
+                          <ul>
+                            <li>
+                              <a href="#">Am I Eligible?</a>
+                            </li>
+                            <li>
+                              <a href="#">Find Help Nearby</a>
+                            </li>
+                            <li>
+                              <a href="#">Search</a>
+                            </li>
+                            <li>
+                              <a href="#">Contact Us</a>
+                            </li>
+                          </ul>
+                          <div class="type-h3">For Caseworkers</div>
+                          <ul>
+                            <li>
+                              <a href="#">Applications &amp; Forms</a>
+                            </li>
+                          </ul>
+                        </li>
+                        <li>
+                          <div class="type-h3">Programs</div>
+                          <ul>
+                            <li>
+                              <a href="#">Cash &amp; Expenses</a>
+                            </li>
+                            <li>
+                              <a href="#">Child Care</a>
+                            </li>
+                            <li>
+                              <a href="#">City ID Card</a>
+                            </li>
+                            <li>
+                              <a href="#">Education</a>
+                            </li>
+                            <li>
+                              <a href="#">Enrichment</a>
+                            </li>
+                            <li>
+                              <a href="#">Food</a>
+                            </li>
+                            <li>
+                              <a href="#">Health</a>
+                            </li>
+                            <li>
+                              <a href="#">Housing</a>
+                            </li>
+                            <li>
+                              <a href="#">Special Needs</a>
+                            </li>
+                            <li>
+                              <a href="#">Work</a>
+                            </li>
+                          </ul>
+                        </li>
+                        <li>
+                          <div class="type-h3">About ACCESS NYC</div>
+                          <ul>
+                            <li>
+                              <a href="#">Training &amp; Support</a>
+                            </li>
+                            <li>
+                              <a href="#">NYC.gov Privacy Policy</a>
+                            </li>
+                            <li>
+                              <a href="#">NYC.gov Terms of Use</a>
+                            </li>
+                          </ul>
+                        </li>
+                        <li>
+                          <svg class="icon icon-logo-full">
+                            <use xlink:href="#icon-logo-full"></use>
+                          </svg>
+                        </li>
+                      </ul>
+                    </nav>
+                    <div class="o-footer__copyright">
+                      <svg class="icon icon-logo-nyc">
+                        <use xlink:href="#icon-logo-nyc"></use>
+                      </svg>
+                      <p>City of New York, 2018 All Rights Reserved.
+                        <br />NYC is a trademark and service mark of the City of New York.</p>
+                    </div>
+                  </footer>
+                </div>
+                <div>
+                  <div class="code-block mb-1"><pre>&lt;footer class=&quot;o-footer&quot; data-sketch-symbol=&quot;objects/footer/footer&quot;&gt;
   &lt;nav class=&quot;o-footer__nav&quot;&gt;
     &lt;ul class=&quot;o-footer__nav-list&quot;&gt;
       &lt;li&gt;
@@ -326,12 +328,13 @@
       &lt;br /&gt;NYC is a trademark and service mark of the City of New York.&lt;/p&gt;
   &lt;/div&gt;
 &lt;/footer&gt;</pre></div>
+                </div>
               </div>
             </div>
-          </div>
-        </section>
-      </article>
-    </main>
+          </section>
+        </article>
+      </main>
+    </div>
     <footer class="py-4 text-center bg-color-blue-dark text-color-white links-invert font-smooth">
       <p class="m-0">Maintained by&nbsp;
         <a href="https://github.com/orgs/CityOfNewYork/teams/nycopportunity">NYC Opportunity</a>

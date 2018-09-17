@@ -23,551 +23,704 @@
 
   <body class="bg-color-white" onload="load()" style="visibility: hidden;">
     <a class="sr-only" href="#main-content">Skip to main content</a>
-    <header class="px-2">
-      <div class="border-b border-color-grey-light">
-        <div class="flex items-center justify-between p-2 screen-tablet:py-4 screen-tablet:px-2">
-          <div>
-            <h1 class="m-0 p-0 leading-normal"><span class="hidden">ACCESS NYC</span>
-              <svg aria-hidden="true" class="icon-logo-mark screen-tablet:hidden">
-                <use xlink:href="#icon-logo-mark"></use>
-              </svg>
-              <svg aria-hidden="true" class="icon-logo-full--large text-color-blue-dark hidden screen-tablet:inline-block">
-                <use xlink:href="#icon-logo-full"></use>
-              </svg>
-            </h1>
+    <div class="min-h-screen">
+      <header class="px-2">
+        <div class="border-b border-color-grey-light">
+          <div class="flex items-center justify-between p-2 screen-tablet:py-4 screen-tablet:px-2">
+            <div>
+              <h1 class="m-0 p-0 leading-normal"><span class="hidden">ACCESS NYC</span>
+                <svg aria-hidden="true" class="icon-logo-mark screen-tablet:hidden">
+                  <use xlink:href="#icon-logo-mark"></use>
+                </svg>
+                <svg aria-hidden="true" class="icon-logo-full--large text-color-blue-dark hidden screen-tablet:inline-block">
+                  <use xlink:href="#icon-logo-full"></use>
+                </svg>
+              </h1>
+            </div>
+            <div class="flex items-center">
+              <h2 class="text-font-size-small m-0 text-color-blue-dark screen-tablet:hidden">Patterns</h2>
+              <h2 aria-hidden="true" class="type-h1 m-0 text-color-blue-dark hidden screen-tablet:inline-block">Patterns</h2>
+              <nav class="text-font-size-small">
+                <a class="rounded-lg text-color-blue-dark border-2 no-underline px-1 ml-2 hidden screen-tablet:inline-block" href="https://github.com/CityOfNewYork/ACCESS-NYC-PATTERNS">0.0.11-6</a>
+                <a aria-hidden="true" class="ml-1 screen-tablet:ml-2 screen-tablet:hidden" href="https://github.com/CityOfNewYork/ACCESS-NYC-PATTERNS">0.0.11-6</a>
+                <a class="ml-1 screen-tablet:ml-2" data-js="toggle" href="#main-menu">Menu</a>
+              </nav>
+            </div>
           </div>
-          <div class="flex items-center">
-            <h2 class="text-font-size-small m-0 text-color-blue-dark screen-tablet:hidden">Patterns</h2>
-            <h2 aria-hidden="true" class="type-h1 m-0 text-color-blue-dark hidden screen-tablet:inline-block">Patterns</h2>
-            <nav class="text-font-size-small">
-              <a class="rounded-lg text-color-blue-dark border-2 no-underline px-1 ml-2 hidden screen-tablet:inline-block" href="https://github.com/CityOfNewYork/ACCESS-NYC-PATTERNS">0.0.11-5</a>
-              <a aria-hidden="true" class="ml-1 screen-tablet:ml-2 screen-tablet:hidden" href="https://github.com/CityOfNewYork/ACCESS-NYC-PATTERNS">0.0.11-5</a>
-              <a class="ml-1 screen-tablet:ml-2" data-js="toggle" href="#main-menu">Menu</a>
+        </div>
+      </header>
+      <aside aria-hidden="true" class="text-font-size-small bg-color-blue-light hidden hidden:overflow animated" id="main-menu" style="position:relative;top:-1px">
+        <div class="page-wrapper">
+          <div class="screen-tablet:flex py-4">
+            <nav class="screen-tablet:flex-1 mb-1 px-2"><span class="screen-tablet:block screen-tablet:border-b border-color-white p-1">Main;</span>
+              <a class="block p-1" href="index">Home</a>
+              <a class="block p-1" href="https://www.npmjs.com/package/access-nyc-patterns">NPM</a>
+              <a class="block p-1" href="https://github.com/CityOfNewYork/ACCESS-NYC-PATTERNS">GitHub</a>
+            </nav>
+            <nav class="screen-tablet:flex-1 mb-1 px-2 screen-desktop:pl-4"><span class="screen-tablet:block screen-tablet:border-b border-color-white p-1">Elements;</span>
+              <a class="block p-1" href="buttons">Buttons</a>
+              <a class="block p-1" href="checkboxes">Checkboxes</a>
+              <a class="block p-1" href="colors">Colors</a>
+              <a class="block p-1" href="dividers">Dividers</a>
+              <a class="block p-1" href="icons">Icons</a>
+              <a class="block p-1" href="inputs">Inputs</a>
+              <a class="block p-1" href="layouts">Layouts</a>
+              <a class="block p-1" href="links">Links</a>
+              <a class="block p-1" href="lists">Lists</a>
+              <a class="block p-1" href="nav">Nav</a>
+              <a class="block p-1" href="program-labels">Program Labels</a>
+              <a class="block p-1" href="radios">Radios</a>
+              <a class="block p-1" href="tables">Tables</a>
+              <a class="block p-1" href="tooltips">Tooltips</a>
+              <a class="block p-1" href="toggles">Toggles</a>
+              <a class="block p-1" href="typography">Typography</a>
+              <a class="block p-1" href="selects">Selects</a>
+            </nav>
+            <nav class="screen-tablet:flex-1 mb-1 px-2 screen-desktop:pl-4"><span class="screen-tablet:block screen-tablet:border-b border-color-white p-1">Components;</span>
+              <a class="block p-1" href="accordion">Accordion</a>
+              <a class="block p-1" href="alert-box">Alert Box</a>
+              <a class="block p-1" href="card">Card</a>
+              <a class="block p-1" href="checklist">Checklist</a>
+              <a class="block p-1" href="disclaimer">Disclaimer</a>
+              <a class="block p-1" href="filter">Filter</a>
+              <a class="block p-1" href="header">Header</a>
+              <a class="block p-1" href="member-list">Member List</a>
+              <a class="block p-1" href="nearby-stops">Nearby Stops</a>
+              <a class="block p-1" href="text-controller">Text Controller</a>
+              <a class="block p-1" href="share-form">Share Form</a>
+              <a class="block p-1" href="side-nav">Side Nav</a>
+              <a class="block p-1" href="question">Question</a>
+            </nav>
+            <nav class="screen-tablet:flex-1 mb-1 px-2 screen-desktop:pl-4"><span class="screen-tablet:block screen-tablet:border-b border-color-white p-1">Objects;</span>
+              <a class="block p-1" href="announcements">Announcements</a>
+              <a class="block p-1" href="banner">Banner</a>
+              <a class="block p-1" href="card-list">Card Lists</a>
+              <a class="block p-1" href="content">Content</a>
+              <a class="block p-1" href="footer">Footer</a>
+              <a class="block p-1" href="mobile-nav">Mobile Nav</a>
+              <a class="block p-1" href="navigation">Navigation</a>
+              <a class="block p-1" href="search-box">Search Box</a>
             </nav>
           </div>
         </div>
-      </div>
-    </header>
-    <aside aria-hidden="true" class="text-font-size-small bg-color-blue-light hidden hidden:overflow animated" id="main-menu" style="position:relative;top:-1px">
-      <div class="page-wrapper">
-        <div class="screen-tablet:flex py-4">
-          <nav class="screen-tablet:flex-1 mb-1 px-2"><span class="screen-tablet:block screen-tablet:border-b border-color-white p-1">Main;</span>
-            <a class="inline-block p-1" href="index">Home</a>
-            <a class="inline-block p-1" href="https://www.npmjs.com/package/access-nyc-patterns">NPM</a>
-            <a class="inline-block p-1" href="https://github.com/CityOfNewYork/ACCESS-NYC-PATTERNS">GitHub</a>
-          </nav>
-          <nav class="screen-tablet:flex-1 mb-1 px-2 screen-desktop:pl-4"><span class="screen-tablet:block screen-tablet:border-b border-color-white p-1">Elements;</span>
-            <a class="inline-block p-1" href="buttons">Buttons</a>
-            <a class="inline-block p-1" href="checkboxes">Checkboxes</a>
-            <a class="inline-block p-1" href="colors">Colors</a>
-            <a class="inline-block p-1" href="dividers">Dividers</a>
-            <a class="inline-block p-1" href="icons">Icons</a>
-            <a class="inline-block p-1" href="inputs">Inputs</a>
-            <a class="inline-block p-1" href="layouts">Layouts</a>
-            <a class="inline-block p-1" href="links">Links</a>
-            <a class="inline-block p-1" href="lists">Lists</a>
-            <a class="inline-block p-1" href="nav">Nav</a>
-            <a class="inline-block p-1" href="program-labels">Program Labels</a>
-            <a class="inline-block p-1" href="radios">Radios</a>
-            <a class="inline-block p-1" href="tables">Tables</a>
-            <a class="inline-block p-1" href="tooltips">Tooltips</a>
-            <a class="inline-block p-1" href="toggles">Toggles</a>
-            <a class="inline-block p-1" href="typography">Typography</a>
-            <a class="inline-block p-1" href="selects">Selects</a>
-          </nav>
-          <nav class="screen-tablet:flex-1 mb-1 px-2 screen-desktop:pl-4"><span class="screen-tablet:block screen-tablet:border-b border-color-white p-1">Components;</span>
-            <a class="inline-block p-1" href="accordion">Accordion</a>
-            <a class="inline-block p-1" href="alert-box">Alert Box</a>
-            <a class="inline-block p-1" href="card">Card</a>
-            <a class="inline-block p-1" href="checklist">Checklist</a>
-            <a class="inline-block p-1" href="disclaimer">Disclaimer</a>
-            <a class="inline-block p-1" href="filter">Filter</a>
-            <a class="inline-block p-1" href="header">Header</a>
-            <a class="inline-block p-1" href="member-list">Member List</a>
-            <a class="inline-block p-1" href="text-controller">Text Controller</a>
-            <a class="inline-block p-1" href="share-form">Share Form</a>
-            <a class="inline-block p-1" href="side-nav">Side Nav</a>
-            <a class="inline-block p-1" href="question">Question</a>
-          </nav>
-          <nav class="screen-tablet:flex-1 mb-1 px-2 screen-desktop:pl-4"><span class="screen-tablet:block screen-tablet:border-b border-color-white p-1">Objects;</span>
-            <a class="inline-block p-1" href="announcements">Announcements</a>
-            <a class="inline-block p-1" href="banner">Banner</a>
-            <a class="inline-block p-1" href="card-list">Card Lists</a>
-            <a class="inline-block p-1" href="content">Content</a>
-            <a class="inline-block p-1" href="footer">Footer</a>
-            <a class="inline-block p-1" href="mobile-nav">Mobile Nav</a>
-            <a class="inline-block p-1" href="navigation">Navigation</a>
-            <a class="inline-block p-1" href="search-box">Search Box</a>
-          </nav>
-        </div>
-      </div>
-    </aside>
-    <main class="pt-4" id="main-content">
-      <article class="py-4">
-        <header class="page-wrapper px-2 screen-desktop:px-0 layout--home-body">
-          <div class="my-0 w-full">
-            <h1 class="text-color-blue-dark px-2 m-0">Colors</h1>
-          </div>
-        </header>
-        <section class="pb-4 mb-4" id="combinations">
-          <div class="page-wrapper px-2 screen-desktop:px-0">
-            <header class="layout--home-body">
-              <div class="my-0 pt-1 px-2 border-b border-color-grey-light">
-                <h2>
-                  <a class="text-color-grey-mid font-normal no-underline capitalize" href="#combinations">Combinations</a>
-                </h2>
-              </div>
-            </header>
-            <div class="layout--home-body">
-              <div class="my-0 pt-4 px-2 text-font-size-small" data-js="markdown" data-js-markdown="utilities/color-combinations.md">
-                <div class="p-1 mb-1 bg-color-grey-lightest"></div>
-                <div class="p-1 mb-1 bg-color-grey-lightest"></div>
-                <div class="p-1 mb-1 bg-color-grey-lightest"></div>
-                <div class="p-1 mb-1 bg-color-grey-lightest"></div>
-                <div class="p-1 mb-1 bg-color-grey-lightest"></div>
-                <div class="p-1 mb-1 bg-color-grey-lightest"></div>
-                <div class="p-1 mb-1 bg-color-grey-lightest"></div>
-                <div class="p-1 mb-1 bg-color-grey-lightest"></div>
-                <div class="p-1 mb-1 bg-color-grey-lightest"></div>
-                <div class="p-1 mb-1 bg-color-grey-lightest"></div>
-                <div class="p-1 mb-1 bg-color-grey-lightest"></div>
-                <div class="p-1 mb-1 bg-color-grey-lightest"></div>
-                <div class="p-1 mb-1 bg-color-grey-lightest"></div>
-                <div class="p-1 mb-1 bg-color-grey-lightest"></div>
-                <div class="p-1 mb-1 bg-color-grey-lightest"></div>
-                <div class="p-1 mb-1 bg-color-grey-lightest"></div>
-                <div class="p-1 mb-1 bg-color-grey-lightest"></div>
-                <div class="p-1 mb-1 bg-color-grey-lightest"></div>
-                <div class="p-1 mb-1 bg-color-grey-lightest"></div>
-                <div class="p-1 mb-1 bg-color-grey-lightest"></div>
-              </div>
+      </aside>
+      <main class="pt-4" id="main-content">
+        <article class="py-4">
+          <header class="page-wrapper px-2 screen-desktop:px-0 layout--home-body">
+            <div class="my-0 w-full">
+              <h1 class="text-color-blue-dark px-2 m-0">Colors</h1>
             </div>
-            <div class="layout--gutter screen-tablet:layout--gutter justify-between pt-4">
-              <div class="layout--gutter screen-mobile:layout--two-columns-gutter screen-tablet:layout--three-columns-gutter screen-desktop:layout--four-columns-gutter">
-                <div class="flex flex-col justify-between items-center border border-color-grey-lightest p-2">
-                  <div class="w-full">
-                    <div class="text-font-size-small">
-                      <h3 class="text-font-size-small capitalize mb-2">light background</h3>
-                      <article class="color-light-background w-full py-4 p-2 mb-2">
-                        <h1 class="type-h4 text-font-size-normal m-0">Headings h1, h3, h5</h1>
-                        <h2 class="type-h5 text-font-size-normal color-light-background__alt">Alternative Text</h2>
-                        <div class="capitalize">light background Text</div>
-                        <a href="#">Hyperlinks</a>
-                      </article>
-                      <p class="mb-0 flex justify-between">Selector<code>.color-light-background</code></p>
+          </header>
+          <section class="pb-4 mb-4" id="combinations">
+            <div class="page-wrapper px-2 screen-desktop:px-0">
+              <header class="layout--home-body">
+                <div class="my-0 pt-1 px-2 border-b border-color-grey-light">
+                  <h2>
+                    <a class="text-color-grey-mid font-normal no-underline capitalize" href="#combinations">Combinations</a>
+                  </h2>
+                </div>
+              </header>
+              <div class="layout--home-body">
+                <div class="my-0 pt-4 px-2 text-font-size-small" data-js="markdown" data-js-markdown="utilities/color-combinations.md">
+                  <div class="p-1 mb-1 bg-color-grey-lightest"></div>
+                  <div class="p-1 mb-1 bg-color-grey-lightest"></div>
+                  <div class="p-1 mb-1 bg-color-grey-lightest"></div>
+                  <div class="p-1 mb-1 bg-color-grey-lightest"></div>
+                  <div class="p-1 mb-1 bg-color-grey-lightest"></div>
+                  <div class="p-1 mb-1 bg-color-grey-lightest"></div>
+                  <div class="p-1 mb-1 bg-color-grey-lightest"></div>
+                  <div class="p-1 mb-1 bg-color-grey-lightest"></div>
+                  <div class="p-1 mb-1 bg-color-grey-lightest"></div>
+                  <div class="p-1 mb-1 bg-color-grey-lightest"></div>
+                  <div class="p-1 mb-1 bg-color-grey-lightest"></div>
+                  <div class="p-1 mb-1 bg-color-grey-lightest"></div>
+                  <div class="p-1 mb-1 bg-color-grey-lightest"></div>
+                  <div class="p-1 mb-1 bg-color-grey-lightest"></div>
+                  <div class="p-1 mb-1 bg-color-grey-lightest"></div>
+                  <div class="p-1 mb-1 bg-color-grey-lightest"></div>
+                  <div class="p-1 mb-1 bg-color-grey-lightest"></div>
+                  <div class="p-1 mb-1 bg-color-grey-lightest"></div>
+                  <div class="p-1 mb-1 bg-color-grey-lightest"></div>
+                  <div class="p-1 mb-1 bg-color-grey-lightest"></div>
+                </div>
+              </div>
+              <div class="layout--gutter screen-tablet:layout--gutter justify-between pt-4">
+                <div class="layout--gutter screen-mobile:layout--two-columns-gutter screen-tablet:layout--three-columns-gutter screen-desktop:layout--four-columns-gutter">
+                  <div class="flex flex-col justify-between items-center border border-color-grey-lightest p-2">
+                    <div class="w-full">
+                      <div class="text-font-size-small">
+                        <h3 class="text-font-size-small capitalize mb-2">light background</h3>
+                        <article class="color-light-background w-full py-4 p-2 mb-2">
+                          <h1 class="type-h4 text-font-size-normal m-0">Headings h1, h3, h5</h1>
+                          <h2 class="type-h5 text-font-size-normal color-light-background__alt">Alternative Text</h2>
+                          <div class="capitalize">light background Text</div>
+                          <a href="#">Hyperlinks</a>
+                        </article>
+                        <p class="mb-0 flex justify-between">Selector<code>.color-light-background</code></p>
+                      </div>
                     </div>
                   </div>
-                </div>
-                <div class="flex flex-col justify-between items-center border border-color-grey-lightest p-2">
-                  <div class="w-full">
-                    <div class="text-font-size-small">
-                      <h3 class="text-font-size-small capitalize mb-2">mid background</h3>
-                      <article class="color-mid-background w-full py-4 p-2 mb-2">
-                        <h1 class="type-h4 text-font-size-normal m-0">Headings h1, h3, h5</h1>
-                        <h2 class="type-h5 text-font-size-normal color-mid-background__alt">Alternative Text</h2>
-                        <div class="capitalize">mid background Text</div>
-                        <a href="#">Hyperlinks</a>
-                      </article>
-                      <p class="mb-0 flex justify-between">Selector<code>.color-mid-background</code></p>
+                  <div class="flex flex-col justify-between items-center border border-color-grey-lightest p-2">
+                    <div class="w-full">
+                      <div class="text-font-size-small">
+                        <h3 class="text-font-size-small capitalize mb-2">mid background</h3>
+                        <article class="color-mid-background w-full py-4 p-2 mb-2">
+                          <h1 class="type-h4 text-font-size-normal m-0">Headings h1, h3, h5</h1>
+                          <h2 class="type-h5 text-font-size-normal color-mid-background__alt">Alternative Text</h2>
+                          <div class="capitalize">mid background Text</div>
+                          <a href="#">Hyperlinks</a>
+                        </article>
+                        <p class="mb-0 flex justify-between">Selector<code>.color-mid-background</code></p>
+                      </div>
                     </div>
                   </div>
-                </div>
-                <div class="flex flex-col justify-between items-center border border-color-grey-lightest p-2">
-                  <div class="w-full">
-                    <div class="text-font-size-small">
-                      <h3 class="text-font-size-small capitalize mb-2">dark background</h3>
-                      <article class="color-dark-background w-full py-4 p-2 mb-2">
-                        <h1 class="type-h4 text-font-size-normal m-0">Headings h1, h3, h5</h1>
-                        <h2 class="type-h5 text-font-size-normal color-dark-background__alt">Alternative Text</h2>
-                        <div class="capitalize">dark background Text</div>
-                        <a href="#">Hyperlinks</a>
-                      </article>
-                      <p class="mb-0 flex justify-between">Selector<code>.color-dark-background</code></p>
+                  <div class="flex flex-col justify-between items-center border border-color-grey-lightest p-2">
+                    <div class="w-full">
+                      <div class="text-font-size-small">
+                        <h3 class="text-font-size-small capitalize mb-2">dark background</h3>
+                        <article class="color-dark-background w-full py-4 p-2 mb-2">
+                          <h1 class="type-h4 text-font-size-normal m-0">Headings h1, h3, h5</h1>
+                          <h2 class="type-h5 text-font-size-normal color-dark-background__alt">Alternative Text</h2>
+                          <div class="capitalize">dark background Text</div>
+                          <a href="#">Hyperlinks</a>
+                        </article>
+                        <p class="mb-0 flex justify-between">Selector<code>.color-dark-background</code></p>
+                      </div>
                     </div>
                   </div>
-                </div>
-                <div class="flex flex-col justify-between items-center border border-color-grey-lightest p-2">
-                  <div class="w-full">
-                    <div class="text-font-size-small">
-                      <h3 class="text-font-size-small capitalize mb-2">primary button</h3>
-                      <article class="color-primary-button w-full py-4 p-2 mb-2">
-                        <div class="capitalize">primary button Text</div>
-                      </article>
-                      <p class="mb-0 flex justify-between">Selector<code>.color-primary-button</code></p>
+                  <div class="flex flex-col justify-between items-center border border-color-grey-lightest p-2">
+                    <div class="w-full">
+                      <div class="text-font-size-small">
+                        <h3 class="text-font-size-small capitalize mb-2">primary button</h3>
+                        <article class="color-primary-button w-full py-4 p-2 mb-2">
+                          <div class="capitalize">primary button Text</div>
+                        </article>
+                        <p class="mb-0 flex justify-between">Selector<code>.color-primary-button</code></p>
+                      </div>
                     </div>
                   </div>
-                </div>
-                <div class="flex flex-col justify-between items-center border border-color-grey-lightest p-2">
-                  <div class="w-full">
-                    <div class="text-font-size-small">
-                      <h3 class="text-font-size-small capitalize mb-2">secondary button</h3>
-                      <article class="color-secondary-button w-full py-4 p-2 mb-2">
-                        <div class="capitalize">secondary button Text</div>
-                      </article>
-                      <p class="mb-0 flex justify-between">Selector<code>.color-secondary-button</code></p>
+                  <div class="flex flex-col justify-between items-center border border-color-grey-lightest p-2">
+                    <div class="w-full">
+                      <div class="text-font-size-small">
+                        <h3 class="text-font-size-small capitalize mb-2">secondary button</h3>
+                        <article class="color-secondary-button w-full py-4 p-2 mb-2">
+                          <div class="capitalize">secondary button Text</div>
+                        </article>
+                        <p class="mb-0 flex justify-between">Selector<code>.color-secondary-button</code></p>
+                      </div>
                     </div>
                   </div>
                 </div>
               </div>
             </div>
-          </div>
-        </section>
-        <section class="pb-4 mb-4" id="utilities">
-          <div class="page-wrapper px-2 screen-desktop:px-0">
-            <header class="layout--home-body">
-              <div class="my-0 pt-1 px-2 border-b border-color-grey-light">
-                <h2>
-                  <a class="text-color-grey-mid font-normal no-underline capitalize" href="#utilities">Utilities</a>
-                </h2>
+          </section>
+          <section class="pb-4 mb-4" id="utilities">
+            <div class="page-wrapper px-2 screen-desktop:px-0">
+              <header class="layout--home-body">
+                <div class="my-0 pt-1 px-2 border-b border-color-grey-light">
+                  <h2>
+                    <a class="text-color-grey-mid font-normal no-underline capitalize" href="#utilities">Utilities</a>
+                  </h2>
+                </div>
+              </header>
+              <div class="layout--home-body">
+                <div class="my-0 pt-4 px-2 text-font-size-small" data-js="markdown" data-js-markdown="utilities/color-utilities.md">
+                  <div class="p-1 mb-1 bg-color-grey-lightest"></div>
+                  <div class="p-1 mb-1 bg-color-grey-lightest"></div>
+                  <div class="p-1 mb-1 bg-color-grey-lightest"></div>
+                  <div class="p-1 mb-1 bg-color-grey-lightest"></div>
+                  <div class="p-1 mb-1 bg-color-grey-lightest"></div>
+                  <div class="p-1 mb-1 bg-color-grey-lightest"></div>
+                  <div class="p-1 mb-1 bg-color-grey-lightest"></div>
+                  <div class="p-1 mb-1 bg-color-grey-lightest"></div>
+                  <div class="p-1 mb-1 bg-color-grey-lightest"></div>
+                  <div class="p-1 mb-1 bg-color-grey-lightest"></div>
+                  <div class="p-1 mb-1 bg-color-grey-lightest"></div>
+                  <div class="p-1 mb-1 bg-color-grey-lightest"></div>
+                  <div class="p-1 mb-1 bg-color-grey-lightest"></div>
+                  <div class="p-1 mb-1 bg-color-grey-lightest"></div>
+                  <div class="p-1 mb-1 bg-color-grey-lightest"></div>
+                  <div class="p-1 mb-1 bg-color-grey-lightest"></div>
+                  <div class="p-1 mb-1 bg-color-grey-lightest"></div>
+                  <div class="p-1 mb-1 bg-color-grey-lightest"></div>
+                  <div class="p-1 mb-1 bg-color-grey-lightest"></div>
+                  <div class="p-1 mb-1 bg-color-grey-lightest"></div>
+                </div>
               </div>
-            </header>
-            <div class="layout--home-body">
-              <div class="my-0 pt-4 px-2 text-font-size-small" data-js="markdown" data-js-markdown="utilities/color-utilities.md">
-                <div class="p-1 mb-1 bg-color-grey-lightest"></div>
-                <div class="p-1 mb-1 bg-color-grey-lightest"></div>
-                <div class="p-1 mb-1 bg-color-grey-lightest"></div>
-                <div class="p-1 mb-1 bg-color-grey-lightest"></div>
-                <div class="p-1 mb-1 bg-color-grey-lightest"></div>
-                <div class="p-1 mb-1 bg-color-grey-lightest"></div>
-                <div class="p-1 mb-1 bg-color-grey-lightest"></div>
-                <div class="p-1 mb-1 bg-color-grey-lightest"></div>
-                <div class="p-1 mb-1 bg-color-grey-lightest"></div>
-                <div class="p-1 mb-1 bg-color-grey-lightest"></div>
-                <div class="p-1 mb-1 bg-color-grey-lightest"></div>
-                <div class="p-1 mb-1 bg-color-grey-lightest"></div>
-                <div class="p-1 mb-1 bg-color-grey-lightest"></div>
-                <div class="p-1 mb-1 bg-color-grey-lightest"></div>
-                <div class="p-1 mb-1 bg-color-grey-lightest"></div>
-                <div class="p-1 mb-1 bg-color-grey-lightest"></div>
-                <div class="p-1 mb-1 bg-color-grey-lightest"></div>
-                <div class="p-1 mb-1 bg-color-grey-lightest"></div>
-                <div class="p-1 mb-1 bg-color-grey-lightest"></div>
-                <div class="p-1 mb-1 bg-color-grey-lightest"></div>
+              <div class="layout--gutter screen-tablet:layout--gutter justify-between pt-4">
+                <div class="layout--gutter screen-mobile:layout--two-columns-gutter screen-tablet:layout--three-columns-gutter screen-desktop:layout--four-columns-gutter">
+                  <div class="flex flex-col justify-between items-center border border-color-grey-lightest p-2">
+                    <div class="w-full">
+                      <div class="text-font-size-small">
+                        <h3 class="text-font-size-small capitalize mb-2">color blue light</h3>
+                        <div class="border border-color-blue-light w-full p-1 mb-2">
+                          <div class="text-color-blue-light pb-1 text-center capitalize">Text color blue light</div>
+                          <div class="bg-color-blue-light w-full py-4"></div>
+                        </div>
+                        <p class="mb-1 flex justify-between">Hex<code>#E1EEFF</code></p>
+                        <p class="mb-1 flex justify-between">Border<code>.border-color-blue-light</code></p>
+                        <p class="mb-1 flex justify-between">Text<code>.text-color-blue-light</code></p>
+                        <p class="mb-0 flex justify-between">Background<code>.bg-color-blue-light</code></p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="flex flex-col justify-between items-center border border-color-grey-lightest p-2">
+                    <div class="w-full">
+                      <div class="text-font-size-small">
+                        <h3 class="text-font-size-small capitalize mb-2">color blue bright</h3>
+                        <div class="border border-color-blue-bright w-full p-1 mb-2">
+                          <div class="text-color-blue-bright pb-1 text-center capitalize">Text color blue bright</div>
+                          <div class="bg-color-blue-bright w-full py-4"></div>
+                        </div>
+                        <p class="mb-1 flex justify-between">Hex<code>#118DF0</code></p>
+                        <p class="mb-1 flex justify-between">Border<code>.border-color-blue-bright</code></p>
+                        <p class="mb-1 flex justify-between">Text<code>.text-color-blue-bright</code></p>
+                        <p class="mb-0 flex justify-between">Background<code>.bg-color-blue-bright</code></p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="flex flex-col justify-between items-center border border-color-grey-lightest p-2">
+                    <div class="w-full">
+                      <div class="text-font-size-small">
+                        <h3 class="text-font-size-small capitalize mb-2">color blue</h3>
+                        <div class="border border-color-blue w-full p-1 mb-2">
+                          <div class="text-color-blue pb-1 text-center capitalize">Text color blue</div>
+                          <div class="bg-color-blue w-full py-4"></div>
+                        </div>
+                        <p class="mb-1 flex justify-between">Hex<code>#184E9E</code></p>
+                        <p class="mb-1 flex justify-between">Border<code>.border-color-blue</code></p>
+                        <p class="mb-1 flex justify-between">Text<code>.text-color-blue</code></p>
+                        <p class="mb-0 flex justify-between">Background<code>.bg-color-blue</code></p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="flex flex-col justify-between items-center border border-color-grey-lightest p-2">
+                    <div class="w-full">
+                      <div class="text-font-size-small">
+                        <h3 class="text-font-size-small capitalize mb-2">color blue dark</h3>
+                        <div class="border border-color-blue-dark w-full p-1 mb-2">
+                          <div class="text-color-blue-dark pb-1 text-center capitalize">Text color blue dark</div>
+                          <div class="bg-color-blue-dark w-full py-4"></div>
+                        </div>
+                        <p class="mb-1 flex justify-between">Hex<code>#112E51</code></p>
+                        <p class="mb-1 flex justify-between">Border<code>.border-color-blue-dark</code></p>
+                        <p class="mb-1 flex justify-between">Text<code>.text-color-blue-dark</code></p>
+                        <p class="mb-0 flex justify-between">Background<code>.bg-color-blue-dark</code></p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="flex flex-col justify-between items-center border border-color-grey-lightest p-2">
+                    <div class="w-full">
+                      <div class="text-font-size-small">
+                        <h3 class="text-font-size-small capitalize mb-2">color yellow light</h3>
+                        <div class="border border-color-yellow-light w-full p-1 mb-2">
+                          <div class="text-color-yellow-light pb-1 text-center capitalize">Text color yellow light</div>
+                          <div class="bg-color-yellow-light w-full py-4"></div>
+                        </div>
+                        <p class="mb-1 flex justify-between">Hex<code>#FFE6A9</code></p>
+                        <p class="mb-1 flex justify-between">Border<code>.border-color-yellow-light</code></p>
+                        <p class="mb-1 flex justify-between">Text<code>.text-color-yellow-light</code></p>
+                        <p class="mb-0 flex justify-between">Background<code>.bg-color-yellow-light</code></p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="flex flex-col justify-between items-center border border-color-grey-lightest p-2">
+                    <div class="w-full">
+                      <div class="text-font-size-small">
+                        <h3 class="text-font-size-small capitalize mb-2">color yellow access</h3>
+                        <div class="border border-color-yellow-access w-full p-1 mb-2">
+                          <div class="text-color-yellow-access pb-1 text-center capitalize">Text color yellow access</div>
+                          <div class="bg-color-yellow-access w-full py-4"></div>
+                        </div>
+                        <p class="mb-1 flex justify-between">Hex<code>#FBB720</code></p>
+                        <p class="mb-1 flex justify-between">Border<code>.border-color-yellow-access</code></p>
+                        <p class="mb-1 flex justify-between">Text<code>.text-color-yellow-access</code></p>
+                        <p class="mb-0 flex justify-between">Background<code>.bg-color-yellow-access</code></p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="flex flex-col justify-between items-center border border-color-grey-lightest p-2">
+                    <div class="w-full">
+                      <div class="text-font-size-small">
+                        <h3 class="text-font-size-small capitalize mb-2">color green light</h3>
+                        <div class="border border-color-green-light w-full p-1 mb-2">
+                          <div class="text-color-green-light pb-1 text-center capitalize">Text color green light</div>
+                          <div class="bg-color-green-light w-full py-4"></div>
+                        </div>
+                        <p class="mb-1 flex justify-between">Hex<code>#D4FFE7</code></p>
+                        <p class="mb-1 flex justify-between">Border<code>.border-color-green-light</code></p>
+                        <p class="mb-1 flex justify-between">Text<code>.text-color-green-light</code></p>
+                        <p class="mb-0 flex justify-between">Background<code>.bg-color-green-light</code></p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="flex flex-col justify-between items-center border border-color-grey-lightest p-2">
+                    <div class="w-full">
+                      <div class="text-font-size-small">
+                        <h3 class="text-font-size-small capitalize mb-2">color green</h3>
+                        <div class="border border-color-green w-full p-1 mb-2">
+                          <div class="text-color-green pb-1 text-center capitalize">Text color green</div>
+                          <div class="bg-color-green w-full py-4"></div>
+                        </div>
+                        <p class="mb-1 flex justify-between">Hex<code>#05CE7C</code></p>
+                        <p class="mb-1 flex justify-between">Border<code>.border-color-green</code></p>
+                        <p class="mb-1 flex justify-between">Text<code>.text-color-green</code></p>
+                        <p class="mb-0 flex justify-between">Background<code>.bg-color-green</code></p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="flex flex-col justify-between items-center border border-color-grey-lightest p-2">
+                    <div class="w-full">
+                      <div class="text-font-size-small">
+                        <h3 class="text-font-size-small capitalize mb-2">color green mid</h3>
+                        <div class="border border-color-green-mid w-full p-1 mb-2">
+                          <div class="text-color-green-mid pb-1 text-center capitalize">Text color green mid</div>
+                          <div class="bg-color-green-mid w-full py-4"></div>
+                        </div>
+                        <p class="mb-1 flex justify-between">Hex<code>#0D6D3B</code></p>
+                        <p class="mb-1 flex justify-between">Border<code>.border-color-green-mid</code></p>
+                        <p class="mb-1 flex justify-between">Text<code>.text-color-green-mid</code></p>
+                        <p class="mb-0 flex justify-between">Background<code>.bg-color-green-mid</code></p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="flex flex-col justify-between items-center border border-color-grey-lightest p-2">
+                    <div class="w-full">
+                      <div class="text-font-size-small">
+                        <h3 class="text-font-size-small capitalize mb-2">color green dark</h3>
+                        <div class="border border-color-green-dark w-full p-1 mb-2">
+                          <div class="text-color-green-dark pb-1 text-center capitalize">Text color green dark</div>
+                          <div class="bg-color-green-dark w-full py-4"></div>
+                        </div>
+                        <p class="mb-1 flex justify-between">Hex<code>#094727</code></p>
+                        <p class="mb-1 flex justify-between">Border<code>.border-color-green-dark</code></p>
+                        <p class="mb-1 flex justify-between">Text<code>.text-color-green-dark</code></p>
+                        <p class="mb-0 flex justify-between">Background<code>.bg-color-green-dark</code></p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="flex flex-col justify-between items-center border border-color-grey-lightest p-2">
+                    <div class="w-full">
+                      <div class="text-font-size-small">
+                        <h3 class="text-font-size-small capitalize mb-2">color pink light</h3>
+                        <div class="border border-color-pink-light w-full p-1 mb-2">
+                          <div class="text-color-pink-light pb-1 text-center capitalize">Text color pink light</div>
+                          <div class="bg-color-pink-light w-full py-4"></div>
+                        </div>
+                        <p class="mb-1 flex justify-between">Hex<code>#F1B3bD</code></p>
+                        <p class="mb-1 flex justify-between">Border<code>.border-color-pink-light</code></p>
+                        <p class="mb-1 flex justify-between">Text<code>.text-color-pink-light</code></p>
+                        <p class="mb-0 flex justify-between">Background<code>.bg-color-pink-light</code></p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="flex flex-col justify-between items-center border border-color-grey-lightest p-2">
+                    <div class="w-full">
+                      <div class="text-font-size-small">
+                        <h3 class="text-font-size-small capitalize mb-2">color pink</h3>
+                        <div class="border border-color-pink w-full p-1 mb-2">
+                          <div class="text-color-pink pb-1 text-center capitalize">Text color pink</div>
+                          <div class="bg-color-pink w-full py-4"></div>
+                        </div>
+                        <p class="mb-1 flex justify-between">Hex<code>#F1647C</code></p>
+                        <p class="mb-1 flex justify-between">Border<code>.border-color-pink</code></p>
+                        <p class="mb-1 flex justify-between">Text<code>.text-color-pink</code></p>
+                        <p class="mb-0 flex justify-between">Background<code>.bg-color-pink</code></p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="flex flex-col justify-between items-center border border-color-grey-lightest p-2">
+                    <div class="w-full">
+                      <div class="text-font-size-small">
+                        <h3 class="text-font-size-small capitalize mb-2">color red</h3>
+                        <div class="border border-color-red w-full p-1 mb-2">
+                          <div class="text-color-red pb-1 text-center capitalize">Text color red</div>
+                          <div class="bg-color-red w-full py-4"></div>
+                        </div>
+                        <p class="mb-1 flex justify-between">Hex<code>#C6252b</code></p>
+                        <p class="mb-1 flex justify-between">Border<code>.border-color-red</code></p>
+                        <p class="mb-1 flex justify-between">Text<code>.text-color-red</code></p>
+                        <p class="mb-0 flex justify-between">Background<code>.bg-color-red</code></p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="flex flex-col justify-between items-center border border-color-grey-lightest p-2">
+                    <div class="w-full">
+                      <div class="text-font-size-small">
+                        <h3 class="text-font-size-small capitalize mb-2">color purple</h3>
+                        <div class="border border-color-purple w-full p-1 mb-2">
+                          <div class="text-color-purple pb-1 text-center capitalize">Text color purple</div>
+                          <div class="bg-color-purple w-full py-4"></div>
+                        </div>
+                        <p class="mb-1 flex justify-between">Hex<code>#4C2C92</code></p>
+                        <p class="mb-1 flex justify-between">Border<code>.border-color-purple</code></p>
+                        <p class="mb-1 flex justify-between">Text<code>.text-color-purple</code></p>
+                        <p class="mb-0 flex justify-between">Background<code>.bg-color-purple</code></p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="flex flex-col justify-between items-center border border-color-grey-lightest p-2">
+                    <div class="w-full">
+                      <div class="text-font-size-small">
+                        <h3 class="text-font-size-small capitalize mb-2">color grey light</h3>
+                        <div class="border border-color-grey-light w-full p-1 mb-2">
+                          <div class="text-color-grey-light pb-1 text-center capitalize">Text color grey light</div>
+                          <div class="bg-color-grey-light w-full py-4"></div>
+                        </div>
+                        <p class="mb-1 flex justify-between">Hex<code>#D1D5D9</code></p>
+                        <p class="mb-1 flex justify-between">Border<code>.border-color-grey-light</code></p>
+                        <p class="mb-1 flex justify-between">Text<code>.text-color-grey-light</code></p>
+                        <p class="mb-0 flex justify-between">Background<code>.bg-color-grey-light</code></p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="flex flex-col justify-between items-center border border-color-grey-lightest p-2">
+                    <div class="w-full">
+                      <div class="text-font-size-small">
+                        <h3 class="text-font-size-small capitalize mb-2">color grey lightest</h3>
+                        <div class="border border-color-grey-lightest w-full p-1 mb-2">
+                          <div class="text-color-grey-lightest pb-1 text-center capitalize">Text color grey lightest</div>
+                          <div class="bg-color-grey-lightest w-full py-4"></div>
+                        </div>
+                        <p class="mb-1 flex justify-between">Hex<code>#EEF3F7</code></p>
+                        <p class="mb-1 flex justify-between">Border<code>.border-color-grey-lightest</code></p>
+                        <p class="mb-1 flex justify-between">Text<code>.text-color-grey-lightest</code></p>
+                        <p class="mb-0 flex justify-between">Background<code>.bg-color-grey-lightest</code></p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="flex flex-col justify-between items-center border border-color-grey-lightest p-2">
+                    <div class="w-full">
+                      <div class="text-font-size-small">
+                        <h3 class="text-font-size-small capitalize mb-2">color grey mid</h3>
+                        <div class="border border-color-grey-mid w-full p-1 mb-2">
+                          <div class="text-color-grey-mid pb-1 text-center capitalize">Text color grey mid</div>
+                          <div class="bg-color-grey-mid w-full py-4"></div>
+                        </div>
+                        <p class="mb-1 flex justify-between">Hex<code>#505C66</code></p>
+                        <p class="mb-1 flex justify-between">Border<code>.border-color-grey-mid</code></p>
+                        <p class="mb-1 flex justify-between">Text<code>.text-color-grey-mid</code></p>
+                        <p class="mb-0 flex justify-between">Background<code>.bg-color-grey-mid</code></p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="flex flex-col justify-between items-center border border-color-grey-lightest p-2">
+                    <div class="w-full">
+                      <div class="text-font-size-small">
+                        <h3 class="text-font-size-small capitalize mb-2">color grey dark</h3>
+                        <div class="border border-color-grey-dark w-full p-1 mb-2">
+                          <div class="text-color-grey-dark pb-1 text-center capitalize">Text color grey dark</div>
+                          <div class="bg-color-grey-dark w-full py-4"></div>
+                        </div>
+                        <p class="mb-1 flex justify-between">Hex<code>#172129</code></p>
+                        <p class="mb-1 flex justify-between">Border<code>.border-color-grey-dark</code></p>
+                        <p class="mb-1 flex justify-between">Text<code>.text-color-grey-dark</code></p>
+                        <p class="mb-0 flex justify-between">Background<code>.bg-color-grey-dark</code></p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="flex flex-col justify-between items-center border border-color-grey-lightest p-2">
+                    <div class="w-full">
+                      <div class="text-font-size-small">
+                        <h3 class="text-font-size-small capitalize mb-2">color black</h3>
+                        <div class="border border-color-black w-full p-1 mb-2">
+                          <div class="text-color-black pb-1 text-center capitalize">Text color black</div>
+                          <div class="bg-color-black w-full py-4"></div>
+                        </div>
+                        <p class="mb-1 flex justify-between">Hex<code>#000000</code></p>
+                        <p class="mb-1 flex justify-between">Border<code>.border-color-black</code></p>
+                        <p class="mb-1 flex justify-between">Text<code>.text-color-black</code></p>
+                        <p class="mb-0 flex justify-between">Background<code>.bg-color-black</code></p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="flex flex-col justify-between items-center border border-color-grey-lightest p-2">
+                    <div class="w-full">
+                      <div class="text-font-size-small">
+                        <h3 class="text-font-size-small capitalize mb-2">color white</h3>
+                        <div class="border border-color-white w-full p-1 mb-2">
+                          <div class="text-color-white pb-1 text-center capitalize">Text color white</div>
+                          <div class="bg-color-white w-full py-4"></div>
+                        </div>
+                        <p class="mb-1 flex justify-between">Hex<code>#ffffff</code></p>
+                        <p class="mb-1 flex justify-between">Border<code>.border-color-white</code></p>
+                        <p class="mb-1 flex justify-between">Text<code>.text-color-white</code></p>
+                        <p class="mb-0 flex justify-between">Background<code>.bg-color-white</code></p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="flex flex-col justify-between items-center border border-color-grey-lightest p-2">
+                    <div class="w-full">
+                      <div class="text-font-size-small">
+                        <h3 class="text-font-size-small capitalize mb-2">color transparent</h3>
+                        <div class="border border-color-transparent w-full p-1 mb-2">
+                          <div class="text-color-transparent pb-1 text-center capitalize">Text color transparent</div>
+                          <div class="bg-color-transparent w-full py-4"></div>
+                        </div>
+                        <p class="mb-1 flex justify-between">Hex<code>rgba(255,255,255,0)</code></p>
+                        <p class="mb-1 flex justify-between">Border<code>.border-color-transparent</code></p>
+                        <p class="mb-1 flex justify-between">Text<code>.text-color-transparent</code></p>
+                        <p class="mb-0 flex justify-between">Background<code>.bg-color-transparent</code></p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="flex flex-col justify-between items-center border border-color-grey-lightest p-2">
+                    <div class="w-full">
+                      <div class="text-font-size-small">
+                        <h3 class="text-font-size-small capitalize mb-2">eighth avenue</h3>
+                        <div class="border border-eighth-avenue w-full p-1 mb-2">
+                          <div class="text-eighth-avenue pb-1 text-center capitalize">Text eighth avenue</div>
+                          <div class="bg-eighth-avenue w-full py-4"></div>
+                        </div>
+                        <p class="mb-1 flex justify-between">Hex<code>#2850AD</code></p>
+                        <p class="mb-1 flex justify-between">Border<code>.border-eighth-avenue</code></p>
+                        <p class="mb-1 flex justify-between">Text<code>.text-eighth-avenue</code></p>
+                        <p class="mb-0 flex justify-between">Background<code>.bg-eighth-avenue</code></p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="flex flex-col justify-between items-center border border-color-grey-lightest p-2">
+                    <div class="w-full">
+                      <div class="text-font-size-small">
+                        <h3 class="text-font-size-small capitalize mb-2">sixth avenue</h3>
+                        <div class="border border-sixth-avenue w-full p-1 mb-2">
+                          <div class="text-sixth-avenue pb-1 text-center capitalize">Text sixth avenue</div>
+                          <div class="bg-sixth-avenue w-full py-4"></div>
+                        </div>
+                        <p class="mb-1 flex justify-between">Hex<code>#FF6319</code></p>
+                        <p class="mb-1 flex justify-between">Border<code>.border-sixth-avenue</code></p>
+                        <p class="mb-1 flex justify-between">Text<code>.text-sixth-avenue</code></p>
+                        <p class="mb-0 flex justify-between">Background<code>.bg-sixth-avenue</code></p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="flex flex-col justify-between items-center border border-color-grey-lightest p-2">
+                    <div class="w-full">
+                      <div class="text-font-size-small">
+                        <h3 class="text-font-size-small capitalize mb-2">crosstown</h3>
+                        <div class="border border-crosstown w-full p-1 mb-2">
+                          <div class="text-crosstown pb-1 text-center capitalize">Text crosstown</div>
+                          <div class="bg-crosstown w-full py-4"></div>
+                        </div>
+                        <p class="mb-1 flex justify-between">Hex<code>#6CBE45</code></p>
+                        <p class="mb-1 flex justify-between">Border<code>.border-crosstown</code></p>
+                        <p class="mb-1 flex justify-between">Text<code>.text-crosstown</code></p>
+                        <p class="mb-0 flex justify-between">Background<code>.bg-crosstown</code></p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="flex flex-col justify-between items-center border border-color-grey-lightest p-2">
+                    <div class="w-full">
+                      <div class="text-font-size-small">
+                        <h3 class="text-font-size-small capitalize mb-2">canarsie</h3>
+                        <div class="border border-canarsie w-full p-1 mb-2">
+                          <div class="text-canarsie pb-1 text-center capitalize">Text canarsie</div>
+                          <div class="bg-canarsie w-full py-4"></div>
+                        </div>
+                        <p class="mb-1 flex justify-between">Hex<code>#A7A9AC</code></p>
+                        <p class="mb-1 flex justify-between">Border<code>.border-canarsie</code></p>
+                        <p class="mb-1 flex justify-between">Text<code>.text-canarsie</code></p>
+                        <p class="mb-0 flex justify-between">Background<code>.bg-canarsie</code></p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="flex flex-col justify-between items-center border border-color-grey-lightest p-2">
+                    <div class="w-full">
+                      <div class="text-font-size-small">
+                        <h3 class="text-font-size-small capitalize mb-2">nassau</h3>
+                        <div class="border border-nassau w-full p-1 mb-2">
+                          <div class="text-nassau pb-1 text-center capitalize">Text nassau</div>
+                          <div class="bg-nassau w-full py-4"></div>
+                        </div>
+                        <p class="mb-1 flex justify-between">Hex<code>#996633</code></p>
+                        <p class="mb-1 flex justify-between">Border<code>.border-nassau</code></p>
+                        <p class="mb-1 flex justify-between">Text<code>.text-nassau</code></p>
+                        <p class="mb-0 flex justify-between">Background<code>.bg-nassau</code></p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="flex flex-col justify-between items-center border border-color-grey-lightest p-2">
+                    <div class="w-full">
+                      <div class="text-font-size-small">
+                        <h3 class="text-font-size-small capitalize mb-2">broadway</h3>
+                        <div class="border border-broadway w-full p-1 mb-2">
+                          <div class="text-broadway pb-1 text-center capitalize">Text broadway</div>
+                          <div class="bg-broadway w-full py-4"></div>
+                        </div>
+                        <p class="mb-1 flex justify-between">Hex<code>#FCCC0A</code></p>
+                        <p class="mb-1 flex justify-between">Border<code>.border-broadway</code></p>
+                        <p class="mb-1 flex justify-between">Text<code>.text-broadway</code></p>
+                        <p class="mb-0 flex justify-between">Background<code>.bg-broadway</code></p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="flex flex-col justify-between items-center border border-color-grey-lightest p-2">
+                    <div class="w-full">
+                      <div class="text-font-size-small">
+                        <h3 class="text-font-size-small capitalize mb-2">broadway seventh avenue</h3>
+                        <div class="border border-broadway-seventh-avenue w-full p-1 mb-2">
+                          <div class="text-broadway-seventh-avenue pb-1 text-center capitalize">Text broadway seventh avenue</div>
+                          <div class="bg-broadway-seventh-avenue w-full py-4"></div>
+                        </div>
+                        <p class="mb-1 flex justify-between">Hex<code>#EE352E</code></p>
+                        <p class="mb-1 flex justify-between">Border<code>.border-broadway-seventh-avenue</code></p>
+                        <p class="mb-1 flex justify-between">Text<code>.text-broadway-seventh-avenue</code></p>
+                        <p class="mb-0 flex justify-between">Background<code>.bg-broadway-seventh-avenue</code></p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="flex flex-col justify-between items-center border border-color-grey-lightest p-2">
+                    <div class="w-full">
+                      <div class="text-font-size-small">
+                        <h3 class="text-font-size-small capitalize mb-2">lexington avenue</h3>
+                        <div class="border border-lexington-avenue w-full p-1 mb-2">
+                          <div class="text-lexington-avenue pb-1 text-center capitalize">Text lexington avenue</div>
+                          <div class="bg-lexington-avenue w-full py-4"></div>
+                        </div>
+                        <p class="mb-1 flex justify-between">Hex<code>#00933C</code></p>
+                        <p class="mb-1 flex justify-between">Border<code>.border-lexington-avenue</code></p>
+                        <p class="mb-1 flex justify-between">Text<code>.text-lexington-avenue</code></p>
+                        <p class="mb-0 flex justify-between">Background<code>.bg-lexington-avenue</code></p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="flex flex-col justify-between items-center border border-color-grey-lightest p-2">
+                    <div class="w-full">
+                      <div class="text-font-size-small">
+                        <h3 class="text-font-size-small capitalize mb-2">flushing</h3>
+                        <div class="border border-flushing w-full p-1 mb-2">
+                          <div class="text-flushing pb-1 text-center capitalize">Text flushing</div>
+                          <div class="bg-flushing w-full py-4"></div>
+                        </div>
+                        <p class="mb-1 flex justify-between">Hex<code>#B933AD</code></p>
+                        <p class="mb-1 flex justify-between">Border<code>.border-flushing</code></p>
+                        <p class="mb-1 flex justify-between">Text<code>.text-flushing</code></p>
+                        <p class="mb-0 flex justify-between">Background<code>.bg-flushing</code></p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="flex flex-col justify-between items-center border border-color-grey-lightest p-2">
+                    <div class="w-full">
+                      <div class="text-font-size-small">
+                        <h3 class="text-font-size-small capitalize mb-2">shuttles</h3>
+                        <div class="border border-shuttles w-full p-1 mb-2">
+                          <div class="text-shuttles pb-1 text-center capitalize">Text shuttles</div>
+                          <div class="bg-shuttles w-full py-4"></div>
+                        </div>
+                        <p class="mb-1 flex justify-between">Hex<code>#808183</code></p>
+                        <p class="mb-1 flex justify-between">Border<code>.border-shuttles</code></p>
+                        <p class="mb-1 flex justify-between">Text<code>.text-shuttles</code></p>
+                        <p class="mb-0 flex justify-between">Background<code>.bg-shuttles</code></p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
-            <div class="layout--gutter screen-tablet:layout--gutter justify-between pt-4">
-              <div class="layout--gutter screen-mobile:layout--two-columns-gutter screen-tablet:layout--three-columns-gutter screen-desktop:layout--four-columns-gutter">
-                <div class="flex flex-col justify-between items-center border border-color-grey-lightest p-2">
-                  <div class="w-full">
-                    <div class="text-font-size-small">
-                      <h3 class="text-font-size-small capitalize mb-2">color blue light</h3>
-                      <div class="border border-color-blue-light w-full p-1 mb-2">
-                        <div class="text-color-blue-light pb-1 text-center capitalize">Text color blue light</div>
-                        <div class="bg-color-blue-light w-full py-4"></div>
-                      </div>
-                      <p class="mb-1 flex justify-between">Hex<code>#E1EEFF</code></p>
-                      <p class="mb-1 flex justify-between">Border<code>.border-color-blue-light</code></p>
-                      <p class="mb-1 flex justify-between">Text<code>.text-color-blue-light</code></p>
-                      <p class="mb-0 flex justify-between">Background<code>.bg-color-blue-light</code></p>
-                    </div>
-                  </div>
-                </div>
-                <div class="flex flex-col justify-between items-center border border-color-grey-lightest p-2">
-                  <div class="w-full">
-                    <div class="text-font-size-small">
-                      <h3 class="text-font-size-small capitalize mb-2">color blue bright</h3>
-                      <div class="border border-color-blue-bright w-full p-1 mb-2">
-                        <div class="text-color-blue-bright pb-1 text-center capitalize">Text color blue bright</div>
-                        <div class="bg-color-blue-bright w-full py-4"></div>
-                      </div>
-                      <p class="mb-1 flex justify-between">Hex<code>#118DF0</code></p>
-                      <p class="mb-1 flex justify-between">Border<code>.border-color-blue-bright</code></p>
-                      <p class="mb-1 flex justify-between">Text<code>.text-color-blue-bright</code></p>
-                      <p class="mb-0 flex justify-between">Background<code>.bg-color-blue-bright</code></p>
-                    </div>
-                  </div>
-                </div>
-                <div class="flex flex-col justify-between items-center border border-color-grey-lightest p-2">
-                  <div class="w-full">
-                    <div class="text-font-size-small">
-                      <h3 class="text-font-size-small capitalize mb-2">color blue</h3>
-                      <div class="border border-color-blue w-full p-1 mb-2">
-                        <div class="text-color-blue pb-1 text-center capitalize">Text color blue</div>
-                        <div class="bg-color-blue w-full py-4"></div>
-                      </div>
-                      <p class="mb-1 flex justify-between">Hex<code>#184E9E</code></p>
-                      <p class="mb-1 flex justify-between">Border<code>.border-color-blue</code></p>
-                      <p class="mb-1 flex justify-between">Text<code>.text-color-blue</code></p>
-                      <p class="mb-0 flex justify-between">Background<code>.bg-color-blue</code></p>
-                    </div>
-                  </div>
-                </div>
-                <div class="flex flex-col justify-between items-center border border-color-grey-lightest p-2">
-                  <div class="w-full">
-                    <div class="text-font-size-small">
-                      <h3 class="text-font-size-small capitalize mb-2">color blue dark</h3>
-                      <div class="border border-color-blue-dark w-full p-1 mb-2">
-                        <div class="text-color-blue-dark pb-1 text-center capitalize">Text color blue dark</div>
-                        <div class="bg-color-blue-dark w-full py-4"></div>
-                      </div>
-                      <p class="mb-1 flex justify-between">Hex<code>#112E51</code></p>
-                      <p class="mb-1 flex justify-between">Border<code>.border-color-blue-dark</code></p>
-                      <p class="mb-1 flex justify-between">Text<code>.text-color-blue-dark</code></p>
-                      <p class="mb-0 flex justify-between">Background<code>.bg-color-blue-dark</code></p>
-                    </div>
-                  </div>
-                </div>
-                <div class="flex flex-col justify-between items-center border border-color-grey-lightest p-2">
-                  <div class="w-full">
-                    <div class="text-font-size-small">
-                      <h3 class="text-font-size-small capitalize mb-2">color yellow light</h3>
-                      <div class="border border-color-yellow-light w-full p-1 mb-2">
-                        <div class="text-color-yellow-light pb-1 text-center capitalize">Text color yellow light</div>
-                        <div class="bg-color-yellow-light w-full py-4"></div>
-                      </div>
-                      <p class="mb-1 flex justify-between">Hex<code>#FFE6A9</code></p>
-                      <p class="mb-1 flex justify-between">Border<code>.border-color-yellow-light</code></p>
-                      <p class="mb-1 flex justify-between">Text<code>.text-color-yellow-light</code></p>
-                      <p class="mb-0 flex justify-between">Background<code>.bg-color-yellow-light</code></p>
-                    </div>
-                  </div>
-                </div>
-                <div class="flex flex-col justify-between items-center border border-color-grey-lightest p-2">
-                  <div class="w-full">
-                    <div class="text-font-size-small">
-                      <h3 class="text-font-size-small capitalize mb-2">color yellow access</h3>
-                      <div class="border border-color-yellow-access w-full p-1 mb-2">
-                        <div class="text-color-yellow-access pb-1 text-center capitalize">Text color yellow access</div>
-                        <div class="bg-color-yellow-access w-full py-4"></div>
-                      </div>
-                      <p class="mb-1 flex justify-between">Hex<code>#FBB720</code></p>
-                      <p class="mb-1 flex justify-between">Border<code>.border-color-yellow-access</code></p>
-                      <p class="mb-1 flex justify-between">Text<code>.text-color-yellow-access</code></p>
-                      <p class="mb-0 flex justify-between">Background<code>.bg-color-yellow-access</code></p>
-                    </div>
-                  </div>
-                </div>
-                <div class="flex flex-col justify-between items-center border border-color-grey-lightest p-2">
-                  <div class="w-full">
-                    <div class="text-font-size-small">
-                      <h3 class="text-font-size-small capitalize mb-2">color green light</h3>
-                      <div class="border border-color-green-light w-full p-1 mb-2">
-                        <div class="text-color-green-light pb-1 text-center capitalize">Text color green light</div>
-                        <div class="bg-color-green-light w-full py-4"></div>
-                      </div>
-                      <p class="mb-1 flex justify-between">Hex<code>#D4FFE7</code></p>
-                      <p class="mb-1 flex justify-between">Border<code>.border-color-green-light</code></p>
-                      <p class="mb-1 flex justify-between">Text<code>.text-color-green-light</code></p>
-                      <p class="mb-0 flex justify-between">Background<code>.bg-color-green-light</code></p>
-                    </div>
-                  </div>
-                </div>
-                <div class="flex flex-col justify-between items-center border border-color-grey-lightest p-2">
-                  <div class="w-full">
-                    <div class="text-font-size-small">
-                      <h3 class="text-font-size-small capitalize mb-2">color green</h3>
-                      <div class="border border-color-green w-full p-1 mb-2">
-                        <div class="text-color-green pb-1 text-center capitalize">Text color green</div>
-                        <div class="bg-color-green w-full py-4"></div>
-                      </div>
-                      <p class="mb-1 flex justify-between">Hex<code>#05CE7C</code></p>
-                      <p class="mb-1 flex justify-between">Border<code>.border-color-green</code></p>
-                      <p class="mb-1 flex justify-between">Text<code>.text-color-green</code></p>
-                      <p class="mb-0 flex justify-between">Background<code>.bg-color-green</code></p>
-                    </div>
-                  </div>
-                </div>
-                <div class="flex flex-col justify-between items-center border border-color-grey-lightest p-2">
-                  <div class="w-full">
-                    <div class="text-font-size-small">
-                      <h3 class="text-font-size-small capitalize mb-2">color green mid</h3>
-                      <div class="border border-color-green-mid w-full p-1 mb-2">
-                        <div class="text-color-green-mid pb-1 text-center capitalize">Text color green mid</div>
-                        <div class="bg-color-green-mid w-full py-4"></div>
-                      </div>
-                      <p class="mb-1 flex justify-between">Hex<code>#0D6D3B</code></p>
-                      <p class="mb-1 flex justify-between">Border<code>.border-color-green-mid</code></p>
-                      <p class="mb-1 flex justify-between">Text<code>.text-color-green-mid</code></p>
-                      <p class="mb-0 flex justify-between">Background<code>.bg-color-green-mid</code></p>
-                    </div>
-                  </div>
-                </div>
-                <div class="flex flex-col justify-between items-center border border-color-grey-lightest p-2">
-                  <div class="w-full">
-                    <div class="text-font-size-small">
-                      <h3 class="text-font-size-small capitalize mb-2">color green dark</h3>
-                      <div class="border border-color-green-dark w-full p-1 mb-2">
-                        <div class="text-color-green-dark pb-1 text-center capitalize">Text color green dark</div>
-                        <div class="bg-color-green-dark w-full py-4"></div>
-                      </div>
-                      <p class="mb-1 flex justify-between">Hex<code>#094727</code></p>
-                      <p class="mb-1 flex justify-between">Border<code>.border-color-green-dark</code></p>
-                      <p class="mb-1 flex justify-between">Text<code>.text-color-green-dark</code></p>
-                      <p class="mb-0 flex justify-between">Background<code>.bg-color-green-dark</code></p>
-                    </div>
-                  </div>
-                </div>
-                <div class="flex flex-col justify-between items-center border border-color-grey-lightest p-2">
-                  <div class="w-full">
-                    <div class="text-font-size-small">
-                      <h3 class="text-font-size-small capitalize mb-2">color pink light</h3>
-                      <div class="border border-color-pink-light w-full p-1 mb-2">
-                        <div class="text-color-pink-light pb-1 text-center capitalize">Text color pink light</div>
-                        <div class="bg-color-pink-light w-full py-4"></div>
-                      </div>
-                      <p class="mb-1 flex justify-between">Hex<code>#F1B3bD</code></p>
-                      <p class="mb-1 flex justify-between">Border<code>.border-color-pink-light</code></p>
-                      <p class="mb-1 flex justify-between">Text<code>.text-color-pink-light</code></p>
-                      <p class="mb-0 flex justify-between">Background<code>.bg-color-pink-light</code></p>
-                    </div>
-                  </div>
-                </div>
-                <div class="flex flex-col justify-between items-center border border-color-grey-lightest p-2">
-                  <div class="w-full">
-                    <div class="text-font-size-small">
-                      <h3 class="text-font-size-small capitalize mb-2">color pink</h3>
-                      <div class="border border-color-pink w-full p-1 mb-2">
-                        <div class="text-color-pink pb-1 text-center capitalize">Text color pink</div>
-                        <div class="bg-color-pink w-full py-4"></div>
-                      </div>
-                      <p class="mb-1 flex justify-between">Hex<code>#F1647C</code></p>
-                      <p class="mb-1 flex justify-between">Border<code>.border-color-pink</code></p>
-                      <p class="mb-1 flex justify-between">Text<code>.text-color-pink</code></p>
-                      <p class="mb-0 flex justify-between">Background<code>.bg-color-pink</code></p>
-                    </div>
-                  </div>
-                </div>
-                <div class="flex flex-col justify-between items-center border border-color-grey-lightest p-2">
-                  <div class="w-full">
-                    <div class="text-font-size-small">
-                      <h3 class="text-font-size-small capitalize mb-2">color red</h3>
-                      <div class="border border-color-red w-full p-1 mb-2">
-                        <div class="text-color-red pb-1 text-center capitalize">Text color red</div>
-                        <div class="bg-color-red w-full py-4"></div>
-                      </div>
-                      <p class="mb-1 flex justify-between">Hex<code>#C6252b</code></p>
-                      <p class="mb-1 flex justify-between">Border<code>.border-color-red</code></p>
-                      <p class="mb-1 flex justify-between">Text<code>.text-color-red</code></p>
-                      <p class="mb-0 flex justify-between">Background<code>.bg-color-red</code></p>
-                    </div>
-                  </div>
-                </div>
-                <div class="flex flex-col justify-between items-center border border-color-grey-lightest p-2">
-                  <div class="w-full">
-                    <div class="text-font-size-small">
-                      <h3 class="text-font-size-small capitalize mb-2">color purple</h3>
-                      <div class="border border-color-purple w-full p-1 mb-2">
-                        <div class="text-color-purple pb-1 text-center capitalize">Text color purple</div>
-                        <div class="bg-color-purple w-full py-4"></div>
-                      </div>
-                      <p class="mb-1 flex justify-between">Hex<code>#4C2C92</code></p>
-                      <p class="mb-1 flex justify-between">Border<code>.border-color-purple</code></p>
-                      <p class="mb-1 flex justify-between">Text<code>.text-color-purple</code></p>
-                      <p class="mb-0 flex justify-between">Background<code>.bg-color-purple</code></p>
-                    </div>
-                  </div>
-                </div>
-                <div class="flex flex-col justify-between items-center border border-color-grey-lightest p-2">
-                  <div class="w-full">
-                    <div class="text-font-size-small">
-                      <h3 class="text-font-size-small capitalize mb-2">color grey light</h3>
-                      <div class="border border-color-grey-light w-full p-1 mb-2">
-                        <div class="text-color-grey-light pb-1 text-center capitalize">Text color grey light</div>
-                        <div class="bg-color-grey-light w-full py-4"></div>
-                      </div>
-                      <p class="mb-1 flex justify-between">Hex<code>#D1D5D9</code></p>
-                      <p class="mb-1 flex justify-between">Border<code>.border-color-grey-light</code></p>
-                      <p class="mb-1 flex justify-between">Text<code>.text-color-grey-light</code></p>
-                      <p class="mb-0 flex justify-between">Background<code>.bg-color-grey-light</code></p>
-                    </div>
-                  </div>
-                </div>
-                <div class="flex flex-col justify-between items-center border border-color-grey-lightest p-2">
-                  <div class="w-full">
-                    <div class="text-font-size-small">
-                      <h3 class="text-font-size-small capitalize mb-2">color grey lightest</h3>
-                      <div class="border border-color-grey-lightest w-full p-1 mb-2">
-                        <div class="text-color-grey-lightest pb-1 text-center capitalize">Text color grey lightest</div>
-                        <div class="bg-color-grey-lightest w-full py-4"></div>
-                      </div>
-                      <p class="mb-1 flex justify-between">Hex<code>#EEF3F7</code></p>
-                      <p class="mb-1 flex justify-between">Border<code>.border-color-grey-lightest</code></p>
-                      <p class="mb-1 flex justify-between">Text<code>.text-color-grey-lightest</code></p>
-                      <p class="mb-0 flex justify-between">Background<code>.bg-color-grey-lightest</code></p>
-                    </div>
-                  </div>
-                </div>
-                <div class="flex flex-col justify-between items-center border border-color-grey-lightest p-2">
-                  <div class="w-full">
-                    <div class="text-font-size-small">
-                      <h3 class="text-font-size-small capitalize mb-2">color grey mid</h3>
-                      <div class="border border-color-grey-mid w-full p-1 mb-2">
-                        <div class="text-color-grey-mid pb-1 text-center capitalize">Text color grey mid</div>
-                        <div class="bg-color-grey-mid w-full py-4"></div>
-                      </div>
-                      <p class="mb-1 flex justify-between">Hex<code>#505C66</code></p>
-                      <p class="mb-1 flex justify-between">Border<code>.border-color-grey-mid</code></p>
-                      <p class="mb-1 flex justify-between">Text<code>.text-color-grey-mid</code></p>
-                      <p class="mb-0 flex justify-between">Background<code>.bg-color-grey-mid</code></p>
-                    </div>
-                  </div>
-                </div>
-                <div class="flex flex-col justify-between items-center border border-color-grey-lightest p-2">
-                  <div class="w-full">
-                    <div class="text-font-size-small">
-                      <h3 class="text-font-size-small capitalize mb-2">color grey dark</h3>
-                      <div class="border border-color-grey-dark w-full p-1 mb-2">
-                        <div class="text-color-grey-dark pb-1 text-center capitalize">Text color grey dark</div>
-                        <div class="bg-color-grey-dark w-full py-4"></div>
-                      </div>
-                      <p class="mb-1 flex justify-between">Hex<code>#172129</code></p>
-                      <p class="mb-1 flex justify-between">Border<code>.border-color-grey-dark</code></p>
-                      <p class="mb-1 flex justify-between">Text<code>.text-color-grey-dark</code></p>
-                      <p class="mb-0 flex justify-between">Background<code>.bg-color-grey-dark</code></p>
-                    </div>
-                  </div>
-                </div>
-                <div class="flex flex-col justify-between items-center border border-color-grey-lightest p-2">
-                  <div class="w-full">
-                    <div class="text-font-size-small">
-                      <h3 class="text-font-size-small capitalize mb-2">color black</h3>
-                      <div class="border border-color-black w-full p-1 mb-2">
-                        <div class="text-color-black pb-1 text-center capitalize">Text color black</div>
-                        <div class="bg-color-black w-full py-4"></div>
-                      </div>
-                      <p class="mb-1 flex justify-between">Hex<code>#000000</code></p>
-                      <p class="mb-1 flex justify-between">Border<code>.border-color-black</code></p>
-                      <p class="mb-1 flex justify-between">Text<code>.text-color-black</code></p>
-                      <p class="mb-0 flex justify-between">Background<code>.bg-color-black</code></p>
-                    </div>
-                  </div>
-                </div>
-                <div class="flex flex-col justify-between items-center border border-color-grey-lightest p-2">
-                  <div class="w-full">
-                    <div class="text-font-size-small">
-                      <h3 class="text-font-size-small capitalize mb-2">color white</h3>
-                      <div class="border border-color-white w-full p-1 mb-2">
-                        <div class="text-color-white pb-1 text-center capitalize">Text color white</div>
-                        <div class="bg-color-white w-full py-4"></div>
-                      </div>
-                      <p class="mb-1 flex justify-between">Hex<code>#ffffff</code></p>
-                      <p class="mb-1 flex justify-between">Border<code>.border-color-white</code></p>
-                      <p class="mb-1 flex justify-between">Text<code>.text-color-white</code></p>
-                      <p class="mb-0 flex justify-between">Background<code>.bg-color-white</code></p>
-                    </div>
-                  </div>
-                </div>
-                <div class="flex flex-col justify-between items-center border border-color-grey-lightest p-2">
-                  <div class="w-full">
-                    <div class="text-font-size-small">
-                      <h3 class="text-font-size-small capitalize mb-2">color transparent</h3>
-                      <div class="border border-color-transparent w-full p-1 mb-2">
-                        <div class="text-color-transparent pb-1 text-center capitalize">Text color transparent</div>
-                        <div class="bg-color-transparent w-full py-4"></div>
-                      </div>
-                      <p class="mb-1 flex justify-between">Hex<code>rgba(255,255,255,0)</code></p>
-                      <p class="mb-1 flex justify-between">Border<code>.border-color-transparent</code></p>
-                      <p class="mb-1 flex justify-between">Text<code>.text-color-transparent</code></p>
-                      <p class="mb-0 flex justify-between">Background<code>.bg-color-transparent</code></p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-      </article>
-    </main>
+          </section>
+        </article>
+      </main>
+    </div>
     <footer class="py-4 text-center bg-color-blue-dark text-color-white links-invert font-smooth">
       <p class="m-0">Maintained by&nbsp;
         <a href="https://github.com/orgs/CityOfNewYork/teams/nycopportunity">NYC Opportunity</a>

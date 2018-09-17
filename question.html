@@ -23,145 +23,147 @@
 
   <body class="bg-color-white" onload="load()" style="visibility: hidden;">
     <a class="sr-only" href="#main-content">Skip to main content</a>
-    <header class="px-2">
-      <div class="border-b border-color-grey-light">
-        <div class="flex items-center justify-between p-2 screen-tablet:py-4 screen-tablet:px-2">
-          <div>
-            <h1 class="m-0 p-0 leading-normal"><span class="hidden">ACCESS NYC</span>
-              <svg aria-hidden="true" class="icon-logo-mark screen-tablet:hidden">
-                <use xlink:href="#icon-logo-mark"></use>
-              </svg>
-              <svg aria-hidden="true" class="icon-logo-full--large text-color-blue-dark hidden screen-tablet:inline-block">
-                <use xlink:href="#icon-logo-full"></use>
-              </svg>
-            </h1>
+    <div class="min-h-screen">
+      <header class="px-2">
+        <div class="border-b border-color-grey-light">
+          <div class="flex items-center justify-between p-2 screen-tablet:py-4 screen-tablet:px-2">
+            <div>
+              <h1 class="m-0 p-0 leading-normal"><span class="hidden">ACCESS NYC</span>
+                <svg aria-hidden="true" class="icon-logo-mark screen-tablet:hidden">
+                  <use xlink:href="#icon-logo-mark"></use>
+                </svg>
+                <svg aria-hidden="true" class="icon-logo-full--large text-color-blue-dark hidden screen-tablet:inline-block">
+                  <use xlink:href="#icon-logo-full"></use>
+                </svg>
+              </h1>
+            </div>
+            <div class="flex items-center">
+              <h2 class="text-font-size-small m-0 text-color-blue-dark screen-tablet:hidden">Patterns</h2>
+              <h2 aria-hidden="true" class="type-h1 m-0 text-color-blue-dark hidden screen-tablet:inline-block">Patterns</h2>
+              <nav class="text-font-size-small">
+                <a class="rounded-lg text-color-blue-dark border-2 no-underline px-1 ml-2 hidden screen-tablet:inline-block" href="https://github.com/CityOfNewYork/ACCESS-NYC-PATTERNS">0.0.11-6</a>
+                <a aria-hidden="true" class="ml-1 screen-tablet:ml-2 screen-tablet:hidden" href="https://github.com/CityOfNewYork/ACCESS-NYC-PATTERNS">0.0.11-6</a>
+                <a class="ml-1 screen-tablet:ml-2" data-js="toggle" href="#main-menu">Menu</a>
+              </nav>
+            </div>
           </div>
-          <div class="flex items-center">
-            <h2 class="text-font-size-small m-0 text-color-blue-dark screen-tablet:hidden">Patterns</h2>
-            <h2 aria-hidden="true" class="type-h1 m-0 text-color-blue-dark hidden screen-tablet:inline-block">Patterns</h2>
-            <nav class="text-font-size-small">
-              <a class="rounded-lg text-color-blue-dark border-2 no-underline px-1 ml-2 hidden screen-tablet:inline-block" href="https://github.com/CityOfNewYork/ACCESS-NYC-PATTERNS">0.0.11-5</a>
-              <a aria-hidden="true" class="ml-1 screen-tablet:ml-2 screen-tablet:hidden" href="https://github.com/CityOfNewYork/ACCESS-NYC-PATTERNS">0.0.11-5</a>
-              <a class="ml-1 screen-tablet:ml-2" data-js="toggle" href="#main-menu">Menu</a>
+        </div>
+      </header>
+      <aside aria-hidden="true" class="text-font-size-small bg-color-blue-light hidden hidden:overflow animated" id="main-menu" style="position:relative;top:-1px">
+        <div class="page-wrapper">
+          <div class="screen-tablet:flex py-4">
+            <nav class="screen-tablet:flex-1 mb-1 px-2"><span class="screen-tablet:block screen-tablet:border-b border-color-white p-1">Main;</span>
+              <a class="block p-1" href="index">Home</a>
+              <a class="block p-1" href="https://www.npmjs.com/package/access-nyc-patterns">NPM</a>
+              <a class="block p-1" href="https://github.com/CityOfNewYork/ACCESS-NYC-PATTERNS">GitHub</a>
+            </nav>
+            <nav class="screen-tablet:flex-1 mb-1 px-2 screen-desktop:pl-4"><span class="screen-tablet:block screen-tablet:border-b border-color-white p-1">Elements;</span>
+              <a class="block p-1" href="buttons">Buttons</a>
+              <a class="block p-1" href="checkboxes">Checkboxes</a>
+              <a class="block p-1" href="colors">Colors</a>
+              <a class="block p-1" href="dividers">Dividers</a>
+              <a class="block p-1" href="icons">Icons</a>
+              <a class="block p-1" href="inputs">Inputs</a>
+              <a class="block p-1" href="layouts">Layouts</a>
+              <a class="block p-1" href="links">Links</a>
+              <a class="block p-1" href="lists">Lists</a>
+              <a class="block p-1" href="nav">Nav</a>
+              <a class="block p-1" href="program-labels">Program Labels</a>
+              <a class="block p-1" href="radios">Radios</a>
+              <a class="block p-1" href="tables">Tables</a>
+              <a class="block p-1" href="tooltips">Tooltips</a>
+              <a class="block p-1" href="toggles">Toggles</a>
+              <a class="block p-1" href="typography">Typography</a>
+              <a class="block p-1" href="selects">Selects</a>
+            </nav>
+            <nav class="screen-tablet:flex-1 mb-1 px-2 screen-desktop:pl-4"><span class="screen-tablet:block screen-tablet:border-b border-color-white p-1">Components;</span>
+              <a class="block p-1" href="accordion">Accordion</a>
+              <a class="block p-1" href="alert-box">Alert Box</a>
+              <a class="block p-1" href="card">Card</a>
+              <a class="block p-1" href="checklist">Checklist</a>
+              <a class="block p-1" href="disclaimer">Disclaimer</a>
+              <a class="block p-1" href="filter">Filter</a>
+              <a class="block p-1" href="header">Header</a>
+              <a class="block p-1" href="member-list">Member List</a>
+              <a class="block p-1" href="nearby-stops">Nearby Stops</a>
+              <a class="block p-1" href="text-controller">Text Controller</a>
+              <a class="block p-1" href="share-form">Share Form</a>
+              <a class="block p-1" href="side-nav">Side Nav</a>
+              <a class="block p-1" href="question">Question</a>
+            </nav>
+            <nav class="screen-tablet:flex-1 mb-1 px-2 screen-desktop:pl-4"><span class="screen-tablet:block screen-tablet:border-b border-color-white p-1">Objects;</span>
+              <a class="block p-1" href="announcements">Announcements</a>
+              <a class="block p-1" href="banner">Banner</a>
+              <a class="block p-1" href="card-list">Card Lists</a>
+              <a class="block p-1" href="content">Content</a>
+              <a class="block p-1" href="footer">Footer</a>
+              <a class="block p-1" href="mobile-nav">Mobile Nav</a>
+              <a class="block p-1" href="navigation">Navigation</a>
+              <a class="block p-1" href="search-box">Search Box</a>
             </nav>
           </div>
         </div>
-      </div>
-    </header>
-    <aside aria-hidden="true" class="text-font-size-small bg-color-blue-light hidden hidden:overflow animated" id="main-menu" style="position:relative;top:-1px">
-      <div class="page-wrapper">
-        <div class="screen-tablet:flex py-4">
-          <nav class="screen-tablet:flex-1 mb-1 px-2"><span class="screen-tablet:block screen-tablet:border-b border-color-white p-1">Main;</span>
-            <a class="inline-block p-1" href="index">Home</a>
-            <a class="inline-block p-1" href="https://www.npmjs.com/package/access-nyc-patterns">NPM</a>
-            <a class="inline-block p-1" href="https://github.com/CityOfNewYork/ACCESS-NYC-PATTERNS">GitHub</a>
-          </nav>
-          <nav class="screen-tablet:flex-1 mb-1 px-2 screen-desktop:pl-4"><span class="screen-tablet:block screen-tablet:border-b border-color-white p-1">Elements;</span>
-            <a class="inline-block p-1" href="buttons">Buttons</a>
-            <a class="inline-block p-1" href="checkboxes">Checkboxes</a>
-            <a class="inline-block p-1" href="colors">Colors</a>
-            <a class="inline-block p-1" href="dividers">Dividers</a>
-            <a class="inline-block p-1" href="icons">Icons</a>
-            <a class="inline-block p-1" href="inputs">Inputs</a>
-            <a class="inline-block p-1" href="layouts">Layouts</a>
-            <a class="inline-block p-1" href="links">Links</a>
-            <a class="inline-block p-1" href="lists">Lists</a>
-            <a class="inline-block p-1" href="nav">Nav</a>
-            <a class="inline-block p-1" href="program-labels">Program Labels</a>
-            <a class="inline-block p-1" href="radios">Radios</a>
-            <a class="inline-block p-1" href="tables">Tables</a>
-            <a class="inline-block p-1" href="tooltips">Tooltips</a>
-            <a class="inline-block p-1" href="toggles">Toggles</a>
-            <a class="inline-block p-1" href="typography">Typography</a>
-            <a class="inline-block p-1" href="selects">Selects</a>
-          </nav>
-          <nav class="screen-tablet:flex-1 mb-1 px-2 screen-desktop:pl-4"><span class="screen-tablet:block screen-tablet:border-b border-color-white p-1">Components;</span>
-            <a class="inline-block p-1" href="accordion">Accordion</a>
-            <a class="inline-block p-1" href="alert-box">Alert Box</a>
-            <a class="inline-block p-1" href="card">Card</a>
-            <a class="inline-block p-1" href="checklist">Checklist</a>
-            <a class="inline-block p-1" href="disclaimer">Disclaimer</a>
-            <a class="inline-block p-1" href="filter">Filter</a>
-            <a class="inline-block p-1" href="header">Header</a>
-            <a class="inline-block p-1" href="member-list">Member List</a>
-            <a class="inline-block p-1" href="text-controller">Text Controller</a>
-            <a class="inline-block p-1" href="share-form">Share Form</a>
-            <a class="inline-block p-1" href="side-nav">Side Nav</a>
-            <a class="inline-block p-1" href="question">Question</a>
-          </nav>
-          <nav class="screen-tablet:flex-1 mb-1 px-2 screen-desktop:pl-4"><span class="screen-tablet:block screen-tablet:border-b border-color-white p-1">Objects;</span>
-            <a class="inline-block p-1" href="announcements">Announcements</a>
-            <a class="inline-block p-1" href="banner">Banner</a>
-            <a class="inline-block p-1" href="card-list">Card Lists</a>
-            <a class="inline-block p-1" href="content">Content</a>
-            <a class="inline-block p-1" href="footer">Footer</a>
-            <a class="inline-block p-1" href="mobile-nav">Mobile Nav</a>
-            <a class="inline-block p-1" href="navigation">Navigation</a>
-            <a class="inline-block p-1" href="search-box">Search Box</a>
-          </nav>
-        </div>
-      </div>
-    </aside>
-    <main class="pt-4" id="main-content">
-      <article class="py-4">
-        <header class="page-wrapper px-2 screen-desktop:px-0 layout--home-body">
-          <div class="my-0 w-full">
-            <h1 class="text-color-blue-dark px-2 m-0">Question</h1>
-          </div>
-        </header>
-        <section class="pb-4 mb-4" id="number-question">
-          <div class="page-wrapper px-2 screen-desktop:px-0">
-            <header class="layout--home-body">
-              <div class="my-0 pt-1 px-2 border-b border-color-grey-light">
-                <h2>
-                  <a class="text-color-grey-mid font-normal no-underline capitalize" href="#number-question">Number Question</a>
-                </h2>
-              </div>
-            </header>
-            <div class="layout--home-body">
-              <div class="my-0 pt-4 px-2 text-font-size-small" data-js="markdown" data-js-markdown="components/question/question-number.md">
-                <div class="p-1 mb-1 bg-color-grey-lightest"></div>
-                <div class="p-1 mb-1 bg-color-grey-lightest"></div>
-                <div class="p-1 mb-1 bg-color-grey-lightest"></div>
-                <div class="p-1 mb-1 bg-color-grey-lightest"></div>
-                <div class="p-1 mb-1 bg-color-grey-lightest"></div>
-                <div class="p-1 mb-1 bg-color-grey-lightest"></div>
-                <div class="p-1 mb-1 bg-color-grey-lightest"></div>
-                <div class="p-1 mb-1 bg-color-grey-lightest"></div>
-                <div class="p-1 mb-1 bg-color-grey-lightest"></div>
-                <div class="p-1 mb-1 bg-color-grey-lightest"></div>
-                <div class="p-1 mb-1 bg-color-grey-lightest"></div>
-                <div class="p-1 mb-1 bg-color-grey-lightest"></div>
-                <div class="p-1 mb-1 bg-color-grey-lightest"></div>
-                <div class="p-1 mb-1 bg-color-grey-lightest"></div>
-                <div class="p-1 mb-1 bg-color-grey-lightest"></div>
-                <div class="p-1 mb-1 bg-color-grey-lightest"></div>
-                <div class="p-1 mb-1 bg-color-grey-lightest"></div>
-                <div class="p-1 mb-1 bg-color-grey-lightest"></div>
-                <div class="p-1 mb-1 bg-color-grey-lightest"></div>
-                <div class="p-1 mb-1 bg-color-grey-lightest"></div>
-              </div>
+      </aside>
+      <main class="pt-4" id="main-content">
+        <article class="py-4">
+          <header class="page-wrapper px-2 screen-desktop:px-0 layout--home-body">
+            <div class="my-0 w-full">
+              <h1 class="text-color-blue-dark px-2 m-0">Question</h1>
             </div>
-            <div class="layout--gutter screen-tablet:layout--columns justify-between pt-4">
-              <div class="screen-tablet:pr-2">
-                <div class="c-question" data-sketch-symbol="components/question/question-number">
-                  <label class="c-question__label" for="person-0-age">How old are you?</label>
-                  <p>
-                    <button aria-describedby="tooltip-age" class="c-question__info btn btn-text btn-link js-tooltip-trigger" type="button">Here’s why we are asking.&nbsp;
-                      <svg class="icon icon-info">
-                        <use xlink:href="#icon-info"></use>
-                      </svg>
-                    </button>
-                  </p>
-                  <div class="c-question__container">
-                    <div data-sketch-symbol-instance="elements/inputs/input-number">
-                      <input aria-required="true" data-type="age" id="person-0-age" maxlength="3" min="0" name="Person[0].age" pattern="[0-9]" required="true" step="1" type="number" />
+          </header>
+          <section class="pb-4 mb-4" id="number-question">
+            <div class="page-wrapper px-2 screen-desktop:px-0">
+              <header class="layout--home-body">
+                <div class="my-0 pt-1 px-2 border-b border-color-grey-light">
+                  <h2>
+                    <a class="text-color-grey-mid font-normal no-underline capitalize" href="#number-question">Number Question</a>
+                  </h2>
+                </div>
+              </header>
+              <div class="layout--home-body">
+                <div class="my-0 pt-4 px-2 text-font-size-small" data-js="markdown" data-js-markdown="components/question/question-number.md">
+                  <div class="p-1 mb-1 bg-color-grey-lightest"></div>
+                  <div class="p-1 mb-1 bg-color-grey-lightest"></div>
+                  <div class="p-1 mb-1 bg-color-grey-lightest"></div>
+                  <div class="p-1 mb-1 bg-color-grey-lightest"></div>
+                  <div class="p-1 mb-1 bg-color-grey-lightest"></div>
+                  <div class="p-1 mb-1 bg-color-grey-lightest"></div>
+                  <div class="p-1 mb-1 bg-color-grey-lightest"></div>
+                  <div class="p-1 mb-1 bg-color-grey-lightest"></div>
+                  <div class="p-1 mb-1 bg-color-grey-lightest"></div>
+                  <div class="p-1 mb-1 bg-color-grey-lightest"></div>
+                  <div class="p-1 mb-1 bg-color-grey-lightest"></div>
+                  <div class="p-1 mb-1 bg-color-grey-lightest"></div>
+                  <div class="p-1 mb-1 bg-color-grey-lightest"></div>
+                  <div class="p-1 mb-1 bg-color-grey-lightest"></div>
+                  <div class="p-1 mb-1 bg-color-grey-lightest"></div>
+                  <div class="p-1 mb-1 bg-color-grey-lightest"></div>
+                  <div class="p-1 mb-1 bg-color-grey-lightest"></div>
+                  <div class="p-1 mb-1 bg-color-grey-lightest"></div>
+                  <div class="p-1 mb-1 bg-color-grey-lightest"></div>
+                  <div class="p-1 mb-1 bg-color-grey-lightest"></div>
+                </div>
+              </div>
+              <div class="layout--gutter screen-tablet:layout--columns justify-between pt-4">
+                <div class="screen-tablet:pr-2">
+                  <div class="c-question" data-sketch-symbol="components/question/question-number">
+                    <label class="c-question__label" for="person-0-age">How old are you?</label>
+                    <p>
+                      <button aria-describedby="tooltip-age" class="c-question__info btn btn-text btn-link js-tooltip-trigger" type="button">Here’s why we are asking.&nbsp;
+                        <svg class="icon icon-info">
+                          <use xlink:href="#icon-info"></use>
+                        </svg>
+                      </button>
+                    </p>
+                    <div class="c-question__container">
+                      <div data-sketch-symbol-instance="elements/inputs/input-number">
+                        <input aria-required="true" data-type="age" id="person-0-age" maxlength="3" min="0" name="Person[0].age" pattern="[0-9]" required="true" step="1" type="number" />
+                      </div>
                     </div>
                   </div>
                 </div>
-              </div>
-              <div>
-                <div class="code-block mb-1"><pre>&lt;div class=&quot;c-question&quot; data-sketch-symbol-instance=&quot;elements/radios/radios&quot;&gt;
+                <div>
+                  <div class="code-block mb-1"><pre>&lt;div class=&quot;c-question&quot; data-sketch-symbol-instance=&quot;elements/radios/radios&quot;&gt;
   &lt;label class=&quot;c-question__label&quot; for=&quot;person-0-age&quot;&gt;How old are you?&lt;/label&gt;
   &lt;p&gt;
     &lt;button aria-describedby=&quot;tooltip-age&quot; class=&quot;c-question__info btn btn-text btn-link js-tooltip-trigger&quot; type=&quot;button&quot;&gt;Here’s why we are asking.&amp;nbsp;
@@ -176,65 +178,65 @@
     &lt;/div&gt;
   &lt;/div&gt;
 &lt;/div&gt;</pre></div>
+                </div>
               </div>
             </div>
-          </div>
-        </section>
-        <section class="pb-4 mb-4" id="number-question-errors">
-          <div class="page-wrapper px-2 screen-desktop:px-0">
-            <header class="layout--home-body">
-              <div class="my-0 pt-1 px-2 border-b border-color-grey-light">
-                <h2>
-                  <a class="text-color-grey-mid font-normal no-underline capitalize" href="#number-question-errors">Number Question Errors</a>
-                </h2>
+          </section>
+          <section class="pb-4 mb-4" id="number-question-errors">
+            <div class="page-wrapper px-2 screen-desktop:px-0">
+              <header class="layout--home-body">
+                <div class="my-0 pt-1 px-2 border-b border-color-grey-light">
+                  <h2>
+                    <a class="text-color-grey-mid font-normal no-underline capitalize" href="#number-question-errors">Number Question Errors</a>
+                  </h2>
+                </div>
+              </header>
+              <div class="layout--home-body">
+                <div class="my-0 pt-4 px-2 text-font-size-small" data-js="markdown" data-js-markdown="components/question/question-number-error.md">
+                  <div class="p-1 mb-1 bg-color-grey-lightest"></div>
+                  <div class="p-1 mb-1 bg-color-grey-lightest"></div>
+                  <div class="p-1 mb-1 bg-color-grey-lightest"></div>
+                  <div class="p-1 mb-1 bg-color-grey-lightest"></div>
+                  <div class="p-1 mb-1 bg-color-grey-lightest"></div>
+                  <div class="p-1 mb-1 bg-color-grey-lightest"></div>
+                  <div class="p-1 mb-1 bg-color-grey-lightest"></div>
+                  <div class="p-1 mb-1 bg-color-grey-lightest"></div>
+                  <div class="p-1 mb-1 bg-color-grey-lightest"></div>
+                  <div class="p-1 mb-1 bg-color-grey-lightest"></div>
+                  <div class="p-1 mb-1 bg-color-grey-lightest"></div>
+                  <div class="p-1 mb-1 bg-color-grey-lightest"></div>
+                  <div class="p-1 mb-1 bg-color-grey-lightest"></div>
+                  <div class="p-1 mb-1 bg-color-grey-lightest"></div>
+                  <div class="p-1 mb-1 bg-color-grey-lightest"></div>
+                  <div class="p-1 mb-1 bg-color-grey-lightest"></div>
+                  <div class="p-1 mb-1 bg-color-grey-lightest"></div>
+                  <div class="p-1 mb-1 bg-color-grey-lightest"></div>
+                  <div class="p-1 mb-1 bg-color-grey-lightest"></div>
+                  <div class="p-1 mb-1 bg-color-grey-lightest"></div>
+                </div>
               </div>
-            </header>
-            <div class="layout--home-body">
-              <div class="my-0 pt-4 px-2 text-font-size-small" data-js="markdown" data-js-markdown="components/question/question-number-error.md">
-                <div class="p-1 mb-1 bg-color-grey-lightest"></div>
-                <div class="p-1 mb-1 bg-color-grey-lightest"></div>
-                <div class="p-1 mb-1 bg-color-grey-lightest"></div>
-                <div class="p-1 mb-1 bg-color-grey-lightest"></div>
-                <div class="p-1 mb-1 bg-color-grey-lightest"></div>
-                <div class="p-1 mb-1 bg-color-grey-lightest"></div>
-                <div class="p-1 mb-1 bg-color-grey-lightest"></div>
-                <div class="p-1 mb-1 bg-color-grey-lightest"></div>
-                <div class="p-1 mb-1 bg-color-grey-lightest"></div>
-                <div class="p-1 mb-1 bg-color-grey-lightest"></div>
-                <div class="p-1 mb-1 bg-color-grey-lightest"></div>
-                <div class="p-1 mb-1 bg-color-grey-lightest"></div>
-                <div class="p-1 mb-1 bg-color-grey-lightest"></div>
-                <div class="p-1 mb-1 bg-color-grey-lightest"></div>
-                <div class="p-1 mb-1 bg-color-grey-lightest"></div>
-                <div class="p-1 mb-1 bg-color-grey-lightest"></div>
-                <div class="p-1 mb-1 bg-color-grey-lightest"></div>
-                <div class="p-1 mb-1 bg-color-grey-lightest"></div>
-                <div class="p-1 mb-1 bg-color-grey-lightest"></div>
-                <div class="p-1 mb-1 bg-color-grey-lightest"></div>
-              </div>
-            </div>
-            <div class="layout--gutter screen-tablet:layout--columns justify-between pt-4">
-              <div class="screen-tablet:pr-2">
-                <div class="c-question" data-sketch-symbol="components/question/question-number-error">
-                  <label class="c-question__label" for="person-0-age-with-error">How old are you?</label>
-                  <p>
-                    <button aria-describedby="tooltip-age" class="c-question__info btn btn-text btn-link js-tooltip-trigger" type="button">Here’s why we are asking.&nbsp;
-                      <svg class="icon icon-info">
-                        <use xlink:href="#icon-info"></use>
-                      </svg>
-                    </button>
-                  </p>
-                  <div class="c-question__container error">
-                    <div aria-live="polite" class="error-message" id="person-0-age-error">This entry is required to continue.</div>
-                    <div class="error" data-sketch-symbol-instance="elements/inputs/input-number-error">
-                      <input aria-describedby="person-0-age-error" aria-invalid="true" aria-required="true" data-type="age" id="person-0-age-with-error" maxlength="3" min="0" name="Person[0].age-with-error" pattern="[0-9]" required="true" step="1" type="number"
-                      />
+              <div class="layout--gutter screen-tablet:layout--columns justify-between pt-4">
+                <div class="screen-tablet:pr-2">
+                  <div class="c-question" data-sketch-symbol="components/question/question-number-error">
+                    <label class="c-question__label" for="person-0-age-with-error">How old are you?</label>
+                    <p>
+                      <button aria-describedby="tooltip-age" class="c-question__info btn btn-text btn-link js-tooltip-trigger" type="button">Here’s why we are asking.&nbsp;
+                        <svg class="icon icon-info">
+                          <use xlink:href="#icon-info"></use>
+                        </svg>
+                      </button>
+                    </p>
+                    <div class="c-question__container error">
+                      <div aria-live="polite" class="error-message" id="person-0-age-error">This entry is required to continue.</div>
+                      <div class="error" data-sketch-symbol-instance="elements/inputs/input-number-error">
+                        <input aria-describedby="person-0-age-error" aria-invalid="true" aria-required="true" data-type="age" id="person-0-age-with-error" maxlength="3" min="0" name="Person[0].age-with-error" pattern="[0-9]" required="true" step="1" type="number"
+                        />
+                      </div>
                     </div>
                   </div>
                 </div>
-              </div>
-              <div>
-                <div class="code-block mb-1"><pre>&lt;div class=&quot;c-question&quot; data-sketch-symbol-instance=&quot;elements/inputs/input-number&quot;&gt;
+                <div>
+                  <div class="code-block mb-1"><pre>&lt;div class=&quot;c-question&quot; data-sketch-symbol-instance=&quot;elements/inputs/input-number&quot;&gt;
   &lt;label class=&quot;c-question__label&quot; for=&quot;person-0-age-with-error&quot;&gt;How old are you?&lt;/label&gt;
   &lt;p&gt;
     &lt;button aria-describedby=&quot;tooltip-age&quot; class=&quot;c-question__info btn btn-text btn-link js-tooltip-trigger&quot; type=&quot;button&quot;&gt;Here’s why we are asking.&amp;nbsp;
@@ -250,57 +252,57 @@
     &lt;/div&gt;
   &lt;/div&gt;
 &lt;/div&gt;</pre></div>
+                </div>
               </div>
             </div>
-          </div>
-        </section>
-        <section class="pb-4 mb-4" id="text-question">
-          <div class="page-wrapper px-2 screen-desktop:px-0">
-            <header class="layout--home-body">
-              <div class="my-0 pt-1 px-2 border-b border-color-grey-light">
-                <h2>
-                  <a class="text-color-grey-mid font-normal no-underline capitalize" href="#text-question">Text Question</a>
-                </h2>
+          </section>
+          <section class="pb-4 mb-4" id="text-question">
+            <div class="page-wrapper px-2 screen-desktop:px-0">
+              <header class="layout--home-body">
+                <div class="my-0 pt-1 px-2 border-b border-color-grey-light">
+                  <h2>
+                    <a class="text-color-grey-mid font-normal no-underline capitalize" href="#text-question">Text Question</a>
+                  </h2>
+                </div>
+              </header>
+              <div class="layout--home-body">
+                <div class="my-0 pt-4 px-2 text-font-size-small" data-js="markdown" data-js-markdown="components/question/question-text.md">
+                  <div class="p-1 mb-1 bg-color-grey-lightest"></div>
+                  <div class="p-1 mb-1 bg-color-grey-lightest"></div>
+                  <div class="p-1 mb-1 bg-color-grey-lightest"></div>
+                  <div class="p-1 mb-1 bg-color-grey-lightest"></div>
+                  <div class="p-1 mb-1 bg-color-grey-lightest"></div>
+                  <div class="p-1 mb-1 bg-color-grey-lightest"></div>
+                  <div class="p-1 mb-1 bg-color-grey-lightest"></div>
+                  <div class="p-1 mb-1 bg-color-grey-lightest"></div>
+                  <div class="p-1 mb-1 bg-color-grey-lightest"></div>
+                  <div class="p-1 mb-1 bg-color-grey-lightest"></div>
+                  <div class="p-1 mb-1 bg-color-grey-lightest"></div>
+                  <div class="p-1 mb-1 bg-color-grey-lightest"></div>
+                  <div class="p-1 mb-1 bg-color-grey-lightest"></div>
+                  <div class="p-1 mb-1 bg-color-grey-lightest"></div>
+                  <div class="p-1 mb-1 bg-color-grey-lightest"></div>
+                  <div class="p-1 mb-1 bg-color-grey-lightest"></div>
+                  <div class="p-1 mb-1 bg-color-grey-lightest"></div>
+                  <div class="p-1 mb-1 bg-color-grey-lightest"></div>
+                  <div class="p-1 mb-1 bg-color-grey-lightest"></div>
+                  <div class="p-1 mb-1 bg-color-grey-lightest"></div>
+                </div>
               </div>
-            </header>
-            <div class="layout--home-body">
-              <div class="my-0 pt-4 px-2 text-font-size-small" data-js="markdown" data-js-markdown="components/question/question-text.md">
-                <div class="p-1 mb-1 bg-color-grey-lightest"></div>
-                <div class="p-1 mb-1 bg-color-grey-lightest"></div>
-                <div class="p-1 mb-1 bg-color-grey-lightest"></div>
-                <div class="p-1 mb-1 bg-color-grey-lightest"></div>
-                <div class="p-1 mb-1 bg-color-grey-lightest"></div>
-                <div class="p-1 mb-1 bg-color-grey-lightest"></div>
-                <div class="p-1 mb-1 bg-color-grey-lightest"></div>
-                <div class="p-1 mb-1 bg-color-grey-lightest"></div>
-                <div class="p-1 mb-1 bg-color-grey-lightest"></div>
-                <div class="p-1 mb-1 bg-color-grey-lightest"></div>
-                <div class="p-1 mb-1 bg-color-grey-lightest"></div>
-                <div class="p-1 mb-1 bg-color-grey-lightest"></div>
-                <div class="p-1 mb-1 bg-color-grey-lightest"></div>
-                <div class="p-1 mb-1 bg-color-grey-lightest"></div>
-                <div class="p-1 mb-1 bg-color-grey-lightest"></div>
-                <div class="p-1 mb-1 bg-color-grey-lightest"></div>
-                <div class="p-1 mb-1 bg-color-grey-lightest"></div>
-                <div class="p-1 mb-1 bg-color-grey-lightest"></div>
-                <div class="p-1 mb-1 bg-color-grey-lightest"></div>
-                <div class="p-1 mb-1 bg-color-grey-lightest"></div>
-              </div>
-            </div>
-            <div class="layout--gutter screen-tablet:layout--columns justify-between pt-4">
-              <div class="screen-tablet:pr-2">
-                <div class="c-question" data-sketch-symbol="components/question/question-text">
-                  <label class="c-question__label" for="client-first-name">What is your email address?</label>
-                  <div class="c-question__container">
-                    <p>We can send you a link to this page to help you get back to it when you’re ready.</p>
-                    <div data-sketch-symbol-instance="elements/inputs/input">
-                      <input name="Client[0].email" type="text" />
+              <div class="layout--gutter screen-tablet:layout--columns justify-between pt-4">
+                <div class="screen-tablet:pr-2">
+                  <div class="c-question" data-sketch-symbol="components/question/question-text">
+                    <label class="c-question__label" for="client-first-name">What is your email address?</label>
+                    <div class="c-question__container">
+                      <p>We can send you a link to this page to help you get back to it when you’re ready.</p>
+                      <div data-sketch-symbol-instance="elements/inputs/input">
+                        <input name="Client[0].email" type="text" />
+                      </div>
                     </div>
                   </div>
                 </div>
-              </div>
-              <div>
-                <div class="code-block mb-1"><pre>&lt;div class=&quot;c-question&quot; data-sketch-symbol-instance=&quot;elements/inputs/input-number-error&quot;&gt;
+                <div>
+                  <div class="code-block mb-1"><pre>&lt;div class=&quot;c-question&quot; data-sketch-symbol-instance=&quot;elements/inputs/input-number-error&quot;&gt;
   &lt;label class=&quot;c-question__label&quot; for=&quot;client-first-name&quot;&gt;What is your email address?&lt;/label&gt;
   &lt;div class=&quot;c-question__container&quot;&gt;
     &lt;p&gt;We can send you a link to this page to help you get back to it when you’re ready.&lt;/p&gt;
@@ -309,68 +311,68 @@
     &lt;/div&gt;
   &lt;/div&gt;
 &lt;/div&gt;</pre></div>
+                </div>
               </div>
             </div>
-          </div>
-        </section>
-        <section class="pb-4 mb-4" id="multiple-choice-question">
-          <div class="page-wrapper px-2 screen-desktop:px-0">
-            <header class="layout--home-body">
-              <div class="my-0 pt-1 px-2 border-b border-color-grey-light">
-                <h2>
-                  <a class="text-color-grey-mid font-normal no-underline capitalize" href="#multiple-choice-question">Multiple Choice Question</a>
-                </h2>
+          </section>
+          <section class="pb-4 mb-4" id="multiple-choice-question">
+            <div class="page-wrapper px-2 screen-desktop:px-0">
+              <header class="layout--home-body">
+                <div class="my-0 pt-1 px-2 border-b border-color-grey-light">
+                  <h2>
+                    <a class="text-color-grey-mid font-normal no-underline capitalize" href="#multiple-choice-question">Multiple Choice Question</a>
+                  </h2>
+                </div>
+              </header>
+              <div class="layout--home-body">
+                <div class="my-0 pt-4 px-2 text-font-size-small" data-js="markdown" data-js-markdown="components/question/question-multiple-choice.md">
+                  <div class="p-1 mb-1 bg-color-grey-lightest"></div>
+                  <div class="p-1 mb-1 bg-color-grey-lightest"></div>
+                  <div class="p-1 mb-1 bg-color-grey-lightest"></div>
+                  <div class="p-1 mb-1 bg-color-grey-lightest"></div>
+                  <div class="p-1 mb-1 bg-color-grey-lightest"></div>
+                  <div class="p-1 mb-1 bg-color-grey-lightest"></div>
+                  <div class="p-1 mb-1 bg-color-grey-lightest"></div>
+                  <div class="p-1 mb-1 bg-color-grey-lightest"></div>
+                  <div class="p-1 mb-1 bg-color-grey-lightest"></div>
+                  <div class="p-1 mb-1 bg-color-grey-lightest"></div>
+                  <div class="p-1 mb-1 bg-color-grey-lightest"></div>
+                  <div class="p-1 mb-1 bg-color-grey-lightest"></div>
+                  <div class="p-1 mb-1 bg-color-grey-lightest"></div>
+                  <div class="p-1 mb-1 bg-color-grey-lightest"></div>
+                  <div class="p-1 mb-1 bg-color-grey-lightest"></div>
+                  <div class="p-1 mb-1 bg-color-grey-lightest"></div>
+                  <div class="p-1 mb-1 bg-color-grey-lightest"></div>
+                  <div class="p-1 mb-1 bg-color-grey-lightest"></div>
+                  <div class="p-1 mb-1 bg-color-grey-lightest"></div>
+                  <div class="p-1 mb-1 bg-color-grey-lightest"></div>
+                </div>
               </div>
-            </header>
-            <div class="layout--home-body">
-              <div class="my-0 pt-4 px-2 text-font-size-small" data-js="markdown" data-js-markdown="components/question/question-multiple-choice.md">
-                <div class="p-1 mb-1 bg-color-grey-lightest"></div>
-                <div class="p-1 mb-1 bg-color-grey-lightest"></div>
-                <div class="p-1 mb-1 bg-color-grey-lightest"></div>
-                <div class="p-1 mb-1 bg-color-grey-lightest"></div>
-                <div class="p-1 mb-1 bg-color-grey-lightest"></div>
-                <div class="p-1 mb-1 bg-color-grey-lightest"></div>
-                <div class="p-1 mb-1 bg-color-grey-lightest"></div>
-                <div class="p-1 mb-1 bg-color-grey-lightest"></div>
-                <div class="p-1 mb-1 bg-color-grey-lightest"></div>
-                <div class="p-1 mb-1 bg-color-grey-lightest"></div>
-                <div class="p-1 mb-1 bg-color-grey-lightest"></div>
-                <div class="p-1 mb-1 bg-color-grey-lightest"></div>
-                <div class="p-1 mb-1 bg-color-grey-lightest"></div>
-                <div class="p-1 mb-1 bg-color-grey-lightest"></div>
-                <div class="p-1 mb-1 bg-color-grey-lightest"></div>
-                <div class="p-1 mb-1 bg-color-grey-lightest"></div>
-                <div class="p-1 mb-1 bg-color-grey-lightest"></div>
-                <div class="p-1 mb-1 bg-color-grey-lightest"></div>
-                <div class="p-1 mb-1 bg-color-grey-lightest"></div>
-                <div class="p-1 mb-1 bg-color-grey-lightest"></div>
-              </div>
-            </div>
-            <div class="layout--gutter screen-tablet:layout--columns justify-between pt-4">
-              <div class="screen-tablet:pr-2">
-                <fieldset class="c-question" data-sketch-symbol="components/question/question-multiple-choice">
-                  <legend class="c-question__label" for="person-0-age">Do any of these apply to you?</legend>
-                  <p>It’s OK to pick more than one. You can also leave this blank if none of these apply to you.</p>
-                  <div class="c-question__container screen-tablet:layout--columns">
-                    <label class="checkbox" data-sketch-symbol-instance="elements/checkboxes/checkboxes" for="person-0-student">
-                      <input id="person-0-student" name="Person[0].student" type="checkbox" value="student" /><span class="checkbox__label">Student</span></label>
-                    <label class="checkbox" data-sketch-symbol-instance="elements/checkboxes/checkboxes" for="person-0-pregnant">
-                      <input id="person-0-pregnant" name="Person[0].pregnant" type="checkbox" value="pregnant" /><span class="checkbox__label">Pregnant</span></label>
-                    <label class="checkbox" data-sketch-symbol-instance="elements/checkboxes/checkboxes" for="person-0-unemployed">
-                      <input id="person-0-unemployed" name="Person[0].unemployed" type="checkbox" value="unemployed" /><span class="checkbox__label">Unemployed</span></label>
-                    <label class="checkbox" data-sketch-symbol-instance="elements/checkboxes/checkboxes" for="person-0-blind">
-                      <input id="person-0-blind" name="Person[0].blind" type="checkbox" value="blind" /><span class="checkbox__label">Blind or visually impaired</span></label>
-                    <label class="checkbox" data-sketch-symbol-instance="elements/checkboxes/checkboxes" for="person-0-disabled">
-                      <input id="person-0-disabled" name="Person[0].disabled" type="checkbox" value="disabled" /><span class="checkbox__label">Have any disabilities</span></label>
-                    <label class="checkbox" data-sketch-symbol-instance="elements/checkboxes/checkboxes" for="person-0-military">
-                      <input id="person-0-military" name="Person[0].military" type="checkbox" value="military" /><span class="checkbox__label">Served in the U.S. Armed Forces, National Guard or Reserves</span></label>
-                    <label class="checkbox" data-sketch-symbol-instance="elements/checkboxes/checkboxes">
-                      <input data-js="clear" type="checkbox" /><span class="checkbox__label">None of these apply</span></label>
-                  </div>
-                </fieldset>
-              </div>
-              <div>
-                <div class="code-block mb-1"><pre>&lt;fieldset class=&quot;c-question&quot; data-sketch-symbol-instance=&quot;elements/inputs/input&quot;&gt;
+              <div class="layout--gutter screen-tablet:layout--columns justify-between pt-4">
+                <div class="screen-tablet:pr-2">
+                  <fieldset class="c-question" data-sketch-symbol="components/question/question-multiple-choice">
+                    <legend class="c-question__label" for="person-0-age">Do any of these apply to you?</legend>
+                    <p>It’s OK to pick more than one. You can also leave this blank if none of these apply to you.</p>
+                    <div class="c-question__container screen-tablet:layout--columns">
+                      <label class="checkbox" data-sketch-symbol-instance="elements/checkboxes/checkboxes" for="person-0-student">
+                        <input id="person-0-student" name="Person[0].student" type="checkbox" value="student" /><span class="checkbox__label">Student</span></label>
+                      <label class="checkbox" data-sketch-symbol-instance="elements/checkboxes/checkboxes" for="person-0-pregnant">
+                        <input id="person-0-pregnant" name="Person[0].pregnant" type="checkbox" value="pregnant" /><span class="checkbox__label">Pregnant</span></label>
+                      <label class="checkbox" data-sketch-symbol-instance="elements/checkboxes/checkboxes" for="person-0-unemployed">
+                        <input id="person-0-unemployed" name="Person[0].unemployed" type="checkbox" value="unemployed" /><span class="checkbox__label">Unemployed</span></label>
+                      <label class="checkbox" data-sketch-symbol-instance="elements/checkboxes/checkboxes" for="person-0-blind">
+                        <input id="person-0-blind" name="Person[0].blind" type="checkbox" value="blind" /><span class="checkbox__label">Blind or visually impaired</span></label>
+                      <label class="checkbox" data-sketch-symbol-instance="elements/checkboxes/checkboxes" for="person-0-disabled">
+                        <input id="person-0-disabled" name="Person[0].disabled" type="checkbox" value="disabled" /><span class="checkbox__label">Have any disabilities</span></label>
+                      <label class="checkbox" data-sketch-symbol-instance="elements/checkboxes/checkboxes" for="person-0-military">
+                        <input id="person-0-military" name="Person[0].military" type="checkbox" value="military" /><span class="checkbox__label">Served in the U.S. Armed Forces, National Guard or Reserves</span></label>
+                      <label class="checkbox" data-sketch-symbol-instance="elements/checkboxes/checkboxes">
+                        <input data-js="clear" type="checkbox" /><span class="checkbox__label">None of these apply</span></label>
+                    </div>
+                  </fieldset>
+                </div>
+                <div>
+                  <div class="code-block mb-1"><pre>&lt;fieldset class=&quot;c-question&quot; data-sketch-symbol-instance=&quot;elements/inputs/input&quot;&gt;
   &lt;legend class=&quot;c-question__label&quot; for=&quot;person-0-age&quot;&gt;Do any of these apply to you?&lt;/legend&gt;
   &lt;p&gt;It’s OK to pick more than one. You can also leave this blank if none of these apply to you.&lt;/p&gt;
   &lt;div class=&quot;c-question__container screen-tablet:layout--columns&quot;&gt;
@@ -390,60 +392,60 @@
       &lt;input data-js=&quot;clear&quot; type=&quot;checkbox&quot; /&gt;&lt;span class=&quot;checkbox__label&quot;&gt;None of these apply&lt;/span&gt;&lt;/label&gt;
   &lt;/div&gt;
 &lt;/fieldset&gt;</pre></div>
+                </div>
               </div>
             </div>
-          </div>
-        </section>
-        <section class="pb-4 mb-4" id="toggle-question">
-          <div class="page-wrapper px-2 screen-desktop:px-0">
-            <header class="layout--home-body">
-              <div class="my-0 pt-1 px-2 border-b border-color-grey-light">
-                <h2>
-                  <a class="text-color-grey-mid font-normal no-underline capitalize" href="#toggle-question">Toggle Question</a>
-                </h2>
+          </section>
+          <section class="pb-4 mb-4" id="toggle-question">
+            <div class="page-wrapper px-2 screen-desktop:px-0">
+              <header class="layout--home-body">
+                <div class="my-0 pt-1 px-2 border-b border-color-grey-light">
+                  <h2>
+                    <a class="text-color-grey-mid font-normal no-underline capitalize" href="#toggle-question">Toggle Question</a>
+                  </h2>
+                </div>
+              </header>
+              <div class="layout--home-body">
+                <div class="my-0 pt-4 px-2 text-font-size-small" data-js="markdown" data-js-markdown="components/question/question-toggle.md">
+                  <div class="p-1 mb-1 bg-color-grey-lightest"></div>
+                  <div class="p-1 mb-1 bg-color-grey-lightest"></div>
+                  <div class="p-1 mb-1 bg-color-grey-lightest"></div>
+                  <div class="p-1 mb-1 bg-color-grey-lightest"></div>
+                  <div class="p-1 mb-1 bg-color-grey-lightest"></div>
+                  <div class="p-1 mb-1 bg-color-grey-lightest"></div>
+                  <div class="p-1 mb-1 bg-color-grey-lightest"></div>
+                  <div class="p-1 mb-1 bg-color-grey-lightest"></div>
+                  <div class="p-1 mb-1 bg-color-grey-lightest"></div>
+                  <div class="p-1 mb-1 bg-color-grey-lightest"></div>
+                  <div class="p-1 mb-1 bg-color-grey-lightest"></div>
+                  <div class="p-1 mb-1 bg-color-grey-lightest"></div>
+                  <div class="p-1 mb-1 bg-color-grey-lightest"></div>
+                  <div class="p-1 mb-1 bg-color-grey-lightest"></div>
+                  <div class="p-1 mb-1 bg-color-grey-lightest"></div>
+                  <div class="p-1 mb-1 bg-color-grey-lightest"></div>
+                  <div class="p-1 mb-1 bg-color-grey-lightest"></div>
+                  <div class="p-1 mb-1 bg-color-grey-lightest"></div>
+                  <div class="p-1 mb-1 bg-color-grey-lightest"></div>
+                  <div class="p-1 mb-1 bg-color-grey-lightest"></div>
+                </div>
               </div>
-            </header>
-            <div class="layout--home-body">
-              <div class="my-0 pt-4 px-2 text-font-size-small" data-js="markdown" data-js-markdown="components/question/question-toggle.md">
-                <div class="p-1 mb-1 bg-color-grey-lightest"></div>
-                <div class="p-1 mb-1 bg-color-grey-lightest"></div>
-                <div class="p-1 mb-1 bg-color-grey-lightest"></div>
-                <div class="p-1 mb-1 bg-color-grey-lightest"></div>
-                <div class="p-1 mb-1 bg-color-grey-lightest"></div>
-                <div class="p-1 mb-1 bg-color-grey-lightest"></div>
-                <div class="p-1 mb-1 bg-color-grey-lightest"></div>
-                <div class="p-1 mb-1 bg-color-grey-lightest"></div>
-                <div class="p-1 mb-1 bg-color-grey-lightest"></div>
-                <div class="p-1 mb-1 bg-color-grey-lightest"></div>
-                <div class="p-1 mb-1 bg-color-grey-lightest"></div>
-                <div class="p-1 mb-1 bg-color-grey-lightest"></div>
-                <div class="p-1 mb-1 bg-color-grey-lightest"></div>
-                <div class="p-1 mb-1 bg-color-grey-lightest"></div>
-                <div class="p-1 mb-1 bg-color-grey-lightest"></div>
-                <div class="p-1 mb-1 bg-color-grey-lightest"></div>
-                <div class="p-1 mb-1 bg-color-grey-lightest"></div>
-                <div class="p-1 mb-1 bg-color-grey-lightest"></div>
-                <div class="p-1 mb-1 bg-color-grey-lightest"></div>
-                <div class="p-1 mb-1 bg-color-grey-lightest"></div>
-              </div>
-            </div>
-            <div class="layout--gutter screen-tablet:layout--columns justify-between pt-4">
-              <div class="screen-tablet:pr-2">
-                <fieldset class="c-question" data-sketch-symbol="components/question/question-toggle">
-                  <legend class="c-question__label">Do you have an income?</legend>
-                  <p>This includes money from jobs, alimony, investments, or gifts.</p>
-                  <div class="c-question__container">
-                    <div data-sketch-symbol-instance="elements/toggles/toggles">
-                      <label class="toggle">
-                        <input data-type="boolean" name="application" type="radio" value="1" /><span class="toggle__label">Yes</span></label>
-                      <label class="toggle">
-                        <input checked="true" data-type="boolean" name="application" type="radio" value="0" /><span class="toggle__label">No</span></label>
+              <div class="layout--gutter screen-tablet:layout--columns justify-between pt-4">
+                <div class="screen-tablet:pr-2">
+                  <fieldset class="c-question" data-sketch-symbol="components/question/question-toggle">
+                    <legend class="c-question__label">Do you have an income?</legend>
+                    <p>This includes money from jobs, alimony, investments, or gifts.</p>
+                    <div class="c-question__container">
+                      <div data-sketch-symbol-instance="elements/toggles/toggles">
+                        <label class="toggle">
+                          <input data-type="boolean" name="application" type="radio" value="1" /><span class="toggle__label">Yes</span></label>
+                        <label class="toggle">
+                          <input checked="true" data-type="boolean" name="application" type="radio" value="0" /><span class="toggle__label">No</span></label>
+                      </div>
                     </div>
-                  </div>
-                </fieldset>
-              </div>
-              <div>
-                <div class="code-block mb-1"><pre>&lt;fieldset class=&quot;c-question&quot; data-sketch-symbol-instance=&quot;elements/checkboxes/checkboxes&quot;&gt;
+                  </fieldset>
+                </div>
+                <div>
+                  <div class="code-block mb-1"><pre>&lt;fieldset class=&quot;c-question&quot; data-sketch-symbol-instance=&quot;elements/checkboxes/checkboxes&quot;&gt;
   &lt;legend class=&quot;c-question__label&quot;&gt;Do you have an income?&lt;/legend&gt;
   &lt;p&gt;This includes money from jobs, alimony, investments, or gifts.&lt;/p&gt;
   &lt;div class=&quot;c-question__container&quot;&gt;
@@ -455,79 +457,79 @@
     &lt;/div&gt;
   &lt;/div&gt;
 &lt;/fieldset&gt;</pre></div>
-              </div>
-            </div>
-          </div>
-        </section>
-        <section class="pb-4 mb-4" id="select-question">
-          <div class="page-wrapper px-2 screen-desktop:px-0">
-            <header class="layout--home-body">
-              <div class="my-0 pt-1 px-2 border-b border-color-grey-light">
-                <h2>
-                  <a class="text-color-grey-mid font-normal no-underline capitalize" href="#select-question">Select Question</a>
-                </h2>
-              </div>
-            </header>
-            <div class="layout--home-body">
-              <div class="my-0 pt-4 px-2 text-font-size-small" data-js="markdown" data-js-markdown="components/question/question-select.md">
-                <div class="p-1 mb-1 bg-color-grey-lightest"></div>
-                <div class="p-1 mb-1 bg-color-grey-lightest"></div>
-                <div class="p-1 mb-1 bg-color-grey-lightest"></div>
-                <div class="p-1 mb-1 bg-color-grey-lightest"></div>
-                <div class="p-1 mb-1 bg-color-grey-lightest"></div>
-                <div class="p-1 mb-1 bg-color-grey-lightest"></div>
-                <div class="p-1 mb-1 bg-color-grey-lightest"></div>
-                <div class="p-1 mb-1 bg-color-grey-lightest"></div>
-                <div class="p-1 mb-1 bg-color-grey-lightest"></div>
-                <div class="p-1 mb-1 bg-color-grey-lightest"></div>
-                <div class="p-1 mb-1 bg-color-grey-lightest"></div>
-                <div class="p-1 mb-1 bg-color-grey-lightest"></div>
-                <div class="p-1 mb-1 bg-color-grey-lightest"></div>
-                <div class="p-1 mb-1 bg-color-grey-lightest"></div>
-                <div class="p-1 mb-1 bg-color-grey-lightest"></div>
-                <div class="p-1 mb-1 bg-color-grey-lightest"></div>
-                <div class="p-1 mb-1 bg-color-grey-lightest"></div>
-                <div class="p-1 mb-1 bg-color-grey-lightest"></div>
-                <div class="p-1 mb-1 bg-color-grey-lightest"></div>
-                <div class="p-1 mb-1 bg-color-grey-lightest"></div>
-              </div>
-            </div>
-            <div class="layout--gutter screen-tablet:layout--columns justify-between pt-4">
-              <div class="screen-tablet:pr-2">
-                <div class="c-question">
-                  <label class="c-question__label" for="person-0-incomes-0-type">What type of income have you had most recently?</label>
-                  <p>Answer the best you can. You will be able to include additional types of income. The more you include, the more accurate your results will be.</p>
-                  </p>
-                  <div class="c-question__container">
-                    <select class="select" data-sketch-symbol-instance="elements/selects/selects" id="person-0-incomes-0" name="Person[0].incomes[0].type">
-                      <option selected="true" value="">Click to add an income type</option>
-                      <option value="Wages">wages, salaries, tips</option>
-                      <option value="SelfEmployment">self-employment Income</option>
-                      <option value="Unemployment">unemployment benefits</option>
-                      <option value="CashAssistance">Cash Assistance grant</option>
-                      <option value="ChildSupport">child support (received)</option>
-                      <option value="DisabilityMedicaid">disability-related Medicaid</option>
-                      <option value="SSI">Supplemental Security Income (SSI)</option>
-                      <option value="SSDependent">Social Security Dependent Benefits</option>
-                      <option value="SSDisability">Social Security Disability Benefits</option>
-                      <option value="SSSurvivor">Social Security Survivor’s Benefits</option>
-                      <option value="SSRetirement">Social Security Retirement Benefits</option>
-                      <option value="NYSDisability">New York State Disability Benefits</option>
-                      <option value="Veteran">Veteran’s Pension or Benefits</option>
-                      <option value="Pension">Government or Private Pension</option>
-                      <option value="DeferredComp">Withdrawals from Deferred Compensation (IRA, Keogh, etc.)</option>
-                      <option value="WorkersComp">Worker’s Compensation</option>
-                      <option value="Alimony">alimony (received)</option>
-                      <option value="Boarder">boarder or lodger</option>
-                      <option value="Gifts">gifts/contributions (received)</option>
-                      <option value="Rental">rental income</option>
-                      <option value="Investment">investment income (interest, dividends, and profit from selling stocks)</option>
-                    </select>
-                  </div>
                 </div>
               </div>
-              <div>
-                <div class="code-block mb-1"><pre>&lt;div class=&quot;c-question&quot;&gt;
+            </div>
+          </section>
+          <section class="pb-4 mb-4" id="select-question">
+            <div class="page-wrapper px-2 screen-desktop:px-0">
+              <header class="layout--home-body">
+                <div class="my-0 pt-1 px-2 border-b border-color-grey-light">
+                  <h2>
+                    <a class="text-color-grey-mid font-normal no-underline capitalize" href="#select-question">Select Question</a>
+                  </h2>
+                </div>
+              </header>
+              <div class="layout--home-body">
+                <div class="my-0 pt-4 px-2 text-font-size-small" data-js="markdown" data-js-markdown="components/question/question-select.md">
+                  <div class="p-1 mb-1 bg-color-grey-lightest"></div>
+                  <div class="p-1 mb-1 bg-color-grey-lightest"></div>
+                  <div class="p-1 mb-1 bg-color-grey-lightest"></div>
+                  <div class="p-1 mb-1 bg-color-grey-lightest"></div>
+                  <div class="p-1 mb-1 bg-color-grey-lightest"></div>
+                  <div class="p-1 mb-1 bg-color-grey-lightest"></div>
+                  <div class="p-1 mb-1 bg-color-grey-lightest"></div>
+                  <div class="p-1 mb-1 bg-color-grey-lightest"></div>
+                  <div class="p-1 mb-1 bg-color-grey-lightest"></div>
+                  <div class="p-1 mb-1 bg-color-grey-lightest"></div>
+                  <div class="p-1 mb-1 bg-color-grey-lightest"></div>
+                  <div class="p-1 mb-1 bg-color-grey-lightest"></div>
+                  <div class="p-1 mb-1 bg-color-grey-lightest"></div>
+                  <div class="p-1 mb-1 bg-color-grey-lightest"></div>
+                  <div class="p-1 mb-1 bg-color-grey-lightest"></div>
+                  <div class="p-1 mb-1 bg-color-grey-lightest"></div>
+                  <div class="p-1 mb-1 bg-color-grey-lightest"></div>
+                  <div class="p-1 mb-1 bg-color-grey-lightest"></div>
+                  <div class="p-1 mb-1 bg-color-grey-lightest"></div>
+                  <div class="p-1 mb-1 bg-color-grey-lightest"></div>
+                </div>
+              </div>
+              <div class="layout--gutter screen-tablet:layout--columns justify-between pt-4">
+                <div class="screen-tablet:pr-2">
+                  <div class="c-question">
+                    <label class="c-question__label" for="person-0-incomes-0-type">What type of income have you had most recently?</label>
+                    <p>Answer the best you can. You will be able to include additional types of income. The more you include, the more accurate your results will be.</p>
+                    </p>
+                    <div class="c-question__container">
+                      <select class="select" data-sketch-symbol-instance="elements/selects/selects" id="person-0-incomes-0" name="Person[0].incomes[0].type">
+                        <option selected="true" value="">Click to add an income type</option>
+                        <option value="Wages">wages, salaries, tips</option>
+                        <option value="SelfEmployment">self-employment Income</option>
+                        <option value="Unemployment">unemployment benefits</option>
+                        <option value="CashAssistance">Cash Assistance grant</option>
+                        <option value="ChildSupport">child support (received)</option>
+                        <option value="DisabilityMedicaid">disability-related Medicaid</option>
+                        <option value="SSI">Supplemental Security Income (SSI)</option>
+                        <option value="SSDependent">Social Security Dependent Benefits</option>
+                        <option value="SSDisability">Social Security Disability Benefits</option>
+                        <option value="SSSurvivor">Social Security Survivor’s Benefits</option>
+                        <option value="SSRetirement">Social Security Retirement Benefits</option>
+                        <option value="NYSDisability">New York State Disability Benefits</option>
+                        <option value="Veteran">Veteran’s Pension or Benefits</option>
+                        <option value="Pension">Government or Private Pension</option>
+                        <option value="DeferredComp">Withdrawals from Deferred Compensation (IRA, Keogh, etc.)</option>
+                        <option value="WorkersComp">Worker’s Compensation</option>
+                        <option value="Alimony">alimony (received)</option>
+                        <option value="Boarder">boarder or lodger</option>
+                        <option value="Gifts">gifts/contributions (received)</option>
+                        <option value="Rental">rental income</option>
+                        <option value="Investment">investment income (interest, dividends, and profit from selling stocks)</option>
+                      </select>
+                    </div>
+                  </div>
+                </div>
+                <div>
+                  <div class="code-block mb-1"><pre>&lt;div class=&quot;c-question&quot;&gt;
   &lt;label class=&quot;c-question__label&quot; for=&quot;person-0-incomes-0-type&quot;&gt;What type of income have you had most recently?&lt;/label&gt;
   &lt;p&gt;Answer the best you can. You will be able to include additional types of income. The more you include, the more accurate your results will be.&lt;/p&gt;
   &lt;/p&gt;
@@ -558,59 +560,59 @@
     &lt;/select&gt;
   &lt;/div&gt;
 &lt;/div&gt;</pre></div>
+                </div>
               </div>
             </div>
-          </div>
-        </section>
-        <section class="pb-4 mb-4" id="select-question">
-          <div class="page-wrapper px-2 screen-desktop:px-0">
-            <header class="layout--home-body">
-              <div class="my-0 pt-1 px-2 border-b border-color-grey-light">
-                <h2>
-                  <a class="text-color-grey-mid font-normal no-underline capitalize" href="#select-question">Select Question</a>
-                </h2>
+          </section>
+          <section class="pb-4 mb-4" id="select-question">
+            <div class="page-wrapper px-2 screen-desktop:px-0">
+              <header class="layout--home-body">
+                <div class="my-0 pt-1 px-2 border-b border-color-grey-light">
+                  <h2>
+                    <a class="text-color-grey-mid font-normal no-underline capitalize" href="#select-question">Select Question</a>
+                  </h2>
+                </div>
+              </header>
+              <div class="layout--home-body">
+                <div class="my-0 pt-4 px-2 text-font-size-small" data-js="markdown" data-js-markdown="components/question/question-radio.md">
+                  <div class="p-1 mb-1 bg-color-grey-lightest"></div>
+                  <div class="p-1 mb-1 bg-color-grey-lightest"></div>
+                  <div class="p-1 mb-1 bg-color-grey-lightest"></div>
+                  <div class="p-1 mb-1 bg-color-grey-lightest"></div>
+                  <div class="p-1 mb-1 bg-color-grey-lightest"></div>
+                  <div class="p-1 mb-1 bg-color-grey-lightest"></div>
+                  <div class="p-1 mb-1 bg-color-grey-lightest"></div>
+                  <div class="p-1 mb-1 bg-color-grey-lightest"></div>
+                  <div class="p-1 mb-1 bg-color-grey-lightest"></div>
+                  <div class="p-1 mb-1 bg-color-grey-lightest"></div>
+                  <div class="p-1 mb-1 bg-color-grey-lightest"></div>
+                  <div class="p-1 mb-1 bg-color-grey-lightest"></div>
+                  <div class="p-1 mb-1 bg-color-grey-lightest"></div>
+                  <div class="p-1 mb-1 bg-color-grey-lightest"></div>
+                  <div class="p-1 mb-1 bg-color-grey-lightest"></div>
+                  <div class="p-1 mb-1 bg-color-grey-lightest"></div>
+                  <div class="p-1 mb-1 bg-color-grey-lightest"></div>
+                  <div class="p-1 mb-1 bg-color-grey-lightest"></div>
+                  <div class="p-1 mb-1 bg-color-grey-lightest"></div>
+                  <div class="p-1 mb-1 bg-color-grey-lightest"></div>
+                </div>
               </div>
-            </header>
-            <div class="layout--home-body">
-              <div class="my-0 pt-4 px-2 text-font-size-small" data-js="markdown" data-js-markdown="components/question/question-radio.md">
-                <div class="p-1 mb-1 bg-color-grey-lightest"></div>
-                <div class="p-1 mb-1 bg-color-grey-lightest"></div>
-                <div class="p-1 mb-1 bg-color-grey-lightest"></div>
-                <div class="p-1 mb-1 bg-color-grey-lightest"></div>
-                <div class="p-1 mb-1 bg-color-grey-lightest"></div>
-                <div class="p-1 mb-1 bg-color-grey-lightest"></div>
-                <div class="p-1 mb-1 bg-color-grey-lightest"></div>
-                <div class="p-1 mb-1 bg-color-grey-lightest"></div>
-                <div class="p-1 mb-1 bg-color-grey-lightest"></div>
-                <div class="p-1 mb-1 bg-color-grey-lightest"></div>
-                <div class="p-1 mb-1 bg-color-grey-lightest"></div>
-                <div class="p-1 mb-1 bg-color-grey-lightest"></div>
-                <div class="p-1 mb-1 bg-color-grey-lightest"></div>
-                <div class="p-1 mb-1 bg-color-grey-lightest"></div>
-                <div class="p-1 mb-1 bg-color-grey-lightest"></div>
-                <div class="p-1 mb-1 bg-color-grey-lightest"></div>
-                <div class="p-1 mb-1 bg-color-grey-lightest"></div>
-                <div class="p-1 mb-1 bg-color-grey-lightest"></div>
-                <div class="p-1 mb-1 bg-color-grey-lightest"></div>
-                <div class="p-1 mb-1 bg-color-grey-lightest"></div>
-              </div>
-            </div>
-            <div class="layout--gutter screen-tablet:layout--columns justify-between pt-4">
-              <div class="screen-tablet:pr-2">
-                <fieldset class="c-question" data-sketch-symbol="components/question/question-radio">
-                  <legend class="c-question__label" for="person-0-age">Phone Type</legend>
-                  <div class="c-question__container">
-                    <label class="radio" data-sketch-symbol-instance="elements/radios/radios" for="client-phone-type-home">
-                      <input id="client-phone-type-home" name="Client.phoneType" type="radio" value="home" /><span class="radio__label">Home</span></label>
-                    <label class="radio" data-sketch-symbol-instance="elements/radios/radios" for="client-phone-type-pregnant">
-                      <input id="client-phone-type-pregnant" name="Client.phoneType" type="radio" value="pregnant" /><span class="radio__label">Work</span></label>
-                    <label class="radio" data-sketch-symbol-instance="elements/radios/radios" for="client-phone-type-unemployed">
-                      <input id="client-phone-type-unemployed" name="Client.phoneType" type="radio" value="unemployed" /><span class="radio__label">Cell Phone</span></label>
-                  </div>
-                </fieldset>
-              </div>
-              <div>
-                <div class="code-block mb-1"><pre>&lt;fieldset class=&quot;c-question&quot; data-sketch-symbol-instance=&quot;elements/selects/selects&quot;&gt;
+              <div class="layout--gutter screen-tablet:layout--columns justify-between pt-4">
+                <div class="screen-tablet:pr-2">
+                  <fieldset class="c-question" data-sketch-symbol="components/question/question-radio">
+                    <legend class="c-question__label" for="person-0-age">Phone Type</legend>
+                    <div class="c-question__container">
+                      <label class="radio" data-sketch-symbol-instance="elements/radios/radios" for="client-phone-type-home">
+                        <input id="client-phone-type-home" name="Client.phoneType" type="radio" value="home" /><span class="radio__label">Home</span></label>
+                      <label class="radio" data-sketch-symbol-instance="elements/radios/radios" for="client-phone-type-pregnant">
+                        <input id="client-phone-type-pregnant" name="Client.phoneType" type="radio" value="pregnant" /><span class="radio__label">Work</span></label>
+                      <label class="radio" data-sketch-symbol-instance="elements/radios/radios" for="client-phone-type-unemployed">
+                        <input id="client-phone-type-unemployed" name="Client.phoneType" type="radio" value="unemployed" /><span class="radio__label">Cell Phone</span></label>
+                    </div>
+                  </fieldset>
+                </div>
+                <div>
+                  <div class="code-block mb-1"><pre>&lt;fieldset class=&quot;c-question&quot; data-sketch-symbol-instance=&quot;elements/selects/selects&quot;&gt;
   &lt;legend class=&quot;c-question__label&quot; for=&quot;person-0-age&quot;&gt;Phone Type&lt;/legend&gt;
   &lt;div class=&quot;c-question__container&quot;&gt;
     &lt;label class=&quot;radio&quot; data-sketch-symbol-instance=&quot;elements/radios/radios&quot; for=&quot;client-phone-type-home&quot;&gt;
@@ -621,12 +623,13 @@
       &lt;input id=&quot;client-phone-type-unemployed&quot; name=&quot;Client.phoneType&quot; type=&quot;radio&quot; value=&quot;unemployed&quot; /&gt;&lt;span class=&quot;radio__label&quot;&gt;Cell Phone&lt;/span&gt;&lt;/label&gt;
   &lt;/div&gt;
 &lt;/fieldset&gt;</pre></div>
+                </div>
               </div>
             </div>
-          </div>
-        </section>
-      </article>
-    </main>
+          </section>
+        </article>
+      </main>
+    </div>
     <footer class="py-4 text-center bg-color-blue-dark text-color-white links-invert font-smooth">
       <p class="m-0">Maintained by&nbsp;
         <a href="https://github.com/orgs/CityOfNewYork/teams/nycopportunity">NYC Opportunity</a>
