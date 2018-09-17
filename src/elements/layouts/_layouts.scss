@@ -418,7 +418,6 @@ $breakpoints: map-get($variables, 'screens');
 } // END Responsive Layouts
 
 .usa-grid {
-  // @include padding(null $site-margins-mobile);
   padding-left: ($spacing-base / 3) * 2;
   padding-right: ($spacing-base / 3) * 2;
   margin-left: auto;

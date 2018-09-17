@@ -6,6 +6,7 @@
 @import 'config/variables';
 
 // Variables
+$grid-base: map-get(map-get($variables, 'dimensions'), 'grid-base');
 $spacing-base: map-get(map-get($variables, 'dimensions'), 'spacing-base');
 $homepage-max-width: map-get(map-get($variables, 'dimensions'), 'homepage-max-width');
 $site-max-width: map-get(map-get($variables, 'dimensions'), 'site-max-width');

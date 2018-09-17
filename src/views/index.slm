@@ -18,5 +18,32 @@
 = content('content');
   section class='pb-4'
     div class='page-wrapper layout--home-body'
-      div
-        /= 'md{{ ../README.md }}';
+      div class='o-banner my-0 w-full color-light-background p-0 px-2 screen-desktop:px-0'
+        div class='o-banner__inner m-0'
+          h1 class='o-banner__title'
+            | The Patterns are a shared vocabulary between the code, design, and user interface of <a href="https://access.nyc.gov">ACCESS NYC</a>.
+
+          p
+            | ACCESS NYC aims to increase the accessibility and convenience of discovering and enrolling in government benefits. The Patterns support this work by defining the UI and behavior that New Yorkers experience as they use the site.
+
+          p
+            a class='btn btn-primary mb-2' href='#main-menu' data-js="toggle" Browse the patterns
+
+          div class='o-banner__touts'
+            div class='o-banner__tout'
+              h3 class='o-banner__tout-title' Developer Tools
+
+              div class='o-banner__tout-body'
+                p class='p1' Developers can import the Patterns into their projects using NPM, Yarn, or via CDN. All of the source code is publicly available to fork or contribute to.
+
+              div class='o-banner__tout-cta'
+                a class='btn btn-secondary btn-next' href='readme'
+                  | Getting started
+
+            div class='o-banner__tout'
+              h3 class='o-banner__tout-title' Design Tools
+
+              div class='o-banner__tout-body'
+                p The Patterns are available as Sketch files that can be used by designers to implement icons, type styles, colors, and modules for use in prototyping.
+              div class='o-banner__tout-cta'
+                a class='btn btn-secondary' href='#' Coming Soon

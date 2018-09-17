@@ -9,5 +9,5 @@
         use xlink:href='#${key.split("--")[0]}'
 
     p class='mb-0 flex justify-between'
-      | ID
-      code ${key}
+      | xlink:href
+      code #${key}

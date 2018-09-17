@@ -44,7 +44,7 @@ $color-transparent: map-get($colors, 'color-transparent');
     color: map-get($colors, map-get($combination, 'color-alt'));
   }
 
-  a {
+  a:not(.btn) {
     color: map-get($colors, map-get($combination, 'hyperlinks'));
 
     &:visited {

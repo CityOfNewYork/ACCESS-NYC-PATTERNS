@@ -10,11 +10,15 @@
 
 // Declarations
 .c-header {
-  padding: $spacing-base;
+  padding: ($spacing-base / 3) * 2;
 
   @media screen and (min-width: $screen-mobile) {
     align-items: flex-start;
     display: flex;
+  }
+
+  @media screen and (min-width: $screen-tablet) {
+    padding: $spacing-base;
   }
 }
 
@@ -48,6 +52,7 @@
 
 .c-header__information {
   @include typography-supplemental();
+  margin-bottom: 0;
 }
 
 .c-header__disclaimer {

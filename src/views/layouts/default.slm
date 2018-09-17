@@ -4,16 +4,17 @@ html lang='en' class='bg-color-white text-size-0'
   body class='bg-color-white' style='visibility: hidden;' onload='load()'
     a class='sr-only' href='#main-content' Skip to main content
 
-    = partial('/partials/header.slm');
+    div class='min-h-screen'
+      = partial('/partials/header.slm');
 
-    aside#main-menu class='text-font-size-small bg-color-blue-light hidden hidden:overflow animated' style='position:relative;top:-1px' aria-hidden='true'
-      div class='page-wrapper'
-        div class='screen-tablet:flex py-4'
-          = partial('/partials/nav.slm');
+      aside#main-menu class='text-font-size-small bg-color-blue-light hidden hidden:overflow animated' style='position:relative;top:-1px' aria-hidden='true'
+        div class='page-wrapper'
+          div class='screen-tablet:flex py-4'
+            = partial('/partials/nav.slm');
 
-    main#main-content class='pt-4'
-      article class='py-4'
-        = content('content');
+      main#main-content class='pt-4'
+        article class='py-4'
+          = content('content');
 
     = partial('/partials/footer.slm');
 
