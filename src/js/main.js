@@ -6,6 +6,7 @@ import Toggle from './modules/toggle';
 import Icons from '../elements/icons/icons';
 import Accordion from '../components/accordion/accordion';
 import Filter from '../components/filter/filter';
+import NearbyStops from '../components/nearby-stops/nearby-stops';
 /** import components here as they are written. */
 
 /**
@@ -64,6 +65,14 @@ class main {
    */
   accordion() {
     return new Accordion();
+  }
+
+  /**
+   * An API for the Nearby Stops Component
+   * @return {object} instance of NearbyStops
+   */
+  nearbyStops() {
+    return new NearbyStops();
   }
   /** add APIs here as they are written */
 }

@@ -23,150 +23,152 @@
 
   <body class="bg-color-white" onload="load()" style="visibility: hidden;">
     <a class="sr-only" href="#main-content">Skip to main content</a>
-    <header class="px-2">
-      <div class="border-b border-color-grey-light">
-        <div class="flex items-center justify-between p-2 screen-tablet:py-4 screen-tablet:px-2">
-          <div>
-            <h1 class="m-0 p-0 leading-normal"><span class="hidden">ACCESS NYC</span>
-              <svg aria-hidden="true" class="icon-logo-mark screen-tablet:hidden">
-                <use xlink:href="#icon-logo-mark"></use>
-              </svg>
-              <svg aria-hidden="true" class="icon-logo-full--large text-color-blue-dark hidden screen-tablet:inline-block">
-                <use xlink:href="#icon-logo-full"></use>
-              </svg>
-            </h1>
+    <div class="min-h-screen">
+      <header class="px-2">
+        <div class="border-b border-color-grey-light">
+          <div class="flex items-center justify-between p-2 screen-tablet:py-4 screen-tablet:px-2">
+            <div>
+              <h1 class="m-0 p-0 leading-normal"><span class="hidden">ACCESS NYC</span>
+                <svg aria-hidden="true" class="icon-logo-mark screen-tablet:hidden">
+                  <use xlink:href="#icon-logo-mark"></use>
+                </svg>
+                <svg aria-hidden="true" class="icon-logo-full--large text-color-blue-dark hidden screen-tablet:inline-block">
+                  <use xlink:href="#icon-logo-full"></use>
+                </svg>
+              </h1>
+            </div>
+            <div class="flex items-center">
+              <h2 class="text-font-size-small m-0 text-color-blue-dark screen-tablet:hidden">Patterns</h2>
+              <h2 aria-hidden="true" class="type-h1 m-0 text-color-blue-dark hidden screen-tablet:inline-block">Patterns</h2>
+              <nav class="text-font-size-small">
+                <a class="rounded-lg text-color-blue-dark border-2 no-underline px-1 ml-2 hidden screen-tablet:inline-block" href="https://github.com/CityOfNewYork/ACCESS-NYC-PATTERNS">0.0.11-5</a>
+                <a aria-hidden="true" class="ml-1 screen-tablet:ml-2 screen-tablet:hidden" href="https://github.com/CityOfNewYork/ACCESS-NYC-PATTERNS">0.0.11-5</a>
+                <a class="ml-1 screen-tablet:ml-2" data-js="toggle" href="#main-menu">Menu</a>
+              </nav>
+            </div>
           </div>
-          <div class="flex items-center">
-            <h2 class="text-font-size-small m-0 text-color-blue-dark screen-tablet:hidden">Patterns</h2>
-            <h2 aria-hidden="true" class="type-h1 m-0 text-color-blue-dark hidden screen-tablet:inline-block">Patterns</h2>
-            <nav class="text-font-size-small">
-              <a class="rounded-lg text-color-blue-dark border-2 no-underline px-1 ml-2 hidden screen-tablet:inline-block" href="https://github.com/CityOfNewYork/ACCESS-NYC-PATTERNS">0.0.11-5</a>
-              <a aria-hidden="true" class="ml-1 screen-tablet:ml-2 screen-tablet:hidden" href="https://github.com/CityOfNewYork/ACCESS-NYC-PATTERNS">0.0.11-5</a>
-              <a class="ml-1 screen-tablet:ml-2" data-js="toggle" href="#main-menu">Menu</a>
+        </div>
+      </header>
+      <aside aria-hidden="true" class="text-font-size-small bg-color-blue-light hidden hidden:overflow animated" id="main-menu" style="position:relative;top:-1px">
+        <div class="page-wrapper">
+          <div class="screen-tablet:flex py-4">
+            <nav class="screen-tablet:flex-1 mb-1 px-2"><span class="screen-tablet:block screen-tablet:border-b border-color-white p-1">Main;</span>
+              <a class="block p-1" href="index">Home</a>
+              <a class="block p-1" href="https://www.npmjs.com/package/access-nyc-patterns">NPM</a>
+              <a class="block p-1" href="https://github.com/CityOfNewYork/ACCESS-NYC-PATTERNS">GitHub</a>
+            </nav>
+            <nav class="screen-tablet:flex-1 mb-1 px-2 screen-desktop:pl-4"><span class="screen-tablet:block screen-tablet:border-b border-color-white p-1">Elements;</span>
+              <a class="block p-1" href="buttons">Buttons</a>
+              <a class="block p-1" href="checkboxes">Checkboxes</a>
+              <a class="block p-1" href="colors">Colors</a>
+              <a class="block p-1" href="dividers">Dividers</a>
+              <a class="block p-1" href="icons">Icons</a>
+              <a class="block p-1" href="inputs">Inputs</a>
+              <a class="block p-1" href="layouts">Layouts</a>
+              <a class="block p-1" href="links">Links</a>
+              <a class="block p-1" href="lists">Lists</a>
+              <a class="block p-1" href="nav">Nav</a>
+              <a class="block p-1" href="program-labels">Program Labels</a>
+              <a class="block p-1" href="radios">Radios</a>
+              <a class="block p-1" href="tables">Tables</a>
+              <a class="block p-1" href="tooltips">Tooltips</a>
+              <a class="block p-1" href="toggles">Toggles</a>
+              <a class="block p-1" href="typography">Typography</a>
+              <a class="block p-1" href="selects">Selects</a>
+            </nav>
+            <nav class="screen-tablet:flex-1 mb-1 px-2 screen-desktop:pl-4"><span class="screen-tablet:block screen-tablet:border-b border-color-white p-1">Components;</span>
+              <a class="block p-1" href="accordion">Accordion</a>
+              <a class="block p-1" href="alert-box">Alert Box</a>
+              <a class="block p-1" href="card">Card</a>
+              <a class="block p-1" href="checklist">Checklist</a>
+              <a class="block p-1" href="disclaimer">Disclaimer</a>
+              <a class="block p-1" href="filter">Filter</a>
+              <a class="block p-1" href="header">Header</a>
+              <a class="block p-1" href="member-list">Member List</a>
+              <a class="block p-1" href="nearby-stops">Nearby Stops</a>
+              <a class="block p-1" href="text-controller">Text Controller</a>
+              <a class="block p-1" href="share-form">Share Form</a>
+              <a class="block p-1" href="side-nav">Side Nav</a>
+              <a class="block p-1" href="question">Question</a>
+            </nav>
+            <nav class="screen-tablet:flex-1 mb-1 px-2 screen-desktop:pl-4"><span class="screen-tablet:block screen-tablet:border-b border-color-white p-1">Objects;</span>
+              <a class="block p-1" href="announcements">Announcements</a>
+              <a class="block p-1" href="banner">Banner</a>
+              <a class="block p-1" href="card-list">Card Lists</a>
+              <a class="block p-1" href="content">Content</a>
+              <a class="block p-1" href="footer">Footer</a>
+              <a class="block p-1" href="mobile-nav">Mobile Nav</a>
+              <a class="block p-1" href="navigation">Navigation</a>
+              <a class="block p-1" href="search-box">Search Box</a>
             </nav>
           </div>
         </div>
-      </div>
-    </header>
-    <aside aria-hidden="true" class="text-font-size-small bg-color-blue-light hidden hidden:overflow animated" id="main-menu" style="position:relative;top:-1px">
-      <div class="page-wrapper">
-        <div class="screen-tablet:flex py-4">
-          <nav class="screen-tablet:flex-1 mb-1 px-2"><span class="screen-tablet:block screen-tablet:border-b border-color-white p-1">Main;</span>
-            <a class="inline-block p-1" href="index">Home</a>
-            <a class="inline-block p-1" href="https://www.npmjs.com/package/access-nyc-patterns">NPM</a>
-            <a class="inline-block p-1" href="https://github.com/CityOfNewYork/ACCESS-NYC-PATTERNS">GitHub</a>
-          </nav>
-          <nav class="screen-tablet:flex-1 mb-1 px-2 screen-desktop:pl-4"><span class="screen-tablet:block screen-tablet:border-b border-color-white p-1">Elements;</span>
-            <a class="inline-block p-1" href="buttons">Buttons</a>
-            <a class="inline-block p-1" href="checkboxes">Checkboxes</a>
-            <a class="inline-block p-1" href="colors">Colors</a>
-            <a class="inline-block p-1" href="dividers">Dividers</a>
-            <a class="inline-block p-1" href="icons">Icons</a>
-            <a class="inline-block p-1" href="inputs">Inputs</a>
-            <a class="inline-block p-1" href="layouts">Layouts</a>
-            <a class="inline-block p-1" href="links">Links</a>
-            <a class="inline-block p-1" href="lists">Lists</a>
-            <a class="inline-block p-1" href="nav">Nav</a>
-            <a class="inline-block p-1" href="program-labels">Program Labels</a>
-            <a class="inline-block p-1" href="radios">Radios</a>
-            <a class="inline-block p-1" href="tables">Tables</a>
-            <a class="inline-block p-1" href="tooltips">Tooltips</a>
-            <a class="inline-block p-1" href="toggles">Toggles</a>
-            <a class="inline-block p-1" href="typography">Typography</a>
-            <a class="inline-block p-1" href="selects">Selects</a>
-          </nav>
-          <nav class="screen-tablet:flex-1 mb-1 px-2 screen-desktop:pl-4"><span class="screen-tablet:block screen-tablet:border-b border-color-white p-1">Components;</span>
-            <a class="inline-block p-1" href="accordion">Accordion</a>
-            <a class="inline-block p-1" href="alert-box">Alert Box</a>
-            <a class="inline-block p-1" href="card">Card</a>
-            <a class="inline-block p-1" href="checklist">Checklist</a>
-            <a class="inline-block p-1" href="disclaimer">Disclaimer</a>
-            <a class="inline-block p-1" href="filter">Filter</a>
-            <a class="inline-block p-1" href="header">Header</a>
-            <a class="inline-block p-1" href="member-list">Member List</a>
-            <a class="inline-block p-1" href="text-controller">Text Controller</a>
-            <a class="inline-block p-1" href="share-form">Share Form</a>
-            <a class="inline-block p-1" href="side-nav">Side Nav</a>
-            <a class="inline-block p-1" href="question">Question</a>
-          </nav>
-          <nav class="screen-tablet:flex-1 mb-1 px-2 screen-desktop:pl-4"><span class="screen-tablet:block screen-tablet:border-b border-color-white p-1">Objects;</span>
-            <a class="inline-block p-1" href="announcements">Announcements</a>
-            <a class="inline-block p-1" href="banner">Banner</a>
-            <a class="inline-block p-1" href="card-list">Card Lists</a>
-            <a class="inline-block p-1" href="content">Content</a>
-            <a class="inline-block p-1" href="footer">Footer</a>
-            <a class="inline-block p-1" href="mobile-nav">Mobile Nav</a>
-            <a class="inline-block p-1" href="navigation">Navigation</a>
-            <a class="inline-block p-1" href="search-box">Search Box</a>
-          </nav>
-        </div>
-      </div>
-    </aside>
-    <main class="pt-4" id="main-content">
-      <article class="py-4">
-        <header class="page-wrapper px-2 screen-desktop:px-0 layout--home-body">
-          <div class="my-0 w-full">
-            <h1 class="text-color-blue-dark px-2 m-0">Share Form</h1>
-          </div>
-        </header>
-        <section class="pb-4 mb-4" id="email-share-form">
-          <div class="page-wrapper px-2 screen-desktop:px-0">
-            <header class="layout--home-body">
-              <div class="my-0 pt-1 px-2 border-b border-color-grey-light">
-                <h2>
-                  <a class="text-color-grey-mid font-normal no-underline capitalize" href="#email-share-form">Email Share Form</a>
-                </h2>
-              </div>
-            </header>
-            <div class="layout--home-body">
-              <div class="my-0 pt-4 px-2 text-font-size-small" data-js="markdown" data-js-markdown="components/share-form/share-form-email.md">
-                <div class="p-1 mb-1 bg-color-grey-lightest"></div>
-                <div class="p-1 mb-1 bg-color-grey-lightest"></div>
-                <div class="p-1 mb-1 bg-color-grey-lightest"></div>
-                <div class="p-1 mb-1 bg-color-grey-lightest"></div>
-                <div class="p-1 mb-1 bg-color-grey-lightest"></div>
-                <div class="p-1 mb-1 bg-color-grey-lightest"></div>
-                <div class="p-1 mb-1 bg-color-grey-lightest"></div>
-                <div class="p-1 mb-1 bg-color-grey-lightest"></div>
-                <div class="p-1 mb-1 bg-color-grey-lightest"></div>
-                <div class="p-1 mb-1 bg-color-grey-lightest"></div>
-                <div class="p-1 mb-1 bg-color-grey-lightest"></div>
-                <div class="p-1 mb-1 bg-color-grey-lightest"></div>
-                <div class="p-1 mb-1 bg-color-grey-lightest"></div>
-                <div class="p-1 mb-1 bg-color-grey-lightest"></div>
-                <div class="p-1 mb-1 bg-color-grey-lightest"></div>
-                <div class="p-1 mb-1 bg-color-grey-lightest"></div>
-                <div class="p-1 mb-1 bg-color-grey-lightest"></div>
-                <div class="p-1 mb-1 bg-color-grey-lightest"></div>
-                <div class="p-1 mb-1 bg-color-grey-lightest"></div>
-                <div class="p-1 mb-1 bg-color-grey-lightest"></div>
-              </div>
+      </aside>
+      <main class="pt-4" id="main-content">
+        <article class="py-4">
+          <header class="page-wrapper px-2 screen-desktop:px-0 layout--home-body">
+            <div class="my-0 w-full">
+              <h1 class="text-color-blue-dark px-2 m-0">Share Form</h1>
             </div>
-            <div class="layout--gutter screen-tablet:layout--columns justify-between pt-4">
-              <div class="screen-tablet:pr-2">
-                <div class="c-share-form" data-sketch-symbol="components/share-form/share-form-email">
-                  <a class="btn btn-primary c-share-form__toggle active" data-scroll-offset="20" href="#share-by-text">Email</a>
-                  <div class="c-share-form__input" id="share-by-text">
-                    <form>
-                      <div class="c-share-form__controls">
-                        <input name="to" placeholder="Email" required="true" type="email" />
-                        <div class="c-share-form__button">
-                          <button class="btn btn-primary btn-small" data-sketch-symbol-instance="elements/buttons/btn-small" type="submit">Send</button>
-                          <svg class="share-form__spinner js-spinner" data-sketch-symbol-instance="elements/spinner/spinner" height="40px" style="display: none" version="1.1" viewBox="0 0 50 50" width="69.89px" x="0px" xml:space="preserve"
-                            xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" y="0px">
-                            <path d="M43.935,25.145c0-10.318-8.364-18.683-18.683-18.683c-10.318,0-18.683,8.365-18.683,18.683h4.068c0-8.071,6.543-14.615,14.615-14.615c8.072,0,14.615,6.543,14.615,14.615H43.935z" fill="#184E9E" transform="rotate(109.079 25 25)">
-                              <animateTransform attributeName="transform" attributeType="xml" dur="1s" from="0 25 25" repeatCount="indefinite" to="360 25 25" type="rotate"></animateTransform>
-                            </path>
-                          </svg>
-                          <div class="success-message">Sent!</div>
-                        </div>
-                      </div>
-                    </form>
-                  </div>
+          </header>
+          <section class="pb-4 mb-4" id="email-share-form">
+            <div class="page-wrapper px-2 screen-desktop:px-0">
+              <header class="layout--home-body">
+                <div class="my-0 pt-1 px-2 border-b border-color-grey-light">
+                  <h2>
+                    <a class="text-color-grey-mid font-normal no-underline capitalize" href="#email-share-form">Email Share Form</a>
+                  </h2>
+                </div>
+              </header>
+              <div class="layout--home-body">
+                <div class="my-0 pt-4 px-2 text-font-size-small" data-js="markdown" data-js-markdown="components/share-form/share-form-email.md">
+                  <div class="p-1 mb-1 bg-color-grey-lightest"></div>
+                  <div class="p-1 mb-1 bg-color-grey-lightest"></div>
+                  <div class="p-1 mb-1 bg-color-grey-lightest"></div>
+                  <div class="p-1 mb-1 bg-color-grey-lightest"></div>
+                  <div class="p-1 mb-1 bg-color-grey-lightest"></div>
+                  <div class="p-1 mb-1 bg-color-grey-lightest"></div>
+                  <div class="p-1 mb-1 bg-color-grey-lightest"></div>
+                  <div class="p-1 mb-1 bg-color-grey-lightest"></div>
+                  <div class="p-1 mb-1 bg-color-grey-lightest"></div>
+                  <div class="p-1 mb-1 bg-color-grey-lightest"></div>
+                  <div class="p-1 mb-1 bg-color-grey-lightest"></div>
+                  <div class="p-1 mb-1 bg-color-grey-lightest"></div>
+                  <div class="p-1 mb-1 bg-color-grey-lightest"></div>
+                  <div class="p-1 mb-1 bg-color-grey-lightest"></div>
+                  <div class="p-1 mb-1 bg-color-grey-lightest"></div>
+                  <div class="p-1 mb-1 bg-color-grey-lightest"></div>
+                  <div class="p-1 mb-1 bg-color-grey-lightest"></div>
+                  <div class="p-1 mb-1 bg-color-grey-lightest"></div>
+                  <div class="p-1 mb-1 bg-color-grey-lightest"></div>
+                  <div class="p-1 mb-1 bg-color-grey-lightest"></div>
                 </div>
               </div>
-              <div>
-                <div class="code-block mb-1"><pre>&lt;div class=&quot;c-share-form&quot; data-sketch-symbol-instance=&quot;elements/spinner/spinner&quot;&gt;
+              <div class="layout--gutter screen-tablet:layout--columns justify-between pt-4">
+                <div class="screen-tablet:pr-2">
+                  <div class="c-share-form" data-sketch-symbol="components/share-form/share-form-email">
+                    <a class="btn btn-primary c-share-form__toggle active" data-scroll-offset="20" href="#share-by-text">Email</a>
+                    <div class="c-share-form__input" id="share-by-text">
+                      <form>
+                        <div class="c-share-form__controls">
+                          <input name="to" placeholder="Email" required="true" type="email" />
+                          <div class="c-share-form__button">
+                            <button class="btn btn-primary btn-small" data-sketch-symbol-instance="elements/buttons/btn-small" type="submit">Send</button>
+                            <svg class="share-form__spinner js-spinner" data-sketch-symbol-instance="elements/spinner/spinner" height="40px" style="display: none" version="1.1" viewBox="0 0 50 50" width="69.89px" x="0px" xml:space="preserve"
+                              xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" y="0px">
+                              <path d="M43.935,25.145c0-10.318-8.364-18.683-18.683-18.683c-10.318,0-18.683,8.365-18.683,18.683h4.068c0-8.071,6.543-14.615,14.615-14.615c8.072,0,14.615,6.543,14.615,14.615H43.935z" fill="#184E9E" transform="rotate(109.079 25 25)">
+                                <animateTransform attributeName="transform" attributeType="xml" dur="1s" from="0 25 25" repeatCount="indefinite" to="360 25 25" type="rotate"></animateTransform>
+                              </path>
+                            </svg>
+                            <div class="success-message">Sent!</div>
+                          </div>
+                        </div>
+                      </form>
+                    </div>
+                  </div>
+                </div>
+                <div>
+                  <div class="code-block mb-1"><pre>&lt;div class=&quot;c-share-form&quot; data-sketch-symbol-instance=&quot;elements/spinner/spinner&quot;&gt;
   &lt;a class=&quot;btn btn-primary c-share-form__toggle active&quot; data-scroll-offset=&quot;20&quot; href=&quot;#share-by-text&quot;&gt;Email&lt;/a&gt;
   &lt;div class=&quot;c-share-form__input&quot; id=&quot;share-by-text&quot;&gt;
     &lt;form&gt;
@@ -186,68 +188,68 @@
     &lt;/form&gt;
   &lt;/div&gt;
 &lt;/div&gt;</pre></div>
-              </div>
-            </div>
-          </div>
-        </section>
-        <section class="pb-4 mb-4" id="text-share-form">
-          <div class="page-wrapper px-2 screen-desktop:px-0">
-            <header class="layout--home-body">
-              <div class="my-0 pt-1 px-2 border-b border-color-grey-light">
-                <h2>
-                  <a class="text-color-grey-mid font-normal no-underline capitalize" href="#text-share-form">Text Share Form</a>
-                </h2>
-              </div>
-            </header>
-            <div class="layout--home-body">
-              <div class="my-0 pt-4 px-2 text-font-size-small" data-js="markdown" data-js-markdown="components/share-form/share-form-text.md">
-                <div class="p-1 mb-1 bg-color-grey-lightest"></div>
-                <div class="p-1 mb-1 bg-color-grey-lightest"></div>
-                <div class="p-1 mb-1 bg-color-grey-lightest"></div>
-                <div class="p-1 mb-1 bg-color-grey-lightest"></div>
-                <div class="p-1 mb-1 bg-color-grey-lightest"></div>
-                <div class="p-1 mb-1 bg-color-grey-lightest"></div>
-                <div class="p-1 mb-1 bg-color-grey-lightest"></div>
-                <div class="p-1 mb-1 bg-color-grey-lightest"></div>
-                <div class="p-1 mb-1 bg-color-grey-lightest"></div>
-                <div class="p-1 mb-1 bg-color-grey-lightest"></div>
-                <div class="p-1 mb-1 bg-color-grey-lightest"></div>
-                <div class="p-1 mb-1 bg-color-grey-lightest"></div>
-                <div class="p-1 mb-1 bg-color-grey-lightest"></div>
-                <div class="p-1 mb-1 bg-color-grey-lightest"></div>
-                <div class="p-1 mb-1 bg-color-grey-lightest"></div>
-                <div class="p-1 mb-1 bg-color-grey-lightest"></div>
-                <div class="p-1 mb-1 bg-color-grey-lightest"></div>
-                <div class="p-1 mb-1 bg-color-grey-lightest"></div>
-                <div class="p-1 mb-1 bg-color-grey-lightest"></div>
-                <div class="p-1 mb-1 bg-color-grey-lightest"></div>
-              </div>
-            </div>
-            <div class="layout--gutter screen-tablet:layout--columns justify-between pt-4">
-              <div class="screen-tablet:pr-2">
-                <div class="c-share-form" data-sketch-symbol="components/share-form/share-form-text">
-                  <a class="btn btn-primary c-share-form__toggle active" data-scroll-offset="20" href="#share-by-text">Text</a>
-                  <div class="c-share-form__input" id="share-by-text">
-                    <form>
-                      <div class="c-share-form__controls">
-                        <input name="to" placeholder="Phone Number" required="true" type="tel" />
-                        <div class="c-share-form__button">
-                          <button class="btn btn-primary btn-small" data-sketch-symbol-instance="elements/buttons/btn-small" type="submit">Send</button>
-                          <svg class="share-form__spinner js-spinner" data-sketch-symbol-instance="elements/spinner/spinner" height="40px" style="display: none" version="1.1" viewBox="0 0 50 50" width="69.89px" x="0px" xml:space="preserve"
-                            xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" y="0px">
-                            <path d="M43.935,25.145c0-10.318-8.364-18.683-18.683-18.683c-10.318,0-18.683,8.365-18.683,18.683h4.068c0-8.071,6.543-14.615,14.615-14.615c8.072,0,14.615,6.543,14.615,14.615H43.935z" fill="#184E9E" transform="rotate(109.079 25 25)">
-                              <animateTransform attributeName="transform" attributeType="xml" dur="1s" from="0 25 25" repeatCount="indefinite" to="360 25 25" type="rotate"></animateTransform>
-                            </path>
-                          </svg>
-                          <div class="success-message">Sent!</div>
-                        </div>
-                      </div>
-                    </form>
-                  </div>
                 </div>
               </div>
-              <div>
-                <div class="code-block mb-1"><pre>&lt;div class=&quot;c-share-form&quot; data-sketch-symbol-instance=&quot;elements/spinner/spinner&quot;&gt;
+            </div>
+          </section>
+          <section class="pb-4 mb-4" id="text-share-form">
+            <div class="page-wrapper px-2 screen-desktop:px-0">
+              <header class="layout--home-body">
+                <div class="my-0 pt-1 px-2 border-b border-color-grey-light">
+                  <h2>
+                    <a class="text-color-grey-mid font-normal no-underline capitalize" href="#text-share-form">Text Share Form</a>
+                  </h2>
+                </div>
+              </header>
+              <div class="layout--home-body">
+                <div class="my-0 pt-4 px-2 text-font-size-small" data-js="markdown" data-js-markdown="components/share-form/share-form-text.md">
+                  <div class="p-1 mb-1 bg-color-grey-lightest"></div>
+                  <div class="p-1 mb-1 bg-color-grey-lightest"></div>
+                  <div class="p-1 mb-1 bg-color-grey-lightest"></div>
+                  <div class="p-1 mb-1 bg-color-grey-lightest"></div>
+                  <div class="p-1 mb-1 bg-color-grey-lightest"></div>
+                  <div class="p-1 mb-1 bg-color-grey-lightest"></div>
+                  <div class="p-1 mb-1 bg-color-grey-lightest"></div>
+                  <div class="p-1 mb-1 bg-color-grey-lightest"></div>
+                  <div class="p-1 mb-1 bg-color-grey-lightest"></div>
+                  <div class="p-1 mb-1 bg-color-grey-lightest"></div>
+                  <div class="p-1 mb-1 bg-color-grey-lightest"></div>
+                  <div class="p-1 mb-1 bg-color-grey-lightest"></div>
+                  <div class="p-1 mb-1 bg-color-grey-lightest"></div>
+                  <div class="p-1 mb-1 bg-color-grey-lightest"></div>
+                  <div class="p-1 mb-1 bg-color-grey-lightest"></div>
+                  <div class="p-1 mb-1 bg-color-grey-lightest"></div>
+                  <div class="p-1 mb-1 bg-color-grey-lightest"></div>
+                  <div class="p-1 mb-1 bg-color-grey-lightest"></div>
+                  <div class="p-1 mb-1 bg-color-grey-lightest"></div>
+                  <div class="p-1 mb-1 bg-color-grey-lightest"></div>
+                </div>
+              </div>
+              <div class="layout--gutter screen-tablet:layout--columns justify-between pt-4">
+                <div class="screen-tablet:pr-2">
+                  <div class="c-share-form" data-sketch-symbol="components/share-form/share-form-text">
+                    <a class="btn btn-primary c-share-form__toggle active" data-scroll-offset="20" href="#share-by-text">Text</a>
+                    <div class="c-share-form__input" id="share-by-text">
+                      <form>
+                        <div class="c-share-form__controls">
+                          <input name="to" placeholder="Phone Number" required="true" type="tel" />
+                          <div class="c-share-form__button">
+                            <button class="btn btn-primary btn-small" data-sketch-symbol-instance="elements/buttons/btn-small" type="submit">Send</button>
+                            <svg class="share-form__spinner js-spinner" data-sketch-symbol-instance="elements/spinner/spinner" height="40px" style="display: none" version="1.1" viewBox="0 0 50 50" width="69.89px" x="0px" xml:space="preserve"
+                              xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" y="0px">
+                              <path d="M43.935,25.145c0-10.318-8.364-18.683-18.683-18.683c-10.318,0-18.683,8.365-18.683,18.683h4.068c0-8.071,6.543-14.615,14.615-14.615c8.072,0,14.615,6.543,14.615,14.615H43.935z" fill="#184E9E" transform="rotate(109.079 25 25)">
+                                <animateTransform attributeName="transform" attributeType="xml" dur="1s" from="0 25 25" repeatCount="indefinite" to="360 25 25" type="rotate"></animateTransform>
+                              </path>
+                            </svg>
+                            <div class="success-message">Sent!</div>
+                          </div>
+                        </div>
+                      </form>
+                    </div>
+                  </div>
+                </div>
+                <div>
+                  <div class="code-block mb-1"><pre>&lt;div class=&quot;c-share-form&quot; data-sketch-symbol-instance=&quot;elements/spinner/spinner&quot;&gt;
   &lt;a class=&quot;btn btn-primary c-share-form__toggle active&quot; data-scroll-offset=&quot;20&quot; href=&quot;#share-by-text&quot;&gt;Text&lt;/a&gt;
   &lt;div class=&quot;c-share-form__input&quot; id=&quot;share-by-text&quot;&gt;
     &lt;form&gt;
@@ -267,12 +269,13 @@
     &lt;/form&gt;
   &lt;/div&gt;
 &lt;/div&gt;</pre></div>
+                </div>
               </div>
             </div>
-          </div>
-        </section>
-      </article>
-    </main>
+          </section>
+        </article>
+      </main>
+    </div>
     <footer class="py-4 text-center bg-color-blue-dark text-color-white links-invert font-smooth">
       <p class="m-0">Maintained by&nbsp;
         <a href="https://github.com/orgs/CityOfNewYork/teams/nycopportunity">NYC Opportunity</a>

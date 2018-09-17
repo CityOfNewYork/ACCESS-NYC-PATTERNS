@@ -23,138 +23,140 @@
 
   <body class="bg-color-white" onload="load()" style="visibility: hidden;">
     <a class="sr-only" href="#main-content">Skip to main content</a>
-    <header class="px-2">
-      <div class="border-b border-color-grey-light">
-        <div class="flex items-center justify-between p-2 screen-tablet:py-4 screen-tablet:px-2">
-          <div>
-            <h1 class="m-0 p-0 leading-normal"><span class="hidden">ACCESS NYC</span>
-              <svg aria-hidden="true" class="icon-logo-mark screen-tablet:hidden">
-                <use xlink:href="#icon-logo-mark"></use>
-              </svg>
-              <svg aria-hidden="true" class="icon-logo-full--large text-color-blue-dark hidden screen-tablet:inline-block">
-                <use xlink:href="#icon-logo-full"></use>
-              </svg>
-            </h1>
+    <div class="min-h-screen">
+      <header class="px-2">
+        <div class="border-b border-color-grey-light">
+          <div class="flex items-center justify-between p-2 screen-tablet:py-4 screen-tablet:px-2">
+            <div>
+              <h1 class="m-0 p-0 leading-normal"><span class="hidden">ACCESS NYC</span>
+                <svg aria-hidden="true" class="icon-logo-mark screen-tablet:hidden">
+                  <use xlink:href="#icon-logo-mark"></use>
+                </svg>
+                <svg aria-hidden="true" class="icon-logo-full--large text-color-blue-dark hidden screen-tablet:inline-block">
+                  <use xlink:href="#icon-logo-full"></use>
+                </svg>
+              </h1>
+            </div>
+            <div class="flex items-center">
+              <h2 class="text-font-size-small m-0 text-color-blue-dark screen-tablet:hidden">Patterns</h2>
+              <h2 aria-hidden="true" class="type-h1 m-0 text-color-blue-dark hidden screen-tablet:inline-block">Patterns</h2>
+              <nav class="text-font-size-small">
+                <a class="rounded-lg text-color-blue-dark border-2 no-underline px-1 ml-2 hidden screen-tablet:inline-block" href="https://github.com/CityOfNewYork/ACCESS-NYC-PATTERNS">0.0.11-5</a>
+                <a aria-hidden="true" class="ml-1 screen-tablet:ml-2 screen-tablet:hidden" href="https://github.com/CityOfNewYork/ACCESS-NYC-PATTERNS">0.0.11-5</a>
+                <a class="ml-1 screen-tablet:ml-2" data-js="toggle" href="#main-menu">Menu</a>
+              </nav>
+            </div>
           </div>
-          <div class="flex items-center">
-            <h2 class="text-font-size-small m-0 text-color-blue-dark screen-tablet:hidden">Patterns</h2>
-            <h2 aria-hidden="true" class="type-h1 m-0 text-color-blue-dark hidden screen-tablet:inline-block">Patterns</h2>
-            <nav class="text-font-size-small">
-              <a class="rounded-lg text-color-blue-dark border-2 no-underline px-1 ml-2 hidden screen-tablet:inline-block" href="https://github.com/CityOfNewYork/ACCESS-NYC-PATTERNS">0.0.11-5</a>
-              <a aria-hidden="true" class="ml-1 screen-tablet:ml-2 screen-tablet:hidden" href="https://github.com/CityOfNewYork/ACCESS-NYC-PATTERNS">0.0.11-5</a>
-              <a class="ml-1 screen-tablet:ml-2" data-js="toggle" href="#main-menu">Menu</a>
+        </div>
+      </header>
+      <aside aria-hidden="true" class="text-font-size-small bg-color-blue-light hidden hidden:overflow animated" id="main-menu" style="position:relative;top:-1px">
+        <div class="page-wrapper">
+          <div class="screen-tablet:flex py-4">
+            <nav class="screen-tablet:flex-1 mb-1 px-2"><span class="screen-tablet:block screen-tablet:border-b border-color-white p-1">Main;</span>
+              <a class="block p-1" href="index">Home</a>
+              <a class="block p-1" href="https://www.npmjs.com/package/access-nyc-patterns">NPM</a>
+              <a class="block p-1" href="https://github.com/CityOfNewYork/ACCESS-NYC-PATTERNS">GitHub</a>
+            </nav>
+            <nav class="screen-tablet:flex-1 mb-1 px-2 screen-desktop:pl-4"><span class="screen-tablet:block screen-tablet:border-b border-color-white p-1">Elements;</span>
+              <a class="block p-1" href="buttons">Buttons</a>
+              <a class="block p-1" href="checkboxes">Checkboxes</a>
+              <a class="block p-1" href="colors">Colors</a>
+              <a class="block p-1" href="dividers">Dividers</a>
+              <a class="block p-1" href="icons">Icons</a>
+              <a class="block p-1" href="inputs">Inputs</a>
+              <a class="block p-1" href="layouts">Layouts</a>
+              <a class="block p-1" href="links">Links</a>
+              <a class="block p-1" href="lists">Lists</a>
+              <a class="block p-1" href="nav">Nav</a>
+              <a class="block p-1" href="program-labels">Program Labels</a>
+              <a class="block p-1" href="radios">Radios</a>
+              <a class="block p-1" href="tables">Tables</a>
+              <a class="block p-1" href="tooltips">Tooltips</a>
+              <a class="block p-1" href="toggles">Toggles</a>
+              <a class="block p-1" href="typography">Typography</a>
+              <a class="block p-1" href="selects">Selects</a>
+            </nav>
+            <nav class="screen-tablet:flex-1 mb-1 px-2 screen-desktop:pl-4"><span class="screen-tablet:block screen-tablet:border-b border-color-white p-1">Components;</span>
+              <a class="block p-1" href="accordion">Accordion</a>
+              <a class="block p-1" href="alert-box">Alert Box</a>
+              <a class="block p-1" href="card">Card</a>
+              <a class="block p-1" href="checklist">Checklist</a>
+              <a class="block p-1" href="disclaimer">Disclaimer</a>
+              <a class="block p-1" href="filter">Filter</a>
+              <a class="block p-1" href="header">Header</a>
+              <a class="block p-1" href="member-list">Member List</a>
+              <a class="block p-1" href="nearby-stops">Nearby Stops</a>
+              <a class="block p-1" href="text-controller">Text Controller</a>
+              <a class="block p-1" href="share-form">Share Form</a>
+              <a class="block p-1" href="side-nav">Side Nav</a>
+              <a class="block p-1" href="question">Question</a>
+            </nav>
+            <nav class="screen-tablet:flex-1 mb-1 px-2 screen-desktop:pl-4"><span class="screen-tablet:block screen-tablet:border-b border-color-white p-1">Objects;</span>
+              <a class="block p-1" href="announcements">Announcements</a>
+              <a class="block p-1" href="banner">Banner</a>
+              <a class="block p-1" href="card-list">Card Lists</a>
+              <a class="block p-1" href="content">Content</a>
+              <a class="block p-1" href="footer">Footer</a>
+              <a class="block p-1" href="mobile-nav">Mobile Nav</a>
+              <a class="block p-1" href="navigation">Navigation</a>
+              <a class="block p-1" href="search-box">Search Box</a>
             </nav>
           </div>
         </div>
-      </div>
-    </header>
-    <aside aria-hidden="true" class="text-font-size-small bg-color-blue-light hidden hidden:overflow animated" id="main-menu" style="position:relative;top:-1px">
-      <div class="page-wrapper">
-        <div class="screen-tablet:flex py-4">
-          <nav class="screen-tablet:flex-1 mb-1 px-2"><span class="screen-tablet:block screen-tablet:border-b border-color-white p-1">Main;</span>
-            <a class="inline-block p-1" href="index">Home</a>
-            <a class="inline-block p-1" href="https://www.npmjs.com/package/access-nyc-patterns">NPM</a>
-            <a class="inline-block p-1" href="https://github.com/CityOfNewYork/ACCESS-NYC-PATTERNS">GitHub</a>
-          </nav>
-          <nav class="screen-tablet:flex-1 mb-1 px-2 screen-desktop:pl-4"><span class="screen-tablet:block screen-tablet:border-b border-color-white p-1">Elements;</span>
-            <a class="inline-block p-1" href="buttons">Buttons</a>
-            <a class="inline-block p-1" href="checkboxes">Checkboxes</a>
-            <a class="inline-block p-1" href="colors">Colors</a>
-            <a class="inline-block p-1" href="dividers">Dividers</a>
-            <a class="inline-block p-1" href="icons">Icons</a>
-            <a class="inline-block p-1" href="inputs">Inputs</a>
-            <a class="inline-block p-1" href="layouts">Layouts</a>
-            <a class="inline-block p-1" href="links">Links</a>
-            <a class="inline-block p-1" href="lists">Lists</a>
-            <a class="inline-block p-1" href="nav">Nav</a>
-            <a class="inline-block p-1" href="program-labels">Program Labels</a>
-            <a class="inline-block p-1" href="radios">Radios</a>
-            <a class="inline-block p-1" href="tables">Tables</a>
-            <a class="inline-block p-1" href="tooltips">Tooltips</a>
-            <a class="inline-block p-1" href="toggles">Toggles</a>
-            <a class="inline-block p-1" href="typography">Typography</a>
-            <a class="inline-block p-1" href="selects">Selects</a>
-          </nav>
-          <nav class="screen-tablet:flex-1 mb-1 px-2 screen-desktop:pl-4"><span class="screen-tablet:block screen-tablet:border-b border-color-white p-1">Components;</span>
-            <a class="inline-block p-1" href="accordion">Accordion</a>
-            <a class="inline-block p-1" href="alert-box">Alert Box</a>
-            <a class="inline-block p-1" href="card">Card</a>
-            <a class="inline-block p-1" href="checklist">Checklist</a>
-            <a class="inline-block p-1" href="disclaimer">Disclaimer</a>
-            <a class="inline-block p-1" href="filter">Filter</a>
-            <a class="inline-block p-1" href="header">Header</a>
-            <a class="inline-block p-1" href="member-list">Member List</a>
-            <a class="inline-block p-1" href="text-controller">Text Controller</a>
-            <a class="inline-block p-1" href="share-form">Share Form</a>
-            <a class="inline-block p-1" href="side-nav">Side Nav</a>
-            <a class="inline-block p-1" href="question">Question</a>
-          </nav>
-          <nav class="screen-tablet:flex-1 mb-1 px-2 screen-desktop:pl-4"><span class="screen-tablet:block screen-tablet:border-b border-color-white p-1">Objects;</span>
-            <a class="inline-block p-1" href="announcements">Announcements</a>
-            <a class="inline-block p-1" href="banner">Banner</a>
-            <a class="inline-block p-1" href="card-list">Card Lists</a>
-            <a class="inline-block p-1" href="content">Content</a>
-            <a class="inline-block p-1" href="footer">Footer</a>
-            <a class="inline-block p-1" href="mobile-nav">Mobile Nav</a>
-            <a class="inline-block p-1" href="navigation">Navigation</a>
-            <a class="inline-block p-1" href="search-box">Search Box</a>
-          </nav>
-        </div>
-      </div>
-    </aside>
-    <main class="pt-4" id="main-content">
-      <article class="py-4">
-        <header class="page-wrapper px-2 screen-desktop:px-0 layout--home-body">
-          <div class="my-0 w-full">
-            <h1 class="text-color-blue-dark px-2 m-0">Card</h1>
-          </div>
-        </header>
-        <section class="pb-4 mb-4" id="default-styling">
-          <div class="page-wrapper px-2 screen-desktop:px-0">
-            <header class="layout--home-body">
-              <div class="my-0 pt-1 px-2 border-b border-color-grey-light">
-                <h2>
-                  <a class="text-color-grey-mid font-normal no-underline capitalize" href="#default-styling">Default Styling</a>
-                </h2>
-              </div>
-            </header>
-            <div class="layout--home-body">
-              <div class="my-0 pt-4 px-2 text-font-size-small" data-js="markdown" data-js-markdown="components/card/card.md">
-                <div class="p-1 mb-1 bg-color-grey-lightest"></div>
-                <div class="p-1 mb-1 bg-color-grey-lightest"></div>
-                <div class="p-1 mb-1 bg-color-grey-lightest"></div>
-                <div class="p-1 mb-1 bg-color-grey-lightest"></div>
-                <div class="p-1 mb-1 bg-color-grey-lightest"></div>
-                <div class="p-1 mb-1 bg-color-grey-lightest"></div>
-                <div class="p-1 mb-1 bg-color-grey-lightest"></div>
-                <div class="p-1 mb-1 bg-color-grey-lightest"></div>
-                <div class="p-1 mb-1 bg-color-grey-lightest"></div>
-                <div class="p-1 mb-1 bg-color-grey-lightest"></div>
-                <div class="p-1 mb-1 bg-color-grey-lightest"></div>
-                <div class="p-1 mb-1 bg-color-grey-lightest"></div>
-                <div class="p-1 mb-1 bg-color-grey-lightest"></div>
-                <div class="p-1 mb-1 bg-color-grey-lightest"></div>
-                <div class="p-1 mb-1 bg-color-grey-lightest"></div>
-                <div class="p-1 mb-1 bg-color-grey-lightest"></div>
-                <div class="p-1 mb-1 bg-color-grey-lightest"></div>
-                <div class="p-1 mb-1 bg-color-grey-lightest"></div>
-                <div class="p-1 mb-1 bg-color-grey-lightest"></div>
-                <div class="p-1 mb-1 bg-color-grey-lightest"></div>
-              </div>
+      </aside>
+      <main class="pt-4" id="main-content">
+        <article class="py-4">
+          <header class="page-wrapper px-2 screen-desktop:px-0 layout--home-body">
+            <div class="my-0 w-full">
+              <h1 class="text-color-blue-dark px-2 m-0">Card</h1>
             </div>
-            <div class="layout--gutter screen-tablet:layout--columns justify-between pt-4">
-              <div class="screen-tablet:pr-2">
-                <article class="c-card" data-sketch-symbol="components/card/card">
-                  <div class="c-card__body">
-                    <h3 class="c-card__title mb-3">Apply for Pre-K for All</h3>
-                    <div class="c-card__summary">
-                      <a href="#">New York City families with a child born in 2014 can apply to Pre-K from February 5 - March 30, 2018.</a>
-                    </div>
-                  </div>
-                </article>
+          </header>
+          <section class="pb-4 mb-4" id="default-styling">
+            <div class="page-wrapper px-2 screen-desktop:px-0">
+              <header class="layout--home-body">
+                <div class="my-0 pt-1 px-2 border-b border-color-grey-light">
+                  <h2>
+                    <a class="text-color-grey-mid font-normal no-underline capitalize" href="#default-styling">Default Styling</a>
+                  </h2>
+                </div>
+              </header>
+              <div class="layout--home-body">
+                <div class="my-0 pt-4 px-2 text-font-size-small" data-js="markdown" data-js-markdown="components/card/card.md">
+                  <div class="p-1 mb-1 bg-color-grey-lightest"></div>
+                  <div class="p-1 mb-1 bg-color-grey-lightest"></div>
+                  <div class="p-1 mb-1 bg-color-grey-lightest"></div>
+                  <div class="p-1 mb-1 bg-color-grey-lightest"></div>
+                  <div class="p-1 mb-1 bg-color-grey-lightest"></div>
+                  <div class="p-1 mb-1 bg-color-grey-lightest"></div>
+                  <div class="p-1 mb-1 bg-color-grey-lightest"></div>
+                  <div class="p-1 mb-1 bg-color-grey-lightest"></div>
+                  <div class="p-1 mb-1 bg-color-grey-lightest"></div>
+                  <div class="p-1 mb-1 bg-color-grey-lightest"></div>
+                  <div class="p-1 mb-1 bg-color-grey-lightest"></div>
+                  <div class="p-1 mb-1 bg-color-grey-lightest"></div>
+                  <div class="p-1 mb-1 bg-color-grey-lightest"></div>
+                  <div class="p-1 mb-1 bg-color-grey-lightest"></div>
+                  <div class="p-1 mb-1 bg-color-grey-lightest"></div>
+                  <div class="p-1 mb-1 bg-color-grey-lightest"></div>
+                  <div class="p-1 mb-1 bg-color-grey-lightest"></div>
+                  <div class="p-1 mb-1 bg-color-grey-lightest"></div>
+                  <div class="p-1 mb-1 bg-color-grey-lightest"></div>
+                  <div class="p-1 mb-1 bg-color-grey-lightest"></div>
+                </div>
               </div>
-              <div>
-                <div class="code-block mb-1"><pre>&lt;article class=&quot;c-card&quot; data-sketch-symbol=&quot;components/card/card-removable&quot;&gt;
+              <div class="layout--gutter screen-tablet:layout--columns justify-between pt-4">
+                <div class="screen-tablet:pr-2">
+                  <article class="c-card" data-sketch-symbol="components/card/card">
+                    <div class="c-card__body">
+                      <h3 class="c-card__title mb-3">Apply for Pre-K for All</h3>
+                      <div class="c-card__summary">
+                        <a href="#">New York City families with a child born in 2014 can apply to Pre-K from February 5 - March 30, 2018.</a>
+                      </div>
+                    </div>
+                  </article>
+                </div>
+                <div>
+                  <div class="code-block mb-1"><pre>&lt;article class=&quot;c-card&quot; data-sketch-symbol=&quot;components/card/card-removable&quot;&gt;
   &lt;div class=&quot;c-card__body&quot;&gt;
     &lt;h3 class=&quot;c-card__title mb-3&quot;&gt;Apply for Pre-K for All&lt;/h3&gt;
     &lt;div class=&quot;c-card__summary&quot;&gt;
@@ -162,63 +164,63 @@
     &lt;/div&gt;
   &lt;/div&gt;
 &lt;/article&gt;</pre></div>
+                </div>
               </div>
             </div>
-          </div>
-        </section>
-        <section class="pb-4 mb-4" id="card-with-icon">
-          <div class="page-wrapper px-2 screen-desktop:px-0">
-            <header class="layout--home-body">
-              <div class="my-0 pt-1 px-2 border-b border-color-grey-light">
-                <h2>
-                  <a class="text-color-grey-mid font-normal no-underline capitalize" href="#card-with-icon">Card With Icon</a>
-                </h2>
+          </section>
+          <section class="pb-4 mb-4" id="card-with-icon">
+            <div class="page-wrapper px-2 screen-desktop:px-0">
+              <header class="layout--home-body">
+                <div class="my-0 pt-1 px-2 border-b border-color-grey-light">
+                  <h2>
+                    <a class="text-color-grey-mid font-normal no-underline capitalize" href="#card-with-icon">Card With Icon</a>
+                  </h2>
+                </div>
+              </header>
+              <div class="layout--home-body">
+                <div class="my-0 pt-4 px-2 text-font-size-small" data-js="markdown" data-js-markdown="components/card/card-icon.md">
+                  <div class="p-1 mb-1 bg-color-grey-lightest"></div>
+                  <div class="p-1 mb-1 bg-color-grey-lightest"></div>
+                  <div class="p-1 mb-1 bg-color-grey-lightest"></div>
+                  <div class="p-1 mb-1 bg-color-grey-lightest"></div>
+                  <div class="p-1 mb-1 bg-color-grey-lightest"></div>
+                  <div class="p-1 mb-1 bg-color-grey-lightest"></div>
+                  <div class="p-1 mb-1 bg-color-grey-lightest"></div>
+                  <div class="p-1 mb-1 bg-color-grey-lightest"></div>
+                  <div class="p-1 mb-1 bg-color-grey-lightest"></div>
+                  <div class="p-1 mb-1 bg-color-grey-lightest"></div>
+                  <div class="p-1 mb-1 bg-color-grey-lightest"></div>
+                  <div class="p-1 mb-1 bg-color-grey-lightest"></div>
+                  <div class="p-1 mb-1 bg-color-grey-lightest"></div>
+                  <div class="p-1 mb-1 bg-color-grey-lightest"></div>
+                  <div class="p-1 mb-1 bg-color-grey-lightest"></div>
+                  <div class="p-1 mb-1 bg-color-grey-lightest"></div>
+                  <div class="p-1 mb-1 bg-color-grey-lightest"></div>
+                  <div class="p-1 mb-1 bg-color-grey-lightest"></div>
+                  <div class="p-1 mb-1 bg-color-grey-lightest"></div>
+                  <div class="p-1 mb-1 bg-color-grey-lightest"></div>
+                </div>
               </div>
-            </header>
-            <div class="layout--home-body">
-              <div class="my-0 pt-4 px-2 text-font-size-small" data-js="markdown" data-js-markdown="components/card/card-icon.md">
-                <div class="p-1 mb-1 bg-color-grey-lightest"></div>
-                <div class="p-1 mb-1 bg-color-grey-lightest"></div>
-                <div class="p-1 mb-1 bg-color-grey-lightest"></div>
-                <div class="p-1 mb-1 bg-color-grey-lightest"></div>
-                <div class="p-1 mb-1 bg-color-grey-lightest"></div>
-                <div class="p-1 mb-1 bg-color-grey-lightest"></div>
-                <div class="p-1 mb-1 bg-color-grey-lightest"></div>
-                <div class="p-1 mb-1 bg-color-grey-lightest"></div>
-                <div class="p-1 mb-1 bg-color-grey-lightest"></div>
-                <div class="p-1 mb-1 bg-color-grey-lightest"></div>
-                <div class="p-1 mb-1 bg-color-grey-lightest"></div>
-                <div class="p-1 mb-1 bg-color-grey-lightest"></div>
-                <div class="p-1 mb-1 bg-color-grey-lightest"></div>
-                <div class="p-1 mb-1 bg-color-grey-lightest"></div>
-                <div class="p-1 mb-1 bg-color-grey-lightest"></div>
-                <div class="p-1 mb-1 bg-color-grey-lightest"></div>
-                <div class="p-1 mb-1 bg-color-grey-lightest"></div>
-                <div class="p-1 mb-1 bg-color-grey-lightest"></div>
-                <div class="p-1 mb-1 bg-color-grey-lightest"></div>
-                <div class="p-1 mb-1 bg-color-grey-lightest"></div>
-              </div>
-            </div>
-            <div class="layout--gutter screen-tablet:layout--columns justify-between pt-4">
-              <div class="screen-tablet:pr-2">
-                <article class="c-card" data-sketch-symbol="components/card/card-icon">
-                  <div class="c-card__icon">
-                    <a href="#">
-                      <div class="icon bg-icon-card-cash-expenses"></div>
-                    </a>
-                  </div>
-                  <div class="c-card__body">
-                    <a href="#">
-                      <h3 class="c-card__title">Tax relief for dependent care</h3>
-                    </a>
-                    <div class="c-card__summary hide-for-print">
-                      <a href="#">Learn more</a>
+              <div class="layout--gutter screen-tablet:layout--columns justify-between pt-4">
+                <div class="screen-tablet:pr-2">
+                  <article class="c-card" data-sketch-symbol="components/card/card-icon">
+                    <div class="c-card__icon">
+                      <a href="#">
+                        <div class="icon bg-icon-card-cash-expenses"></div>
+                      </a>
                     </div>
-                  </div>
-                </article>
-              </div>
-              <div>
-                <div class="code-block mb-1"><pre>&lt;article class=&quot;c-card&quot; data-sketch-symbol=&quot;components/card/card-removable&quot;&gt;
+                    <div class="c-card__body">
+                      <a href="#">
+                        <h3 class="c-card__title">Tax relief for dependent care</h3>
+                      </a>
+                      <div class="c-card__summary hide-for-print">
+                        <a href="#">Learn more</a>
+                      </div>
+                    </div>
+                  </article>
+                </div>
+                <div>
+                  <div class="code-block mb-1"><pre>&lt;article class=&quot;c-card&quot; data-sketch-symbol=&quot;components/card/card-removable&quot;&gt;
   &lt;div class=&quot;c-card__icon&quot;&gt;
     &lt;a href=&quot;#&quot;&gt;
       &lt;div class=&quot;icon bg-icon-card-cash-expenses&quot;&gt;&lt;/div&gt;
@@ -233,68 +235,68 @@
     &lt;/div&gt;
   &lt;/div&gt;
 &lt;/article&gt;</pre></div>
+                </div>
               </div>
             </div>
-          </div>
-        </section>
-        <section class="pb-4 mb-4" id="card-with-icon-and-information">
-          <div class="page-wrapper px-2 screen-desktop:px-0">
-            <header class="layout--home-body">
-              <div class="my-0 pt-1 px-2 border-b border-color-grey-light">
-                <h2>
-                  <a class="text-color-grey-mid font-normal no-underline capitalize" href="#card-with-icon-and-information">Card With Icon and Information</a>
-                </h2>
+          </section>
+          <section class="pb-4 mb-4" id="card-with-icon-and-information">
+            <div class="page-wrapper px-2 screen-desktop:px-0">
+              <header class="layout--home-body">
+                <div class="my-0 pt-1 px-2 border-b border-color-grey-light">
+                  <h2>
+                    <a class="text-color-grey-mid font-normal no-underline capitalize" href="#card-with-icon-and-information">Card With Icon and Information</a>
+                  </h2>
+                </div>
+              </header>
+              <div class="layout--home-body">
+                <div class="my-0 pt-4 px-2 text-font-size-small" data-js="markdown" data-js-markdown="components/card/card-icon-info.md">
+                  <div class="p-1 mb-1 bg-color-grey-lightest"></div>
+                  <div class="p-1 mb-1 bg-color-grey-lightest"></div>
+                  <div class="p-1 mb-1 bg-color-grey-lightest"></div>
+                  <div class="p-1 mb-1 bg-color-grey-lightest"></div>
+                  <div class="p-1 mb-1 bg-color-grey-lightest"></div>
+                  <div class="p-1 mb-1 bg-color-grey-lightest"></div>
+                  <div class="p-1 mb-1 bg-color-grey-lightest"></div>
+                  <div class="p-1 mb-1 bg-color-grey-lightest"></div>
+                  <div class="p-1 mb-1 bg-color-grey-lightest"></div>
+                  <div class="p-1 mb-1 bg-color-grey-lightest"></div>
+                  <div class="p-1 mb-1 bg-color-grey-lightest"></div>
+                  <div class="p-1 mb-1 bg-color-grey-lightest"></div>
+                  <div class="p-1 mb-1 bg-color-grey-lightest"></div>
+                  <div class="p-1 mb-1 bg-color-grey-lightest"></div>
+                  <div class="p-1 mb-1 bg-color-grey-lightest"></div>
+                  <div class="p-1 mb-1 bg-color-grey-lightest"></div>
+                  <div class="p-1 mb-1 bg-color-grey-lightest"></div>
+                  <div class="p-1 mb-1 bg-color-grey-lightest"></div>
+                  <div class="p-1 mb-1 bg-color-grey-lightest"></div>
+                  <div class="p-1 mb-1 bg-color-grey-lightest"></div>
+                </div>
               </div>
-            </header>
-            <div class="layout--home-body">
-              <div class="my-0 pt-4 px-2 text-font-size-small" data-js="markdown" data-js-markdown="components/card/card-icon-info.md">
-                <div class="p-1 mb-1 bg-color-grey-lightest"></div>
-                <div class="p-1 mb-1 bg-color-grey-lightest"></div>
-                <div class="p-1 mb-1 bg-color-grey-lightest"></div>
-                <div class="p-1 mb-1 bg-color-grey-lightest"></div>
-                <div class="p-1 mb-1 bg-color-grey-lightest"></div>
-                <div class="p-1 mb-1 bg-color-grey-lightest"></div>
-                <div class="p-1 mb-1 bg-color-grey-lightest"></div>
-                <div class="p-1 mb-1 bg-color-grey-lightest"></div>
-                <div class="p-1 mb-1 bg-color-grey-lightest"></div>
-                <div class="p-1 mb-1 bg-color-grey-lightest"></div>
-                <div class="p-1 mb-1 bg-color-grey-lightest"></div>
-                <div class="p-1 mb-1 bg-color-grey-lightest"></div>
-                <div class="p-1 mb-1 bg-color-grey-lightest"></div>
-                <div class="p-1 mb-1 bg-color-grey-lightest"></div>
-                <div class="p-1 mb-1 bg-color-grey-lightest"></div>
-                <div class="p-1 mb-1 bg-color-grey-lightest"></div>
-                <div class="p-1 mb-1 bg-color-grey-lightest"></div>
-                <div class="p-1 mb-1 bg-color-grey-lightest"></div>
-                <div class="p-1 mb-1 bg-color-grey-lightest"></div>
-                <div class="p-1 mb-1 bg-color-grey-lightest"></div>
-              </div>
-            </div>
-            <div class="layout--gutter screen-tablet:layout--columns justify-between pt-4">
-              <div class="screen-tablet:pr-2">
-                <article class="c-card" data-sketch-symbol="components/card/card-icon-info">
-                  <div class="c-card__icon">
-                    <a href="#">
-                      <div class="icon bg-icon-card-cash-expenses"></div>
-                    </a>
-                  </div>
-                  <div class="c-card__body">
-                    <a href="#">
-                      <h3 class="c-card__title">Money for heat and utility expenses</h3>
-                    </a>
-                    <p class="c-card__subtitle type-small text-color-grey-mid">Home Energy Assistance Program (HEAP)
-                      <div class="c-card__summary">
-                        <p>HEAP can help you pay for the costs of heating your home during the winter months.</p>
-                        <p class="hide-for-print">
-                          <a href="#">Learn more</a>
-                        </p>
-                      </div>
-                    </p>
-                  </div>
-                </article>
-              </div>
-              <div>
-                <div class="code-block mb-1"><pre>&lt;article class=&quot;c-card&quot; data-sketch-symbol=&quot;components/card/card-removable&quot;&gt;
+              <div class="layout--gutter screen-tablet:layout--columns justify-between pt-4">
+                <div class="screen-tablet:pr-2">
+                  <article class="c-card" data-sketch-symbol="components/card/card-icon-info">
+                    <div class="c-card__icon">
+                      <a href="#">
+                        <div class="icon bg-icon-card-cash-expenses"></div>
+                      </a>
+                    </div>
+                    <div class="c-card__body">
+                      <a href="#">
+                        <h3 class="c-card__title">Money for heat and utility expenses</h3>
+                      </a>
+                      <p class="c-card__subtitle type-small text-color-grey-mid">Home Energy Assistance Program (HEAP)
+                        <div class="c-card__summary">
+                          <p>HEAP can help you pay for the costs of heating your home during the winter months.</p>
+                          <p class="hide-for-print">
+                            <a href="#">Learn more</a>
+                          </p>
+                        </div>
+                      </p>
+                    </div>
+                  </article>
+                </div>
+                <div>
+                  <div class="code-block mb-1"><pre>&lt;article class=&quot;c-card&quot; data-sketch-symbol=&quot;components/card/card-removable&quot;&gt;
   &lt;div class=&quot;c-card__icon&quot;&gt;
     &lt;a href=&quot;#&quot;&gt;
       &lt;div class=&quot;icon bg-icon-card-cash-expenses&quot;&gt;&lt;/div&gt;
@@ -314,71 +316,71 @@
     &lt;/p&gt;
   &lt;/div&gt;
 &lt;/article&gt;</pre></div>
+                </div>
               </div>
             </div>
-          </div>
-        </section>
-        <section class="pb-4 mb-4" id="card-with-icon,-information,-and-apply-button">
-          <div class="page-wrapper px-2 screen-desktop:px-0">
-            <header class="layout--home-body">
-              <div class="my-0 pt-1 px-2 border-b border-color-grey-light">
-                <h2>
-                  <a class="text-color-grey-mid font-normal no-underline capitalize" href="#card-with-icon,-information,-and-apply-button">Card With Icon, Information, and Apply Button</a>
-                </h2>
+          </section>
+          <section class="pb-4 mb-4" id="card-with-icon,-information,-and-apply-button">
+            <div class="page-wrapper px-2 screen-desktop:px-0">
+              <header class="layout--home-body">
+                <div class="my-0 pt-1 px-2 border-b border-color-grey-light">
+                  <h2>
+                    <a class="text-color-grey-mid font-normal no-underline capitalize" href="#card-with-icon,-information,-and-apply-button">Card With Icon, Information, and Apply Button</a>
+                  </h2>
+                </div>
+              </header>
+              <div class="layout--home-body">
+                <div class="my-0 pt-4 px-2 text-font-size-small" data-js="markdown" data-js-markdown="components/card/card-icon-info-apply.md">
+                  <div class="p-1 mb-1 bg-color-grey-lightest"></div>
+                  <div class="p-1 mb-1 bg-color-grey-lightest"></div>
+                  <div class="p-1 mb-1 bg-color-grey-lightest"></div>
+                  <div class="p-1 mb-1 bg-color-grey-lightest"></div>
+                  <div class="p-1 mb-1 bg-color-grey-lightest"></div>
+                  <div class="p-1 mb-1 bg-color-grey-lightest"></div>
+                  <div class="p-1 mb-1 bg-color-grey-lightest"></div>
+                  <div class="p-1 mb-1 bg-color-grey-lightest"></div>
+                  <div class="p-1 mb-1 bg-color-grey-lightest"></div>
+                  <div class="p-1 mb-1 bg-color-grey-lightest"></div>
+                  <div class="p-1 mb-1 bg-color-grey-lightest"></div>
+                  <div class="p-1 mb-1 bg-color-grey-lightest"></div>
+                  <div class="p-1 mb-1 bg-color-grey-lightest"></div>
+                  <div class="p-1 mb-1 bg-color-grey-lightest"></div>
+                  <div class="p-1 mb-1 bg-color-grey-lightest"></div>
+                  <div class="p-1 mb-1 bg-color-grey-lightest"></div>
+                  <div class="p-1 mb-1 bg-color-grey-lightest"></div>
+                  <div class="p-1 mb-1 bg-color-grey-lightest"></div>
+                  <div class="p-1 mb-1 bg-color-grey-lightest"></div>
+                  <div class="p-1 mb-1 bg-color-grey-lightest"></div>
+                </div>
               </div>
-            </header>
-            <div class="layout--home-body">
-              <div class="my-0 pt-4 px-2 text-font-size-small" data-js="markdown" data-js-markdown="components/card/card-icon-info-apply.md">
-                <div class="p-1 mb-1 bg-color-grey-lightest"></div>
-                <div class="p-1 mb-1 bg-color-grey-lightest"></div>
-                <div class="p-1 mb-1 bg-color-grey-lightest"></div>
-                <div class="p-1 mb-1 bg-color-grey-lightest"></div>
-                <div class="p-1 mb-1 bg-color-grey-lightest"></div>
-                <div class="p-1 mb-1 bg-color-grey-lightest"></div>
-                <div class="p-1 mb-1 bg-color-grey-lightest"></div>
-                <div class="p-1 mb-1 bg-color-grey-lightest"></div>
-                <div class="p-1 mb-1 bg-color-grey-lightest"></div>
-                <div class="p-1 mb-1 bg-color-grey-lightest"></div>
-                <div class="p-1 mb-1 bg-color-grey-lightest"></div>
-                <div class="p-1 mb-1 bg-color-grey-lightest"></div>
-                <div class="p-1 mb-1 bg-color-grey-lightest"></div>
-                <div class="p-1 mb-1 bg-color-grey-lightest"></div>
-                <div class="p-1 mb-1 bg-color-grey-lightest"></div>
-                <div class="p-1 mb-1 bg-color-grey-lightest"></div>
-                <div class="p-1 mb-1 bg-color-grey-lightest"></div>
-                <div class="p-1 mb-1 bg-color-grey-lightest"></div>
-                <div class="p-1 mb-1 bg-color-grey-lightest"></div>
-                <div class="p-1 mb-1 bg-color-grey-lightest"></div>
-              </div>
-            </div>
-            <div class="layout--gutter screen-tablet:layout--columns justify-between pt-4">
-              <div class="screen-tablet:pr-2">
-                <article class="c-card" data-sketch-symbol="components/card/card-icon-info-apply">
-                  <div class="c-card__icon">
-                    <a href="#">
-                      <div class="icon bg-icon-card-cash-expenses"></div>
-                    </a>
-                  </div>
-                  <div class="c-card__body">
-                    <a href="#">
-                      <h3 class="c-card__title">Money for heat and utility expenses</h3>
-                    </a>
-                    <p class="c-card__subtitle type-small text-color-grey-mid">Home Energy Assistance Program (HEAP)
-                      <div class="c-card__summary">
-                        <p>HEAP can help you pay for the costs of heating your home during the winter months.</p>
-                        <p class="hide-for-print">
-                          <a href="#">Learn more</a>
-                        </p>
-                        <p class="hide-for-print">
-                          <a class="btn btn-secondary btn-next" href="#?step=how-to-apply">Apply</a>
-                        </p>
-                      </div>
-                    </p>
-                  </div>
-                </article>
-              </div>
-              <div>
-                <div class="code-block mb-1"><pre>&lt;article class=&quot;c-card&quot; data-sketch-symbol=&quot;components/card/card-removable&quot;&gt;
+              <div class="layout--gutter screen-tablet:layout--columns justify-between pt-4">
+                <div class="screen-tablet:pr-2">
+                  <article class="c-card" data-sketch-symbol="components/card/card-icon-info-apply">
+                    <div class="c-card__icon">
+                      <a href="#">
+                        <div class="icon bg-icon-card-cash-expenses"></div>
+                      </a>
+                    </div>
+                    <div class="c-card__body">
+                      <a href="#">
+                        <h3 class="c-card__title">Money for heat and utility expenses</h3>
+                      </a>
+                      <p class="c-card__subtitle type-small text-color-grey-mid">Home Energy Assistance Program (HEAP)
+                        <div class="c-card__summary">
+                          <p>HEAP can help you pay for the costs of heating your home during the winter months.</p>
+                          <p class="hide-for-print">
+                            <a href="#">Learn more</a>
+                          </p>
+                          <p class="hide-for-print">
+                            <a class="btn btn-secondary btn-next" href="#?step=how-to-apply">Apply</a>
+                          </p>
+                        </div>
+                      </p>
+                    </div>
+                  </article>
+                </div>
+                <div>
+                  <div class="code-block mb-1"><pre>&lt;article class=&quot;c-card&quot; data-sketch-symbol=&quot;components/card/card-removable&quot;&gt;
   &lt;div class=&quot;c-card__icon&quot;&gt;
     &lt;a href=&quot;#&quot;&gt;
       &lt;div class=&quot;icon bg-icon-card-cash-expenses&quot;&gt;&lt;/div&gt;
@@ -401,94 +403,94 @@
     &lt;/p&gt;
   &lt;/div&gt;
 &lt;/article&gt;</pre></div>
+                </div>
               </div>
             </div>
-          </div>
-        </section>
-        <section class="pb-4 mb-4" id="removable-card">
-          <div class="page-wrapper px-2 screen-desktop:px-0">
-            <header class="layout--home-body">
-              <div class="my-0 pt-1 px-2 border-b border-color-grey-light">
-                <h2>
-                  <a class="text-color-grey-mid font-normal no-underline capitalize" href="#removable-card">Removable Card</a>
-                </h2>
+          </section>
+          <section class="pb-4 mb-4" id="removable-card">
+            <div class="page-wrapper px-2 screen-desktop:px-0">
+              <header class="layout--home-body">
+                <div class="my-0 pt-1 px-2 border-b border-color-grey-light">
+                  <h2>
+                    <a class="text-color-grey-mid font-normal no-underline capitalize" href="#removable-card">Removable Card</a>
+                  </h2>
+                </div>
+              </header>
+              <div class="layout--home-body">
+                <div class="my-0 pt-4 px-2 text-font-size-small" data-js="markdown" data-js-markdown="components/card/card-removable.md">
+                  <div class="p-1 mb-1 bg-color-grey-lightest"></div>
+                  <div class="p-1 mb-1 bg-color-grey-lightest"></div>
+                  <div class="p-1 mb-1 bg-color-grey-lightest"></div>
+                  <div class="p-1 mb-1 bg-color-grey-lightest"></div>
+                  <div class="p-1 mb-1 bg-color-grey-lightest"></div>
+                  <div class="p-1 mb-1 bg-color-grey-lightest"></div>
+                  <div class="p-1 mb-1 bg-color-grey-lightest"></div>
+                  <div class="p-1 mb-1 bg-color-grey-lightest"></div>
+                  <div class="p-1 mb-1 bg-color-grey-lightest"></div>
+                  <div class="p-1 mb-1 bg-color-grey-lightest"></div>
+                  <div class="p-1 mb-1 bg-color-grey-lightest"></div>
+                  <div class="p-1 mb-1 bg-color-grey-lightest"></div>
+                  <div class="p-1 mb-1 bg-color-grey-lightest"></div>
+                  <div class="p-1 mb-1 bg-color-grey-lightest"></div>
+                  <div class="p-1 mb-1 bg-color-grey-lightest"></div>
+                  <div class="p-1 mb-1 bg-color-grey-lightest"></div>
+                  <div class="p-1 mb-1 bg-color-grey-lightest"></div>
+                  <div class="p-1 mb-1 bg-color-grey-lightest"></div>
+                  <div class="p-1 mb-1 bg-color-grey-lightest"></div>
+                  <div class="p-1 mb-1 bg-color-grey-lightest"></div>
+                </div>
               </div>
-            </header>
-            <div class="layout--home-body">
-              <div class="my-0 pt-4 px-2 text-font-size-small" data-js="markdown" data-js-markdown="components/card/card-removable.md">
-                <div class="p-1 mb-1 bg-color-grey-lightest"></div>
-                <div class="p-1 mb-1 bg-color-grey-lightest"></div>
-                <div class="p-1 mb-1 bg-color-grey-lightest"></div>
-                <div class="p-1 mb-1 bg-color-grey-lightest"></div>
-                <div class="p-1 mb-1 bg-color-grey-lightest"></div>
-                <div class="p-1 mb-1 bg-color-grey-lightest"></div>
-                <div class="p-1 mb-1 bg-color-grey-lightest"></div>
-                <div class="p-1 mb-1 bg-color-grey-lightest"></div>
-                <div class="p-1 mb-1 bg-color-grey-lightest"></div>
-                <div class="p-1 mb-1 bg-color-grey-lightest"></div>
-                <div class="p-1 mb-1 bg-color-grey-lightest"></div>
-                <div class="p-1 mb-1 bg-color-grey-lightest"></div>
-                <div class="p-1 mb-1 bg-color-grey-lightest"></div>
-                <div class="p-1 mb-1 bg-color-grey-lightest"></div>
-                <div class="p-1 mb-1 bg-color-grey-lightest"></div>
-                <div class="p-1 mb-1 bg-color-grey-lightest"></div>
-                <div class="p-1 mb-1 bg-color-grey-lightest"></div>
-                <div class="p-1 mb-1 bg-color-grey-lightest"></div>
-                <div class="p-1 mb-1 bg-color-grey-lightest"></div>
-                <div class="p-1 mb-1 bg-color-grey-lightest"></div>
-              </div>
-            </div>
-            <div class="layout--gutter screen-tablet:layout--gutter justify-between pt-4">
-              <div>
-                <article class="mb-4 print:pb-4 print:border-b" data-sketch-symbol="components/card/card-removable">
-                  <div class="flex items-stretch bg-color-grey-lightest p-3 screen-desktop:p-4 print:flex print:p-0 print:bg-color-transparent">
-                    <div class="w-100 pr-1 print:p-0">
-                      <header class="c-card p-0 bg-color-transparent mb-2">
-                        <div class="c-card__icon-large print:hidden">
-                          <div class="icon bg-icon-card-cash-expenses"></div>
-                        </div>
-                        <div aria-hidden="true" class="pr-2 hidden print:inline-block">
-                          <div class="icon bg-icon-card-cash-expenses"></div>
-                        </div>
-                        <div class="c-card__body pt-1">
-                          <a href="#">
-                            <h3 class="c-card__title text-color-blue-dark">Money for heat and utility expenses</h3>
-                          </a>
-                          <p class="c-card__subtitle text-color-grey-mid mb-0">HEAP can help you pay for the costs of heating your home during the winter months.</p>
-                        </div>
-                      </header>
-                      <h3 class="type-h4 print:hidden text-color-blue-dark">Ongoing Engagement</h3>
-                      <div class="print:mb-2">
-                        <h3 class="type-h4 text-color-blue-dark">Heads Up</h3>
-                        <div class="c-checklist" id="heads-up-S2R010">
-                          <ul>
-                            <li>Requires proof of identity, where you live, income, and citizenship status.</li>
-                            <li>You must be a US citizen or have satisfactory immigration status to receive Cash Assistance; a worker will help you learn your status when you apply</li>
-                            <li>If you are able to work, you will either need to be working, in an education or training program, or participate in a program assigned to you in order to get Cash Assistance</li>
-                            <li>You can get money for emergencies, including: eviction, energy and utility bills, natural disasters, and your safety or health</li>
-                            <li>Apply in person, or have an interview at home if you are homebound</li>
-                          </ul>
-                          <p class="print:hidden m-0">
-                            <a class="btn btn-secondary btn-next" href="#">See a full list of required documents</a>
-                          </p>
+              <div class="layout--gutter screen-tablet:layout--gutter justify-between pt-4">
+                <div>
+                  <article class="mb-4 print:pb-4 print:border-b" data-sketch-symbol="components/card/card-removable">
+                    <div class="flex items-stretch bg-color-grey-lightest p-3 screen-desktop:p-4 print:flex print:p-0 print:bg-color-transparent">
+                      <div class="w-100 pr-1 print:p-0">
+                        <header class="c-card p-0 bg-color-transparent mb-2">
+                          <div class="c-card__icon-large print:hidden">
+                            <div class="icon bg-icon-card-cash-expenses"></div>
+                          </div>
+                          <div aria-hidden="true" class="pr-2 hidden print:inline-block">
+                            <div class="icon bg-icon-card-cash-expenses"></div>
+                          </div>
+                          <div class="c-card__body pt-1">
+                            <a href="#">
+                              <h3 class="c-card__title text-color-blue-dark">Money for heat and utility expenses</h3>
+                            </a>
+                            <p class="c-card__subtitle text-color-grey-mid mb-0">HEAP can help you pay for the costs of heating your home during the winter months.</p>
+                          </div>
+                        </header>
+                        <h3 class="type-h4 print:hidden text-color-blue-dark">Ongoing Engagement</h3>
+                        <div class="print:mb-2">
+                          <h3 class="type-h4 text-color-blue-dark">Heads Up</h3>
+                          <div class="c-checklist" id="heads-up-S2R010">
+                            <ul>
+                              <li>Requires proof of identity, where you live, income, and citizenship status.</li>
+                              <li>You must be a US citizen or have satisfactory immigration status to receive Cash Assistance; a worker will help you learn your status when you apply</li>
+                              <li>If you are able to work, you will either need to be working, in an education or training program, or participate in a program assigned to you in order to get Cash Assistance</li>
+                              <li>You can get money for emergencies, including: eviction, energy and utility bills, natural disasters, and your safety or health</li>
+                              <li>Apply in person, or have an interview at home if you are homebound</li>
+                            </ul>
+                            <p class="print:hidden m-0">
+                              <a class="btn btn-secondary btn-next" href="#">See a full list of required documents</a>
+                            </p>
+                          </div>
                         </div>
                       </div>
-                    </div>
-                    <div class="flex flex-col justify-between hide-for-print">
-                      <div class="pb-1" style="width:232px">
+                      <div class="flex flex-col justify-between hide-for-print">
+                        <div class="pb-1" style="width:232px">
+                          <div>
+                            <a class="btn btn-primary btn-small block">Remove Program</a>
+                          </div>
+                        </div>
                         <div>
-                          <a class="btn btn-primary btn-small block">Remove Program</a>
+                          <a class="btn-toggle btn" href="#">Learn More</a>
                         </div>
                       </div>
-                      <div>
-                        <a class="btn-toggle btn" href="#">Learn More</a>
-                      </div>
                     </div>
-                  </div>
-                </article>
-              </div>
-              <div>
-                <div class="code-block mb-1"><pre>&lt;article class=&quot;mb-4 print:pb-4 print:border-b&quot; data-sketch-symbol=&quot;components/card/card-removable&quot;&gt;
+                  </article>
+                </div>
+                <div>
+                  <div class="code-block mb-1"><pre>&lt;article class=&quot;mb-4 print:pb-4 print:border-b&quot; data-sketch-symbol=&quot;components/card/card-removable&quot;&gt;
   &lt;div class=&quot;flex items-stretch bg-color-grey-lightest p-3 screen-desktop:p-4 print:flex print:p-0 print:bg-color-transparent&quot;&gt;
     &lt;div class=&quot;w-100 pr-1 print:p-0&quot;&gt;
       &lt;header class=&quot;c-card p-0 bg-color-transparent mb-2&quot;&gt;
@@ -534,12 +536,13 @@
     &lt;/div&gt;
   &lt;/div&gt;
 &lt;/article&gt;</pre></div>
+                </div>
               </div>
             </div>
-          </div>
-        </section>
-      </article>
-    </main>
+          </section>
+        </article>
+      </main>
+    </div>
     <footer class="py-4 text-center bg-color-blue-dark text-color-white links-invert font-smooth">
       <p class="m-0">Maintained by&nbsp;
         <a href="https://github.com/orgs/CityOfNewYork/teams/nycopportunity">NYC Opportunity</a>

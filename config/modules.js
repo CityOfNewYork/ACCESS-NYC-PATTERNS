@@ -157,6 +157,13 @@ const modules = [
     includePaths: sass.includePaths
   },
   {
+    file: './src/components/nearby-stops/_nearby-stops.scss',
+    outDir: './dist/components/nearby-stops/',
+    outFile: 'nearby-stops.css',
+    precision: sass.precision,
+    includePaths: sass.includePaths
+  },
+  {
     file: './src/components/text-controller/_text-controller.scss',
     outDir: './dist/components/text-controller/',
     outFile: 'text-controller.css',

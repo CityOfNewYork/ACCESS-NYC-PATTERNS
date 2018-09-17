@@ -135,6 +135,26 @@ const modules = [
         strict: rollup.strict
       }
     ]
+  },
+  {
+    input: './src/components/nearby-stops/nearby-stops.js',
+    plugins: rollup.dist,
+    output: [
+      {
+        name: 'NearbyStops',
+        file: `./dist/components/nearby-stops/nearby-stops.iffe.js`,
+        sourcemap: rollup.sourcemap,
+        format: 'iife',
+        strict: rollup.strict
+      },
+      {
+        name: 'NearbyStops',
+        file: `./dist/components/nearby-stops/nearby-stops.common.js`,
+        sourcemap: rollup.sourcemap,
+        format: 'cjs',
+        strict: rollup.strict
+      }
+    ]
   }
 ];
 

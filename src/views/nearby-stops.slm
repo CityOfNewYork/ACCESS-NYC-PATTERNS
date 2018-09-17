@@ -1,8 +1,8 @@
 / Layout
-= extend('/layouts/default');
+= extend('layouts/default');
 
 / Component
-- title = 'Icons';
+- title = 'Nearby Stops';
 
 / Partials
 = partial('partials/styles.slm');
@@ -22,5 +22,8 @@
 
 = content('content');
   = mixin('content-header', title);
-  = mixin('section', 'Usage and Icon Library', 'elements/icons/icons', 'gutter', this.vars.icons);
-  = mixin('section', 'Subway CSS Icons', 'elements/icons/icons-subway', 'gutter', this.vars.subwayIcons);
+  = mixin('section', 'Default Styling', 'components/nearby-stops/nearby-stops');
+
+= content('script');
+  javascript:
+    access.nearbyStops();

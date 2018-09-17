@@ -1,0 +1,22 @@
+/
+/ Nearby Stops
+/
+
+section
+  h3 Nearby Stops
+  div class='c-nearby-stops' data-js='nearby-stops' data-nearby-stops-location='[-74.0053925, 40.7146607]' data-nearby-stops-amount='4' data-nearby-stops-endpoint='data/kk4q-3rt2.json'
+    div class='c-nearby-stops__stop'
+      span class='c-nearby-stops__subway icon-subway bg-shuttles'
+      span class='c-nearby-stops__subway icon-subway bg-shuttles'
+      span class='c-nearby-stops__subway icon-subway bg-shuttles'
+      span class='c-nearby-stops__description w-full bg-color-grey-lightest' &nbsp;
+    div class='c-nearby-stops__stop'
+      span class='c-nearby-stops__subway icon-subway bg-shuttles'
+      span class='c-nearby-stops__subway icon-subway bg-shuttles'
+      span class='c-nearby-stops__subway icon-subway bg-shuttles'
+      span class='c-nearby-stops__description w-full bg-color-grey-lightest' &nbsp;
+    div class='c-nearby-stops__stop'
+      span class='c-nearby-stops__subway icon-subway bg-shuttles'
+      span class='c-nearby-stops__subway icon-subway bg-shuttles'
+      span class='c-nearby-stops__subway icon-subway bg-shuttles'
+      span class='c-nearby-stops__description w-full bg-color-grey-lightest' &nbsp;

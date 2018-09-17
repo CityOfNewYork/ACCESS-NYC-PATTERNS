@@ -64,7 +64,17 @@ $variables: (
     color-grey-dark: #172129,
     color-black: #000000,
     color-white: #ffffff,
-    color-transparent: rgba(255,255,255,0)
+    color-transparent: rgba(255,255,255,0),
+    eighth-avenue: #2850AD,
+    sixth-avenue: #FF6319,
+    crosstown: #6CBE45,
+    canarsie: #A7A9AC,
+    nassau: #996633,
+    broadway: #FCCC0A,
+    broadway-seventh-avenue: #EE352E,
+    lexington-avenue: #00933C,
+    flushing: #B933AD,
+    shuttles: #808183
   ),
   colorCombinations: (
     light-background: (
@@ -113,6 +123,7 @@ $variables: (
     screen-sm-mobile: 400
   ),
   dimensions: (
+    grid-base: 8px,
     spacing-base: 24px,
     homepage-max-width: 800px,
     site-max-width: 1200px,
@@ -192,6 +203,18 @@ $variables: (
     icon-housing: 50px 50px,
     icon-special-needs: 50px 50px,
     icon-work: 50px 52px
+  ),
+  subwayIcons: (
+    eighth-avenue: (A, C, E),
+    sixth-avenue: (B, D, F, M),
+    crosstown: (G),
+    canarsie: (L),
+    nassau: (J, Z),
+    broadway: (N, Q, R, W),
+    broadway-seventh-avenue: (1, 2, 3),
+    lexington-avenue: (4, 5, 6, 6 Express),
+    flushing: (7, 7 Express),
+    shuttles: (S)
   ),
   inputs: (
     checkbox-radius: 8px,

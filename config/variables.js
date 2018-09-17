@@ -119,7 +119,19 @@ const variables = {
     'color-black': '#000000',
 
     'color-white': '#ffffff',
-    'color-transparent': 'rgba(255,255,255,0)'
+    'color-transparent': 'rgba(255,255,255,0)',
+
+    // https://en.wikipedia.org/wiki/New_York_City_Subway#Nomenclature
+    'eighth-avenue': '#2850AD', // Vivid Blue, A C E
+    'sixth-avenue': '#FF6319', // Bright Orange, B D F M
+    'crosstown': '#6CBE45', // Lime Green, G
+    'canarsie': '#A7A9AC', // Light Slate Grey, L
+    'nassau': '#996633', // Terra Cotta Brown, J Z
+    'broadway': '#FCCC0A', // Sunflower Yellow, N Q R W
+    'broadway-seventh-avenue': '#EE352E', // Tomato Red, 1 2 3
+    'lexington-avenue': '#00933C', // Apple Green, 4 5 6 6 Express
+    'flushing': '#B933AD', // Raspberry, 7 7 Express
+    'shuttles': '#808183' // Dark Slate Gray, S
   },
   colorCombinations: {
     'light-background': {
@@ -168,6 +180,7 @@ const variables = {
     'screen-sm-mobile': 400
   },
   dimensions: {
+    'grid-base': '8px',
     'spacing-base': '24px',
     'homepage-max-width': '800px',
     'site-max-width': '1200px',
@@ -253,6 +266,18 @@ const variables = {
     'icon-housing': '50px 50px',
     'icon-special-needs': '50px 50px',
     'icon-work': '50px 52px'
+  },
+  subwayIcons: {
+    'eighth-avenue': ['A', 'C', 'E'],
+    'sixth-avenue': ['B', 'D', 'F', 'M'],
+    'crosstown': ['G'],
+    'canarsie': ['L'],
+    'nassau': ['J', 'Z'],
+    'broadway': ['N', 'Q', 'R', 'W'],
+    'broadway-seventh-avenue': ['1', '2', '3'],
+    'lexington-avenue': ['4', '5', '6', '6 Express'],
+    'flushing': ['7', '7 Express'],
+    'shuttles': ['S']
   },
   inputs: {
     'checkbox-radius': '8px',

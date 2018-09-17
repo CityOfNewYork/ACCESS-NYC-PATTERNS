@@ -4,6 +4,8 @@
 
 // Dependencies
 @import 'config/variables';
+@import 'config/dimensions';
+@import 'config/fonts';
 @import 'scss/functions/str-replace';
 @import 'bourbon/app/assets/stylesheets/addons/size';
 
@@ -35,5 +37,56 @@
 
   .#{$key} {
     @include size($var);
+  }
+}
+
+[class*='icon-subway'] {
+  color: map-get($colors, 'color-white');
+  font-size: 80%;
+  font-family: helvetica, arial, sans-serif;
+  font-weight: bold;
+  @include font-smooth();
+  line-height: 150%;
+  text-align: center;
+  text-decoration: none;
+  border-radius: 9999px;
+  display: inline-block;
+  width: $spacing-base;
+  height: $spacing-base;
+  min-width: $spacing-base;
+  min-height: $spacing-base;
+  flex-shrink: 0;
+
+  &.bg-broadway {
+    color: map-get($colors, 'color-black');
+  }
+}
+
+.icon-subway-express {
+  position: relative;
+  z-index: 1;
+
+  &[class*='bg-'] {
+    background-color: transparent !important;
+  }
+
+  &:before, &:after {
+    content: '';
+    border: ($spacing-base / 2) solid transparent;
+    width: 0;
+    height: 0;
+    position: absolute;
+    left: 0px;
+    z-index: -1;
+  }
+
+  &:before {
+    top: -($spacing-base / 2);
+    border-bottom-color: inherit;
+  }
+
+  &:after {
+    bottom: -($spacing-base / 2);
+    border-top-color: inherit;
   }
 }
