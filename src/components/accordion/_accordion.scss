@@ -40,8 +40,8 @@
 
 .c-accordion__toggle {
   color: $color-white !important;
-  text-decoration: none;
-  font-style: italic;
+  // font-style: italic;
+  display: inline-flex;
 
   * {
     @include disable-pointer-events;
