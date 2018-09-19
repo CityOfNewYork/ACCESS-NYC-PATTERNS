@@ -3,12 +3,13 @@ header class='px-2'
     div class='flex items-center justify-between p-2 screen-tablet:py-4 screen-tablet:px-2'
       div
         h1 class='m-0 p-0 leading-normal'
-          span class='hidden'
-            | ACCESS NYC
-          svg class='icon-logo-mark screen-tablet:hidden' aria-hidden='true'
-            use xlink:href='#icon-logo-mark'
-          svg class='icon-logo-full--large text-color-blue-dark hidden screen-tablet:inline-block' aria-hidden='true'
-              use xlink:href='#icon-logo-full'
+          a href='index'
+            span class='hidden'
+              | ACCESS NYC
+            svg class='icon-logo-mark screen-tablet:hidden' aria-hidden='true'
+              use xlink:href='#icon-logo-mark'
+            svg class='icon-logo-full--large text-color-blue-dark hidden screen-tablet:inline-block' aria-hidden='true'
+                use xlink:href='#icon-logo-full'
 
       div class='flex items-center'
         h2 class='text-font-size-small m-0 text-color-blue-dark screen-tablet:hidden'
