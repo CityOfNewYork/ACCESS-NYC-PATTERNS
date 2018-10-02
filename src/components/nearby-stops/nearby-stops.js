@@ -5,7 +5,7 @@ import {default as _template} from 'lodash-es/template';
 import {default as _forEach} from 'lodash-es/forEach';
 
 /**
- * The Accordion module
+ * The NearbyStops Module
  * @class
  */
 class NearbyStops {
@@ -57,22 +57,23 @@ class NearbyStops {
     let geo = [];
     let distances = [];
 
-    // 2. Compare lat and lon of current location with list of stops
+    // 1. Compare lat and lon of current location with list of stops
     for (let i = 0; i < stops.length; i++) {
       geo = stops[i][this._key('ODATA_GEO')][this._key('ODATA_COOR')];
+      geo = geo.reverse();
       distances.push({
-        'distance': this._calcDistance(loc[0], loc[1], geo[0], geo[1]),
+        'distance': this._equirectangular(loc[0], loc[1], geo[0], geo[1]),
         'stop': i, // index of stop in the data
       });
     }
 
-    // Sort the distances shortest to longest
-    distances.sort((a, b) => a.distance - b.distance);
+    // 2. Sort the distances shortest to longest
+    distances.sort((a, b) => (a.distance < b.distance) ? -1 : 1);
     distances = distances.slice(0, amount);
 
     // 3. Return the list of closest stops (number based on Amount option)
+    // and replace the stop index with the actual stop data
     for (let x = 0; x < distances.length; x++)
-      // Replace the stop index with the actual stop data
       distances[x].stop = stops[distances[x].stop];
 
     return distances;
@@ -110,24 +111,21 @@ class NearbyStops {
   /**
    * Returns distance in miles comparing the latitude and longitude of two
    * points using decimal degrees.
-   * @url https://www.geodatasource.com/developers/javascript
-   * @param  {[type]} lat1 Latitude of point 1 (in decimal degrees)
-   * @param  {[type]} lon1 Longitude of point 1 (in decimal degrees)
-   * @param  {[type]} lat2 Latitude of point 2 (in decimal degrees)
-   * @param  {[type]} lon2 Longitude of point 2 (in decimal degrees)
-   * @return {[type]}      [description]
+   * @param  {float} lat1 Latitude of point 1 (in decimal degrees)
+   * @param  {float} lon1 Longitude of point 1 (in decimal degrees)
+   * @param  {float} lat2 Latitude of point 2 (in decimal degrees)
+   * @param  {float} lon2 Longitude of point 2 (in decimal degrees)
+   * @return {float}      [description]
    */
-  _calcDistance(lat1, lon1, lat2, lon2) {
-    let radlat1 = Math.PI * lat1 / 180;
-    let radlat2 = Math.PI * lat2 / 180;
-    let theta = lon1 - lon2;
-    let radtheta = Math.PI * theta / 180;
-    let dist = Math.sin(radlat1) * Math.sin(radlat2) + Math.cos(radlat1) *
-      Math.cos(radlat2) * Math.cos(radtheta);
-    dist = Math.acos(dist);
-    dist = dist * 180 / Math.PI;
-    dist = dist * 60 * 1.1515;
-    return dist;
+  _equirectangular(lat1, lon1, lat2, lon2) {
+    Math.deg2rad = (deg) => deg * (Math.PI / 180);
+    let alpha = Math.abs(lon2) - Math.abs(lon1);
+    let x = Math.deg2rad(alpha) * Math.cos(Math.deg2rad(lat1 + lat2) / 2);
+    let y = Math.deg2rad(lat1 - lat2);
+    let R = 3959; // earth radius in miles;
+    let distance = Math.sqrt(x * x + y * y) * R;
+
+    return distance;
   }
 
   /**
@@ -138,19 +136,23 @@ class NearbyStops {
   _assignColors(locations) {
     let line = [];
     let trunk = 'shuttles';
-    // loop through each location that we are going to display
+
+    // Loop through each location that we are going to display
     for (let i = 0; i < locations.length; i++) {
       // assign the line to a variable to lookup in our color dictionary
       line = locations[i].stop[this._key('ODATA_LINE')].split('-');
+
       for (let x = 0; x < NearbyStops.trunks.length; x++)
         // Look through each color in the color dictionary
         for (let y = 0; y < NearbyStops.trunks[x].LINES.length; y++)
           // Check to see which trunk is associated with our location line
           if (line.indexOf(NearbyStops.trunks[x].LINES[y]) > -1)
             trunk = NearbyStops.trunks[x].TRUNK;
+
       // Add the trunk to the location
       locations[i].trunk = trunk;
     }
+
     return locations;
   }
 
@@ -253,7 +255,7 @@ NearbyStops.keys = {
 NearbyStops.templates = {
   SUBWAY: [
   '<% _each(stops, function(stop) { %>',
-  '<a class="c-nearby-stops__stop" href="#">',
+  '<div class="c-nearby-stops__stop">',
     '<% var lines = stop.stop.line.split("-") %>',
     '<% _each(lines, function(line) { %>',
     '<% var exp = (line.indexOf("Express") > -1) ? true : false %>',
@@ -268,10 +270,10 @@ NearbyStops.templates = {
     '</span>',
     '<% }); %>',
     '<span class="c-nearby-stops__description">',
-      '<%- stop.distance.toString().slice(0, 4) %> Miles, ',
+      '<%- stop.distance.toString().slice(0, 3) %> Miles, ',
       '<%- stop.stop.name %>',
     '</span>',
-  '</a>',
+  '</div>',
   '<% }); %>'
   ].join('')
 };

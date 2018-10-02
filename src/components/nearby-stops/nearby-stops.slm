@@ -4,7 +4,7 @@
 
 section
   h3 Nearby Stops
-  div class='c-nearby-stops' data-js='nearby-stops' data-nearby-stops-location='[-74.0053925, 40.7146607]' data-nearby-stops-amount='4' data-nearby-stops-endpoint='data/kk4q-3rt2.json'
+  div class='c-nearby-stops' data-js='nearby-stops' data-nearby-stops-location='[40.7146607, -74.0053925]' data-nearby-stops-amount='3' data-nearby-stops-endpoint='data/kk4q-3rt2.json'
     div class='c-nearby-stops__stop'
       span class='c-nearby-stops__subway icon-subway bg-shuttles'
       span class='c-nearby-stops__subway icon-subway bg-shuttles'

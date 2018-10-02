@@ -72,21 +72,21 @@
 
   &:before, &:after {
     content: '';
-    border: ($spacing-base / 2) solid transparent;
+    border: ($spacing-base / 2) + 1 solid transparent;
     width: 0;
     height: 0;
     position: absolute;
-    left: 0px;
+    left: -1px;
     z-index: -1;
   }
 
   &:before {
-    top: -($spacing-base / 2);
+    top: -($spacing-base / 2) - 2;
     border-bottom-color: inherit;
   }
 
   &:after {
-    bottom: -($spacing-base / 2);
+    bottom: -($spacing-base / 2) - 2;
     border-top-color: inherit;
   }
 }
