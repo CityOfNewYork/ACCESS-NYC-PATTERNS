@@ -134,23 +134,31 @@ class NearbyStops {
    * @return {object}           Same object with colors assigned to each loc
    */
   _assignColors(locations) {
-    let line = [];
-    let trunk = 'shuttles';
+    let locationLines = [];
+    let line = 'S';
+    let lines = ['S'];
 
     // Loop through each location that we are going to display
     for (let i = 0; i < locations.length; i++) {
       // assign the line to a variable to lookup in our color dictionary
-      line = locations[i].stop[this._key('ODATA_LINE')].split('-');
+      locationLines = locations[i].stop[this._key('ODATA_LINE')].split('-');
 
-      for (let x = 0; x < NearbyStops.trunks.length; x++)
-        // Look through each color in the color dictionary
-        for (let y = 0; y < NearbyStops.trunks[x].LINES.length; y++)
-          // Check to see which trunk is associated with our location line
-          if (line.indexOf(NearbyStops.trunks[x].LINES[y]) > -1)
-            trunk = NearbyStops.trunks[x].TRUNK;
+      for (let x = 0; x < locationLines.length; x++) {
+        line = locationLines[x];
+
+        for (let y = 0; y < NearbyStops.trunks.length; y++) {
+          lines = NearbyStops.trunks[y]['LINES'];
+
+          if (lines.indexOf(line) > -1)
+            locationLines[x] = {
+              'line': line,
+              'trunk': NearbyStops.trunks[y]['TRUNK']
+            };
+        }
+      }
 
       // Add the trunk to the location
-      locations[i].trunk = trunk;
+      locations[i].trunks = locationLines;
     }
 
     return locations;
@@ -257,15 +265,15 @@ NearbyStops.templates = {
   '<% _each(stops, function(stop) { %>',
   '<div class="c-nearby-stops__stop">',
     '<% var lines = stop.stop.line.split("-") %>',
-    '<% _each(lines, function(line) { %>',
-    '<% var exp = (line.indexOf("Express") > -1) ? true : false %>',
-    '<% if (exp) line = line.split(" ")[0] %>',
+    '<% _each(stop.trunks, function(trunk) { %>',
+    '<% var exp = (trunk.line.indexOf("Express") > -1) ? true : false %>',
+    '<% if (exp) trunk.line = trunk.line.split(" ")[0] %>',
     '<span class="',
       'c-nearby-stops__subway ',
       'icon-subway<% if (exp) { %>-express<% } %> ',
-      '<% if (exp) { %>border-<% } else { %>bg-<% } %><%-stop.trunk %>',
+      '<% if (exp) { %>border-<% } else { %>bg-<% } %><%- trunk.trunk %>',
       '">',
-      '<%-line %>',
+      '<%- trunk.line %>',
       '<% if (exp) { %> <span class="sr-only">Express</span><% } %>',
     '</span>',
     '<% }); %>',
