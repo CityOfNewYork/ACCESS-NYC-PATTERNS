@@ -6,7 +6,7 @@
     <meta content="IE=edge" http-equiv="X-UA-Compatible" />
     <meta content="width=device-width, initial-scale=1" name="viewport" />
     <link href="styles/site-default.css" rel="stylesheet" />
-    <title>Mobile Nav | ACCESS NYC Patterns</title>
+    <title>Patterns</title>
     <noscript>
       <style>
         body {
@@ -52,14 +52,10 @@
         </div>
       </header>
       <aside aria-hidden="true" class="text-font-size-small bg-color-blue-light hidden hidden:overflow animated" id="main-menu" style="position:relative;top:-1px">
-        <div class="page-wrapper py-4">
-          <div class="screen-tablet:flex">
+        <div class="page-wrapper">
+          <div class="screen-tablet:flex py-4">
             <nav class="screen-tablet:flex-1 mb-1 px-2"><span class="screen-tablet:block screen-tablet:border-b border-color-white p-1">Main;</span>
               <a class="block p-1" href="index">Home</a>
-              <a class="block p-1" href="about">About</a>
-              <a class="block p-1" href="installation">Installation</a>
-              <a class="block p-1" href="design-tools">Design Tools</a>
-              <a class="block p-1 border-b border-color-white" href="developer-tools">Developer Tools</a>
               <a class="block p-1" href="https://www.npmjs.com/package/access-nyc-patterns">NPM</a>
               <a class="block p-1" href="https://github.com/CityOfNewYork/ACCESS-NYC-PATTERNS">GitHub</a>
             </nav>
@@ -108,94 +104,98 @@
               <a class="block p-1" href="search-box">Search Box</a>
             </nav>
           </div>
-          <div class="text-center">
-            <a data-js="toggle" href="#main-menu">Close Menu</a>
-          </div>
         </div>
       </aside>
       <main class="pt-4" id="main-content">
         <article class="py-4">
           <header class="page-wrapper px-2 screen-desktop:px-0 layout--home-body">
             <div class="my-0 w-full">
-              <h1 class="text-color-blue-dark px-2 m-0">Mobile Nav</h1>
+              <h1 class="text-color-blue-dark px-2 m-0">Getting Started</h1>
             </div>
           </header>
-          <section class="pb-4 mb-4" id="default-styling">
-            <div class="page-wrapper px-2 screen-desktop:px-0">
+          <section class="pb-4 mb-4" id="welcome">
+            <div class="page-wrapper">
               <header class="layout--home-body">
-                <div class="my-0 pt-1 px-2 border-b border-color-grey-light">
-                  <h2>
-                    <a class="text-color-grey-mid font-normal no-underline capitalize" href="#default-styling">Default Styling</a>
-                  </h2>
-                </div>
+                <div class="my-0 pt-1 px-2 border-b border-color-grey-light"></div>
               </header>
               <div class="layout--home-body">
-                <div class="my-0 pt-4 px-2 text-font-size-small" data-js="markdown" data-js-markdown="objects/mobile-nav/mobile-nav.md">
-                  <div class="p-1 mb-1 bg-color-grey-lightest"></div>
-                  <div class="p-1 mb-1 bg-color-grey-lightest"></div>
-                  <div class="p-1 mb-1 bg-color-grey-lightest"></div>
-                  <div class="p-1 mb-1 bg-color-grey-lightest"></div>
-                  <div class="p-1 mb-1 bg-color-grey-lightest"></div>
-                  <div class="p-1 mb-1 bg-color-grey-lightest"></div>
-                  <div class="p-1 mb-1 bg-color-grey-lightest"></div>
-                  <div class="p-1 mb-1 bg-color-grey-lightest"></div>
-                  <div class="p-1 mb-1 bg-color-grey-lightest"></div>
-                  <div class="p-1 mb-1 bg-color-grey-lightest"></div>
-                  <div class="p-1 mb-1 bg-color-grey-lightest"></div>
-                  <div class="p-1 mb-1 bg-color-grey-lightest"></div>
-                  <div class="p-1 mb-1 bg-color-grey-lightest"></div>
-                  <div class="p-1 mb-1 bg-color-grey-lightest"></div>
-                  <div class="p-1 mb-1 bg-color-grey-lightest"></div>
-                  <div class="p-1 mb-1 bg-color-grey-lightest"></div>
-                  <div class="p-1 mb-1 bg-color-grey-lightest"></div>
-                  <div class="p-1 mb-1 bg-color-grey-lightest"></div>
-                  <div class="p-1 mb-1 bg-color-grey-lightest"></div>
-                  <div class="p-1 mb-1 bg-color-grey-lightest"></div>
-                </div>
-              </div>
-              <div class="layout--gutter screen-tablet:layout--columns justify-between pt-4">
-                <div class="screen-tablet:pr-2">
-                  <div class="o-mobile-nav active:o-mobile-nav" data-sketch-symbol="objects/mobile-nav/mobile-nav" id="o-mobile-nav">
-                    <a class="o-mobile-nav__close js-hide-nav" href="#o-mobile-nav">close &amp; return to site
-                      <svg aria-hidden="true" class="icon icon-close">
-                        <use xlink:href="#icon-close"></use>
-                      </svg>
-                    </a>
-                    <div class="o-mobile-nav__inner">
-                      <h4 class="o-mobile-nav__header">Get help now</h4>
-                      <nav class="nav-block">
-                        <a class="active" href="#">Am I eligible?</a>
-                        <a href="#">Programs</a>
-                        <a href="#">Find help</a>
-                        <a class="td-inherit" href="#search">
-                          <svg class="icon icon-search">
-                            <use xlink:href="#icon-search"></use>
-                          </svg>Search</a>
-                      </nav>
-                    </div>
-                  </div>
-                </div>
-                <div>
-                  <div class="code-block mb-1"><pre>&lt;div class=&quot;o-mobile-nav active:o-mobile-nav&quot; data-sketch-symbol=&quot;objects/mobile-nav/mobile-nav&quot; id=&quot;o-mobile-nav&quot;&gt;
-  &lt;a class=&quot;o-mobile-nav__close js-hide-nav&quot; href=&quot;#o-mobile-nav&quot;&gt;close &amp;amp; return to site
-    &lt;svg aria-hidden=&quot;true&quot; class=&quot;icon icon-close&quot;&gt;
-      &lt;use xlink:href=&quot;#icon-close&quot;&gt;&lt;/use&gt;
-    &lt;/svg&gt;
-  &lt;/a&gt;
-  &lt;div class=&quot;o-mobile-nav__inner&quot;&gt;
-    &lt;h4 class=&quot;o-mobile-nav__header&quot;&gt;Get help now&lt;/h4&gt;
-    &lt;nav class=&quot;nav-block&quot;&gt;
-      &lt;a class=&quot;active&quot; href=&quot;#&quot;&gt;Am I eligible?&lt;/a&gt;
-      &lt;a href=&quot;#&quot;&gt;Programs&lt;/a&gt;
-      &lt;a href=&quot;#&quot;&gt;Find help&lt;/a&gt;
-      &lt;a class=&quot;td-inherit&quot; href=&quot;#search&quot;&gt;
-        &lt;svg class=&quot;icon icon-search&quot;&gt;
-          &lt;use xlink:href=&quot;#icon-search&quot;&gt;&lt;/use&gt;
-        &lt;/svg&gt;Search&lt;/a&gt;
-    &lt;/nav&gt;
-  &lt;/div&gt;
-&lt;/div&gt;</pre></div>
-                </div>
+                <div class="px-2 text-font-size-small"><h2>Styles</h2>
+
+<p>There are a few options when integrating the stylesheet.</p>
+
+<h3>Node Module (recommended)</h3>
+
+<p>This package is available as an NPM Module and can be included as a dependency with NPM...</p>
+
+<pre><code>$ npm install access-nyc-patterns -save</code></pre>
+
+<p>... or Yarn;</p>
+
+<pre><code>$ yarn add access-nyc-patterns</code></pre>
+
+<h3>Download</h3>
+
+<p>
+  <a href="https://github.com/CityOfNewYork/ACCESS-NYC-PATTERNS/archive/master.zip">Download an archive</a> of this repository to include within your project.</p>
+
+<h3>CDN</h3>
+
+<p>The global stylesheet (<code>style-default.css</code>) that includes all elements, components, objects, and utilities exists in the
+  <a href="https://github.com/CityOfNewYork/ACCESS-NYC-PATTERNS/tree/master/dist/styles"><code>dist/styles</code></a> directory. This includes the English (default) stylesheet as well as 10 other individual language stylesheets.</p>
+
+<p>You can pick which stylesheet to use by linking to it through
+  <a href="https://rawgit.com/">RawGit</a>. For example, after pasting in the link of the v1.0.0 default stylesheet;</p>
+
+<pre><code>https://cdn.rawgit.com/CityOfNewYork/ACCESS-NYC-PATTERNS/v1.0.0/dist/styles/site-default.css</code></pre>
+
+<p>You will receive a CDN link;</p>
+
+<pre><code>https://cdn.rawgit.com/CityOfNewYork/ACCESS-NYC-PATTERNS/v1.0.0/dist/styles/site-default.css</code></pre>
+
+<p>Once you have the link, you can drop it into the <code>head</code> of your html document;</p>
+
+<pre><code>&lt;link href=&quot;https://cdn.rawgit.com/CityOfNewYork/ACCESS-NYC-PATTERNS/v1.0.0/dist/styles/site-default.css&quot; rel=&quot;stylesheet&quot;&gt;</code></pre>
+
+<p>All Components and Objects are distributed with their own styles and JavaScript dependencies in their corresponding <code>/dist</code> folder as well. For example, all of the accordion dependencies live in the <code>/dist/components/accordion</code> folder.</p>
+
+<h3>SASS Import</h3>
+
+<p>The ACCESS NYC main
+  <a href="https://github.com/CityOfNewYork/ACCESS-NYC/blob/master/wp-content/themes/access/src/scss/_imports.scss">SASS import file</a> can give you an idea of how to include individual patterns into your project. Be sure to add <code>node_modules</code> to your include paths.</p>
+
+<h2>Javascript</h2>
+
+<p>The Javascript source is written as ES6 Modules. Using
+  <a href="https://rollupjs.org">Rollup.js</a>, individual components with javascript dependencies are distributed as CommonJS and IFFE functions so that depending on the flavor of your project you can use import any of the three.</p>
+
+<h3>CommonJS and ES6 Component Import</h3>
+
+<p>Here is an example of importing the accordion component and initializing it.</p>
+
+<pre><code>import Accordion from &#39;components/accordion/accordion&#39;;
+new Accordion();</code></pre>
+
+<h3>IFFE</h3>
+
+<p>Here is an example of the accordion IFFE script.</p>
+
+<pre><code>&lt;script src=&quot;dist/components/accordion.iffe.js&quot;&gt;&lt;/script&gt;
+&lt;script type=&quot;text/javascript&quot;&gt;
+  new Accordion();
+&lt;/script&gt;</code></pre>
+
+<h3>Global Pattern Script</h3>
+
+<p>You may also import the main ACCESS NYC Patterns script with all of the dependencies in it. This script is exported as an IFFE function so it doesn&#39;t need to be compiled. Components must be initialized individually.</p>
+
+<pre><code>&lt;script src=&quot;dist/scripts/AccessNyc.js&quot;&gt;&lt;/script&gt;
+&lt;script type=&quot;text/javascript&quot;&gt;
+  var access = new AccessNyc();
+  access.accordion();
+&lt;/script&gt;</code></pre>
+
+<p>The main
+  <a href="https://github.com/CityOfNewYork/ACCESS-NYC-PATTERNS/blob/master/src/js/main.js">Javascript import file</a> can give you an idea of how each component needs to be initialized.</p></div>
               </div>
             </div>
           </section>

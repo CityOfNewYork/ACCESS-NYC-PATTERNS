@@ -6,7 +6,7 @@
     <meta content="IE=edge" http-equiv="X-UA-Compatible" />
     <meta content="width=device-width, initial-scale=1" name="viewport" />
     <link href="styles/site-default.css" rel="stylesheet" />
-    <title>Patterns</title>
+    <title>Patterns | ACCESS NYC Patterns</title>
     <noscript>
       <style>
         body {
@@ -52,10 +52,14 @@
         </div>
       </header>
       <aside aria-hidden="true" class="text-font-size-small bg-color-blue-light hidden hidden:overflow animated" id="main-menu" style="position:relative;top:-1px">
-        <div class="page-wrapper">
-          <div class="screen-tablet:flex py-4">
+        <div class="page-wrapper py-4">
+          <div class="screen-tablet:flex">
             <nav class="screen-tablet:flex-1 mb-1 px-2"><span class="screen-tablet:block screen-tablet:border-b border-color-white p-1">Main;</span>
               <a class="block p-1" href="index">Home</a>
+              <a class="block p-1" href="about">About</a>
+              <a class="block p-1" href="installation">Installation</a>
+              <a class="block p-1" href="design-tools">Design Tools</a>
+              <a class="block p-1 border-b border-color-white" href="developer-tools">Developer Tools</a>
               <a class="block p-1" href="https://www.npmjs.com/package/access-nyc-patterns">NPM</a>
               <a class="block p-1" href="https://github.com/CityOfNewYork/ACCESS-NYC-PATTERNS">GitHub</a>
             </nav>
@@ -104,6 +108,9 @@
               <a class="block p-1" href="search-box">Search Box</a>
             </nav>
           </div>
+          <div class="text-center">
+            <a data-js="toggle" href="#main-menu">Close Menu</a>
+          </div>
         </div>
       </aside>
       <main class="pt-4" id="main-content">
@@ -115,29 +122,63 @@
                   <h1 class="o-banner__title">The Patterns are a shared vocabulary between the code, design, and user interface of
                     <a href="https://access.nyc.gov">ACCESS NYC</a>.</h1>
                   <p>ACCESS NYC aims to increase the accessibility and convenience of discovering and enrolling in government benefits. The Patterns support this work by defining the UI and behavior that New Yorkers experience as they use the site.</p>
-                  <p>
+                  <p
+                    class="text-center">
                     <a class="btn btn-primary mb-2" data-js="toggle" href="#main-menu">Browse the patterns</a>
-                  </p>
-                  <div class="o-banner__touts">
-                    <div class="o-banner__tout">
-                      <h3 class="o-banner__tout-title">Developer Tools</h3>
-                      <div class="o-banner__tout-body">
-                        <p class="p1">Developers can import the Patterns into their projects using NPM, Yarn, or via CDN. All of the source code is publicly available to fork or contribute to.</p>
-                      </div>
-                      <div class="o-banner__tout-cta">
-                        <a class="btn btn-secondary btn-next" href="readme">Getting started</a>
-                      </div>
-                    </div>
-                    <div class="o-banner__tout">
-                      <h3 class="o-banner__tout-title">Design Tools</h3>
-                      <div class="o-banner__tout-body">
-                        <p>The Patterns are available as Sketch files that can be used by designers to implement icons, type styles, colors, and modules for use in prototyping.</p>
-                      </div>
-                      <div class="o-banner__tout-cta">
-                        <a class="btn btn-secondary" href="#">Coming Soon</a>
+                    </p>
+                    <div class="bg-status-info mb-4 p-2 screen-desktop:p-4">
+                      <h2 id="features">Features</h2>
+                      <div class="c-checklist">
+                        <ul class="mb-0">
+                          <li class="c-checklist__item-generic">WCAG AA Compliant typography and color contrast.</li>
+                          <li class="c-checklist__item-generic">Multi-lingual stylesheets with right-to-left and left-to-right reading orientations.</li>
+                          <li class="c-checklist__item-generic">Mobile-first stylesheets with support for modern browsers back to IE11.</li>
+                          <li class="c-checklist__item-generic">Modularized distributions for every pattern.</li>
+                          <li class="c-checklist__item-generic pb-1">Tailwind.css (https://tailwindcss.com) Utility Framework integration.</li>
+                        </ul>
                       </div>
                     </div>
-                  </div>
+                    <div class="o-banner__touts mb-4">
+                      <div class="o-banner__tout">
+                        <h3 class="o-banner__tout-title">Installation</h3>
+                        <div class="o-banner__tout-body">
+                          <p class="p1">Developers can import the Patterns into their projects using NPM, Yarn, or via CDN. All of the source code is publicly available to fork or contribute to.</p>
+                        </div>
+                        <div class="o-banner__tout-cta">
+                          <a class="btn btn-secondary btn-next" href="installation">Get started</a>
+                        </div>
+                      </div>
+                      <div class="o-banner__tout">
+                        <h3 class="o-banner__tout-title">Design Tools</h3>
+                        <div class="o-banner__tout-body">
+                          <p>The Patterns are available as Sketch files that can be used by designers to implement icons, type styles, colors, and modules for use in prototyping.</p>
+                        </div>
+                        <div class="o-banner__tout-cta">
+                          <a class="btn btn-secondary btn-next" href="design-tools">Download Tools</a>
+                        </div>
+                      </div>
+                    </div>
+                    <h4 id="links">Links</h4>
+                    <div class="c-checklist mb-4">
+                      <ul>
+                        <li>
+                          <a href="https://github.com/CityOfNewYork/ACCESS-NYC-PATTERNS">GitHub Repository</a> - The source repository for the Patterns.</li>
+                        <li>
+                          <a href="https://www.npmjs.com/package/access-nyc-patterns">NPM Package</a> - The published Patterns on NPM.</li>
+                        <li>
+                          <a href="icons">Icon Patterns</a> - The Icon Pattern set reference and usage.</li>
+                        <li>
+                          <a href="typography">Typography Patterns</a> - The Typography Pattern reference.</li>
+                        <li>
+                          <a href="colors">Color Patterns</a> - The Color Pattern reference.</li>
+                        <li>
+                          <a href="developer-tools">Installation</a> - Details on installing the Patterns in a project.</li>
+                        <li>
+                          <a href="developer-tools">Developer Tools</a> - Details on developing with the Patterns.</li>
+                        <li>
+                          <a href="developer-tools">Design Tools</a> - Download page for Sketch, font, and svg files.</li>
+                      </ul>
+                    </div>
                 </div>
               </div>
             </div>

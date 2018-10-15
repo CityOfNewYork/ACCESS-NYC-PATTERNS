@@ -1,4 +1,4 @@
-= mixin('head', 'title = Page Title');
+= mixin('head', 'title = ACCESS NYC Patterns');
   head
     meta charset='utf-8'
     meta http-equiv='X-UA-Compatible' content='IE=edge'
@@ -6,7 +6,12 @@
 
     link rel='stylesheet' href='styles/site-default.css'
 
-    title = this.title
+    title
+      - if (this.title != 'ACCESS NYC Patterns')
+        = this.title;
+        = ' | ACCESS NYC Patterns';
+      - else
+        = this.title;
 
     noscript
       style
