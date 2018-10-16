@@ -19,7 +19,7 @@
   = mixin('header');
 
 = content('content');
-  = mixin('content-header', title);
+  = mixin('content-header', title + ' (coming soon)');
   section id='welcome' class='pb-4 mb-4'
     div class='page-wrapper'
       header class='layout--home-body'
@@ -31,4 +31,4 @@
             = 'md{{ content/design-tools.md }}';
 
             p class='text-center'
-              a class='btn btn-primary mb-2' href='#' Download design files and assets
+              a class='btn btn-primary mb-2' href='#' Coming Soon
