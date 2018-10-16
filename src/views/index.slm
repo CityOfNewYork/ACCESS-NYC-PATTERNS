@@ -26,24 +26,65 @@
           p
             | ACCESS NYC aims to increase the accessibility and convenience of discovering and enrolling in government benefits. The Patterns support this work by defining the UI and behavior that New Yorkers experience as they use the site.
 
-          p
-            a class='btn btn-primary mb-2' href='#main-menu' data-js="toggle" Browse the patterns
+          p class='text-center'
+            a class='btn btn-primary mb-2' href='#main-menu' data-js='toggle' Browse the patterns
 
-          div class='o-banner__touts'
+          div class='bg-status-info mb-4 p-2 screen-desktop:p-4'
+            h2#features Features
+
+            div class='c-checklist'
+              ul class='mb-0'
+                li class='c-checklist__item-generic' WCAG AA Compliant typography and color contrast.
+                li class='c-checklist__item-generic' Multi-lingual stylesheets with right-to-left and left-to-right reading orientations.
+                li class='c-checklist__item-generic' Mobile-first stylesheets with support for modern browsers back to IE11.
+                li class='c-checklist__item-generic' Modularized distributions for every pattern.
+                li class='c-checklist__item-generic pb-1' Tailwind.css (https://tailwindcss.com) Utility Framework integration.
+
+          div class='o-banner__touts mb-4'
             div class='o-banner__tout'
-              h3 class='o-banner__tout-title' Developer Tools
+              h3 class='o-banner__tout-title' Installation
 
               div class='o-banner__tout-body'
                 p class='p1' Developers can import the Patterns into their projects using NPM, Yarn, or via CDN. All of the source code is publicly available to fork or contribute to.
 
               div class='o-banner__tout-cta'
-                a class='btn btn-secondary btn-next' href='readme'
-                  | Getting started
+                a class='btn btn-secondary btn-next' href='installation'
+                  | Get started
 
             div class='o-banner__tout'
               h3 class='o-banner__tout-title' Design Tools
 
               div class='o-banner__tout-body'
                 p The Patterns are available as Sketch files that can be used by designers to implement icons, type styles, colors, and modules for use in prototyping.
+
               div class='o-banner__tout-cta'
-                a class='btn btn-secondary' href='#' Coming Soon
+                a class='btn btn-secondary btn-next' href='design-tools' Download Tools
+
+          h4#links Links
+
+          div class='c-checklist mb-4'
+            ul
+              li
+                a href='https://github.com/CityOfNewYork/ACCESS-NYC-PATTERNS' GitHub Repository
+                |  - The source repository for the Patterns.
+              li
+                a href='https://www.npmjs.com/package/access-nyc-patterns' NPM Package
+                |  - The published Patterns on NPM.
+              li
+                a href='icons' Icon Patterns
+                |  - The Icon Pattern set reference and usage.
+              li
+                a href='typography' Typography Patterns
+                |  - The Typography Pattern reference.
+              li
+                a href='colors' Color Patterns
+                |  - The Color Pattern reference.
+              li
+                a href='developer-tools' Installation
+                |  - Details on installing the Patterns in a project.
+              li
+                a href='developer-tools' Developer Tools
+                |  - Details on developing with the Patterns.
+              li
+                a href='developer-tools' Design Tools
+                |  - Download page for Sketch, font, and svg files.

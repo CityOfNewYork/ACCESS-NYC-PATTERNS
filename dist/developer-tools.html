@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html class="bg-color-white text-size-0" lang="en">
+
+  <head>
+    <meta charset="utf-8" />
+    <meta content="IE=edge" http-equiv="X-UA-Compatible" />
+    <meta content="width=device-width, initial-scale=1" name="viewport" />
+    <link href="styles/site-default.css" rel="stylesheet" />
+    <title>Developer Tools | ACCESS NYC Patterns</title>
+    <noscript>
+      <style>
+        body {
+          visibility: visible !important;
+        }
+      </style>
+    </noscript>
+    <script type="text/javascript">
+      function load() {
+        document.body.style.visibility = 'visible'
+      };
+    </script>
+  </head>
+
+  <body class="bg-color-white" onload="load()" style="visibility: hidden;">
+    <a class="sr-only" href="#main-content">Skip to main content</a>
+    <div class="min-h-screen">
+      <header class="px-2">
+        <div class="border-b border-color-grey-light">
+          <div class="flex items-center justify-between p-2 screen-tablet:py-4 screen-tablet:px-2">
+            <div>
+              <h1 class="m-0 p-0 leading-normal">
+                <a href="index"><span class="hidden">ACCESS NYC</span>
+                  <svg aria-hidden="true" class="icon-logo-mark screen-tablet:hidden">
+                    <use xlink:href="#icon-logo-mark"></use>
+                  </svg>
+                  <svg aria-hidden="true" class="icon-logo-full--large text-color-blue-dark hidden screen-tablet:inline-block">
+                    <use xlink:href="#icon-logo-full"></use>
+                  </svg>
+                </a>
+              </h1>
+            </div>
+            <div class="flex items-center">
+              <h2 class="text-font-size-small m-0 text-color-blue-dark screen-tablet:hidden">Patterns</h2>
+              <h2 aria-hidden="true" class="type-h1 m-0 text-color-blue-dark hidden screen-tablet:inline-block">Patterns</h2>
+              <nav class="text-font-size-small">
+                <a class="rounded-lg text-color-blue-dark border-2 no-underline px-1 ml-2 hidden screen-tablet:inline-block" href="https://github.com/CityOfNewYork/ACCESS-NYC-PATTERNS">0.0.11-11</a>
+                <a aria-hidden="true" class="ml-1 screen-tablet:ml-2 screen-tablet:hidden" href="https://github.com/CityOfNewYork/ACCESS-NYC-PATTERNS">0.0.11-11</a>
+                <a class="ml-1 screen-tablet:ml-2" data-js="toggle" href="#main-menu">Menu</a>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </header>
+      <aside aria-hidden="true" class="text-font-size-small bg-color-blue-light hidden hidden:overflow animated" id="main-menu" style="position:relative;top:-1px">
+        <div class="page-wrapper py-4">
+          <div class="screen-tablet:flex">
+            <nav class="screen-tablet:flex-1 mb-1 px-2"><span class="screen-tablet:block screen-tablet:border-b border-color-white p-1">Main;</span>
+              <a class="block p-1" href="index">Home</a>
+              <a class="block p-1" href="about">About</a>
+              <a class="block p-1" href="installation">Installation</a>
+              <a class="block p-1" href="design-tools">Design Tools</a>
+              <a class="block p-1 border-b border-color-white" href="developer-tools">Developer Tools</a>
+              <a class="block p-1" href="https://www.npmjs.com/package/access-nyc-patterns">NPM</a>
+              <a class="block p-1" href="https://github.com/CityOfNewYork/ACCESS-NYC-PATTERNS">GitHub</a>
+            </nav>
+            <nav class="screen-tablet:flex-1 mb-1 px-2 screen-desktop:pl-4"><span class="screen-tablet:block screen-tablet:border-b border-color-white p-1">Elements;</span>
+              <a class="block p-1" href="buttons">Buttons</a>
+              <a class="block p-1" href="checkboxes">Checkboxes</a>
+              <a class="block p-1" href="colors">Colors</a>
+              <a class="block p-1" href="dividers">Dividers</a>
+              <a class="block p-1" href="icons">Icons</a>
+              <a class="block p-1" href="inputs">Inputs</a>
+              <a class="block p-1" href="layouts">Layouts</a>
+              <a class="block p-1" href="links">Links</a>
+              <a class="block p-1" href="lists">Lists</a>
+              <a class="block p-1" href="nav">Nav</a>
+              <a class="block p-1" href="program-labels">Program Labels</a>
+              <a class="block p-1" href="radios">Radios</a>
+              <a class="block p-1" href="tables">Tables</a>
+              <a class="block p-1" href="tooltips">Tooltips</a>
+              <a class="block p-1" href="toggles">Toggles</a>
+              <a class="block p-1" href="typography">Typography</a>
+              <a class="block p-1" href="selects">Selects</a>
+            </nav>
+            <nav class="screen-tablet:flex-1 mb-1 px-2 screen-desktop:pl-4"><span class="screen-tablet:block screen-tablet:border-b border-color-white p-1">Components;</span>
+              <a class="block p-1" href="accordion">Accordion</a>
+              <a class="block p-1" href="alert-box">Alert Box</a>
+              <a class="block p-1" href="card">Card</a>
+              <a class="block p-1" href="checklist">Checklist</a>
+              <a class="block p-1" href="disclaimer">Disclaimer</a>
+              <a class="block p-1" href="filter">Filter</a>
+              <a class="block p-1" href="header">Header</a>
+              <a class="block p-1" href="member-list">Member List</a>
+              <a class="block p-1" href="nearby-stops">Nearby Stops</a>
+              <a class="block p-1" href="text-controller">Text Controller</a>
+              <a class="block p-1" href="share-form">Share Form</a>
+              <a class="block p-1" href="side-nav">Side Nav</a>
+              <a class="block p-1" href="question">Question</a>
+            </nav>
+            <nav class="screen-tablet:flex-1 mb-1 px-2 screen-desktop:pl-4"><span class="screen-tablet:block screen-tablet:border-b border-color-white p-1">Objects;</span>
+              <a class="block p-1" href="announcements">Announcements</a>
+              <a class="block p-1" href="banner">Banner</a>
+              <a class="block p-1" href="card-list">Card Lists</a>
+              <a class="block p-1" href="content">Content</a>
+              <a class="block p-1" href="footer">Footer</a>
+              <a class="block p-1" href="mobile-nav">Mobile Nav</a>
+              <a class="block p-1" href="navigation">Navigation</a>
+              <a class="block p-1" href="search-box">Search Box</a>
+            </nav>
+          </div>
+          <div class="text-center">
+            <a data-js="toggle" href="#main-menu">Close Menu</a>
+          </div>
+        </div>
+      </aside>
+      <main class="pt-4" id="main-content">
+        <article class="py-4">
+          <header class="page-wrapper px-2 screen-desktop:px-0 layout--home-body">
+            <div class="my-0 w-full">
+              <h1 class="text-color-blue-dark px-2 m-0">Developer Tools</h1>
+            </div>
+          </header>
+          <section class="pb-4 mb-4" id="welcome">
+            <div class="page-wrapper">
+              <header class="layout--home-body">
+                <div class="my-0 pt-1 px-2 border-b border-color-grey-light"></div>
+              </header>
+              <div class="layout--home-body color-light-background">
+                <div class="px-2 text-font-size-small">
+                  <div class="o-content color-light-background pb-4"><p>The Patterns library is a Node.js application that uses various libraries including Express, Rollup.js, Node Sass, Nodemon, and HTML Sketch App, to run the development server and build tasks for Style, JavaScript, SVG, Views, and Sketch distributions.
+  This is all managed via
+  <a href="https://docs.npmjs.com/misc/scripts">npm scripts</a> in the <code>package.json</code> file and modules in the <code>.app/</code> directory with configuration in the <code>config/</code> directory.</p>
+
+<h4>NPM Scripts</h4>
+
+<pre><code>serve</code></pre>
+
+<p>This starts the
+  <a href="https://expressjs.com/">Express.js</a> development server which uses express to render the views in <code>src/views</code>. It also uses Concurrently to run all the <code>:watch</code> scripts for different compilation tasks so that when changes are made to the files they
+  are run.</p>
+
+<pre><code>compile</code></pre>
+
+<p>This runs all of the compilation tasks illustrated below for Styles, JavaScript, SVG, Views.</p>
+
+<pre><code>sync</code></pre>
+
+<p>This starts a
+  <a href="https://browsersync.io/">BrowserSync</a> server which proxies the Express application server.</p>
+
+<pre><code>build</code></pre>
+
+<p>This runs the <code>.app/build.js</code> module which reads the <code>src/views/</code> directory and compiles the <code>src/views/*.slm</code> templates to <code>dist/*.html</code>.</p>
+
+<pre><code>build:watch</code></pre>
+
+<p>This runs
+  <a href="https://nodemon.io/">nodemon</a> to watch for changes on <code>src/views/*.slm</code> and run the <code>build</code> npm script.</p>
+
+<pre><code>ghpages</code></pre>
+
+<p>This commits all of the changes in the <code>dist/</code> directory to the <code>gh-pages</code> branch and pushes it to GitHub. The <code>gh-pages</code> branch is used for the publicly accessible patterns website.</p>
+
+<pre><code>scripts</code></pre>
+
+<p>This runs
+  <a href="https://rollupjs.org">rollup.js</a> on JavaScript dependencies of the Patterns and <code>src/js/</code> directories. The dependencies are explicitly defined by the
+  <a href="https://github.com/CityOfNewYork/ACCESS-NYC-PATTERNS/blob/master/config/rollup.js"><code>config/rollup.js</code></a> file.</p>
+
+<pre><code>scripts:watch</code></pre>
+
+<p>This runs
+  <a href="https://nodemon.io/">nodemon</a> to watch for changes on all <code>*.js</code> files in the <code>src/</code> directory and run the <code>scripts</code> npm script.</p>
+
+<pre><code>styles</code></pre>
+
+<p>This runs all of the various <code>styles:</code> npm scripts illustrated below.</p>
+
+<pre><code>styles:variables</code></pre>
+
+<p>This runs the <code>.app/variables.js</code> module which takes the configuration variables in the
+  <a href="https://github.com/CityOfNewYork/ACCESS-NYC-PATTERNS/blob/master/config/variables.js"><code>config/variables.js</code></a> file and converts them into SASS variables and writes them to <code>src/styles/config/_variables.scss</code> for the <code>styles:sass</code> npm script to process.</p>
+
+<pre><code>styles:sass</code></pre>
+
+<p>This runs the <code>.app/sass.js</code> module which compiles each module in the
+  <a href="https://github.com/CityOfNewYork/ACCESS-NYC-PATTERNS/blob/master/config/modules.js"><code>config/modules.js</code></a> file.</p>
+
+<pre><code>styles:postcss</code></pre>
+
+<p>This runs the <code>.app/postcss.js</code> module which runs
+  <a href="https://postcss.org/">PostCSS</a> on each module in the <code>config/modules.js</code> file. PostCSS is configured by the <code>config/postcss.js</code> file.</p>
+
+<pre><code>styles:watch</code></pre>
+
+<p>This runs
+  <a href="https://nodemon.io/">nodemon</a> to watch for changes on all <code>*.scss</code> files in the <code>src/</code> directory and runs the <code>styles</code> npm script.</p>
+
+<pre><code>svgs</code></pre>
+
+<p>This runs all of the various <code>svgs:</code> npm scripts illustrated below.</p>
+
+<pre><code>svgs:optimize</code></pre>
+
+<p>This runs
+  <a href="https://github.com/svg/svgo">svgo</a> on the SVG files in the <code>src/svg/</code> directory and writes the optimized files to the <code>dist/svg/</code> directory.</p>
+
+<pre><code>svgs:symbol</code></pre>
+
+<p>This uses
+  <a href="https://www.npmjs.com/package/svgstore">svgstore</a> to build an SVG symbol from the optimized SVGs in the <code>dist/svg/</code> directory.</p>
+
+<pre><code>svgs:watch</code></pre>
+
+<p>This runs
+  <a href="https://nodemon.io/">nodemon</a> to watch for changes on all <code>*.svg</code> files in the <code>src/svg/</code> directory and runs the <code>svgs</code> npm script.</p>
+
+<pre><code>design:sketch</code></pre>
+
+<p>This uses the
+  <a href="https://github.com/seek-oss/html-sketchapp-cli">HTML Sketch App CLI</a> to export all of the patterns in the <code>dist/sketch.html</code> to “Almost Sketch Files” to be integrated into Sketch using the
+  <a href="https://github.com/brainly/html-sketchapp">HTML Sketch Plugin</a>.</p>
+
+<pre><code>make</code></pre>
+
+<p>This is the method for creating new patterns using templates defined in the
+  <a href="https://github.com/CityOfNewYork/ACCESS-NYC-PATTERNS/blob/master/config/make.js"><code>config/make.js</code></a> directory. Using <code>npm run make Accordion component</code> will bootstrap generate a stylesheet and markup file needed to add an Accordion Component to the Patterns. The parameters accepted are <code>name</code> (“Accordion”)
+  and <code>pattern type</code> (“component”). Currently the three available types are element, component, and object. The files will be generated and written according to these parameters;</p>
+
+<pre><code>src/&lt;pattern type&gt;/&lt;name&gt;/&lt;name&gt;.slm
+src/&lt;pattern type&gt;/&lt;name&gt;/_&lt;name&gt;.scss</code></pre>
+
+<p>The content of each file is determined by the templates defined in the
+  <a href="https://github.com/CityOfNewYork/ACCESS-NYC-PATTERNS/blob/master/config/make.js"><code>config/make.js</code></a> file. It will also ask if you would like to create a SASS configuration file to be written to the <code>src/styles/config/</code> directory and a view file to be written to <code>src/views/</code> directory.</p>
+
+<h3>Contributing</h3>
+
+<p>The most important changes developers may need to make includes files within two directories; The <code>src/</code> directory, which includes all of the pattern source including scripts, styles, and template source, and the <code>config/</code> directory,
+  which includes all of the configuration for the different node libraries and global variables for the Patterns.</p>
+
+<p>Every Pattern is developed with Style, JavaScript, and Markup dependencies bundled together by design so they can all be exported and imported independently of the rest of the Patterns.</p>
+
+<pre><code>src/&lt;pattern type&gt;/&lt;name&gt;/&lt;name&gt;.&lt;extension&gt;</code></pre>
+
+<p>For example, all of the relevant Accordion Component dependencies live in;</p>
+
+<pre><code>src/component/accordion/accordion.slm // Template Source
+src/component/accordion/accordion.js // JavaScript
+src/component/accordion/_accordion.scss // Styling</code></pre>
+
+<h4>Style Guide</h4>
+
+<p>JavaScript is written as ES6 modules that conforms to a standard
+  <a href="https://rollupjs.org/guide/en#faqs">set by Rollup.js</a> and linted by ESLint using the Google Standard.
+  <a href="https://github.com/CityOfNewYork/ACCESS-NYC-PATTERNS/blob/master/package.json">Definitions can be found in the package.json file</a>. If a Pattern requires targeting DOM elements by a selector, it is prefered to use data attributes with “js”; <code>data-js=”accordion”</code> or <code>data-js=”toggle”</code>. Using classes or ids
+  as targets is less preferred, however, if it is required it must have a “js” prefix in the name to avoid confusion; “.js-” or “#js-”.</p>
+
+<p>Styles are written accordion to a modified
+  <a href="https://csswizardry.com/2015/08/bemit-taking-the-bem-naming-convention-a-step-further/">BEMIT standard</a>;</p>
+
+<pre><code>.c-accordion {...}
+.c-accordion--type {...}
+.c-accordion__child-element {...}</code></pre>
+
+<p>Prefixes; <code>.c-</code> = components, <code>.o-</code> = objects. There are no prefixes for elements and utilities.</p>
+
+<p>Templates source is written using
+  <a href="https://github.com/slm-lang/slm">slm-lang</a>. Every Element, Component, and Object needs it’s dependant markup documented in a slm-lang template of the same name. For example, the Accordion Component template
+  <a href="https://github.com/CityOfNewYork/ACCESS-NYC-PATTERNS/blob/master/src/components/accordion/accordion.slm"><code>src/components/accordion/accordion.slm</code></a>.</p>
+
+<p>Documentation is written in
+  <a href="https://daringfireball.net/projects/markdown/syntax">Markdown</a>. When you visit a pattern in the browser, the page looks for a Markdown file that maps to the Pattern’s template source path in the <code>dist/</code> directory. Take, for example, the Accordion Component; the
+  <a href="https://github.com/CityOfNewYork/ACCESS-NYC-PATTERNS/blob/master/src/components/accordion/accordion.slm"><code>src/components/accordion/accordion.slm</code></a> is the template source. The corresponding documentation should live in
+  <a href="https://github.com/CityOfNewYork/ACCESS-NYC-PATTERNS/blob/master/dist/components/accordion/accordion.md"><code>dist/components/accordion/accordion.md</code></a>. When the /accordion page is visited, the page will look for
+  <a href="https://github.com/CityOfNewYork/ACCESS-NYC-PATTERNS/blob/master/dist/components/accordion/accordion.md"><code>dist/components/accordion/accordion.md</code></a> and render the documentation in the browser.</p>
+
+<h2>Patterns</h2>
+
+<p>All of the Patterns source is organized into four directories; elements, components, objects, and utilities according to the
+  <a href="about#naming-convention">Patterns naming convention</a>.</p>
+
+<p><em>Elements</em></p>
+
+<p>Elements are the smallest building blocks including colors, icons, buttons, links, layouts and more. They are used globally and can be seen within
+  <a href="#components">Components</a> and
+  <a href="#objects">Objects</a>. Often they are customized default HTML tags (&lt;button&gt;, &lt;table&gt;, &lt;ul&gt;, &lt;li&gt;, etc.) They require smaller amounts of markup and styling to customize.</p>
+
+<p><em>Components</em></p>
+
+<p>Components are smaller patterns that require more complex markup and styling than elements. Often, they include multiple elements. Component CSS classes are denoted with the <code>.c-</code> prefix.</p>
+
+<p><em>Objects</em></p>
+
+<p>Objects are the most complex patterns that require a great deal of custom styling and markup to function. They can be global elements (&lt;footer&gt;) or appear only in certain views. Object CSS classes are denoted with the <code>.o-</code> prefix.</p>
+
+<p><em>Utilities</em></p>
+
+<p>Utilities are reusable single attribute styles that are used to customize markup so that fewer patterns need to be written. They are not tied to any element, component, or object but they can help override styling in certain contexts and build views more
+  efficiently. These patterns utilize the
+  <a href="https://tailwindcss.com/">Tailwind Framework</a>. Refer to the Tailwind Docs and
+  <a href="https://github.com/CityOfNewYork/ACCESS-NYC-PATTERNS/blob/master/config/tailwind.js">Tailwind configuration file</a> for details on available modules and usage.</p></div>
+                </div>
+              </div>
+            </div>
+          </section>
+        </article>
+      </main>
+    </div>
+    <footer class="py-4 text-center bg-color-blue-dark text-color-white links-invert font-smooth">
+      <p>
+        <nav>
+          <a class="px-1" href="index">Home</a>
+          <a class="px-1" href="about">About</a>
+          <a class="px-1" href="installation">Installation</a>
+          <a class="px-1" href="design-tools">Design Tools</a>
+          <a class="px-1" href="developer-tools">Developer Tools</a>
+        </nav>
+      </p>
+      <p>Maintained by&nbsp;
+        <a href="https://nyc.gov/opportunity">NYC Opportunity</a>
+      </p>
+      <p class="m-0">
+        <nav>
+          <a class="px-1" href="https://github.com/orgs/CityOfNewYork/teams/nycopportunity">GitHub</a>
+          <a class="px-1" href="https://twitter.com/nycopportunity">Twitter</a>
+          <a class="px-1" href="https://www.facebook.com/NYCOpportunity">Facebook</a>
+          <a class="px-1" href="https://www.instagram.com/nycopportunity">Instagram</a>
+        </nav>
+      </p>
+    </footer>
+    <script src="https://cdn.polyfill.io/v2/polyfill.min.js?features=fetch,Element.prototype.matches,Promise&amp;flags=gated"></script>
+    <script src="scripts/AccessNyc.js"></script>
+    <script src="scripts/markdown.min.js"></script>
+    <script type="text/javascript">
+      var access = new AccessNyc();
+      access.markdown();
+      access.icons();
+      access.toggle();
+    </script>
+  </body>
+
+</html>

@@ -1,6 +1,10 @@
 nav class='${class_nav}'
   span class='${class_nav_heading}' Main;
   a class='${class_nav_item}' href='index' Home
+  a class='${class_nav_item}' href='about' About
+  a class='${class_nav_item}' href='installation' Installation
+  a class='${class_nav_item}' href='design-tools' Design Tools
+  a class='${class_nav_item} border-b border-color-white' href='developer-tools' Developer Tools
   a class='${class_nav_item}' href='${link_npm}' NPM
   a class='${class_nav_item}' href='${link_source}' GitHub
 
@@ -50,4 +54,3 @@ nav class='${class_nav} screen-desktop:pl-4'
   a class='${class_nav_item}' href='mobile-nav' Mobile Nav
   a class='${class_nav_item}' href='navigation' Navigation
   a class='${class_nav_item}' href='search-box' Search Box
-

@@ -1,0 +1,34 @@
+/ Layout
+= extend('layouts/default');
+
+- title = 'Design Tools';
+
+/ Partials
+= partial('partials/styles.slm');
+= partial('partials/links.slm');
+= partial('partials/head.mixin.slm');
+= partial('partials/content-header.mixin.slm');
+= partial('partials/demo-specs.mixin.slm');
+= partial('partials/demo-block.mixin.slm');
+
+/ Content blocks
+= content('head');
+  = mixin('head', title);
+
+= content('header');
+  = mixin('header');
+
+= content('content');
+  = mixin('content-header', title);
+  section id='welcome' class='pb-4 mb-4'
+    div class='page-wrapper'
+      header class='layout--home-body'
+        div class='my-0 pt-1 px-2 border-b border-color-grey-light'
+
+      div class='layout--home-body color-light-background'
+        div class='px-2 text-font-size-small'
+          div class='o-content color-light-background pb-4'
+            = 'md{{ content/design-tools.md }}';
+
+            p class='text-center'
+              a class='btn btn-primary mb-2' href='#' Download design files and assets

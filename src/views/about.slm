@@ -1,6 +1,8 @@
 / Layout
 = extend('layouts/default');
 
+- title = 'About';
+
 / Partials
 = partial('partials/styles.slm');
 = partial('partials/links.slm');
@@ -11,13 +13,13 @@
 
 / Content blocks
 = content('head');
-  = mixin('head', 'Patterns');
+  = mixin('head', title);
 
 = content('header');
-  = mixin('header', 'Welcome to the ACCESS NYC Patterns Guide');
+  = mixin('header');
 
 = content('content');
-  = mixin('content-header', 'Readme');
+  = mixin('content-header', title);
   section id='welcome' class='pb-4 mb-4'
     div class='page-wrapper'
       header class='layout--home-body'
@@ -25,5 +27,5 @@
 
       div class='layout--home-body'
         div class='px-2 text-font-size-small'
-          = 'md{{ ../README.md }}';
-
+          div class='o-content color-light-background pb-4'
+            = 'md{{ content/about.md }}';
