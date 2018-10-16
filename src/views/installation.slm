@@ -28,4 +28,3 @@
       div class='layout--home-body'
         div class='px-2 text-font-size-small'
           = 'md{{ content/installation.md }}';
-
