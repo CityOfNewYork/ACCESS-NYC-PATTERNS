@@ -19,7 +19,11 @@
 
     - if (typeof this.grid === 'object')
       - ;
-      div class='layout--gutter screen-mobile:layout--two-columns-gutter screen-tablet:layout--three-columns-gutter screen-desktop:layout--four-columns-gutter'
+      - if (Object.keys(this.grid).length % 2 == 0)
+        - layout = 'three-columns-gutter';
+      - else
+        - layout = 'four-columns-gutter';
+      div class='layout--gutter screen-mobile:layout--two-columns-gutter screen-tablet:layout--${layout}'
         - for (key in this.grid)
           - value = this.grid[key];
           div class='flex flex-col justify-between items-center border border-color-grey-lightest p-2'

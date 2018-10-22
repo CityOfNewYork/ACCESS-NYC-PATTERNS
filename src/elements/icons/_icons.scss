@@ -46,7 +46,7 @@
   font-family: helvetica, arial, sans-serif;
   font-weight: bold;
   @include font-smooth();
-  line-height: 150%;
+  line-height: 27px;
   text-align: center;
   text-decoration: none;
   border-radius: 9999px;
@@ -72,21 +72,21 @@
 
   &:before, &:after {
     content: '';
-    border: ($spacing-base / 2) + 1 solid transparent;
+    border: 15px solid transparent;
     width: 0;
     height: 0;
     position: absolute;
-    left: -1px;
+    left: -3px;
     z-index: -1;
   }
 
   &:before {
-    top: -($spacing-base / 2) - 2;
+    top: -18px;
     border-bottom-color: inherit;
   }
 
   &:after {
-    bottom: -($spacing-base / 2) - 2;
+    bottom: -18px;
     border-top-color: inherit;
   }
 }

@@ -4,9 +4,22 @@
 
     h3 class='text-font-size-small capitalize mb-2' ${key.replace(/-/g," ")}
 
-    div class='py-4 text-center bg-color-grey-lightest px-2 mb-2 flex items-center justify-center' style='min-height:150px'
-      svg class='${key} text-color-blue-dark'
-        use xlink:href='#${key.split("--")[0]}'
+    div class='text-font-size-normal py-4 text-center bg-color-grey-lightest px-2 mb-2 flex items-center justify-center' style='min-height:150px'
+      - for (i in value)
+        - line = value[i];
+        - express = false;
+        - color = 'bg-' + key;
+
+        - if (line.indexOf('Express') > -1)
+          - express = 'icon-subway-express';
+          - line = line.split(' ')[0];
+          - color = 'border-' + key;
+
+        span class='icon-subway ${color} ${express} mx-1'
+          = line;
+          - if (express)
+            - ;
+            span class='sr-only' Express
 
     p class='mb-0 flex justify-between'
       | ID

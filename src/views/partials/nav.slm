@@ -1,15 +1,15 @@
 nav class='${class_nav}'
-  span class='${class_nav_heading}' Main;
+  span class='${class_nav_heading} ${class_nav_divider}' Main
   a class='${class_nav_item}' href='index' Home
   a class='${class_nav_item}' href='about' About
   a class='${class_nav_item}' href='installation' Installation
   a class='${class_nav_item}' href='design-tools' Design Tools
-  a class='${class_nav_item} border-b border-color-white' href='developer-tools' Developer Tools
+  a class='${class_nav_item} ${class_nav_divider}' href='developer-tools' Developer Tools
   a class='${class_nav_item}' href='${link_npm}' NPM
   a class='${class_nav_item}' href='${link_source}' GitHub
 
 nav class='${class_nav} screen-desktop:pl-4'
-  span class='${class_nav_heading}' Elements;
+  span class='${class_nav_heading} ${class_nav_divider}' Elements
   a class='${class_nav_item}' href='buttons' Buttons
   a class='${class_nav_item}' href='checkboxes' Checkboxes
   a class='${class_nav_item}' href='colors' Colors
@@ -29,7 +29,7 @@ nav class='${class_nav} screen-desktop:pl-4'
   a class='${class_nav_item}' href='selects' Selects
 
 nav class='${class_nav} screen-desktop:pl-4'
-  span class='${class_nav_heading}' Components;
+  span class='${class_nav_heading} ${class_nav_divider}' Components
   a class='${class_nav_item}' href='accordion' Accordion
   a class='${class_nav_item}' href='alert-box' Alert Box
   a class='${class_nav_item}' href='card' Card
@@ -45,7 +45,7 @@ nav class='${class_nav} screen-desktop:pl-4'
   a class='${class_nav_item}' href='question' Question
 
 nav class='${class_nav} screen-desktop:pl-4'
-  span class='${class_nav_heading}' Objects;
+  span class='${class_nav_heading} ${class_nav_divider}' Objects
   a class='${class_nav_item}' href='announcements' Announcements
   a class='${class_nav_item}' href='banner' Banner
   a class='${class_nav_item}' href='card-list' Card Lists
