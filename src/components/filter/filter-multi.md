@@ -1,0 +1,1 @@
+The Multi Filter Component allows for multiple selections and nested filter categories.

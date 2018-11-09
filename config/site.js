@@ -14,8 +14,8 @@ const site = {
     tailwindcss: package.dependencies.tailwindcss.replace('^', ''),
   },
   urls: {
-    production: 'https://cityofnewyork.github.io/nyco-patterns',
-    cdn: '"https://cdn.rawgit.com/CityOfNewYork/ACCESS-NYC-PATTERNS/v' + package.version + '/dist"'
+    production: 'https://cityofnewyork.github.io/ACCESS-NYC-PATTERNS',
+    cdn: '"https://cdn.jsdelivr.net/gh/CityOfNewYork/ACCESS-NYC-PATTERNS@v' + package.version + '/dist"'
   }
 };
 

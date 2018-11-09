@@ -2,7 +2,7 @@
 / Accordion
 /
 
-article id='what-you-need-to-include' class='c-accordion mt-0' data-sketch-symbol=symbol data-sketch-symbol-instance=instance
+article id='what-you-need-to-include' class='c-accordion m-0' data-sketch-symbol=symbol data-sketch-symbol-instance=instance
   header class='c-accordion__header'
     p
       | Free tax prep for New Yorkers

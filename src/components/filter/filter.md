@@ -1,0 +1,1 @@
+The Filter Component is a list of categories used to get more granular results in a search. With JavaScript enabled, the Filter Component will toggle open or closed.

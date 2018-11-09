@@ -1,0 +1,1 @@
+The Disclaimer Component contains legal information for the user to read.

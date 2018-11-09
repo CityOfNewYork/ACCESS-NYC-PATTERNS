@@ -1,4 +1,4 @@
-= mixin('section', 'title', 'path', 'layout = columns', 'grid = false', 'specs = true');
+= mixin('section', 'title', 'path', 'layout = columns', 'grid = false', 'specs = true', 'code = true');
   - this.id = this.title.toLowerCase().split(' ').join('-');
   section id='${this.id}' class='pb-4 mb-4'
     div class='page-wrapper px-2 screen-desktop:px-0'
@@ -11,4 +11,5 @@
       - if (this.specs != 'false')
         = mixin('demo-specs', this.path + '.md');
 
-      = mixin('demo-block', this.path + '.slm', this.layout, this.grid);
+      - if (this.code != 'false')
+        = mixin('demo-block', this.path + '.slm', this.layout, this.grid);

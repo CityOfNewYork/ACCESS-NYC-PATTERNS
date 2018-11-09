@@ -1,0 +1,1 @@
+Program Label Elements help the admins indicate when an application deadline in coming up. For instance, when applications for heating bill assistance open the label "Applications Open" might be green, and then yellow for the two weeks before and red the day before "Applications due".

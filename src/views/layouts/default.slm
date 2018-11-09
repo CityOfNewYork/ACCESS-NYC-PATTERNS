@@ -16,7 +16,7 @@ html lang='en' class='bg-color-white text-size-0'
             a href='#main-menu' data-js='toggle' Close Menu
 
       main#main-content class='pt-4'
-        article class='py-4'
+        article class='pt-4'
           = content('content');
 
     = partial('/partials/footer.slm');

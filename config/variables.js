@@ -6,7 +6,7 @@ const package = require('../package.json');
 
 const variables = {
   version: package.version,
-  cdn: '"https://cdn.rawgit.com/CityOfNewYork/ACCESS-NYC-PATTERNS/v' + package.version + '/dist"',
+  cdn: '"https://cdn.jsdelivr.net/gh/CityOfNewYork/ACCESS-NYC-PATTERNS@v' + package.version + '/dist"',
   languages: ['default', 'ar', 'es', 'kr', 'ur', 'tc'],
   rtlLanguages: ['ar', 'ur'],
   fonts: {

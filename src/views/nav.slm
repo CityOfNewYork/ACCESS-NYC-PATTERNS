@@ -22,4 +22,5 @@
 
 = content('content');
   = mixin('content-header', title);
-  = mixin('section', 'Default Styling', 'elements/nav/nav');
+  = mixin('section', 'Nav Inline', 'elements/nav/nav-inline');
+  = mixin('section', 'Nav Block', 'elements/nav/nav-block');

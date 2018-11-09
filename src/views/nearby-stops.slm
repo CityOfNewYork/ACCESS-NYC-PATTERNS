@@ -10,6 +10,7 @@
 = partial('partials/head.mixin.slm');
 = partial('partials/content-header.mixin.slm');
 = partial('partials/section.mixin.slm');
+= partial('partials/section-text.mixin.slm');
 = partial('partials/demo-specs.mixin.slm');
 = partial('partials/demo-block.mixin.slm');
 
@@ -22,7 +23,8 @@
 
 = content('content');
   = mixin('content-header', title);
-  = mixin('section', 'Default Styling', 'components/nearby-stops/nearby-stops');
+  = mixin('section', 'About', 'components/nearby-stops/nearby-stops');
+  = mixin('section-text', 'Develop', 'components/nearby-stops/nearby-stops-develop');
 
 = content('script');
   javascript:

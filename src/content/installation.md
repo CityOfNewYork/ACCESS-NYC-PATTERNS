@@ -1,8 +1,9 @@
 ## Styles
 
-There are a few options when integrating the stylesheet.
+There are a few options when integrating the patterns.
 
 ### Node Module (recommended)
+
 This package is available as an NPM Module and can be included as a dependency with NPM...
 
     $ npm install access-nyc-patterns -save
@@ -12,36 +13,63 @@ This package is available as an NPM Module and can be included as a dependency w
     $ yarn add access-nyc-patterns
 
 ### Download
-[Download an archive](https://github.com/CityOfNewYork/ACCESS-NYC-PATTERNS/archive/master.zip) of this repository to include within your project.
+
+[Download an archive](https://github.com/CityOfNewYork/ACCESS-NYC-PATTERNS/archive/master.zip) of this repository to include in your project.
 
 ### CDN
-The global stylesheet (`style-default.css`) that includes all elements, components, objects, and utilities exists in the [`dist/styles`](https://github.com/CityOfNewYork/ACCESS-NYC-PATTERNS/tree/master/dist/styles) directory. This includes the English (default) stylesheet as well as 10 other individual language stylesheets.
 
-You can pick which stylesheet to use by linking to it through [RawGit](https://rawgit.com/). For example, after pasting in the link of the v1.0.0 default stylesheet;
+The global stylesheet (`style-default.css`) with all elements, components, objects, and utilities exists in the [`dist/styles`](https://github.com/CityOfNewYork/ACCESS-NYC-PATTERNS/tree/master/dist/styles) directory. This includes the English (default) stylesheet as well as 10 other individual language stylesheets.
 
-    https://cdn.rawgit.com/CityOfNewYork/ACCESS-NYC-PATTERNS/v1.0.0/dist/styles/site-default.css
+You can pick which stylesheet to use by linking to it through [JsDelivr](https://www.jsdelivr.com). For example, after pasting in the link of the v1.0.0 default stylesheet:
+
+    https://cdn.jsdelivr.net/gh/cityofnewyork/access-nyc-patterns@v1.0.0/dist/styles/site-default.css
 
 You will receive a CDN link;
 
-    https://cdn.rawgit.com/CityOfNewYork/ACCESS-NYC-PATTERNS/v1.0.0/dist/styles/site-default.css
+    https://cdn.jsdelivr.net/gh/cityofnewyork/access-nyc-patterns@v1.0.0/dist/styles/site-default.css
 
-Once you have the link, you can drop it into the `head` of your html document;
+Once you have the link, you can drop it into the `<head>` of your html document.
 
-    <link href="https://cdn.rawgit.com/CityOfNewYork/ACCESS-NYC-PATTERNS/v1.0.0/dist/styles/site-default.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/gh/cityofnewyork/access-nyc-patterns@v0.0.1/dist/styles/site-default.css" rel="stylesheet">
 
-All Components and Objects are distributed with their own styles and JavaScript dependencies in their corresponding  `/dist` folder as well. For example, all of the accordion dependencies live in the `/dist/components/accordion` folder.
+You can learn more about the different ways to use JsDelivr on it’s [feature page](https://www.jsdelivr.com/features).  All Components and Objects are also distributed with their own styles and JavaScript dependencies in their corresponding  `/dist` folder. For example, all of the accordion dependencies live in the `/dist/components/accordion` folder.
 
 ### SASS Import
 
-The ACCESS NYC main [SASS import file](https://github.com/CityOfNewYork/ACCESS-NYC/blob/master/wp-content/themes/access/src/scss/_imports.scss) can give you an idea of how to include individual patterns into your project. Be sure to add `node_modules` to your include paths.
+The ACCESS NYC main [SASS import](https://github.com/CityOfNewYork/ACCESS-NYC/blob/master/wp-content/themes/access/src/scss/_imports.scss) shows how to include individual patterns into your project. Be sure to add `node_modules` to your “include” paths.
+
+For example; the [node-sass](https://github.com/sass/node-sass) `includePaths` option which is array of paths that attempt to resolve your `@import` declarations.
+
+    Sass.render({
+            file: './src/scss/site-default.scss',
+            outFile: 'site-default.css',
+            includePaths: [
+                './node_modules',
+                './node_modules/access-nyc-patterns/src'
+            ]
+        }, (err, result) => {
+            Fs.writeFile(`./dist/styles/site-default.css`, result.css);
+        }
+    });
+
+Similar to the the [gulp-sass](https://www.npmjs.com/package/gulp-sass) `includePaths` option.
+
+    gulp.task('sass', () => {
+        return gulp.src('./sass/**/*.scss')
+            .pipe(sass.({includePaths: [
+                'node_modules',
+                'node_modules/access-nyc-patterns/src'
+            ]}))
+             .pipe(gulp.dest('./css'));
+    });
 
 ## Javascript
 
-The Javascript source is written as ES6 Modules. Using [Rollup.js](https://rollupjs.org), individual components with javascript dependencies are distributed as CommonJS and IFFE functions so that depending on the flavor of your project you can use import any of the three.
+The JavaScript source is written as ES6 Modules, and using [Rollup.js](https://rollupjs.org), individual components with JavaScript dependencies are distributed as CommonJS and IFFE functions. Depending on your project, you can import any of the three.
 
 ### CommonJS and ES6 Component Import
 
-Here is an example of importing the accordion component and initializing it.
+Here is an example of importing only the accordion component and initializing it.
 
     import Accordion from 'components/accordion/accordion';
     new Accordion();
@@ -65,4 +93,5 @@ You may also import the main ACCESS NYC Patterns script with all of the dependen
       access.accordion();
     </script>
 
-The main [Javascript import file](https://github.com/CityOfNewYork/ACCESS-NYC-PATTERNS/blob/master/src/js/main.js) can give you an idea of how each component needs to be initialized.
+The main [Javascript import file](https://github.com/CityOfNewYork/ACCESS-NYC-PATTERNS/blob/master/src/js/main.js) shows how each component needs to be initialized.
+

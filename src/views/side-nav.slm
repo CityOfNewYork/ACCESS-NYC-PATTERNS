@@ -2,7 +2,7 @@
 = extend('/layouts/default');
 
 / Component
-- title = 'Share Form';
+- title = 'Side Nav';
 
 / Partials
 = partial('partials/styles.slm');
@@ -10,6 +10,7 @@
 = partial('partials/head.mixin.slm');
 = partial('partials/content-header.mixin.slm');
 = partial('partials/section.mixin.slm');
+= partial('partials/section-text.mixin.slm');
 = partial('partials/demo-specs.mixin.slm');
 = partial('partials/demo-block.mixin.slm');
 
@@ -25,3 +26,4 @@
   = mixin('section', 'Ordered Side Nav', 'components/side-nav/side-nav-ol');
   = mixin('section', 'Unordered Side Nav', 'components/side-nav/side-nav-ul');
   = mixin('section', 'Share Links', 'components/share-links/share-links');
+  = mixin('section-text', 'Develop', 'components/side-nav/side-nav-develop');

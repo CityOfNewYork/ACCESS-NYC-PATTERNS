@@ -1,4 +1,4 @@
-footer class='py-4 text-center bg-color-blue-dark text-color-white links-invert font-smooth'
+footer class='py-4 text-center color-dark-background'
   p
     = partial('nav-sub.slm');
 

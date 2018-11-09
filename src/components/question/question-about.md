@@ -1,0 +1,1 @@
+The Question Component allows a user to enter information into a form. This ACCESS NYC Pattern follows the styling and usage guidelines of the [U.S. Web Design System’s Form Control](https://designsystem.digital.gov/components/form-controls/).

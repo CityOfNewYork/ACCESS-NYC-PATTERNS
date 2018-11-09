@@ -10,6 +10,7 @@
 = partial('partials/head.mixin.slm');
 = partial('partials/content-header.mixin.slm');
 = partial('partials/section.mixin.slm');
+= partial('partials/section-text.mixin.slm');
 = partial('partials/demo-specs.mixin.slm');
 = partial('partials/demo-block.mixin.slm');
 
@@ -22,6 +23,7 @@
 
 = content('content');
   = mixin('content-header', title);
+  = mixin('section-text', 'About', 'components/alert-box/alert-box-about');
   = mixin('section', 'Information', 'components/alert-box/alert-box-info');
   = mixin('section', 'Success', 'components/alert-box/alert-box-success');
   = mixin('section', 'Urgent', 'components/alert-box/alert-box-urgent');

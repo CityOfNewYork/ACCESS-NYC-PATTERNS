@@ -10,6 +10,7 @@
 = partial('partials/head.mixin.slm');
 = partial('partials/content-header.mixin.slm');
 = partial('partials/section.mixin.slm');
+= partial('partials/section-text.mixin.slm');
 = partial('partials/demo-specs.mixin.slm');
 = partial('partials/demo-block.mixin.slm');
 
@@ -22,7 +23,7 @@
 
 = content('content');
   = mixin('content-header', title);
-  = mixin('section', 'Default Styling', 'components/card/card');
+  = mixin('section', 'About', 'components/card/card');
   = mixin('section', 'Card With Icon', 'components/card/card-icon');
   = mixin('section', 'Card With Icon and Information', 'components/card/card-icon-info');
   = mixin('section', 'Card With Icon, Information, and Apply Button', 'components/card/card-icon-info-apply');

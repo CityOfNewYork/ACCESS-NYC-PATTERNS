@@ -1,0 +1,1 @@
+Table Elements are usually used to show the income limits for applicants with different situations (like household size or marital status).

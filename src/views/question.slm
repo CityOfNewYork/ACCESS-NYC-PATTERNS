@@ -10,6 +10,7 @@
 = partial('partials/head.mixin.slm');
 = partial('partials/content-header.mixin.slm');
 = partial('partials/section.mixin.slm');
+= partial('partials/section-text.mixin.slm');
 = partial('partials/demo-specs.mixin.slm');
 = partial('partials/demo-block.mixin.slm');
 
@@ -22,6 +23,7 @@
 
 = content('content');
   = mixin('content-header', title);
+  = mixin('section-text', 'About', 'components/question/question-about');
   = mixin('section', 'Number Question', 'components/question/question-number');
   = mixin('section', 'Number Question Errors', 'components/question/question-number-error');
   = mixin('section', 'Text Question', 'components/question/question-text');

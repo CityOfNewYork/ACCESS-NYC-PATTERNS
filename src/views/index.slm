@@ -16,75 +16,92 @@
   = mixin('header', 'Welcome to the ACCESS NYC Patterns Guide');
 
 = content('content');
-  section class='pb-4'
-    div class='page-wrapper layout--home-body'
-      div class='o-banner my-0 w-full color-light-background p-0 px-2 screen-desktop:px-0'
-        div class='o-banner__inner m-0'
-          h1 class='o-banner__title'
-            | The Patterns are a shared vocabulary between the code, design, and user interface of <a href="https://access.nyc.gov">ACCESS NYC</a>.
+  section
+    div class='page-wrapper layout--home-body px-2'
+      div
+        div class='o-banner my-0 w-full color-light-background p-0'
+          div class='o-banner__inner max-w-full'
+            h1 class='o-banner__title'
+              | The Patterns of ACCESS NYC are a shared vocabulary between the code, design, and user interface (UI) of <a href="https://access.nyc.gov">ACCESS NYC</a>.
 
-          p
-            | ACCESS NYC aims to increase the accessibility and convenience of discovering and enrolling in government benefits. The Patterns support this work by defining the UI and behavior that New Yorkers experience as they use the site.
+            p
+              | ACCESS NYC aims to increase the accessibility and convenience of discovering and enrolling in government benefits. The Patterns support this work by defining the UI and behavior that New Yorkers experience as they use the site.
 
-          p class='text-center'
-            a class='btn btn-primary mb-2' href='#main-menu' data-js='toggle' Browse the patterns
+            p class='text-center'
+              a class='btn btn-primary mb-2' href='#main-menu' data-js='toggle' Browse the patterns
 
-          div class='bg-status-info mb-4 p-2 screen-desktop:p-4'
-            h2#features Features
+            div class='bg-status-info mb-4 p-2 screen-desktop:p-4'
+              h2#features Features
 
-            div class='c-checklist'
-              ul class='mb-0'
-                li class='c-checklist__item-generic' WCAG AA Compliant typography and color contrast.
-                li class='c-checklist__item-generic' Multi-lingual stylesheets with right-to-left and left-to-right reading orientations.
-                li class='c-checklist__item-generic' Mobile-first stylesheets with support for modern browsers back to IE11.
-                li class='c-checklist__item-generic' Modularized distributions for every pattern.
-                li class='c-checklist__item-generic pb-1' Tailwind.css (https://tailwindcss.com) Utility Framework integration.
+              div class='c-checklist'
+                ul class='mb-0'
+                  li class='c-checklist__item-generic' Web Content Accessibility Guidelines (WCAG) AA Compliant typography and color contrast.
+                  li class='c-checklist__item-generic' Multi-lingual stylesheets with right-to-left and left-to-right reading orientations.
+                  li class='c-checklist__item-generic' Mobile-first stylesheets with support for modern browsers back to Internet Explorer 11.
+                  li class='c-checklist__item-generic' Module-based design patterns with CSS and JavaScript included for each pattern.
+                  li class='c-checklist__item-generic pb-1' <a href='https://tailwindcss.com'>Tailwind.css Utility Framework</a> integration.
 
-          div class='o-banner__touts mb-4'
-            div class='o-banner__tout'
-              h3 class='o-banner__tout-title' Installation
+            div class='o-banner__touts'
+              div class='o-banner__tout'
+                h3 class='o-banner__tout-title' Installation
 
-              div class='o-banner__tout-body'
-                p class='p1' Developers can import the Patterns into their projects using NPM, Yarn, or via CDN. All of the source code is publicly available to fork or contribute to.
+                div class='o-banner__tout-body'
+                  p class='p1' Developers can import the Patterns into their projects using NPM, Yarn, or via CDN. All of the source code is publicly available to fork or contribute to.
 
-              div class='o-banner__tout-cta'
-                a class='btn btn-secondary btn-next' href='installation'
-                  | Get started
+                div class='o-banner__tout-cta'
+                  a class='btn btn-secondary btn-next' href='installation'
+                    | Get started
 
-            div class='o-banner__tout'
-              h3 class='o-banner__tout-title' Design Tools
+              div class='o-banner__tout'
+                h3 class='o-banner__tout-title' Design Tools
 
-              div class='o-banner__tout-body'
-                p The Patterns are available as Sketch files that can be used by designers to implement icons, type styles, colors, and modules for use in prototyping.
+                div class='o-banner__tout-body'
+                  p The Patterns are available as Sketch files that designers can use to implement icons, type styles, colors, and modules in prototypes.
 
-              div class='o-banner__tout-cta'
-                a class='btn btn-secondary btn-next' href='design-tools' Download Tools
+                div class='o-banner__tout-cta'
+                  a class='btn btn-secondary btn-next' href='design-tools' Download Tools
 
-          h4#links Links
+  section class='pb-4 color-mid-background'
+    div class='page-wrapper layout--home-body px-2'
+      div
 
-          div class='c-checklist mb-4'
-            ul
-              li
-                a href='https://github.com/CityOfNewYork/ACCESS-NYC-PATTERNS' GitHub Repository
-                |  - The source repository for the Patterns.
-              li
-                a href='https://www.npmjs.com/package/access-nyc-patterns' NPM Package
-                |  - The published Patterns on NPM.
-              li
-                a href='icons' Icon Patterns
-                |  - The Icon Pattern set reference and usage.
-              li
-                a href='typography' Typography Patterns
-                |  - The Typography Pattern reference.
-              li
-                a href='colors' Color Patterns
-                |  - The Color Pattern reference.
-              li
-                a href='developer-tools' Installation
-                |  - Details on installing the Patterns in a project.
-              li
-                a href='developer-tools' Developer Tools
-                |  - Details on developing with the Patterns.
-              li
-                a href='developer-tools' Design Tools
-                |  - Download page for Sketch, font, and svg files.
+        h4#links Links
+
+        div class='layout--gutter screen-tablet:layout--columns-gutter'
+          article class='c-card'
+            div class='c-card__body'
+              h3 class='c-card__title mb-3' Icon Patterns
+              div class='c-card__summary'
+                a href='icons' The Icon Pattern set reference and usage.
+
+          article class='c-card'
+            div class='c-card__body'
+              h3 class='c-card__title mb-3' Typography Patterns
+              div class='c-card__summary'
+                a href='typography' The Typography Pattern reference.
+
+          article class='c-card'
+            div class='c-card__body'
+              h3 class='c-card__title mb-3' Color Patterns
+              div class='c-card__summary'
+                a href='colors' The Color Pattern reference.
+
+          article class='c-card' aria-hidden='true'
+
+  section class='py-4'
+    div class='page-wrapper layout--home-body px-2'
+      div
+
+        h3#nyc-civic-service-design NYC Civic Service Design
+
+        p ACCESS NYC was built using the <a href='http://nyc.gov/servicedesign101'>NYC Civic Service Design</a> principles. The corresponding site is an introduction to service design for public servants, and a set of practical ways to include design methods in your work. Use this collection of tools and tactics to see your service in context, talk with people who use it, and try out ideas in low-risk ways.
+
+        h4#more-nyc-design-resources More NYC Design Resources
+
+        ul
+          li
+            a href='https://blueprint.cityofnewyork.us/' NYC Digital Blueprint
+            |  - A guide for building trustworthy and accessible digital products that help New Yorkers.
+          li
+            a href='https://playbook.cityofnewyork.us/' NYC Digital Playbook
+            |  - This guide outlines the City of New York’s intentions for how residents experience City services.

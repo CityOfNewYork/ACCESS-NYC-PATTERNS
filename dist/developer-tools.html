@@ -66,9 +66,7 @@
             <nav class="screen-tablet:flex-1 mb-1 px-2 screen-desktop:pl-4"><span class="type-h3 text-font-size-small mb-1 block screen-tablet:border-b screen-tablet:pb-2 screen-tablet:mb-1 border-color-white p-1">Elements</span>
               <a class="block p-1" href="buttons">Buttons</a>
               <a class="block p-1" href="checkboxes">Checkboxes</a>
-              <a class="block p-1" href="colors">Colors</a>
               <a class="block p-1" href="dividers">Dividers</a>
-              <a class="block p-1" href="icons">Icons</a>
               <a class="block p-1" href="inputs">Inputs</a>
               <a class="block p-1" href="layouts">Layouts</a>
               <a class="block p-1" href="links">Links</a>
@@ -79,7 +77,6 @@
               <a class="block p-1" href="tables">Tables</a>
               <a class="block p-1" href="tooltips">Tooltips</a>
               <a class="block p-1" href="toggles">Toggles</a>
-              <a class="block p-1" href="typography">Typography</a>
               <a class="block p-1" href="selects">Selects</a>
             </nav>
             <nav class="screen-tablet:flex-1 mb-1 px-2 screen-desktop:pl-4"><span class="type-h3 text-font-size-small mb-1 block screen-tablet:border-b screen-tablet:pb-2 screen-tablet:mb-1 border-color-white p-1">Components</span>
@@ -92,9 +89,9 @@
               <a class="block p-1" href="header">Header</a>
               <a class="block p-1" href="member-list">Member List</a>
               <a class="block p-1" href="nearby-stops">Nearby Stops</a>
-              <a class="block p-1" href="text-controller">Text Controller</a>
               <a class="block p-1" href="share-form">Share Form</a>
               <a class="block p-1" href="side-nav">Side Nav</a>
+              <a class="block p-1" href="text-controller">Text Controller</a>
               <a class="block p-1" href="question">Question</a>
             </nav>
             <nav class="screen-tablet:flex-1 mb-1 px-2 screen-desktop:pl-4"><span class="type-h3 text-font-size-small mb-1 block screen-tablet:border-b screen-tablet:pb-2 screen-tablet:mb-1 border-color-white p-1">Objects</span>
@@ -107,6 +104,15 @@
               <a class="block p-1" href="navigation">Navigation</a>
               <a class="block p-1" href="search-box">Search Box</a>
             </nav>
+            <nav class="screen-tablet:flex-1 mb-1 px-2 screen-desktop:pl-4"><span class="type-h3 text-font-size-small mb-1 block screen-tablet:border-b screen-tablet:pb-2 screen-tablet:mb-1 border-color-white p-1">Utilities</span>
+              <a class="block p-1" href="colors">Colors</a>
+              <a class="block p-1" href="icons">Icons</a>
+              <a class="block p-1" href="typography">Typography</a>
+              <a class="block p-1" href="language">Language</a>
+              <a class="block p-1" href="accessibility">Accessibility</a>
+              <a class="block p-1" href="media">Media</a>
+              <a class="block p-1" href="display">Display</a>
+            </nav>
           </div>
           <div class="text-center">
             <a data-js="toggle" href="#main-menu">Close Menu</a>
@@ -114,7 +120,7 @@
         </div>
       </aside>
       <main class="pt-4" id="main-content">
-        <article class="py-4">
+        <article class="pt-4">
           <header class="page-wrapper px-2 screen-desktop:px-0 layout--home-body">
             <div class="my-0 w-full">
               <h1 class="text-color-blue-dark px-2 m-0">Developer Tools</h1>
@@ -127,30 +133,29 @@
               </header>
               <div class="layout--home-body color-light-background">
                 <div class="px-2 text-font-size-small">
-                  <div class="o-content color-light-background pb-4"><p>The Patterns library is a Node.js application that uses various libraries including Express, Rollup.js, Node Sass, Nodemon, and HTML Sketch App, to run the development server and build tasks for Style, JavaScript, SVG, Views, and Sketch distributions.
-  This is all managed via
-  <a href="https://docs.npmjs.com/misc/scripts">npm scripts</a> in the <code>package.json</code> file and modules in the <code>.app/</code> directory with configuration in the <code>config/</code> directory.</p>
+                  <div class="o-content color-light-background pb-4"><p>The Patterns library is a Node.js application that uses various libraries—including Express, Rollup.js, Node Sass, Nodemon, and HTML Sketch App—to run the development server and build tasks for Style, JavaScript, SVG, Views, and Sketch distributions.
+  This is all managed through
+  <a href="https://docs.npmjs.com/misc/scripts">npm scripts</a> in the <code>package.json</code> file, modules in the <code>.app/</code> directory, and configuration in the <code>config/</code> directory.</p>
 
 <h4>NPM Scripts</h4>
 
 <pre><code>serve</code></pre>
 
 <p>This starts the
-  <a href="https://expressjs.com/">Express.js</a> development server which uses express to render the views in <code>src/views</code>. It also uses Concurrently to run all the <code>:watch</code> scripts for different compilation tasks so that when changes are made to the files they
-  are run.</p>
+  <a href="https://expressjs.com/">Express.js</a> development server, which uses Express to render the views in <code>src/views</code>. It also uses Concurrently to trigger <code>:watch</code> scripts for different compilation tasks as changes are detected within your project.</p>
 
 <pre><code>compile</code></pre>
 
-<p>This runs all of the compilation tasks illustrated below for Styles, JavaScript, SVG, Views.</p>
+<p>This runs all of the compilation tasks illustrated below for Styles, JavaScript, SVG, and Views.</p>
 
 <pre><code>sync</code></pre>
 
 <p>This starts a
-  <a href="https://browsersync.io/">BrowserSync</a> server which proxies the Express application server.</p>
+  <a href="https://browsersync.io/">BrowserSync</a> server that proxies the Express application server.</p>
 
 <pre><code>build</code></pre>
 
-<p>This runs the <code>.app/build.js</code> module which reads the <code>src/views/</code> directory and compiles the <code>src/views/*.slm</code> templates to <code>dist/*.html</code>.</p>
+<p>This runs the <code>.app/build.js</code> module that reads the <code>src/views/</code> directory and compiles the <code>src/views/*.slm</code> templates to <code>dist/*.html</code>.</p>
 
 <pre><code>build:watch</code></pre>
 
@@ -159,12 +164,12 @@
 
 <pre><code>ghpages</code></pre>
 
-<p>This commits all of the changes in the <code>dist/</code> directory to the <code>gh-pages</code> branch and pushes it to GitHub. The <code>gh-pages</code> branch is used for the publicly accessible patterns website.</p>
+<p>This commits all of the changes in the <code>dist/</code> directory to the <code>gh-pages</code> branch and pushes it to GitHub. The <code>gh-pages</code> branch is used for the publicly accessible Patterns website.</p>
 
 <pre><code>scripts</code></pre>
 
 <p>This runs
-  <a href="https://rollupjs.org">rollup.js</a> on JavaScript dependencies of the Patterns and <code>src/js/</code> directories. The dependencies are explicitly defined by the
+  <a href="https://rollupjs.org">Rollup.js</a> on JavaScript dependencies of the Patterns and <code>src/js/</code> directories. The dependencies are explicitly defined by the
   <a href="https://github.com/CityOfNewYork/ACCESS-NYC-PATTERNS/blob/master/config/rollup.js"><code>config/rollup.js</code></a> file.</p>
 
 <pre><code>scripts:watch</code></pre>
@@ -227,22 +232,29 @@
   <a href="https://github.com/CityOfNewYork/ACCESS-NYC-PATTERNS/blob/master/config/make.js"><code>config/make.js</code></a> directory. Using <code>npm run make Accordion component</code> will bootstrap generate a stylesheet and markup file needed to add an Accordion Component to the Patterns. The parameters accepted are <code>name</code> (“Accordion”)
   and <code>pattern type</code> (“component”). Currently the three available types are element, component, and object. The files will be generated and written according to these parameters;</p>
 
+<p>This is the method for creating new patterns using templates defined in the
+  <a href="https://github.com/CityOfNewYork/ACCESS-NYC-PATTERNS/blob/master/config/make.js"><code>config/make.js</code></a> directory. Use <code>npm run make Accordion component</code> to generate the stylesheet and markup file needed to add an Accordion Component to the Patterns.</p>
+
+<p>The parameters accepted are <code>name</code> (“Accordion”) and <code>pattern type</code> (“component”). Currently, the three available types are element, component, and object. The files will be generated and written according to these parameters:</p>
+
 <pre><code>src/&lt;pattern type&gt;/&lt;name&gt;/&lt;name&gt;.slm
 src/&lt;pattern type&gt;/&lt;name&gt;/_&lt;name&gt;.scss</code></pre>
 
 <p>The content of each file is determined by the templates defined in the
-  <a href="https://github.com/CityOfNewYork/ACCESS-NYC-PATTERNS/blob/master/config/make.js"><code>config/make.js</code></a> file. It will also ask if you would like to create a SASS configuration file to be written to the <code>src/styles/config/</code> directory and a view file to be written to <code>src/views/</code> directory.</p>
+  <a href="https://github.com/CityOfNewYork/ACCESS-NYC-PATTERNS/blob/master/config/make.js"><code>config/make.js</code></a> file.</p>
+
+<p>Once you run the script, a prompt will also ask if you would like a SASS configuration file to be written to the <code>src/styles/config/</code> directory and a view file to be written to <code>src/views/</code> directory.</p>
 
 <h3>Contributing</h3>
 
-<p>The most important changes developers may need to make includes files within two directories; The <code>src/</code> directory, which includes all of the pattern source including scripts, styles, and template source, and the <code>config/</code> directory,
+<p>The most important changes developers may need to make are to files within two directories: The <code>src/</code> directory, which includes all of the pattern source including scripts, styles, and template source, and the <code>config/</code> directory,
   which includes all of the configuration for the different node libraries and global variables for the Patterns.</p>
 
-<p>Every Pattern is developed with Style, JavaScript, and Markup dependencies bundled together by design so they can all be exported and imported independently of the rest of the Patterns.</p>
+<p>Every Pattern is developed with Style, JavaScript, and Markup dependencies bundled together so they can all be exported and imported independently of the rest of the Patterns.</p>
 
-<pre><code>src/&lt;pattern type&gt;/&lt;name&gt;/&lt;name&gt;.&lt;extension&gt;</code></pre>
+<pre><code>`src/&lt;pattern type&gt;/&lt;name&gt;/&lt;name&gt;.&lt;extension&gt;`</code></pre>
 
-<p>For example, all of the relevant Accordion Component dependencies live in;</p>
+<p>For example, all of the relevant Accordion Component dependencies live in:</p>
 
 <pre><code>src/component/accordion/accordion.slm // Template Source
 src/component/accordion/accordion.js // JavaScript
@@ -250,53 +262,55 @@ src/component/accordion/_accordion.scss // Styling</code></pre>
 
 <h4>Style Guide</h4>
 
-<p>JavaScript is written as ES6 modules that conforms to a standard
+<p>JavaScript is written as ES6 modules that conform to a standard set by
   <a href="https://rollupjs.org/guide/en#faqs">set by Rollup.js</a> and linted by ESLint using the Google Standard.
-  <a href="https://github.com/CityOfNewYork/ACCESS-NYC-PATTERNS/blob/master/package.json">Definitions can be found in the package.json file</a>. If a Pattern requires targeting DOM elements by a selector, it is prefered to use data attributes with “js”; <code>data-js=”accordion”</code> or <code>data-js=”toggle”</code>. Using classes or ids
-  as targets is less preferred, however, if it is required it must have a “js” prefix in the name to avoid confusion; “.js-” or “#js-”.</p>
+  <a href="https://github.com/CityOfNewYork/ACCESS-NYC-PATTERNS/blob/master/package.json">Definitions can be found in the package.json file</a>.</p>
+
+<p>If a Pattern requires targeting DOM elements by a selector, it is better to use data attributes with “js”; <code>data-js=”accordion”</code> or <code>data-js=”toggle”</code>. While using classes or ids as targets is less preferable, if it is required,
+  it must have a “js” prefix in the name to avoid confusion: “.js-” or “#js-”.</p>
 
 <p>Styles are written accordion to a modified
-  <a href="https://csswizardry.com/2015/08/bemit-taking-the-bem-naming-convention-a-step-further/">BEMIT standard</a>;</p>
+  <a href="https://csswizardry.com/2015/08/bemit-taking-the-bem-naming-convention-a-step-further/">BEMIT standard</a>:</p>
 
 <pre><code>.c-accordion {...}
 .c-accordion--type {...}
 .c-accordion__child-element {...}</code></pre>
 
-<p>Prefixes; <code>.c-</code> = components, <code>.o-</code> = objects. There are no prefixes for elements and utilities.</p>
+<p>Prefixes: <code>.c-</code> = components, <code>.o-</code> = objects. There are no prefixes for elements and utilities.</p>
 
 <p>Templates source is written using
-  <a href="https://github.com/slm-lang/slm">slm-lang</a>. Every Element, Component, and Object needs it’s dependant markup documented in a slm-lang template of the same name. For example, the Accordion Component template
+  <a href="https://github.com/slm-lang/slm">slm-lang</a>. Every Element, Component, and Object needs its dependant markup documented in a slm-lang template of the same name. For example, the Accordion Component template would be
   <a href="https://github.com/CityOfNewYork/ACCESS-NYC-PATTERNS/blob/master/src/components/accordion/accordion.slm"><code>src/components/accordion/accordion.slm</code></a>.</p>
 
 <p>Documentation is written in
-  <a href="https://daringfireball.net/projects/markdown/syntax">Markdown</a>. When you visit a pattern in the browser, the page looks for a Markdown file that maps to the Pattern’s template source path in the <code>dist/</code> directory. Take, for example, the Accordion Component; the
+  <a href="https://daringfireball.net/projects/markdown/syntax">Markdown</a>. When you visit a pattern in the browser, the page looks for a Markdown file that maps to the Pattern’s template source path in the <code>dist/</code> directory. For example, with the Accordion Component, the
   <a href="https://github.com/CityOfNewYork/ACCESS-NYC-PATTERNS/blob/master/src/components/accordion/accordion.slm"><code>src/components/accordion/accordion.slm</code></a> is the template source. The corresponding documentation should live in
-  <a href="https://github.com/CityOfNewYork/ACCESS-NYC-PATTERNS/blob/master/dist/components/accordion/accordion.md"><code>dist/components/accordion/accordion.md</code></a>. When the /accordion page is visited, the page will look for
-  <a href="https://github.com/CityOfNewYork/ACCESS-NYC-PATTERNS/blob/master/dist/components/accordion/accordion.md"><code>dist/components/accordion/accordion.md</code></a> and render the documentation in the browser.</p>
+  <a href="https://github.com/CityOfNewYork/ACCESS-NYC-PATTERNS/blob/master/dist/components/accordion/accordion.md"><code>dist/components/accordion/accordion.md</code></a>. When a user visits the /accordion page, the page looks for
+  <a href="https://github.com/CityOfNewYork/ACCESS-NYC-PATTERNS/blob/master/dist/components/accordion/accordion.md"><code>dist/components/accordion/accordion.md</code></a> and renders the documentation in the browser.</p>
 
 <h2>Patterns</h2>
 
-<p>All of the Patterns source is organized into four directories; elements, components, objects, and utilities according to the
+<p>All of the Patterns source is organized into four directories: elements, components, objects, and utilities, according to the
   <a href="about#naming-convention">Patterns naming convention</a>.</p>
 
 <p><em>Elements</em></p>
 
-<p>Elements are the smallest building blocks including colors, icons, buttons, links, layouts and more. They are used globally and can be seen within
+<p>Elements are the smallest building blocks and include colors, icons, buttons, links, layouts, and more. They can be seen within
   <a href="#components">Components</a> and
-  <a href="#objects">Objects</a>. Often they are customized default HTML tags (&lt;button&gt;, &lt;table&gt;, &lt;ul&gt;, &lt;li&gt;, etc.) They require smaller amounts of markup and styling to customize.</p>
+  <a href="#objects">Objects</a>. They are often customized default HTML tags (&amp;lt;button&amp;gt;, &amp;lt;table&amp;gt;, &amp;lt;ul&amp;gt;, &amp;lt;a&amp;gt;, etc.). They require smaller amounts of markup and styling to customize.</p>
 
 <p><em>Components</em></p>
 
-<p>Components are smaller patterns that require more complex markup and styling than elements. Often, they include multiple elements. Component CSS classes are denoted with the <code>.c-</code> prefix.</p>
+<p>Components are smaller patterns that require more complex markup and styling than elements. Often, they include multiple elements such as buttons, lists, links, etc.. Component CSS classes are denoted with the <code>.c-</code> prefix.</p>
 
 <p><em>Objects</em></p>
 
-<p>Objects are the most complex patterns that require a great deal of custom styling and markup to function. They can be global elements (&lt;footer&gt;) or appear only in certain views. Object CSS classes are denoted with the <code>.o-</code> prefix.</p>
+<p>Objects are the most complex patterns and require a great deal of custom styling and markup to function. They can be global elements (&amp;lt;footer&amp;gt;) or appear only in certain views. Object CSS classes are denoted with the <code>.o-</code> prefix.</p>
 
 <p><em>Utilities</em></p>
 
-<p>Utilities are reusable single attribute styles that are used to customize markup so that fewer patterns need to be written. They are not tied to any element, component, or object but they can help override styling in certain contexts and build views more
-  efficiently. These patterns utilize the
+<p>Utilities are reusable single-attribute styles used to customize markup so that fewer patterns need to be written. They are not tied to any element, component, or object, but they can help override styling in certain contexts and build views more efficiently.
+  These Patterns use the
   <a href="https://tailwindcss.com/">Tailwind Framework</a>. Refer to the Tailwind Docs and
   <a href="https://github.com/CityOfNewYork/ACCESS-NYC-PATTERNS/blob/master/config/tailwind.js">Tailwind configuration file</a> for details on available modules and usage.</p></div>
                 </div>
@@ -306,7 +320,7 @@ src/component/accordion/_accordion.scss // Styling</code></pre>
         </article>
       </main>
     </div>
-    <footer class="py-4 text-center bg-color-blue-dark text-color-white links-invert font-smooth">
+    <footer class="py-4 text-center color-dark-background">
       <p>
         <nav>
           <a class="px-1" href="index">Home</a>

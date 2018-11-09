@@ -22,4 +22,4 @@
 
 = content('content');
   = mixin('content-header', title);
-  = mixin('section', 'Default Styling', 'components/member-list/member-list');
+  = mixin('section', 'About', 'components/member-list/member-list');

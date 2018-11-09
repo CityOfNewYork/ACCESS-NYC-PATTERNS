@@ -12,9 +12,7 @@ nav class='${class_nav} screen-desktop:pl-4'
   span class='${class_nav_heading} ${class_nav_divider}' Elements
   a class='${class_nav_item}' href='buttons' Buttons
   a class='${class_nav_item}' href='checkboxes' Checkboxes
-  a class='${class_nav_item}' href='colors' Colors
   a class='${class_nav_item}' href='dividers' Dividers
-  a class='${class_nav_item}' href='icons' Icons
   a class='${class_nav_item}' href='inputs' Inputs
   a class='${class_nav_item}' href='layouts' Layouts
   a class='${class_nav_item}' href='links' Links
@@ -25,7 +23,6 @@ nav class='${class_nav} screen-desktop:pl-4'
   a class='${class_nav_item}' href='tables' Tables
   a class='${class_nav_item}' href='tooltips' Tooltips
   a class='${class_nav_item}' href='toggles' Toggles
-  a class='${class_nav_item}' href='typography' Typography
   a class='${class_nav_item}' href='selects' Selects
 
 nav class='${class_nav} screen-desktop:pl-4'
@@ -39,9 +36,9 @@ nav class='${class_nav} screen-desktop:pl-4'
   a class='${class_nav_item}' href='header' Header
   a class='${class_nav_item}' href='member-list' Member List
   a class='${class_nav_item}' href='nearby-stops' Nearby Stops
-  a class='${class_nav_item}' href='text-controller' Text Controller
   a class='${class_nav_item}' href='share-form' Share Form
   a class='${class_nav_item}' href='side-nav' Side Nav
+  a class='${class_nav_item}' href='text-controller' Text Controller
   a class='${class_nav_item}' href='question' Question
 
 nav class='${class_nav} screen-desktop:pl-4'
@@ -54,3 +51,13 @@ nav class='${class_nav} screen-desktop:pl-4'
   a class='${class_nav_item}' href='mobile-nav' Mobile Nav
   a class='${class_nav_item}' href='navigation' Navigation
   a class='${class_nav_item}' href='search-box' Search Box
+
+nav class='${class_nav} screen-desktop:pl-4'
+  span class='${class_nav_heading} ${class_nav_divider}' Utilities
+  a class='${class_nav_item}' href='colors' Colors
+  a class='${class_nav_item}' href='icons' Icons
+  a class='${class_nav_item}' href='typography' Typography
+  a class='${class_nav_item}' href='language' Language
+  a class='${class_nav_item}' href='accessibility' Accessibility
+  a class='${class_nav_item}' href='media' Media
+  a class='${class_nav_item}' href='display' Display

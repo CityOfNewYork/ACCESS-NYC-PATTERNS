@@ -10,6 +10,7 @@
 = partial('partials/head.mixin.slm');
 = partial('partials/content-header.mixin.slm');
 = partial('partials/section.mixin.slm');
+= partial('partials/section-text.mixin.slm');
 = partial('partials/demo-specs.mixin.slm');
 = partial('partials/demo-block.mixin.slm');
 
@@ -24,3 +25,4 @@
   = mixin('content-header', title);
   = mixin('section', 'Email Share Form', 'components/share-form/share-form-email');
   = mixin('section', 'Text Share Form', 'components/share-form/share-form-text');
+  = mixin('section-text', 'Develop', 'components/share-form/share-form-develop');

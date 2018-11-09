@@ -35,12 +35,6 @@
   a {
     display: inline-block;
     margin-#{$text-direction-start}: 1em;
-    &:link,
-    &:visited,
-    &:hover,
-    &:active {
-      color: $color-white;
-    }
   }
 
   .active {
