@@ -10,7 +10,7 @@
 
 / Content blocks
 = content('head');
-  = mixin('head', 'Patterns');
+  = mixin('head');
 
 = content('header');
   = mixin('header', 'Welcome to the ACCESS NYC Patterns Guide');
