@@ -1,6 +1,6 @@
 The Patterns library is a Node.js application that uses various libraries—including Express, Rollup.js, Node Sass, Nodemon, and HTML Sketch App—to run the development server and build tasks for Style, JavaScript, SVG, Views, and Sketch distributions. This is all managed through [npm scripts](https://docs.npmjs.com/misc/scripts) in the `package.json` file, modules in the `.app/` directory, and configuration in the `config/` directory.
 
-#### NPM Scripts
+## NPM Scripts
 
     serve
 
@@ -89,7 +89,7 @@ The content of each file is determined by the templates defined in the [`config/
 
 Once you run the script, a prompt will also ask if you would like a SASS configuration file to be written to the `src/styles/config/` directory and a view file to be written to `src/views/` directory.
 
-### Contributing
+## Contributing
 
 The most important changes developers may need to make are to files within two directories: The `src/` directory, which includes all of the pattern source including scripts, styles, and template source, and the `config/` directory, which includes all of the configuration for the different node libraries and global variables for the Patterns.
 
@@ -103,7 +103,7 @@ For example, all of the relevant Accordion Component dependencies live in:
     src/component/accordion/accordion.js // JavaScript
     src/component/accordion/_accordion.scss // Styling
 
-#### Style Guide
+### Style Guide
 
 JavaScript is written as ES6 modules that conform to a standard set by [set by Rollup.js](https://rollupjs.org/guide/en#faqs) and linted by ESLint using the Google Standard. [Definitions can be found in the package.json file](https://github.com/CityOfNewYork/ACCESS-NYC-PATTERNS/blob/master/package.json).
 
