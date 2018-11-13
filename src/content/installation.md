@@ -20,11 +20,7 @@ This package is available as an NPM Module and can be included as a dependency w
 
 The global stylesheet (`style-default.css`) with all elements, components, objects, and utilities exists in the [`dist/styles`](https://github.com/CityOfNewYork/ACCESS-NYC-PATTERNS/tree/master/dist/styles) directory. This includes the English (default) stylesheet as well as 10 other individual language stylesheets.
 
-You can pick which stylesheet to use by linking to it through [JsDelivr](https://www.jsdelivr.com). For example, after pasting in the link of the v1.0.0 default stylesheet:
-
-    https://cdn.jsdelivr.net/gh/cityofnewyork/access-nyc-patterns@v1.0.0/dist/styles/site-default.css
-
-You will receive a CDN link;
+You can pick which stylesheet to use by linking to it through [JsDelivr](https://www.jsdelivr.com). For example, the link of the v1.0.0 default stylesheet:
 
     https://cdn.jsdelivr.net/gh/cityofnewyork/access-nyc-patterns@v1.0.0/dist/styles/site-default.css
 

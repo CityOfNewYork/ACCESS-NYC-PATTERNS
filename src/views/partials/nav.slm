@@ -1,6 +1,5 @@
 nav class='${class_nav}'
-  span class='${class_nav_heading} ${class_nav_divider}' Main
-  a class='${class_nav_item}' href='index' Home
+  a class='${class_nav_heading} ${class_nav_divider}' href='index' Home
   a class='${class_nav_item}' href='about' About
   a class='${class_nav_item}' href='installation' Installation
   a class='${class_nav_item}' href='design-tools' Design Tools
