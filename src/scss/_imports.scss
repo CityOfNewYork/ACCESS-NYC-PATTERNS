@@ -34,7 +34,6 @@
 // namespace prefixes based on their attributes.
 
 @import 'elements/base/base';
-@import 'elements/typography/typography';
 @import 'elements/animate/animate';
 @import 'elements/code/code';
 @import 'elements/layouts/layouts';
@@ -48,7 +47,6 @@
 @import 'elements/radios/radios';
 @import 'elements/toggles/toggles';
 @import 'elements/selects/selects';
-@import 'elements/icons/icons';
 @import 'elements/tables/tables';
 @import 'elements/tooltips/tooltips';
 @import 'elements/divider/divider';
@@ -104,7 +102,10 @@
  ************/
 
 @import 'utilities/color';
+@import 'utilities/icons/icons';
+@import 'utilities/typography/typography';
 @import 'utilities/font';
+@import 'utilities/text';
 @import 'utilities/accessibility';
 @import 'utilities/inherit';
 @import 'utilities/language';

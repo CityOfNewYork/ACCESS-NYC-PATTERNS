@@ -10,6 +10,7 @@
 = partial('partials/head.mixin.slm');
 = partial('partials/content-header.mixin.slm');
 = partial('partials/section.mixin.slm');
+= partial('partials/section-text.mixin.slm');
 = partial('partials/demo-specs.mixin.slm');
 = partial('partials/demo-block.mixin.slm');
 
@@ -22,5 +23,9 @@
 
 = content('content');
   = mixin('content-header', title);
-  = mixin('section', 'Usage and Icon Library', 'elements/icons/icons', 'gutter', this.vars.icons);
-  = mixin('section', 'Subway CSS Icons', 'elements/icons/icons-subway', 'gutter', this.vars.subwayIcons);
+  = mixin('section', 'Program Category Icons', 'utilities/icons/icons-program-category', 'gutter', this.vars.programCategoryIcons);
+  = mixin('section', 'Program Card Icons', 'utilities/icons/icons-program-card', 'gutter', this.vars.programCardIcons);
+  = mixin('section', 'Checklist Category Icons', 'utilities/icons/icons-checklist', 'gutter', this.vars.checklistIcons);
+  = mixin('section', 'All other icons', 'utilities/icons/icons', 'gutter', this.vars.otherIcons);
+  = mixin('section-text', 'Usage', 'utilities/icons/icons-usage');
+  = mixin('section', 'Subway Icons', 'utilities/icons/icons-subway', 'gutter', this.vars.subwayIcons);

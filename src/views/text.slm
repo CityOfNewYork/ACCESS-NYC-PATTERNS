@@ -1,0 +1,26 @@
+/ Layout
+= extend('/layouts/default');
+
+/ Component
+- title = 'Text';
+
+/ Partials
+= partial('partials/styles.slm');
+= partial('partials/links.slm');
+= partial('partials/head.mixin.slm');
+= partial('partials/content-header.mixin.slm');
+= partial('partials/section.mixin.slm');
+= partial('partials/section-text.mixin.slm');
+= partial('partials/demo-specs.mixin.slm');
+= partial('partials/demo-block.mixin.slm');
+
+/ Content blocks
+= content('head');
+  = mixin('head', title);
+
+= content('header');
+  = mixin('header', title);
+
+= content('content');
+  = mixin('content-header', title);
+  = mixin('section', 'Alignment', 'utilities/text');

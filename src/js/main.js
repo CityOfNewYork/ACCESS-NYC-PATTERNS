@@ -3,7 +3,7 @@
 // import Module from './modules/module'; // sample module import
 import Utility from './modules/utility.js';
 import Toggle from './modules/toggle';
-import Icons from '../elements/icons/icons';
+import Icons from '../utilities/icons/icons';
 import Accordion from '../components/accordion/accordion';
 import Filter from '../components/filter/filter';
 import NearbyStops from '../components/nearby-stops/nearby-stops';

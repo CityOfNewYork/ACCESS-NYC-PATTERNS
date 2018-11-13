@@ -20,7 +20,7 @@
 
 = content('content');
   = mixin('content-header', title);
-  section id='welcome' class='pb-4 mb-4'
+  section class='pb-4 mb-4'
     div class='page-wrapper'
       header class='layout--home-body'
         div class='my-0 pt-1 px-2 border-b border-color-grey-light'

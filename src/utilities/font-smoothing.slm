@@ -1,0 +1,5 @@
+div class='text-color-white bg-color-blue-dark font-smooth p-4'
+  h1 class='m-0' Font Smooth
+
+div class='color-dark-background font-smooth-auto p-4'
+  h1 class='m-0' Font Smooth Auto

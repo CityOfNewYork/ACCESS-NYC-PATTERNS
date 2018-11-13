@@ -7,6 +7,7 @@
 @import 'config/fonts';
 
 $colors: map-get($variables, 'colors');
+$statuses: map-get($variables, 'colorStatuses');
 $combinations: map-get($variables, 'colorCombinations');
 
 // Variables
@@ -36,6 +37,7 @@ $color-transparent: map-get($colors, 'color-transparent');
 @mixin combination($selector, $combination, $colors, $smoothing: false) {
   color: map-get($colors, map-get($combination, 'color'));
   background-color: map-get($colors, map-get($combination, 'background-color'));
+
   @if $smoothing {
     @include font-smooth;
   }

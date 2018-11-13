@@ -133,6 +133,12 @@ const variables = {
     'flushing': '#B933AD', // Raspberry, 7 7 Express
     'shuttles': '#808183' // Dark Slate Gray, S
   },
+  colorStatuses: {
+    'success': 'color-green-light',
+    'info': 'color-blue-light',
+    'warning': 'color-yellow-light',
+    'urgent': 'color-pink-light'
+  },
   colorCombinations: {
     'light-background': {
       'color': 'color-black',
@@ -267,6 +273,64 @@ const variables = {
     'icon-special-needs': '50px 50px',
     'icon-work': '50px 52px'
   },
+  programCategoryIcons: [
+    'icon-cash-expenses',
+    'icon-child-care',
+    'icon-city-id-card',
+    'icon-education',
+    'icon-enrichment',
+    'icon-family-services',
+    'icon-food',
+    'icon-health',
+    'icon-housing',
+    'icon-special-needs',
+    'icon-work'
+  ],
+  programCardIcons: [
+    'icon-card-cash-expenses',
+    'icon-card-child-care',
+    'icon-card-city-id-card',
+    'icon-card-education',
+    'icon-card-enrichment',
+    'icon-card-expenses',
+    'icon-card-family-services',
+    'icon-card-food',
+    'icon-card-health',
+    'icon-card-housing',
+    'icon-card-special-needs',
+    'icon-card-work',
+  ],
+  checklistIconsSize: '50px 50px',
+  checklistIcons: {
+    'icon-application': '"headsup_application_25px-1.png"',
+    'icon-badge': '"headsup_badge_30px-1.png"',
+    'icon-calendar': '"headsup_calendar_25px-1.png"',
+    'icon-flag': '"headsup_flag_30px-1.png"',
+    'icon-generic': '"headsup_generic_30px-1.png"',
+    'icon-check': '"icon-eligibilitycheck.png"'
+  },
+  otherIcons: [
+    'icon-logo-full',
+    'icon-logo-full--large',
+    'icon-logo-mark',
+    'icon-logo-nyc',
+    'icon-close',
+    'icon-contact',
+    'icon-gear',
+    'icon-minus',
+    'icon-plus',
+    'icon-screening',
+    'icon-search',
+    'icon-printer',
+    'icon-share',
+    'icon-eligibilitycheck',
+    'icon-checkmark',
+    'icon-arrow-down',
+    'icon-info',
+    'icon-success',
+    'icon-urgent',
+    'icon-warning'
+  ],
   subwayIcons: {
     'eighth-avenue': ['A', 'C', 'E'],
     'sixth-avenue': ['B', 'D', 'F', 'M'],

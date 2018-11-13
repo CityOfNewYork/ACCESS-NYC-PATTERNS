@@ -1,0 +1,1 @@
+There is no specific style definition for the Announcements Object. They are a combination of the [Layout Utilities](layouts), [Divider Element](dividers), and [Card Components](card).

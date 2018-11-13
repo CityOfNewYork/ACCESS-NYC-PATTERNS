@@ -7,17 +7,17 @@
 
 // Declarations
 .bg-status-success {
-  background-color: $color-green-light;
+  background-color: map-get($colors, map-get($statuses, 'success'));
 }
 
 .bg-status-info {
-  background-color: $color-blue-light;
+  background-color: map-get($colors, map-get($statuses, 'info'));
 }
 
 .bg-status-warning {
-  background-color: $color-yellow-light;
+  background-color: map-get($colors, map-get($statuses, 'warning'));
 }
 
 .bg-status-urgent {
-  background-color: $color-pink-light;
+  background-color: map-get($colors, map-get($statuses, 'urgent'));
 }

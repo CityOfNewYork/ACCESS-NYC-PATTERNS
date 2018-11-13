@@ -19,10 +19,10 @@
 
     - if (typeof this.grid === 'object')
       - ;
-      - if (Object.keys(this.grid).length % 2 == 0)
-        - layout = 'three-columns-gutter';
-      - else
-        - layout = 'four-columns-gutter';
+      /- if (Object.keys(this.grid).length % 2 == 0)
+      - layout = 'three-columns-gutter';
+      /- else
+      /  - layout = 'four-columns-gutter';
       div class='layout--gutter screen-mobile:layout--two-columns-gutter screen-tablet:layout--${layout}'
         - for (key in this.grid)
           - value = this.grid[key];

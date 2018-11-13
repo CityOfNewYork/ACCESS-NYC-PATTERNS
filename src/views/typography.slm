@@ -10,6 +10,7 @@
 = partial('partials/head.mixin.slm');
 = partial('partials/content-header.mixin.slm');
 = partial('partials/section.mixin.slm');
+= partial('partials/section-text.mixin.slm');
 = partial('partials/demo-specs.mixin.slm');
 = partial('partials/demo-block.mixin.slm');
 
@@ -22,10 +23,13 @@
 
 = content('content');
   = mixin('content-header', title);
-  = mixin('section', 'Headings', 'elements/typography/type-h');
-  = mixin('section', 'Jumbo', 'elements/typography/type-jumbo');
-  = mixin('section', 'Small', 'elements/typography/type-small');
-  = mixin('section', 'Blockquote', 'elements/typography/type-blockquote');
-  = mixin('section', 'Exposition', 'elements/typography/type-exposition');
-  = mixin('section', 'Supplemental', 'elements/typography/type-supplemental');
-  = mixin('section', 'Language Utilities', 'utilities/language');
+  = mixin('section', 'Heading 1', 'utilities/typography/type-h1');
+  = mixin('section', 'Heading 2', 'utilities/typography/type-h2');
+  = mixin('section', 'Heading 3', 'utilities/typography/type-h3');
+  = mixin('section', 'Heading 4', 'utilities/typography/type-h4');
+  = mixin('section', 'Heading 5', 'utilities/typography/type-h5');
+  = mixin('section', 'Jumbo', 'utilities/typography/type-jumbo');
+  = mixin('section', 'Small', 'utilities/typography/type-small');
+  = mixin('section', 'Blockquote', 'utilities/typography/type-blockquote');
+  = mixin('section', 'Exposition', 'utilities/typography/type-exposition');
+  = mixin('section', 'Supplemental', 'utilities/typography/type-supplemental');

@@ -1,0 +1,109 @@
+/**
+ * Icons
+ */
+
+// Dependencies
+@import 'config/variables';
+@import 'config/dimensions';
+@import 'config/fonts';
+@import 'scss/functions/str-replace';
+@import 'bourbon/app/assets/stylesheets/addons/size';
+
+$cdn: map-get($variables, 'cdn');
+
+// Declarations
+[class*='icon-'] {
+  overflow: visible !important;
+  max-width: 100%;
+}
+
+[class*='bg-icon-'] {
+  display: inline-block;
+}
+
+@each $key, $var in map-get($variables, 'icons') {
+  $path: $key;
+
+  @each $str in map-get($variables, 'iconVariants') {
+    $path: str-replace($path, $str);
+  }
+
+  .bg-#{$key} {
+    @include size($var);
+    background-image: url('#{$cdn}/svg/#{$path}.svg');
+    background-repeat: no-repeat;
+    background-size: 100%;
+    background-position: center
+  }
+
+  .#{$key} {
+    @include size($var);
+  }
+}
+
+@each $key, $var in map-get($variables, 'checklistIcons') {
+  $size: map-get($variables, 'checklistIconsSize');
+
+  .bg-#{$key} {
+    @include size($size);
+    background-image: url('#{$cdn}/images/#{$var}');
+    background-repeat: no-repeat;
+    background-size: 100%;
+    background-position: center
+  }
+
+  .#{$key} {
+    @include size($size);
+  }
+}
+
+[class*='icon-subway'] {
+  color: map-get($colors, 'color-white');
+  font-size: 75%;
+  font-family: helvetica, arial, sans-serif;
+  font-weight: bold;
+  @include font-smooth();
+  padding: 1px;
+  text-align: center;
+  text-decoration: none;
+  border-radius: 9999px;
+  display: inline-block;
+  width: $spacing-base;
+  height: $spacing-base;
+  min-width: $spacing-base;
+  min-height: $spacing-base;
+  flex-shrink: 0;
+
+  &.bg-broadway {
+    color: map-get($colors, 'color-black');
+  }
+}
+
+.icon-subway-express {
+  position: relative;
+  z-index: 1;
+
+  &[class*='bg-'] {
+    background-color: transparent !important;
+  }
+
+  &:before, &:after {
+    content: '';
+    border: 15px solid transparent;
+    width: 0;
+    height: 0;
+    position: absolute;
+    left: -3px;
+    z-index: -1;
+  }
+
+  &:before {
+    top: -18px;
+    border-bottom-color: inherit;
+  }
+
+  &:after {
+    bottom: -18px;
+    border-top-color: inherit;
+  }
+}

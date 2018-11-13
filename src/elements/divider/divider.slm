@@ -1,4 +1,4 @@
 /
 / Divider
 /
-hr class='divider' data-sketch-symbol=symbol data-sketch-symbol-instance=instance
+div class='divider' data-sketch-symbol=symbol data-sketch-symbol-instance=instance

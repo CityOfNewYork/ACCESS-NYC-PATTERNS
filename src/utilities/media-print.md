@@ -1,0 +1,1 @@
+The ACCESS NYC Patterns include a `.print-view` utility for rendering views for print. Additionally, the [Patterns configuration for Tailwind](https://github.com/CityOfNewYork/ACCESS-NYC-PATTERNS/blob/master/config/tailwind.js) includes a `@media “print”`setting so that all utilities can target print screens only.

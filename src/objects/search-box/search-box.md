@@ -1,0 +1,1 @@
+The Search Box is a custom module with specific classes to define its elements, including the search input and program links. This is based on the same interaction in [Growing Up NYC](https://growingupnyc.cityofnewyork.us/), NYC Opportunity’s product for parents and families.
