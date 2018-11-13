@@ -64,10 +64,15 @@
   section class='pb-4 color-mid-background'
     div class='page-wrapper layout--home-body px-2'
       div
-
         h4#links Links
 
         div class='layout--gutter screen-tablet:layout--columns-gutter'
+          article class='c-card'
+            div class='c-card__body'
+              h3 class='c-card__title mb-3' About
+              div class='c-card__summary'
+                a href='about' About ACCESS NYC Patterns.
+
           article class='c-card'
             div class='c-card__body'
               h3 class='c-card__title mb-3' Icon Patterns
@@ -86,7 +91,7 @@
               div class='c-card__summary'
                 a href='colors' The Color Pattern reference.
 
-          article class='c-card' aria-hidden='true'
+          /article class='c-card' aria-hidden='true'
 
   section class='py-4'
     div class='page-wrapper layout--home-body px-2'
