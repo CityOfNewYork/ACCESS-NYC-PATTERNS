@@ -69,9 +69,9 @@
         div class='layout--gutter screen-tablet:layout--columns-gutter'
           article class='c-card'
             div class='c-card__body'
-              h3 class='c-card__title mb-3' About
+              h3 class='c-card__title mb-3' About Patterns
               div class='c-card__summary'
-                a href='about' About ACCESS NYC Patterns.
+                a href='about' Learn more about ACCESS NYC Patterns.
 
           article class='c-card'
             div class='c-card__body'
@@ -91,12 +91,9 @@
               div class='c-card__summary'
                 a href='colors' The Color Pattern reference.
 
-          /article class='c-card' aria-hidden='true'
-
   section class='py-4'
     div class='page-wrapper layout--home-body px-2'
       div
-
         h3#nyc-civic-service-design NYC Civic Service Design
 
         p ACCESS NYC was built using the <a href='http://nyc.gov/servicedesign101'>NYC Civic Service Design</a> principles. The corresponding site is an introduction to service design for public servants, and a set of practical ways to include design methods in your work. Use this collection of tools and tactics to see your service in context, talk with people who use it, and try out ideas in low-risk ways.
