@@ -146,29 +146,41 @@
             </div>
           </header>
           <section class="pb-4 mb-4" id="font-families">
-            <div class="page-wrapper px-2 screen-desktop:px-0">
+            <div class="page-wrapper px-2">
               <header class="layout--home-body">
-                <div class="my-0 pt-1 px-2 border-b border-color-grey-light">
-                  <h2>
+                <div class="my-0 pt-1 px-2 pb-3 border-b border-color-grey-light screen-tablet:flex screen-tablet:justify-between">
+                  <h2 class="m-0 pb-1">
                     <a class="text-color-grey-mid font-normal no-underline capitalize" href="#font-families">Font Families</a>
-                  </h2>
-                </div>
+                  </h2><span><code class="code">src/utilities/font</code></span></div>
               </header>
               <div class="layout--home-body">
                 <div class="my-0 pt-4 px-2 text-font-size-small"><p>ACCESS NYC uses
   <a href="https://www.google.com/get/noto/">Google Noto Fonts</a> to support the Patterns in multiple languages. It includes sans-serif and serif variations for over 800 languages and is designed to appear equal in weight and size across languages. This makes the multilingual templates easier
   to develop and non-English content easier to read.</p></div>
               </div>
+              <div class="layout--gutter screen-tablet:layout--columns justify-between pt-4">
+                <div class="screen-tablet:pr-2">
+                  <article class="text-color-white" style="background-color:#3f51b5">
+                    <h1 class="font-sans p-4 m-0">Font Family Noto Sans</h1>
+                    <h1 class="font-serif p-4 m-0">Font Family Noto Serif</h1>
+                  </article>
+                </div>
+                <div>
+                  <div class="code-block mb-1"><pre>&lt;article class=&quot;text-color-white&quot; style=&quot;background-color:#3f51b5&quot;&gt;
+  &lt;h1 class=&quot;font-sans p-4 m-0&quot;&gt;Font Family Noto Sans&lt;/h1&gt;
+  &lt;h1 class=&quot;font-serif p-4 m-0&quot;&gt;Font Family Noto Serif&lt;/h1&gt;
+&lt;/article&gt;</pre></div>
+                </div>
+              </div>
             </div>
           </section>
           <section class="pb-4 mb-4" id="font-smoothing">
             <div class="page-wrapper px-2">
               <header class="layout--home-body">
-                <div class="my-0 pt-1 px-2 border-b border-color-grey-light">
-                  <h2>
+                <div class="my-0 pt-1 px-2 pb-3 border-b border-color-grey-light screen-tablet:flex screen-tablet:justify-between">
+                  <h2 class="m-0 pb-1">
                     <a class="text-color-grey-mid font-normal no-underline capitalize" href="#font-smoothing">Font Smoothing</a>
-                  </h2>
-                </div>
+                  </h2><span><code class="code">src/utilities/font-smoothing</code></span></div>
               </header>
               <div class="layout--home-body">
                 <div class="my-0 pt-4 px-2 text-font-size-small"><p>Font smoothing can be controlled through the <code>.font-smooth</code> and <code>.font-smooth-auto</code> utilities. This will modify the aliasing for Webkit- and Mozilla-based browsers only. This utility works the best with light-colored text on dark
@@ -176,20 +188,24 @@
               </div>
               <div class="layout--gutter screen-tablet:layout--columns justify-between pt-4">
                 <div class="screen-tablet:pr-2">
-                  <div class="text-color-white bg-color-blue-dark font-smooth p-4">
-                    <h1 class="m-0">Font Smooth</h1>
-                  </div>
-                  <div class="color-dark-background font-smooth-auto p-4">
-                    <h1 class="m-0">Font Smooth Auto</h1>
-                  </div>
+                  <article>
+                    <div class="bg-color-blue-dark text-color-white font-smooth">
+                      <h1 class="m-0 p-4">Font Smooth</h1>
+                    </div>
+                    <div class="color-dark-background font-smooth-auto">
+                      <h1 class="m-0 p-4">Font Smooth Auto</h1>
+                    </div>
+                  </article>
                 </div>
                 <div>
-                  <div class="code-block mb-1"><pre>&lt;div class=&quot;text-color-white bg-color-blue-dark font-smooth p-4&quot;&gt;
-  &lt;h1 class=&quot;m-0&quot;&gt;Font Smooth&lt;/h1&gt;
-&lt;/div&gt;
-&lt;div class=&quot;color-dark-background font-smooth-auto p-4&quot;&gt;
-  &lt;h1 class=&quot;m-0&quot;&gt;Font Smooth Auto&lt;/h1&gt;
-&lt;/div&gt;</pre></div>
+                  <div class="code-block mb-1"><pre>&lt;article&gt;
+  &lt;div class=&quot;bg-color-blue-dark text-color-white font-smooth&quot;&gt;
+    &lt;h1 class=&quot;m-0 p-4&quot;&gt;Font Smooth&lt;/h1&gt;
+  &lt;/div&gt;
+  &lt;div class=&quot;color-dark-background font-smooth-auto&quot;&gt;
+    &lt;h1 class=&quot;m-0 p-4&quot;&gt;Font Smooth Auto&lt;/h1&gt;
+  &lt;/div&gt;
+&lt;/article&gt;</pre></div>
                 </div>
               </div>
             </div>
@@ -197,31 +213,26 @@
           <section class="pb-4 mb-4" id="font-serif/sans-serif">
             <div class="page-wrapper px-2">
               <header class="layout--home-body">
-                <div class="my-0 pt-1 px-2 border-b border-color-grey-light">
-                  <h2>
+                <div class="my-0 pt-1 px-2 pb-3 border-b border-color-grey-light screen-tablet:flex screen-tablet:justify-between">
+                  <h2 class="m-0 pb-1">
                     <a class="text-color-grey-mid font-normal no-underline capitalize" href="#font-serif/sans-serif">Font Serif/Sans-Serif</a>
-                  </h2>
-                </div>
+                  </h2><span><code class="code">src/utilities/font-serif-sans</code></span></div>
               </header>
               <div class="layout--home-body">
                 <div class="my-0 pt-4 px-2 text-font-size-small"><p>Using the <code>.font-serif</code> or <code>.font-sans</code> utility will render the serif or san-serif font of the current language selected.</p></div>
               </div>
               <div class="layout--gutter screen-tablet:layout--columns justify-between pt-4">
                 <div class="screen-tablet:pr-2">
-                  <div class="p-4">
-                    <h1 class="font-serif m-0">Font Serif</h1>
-                  </div>
-                  <div class="p-4">
-                    <h1 class="font-sans m-0">Font Sans</h1>
-                  </div>
+                  <article>
+                    <h1 class="font-serif m-0 p-4">Font Serif</h1>
+                    <h1 class="font-sans m-0 p-4">Font Sans</h1>
+                  </article>
                 </div>
                 <div>
-                  <div class="code-block mb-1"><pre>&lt;div class=&quot;p-4&quot;&gt;
-  &lt;h1 class=&quot;font-serif m-0&quot;&gt;Font Serif&lt;/h1&gt;
-&lt;/div&gt;
-&lt;div class=&quot;p-4&quot;&gt;
-  &lt;h1 class=&quot;font-sans m-0&quot;&gt;Font Sans&lt;/h1&gt;
-&lt;/div&gt;</pre></div>
+                  <div class="code-block mb-1"><pre>&lt;article&gt;
+  &lt;h1 class=&quot;font-serif m-0 p-4&quot;&gt;Font Serif&lt;/h1&gt;
+  &lt;h1 class=&quot;font-sans m-0 p-4&quot;&gt;Font Sans&lt;/h1&gt;
+&lt;/article&gt;</pre></div>
                 </div>
               </div>
             </div>
