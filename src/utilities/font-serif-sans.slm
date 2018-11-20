@@ -1,5 +1,3 @@
-div class='p-4'
-  h1 class='font-serif m-0' Font Serif
-
-div class='p-4'
-  h1 class='font-sans m-0' Font Sans
+article
+  h1 class='font-serif m-0 p-4' Font Serif
+  h1 class='font-sans m-0 p-4' Font Sans

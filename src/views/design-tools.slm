@@ -8,8 +8,8 @@
 = partial('partials/links.slm');
 = partial('partials/head.mixin.slm');
 = partial('partials/content-header.mixin.slm');
-= partial('partials/demo-specs.mixin.slm');
-= partial('partials/demo-block.mixin.slm');
+= partial('section/demo-specs.mixin.slm');
+= partial('section/demo-block.mixin.slm');
 
 / Content blocks
 = content('head');
@@ -30,5 +30,5 @@
           div class='o-content color-light-background pb-4'
             = 'md{{ content/design-tools.md }}';
 
-            p class='text-center'
+            p class='text-center pt-3'
               a class='btn btn-primary mb-2' href='#' Coming Soon

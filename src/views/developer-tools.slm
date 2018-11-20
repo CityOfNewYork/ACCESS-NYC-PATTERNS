@@ -8,8 +8,8 @@
 = partial('partials/links.slm');
 = partial('partials/head.mixin.slm');
 = partial('partials/content-header.mixin.slm');
-= partial('partials/demo-specs.mixin.slm');
-= partial('partials/demo-block.mixin.slm');
+= partial('section/demo-specs.mixin.slm');
+= partial('section/demo-block.mixin.slm');
 
 / Content blocks
 = content('head');

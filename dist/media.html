@@ -146,33 +146,72 @@
             </div>
           </header>
           <section class="pb-4 mb-4" id="screen">
-            <div class="page-wrapper px-2 screen-desktop:px-0">
+            <div class="page-wrapper px-2">
               <header class="layout--home-body">
-                <div class="my-0 pt-1 px-2 border-b border-color-grey-light">
-                  <h2>
+                <div class="my-0 pt-1 px-2 pb-3 border-b border-color-grey-light screen-tablet:flex screen-tablet:justify-between">
+                  <h2 class="m-0 pb-1">
                     <a class="text-color-grey-mid font-normal no-underline capitalize" href="#screen">Screen</a>
-                  </h2>
-                </div>
+                  </h2><span><code class="code">src/utilities/media-screen</code></span></div>
               </header>
               <div class="layout--home-body">
                 <div class="my-0 pt-4 px-2 text-font-size-small"><p>The media breakpoints for the ACCESS NYC Patterns are configured to be mobile-first. As the screen width increases, media queries override the default styling of mobile elements. There are four screen breakpoints that correspond to small mobile screens,
   mobile screens, tablet screens, and desktop screens. The pixel values for these dimensions are defined in the
-  <a href="https://github.com/CityOfNewYork/ACCESS-NYC-PATTERNS/blob/master/config/variables.js">Patterns variable config file</a>.</p></div>
+  <a href="https://github.com/CityOfNewYork/ACCESS-NYC-PATTERNS/blob/master/config/variables.js">Patterns variable config file</a> under <code>screens</code>.</p>
+
+<ul>
+  <li><code>screen-desktop</code></li>
+  <li><code>screen-tablet</code></li>
+  <li><code>screen-mobile</code></li>
+  <li><code>screen-sm-mobile</code></li>
+</ul>
+
+<p>Tailwind utilities are customized according to the
+  <a href="https://tailwindcss.com/docs/responsive-design">Responsive Design</a> documentation. There are a handful of Tailwind modules configured to include responsive selectors and can be seen in the
+  <a href="https://github.com/CityOfNewYork/ACCESS-NYC-PATTERNS/blob/master/config/tailwind.js">Patterns configuration for Tailwind</a>.</p></div>
+              </div>
+              <div class="layout--gutter screen-tablet:layout--columns justify-between pt-4">
+                <div class="screen-tablet:pr-2">
+                  <p class="hidden screen-desktop:block">Visible for desktop screens and up.</p>
+                  <p class="hidden screen-tablet:block">Visible for tablet screens and up.</p>
+                  <p class="hidden screen-mobile:block">Visible mobile screens and up.</p>
+                  <p class="hidden screen-sm-mobile:block">Visible small mobile screens and up.</p>
+                  <p class="hidden">Hidden for all screens.</p>
+                </div>
+                <div>
+                  <div class="code-block mb-1"><pre>&lt;p class=&quot;hidden screen-desktop:block&quot;&gt;Visible for desktop screens and up.&lt;/p&gt;
+&lt;p class=&quot;hidden screen-tablet:block&quot;&gt;Visible for tablet screens and up.&lt;/p&gt;
+&lt;p class=&quot;hidden screen-mobile:block&quot;&gt;Visible mobile screens and up.&lt;/p&gt;
+&lt;p class=&quot;hidden screen-sm-mobile:block&quot;&gt;Visible small mobile screens and up.&lt;/p&gt;
+&lt;p class=&quot;hidden&quot;&gt;Hidden for all screens.&lt;/p&gt;</pre></div>
+                </div>
               </div>
             </div>
           </section>
           <section class="pb-4 mb-4" id="print">
-            <div class="page-wrapper px-2 screen-desktop:px-0">
+            <div class="page-wrapper px-2">
               <header class="layout--home-body">
-                <div class="my-0 pt-1 px-2 border-b border-color-grey-light">
-                  <h2>
+                <div class="my-0 pt-1 px-2 pb-3 border-b border-color-grey-light screen-tablet:flex screen-tablet:justify-between">
+                  <h2 class="m-0 pb-1">
                     <a class="text-color-grey-mid font-normal no-underline capitalize" href="#print">Print</a>
-                  </h2>
-                </div>
+                  </h2><span><code class="code">src/utilities/media-print</code></span></div>
               </header>
               <div class="layout--home-body">
-                <div class="my-0 pt-4 px-2 text-font-size-small"><p>The ACCESS NYC Patterns include a <code>.print-view</code> utility for rendering views for print. Additionally, the
-  <a href="https://github.com/CityOfNewYork/ACCESS-NYC-PATTERNS/blob/master/config/tailwind.js">Patterns configuration for Tailwind</a> includes a <code>@media “print”</code>setting so that all utilities can target print screens only.</p></div>
+                <div class="my-0 pt-4 px-2 text-font-size-small"><p>The ACCESS NYC Patterns include a <code>.print-view</code> utility that applies to the <code>&lt;body&gt;</code> tag for rendering views for print. Additionally, the
+  <a href="https://github.com/CityOfNewYork/ACCESS-NYC-PATTERNS/blob/master/config/tailwind.js">Patterns configuration for Tailwind</a> includes a <code>@media “print”</code>setting so that all responsive utilities can target print screens only.</p></div>
+              </div>
+              <div class="layout--gutter screen-tablet:layout--columns justify-between pt-4">
+                <div class="screen-tablet:pr-2">
+                  <article class="print-view">
+                    <p>Styles specific for print will apply within this article.</p>
+                    <p class="print:hidden">This paragraph will be hidden for @media 'print' and within the '.print-view' class.</p>
+                  </article>
+                </div>
+                <div>
+                  <div class="code-block mb-1"><pre>&lt;article class=&quot;print-view&quot;&gt;
+  &lt;p&gt;Styles specific for print will apply within this article.&lt;/p&gt;
+  &lt;p class=&quot;print:hidden&quot;&gt;This paragraph will be hidden for @media &#39;print&#39; and within the &#39;.print-view&#39; class.&lt;/p&gt;
+&lt;/article&gt;</pre></div>
+                </div>
               </div>
             </div>
           </section>

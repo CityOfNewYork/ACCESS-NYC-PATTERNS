@@ -34,7 +34,7 @@ code, pre {
   text-overflow: ellipsis;
 }
 
-p code {
+p code, li code {
   color: $color-purple;
   font-size: 85%;
   font-family: inherit;

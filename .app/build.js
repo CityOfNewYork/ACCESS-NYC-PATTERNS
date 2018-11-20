@@ -18,7 +18,7 @@ const SOURCE = Path.join(__dirname, '../', 'src/');
 const BASE_PATH = `${SOURCE}/views`;
 const VIEWS = 'src/views/';
 const DIST ='dist/';
-const WHITELIST = ['partials', 'layouts'];
+const WHITELIST = ['partials', 'layouts', 'section'];
 const LOCALS = require('./locals');
 
 /**
@@ -101,7 +101,7 @@ function fnMarkdown(filename, path, data) {
  * @param  {function} fnCallback - the callback function after read
  */
 function fnReadFile(filename, path, fnCallback) {
-  let fullPath = `${path}/${filename}`;
+  let fullPath = Path.join(path, filename);
   Fs.readFile(fullPath, 'utf-8', (err, src) => {
     if (err) {
       console.log(`${alerts.error} ${err}`);

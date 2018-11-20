@@ -2,7 +2,3 @@
   header class='page-wrapper px-2 screen-desktop:px-0 layout--home-body'
     div class='my-0 w-full'
       h1 class='text-color-blue-dark px-2 pb-4' = this.title;
-      /h2 class='type-h5 flex'
-      /  | Source
-      /  a href='${link_source}/tree/master/src/${this.path}.slm'
-      /    code class='code ml-1' ${this.path}

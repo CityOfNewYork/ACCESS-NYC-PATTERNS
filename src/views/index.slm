@@ -5,8 +5,8 @@
 = partial('partials/styles.slm');
 = partial('partials/links.slm');
 = partial('partials/head.mixin.slm');
-= partial('partials/demo-specs.mixin.slm');
-= partial('partials/demo-block.mixin.slm');
+= partial('section/demo-specs.mixin.slm');
+= partial('section/demo-block.mixin.slm');
 
 / Content blocks
 = content('head');
@@ -39,7 +39,7 @@
                   li class='c-checklist__item-generic' Multi-lingual stylesheets with right-to-left and left-to-right reading orientations.
                   li class='c-checklist__item-generic' Mobile-first stylesheets with support for modern browsers back to Internet Explorer 11.
                   li class='c-checklist__item-generic' Module-based design patterns with CSS and JavaScript included for each pattern.
-                  li class='c-checklist__item-generic pb-1' <a href='https://tailwindcss.com'>Tailwind.css Utility Framework</a> integration.
+                  li class='c-checklist__item-generic pb-1' <a href='utility'>Tailwind.css Utility Framework</a> integration.
 
             div class='o-banner__touts'
               div class='o-banner__tout'
