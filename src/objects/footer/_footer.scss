@@ -17,8 +17,8 @@
 
   .o-footer__nav-list {
     @include typography-nav();
-    @include clearfix();
-    display: block;
+    // @include clearfix();
+    // display: block;
     list-style: none;
     margin: 0 0 $spacing-base;
     padding: 0;
@@ -29,7 +29,7 @@
 
     ul {
       list-style: none;
-      margin: 0 0 2*$spacing-base;
+      margin: 0 0 (2*$spacing-base);
       padding: 0;
 
       > li {
@@ -37,33 +37,69 @@
       }
     }
 
-    > li {
-      width: 100%;
-      float: $text-direction-start;
-      padding: 0 $spacing-base;
+    //   margin: 0 0 2*$spacing-base;
+    //   padding: 0;
 
-      // @include media($bp-tablet-up) {
-      @media screen and (min-width: $screen-tablet) {
-        width: 50%;
+    //   > li {
+    //     margin-bottom: $spacing-base;
+    //   }
+    // }
 
-        &:last-child {
-          width: 100%;
-        }
-      }
+    // > li {
+    //   width: 100%;
+    //   float: $text-direction-start;
+    //   padding: 0 $spacing-base;
 
-      // @include media($bp-desktop-up) {
-      @media screen and (min-width: $screen-desktop) {
-        width: 29%;
+    //   // @include media($bp-tablet-up) {
+    //   @media screen and (min-width: $screen-tablet) {
+    //     width: 50%;
 
-        &:last-child {
-          width: 42%;
-        }
-      }
-    }
+    //     &:last-child {
+    //       width: 100%;
+    //     }
+    //   }
+
+    //   // @include media($bp-desktop-up) {
+    //   @media screen and (min-width: $screen-desktop) {
+    //     width: 29%;
+
+    //     &:last-child {
+    //       width: 42%;
+    //     }
+    //   }
+    // }
   }
 
   .o-footer__copyright {
     margin: 0 $spacing-base;
+  }
+}
+
+@media screen and (min-width: $screen-desktop) {
+  .o-footer__column-first {
+    width: 20%;
+  }
+
+  .o-footer__column-middle {
+    width: 20%;
+  }
+
+  .o-footer__column-last {
+    width: 40%;
+  }
+}
+
+@media screen and (min-width: $screen-tablet) and (max-width: $screen-desktop) {
+  .o-footer__column-first {
+    width: 40%;
+  }
+
+  .o-footer__column-middle {
+    width: 60%;
+  }
+
+  .o-footer__column-last {
+    width: 100%;
   }
 }
 

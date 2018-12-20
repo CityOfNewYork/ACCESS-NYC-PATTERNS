@@ -4,9 +4,10 @@
 
 footer class='o-footer color-mid-background' data-sketch-symbol=symbol
   nav class='o-footer__nav'
-    ul class='o-footer__nav-list'
-      li
+    ul class='o-footer__nav-list px-3 screen-tablet:layout--two-columns-gutter screen-desktop:layout--three-columns-gutter'
+      li class='o-footer__column-first'
         div class='type-h3' Get Help Now
+
         ul
           li
             a href='#' Am I Eligible?
@@ -18,47 +19,51 @@ footer class='o-footer color-mid-background' data-sketch-symbol=symbol
             a href='#' Contact Us
 
         div class='type-h3' For Caseworkers
-        ul
-            li
-              a href='#' Applications &amp; Forms
 
-      li
+        ul
+          li
+            a href='#' Applications &amp; Forms
+
+      li class='o-footer__column-middle'
         div class='type-h3' Programs
-        ul
-            li
-              a href='#' Cash &amp; Expenses
-            li
-              a href='#' Child Care
-            li
-              a href='#' City ID Card
-            li
-              a href='#' Education
-            li
-              a href='#' Enrichment
-            li
-              a href='#' Food
-            li
-              a href='#' Health
-            li
-              a href='#' Housing
-            li
-              a href='#' Special Needs
-            li
-              a href='#' Work
 
-      li
+        ul class='screen-tablet:layout--columns-gutter screen-desktop:layout--rows'
+          li
+            a href='#' Cash &amp; Expenses
+          li
+            a href='#' Child Care
+          li
+            a href='#' City ID Card
+          li
+            a href='#' Education
+          li
+            a href='#' Enrichment
+          li
+            a href='#' Family Services
+          li
+            a href='#' Food
+          li
+            a href='#' Health
+          li
+            a href='#' Housing
+          li
+            a href='#' Special Needs
+          li
+            a href='#' Work
+
+      li class='o-footer__column-last'
         div class='type-h3'
           span class='sr-only' About ACCESS NYC
           svg class='icon icon-logo-full text-color-blue-dark'
             use xlink:href='#icon-logo-full'
 
         ul
-            li
-              a href='#' Training &amp; Support
-            li
-              a href='#' NYC.gov Privacy Policy
-            li
-              a href='#' NYC.gov Terms of Use
+          li
+            a href='#' Training &amp; Support
+          li
+            a href='#' NYC.gov Privacy Policy
+          li
+            a href='#' NYC.gov Terms of Use
 
         div class='type-h3' Get Updates
 
@@ -82,8 +87,6 @@ footer class='o-footer color-mid-background' data-sketch-symbol=symbol
                   = partial(`../../${instance}.slm`);
 
           button type='submit' class='btn-primary btn-small' Sign Up
-
-
 
   div class='o-footer__copyright'
     svg class='icon icon-logo-nyc'
