@@ -363,8 +363,8 @@
                     <input id="person-0-snap" name="Person[0].snap" type="checkbox" value="snap" /><span class="checkbox__label">SNAP (Supplemental Nutrition Assistance Program)</span></label>
                 </div>
                 <div>
-                  <div class="code-block mb-1"><pre>&lt;label class=&quot;checkbox&quot; data-sketch-symbol-instance=&quot;elements/inputs/input-search&quot; for=&quot;person-0-unemployed&quot;&gt;
-  &lt;input id=&quot;person-0-unemployed&quot; name=&quot;Person[0].unemployed&quot; type=&quot;checkbox&quot; value=&quot;unemployed&quot; /&gt;&lt;span class=&quot;checkbox__label&quot;&gt;Cell Phone&lt;/span&gt;&lt;/label&gt;</pre></div>
+                  <div class="code-block mb-1"><pre>&lt;label class=&quot;checkbox&quot; data-sketch-symbol-instance=&quot;elements/inputs/input-search&quot; for=&quot;person-0-staten-island&quot;&gt;
+  &lt;input id=&quot;person-0-staten-island&quot; name=&quot;Person[0].staten-island&quot; type=&quot;checkbox&quot; value=&quot;staten-island&quot; /&gt;&lt;span class=&quot;checkbox__label&quot;&gt;Staten Island&lt;/span&gt;&lt;/label&gt;</pre></div>
                 </div>
               </div>
             </div>
@@ -1360,8 +1360,8 @@
                     <input id="client-phone-type-home" name="Client.phoneType" type="radio" value="home" /><span class="radio__label">Home</span></label>
                 </div>
                 <div>
-                  <div class="code-block mb-1"><pre>&lt;label class=&quot;radio&quot; data-sketch-symbol-instance=&quot;elements/inputs/input-search&quot; for=&quot;client-phone-type-unemployed&quot;&gt;
-  &lt;input id=&quot;client-phone-type-unemployed&quot; name=&quot;Client.phoneType&quot; type=&quot;radio&quot; value=&quot;unemployed&quot; /&gt;&lt;span class=&quot;radio__label&quot;&gt;Cell Phone&lt;/span&gt;&lt;/label&gt;</pre></div>
+                  <div class="code-block mb-1"><pre>&lt;label class=&quot;radio&quot; data-sketch-symbol-instance=&quot;elements/inputs/input-search&quot; for=&quot;client-phone-type-staten-island&quot;&gt;
+  &lt;input id=&quot;client-phone-type-staten-island&quot; name=&quot;Client.phoneType&quot; type=&quot;radio&quot; value=&quot;staten-island&quot; /&gt;&lt;span class=&quot;radio__label&quot;&gt;Staten Island&lt;/span&gt;&lt;/label&gt;</pre></div>
                 </div>
               </div>
             </div>
@@ -2783,7 +2783,7 @@
         <div class="layout--gutter screen-tablet:layout--gutter justify-between pt-4">
           <div>
             <fieldset class="c-question" data-sketch-symbol="components/question/question-multiple-choice">
-              <legend class="c-question__label" for="person-0-age">Do any of these apply to you?</legend>
+              <legend class="c-question__label">Do any of these apply to you?</legend>
               <p>It’s OK to pick more than one. You can also leave this blank if none of these apply to you.</p>
               <div class="c-question__container screen-tablet:layout--columns">
                 <label class="checkbox" data-sketch-symbol-instance="elements/checkboxes/checkboxes" for="person-0-student">
@@ -2805,7 +2805,7 @@
           </div>
           <div>
             <div class="code-block mb-1"><pre>&lt;fieldset class=&quot;c-question&quot; data-sketch-symbol-instance=&quot;elements/inputs/input-search&quot;&gt;
-  &lt;legend class=&quot;c-question__label&quot; for=&quot;person-0-age&quot;&gt;Do any of these apply to you?&lt;/legend&gt;
+  &lt;legend class=&quot;c-question__label&quot;&gt;Do any of these apply to you?&lt;/legend&gt;
   &lt;p&gt;It’s OK to pick more than one. You can also leave this blank if none of these apply to you.&lt;/p&gt;
   &lt;div class=&quot;c-question__container screen-tablet:layout--columns&quot;&gt;
     &lt;label class=&quot;checkbox&quot; data-sketch-symbol-instance=&quot;elements/checkboxes/checkboxes&quot; for=&quot;person-0-student&quot;&gt;
@@ -3153,6 +3153,60 @@
         &lt;input name=&quot;to&quot; placeholder=&quot;Email&quot; required=&quot;true&quot; type=&quot;email&quot; /&gt;
         &lt;div class=&quot;c-share-form__button&quot;&gt;
           &lt;button class=&quot;btn btn-primary btn-small&quot; data-sketch-symbol-instance=&quot;elements/buttons/btn-small&quot; type=&quot;submit&quot;&gt;Send&lt;/button&gt;
+          &lt;svg class=&quot;share-form__spinner js-spinner&quot; data-sketch-symbol-instance=&quot;elements/spinner/spinner&quot; height=&quot;40px&quot; style=&quot;display: none&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 50 50&quot; width=&quot;69.89px&quot; x=&quot;0px&quot; xml:space=&quot;preserve&quot; xmlns=&quot;http://www.w3.org/2000/svg&quot;
+            xmlns:xlink=&quot;http://www.w3.org/1999/xlink&quot; y=&quot;0px&quot;&gt;
+            &lt;path d=&quot;M43.935,25.145c0-10.318-8.364-18.683-18.683-18.683c-10.318,0-18.683,8.365-18.683,18.683h4.068c0-8.071,6.543-14.615,14.615-14.615c8.072,0,14.615,6.543,14.615,14.615H43.935z&quot; fill=&quot;#184E9E&quot; transform=&quot;rotate(109.079 25 25)&quot;&gt;
+              &lt;animateTransform attributeName=&quot;transform&quot; attributeType=&quot;xml&quot; dur=&quot;1s&quot; from=&quot;0 25 25&quot; repeatCount=&quot;indefinite&quot; to=&quot;360 25 25&quot; type=&quot;rotate&quot;&gt;&lt;/animateTransform&gt;
+            &lt;/path&gt;
+          &lt;/svg&gt;
+          &lt;div class=&quot;success-message&quot;&gt;Sent!&lt;/div&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/form&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</pre></div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="pb-4 mb-4" id="share-form-sign-up">
+      <div class="page-wrapper px-2">
+        <header class="layout--home-body">
+          <div class="my-0 pt-1 px-2 pb-3 border-b border-color-grey-light screen-tablet:flex screen-tablet:justify-between">
+            <h2 class="m-0 pb-1">
+              <a class="text-color-grey-mid font-normal no-underline capitalize" href="#share-form-sign-up">share form sign up</a>
+            </h2><span><code class="code">src/components/share-form/share-form-sign-up</code></span></div>
+        </header>
+        <div class="layout--gutter screen-tablet:layout--gutter justify-between pt-4">
+          <div>
+            <div class="c-share-form" data-sketch-symbol="components/share-form/share-form-sign-up">
+              <div class="c-share-form__input" id="sign-up">
+                <form>
+                  <div class="c-share-form__controls">
+                    <input name="to" placeholder="Enter your email" required="true" type="email" />
+                    <div class="c-share-form__button">
+                      <button class="btn btn-primary btn-small" data-sketch-symbol-instance="elements/buttons/btn-small" type="submit">Sign&nbsp;Up</button>
+                      <svg class="share-form__spinner js-spinner" data-sketch-symbol-instance="elements/spinner/spinner" height="40px" style="display: none" version="1.1" viewBox="0 0 50 50" width="69.89px" x="0px" xml:space="preserve"
+                        xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" y="0px">
+                        <path d="M43.935,25.145c0-10.318-8.364-18.683-18.683-18.683c-10.318,0-18.683,8.365-18.683,18.683h4.068c0-8.071,6.543-14.615,14.615-14.615c8.072,0,14.615,6.543,14.615,14.615H43.935z" fill="#184E9E" transform="rotate(109.079 25 25)">
+                          <animateTransform attributeName="transform" attributeType="xml" dur="1s" from="0 25 25" repeatCount="indefinite" to="360 25 25" type="rotate"></animateTransform>
+                        </path>
+                      </svg>
+                      <div class="success-message">Sent!</div>
+                    </div>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+          <div>
+            <div class="code-block mb-1"><pre>&lt;div class=&quot;c-share-form&quot; data-sketch-symbol-instance=&quot;elements/spinner/spinner&quot;&gt;
+  &lt;div class=&quot;c-share-form__input&quot; id=&quot;sign-up&quot;&gt;
+    &lt;form&gt;
+      &lt;div class=&quot;c-share-form__controls&quot;&gt;
+        &lt;input name=&quot;to&quot; placeholder=&quot;Enter your email&quot; required=&quot;true&quot; type=&quot;email&quot; /&gt;
+        &lt;div class=&quot;c-share-form__button&quot;&gt;
+          &lt;button class=&quot;btn btn-primary btn-small&quot; data-sketch-symbol-instance=&quot;elements/buttons/btn-small&quot; type=&quot;submit&quot;&gt;Sign&amp;nbsp;Up&lt;/button&gt;
           &lt;svg class=&quot;share-form__spinner js-spinner&quot; data-sketch-symbol-instance=&quot;elements/spinner/spinner&quot; height=&quot;40px&quot; style=&quot;display: none&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 50 50&quot; width=&quot;69.89px&quot; x=&quot;0px&quot; xml:space=&quot;preserve&quot; xmlns=&quot;http://www.w3.org/2000/svg&quot;
             xmlns:xlink=&quot;http://www.w3.org/1999/xlink&quot; y=&quot;0px&quot;&gt;
             &lt;path d=&quot;M43.935,25.145c0-10.318-8.364-18.683-18.683-18.683c-10.318,0-18.683,8.365-18.683,18.683h4.068c0-8.071,6.543-14.615,14.615-14.615c8.072,0,14.615,6.543,14.615,14.615H43.935z&quot; fill=&quot;#184E9E&quot; transform=&quot;rotate(109.079 25 25)&quot;&gt;
@@ -4077,7 +4131,7 @@
         </header>
         <div class="layout--gutter screen-tablet:layout--gutter justify-between pt-4">
           <div>
-            <footer class="o-footer" data-sketch-symbol="objects/footer/footer">
+            <footer class="o-footer color-mid-background" data-sketch-symbol="objects/footer/footer">
               <nav class="o-footer__nav">
                 <ul class="o-footer__nav-list">
                   <li>
@@ -4139,7 +4193,11 @@
                     </ul>
                   </li>
                   <li>
-                    <div class="type-h3">About ACCESS NYC</div>
+                    <div class="type-h3"><span class="sr-only">About ACCESS NYC</span>
+                      <svg class="icon icon-logo-full text-color-blue-dark">
+                        <use xlink:href="#icon-logo-full"></use>
+                      </svg>
+                    </div>
                     <ul>
                       <li>
                         <a href="#">Training &amp; Support</a>
@@ -4151,11 +4209,33 @@
                         <a href="#">NYC.gov Terms of Use</a>
                       </li>
                     </ul>
-                  </li>
-                  <li>
-                    <svg class="icon icon-logo-full">
-                      <use xlink:href="#icon-logo-full"></use>
-                    </svg>
+                    <div class="type-h3">Get Updates</div>
+                    <form class="mb-4">
+                      <div class="c-question">
+                        <label class="c-question__label">What is your email?</label>
+                        <div class="c-question__container">
+                          <input class="w-full" type="email" />
+                        </div>
+                      </div>
+                      <div class="c-question mt-3">
+                        <fieldset class="c-question">
+                          <legend class="c-question__label">Which borough(s) would you like to recieve updates for?</legend>
+                          <div class="c-question__container screen-tablet:layout--columns">
+                            <label class="checkbox" data-sketch-symbol-instance="elements/checkboxes/checkboxes" for="person-0-manhattan">
+                              <input id="person-0-manhattan" name="Person[0].manhattan" type="checkbox" value="manhattan" /><span class="checkbox__label">Manhattan</span></label>
+                            <label class="checkbox" data-sketch-symbol-instance="elements/checkboxes/checkboxes" for="person-0-brooklyn">
+                              <input id="person-0-brooklyn" name="Person[0].brooklyn" type="checkbox" value="brooklyn" /><span class="checkbox__label">Brooklyn</span></label>
+                            <label class="checkbox" data-sketch-symbol-instance="elements/checkboxes/checkboxes" for="person-0-queens">
+                              <input id="person-0-queens" name="Person[0].queens" type="checkbox" value="queens" /><span class="checkbox__label">Queens</span></label>
+                            <label class="checkbox" data-sketch-symbol-instance="elements/checkboxes/checkboxes" for="person-0-bronx">
+                              <input id="person-0-bronx" name="Person[0].bronx" type="checkbox" value="bronx" /><span class="checkbox__label">Bronx</span></label>
+                            <label class="checkbox" data-sketch-symbol-instance="elements/checkboxes/checkboxes" for="person-0-staten-island">
+                              <input id="person-0-staten-island" name="Person[0].staten-island" type="checkbox" value="staten-island" /><span class="checkbox__label">Staten Island</span></label>
+                          </div>
+                        </fieldset>
+                      </div>
+                      <button class="btn-primary btn-small" type="submit">Sign Up</button>
+                    </form>
                   </li>
                 </ul>
               </nav>
@@ -4169,7 +4249,7 @@
             </footer>
           </div>
           <div>
-            <div class="code-block mb-1"><pre>&lt;footer class=&quot;o-footer&quot;&gt;
+            <div class="code-block mb-1"><pre>&lt;footer class=&quot;o-footer color-mid-background&quot;&gt;
   &lt;nav class=&quot;o-footer__nav&quot;&gt;
     &lt;ul class=&quot;o-footer__nav-list&quot;&gt;
       &lt;li&gt;
@@ -4231,7 +4311,11 @@
         &lt;/ul&gt;
       &lt;/li&gt;
       &lt;li&gt;
-        &lt;div class=&quot;type-h3&quot;&gt;About ACCESS NYC&lt;/div&gt;
+        &lt;div class=&quot;type-h3&quot;&gt;&lt;span class=&quot;sr-only&quot;&gt;About ACCESS NYC&lt;/span&gt;
+          &lt;svg class=&quot;icon icon-logo-full text-color-blue-dark&quot;&gt;
+            &lt;use xlink:href=&quot;#icon-logo-full&quot;&gt;&lt;/use&gt;
+          &lt;/svg&gt;
+        &lt;/div&gt;
         &lt;ul&gt;
           &lt;li&gt;
             &lt;a href=&quot;#&quot;&gt;Training &amp;amp; Support&lt;/a&gt;
@@ -4243,11 +4327,33 @@
             &lt;a href=&quot;#&quot;&gt;NYC.gov Terms of Use&lt;/a&gt;
           &lt;/li&gt;
         &lt;/ul&gt;
-      &lt;/li&gt;
-      &lt;li&gt;
-        &lt;svg class=&quot;icon icon-logo-full&quot;&gt;
-          &lt;use xlink:href=&quot;#icon-logo-full&quot;&gt;&lt;/use&gt;
-        &lt;/svg&gt;
+        &lt;div class=&quot;type-h3&quot;&gt;Get Updates&lt;/div&gt;
+        &lt;form class=&quot;mb-4&quot;&gt;
+          &lt;div class=&quot;c-question&quot;&gt;
+            &lt;label class=&quot;c-question__label&quot;&gt;What is your email?&lt;/label&gt;
+            &lt;div class=&quot;c-question__container&quot;&gt;
+              &lt;input class=&quot;w-full&quot; type=&quot;email&quot; /&gt;
+            &lt;/div&gt;
+          &lt;/div&gt;
+          &lt;div class=&quot;c-question mt-3&quot;&gt;
+            &lt;fieldset class=&quot;c-question&quot;&gt;
+              &lt;legend class=&quot;c-question__label&quot;&gt;Which borough(s) would you like to recieve updates for?&lt;/legend&gt;
+              &lt;div class=&quot;c-question__container screen-tablet:layout--columns&quot;&gt;
+                &lt;label class=&quot;checkbox&quot; data-sketch-symbol-instance=&quot;elements/checkboxes/checkboxes&quot; for=&quot;person-0-manhattan&quot;&gt;
+                  &lt;input id=&quot;person-0-manhattan&quot; name=&quot;Person[0].manhattan&quot; type=&quot;checkbox&quot; value=&quot;manhattan&quot; /&gt;&lt;span class=&quot;checkbox__label&quot;&gt;Manhattan&lt;/span&gt;&lt;/label&gt;
+                &lt;label class=&quot;checkbox&quot; data-sketch-symbol-instance=&quot;elements/checkboxes/checkboxes&quot; for=&quot;person-0-brooklyn&quot;&gt;
+                  &lt;input id=&quot;person-0-brooklyn&quot; name=&quot;Person[0].brooklyn&quot; type=&quot;checkbox&quot; value=&quot;brooklyn&quot; /&gt;&lt;span class=&quot;checkbox__label&quot;&gt;Brooklyn&lt;/span&gt;&lt;/label&gt;
+                &lt;label class=&quot;checkbox&quot; data-sketch-symbol-instance=&quot;elements/checkboxes/checkboxes&quot; for=&quot;person-0-queens&quot;&gt;
+                  &lt;input id=&quot;person-0-queens&quot; name=&quot;Person[0].queens&quot; type=&quot;checkbox&quot; value=&quot;queens&quot; /&gt;&lt;span class=&quot;checkbox__label&quot;&gt;Queens&lt;/span&gt;&lt;/label&gt;
+                &lt;label class=&quot;checkbox&quot; data-sketch-symbol-instance=&quot;elements/checkboxes/checkboxes&quot; for=&quot;person-0-bronx&quot;&gt;
+                  &lt;input id=&quot;person-0-bronx&quot; name=&quot;Person[0].bronx&quot; type=&quot;checkbox&quot; value=&quot;bronx&quot; /&gt;&lt;span class=&quot;checkbox__label&quot;&gt;Bronx&lt;/span&gt;&lt;/label&gt;
+                &lt;label class=&quot;checkbox&quot; data-sketch-symbol-instance=&quot;elements/checkboxes/checkboxes&quot; for=&quot;person-0-staten-island&quot;&gt;
+                  &lt;input id=&quot;person-0-staten-island&quot; name=&quot;Person[0].staten-island&quot; type=&quot;checkbox&quot; value=&quot;staten-island&quot; /&gt;&lt;span class=&quot;checkbox__label&quot;&gt;Staten Island&lt;/span&gt;&lt;/label&gt;
+              &lt;/div&gt;
+            &lt;/fieldset&gt;
+          &lt;/div&gt;
+          &lt;button class=&quot;btn-primary btn-small&quot; type=&quot;submit&quot;&gt;Sign Up&lt;/button&gt;
+        &lt;/form&gt;
       &lt;/li&gt;
     &lt;/ul&gt;
   &lt;/nav&gt;
@@ -4273,7 +4379,7 @@
         </header>
         <div class="layout--gutter screen-tablet:layout--gutter justify-between pt-4">
           <div>
-            <div class="o-mobile-nav active:o-mobile-nav" data-sketch-symbol="objects/mobile-nav/mobile-nav" id="o-mobile-nav">
+            <div class="o-mobile-nav color-mid-background active:o-mobile-nav" data-sketch-symbol="objects/mobile-nav/mobile-nav" id="o-mobile-nav">
               <a class="o-mobile-nav__close js-hide-nav" href="#o-mobile-nav">close &amp; return to site
                 <svg aria-hidden="true" class="icon icon-close">
                   <use xlink:href="#icon-close"></use>
@@ -4294,7 +4400,7 @@
             </div>
           </div>
           <div>
-            <div class="code-block mb-1"><pre>&lt;div class=&quot;o-mobile-nav active:o-mobile-nav&quot; data-sketch-symbol-instance=&quot;components/card/card-icon-info&quot; id=&quot;o-mobile-nav&quot;&gt;
+            <div class="code-block mb-1"><pre>&lt;div class=&quot;o-mobile-nav color-mid-background active:o-mobile-nav&quot; data-sketch-symbol-instance=&quot;elements/checkboxes/checkboxes&quot; id=&quot;o-mobile-nav&quot;&gt;
   &lt;a class=&quot;o-mobile-nav__close js-hide-nav&quot; href=&quot;#o-mobile-nav&quot;&gt;close &amp;amp; return to site
     &lt;svg aria-hidden=&quot;true&quot; class=&quot;icon icon-close&quot;&gt;
       &lt;use xlink:href=&quot;#icon-close&quot;&gt;&lt;/use&gt;
@@ -4327,7 +4433,7 @@
         </header>
         <div class="layout--gutter screen-tablet:layout--gutter justify-between pt-4">
           <div>
-            <nav class="o-navigation" data-sketch-symbol="objects/navigation/navigation">
+            <nav class="o-navigation color-dark-background" data-sketch-symbol="objects/navigation/navigation">
               <div class="logo-access">
                 <a href="/">
                   <svg class="icon icon-logo-full">
@@ -4344,29 +4450,29 @@
                     <use xlink:href="#icon-search"></use>
                   </svg>Search</a>
               </nav>
-              <div class="o-mobile-nav active:o-mobile-nav" data-sketch-symbol-instance="objects/mobile-nav/mobile-nav" id="o-mobile-nav">
-                <a class="o-mobile-nav__close js-hide-nav" href="#o-mobile-nav">close &amp; return to site
-                  <svg aria-hidden="true" class="icon icon-close">
-                    <use xlink:href="#icon-close"></use>
-                  </svg>
-                </a>
-                <div class="o-mobile-nav__inner">
-                  <h4 class="o-mobile-nav__header">Get help now</h4>
-                  <nav class="nav-block">
-                    <a class="active" href="#">Am I eligible?</a>
-                    <a href="#">Programs</a>
-                    <a href="#">Find help</a>
-                    <a class="td-inherit" href="#search">
-                      <svg class="icon icon-search">
-                        <use xlink:href="#icon-search"></use>
-                      </svg>Search</a>
-                  </nav>
-                </div>
-              </div>
             </nav>
+            <div class="o-mobile-nav color-mid-background active:o-mobile-nav" data-sketch-symbol-instance="objects/mobile-nav/mobile-nav" id="o-mobile-nav">
+              <a class="o-mobile-nav__close js-hide-nav" href="#o-mobile-nav">close &amp; return to site
+                <svg aria-hidden="true" class="icon icon-close">
+                  <use xlink:href="#icon-close"></use>
+                </svg>
+              </a>
+              <div class="o-mobile-nav__inner">
+                <h4 class="o-mobile-nav__header">Get help now</h4>
+                <nav class="nav-block">
+                  <a class="active" href="#">Am I eligible?</a>
+                  <a href="#">Programs</a>
+                  <a href="#">Find help</a>
+                  <a class="td-inherit" href="#search">
+                    <svg class="icon icon-search">
+                      <use xlink:href="#icon-search"></use>
+                    </svg>Search</a>
+                </nav>
+              </div>
+            </div>
           </div>
           <div>
-            <div class="code-block mb-1"><pre>&lt;nav class=&quot;o-navigation&quot;&gt;
+            <div class="code-block mb-1"><pre>&lt;nav class=&quot;o-navigation color-dark-background&quot;&gt;
   &lt;div class=&quot;logo-access&quot;&gt;
     &lt;a href=&quot;/&quot;&gt;
       &lt;svg class=&quot;icon icon-logo-full&quot;&gt;
@@ -4383,26 +4489,26 @@
         &lt;use xlink:href=&quot;#icon-search&quot;&gt;&lt;/use&gt;
       &lt;/svg&gt;Search&lt;/a&gt;
   &lt;/nav&gt;
-  &lt;div class=&quot;o-mobile-nav active:o-mobile-nav&quot; data-sketch-symbol-instance=&quot;objects/mobile-nav/mobile-nav&quot; id=&quot;o-mobile-nav&quot;&gt;
-    &lt;a class=&quot;o-mobile-nav__close js-hide-nav&quot; href=&quot;#o-mobile-nav&quot;&gt;close &amp;amp; return to site
-      &lt;svg aria-hidden=&quot;true&quot; class=&quot;icon icon-close&quot;&gt;
-        &lt;use xlink:href=&quot;#icon-close&quot;&gt;&lt;/use&gt;
-      &lt;/svg&gt;
-    &lt;/a&gt;
-    &lt;div class=&quot;o-mobile-nav__inner&quot;&gt;
-      &lt;h4 class=&quot;o-mobile-nav__header&quot;&gt;Get help now&lt;/h4&gt;
-      &lt;nav class=&quot;nav-block&quot;&gt;
-        &lt;a class=&quot;active&quot; href=&quot;#&quot;&gt;Am I eligible?&lt;/a&gt;
-        &lt;a href=&quot;#&quot;&gt;Programs&lt;/a&gt;
-        &lt;a href=&quot;#&quot;&gt;Find help&lt;/a&gt;
-        &lt;a class=&quot;td-inherit&quot; href=&quot;#search&quot;&gt;
-          &lt;svg class=&quot;icon icon-search&quot;&gt;
-            &lt;use xlink:href=&quot;#icon-search&quot;&gt;&lt;/use&gt;
-          &lt;/svg&gt;Search&lt;/a&gt;
-      &lt;/nav&gt;
-    &lt;/div&gt;
+&lt;/nav&gt;
+&lt;div class=&quot;o-mobile-nav color-mid-background active:o-mobile-nav&quot; data-sketch-symbol-instance=&quot;objects/mobile-nav/mobile-nav&quot; id=&quot;o-mobile-nav&quot;&gt;
+  &lt;a class=&quot;o-mobile-nav__close js-hide-nav&quot; href=&quot;#o-mobile-nav&quot;&gt;close &amp;amp; return to site
+    &lt;svg aria-hidden=&quot;true&quot; class=&quot;icon icon-close&quot;&gt;
+      &lt;use xlink:href=&quot;#icon-close&quot;&gt;&lt;/use&gt;
+    &lt;/svg&gt;
+  &lt;/a&gt;
+  &lt;div class=&quot;o-mobile-nav__inner&quot;&gt;
+    &lt;h4 class=&quot;o-mobile-nav__header&quot;&gt;Get help now&lt;/h4&gt;
+    &lt;nav class=&quot;nav-block&quot;&gt;
+      &lt;a class=&quot;active&quot; href=&quot;#&quot;&gt;Am I eligible?&lt;/a&gt;
+      &lt;a href=&quot;#&quot;&gt;Programs&lt;/a&gt;
+      &lt;a href=&quot;#&quot;&gt;Find help&lt;/a&gt;
+      &lt;a class=&quot;td-inherit&quot; href=&quot;#search&quot;&gt;
+        &lt;svg class=&quot;icon icon-search&quot;&gt;
+          &lt;use xlink:href=&quot;#icon-search&quot;&gt;&lt;/use&gt;
+        &lt;/svg&gt;Search&lt;/a&gt;
+    &lt;/nav&gt;
   &lt;/div&gt;
-&lt;/nav&gt;</pre></div>
+&lt;/div&gt;</pre></div>
           </div>
         </div>
       </div>
