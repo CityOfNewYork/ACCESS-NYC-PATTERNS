@@ -58,7 +58,7 @@ $color-transparent: map-get($colors, 'color-transparent');
     }
   }
 
-  h1, h3, h5 {
+  h1, h3, h5, .type-h1, .type-h2, .type-h3 {
     color: map-get($colors, map-get($combination, 'headings'));
   }
 }

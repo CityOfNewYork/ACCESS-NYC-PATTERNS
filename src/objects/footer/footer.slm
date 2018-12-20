@@ -2,7 +2,7 @@
 / Footer
 /
 
-footer class='o-footer' data-sketch-symbol=symbol
+footer class='o-footer color-mid-background' data-sketch-symbol=symbol
   nav class='o-footer__nav'
     ul class='o-footer__nav-list'
       li
@@ -47,7 +47,11 @@ footer class='o-footer' data-sketch-symbol=symbol
               a href='#' Work
 
       li
-        div class='type-h3' About ACCESS NYC
+        div class='type-h3'
+          span class='sr-only' About ACCESS NYC
+          svg class='icon icon-logo-full text-color-blue-dark'
+            use xlink:href='#icon-logo-full'
+
         ul
             li
               a href='#' Training &amp; Support
@@ -56,9 +60,30 @@ footer class='o-footer' data-sketch-symbol=symbol
             li
               a href='#' NYC.gov Terms of Use
 
-      li
-        svg class='icon icon-logo-full'
-          use xlink:href='#icon-logo-full'
+        div class='type-h3' Get Updates
+
+        form class='mb-4'
+          div class='c-question'
+            label class='c-question__label' What is your email?
+
+            div class='c-question__container'
+              input type='email' class='w-full'
+
+          div class='c-question mt-3'
+            fieldset class='c-question'
+              legend class='c-question__label' Which borough(s) would you like to recieve updates for?
+
+              div class='c-question__container screen-tablet:layout--columns'
+                - values = [['Manhattan', 'manhattan'], ['Brooklyn', 'brooklyn'], ['Queens', 'queens'], ['Bronx', 'bronx'], ['Staten Island', 'staten-island']];
+                - symbol = false;
+                - instance = 'elements/checkboxes/checkboxes';
+                - for (v in values)
+                  - text = values[v];
+                  = partial(`../../${instance}.slm`);
+
+          button type='submit' class='btn-primary btn-small' Sign Up
+
+
 
   div class='o-footer__copyright'
     svg class='icon icon-logo-nyc'

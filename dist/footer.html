@@ -158,7 +158,7 @@
               </div>
               <div class="layout--gutter screen-tablet:layout--gutter justify-between pt-4">
                 <div>
-                  <footer class="o-footer" data-sketch-symbol="objects/footer/footer">
+                  <footer class="o-footer color-mid-background" data-sketch-symbol="objects/footer/footer">
                     <nav class="o-footer__nav">
                       <ul class="o-footer__nav-list">
                         <li>
@@ -220,7 +220,11 @@
                           </ul>
                         </li>
                         <li>
-                          <div class="type-h3">About ACCESS NYC</div>
+                          <div class="type-h3"><span class="sr-only">About ACCESS NYC</span>
+                            <svg class="icon icon-logo-full text-color-blue-dark">
+                              <use xlink:href="#icon-logo-full"></use>
+                            </svg>
+                          </div>
                           <ul>
                             <li>
                               <a href="#">Training &amp; Support</a>
@@ -232,11 +236,33 @@
                               <a href="#">NYC.gov Terms of Use</a>
                             </li>
                           </ul>
-                        </li>
-                        <li>
-                          <svg class="icon icon-logo-full">
-                            <use xlink:href="#icon-logo-full"></use>
-                          </svg>
+                          <div class="type-h3">Get Updates</div>
+                          <form class="mb-4">
+                            <div class="c-question">
+                              <label class="c-question__label">What is your email?</label>
+                              <div class="c-question__container">
+                                <input class="w-full" type="email" />
+                              </div>
+                            </div>
+                            <div class="c-question mt-3">
+                              <fieldset class="c-question">
+                                <legend class="c-question__label">Which borough(s) would you like to recieve updates for?</legend>
+                                <div class="c-question__container screen-tablet:layout--columns">
+                                  <label class="checkbox" data-sketch-symbol-instance="elements/checkboxes/checkboxes" for="person-0-manhattan">
+                                    <input id="person-0-manhattan" name="Person[0].manhattan" type="checkbox" value="manhattan" /><span class="checkbox__label">Manhattan</span></label>
+                                  <label class="checkbox" data-sketch-symbol-instance="elements/checkboxes/checkboxes" for="person-0-brooklyn">
+                                    <input id="person-0-brooklyn" name="Person[0].brooklyn" type="checkbox" value="brooklyn" /><span class="checkbox__label">Brooklyn</span></label>
+                                  <label class="checkbox" data-sketch-symbol-instance="elements/checkboxes/checkboxes" for="person-0-queens">
+                                    <input id="person-0-queens" name="Person[0].queens" type="checkbox" value="queens" /><span class="checkbox__label">Queens</span></label>
+                                  <label class="checkbox" data-sketch-symbol-instance="elements/checkboxes/checkboxes" for="person-0-bronx">
+                                    <input id="person-0-bronx" name="Person[0].bronx" type="checkbox" value="bronx" /><span class="checkbox__label">Bronx</span></label>
+                                  <label class="checkbox" data-sketch-symbol-instance="elements/checkboxes/checkboxes" for="person-0-staten-island">
+                                    <input id="person-0-staten-island" name="Person[0].staten-island" type="checkbox" value="staten-island" /><span class="checkbox__label">Staten Island</span></label>
+                                </div>
+                              </fieldset>
+                            </div>
+                            <button class="btn-primary btn-small" type="submit">Sign Up</button>
+                          </form>
                         </li>
                       </ul>
                     </nav>
@@ -250,7 +276,7 @@
                   </footer>
                 </div>
                 <div>
-                  <div class="code-block mb-1"><pre>&lt;footer class=&quot;o-footer&quot; data-sketch-symbol=&quot;objects/footer/footer&quot;&gt;
+                  <div class="code-block mb-1"><pre>&lt;footer class=&quot;o-footer color-mid-background&quot;&gt;
   &lt;nav class=&quot;o-footer__nav&quot;&gt;
     &lt;ul class=&quot;o-footer__nav-list&quot;&gt;
       &lt;li&gt;
@@ -312,7 +338,11 @@
         &lt;/ul&gt;
       &lt;/li&gt;
       &lt;li&gt;
-        &lt;div class=&quot;type-h3&quot;&gt;About ACCESS NYC&lt;/div&gt;
+        &lt;div class=&quot;type-h3&quot;&gt;&lt;span class=&quot;sr-only&quot;&gt;About ACCESS NYC&lt;/span&gt;
+          &lt;svg class=&quot;icon icon-logo-full text-color-blue-dark&quot;&gt;
+            &lt;use xlink:href=&quot;#icon-logo-full&quot;&gt;&lt;/use&gt;
+          &lt;/svg&gt;
+        &lt;/div&gt;
         &lt;ul&gt;
           &lt;li&gt;
             &lt;a href=&quot;#&quot;&gt;Training &amp;amp; Support&lt;/a&gt;
@@ -324,11 +354,33 @@
             &lt;a href=&quot;#&quot;&gt;NYC.gov Terms of Use&lt;/a&gt;
           &lt;/li&gt;
         &lt;/ul&gt;
-      &lt;/li&gt;
-      &lt;li&gt;
-        &lt;svg class=&quot;icon icon-logo-full&quot;&gt;
-          &lt;use xlink:href=&quot;#icon-logo-full&quot;&gt;&lt;/use&gt;
-        &lt;/svg&gt;
+        &lt;div class=&quot;type-h3&quot;&gt;Get Updates&lt;/div&gt;
+        &lt;form class=&quot;mb-4&quot;&gt;
+          &lt;div class=&quot;c-question&quot;&gt;
+            &lt;label class=&quot;c-question__label&quot;&gt;What is your email?&lt;/label&gt;
+            &lt;div class=&quot;c-question__container&quot;&gt;
+              &lt;input class=&quot;w-full&quot; type=&quot;email&quot; /&gt;
+            &lt;/div&gt;
+          &lt;/div&gt;
+          &lt;div class=&quot;c-question mt-3&quot;&gt;
+            &lt;fieldset class=&quot;c-question&quot;&gt;
+              &lt;legend class=&quot;c-question__label&quot;&gt;Which borough(s) would you like to recieve updates for?&lt;/legend&gt;
+              &lt;div class=&quot;c-question__container screen-tablet:layout--columns&quot;&gt;
+                &lt;label class=&quot;checkbox&quot; data-sketch-symbol-instance=&quot;elements/checkboxes/checkboxes&quot; for=&quot;person-0-manhattan&quot;&gt;
+                  &lt;input id=&quot;person-0-manhattan&quot; name=&quot;Person[0].manhattan&quot; type=&quot;checkbox&quot; value=&quot;manhattan&quot; /&gt;&lt;span class=&quot;checkbox__label&quot;&gt;Manhattan&lt;/span&gt;&lt;/label&gt;
+                &lt;label class=&quot;checkbox&quot; data-sketch-symbol-instance=&quot;elements/checkboxes/checkboxes&quot; for=&quot;person-0-brooklyn&quot;&gt;
+                  &lt;input id=&quot;person-0-brooklyn&quot; name=&quot;Person[0].brooklyn&quot; type=&quot;checkbox&quot; value=&quot;brooklyn&quot; /&gt;&lt;span class=&quot;checkbox__label&quot;&gt;Brooklyn&lt;/span&gt;&lt;/label&gt;
+                &lt;label class=&quot;checkbox&quot; data-sketch-symbol-instance=&quot;elements/checkboxes/checkboxes&quot; for=&quot;person-0-queens&quot;&gt;
+                  &lt;input id=&quot;person-0-queens&quot; name=&quot;Person[0].queens&quot; type=&quot;checkbox&quot; value=&quot;queens&quot; /&gt;&lt;span class=&quot;checkbox__label&quot;&gt;Queens&lt;/span&gt;&lt;/label&gt;
+                &lt;label class=&quot;checkbox&quot; data-sketch-symbol-instance=&quot;elements/checkboxes/checkboxes&quot; for=&quot;person-0-bronx&quot;&gt;
+                  &lt;input id=&quot;person-0-bronx&quot; name=&quot;Person[0].bronx&quot; type=&quot;checkbox&quot; value=&quot;bronx&quot; /&gt;&lt;span class=&quot;checkbox__label&quot;&gt;Bronx&lt;/span&gt;&lt;/label&gt;
+                &lt;label class=&quot;checkbox&quot; data-sketch-symbol-instance=&quot;elements/checkboxes/checkboxes&quot; for=&quot;person-0-staten-island&quot;&gt;
+                  &lt;input id=&quot;person-0-staten-island&quot; name=&quot;Person[0].staten-island&quot; type=&quot;checkbox&quot; value=&quot;staten-island&quot; /&gt;&lt;span class=&quot;checkbox__label&quot;&gt;Staten Island&lt;/span&gt;&lt;/label&gt;
+              &lt;/div&gt;
+            &lt;/fieldset&gt;
+          &lt;/div&gt;
+          &lt;button class=&quot;btn-primary btn-small&quot; type=&quot;submit&quot;&gt;Sign Up&lt;/button&gt;
+        &lt;/form&gt;
       &lt;/li&gt;
     &lt;/ul&gt;
   &lt;/nav&gt;

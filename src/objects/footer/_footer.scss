@@ -44,7 +44,7 @@
 
       // @include media($bp-tablet-up) {
       @media screen and (min-width: $screen-tablet) {
-        width: 33.33%;
+        width: 50%;
 
         &:last-child {
           width: 100%;
@@ -53,10 +53,10 @@
 
       // @include media($bp-desktop-up) {
       @media screen and (min-width: $screen-desktop) {
-        width: 25%;
+        width: 29%;
 
         &:last-child {
-          width: 25%;
+          width: 42%;
         }
       }
     }
