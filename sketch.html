@@ -3169,60 +3169,6 @@
         </div>
       </div>
     </section>
-    <section class="pb-4 mb-4" id="share-form-sign-up">
-      <div class="page-wrapper px-2">
-        <header class="layout--home-body">
-          <div class="my-0 pt-1 px-2 pb-3 border-b border-color-grey-light screen-tablet:flex screen-tablet:justify-between">
-            <h2 class="m-0 pb-1">
-              <a class="text-color-grey-mid font-normal no-underline capitalize" href="#share-form-sign-up">share form sign up</a>
-            </h2><span><code class="code">src/components/share-form/share-form-sign-up</code></span></div>
-        </header>
-        <div class="layout--gutter screen-tablet:layout--gutter justify-between pt-4">
-          <div>
-            <div class="c-share-form" data-sketch-symbol="components/share-form/share-form-sign-up">
-              <div class="c-share-form__input" id="sign-up">
-                <form>
-                  <div class="c-share-form__controls">
-                    <input name="to" placeholder="Enter your email" required="true" type="email" />
-                    <div class="c-share-form__button">
-                      <button class="btn btn-primary btn-small" data-sketch-symbol-instance="elements/buttons/btn-small" type="submit">Sign&nbsp;Up</button>
-                      <svg class="share-form__spinner js-spinner" data-sketch-symbol-instance="elements/spinner/spinner" height="40px" style="display: none" version="1.1" viewBox="0 0 50 50" width="69.89px" x="0px" xml:space="preserve"
-                        xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" y="0px">
-                        <path d="M43.935,25.145c0-10.318-8.364-18.683-18.683-18.683c-10.318,0-18.683,8.365-18.683,18.683h4.068c0-8.071,6.543-14.615,14.615-14.615c8.072,0,14.615,6.543,14.615,14.615H43.935z" fill="#184E9E" transform="rotate(109.079 25 25)">
-                          <animateTransform attributeName="transform" attributeType="xml" dur="1s" from="0 25 25" repeatCount="indefinite" to="360 25 25" type="rotate"></animateTransform>
-                        </path>
-                      </svg>
-                      <div class="success-message">Sent!</div>
-                    </div>
-                  </div>
-                </form>
-              </div>
-            </div>
-          </div>
-          <div>
-            <div class="code-block mb-1"><pre>&lt;div class=&quot;c-share-form&quot; data-sketch-symbol-instance=&quot;elements/spinner/spinner&quot;&gt;
-  &lt;div class=&quot;c-share-form__input&quot; id=&quot;sign-up&quot;&gt;
-    &lt;form&gt;
-      &lt;div class=&quot;c-share-form__controls&quot;&gt;
-        &lt;input name=&quot;to&quot; placeholder=&quot;Enter your email&quot; required=&quot;true&quot; type=&quot;email&quot; /&gt;
-        &lt;div class=&quot;c-share-form__button&quot;&gt;
-          &lt;button class=&quot;btn btn-primary btn-small&quot; data-sketch-symbol-instance=&quot;elements/buttons/btn-small&quot; type=&quot;submit&quot;&gt;Sign&amp;nbsp;Up&lt;/button&gt;
-          &lt;svg class=&quot;share-form__spinner js-spinner&quot; data-sketch-symbol-instance=&quot;elements/spinner/spinner&quot; height=&quot;40px&quot; style=&quot;display: none&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 50 50&quot; width=&quot;69.89px&quot; x=&quot;0px&quot; xml:space=&quot;preserve&quot; xmlns=&quot;http://www.w3.org/2000/svg&quot;
-            xmlns:xlink=&quot;http://www.w3.org/1999/xlink&quot; y=&quot;0px&quot;&gt;
-            &lt;path d=&quot;M43.935,25.145c0-10.318-8.364-18.683-18.683-18.683c-10.318,0-18.683,8.365-18.683,18.683h4.068c0-8.071,6.543-14.615,14.615-14.615c8.072,0,14.615,6.543,14.615,14.615H43.935z&quot; fill=&quot;#184E9E&quot; transform=&quot;rotate(109.079 25 25)&quot;&gt;
-              &lt;animateTransform attributeName=&quot;transform&quot; attributeType=&quot;xml&quot; dur=&quot;1s&quot; from=&quot;0 25 25&quot; repeatCount=&quot;indefinite&quot; to=&quot;360 25 25&quot; type=&quot;rotate&quot;&gt;&lt;/animateTransform&gt;
-            &lt;/path&gt;
-          &lt;/svg&gt;
-          &lt;div class=&quot;success-message&quot;&gt;Sent!&lt;/div&gt;
-        &lt;/div&gt;
-      &lt;/div&gt;
-    &lt;/form&gt;
-  &lt;/div&gt;
-&lt;/div&gt;</pre></div>
-          </div>
-        </div>
-      </div>
-    </section>
     <section class="pb-4 mb-4" id="share-form-text">
       <div class="page-wrapper px-2">
         <header class="layout--home-body">
@@ -4133,8 +4079,8 @@
           <div>
             <footer class="o-footer color-mid-background" data-sketch-symbol="objects/footer/footer">
               <nav class="o-footer__nav">
-                <ul class="o-footer__nav-list">
-                  <li>
+                <ul class="o-footer__nav-list px-3 screen-tablet:layout--two-columns-gutter screen-desktop:layout--three-columns-gutter">
+                  <li class="o-footer__column-first">
                     <div class="type-h3">Get Help Now</div>
                     <ul>
                       <li>
@@ -4157,9 +4103,9 @@
                       </li>
                     </ul>
                   </li>
-                  <li>
+                  <li class="o-footer__column-middle">
                     <div class="type-h3">Programs</div>
-                    <ul>
+                    <ul class="screen-tablet:layout--columns-gutter screen-desktop:layout--rows">
                       <li>
                         <a href="#">Cash &amp; Expenses</a>
                       </li>
@@ -4174,6 +4120,9 @@
                       </li>
                       <li>
                         <a href="#">Enrichment</a>
+                      </li>
+                      <li>
+                        <a href="#">Family Services</a>
                       </li>
                       <li>
                         <a href="#">Food</a>
@@ -4192,7 +4141,7 @@
                       </li>
                     </ul>
                   </li>
-                  <li>
+                  <li class="o-footer__column-last">
                     <div class="type-h3"><span class="sr-only">About ACCESS NYC</span>
                       <svg class="icon icon-logo-full text-color-blue-dark">
                         <use xlink:href="#icon-logo-full"></use>
@@ -4251,8 +4200,8 @@
           <div>
             <div class="code-block mb-1"><pre>&lt;footer class=&quot;o-footer color-mid-background&quot;&gt;
   &lt;nav class=&quot;o-footer__nav&quot;&gt;
-    &lt;ul class=&quot;o-footer__nav-list&quot;&gt;
-      &lt;li&gt;
+    &lt;ul class=&quot;o-footer__nav-list px-3 screen-tablet:layout--two-columns-gutter screen-desktop:layout--three-columns-gutter&quot;&gt;
+      &lt;li class=&quot;o-footer__column-first&quot;&gt;
         &lt;div class=&quot;type-h3&quot;&gt;Get Help Now&lt;/div&gt;
         &lt;ul&gt;
           &lt;li&gt;
@@ -4275,9 +4224,9 @@
           &lt;/li&gt;
         &lt;/ul&gt;
       &lt;/li&gt;
-      &lt;li&gt;
+      &lt;li class=&quot;o-footer__column-middle&quot;&gt;
         &lt;div class=&quot;type-h3&quot;&gt;Programs&lt;/div&gt;
-        &lt;ul&gt;
+        &lt;ul class=&quot;screen-tablet:layout--columns-gutter screen-desktop:layout--rows&quot;&gt;
           &lt;li&gt;
             &lt;a href=&quot;#&quot;&gt;Cash &amp;amp; Expenses&lt;/a&gt;
           &lt;/li&gt;
@@ -4292,6 +4241,9 @@
           &lt;/li&gt;
           &lt;li&gt;
             &lt;a href=&quot;#&quot;&gt;Enrichment&lt;/a&gt;
+          &lt;/li&gt;
+          &lt;li&gt;
+            &lt;a href=&quot;#&quot;&gt;Family Services&lt;/a&gt;
           &lt;/li&gt;
           &lt;li&gt;
             &lt;a href=&quot;#&quot;&gt;Food&lt;/a&gt;
@@ -4310,7 +4262,7 @@
           &lt;/li&gt;
         &lt;/ul&gt;
       &lt;/li&gt;
-      &lt;li&gt;
+      &lt;li class=&quot;o-footer__column-last&quot;&gt;
         &lt;div class=&quot;type-h3&quot;&gt;&lt;span class=&quot;sr-only&quot;&gt;About ACCESS NYC&lt;/span&gt;
           &lt;svg class=&quot;icon icon-logo-full text-color-blue-dark&quot;&gt;
             &lt;use xlink:href=&quot;#icon-logo-full&quot;&gt;&lt;/use&gt;
