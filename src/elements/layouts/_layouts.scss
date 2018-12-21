@@ -122,7 +122,8 @@ $breakpoints: map-get($variables, 'screens');
     > * {
       margin-bottom: $spacing-base;
       width: calc(50% - #{$spacing-base/2});
-      max-width:  calc(50% - #{$spacing-base/2})
+      max-width:  calc(50% - #{$spacing-base/2});
+      flex-basis:  calc(50% - #{$spacing-base/2})
     }
 
     > *:nth-last-child(1),
@@ -155,7 +156,8 @@ $breakpoints: map-get($variables, 'screens');
 
     > * {
       width: calc(25% - #{$spacing-base/2});
-      max-width: calc(25% - #{$spacing-base/2})
+      max-width: calc(25% - #{$spacing-base/2});
+      flex-basis: calc(25% - #{$spacing-base/2})
     }
 
     > * {
@@ -188,6 +190,7 @@ $breakpoints: map-get($variables, 'screens');
     > * {
       width: calc(33.33% - #{$spacing-base/2});
       max-width: calc(33.33% - #{$spacing-base/2});
+      flex-basis: calc(33.33% - #{$spacing-base/2})
     }
 
     > * {
@@ -220,6 +223,7 @@ $breakpoints: map-get($variables, 'screens');
     > *, &:after {
       width: calc(50% - #{$spacing-base/2});
       max-width: calc(50% - #{$spacing-base/2});
+      flex-basis: calc(50% - #{$spacing-base/2})
     }
 
     > * {
@@ -251,6 +255,7 @@ $breakpoints: map-get($variables, 'screens');
     > *:first-child {
       width: 18.5rem;
       max-width: 18.5rem;
+      flex-basis: 18.5rem
     }
 
     > *:first-child + * {
@@ -278,11 +283,13 @@ $breakpoints: map-get($variables, 'screens');
     > *:first-child {
       width: 12.5rem;
       max-width: 12.5rem;
+      flex-basis: 12.5rem
     }
 
     > *:first-child + * {
       width: calc(100% - 12.5rem);
       max-width: calc(100% - 12.5rem);
+      flex-basis: calc(100% - 12.5rem)
     }
   }
 
@@ -309,12 +316,14 @@ $breakpoints: map-get($variables, 'screens');
     > *:first-child {
       width: 18.5rem;
       max-width: 18.5rem;
+      flex-basis: 18.5rem;
       margin-#{$text-direction-end}: $spacing-base;
     }
 
     > *:first-child + * {
       width: calc(100% - 18.5rem - #{$spacing-base});
       max-width: calc(100% - 18.5rem - #{$spacing-base});
+      flex-basis: calc(100% - 18.5rem - #{$spacing-base})
     }
   }
 
@@ -341,12 +350,14 @@ $breakpoints: map-get($variables, 'screens');
     > *:first-child {
       width: 12.5rem;
       max-width: 12.5rem;
+      flex-basis: 12.5rem;
       margin-#{$text-direction-end}: $spacing-base;
     }
 
     > *:first-child + * {
       width: calc(100% - 12.5rem - #{$spacing-base});
       max-width: calc(100% - 12.5rem - #{$spacing-base});
+      flex-basis: calc(100% - 12.5rem - #{$spacing-base})
     }
   }
 
