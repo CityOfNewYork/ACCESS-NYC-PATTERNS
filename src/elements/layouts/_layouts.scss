@@ -62,7 +62,8 @@ $breakpoints: map-get($variables, 'screens');
     > * {
       height: 50%;
       width: 100%;
-      max-width: 100%
+      max-width: 100%;
+      flex-basis: 100%
     }
   }
 
@@ -122,8 +123,8 @@ $breakpoints: map-get($variables, 'screens');
     > * {
       margin-bottom: $spacing-base;
       width: calc(50% - #{$spacing-base/2});
-      max-width:  calc(50% - #{$spacing-base/2});
-      flex-basis:  calc(50% - #{$spacing-base/2})
+      max-width: calc(50% - #{$spacing-base/2});
+      flex-basis: calc(50% - #{$spacing-base/2})
     }
 
     > *:nth-last-child(1),
@@ -261,6 +262,7 @@ $breakpoints: map-get($variables, 'screens');
     > *:first-child + * {
       width: calc(100% - 18.5rem);
       max-width: calc(100% - 18.5rem);
+      flex-basis: calc(100% - 18.5rem)
     }
   }
 
