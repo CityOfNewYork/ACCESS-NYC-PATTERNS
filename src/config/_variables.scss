@@ -4,8 +4,8 @@
 // and use `$set: map-get($variables, {set}); $var: map-get($set, {var})`.
 
 $variables: (
-  version: 0.1.0,
-  cdn: "https://cdn.jsdelivr.net/gh/CityOfNewYork/ACCESS-NYC-PATTERNS@v0.1.0/dist",
+  version: 0.1.1,
+  cdn: "https://cdn.jsdelivr.net/gh/CityOfNewYork/ACCESS-NYC-PATTERNS@v0.1.1/dist",
   languages: (default, ar, es, kr, ur, tc),
   rtlLanguages: (ar, ur),
   fonts: (
