@@ -12,9 +12,9 @@ const modules = require('../config/modules');
 /**
  * Init
  */
-
-modules.forEach(function(module) {
+function run(module) {
   let bundle = Path.join(__dirname, '../', module.outDir, module.outFile);
+
   Fs.readFile(bundle, (err, css) => {
     Postcss(config.plugins)
       .process(css, {
@@ -31,4 +31,14 @@ modules.forEach(function(module) {
         });
       });
   });
-});
+}
+
+if (process.env.NODE_ENV === 'development') {
+  modules.forEach(function(module) {
+    if (module.devModule) {
+      run(module);
+    }
+  });
+} else {
+  modules.forEach(run);
+}

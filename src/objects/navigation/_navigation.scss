@@ -15,23 +15,15 @@
 .o-navigation {
   align-items: center;
   display: flex;
-  background: $color-blue-dark;
-  color: $color-white;
   @include font-smooth;
   padding: (.5 * $spacing-base) $spacing-base;
 
   .logo-access {
-    a:link,
-    a:visited {
-      color: $color-white;
-    }
-
     .icon-logo-full {
       width: 135px;
       height: 23px;
       display: block;
 
-      // @include media($bp-desktop-up) {
       @media screen and (min-width: $screen-desktop) {
         .home & {
           width: 270px;
@@ -42,26 +34,21 @@
   }
 }
 
-.o-navigation__nav a:not(.btn):link {
-  color: $color-white;
-}
-
 .o-navigation__toggle,
 .o-navigation__search-toggle {
   @include typography-nav();
   margin-#{$text-direction-start}: 1em;
 
   a:link {
-    color: $color-white;
-    text-decoration: none;
+    text-decoration: none
   }
 
   svg {
-    fill: currentColor;
+    fill: currentColor
   }
 
   .icon {
-    margin-#{$text-direction-end}: .3em;
+    margin-#{$text-direction-end}: .3em
   }
 }
 
@@ -69,8 +56,7 @@
   flex: 1 1 auto;
   text-align: $text-direction-end;
 
-  // @include media($bp-desktop-up) {
   @media screen and (min-width: $screen-desktop) {
-    display: none;
+    display: none
   }
 }

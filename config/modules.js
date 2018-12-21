@@ -31,7 +31,8 @@ const modules = [
     outFile: 'site-default.css',
     sourceMapEmbed: sass.sourceMapEmbed,
     precision: sass.precision,
-    includePaths: sass.includePaths
+    includePaths: sass.includePaths,
+    devModule: true
   },
   {
     file: './src/scss/site-es.scss',

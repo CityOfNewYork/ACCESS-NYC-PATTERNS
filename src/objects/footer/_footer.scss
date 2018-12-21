@@ -7,6 +7,7 @@
 @import 'config/dimensions';
 @import 'config/media';
 @import 'config/direction';
+@import 'config/fonts';
 @import 'config/typography';
 @import 'bourbon/app/assets/stylesheets/addons/clearfix';
 
@@ -14,74 +15,42 @@
 .o-footer {
   padding: 2*$spacing-base 0;
   border-top: 3px solid $color-blue-dark;
+}
 
-  .o-footer__nav-list {
-    @include typography-nav();
-    // @include clearfix();
-    // display: block;
-    list-style: none;
-    margin: 0 0 $spacing-base;
-    padding: 0;
+.o-footer__nav-list {
+  @include typography-nav();
+  list-style: none;
+  margin: 0 0 $spacing-base;
+  padding: 0;
 
-    .type-h3 {
-      margin-bottom: $spacing-base;
-    }
-
-    ul {
-      list-style: none;
-      margin: 0 0 (2*$spacing-base);
-      padding: 0;
-
-      > li {
-        margin-bottom: $spacing-base;
-      }
-    }
-
-    //   margin: 0 0 2*$spacing-base;
-    //   padding: 0;
-
-    //   > li {
-    //     margin-bottom: $spacing-base;
-    //   }
-    // }
-
-    // > li {
-    //   width: 100%;
-    //   float: $text-direction-start;
-    //   padding: 0 $spacing-base;
-
-    //   // @include media($bp-tablet-up) {
-    //   @media screen and (min-width: $screen-tablet) {
-    //     width: 50%;
-
-    //     &:last-child {
-    //       width: 100%;
-    //     }
-    //   }
-
-    //   // @include media($bp-desktop-up) {
-    //   @media screen and (min-width: $screen-desktop) {
-    //     width: 29%;
-
-    //     &:last-child {
-    //       width: 42%;
-    //     }
-    //   }
-    // }
+  .type-h3 {
+    margin-bottom: $spacing-base;
   }
 
-  .o-footer__copyright {
-    margin: 0 $spacing-base;
+  ul {
+    list-style: none;
+    margin: 0 0 (2*$spacing-base);
+    padding: 0;
+
+    > li {
+      margin-bottom: $spacing-base;
+    }
   }
 }
 
+.o-footer__copyright {
+  margin: 0 $spacing-base;
+}
+
+// Desktop
 @media screen and (min-width: $screen-desktop) {
-  .o-footer__column-first {
-    width: 20%;
+  .o-footer__nav-list {
+    display: flex;
   }
 
+  .o-footer__column-first,
   .o-footer__column-middle {
-    width: 20%;
+    width: 30%;
   }
 
   .o-footer__column-last {
@@ -89,7 +58,13 @@
   }
 }
 
+// Tablet
 @media screen and (min-width: $screen-tablet) and (max-width: $screen-desktop) {
+  .o-footer__nav-list {
+    flex-wrap: wrap;
+    display: flex;
+  }
+
   .o-footer__column-first {
     width: 40%;
   }
@@ -110,7 +85,7 @@
   flex-direction: row;
   justify-content: flex-start;
   color: $color-grey-dark;
-  font-size: 12px; // TODO(jjandoc): Variable?
+  font-size: $font-size-xsmall;
 
   .icon-logo-nyc {
     width: 90px;

@@ -31,7 +31,7 @@ function write(module) {
   });
 }
 
-modules.forEach(function(module) {
+function run(module) {
   let outDir = Path.join(__dirname, '../', module.outDir);
   if (!Fs.existsSync(outDir)) {
     mkdirp(outDir, (err) => {
@@ -44,4 +44,14 @@ modules.forEach(function(module) {
   } else {
     write(module);
   }
-});
+}
+
+if (process.env.NODE_ENV === 'development') {
+  modules.forEach(function(module) {
+    if (module.devModule) {
+      run(module);
+    }
+  });
+} else {
+  modules.forEach(run);
+}

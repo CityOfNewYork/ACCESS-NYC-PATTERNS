@@ -5,7 +5,7 @@
 div class='c-share-form' data-sketch-symbol=symbol data-sketch-symbol-instance=instance
   a class='btn btn-primary c-share-form__toggle active' data-scroll-offset='20' href='#share-by-text' Email
 
-  div id='share-by-text' class='c-share-form__input'
+  div id='share-by-text' class='c-share-form__input active'
     form
       div class='c-share-form__controls'
         input type='email' name='to' placeholder='Email' required='true'

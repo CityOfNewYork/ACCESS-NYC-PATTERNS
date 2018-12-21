@@ -4,12 +4,13 @@
     div class='page-wrapper px-2 screen-desktop:px-0'
       header class='layout--home-body'
         div class='my-0 pt-1 px-2 pb-3 border-b border-color-grey-light screen-tablet:flex screen-tablet:justify-between'
-          h2 class='m-0 pb-1'
+          h2 class='m-0 pb-1 screen-tablet:pb-0'
             a href='#${this.id}' class='text-color-grey-mid font-normal no-underline capitalize'
               = this.title;
 
-          span
-            code class='code' src/${this.path}
+          div class='code-block'
+            pre
+              code class='text-color-blue' ${this.path}
 
       - if (this.specs != 'false')
         = mixin('demo-specs', this.path + '.md');

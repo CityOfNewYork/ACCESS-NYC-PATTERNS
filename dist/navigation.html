@@ -148,10 +148,12 @@
           <section class="pb-4 mb-4" id="default-styling">
             <div class="page-wrapper px-2">
               <header class="layout--home-body">
-                <div class="my-0 pt-1 px-2 pb-3 border-b border-color-grey-light screen-tablet:flex screen-tablet:justify-between">
-                  <h2 class="m-0 pb-1">
+                <div class="my-0 pt-1 px-2 pb-3 border-b border-color-grey-light screen-tablet:flex screen-tablet:justify-between items-center">
+                  <h2 class="m-0 pb-1 screen-tablet:pb-0">
                     <a class="text-color-grey-mid font-normal no-underline capitalize" href="#default-styling">Default Styling</a>
-                  </h2><span><code class="code">src/objects/navigation/navigation</code></span></div>
+                  </h2>
+                  <div class="code-block"><pre><code class="text-color-blue">objects/navigation/navigation</code></pre></div>
+                </div>
               </header>
               <div class="layout--home-body">
                 <div class="my-0 pt-4 px-2 text-font-size-small"><p>The Navigation Object is a custom module with specific classes to define its elements, including the logo and nav. When a user is in a section of ACCESS NYC, the navigation item for that section gets a bolder type treatment. The Home page of ACCESS NYC
@@ -159,7 +161,7 @@
               </div>
               <div class="layout--gutter screen-tablet:layout--gutter justify-between pt-4">
                 <div>
-                  <nav class="o-navigation" data-sketch-symbol="objects/navigation/navigation">
+                  <nav class="o-navigation color-dark-background" data-sketch-symbol="objects/navigation/navigation">
                     <div class="logo-access">
                       <a href="/">
                         <svg class="icon icon-logo-full">
@@ -176,29 +178,29 @@
                           <use xlink:href="#icon-search"></use>
                         </svg>Search</a>
                     </nav>
-                    <div class="o-mobile-nav active:o-mobile-nav" data-sketch-symbol-instance="objects/mobile-nav/mobile-nav" id="o-mobile-nav">
-                      <a class="o-mobile-nav__close js-hide-nav" href="#o-mobile-nav">close &amp; return to site
-                        <svg aria-hidden="true" class="icon icon-close">
-                          <use xlink:href="#icon-close"></use>
-                        </svg>
-                      </a>
-                      <div class="o-mobile-nav__inner">
-                        <h4 class="o-mobile-nav__header">Get help now</h4>
-                        <nav class="nav-block">
-                          <a class="active" href="#">Am I eligible?</a>
-                          <a href="#">Programs</a>
-                          <a href="#">Find help</a>
-                          <a class="td-inherit" href="#search">
-                            <svg class="icon icon-search">
-                              <use xlink:href="#icon-search"></use>
-                            </svg>Search</a>
-                        </nav>
-                      </div>
-                    </div>
                   </nav>
+                  <div class="o-mobile-nav color-mid-background active:o-mobile-nav" data-sketch-symbol-instance="objects/mobile-nav/mobile-nav" id="o-mobile-nav">
+                    <a class="o-mobile-nav__close js-hide-nav" href="#o-mobile-nav">close &amp; return to site
+                      <svg aria-hidden="true" class="icon icon-close">
+                        <use xlink:href="#icon-close"></use>
+                      </svg>
+                    </a>
+                    <div class="o-mobile-nav__inner">
+                      <h4 class="o-mobile-nav__header">Get help now</h4>
+                      <nav class="nav-block">
+                        <a class="active" href="#">Am I eligible?</a>
+                        <a href="#">Programs</a>
+                        <a href="#">Find help</a>
+                        <a class="td-inherit" href="#search">
+                          <svg class="icon icon-search">
+                            <use xlink:href="#icon-search"></use>
+                          </svg>Search</a>
+                      </nav>
+                    </div>
+                  </div>
                 </div>
                 <div>
-                  <div class="code-block mb-1"><pre>&lt;nav class=&quot;o-navigation&quot;&gt;
+                  <div class="code-block mb-1"><pre>&lt;nav class=&quot;o-navigation color-dark-background&quot;&gt;
   &lt;div class=&quot;logo-access&quot;&gt;
     &lt;a href=&quot;/&quot;&gt;
       &lt;svg class=&quot;icon icon-logo-full&quot;&gt;
@@ -215,26 +217,26 @@
         &lt;use xlink:href=&quot;#icon-search&quot;&gt;&lt;/use&gt;
       &lt;/svg&gt;Search&lt;/a&gt;
   &lt;/nav&gt;
-  &lt;div class=&quot;o-mobile-nav active:o-mobile-nav&quot; data-sketch-symbol-instance=&quot;objects/mobile-nav/mobile-nav&quot; id=&quot;o-mobile-nav&quot;&gt;
-    &lt;a class=&quot;o-mobile-nav__close js-hide-nav&quot; href=&quot;#o-mobile-nav&quot;&gt;close &amp;amp; return to site
-      &lt;svg aria-hidden=&quot;true&quot; class=&quot;icon icon-close&quot;&gt;
-        &lt;use xlink:href=&quot;#icon-close&quot;&gt;&lt;/use&gt;
-      &lt;/svg&gt;
-    &lt;/a&gt;
-    &lt;div class=&quot;o-mobile-nav__inner&quot;&gt;
-      &lt;h4 class=&quot;o-mobile-nav__header&quot;&gt;Get help now&lt;/h4&gt;
-      &lt;nav class=&quot;nav-block&quot;&gt;
-        &lt;a class=&quot;active&quot; href=&quot;#&quot;&gt;Am I eligible?&lt;/a&gt;
-        &lt;a href=&quot;#&quot;&gt;Programs&lt;/a&gt;
-        &lt;a href=&quot;#&quot;&gt;Find help&lt;/a&gt;
-        &lt;a class=&quot;td-inherit&quot; href=&quot;#search&quot;&gt;
-          &lt;svg class=&quot;icon icon-search&quot;&gt;
-            &lt;use xlink:href=&quot;#icon-search&quot;&gt;&lt;/use&gt;
-          &lt;/svg&gt;Search&lt;/a&gt;
-      &lt;/nav&gt;
-    &lt;/div&gt;
+&lt;/nav&gt;
+&lt;div class=&quot;o-mobile-nav color-mid-background active:o-mobile-nav&quot; data-sketch-symbol-instance=&quot;objects/mobile-nav/mobile-nav&quot; id=&quot;o-mobile-nav&quot;&gt;
+  &lt;a class=&quot;o-mobile-nav__close js-hide-nav&quot; href=&quot;#o-mobile-nav&quot;&gt;close &amp;amp; return to site
+    &lt;svg aria-hidden=&quot;true&quot; class=&quot;icon icon-close&quot;&gt;
+      &lt;use xlink:href=&quot;#icon-close&quot;&gt;&lt;/use&gt;
+    &lt;/svg&gt;
+  &lt;/a&gt;
+  &lt;div class=&quot;o-mobile-nav__inner&quot;&gt;
+    &lt;h4 class=&quot;o-mobile-nav__header&quot;&gt;Get help now&lt;/h4&gt;
+    &lt;nav class=&quot;nav-block&quot;&gt;
+      &lt;a class=&quot;active&quot; href=&quot;#&quot;&gt;Am I eligible?&lt;/a&gt;
+      &lt;a href=&quot;#&quot;&gt;Programs&lt;/a&gt;
+      &lt;a href=&quot;#&quot;&gt;Find help&lt;/a&gt;
+      &lt;a class=&quot;td-inherit&quot; href=&quot;#search&quot;&gt;
+        &lt;svg class=&quot;icon icon-search&quot;&gt;
+          &lt;use xlink:href=&quot;#icon-search&quot;&gt;&lt;/use&gt;
+        &lt;/svg&gt;Search&lt;/a&gt;
+    &lt;/nav&gt;
   &lt;/div&gt;
-&lt;/nav&gt;</pre></div>
+&lt;/div&gt;</pre></div>
                 </div>
               </div>
             </div>

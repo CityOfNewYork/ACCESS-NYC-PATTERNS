@@ -2,7 +2,7 @@
 / Navigation
 /
 
-nav class='o-navigation' data-sketch-symbol=symbol
+nav class='o-navigation color-dark-background' data-sketch-symbol=symbol
   div class='logo-access'
     a href='/'
       svg class='icon icon-logo-full'
@@ -19,6 +19,6 @@ nav class='o-navigation' data-sketch-symbol=symbol
         use xlink:href='#icon-search'
       | Search
 
-  - symbol = false;
-  - instance = 'objects/mobile-nav/mobile-nav';
-  = partial('../mobile-nav/mobile-nav');
+- symbol = false;
+- instance = 'objects/mobile-nav/mobile-nav';
+= partial('../mobile-nav/mobile-nav');

@@ -19,14 +19,15 @@
     "svg_src": "./src/svg",
     "svg_dist": "./dist/svg",
     "svg_sprite_svg": "./src/views/partials/icons.slm",
-    "svg_sprite_partial": "./src/views/partials/icons.slm"
+    "svg_sprite_partial": "./src/views/partials/icons.slm",
+    "dev_module": "./src/scss/site-default.scss"
   },
   "scripts": {
     "test": "",
-    "start": "PORT=$npm_package_config_port concurrently 'npm run svgs:watch' 'npm run styles:watch' 'npm run scripts:watch' 'npm run build:watch' 'npm run serve' 'npm run sync'",
+    "start": "NODE_ENV=development PORT=$npm_package_config_port concurrently 'npm run svgs:watch' 'npm run styles:watch' 'npm run scripts:watch' 'npm run build:watch' 'npm run serve' 'npm run sync'",
+    "predeploy": "NODE_ENV=production concurrently 'npm run svgs' 'npm run styles' 'npm run scripts' 'npm run build'",
     "serve": "PORT=$npm_package_config_port node .app/serve.js --ext slm --watch src",
     "build": "VARS=$npm_package_config_vars node .app/build.js",
-    "compile": "concurrently 'npm run svgs' 'npm run styles' 'npm run scripts' 'npm run build'",
     "build:watch": "nodemon -e slm,md --watch src -x 'npm run build'",
     "ghpages": "node .app/publish.js",
     "scripts": "rollup -c $npm_package_config_rollup",

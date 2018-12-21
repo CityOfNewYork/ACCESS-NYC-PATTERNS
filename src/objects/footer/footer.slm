@@ -4,7 +4,7 @@
 
 footer class='o-footer color-mid-background' data-sketch-symbol=symbol
   nav class='o-footer__nav'
-    ul class='o-footer__nav-list px-3 screen-tablet:layout--two-columns-gutter screen-desktop:layout--three-columns-gutter'
+    ul class='o-footer__nav-list px-3'
       li class='o-footer__column-first'
         div class='type-h3' Get Help Now
 

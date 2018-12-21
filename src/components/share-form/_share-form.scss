@@ -101,8 +101,18 @@
 }
 
 .c-share-form__button {
-  flex: 0 0 69.89px;
   padding: 0 10px;
+  flex-basis: 91px;
+  max-width: 91px;
+  min-width: 91px;
+  display: flex;
+  align-items: center;
+
+  [class*='btn-'] {
+    padding-left: 0;
+    padding-right: 0;
+    width: 100%;
+  }
 }
 
 // .share-form__spinner {
