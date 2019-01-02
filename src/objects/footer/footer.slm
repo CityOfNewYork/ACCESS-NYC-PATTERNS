@@ -69,10 +69,10 @@ footer class='o-footer color-mid-background' data-sketch-symbol=symbol
 
         form class='mb-4'
           div class='c-question'
-            label class='c-question__label' What is your email?
+            label class='c-question__label sr-only' What is your email?
 
             div class='c-question__container'
-              input type='email' class='w-full'
+              input type='email' class='w-full' placeholder='What is your email?'
 
           div class='c-question mt-3'
             fieldset class='c-question'

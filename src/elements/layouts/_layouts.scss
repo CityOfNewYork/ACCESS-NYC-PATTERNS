@@ -38,7 +38,7 @@ $breakpoints: map-get($variables, 'screens');
   //
   .#{$variant}layout--columns {
     display: flex;
-
+    flex-wrap: wrap;
     > * {
       width: 50%;
       max-width: 50%
