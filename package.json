@@ -29,7 +29,7 @@
     "serve": "PORT=$npm_package_config_port node .app/serve.js --ext slm --watch src",
     "build": "VARS=$npm_package_config_vars node .app/build.js",
     "build:watch": "nodemon -e slm,md --watch src -x 'npm run build'",
-    "ghpages": "node .app/publish.js",
+    "publish": "npm run build && node .app/publish.js",
     "scripts": "rollup -c $npm_package_config_rollup",
     "scripts:watch": "rollup -c $npm_package_config_rollup -w",
     "sync": "browser-sync start --files 'src' --no-open --no-ui --reload-delay 2000 --proxy \"http://localhost:$npm_package_config_port\"",
