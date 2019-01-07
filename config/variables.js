@@ -3,10 +3,11 @@
  */
 
 const package = require('../package.json');
+const version = process.env.V || package.version;
 
 const variables = {
-  version: package.version,
-  cdn: '"https://cdn.jsdelivr.net/gh/CityOfNewYork/ACCESS-NYC-PATTERNS@v' + package.version + '/dist"',
+  version: version,
+  cdn: '"https://cdn.jsdelivr.net/gh/CityOfNewYork/ACCESS-NYC-PATTERNS@v' + version + '/dist"',
   languages: ['default', 'ar', 'es', 'kr', 'ur', 'tc'],
   rtlLanguages: ['ar', 'ur'],
   fonts: {

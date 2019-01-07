@@ -69,17 +69,17 @@ footer class='o-footer color-mid-background' data-sketch-symbol=symbol
 
         form class='mb-4'
           div class='c-question'
-            label class='c-question__label sr-only' What is your email?
+            label class='c-question__label' Receive benefits news and reminders about upcoming open enrollment periods.
 
             div class='c-question__container'
-              input type='email' class='w-full' placeholder='What is your email?'
+              input type='email' class='w-full' placeholder='Email address'
 
           div class='c-question mt-3'
             fieldset class='c-question'
               legend class='c-question__label' Which borough(s) would you like to recieve updates for?
 
               div class='c-question__container screen-tablet:layout--columns'
-                - values = [['Manhattan', 'manhattan'], ['Brooklyn', 'brooklyn'], ['Queens', 'queens'], ['Bronx', 'bronx'], ['Staten Island', 'staten-island']];
+                - values = [['Bronx', 'bronx'], ['Staten Island', 'staten-island'], ['Queens', 'queens'], ['Brooklyn', 'brooklyn'], ['Manhattan', 'manhattan']];
                 - symbol = false;
                 - instance = 'elements/checkboxes/checkboxes';
                 - for (v in values)
