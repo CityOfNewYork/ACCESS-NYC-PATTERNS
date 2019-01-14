@@ -59,8 +59,8 @@
               <h2 class="text-font-size-small m-0 text-color-blue-dark screen-tablet:hidden">Patterns</h2>
               <h2 aria-hidden="true" class="type-h1 m-0 text-color-blue-dark hidden screen-tablet:inline-block">Patterns</h2>
               <nav class="text-font-size-small">
-                <a class="rounded-lg text-color-blue-dark border-2 no-underline px-1 ml-2 hidden screen-tablet:inline-block" href="https://github.com/CityOfNewYork/ACCESS-NYC-PATTERNS">0.1.4</a>
-                <a aria-hidden="true" class="ml-1 screen-tablet:ml-2 screen-tablet:hidden" href="https://github.com/CityOfNewYork/ACCESS-NYC-PATTERNS">0.1.4</a>
+                <a class="rounded-lg text-color-blue-dark border-2 no-underline px-1 ml-2 hidden screen-tablet:inline-block" href="https://github.com/CityOfNewYork/ACCESS-NYC-PATTERNS">0.1.5</a>
+                <a aria-hidden="true" class="ml-1 screen-tablet:ml-2 screen-tablet:hidden" href="https://github.com/CityOfNewYork/ACCESS-NYC-PATTERNS">0.1.5</a>
                 <a class="ml-1 screen-tablet:ml-2" data-js="toggle" href="#main-menu">Menu</a>
               </nav>
             </div>
@@ -241,33 +241,95 @@
                               <a href="#">NYC.gov Terms of Use</a>
                             </li>
                           </ul>
-                          <div class="type-h3">Get Updates</div>
-                          <form class="mb-4">
-                            <div class="c-question">
-                              <label class="c-question__label">Receive benefits news and reminders about upcoming open enrollment periods.</label>
-                              <div class="c-question__container">
-                                <input class="w-full" placeholder="Email address" type="email" />
-                              </div>
-                            </div>
-                            <div class="c-question mt-3">
-                              <fieldset class="c-question">
-                                <legend class="c-question__label">Which borough(s) would you like to recieve updates for?</legend>
-                                <div class="c-question__container screen-tablet:layout--columns">
-                                  <label class="checkbox" data-sketch-symbol-instance="elements/checkboxes/checkboxes" for="person-0-bronx">
-                                    <input id="person-0-bronx" name="Person[0].bronx" type="checkbox" value="bronx" /><span class="checkbox__label">Bronx</span></label>
-                                  <label class="checkbox" data-sketch-symbol-instance="elements/checkboxes/checkboxes" for="person-0-staten-island">
-                                    <input id="person-0-staten-island" name="Person[0].staten-island" type="checkbox" value="staten-island" /><span class="checkbox__label">Staten Island</span></label>
-                                  <label class="checkbox" data-sketch-symbol-instance="elements/checkboxes/checkboxes" for="person-0-queens">
-                                    <input id="person-0-queens" name="Person[0].queens" type="checkbox" value="queens" /><span class="checkbox__label">Queens</span></label>
-                                  <label class="checkbox" data-sketch-symbol-instance="elements/checkboxes/checkboxes" for="person-0-brooklyn">
-                                    <input id="person-0-brooklyn" name="Person[0].brooklyn" type="checkbox" value="brooklyn" /><span class="checkbox__label">Brooklyn</span></label>
-                                  <label class="checkbox" data-sketch-symbol-instance="elements/checkboxes/checkboxes" for="person-0-manhattan">
-                                    <input id="person-0-manhattan" name="Person[0].manhattan" type="checkbox" value="manhattan" /><span class="checkbox__label">Manhattan</span></label>
+                          <div class="mb-4 p-3 screen-desktop:p-4 bg-color-white" data-js="newsletter" data-sketch-symbol-instance="objects/newsletter/newsletter">
+                            <div class="type-h3">Get Updates</div>
+                            <form action="https://nyc.us18.list-manage.com/subscribe/post?u=d04b7b607bddbd338b416fa89&amp;id=98ff3f3900" id="mc-embedded-subscribe-form" method="post" novalidate="true" target="_blank">
+                              <div class="c-question">
+                                <label class="c-question__label">Receive benefits news and reminders about upcoming open enrollment periods.</label>
+                                <div class="c-question__container">
+                                  <input class="w-full" name="EMAIL" placeholder="Email address" required="true" type="email" />
                                 </div>
-                              </fieldset>
-                            </div>
-                            <button class="btn-primary btn-small" type="submit">Sign Up</button>
-                          </form>
+                              </div>
+                              <div class="c-question mt-3">
+                                <fieldset class="c-question">
+                                  <legend class="c-question__label">Which borough(s) would you like to recieve updates for?</legend>
+                                  <div class="c-question__container screen-tablet:layout--columns" data-js-join-values="input[name=&quot;BOROUGH&quot;]">
+                                    <label class="checkbox" data-sketch-symbol-instance="elements/checkboxes/checkboxes" for="BOROUGH.Bronx">
+                                      <input id="BOROUGH.Bronx" name="BOROUGH.Bronx" type="checkbox" value="Bronx" /><span class="checkbox__label">Bronx</span></label>
+                                    <label class="checkbox" data-sketch-symbol-instance="elements/checkboxes/checkboxes" for="BOROUGH.Staten Island">
+                                      <input id="BOROUGH.Staten Island" name="BOROUGH.Staten Island" type="checkbox" value="Staten Island" /><span class="checkbox__label">Staten Island</span></label>
+                                    <label class="checkbox" data-sketch-symbol-instance="elements/checkboxes/checkboxes" for="BOROUGH.Queens">
+                                      <input id="BOROUGH.Queens" name="BOROUGH.Queens" type="checkbox" value="Queens" /><span class="checkbox__label">Queens</span></label>
+                                    <label class="checkbox" data-sketch-symbol-instance="elements/checkboxes/checkboxes" for="BOROUGH.Brooklyn">
+                                      <input id="BOROUGH.Brooklyn" name="BOROUGH.Brooklyn" type="checkbox" value="Brooklyn" /><span class="checkbox__label">Brooklyn</span></label>
+                                    <label class="checkbox" data-sketch-symbol-instance="elements/checkboxes/checkboxes" for="BOROUGH.Manhattan">
+                                      <input id="BOROUGH.Manhattan" name="BOROUGH.Manhattan" type="checkbox" value="Manhattan" /><span class="checkbox__label">Manhattan</span></label>
+                                  </div>
+                                  <input aria-hidden="true" name="BOROUGH" readonly="true" tabindex="-1" type="hidden" />
+                                </fieldset>
+                              </div>
+                              <div aria-hidden="true" style="position: absolute; left: -5000px;">
+                                <input name="b_d04b7b607bddbd338b416fa89_98ff3f3900" tabindex="-1" type="text" value="" />
+                              </div>
+                              <button class="btn-primary btn-small" type="submit">Sign Up</button>
+                              <article aria-hidden="true" class="c-alert-box bg-status-warning mt-3 text-font-size-small hidden" data-js-newsletter="alert-box-warning">
+                                <div class="c-alert-box__icon">
+                                  <div class="c-alert-box__svg bg-icon-warning"></div>
+                                </div>
+                                <div class="c-alert-box__body" data-js-newsletter="alert-box__text"></div>
+                              </article>
+                              <article aria-hidden="true" class="c-alert-box bg-status-success mt-3 text-font-size-small hidden" data-js-newsletter="alert-box-success">
+                                <div class="c-alert-box__icon">
+                                  <div class="c-alert-box__svg bg-icon-success"></div>
+                                </div>
+                                <div class="c-alert-box__body" data-js-newsletter="alert-box__text"></div>
+                              </article>
+                            </form>
+                          </div>
+                          <script>
+                            window.LOCALIZED_STRINGS = window.LOCALIZED_STRINGS || [];
+                            window.LOCALIZED_STRINGS = window.LOCALIZED_STRINGS.concat([{
+                                'label': 'This field is required.',
+                                'slug': 'VALID_REQUIRED'
+                              },
+                              {
+                                'label': 'Email is required.',
+                                'slug': 'VALID_EMAIL_REQUIRED'
+                              },
+                              {
+                                'label': 'Please enter a valid email.',
+                                'slug': 'VALID_EMAIL_INVALID'
+                              },
+                              {
+                                'label': 'Please select a borough.',
+                                'slug': 'VALID_CHECKBOX_BOROUGH'
+                              },
+                              {
+                                'label': 'Almost finished... We need to confirm your email address. To complete the subscription process, please click the link in the email we just sent you.',
+                                'slug': 'SUCCESS_CONFIRM_EMAIL'
+                              },
+                              {
+                                'label': 'There was an error with your submission. Please try again later.',
+                                'slug': 'ERR_PLEASE_TRY_LATER'
+                              },
+                              {
+                                'label': 'Please enter a value',
+                                'slug': 'ERR_PLEASE_ENTER_VALUE'
+                              },
+                              {
+                                'label': 'Recipient "{{ EMAIL }}" has too many recent signup requests',
+                                'slug': 'ERR_TOO_MANY_RECENT'
+                              },
+                              {
+                                'label': '{{ EMAIL }} is already subscribed to list {{ LIST_NAME }}. <a href="{{ PROFILE_URL }}">Click here to update your profile</a>',
+                                'slug': 'ERR_ALREADY_SUBSCRIBED'
+                              },
+                              {
+                                'label': 'This email address looks fake or invalid. Please enter a real email address.',
+                                'slug': 'ERR_INVALID_EMAIL'
+                              }
+                            ]);
+                          </script>
                         </li>
                       </ul>
                     </nav>
@@ -362,33 +424,95 @@
             &lt;a href=&quot;#&quot;&gt;NYC.gov Terms of Use&lt;/a&gt;
           &lt;/li&gt;
         &lt;/ul&gt;
-        &lt;div class=&quot;type-h3&quot;&gt;Get Updates&lt;/div&gt;
-        &lt;form class=&quot;mb-4&quot;&gt;
-          &lt;div class=&quot;c-question&quot;&gt;
-            &lt;label class=&quot;c-question__label&quot;&gt;Receive benefits news and reminders about upcoming open enrollment periods.&lt;/label&gt;
-            &lt;div class=&quot;c-question__container&quot;&gt;
-              &lt;input class=&quot;w-full&quot; placeholder=&quot;Email address&quot; type=&quot;email&quot; /&gt;
-            &lt;/div&gt;
-          &lt;/div&gt;
-          &lt;div class=&quot;c-question mt-3&quot;&gt;
-            &lt;fieldset class=&quot;c-question&quot;&gt;
-              &lt;legend class=&quot;c-question__label&quot;&gt;Which borough(s) would you like to recieve updates for?&lt;/legend&gt;
-              &lt;div class=&quot;c-question__container screen-tablet:layout--columns&quot;&gt;
-                &lt;label class=&quot;checkbox&quot; data-sketch-symbol-instance=&quot;elements/checkboxes/checkboxes&quot; for=&quot;person-0-bronx&quot;&gt;
-                  &lt;input id=&quot;person-0-bronx&quot; name=&quot;Person[0].bronx&quot; type=&quot;checkbox&quot; value=&quot;bronx&quot; /&gt;&lt;span class=&quot;checkbox__label&quot;&gt;Bronx&lt;/span&gt;&lt;/label&gt;
-                &lt;label class=&quot;checkbox&quot; data-sketch-symbol-instance=&quot;elements/checkboxes/checkboxes&quot; for=&quot;person-0-staten-island&quot;&gt;
-                  &lt;input id=&quot;person-0-staten-island&quot; name=&quot;Person[0].staten-island&quot; type=&quot;checkbox&quot; value=&quot;staten-island&quot; /&gt;&lt;span class=&quot;checkbox__label&quot;&gt;Staten Island&lt;/span&gt;&lt;/label&gt;
-                &lt;label class=&quot;checkbox&quot; data-sketch-symbol-instance=&quot;elements/checkboxes/checkboxes&quot; for=&quot;person-0-queens&quot;&gt;
-                  &lt;input id=&quot;person-0-queens&quot; name=&quot;Person[0].queens&quot; type=&quot;checkbox&quot; value=&quot;queens&quot; /&gt;&lt;span class=&quot;checkbox__label&quot;&gt;Queens&lt;/span&gt;&lt;/label&gt;
-                &lt;label class=&quot;checkbox&quot; data-sketch-symbol-instance=&quot;elements/checkboxes/checkboxes&quot; for=&quot;person-0-brooklyn&quot;&gt;
-                  &lt;input id=&quot;person-0-brooklyn&quot; name=&quot;Person[0].brooklyn&quot; type=&quot;checkbox&quot; value=&quot;brooklyn&quot; /&gt;&lt;span class=&quot;checkbox__label&quot;&gt;Brooklyn&lt;/span&gt;&lt;/label&gt;
-                &lt;label class=&quot;checkbox&quot; data-sketch-symbol-instance=&quot;elements/checkboxes/checkboxes&quot; for=&quot;person-0-manhattan&quot;&gt;
-                  &lt;input id=&quot;person-0-manhattan&quot; name=&quot;Person[0].manhattan&quot; type=&quot;checkbox&quot; value=&quot;manhattan&quot; /&gt;&lt;span class=&quot;checkbox__label&quot;&gt;Manhattan&lt;/span&gt;&lt;/label&gt;
+        &lt;div class=&quot;mb-4 p-3 screen-desktop:p-4 bg-color-white&quot; data-js=&quot;newsletter&quot; data-sketch-symbol-instance=&quot;objects/newsletter/newsletter&quot;&gt;
+          &lt;div class=&quot;type-h3&quot;&gt;Get Updates&lt;/div&gt;
+          &lt;form action=&quot;https://nyc.us18.list-manage.com/subscribe/post?u=d04b7b607bddbd338b416fa89&amp;amp;id=98ff3f3900&quot; id=&quot;mc-embedded-subscribe-form&quot; method=&quot;post&quot; novalidate=&quot;true&quot; target=&quot;_blank&quot;&gt;
+            &lt;div class=&quot;c-question&quot;&gt;
+              &lt;label class=&quot;c-question__label&quot;&gt;Receive benefits news and reminders about upcoming open enrollment periods.&lt;/label&gt;
+              &lt;div class=&quot;c-question__container&quot;&gt;
+                &lt;input class=&quot;w-full&quot; name=&quot;EMAIL&quot; placeholder=&quot;Email address&quot; required=&quot;true&quot; type=&quot;email&quot; /&gt;
               &lt;/div&gt;
-            &lt;/fieldset&gt;
-          &lt;/div&gt;
-          &lt;button class=&quot;btn-primary btn-small&quot; type=&quot;submit&quot;&gt;Sign Up&lt;/button&gt;
-        &lt;/form&gt;
+            &lt;/div&gt;
+            &lt;div class=&quot;c-question mt-3&quot;&gt;
+              &lt;fieldset class=&quot;c-question&quot;&gt;
+                &lt;legend class=&quot;c-question__label&quot;&gt;Which borough(s) would you like to recieve updates for?&lt;/legend&gt;
+                &lt;div class=&quot;c-question__container screen-tablet:layout--columns&quot; data-js-join-values=&quot;input[name=&amp;quot;BOROUGH&amp;quot;]&quot;&gt;
+                  &lt;label class=&quot;checkbox&quot; data-sketch-symbol-instance=&quot;elements/checkboxes/checkboxes&quot; for=&quot;BOROUGH.Bronx&quot;&gt;
+                    &lt;input id=&quot;BOROUGH.Bronx&quot; name=&quot;BOROUGH.Bronx&quot; type=&quot;checkbox&quot; value=&quot;Bronx&quot; /&gt;&lt;span class=&quot;checkbox__label&quot;&gt;Bronx&lt;/span&gt;&lt;/label&gt;
+                  &lt;label class=&quot;checkbox&quot; data-sketch-symbol-instance=&quot;elements/checkboxes/checkboxes&quot; for=&quot;BOROUGH.Staten Island&quot;&gt;
+                    &lt;input id=&quot;BOROUGH.Staten Island&quot; name=&quot;BOROUGH.Staten Island&quot; type=&quot;checkbox&quot; value=&quot;Staten Island&quot; /&gt;&lt;span class=&quot;checkbox__label&quot;&gt;Staten Island&lt;/span&gt;&lt;/label&gt;
+                  &lt;label class=&quot;checkbox&quot; data-sketch-symbol-instance=&quot;elements/checkboxes/checkboxes&quot; for=&quot;BOROUGH.Queens&quot;&gt;
+                    &lt;input id=&quot;BOROUGH.Queens&quot; name=&quot;BOROUGH.Queens&quot; type=&quot;checkbox&quot; value=&quot;Queens&quot; /&gt;&lt;span class=&quot;checkbox__label&quot;&gt;Queens&lt;/span&gt;&lt;/label&gt;
+                  &lt;label class=&quot;checkbox&quot; data-sketch-symbol-instance=&quot;elements/checkboxes/checkboxes&quot; for=&quot;BOROUGH.Brooklyn&quot;&gt;
+                    &lt;input id=&quot;BOROUGH.Brooklyn&quot; name=&quot;BOROUGH.Brooklyn&quot; type=&quot;checkbox&quot; value=&quot;Brooklyn&quot; /&gt;&lt;span class=&quot;checkbox__label&quot;&gt;Brooklyn&lt;/span&gt;&lt;/label&gt;
+                  &lt;label class=&quot;checkbox&quot; data-sketch-symbol-instance=&quot;elements/checkboxes/checkboxes&quot; for=&quot;BOROUGH.Manhattan&quot;&gt;
+                    &lt;input id=&quot;BOROUGH.Manhattan&quot; name=&quot;BOROUGH.Manhattan&quot; type=&quot;checkbox&quot; value=&quot;Manhattan&quot; /&gt;&lt;span class=&quot;checkbox__label&quot;&gt;Manhattan&lt;/span&gt;&lt;/label&gt;
+                &lt;/div&gt;
+                &lt;input aria-hidden=&quot;true&quot; name=&quot;BOROUGH&quot; readonly=&quot;true&quot; tabindex=&quot;-1&quot; type=&quot;hidden&quot; /&gt;
+              &lt;/fieldset&gt;
+            &lt;/div&gt;
+            &lt;div aria-hidden=&quot;true&quot; style=&quot;position: absolute; left: -5000px;&quot;&gt;
+              &lt;input name=&quot;b_d04b7b607bddbd338b416fa89_98ff3f3900&quot; tabindex=&quot;-1&quot; type=&quot;text&quot; value=&quot;&quot; /&gt;
+            &lt;/div&gt;
+            &lt;button class=&quot;btn-primary btn-small&quot; type=&quot;submit&quot;&gt;Sign Up&lt;/button&gt;
+            &lt;article aria-hidden=&quot;true&quot; class=&quot;c-alert-box bg-status-warning mt-3 text-font-size-small hidden&quot; data-js-newsletter=&quot;alert-box-warning&quot;&gt;
+              &lt;div class=&quot;c-alert-box__icon&quot;&gt;
+                &lt;div class=&quot;c-alert-box__svg bg-icon-warning&quot;&gt;&lt;/div&gt;
+              &lt;/div&gt;
+              &lt;div class=&quot;c-alert-box__body&quot; data-js-newsletter=&quot;alert-box__text&quot;&gt;&lt;/div&gt;
+            &lt;/article&gt;
+            &lt;article aria-hidden=&quot;true&quot; class=&quot;c-alert-box bg-status-success mt-3 text-font-size-small hidden&quot; data-js-newsletter=&quot;alert-box-success&quot;&gt;
+              &lt;div class=&quot;c-alert-box__icon&quot;&gt;
+                &lt;div class=&quot;c-alert-box__svg bg-icon-success&quot;&gt;&lt;/div&gt;
+              &lt;/div&gt;
+              &lt;div class=&quot;c-alert-box__body&quot; data-js-newsletter=&quot;alert-box__text&quot;&gt;&lt;/div&gt;
+            &lt;/article&gt;
+          &lt;/form&gt;
+        &lt;/div&gt;
+        &lt;script&gt;
+          window.LOCALIZED_STRINGS = window.LOCALIZED_STRINGS || [];
+          window.LOCALIZED_STRINGS = window.LOCALIZED_STRINGS.concat([{
+              &#39;label&#39;: &#39;This field is required.&#39;,
+              &#39;slug&#39;: &#39;VALID_REQUIRED&#39;
+            },
+            {
+              &#39;label&#39;: &#39;Email is required.&#39;,
+              &#39;slug&#39;: &#39;VALID_EMAIL_REQUIRED&#39;
+            },
+            {
+              &#39;label&#39;: &#39;Please enter a valid email.&#39;,
+              &#39;slug&#39;: &#39;VALID_EMAIL_INVALID&#39;
+            },
+            {
+              &#39;label&#39;: &#39;Please select a borough.&#39;,
+              &#39;slug&#39;: &#39;VALID_CHECKBOX_BOROUGH&#39;
+            },
+            {
+              &#39;label&#39;: &#39;Almost finished... We need to confirm your email address. To complete the subscription process, please click the link in the email we just sent you.&#39;,
+              &#39;slug&#39;: &#39;SUCCESS_CONFIRM_EMAIL&#39;
+            },
+            {
+              &#39;label&#39;: &#39;There was an error with your submission. Please try again later.&#39;,
+              &#39;slug&#39;: &#39;ERR_PLEASE_TRY_LATER&#39;
+            },
+            {
+              &#39;label&#39;: &#39;Please enter a value&#39;,
+              &#39;slug&#39;: &#39;ERR_PLEASE_ENTER_VALUE&#39;
+            },
+            {
+              &#39;label&#39;: &#39;Recipient &quot;{{ EMAIL }}&quot; has too many recent signup requests&#39;,
+              &#39;slug&#39;: &#39;ERR_TOO_MANY_RECENT&#39;
+            },
+            {
+              &#39;label&#39;: &#39;{{ EMAIL }} is already subscribed to list {{ LIST_NAME }}. &lt;a href=&quot;{{ PROFILE_URL }}&quot;&gt;Click here to update your profile&lt;/a&gt;&#39;,
+              &#39;slug&#39;: &#39;ERR_ALREADY_SUBSCRIBED&#39;
+            },
+            {
+              &#39;label&#39;: &#39;This email address looks fake or invalid. Please enter a real email address.&#39;,
+              &#39;slug&#39;: &#39;ERR_INVALID_EMAIL&#39;
+            }
+          ]);
+        &lt;/script&gt;
       &lt;/li&gt;
     &lt;/ul&gt;
   &lt;/nav&gt;
@@ -429,7 +553,7 @@
         </nav>
       </p>
     </footer>
-    <script src="https://cdn.polyfill.io/v2/polyfill.min.js?features=fetch,Element.prototype.matches,Promise&amp;flags=gated"></script>
+    <script crossorigin="anonymous" src="https://polyfill.io/v3/polyfill.min.js?flags=gated&amp;features=Array.prototype.forEach,Element.prototype.matches,Element.prototype.remove,fetch,Promise"></script>
     <script src="scripts/AccessNyc.js"></script>
     <script src="scripts/markdown.min.js"></script>
     <script type="text/javascript">
@@ -437,6 +561,9 @@
       access.markdown();
       access.icons();
       access.toggle();
+    </script>
+    <script type="text/javascript">
+      access.newsletter();
     </script>
   </body>
 
