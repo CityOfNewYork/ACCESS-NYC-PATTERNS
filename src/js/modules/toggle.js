@@ -74,7 +74,7 @@ class Toggle {
     /**
      * Main
      */
-    this._elementToggle(el, target);
+    this.elementToggle(el, target);
 
     /**
      * Location
@@ -93,7 +93,7 @@ class Toggle {
       );
       undo.addEventListener('click', (event) => {
         event.preventDefault();
-        this._elementToggle(el, target);
+        this.elementToggle(el, target);
         undo.removeEventListener('click');
       });
     }
@@ -107,7 +107,7 @@ class Toggle {
    * @param  {object} target The target element to toggle active/hidden
    * @return {object}        The class
    */
-  _elementToggle(el, target) {
+  elementToggle(el, target) {
     el.classList.toggle(this._settings.activeClass);
     target.classList.toggle(this._settings.activeClass);
     target.classList.toggle(this._settings.inactiveClass);

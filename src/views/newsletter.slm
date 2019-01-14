@@ -2,7 +2,7 @@
 = extend('layouts/default');
 
 / Component
-- title = 'Footer';
+- title = 'Newsletter';
 
 / Partials
 = partial('partials/styles.slm');
@@ -22,7 +22,7 @@
 
 = content('content');
   = mixin('content-header', title);
-  = mixin('section', 'Default Styling', 'objects/footer/footer', 'gutter');
+  = mixin('section', 'Default Styling', 'objects/newsletter/newsletter');
 
 = content('script');
   javascript:

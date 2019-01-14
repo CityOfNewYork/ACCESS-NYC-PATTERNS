@@ -27,12 +27,6 @@ let rollup = {
  * @type {Object}
  */
 const plugins = {
-  eslint: eslint({
-    parserOptions: {
-      ecmaVersion: 6,
-      sourceType: 'module'
-    }}
-  ),
   babel: babel({
     exclude: 'node_modules/**'
   }),
@@ -59,7 +53,6 @@ const plugins = {
  * @type {Array}
  */
 rollup.local = [
-  plugins.eslint,
   plugins.babel,
   plugins.alias,
   plugins.resolve,
@@ -67,10 +60,24 @@ rollup.local = [
 ];
 
 rollup.dist = [
-  plugins.eslint,
   plugins.babel,
   plugins.resolve
 ];
+
+/**
+ * Only use ESLint in Production scripts
+ */
+if (process.env.NODE_ENV === 'production') {
+  plugins['eslint'] = eslint({
+    parserOptions: {
+      ecmaVersion: 6,
+      sourceType: 'module'
+    }}
+  );
+
+  rollup.dist.unshift(plugins.eslint);
+  rollup.local.unshift(plugins.eslint);
+}
 
 /**
  * Our list of modules we are exporting
@@ -150,6 +157,26 @@ const modules = [
       {
         name: 'NearbyStops',
         file: `./dist/components/nearby-stops/nearby-stops.common.js`,
+        sourcemap: rollup.sourcemap,
+        format: 'cjs',
+        strict: rollup.strict
+      }
+    ]
+  },
+  {
+    input: './src/objects/newsletter/newsletter.js',
+    plugins: rollup.dist,
+    output: [
+      {
+        name: 'Newsletter',
+        file: `./dist/objects/newsletter/newsletter.iffe.js`,
+        sourcemap: rollup.sourcemap,
+        format: 'iife',
+        strict: rollup.strict
+      },
+      {
+        name: 'Newsletter',
+        file: `./dist/objects/newsletter/newsletter.common.js`,
         sourcemap: rollup.sourcemap,
         format: 'cjs',
         strict: rollup.strict

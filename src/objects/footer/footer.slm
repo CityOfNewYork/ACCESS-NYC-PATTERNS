@@ -65,28 +65,9 @@ footer class='o-footer color-mid-background' data-sketch-symbol=symbol
           li
             a href='#' NYC.gov Terms of Use
 
-        div class='type-h3' Get Updates
-
-        form class='mb-4'
-          div class='c-question'
-            label class='c-question__label' Receive benefits news and reminders about upcoming open enrollment periods.
-
-            div class='c-question__container'
-              input type='email' class='w-full' placeholder='Email address'
-
-          div class='c-question mt-3'
-            fieldset class='c-question'
-              legend class='c-question__label' Which borough(s) would you like to recieve updates for?
-
-              div class='c-question__container screen-tablet:layout--columns'
-                - values = [['Bronx', 'bronx'], ['Staten Island', 'staten-island'], ['Queens', 'queens'], ['Brooklyn', 'brooklyn'], ['Manhattan', 'manhattan']];
-                - symbol = false;
-                - instance = 'elements/checkboxes/checkboxes';
-                - for (v in values)
-                  - text = values[v];
-                  = partial(`../../${instance}.slm`);
-
-          button type='submit' class='btn-primary btn-small' Sign Up
+        - symbol = false;
+        - instance = 'objects/newsletter/newsletter';
+        = partial(`../../${instance}`);
 
   div class='o-footer__copyright'
     svg class='icon icon-logo-nyc'

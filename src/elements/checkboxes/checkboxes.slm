@@ -2,14 +2,11 @@
 / Checkboxes
 /
 
-- if (typeof text === 'undefined')
-  - ;
-  label class='checkbox' for='person-0-snap' data-sketch-symbol=symbol data-sketch-symbol-instance=instance
-    input id='person-0-snap' value='snap' type='checkbox' name='Person[0].snap'
-    span class='checkbox__label' SNAP (Supplemental Nutrition Assistance Program)
-- else
-  - ;
-  label class='checkbox' for='person-0-${text[1]}' data-sketch-symbol=symbol data-sketch-symbol-instance=instance
-    input id='person-0-${text[1]}' value='${text[1]}' type='checkbox' name='Person[0].${text[1]}'
-    span class='checkbox__label'
-      = text[0];
+/ Set the value to the default sitewide value
+- if (typeof value === 'undefined' || !value)
+  - value = this.site.defaults.checkboxes;
+
+label class='checkbox' for='${value.id}' data-sketch-symbol=symbol data-sketch-symbol-instance=instance
+  input type='checkbox' id='${value.id}' value='${value.value}' name='${value.name}'
+  span class='checkbox__label'
+    = value.label;

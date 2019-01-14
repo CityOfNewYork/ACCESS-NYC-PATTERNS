@@ -7,12 +7,12 @@ fieldset class='c-question' data-sketch-symbol=symbol data-sketch-symbol-instanc
   p It’s OK to pick more than one. You can also leave this blank if none of these apply to you.
 
   div class='c-question__container screen-tablet:layout--columns'
-    - values = [['Student', 'student'], ['Pregnant', 'pregnant'], ['Unemployed', 'unemployed'], ['Blind or visually impaired', 'blind'], ['Have any disabilities', 'disabled'], ['Served in the U.S. Armed Forces, National Guard or Reserves', 'military']];
     - symbol = false;
     - instance = 'elements/checkboxes/checkboxes';
-    - for (v in values)
-      - text = values[v];
+    - for (index in this.site.question.programs)
+      - value = this.site.question.programs[index];
       = partial(`../../${instance}.slm`);
+      - value = null;
 
     label class='checkbox' data-sketch-symbol-instance=instance
       input type='checkbox' data-js='clear'

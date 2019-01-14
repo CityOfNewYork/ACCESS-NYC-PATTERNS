@@ -5305,6 +5305,11 @@ npm-run-path@^2.0.0:
     gauge "~2.7.3"
     set-blocking "~2.0.0"
 
+nserializejson@^1.0.2:
+  version "1.0.2"
+  resolved "https://registry.yarnpkg.com/nserializejson/-/nserializejson-1.0.2.tgz#89692bc754d0890ec9b98910e7b2f35f8789ead6"
+  integrity sha512-4PwScU5OIp5pbqZA/UUgQ4dkzpdiQhBmwSTg3wYiIAemO+UxZycyHuPkBzwY222CVyEQpvstHu8KVh1VybQFUQ==
+
 nth-check@^1.0.1, nth-check@~1.0.1:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/nth-check/-/nth-check-1.0.1.tgz#9929acdf628fc2c41098deab82ac580cf149aae4"

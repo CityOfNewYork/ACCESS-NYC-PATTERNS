@@ -7,6 +7,7 @@ import Icons from '../utilities/icons/icons';
 import Accordion from '../components/accordion/accordion';
 import Filter from '../components/filter/filter';
 import NearbyStops from '../components/nearby-stops/nearby-stops';
+import Newsletter from '../objects/newsletter/newsletter';
 /** import components here as they are written. */
 
 /**
@@ -73,6 +74,15 @@ class main {
    */
   nearbyStops() {
     return new NearbyStops();
+  }
+
+  /**
+   * An API for the Newsletter Object
+   * @return {object} instance of Newsletter
+   */
+  newsletter() {
+    let element = document.querySelector(Newsletter.selector);
+    return new Newsletter(element);
   }
   /** add APIs here as they are written */
 }

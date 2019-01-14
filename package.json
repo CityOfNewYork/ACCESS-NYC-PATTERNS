@@ -93,6 +93,7 @@
     "animate.scss": "0.0.6",
     "bourbon": "^4.2.7",
     "lodash": "^4.17.5",
+    "nserializejson": "^1.0.2",
     "tailwindcss": "^0.7.2",
     "vue": "^2.5.16"
   },
