@@ -22,4 +22,4 @@
 
 = content('content');
   = mixin('content-header', title);
-  = mixin('section', 'Default Styling', 'objects/mobile-nav/mobile-nav', 'gutter');
+  = mixin('section', '', 'objects/mobile-nav/mobile-nav', 'gutter');

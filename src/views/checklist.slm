@@ -23,4 +23,4 @@
 
 = content('content');
   = mixin('content-header', title);
-  = mixin('section', 'About', 'components/checklist/checklist');
+  = mixin('section', '', 'components/checklist/checklist');

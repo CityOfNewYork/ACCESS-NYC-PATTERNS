@@ -1,6 +1,8 @@
-This project is under active development by the Product and Design team at [NYC Opportunity](https://github.com/orgs/CityOfNewYork/teams/nycopportunity). We are currently in the process of migrating styles into this repository and setting up templates for documentation. [Learn more about the project development in the wiki](https://github.com/CityOfNewYork/ACCESS-NYC-PATTERNS/wiki/Development).
+# ACCESS NYC Patterns
 
-ACCESS NYC Patterns is source for styles seen on [ACCESS NYC](https://access.nyc.gov). This repository utilizes the U.S. Web Design System and the Tailwind CSS Utility framework. It is available in 11 different languages including English (default), Spanish, French, Chinese, Russian, Arabic, Polish, Urdu, Bengla, Haitian Creole, and Korean.
+The [Patterns of ACCESS NYC](https://cityofnewyork.github.io/ACCESS-NYC-PATTERNS/) are a shared vocabulary between the code, design, and user interface (UI) of [ACCESS NYC](https://access.nyc.gov) created for the Mayor’s Office for Economic Opportunity (NYC Opportunity) Service Design Studio and Product Teams. ACCESS NYC aims to increase the accessibility and convenience of discovering and enrolling in government benefits. The Patterns support this work by defining the UI and behavior that New Yorkers experience as they use the site.
+
+Learn more [about the ACCESS NYC Patterns](https://cityofnewyork.github.io/ACCESS-NYC-PATTERNS/about), [installation](https://cityofnewyork.github.io/ACCESS-NYC-PATTERNS/installation), and [developer tools](https://cityofnewyork.github.io/ACCESS-NYC-PATTERNS/developer-tools).
 
 # About NYCO
 

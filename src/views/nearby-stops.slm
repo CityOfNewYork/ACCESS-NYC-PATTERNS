@@ -23,8 +23,8 @@
 
 = content('content');
   = mixin('content-header', title);
-  = mixin('section', 'About', 'components/nearby-stops/nearby-stops');
-  = mixin('section-text', 'Develop', 'components/nearby-stops/nearby-stops-develop');
+  = mixin('section', '', 'components/nearby-stops/nearby-stops');
+  = mixin('section-text', 'Usage', 'components/nearby-stops/readme');
 
 = content('script');
   javascript:

@@ -22,4 +22,4 @@
 
 = content('content');
   = mixin('content-header', title);
-  = mixin('section', 'Default Styling', 'objects/search-box/search-box', 'gutter');
+  = mixin('section', '', 'objects/search-box/search-box', 'gutter');

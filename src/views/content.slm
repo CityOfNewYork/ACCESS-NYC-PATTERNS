@@ -22,4 +22,4 @@
 
 = content('content');
   = mixin('content-header', title);
-  = mixin('section', 'Default Styling', 'objects/content/content');
+  = mixin('section', '', 'objects/content/content');

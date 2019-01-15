@@ -78,7 +78,7 @@ script:
       'slug': 'ERR_TOO_MANY_RECENT'
     },
     {
-      'label': '{{ EMAIL }} is already subscribed to list {{ LIST_NAME }}. <a href="{{ PROFILE_URL }}">Click here to update your profile</a>',
+      'label': '{{ EMAIL }} is already subscribed to list {{ LIST_NAME }}.',
       'slug': 'ERR_ALREADY_SUBSCRIBED'
     },
     {

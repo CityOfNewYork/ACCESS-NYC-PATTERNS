@@ -22,4 +22,4 @@
 
 = content('content');
   = mixin('content-header', title);
-  = mixin('section', 'Default Styling', 'objects/banner/banner', 'gutter');
+  = mixin('section', '', 'objects/banner/banner', 'gutter');

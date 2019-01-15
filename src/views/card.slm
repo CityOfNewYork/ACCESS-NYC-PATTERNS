@@ -23,7 +23,7 @@
 
 = content('content');
   = mixin('content-header', title);
-  = mixin('section', 'About', 'components/card/card');
+  = mixin('section', '', 'components/card/card');
   = mixin('section', 'Card With Icon', 'components/card/card-icon');
   = mixin('section', 'Card With Icon and Information', 'components/card/card-icon-info');
   = mixin('section', 'Card With Icon, Information, and Apply Button', 'components/card/card-icon-info-apply');

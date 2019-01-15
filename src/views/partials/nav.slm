@@ -49,6 +49,7 @@ nav class='${class_nav} screen-desktop:pl-4'
   a class='${class_nav_item}' href='footer' Footer
   a class='${class_nav_item}' href='mobile-nav' Mobile Nav
   a class='${class_nav_item}' href='navigation' Navigation
+  a class='${class_nav_item}' href='newsletter' Newsletter
   a class='${class_nav_item}' href='search-box' Search Box
 
 nav class='${class_nav} screen-desktop:pl-4'

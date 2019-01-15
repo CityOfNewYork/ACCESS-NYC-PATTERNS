@@ -10,6 +10,7 @@
 = partial('partials/head.mixin.slm');
 = partial('partials/content-header.mixin.slm');
 = partial('section/section.mixin.slm');
+= partial('section/section-text.mixin.slm');
 = partial('section/demo-specs.mixin.slm');
 = partial('section/demo-block.mixin.slm');
 
@@ -22,7 +23,8 @@
 
 = content('content');
   = mixin('content-header', title);
-  = mixin('section', 'Default Styling', 'objects/newsletter/newsletter');
+  = mixin('section', '', 'objects/newsletter/newsletter');
+  = mixin('section-text', 'Usage', 'objects/newsletter/readme');
 
 = content('script');
   javascript:

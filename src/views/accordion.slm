@@ -23,8 +23,8 @@
 
 = content('content');
   = mixin('content-header', title);
-  = mixin('section', 'About', 'components/accordion/accordion');
-  = mixin('section-text', 'Develop', 'components/accordion/accordion-develop');
+  = mixin('section', '', 'components/accordion/accordion');
+  = mixin('section-text', 'Usage', 'components/accordion/readme');
 
 = content('script');
   javascript:

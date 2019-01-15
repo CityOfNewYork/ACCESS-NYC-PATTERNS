@@ -23,9 +23,9 @@
 
 = content('content');
   = mixin('content-header', title);
-  = mixin('section', 'About', 'components/filter/filter');
+  = mixin('section', '', 'components/filter/filter');
   = mixin('section', 'Multi Filter', 'components/filter/filter-multi');
-  = mixin('section-text', 'Develop', 'components/filter/filter-develop');
+  = mixin('section-text', 'Usage', 'components/filter/filter-develop');
 
 = content('script');
   javascript:

@@ -22,5 +22,5 @@
 
 = content('content');
   = mixin('content-header', title);
-  = mixin('section', 'About', 'components/disclaimer/disclaimer');
+  = mixin('section', '', 'components/disclaimer/disclaimer');
   = mixin('section', 'Small Disclaimer', 'components/disclaimer/disclaimer-small');
