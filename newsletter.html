@@ -59,8 +59,8 @@
               <h2 class="text-font-size-small m-0 text-color-blue-dark screen-tablet:hidden">Patterns</h2>
               <h2 aria-hidden="true" class="type-h1 m-0 text-color-blue-dark hidden screen-tablet:inline-block">Patterns</h2>
               <nav class="text-font-size-small">
-                <a class="rounded-lg text-color-blue-dark border-2 no-underline px-1 ml-2 hidden screen-tablet:inline-block" href="https://github.com/CityOfNewYork/ACCESS-NYC-PATTERNS">0.1.5</a>
-                <a aria-hidden="true" class="ml-1 screen-tablet:ml-2 screen-tablet:hidden" href="https://github.com/CityOfNewYork/ACCESS-NYC-PATTERNS">0.1.5</a>
+                <a class="rounded-lg text-color-blue-dark border-2 no-underline px-1 ml-2 hidden screen-tablet:inline-block" href="https://github.com/CityOfNewYork/ACCESS-NYC-PATTERNS">0.1.6</a>
+                <a aria-hidden="true" class="ml-1 screen-tablet:ml-2 screen-tablet:hidden" href="https://github.com/CityOfNewYork/ACCESS-NYC-PATTERNS">0.1.6</a>
                 <a class="ml-1 screen-tablet:ml-2" data-js="toggle" href="#main-menu">Menu</a>
               </nav>
             </div>
@@ -118,6 +118,7 @@
               <a class="block p-1" href="footer">Footer</a>
               <a class="block p-1" href="mobile-nav">Mobile Nav</a>
               <a class="block p-1" href="navigation">Navigation</a>
+              <a class="block p-1" href="newsletter">Newsletter</a>
               <a class="block p-1" href="search-box">Search Box</a>
             </nav>
             <nav class="screen-tablet:flex-1 mb-1 px-2 screen-desktop:pl-4">
@@ -142,21 +143,21 @@
         <article class="pt-4">
           <header class="page-wrapper px-2 screen-desktop:px-0 layout--home-body">
             <div class="my-0 w-full">
-              <h1 class="text-color-blue-dark px-2 pb-4">Newsletter</h1>
+              <h1 class="text-color-blue-dark px-2 pb-4 mb-4">Newsletter</h1>
             </div>
           </header>
-          <section class="pb-4 mb-4" id="default-styling">
-            <div class="page-wrapper px-2">
+          <section class="pb-4 mb-4" id="">
+            <div class="page-wrapper px-2 screen-desktop:px-0">
               <header class="layout--home-body">
-                <div class="my-0 pt-1 px-2 pb-3 border-b border-color-grey-light screen-tablet:flex screen-tablet:justify-between items-center">
-                  <h2 class="m-0 pb-1 screen-tablet:pb-0">
-                    <a class="text-color-grey-mid font-normal no-underline capitalize" href="#default-styling">Default Styling</a>
-                  </h2>
-                  <div class="code-block"><pre><code class="text-color-blue">objects/newsletter/newsletter</code></pre></div>
-                </div>
+                <div class="my-0 px-2 border-b border-color-grey-light screen-tablet:flex screen-tablet:justify-between items-center"></div>
               </header>
               <div class="layout--home-body">
-                <div class="my-0 pt-4 px-2 text-font-size-small"></div>
+                <div class="my-0 pt-4 px-2 text-font-size-small"><p>The Newsletter Object is an embedded Mailchimp signup form. More details about embedded Mailchimp forms can be found on the
+  <a href="https://mailchimp.com/help/add-a-signup-form-to-your-website/">Mailchimp website</a>. This form can work with any Mailchimp subscriber list that is configured through the form action;</p>
+
+<pre><code> form action=&quot;https://nyc.us18.list-manage.com/subscribe/post?u=d04b7b607bddbd338b416fa89&amp;id=98ff3f3900&quot; method=&quot;post&quot; id=&quot;mc-embedded-subscribe-form&quot;</code></pre>
+
+<p>While the Newsletter Object doesn&#39;t require JavaScript, it is needed for borough data processing (Which borough(s) would you like to recieve updates for?) and front-end validation.</p></div>
               </div>
               <div class="layout--gutter screen-tablet:layout--columns justify-between pt-4">
                 <div class="screen-tablet:pr-2">
@@ -240,7 +241,7 @@
                         'slug': 'ERR_TOO_MANY_RECENT'
                       },
                       {
-                        'label': '{{ EMAIL }} is already subscribed to list {{ LIST_NAME }}. <a href="{{ PROFILE_URL }}">Click here to update your profile</a>',
+                        'label': '{{ EMAIL }} is already subscribed to list {{ LIST_NAME }}.',
                         'slug': 'ERR_ALREADY_SUBSCRIBED'
                       },
                       {
@@ -331,7 +332,7 @@
       &#39;slug&#39;: &#39;ERR_TOO_MANY_RECENT&#39;
     },
     {
-      &#39;label&#39;: &#39;{{ EMAIL }} is already subscribed to list {{ LIST_NAME }}. &lt;a href=&quot;{{ PROFILE_URL }}&quot;&gt;Click here to update your profile&lt;/a&gt;&#39;,
+      &#39;label&#39;: &#39;{{ EMAIL }} is already subscribed to list {{ LIST_NAME }}.&#39;,
       &#39;slug&#39;: &#39;ERR_ALREADY_SUBSCRIBED&#39;
     },
     {
@@ -341,6 +342,37 @@
   ]);
 &lt;/script&gt;</pre></div>
                 </div>
+              </div>
+            </div>
+          </section>
+          <section class="pb-4 mb-4" id="usage">
+            <div class="page-wrapper px-2 screen-desktop:px-0">
+              <header class="layout--home-body">
+                <div class="my-0 px-2 border-b border-color-grey-light screen-tablet:flex screen-tablet:justify-between">
+                  <h2 class="m-0 pt-1 pb-4">
+                    <a class="text-color-grey-mid font-normal no-underline capitalize" href="#usage">Usage</a>
+                  </h2>
+                </div>
+              </header>
+              <div class="layout--home-body">
+                <div class="my-0 pt-4 px-2 text-font-size-small"><h4>Global Script</h4>
+
+<p>The Newsletter Object does not require JavaScript, however, the associated script provides front-end validation and borough data processing. To use the Newsletter in the global ACCESS NYC Patterns script use the following code:</p>
+
+<pre><code>var access = new AccessNyc();
+access.newsletter();</code></pre>
+
+<p>This function will attach the Newsletter submission event and borough data processing to the body of the document.</p>
+
+<h4>Module Import</h4>
+
+<p>The ES6 and CommonJS modules require importing and object instantiation in your main script:</p>
+
+<pre><code>import Newsletter from &#39;../objects/newsletter/newsletter&#39;;
+let element = document.querySelector(Newsletter.selector);
+return new Newsletter(element);</code></pre>
+
+<p>The component requires the <code>data-js=&quot;newsletter&quot;</code> attribute and a unique ID targeting the form body.</p></div>
               </div>
             </div>
           </section>

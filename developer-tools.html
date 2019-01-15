@@ -59,8 +59,8 @@
               <h2 class="text-font-size-small m-0 text-color-blue-dark screen-tablet:hidden">Patterns</h2>
               <h2 aria-hidden="true" class="type-h1 m-0 text-color-blue-dark hidden screen-tablet:inline-block">Patterns</h2>
               <nav class="text-font-size-small">
-                <a class="rounded-lg text-color-blue-dark border-2 no-underline px-1 ml-2 hidden screen-tablet:inline-block" href="https://github.com/CityOfNewYork/ACCESS-NYC-PATTERNS">0.1.5</a>
-                <a aria-hidden="true" class="ml-1 screen-tablet:ml-2 screen-tablet:hidden" href="https://github.com/CityOfNewYork/ACCESS-NYC-PATTERNS">0.1.5</a>
+                <a class="rounded-lg text-color-blue-dark border-2 no-underline px-1 ml-2 hidden screen-tablet:inline-block" href="https://github.com/CityOfNewYork/ACCESS-NYC-PATTERNS">0.1.6</a>
+                <a aria-hidden="true" class="ml-1 screen-tablet:ml-2 screen-tablet:hidden" href="https://github.com/CityOfNewYork/ACCESS-NYC-PATTERNS">0.1.6</a>
                 <a class="ml-1 screen-tablet:ml-2" data-js="toggle" href="#main-menu">Menu</a>
               </nav>
             </div>
@@ -118,6 +118,7 @@
               <a class="block p-1" href="footer">Footer</a>
               <a class="block p-1" href="mobile-nav">Mobile Nav</a>
               <a class="block p-1" href="navigation">Navigation</a>
+              <a class="block p-1" href="newsletter">Newsletter</a>
               <a class="block p-1" href="search-box">Search Box</a>
             </nav>
             <nav class="screen-tablet:flex-1 mb-1 px-2 screen-desktop:pl-4">
@@ -142,7 +143,7 @@
         <article class="pt-4">
           <header class="page-wrapper px-2 screen-desktop:px-0 layout--home-body">
             <div class="my-0 w-full">
-              <h1 class="text-color-blue-dark px-2 pb-4">Developer Tools</h1>
+              <h1 class="text-color-blue-dark px-2 pb-4 mb-4">Developer Tools</h1>
             </div>
           </header>
           <section class="pb-4 mb-4" id="welcome">
@@ -152,117 +153,155 @@
               </header>
               <div class="layout--home-body color-light-background">
                 <div class="px-2 text-font-size-small">
-                  <div class="o-content color-light-background pb-4"><p>The Patterns library is a Node.js application that uses various libraries—including Express, Rollup.js, Node Sass, Nodemon, and HTML Sketch App—to run the development server and build tasks for Style, JavaScript, SVG, Views, and Sketch distributions.
-  This is all managed through
-  <a href="https://docs.npmjs.com/misc/scripts">npm scripts</a> in the <code>package.json</code> file, modules in the <code>.app/</code> directory, and configuration in the <code>config/</code> directory.</p>
+                  <div class="o-content color-light-background pb-4"><h2>NPM Scripts</h2>
 
-<h2>NPM Scripts</h2>
+<p>The Patterns library is a Node.js application that uses various libraries—including Express, Rollup.js, Node Sass, Nodemon, and HTML Sketch App—to run the development server and build tasks for Style, JavaScript, SVG, Views, and Sketch files. This is
+  all managed via
+  <a href="https://docs.npmjs.com/misc/scripts">npm scripts</a> in the <strong>package.json</strong> file, modules in the <strong>.app/</strong> directory, and configuration in the <strong>config/</strong> directory.</p>
 
-<pre><code>serve</code></pre>
+<h3>Main Scripts</h3>
+
+<h4>Development</h4>
+
+<p><strong><code>npm run start</code></strong></p>
 
 <p>This starts the
-  <a href="https://expressjs.com/">Express.js</a> development server, which uses Express to render the views in <code>src/views</code>. It also uses Concurrently to trigger <code>:watch</code> scripts for different compilation tasks as changes are detected within your project.</p>
+  <a href="https://expressjs.com/">Express.js</a> development server, which uses Express to render the views in <strong>src/views</strong>. It also uses Concurrently to trigger <strong>:watch</strong> scripts for different compilation tasks as changes are detected within your project.
+  The <strong>NODE_ENV</strong> is set to &quot;development&quot; which affects the the styles compilation process by only compiling the global stylesheet. It also affects script processing by disabling ESLint.</p>
 
-<pre><code>compile</code></pre>
+<p>The development server renders <strong>slm</strong> templates, but it does not display markup or markdown blocks for each Pattern. These are blocks included with <code>md{{ path/to/pattern.md }}</code> and <code>code{{ path/to/pattern.slm }}</code>. To
+  see markup and markdown, append <strong>.html</strong> to the url (ex; <strong>http://localhost:7000/developer-tools.html</strong>). This will load the static page from the <strong>/dist</strong> directory which has markup and markdown compiled.</p>
 
-<p>This runs all of the compilation tasks illustrated below for Styles, JavaScript, SVG, and Views.</p>
+<h4>Make</h4>
 
-<pre><code>sync</code></pre>
+<p><strong><code>npm run make {{ Name }} {{ pattern type }}</code></strong></p>
+
+<p>This is the method for creating new patterns using templates defined in the
+  <a href="https://github.com/CityOfNewYork/ACCESS-NYC-PATTERNS/blob/master/config/make.js"><strong>config/make.js</strong></a> directory. Running</p>
+
+<pre><code>npm run make Accordion component</code></pre>
+
+<p>... will bootstrap generate a stylesheet and markup file needed to add an Accordion Component to the Patterns. The parameters accepted are <strong>name</strong> (“Accordion”) and <strong>pattern type</strong> (“component”). Currently the three available
+  types are element, component, and object. The files will be generated and written according to these parameters;</p>
+
+<p>This is the method for creating new patterns using templates defined in the
+  <a href="https://github.com/CityOfNewYork/ACCESS-NYC-PATTERNS/blob/master/config/make.js"><strong>config/make.js</strong></a> directory. Use</p>
+
+<pre><code>npm run make Accordion component</code></pre>
+
+<p>... to generate the stylesheet and markup file needed to add an Accordion Component to the Patterns.</p>
+
+<p>The parameters accepted are <strong>name</strong> (“Accordion”) and <strong>pattern type</strong> (“component”). Currently, the three available types are element, component, and object. The files will be generated and written according to these parameters:</p>
+
+<pre><code>src/{{ pattern type }}/{{ name }}/{{ name }}.slm
+src/{{ pattern type }}/{{ name }}/_{{ name }}.scss</code></pre>
+
+<p>The content of each file is determined by the templates defined in the
+  <a href="https://github.com/CityOfNewYork/ACCESS-NYC-PATTERNS/blob/master/config/make.js"><strong>config/make.js</strong></a> file.</p>
+
+<p>Once you run the script, a prompt will also ask if you would like a SASS configuration file to be written to the <strong>src/styles/config/</strong> directory and a view file to be written to <strong>src/views/</strong> directory.</p>
+
+<h4>Pre-deploy</h4>
+
+<p><strong><code>npm run predeploy</code></strong></p>
+
+<p>This runs all of the compilation tasks illustrated below for Styles, JavaScript, SVG, and Views with <strong>NODE_ENV</strong> set to &quot;production&quot;.</p>
+
+<h4>Publish</h4>
+
+<p><strong><code>npm run publish</code></strong></p>
+
+<p>This commits all of the changes in the <strong>dist/</strong> directory to the <strong>gh-pages</strong> branch and pushes it to GitHub. The <strong>gh-pages</strong> branch is used for the publicly accessible Patterns website.</p>
+
+<h4>Other Scripts</h4>
+
+<p>The main scripts utilize the following scripts for their tasks but they can all be accessed individually.</p>
+
+<h5>Build (HTML)</h5>
+
+<p><strong><code>npm run build</code></strong></p>
+
+<p>This runs the <strong>.app/build.js</strong> module that reads the <strong>src/views/</strong> directory and compiles the <strong>src/views/{{ view }}.slm</strong> templates to <strong>dist/{{ view }}.html</strong>.</p>
+
+<p><strong><code>npm run build:watch</code></strong></p>
+
+<p>This runs
+  <a href="https://nodemon.io/">nodemon</a> to watch for changes on <strong>src/views/{{ view }}.slm</strong> and run the <strong>build</strong> npm script.</p>
+
+<h5>BrowserSync</h5>
+
+<p><strong><code>npm run sync</code></strong></p>
 
 <p>This starts a
   <a href="https://browsersync.io/">BrowserSync</a> server that proxies the Express application server.</p>
 
-<pre><code>build</code></pre>
+<h5>JavaScript</h5>
 
-<p>This runs the <code>.app/build.js</code> module that reads the <code>src/views/</code> directory and compiles the <code>src/views/*.slm</code> templates to <code>dist/*.html</code>.</p>
-
-<pre><code>build:watch</code></pre>
+<p><strong><code>npm run scripts</code></strong></p>
 
 <p>This runs
-  <a href="https://nodemon.io/">nodemon</a> to watch for changes on <code>src/views/*.slm</code> and run the <code>build</code> npm script.</p>
+  <a href="https://rollupjs.org">Rollup.js</a> on JavaScript dependencies of the Patterns and <strong>src/js/</strong> directories. The dependencies are explicitly defined by the
+  <a href="https://github.com/CityOfNewYork/ACCESS-NYC-PATTERNS/blob/master/config/rollup.js"><strong>config/rollup.js</strong></a> file.</p>
 
-<pre><code>ghpages</code></pre>
-
-<p>This commits all of the changes in the <code>dist/</code> directory to the <code>gh-pages</code> branch and pushes it to GitHub. The <code>gh-pages</code> branch is used for the publicly accessible Patterns website.</p>
-
-<pre><code>scripts</code></pre>
+<p><strong><code>npm run scripts:watch</code></strong></p>
 
 <p>This runs
-  <a href="https://rollupjs.org">Rollup.js</a> on JavaScript dependencies of the Patterns and <code>src/js/</code> directories. The dependencies are explicitly defined by the
-  <a href="https://github.com/CityOfNewYork/ACCESS-NYC-PATTERNS/blob/master/config/rollup.js"><code>config/rollup.js</code></a> file.</p>
+  <a href="https://nodemon.io/">nodemon</a> to watch for changes on all JavaScript files in the <strong>src/</strong> directory and run the <code>scripts</code> npm script.</p>
 
-<pre><code>scripts:watch</code></pre>
+<h5>Styles</h5>
 
-<p>This runs
-  <a href="https://nodemon.io/">nodemon</a> to watch for changes on all <code>*.js</code> files in the <code>src/</code> directory and run the <code>scripts</code> npm script.</p>
-
-<pre><code>styles</code></pre>
+<p><strong><code>npm run styles</code></strong></p>
 
 <p>This runs all of the various <code>styles:</code> npm scripts illustrated below.</p>
 
-<pre><code>styles:variables</code></pre>
+<p><strong><code>npm run styles:variables</code></strong></p>
 
-<p>This runs the <code>.app/variables.js</code> module which takes the configuration variables in the
-  <a href="https://github.com/CityOfNewYork/ACCESS-NYC-PATTERNS/blob/master/config/variables.js"><code>config/variables.js</code></a> file and converts them into SASS variables and writes them to <code>src/styles/config/_variables.scss</code> for the <code>styles:sass</code> npm script to process.</p>
+<p>This runs the <strong>.app/variables.js</strong> module which takes the configuration variables in the
+  <a href="https://github.com/CityOfNewYork/ACCESS-NYC-PATTERNS/blob/master/config/variables.js"><strong>config/variables.js</strong></a> file and converts them into SASS variables and writes them to <strong>src/styles/config/_variables.scss</strong> for the <code>styles:sass</code> npm script to process.</p>
 
-<pre><code>styles:sass</code></pre>
+<p><strong><code>npm run styles:sass</code></strong></p>
 
-<p>This runs the <code>.app/sass.js</code> module which compiles each module in the
-  <a href="https://github.com/CityOfNewYork/ACCESS-NYC-PATTERNS/blob/master/config/modules.js"><code>config/modules.js</code></a> file.</p>
+<p>This runs the <strong>.app/sass.js</strong> module which compiles each module in the
+  <a href="https://github.com/CityOfNewYork/ACCESS-NYC-PATTERNS/blob/master/config/modules.js"><strong>config/modules.js</strong></a> file.</p>
 
-<pre><code>styles:postcss</code></pre>
+<p><strong><code>npm run styles:postcss</code></strong></p>
 
-<p>This runs the <code>.app/postcss.js</code> module which runs
-  <a href="https://postcss.org/">PostCSS</a> on each module in the <code>config/modules.js</code> file. PostCSS is configured by the <code>config/postcss.js</code> file.</p>
+<p>This runs the <strong>.app/postcss.js</strong> module which runs
+  <a href="https://postcss.org/">PostCSS</a> on each module in the <strong>config/modules.js</strong> file. PostCSS is configured by the <strong>config/postcss.js</strong> file.</p>
 
-<pre><code>styles:watch</code></pre>
+<p><strong><code>npm run styles:watch</code></strong></p>
 
 <p>This runs
-  <a href="https://nodemon.io/">nodemon</a> to watch for changes on all <code>*.scss</code> files in the <code>src/</code> directory and runs the <code>styles</code> npm script.</p>
+  <a href="https://nodemon.io/">nodemon</a> to watch for changes on all Sass files in the <strong>src/</strong> directory and runs the <code>styles</code> npm script.</p>
 
-<pre><code>svgs</code></pre>
+<h5>SVGs</h5>
+
+<p><strong><code>npm run svgs</code></strong></p>
 
 <p>This runs all of the various <code>svgs:</code> npm scripts illustrated below.</p>
 
-<pre><code>svgs:optimize</code></pre>
+<p><strong><code>npm run svgs:optimize</code></strong></p>
 
 <p>This runs
-  <a href="https://github.com/svg/svgo">svgo</a> on the SVG files in the <code>src/svg/</code> directory and writes the optimized files to the <code>dist/svg/</code> directory.</p>
+  <a href="https://github.com/svg/svgo">svgo</a> on the SVG files in the <strong>src/svg/</strong> directory and writes the optimized files to the <strong>dist/svg/</strong> directory.</p>
 
-<pre><code>svgs:symbol</code></pre>
+<p><strong><code>npm run svgs:symbol</code></strong></p>
 
 <p>This uses
-  <a href="https://www.npmjs.com/package/svgstore">svgstore</a> to build an SVG symbol from the optimized SVGs in the <code>dist/svg/</code> directory.</p>
+  <a href="https://www.npmjs.com/package/svgstore">svgstore</a> to build an SVG symbol from the optimized SVGs in the <strong>dist/svg/</strong> directory.</p>
 
-<pre><code>svgs:watch</code></pre>
+<p><strong><code>npm run svgs:watch</code></strong></p>
 
 <p>This runs
-  <a href="https://nodemon.io/">nodemon</a> to watch for changes on all <code>*.svg</code> files in the <code>src/svg/</code> directory and runs the <code>svgs</code> npm script.</p>
+  <a href="https://nodemon.io/">nodemon</a> to watch for changes on all SVG files in the <strong>src/svg/</strong> directory and runs the <code>svgs</code> npm script.</p>
 
-<pre><code>design:sketch</code></pre>
+<h5>Design</h5>
+
+<p><strong><code>npm run design:sketch</code></strong></p>
 
 <p>This uses the
-  <a href="https://github.com/seek-oss/html-sketchapp-cli">HTML Sketch App CLI</a> to export all of the patterns in the <code>dist/sketch.html</code> to “Almost Sketch Files” to be integrated into Sketch using the
+  <a href="https://github.com/seek-oss/html-sketchapp-cli">HTML Sketch App CLI</a> to export all of the patterns in the <strong>dist/sketch.html</strong> to “Almost Sketch Files” to be integrated into Sketch using the
   <a href="https://github.com/brainly/html-sketchapp">HTML Sketch Plugin</a>.</p>
-
-<pre><code>make</code></pre>
-
-<p>This is the method for creating new patterns using templates defined in the
-  <a href="https://github.com/CityOfNewYork/ACCESS-NYC-PATTERNS/blob/master/config/make.js"><code>config/make.js</code></a> directory. Using <code>npm run make Accordion component</code> will bootstrap generate a stylesheet and markup file needed to add an Accordion Component to the Patterns. The parameters accepted are <code>name</code> (“Accordion”)
-  and <code>pattern type</code> (“component”). Currently the three available types are element, component, and object. The files will be generated and written according to these parameters;</p>
-
-<p>This is the method for creating new patterns using templates defined in the
-  <a href="https://github.com/CityOfNewYork/ACCESS-NYC-PATTERNS/blob/master/config/make.js"><code>config/make.js</code></a> directory. Use <code>npm run make Accordion component</code> to generate the stylesheet and markup file needed to add an Accordion Component to the Patterns.</p>
-
-<p>The parameters accepted are <code>name</code> (“Accordion”) and <code>pattern type</code> (“component”). Currently, the three available types are element, component, and object. The files will be generated and written according to these parameters:</p>
-
-<pre><code>src/&lt;pattern type&gt;/&lt;name&gt;/&lt;name&gt;.slm
-src/&lt;pattern type&gt;/&lt;name&gt;/_&lt;name&gt;.scss</code></pre>
-
-<p>The content of each file is determined by the templates defined in the
-  <a href="https://github.com/CityOfNewYork/ACCESS-NYC-PATTERNS/blob/master/config/make.js"><code>config/make.js</code></a> file.</p>
-
-<p>Once you run the script, a prompt will also ask if you would like a SASS configuration file to be written to the <code>src/styles/config/</code> directory and a view file to be written to <code>src/views/</code> directory.</p>
 
 <h2>Contributing</h2>
 
@@ -271,7 +310,7 @@ src/&lt;pattern type&gt;/&lt;name&gt;/_&lt;name&gt;.scss</code></pre>
 
 <p>Every Pattern is developed with Style, JavaScript, and Markup dependencies bundled together so they can all be exported and imported independently of the rest of the Patterns.</p>
 
-<pre><code>`src/&lt;pattern type&gt;/&lt;name&gt;/&lt;name&gt;.&lt;extension&gt;`</code></pre>
+<pre><code>src/{{ pattern type }}/{{ name }}/{{ name }}.{{ extension }}</code></pre>
 
 <p>For example, all of the relevant Accordion Component dependencies live in:</p>
 
