@@ -15,21 +15,13 @@ The development server renders **slm** templates, but it does not display markup
 
 #### Make
 
-**`npm run make {{ Name }} {{ pattern type }}`**
+**`npm run make {{ pattern type }} {{ name }}`**
 
 This is the method for creating new patterns using templates defined in the [**config/make.js**](https://github.com/CityOfNewYork/ACCESS-NYC-PATTERNS/blob/master/config/make.js) directory. Running
 
-    npm run make Accordion component
+    npm run make component accordion
 
-... will bootstrap generate a stylesheet and markup file needed to add an Accordion Component to the Patterns. The parameters accepted are **name** (“Accordion”) and **pattern type** (“component”). Currently the three available types are element, component, and object. The files will be generated and written according to these parameters;
-
-This is the method for creating new patterns using templates defined in the [**config/make.js**](https://github.com/CityOfNewYork/ACCESS-NYC-PATTERNS/blob/master/config/make.js) directory. Use
-
-    npm run make Accordion component
-
-... to generate the stylesheet and markup file needed to add an Accordion Component to the Patterns.
-
-The parameters accepted are **name** (“Accordion”) and **pattern type** (“component”). Currently, the three available types are element, component, and object. The files will be generated and written according to these parameters:
+... will generate a stylesheet and markup file needed to add an Accordion Component to the Patterns. The parameters accepted are **pattern type** (“component”) and **name** (“accordion”. Currently the three available types are element, component, and object. The files will be generated and written according to these parameters;
 
     src/{{ pattern type }}/{{ name }}/{{ name }}.slm
     src/{{ pattern type }}/{{ name }}/_{{ name }}.scss

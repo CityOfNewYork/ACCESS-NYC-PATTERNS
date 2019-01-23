@@ -13,6 +13,6 @@ The ES6 and CommonJS modules require importing and object instantiation in your 
 
     import Newsletter from '../objects/newsletter/newsletter';
     let element = document.querySelector(Newsletter.selector);
-    return new Newsletter(element);
+    if (element) new Newsletter(element);
 
 The component requires the `data-js="newsletter"` attribute and a unique ID targeting the form body.

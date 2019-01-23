@@ -86,18 +86,23 @@ function fnMakeOtherFiles(dir, type, template, pattern, callback) {
  * @param  {string} pattern The name of the pattern
  */
 function fnFiles(dir, type, pattern, callback) {
-  let filetypes = ['markup', 'styles'];
+  let filetypes = ['markup', 'styles', 'markdown'];
   filetypes.forEach((element, index) => {
-    let style = templates[element]
-      .split('{{ type }}').join(type)
-      .split('{{ prefix }}').join(prefixes[type])
-      .split('{{ pattern }}').join(pattern)
-      .split('{{ Pattern }}').join(
-        pattern
-        .split('-').join(' ')
-        .split('_').join(' ')
-        .charAt(0).toUpperCase()+pattern.slice(1)
-      );
+    let style = '';
+    if (templates[element]) {
+      style = templates[element]
+        .split('{{ type }}').join(type)
+        .split('{{ prefix }}').join(prefixes[type])
+        .split('{{ pattern }}').join(pattern)
+        .split('{{ Pattern }}').join(
+          pattern
+          .split('-').join(' ')
+          .split('_').join(' ')
+          .charAt(0).toUpperCase()+pattern.slice(1)
+        );
+    } else {
+      console.log(`${alerts.error} ${element} template does not exist in ./config/make.js`);
+    }
     let file = files[element].replace('{{ pattern }}', pattern);
     fs.writeFileSync(`${dir}/${file}`, style);
     if (fs.existsSync(`${dir}/${file}`)) {

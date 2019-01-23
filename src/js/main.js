@@ -82,7 +82,7 @@ class main {
    */
   newsletter() {
     let element = document.querySelector(Newsletter.selector);
-    return new Newsletter(element);
+    return (element) ? new Newsletter(element) : null;
   }
   /** add APIs here as they are written */
 }

@@ -26,7 +26,7 @@ const templates = {
       "/",
       "/ Basically, if you are building an Object or a Component and including",
       "/ other Elements/Components/Objects, the symbol should be set to false",
-      "/ and the instance should be set to the pattern's path."
+      "/ and the instance should be set to the pattern's path.",
       "",
       "div data-sketch-symbol=symbol data-sketch-symbol-instance=instance"
     ].join("\n"),
@@ -42,7 +42,7 @@ const templates = {
       "// where the pattern is getting variables from. You can create a",
       "// pattern specific SASS configuration in the /src/config directory, or",
       "// add configuration to the /config/variables.js object (which is",
-      "// to SASS during the compilation process)."
+      "// to SASS during the compilation process).",
       "// @import 'config/variables';",
       "",
       "// Declarations",
@@ -90,6 +90,7 @@ const templates = {
 
 const files = {
   markup: '{{ pattern }}.slm',
+  markdown: '{{ pattern }}.md',
   styles: '_{{ pattern }}.scss',
   config: '_{{ pattern }}.scss',
   views: '{{ pattern }}.slm'
