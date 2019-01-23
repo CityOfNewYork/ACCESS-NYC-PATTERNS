@@ -59,8 +59,8 @@
               <h2 class="text-font-size-small m-0 text-color-blue-dark screen-tablet:hidden">Patterns</h2>
               <h2 aria-hidden="true" class="type-h1 m-0 text-color-blue-dark hidden screen-tablet:inline-block">Patterns</h2>
               <nav class="text-font-size-small">
-                <a class="rounded-lg text-color-blue-dark border-2 no-underline px-1 ml-2 hidden screen-tablet:inline-block" href="https://github.com/CityOfNewYork/ACCESS-NYC-PATTERNS">0.1.6</a>
-                <a aria-hidden="true" class="ml-1 screen-tablet:ml-2 screen-tablet:hidden" href="https://github.com/CityOfNewYork/ACCESS-NYC-PATTERNS">0.1.6</a>
+                <a class="rounded-lg text-color-blue-dark border-2 no-underline px-1 ml-2 hidden screen-tablet:inline-block" href="https://github.com/CityOfNewYork/ACCESS-NYC-PATTERNS">0.1.7</a>
+                <a aria-hidden="true" class="ml-1 screen-tablet:ml-2 screen-tablet:hidden" href="https://github.com/CityOfNewYork/ACCESS-NYC-PATTERNS">0.1.7</a>
                 <a class="ml-1 screen-tablet:ml-2" data-js="toggle" href="#main-menu">Menu</a>
               </nav>
             </div>
@@ -174,24 +174,15 @@
 
 <h4>Make</h4>
 
-<p><strong><code>npm run make {{ Name }} {{ pattern type }}</code></strong></p>
+<p><strong><code>npm run make {{ pattern type }} {{ name }}</code></strong></p>
 
 <p>This is the method for creating new patterns using templates defined in the
   <a href="https://github.com/CityOfNewYork/ACCESS-NYC-PATTERNS/blob/master/config/make.js"><strong>config/make.js</strong></a> directory. Running</p>
 
-<pre><code>npm run make Accordion component</code></pre>
+<pre><code>npm run make component accordion</code></pre>
 
-<p>... will bootstrap generate a stylesheet and markup file needed to add an Accordion Component to the Patterns. The parameters accepted are <strong>name</strong> (“Accordion”) and <strong>pattern type</strong> (“component”). Currently the three available
-  types are element, component, and object. The files will be generated and written according to these parameters;</p>
-
-<p>This is the method for creating new patterns using templates defined in the
-  <a href="https://github.com/CityOfNewYork/ACCESS-NYC-PATTERNS/blob/master/config/make.js"><strong>config/make.js</strong></a> directory. Use</p>
-
-<pre><code>npm run make Accordion component</code></pre>
-
-<p>... to generate the stylesheet and markup file needed to add an Accordion Component to the Patterns.</p>
-
-<p>The parameters accepted are <strong>name</strong> (“Accordion”) and <strong>pattern type</strong> (“component”). Currently, the three available types are element, component, and object. The files will be generated and written according to these parameters:</p>
+<p>... will generate a stylesheet and markup file needed to add an Accordion Component to the Patterns. The parameters accepted are <strong>pattern type</strong> (“component”) and <strong>name</strong> (“accordion”. Currently the three available types are
+  element, component, and object. The files will be generated and written according to these parameters;</p>
 
 <pre><code>src/{{ pattern type }}/{{ name }}/{{ name }}.slm
 src/{{ pattern type }}/{{ name }}/_{{ name }}.scss</code></pre>
