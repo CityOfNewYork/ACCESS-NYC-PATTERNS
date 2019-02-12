@@ -20,6 +20,12 @@ $checkbox-radius: map-get(map-get($variables, 'inputs'), 'checkbox-radius');
   font-size: $font-size-base;
   font-weight: $font-weight-bold;
 
+  // To ensure that the focus state is visible with checkboxes inside
+  // elements with overflow - hidden (ex. c-filter-multi);
+  padding-#{$text-direction-start}: 3px;
+  padding-top: 3px;
+  padding-bottom: 3px;
+
   cursor: pointer;
   display: block;
 

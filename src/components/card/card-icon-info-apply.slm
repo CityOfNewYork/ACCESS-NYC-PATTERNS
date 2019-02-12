@@ -1,19 +1,22 @@
 article class='c-card' data-sketch-symbol=symbol data-sketch-symbol-instance=instance
   div class='c-card__icon'
-    a href='#'
-      div class='icon bg-icon-card-cash-expenses'
+    svg role='img' class='icon icon-card-cash-expenses'
+      title id='icon-card-cash-expenses_title' Cash &amp; Expenses
+      use xmlns:xlink='http://www.w3.org/1999/xlink' xlink:href='#icon-card-cash-expenses'
+
   div class='c-card__body'
-    a href='#'
-      h3 class='c-card__title'
-        | Money for heat and utility expenses
-    p class='c-card__subtitle type-small text-color-grey-mid'
-      | Home Energy Assistance Program (HEAP)
-      div class='c-card__summary'
-        p
-          | HEAP can help you pay for the costs of heating your home during the winter months.
-        p class='hide-for-print'
-          a href='#'
-            | Learn more
-        p class='hide-for-print'
-          a class='btn btn-secondary btn-next' href='#?step=how-to-apply'
-            | Apply
+    a href='http://localhost:8080/programs/home-energy-assistance-program-heap/' class='text-color-blue-dark'
+      h3 class='c-card__title text-color-blue-dark'  Money for heat and utility expenses
+
+    p class='program-card-subtitle type-small'  Home Energy Assistance Program (HEAP)
+
+    div class='c-card__summary'
+      p HEAP can help you pay for the costs of heating your home during the winter months.
+
+      p class='hide-for-print'
+        a href='http://localhost:8080/programs/home-energy-assistance-program-heap/'
+          | Learn more
+          span class='sr-only' : Home Energy Assistance Program
+
+      p class='hide-for-print'
+        a class='btn btn-secondary btn-next' href='#' Apply

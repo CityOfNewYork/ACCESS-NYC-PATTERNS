@@ -63,7 +63,7 @@
 
   section class='pb-4 color-mid-background'
     div class='page-wrapper layout--home-body px-2'
-      div
+      div class='w-full'
         h4#links Links
 
         div class='layout--gutter screen-tablet:layout--columns-gutter'

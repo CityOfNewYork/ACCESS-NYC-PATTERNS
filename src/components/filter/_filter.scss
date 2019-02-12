@@ -134,7 +134,8 @@ a.c-filter__item {
 }
 
 .c-filter-multi__list {
-  padding: 0 $spacing-base;
+  padding: 0;
+  padding-#{$text-direction-start}: 3px; // accomodate checkbox
   list-style: none;
   margin: 0
 }
@@ -212,12 +213,4 @@ a.c-filter__item {
   font-weight: $font-weight-normal;
   margin: (.5 * $spacing-base) 0;
   min-height: map-get(map-get($variables, 'inputs'), 'checkbox-size');
-
-  .checkbox {
-    padding-top: .25 * $spacing-base
-  }
-}
-
-.c-filter-multi__programs .checkbox {
-  padding-top: 5px
 }
