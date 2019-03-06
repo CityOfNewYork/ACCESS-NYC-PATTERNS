@@ -4,7 +4,8 @@
 
 article class='c-alert-box bg-status-info mb-4' data-sketch-symbol=symbol data-sketch-symbol-instance=instance
   div class='c-alert-box__icon'
-    div class='c-alert-box__svg bg-icon-info'
+    svg class='c-alert-box__svg icon icon-4 icon-ui-info'
+      use xlink:href='#icon-ui-info'
   div class='c-alert-box__body'
     header
       h1 class='type-h4 m-0' ACCESS NYC will be undergoing maintenance Friday, February 2nd from 9pm to 11pm EST.

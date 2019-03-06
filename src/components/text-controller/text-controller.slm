@@ -5,8 +5,8 @@
 div class='c-text-controller' data-sketch-symbol=symbol data-sketch-symbol-instance=instance
 
   a class='c-text-controller__toggle mb-1' href='#text-controls'
-    svg class='icon icon-gear'
-      use xlink:href='#icon-gear'
+    svg class='icon icon-ui-settings'
+      use xlink:href='#icon-ui-settings'
 
     span class='c-text-controller__title-full' Translate &amp; Adjust Text
     span class='c-text-controller__title-short' Translate Text
@@ -53,12 +53,12 @@ div class='c-text-controller' data-sketch-symbol=symbol data-sketch-symbol-insta
     div class='c-text-controller__sizer'
       em class='c-text-controller__sizer-text' Adjust text size
       button class='c-text-controller__sizer-btn btn-text js-text-larger'
-        svg class='icon icon-plus'
-          use xlink:href='#icon-plus'
+        svg class='icon icon-ui-plus-circle'
+          use xlink:href='#icon-ui-plus-circle'
         div class='sr-only' Larger
       button class='c-text-controller__sizer-btn btn-text js-text-smaller'
-        svg class='icon icon-minus'
-          use xlink:href='#icon-minus'
+        svg class='icon icon-ui-minus-circle'
+          use xlink:href='#icon-ui-minus-circle'
         div class='sr-only' Smaller
 
 

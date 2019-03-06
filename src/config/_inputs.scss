@@ -1,0 +1,23 @@
+// Dependencies
+@import 'config/media';
+@import 'config/colors';
+
+// Declarations
+@mixin inputs() {
+  color: $color-grey-mid;
+  padding: (.75 * $spacing-base);
+
+  &::placeholder {
+    color: $color-grey-mid;
+  }
+}
+
+@mixin input-icon() {
+  padding-left: 30px;
+}
+
+@mixin input-currency-icon() {
+  color: $color-green-mid;
+  font-size: 22px;
+  font-weight: $font-weight-bold;
+}

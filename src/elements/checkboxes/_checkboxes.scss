@@ -4,79 +4,39 @@
 
 // Dependencies
 @import 'config/variables';
+@import 'config/options';
+@import 'config/checkboxes';
 @import 'config/direction';
 @import 'config/dimensions';
-@import 'config/fonts';
-@import 'config/colors';
 @import 'config/accessibility';
-@import 'config/media';
-
-$cdn: map-get($variables, 'cdn');
-$checkbox-size: map-get(map-get($variables, 'inputs'), 'checkbox-size');
-$checkbox-radius: map-get(map-get($variables, 'inputs'), 'checkbox-radius');
 
 // Declarations
 .checkbox {
-  font-size: $font-size-base;
-  font-weight: $font-weight-bold;
-
-  // To ensure that the focus state is visible with checkboxes inside
-  // elements with overflow - hidden (ex. c-filter-multi);
-  padding-#{$text-direction-start}: 3px;
-  padding-top: 3px;
-  padding-bottom: 3px;
-
-  cursor: pointer;
-  display: block;
-
-  margin-bottom: $spacing-base;
-
-  // @include media($bp-tablet-up) {
-  //   margin-bottom: $spacing-base * 1.5
-  // }
+  @include options;
 
   &:last-of-type {
     margin-bottom: 0
   }
 
-  input {
+  > input {
     @include sr-only()
   }
 }
 
 .checkbox__label {
-  display: flex;
-  line-height: $checkbox-size;
+  @include options-labels;
 }
 
 .checkbox__label::before {
-  transition: all .2s;
-
-  background: $color-white;
-  border: 1px solid $color-grey-mid;
-  border-radius: $checkbox-radius;
-  content: '';
-  display: inline-block;
-
-  width: $checkbox-size;
-  height: $checkbox-size;
-  min-width: $checkbox-size;
-  margin-#{$text-direction-end}: .5 * $spacing-base;
+  @include checkboxes-btn;
 }
 
-input:checked + .checkbox__label {
-  &::before {
-    background: $color-blue url('#{$cdn}/svg/icon-checkmark-white.svg') no-repeat;
-    background-size: cover;
-    border: 0;
-  }
+input:checked + .checkbox__label::before {
+  @include checkboxes-btn-checked;
 }
 
-input:focus + .checkbox__label {
-  &::before {
-    border: 0;
-    box-shadow: 0 0 0 1px $color-white, 0 0 0 3px $color-blue;
-  }
+input:focus + .checkbox__label::before {
+  @include checkboxes-btn-focused;
 }
 
 .checkbox__icon {

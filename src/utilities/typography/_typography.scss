@@ -92,7 +92,8 @@ html {
 p,
 ul,
 ol {
-  @include margin(0 null rem(strip-units($spacing-base), $em-base));
+  margin-top: 0;
+  margin-bottom: rem(strip-units($spacing-base), $em-base);
 }
 
 @media print {

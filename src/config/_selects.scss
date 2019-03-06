@@ -1,0 +1,23 @@
+// Dependencies
+@import 'config/colors';
+@import 'config/cdn';
+@import 'config/dimensions';
+@import 'config/direction';
+@import 'config/dimensions';
+
+$select-background-image: url('#{$cdn}#{$path-to-svg}icon-ui-chevron-down.svg');
+
+// Declarations
+@mixin selects() {
+  background-color: $color-white;
+  background-image: $select-background-image;
+  background-position: $text-direction-end .5rem center;
+  background-repeat: no-repeat;
+  background-size: ($grid-base * 3) ($grid-base * 3);
+  padding: .75 * $spacing-base;
+  padding-#{$text-direction-end}: 2.8rem;
+
+  &::-ms-expand {
+    display: none;
+  }
+}

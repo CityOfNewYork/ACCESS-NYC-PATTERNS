@@ -3,6 +3,7 @@
  */
 
 // Dependencies
+@import 'config/question';
 @import 'config/direction';
 @import 'config/fonts';
 @import 'config/dimensions';
@@ -10,45 +11,23 @@
 
 // Declarations
 .c-question {
-  margin-bottom: $spacing-base;
+  @include question;
 }
 
 .c-question__container {
   margin-top: 10px;
 
   &.error {
-    position: relative;
-
-    &::before {
-      position: absolute;
-      top: .5 * -$spacing-base;
-      bottom: -$spacing-base;
-      @if $text-direction == 'rtl' {
-        right: -19px;
-      } @else {
-        left: -19px;
-      }
-      border-left: 3px solid $color-red;
-      content: '';
-      display: block;
-      width: 0;
-    }
+    @include question-error;
   }
 
   .error-message {
-    color: $color-red;
-    font-size: $font-size-small;
-    margin-bottom: (.5 * $spacing-base);
-    width: 100%;
+    @include question-error-message;
   }
 }
 
 .c-question__label {
-  display: inline-block;
-  font-size: $font-size-base;
-  font-weight: $font-weight-bold;
-  vertical-align: top;
-  margin-bottom: $spacing-base/3;
+  @include question-label;
 }
 
 .c-question__info {

@@ -1,0 +1,240 @@
+@mixin formstack-body() {
+  .fsBody {
+    @content;
+  }
+}
+
+@mixin formstack-form() {
+  .fsBody .fsForm {
+    @content;
+  }
+}
+
+@mixin formstack-text-fields() {
+  textarea.fsField,
+  input:not([type='checkbox']):not([type='radio']).fsField,
+  input:not([type='checkbox']):not([type='radio']).fsOtherField {
+    @content;
+  }
+}
+
+@mixin formstack-name-fields() {
+  input:not([type='checkbox']):not([type='radio']).fsFieldName {
+    @content;
+  }
+}
+
+@mixin formstack-select-fields() {
+  select.fsField,
+  select.fsField:not([multiple=multiple]) {
+    @content;
+  }
+}
+
+@mixin formstack-options() {
+  .fsOptionLabel {
+    @content;
+  }
+}
+
+@mixin formstack-options__inputs() {
+  input[type='radio'],
+  input[type='checkbox'] {
+    @content;
+  }
+}
+
+@mixin formstack-options__radio() {
+  input[type='radio']::before {
+    @content;
+  }
+}
+
+@mixin formstack-options__radio-checked() {
+  input[type='radio']:checked::before {
+    @content;
+  }
+}
+
+@mixin formstack-options__radio-focus() {
+  input[type='radio']:focus::before {
+    @content;
+  }
+}
+
+@mixin formstack-options__checkbox() {
+  input[type='checkbox']::before {
+    @content;
+  }
+}
+
+@mixin formstack-options__checkbox-checked() {
+  input[type='checkbox']:checked::before {
+    @content;
+  }
+}
+
+@mixin formstack-options__checkbox-focus() {
+  input[type='checkbox']:focus::before {
+    @content;
+  }
+}
+
+@mixin formstack-section-heading() {
+  .fsSectionHeader {
+    @content;
+  }
+}
+
+@mixin formstack-section-heading__title() {
+  .fsSectionHeading {
+    @content;
+  }
+}
+
+@mixin formstack-question() {
+  .fsFieldRow {
+    @content;
+  }
+}
+
+@mixin formstack-question--date() {
+  [fs-field-type='datetime'] {
+    @content;
+  }
+}
+
+@mixin formstack-question--name() {
+  [fs-field-type='name'] {
+    @content;
+  }
+}
+
+// @mixin formstack-question-name__container() {
+//   .fsSubField {
+//     @content;
+//   }
+// }
+
+@mixin formstack-question--options() {
+  [fs-field-type='radio'],
+  [fs-field-type='checkbox'] {
+    @content;
+  }
+}
+
+@mixin formstack-question__container() {
+  .fieldset-content,
+  .fsSubFieldGroup {
+    @content;
+  }
+}
+
+@mixin formstack-question__label() {
+  .fsLabel {
+    @content;
+  }
+}
+
+@mixin formstack-question__label-asterisk() {
+  .fsRequiredMarker {
+    @content;
+  }
+}
+
+@mixin formstack-question__supporting-text() {
+  .fsSupporting {
+    @content;
+  }
+}
+
+@mixin formstack-question--error() {
+  .fsValidationError {
+    @content;
+  }
+}
+
+@mixin formstack-currency__input() {
+  .fsCurrency ~ input.fsField {
+    @content;
+  }
+}
+
+@mixin formstack-currency__prefix() {
+  .fsCurrencyPrefix {
+    @content;
+  }
+}
+
+@mixin formstack-disclaimer() {
+  [fs-field-type='richtext'] {
+    @content;
+  }
+}
+
+@mixin formstack-button() {
+  .fsSubmitButton,
+  .fsPreviousButton,
+  .fsNextButton {
+    border-radius: $btn-radius !important;
+    @content;
+  }
+}
+
+@mixin formstack-button-submit() {
+  .fsSubmitButton {
+    @content;
+  }
+}
+
+@mixin formstack-button-previous() {
+  .fsPreviousButton {
+    @content;
+  }
+}
+
+@mixin formstack-button-next() {
+  .fsNextButton {
+    @content;
+  }
+}
+
+@mixin formstack-button-datepicker() {
+  .fsCalendarPickerLink {
+    @content;
+  }
+
+  .ui-datepicker-trigger {
+    display: none;
+  }
+}
+
+@mixin formstack-progress-bar() {
+  div.fsProgress {
+    @content;
+  }
+}
+
+@mixin formstack-progress-bar__container {
+  .fsProgressBarContainer {
+    @content;
+  }
+}
+
+@mixin formstack-progress-bar__text {
+  .fsProgressText {
+    @content;
+  }
+}
+
+@mixin formstack-progress-bar__progress {
+  .fsProgressBar {
+    @content;
+  }
+}
+
+@mixin formstack-pagination {
+  .fsPagination {
+    @content;
+  }
+}

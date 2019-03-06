@@ -222,8 +222,7 @@ const variables = {
     3: '24px',
     4: '32px'
   },
-  iconVariants: ['--large', '--small'],
-  icons: {
+  'icons': {
     // Logos
     'icon-logo-full': '180px 30px',
     'icon-logo-full--large': '270px 45px',
@@ -272,9 +271,47 @@ const variables = {
     'icon-health': '50px 50px',
     'icon-housing': '50px 50px',
     'icon-special-needs': '50px 50px',
-    'icon-work': '50px 52px'
+    'icon-work': '50px 52px',
+    // UI Icons
+    'icon-ui-alert-octagon': '24px 24px',
+    'icon-ui-alert-triangle': '24px 24px',
+    'icon-ui-calendar': '24px 24px',
+    'icon-ui-check-circle': '24px 24px',
+    'icon-ui-check': '24px 24px',
+    'icon-ui-chevron-down': '24px 24px',
+    'icon-ui-chevron-left': '24px 24px',
+    'icon-ui-chevron-right': '24px 24px',
+    'icon-ui-chevron-up': '24px 24px',
+    'icon-ui-info': '24px 24px',
+    'icon-ui-mail': '24px 24px',
+    'icon-ui-message-circle': '24px 24px',
+    'icon-ui-minus-circle': '24px 24px',
+    'icon-ui-plus-circle': '24px 24px',
+    'icon-ui-printer': '24px 24px',
+    'icon-ui-search': '24px 24px',
+    'icon-ui-settings': '24px 24px',
+    'icon-ui-user-check': '24px 24px',
+    'icon-ui-x-circle': '24px 24px',
+    'icon-ui-x': '24px 24px'
   },
-  programCategoryIcons: [
+  'icons-variants': ['--large', '--small'],
+  'icons-sizes': {
+    '1': '8px 8px',
+    '2': '16px 16px',
+    '3': '24px 24px',
+    '4': '32px 32px',
+    '5': '40px 40px',
+    '6': '48px 48px',
+    '7': '56px 56px',
+    '8': '64px 64px',
+    '9': '72px 72px',
+    '10': '80px 80px',
+    '11': '88px 88px',
+    '12': '96px 96px',
+    'large': '136px 136px',
+    'xlarge': '256px 256px'
+  },
+  'icons-program-category': [
     'icon-cash-expenses',
     'icon-child-care',
     'icon-city-id-card',
@@ -287,7 +324,7 @@ const variables = {
     'icon-special-needs',
     'icon-work'
   ],
-  programCardIcons: [
+  'icons-program-card': [
     'icon-card-cash-expenses',
     'icon-card-child-care',
     'icon-card-city-id-card',
@@ -301,8 +338,8 @@ const variables = {
     'icon-card-special-needs',
     'icon-card-work',
   ],
-  checklistIconsSize: '50px 50px',
-  checklistIcons: {
+  'icons-checklist-size': '50px 50px',
+  'icons-checklist': {
     'icon-application': '"headsup_application_25px-1.png"',
     'icon-badge': '"headsup_badge_30px-1.png"',
     'icon-calendar': '"headsup_calendar_25px-1.png"',
@@ -310,19 +347,19 @@ const variables = {
     'icon-generic': '"headsup_generic_30px-1.png"',
     'icon-check': '"icon-eligibilitycheck.png"'
   },
-  otherIcons: [
+  'icons-logo': [
     'icon-logo-full',
     'icon-logo-full--large',
     'icon-logo-mark',
     'icon-logo-nyc',
+  ],
+  'icons-other': [
     'icon-close',
     'icon-contact',
     'icon-gear',
     'icon-minus',
     'icon-plus',
     'icon-screening',
-    'icon-search',
-    'icon-printer',
     'icon-share',
     'icon-eligibilitycheck',
     'icon-checkmark',
@@ -332,7 +369,29 @@ const variables = {
     'icon-urgent',
     'icon-warning'
   ],
-  subwayIcons: {
+  'icons-ui': [
+    'icon-ui-alert-octagon',
+    'icon-ui-alert-triangle',
+    'icon-ui-calendar',
+    'icon-ui-check-circle',
+    'icon-ui-check',
+    'icon-ui-chevron-down',
+    'icon-ui-chevron-left',
+    'icon-ui-chevron-right',
+    'icon-ui-chevron-up',
+    'icon-ui-info',
+    'icon-ui-mail',
+    'icon-ui-message-circle',
+    'icon-ui-minus-circle',
+    'icon-ui-plus-circle',
+    'icon-ui-printer',
+    'icon-ui-search',
+    'icon-ui-settings',
+    'icon-ui-user-check',
+    'icon-ui-x-circle',
+    'icon-ui-x'
+  ],
+  'icons-subway': {
     'eighth-avenue': ['A', 'C', 'E'],
     'sixth-avenue': ['B', 'D', 'F', 'M'],
     'crosstown': ['G'],

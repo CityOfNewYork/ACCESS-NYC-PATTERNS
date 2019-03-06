@@ -1,13 +1,32 @@
 // @charset 'utf-8';
 
-// Global Dependencies
-// Bourbon: These are settings that are needed globaly for the Bourbon integration
-@import 'bourbon/app/assets/stylesheets/bourbon-deprecate';
-@import 'bourbon/app/assets/stylesheets/settings/deprecation-warnings';
-@import 'bourbon/app/assets/stylesheets/settings/asset-pipeline';
-@import 'bourbon/app/assets/stylesheets/helpers/directional-values';
+/***********************
+ * Asset Paths and CDN
+ ***********************/
 
-// if @font-face is used it needs to be first imported first.
+// This is the path to your asset folders. Uncomment and set to override the default.
+// By default, it is set to look for assets one director up from the distributed
+// stylesheet '../' ex;
+// $cdn: 'path/to/assets/';
+
+// The CDN can be set to another local path, or, it can be set to the 'cdn' within
+// the $variables map. This default uses jsDelivr to pull the assets from the patterns
+// GitHub repository and the tag of the installed version. ex;
+// @import 'config/variables';
+// $cdn: map-get($variables, 'cdn');
+
+// These are the default paths to the different asset types within the asset folder.
+// Uncomment and set to override their defaults.
+// $path-to-fonts: 'fonts/';
+// $path-to-images: 'images/';
+// $path-to-svg: 'svg/';
+
+/*********
+ * Fonts
+ *********/
+
+// If @font-face is used it needs to be imported before all other declarations.
+
 @import 'elements/fonts/fonts';
 
 /************************
@@ -20,9 +39,13 @@
 // dependencies (recommended). Dependency examples include Bootstrap or Material
 // Components Web.
 
+@import 'bourbon/app/assets/stylesheets/bourbon-deprecate';
+@import 'bourbon/app/assets/stylesheets/settings/deprecation-warnings';
+@import 'bourbon/app/assets/stylesheets/settings/asset-pipeline';
+@import 'bourbon/app/assets/stylesheets/helpers/directional-values';
 @import 'animate.scss/vendor/assets/stylesheets/animate/fadeInUp';
 @import 'animate.scss/vendor/assets/stylesheets/animate/fadeIn';
-// components - end
+// global - end
 
 /**********
 * Elements
@@ -42,7 +65,8 @@
 @import 'elements/overlay/overlay';
 @import 'elements/forms/forms';
 @import 'elements/labels/labels';
-@import 'elements/buttons/btn';
+@import 'elements/buttons/buttons';
+@import 'elements/icons/icons';
 @import 'elements/checkboxes/checkboxes';
 @import 'elements/radios/radios';
 @import 'elements/toggles/toggles';
@@ -102,7 +126,6 @@
  ************/
 
 @import 'utilities/color';
-@import 'utilities/icons/icons';
 @import 'utilities/typography/typography';
 @import 'utilities/font';
 @import 'utilities/text';

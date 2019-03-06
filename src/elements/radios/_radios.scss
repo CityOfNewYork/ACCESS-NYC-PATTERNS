@@ -4,6 +4,8 @@
 
 // Dependencies
 @import 'config/direction';
+@import 'config/options';
+@import 'config/radios';
 @import 'config/dimensions';
 @import 'config/fonts';
 @import 'config/colors';
@@ -12,19 +14,7 @@
 
 // Declarations
 .radio {
-  font-size: $font-size-base;
-  font-weight: $font-weight-bold;
-
-  cursor: pointer;
-  display: block;
-  padding-#{$text-direction-start}: 40px;
-  position: relative;
-
-  margin-bottom: $spacing-base;
-
-  // @include media($bp-tablet-up) {
-  //   margin-bottom: $spacing-base * 1.5
-  // }
+  @include options;
 
   &:last-of-type {
     margin-bottom: 0
@@ -36,31 +26,17 @@
 }
 
 .radio__label {
-  display: flex;
-  line-height: map-get(map-get($variables, 'inputs'), 'checkbox-size');
+  @include options-labels;
 }
 
 input + .radio__label::before {
-  @include size( map-get(map-get($variables, 'inputs'), 'checkbox-size') );
-  transition: all .2s;
-  position: absolute;
-  top: 0;
-  @if $text-direction == 'rtl' { right: 0; } @else { left: 0; }
-  background: $color-white;
-  border: 1px solid $color-grey-mid;
-  border-radius: 50%;
-  content: '';
-  display: inline-block;
-  min-width: map-get(map-get($variables, 'inputs'), 'checkbox-size');
+  @include radios-btn;
 }
 
 input:checked + .radio__label::before {
-  background-color: $color-blue;
-  box-shadow: 0 0 0 2px $color-blue inset, 0 0 0 4px $color-white inset;
-  border: 0;
+  @include radios-btn-checked;
 }
 
 input:focus + .radio__label::before {
-  border: 0;
-  box-shadow: 0 0 0 2px $color-blue inset, 0 0 0 4px $color-white inset;
+  @include radios-btn-focused;
 }

@@ -4,6 +4,7 @@
 
 // Dependencies
 @import 'config/variables';
+@import 'config/cdn';
 @import 'config/colors';
 @import 'config/direction';
 @import 'bourbon/app/assets/stylesheets/addons/triangle';
@@ -28,7 +29,6 @@ a, .btn-link {
 .link-more {
   &::after {
     @include triangle(.6em .4em, $color-blue-dark, $text-direction-end);
-    content: '';
     display: inline-block;
     margin-#{$text-direction-start}: .3em;
   }

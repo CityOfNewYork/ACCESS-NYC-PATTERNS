@@ -3,31 +3,19 @@
  */
 
 // Dependencies
-@import 'config/colors';
+@import 'config/disclaimer';
 @import 'config/fonts';
 @import 'config/typography';
+@import 'config/direction';
 
 // Declarations
 .c-disclaimer {
-  font-size: $font-size-small;
-  background: $color-grey-lightest;
-  border: 1px solid $color-grey-light;
-  padding: 24px;
-
-  > p:last-child {
-    margin-bottom: 0;
-  }
-
-  small {
-    @include typography-dislaimer-small();
-    margin: 0;
-    display: inline-block;
-  }
+  @include disclaimer;
 }
 
 .c-disclaimer__icon {
-  width: 24px;
-  height: 24px
+  width: 24px !important;
+  height: 24px !important
 }
 
 .c-disclaimer__icon--pre {

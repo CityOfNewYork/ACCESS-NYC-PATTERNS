@@ -263,7 +263,7 @@ Newsletter.strings = {
   ERR_PLEASE_TRY_LATER: 'ERR_PLEASE_TRY_LATER',
   SUCCESS_CONFIRM_EMAIL: 'Almost finished...',
   ERR_PLEASE_ENTER_VALUE: 'Please enter a value',
-  ERR_TOO_MANY_RECENT: 'too many recent signup requests',
+  ERR_TOO_MANY_RECENT: 'too many',
   ERR_ALREADY_SUBSCRIBED: 'is already subscribed',
   ERR_INVALID_EMAIL: 'looks fake or invalid',
   LIST_NAME: 'ACCESS NYC - Newsletter'

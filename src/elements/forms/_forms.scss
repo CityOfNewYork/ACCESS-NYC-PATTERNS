@@ -5,78 +5,16 @@
 // Dependencies
 @import 'config/variables';
 @import 'config/forms';
-@import 'config/dimensions';
-@import 'config/media';
-@import 'scss/functions/strip-units';
-
-$cdn: map-get($variables, 'cdn');
 
 // Declarations
 fieldset, legend {
-  border-width: 0;
-  padding: 0;
-  margin: 0;
+  @include forms-fieldset-reset;
 }
 
-input,
-textarea,
-select,
-optgroup {
-  cursor: pointer;
-  color: inherit;
-  font: inherit;
-  margin: 0;
+input, textarea, select, optgroup {
+  @include forms-element-reset;
 }
 
-input {
-  color: $color-grey-mid;
-}
-
-input,
-textarea {
-  &::placeholder {
-    color: $color-grey-mid;
-  }
-}
-
-input,
-textarea,
-select,
-optgroup {
-  appearance: none;
-  border: 1px solid $color-grey-mid;
-  border-radius: 0;
-  display: block;
-  max-width: 100%;
-  min-width: 200px;
-  width: 100%;
-
-  // @include media($bp-tablet-up) {
-  @media screen and (min-width: $screen-tablet) {
-    width: auto;
-  }
-
-  .error & {
-    border-color: $color-red;
-  }
-}
-
-[type='checkbox'],
-[type='radio'] {
+[type='checkbox'], [type='radio'] {
   display: inline;
-}
-
-input,
-textarea {
-  padding: (.75 * $spacing-base);
-}
-
-input[type='number'] {
-  appearance: textfield;
-
-  &::-webkit-outer-spin-button,
-  &::-webkit-inner-spin-button {
-    appearance: none;
-    margin: 0;
-  }
 }

@@ -1,0 +1,125 @@
+/**
+ * Buttons
+ */
+
+// Dependencies
+@import 'config/colors';
+@import 'config/fonts';
+@import 'config/dimensions';
+@import 'config/direction';
+@import 'config/buttons';
+@import 'config/typography';
+@import 'config/media';
+@import 'bourbon/app/assets/stylesheets/addons/triangle';
+@import 'bourbon/app/assets/stylesheets/addons/size';
+
+// Declarations
+// Base styles for buttons
+.btn, [class*='btn-'] {
+  @include btn;
+}
+
+//
+// Types
+//
+.btn-tag {
+  @include typography-supplemental();
+  border-radius: 15px;
+  margin: 5px 2px;
+  padding: 8px;
+
+  &:first-of-type {
+    margin-#{$text-direction-start}: 0;
+  }
+
+  &:last-of-type {
+    margin-#{$text-direction-end}: 0;
+  }
+}
+
+.btn-toggle {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  border-radius: 0;
+  font-size: $font-size-small;
+  padding: $spacing-base;
+  text-align: $text-direction-start;
+  border-radius: $btn-radius;
+
+  &::after {
+    content: '';
+    position: relative;
+    top: -.1em;
+
+    height: 0;
+    width: 0;
+    border-left: .4em solid transparent;
+    border-right: .4em solid transparent;
+
+    border-top: .6em solid;
+    border-top-color: inherit;
+
+    display: inline-block;
+    margin-#{$text-direction-start}: .5em;
+  }
+
+  &.active {
+    &::after {
+      border-top: 0;
+      border-bottom: .6em solid;
+      border-bottom-color: inherit;
+    }
+  }
+}
+
+//
+// Modifiers
+//
+.btn-small {
+  font-size: .727rem;
+}
+
+//
+// Responsive types for button size
+//
+.screen-tablet\:btn-normal {
+  @media screen and (min-width: $screen-tablet) {
+    @include btn-normal();
+  }
+}
+
+.screen-desktop\:btn-normal {
+  @media screen and (min-width: $screen-desktop) {
+    @include btn-normal();
+  }
+}
+
+//
+// Button types that should override top level styling
+//
+.btn-primary {
+  @include btn-primary;
+}
+
+.btn-secondary {
+  @include btn-secondary;
+}
+
+.btn-next,
+.btn-previous {
+  &[class*='-next'] {
+    @include btn-next;
+  }
+
+  &[class*='-previous'] {
+    @include btn-previous;
+  }
+}
+
+.btn-text {
+  background: none;
+  border: 0;
+  border-radius: 0;
+  padding: 0;
+}

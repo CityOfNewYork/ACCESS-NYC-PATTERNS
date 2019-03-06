@@ -11,8 +11,6 @@
 = partial('partials/content-header.mixin.slm');
 = partial('section/section.mixin.slm');
 = partial('section/section-text.mixin.slm');
-= partial('section/demo-specs.mixin.slm');
-= partial('section/demo-block.mixin.slm');
 
 / Content blocks
 = content('head');

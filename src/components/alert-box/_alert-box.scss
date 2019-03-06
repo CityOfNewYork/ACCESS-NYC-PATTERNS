@@ -13,30 +13,29 @@
 
 // Declarations
 .c-alert-box {
-  // display: flex;
-  // @include full-width-home-margins;
   background: $color-grey-lightest;
   padding: $spacing-base;
 
   @media screen and (min-width: $screen-mobile) {
     align-items: stretch;
     display: flex;
-    // padding: 1.5 * $spacing-base;
   }
 }
 
 .c-alert-box__icon {
-  margin-bottom: $spacing-base/3;
+  margin-bottom: $grid-base;
 
   @media screen and (min-width: $screen-mobile) {
-    padding-#{$text-direction-end}: $spacing-base;
+    padding-#{$text-direction-end}: ($grid-base * 2);
     margin-bottom: 0;
   }
 }
 
 .c-alert-box__svg,
+[class*='icon-'].c-alert-box__svg,
 [class*='bg-icon-'].c-alert-box__svg {
-  display: block
+  display: block;
+  max-width: inherit;
 }
 
 .c-alert-box__body {

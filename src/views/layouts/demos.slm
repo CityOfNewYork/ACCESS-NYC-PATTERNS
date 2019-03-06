@@ -3,9 +3,6 @@ html lang='en' class='text-size-0'
   = content('head');
 
   body style='visibility: hidden;' onload='load()'
-    div style='display: none' aria-hidden='true'
-      = partial('/partials/icons.slm');
-
     main#demo-content class='min-h-screen bg-color-white'
       = content('content');
 

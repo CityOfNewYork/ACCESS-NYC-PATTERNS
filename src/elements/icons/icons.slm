@@ -1,0 +1,13 @@
+- if (typeof value !== 'undefined')
+  - ;
+  div class='text-font-size-small'
+
+    h3 class='text-font-size-small capitalize mb-2' ${value.replace(/-/g," ")}
+
+    div class='py-4 text-center bg-color-grey-lightest px-2 mb-2 flex items-center justify-center' style='min-height:150px'
+      svg class='${value} icon-4 text-color-blue-dark'
+        use xlink:href='#${value.split("--")[0]}'
+
+    p class='mb-0 flex justify-between'
+      | xlink:href
+      code #${value}

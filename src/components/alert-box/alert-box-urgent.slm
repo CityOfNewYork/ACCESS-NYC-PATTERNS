@@ -4,7 +4,9 @@
 
 article class='c-alert-box bg-status-urgent mb-4' data-sketch-symbol=symbol data-sketch-symbol-instance=instance
   div class='c-alert-box__icon'
-    div class='c-alert-box__svg bg-icon-urgent'
+    svg class='c-alert-box__svg icon icon-4 icon-ui-alert-octagon' role='img'
+      title Urgent Alert
+      use xlink:href='#icon-ui-alert-octagon'
   div class='c-alert-box__body'
     header
       h1 class='type-h4 m-0' Something went wrong.

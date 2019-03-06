@@ -4,23 +4,17 @@
 
 // Dependencies
 @import 'config/variables';
-@import 'config/colors';
-@import 'config/direction';
-@import 'config/dimensions';
-
-$cdn: map-get($variables, 'cdn');
+@import 'config/selects';
 
 // Declarations
 .select {
-  background-color: $color-white;
-  background-image: url('#{$cdn}/svg/icon-arrow-down.svg');
-  background-position: $text-direction-end .5rem center;
-  background-repeat: no-repeat;
-  background-size: 18px 18px;
-  padding: .75 * $spacing-base;
-  padding-#{$text-direction-end}: 1.8rem;
+  @include selects();
 
-  &::-ms-expand {
-    display: none;
+  @media screen and (min-width: $screen-tablet) {
+    width: auto;
+  }
+
+  .error & {
+    border-color: $color-red;
   }
 }

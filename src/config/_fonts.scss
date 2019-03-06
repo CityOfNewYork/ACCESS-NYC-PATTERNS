@@ -11,9 +11,6 @@ $fonts: map-get($variables, 'fonts');
 $font-sizes: map-get($variables, 'fontSizes');
 $font-weights: map-get($variables, 'fontWeights');
 
-// Variables
-$font-path: '../fonts';
-
 $em-base: map-get($variables, 'emBase');
 
 $font-size-xsmall: map-get($font-sizes, 'font-size-xsmall');

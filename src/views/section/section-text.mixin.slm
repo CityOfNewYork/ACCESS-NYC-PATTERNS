@@ -1,3 +1,4 @@
+= partial('demo-specs.mixin.slm');
 = mixin('section-text', 'title', 'path');
   - this.id = this.title.toLowerCase().split(' ').join('-');
 
@@ -10,10 +11,6 @@
             h2 class='m-0 pt-1 pb-4'
               a href='#${this.id}' class='text-color-grey-mid font-normal no-underline capitalize'
                 = this.title;
-
-          / div class='code-block'
-          /   pre
-          /     code class='text-color-blue' ${this.path}
 
       - if (this.specs != 'false')
         = mixin('demo-specs', this.path + '.md');

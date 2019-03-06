@@ -104,6 +104,7 @@
   color: $color-blue-dark;
   margin-left: 0.15em;
   margin-right: 0.15em;
+  font-size: inherit;
 
   &:first-of-type {
     margin-#{$text-direction-start}: 0;

@@ -10,8 +10,6 @@
 = partial('partials/head.mixin.slm');
 = partial('partials/content-header.mixin.slm');
 = partial('section/section.mixin.slm');
-= partial('section/demo-specs.mixin.slm');
-= partial('section/demo-block.mixin.slm');
 
 / Content blocks
 = content('head');
@@ -22,17 +20,17 @@
 
 = content('content');
   = mixin('content-header', title);
-  - for (let i in this.modules)
-    - ;
-    - let categories = this.modules[i].children;
-    - for (let x in categories.children)
-      - ;
-      - let module = categories.children[x];
-      - for (let y in module.children)
-        - ;
-        - let item = module.children[y];
-        - if item.name.indexOf('.slm') > -1
-          - ;
-          - let title = item.name.replace(/-/g, ' ').replace('.slm', '');
-          - let path = item.path.split('/src/')[1].replace('.slm', '');
-          = mixin('section', title, path, 'gutter', 'false', 'false');
+  / - for (let i in this.modules)
+  /   - ;
+  /   - let categories = this.modules[i].children;
+  /   - for (let x in categories.children)
+  /     - ;
+  /     - let module = categories.children[x];
+  /     - for (let y in module.children)
+  /       - ;
+  /       - let item = module.children[y];
+  /       - if item.name.indexOf('.slm') > -1
+  /         - ;
+  /         - let title = item.name.replace(/-/g, ' ').replace('.slm', '');
+  /         - let path = item.path.split('/src/')[1].replace('.slm', '');
+  /         = mixin('section', title, path, 'gutter', 'false', 'false');

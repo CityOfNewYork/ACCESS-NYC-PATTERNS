@@ -1,0 +1,12 @@
+// Dependencies
+@import 'config/variables';
+
+// Declarations
+@mixin iconSizes($variant: '') {
+  @each $key, $var in map-get($variables, 'icons-sizes') {
+    .#{$variant}icon-#{$key} {
+      width: nth($var, 1) !important;
+      height: nth($var, 2) !important;
+    }
+  }
+}

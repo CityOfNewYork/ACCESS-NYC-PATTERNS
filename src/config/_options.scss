@@ -1,0 +1,28 @@
+// Dependencies
+@import 'config/variables';
+@import 'config/checkboxes';
+@import 'config/direction';
+@import 'config/fonts';
+@import 'config/accessibility';
+
+// Declarations
+@mixin options() {
+  font-size: $font-size-base;
+  font-weight: $font-weight-bold;
+
+  // To ensure that the focus state is visible with checkboxes inside
+  // elements with overflow - hidden (ex. c-filter-multi);
+  padding-#{$text-direction-start}: 3px;
+  padding-top: 3px;
+  padding-bottom: 3px;
+
+  cursor: pointer;
+  display: block;
+
+  margin-bottom: $spacing-base;
+}
+
+@mixin options-labels {
+  display: flex;
+  line-height: $checkbox-size;
+}

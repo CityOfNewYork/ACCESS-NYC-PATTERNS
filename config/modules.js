@@ -186,9 +186,23 @@ const modules = [
     includePaths: sass.includePaths
   },
   {
+    file: './src/objects/formstack/_formstack.scss',
+    outDir: './dist/objects/formstack/',
+    outFile: 'formstack.css',
+    precision: sass.precision,
+    includePaths: sass.includePaths
+  },
+  {
     file: './src/objects/navigation/_navigation.scss',
     outDir: './dist/objects/navigation/',
     outFile: 'navigation.css',
+    precision: sass.precision,
+    includePaths: sass.includePaths
+  },
+  {
+    file: './src/objects/newsletter/_newsletter.scss',
+    outDir: './dist/objects/newsletter/',
+    outFile: 'newsletter.css',
     precision: sass.precision,
     includePaths: sass.includePaths
   },

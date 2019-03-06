@@ -3,15 +3,27 @@
 //
 
 // Dependencies
-@import 'scss/functions/rem';
+@import 'config/media';
+@import 'config/colors';
 
-// Variables
-$helvetica: '';
-$georgia: '';
+@mixin forms-fieldset-reset() {
+  border-width: 0;
+  padding: 0;
+  margin: 0;
+}
 
-$font-sans: 'Source Sans Pro', $helvetica;
-$font-serif: 'Merriweather', $georgia;
-
-$h5-font-size: rem(15px, $em-base);
-
-$image-path: '../img';
+@mixin forms-element-reset() {
+  color: initial;
+  font-family: inherit;
+  font-size: inherit;
+  line-height: initial;
+  appearance: none;
+  border: 1px solid $color-grey-mid;
+  border-radius: 0;
+  display: block;
+  max-width: 100%;
+  min-width: 200px;
+  width: 100%;
+  margin: 0;
+  cursor: pointer;
+}

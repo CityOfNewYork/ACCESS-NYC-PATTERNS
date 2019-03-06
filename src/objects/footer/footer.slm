@@ -24,6 +24,18 @@ footer class='o-footer color-mid-background' data-sketch-symbol=symbol
           li
             a href='#' Applications &amp; Forms
 
+        div class='type-h3' About ACCESS NYC
+
+        ul
+          li
+            a href='#' Training &amp; Support
+          li
+            a href='#' NYC.gov Privacy Policy
+          li
+            a href='#' NYC.gov Terms of Use
+          li
+            a href='#' About
+
       li class='o-footer__column-middle'
         div class='type-h3' Programs
 
@@ -52,24 +64,14 @@ footer class='o-footer color-mid-background' data-sketch-symbol=symbol
             a href='#' Work
 
       li class='o-footer__column-last'
-        div class='type-h3'
-          span class='sr-only' About ACCESS NYC
-          svg class='icon icon-logo-full text-color-blue-dark'
-            use xlink:href='#icon-logo-full'
-
-        ul
-          li
-            a href='#' Training &amp; Support
-          li
-            a href='#' NYC.gov Privacy Policy
-          li
-            a href='#' NYC.gov Terms of Use
-
         - symbol = false;
         - instance = 'objects/newsletter/newsletter';
         = partial(`../../${instance}`);
 
   div class='o-footer__copyright'
+    svg class='icon icon-logo-full text-color-blue-dark'
+      use xlink:href='#icon-logo-full'
+
     svg class='icon icon-logo-nyc'
       use xlink:href='#icon-logo-nyc'
 

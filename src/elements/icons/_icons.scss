@@ -4,12 +4,13 @@
 
 // Dependencies
 @import 'config/variables';
+@import 'config/cdn';
+@import 'config/icons';
+@import 'config/media';
 @import 'config/dimensions';
 @import 'config/fonts';
 @import 'scss/functions/str-replace';
 @import 'bourbon/app/assets/stylesheets/addons/size';
-
-$cdn: map-get($variables, 'cdn');
 
 // Declarations
 [class*='icon-'] {
@@ -21,16 +22,28 @@ $cdn: map-get($variables, 'cdn');
   display: inline-block;
 }
 
+[class*='icon-ui-'] {
+  stroke: currentColor;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  fill: none;
+
+  circle {
+    fill: currentColor;
+  }
+}
+
 @each $key, $var in map-get($variables, 'icons') {
   $path: $key;
 
-  @each $str in map-get($variables, 'iconVariants') {
+  @each $str in map-get($variables, 'icons-variants') {
     $path: str-replace($path, $str);
   }
 
   .bg-#{$key} {
     @include size($var);
-    background-image: url('#{$cdn}/svg/#{$path}.svg');
+    background-image: url('#{$cdn}#{$path-to-svg}#{$path}.svg');
     background-repeat: no-repeat;
     background-size: 100%;
     background-position: center
@@ -41,12 +54,12 @@ $cdn: map-get($variables, 'cdn');
   }
 }
 
-@each $key, $var in map-get($variables, 'checklistIcons') {
-  $size: map-get($variables, 'checklistIconsSize');
+@each $key, $var in map-get($variables, 'icons-checklist') {
+  $size: map-get($variables, 'icons-checklist-size');
 
   .bg-#{$key} {
     @include size($size);
-    background-image: url('#{$cdn}/images/#{$var}');
+    background-image: url('#{$cdn}#{$path-to-images}#{$var}');
     background-repeat: no-repeat;
     background-size: 100%;
     background-position: center
@@ -55,6 +68,11 @@ $cdn: map-get($variables, 'cdn');
   .#{$key} {
     @include size($size);
   }
+}
+
+// Create our responsive icon size utilty
+@include screens {
+  @include iconSizes($variant);
 }
 
 [class*='icon-subway'] {

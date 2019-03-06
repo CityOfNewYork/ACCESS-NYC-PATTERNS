@@ -16,9 +16,9 @@ div class='o-banner' data-sketch-symbol=symbol
 
         div class='o-banner__tout-cta'
           a class='btn btn-primary' href='#'
-            svg class='icon icon-screening'
-              use xlink:href='#icon-screening'
-            | &nbsp;Am I eligible?
+            svg class='icon icon-ui-user-check'
+              use xlink:href='#icon-ui-user-check'
+            | &nbsp;&nbsp;Am I eligible?
 
       div class='o-banner__tout'
         h2 class='o-banner__tout-title type-h3' Apply now for benefits.
