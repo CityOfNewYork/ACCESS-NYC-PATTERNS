@@ -3,7 +3,6 @@
  */
 
 // Dependencies
-@import url('https://fonts.googleapis.com/css?family=Noto+Sans:400,700|Noto+Serif:400,700');
 @import 'config/variables';
 @import 'config/formstack';
 @import 'config/fonts';
@@ -18,9 +17,6 @@
 @import 'config/question';
 @import 'config/disclaimer';
 @import 'config/buttons';
-
-$grid: map-get(map-get($variables, 'dimensions'), 'grid-base');
-$cdn: map-get($variables, 'cdn');
 
 // Declarations
 html {

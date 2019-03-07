@@ -7,7 +7,7 @@ const version = process.env.V || package.version;
 
 const variables = {
   version: version,
-  cdn: '"https://cdn.jsdelivr.net/gh/CityOfNewYork/ACCESS-NYC-PATTERNS@v' + version + '/dist"',
+  cdn: '"https://cdn.jsdelivr.net/gh/CityOfNewYork/ACCESS-NYC-PATTERNS@v' + version + '/dist/"',
   languages: ['default', 'ar', 'es', 'kr', 'ur', 'tc'],
   rtlLanguages: ['ar', 'ur'],
   fonts: {

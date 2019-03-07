@@ -98,6 +98,26 @@ const modules = [
     plugins: rollup.local
   },
   {
+    input: './src/elements/icons/icons.js',
+    plugins: rollup.dist,
+    output: [
+      {
+        name: 'Icons',
+        file: `./dist/elements/icons/icons.iffe.js`,
+        sourcemap: rollup.sourcemap,
+        format: 'iife',
+        strict: rollup.strict
+      },
+      {
+        name: 'Icons',
+        file: `./dist/elements/icons/icons.common.js`,
+        sourcemap: rollup.sourcemap,
+        format: 'cjs',
+        strict: rollup.strict
+      }
+    ]
+  },
+  {
     input: './src/components/accordion/accordion.js',
     plugins: rollup.dist,
     // This enables us to declare peer dependencies and
