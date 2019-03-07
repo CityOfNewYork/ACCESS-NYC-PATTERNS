@@ -16,10 +16,6 @@
   "config": {
     "port": "7000",
     "rollup": "./config/rollup.js",
-    "svg_src": "./src/svg",
-    "svg_dist": "./dist/svg",
-    "svg_sprite_svg": "./src/views/partials/icons.slm",
-    "svg_sprite_partial": "./src/views/partials/icons.slm",
     "dev_module": "./src/scss/site-default.scss"
   },
   "scripts": {
@@ -39,9 +35,9 @@
     "styles:postcss": "node .app/postcss.js",
     "styles:watch": "nodemon --ext scss --watch src --ignore _variables.scss -x 'npm run styles'",
     "svgs": "npm run svgs:optimize && npm run svgs:symbol",
-    "svgs:optimize": "svgo -f $npm_package_config_svg_src -o $npm_package_config_svg_dist",
-    "svgs:symbol": "svgstore -o $npm_package_config_svg_sprite_partial $npm_package_config_svg_dist/*.svg --inline && svgstore -o $npm_package_config_svg_sprite_svg $npm_package_config_svg_dist/*.svg --inline",
-    "svgs:watch": "nodemon --ext svg --watch $npm_package_config_svg_src -x 'npm run svgs'",
+    "svgs:optimize": "svgo -f ./src/svg -o ./dist/svg",
+    "svgs:symbol": "svgstore -o ./src/views/partials/icons.slm ./dist/svg/*.svg --inline",
+    "svgs:watch": "nodemon --ext svg --watch ./src/svg -x 'npm run svgs'",
     "design:sketch": "html-sketchapp --viewports.Desktop 1024x768 --file dist/sketch.html --out-dir dist/design/sketch",
     "make": "node .app/make.js"
   },
