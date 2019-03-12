@@ -115,6 +115,13 @@
   }
 }
 
-// .share-form__spinner {
-//   flex: 0 0 69.89px; // same width as send button
-// }
+.c-share-form__spinner {
+  display: flex;
+
+  flex-basis: 69.89px;
+  max-width: 69.89px;
+  min-width: 69.89px;
+
+  justify-content: center;
+  align-items: center;
+}
