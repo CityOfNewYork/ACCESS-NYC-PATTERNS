@@ -24,7 +24,7 @@ $icons: map-get($variables, 'icons-checklist');
     background-image: url('#{$cdn}#{$path-to-images}#{map-get($icons, 'icon-check')}');
     background-position: $text-direction-start top;
     background-repeat: no-repeat;
-    background-size: map-get($variables, 'emBase') * 1.5 + px auto;
+    background-size: map-get($variables, 'em-base') * 1.5 + px auto;
   }
 
   // Nested lists

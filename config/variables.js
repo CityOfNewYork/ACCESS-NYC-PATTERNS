@@ -6,11 +6,11 @@ const package = require('../package.json');
 const version = process.env.V || package.version;
 
 const variables = {
-  version: version,
-  cdn: '"https://cdn.jsdelivr.net/gh/CityOfNewYork/ACCESS-NYC-PATTERNS@v' + version + '/dist/"',
-  languages: ['default', 'ar', 'es', 'kr', 'ur', 'tc'],
-  rtlLanguages: ['ar', 'ur'],
-  fonts: {
+  'version': version,
+  'cdn': '"https://cdn.jsdelivr.net/gh/CityOfNewYork/ACCESS-NYC-PATTERNS@v' + version + '/dist/"',
+  'languages': ['default', 'ar', 'es', 'kr', 'ur', 'tc'],
+  'rtl-languages': ['ar', 'ur'],
+  'fonts': {
     'system': [
       '-apple-system',
       'BlinkMacSystemFont',
@@ -69,12 +69,12 @@ const variables = {
       'serif'
     ]
   },
-  fontWeights: {
-    normal: 'normal',
-    bold: 'bold'
+  'font-weights': {
+    'normal': 'normal',
+    'bold': 'bold'
   },
-  emBase: 22,
-  fontSizes: {
+  'em-base': 22,
+  'font-sizes': {
     'font-size-xsmall': '0.54rem',
     'font-size-small': '0.72rem',
     'font-size-normal': '1rem',
@@ -85,7 +85,7 @@ const variables = {
     'font-size-jumbo': '2.54rem',
     'font-size-print': '16px'
   },
-  leading: {
+  'leading': {
     'xsmall': '0.8',
     'small': '0.9',
     'normal': '1',
@@ -93,7 +93,7 @@ const variables = {
     'large': '1.4',
     'larger': '1.5'
   },
-  colors: {
+  'colors': {
     'color-blue-light': '#E1EEFF',
     'color-blue-bright': '#118DF0',
     'color-blue': '#184E9E',
@@ -134,13 +134,13 @@ const variables = {
     'flushing': '#B933AD', // Raspberry, 7 7 Express
     'shuttles': '#808183' // Dark Slate Gray, S
   },
-  colorStatuses: {
+  'color-statuses': {
     'success': 'color-green-light',
     'info': 'color-blue-light',
     'warning': 'color-yellow-light',
     'urgent': 'color-pink-light'
   },
-  colorCombinations: {
+  'color-combinations': {
     'light-background': {
       'color': 'color-black',
       'headings': 'color-blue-dark',
@@ -180,13 +180,13 @@ const variables = {
       'background-color': 'color-green-mid'
     }
   },
-  screens: {
+  'screens': {
     'screen-desktop': 960,
     'screen-tablet': 768,
     'screen-mobile': 480,
     'screen-sm-mobile': 400
   },
-  dimensions: {
+  'dimensions': {
     'grid-base': '8px',
     'spacing-base': '24px',
     'homepage-max-width': '800px',
@@ -195,27 +195,27 @@ const variables = {
     'site-margins-mobile': '16px',
     'site-min-width': '320px'
   },
-  animate: {
+  'animate': {
     'ease-in-quint': 'cubic-bezier(0.755, 0.05, 0.855, 0.06)',
     'ease-out-quint': 'cubic-bezier(0.23, 1, 0.32, 1)',
     'animate-scss-speed': '0.75s',
     'animate-timing-function': 'cubic-bezier(0.23, 1, 0.32, 1)'
   },
-  borderWidths: {
+  'border-widths': {
     0: '0',
     'default': '1px',
     2: '2px',
     4: '4px',
     8: '8px'
   },
-  padding: {
+  'padding': {
     0: '0',
     1: '8px',
     2: '16px',
     3: '24px',
     4: '32px'
   },
-  margin: {
+  'margin': {
     0: '0',
     1: '8px',
     2: '16px',
@@ -294,7 +294,9 @@ const variables = {
     'icon-ui-x-circle': '24px 24px',
     'icon-ui-x': '24px 24px'
   },
-  'icons-variants': ['--large', '--small'],
+  'icons-variants': [
+    '--large'
+  ],
   'icons-sizes': {
     '1': '8px 8px',
     '2': '16px 16px',
@@ -403,7 +405,7 @@ const variables = {
     'flushing': ['7', '7 Express'],
     'shuttles': ['S']
   },
-  inputs: {
+  'inputs': {
     'checkbox-radius': '8px',
     'checkbox-size': '30px',
     'toggle-size': '25px'

@@ -7,8 +7,8 @@
 @import 'config/fonts';
 
 $colors: map-get($variables, 'colors');
-$statuses: map-get($variables, 'colorStatuses');
-$combinations: map-get($variables, 'colorCombinations');
+$statuses: map-get($variables, 'color-statuses');
+$combinations: map-get($variables, 'color-combinations');
 
 // Variables
 $color-black: map-get($colors, 'color-black');

@@ -22,10 +22,10 @@ module.exports = {
     'print': {'raw': 'print'}
   },
   fonts: variables.fonts,
-  textSizes: variables.fontSizes,
-  fontWeights: variables.fontWeights,
+  textSizes: variables['font-sizes'],
+  fontWeights: variables['font-weights'],
   leading: variables.leading,
-  borderWidths: variables.borderWidths,
+  borderWidths: variables['border-Widths'],
   margin: variables.margin,
   maxWidth: {
     '1/2': '50%',

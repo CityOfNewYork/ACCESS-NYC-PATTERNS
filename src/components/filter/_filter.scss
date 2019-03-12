@@ -10,6 +10,7 @@
 @import 'config/dimensions';
 @import 'config/direction';
 @import 'config/fonts';
+@import 'config/media';
 @import 'bourbon/app/assets/stylesheets/addons/triangle';
 
 // Declarations
@@ -39,7 +40,7 @@
   &::after {
     @include triangle(.6em .4em, $color-white, down);
     content: '';
-    display: inline-block;
+    // display: inline-block;
     float: $text-direction-end;
     margin-top: .5em;
   }
@@ -51,7 +52,7 @@
       @include triangle(.6em .4em, $color-white, up);
       border-top: 0;
       content: '';
-      display: inline-block;
+      // display: inline-block;
       float: $text-direction-end;
       margin-top: .5em;
     }
@@ -80,8 +81,12 @@
   background: $color-blue-dark;
   display: block;
   margin: 0;
-  padding: .75*$spacing-base $spacing-base;
+  padding: ($grid-base * 2) $spacing-base;
   text-decoration: none;
+
+  // @media screen and (min-width: $screen-tablet) {
+  //   padding: $spacing-base;
+  // }
 
   .c-filter-list li:last-child & {
     border-radius: 0 0 $btn-radius $btn-radius;
@@ -143,10 +148,14 @@ a.c-filter__item {
 .c-filter-multi__item {
   border-bottom: 1px solid $color-grey-light;
   font-weight: $font-weight-bold;
-  padding: $spacing-base 0;
+  padding: ($grid-base * 2) 0;
 
   &:last-child {
     border: 0;
+  }
+
+  @media screen and (min-width: $screen-tablet) {
+    padding: $spacing-base 0;
   }
 }
 
@@ -213,4 +222,8 @@ a.c-filter__item {
   font-weight: $font-weight-normal;
   margin: (.5 * $spacing-base) 0;
   min-height: map-get(map-get($variables, 'inputs'), 'checkbox-size');
+
+  &:last-child {
+    margin-bottom: 0
+  }
 }

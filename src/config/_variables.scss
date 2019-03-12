@@ -4,10 +4,10 @@
 // and use `$set: map-get($variables, {set}); $var: map-get($set, {var})`.
 
 $variables: (
-  version: 0.2.2,
-  cdn: "https://cdn.jsdelivr.net/gh/CityOfNewYork/ACCESS-NYC-PATTERNS@v0.2.2/dist/",
+  version: 0.2.3,
+  cdn: "https://cdn.jsdelivr.net/gh/CityOfNewYork/ACCESS-NYC-PATTERNS@v0.2.3/dist/",
   languages: (default, ar, es, kr, ur, tc),
-  rtlLanguages: (ar, ur),
+  rtl-languages: (ar, ur),
   fonts: (
     system: (-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif),
     default-sans: ("Noto Sans", sans-serif),
@@ -19,12 +19,12 @@ $variables: (
     ar-sans: ("Noto Naskh Arabic", "Noto Sans", sans-serif),
     ar-serif: ("Noto Naskh Arabic", "Noto Serif", serif)
   ),
-  fontWeights: (
+  font-weights: (
     normal: normal,
     bold: bold
   ),
-  emBase: 22,
-  fontSizes: (
+  em-base: 22,
+  font-sizes: (
     font-size-xsmall: 0.54rem,
     font-size-small: 0.72rem,
     font-size-normal: 1rem,
@@ -76,13 +76,13 @@ $variables: (
     flushing: #B933AD,
     shuttles: #808183
   ),
-  colorStatuses: (
+  color-statuses: (
     success: color-green-light,
     info: color-blue-light,
     warning: color-yellow-light,
     urgent: color-pink-light
   ),
-  colorCombinations: (
+  color-combinations: (
     light-background: (
       color: color-black,
       headings: color-blue-dark,
@@ -143,7 +143,7 @@ $variables: (
     animate-scss-speed: 0.75s,
     animate-timing-function: cubic-bezier(0.23, 1, 0.32, 1)
   ),
-  borderWidths: (
+  border-widths: (
     0: 0,
     2: 2px,
     4: 4px,
@@ -229,7 +229,7 @@ $variables: (
     icon-ui-x-circle: 24px 24px,
     icon-ui-x: 24px 24px
   ),
-  icons-variants: (--large, --small),
+  icons-variants: (--large),
   icons-sizes: (
     1: 8px 8px,
     2: 16px 16px,

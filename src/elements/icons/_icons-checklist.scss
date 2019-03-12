@@ -1,0 +1,18 @@
+@import 'config/variables';
+@import 'config/cdn';
+
+@each $key, $var in map-get($variables, 'icons-checklist') {
+  $size: map-get($variables, 'icons-checklist-size');
+
+  .bg-#{$key} {
+    @include size($size);
+    background-image: url('#{$cdn}#{$path-to-images}#{$var}');
+    background-repeat: no-repeat;
+    background-size: 100%;
+    background-position: center
+  }
+
+  .#{$key} {
+    @include size($size);
+  }
+}

@@ -16,10 +16,15 @@
             = 'code{{ '+ this.markup +' }}';
 
     - if (typeof this.grid === 'object')
-      - layout = 'three-columns-gutter';
-      div class='layout--gutter screen-mobile:layout--two-columns-gutter screen-tablet:layout--${layout}'
+      div class='layout--gutter screen-mobile:layout--two-columns-gutter screen-tablet:layout--three-columns-gutter'
+        - let keys = Object.keys(this.grid);
+        - let even = (keys.length % 2 == 0);
+
         - for (key in this.grid)
           - value = this.grid[key];
           div class='flex flex-col justify-between items-center border border-color-grey-lightest p-2'
             div class='w-full'
               = partial('../' + this.markup);
+
+          - if (even && keys.indexOf(key) === keys.length - 1)
+            div &nbsp;

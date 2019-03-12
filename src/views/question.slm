@@ -28,4 +28,4 @@
   = mixin('section', 'Multiple Choice Question', 'components/question/question-multiple-choice');
   = mixin('section', 'Toggle Question', 'components/question/question-toggle');
   = mixin('section', 'Select Question', 'components/question/question-select');
-  = mixin('section', 'Select Question', 'components/question/question-radio');
+  = mixin('section', 'Radio Question', 'components/question/question-radio');
