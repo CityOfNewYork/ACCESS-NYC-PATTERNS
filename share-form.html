@@ -59,8 +59,8 @@
               <h2 class="text-font-size-small m-0 text-color-blue-dark screen-tablet:hidden">Patterns</h2>
               <h2 aria-hidden="true" class="type-h1 m-0 text-color-blue-dark hidden screen-tablet:inline-block">Patterns</h2>
               <nav class="text-font-size-small">
-                <a class="rounded-lg text-color-blue-dark border-2 no-underline px-1 ml-2 hidden screen-tablet:inline-block" href="https://github.com/CityOfNewYork/ACCESS-NYC-PATTERNS">0.2.3</a>
-                <a aria-hidden="true" class="ml-1 screen-tablet:ml-2 screen-tablet:hidden" href="https://github.com/CityOfNewYork/ACCESS-NYC-PATTERNS">0.2.3</a>
+                <a class="rounded-lg text-color-blue-dark border-2 no-underline px-1 ml-2 hidden screen-tablet:inline-block" href="https://github.com/CityOfNewYork/ACCESS-NYC-PATTERNS">0.2.4</a>
+                <a aria-hidden="true" class="ml-1 screen-tablet:ml-2 screen-tablet:hidden" href="https://github.com/CityOfNewYork/ACCESS-NYC-PATTERNS">0.2.4</a>
                 <a class="ml-1 screen-tablet:ml-2" data-js="toggle" href="#main-menu">Menu</a>
               </nav>
             </div>
@@ -168,9 +168,11 @@
                           <input name="to" placeholder="Email" required="true" type="email" />
                           <div class="c-share-form__button">
                             <button class="btn btn-primary btn-small" data-sketch-symbol-instance="elements/buttons/btn-small" type="submit">Send</button>
-                            <svg class="spinner icon-4 block text-color-yellow-access" data-sketch-symbol-instance="elements/spinner/spinner" version="1.1" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-                              <circle class="spinner__path" cx="12" cy="12" fill="none" r="10"></circle>
-                            </svg>
+                            <div class="c-share-form__spinner" data-js="spinner" style="display: none">
+                              <svg class="spinner icon-4 text-color-yellow-access" data-sketch-symbol-instance="elements/spinner/spinner" version="1.1" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                                <circle class="spinner__path" cx="12" cy="12" fill="none" r="10"></circle>
+                              </svg>
+                            </div>
                             <div class="success-message">Sent!</div>
                           </div>
                         </div>
@@ -187,9 +189,11 @@
         &lt;input name=&quot;to&quot; placeholder=&quot;Email&quot; required=&quot;true&quot; type=&quot;email&quot; /&gt;
         &lt;div class=&quot;c-share-form__button&quot;&gt;
           &lt;button class=&quot;btn btn-primary btn-small&quot; data-sketch-symbol-instance=&quot;elements/buttons/btn-small&quot; type=&quot;submit&quot;&gt;Send&lt;/button&gt;
-          &lt;svg class=&quot;spinner icon-4 block text-color-yellow-access&quot; data-sketch-symbol-instance=&quot;elements/spinner/spinner&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 24 24&quot; xmlns=&quot;http://www.w3.org/2000/svg&quot; xmlns:xlink=&quot;http://www.w3.org/1999/xlink&quot;&gt;
-            &lt;circle class=&quot;spinner__path&quot; cx=&quot;12&quot; cy=&quot;12&quot; fill=&quot;none&quot; r=&quot;10&quot;&gt;&lt;/circle&gt;
-          &lt;/svg&gt;
+          &lt;div class=&quot;c-share-form__spinner&quot; data-js=&quot;spinner&quot; style=&quot;display: none&quot;&gt;
+            &lt;svg class=&quot;spinner icon-4 text-color-yellow-access&quot; data-sketch-symbol-instance=&quot;elements/spinner/spinner&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 24 24&quot; xmlns=&quot;http://www.w3.org/2000/svg&quot; xmlns:xlink=&quot;http://www.w3.org/1999/xlink&quot;&gt;
+              &lt;circle class=&quot;spinner__path&quot; cx=&quot;12&quot; cy=&quot;12&quot; fill=&quot;none&quot; r=&quot;10&quot;&gt;&lt;/circle&gt;
+            &lt;/svg&gt;
+          &lt;/div&gt;
           &lt;div class=&quot;success-message&quot;&gt;Sent!&lt;/div&gt;
         &lt;/div&gt;
       &lt;/div&gt;
@@ -222,9 +226,11 @@
                           <input name="to" placeholder="Phone Number" required="true" type="tel" />
                           <div class="c-share-form__button">
                             <button class="btn btn-primary btn-small" data-sketch-symbol-instance="elements/buttons/btn-small" type="submit">Send</button>
-                            <svg class="spinner icon-4 block text-color-yellow-access" data-sketch-symbol-instance="elements/spinner/spinner" version="1.1" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-                              <circle class="spinner__path" cx="12" cy="12" fill="none" r="10"></circle>
-                            </svg>
+                            <div class="c-share-form__spinner" data-js="spinner" style="display: none">
+                              <svg class="spinner icon-4 text-color-yellow-access" data-sketch-symbol-instance="elements/spinner/spinner" version="1.1" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                                <circle class="spinner__path" cx="12" cy="12" fill="none" r="10"></circle>
+                              </svg>
+                            </div>
                             <div class="success-message">Sent!</div>
                           </div>
                         </div>
@@ -241,9 +247,11 @@
         &lt;input name=&quot;to&quot; placeholder=&quot;Phone Number&quot; required=&quot;true&quot; type=&quot;tel&quot; /&gt;
         &lt;div class=&quot;c-share-form__button&quot;&gt;
           &lt;button class=&quot;btn btn-primary btn-small&quot; data-sketch-symbol-instance=&quot;elements/buttons/btn-small&quot; type=&quot;submit&quot;&gt;Send&lt;/button&gt;
-          &lt;svg class=&quot;spinner icon-4 block text-color-yellow-access&quot; data-sketch-symbol-instance=&quot;elements/spinner/spinner&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 24 24&quot; xmlns=&quot;http://www.w3.org/2000/svg&quot; xmlns:xlink=&quot;http://www.w3.org/1999/xlink&quot;&gt;
-            &lt;circle class=&quot;spinner__path&quot; cx=&quot;12&quot; cy=&quot;12&quot; fill=&quot;none&quot; r=&quot;10&quot;&gt;&lt;/circle&gt;
-          &lt;/svg&gt;
+          &lt;div class=&quot;c-share-form__spinner&quot; data-js=&quot;spinner&quot; style=&quot;display: none&quot;&gt;
+            &lt;svg class=&quot;spinner icon-4 text-color-yellow-access&quot; data-sketch-symbol-instance=&quot;elements/spinner/spinner&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 24 24&quot; xmlns=&quot;http://www.w3.org/2000/svg&quot; xmlns:xlink=&quot;http://www.w3.org/1999/xlink&quot;&gt;
+              &lt;circle class=&quot;spinner__path&quot; cx=&quot;12&quot; cy=&quot;12&quot; fill=&quot;none&quot; r=&quot;10&quot;&gt;&lt;/circle&gt;
+            &lt;/svg&gt;
+          &lt;/div&gt;
           &lt;div class=&quot;success-message&quot;&gt;Sent!&lt;/div&gt;
         &lt;/div&gt;
       &lt;/div&gt;
