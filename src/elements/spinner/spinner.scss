@@ -1,5 +1,10 @@
 .spinner {
   animation: spinner 2s linear infinite;
+
+  // IE Only
+  @media screen and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+    animation-duration: 1s
+  }
 }
 
 .spinner__path {
@@ -9,6 +14,12 @@
   stroke-linejoin: round;
   fill: none;
   animation: spindash 2s ease-in-out infinite;
+
+  // IE Only
+  @media screen and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+    stroke-dasharray: 90, 150;
+    stroke-dashoffset: -20;
+  }
 }
 
 @keyframes spinner {
