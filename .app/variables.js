@@ -6,7 +6,7 @@ const jsSass = require('../node_modules/json-sass/lib/jsToSassString');
 const variables = require('../config/variables');
 const Path = require('path');
 const fs = require('fs');
-const alerts = require(Path.join(__dirname, 'alerts'));
+const alerts = require('../config/alerts');
 
 /**
  * Constants

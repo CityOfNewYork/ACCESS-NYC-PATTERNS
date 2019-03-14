@@ -4,7 +4,7 @@
 
 const ghpages = require('gh-pages');
 const Path = require('path');
-const alerts = require(Path.join(__dirname, 'alerts'));
+const alerts = require('../config/alerts');
 
 /**
  * Constants

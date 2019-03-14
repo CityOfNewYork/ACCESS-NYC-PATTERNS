@@ -8,7 +8,7 @@ const Fs = require('fs');
 const pretty = require('pretty');
 const escape = require('escape-html');
 const markdown = require('markdown').markdown;
-const alerts = require(Path.join(__dirname, 'alerts'));
+const alerts = require('../config/alerts');
 
 /**
  * Constants
