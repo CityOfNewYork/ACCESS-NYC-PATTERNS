@@ -59,8 +59,8 @@
               <h2 class="text-font-size-small m-0 text-color-blue-dark screen-tablet:hidden">Patterns</h2>
               <h2 aria-hidden="true" class="type-h1 m-0 text-color-blue-dark hidden screen-tablet:inline-block">Patterns</h2>
               <nav class="text-font-size-small">
-                <a class="rounded-lg text-color-blue-dark border-2 no-underline px-1 ml-2 hidden screen-tablet:inline-block" href="https://github.com/CityOfNewYork/ACCESS-NYC-PATTERNS">0.2.5</a>
-                <a aria-hidden="true" class="ml-1 screen-tablet:ml-2 screen-tablet:hidden" href="https://github.com/CityOfNewYork/ACCESS-NYC-PATTERNS">0.2.5</a>
+                <a class="rounded-lg text-color-blue-dark border-2 no-underline px-1 ml-2 hidden screen-tablet:inline-block" href="https://github.com/CityOfNewYork/ACCESS-NYC-PATTERNS">0.3.0</a>
+                <a aria-hidden="true" class="ml-1 screen-tablet:ml-2 screen-tablet:hidden" href="https://github.com/CityOfNewYork/ACCESS-NYC-PATTERNS">0.3.0</a>
                 <a class="ml-1 screen-tablet:ml-2" data-js="toggle" href="#main-menu">Menu</a>
               </nav>
             </div>
@@ -174,23 +174,114 @@
 
 <h4>Make</h4>
 
-<p><strong><code>npm run make {{ pattern type }} {{ name }}</code></strong></p>
+<p><strong><code>npm run make {{ type }} {{ pattern }}</code></strong></p>
 
 <p>This is the method for creating new patterns using templates defined in the
   <a href="https://github.com/CityOfNewYork/ACCESS-NYC-PATTERNS/blob/master/config/make.js"><strong>config/make.js</strong></a> directory. Running</p>
 
 <pre><code>npm run make component accordion</code></pre>
 
-<p>... will generate a stylesheet and markup file needed to add an Accordion Component to the Patterns. The parameters accepted are <strong>pattern type</strong> (“component”) and <strong>name</strong> (“accordion”. Currently the three available types are
-  element, component, and object. The files will be generated and written according to these parameters;</p>
+<p>... will generate a styles, markup (.slm), and markdown files from templates needed to add an Accordion Component to the Patterns. The parameters accepted are <strong>pattern type</strong> (“component”) and <strong>name</strong> (“accordion”. Currently
+  the three available types are element, component, and object. The files will be generated and written according to these parameters;</p>
 
-<pre><code>src/{{ pattern type }}/{{ name }}/{{ name }}.slm
-src/{{ pattern type }}/{{ name }}/_{{ name }}.scss</code></pre>
+<pre><code>src/{{ type }}/{{ pattern }}/{{ pattern }}.slm
+src/{{ type }}/{{ pattern }}/_{{ pattern }}.scss</code></pre>
 
-<p>The content of each file is determined by the templates defined in the
+<p>Once the script is run, a prompt will ask if you would like to create optional template files inlcuding a SASS configuration file for storing variables and mixins, a JavaScript file for enhanced pattern functionality, a view .slm template file for creating
+  a page to view the pattern in the documentation, an any other custom files defined as optional in the
+  <a href="https://github.com/CityOfNewYork/ACCESS-NYC-PATTERNS/blob/master/config/make.js"><strong>config/make.js</strong></a> file (see below about adding custom templates). The content of each file is determined by the templates defined in the
+  <a href="https://github.com/CityOfNewYork/ACCESS-NYC-PATTERNS/blob/master/config/make.js"><strong>config/make.js</strong></a> file. Overwriting existing pattern files is not allowed, however, rerunning this script will ask the developer if they want to create any of the optional files defined in the <code>optional</code> constant in the
   <a href="https://github.com/CityOfNewYork/ACCESS-NYC-PATTERNS/blob/master/config/make.js"><strong>config/make.js</strong></a> file.</p>
 
-<p>Once you run the script, a prompt will also ask if you would like a SASS configuration file to be written to the <strong>src/styles/config/</strong> directory and a view file to be written to <strong>src/views/</strong> directory.</p>
+<h5>Adding a File to an Existing Pattern</h5>
+
+<p><strong><code>npm run make {{ type }} {{ pattern }} {{ template }}</code></strong></p>
+
+<p>Running this command will generate a prompt to create the specified file using templates in the
+  <a href="https://github.com/CityOfNewYork/ACCESS-NYC-PATTERNS/blob/master/config/make.js"><strong>config/make.js</strong></a> file. It will not permit overwritting existing pattern files.</p>
+
+<h5>Adding a Custom Template</h5>
+
+<p>Adding a custom template to be created automatically when patterns are generated via this script can be done by adding or modifying variables in the
+  <a href="https://github.com/CityOfNewYork/ACCESS-NYC-PATTERNS/blob/master/config/make.js"><strong>config/make.js</strong></a> file. For example, these are the steps that it would take to add a
+  <a href="https://reactjs.org/">React</a> template for each Pattern via the <code>npm run make</code> script.</p>
+
+<p><strong>Step 1</strong></p>
+
+<p>First, the new template would be defined in the <code>templates</code> constant as &quot;react&quot; and the following template string would written to the content of any new React file;</p>
+
+<pre><code>const templates = {
+  ...
+  &#39;react&#39;: [
+    &#39;class {{ Pattern }} extends React.Component {
+    &#39;  render() {&#39;,
+    &#39;    return (&#39;,
+    &#39;      &lt;div&gt;&#39;,
+    &#39;        Hello {this.props.name}!&#39;,
+    &#39;      &lt;/div&gt;&#39;,
+    &#39;    );&#39;,
+    &#39;  }&#39;,
+    &#39;}&#39;,
+    &#39;\n&#39;,
+    &#39;ReactDOM.render(&#39;,
+    &#39;  &lt;{{ Pattern }} name=&quot;World&quot; /&gt;,&#39;,
+    &#39;  document.getElementById(&#39;js-{{ pattern }}&#39;)&#39;,
+    &#39;);&#39;
+  ].join(&#39;\n&#39;),
+  ...
+};</code></pre>
+
+<p><strong>Template Variables</strong></p>
+
+<p>Within the template string, there are a handful of variables referencing the new pattern&#39;s name that will be replaced when the template is compiled. They are denoted by double brackets <code>{{  }}</code>;</p>
+
+<p><code>{{ type }}</code> The pattern type defined by the command. Will either be &quot;elements&quot;, &quot;objects&quot;, &quot;utilities.&quot;</p>
+
+<p><code>{{ prefix }}</code> The pattern prefix, will be defined by the type and <code>prefixes</code> constant in
+  <a href="https://github.com/CityOfNewYork/ACCESS-NYC-PATTERNS/blob/master/config/make.js"><strong>config/make.js</strong></a>.</p>
+
+<p><code>{{ pattern }}</code> The lower case name of the pattern.</p>
+
+<p><code>{{ Pattern }}</code> The uppercase name of the pattern.</p>
+
+<p><strong>Step 2</strong></p>
+
+<p>Next, provide a filename in the <code>files</code> constant. Filenames use the same template variables above.</p>
+
+<pre><code>const files = {
+  ...
+  &#39;react&#39;: &#39;{{ pattern }}.jsx&#39;,
+  ...
+};</code></pre>
+
+<p><strong>Step 3</strong></p>
+
+<p>Next, if it is an optional template then add &#39;react&#39; to the <code>optional</code> constant. This will generate a prompt to create the file with a yes/no question when running the make script.</p>
+
+<pre><code>const optional = [
+  ...
+  &#39;react&#39;,
+  ...
+];</code></pre>
+
+<p><strong>Step 4</strong></p>
+
+<p>Next, it the template should written to every new pattern&#39;s dedicated directory (<strong>src/{{ type }}/{{ pattern }}/</strong>) then add &#39;react&#39; to the <code>patterns</code> constant. This is generally recommended.</p>
+
+<pre><code>const patterns = [
+  ...
+  &#39;react&#39;,
+  ...
+];</code></pre>
+
+<p>If you do not add &#39;react&#39; to the <code>patterns</code> constant, then you must provide a path you would like it written to in the <code>paths</code> constant. For the most part, pattern templates should be closely associated with their pattern
+  so keeping them together is recommended as opposed to writing them to a different directory. However, there may be cases where this needs to be done.</p>
+
+<pre><code>const paths = {
+  ...
+  &#39;react&#39;: Path.join(dirs.src, &#39;js&#39;, &#39;react&#39;),
+  ...
+};</code></pre>
 
 <h4>Pre-deploy</h4>
 
