@@ -1,12 +1,23 @@
 'use strict';
 
-// import Module from './modules/module'; // sample module import
 import Utility from './modules/utility.js';
 import Toggle from './modules/toggle';
+import VueDemo from './modules/VueDemo';
+
+// Elements
 import Icons from '../elements/icons/icons';
+
+// Components
+import CardVue from '../components/card/card.vue';
+import CardData from '../components/card/card.data.js';
 import Accordion from '../components/accordion/accordion';
 import Filter from '../components/filter/filter';
+import FilterVue from '../components/filter/filter.vue';
+import FilterMultiVue from '../components/filter/filter-multi.vue';
+import FilterData from '../components/filter/filter.data.js';
 import NearbyStops from '../components/nearby-stops/nearby-stops';
+
+// Objects
 import Newsletter from '../objects/newsletter/newsletter';
 /** import components here as they are written. */
 
@@ -66,6 +77,61 @@ class main {
    */
   accordion() {
     return new Accordion();
+  }
+
+  /**
+   * An API for the Vue Card Demo
+   * @param  {string} component The name of the Component to display
+   * @return {object} instance of the Vue Demo
+   */
+  cardVue(component = 'c-card') {
+    let modules = {
+      'c-card': CardVue
+    };
+
+    return new VueDemo({
+      'name': component,
+      'module': modules[component]
+    }, {
+      card: CardData,
+    });
+  }
+
+  /**
+   * An API for the Vue Filter Demo
+   * @param  {string} component The name of the Component to display
+   * @return {object}           instance of the Vue Demo
+   */
+  filterVue(component = 'c-filter') {
+    let modules = {
+      'c-filter': FilterVue,
+      'c-filter-multi': FilterMultiVue
+    };
+
+    return new VueDemo({
+      'name': component,
+      'module': modules[component]
+    }, {
+      termsFilter: Object.assign({}, FilterData[0]),
+      termsFilterMulti: FilterData
+    }, {
+      fetch: function(params) {
+        // eslint-disable-next-line no-console
+        console.dir({
+          'component': component,
+          'method': 'click',
+          'params': params
+        });
+      },
+      reset: function(params) {
+        // eslint-disable-next-line no-console
+        console.dir({
+          'component': component,
+          'method': 'reset',
+          'params': params
+        });
+      }
+    });
   }
 
   /**

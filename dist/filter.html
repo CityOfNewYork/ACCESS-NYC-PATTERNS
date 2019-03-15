@@ -197,7 +197,7 @@
                   </div>
                 </div>
                 <div>
-                  <div class="code-block mb-1"><pre>&lt;div class=&quot;c-filter&quot; data-sketch-symbol=&quot;components/filter/filter-multi&quot;&gt;
+                  <div class="code-block mb-1"><pre>&lt;div class=&quot;c-filter&quot; data-sketch-symbol=&quot;components/filter/filter-multi.vue&quot;&gt;
   &lt;a class=&quot;c-filter__header active&quot; data-js=&quot;filter&quot; href=&quot;#filter__list&quot;&gt;All Programs&lt;/a&gt;
   &lt;ul class=&quot;c-filter__list active&quot; id=&quot;filter__list&quot;&gt;
     &lt;li&gt;&lt;span class=&quot;c-filter__item&quot;&gt;All Programs&lt;/span&gt;&lt;/li&gt;
@@ -314,7 +314,7 @@
                   </div>
                 </div>
                 <div>
-                  <div class="code-block mb-1"><pre>&lt;div class=&quot;c-filter-multi active bg-color-white&quot; data-sketch-symbol=&quot;components/filter/filter-multi&quot;&gt;
+                  <div class="code-block mb-1"><pre>&lt;div class=&quot;c-filter-multi active bg-color-white&quot; data-sketch-symbol=&quot;components/filter/filter-multi.vue&quot;&gt;
   &lt;ul class=&quot;c-filter-multi__list&quot;&gt;
     &lt;li class=&quot;c-filter-multi__item&quot;&gt;
       &lt;div class=&quot;c-filter-multi__item-header&quot;&gt;
@@ -388,19 +388,111 @@
               <div class="layout--home-body">
                 <div class="my-0 pt-4 px-2 text-font-size-small"><h4>Global Script</h4>
 
-<p>The Filter Component requires JavaScript for functionality and screen reader accessibility. To use the Filter in the global ACCESS NYC Patterns script use the following code:</p>
+<p>The Filter and Filter Multi Components require the Filter JavaScript for toggling functionality and screen reader accessibility. It will work for both the Filter and Filter Multi Components. To use the Filter in the global ACCESS NYC Patterns script use
+  the following code:</p>
 
-<pre><code>var access = new AccessNyc();
-access.filter();</code></pre>
+<pre><code>&lt;!-- Global Script --&gt;
+&lt;script src=&quot;dist/scripts/AccessNyc.js&quot;&gt;&lt;/script&gt;
+
+&lt;script&gt;
+  var access = new AccessNyc();
+  access.filter();
+&lt;/script&gt;</code></pre>
 
 <p>This function will attach the filter toggling event to the body of the document.</p>
 
-<h4>Module</h4>
+<h4>Cherry-picked Module Import</h4>
 
 <p>The ES6, CommonJS, and IFFE modules all require importing and object instantiation in your main script:</p>
 
-<pre><code>import Filter from &#39;components/filter/filter.common&#39;;
+<pre><code>// ES6
+import Filter from &#39;src/components/filter/filter&#39;;
+
+// CommonJS
+import Filter from &#39;dist/components/filter/filter.common&#39;;
+
+&lt;!-- IFFE --&gt;
+&lt;script src=&quot;dist/components/filter/filter.iffe.js&quot;&gt;&lt;/script&gt;
+
 new Filter();</code></pre></div>
+              </div>
+            </div>
+          </section>
+          <section class="pb-4 mb-4" id="vue-filter">
+            <div class="page-wrapper px-2">
+              <header class="layout--home-body">
+                <div class="my-0 px-2 border-b border-color-grey-light screen-tablet:flex screen-tablet:justify-between items-center">
+                  <h2 class="m-0 pt-1 pb-4">
+                    <a class="text-color-grey-mid font-normal no-underline capitalize" href="#vue-filter">Vue Filter</a>
+                  </h2>
+                </div>
+              </header>
+              <div class="layout--home-body">
+                <div class="my-0 pt-4 px-2 text-font-size-small"></div>
+              </div>
+              <div class="layout--gutter screen-tablet:layout--columns justify-between pt-4">
+                <div class="screen-tablet:pr-2">
+                  <div id="app-c-filter">
+                    <c-filter :terms="termsFilter" @fetch="fetch" @reset="reset"></c-filter>
+                  </div>
+                </div>
+                <div>
+                  <div class="code-block mb-1"><pre>&lt;div id=&quot;app-c-filter&quot;&gt;
+  &lt;c-filter :terms=&quot;termsFilter&quot; @fetch=&quot;fetch&quot; @reset=&quot;reset&quot;&gt;&lt;/c-filter&gt;
+&lt;/div&gt;</pre></div>
+                </div>
+              </div>
+            </div>
+          </section>
+          <section class="pb-4 mb-4" id="vue-multi-filter">
+            <div class="page-wrapper px-2">
+              <header class="layout--home-body">
+                <div class="my-0 px-2 border-b border-color-grey-light screen-tablet:flex screen-tablet:justify-between items-center">
+                  <h2 class="m-0 pt-1 pb-4">
+                    <a class="text-color-grey-mid font-normal no-underline capitalize" href="#vue-multi-filter">Vue Multi Filter</a>
+                  </h2>
+                </div>
+              </header>
+              <div class="layout--home-body">
+                <div class="my-0 pt-4 px-2 text-font-size-small"></div>
+              </div>
+              <div class="layout--gutter screen-tablet:layout--columns justify-between pt-4">
+                <div class="screen-tablet:pr-2">
+                  <div id="app-c-filter-multi">
+                    <c-filter-multi :terms="termsFilterMulti" @fetch="fetch"></c-filter-multi>
+                  </div>
+                </div>
+                <div>
+                  <div class="code-block mb-1"><pre>&lt;div id=&quot;app-c-filter-multi&quot;&gt;
+  &lt;c-filter-multi :terms=&quot;termsFilterMulti&quot; @fetch=&quot;fetch&quot;&gt;&lt;/c-filter-multi&gt;
+&lt;/div&gt;</pre></div>
+                </div>
+              </div>
+            </div>
+          </section>
+          <section class="pb-4 mb-4" id="vue-components">
+            <div class="page-wrapper px-2 screen-desktop:px-0">
+              <header class="layout--home-body">
+                <div class="my-0 px-2 border-b border-color-grey-light screen-tablet:flex screen-tablet:justify-between">
+                  <h2 class="m-0 pt-1 pb-4">
+                    <a class="text-color-grey-mid font-normal no-underline capitalize" href="#vue-components">Vue Components</a>
+                  </h2>
+                </div>
+              </header>
+              <div class="layout--home-body">
+                <div class="my-0 pt-4 px-2 text-font-size-small"><p>The Vue Component implementation provides data binding and reactivity. The reactivity is based on events emitted on the individual filters on click. Open the console to see logged events.</p>
+
+<p>The
+  <a href="#vue-filter">Vue Filter</a> and
+  <a href="#vue-filter-multi">Vue Filter Multi</a> can be imported from this path in your main script and added to the Vue instance before your application declaration:</p>
+
+<pre><code>import FilterVue from &#39;src/components/filter/filter.vue&#39;;
+import FilterMultiVue from &#39;src/components/filter/filter-multi.vue&#39;;
+
+Vue.component(&#39;c-filter&#39;, FilterVue);
+Vue.component(&#39;c-filter-multi&#39;, FilterMultiVue);
+
+new Vue();</code></pre></div>
               </div>
             </div>
           </section>
@@ -440,6 +532,8 @@ new Filter();</code></pre></div>
     </script>
     <script type="text/javascript">
       access.filter();
+      access.filterVue();
+      access.filterVue('c-filter-multi');
     </script>
   </body>
 

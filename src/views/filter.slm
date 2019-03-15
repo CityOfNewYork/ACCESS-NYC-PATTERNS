@@ -25,6 +25,12 @@
   = mixin('section', 'Multi Filter', 'components/filter/filter-multi');
   = mixin('section-text', 'Usage', 'components/filter/readme');
 
+  = mixin('section', 'Vue Filter', 'components/filter/filter.vue');
+  = mixin('section', 'Vue Multi Filter', 'components/filter/filter-multi.vue');
+  = mixin('section-text', 'Vue Components', 'components/filter/readme.vue');
+
 = content('script');
   javascript:
     access.filter();
+    access.filterVue();
+    access.filterVue('c-filter-multi');

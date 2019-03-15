@@ -29,7 +29,7 @@ const Path = require('path');
  *
  */
 const templates = {
-  markup: [
+  'markup': [
       "/",
       "/ {{ Pattern }}",
       "/ The Sketch attributes expose the markup to HTML Sketch App and should",
@@ -48,10 +48,10 @@ const templates = {
       "/ other Elements/Components/Objects, the symbol should be set to false",
       "/ and the instance should be set to the pattern's path.",
       "",
-      "div data-sketch-symbol=symbol data-sketch-symbol-instance=instance"
+      "div class=\"{{ prefix }}{{ pattern }}\" data-sketch-symbol=symbol data-sketch-symbol-instance=instance"
     ].join("\n"),
-  markdown: "",
-  styles: [
+  'markdown': "",
+  'styles': [
       "/**",
       " * {{ Pattern }}",
       " */",
@@ -69,7 +69,7 @@ const templates = {
       "// Declarations",
       "// .{{ prefix }}{{ pattern }} { }"
     ].join("\n"),
-  scripts: [
+  'scripts': [
       "'use strict';",
       "",
       "class {{ Pattern }} {",
@@ -88,7 +88,8 @@ const templates = {
       "",
       "export default {{ Pattern }};",
     ].join("\n"),
-  config: [
+  'readme': '',
+  'config': [
       "//",
       "// Variables",
       "//",
@@ -99,7 +100,7 @@ const templates = {
       "// Declarations",
       "// $var"
     ].join("\n"),
-  views: [
+  'views': [
       "/ Layout",
       "= extend('layouts/default');",
       "",
@@ -125,24 +126,30 @@ const templates = {
       "= content('content');",
       "  = mixin('content-header', title);",
       "  = mixin('section', 'Default Styling', '{{ type }}/{{ pattern }}/{{ pattern }}');",
-      ""].join("\n"),
-  vue: [
-    "<template>",
-    "  <div>",
-    "    <!-- markup -->",
-    "  </div>",
-    "</template>",
-    "",
-    "<style>",
-    "  @import '{{ type }}/{{ pattern }}/{{ pattern }}';",
-    "</style>",
-    "",
-    "<script>",
-    "  export default {",
-    "    props: []",
-    "  }",
-    "</script>"
-  ].join("\n")
+      ""
+    ].join("\n"),
+  'vue': [
+      "<template>",
+      "  <div class=\"{{ prefix }}{{ pattern }}\">",
+      "    <!-- markup -->",
+      "  </div>",
+      "</template>",
+      "",
+      "<style>",
+      "  /* @import '{{ type }}/{{ pattern }}/{{ pattern }}'; */",
+      "</style>",
+      "",
+      "<script>",
+      "  export default {}",
+      "</script>"
+    ].join("\n"),
+  'vue-markup': [
+      "/ This is the Vue Application wrapper needed to display the Vue Component.",
+      "div id='app-{{ prefix }}{{ pattern }}'",
+      "  {{ prefix }}{{ pattern }}"
+    ].join("\n"),
+  'vue-readme': "",
+  'data': "export default {}"
 };
 
 /**
@@ -164,13 +171,17 @@ const prefixes = {
  * template. There must be a filename for each template in the list above.
  */
 const files = {
-  markup: '{{ pattern }}.slm',
-  markdown: '{{ pattern }}.md',
-  styles: '_{{ pattern }}.scss',
-  scripts: '{{ Pattern }}.js',
-  config: '_{{ pattern }}.scss',
-  views: '{{ pattern }}.slm',
-  vue: '{{ pattern }}.vue'
+  'markup': '{{ pattern }}.slm',
+  'markdown': '{{ pattern }}.md',
+  'styles': '_{{ pattern }}.scss',
+  'scripts': '{{ Pattern }}.js',
+  'readme': 'readme.md',
+  'config': '_{{ pattern }}.scss',
+  'views': '{{ pattern }}.slm',
+  'vue': '{{ pattern }}.vue',
+  'vue-markup': '{{ pattern }}.vue.slm',
+  'vue-readme': 'readme.vue.md',
+  'data': '{{ pattern }}.data.js'
 };
 
 /**
@@ -183,7 +194,10 @@ const optional = [
   'config',
   'views',
   'scripts',
-  'vue'
+  'vue',
+  'vue-markup',
+  'vue-readme',
+  'data'
 ];
 
 /**
@@ -198,7 +212,10 @@ const patterns = [
   'markup',
   'markdown',
   'scripts',
-  'vue'
+  'vue',
+  'vue-markup',
+  'vue-readme',
+  'data'
 ];
 
 /**
@@ -229,7 +246,40 @@ const paths = {
   'styles_global': 'src/scss/_imports.scss',
   'styles_modules': 'config/modules.js',
   'scripts_global': 'src/js/main.js',
-  'scripts_modules': 'config/rollup.js'
+  'scripts_modules': 'config/rollup.js',
+  'vue_demo': 'src/js/modules/VueDemo.js'
+};
+
+const messages = {
+  'styles': [
+    '\n',
+    `${alerts.styles} Styles Info. `,
+    `Import the "${PATTERN}" stylesheet into the "${PATHS.styles_global}" file. `,
+    `This is technically optional but necessary for integrating styles into the `,
+    `global stylesheet. Also, add the "${PATTERN}" stylesheet module `,
+    `"${PATHS.styles_modules}" to create an independent distribution with all of `,
+    `the styles needed for it to function (this is mostly done for Object and `,
+    `Component types).`,
+    '\n'
+  ],
+  'scripts': [
+    '\n',
+    `${alerts.scripts} Scripts Info. `,
+    `Import the "${PATTERN}" script into the "${PATHS.scripts_global}" file `,
+    `and create a public function for it in the main class. This is technically `,
+    `optional but necessary for integrating scripts into the global script `,
+    `Also, add the "${PATTERN}" script module to "${PATHS.scripts_modules}" to `,
+    `create an independent distribution (this could be any Pattern type that `,
+    `requires JavaScript to function) `,
+    '\n'
+  ],
+  'vue': [
+    `Use the Vue Demo app module (${PATHS.vue_demo}) in ${PATHS.styles_global} `,
+    'to create a parent application to display the Vue component. You will also ',
+    'be asked to create a Vue markup file where the reference to the application ',
+    'will be created. Also, you will be asked if you would like to create a data ',
+    'file where you can store data needed for the Vue Component to display properly.'
+  ]
 };
 
 module.exports = {
@@ -239,5 +289,6 @@ module.exports = {
   prefixes: prefixes,
   dirs: dirs,
   paths: paths,
-  patterns: patterns
+  patterns: patterns,
+  messages: messages
 };

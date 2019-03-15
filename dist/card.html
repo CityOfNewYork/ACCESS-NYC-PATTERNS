@@ -174,7 +174,7 @@
                   </article>
                 </div>
                 <div>
-                  <div class="code-block mb-1"><pre>&lt;article class=&quot;c-card&quot; data-sketch-symbol=&quot;components/card/card-removable&quot;&gt;
+                  <div class="code-block mb-1"><pre>&lt;article class=&quot;c-card&quot; data-sketch-symbol=&quot;components/card/card.vue&quot;&gt;
   &lt;div class=&quot;c-card__body&quot;&gt;
     &lt;h3 class=&quot;c-card__title mb-3&quot;&gt;Apply for Pre-K for All&lt;/h3&gt;
     &lt;div class=&quot;c-card__summary&quot;&gt;
@@ -217,7 +217,7 @@
                   </article>
                 </div>
                 <div>
-                  <div class="code-block mb-1"><pre>&lt;article class=&quot;c-card&quot; data-sketch-symbol=&quot;components/card/card-removable&quot;&gt;
+                  <div class="code-block mb-1"><pre>&lt;article class=&quot;c-card&quot; data-sketch-symbol=&quot;components/card/card.vue&quot;&gt;
   &lt;div class=&quot;c-card__icon&quot;&gt;
     &lt;a href=&quot;#&quot;&gt;
       &lt;div class=&quot;icon bg-icon-card-cash-expenses&quot;&gt;&lt;/div&gt;
@@ -272,7 +272,7 @@
                   </article>
                 </div>
                 <div>
-                  <div class="code-block mb-1"><pre>&lt;article class=&quot;c-card&quot; data-sketch-symbol=&quot;components/card/card-removable&quot;&gt;
+                  <div class="code-block mb-1"><pre>&lt;article class=&quot;c-card&quot; data-sketch-symbol=&quot;components/card/card.vue&quot;&gt;
   &lt;div class=&quot;c-card__icon&quot;&gt;
     &lt;a href=&quot;#&quot;&gt;
       &lt;div class=&quot;icon bg-icon-card-cash-expenses&quot;&gt;&lt;/div&gt;
@@ -335,7 +335,7 @@
                   </article>
                 </div>
                 <div>
-                  <div class="code-block mb-1"><pre>&lt;article class=&quot;c-card&quot; data-sketch-symbol=&quot;components/card/card-removable&quot;&gt;
+                  <div class="code-block mb-1"><pre>&lt;article class=&quot;c-card&quot; data-sketch-symbol=&quot;components/card/card.vue&quot;&gt;
   &lt;div class=&quot;c-card__icon&quot;&gt;
     &lt;svg class=&quot;icon icon-card-cash-expenses&quot; role=&quot;img&quot;&gt;
       &lt;title id=&quot;icon-card-cash-expenses_title&quot;&gt;Cash &amp;amp; Expenses&lt;/title&gt;
@@ -424,7 +424,7 @@
                   </article>
                 </div>
                 <div>
-                  <div class="code-block mb-1"><pre>&lt;article class=&quot;mb-4 print:pb-4 print:border-b&quot; data-sketch-symbol=&quot;components/card/card-removable&quot;&gt;
+                  <div class="code-block mb-1"><pre>&lt;article class=&quot;mb-4 print:pb-4 print:border-b&quot; data-sketch-symbol=&quot;components/card/card.vue&quot;&gt;
   &lt;div class=&quot;flex items-stretch bg-color-grey-lightest p-3 screen-desktop:p-4 print:flex print:p-0 print:bg-color-transparent&quot;&gt;
     &lt;div class=&quot;w-100 pr-1 print:p-0&quot;&gt;
       &lt;header class=&quot;c-card p-0 bg-color-transparent mb-2&quot;&gt;
@@ -474,6 +474,77 @@
               </div>
             </div>
           </section>
+          <section class="pb-4 mb-4" id="vue-card">
+            <div class="page-wrapper px-2">
+              <header class="layout--home-body">
+                <div class="my-0 px-2 border-b border-color-grey-light screen-tablet:flex screen-tablet:justify-between items-center">
+                  <h2 class="m-0 pt-1 pb-4">
+                    <a class="text-color-grey-mid font-normal no-underline capitalize" href="#vue-card">Vue Card</a>
+                  </h2>
+                </div>
+              </header>
+              <div class="layout--home-body">
+                <div class="my-0 pt-4 px-2 text-font-size-small"></div>
+              </div>
+              <div class="layout--gutter screen-tablet:layout--columns justify-between pt-4">
+                <div class="screen-tablet:pr-2">
+                  <div id="app-c-card">
+                    <c-card taxonomy="programs" v-bind="card"></c-card>
+                  </div>
+                </div>
+                <div>
+                  <div class="code-block mb-1"><pre>&lt;div id=&quot;app-c-card&quot;&gt;
+  &lt;c-card taxonomy=&quot;programs&quot; v-bind=&quot;card&quot;&gt;&lt;/c-card&gt;
+&lt;/div&gt;</pre></div>
+                </div>
+              </div>
+            </div>
+          </section>
+          <section class="pb-4 mb-4" id="vue-component-usage">
+            <div class="page-wrapper px-2 screen-desktop:px-0">
+              <header class="layout--home-body">
+                <div class="my-0 px-2 border-b border-color-grey-light screen-tablet:flex screen-tablet:justify-between">
+                  <h2 class="m-0 pt-1 pb-4">
+                    <a class="text-color-grey-mid font-normal no-underline capitalize" href="#vue-component-usage">Vue Component Usage</a>
+                  </h2>
+                </div>
+              </header>
+              <div class="layout--home-body">
+                <div class="my-0 pt-4 px-2 text-font-size-small"><p>The
+  <a href="#vue-card">Vue Card</a> can be imported from this path in your main script and added to the Vue instance before your application declaration:</p>
+
+<pre><code>import CardVue from &#39;src/components/card/card.vue&#39;;
+Vue.component(&#39;c-card&#39;, CardVue);
+
+new Vue();</code></pre>
+
+<h4>Props</h4>
+
+<p>The follow props are expected on the card. In order to disable certain options, just omit these props.</p>
+
+<p><code>cta</code> <em>type: String</em> - Wether to display the call to action button.</p>
+
+<p><code>title</code> <em>type: String</em> - The title of the card.</p>
+
+<p><code>link</code> <em>type: String</em> - The link to the full content the card is referring to.</p>
+
+<p><code>subtitle</code> <em>type: String</em> - The text displayed beneath the title of the card.</p>
+
+<p><code>summary</code> <em>type: String</em> - A short paragraph summary of the card content.</p>
+
+<p><code>category</code> <em>type: Object</em> - The category of the content, this will hide or show the icon.</p>
+
+<p><code>blank</code> <em>type: Boolean</em> - Wether to open the card&#39;s hyperlinks in a new tab.</p>
+
+<p><code>STRINGS</code> <em>type: Object</em> - This is a list of available strings within the Compnent that can be overidden for translation. Below are the default strings:</p>
+
+<pre><code>{
+  &#39;LEARN_MORE&#39;: &#39;Learn more&#39;,
+  &#39;CTA&#39;: &#39;Apply&#39;
+}</code></pre></div>
+              </div>
+            </div>
+          </section>
         </article>
       </main>
     </div>
@@ -507,6 +578,9 @@
       access.markdown();
       access.icons();
       access.toggle();
+    </script>
+    <script type="text/javascript">
+      access.cardVue();
     </script>
   </body>
 

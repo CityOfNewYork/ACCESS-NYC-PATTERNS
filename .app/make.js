@@ -24,30 +24,7 @@ const PREFIXES = config.prefixes;
 const FILENAMES = Object.keys(FILES)
   .filter(f => config.optional.indexOf(f) === -1);
 
-const MSGS = {
-  styles: [
-    '\n',
-    `${alerts.styles} Styles Info. `,
-    `Import the "${PATTERN}" stylesheet into the "${PATHS.styles_global}" file. `,
-    `This is technically optional but necessary for integrating styles into the `,
-    `global stylesheet. Also, add the "${PATTERN}" stylesheet module `,
-    `"${PATHS.styles_modules}" to create an independent distribution with all of `,
-    `the styles needed for it to function (this is mostly done for Object and `,
-    `Component types).`,
-    '\n'
-  ],
-  scripts: [
-    '\n',
-    `${alerts.scripts} Scripts Info. `,
-    `Import the "${PATTERN}" script into the "${PATHS.scripts_global}" file `,
-    `and create a public function for it in the main class. This is technically `,
-    `optional but necessary for integrating scripts into the global script `,
-    `Also, add the "${PATTERN}" script module to "${PATHS.scripts_modules}" to `,
-    `create an independent distribution (this could be any Pattern type that `,
-    `requires JavaScript to function) `,
-    '\n'
-  ]
-};
+const MSGS = config.messages;
 
 let prompt = Readline.createInterface({
     input: process.stdin,
@@ -121,10 +98,10 @@ function fnDirectory(dir, type, pattern, callback) {
  * @return {boolean}        false if already exists, true if created
  */
 function makeFile(dir, filetype, pattern, callback) {
-  let file = parseTemplateVars(FILES[filetype], filetype, pattern);
+  let file = parseTemplateVars(FILES[filetype], TYPE, pattern);
 
   if (!fs.existsSync(`${dir}/${file}`)) {
-    let content = parseTemplateVars(TEMPLATES[filetype], filetype, pattern);
+    let content = parseTemplateVars(TEMPLATES[filetype], TYPE, pattern);
 
     fs.writeFile(`${dir}/${file}`, content, err => {
       if (err) {
@@ -182,7 +159,7 @@ function makeOptional(filetype, pattern, prompt) {
     let isPattern = PATTERNS.indexOf(filetype);
     let type = (isPattern) ? TYPE : filetype; // use the type arg instead
     let path = (isPattern) ? PATHS.pattern : PATHS[filetype]; // use the patterns default path instead
-    let relative = parseTemplateVars(path, type, pattern);
+    let relative = parseTemplateVars(path, TYPE, pattern);
     let absolute = Path.join(__dirname, DIRS.base, relative);
 
     prompt.question(

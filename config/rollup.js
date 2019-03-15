@@ -7,6 +7,9 @@ import resolve from 'rollup-plugin-node-resolve';
 import babel from 'rollup-plugin-babel';
 import replace from 'rollup-plugin-replace';
 import eslint from 'rollup-plugin-eslint';
+import vue from 'rollup-plugin-vue';
+import buble from 'rollup-plugin-buble';
+import commonjs from 'rollup-plugin-commonjs';
 
 /**
  * Config
@@ -37,31 +40,42 @@ const plugins = {
     }
   }),
   alias: alias({
-    // ACCESS currently uses CommonJS Modules so this alias plugin allows
-    // us to write libriaries that import peer dependencies in the ACCESS
-    // environment in the CommonJS format, and utilize ES6 modules in the
-    // local ACCESS Patterns development environment.
+    // ACCESS Core WordPress theme currently uses CommonJS Modules so this alias
+    // plugin allows us to write libriaries that import peer dependencies in the
+    // ACCESS Core WordPress theme environment in the CommonJS format, and
+    // utilize ES6 modules in the local ACCESS Patterns development environment.
     'vue/dist/vue.common': 'node_modules/vue/dist/vue.esm.js'
   }),
   replace: replace({
     'process.env.NODE_ENV': JSON.stringify('production')
-  })
+  }),
+  common: commonjs(),
+  vue: vue(),
+  buble: buble()
 };
 
 /**
  * Distribution plugin settings. Order matters here.
  * @type {Array}
  */
+
+/** These are plugins used for the global patterns script */
 rollup.local = [
-  plugins.babel,
   plugins.alias,
   plugins.resolve,
+  plugins.common,
+  plugins.vue,
+  plugins.buble,
+  plugins.babel,
   plugins.replace
 ];
 
 rollup.dist = [
-  plugins.babel,
-  plugins.resolve
+  plugins.resolve,
+  plugins.common,
+  plugins.vue,
+  plugins.buble,
+  plugins.babel
 ];
 
 /**

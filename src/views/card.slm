@@ -26,3 +26,10 @@
   = mixin('section', 'Card With Icon and Information', 'components/card/card-icon-info');
   = mixin('section', 'Card With Icon, Information, and Apply Button', 'components/card/card-icon-info-apply');
   = mixin('section', 'Removable Card', 'components/card/card-removable', 'gutter');
+
+  = mixin('section', 'Vue Card', 'components/card/card.vue');
+  = mixin('section-text', 'Vue Component Usage', 'components/card/readme.vue');
+
+= content('script');
+  javascript:
+    access.cardVue();

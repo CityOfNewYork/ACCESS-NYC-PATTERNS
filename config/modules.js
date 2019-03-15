@@ -116,6 +116,13 @@ const modules = [
     includePaths: sass.includePaths
   },
   {
+    file: './src/components/filter/_filter-multi.scss',
+    outDir: './dist/components/filter/',
+    outFile: 'filter-multi.css',
+    precision: sass.precision,
+    includePaths: sass.includePaths
+  },
+  {
     file: './src/components/header/_header.scss',
     outDir: './dist/components/header/',
     outFile: 'header.css',

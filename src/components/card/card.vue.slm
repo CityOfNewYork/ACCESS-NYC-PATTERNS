@@ -1,0 +1,2 @@
+div id='app-c-card'
+  c-card v-bind='card' taxonomy='programs'
