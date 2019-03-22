@@ -1,7 +1,7 @@
 let emoji = require('node-emoji');
 
 module.exports = {
-  styles: emoji.get('frame_with_picture') + ' ',
+  styles: emoji.get('nail_care') + ' ',
   scripts: emoji.get('atom_symbol') + ' ',
   question: emoji.get('question') + ' ',
   attention: emoji.get('wave') + ' ',

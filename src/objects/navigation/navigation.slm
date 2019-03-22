@@ -15,8 +15,8 @@ nav class='o-navigation color-dark-background' data-sketch-symbol=symbol
     a class='hidden screen-desktop:inline-block' href='#' Programs
     a class='hidden screen-desktop:inline-block' href='#' Find help
     a class='td-inherit o-navigation__search' href='#search'
-      svg class='icon icon-search' aria-hidden='true'
-        use xlink:href='#icon-search'
+      svg class='icon icon-ui-search' aria-hidden='true'
+        use xlink:href='#icon-ui-search'
       | Search
 
 - symbol = false;
