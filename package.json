@@ -34,7 +34,7 @@
     "styles:postcss": "node .app/postcss.js",
     "styles:watch": "nodemon --ext scss --watch src --ignore _variables.scss -x \"npm run styles\"",
     "svgs": "npm run svgs:optimize && npm run svgs:symbol",
-    "svgs:optimize": "svgo -f ./src/svg -o ./dist/svg",
+    "svgs:optimize": "svgo -f ./src/svg -o ./dist/svg --disable=convertPathData",
     "svgs:symbol": "svgstore -o ./dist/icons.svg ./dist/svg/*.svg --inline",
     "svgs:watch": "nodemon --ext svg --watch ./src/svg -x \"npm run svgs\"",
     "design:sketch": "html-sketchapp --viewports.Desktop 1024x768 --file dist/sketch.html --out-dir dist/design/sketch",
