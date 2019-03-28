@@ -104,7 +104,7 @@ const modules = [
     output: {
       name: 'AccessNyc',
       file: `./dist/scripts/AccessNyc.js`,
-      sourcemap: rollup.sourcemap,
+      sourcemap: (process.env.NODE_ENV === 'production') ? false : rollup.sourcemap,
       format: rollup.format,
       strict: rollup.strict,
       globals: rollup.globals
@@ -118,14 +118,12 @@ const modules = [
       {
         name: 'Icons',
         file: `./dist/elements/icons/icons.iffe.js`,
-        sourcemap: rollup.sourcemap,
         format: 'iife',
         strict: rollup.strict
       },
       {
         name: 'Icons',
         file: `./dist/elements/icons/icons.common.js`,
-        sourcemap: rollup.sourcemap,
         format: 'cjs',
         strict: rollup.strict
       }
@@ -141,7 +139,6 @@ const modules = [
       {
         name: 'Accordion',
         file: `./dist/components/accordion/accordion.iffe.js`,
-        sourcemap: rollup.sourcemap,
         format: 'iife',
         strict: rollup.strict,
         globals: { // This suppressess a warning regarding using a global peer
@@ -151,7 +148,6 @@ const modules = [
       {
         name: 'Accordion',
         file: `./dist/components/accordion/accordion.common.js`,
-        sourcemap: rollup.sourcemap,
         format: 'cjs',
         strict: rollup.strict
       }
@@ -164,14 +160,12 @@ const modules = [
       {
         name: 'Filter',
         file: `./dist/components/filter/filter.iffe.js`,
-        sourcemap: rollup.sourcemap,
         format: 'iife',
         strict: rollup.strict
       },
       {
         name: 'Filter',
         file: `./dist/components/filter/filter.common.js`,
-        sourcemap: rollup.sourcemap,
         format: 'cjs',
         strict: rollup.strict
       }
@@ -184,14 +178,12 @@ const modules = [
       {
         name: 'NearbyStops',
         file: `./dist/components/nearby-stops/nearby-stops.iffe.js`,
-        sourcemap: rollup.sourcemap,
         format: 'iife',
         strict: rollup.strict
       },
       {
         name: 'NearbyStops',
         file: `./dist/components/nearby-stops/nearby-stops.common.js`,
-        sourcemap: rollup.sourcemap,
         format: 'cjs',
         strict: rollup.strict
       }
@@ -204,14 +196,12 @@ const modules = [
       {
         name: 'Newsletter',
         file: `./dist/objects/newsletter/newsletter.iffe.js`,
-        sourcemap: rollup.sourcemap,
         format: 'iife',
         strict: rollup.strict
       },
       {
         name: 'Newsletter',
         file: `./dist/objects/newsletter/newsletter.common.js`,
-        sourcemap: rollup.sourcemap,
         format: 'cjs',
         strict: rollup.strict
       }
