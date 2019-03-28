@@ -233,7 +233,7 @@ Templates source is written using [slm-lang](https://github.com/slm-lang/slm). E
 
 Documentation is written in [Markdown](https://daringfireball.net/projects/markdown/syntax). When you visit a pattern in the browser, the page looks for a Markdown file that maps to the Pattern’s template source path in the `dist/` directory. For example, with the Accordion Component, the [`src/components/accordion/accordion.slm`](https://github.com/CityOfNewYork/ACCESS-NYC-PATTERNS/blob/master/src/components/accordion/accordion.slm) is the template source. The corresponding  documentation should live in [`dist/components/accordion/accordion.md`](https://github.com/CityOfNewYork/ACCESS-NYC-PATTERNS/blob/master/dist/components/accordion/accordion.md). When a user visits the /accordion page, the page looks for [`dist/components/accordion/accordion.md`](https://github.com/CityOfNewYork/ACCESS-NYC-PATTERNS/blob/master/dist/components/accordion/accordion.md) and renders the documentation in the browser.
 
-## Patterns
+### Patterns
 
 All of the Patterns source is organized into four directories: elements, components, objects, and utilities, according to the [Patterns naming convention](about#naming-convention).
 

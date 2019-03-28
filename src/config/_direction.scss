@@ -11,7 +11,7 @@ $text-direction: ltr;
 $text-direction-start: left;
 $text-direction-end: right;
 
-@each $lang in map-get($variables, 'rtlLanguages') {
+@each $lang in map-get($variables, 'rtl-languages') {
   @if $language == $lang {
     $default-layout-direction: RTL !global;
     // Below variable is used for the USWDS grid which built on an old
