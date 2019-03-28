@@ -258,7 +258,7 @@ const variables = {
     'icon-card-food': '50px 50px',
     'icon-card-health': '50px 50px',
     'icon-card-housing': '50px 50px',
-    'icon-card-special-needs': '50px 50px',
+    'icon-card-people-with-disabilities': '50px 50px',
     'icon-card-work': '50px 50px',
     // Program Type Icons
     'icon-cash-expenses': '50px 50px',
@@ -270,7 +270,7 @@ const variables = {
     'icon-food': '50px 52px',
     'icon-health': '50px 50px',
     'icon-housing': '50px 50px',
-    'icon-special-needs': '50px 50px',
+    'icon-people-with-disabilities': '50px 50px',
     'icon-work': '50px 52px',
     // UI Icons
     'icon-ui-alert-octagon': '24px 24px',
@@ -323,7 +323,7 @@ const variables = {
     'icon-food',
     'icon-health',
     'icon-housing',
-    'icon-special-needs',
+    'icon-people-with-disabilities',
     'icon-work'
   ],
   'icons-program-card': [
@@ -337,7 +337,7 @@ const variables = {
     'icon-card-food',
     'icon-card-health',
     'icon-card-housing',
-    'icon-card-special-needs',
+    'icon-card-people-with-disabilities',
     'icon-card-work',
   ],
   'icons-checklist-size': '50px 50px',

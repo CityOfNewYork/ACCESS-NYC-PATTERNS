@@ -195,7 +195,7 @@ $variables: (
     icon-card-food: 50px 50px,
     icon-card-health: 50px 50px,
     icon-card-housing: 50px 50px,
-    icon-card-special-needs: 50px 50px,
+    icon-card-people-with-disabilities: 50px 50px,
     icon-card-work: 50px 50px,
     icon-cash-expenses: 50px 50px,
     icon-child-care: 50px 52px,
@@ -206,7 +206,7 @@ $variables: (
     icon-food: 50px 52px,
     icon-health: 50px 50px,
     icon-housing: 50px 50px,
-    icon-special-needs: 50px 50px,
+    icon-people-with-disabilities: 50px 50px,
     icon-work: 50px 52px,
     icon-ui-alert-octagon: 24px 24px,
     icon-ui-alert-triangle: 24px 24px,
@@ -246,8 +246,8 @@ $variables: (
     large: 136px 136px,
     xlarge: 256px 256px
   ),
-  icons-program-category: (icon-cash-expenses, icon-child-care, icon-city-id-card, icon-education, icon-enrichment, icon-family-services, icon-food, icon-health, icon-housing, icon-special-needs, icon-work),
-  icons-program-card: (icon-card-cash-expenses, icon-card-child-care, icon-card-city-id-card, icon-card-education, icon-card-enrichment, icon-card-expenses, icon-card-family-services, icon-card-food, icon-card-health, icon-card-housing, icon-card-special-needs, icon-card-work),
+  icons-program-category: (icon-cash-expenses, icon-child-care, icon-city-id-card, icon-education, icon-enrichment, icon-family-services, icon-food, icon-health, icon-housing, icon-people-with-disabilities, icon-work),
+  icons-program-card: (icon-card-cash-expenses, icon-card-child-care, icon-card-city-id-card, icon-card-education, icon-card-enrichment, icon-card-expenses, icon-card-family-services, icon-card-food, icon-card-health, icon-card-housing, icon-card-people-with-disabilities, icon-card-work),
   icons-checklist-size: 50px 50px,
   icons-checklist: (
     icon-application: "headsup_application_25px-1.png",
