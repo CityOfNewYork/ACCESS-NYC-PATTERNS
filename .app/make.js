@@ -5,8 +5,8 @@
 const fs = require('fs');
 const Path = require('path');
 const Readline = require('readline');
-const config = require('../config/make');
-const alerts = require('../config/alerts');
+const alerts = require(`${process.env.PWD}/config/alerts`);
+const config = require(`${process.env.PWD}/config/make`);
 
 /**
  * Constants
@@ -14,17 +14,9 @@ const alerts = require('../config/alerts');
 
 const TYPE = (process.argv[2] === 'utility') ? 'utilities' : `${process.argv[2]}s`;
 const PATTERN = process.argv[3];
-const PATTERNS = config.patterns;
 const FILE = process.argv[4];
-const DIRS = config.dirs;
-const PATHS = config.paths;
-const TEMPLATES = config.templates;
-const FILES = config.files;
-const PREFIXES = config.prefixes;
-const FILENAMES = Object.keys(FILES)
+const FILENAMES = Object.keys(config.files)
   .filter(f => config.optional.indexOf(f) === -1);
-
-const MSGS = config.messages;
 
 let prompt = Readline.createInterface({
     input: process.stdin,
@@ -38,25 +30,21 @@ let prompt = Readline.createInterface({
 /**
  * Parse variables in the config/make.js template strings.
  */
-const parseTemplateVars = (str, type, pattern) => str
-  .split('{{ type }}').join(type)
-  .split('{{ prefix }}').join(PREFIXES[type])
-  .split('{{ pattern }}').join(pattern)
+const parseVariables = (str) => str
+  .split('{{ type }}').join(TYPE)
+  .split('{{ prefix }}').join(config.prefixes[TYPE])
+  .split('{{ pattern }}').join(PATTERN)
   .split('{{ Pattern }}').join(
-    pattern
+    PATTERN
       .split('-').join(' ')
       .split('_').join(' ')
-      .charAt(0).toUpperCase() + pattern.slice(1)
+      .charAt(0).toUpperCase() + PATTERN.slice(1)
   );
 
 /**
  * Evaluate a yes answer
  */
-const yes = (str) => (
-    str.toLowerCase() == 'yes' ||
-    str.toLowerCase() == 'ye' ||
-    str.toLowerCase() == 'y'
-  );
+const yes = str => str.indexOf('y') === 0;
 
 /**
  * An async forEach function
@@ -70,8 +58,8 @@ const asyncForEach = async (array, callback) => {
 /**
  * Log a message from MSG.
  */
-const loginfo = (type) => (MSGS[type]) ?
-  console.log(MSGS[type].join('')) : false;
+const logInfo = (type) => (config.messages[type]) ? 
+  console.log(parseVariables(config.messages[type].join(''))) : false;
 
 /**
  * Create the directory for the pattern if it doesn't exist
@@ -98,10 +86,10 @@ function fnDirectory(dir, type, pattern, callback) {
  * @return {boolean}        false if already exists, true if created
  */
 function makeFile(dir, filetype, pattern, callback) {
-  let file = parseTemplateVars(FILES[filetype], TYPE, pattern);
+  let file = parseVariables(config.files[filetype]);
 
   if (!fs.existsSync(`${dir}/${file}`)) {
-    let content = parseTemplateVars(TEMPLATES[filetype], TYPE, pattern);
+    let content = parseVariables(config.templates[filetype]);
 
     fs.writeFile(`${dir}/${file}`, content, err => {
       if (err) {
@@ -123,8 +111,8 @@ function makeFile(dir, filetype, pattern, callback) {
  * @return {boolean}         False if nothing is created
  */
 function makeDefaults(type, pattern, callback) {
-  let relative = Path.join(DIRS.src, type);
-  let absolute = Path.join(__dirname, DIRS.base, relative, pattern);
+  let relative = Path.join(config.dirs.src, type);
+  let absolute = Path.join(__dirname, config.dirs.base, relative, pattern);
 
   fnDirectory(absolute, type, pattern, (success) => {
     if (success) {
@@ -134,7 +122,7 @@ function makeDefaults(type, pattern, callback) {
         makeFile(absolute, filetype, pattern, (success, filename) => {
           if (success) {
             console.log(`${alerts.success} Created "${filename}".`);
-            loginfo(filetype);
+            logInfo(filetype);
           }
         });
       });
@@ -156,11 +144,11 @@ function makeDefaults(type, pattern, callback) {
  */
 function makeOptional(filetype, pattern, prompt) {
   return new Promise(resolve => {
-    let isPattern = PATTERNS.indexOf(filetype);
-    let type = (isPattern) ? TYPE : filetype; // use the type arg instead
-    let path = (isPattern) ? PATHS.pattern : PATHS[filetype]; // use the patterns default path instead
-    let relative = parseTemplateVars(path, TYPE, pattern);
-    let absolute = Path.join(__dirname, DIRS.base, relative);
+    let isPattern = config.patterns.indexOf(filetype) > -1;
+    let path = (isPattern) ? config.paths.pattern : config.paths[filetype]; // use the patterns default path instead
+    
+    let relative = parseVariables(path);
+    let absolute = Path.join(__dirname, config.dirs.base, relative);
 
     prompt.question(
       `${alerts.question} Would you like to create a "${filetype}" file for "${pattern}"? (y/n)`,
@@ -169,7 +157,7 @@ function makeOptional(filetype, pattern, prompt) {
           makeFile(absolute, filetype, pattern, (success, file) => {
             if (success) {
               console.log(`${alerts.success} ${file} was made in ${relative}`);
-              loginfo(filetype);
+              logInfo(filetype);
             } else {
               console.log(`${alerts.error} ${file} already exists in ${relative}`);
             }
