@@ -3,6 +3,7 @@
  */
 
 const Path = require('path');
+const alerts = require('./alerts.js');
 
 /**
  * Config
@@ -254,10 +255,10 @@ const messages = {
   'styles': [
     '\n',
     `${alerts.styles} Styles Info. `,
-    `Import the "${PATTERN}" stylesheet into the "${PATHS.styles_global}" file. `,
+    `Import the "{{ pattern }}" stylesheet into the "${paths.styles_global}" file. `,
     `This is technically optional but necessary for integrating styles into the `,
-    `global stylesheet. Also, add the "${PATTERN}" stylesheet module `,
-    `"${PATHS.styles_modules}" to create an independent distribution with all of `,
+    `global stylesheet. Also, add the "{{ pattern }}" stylesheet module `,
+    `"${paths.styles_modules}" to create an independent distribution with all of `,
     `the styles needed for it to function (this is mostly done for Object and `,
     `Component types).`,
     '\n'
@@ -265,20 +266,22 @@ const messages = {
   'scripts': [
     '\n',
     `${alerts.scripts} Scripts Info. `,
-    `Import the "${PATTERN}" script into the "${PATHS.scripts_global}" file `,
+    `Import the "{{ pattern }}" script into the "${paths.scripts_global}" file `,
     `and create a public function for it in the main class. This is technically `,
-    `optional but necessary for integrating scripts into the global script `,
-    `Also, add the "${PATTERN}" script module to "${PATHS.scripts_modules}" to `,
+    `optional but necessary for integrating scripts into the global script. `,
+    `Also, add the "{{ pattern }}" script module to "${paths.scripts_modules}" to `,
     `create an independent distribution (this could be any Pattern type that `,
     `requires JavaScript to function) `,
     '\n'
   ],
   'vue': [
-    `Use the Vue Demo app module (${PATHS.vue_demo}) in ${PATHS.styles_global} `,
+    '\n',
+    `Use the Vue Demo app module (${paths.vue_demo}) in ${paths.styles_global} `,
     'to create a parent application to display the Vue component. You will also ',
     'be asked to create a Vue markup file where the reference to the application ',
     'will be created. Also, you will be asked if you would like to create a data ',
-    'file where you can store data needed for the Vue Component to display properly.'
+    'file where you can store data needed for the Vue Component to display properly.',
+    '\n',
   ]
 };
 
