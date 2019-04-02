@@ -15203,317 +15203,266 @@ var AccessNyc = (function () {
     LINES: ['S']
   }];
 
-  function isStringJsonObject(arg) {
-      try {
-          JSON.parse(arg);
-          return true;
-      }
-      catch (e) { }
-      return false;
-  }
-  function isArray$1(arg) {
-      return Array.isArray(arg);
-  }
-  function isStringNumber(arg) {
-      return typeof arg == 'number' || /^[-+]?\d+([Ee][+-]?\d+)?(\.\d+)?$/.test(arg);
-  }
-  function isStringInteger(arg) {
-      return /^[-+]?\d+([Ee][+-]?\d+)?$/.test(arg);
-  }
-  function isStringNullOrEmpty(arg) {
-      return arg == null || arg.trim() === "";
-  }
-  var nodeListToArray = function (nodeList) {
-      return Array.prototype.slice.call(nodeList);
-  };
+  // get successful control from form and assemble into object
+  // http://www.w3.org/TR/html401/interact/forms.html#h-17.13.2
 
-  var parserList = [
-      {
-          name: "auto",
-          parse: function (val, forceNull) {
-              if (isStringNullOrEmpty(val)) {
-                  return forceNull ? null : val;
-              }
-              var result = val.toString().trim();
-              if (result.toLowerCase() === "null")
-                  { return null; }
-              try {
-                  result = JSON.parse(result);
-                  return result;
-              }
-              catch (e) {
-              }
-              var array = result.split(",");
-              if (array.length > 1) {
-                  result = array.map(function (x) {
-                      if (isStringNumber(x)) {
-                          return parseFloat(x);
-                      }
-                      else if (isStringJsonObject(x)) {
-                          return JSON.parse(x);
-                      }
-                      return x.trim();
-                  });
-              }
-              return result;
-          }
-      },
-      {
-          name: "number",
-          parse: function (val, forceNull) {
-              if (isStringNullOrEmpty(val)) {
-                  return forceNull ? null : 0;
-              }
-              if (isStringNumber(val)) {
-                  return parseFloat(val);
-              }
-              return 0;
-          }
-      },
-      {
-          name: "boolean",
-          parse: function (val, forceNull) {
-              if (isStringNullOrEmpty(val)) {
-                  return forceNull ? null : false;
-              }
-              val = val.toString().toLowerCase();
-              if (val === "true" || val === "1") {
-                  return true;
-              }
-              return false;
-          }
-      },
-      {
-          name: "string",
-          parse: function (val, forceNull) {
-              if (isStringNullOrEmpty(val)) {
-                  return null;
-              }
-              var result = val.toString().trim();
-              if (result.toLowerCase() === "null" || (result === "" && forceNull))
-                  { return null; }
-              return result;
-          }
-      },
-      {
-          name: "array[auto]",
-          parse: function (val, forceNull) {
-              if (isStringNullOrEmpty(val)) {
-                  if (forceNull)
-                      { return null; }
-                  return [];
-              }
-              return val.split(",").map(function (x) {
-                  var parser = parserList.filter(function (x) { return x.name === "auto"; })[0];
-                  return parser.parse(x.trim(), forceNull);
-              });
-          }
-      },
-      {
-          name: "array[string]",
-          parse: function (val, forceNull) {
-              if (isStringNullOrEmpty(val)) {
-                  if (forceNull)
-                      { return null; }
-                  return [];
-              }
-              return val.split(",").map(function (x) { return x.trim().toString(); });
-          }
-      },
-      {
-          name: "array[number]",
-          parse: function (val, forceNull) {
-              if (isStringNullOrEmpty(val)) {
-                  if (forceNull)
-                      { return null; }
-                  return [];
-              }
-              return val.split(",").map(function (x) { return parseFloat(x.trim()); });
-          }
-      },
-      {
-          name: "json",
-          parse: function (val, forceNull) {
-              if (isStringNullOrEmpty(val)) {
-                  if (forceNull)
-                      { return null; }
-                  return {};
-              }
-              return JSON.parse(val);
-          }
-      }
-  ];
+  // types which indicate a submit action and are not successful controls
+  // these will be ignored
+  var k_r_submitter = /^(?:submit|button|image|reset|file)$/i;
 
-  var pluginName = "NSerializeJson";
+  // node names which could be successful controls
+  var k_r_success_contrls = /^(?:input|select|textarea|keygen)/i;
 
-  var NSerializeJson = (function () {
-      function NSerializeJson() {
+  // Matches bracket notation.
+  var brackets = /(\[[^\[\]]*\])/g;
+
+  // serializes form fields
+  // @param form MUST be an HTMLForm element
+  // @param options is an optional argument to configure the serialization. Default output
+  // with no options specified is a url encoded string
+  //    - hash: [true | false] Configure the output type. If true, the output will
+  //    be a js object.
+  //    - serializer: [function] Optional serializer function to override the default one.
+  //    The function takes 3 arguments (result, key, value) and should return new result
+  //    hash and url encoded str serializers are provided with this module
+  //    - disabled: [true | false]. If true serialize disabled fields.
+  //    - empty: [true | false]. If true serialize empty fields
+  function serialize(form, options) {
+      if (typeof options != 'object') {
+          options = { hash: !!options };
       }
-      NSerializeJson.parseValue = function (value, type) {
-          if (isStringNullOrEmpty(type)) {
-              var autoParser = this.parsers.filter(function (x) { return x.name === "auto"; })[0];
-              return autoParser.parse(value, this.options.forceNullOnEmpty);
+      else if (options.hash === undefined) {
+          options.hash = true;
+      }
+
+      var result = (options.hash) ? {} : '';
+      var serializer = options.serializer || ((options.hash) ? hash_serializer : str_serialize);
+
+      var elements = form && form.elements ? form.elements : [];
+
+      //Object store each radio and set if it's empty or not
+      var radio_store = Object.create(null);
+
+      for (var i=0 ; i<elements.length ; ++i) {
+          var element = elements[i];
+
+          // ingore disabled fields
+          if ((!options.disabled && element.disabled) || !element.name) {
+              continue;
           }
-          var parser = this.parsers.filter(function (x) { return x.name === type; })[0];
-          if (parser == null) {
-              throw pluginName + ": couldn't find ther parser for type '" + type + "'.";
+          // ignore anyhting that is not considered a success field
+          if (!k_r_success_contrls.test(element.nodeName) ||
+              k_r_submitter.test(element.type)) {
+              continue;
           }
-          return parser.parse(value, this.options.forceNullOnEmpty);
-      };
-      NSerializeJson.serializeForm = function (htmlFormElement) {
-          var _this = this;
-          var nodeList = htmlFormElement.querySelectorAll("input, select, textarea");
-          var htmlInputElements = nodeListToArray(nodeList);
-          var checkedElements = htmlInputElements.filter(function (x) {
-              if (x.disabled ||
-                  ((x.getAttribute("type") === "radio" && !x.checked) ||
-                      (x.getAttribute("type") === "checkbox" && !x.checked))) {
-                  return false;
+
+          var key = element.name;
+          var val = element.value;
+
+          // we can't just use element.value for checkboxes cause some browsers lie to us
+          // they say "on" for value when the box isn't checked
+          if ((element.type === 'checkbox' || element.type === 'radio') && !element.checked) {
+              val = undefined;
+          }
+
+          // If we want empty elements
+          if (options.empty) {
+              // for checkbox
+              if (element.type === 'checkbox' && !element.checked) {
+                  val = '';
               }
-              return true;
-          });
-          var resultObject = {};
-          checkedElements.forEach(function (x) { return _this.serializeIntoObject(resultObject, x); });
-          return resultObject;
-      };
-      NSerializeJson.serializeIntoObject = function (obj, htmlElement) {
-          var value = null;
-          if (htmlElement.tagName.toLowerCase() === "select") {
-              var firstSelectOpt = Array.from(htmlElement.options).filter(function (x) { return x.selected; })[0];
-              if (firstSelectOpt) {
-                  value = firstSelectOpt.getAttribute("value");
-              }
-          }
-          else {
-              value = htmlElement.value;
-          }
-          var pathStr = htmlElement.getAttribute("name");
-          if (isStringNullOrEmpty(pathStr))
-              { return obj; }
-          var path = [];
-          var type = null;
-          var typeIndex = pathStr.indexOf(":");
-          if (typeIndex > -1) {
-              type = pathStr.substring(typeIndex + 1, pathStr.length);
-              if (type === "skip") {
-                  return obj;
-              }
-              pathStr = pathStr.substring(0, typeIndex);
-          }
-          else {
-              type = htmlElement.getAttribute("data-value-type");
-          }
-          if (this.options.onBeforeParseValue != null) {
-              value = this.options.onBeforeParseValue(value, type);
-          }
-          var parsedValue = this.parseValue(value, type);
-          var pathLength = 0;
-          if (this.options.useDotSeparatorInPath) {
-              var addArrayToPath = false;
-              path = pathStr.split(".");
-              pathLength = path.length;
-              path.forEach(function (step, index) {
-                  var indexOfBrackets = step.indexOf("[]");
-                  if (index !== pathLength - 1) {
-                      if (indexOfBrackets > -1) {
-                          throw pluginName + ": error in path '" + pathStr + "' empty values in the path mean array and should be at the end.";
-                      }
+
+              // for radio
+              if (element.type === 'radio') {
+                  if (!radio_store[element.name] && !element.checked) {
+                      radio_store[element.name] = false;
                   }
-                  else {
-                      if (indexOfBrackets > -1) {
-                          path[index] = step.replace("[]", "");
-                          addArrayToPath = true;
-                      }
+                  else if (element.checked) {
+                      radio_store[element.name] = true;
                   }
-              });
-              if (addArrayToPath) {
-                  path.push("");
+              }
+
+              // if options empty is true, continue only if its radio
+              if (val == undefined && element.type == 'radio') {
+                  continue;
               }
           }
           else {
-              path = pathStr.split("[").map(function (x, i) { return x.replace("]", ""); });
-              pathLength = path.length;
-              path.forEach(function (step, index) {
-                  if (index !== pathLength - 1 && isStringNullOrEmpty(step))
-                      { throw pluginName + ": error in path '" + pathStr + "' empty values in the path mean array and should be at the end."; }
-              });
-          }
-          this.searchAndSet(obj, path, 0, parsedValue);
-          return obj;
-      };
-      NSerializeJson.searchAndSet = function (currentObj, path, pathIndex, parsedValue, arrayInternalIndex) {
-          if (arrayInternalIndex === void 0) { arrayInternalIndex = 0; }
-          var step = path[pathIndex];
-          var isFinalStep = pathIndex === path.length - 1;
-          var nextStep = path[pathIndex + 1];
-          if (currentObj == null || typeof currentObj == "string") {
-              path = path.map(function (x) { return isStringNullOrEmpty(x) ? "[]" : x; });
-              console.log(pluginName + ": there was an error in path '" + path + "' in step '" + step + "'.");
-              throw pluginName + ": error.";
-          }
-          var isArrayStep = isStringNullOrEmpty(step);
-          var isIntegerStep = isStringInteger(step);
-          var isNextStepAnArray = isStringInteger(nextStep) || isStringNullOrEmpty(nextStep);
-          if (isArrayStep) {
-              if (isFinalStep) {
-                  currentObj.push(parsedValue);
-                  return;
-              }
-              else {
-                  if (currentObj[arrayInternalIndex] == null) {
-                      currentObj[arrayInternalIndex] = {};
-                  }
-                  step = arrayInternalIndex;
-                  arrayInternalIndex++;
+              // value-less fields are ignored unless options.empty is true
+              if (!val) {
+                  continue;
               }
           }
-          else if (isIntegerStep && this.options.useNumKeysAsArrayIndex) {
-              step = parseInt(step);
-              if (!isArray$1(currentObj)) {
-                  currentObj = [];
-              }
-              if (isFinalStep) {
-                  currentObj[step] = parsedValue;
-                  return;
-              }
-              else {
-                  if (currentObj[step] == null)
-                      { currentObj[step] = {}; }
-              }
-          }
-          else {
-              if (isFinalStep) {
-                  currentObj[step] = parsedValue;
-                  return;
-              }
-              else {
-                  if (this.options.useNumKeysAsArrayIndex) {
-                      if (isNextStepAnArray) {
-                          if (!isArray$1(currentObj[step]))
-                              { currentObj[step] = []; }
+
+          // multi select boxes
+          if (element.type === 'select-multiple') {
+              val = [];
+
+              var selectOptions = element.options;
+              var isSelectedOptions = false;
+              for (var j=0 ; j<selectOptions.length ; ++j) {
+                  var option = selectOptions[j];
+                  var allowedEmpty = options.empty && !option.value;
+                  var hasValue = (option.value || allowedEmpty);
+                  if (option.selected && hasValue) {
+                      isSelectedOptions = true;
+
+                      // If using a hash serializer be sure to add the
+                      // correct notation for an array in the multi-select
+                      // context. Here the name attribute on the select element
+                      // might be missing the trailing bracket pair. Both names
+                      // "foo" and "foo[]" should be arrays.
+                      if (options.hash && key.slice(key.length - 2) !== '[]') {
+                          result = serializer(result, key + '[]', option.value);
                       }
                       else {
-                          if (currentObj[step] == null)
-                              { currentObj[step] = {}; }
+                          result = serializer(result, key, option.value);
                       }
                   }
-                  else {
-                      if (currentObj[step] == null)
-                          { currentObj[step] = {}; }
-                  }
+              }
+
+              // Serialize if no selected options and options.empty is true
+              if (!isSelectedOptions && options.empty) {
+                  result = serializer(result, key, '');
+              }
+
+              continue;
+          }
+
+          result = serializer(result, key, val);
+      }
+
+      // Check for all empty radio buttons and serialize them with key=""
+      if (options.empty) {
+          for (var key in radio_store) {
+              if (!radio_store[key]) {
+                  result = serializer(result, key, '');
               }
           }
-          pathIndex++;
-          this.searchAndSet(currentObj[step], path, pathIndex, parsedValue, arrayInternalIndex);
-      };
-      NSerializeJson.options = {
-          useNumKeysAsArrayIndex: true,
-          useDotSeparatorInPath: false,
-          forceNullOnEmpty: false
-      };
-      NSerializeJson.parsers = parserList.slice();
-      return NSerializeJson;
-  }());
+      }
+
+      return result;
+  }
+
+  function parse_keys(string) {
+      var keys = [];
+      var prefix = /^([^\[\]]*)/;
+      var children = new RegExp(brackets);
+      var match = prefix.exec(string);
+
+      if (match[1]) {
+          keys.push(match[1]);
+      }
+
+      while ((match = children.exec(string)) !== null) {
+          keys.push(match[1]);
+      }
+
+      return keys;
+  }
+
+  function hash_assign(result, keys, value) {
+      if (keys.length === 0) {
+          result = value;
+          return result;
+      }
+
+      var key = keys.shift();
+      var between = key.match(/^\[(.+?)\]$/);
+
+      if (key === '[]') {
+          result = result || [];
+
+          if (Array.isArray(result)) {
+              result.push(hash_assign(null, keys, value));
+          }
+          else {
+              // This might be the result of bad name attributes like "[][foo]",
+              // in this case the original `result` object will already be
+              // assigned to an object literal. Rather than coerce the object to
+              // an array, or cause an exception the attribute "_values" is
+              // assigned as an array.
+              result._values = result._values || [];
+              result._values.push(hash_assign(null, keys, value));
+          }
+
+          return result;
+      }
+
+      // Key is an attribute name and can be assigned directly.
+      if (!between) {
+          result[key] = hash_assign(result[key], keys, value);
+      }
+      else {
+          var string = between[1];
+          // +var converts the variable into a number
+          // better than parseInt because it doesn't truncate away trailing
+          // letters and actually fails if whole thing is not a number
+          var index = +string;
+
+          // If the characters between the brackets is not a number it is an
+          // attribute name and can be assigned directly.
+          if (isNaN(index)) {
+              result = result || {};
+              result[string] = hash_assign(result[string], keys, value);
+          }
+          else {
+              result = result || [];
+              result[index] = hash_assign(result[index], keys, value);
+          }
+      }
+
+      return result;
+  }
+
+  // Object/hash encoding serializer.
+  function hash_serializer(result, key, value) {
+      var matches = key.match(brackets);
+
+      // Has brackets? Use the recursive assignment function to walk the keys,
+      // construct any missing objects in the result tree and make the assignment
+      // at the end of the chain.
+      if (matches) {
+          var keys = parse_keys(key);
+          hash_assign(result, keys, value);
+      }
+      else {
+          // Non bracket notation can make assignments directly.
+          var existing = result[key];
+
+          // If the value has been assigned already (for instance when a radio and
+          // a checkbox have the same name attribute) convert the previous value
+          // into an array before pushing into it.
+          //
+          // NOTE: If this requirement were removed all hash creation and
+          // assignment could go through `hash_assign`.
+          if (existing) {
+              if (!Array.isArray(existing)) {
+                  result[key] = [ existing ];
+              }
+
+              result[key].push(value);
+          }
+          else {
+              result[key] = value;
+          }
+      }
+
+      return result;
+  }
+
+  // urlform encoding serializer
+  function str_serialize(result, key, value) {
+      // encode newlines as \r\n cause the html spec says so
+      value = value.replace(/(\r)?\n/g, '\r\n');
+      value = encodeURIComponent(value);
+
+      // spaces should be '+' rather than '%20'.
+      value = value.replace(/%20/g, '+');
+      return result + (result ? '&' : '') + encodeURIComponent(key) + '=' + value;
+  }
+
+  var formSerialize = serialize;
 
   /**
    * The Newsletter module
@@ -15550,17 +15499,22 @@ var AccessNyc = (function () {
   Newsletter.prototype._submit = function _submit(event) {
     event.preventDefault();
 
-    // Store the data.
-    this._data = NSerializeJson.serializeForm(event.target);
+    // Serialize the data
+    this._data = formSerialize(event.target, { hash: true });
 
     // Switch the action to post-json. This creates an endpoint for mailchimp
     // that acts as a script that can be loaded onto our page.
     var action = event.target.action.replace(Newsletter.endpoints.MAIN + "?", Newsletter.endpoints.MAIN_JSON + "?");
 
-    var keys = Object.keys(this._data);
-    for (var i = 0; i < keys.length; i++) {
-      action = action + "&" + keys[i] + "=" + this._data[keys[i]];
-    }
+    // Add our params to the action
+    action = action + formSerialize(event.target, { serializer: function serializer() {
+        var params = [],
+            len = arguments.length;
+        while (len--) {
+          params[len] = arguments[len];
+        }var prev = typeof params[0] === 'string' ? params[0] : '';
+        return prev + "&" + params[1] + "=" + params[2];
+      } });
 
     // Append the callback reference. Mailchimp will wrap the JSON response in
     // our callback method. Once we load the script the callback will execute.
