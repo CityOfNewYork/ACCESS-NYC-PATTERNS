@@ -1,7 +1,7 @@
 'use strict';
 
 import Utility from '../../js/modules/utility.js';
-import {NSerializeJson as Serialize} from 'nserializejson';
+import formSerialize from 'form-serialize';
 
 /**
  * The Newsletter module
@@ -46,8 +46,8 @@ class Newsletter {
   _submit(event) {
     event.preventDefault();
 
-    // Store the data.
-    this._data = Serialize.serializeForm(event.target);
+    // Serialize the data
+    this._data = formSerialize(event.target, {hash: true});
 
     // Switch the action to post-json. This creates an endpoint for mailchimp
     // that acts as a script that can be loaded onto our page.
@@ -55,9 +55,11 @@ class Newsletter {
       `${Newsletter.endpoints.MAIN}?`, `${Newsletter.endpoints.MAIN_JSON}?`
     );
 
-    let keys = Object.keys(this._data);
-    for (let i = 0; i < keys.length; i++)
-      action = action + `&${keys[i]}=${this._data[keys[i]]}`;
+    // Add our params to the action
+    action = action + formSerialize(event.target, {serializer: (...params) => {
+      let prev = (typeof params[0] === 'string') ? params[0] : '';
+      return `${prev}&${params[1]}=${params[2]}`;
+    }});
 
     // Append the callback reference. Mailchimp will wrap the JSON response in
     // our callback method. Once we load the script the callback will execute.
