@@ -10,8 +10,7 @@
 = partial('partials/head.mixin.slm');
 = partial('partials/content-header.mixin.slm');
 = partial('section/section.mixin.slm');
-= partial('section/demo-specs.mixin.slm');
-= partial('section/demo-block.mixin.slm');
+= partial('section/section-text.mixin.slm');
 
 / Content blocks
 = content('head');
@@ -31,3 +30,9 @@
   = mixin('section', 'US Phone', 'elements/inputs/input-phone-us');
   = mixin('section', 'US Phone Error', 'elements/inputs/input-phone-us-error');
   = mixin('section', 'Search', 'elements/inputs/input-search');
+  = mixin('section', 'Autocomplete', 'elements/inputs/input-autocomplete');
+  = mixin('section-text', 'Usage', 'elements/inputs/readme');
+
+= content('script');
+  javascript:
+    access.inputAutocomplete();
