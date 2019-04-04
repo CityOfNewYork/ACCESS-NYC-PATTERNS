@@ -409,6 +409,9 @@ const variables = {
     'checkbox-radius': '8px',
     'checkbox-size': '30px',
     'toggle-size': '25px'
+  },
+  'display': {
+    'up': '0px 5px 11px 1px rgba(0,0,0,0.45)'
   }
 };
 
