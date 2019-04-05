@@ -252,3 +252,23 @@ Objects are the most complex patterns and require a great deal of custom styling
 _Utilities_
 
 Utilities are reusable single-attribute styles used to customize markup so that fewer patterns need to be written. They are not tied to any element, component, or object, but they can help override styling in certain contexts and build views more efficiently. These Patterns use the [Tailwind Framework](https://tailwindcss.com/). Refer to the Tailwind Docs and [Tailwind configuration file](https://github.com/CityOfNewYork/ACCESS-NYC-PATTERNS/blob/master/config/tailwind.js) for details on available modules and usage.
+
+### Publishing
+
+Here are the steps to publishing updates to the npm registry. This assumes that a feature request has been approved and pulled into master.
+
+* `git checkout master` - Change the working branch of your source to master.
+
+* `npm install` - Install any npm dependencies from the master package.json were not captured in your source.
+
+* Manually increment the package.json version number to the desired semantic version (patch, minor, major) and save the file.
+
+* `npm run predeploy` - Build the scripts, styles, and markup of to the distribution folder with the new version number in the file.
+
+* `git checkout package.json` - Undo the change made to the package.json file. This is temporary so that the next command can do it's work.
+
+* `npm version {{ patch, minor, or major }}` - This will update the package.json and package-lock.json file, commit the change and tag the repo with the desired version.
+
+* `git push origin && git push origin {{ tag (version number with 'v' prepended to it) }}` - Push changes and tag to the GitHub repository.
+
+* `npm publish` - Publish the package to the npm registery. This will also run `npm run publish` which executes a script that will take the distribution directory and push it to the GitHub Pages branch for the static site documentation.
