@@ -1,5 +1,7 @@
-var AccessNyc = (function () {
+var AccessNyc = (function (formSerialize) {
   'use strict';
+
+  formSerialize = formSerialize && formSerialize.hasOwnProperty('default') ? formSerialize['default'] : formSerialize;
 
   /**
    * The Utility class
@@ -12317,6 +12319,330 @@ var AccessNyc = (function () {
   /** @type {String} The path of the icon file */
   Icons.path = 'icons.svg';
 
+  /**
+   * JaroWinkler function.
+   * https://en.wikipedia.org/wiki/Jaro%E2%80%93Winkler_distance
+   * @param {string} s1 string one.
+   * @param {string} s2 second string.
+   * @return {number} amount of matches.
+   */
+  function jaro(s1, s2) {
+    var assign;
+
+    var shorter;
+    var longer;
+
+    assign = s1.length > s2.length ? [s1, s2] : [s2, s1], longer = assign[0], shorter = assign[1];
+
+    var matchingWindow = Math.floor(longer.length / 2) - 1;
+    var shorterMatches = [];
+    var longerMatches = [];
+
+    for (var i = 0; i < shorter.length; i++) {
+      var ch = shorter[i];
+      var windowStart = Math.max(0, i - matchingWindow);
+      var windowEnd = Math.min(i + matchingWindow + 1, longer.length);
+      for (var j = windowStart; j < windowEnd; j++) {
+        if (longerMatches[j] === undefined && ch === longer[j]) {
+          shorterMatches[i] = longerMatches[j] = ch;
+          break;
+        }
+      }
+    }
+
+    var shorterMatchesString = shorterMatches.join('');
+    var longerMatchesString = longerMatches.join('');
+    var numMatches = shorterMatchesString.length;
+
+    var transpositions = 0;
+    for (var i$1 = 0; i$1 < shorterMatchesString.length; i$1++) {
+      if (shorterMatchesString[i$1] !== longerMatchesString[i$1]) {
+        transpositions++;
+      }
+    }
+    return numMatches > 0 ? (numMatches / shorter.length + numMatches / longer.length + (numMatches - Math.floor(transpositions / 2)) / numMatches) / 3.0 : 0;
+  }
+
+  /**
+   * @param {string} s1 string one.
+   * @param {string} s2 second string.
+   * @param {number} prefixScalingFactor
+   * @return {number} jaroSimilarity
+   */
+  function jaroWinkler (s1, s2, prefixScalingFactor) {
+    if (prefixScalingFactor === void 0) prefixScalingFactor = 0.2;
+
+    var jaroSimilarity = jaro(s1, s2);
+
+    var commonPrefixLength = 0;
+    for (var i = 0; i < s1.length; i++) {
+      if (s1[i] === s2[i]) {
+        commonPrefixLength++;
+      } else {
+        break;
+      }
+    }
+
+    return jaroSimilarity + Math.min(commonPrefixLength, 4) * prefixScalingFactor * (1 - jaroSimilarity);
+  }
+
+  function memoize (fn) {
+    var cache = {};
+
+    return function () {
+      var args = [],
+          len = arguments.length;
+      while (len--) {
+        args[len] = arguments[len];
+      }var key = JSON.stringify(args);
+      return cache[key] || (cache[key] = fn.apply(void 0, args));
+    };
+  }
+
+  /* eslint-env browser */
+
+  /**
+   * Autocomplete for autocomplete.
+   * https://github.com/devowhippit/miss-plete-js
+   */
+  var Autocomplete = function Autocomplete(ref) {
+    var this$1 = this;
+    var selector = ref.selector;
+    var options = ref.options;
+    var className = ref.className;
+    var scoreFn = ref.scoreFn;if (scoreFn === void 0) scoreFn = memoize(Autocomplete.scoreFn);
+    var listItemFn = ref.listItemFn;if (listItemFn === void 0) listItemFn = Autocomplete.listItemFn;
+
+    Object.assign(this, { selector: selector, options: options, className: className, scoreFn: scoreFn, listItemFn: listItemFn });
+    this.scoredOptions = null;
+    this.container = null;
+    this.ul = null;
+    this.highlightedIndex = -1;
+
+    this.input = document.querySelector(this.selector);
+
+    this.input.addEventListener('input', function () {
+      if (this$1.input.value.length > 0) {
+        this$1.scoredOptions = this$1.options.map(function (option) {
+          return scoreFn(this$1.input.value, option);
+        }).sort(function (a, b) {
+          return b.score - a.score;
+        });
+      } else {
+        this$1.scoredOptions = [];
+      }
+
+      this$1.renderOptions();
+    });
+
+    this.input.addEventListener('keydown', function (event) {
+      if (this$1.ul) // dropdown visible?
+        {
+          switch (event.keyCode) {
+            case 13:
+              this$1.select();
+              break;
+            case 27:
+              // Esc
+              this$1.removeDropdown();
+              break;
+            case 40:
+              // Down arrow
+              // Otherwise up arrow places the cursor at the beginning of the
+              // field, and down arrow at the end
+              event.preventDefault();
+              this$1.changeHighlightedOption(this$1.highlightedIndex < this$1.ul.children.length - 1 ? this$1.highlightedIndex + 1 : -1);
+              break;
+            case 38:
+              // Up arrow
+              event.preventDefault();
+              this$1.changeHighlightedOption(this$1.highlightedIndex > -1 ? this$1.highlightedIndex - 1 : this$1.ul.children.length - 1);
+              break;
+          }
+        }
+    });
+
+    this.input.addEventListener('blur', function (event) {
+      this$1.removeDropdown();
+      this$1.highlightedIndex = -1;
+    });
+  };
+
+  var staticAccessors = { MAX_ITEMS: { configurable: true } }; // end constructor
+
+  /**
+  * It must return an object with at least the
+  * properties `score` and `displayValue`
+  * @param {array} inputValue
+  * @param {array} optionSynonyms
+  * Default is a Jaro–Winkler similarity function.
+  * @return {int} score or displayValue
+  */
+  Autocomplete.scoreFn = function scoreFn(inputValue, optionSynonyms) {
+    var closestSynonym = null;
+
+    optionSynonyms.forEach(function (synonym) {
+      var similarity = jaroWinkler(synonym.trim().toLowerCase(), inputValue.trim().toLowerCase());
+      if (closestSynonym === null || similarity > closestSynonym.similarity) {
+        closestSynonym = { similarity: similarity, value: synonym };
+        if (similarity === 1) {
+          return;
+        }
+      }
+    });
+    return {
+      score: closestSynonym.similarity,
+      displayValue: optionSynonyms[0]
+    };
+  };
+
+  /**
+   * Maximum amount of results to be returned.
+   */
+  staticAccessors.MAX_ITEMS.get = function () {
+    return 5;
+  };
+
+  /**
+  * List item for dropdown list.
+  * @param {Number} scoredOption
+  * @param {Number} itemIndex
+  * @return {string} The a list item <li>.
+  */
+  Autocomplete.listItemFn = function listItemFn(scoredOption, itemIndex) {
+    var li = itemIndex > Autocomplete.MAX_ITEMS ? null : document.createElement('li');
+    li && li.appendChild(document.createTextNode(scoredOption.displayValue));
+    return li;
+  };
+
+  /**
+  * Get index of previous element.
+  * @param {array} node
+  * @return {number} index of previous element.
+  */
+  Autocomplete.prototype.getSiblingIndex = function getSiblingIndex(node) {
+    var index = -1;
+    var n = node;
+    do {
+      index++;
+      n = n.previousElementSibling;
+    } while (n);
+    return index;
+  };
+  /**
+  * Display options as a list.
+  */
+  Autocomplete.prototype.renderOptions = function renderOptions() {
+    var this$1 = this;
+
+    var documentFragment = document.createDocumentFragment();
+
+    this.scoredOptions.every(function (scoredOption, i) {
+      var listItem = this$1.listItemFn(scoredOption, i);
+      listItem && documentFragment.appendChild(listItem);
+      return !!listItem;
+    });
+
+    this.removeDropdown();
+    this.highlightedIndex = -1;
+
+    if (documentFragment.hasChildNodes()) {
+      var newUl = document.createElement('ul');
+      newUl.addEventListener('mouseover', function (event) {
+        if (event.target.tagName === 'LI') {
+          this$1.changeHighlightedOption(this$1.getSiblingIndex(event.target));
+        }
+      });
+
+      newUl.addEventListener('mouseleave', function () {
+        this$1.changeHighlightedOption(-1);
+      });
+
+      newUl.addEventListener('mousedown', function (event) {
+        return event.preventDefault();
+      });
+
+      newUl.addEventListener('click', function (event) {
+        if (event.target.tagName === 'LI') {
+          this$1.select();
+        }
+      });
+
+      newUl.appendChild(documentFragment);
+
+      // See CSS to understand why the <ul> has to be wrapped in a <div>
+      var newContainer = document.createElement('div');
+      newContainer.className = this.className;
+      newContainer.appendChild(newUl);
+
+      // Inserts the dropdown just after the <input> element
+      this.input.parentNode.insertBefore(newContainer, this.input.nextSibling);
+      this.container = newContainer;
+      this.ul = newUl;
+    }
+  };
+
+  /**
+  * Highlight new option selected.
+  * @param {Number} newHighlightedIndex
+  */
+  Autocomplete.prototype.changeHighlightedOption = function changeHighlightedOption(newHighlightedIndex) {
+    if (newHighlightedIndex >= -1 && newHighlightedIndex < this.ul.children.length) {
+      // If any option already selected, then unselect it
+      if (this.highlightedIndex !== -1) {
+        this.ul.children[this.highlightedIndex].classList.remove('highlight');
+      }
+
+      this.highlightedIndex = newHighlightedIndex;
+
+      if (this.highlightedIndex !== -1) {
+        this.ul.children[this.highlightedIndex].classList.add('highlight');
+      }
+    }
+  };
+
+  /**
+  * Selects an option from a list of items.
+  */
+  Autocomplete.prototype.select = function select() {
+    if (this.highlightedIndex !== -1) {
+      this.input.value = this.scoredOptions[this.highlightedIndex].displayValue;
+      this.removeDropdown();
+    }
+  };
+
+  /**
+  * Remove dropdown list once a list item is selected.
+  */
+  Autocomplete.prototype.removeDropdown = function removeDropdown() {
+    this.container && this.container.remove();
+    this.container = null;
+    this.ul = null;
+  };
+
+  Object.defineProperties(Autocomplete, staticAccessors);
+
+  /**
+   * The InputAutocomplete class.
+   */
+  var InputAutocomplete = function InputAutocomplete(settings) {
+    this._autocomplete = new Autocomplete({
+      selector: settings.hasOwnProperty('selector') ? settings.selector : InputAutocomplete.selector,
+      options: settings.options,
+      className: InputAutocomplete.classname
+    });
+
+    return this;
+  };
+
+  /** @type {string} The search box dom selector */
+  InputAutocomplete.selector = '[data-js="input-autocomplete__input"]';
+
+  /** @type {string} The classname for the dropdown element */
+  InputAutocomplete.classname = 'input-autocomplete__dropdown';
+
+  var InputAutocompleteData = [['Bronx', 'Hunts Point', 'Arthur Avenue', 'Riverside', 'Mott Haven'], ['Queens', 'Corona', 'East Elmhurst', 'Forest Hills', 'Fresh Pond'], ['Brooklyn', 'Flatbush', 'Bay Ridge', 'DUMBO', 'Williamsburg'], ['Staten Island', 'South Beach', 'Fort Wadsworth', 'Todt Hill', 'Great Kills'], ['Manhattan', 'Lower', 'Midtown', 'Chinatown', 'SoHo']];
+
   //
   //
   //
@@ -15203,267 +15529,6 @@ var AccessNyc = (function () {
     LINES: ['S']
   }];
 
-  // get successful control from form and assemble into object
-  // http://www.w3.org/TR/html401/interact/forms.html#h-17.13.2
-
-  // types which indicate a submit action and are not successful controls
-  // these will be ignored
-  var k_r_submitter = /^(?:submit|button|image|reset|file)$/i;
-
-  // node names which could be successful controls
-  var k_r_success_contrls = /^(?:input|select|textarea|keygen)/i;
-
-  // Matches bracket notation.
-  var brackets = /(\[[^\[\]]*\])/g;
-
-  // serializes form fields
-  // @param form MUST be an HTMLForm element
-  // @param options is an optional argument to configure the serialization. Default output
-  // with no options specified is a url encoded string
-  //    - hash: [true | false] Configure the output type. If true, the output will
-  //    be a js object.
-  //    - serializer: [function] Optional serializer function to override the default one.
-  //    The function takes 3 arguments (result, key, value) and should return new result
-  //    hash and url encoded str serializers are provided with this module
-  //    - disabled: [true | false]. If true serialize disabled fields.
-  //    - empty: [true | false]. If true serialize empty fields
-  function serialize(form, options) {
-      if (typeof options != 'object') {
-          options = { hash: !!options };
-      }
-      else if (options.hash === undefined) {
-          options.hash = true;
-      }
-
-      var result = (options.hash) ? {} : '';
-      var serializer = options.serializer || ((options.hash) ? hash_serializer : str_serialize);
-
-      var elements = form && form.elements ? form.elements : [];
-
-      //Object store each radio and set if it's empty or not
-      var radio_store = Object.create(null);
-
-      for (var i=0 ; i<elements.length ; ++i) {
-          var element = elements[i];
-
-          // ingore disabled fields
-          if ((!options.disabled && element.disabled) || !element.name) {
-              continue;
-          }
-          // ignore anyhting that is not considered a success field
-          if (!k_r_success_contrls.test(element.nodeName) ||
-              k_r_submitter.test(element.type)) {
-              continue;
-          }
-
-          var key = element.name;
-          var val = element.value;
-
-          // we can't just use element.value for checkboxes cause some browsers lie to us
-          // they say "on" for value when the box isn't checked
-          if ((element.type === 'checkbox' || element.type === 'radio') && !element.checked) {
-              val = undefined;
-          }
-
-          // If we want empty elements
-          if (options.empty) {
-              // for checkbox
-              if (element.type === 'checkbox' && !element.checked) {
-                  val = '';
-              }
-
-              // for radio
-              if (element.type === 'radio') {
-                  if (!radio_store[element.name] && !element.checked) {
-                      radio_store[element.name] = false;
-                  }
-                  else if (element.checked) {
-                      radio_store[element.name] = true;
-                  }
-              }
-
-              // if options empty is true, continue only if its radio
-              if (val == undefined && element.type == 'radio') {
-                  continue;
-              }
-          }
-          else {
-              // value-less fields are ignored unless options.empty is true
-              if (!val) {
-                  continue;
-              }
-          }
-
-          // multi select boxes
-          if (element.type === 'select-multiple') {
-              val = [];
-
-              var selectOptions = element.options;
-              var isSelectedOptions = false;
-              for (var j=0 ; j<selectOptions.length ; ++j) {
-                  var option = selectOptions[j];
-                  var allowedEmpty = options.empty && !option.value;
-                  var hasValue = (option.value || allowedEmpty);
-                  if (option.selected && hasValue) {
-                      isSelectedOptions = true;
-
-                      // If using a hash serializer be sure to add the
-                      // correct notation for an array in the multi-select
-                      // context. Here the name attribute on the select element
-                      // might be missing the trailing bracket pair. Both names
-                      // "foo" and "foo[]" should be arrays.
-                      if (options.hash && key.slice(key.length - 2) !== '[]') {
-                          result = serializer(result, key + '[]', option.value);
-                      }
-                      else {
-                          result = serializer(result, key, option.value);
-                      }
-                  }
-              }
-
-              // Serialize if no selected options and options.empty is true
-              if (!isSelectedOptions && options.empty) {
-                  result = serializer(result, key, '');
-              }
-
-              continue;
-          }
-
-          result = serializer(result, key, val);
-      }
-
-      // Check for all empty radio buttons and serialize them with key=""
-      if (options.empty) {
-          for (var key in radio_store) {
-              if (!radio_store[key]) {
-                  result = serializer(result, key, '');
-              }
-          }
-      }
-
-      return result;
-  }
-
-  function parse_keys(string) {
-      var keys = [];
-      var prefix = /^([^\[\]]*)/;
-      var children = new RegExp(brackets);
-      var match = prefix.exec(string);
-
-      if (match[1]) {
-          keys.push(match[1]);
-      }
-
-      while ((match = children.exec(string)) !== null) {
-          keys.push(match[1]);
-      }
-
-      return keys;
-  }
-
-  function hash_assign(result, keys, value) {
-      if (keys.length === 0) {
-          result = value;
-          return result;
-      }
-
-      var key = keys.shift();
-      var between = key.match(/^\[(.+?)\]$/);
-
-      if (key === '[]') {
-          result = result || [];
-
-          if (Array.isArray(result)) {
-              result.push(hash_assign(null, keys, value));
-          }
-          else {
-              // This might be the result of bad name attributes like "[][foo]",
-              // in this case the original `result` object will already be
-              // assigned to an object literal. Rather than coerce the object to
-              // an array, or cause an exception the attribute "_values" is
-              // assigned as an array.
-              result._values = result._values || [];
-              result._values.push(hash_assign(null, keys, value));
-          }
-
-          return result;
-      }
-
-      // Key is an attribute name and can be assigned directly.
-      if (!between) {
-          result[key] = hash_assign(result[key], keys, value);
-      }
-      else {
-          var string = between[1];
-          // +var converts the variable into a number
-          // better than parseInt because it doesn't truncate away trailing
-          // letters and actually fails if whole thing is not a number
-          var index = +string;
-
-          // If the characters between the brackets is not a number it is an
-          // attribute name and can be assigned directly.
-          if (isNaN(index)) {
-              result = result || {};
-              result[string] = hash_assign(result[string], keys, value);
-          }
-          else {
-              result = result || [];
-              result[index] = hash_assign(result[index], keys, value);
-          }
-      }
-
-      return result;
-  }
-
-  // Object/hash encoding serializer.
-  function hash_serializer(result, key, value) {
-      var matches = key.match(brackets);
-
-      // Has brackets? Use the recursive assignment function to walk the keys,
-      // construct any missing objects in the result tree and make the assignment
-      // at the end of the chain.
-      if (matches) {
-          var keys = parse_keys(key);
-          hash_assign(result, keys, value);
-      }
-      else {
-          // Non bracket notation can make assignments directly.
-          var existing = result[key];
-
-          // If the value has been assigned already (for instance when a radio and
-          // a checkbox have the same name attribute) convert the previous value
-          // into an array before pushing into it.
-          //
-          // NOTE: If this requirement were removed all hash creation and
-          // assignment could go through `hash_assign`.
-          if (existing) {
-              if (!Array.isArray(existing)) {
-                  result[key] = [ existing ];
-              }
-
-              result[key].push(value);
-          }
-          else {
-              result[key] = value;
-          }
-      }
-
-      return result;
-  }
-
-  // urlform encoding serializer
-  function str_serialize(result, key, value) {
-      // encode newlines as \r\n cause the html spec says so
-      value = value.replace(/(\r)?\n/g, '\r\n');
-      value = encodeURIComponent(value);
-
-      // spaces should be '+' rather than '%20'.
-      value = value.replace(/%20/g, '+');
-      return result + (result ? '&' : '') + encodeURIComponent(key) + '=' + value;
-  }
-
-  var formSerialize = serialize;
-
   /**
    * The Newsletter module
    * @class
@@ -15861,7 +15926,21 @@ var AccessNyc = (function () {
     var element = document.querySelector(Newsletter.selector);
     return element ? new Newsletter(element) : null;
   };
+  /** add APIs here as they are written */
+
+  /**
+  * An API for the Autocomplete Object
+  * @param {object} settings
+  * @return {object} instance of Autocomplete
+  */
+  main.prototype.inputAutocomplete = function inputAutocomplete(settings) {
+    if (settings === void 0) settings = {};
+
+    settings.options = settings.hasOwnProperty('options') ? settings.options : InputAutocompleteData;
+
+    return new InputAutocomplete(settings);
+  };
 
   return main;
 
-}());
+}(formSerialize));

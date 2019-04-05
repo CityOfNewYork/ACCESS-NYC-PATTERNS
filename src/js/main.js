@@ -4,8 +4,11 @@ import Utility from './modules/utility.js';
 import Toggle from './modules/toggle';
 import VueDemo from './modules/VueDemo';
 
+
 // Elements
 import Icons from '../elements/icons/icons';
+import InputAutocomplete from '../elements/inputs/input-autocomplete';
+import InputAutocompleteData from '../elements/inputs/input-autocomplete.data';
 
 // Components
 import CardVue from '../components/card/card.vue';
@@ -16,6 +19,7 @@ import FilterVue from '../components/filter/filter.vue';
 import FilterMultiVue from '../components/filter/filter-multi.vue';
 import FilterData from '../components/filter/filter.data.js';
 import NearbyStops from '../components/nearby-stops/nearby-stops';
+
 
 // Objects
 import Newsletter from '../objects/newsletter/newsletter';
@@ -151,6 +155,18 @@ class main {
     return (element) ? new Newsletter(element) : null;
   }
   /** add APIs here as they are written */
+
+ /**
+  * An API for the Autocomplete Object
+  * @param {object} settings
+  * @return {object} instance of Autocomplete
+  */
+  inputAutocomplete(settings = {}) {
+    settings.options = (settings.hasOwnProperty('options'))
+      ? settings.options : InputAutocompleteData;
+
+    return new InputAutocomplete(settings);
+  }
 }
 
 export default main;
