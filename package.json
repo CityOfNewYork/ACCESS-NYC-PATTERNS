@@ -1,10 +1,10 @@
 {
   "name": "access-nyc-patterns",
   "version": "0.3.4",
-  "description": "",
-  "author": "NYC Opportunity <technology@nycopportunity.nyc.gov>",
+  "description": "User Interface Patterns for Benefits Access",
+  "author": "products@nycopportunity.nyc.gov<NYC Opportunity>",
   "license": "GPL-3.0+",
-  "homepage": "https://cityofnewyork.github.io/ACCESS-NYC-PATTERNS/",
+  "homepage": "https://accesspatterns.cityofnewyork.us",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/CityOfNewYork/ACCESS-NYC-PATTERNS.git"
