@@ -12417,9 +12417,21 @@ var AccessNyc = (function () {
     this.ul = null;
     this.highlightedIndex = -1;
 
-    this.input = document.querySelector(this.selector);
+    window.addEventListener('keyup', function (event) {
+      if (!event.target.matches(this$1.selector)) {
+        return;
+      }
 
-    this.input.addEventListener('input', function () {
+      this$1.input = event.target;
+    });
+
+    window.addEventListener('input', function (event) {
+      if (!event.target.matches(this$1.selector)) {
+        return;
+      }
+
+      this$1.input = event.target;
+
       if (this$1.input.value.length > 0) {
         this$1.scoredOptions = this$1.options.map(function (option) {
           return scoreFn(this$1.input.value, option);
@@ -12433,7 +12445,13 @@ var AccessNyc = (function () {
       this$1.renderOptions();
     });
 
-    this.input.addEventListener('keydown', function (event) {
+    window.addEventListener('keydown', function (event) {
+      if (!event.target.matches(this$1.selector)) {
+        return;
+      }
+
+      this$1.input = event.target;
+
       if (this$1.ul) // dropdown visible?
         {
           switch (event.keyCode) {
@@ -12460,10 +12478,14 @@ var AccessNyc = (function () {
         }
     });
 
-    this.input.addEventListener('blur', function (event) {
+    window.addEventListener('blur', function (event) {
+      if (event.target === window || !event.target.matches(this$1.selector)) {
+        return;
+      }
+
       this$1.removeDropdown();
       this$1.highlightedIndex = -1;
-    });
+    }, true);
   };
 
   var staticAccessors = { MAX_ITEMS: { configurable: true } }; // end constructor

@@ -25,9 +25,19 @@ class Autocomplete {
     this.ul = null;
     this.highlightedIndex = -1;
 
-    this.input = document.querySelector(this.selector);
+    window.addEventListener('keyup', (event) => {
+      if (!event.target.matches(this.selector))
+        return;
 
-    this.input.addEventListener('input', () => {
+      this.input = event.target;
+    });
+
+    window.addEventListener('input', (event) => {
+       if (!event.target.matches(this.selector))
+        return;
+
+      this.input = event.target;
+
       if (this.input.value.length > 0)
         this.scoredOptions = this.options
           .map((option) => scoreFn(this.input.value, option))
@@ -38,7 +48,12 @@ class Autocomplete {
       this.renderOptions();
     });
 
-    this.input.addEventListener('keydown', (event) => {
+    window.addEventListener('keydown', (event) => {
+      if (!event.target.matches(this.selector))
+        return;
+
+      this.input = event.target;
+
       if (this.ul)// dropdown visible?
         switch (event.keyCode) {
           case 13:
@@ -68,10 +83,13 @@ class Autocomplete {
         }
     });
 
-    this.input.addEventListener('blur', (event) => {
+    window.addEventListener('blur', (event) => {
+      if (event.target === window || !event.target.matches(this.selector))
+        return;
+
       this.removeDropdown();
       this.highlightedIndex = -1;
-    });
+    }, true);
   }// end constructor
 
  /**
