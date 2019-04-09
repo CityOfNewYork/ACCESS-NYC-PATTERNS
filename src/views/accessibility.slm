@@ -17,7 +17,7 @@
   = mixin('head', title);
 
 = content('header');
-  = mixin('header', title);
+  = mixin('header', title); 
 
 = content('content');
   = mixin('content-header', title);
