@@ -20,7 +20,7 @@
 
 .c-filter-multi__list {
   padding: 0;
-  padding-#{$text-direction-start}: 3px; // accomodate checkbox
+  // padding-#{$text-direction-start}: 3px; // accomodate checkbox
   list-style: none;
   margin: 0
 }
@@ -102,6 +102,10 @@
   font-weight: $font-weight-normal;
   margin: (.5 * $spacing-base) 0;
   min-height: map-get(map-get($variables, 'inputs'), 'checkbox-size');
+
+  a {
+    cursor: pointer
+  }
 
   &:last-child {
     margin-bottom: 0

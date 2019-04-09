@@ -59,8 +59,8 @@
               <h2 class="text-font-size-small m-0 text-color-blue-dark screen-tablet:hidden">Patterns</h2>
               <h2 aria-hidden="true" class="type-h1 m-0 text-color-blue-dark hidden screen-tablet:inline-block">Patterns</h2>
               <nav class="text-font-size-small">
-                <a class="rounded-lg text-color-blue-dark border-2 no-underline px-1 ml-2 hidden screen-tablet:inline-block" href="https://github.com/CityOfNewYork/ACCESS-NYC-PATTERNS">0.3.5</a>
-                <a aria-hidden="true" class="ml-1 screen-tablet:ml-2 screen-tablet:hidden" href="https://github.com/CityOfNewYork/ACCESS-NYC-PATTERNS">0.3.5</a>
+                <a class="rounded-lg text-color-blue-dark border-2 no-underline px-1 ml-2 hidden screen-tablet:inline-block" href="https://github.com/CityOfNewYork/ACCESS-NYC-PATTERNS">0.3.7</a>
+                <a aria-hidden="true" class="ml-1 screen-tablet:ml-2 screen-tablet:hidden" href="https://github.com/CityOfNewYork/ACCESS-NYC-PATTERNS">0.3.7</a>
                 <a class="ml-1 screen-tablet:ml-2" data-js="toggle" href="#main-menu">Menu</a>
               </nav>
             </div>
@@ -250,7 +250,8 @@
                 </div>
               </header>
               <div class="layout--home-body">
-                <div class="my-0 pt-4 px-2 text-font-size-small"><p>The Multi Filter Component allows for multiple selections and nested filter categories.</p></div>
+                <div class="my-0 pt-4 px-2 text-font-size-small"><p>The Multi Filter Component allows for multiple selections and nested filter categories. There are alternate patterns for toggling all checkboxes within a group which includes a checkbox on the parent menu toggle or a nested short link within the menu
+  accordian.</p></div>
               </div>
               <div class="layout--gutter screen-tablet:layout--columns justify-between pt-4">
                 <div class="screen-tablet:pr-2">
@@ -258,12 +259,14 @@
                     <ul class="c-filter-multi__list">
                       <li class="c-filter-multi__item">
                         <div class="c-filter-multi__item-header">
-                          <label class="checkbox">
-                            <input data-toggles="#" type="checkbox" /><span class="checkbox__label">Cash &amp; Expenses</span></label>
+                          <label>Cash &amp; Expenses</label>
                           <a class="c-filter-multi__item-header-toggle active" data-js="filter" href="#cash-and-expenses"><span class="c-filter-multi__item-header-expand">Expand category</span><span class="c-filter-multi__item-header-collapse">Collapse category</span></a>
                         </div>
                         <div aria-hidden="false" class="c-filter-multi__item-group active" id="cash-and-expenses">
                           <ul class="c-filter-multi__item-group-list">
+                            <li class="c-filter-multi__item-group-subitem">
+                              <a>Toggle All</a>
+                            </li>
                             <li class="c-filter-multi__item-group-subitem">
                               <label class="checkbox">
                                 <input type="checkbox" value="6871" /><span class="checkbox__label text-font-size-small font-normal">Home Energy Assistance Program (HEAP)</span></label>
@@ -318,12 +321,14 @@
   &lt;ul class=&quot;c-filter-multi__list&quot;&gt;
     &lt;li class=&quot;c-filter-multi__item&quot;&gt;
       &lt;div class=&quot;c-filter-multi__item-header&quot;&gt;
-        &lt;label class=&quot;checkbox&quot;&gt;
-          &lt;input data-toggles=&quot;#&quot; type=&quot;checkbox&quot; /&gt;&lt;span class=&quot;checkbox__label&quot;&gt;Cash &amp;amp; Expenses&lt;/span&gt;&lt;/label&gt;
+        &lt;label&gt;Cash &amp;amp; Expenses&lt;/label&gt;
         &lt;a class=&quot;c-filter-multi__item-header-toggle active&quot; data-js=&quot;filter&quot; href=&quot;#cash-and-expenses&quot;&gt;&lt;span class=&quot;c-filter-multi__item-header-expand&quot;&gt;Expand category&lt;/span&gt;&lt;span class=&quot;c-filter-multi__item-header-collapse&quot;&gt;Collapse category&lt;/span&gt;&lt;/a&gt;
       &lt;/div&gt;
       &lt;div aria-hidden=&quot;false&quot; class=&quot;c-filter-multi__item-group active&quot; id=&quot;cash-and-expenses&quot;&gt;
         &lt;ul class=&quot;c-filter-multi__item-group-list&quot;&gt;
+          &lt;li class=&quot;c-filter-multi__item-group-subitem&quot;&gt;
+            &lt;a&gt;Toggle All&lt;/a&gt;
+          &lt;/li&gt;
           &lt;li class=&quot;c-filter-multi__item-group-subitem&quot;&gt;
             &lt;label class=&quot;checkbox&quot;&gt;
               &lt;input type=&quot;checkbox&quot; value=&quot;6871&quot; /&gt;&lt;span class=&quot;checkbox__label text-font-size-small font-normal&quot;&gt;Home Energy Assistance Program (HEAP)&lt;/span&gt;&lt;/label&gt;
@@ -459,12 +464,12 @@ new Filter();</code></pre></div>
               <div class="layout--gutter screen-tablet:layout--columns justify-between pt-4">
                 <div class="screen-tablet:pr-2">
                   <div id="app-c-filter-multi">
-                    <c-filter-multi :terms="termsFilterMulti" @fetch="fetch"></c-filter-multi>
+                    <c-filter-multi :terms="termsFilterMulti" @fetch="fetch" @reset="reset"></c-filter-multi>
                   </div>
                 </div>
                 <div>
                   <div class="code-block mb-1"><pre>&lt;div id=&quot;app-c-filter-multi&quot;&gt;
-  &lt;c-filter-multi :terms=&quot;termsFilterMulti&quot; @fetch=&quot;fetch&quot;&gt;&lt;/c-filter-multi&gt;
+  &lt;c-filter-multi :terms=&quot;termsFilterMulti&quot; @fetch=&quot;fetch&quot; @reset=&quot;reset&quot;&gt;&lt;/c-filter-multi&gt;
 &lt;/div&gt;</pre></div>
                 </div>
               </div>
@@ -492,7 +497,22 @@ import FilterMultiVue from &#39;src/components/filter/filter-multi.vue&#39;;
 Vue.component(&#39;c-filter&#39;, FilterVue);
 Vue.component(&#39;c-filter-multi&#39;, FilterMultiVue);
 
-new Vue();</code></pre></div>
+new Vue();</code></pre>
+
+<h3>Props</h3>
+
+<h4>Data</h4>
+
+<p>Data for the filter list can be passed by setting the <code>:terms</code> prop on the component tag. For example, on
+  <a href="#vue-filter-multi">Vue Filter Multi</a> the &quot;termsFilterMulti&quot; is an collection of filters bound to <code>terms</code>. A
+  <a href="https://github.com/CityOfNewYork/ACCESS-NYC-PATTERNS/blob/master/src/components/filter/filter.data.js">sample set of data can be seen here</a>.</p>
+
+<h4>Events</h4>
+
+<p>The
+  <a href="#vue-filter">Vue Filter</a> and
+  <a href="#vue-filter-multi">Vue Filter Multi</a> accept the <code>@fetch</code> event which will emit when each filter is clicked (or checked). Pass a method to this prop to provide functionality.
+  <a href="#vue-filter">Vue Filter</a> will accept an additional <code>@reset</code> event which will emit an event when the &quot;All {{ filter }}&quot; item is clicked.</p></div>
               </div>
             </div>
           </section>

@@ -2,6 +2,8 @@ export default [
   {
     name: 'Programs',
     slug: 'programs',
+    checkbox: false,
+    toggle: true,
     filters: [
       {
         id: 154,
@@ -74,6 +76,8 @@ export default [
   {
     name: 'Population Served',
     slug: 'populations-served',
+    checkbox: true,
+    toggle: false,
     filters: [
       {
         id: 324,

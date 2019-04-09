@@ -42,15 +42,13 @@
       }
     },
     methods: {
-      fetch: function(params) {
-        params.event.preventDefault();
-        this.$set(this.terms, 'current', params.data.name);
-        this.$emit('fetch', params);
+      fetch: function(event) {
+        this.$set(this.terms, 'current', event.data.name);
+        this.$emit('fetch', event);
 
         return this;
       },
       reset: function(event) {
-        event.preventDefault();
         this.$set(this.terms, 'current', '');
         this.$emit('reset', {event: event, data: this});
 
@@ -63,5 +61,5 @@
         return this;
       }
     }
-  }
+  };
 </script>

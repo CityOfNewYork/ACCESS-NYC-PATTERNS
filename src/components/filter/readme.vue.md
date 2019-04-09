@@ -9,3 +9,13 @@ The [Vue Filter](#vue-filter) and [Vue Filter Multi](#vue-filter-multi) can be i
     Vue.component('c-filter-multi', FilterMultiVue);
 
     new Vue();
+
+### Props
+
+#### Data
+
+Data for the filter list can be passed by setting the `:terms` prop on the component tag. For example, on [Vue Filter Multi](#vue-filter-multi) the "termsFilterMulti" is an collection of filters bound to `terms`. A [sample set of data can be seen here](https://github.com/CityOfNewYork/ACCESS-NYC-PATTERNS/blob/master/src/components/filter/filter.data.js).
+
+#### Events
+
+The [Vue Filter](#vue-filter) and [Vue Filter Multi](#vue-filter-multi) accept the `@fetch` event which will emit when each filter is clicked (or checked). Pass a method to this prop to provide functionality. [Vue Filter](#vue-filter) will accept an additional `@reset` event which will emit an event when the "All {{ filter }}" item is clicked.

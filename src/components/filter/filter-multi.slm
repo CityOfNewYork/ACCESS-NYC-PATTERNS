@@ -2,14 +2,14 @@ div class='c-filter-multi active bg-color-white' data-sketch-symbol=symbol data-
   ul class='c-filter-multi__list'
     li class='c-filter-multi__item'
       div class='c-filter-multi__item-header'
-        label class='checkbox'
-          input data-toggles='#' type='checkbox'
-          span class='checkbox__label' Cash &amp; Expenses
+        label Cash &amp; Expenses
         a href='#cash-and-expenses' class='c-filter-multi__item-header-toggle active' data-js='filter'
           span class='c-filter-multi__item-header-expand' Expand category
           span class='c-filter-multi__item-header-collapse' Collapse category
       div#cash-and-expenses class='c-filter-multi__item-group active' aria-hidden='false'
         ul class='c-filter-multi__item-group-list'
+          li class='c-filter-multi__item-group-subitem'
+            a Toggle All
           li class='c-filter-multi__item-group-subitem'
             label class='checkbox'
               input value='6871' type='checkbox'

@@ -3,10 +3,12 @@
     <ul class="c-filter-multi__list">
       <li class="c-filter-multi__item" v-for="t in terms" :key="t.term_id">
         <div class="c-filter-multi__item-header">
-          <label class="checkbox">
+          <label v-if="t.checkbox" class="checkbox">
             <input data-toggles="#" type="checkbox" :checked="t.checked" @change="fetch({'event': $event, 'data': {'parent': t.slug}})" />
-
             <span class="checkbox__label">{{ t.name }}</span>
+          </label>
+          <label v-else>
+            {{ t.name }}
           </label>
 
           <a :class="{'active': t.active, 'inactive': !(t.active)}" class="c-filter-multi__item-header-toggle" :href="'#' + t.slug" @click="toggle($event, t)">
@@ -18,6 +20,10 @@
 
         <div :aria-hidden="!(t.active)" :class="{'active': t.active, 'inactive': !(t.active)}" class="c-filter-multi__item-group" :id="t.slug">
           <ul class="c-filter-multi__item-group-list">
+            <li class='c-filter-multi__item-group-subitem' v-if="t.toggle">
+              <a @click="reset({'event': $event, 'data': {'parent': t.slug}})">Toggle All</a>
+            </li>
+
             <li class="c-filter-multi__item-group-subitem" v-for="f in t.filters" :key="f.slug">
               <label class="checkbox">
                 <input type="checkbox" :value="f.slug" :checked="f.checked" @change="fetch({'event': $event, 'data': f})" />
@@ -55,6 +61,11 @@
 
         return this;
       },
+      reset: function(event) {
+        this.$emit('reset', {event: event, data: this});
+
+        return this;
+      },
       toggle: function(event, terms) {
         event.preventDefault();
         this.$set(terms, 'active', !terms.active);
@@ -62,5 +73,5 @@
         return this;
       }
     }
-  }
+  };
 </script>

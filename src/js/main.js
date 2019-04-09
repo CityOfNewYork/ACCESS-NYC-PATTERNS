@@ -17,7 +17,7 @@ import Accordion from '../components/accordion/accordion';
 import Filter from '../components/filter/filter';
 import FilterVue from '../components/filter/filter.vue';
 import FilterMultiVue from '../components/filter/filter-multi.vue';
-import FilterData from '../components/filter/filter.data.js';
+import FilterData from '../components/filter/filter.data';
 import NearbyStops from '../components/nearby-stops/nearby-stops';
 
 
