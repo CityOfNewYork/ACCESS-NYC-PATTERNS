@@ -12890,15 +12890,13 @@ var AccessNyc = (function () {
       }
     },
     methods: {
-      fetch: function fetch(params) {
-        params.event.preventDefault();
-        this.$set(this.terms, 'current', params.data.name);
-        this.$emit('fetch', params);
+      fetch: function fetch(event) {
+        this.$set(this.terms, 'current', event.data.name);
+        this.$emit('fetch', event);
 
         return this;
       },
       reset: function reset(event) {
-        event.preventDefault();
         this.$set(this.terms, 'current', '');
         this.$emit('reset', { event: event, data: this });
 
@@ -13001,6 +12999,12 @@ var AccessNyc = (function () {
   //
   //
   //
+  //
+  //
+  //
+  //
+  //
+  //
 
   var script$2 = {
     props: {
@@ -13022,6 +13026,11 @@ var AccessNyc = (function () {
 
         return this;
       },
+      reset: function reset(event) {
+        this.$emit('reset', { event: event, data: this });
+
+        return this;
+      },
       toggle: function toggle(event, terms) {
         event.preventDefault();
         this.$set(terms, 'active', !terms.active);
@@ -13037,15 +13046,17 @@ var AccessNyc = (function () {
   /* template */
   var __vue_render__$2 = function __vue_render__() {
     var _vm = this;var _h = _vm.$createElement;var _c = _vm._self._c || _h;return _c('div', { staticClass: "c-filter-multi" }, [_c('ul', { staticClass: "c-filter-multi__list" }, _vm._l(_vm.terms, function (t) {
-      return _c('li', { key: t.term_id, staticClass: "c-filter-multi__item" }, [_c('div', { staticClass: "c-filter-multi__item-header" }, [_c('label', { staticClass: "checkbox" }, [_c('input', { attrs: { "data-toggles": "#", "type": "checkbox" }, domProps: { "checked": t.checked }, on: { "change": function change($event) {
+      return _c('li', { key: t.term_id, staticClass: "c-filter-multi__item" }, [_c('div', { staticClass: "c-filter-multi__item-header" }, [t.checkbox ? _c('label', { staticClass: "checkbox" }, [_c('input', { attrs: { "data-toggles": "#", "type": "checkbox" }, domProps: { "checked": t.checked }, on: { "change": function change($event) {
             return _vm.fetch({ 'event': $event, 'data': { 'parent': t.slug } });
-          } } }), _vm._v(" "), _c('span', { staticClass: "checkbox__label" }, [_vm._v(_vm._s(t.name))])]), _vm._v(" "), _c('a', { staticClass: "c-filter-multi__item-header-toggle", class: { 'active': t.active, 'inactive': !t.active }, attrs: { "href": '#' + t.slug }, on: { "click": function click($event) {
+          } } }), _vm._v(" "), _c('span', { staticClass: "checkbox__label" }, [_vm._v(_vm._s(t.name))])]) : _c('label', [_vm._v("\n          " + _vm._s(t.name) + "\n        ")]), _vm._v(" "), _c('a', { staticClass: "c-filter-multi__item-header-toggle", class: { 'active': t.active, 'inactive': !t.active }, attrs: { "href": '#' + t.slug }, on: { "click": function click($event) {
             return _vm.toggle($event, t);
-          } } }, [_c('span', { staticClass: "c-filter-multi__item-header-expand" }, [_vm._v("Expand category")]), _vm._v(" "), _c('span', { staticClass: "c-filter-multi__item-header-collapse" }, [_vm._v("Collapse category")])])]), _vm._v(" "), _c('div', { staticClass: "c-filter-multi__item-group", class: { 'active': t.active, 'inactive': !t.active }, attrs: { "aria-hidden": !t.active, "id": t.slug } }, [_c('ul', { staticClass: "c-filter-multi__item-group-list" }, _vm._l(t.filters, function (f) {
+          } } }, [_c('span', { staticClass: "c-filter-multi__item-header-expand" }, [_vm._v("Expand category")]), _vm._v(" "), _c('span', { staticClass: "c-filter-multi__item-header-collapse" }, [_vm._v("Collapse category")])])]), _vm._v(" "), _c('div', { staticClass: "c-filter-multi__item-group", class: { 'active': t.active, 'inactive': !t.active }, attrs: { "aria-hidden": !t.active, "id": t.slug } }, [_c('ul', { staticClass: "c-filter-multi__item-group-list" }, [t.toggle ? _c('li', { staticClass: "c-filter-multi__item-group-subitem" }, [_c('a', { on: { "click": function click($event) {
+            return _vm.reset({ 'event': $event, 'data': { 'parent': t.slug } });
+          } } }, [_vm._v("Toggle All")])]) : _vm._e(), _vm._v(" "), _vm._l(t.filters, function (f) {
         return _c('li', { key: f.slug, staticClass: "c-filter-multi__item-group-subitem" }, [_c('label', { staticClass: "checkbox" }, [_c('input', { attrs: { "type": "checkbox" }, domProps: { "value": f.slug, "checked": f.checked }, on: { "change": function change($event) {
               return _vm.fetch({ 'event': $event, 'data': f });
             } } }), _vm._v(" "), _c('span', { staticClass: "checkbox__label text-font-size-small font-normal", domProps: { "innerHTML": _vm._s(f.name) } }, [_vm._v(_vm._s(f.name))])])]);
-      }), 0)])]);
+      })], 2)])]);
     }), 0)]);
   };
   var __vue_staticRenderFns__$2 = [];
@@ -13090,6 +13101,8 @@ var AccessNyc = (function () {
   var FilterData = [{
     name: 'Programs',
     slug: 'programs',
+    checkbox: false,
+    toggle: true,
     filters: [{
       id: 154,
       name: 'Cash &amp; Expenses',
@@ -13149,6 +13162,8 @@ var AccessNyc = (function () {
   }, {
     name: 'Population Served',
     slug: 'populations-served',
+    checkbox: true,
+    toggle: false,
     filters: [{
       id: 324,
       name: 'Children (0-13)',
