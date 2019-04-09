@@ -13003,8 +13003,6 @@ var AccessNyc = (function () {
   //
   //
   //
-  //
-  //
 
   var script$2 = {
     props: {
@@ -13014,7 +13012,9 @@ var AccessNyc = (function () {
         type: Object,
         default: function _default() {
           return {
-            'ALL': 'All'
+            'EXPAND_CATEGORY': 'Expand category',
+            'COLLAPSE_CATEGORY': 'Collapse category',
+            'TOGGLE_ALL': 'Toggle All'
           };
         }
       }
@@ -13050,7 +13050,7 @@ var AccessNyc = (function () {
             return _vm.fetch({ 'event': $event, 'data': { 'parent': t.slug } });
           } } }), _vm._v(" "), _c('span', { staticClass: "checkbox__label" }, [_vm._v(_vm._s(t.name))])]) : _c('label', [_vm._v("\n          " + _vm._s(t.name) + "\n        ")]), _vm._v(" "), _c('a', { staticClass: "c-filter-multi__item-header-toggle", class: { 'active': t.active, 'inactive': !t.active }, attrs: { "href": '#' + t.slug }, on: { "click": function click($event) {
             return _vm.toggle($event, t);
-          } } }, [_c('span', { staticClass: "c-filter-multi__item-header-expand" }, [_vm._v("Expand category")]), _vm._v(" "), _c('span', { staticClass: "c-filter-multi__item-header-collapse" }, [_vm._v("Collapse category")])])]), _vm._v(" "), _c('div', { staticClass: "c-filter-multi__item-group", class: { 'active': t.active, 'inactive': !t.active }, attrs: { "aria-hidden": !t.active, "id": t.slug } }, [_c('ul', { staticClass: "c-filter-multi__item-group-list" }, [t.toggle ? _c('li', { staticClass: "c-filter-multi__item-group-subitem" }, [_c('a', { on: { "click": function click($event) {
+          } } }, [_c('span', { staticClass: "c-filter-multi__item-header-expand", domProps: { "innerHTML": _vm._s(_vm.STRINGS.EXPAND_CATEGORY) } }, [_vm._v("Expand Category")]), _vm._v(" "), _c('span', { staticClass: "c-filter-multi__item-header-collapse", domProps: { "innerHTML": _vm._s(_vm.STRINGS.COLLAPSE_CATEGORY) } }, [_vm._v("Collapse Category")])])]), _vm._v(" "), _c('div', { staticClass: "c-filter-multi__item-group", class: { 'active': t.active, 'inactive': !t.active }, attrs: { "aria-hidden": !t.active, "id": t.slug } }, [_c('ul', { staticClass: "c-filter-multi__item-group-list" }, [t.toggle ? _c('li', { staticClass: "c-filter-multi__item-group-subitem" }, [_c('a', { domProps: { "innerHTML": _vm._s(_vm.STRINGS.TOGGLE_ALL) }, on: { "click": function click($event) {
             return _vm.reset({ 'event': $event, 'data': { 'parent': t.slug } });
           } } }, [_vm._v("Toggle All")])]) : _vm._e(), _vm._v(" "), _vm._l(t.filters, function (f) {
         return _c('li', { key: f.slug, staticClass: "c-filter-multi__item-group-subitem" }, [_c('label', { staticClass: "checkbox" }, [_c('input', { attrs: { "type": "checkbox" }, domProps: { "value": f.slug, "checked": f.checked }, on: { "change": function change($event) {

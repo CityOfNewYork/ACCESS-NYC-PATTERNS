@@ -12,22 +12,20 @@
           </label>
 
           <a :class="{'active': t.active, 'inactive': !(t.active)}" class="c-filter-multi__item-header-toggle" :href="'#' + t.slug" @click="toggle($event, t)">
-            <span class="c-filter-multi__item-header-expand">Expand category</span>
-
-            <span class="c-filter-multi__item-header-collapse">Collapse category</span>
+            <span class="c-filter-multi__item-header-expand" v-html="STRINGS.EXPAND_CATEGORY">Expand Category</span>
+            <span class="c-filter-multi__item-header-collapse" v-html="STRINGS.COLLAPSE_CATEGORY">Collapse Category</span>
           </a>
         </div>
 
         <div :aria-hidden="!(t.active)" :class="{'active': t.active, 'inactive': !(t.active)}" class="c-filter-multi__item-group" :id="t.slug">
           <ul class="c-filter-multi__item-group-list">
             <li class='c-filter-multi__item-group-subitem' v-if="t.toggle">
-              <a @click="reset({'event': $event, 'data': {'parent': t.slug}})">Toggle All</a>
+              <a @click="reset({'event': $event, 'data': {'parent': t.slug}})" v-html="STRINGS.TOGGLE_ALL">Toggle All</a>
             </li>
 
             <li class="c-filter-multi__item-group-subitem" v-for="f in t.filters" :key="f.slug">
               <label class="checkbox">
                 <input type="checkbox" :value="f.slug" :checked="f.checked" @change="fetch({'event': $event, 'data': f})" />
-
                 <span class="checkbox__label text-font-size-small font-normal" v-html="f.name">{{ f.name }}</span>
               </label>
             </li>
@@ -50,7 +48,9 @@
       'STRINGS': {
         type: Object,
         default: () => ({
-          'ALL': 'All'
+          'EXPAND_CATEGORY': 'Expand category',
+          'COLLAPSE_CATEGORY': 'Collapse category',
+          'TOGGLE_ALL': 'Toggle All'
         })
       }
     },
