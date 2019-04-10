@@ -85,17 +85,17 @@ var InputAutocomplete = (function () {
 
   /**
    * Autocomplete for autocomplete.
-   * https://github.com/devowhippit/miss-plete-js
+   * Forked and modified from https://github.com/xavi/miss-plete
    */
   var Autocomplete = function Autocomplete(ref) {
     var this$1 = this;
     var selector = ref.selector;
     var options = ref.options;
-    var className = ref.className;
+    var classname = ref.classname;
     var scoreFn = ref.scoreFn;if (scoreFn === void 0) scoreFn = memoize(Autocomplete.scoreFn);
     var listItemFn = ref.listItemFn;if (listItemFn === void 0) listItemFn = Autocomplete.listItemFn;
 
-    Object.assign(this, { selector: selector, options: options, className: className, scoreFn: scoreFn, listItemFn: listItemFn });
+    Object.assign(this, { selector: selector, options: options, classname: classname, scoreFn: scoreFn, listItemFn: listItemFn });
     this.scoredOptions = null;
     this.container = null;
     this.ul = null;
@@ -105,7 +105,6 @@ var InputAutocomplete = (function () {
       if (!event.target.matches(this$1.selector)) {
         return;
       }
-
       this$1.input = event.target;
     });
 
@@ -113,7 +112,6 @@ var InputAutocomplete = (function () {
       if (!event.target.matches(this$1.selector)) {
         return;
       }
-
       this$1.input = event.target;
 
       if (this$1.input.value.length > 0) {
@@ -133,7 +131,6 @@ var InputAutocomplete = (function () {
       if (!event.target.matches(this$1.selector)) {
         return;
       }
-
       this$1.input = event.target;
 
       if (this$1.ul) // dropdown visible?
@@ -233,6 +230,7 @@ var InputAutocomplete = (function () {
     } while (n);
     return index;
   };
+
   /**
   * Display options as a list.
   */
@@ -276,7 +274,7 @@ var InputAutocomplete = (function () {
 
       // See CSS to understand why the <ul> has to be wrapped in a <div>
       var newContainer = document.createElement('div');
-      newContainer.className = this.className;
+      newContainer.className = this.classname;
       newContainer.appendChild(newUl);
 
       // Inserts the dropdown just after the <input> element
@@ -330,14 +328,28 @@ var InputAutocomplete = (function () {
    * The InputAutocomplete class.
    */
   var InputAutocomplete = function InputAutocomplete(settings) {
+    if (settings === void 0) settings = {};
+
     this._autocomplete = new Autocomplete({
       selector: settings.hasOwnProperty('selector') ? settings.selector : InputAutocomplete.selector,
-      options: settings.options,
-      className: InputAutocomplete.classname
+      options: settings.hasOwnProperty('options') ? settings.options : InputAutocomplete.options,
+      classname: settings.hasOwnProperty('classname') ? settings.classname : InputAutocomplete.classname
     });
 
     return this;
   };
+
+  /**
+   * Setter for the Autocomplete options
+   * @param{object} opt Set of array options for the Autocomplete class
+   */
+  InputAutocomplete.prototype.options = function options(reset) {
+    this._autocomplete.options = reset;
+    return this;
+  };
+
+  /** @type {array} Default options for the autocomplete class */
+  InputAutocomplete.options = [];
 
   /** @type {string} The search box dom selector */
   InputAutocomplete.selector = '[data-js="input-autocomplete__input"]';
