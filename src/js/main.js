@@ -113,29 +113,35 @@ class main {
     };
 
     return new VueDemo({
-      'name': component,
-      'module': modules[component]
-    }, {
-      termsFilter: Object.assign({}, FilterData[0]),
-      termsFilterMulti: FilterData
-    }, {
-      fetch: function(params) {
-        // eslint-disable-next-line no-console
-        console.dir({
-          'component': component,
-          'method': 'click',
-          'params': params
-        });
-      },
-      reset: function(params) {
-        // eslint-disable-next-line no-console
-        console.dir({
-          'component': component,
-          'method': 'reset',
-          'params': params
-        });
-      }
-    });
+        'name': component,
+        'module': modules[component]
+      }, {
+        termsFilter: Object.assign({}, FilterData[0]),
+        termsFilterMulti: FilterData,
+        STRINGS: {
+            'ALL': 'All',
+            'EXPAND_CATEGORY': 'Expand Category',
+            'COLLAPSE_CATEGORY': 'Collapse Category',
+            'TOGGLE_ALL': 'oh no'
+          }
+      }, {
+        fetch: function(params) {
+          // eslint-disable-next-line no-console
+          console.dir({
+            'component': component,
+            'method': 'click',
+            'params': params
+          });
+        },
+        reset: function(params) {
+          // eslint-disable-next-line no-console
+          console.dir({
+            'component': component,
+            'method': 'reset',
+            'params': params
+          });
+        }
+      });
   }
 
   /**

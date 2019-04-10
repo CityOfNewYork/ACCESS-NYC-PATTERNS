@@ -6,7 +6,7 @@ import memoize from './memoize.js';
 
 /**
  * Autocomplete for autocomplete.
- * https://github.com/devowhippit/miss-plete-js
+ * Forked and modified from https://github.com/xavi/miss-plete
  */
 class Autocomplete {
  /**
@@ -15,43 +15,35 @@ class Autocomplete {
   constructor({
     selector,
     options,
-    className,
+    classname,
     scoreFn = memoize(Autocomplete.scoreFn),
     listItemFn = Autocomplete.listItemFn
   }) {
-    Object.assign(this, {selector, options, className, scoreFn, listItemFn});
+    Object.assign(this, {selector, options, classname, scoreFn, listItemFn});
     this.scoredOptions = null;
     this.container = null;
     this.ul = null;
     this.highlightedIndex = -1;
 
     window.addEventListener('keyup', (event) => {
-      if (!event.target.matches(this.selector))
-        return;
-
+      if (!event.target.matches(this.selector)) return;
       this.input = event.target;
     });
 
     window.addEventListener('input', (event) => {
-       if (!event.target.matches(this.selector))
-        return;
-
+      if (!event.target.matches(this.selector)) return;
       this.input = event.target;
 
-      if (this.input.value.length > 0)
-        this.scoredOptions = this.options
-          .map((option) => scoreFn(this.input.value, option))
-          .sort((a, b) => b.score - a.score);
-      else
-        this.scoredOptions = [];
+      if (this.input.value.length > 0) this.scoredOptions = this.options
+        .map((option) => scoreFn(this.input.value, option))
+        .sort((a, b) => b.score - a.score);
+      else this.scoredOptions = [];
 
       this.renderOptions();
     });
 
     window.addEventListener('keydown', (event) => {
-      if (!event.target.matches(this.selector))
-        return;
-
+      if (!event.target.matches(this.selector)) return;
       this.input = event.target;
 
       if (this.ul)// dropdown visible?
@@ -155,6 +147,7 @@ class Autocomplete {
     } while (n);
     return index;
   }
+
   /**
   * Display options as a list.
   */
@@ -192,7 +185,7 @@ class Autocomplete {
 
       // See CSS to understand why the <ul> has to be wrapped in a <div>
       const newContainer = document.createElement('div');
-      newContainer.className = this.className;
+      newContainer.className = this.classname;
       newContainer.appendChild(newUl);
 
       // Inserts the dropdown just after the <input> element

@@ -1,2 +1,2 @@
 div id='app-c-filter-multi'
-  c-filter-multi :terms='termsFilterMulti' @fetch='fetch' @reset='reset'
+  c-filter-multi :terms='termsFilterMulti' :STRINGS='STRINGS' @fetch='fetch' @reset='reset'

@@ -157,12 +157,6 @@ input[type='number'] {
   z-index: 1;
 
   box-shadow: map-get(map-get($variables, 'display'), 'up');
-  // overflow: hidden;
-
-  // &:after {
-  //   content: '';
-  //   display: block;
-  // }
 }
 
 .input-autocomplete__dropdown > ul > li {
@@ -173,7 +167,3 @@ input[type='number'] {
 .input-autocomplete__dropdown > ul > li.highlight {
   background-color: $color-blue-light;
 }
-
-// .input-autocomplete__dropdown > ul > li span {
-//   color: $color-white;
-// }
