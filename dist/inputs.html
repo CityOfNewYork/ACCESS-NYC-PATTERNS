@@ -401,18 +401,21 @@
                 </div>
               </header>
               <div class="layout--home-body">
-                <div class="my-0 pt-4 px-2 text-font-size-small"><p>The Autocomplete Input Element uses JavaScript to provide a selectable list of suggested terms as a user types into the field. The suggested terms are passed to the InputAutocomplete class on instantiation and can be updated on the fly with new terms.
-  Terms are displayed in order by relevance and synonym mapping (see usage details below), Additionally, the function is miss-spelling tolerant. </p></div>
+                <div class="my-0 pt-4 px-2 text-font-size-small"><p>The Autocomplete Input Element uses JavaScript to provide a selectable list of suggested terms as a user types into the field. The suggested terms are passed to the <code>InputAutocomplete</code> class on instantiation and can be updated on the fly with
+  new terms. Terms are displayed in order by relevance and synonym mapping (see usage details below), Additionally, the function is miss-spelling tolerant.</p></div>
               </div>
               <div class="layout--gutter screen-tablet:layout--columns justify-between pt-4">
                 <div class="screen-tablet:pr-2">
-                  <div class="input-autocomplete">
-                    <input autocomplete="off" data-js="input-autocomplete__input" type="text" />
+                  <div class="input-autocomplete" data-sketch-symbol="elements/inputs/input-autocomplete">
+                    <input aria-autocomplete="both" aria-describedby="input-autocomplete__instructions-0" aria-expanded="false" aria-owns="input-autocomplete__options" autocomplete="off" data-js="input-autocomplete__input" data-persist-dropdown="true" type="text"
+                    />
+                    <div aria-live="polite" class="sr-only" id="input-autocomplete__instructions-0"></div>
                   </div>
                 </div>
                 <div>
-                  <div class="code-block mb-1"><pre>&lt;div class=&quot;input-autocomplete&quot;&gt;
-  &lt;input autocomplete=&quot;off&quot; data-js=&quot;input-autocomplete__input&quot; type=&quot;text&quot; /&gt;
+                  <div class="code-block mb-1"><pre>&lt;div class=&quot;input-autocomplete&quot; data-sketch-symbol=&quot;elements/inputs/input-autocomplete&quot;&gt;
+  &lt;input aria-autocomplete=&quot;both&quot; aria-describedby=&quot;input-autocomplete__instructions-0&quot; aria-expanded=&quot;false&quot; aria-owns=&quot;input-autocomplete__options&quot; autocomplete=&quot;off&quot; data-js=&quot;input-autocomplete__input&quot; data-persist-dropdown=&quot;true&quot; type=&quot;text&quot; /&gt;
+  &lt;div aria-live=&quot;polite&quot; class=&quot;sr-only&quot; id=&quot;input-autocomplete__instructions-0&quot;&gt;&lt;/div&gt;
 &lt;/div&gt;</pre></div>
                 </div>
               </div>
