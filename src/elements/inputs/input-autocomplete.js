@@ -28,7 +28,8 @@ class InputAutocomplete {
 
   /**
    * Setter for the Autocomplete options
-   * @param  {object} opt Set of array options for the Autocomplete class
+   * @param  {object} reset Set of array options for the Autocomplete class
+   * @return {object} InputAutocomplete object with new options.
    */
   options(reset) {
     this.library.settings.options = reset;
@@ -38,6 +39,7 @@ class InputAutocomplete {
   /**
    * Setter for the Autocomplete strings
    * @param  {object}  localizedStrings  Object containing strings.
+   * @return {object} Autocomplete strings
    */
   strings(localizedStrings) {
     Object.assign(this.library.STRINGS, localizedStrings);

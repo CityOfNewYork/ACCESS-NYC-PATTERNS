@@ -125,6 +125,7 @@ var InputAutocomplete = (function () {
     body.addEventListener('focus', function (e) {
       this$1.focusEvent(e);
     }, true);
+
     body.addEventListener('blur', function (e) {
       this$1.blurEvent(e);
     }, true);
@@ -555,7 +556,8 @@ var InputAutocomplete = (function () {
 
   /**
    * Setter for the Autocomplete options
-   * @param{object} opt Set of array options for the Autocomplete class
+   * @param{object} reset Set of array options for the Autocomplete class
+   * @return {object} InputAutocomplete object with new options.
    */
   InputAutocomplete.prototype.options = function options(reset) {
     this.library.settings.options = reset;
@@ -565,6 +567,7 @@ var InputAutocomplete = (function () {
   /**
    * Setter for the Autocomplete strings
    * @param{object}localizedStringsObject containing strings.
+   * @return {object} Autocomplete strings
    */
   InputAutocomplete.prototype.strings = function strings(localizedStrings) {
     Object.assign(this.library.STRINGS, localizedStrings);

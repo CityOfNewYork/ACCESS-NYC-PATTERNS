@@ -38,14 +38,25 @@ class Autocomplete {
     this.STRINGS = Autocomplete.strings;
     this.MAX_ITEMS = Autocomplete.maxItems;
 
-    window.addEventListener('keydown', e => {this.keydownEvent(e)});
-    window.addEventListener('keyup', e => {this.keyupEvent(e)});
-    window.addEventListener('input', e => {this.inputEvent(e)});
+    window.addEventListener('keydown', (e) => {
+      this.keydownEvent(e);
+    });
+    window.addEventListener('keyup', (e) => {
+      this.keyupEvent(e);
+    });
+    window.addEventListener('input', (e) => {
+      this.inputEvent(e);
+    });
 
     let body = document.querySelector('body');
 
-    body.addEventListener('focus', e => {this.focusEvent(e)}, true);
-    body.addEventListener('blur', e => {this.blurEvent(e)}, true);
+    body.addEventListener('focus', (e) => {
+      this.focusEvent(e);
+    }, true);
+
+    body.addEventListener('blur', (e) => {
+      this.blurEvent(e);
+    }, true);
 
     return this;
   }
@@ -124,7 +135,8 @@ class Autocomplete {
    * @param   {object}  event  The event object
    */
   blurEvent(event) {
-    if (event.target === window || !event.target.matches(this.settings.selector))
+    if (event.target === window ||
+          !event.target.matches(this.settings.selector))
       return;
 
     this.input = event.target;
@@ -250,7 +262,9 @@ class Autocomplete {
     let index = -1;
     let n = node;
 
-    do { index++; n = n.previousElementSibling; }
+    do {
+      index++; n = n.previousElementSibling;
+    }
     while (n);
 
     return index;
@@ -284,7 +298,7 @@ class Autocomplete {
       newUl.setAttribute('tabindex', '0');
       newUl.setAttribute('id', this.SELECTORS.OPTIONS);
 
-      newUl.addEventListener('mouseover', event => {
+      newUl.addEventListener('mouseover', (event) => {
         if (event.target.tagName === 'LI')
           this.highlight(this.settings.getSiblingIndex(event.target));
       });
@@ -293,10 +307,10 @@ class Autocomplete {
         this.highlight(-1);
       });
 
-      newUl.addEventListener('mousedown', event =>
+      newUl.addEventListener('mousedown', (event) =>
         event.preventDefault());
 
-      newUl.addEventListener('click', event => {
+      newUl.addEventListener('click', (event) => {
         if (event.target.tagName === 'LI')
           this.selected();
       });

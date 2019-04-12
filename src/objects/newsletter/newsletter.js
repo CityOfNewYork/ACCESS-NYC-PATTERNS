@@ -285,12 +285,18 @@ Newsletter.strings = {
   VALID_EMAIL_REQUIRED: 'Email is required.',
   VALID_EMAIL_INVALID: 'Please enter a valid email.',
   VALID_CHECKBOX_BOROUGH: 'Please select a borough.',
-  ERR_PLEASE_TRY_LATER: 'There was an error with your submission. Please try again later.',
-  SUCCESS_CONFIRM_EMAIL: 'Almost finished... We need to confirm your email address. To complete the subscription process, please click the link in the email we just sent you.',
+  ERR_PLEASE_TRY_LATER: 'There was an error with your submission.' +
+                        'Please try again later.',
+  SUCCESS_CONFIRM_EMAIL: 'Almost finished... We need to confirm your email' +
+                         'address. To complete the subscription process,' +
+                         'please click the link in the email we just sent you.',
   ERR_PLEASE_ENTER_VALUE: 'Please enter a value',
-  ERR_TOO_MANY_RECENT: 'Recipient "{{ EMAIL }}" has too many recent signup requests',
-  ERR_ALREADY_SUBSCRIBED: '{{ EMAIL }} is already subscribed to list {{ LIST_NAME }}.',
-  ERR_INVALID_EMAIL: 'This email address looks fake or invalid. Please enter a real email address.',
+  ERR_TOO_MANY_RECENT: 'Recipient "{{ EMAIL }}" has too' +
+                       'many recent signup requests',
+  ERR_ALREADY_SUBSCRIBED: '{{ EMAIL }} is already subscribed' +
+                          'to list {{ LIST_NAME }}.',
+  ERR_INVALID_EMAIL: 'This email address looks fake or invalid.' +
+                     'Please enter a real email address.',
   LIST_NAME: 'ACCESS NYC - Newsletter'
 };
 

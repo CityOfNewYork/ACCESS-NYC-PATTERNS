@@ -103,8 +103,9 @@ Utility.joinValues = function(event) {
  * See https://developer.mozilla.org/en-US/docs/Learn/HTML/Forms/Form_validation
  * See https://caniuse.com/#feat=form-validation for support
  *
- * @param  {Event}         event The form submission event.
- * @return {Event/Boolean}       The original event or false if invalid.
+ * @param  {Event}  event The form submission event.
+ * @param  {Array} STRINGS set of strings
+ * @return {Event/Boolean} The original event or false if invalid.
  */
 Utility.valid = function(event, STRINGS) {
   event.preventDefault();
