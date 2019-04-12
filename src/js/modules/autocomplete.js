@@ -10,14 +10,17 @@ import memoize from './memoize.js';
  */
 class Autocomplete {
   /**
-   * @param  {object} settings  configuration options
+   * @param   {object} settings  Configuration options
+   * @return  {this}             The class
    * @constructor
    */
   constructor(settings = {}) {
-    settings = {
+    this.settings = {
       'selector': settings.selector, // required
       'options': settings.options, // required
       'classname': settings.classname, // required
+      'selected': (settings.hasOwnProperty('selected')) ?
+        settings.selected : false,
       'score': (settings.hasOwnProperty('score')) ?
         settings.score : memoize(Autocomplete.score),
       'listItem': (settings.hasOwnProperty('listItem')) ?
@@ -26,12 +29,14 @@ class Autocomplete {
         settings.getSiblingIndex : Autocomplete.getSiblingIndex
     };
 
-    Object.assign(this, settings);
-
     this.scoredOptions = null;
     this.container = null;
     this.ul = null;
     this.highlighted = -1;
+
+    this.SELECTORS = Autocomplete.selectors;
+    this.STRINGS = Autocomplete.strings;
+    this.MAX_ITEMS = Autocomplete.maxItems;
 
     window.addEventListener('keydown', e => {this.keydownEvent(e)});
     window.addEventListener('keyup', e => {this.keyupEvent(e)});
@@ -49,8 +54,12 @@ class Autocomplete {
    * EVENTS
    */
 
+  /**
+   * The input focus event
+   * @param   {object}  event  The event object
+   */
   focusEvent(event) {
-    if (!event.target.matches(this.selector)) return;
+    if (!event.target.matches(this.settings.selector)) return;
 
     this.input = event.target;
 
@@ -58,8 +67,12 @@ class Autocomplete {
       this.message('INIT');
   }
 
+  /**
+   * The input keydown event
+   * @param   {object}  event  The event object
+   */
   keydownEvent(event) {
-    if (!event.target.matches(this.selector)) return;
+    if (!event.target.matches(this.settings.selector)) return;
     this.input = event.target;
 
     if (this.ul)
@@ -75,22 +88,30 @@ class Autocomplete {
       }
   }
 
+  /**
+   * The input keyup event
+   * @param   {object}  event  The event object
+   */
   keyupEvent(event) {
-    if (!event.target.matches(this.selector))
+    if (!event.target.matches(this.settings.selector))
       return;
 
     this.input = event.target;
   }
 
+  /**
+   * The input event
+   * @param   {object}  event  The event object
+   */
   inputEvent(event) {
-    if (!event.target.matches(this.selector))
+    if (!event.target.matches(this.settings.selector))
       return;
 
     this.input = event.target;
 
     if (this.input.value.length > 0)
-      this.scoredOptions = this.options
-        .map((option) => this.score(this.input.value, option))
+      this.scoredOptions = this.settings.options
+        .map((option) => this.settings.score(this.input.value, option))
         .sort((a, b) => b.score - a.score);
     else
       this.scoredOptions = [];
@@ -98,8 +119,12 @@ class Autocomplete {
     this.dropdown();
   }
 
+  /**
+   * The input blur event
+   * @param   {object}  event  The event object
+   */
   blurEvent(event) {
-    if (event.target === window || !event.target.matches(this.selector))
+    if (event.target === window || !event.target.matches(this.settings.selector))
       return;
 
     this.input = event.target;
@@ -115,8 +140,11 @@ class Autocomplete {
    * KEY INPUT EVENTS
    */
 
-  // Otherwise up arrow places the cursor at the beginning of the
-  // field, and down arrow at the end
+  /**
+   * What happens when the user presses the down arrow
+   * @param   {object}  event  The event object
+   * @return  {object}         The Class
+   */
   keyDown(event) {
     event.preventDefault();
 
@@ -127,6 +155,11 @@ class Autocomplete {
     return this;
   }
 
+  /**
+   * What happens when the user presses the up arrow
+   * @param   {object}  event  The event object
+   * @return  {object}         The Class
+   */
   keyUp(event) {
     event.preventDefault();
 
@@ -137,11 +170,21 @@ class Autocomplete {
     return this;
   }
 
+  /**
+   * What happens when the user presses the enter key
+   * @param   {object}  event  The event object
+   * @return  {object}         The Class
+   */
   keyEnter(event) {
-    this.select();
+    this.selected();
     return this;
   }
 
+  /**
+   * What happens when the user presses the escape key
+   * @param   {object}  event  The event object
+   * @return  {object}         The Class
+   */
   keyEscape(event) {
     this.remove();
     return this;
@@ -186,7 +229,7 @@ class Autocomplete {
    * @return {string}  The a list item <li>.
    */
   static listItem(scoredOption, index) {
-    const li = (index > Autocomplete.MAX_ITEMS) ?
+    const li = (index > this.MAX_ITEMS) ?
       null : document.createElement('li');
 
     li.setAttribute('role', 'option');
@@ -219,12 +262,13 @@ class Autocomplete {
 
   /**
    * Display options as a list.
+   * @return  {object} The Class
    */
   dropdown() {
     const documentFragment = document.createDocumentFragment();
 
     this.scoredOptions.every((scoredOption, i) => {
-      const listItem = this.listItem(scoredOption, i);
+      const listItem = this.settings.listItem(scoredOption, i);
 
       listItem && documentFragment.appendChild(listItem);
       return !!listItem;
@@ -238,11 +282,11 @@ class Autocomplete {
 
       newUl.setAttribute('role', 'listbox');
       newUl.setAttribute('tabindex', '0');
-      newUl.setAttribute('id', Autocomplete.selectors.OPTIONS);
+      newUl.setAttribute('id', this.SELECTORS.OPTIONS);
 
       newUl.addEventListener('mouseover', event => {
         if (event.target.tagName === 'LI')
-          this.highlight(this.getSiblingIndex(event.target));
+          this.highlight(this.settings.getSiblingIndex(event.target));
       });
 
       newUl.addEventListener('mouseleave', () => {
@@ -254,7 +298,7 @@ class Autocomplete {
 
       newUl.addEventListener('click', event => {
         if (event.target.tagName === 'LI')
-          this.select();
+          this.selected();
       });
 
       newUl.appendChild(documentFragment);
@@ -262,7 +306,7 @@ class Autocomplete {
       // See CSS to understand why the <ul> has to be wrapped in a <div>
       const newContainer = document.createElement('div');
 
-      newContainer.className = this.classname;
+      newContainer.className = this.settings.classname;
       newContainer.appendChild(newUl);
 
       this.input.setAttribute('aria-expanded', 'true');
@@ -272,7 +316,7 @@ class Autocomplete {
       this.container = newContainer;
       this.ul = newUl;
 
-      this.message('TYPING', this.options.length);
+      this.message('TYPING', this.settings.options.length);
     }
 
     return this;
@@ -280,14 +324,15 @@ class Autocomplete {
 
   /**
    * Highlight new option selected.
-   * @param {Number} newIndex
+   * @param   {Number}  newIndex
+   * @return  {object}  The Class
    */
   highlight(newIndex) {
     if (newIndex >= -1 && newIndex < this.ul.children.length) {
       // If any option already selected, then unselect it
       if (this.highlighted !== -1) {
         this.ul.children[this.highlighted].classList
-          .remove(Autocomplete.selectors.HIGHLIGHT);
+          .remove(this.SELECTORS.HIGHLIGHT);
         this.ul.children[this.highlighted].removeAttribute('aria-selected');
         this.ul.children[this.highlighted].removeAttribute('id');
 
@@ -298,14 +343,14 @@ class Autocomplete {
 
       if (this.highlighted !== -1) {
         this.ul.children[this.highlighted].classList
-          .add(Autocomplete.selectors.HIGHLIGHT);
+          .add(this.SELECTORS.HIGHLIGHT);
         this.ul.children[this.highlighted]
           .setAttribute('aria-selected', 'true');
         this.ul.children[this.highlighted]
-          .setAttribute('id', Autocomplete.selectors.ACTIVE_DESCENDANT);
+          .setAttribute('id', this.SELECTORS.ACTIVE_DESCENDANT);
 
         this.input.setAttribute('aria-activedescendant',
-          Autocomplete.selectors.ACTIVE_DESCENDANT);
+          this.SELECTORS.ACTIVE_DESCENDANT);
       }
     }
 
@@ -314,19 +359,25 @@ class Autocomplete {
 
   /**
    * Selects an option from a list of items.
+   * @return  {object} The Class
    */
-  select() {
+  selected() {
     if (this.highlighted !== -1) {
       this.input.value = this.scoredOptions[this.highlighted].displayValue;
       this.remove();
       this.message('SELECTED', this.input.value);
     }
 
+    // User provided callback method for selected option.
+    if (this.settings.selected)
+      this.settings.selected(this.input.value, this);
+
     return this;
   }
 
   /**
    * Remove dropdown list once a list item is selected.
+   * @return  {object} The Class
    */
   remove() {
     this.container && this.container.remove();
@@ -338,19 +389,25 @@ class Autocomplete {
     return this;
   }
 
+  /**
+   * Messaging that is passed to the screen reader
+   * @param   {string}  key       The Key of the message to write
+   * @param   {string}  variable  A variable to provide to the string.
+   * @return  {object}            The Class
+   */
   message(key = false, variable = '') {
     if (!key) return this;
 
     let messages = {
-      'INIT': () => Autocomplete.strings.DIRECTIONS_TYPE,
+      'INIT': () => this.STRINGS.DIRECTIONS_TYPE,
       'TYPING': () => ([
-          Autocomplete.strings.OPTION_AVAILABLE.replace('{{ var }}', variable),
-          Autocomplete.strings.DIRECTIONS_REVIEW
-        ].join(' ')),
+          this.STRINGS.OPTION_AVAILABLE.replace('{{ NUMBER }}', variable),
+          this.STRINGS.DIRECTIONS_REVIEW
+        ].join('. ')),
       'SELECTED': () => ([
-          Autocomplete.strings.OPTION_SELECTED.replace('{{ var }}', variable),
-          Autocomplete.strings.DIRECTIONS_TYPE
-        ].join(' '))
+          this.STRINGS.OPTION_SELECTED.replace('{{ VALUE }}', variable),
+          this.STRINGS.DIRECTIONS_TYPE
+        ].join('. '))
     };
 
     document.querySelector(`#${this.input.getAttribute('aria-describedby')}`)
@@ -371,16 +428,16 @@ Autocomplete.selectors = {
 /**  */
 Autocomplete.strings = {
   'DIRECTIONS_TYPE':
-    'Start typing to generate a list of potential input options.',
+    'Start typing to generate a list of potential input options',
   'DIRECTIONS_REVIEW': [
       'Keyboard users can use the up and down arrows to ',
-      'review options and press enter to select an option.'
+      'review options and press enter to select an option'
     ].join(''),
-  'OPTION_AVAILABLE': '{{ var }} options available.',
-  'OPTION_SELECTED': '{{ var }} selected.'
+  'OPTION_AVAILABLE': '{{ NUMBER }} options available',
+  'OPTION_SELECTED': '{{ VALUE }} selected'
 };
 
 /** Maximum amount of results to be returned. */
-Autocomplete.MAX_ITEMS = 5;
+Autocomplete.maxItems = 5;
 
 export default Autocomplete;

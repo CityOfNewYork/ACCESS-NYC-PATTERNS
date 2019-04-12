@@ -90,21 +90,24 @@ var Autocomplete = function Autocomplete(settings) {
   var this$1 = this;
   if (settings === void 0) settings = {};
 
-  settings = {
+  this.settings = {
     'selector': settings.selector, // required
     'options': settings.options, // required
     'classname': settings.classname, // required
+    'selected': settings.hasOwnProperty('selected') ? settings.selected : false,
     'score': settings.hasOwnProperty('score') ? settings.score : memoize(Autocomplete.score),
     'listItem': settings.hasOwnProperty('listItem') ? settings.listItem : Autocomplete.listItem,
     'getSiblingIndex': settings.hasOwnProperty('getSiblingIndex') ? settings.getSiblingIndex : Autocomplete.getSiblingIndex
   };
 
-  Object.assign(this, settings);
-
   this.scoredOptions = null;
   this.container = null;
   this.ul = null;
   this.highlighted = -1;
+
+  this.SELECTORS = Autocomplete.selectors;
+  this.STRINGS = Autocomplete.strings;
+  this.MAX_ITEMS = Autocomplete.maxItems;
 
   window.addEventListener('keydown', function (e) {
     this$1.keydownEvent(e);
@@ -132,8 +135,12 @@ var Autocomplete = function Autocomplete(settings) {
  * EVENTS
  */
 
+/**
+ * The input focus event
+ * @param {object}eventThe event object
+ */
 Autocomplete.prototype.focusEvent = function focusEvent(event) {
-  if (!event.target.matches(this.selector)) {
+  if (!event.target.matches(this.settings.selector)) {
     return;
   }
 
@@ -144,8 +151,12 @@ Autocomplete.prototype.focusEvent = function focusEvent(event) {
   }
 };
 
+/**
+ * The input keydown event
+ * @param {object}eventThe event object
+ */
 Autocomplete.prototype.keydownEvent = function keydownEvent(event) {
-  if (!event.target.matches(this.selector)) {
+  if (!event.target.matches(this.settings.selector)) {
     return;
   }
   this.input = event.target;
@@ -168,26 +179,34 @@ Autocomplete.prototype.keydownEvent = function keydownEvent(event) {
   }
 };
 
+/**
+ * The input keyup event
+ * @param {object}eventThe event object
+ */
 Autocomplete.prototype.keyupEvent = function keyupEvent(event) {
-  if (!event.target.matches(this.selector)) {
+  if (!event.target.matches(this.settings.selector)) {
     return;
   }
 
   this.input = event.target;
 };
 
+/**
+ * The input event
+ * @param {object}eventThe event object
+ */
 Autocomplete.prototype.inputEvent = function inputEvent(event) {
   var this$1 = this;
 
-  if (!event.target.matches(this.selector)) {
+  if (!event.target.matches(this.settings.selector)) {
     return;
   }
 
   this.input = event.target;
 
   if (this.input.value.length > 0) {
-    this.scoredOptions = this.options.map(function (option) {
-      return this$1.score(this$1.input.value, option);
+    this.scoredOptions = this.settings.options.map(function (option) {
+      return this$1.settings.score(this$1.input.value, option);
     }).sort(function (a, b) {
       return b.score - a.score;
     });
@@ -198,8 +217,12 @@ Autocomplete.prototype.inputEvent = function inputEvent(event) {
   this.dropdown();
 };
 
+/**
+ * The input blur event
+ * @param {object}eventThe event object
+ */
 Autocomplete.prototype.blurEvent = function blurEvent(event) {
-  if (event.target === window || !event.target.matches(this.selector)) {
+  if (event.target === window || !event.target.matches(this.settings.selector)) {
     return;
   }
 
@@ -217,8 +240,11 @@ Autocomplete.prototype.blurEvent = function blurEvent(event) {
  * KEY INPUT EVENTS
  */
 
-// Otherwise up arrow places the cursor at the beginning of the
-// field, and down arrow at the end
+/**
+ * What happens when the user presses the down arrow
+ * @param {object}eventThe event object
+ * @return{object}       The Class
+ */
 Autocomplete.prototype.keyDown = function keyDown(event) {
   event.preventDefault();
 
@@ -227,6 +253,11 @@ Autocomplete.prototype.keyDown = function keyDown(event) {
   return this;
 };
 
+/**
+ * What happens when the user presses the up arrow
+ * @param {object}eventThe event object
+ * @return{object}       The Class
+ */
 Autocomplete.prototype.keyUp = function keyUp(event) {
   event.preventDefault();
 
@@ -235,11 +266,21 @@ Autocomplete.prototype.keyUp = function keyUp(event) {
   return this;
 };
 
+/**
+ * What happens when the user presses the enter key
+ * @param {object}eventThe event object
+ * @return{object}       The Class
+ */
 Autocomplete.prototype.keyEnter = function keyEnter(event) {
-  this.select();
+  this.selected();
   return this;
 };
 
+/**
+ * What happens when the user presses the escape key
+ * @param {object}eventThe event object
+ * @return{object}       The Class
+ */
 Autocomplete.prototype.keyEscape = function keyEscape(event) {
   this.remove();
   return this;
@@ -283,7 +324,7 @@ Autocomplete.score = function score(value, synonyms) {
  * @return {string}The a list item <li>.
  */
 Autocomplete.listItem = function listItem(scoredOption, index) {
-  var li = index > Autocomplete.MAX_ITEMS ? null : document.createElement('li');
+  var li = index > this.MAX_ITEMS ? null : document.createElement('li');
 
   li.setAttribute('role', 'option');
   li.setAttribute('tabindex', '-1');
@@ -316,6 +357,7 @@ Autocomplete.getSiblingIndex = function getSiblingIndex(node) {
 
 /**
  * Display options as a list.
+ * @return{object} The Class
  */
 Autocomplete.prototype.dropdown = function dropdown() {
   var this$1 = this;
@@ -323,7 +365,7 @@ Autocomplete.prototype.dropdown = function dropdown() {
   var documentFragment = document.createDocumentFragment();
 
   this.scoredOptions.every(function (scoredOption, i) {
-    var listItem = this$1.listItem(scoredOption, i);
+    var listItem = this$1.settings.listItem(scoredOption, i);
 
     listItem && documentFragment.appendChild(listItem);
     return !!listItem;
@@ -337,11 +379,11 @@ Autocomplete.prototype.dropdown = function dropdown() {
 
     newUl.setAttribute('role', 'listbox');
     newUl.setAttribute('tabindex', '0');
-    newUl.setAttribute('id', Autocomplete.selectors.OPTIONS);
+    newUl.setAttribute('id', this.SELECTORS.OPTIONS);
 
     newUl.addEventListener('mouseover', function (event) {
       if (event.target.tagName === 'LI') {
-        this$1.highlight(this$1.getSiblingIndex(event.target));
+        this$1.highlight(this$1.settings.getSiblingIndex(event.target));
       }
     });
 
@@ -355,7 +397,7 @@ Autocomplete.prototype.dropdown = function dropdown() {
 
     newUl.addEventListener('click', function (event) {
       if (event.target.tagName === 'LI') {
-        this$1.select();
+        this$1.selected();
       }
     });
 
@@ -364,7 +406,7 @@ Autocomplete.prototype.dropdown = function dropdown() {
     // See CSS to understand why the <ul> has to be wrapped in a <div>
     var newContainer = document.createElement('div');
 
-    newContainer.className = this.classname;
+    newContainer.className = this.settings.classname;
     newContainer.appendChild(newUl);
 
     this.input.setAttribute('aria-expanded', 'true');
@@ -374,7 +416,7 @@ Autocomplete.prototype.dropdown = function dropdown() {
     this.container = newContainer;
     this.ul = newUl;
 
-    this.message('TYPING', this.options.length);
+    this.message('TYPING', this.settings.options.length);
   }
 
   return this;
@@ -382,13 +424,14 @@ Autocomplete.prototype.dropdown = function dropdown() {
 
 /**
  * Highlight new option selected.
- * @param {Number} newIndex
+ * @param {Number}newIndex
+ * @return{object}The Class
  */
 Autocomplete.prototype.highlight = function highlight(newIndex) {
   if (newIndex >= -1 && newIndex < this.ul.children.length) {
     // If any option already selected, then unselect it
     if (this.highlighted !== -1) {
-      this.ul.children[this.highlighted].classList.remove(Autocomplete.selectors.HIGHLIGHT);
+      this.ul.children[this.highlighted].classList.remove(this.SELECTORS.HIGHLIGHT);
       this.ul.children[this.highlighted].removeAttribute('aria-selected');
       this.ul.children[this.highlighted].removeAttribute('id');
 
@@ -398,11 +441,11 @@ Autocomplete.prototype.highlight = function highlight(newIndex) {
     this.highlighted = newIndex;
 
     if (this.highlighted !== -1) {
-      this.ul.children[this.highlighted].classList.add(Autocomplete.selectors.HIGHLIGHT);
+      this.ul.children[this.highlighted].classList.add(this.SELECTORS.HIGHLIGHT);
       this.ul.children[this.highlighted].setAttribute('aria-selected', 'true');
-      this.ul.children[this.highlighted].setAttribute('id', Autocomplete.selectors.ACTIVE_DESCENDANT);
+      this.ul.children[this.highlighted].setAttribute('id', this.SELECTORS.ACTIVE_DESCENDANT);
 
-      this.input.setAttribute('aria-activedescendant', Autocomplete.selectors.ACTIVE_DESCENDANT);
+      this.input.setAttribute('aria-activedescendant', this.SELECTORS.ACTIVE_DESCENDANT);
     }
   }
 
@@ -411,12 +454,18 @@ Autocomplete.prototype.highlight = function highlight(newIndex) {
 
 /**
  * Selects an option from a list of items.
+ * @return{object} The Class
  */
-Autocomplete.prototype.select = function select() {
+Autocomplete.prototype.selected = function selected() {
   if (this.highlighted !== -1) {
     this.input.value = this.scoredOptions[this.highlighted].displayValue;
     this.remove();
     this.message('SELECTED', this.input.value);
+  }
+
+  // User provided callback method for selected option.
+  if (this.settings.selected) {
+    this.settings.selected(this.input.value, this);
   }
 
   return this;
@@ -424,6 +473,7 @@ Autocomplete.prototype.select = function select() {
 
 /**
  * Remove dropdown list once a list item is selected.
+ * @return{object} The Class
  */
 Autocomplete.prototype.remove = function remove() {
   this.container && this.container.remove();
@@ -435,7 +485,14 @@ Autocomplete.prototype.remove = function remove() {
   return this;
 };
 
+/**
+ * Messaging that is passed to the screen reader
+ * @param {string}key     The Key of the message to write
+ * @param {string}variableA variable to provide to the string.
+ * @return{object}          The Class
+ */
 Autocomplete.prototype.message = function message(key, variable) {
+  var this$1 = this;
   if (key === void 0) key = false;
   if (variable === void 0) variable = '';
 
@@ -445,13 +502,13 @@ Autocomplete.prototype.message = function message(key, variable) {
 
   var messages = {
     'INIT': function INIT() {
-      return Autocomplete.strings.DIRECTIONS_TYPE;
+      return this$1.STRINGS.DIRECTIONS_TYPE;
     },
     'TYPING': function TYPING() {
-      return [Autocomplete.strings.OPTION_AVAILABLE.replace('{{ var }}', variable), Autocomplete.strings.DIRECTIONS_REVIEW].join(' ');
+      return [this$1.STRINGS.OPTION_AVAILABLE.replace('{{ NUMBER }}', variable), this$1.STRINGS.DIRECTIONS_REVIEW].join('. ');
     },
     'SELECTED': function SELECTED() {
-      return [Autocomplete.strings.OPTION_SELECTED.replace('{{ var }}', variable), Autocomplete.strings.DIRECTIONS_TYPE].join(' ');
+      return [this$1.STRINGS.OPTION_SELECTED.replace('{{ VALUE }}', variable), this$1.STRINGS.DIRECTIONS_TYPE].join('. ');
     }
   };
 
@@ -470,14 +527,14 @@ Autocomplete.selectors = {
 
 /**  */
 Autocomplete.strings = {
-  'DIRECTIONS_TYPE': 'Start typing to generate a list of potential input options.',
-  'DIRECTIONS_REVIEW': ['Keyboard users can use the up and down arrows to ', 'review options and press enter to select an option.'].join(''),
-  'OPTION_AVAILABLE': '{{ var }} options available.',
-  'OPTION_SELECTED': '{{ var }} selected.'
+  'DIRECTIONS_TYPE': 'Start typing to generate a list of potential input options',
+  'DIRECTIONS_REVIEW': ['Keyboard users can use the up and down arrows to ', 'review options and press enter to select an option'].join(''),
+  'OPTION_AVAILABLE': '{{ NUMBER }} options available',
+  'OPTION_SELECTED': '{{ VALUE }} selected'
 };
 
 /** Maximum amount of results to be returned. */
-Autocomplete.MAX_ITEMS = 5;
+Autocomplete.maxItems = 5;
 
 /**
  * The InputAutocomplete class.
@@ -485,9 +542,10 @@ Autocomplete.MAX_ITEMS = 5;
 var InputAutocomplete = function InputAutocomplete(settings) {
   if (settings === void 0) settings = {};
 
-  this._autocomplete = new Autocomplete({
-    selector: settings.hasOwnProperty('selector') ? settings.selector : InputAutocomplete.selector,
+  this.library = new Autocomplete({
     options: settings.hasOwnProperty('options') ? settings.options : InputAutocomplete.options,
+    selected: settings.hasOwnProperty('selected') ? settings.selected : false,
+    selector: settings.hasOwnProperty('selector') ? settings.selector : InputAutocomplete.selector,
     classname: settings.hasOwnProperty('classname') ? settings.classname : InputAutocomplete.classname
   });
 
@@ -499,7 +557,16 @@ var InputAutocomplete = function InputAutocomplete(settings) {
  * @param{object} opt Set of array options for the Autocomplete class
  */
 InputAutocomplete.prototype.options = function options(reset) {
-  this._autocomplete.options = reset;
+  this.library.settings.options = reset;
+  return this;
+};
+
+/**
+ * Setter for the Autocomplete strings
+ * @param{object}localizedStringsObject containing strings.
+ */
+InputAutocomplete.prototype.strings = function strings(localizedStrings) {
+  Object.assign(this.library.STRINGS, localizedStrings);
   return this;
 };
 

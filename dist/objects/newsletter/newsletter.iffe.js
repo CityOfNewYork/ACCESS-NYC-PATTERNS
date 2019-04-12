@@ -104,7 +104,7 @@ var Newsletter = (function () {
    * @param  {Event}         event The form submission event.
    * @return {Event/Boolean}       The original event or false if invalid.
    */
-  Utility.valid = function (event) {
+  Utility.valid = function (event, STRINGS) {
     event.preventDefault();
 
     if (Utility.debug())
@@ -137,9 +137,9 @@ var Newsletter = (function () {
 
       // Get the error message from localized strings.
       if (el.validity.valueMissing) {
-        message.innerHTML = Utility.localize('VALID_REQUIRED');
+        message.innerHTML = STRINGS.VALID_REQUIRED;
       } else if (!el.validity.valid) {
-        message.innerHTML = Utility.localize("VALID_" + el.type.toUpperCase() + "_INVALID");
+        message.innerHTML = STRINGS["VALID_" + el.type.toUpperCase() + "_INVALID"];
       } else {
         message.innerHTML = el.validationMessage;
       }
@@ -491,6 +491,8 @@ var Newsletter = (function () {
 
     this._el = element;
 
+    this.STRINGS = Newsletter.strings;
+
     // Map toggled checkbox values to an input.
     this._el.addEventListener('click', Utility.joinValues);
 
@@ -501,7 +503,7 @@ var Newsletter = (function () {
     };
 
     this._el.querySelector('form').addEventListener('submit', function (event) {
-      return Utility.valid(event) ? this$1._submit(event).then(this$1._onload).catch(this$1._onerror) : false;
+      return Utility.valid(event, this$1.STRINGS) ? this$1._submit(event).then(this$1._onload).catch(this$1._onerror) : false;
     });
 
     return this;
@@ -619,7 +621,7 @@ var Newsletter = (function () {
   Newsletter.prototype._messaging = function _messaging(type, msg) {
     if (msg === void 0) msg = 'no message';
 
-    var strings = Object.keys(Newsletter.strings);
+    var strings = Object.keys(Newsletter.stringKeys);
     var handled = false;
     var alertBox = this._el.querySelector(Newsletter.selectors[type + "_BOX"]);
 
@@ -628,8 +630,8 @@ var Newsletter = (function () {
     // Get the localized string, these should be written to the DOM already.
     // The utility contains a global method for retrieving them.
     for (var i = 0; i < strings.length; i++) {
-      if (msg.indexOf(Newsletter.strings[strings[i]]) > -1) {
-        msg = Utility.localize(strings[i]);
+      if (msg.indexOf(Newsletter.stringKeys[strings[i]]) > -1) {
+        msg = this.STRINGS[strings[i]];
         handled = true;
       }
     }
@@ -639,7 +641,7 @@ var Newsletter = (function () {
     for (var x = 0; x < Newsletter.templates.length; x++) {
       var template = Newsletter.templates[x];
       var key = template.replace('{{ ', '').replace(' }}', '');
-      var value = this._data[key] || Newsletter.strings[key];
+      var value = this._data[key] || this.STRINGS[key];
       var reg = new RegExp(template, 'gi');
       msg = msg.replace(reg, value ? value : '');
     }
@@ -647,7 +649,7 @@ var Newsletter = (function () {
     if (handled) {
       alertBoxMsg.innerHTML = msg;
     } else if (type === 'ERROR') {
-      alertBoxMsg.innerHTML = Utility.localize(Newsletter.strings.ERR_PLEASE_TRY_LATER);
+      alertBoxMsg.innerHTML = this.STRINGS.ERR_PLEASE_TRY_LATER;
     }
 
     if (alertBox) {
@@ -713,6 +715,16 @@ var Newsletter = (function () {
     return Newsletter.keys[key];
   };
 
+  /**
+   * Setter for the Autocomplete strings
+   * @param {object}localizedStringsObject containing strings.
+   * @return{object}                  The Newsletter Object.
+   */
+  Newsletter.prototype.strings = function strings(localizedStrings) {
+    Object.assign(this.STRINGS, localizedStrings);
+    return this;
+  };
+
   /** @type {Object} API data keys */
   Newsletter.keys = {
     MC_RESULT: 'result',
@@ -741,13 +753,26 @@ var Newsletter = (function () {
   Newsletter.selector = Newsletter.selectors.ELEMENT;
 
   /** @type {Object} String references for the instance */
-  Newsletter.strings = {
-    ERR_PLEASE_TRY_LATER: 'ERR_PLEASE_TRY_LATER',
+  Newsletter.stringKeys = {
     SUCCESS_CONFIRM_EMAIL: 'Almost finished...',
     ERR_PLEASE_ENTER_VALUE: 'Please enter a value',
     ERR_TOO_MANY_RECENT: 'too many',
     ERR_ALREADY_SUBSCRIBED: 'is already subscribed',
-    ERR_INVALID_EMAIL: 'looks fake or invalid',
+    ERR_INVALID_EMAIL: 'looks fake or invalid'
+  };
+
+  /** @type {Object} Available strings */
+  Newsletter.strings = {
+    VALID_REQUIRED: 'This field is required.',
+    VALID_EMAIL_REQUIRED: 'Email is required.',
+    VALID_EMAIL_INVALID: 'Please enter a valid email.',
+    VALID_CHECKBOX_BOROUGH: 'Please select a borough.',
+    ERR_PLEASE_TRY_LATER: 'There was an error with your submission. Please try again later.',
+    SUCCESS_CONFIRM_EMAIL: 'Almost finished... We need to confirm your email address. To complete the subscription process, please click the link in the email we just sent you.',
+    ERR_PLEASE_ENTER_VALUE: 'Please enter a value',
+    ERR_TOO_MANY_RECENT: 'Recipient "{{ EMAIL }}" has too many recent signup requests',
+    ERR_ALREADY_SUBSCRIBED: '{{ EMAIL }} is already subscribed to list {{ LIST_NAME }}.',
+    ERR_INVALID_EMAIL: 'This email address looks fake or invalid. Please enter a real email address.',
     LIST_NAME: 'ACCESS NYC - Newsletter'
   };
 

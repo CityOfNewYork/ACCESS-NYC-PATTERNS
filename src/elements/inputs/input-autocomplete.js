@@ -12,11 +12,13 @@ class InputAutocomplete {
    * @constructor
    */
   constructor(settings = {}) {
-    this._autocomplete = new Autocomplete({
-      selector: (settings.hasOwnProperty('selector'))
-        ? settings.selector : InputAutocomplete.selector,
+    this.library = new Autocomplete({
       options: (settings.hasOwnProperty('options'))
         ? settings.options : InputAutocomplete.options,
+      selected: (settings.hasOwnProperty('selected'))
+        ? settings.selected : false,
+      selector: (settings.hasOwnProperty('selector'))
+        ? settings.selector : InputAutocomplete.selector,
       classname: (settings.hasOwnProperty('classname'))
         ? settings.classname : InputAutocomplete.classname,
     });
@@ -29,7 +31,16 @@ class InputAutocomplete {
    * @param  {object} opt Set of array options for the Autocomplete class
    */
   options(reset) {
-    this._autocomplete.options = reset;
+    this.library.settings.options = reset;
+    return this;
+  }
+
+  /**
+   * Setter for the Autocomplete strings
+   * @param  {object}  localizedStrings  Object containing strings.
+   */
+  strings(localizedStrings) {
+    Object.assign(this.library.STRINGS, localizedStrings);
     return this;
   }
 }

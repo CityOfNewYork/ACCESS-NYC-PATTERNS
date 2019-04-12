@@ -14,10 +14,12 @@ class Newsletter {
   /**
    * The class constructor
    * @param  {Object} element The Newsletter DOM Object
-   * @return {Class}          The instanciated Newsletter object
+   * @return {Class}          The instantiated Newsletter object
    */
   constructor(element) {
     this._el = element;
+
+    this.STRINGS = Newsletter.strings;
 
     // Map toggled checkbox values to an input.
     this._el.addEventListener('click', Utility.joinValues);
@@ -29,7 +31,7 @@ class Newsletter {
     };
 
     this._el.querySelector('form').addEventListener('submit', (event) =>
-      (Utility.valid(event)) ?
+      (Utility.valid(event, this.STRINGS)) ?
         this._submit(event).then(this._onload).catch(this._onerror) : false
     );
 
@@ -140,7 +142,7 @@ class Newsletter {
    * @return {Class}       Newsletter
    */
   _messaging(type, msg = 'no message') {
-    let strings = Object.keys(Newsletter.strings);
+    let strings = Object.keys(Newsletter.stringKeys);
     let handled = false;
     let alertBox = this._el.querySelector(
       Newsletter.selectors[`${type}_BOX`]
@@ -153,8 +155,8 @@ class Newsletter {
     // Get the localized string, these should be written to the DOM already.
     // The utility contains a global method for retrieving them.
     for (let i = 0; i < strings.length; i++)
-      if (msg.indexOf(Newsletter.strings[strings[i]]) > -1) {
-        msg = Utility.localize(strings[i]);
+      if (msg.indexOf(Newsletter.stringKeys[strings[i]]) > -1) {
+        msg = this.STRINGS[strings[i]];
         handled = true;
       }
 
@@ -163,7 +165,7 @@ class Newsletter {
     for (let x = 0; x < Newsletter.templates.length; x++) {
       let template = Newsletter.templates[x];
       let key = template.replace('{{ ', '').replace(' }}', '');
-      let value = this._data[key] || Newsletter.strings[key];
+      let value = this._data[key] || this.STRINGS[key];
       let reg = new RegExp(template, 'gi');
       msg = msg.replace(reg, (value) ? value : '');
     }
@@ -171,9 +173,7 @@ class Newsletter {
     if (handled)
       alertBoxMsg.innerHTML = msg;
     else if (type === 'ERROR')
-      alertBoxMsg.innerHTML = Utility.localize(
-        Newsletter.strings.ERR_PLEASE_TRY_LATER
-      );
+      alertBoxMsg.innerHTML = this.STRINGS.ERR_PLEASE_TRY_LATER;
 
     if (alertBox) this._elementShow(alertBox, alertBoxMsg);
 
@@ -231,6 +231,16 @@ class Newsletter {
   _key(key) {
     return Newsletter.keys[key];
   }
+
+  /**
+   * Setter for the Autocomplete strings
+   * @param   {object}  localizedStrings  Object containing strings.
+   * @return  {object}                    The Newsletter Object.
+   */
+  strings(localizedStrings) {
+    Object.assign(this.STRINGS, localizedStrings);
+    return this;
+  }
 }
 
 /** @type {Object} API data keys */
@@ -261,13 +271,26 @@ Newsletter.selectors = {
 Newsletter.selector = Newsletter.selectors.ELEMENT;
 
 /** @type {Object} String references for the instance */
-Newsletter.strings = {
-  ERR_PLEASE_TRY_LATER: 'ERR_PLEASE_TRY_LATER',
+Newsletter.stringKeys = {
   SUCCESS_CONFIRM_EMAIL: 'Almost finished...',
   ERR_PLEASE_ENTER_VALUE: 'Please enter a value',
   ERR_TOO_MANY_RECENT: 'too many',
   ERR_ALREADY_SUBSCRIBED: 'is already subscribed',
-  ERR_INVALID_EMAIL: 'looks fake or invalid',
+  ERR_INVALID_EMAIL: 'looks fake or invalid'
+};
+
+/** @type {Object} Available strings */
+Newsletter.strings = {
+  VALID_REQUIRED: 'This field is required.',
+  VALID_EMAIL_REQUIRED: 'Email is required.',
+  VALID_EMAIL_INVALID: 'Please enter a valid email.',
+  VALID_CHECKBOX_BOROUGH: 'Please select a borough.',
+  ERR_PLEASE_TRY_LATER: 'There was an error with your submission. Please try again later.',
+  SUCCESS_CONFIRM_EMAIL: 'Almost finished... We need to confirm your email address. To complete the subscription process, please click the link in the email we just sent you.',
+  ERR_PLEASE_ENTER_VALUE: 'Please enter a value',
+  ERR_TOO_MANY_RECENT: 'Recipient "{{ EMAIL }}" has too many recent signup requests',
+  ERR_ALREADY_SUBSCRIBED: '{{ EMAIL }} is already subscribed to list {{ LIST_NAME }}.',
+  ERR_INVALID_EMAIL: 'This email address looks fake or invalid. Please enter a real email address.',
   LIST_NAME: 'ACCESS NYC - Newsletter'
 };
 
