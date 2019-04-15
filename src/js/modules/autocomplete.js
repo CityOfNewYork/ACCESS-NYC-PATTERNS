@@ -48,6 +48,10 @@ class Autocomplete {
       this.inputEvent(e);
     });
 
+    window.addEventListener('change', (e) => {
+      this.scrollUpToElement(e);
+    });
+
     let body = document.querySelector('body');
 
     body.addEventListener('focus', (e) => {
@@ -146,6 +150,17 @@ class Autocomplete {
 
     this.remove();
     this.highlighted = -1;
+  }
+
+  /**
+   * Scroll window up to element
+   * @param   {object}  event  The event object
+   */
+  scrollUpToElement(event) {
+    if (!event.target.matches(this.settings.selector)) return;
+
+    this.input = event.target;
+    this.input.scrollIntoView({block: 'center'});
   }
 
   /**

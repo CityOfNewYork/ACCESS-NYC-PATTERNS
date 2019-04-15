@@ -120,6 +120,10 @@ var InputAutocomplete = (function () {
       this$1.inputEvent(e);
     });
 
+    window.addEventListener('change', function (e) {
+      this$1.scrollUpToElement(e);
+    });
+
     var body = document.querySelector('body');
 
     body.addEventListener('focus', function (e) {
@@ -236,6 +240,19 @@ var InputAutocomplete = (function () {
 
     this.remove();
     this.highlighted = -1;
+  };
+
+  /**
+   * Scroll window up to element
+   * @param {object}eventThe event object
+   */
+  Autocomplete.prototype.scrollUpToElement = function scrollUpToElement(event) {
+    if (!event.target.matches(this.settings.selector)) {
+      return;
+    }
+
+    this.input = event.target;
+    this.input.scrollIntoView({ block: 'center' });
   };
 
   /**
