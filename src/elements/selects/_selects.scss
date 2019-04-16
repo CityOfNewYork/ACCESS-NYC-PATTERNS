@@ -4,11 +4,16 @@
 
 // Dependencies
 @import 'config/variables';
+@import 'config/inputs';
 @import 'config/selects';
 
 // Declarations
 .select {
   @include selects();
+
+  &:focus {
+    @include input-focus();
+  }
 
   @media screen and (min-width: $screen-tablet) {
     width: auto;
@@ -16,5 +21,9 @@
 
   .error & {
     border-color: $color-red;
+
+    &:focus {
+      @include input-focus-error();
+    }
   }
 }
