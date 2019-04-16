@@ -12437,10 +12437,6 @@ var AccessNyc = (function () {
       this$1.inputEvent(e);
     });
 
-    window.addEventListener('change', function (e) {
-      this$1.scrollUpToElement(e);
-    });
-
     var body = document.querySelector('body');
 
     body.addEventListener('focus', function (e) {
@@ -12557,19 +12553,6 @@ var AccessNyc = (function () {
 
     this.remove();
     this.highlighted = -1;
-  };
-
-  /**
-   * Scroll window up to element
-   * @param {object}eventThe event object
-   */
-  Autocomplete.prototype.scrollUpToElement = function scrollUpToElement(event) {
-    if (!event.target.matches(this.settings.selector)) {
-      return;
-    }
-
-    this.input = event.target;
-    this.input.scrollIntoView({ block: 'center' });
   };
 
   /**
@@ -12797,6 +12780,10 @@ var AccessNyc = (function () {
       this.input.value = this.scoredOptions[this.highlighted].displayValue;
       this.remove();
       this.message('SELECTED', this.input.value);
+
+      if (window.innerWidth <= 768) {
+        this.input.scrollIntoView(true);
+      }
     }
 
     // User provided callback method for selected option.
