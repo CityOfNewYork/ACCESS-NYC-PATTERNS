@@ -8,7 +8,6 @@ import VueDemo from './modules/VueDemo';
 // Elements
 import Icons from '../elements/icons/icons';
 import InputAutocomplete from '../elements/inputs/input-autocomplete';
-import InputAutocompleteData from '../elements/inputs/input-autocomplete.data';
 
 // Components
 import CardVue from '../components/card/card.vue';
@@ -168,9 +167,6 @@ class main {
   * @return {object} instance of Autocomplete
   */
   inputAutocomplete(settings = {}) {
-    settings.options = (settings.hasOwnProperty('options'))
-      ? settings.options : InputAutocompleteData;
-
     return new InputAutocomplete(settings);
   }
 }

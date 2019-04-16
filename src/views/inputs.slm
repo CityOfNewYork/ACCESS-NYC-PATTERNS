@@ -31,8 +31,27 @@
   = mixin('section', 'US Phone Error', 'elements/inputs/input-phone-us-error');
   = mixin('section', 'Search', 'elements/inputs/input-search');
   = mixin('section', 'Autocomplete', 'elements/inputs/input-autocomplete');
-  = mixin('section-text', 'Usage', 'elements/inputs/readme');
+  = mixin('section-text', 'Autocomplete Usage', 'elements/inputs/input-autocomplete.readme');
 
 = content('script');
   javascript:
-    access.inputAutocomplete();
+    var autocomplete = access.inputAutocomplete({
+        // Providing a callback for the selected event.
+        selected: function(value) {
+            console.dir('Selected ' + value + '!');
+          }
+      });
+
+    // Updating dropdown options post instantiation.
+    autocomplete.options([
+      ['Bronx', 'Hunts Point', 'Arthur Avenue', 'Riverside', 'Mott Haven'],
+      ['Queens', 'Corona', 'East Elmhurst', 'Forest Hills', 'Fresh Pond'],
+      ['Brooklyn', 'Flatbush', 'Bay Ridge', 'DUMBO', 'Williamsburg'],
+      ['Staten Island', 'South Beach', 'Fort Wadsworth', 'Todt Hill', 'Great Kills'],
+      ['Manhattan', 'Lower', 'Midtown', 'Chinatown', 'SoHo']
+    ]);
+
+    // Updating strings used by the
+    autocomplete.strings({
+      'OPTION_SELECTED': '{{ VALUE }} is selected!'
+    });
