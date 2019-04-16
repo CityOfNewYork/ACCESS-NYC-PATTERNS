@@ -101,10 +101,11 @@ var Filter = (function () {
    * See https://developer.mozilla.org/en-US/docs/Learn/HTML/Forms/Form_validation
    * See https://caniuse.com/#feat=form-validation for support
    *
-   * @param  {Event}         event The form submission event.
-   * @return {Event/Boolean}       The original event or false if invalid.
+   * @param  {Event}  event The form submission event.
+   * @param  {Array} STRINGS set of strings
+   * @return {Event/Boolean} The original event or false if invalid.
    */
-  Utility.valid = function (event) {
+  Utility.valid = function (event, STRINGS) {
     event.preventDefault();
 
     if (Utility.debug())
@@ -137,9 +138,9 @@ var Filter = (function () {
 
       // Get the error message from localized strings.
       if (el.validity.valueMissing) {
-        message.innerHTML = Utility.localize('VALID_REQUIRED');
+        message.innerHTML = STRINGS.VALID_REQUIRED;
       } else if (!el.validity.valid) {
-        message.innerHTML = Utility.localize("VALID_" + el.type.toUpperCase() + "_INVALID");
+        message.innerHTML = STRINGS["VALID_" + el.type.toUpperCase() + "_INVALID"];
       } else {
         message.innerHTML = el.validationMessage;
       }
