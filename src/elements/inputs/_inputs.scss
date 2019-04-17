@@ -4,6 +4,7 @@
 
 // Dependencies
 @import 'config/variables';
+@import 'config/animate';
 @import 'config/inputs';
 @import 'config/direction';
 @import 'config/dimensions';
@@ -161,9 +162,11 @@ input[type='number'] {
 
 .input-autocomplete__dropdown > ul > li {
   @include inputs;
+  @include transition;
   cursor: pointer;
 }
 
 .input-autocomplete__dropdown > ul > .input-autocomplete__highlight {
   background-color: $color-blue-light;
+
 }

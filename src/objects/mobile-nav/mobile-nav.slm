@@ -14,6 +14,6 @@ div#o-mobile-nav class='o-mobile-nav color-mid-background active:o-mobile-nav' d
       a href='#' Programs
       a href='#' Find help
       a href='#search' class='td-inherit'
-        svg class='icon icon-search'
-          use xlink:href='#icon-search'
+        svg class='icon icon-ui-search'
+          use xlink:href='#icon-ui-search'
         | Search

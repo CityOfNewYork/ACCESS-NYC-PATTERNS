@@ -8,5 +8,5 @@ div class='c-question' data-sketch-symbol=symbol data-sketch-symbol-instance=ins
   div class='c-question__container'
     p We can send you a link to this page to help you get back to it when you’re ready.
     - symbol = false;
-    - instance = 'elements/inputs/input';
+    - instance = 'elements/inputs/inputs';
     = partial(`../../${instance}.slm`);

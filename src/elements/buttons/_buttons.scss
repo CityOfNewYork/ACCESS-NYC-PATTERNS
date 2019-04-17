@@ -3,6 +3,7 @@
  */
 
 // Dependencies
+@import 'config/animate';
 @import 'config/colors';
 @import 'config/fonts';
 @import 'config/dimensions';
@@ -15,14 +16,16 @@
 
 // Declarations
 // Base styles for buttons
-.btn, [class*='btn-'] {
+.btn, [class*='btn-'],
+.button, [class*='button-'] {
   @include btn;
+  @include transition;
 }
 
 //
 // Types
 //
-.btn-tag {
+.btn-tag, .button-tag {
   @include typography-supplemental();
   border-radius: 15px;
   margin: 5px 2px;
@@ -37,7 +40,7 @@
   }
 }
 
-.btn-toggle {
+.btn-toggle, .button-toggle {
   align-items: center;
   display: flex;
   justify-content: space-between;
@@ -76,20 +79,22 @@
 //
 // Modifiers
 //
-.btn-small {
+.btn-small, .button-small {
   font-size: .727rem;
 }
 
 //
 // Responsive types for button size
 //
-.screen-tablet\:btn-normal {
+.screen-tablet\:btn-normal,
+.screen-tablet\:button-normal {
   @media screen and (min-width: $screen-tablet) {
     @include btn-normal();
   }
 }
 
-.screen-desktop\:btn-normal {
+.screen-desktop\:btn-normal,
+.screen-desktop\:button-normal {
   @media screen and (min-width: $screen-desktop) {
     @include btn-normal();
   }
@@ -98,16 +103,20 @@
 //
 // Button types that should override top level styling
 //
-.btn-primary {
+.btn-primary,
+.button-primary {
   @include btn-primary;
 }
 
-.btn-secondary {
+.btn-secondary,
+.button-secondary {
   @include btn-secondary;
 }
 
 .btn-next,
-.btn-previous {
+.btn-previous,
+.button-next,
+.button-previous {
   &[class*='-next'] {
     @include btn-next;
   }
@@ -117,7 +126,8 @@
   }
 }
 
-.btn-text {
+.btn-text,
+.button-text {
   background: none;
   border: 0;
   border-radius: 0;

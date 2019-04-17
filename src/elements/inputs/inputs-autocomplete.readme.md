@@ -7,16 +7,16 @@ To use the Autocomplete Input in the global ACCESS NYC Patterns script use the f
 
     <script>
       var access = new AccessNyc();
-      access.inputAutocomplete({
+      access.inputsAutocomplete({
         options: [
           ['Bronx'], ['Queens']
         ]
       });
     </script>
 
-This function will instantiate the autocomplete with the provided options and attach the event listener to an input element with the default selector `[data-js='input-autocomplete__input']` (see markup details in the example above ). Below is an advanced configuration that passes a callback to the "selected" method of the autocomplete class. This callback is executed after a user has selected an option and the input value has been set. It will pass the selected value (`String`) as the first argument and the autocomplete class (`Object`) as the second.
+This function will instantiate the autocomplete with the provided options and attach the event listener to an input element with the default selector `[data-js='inputs-autocomplete__input']` (see markup details in the example above ). Below is an advanced configuration that passes a callback to the "selected" method of the autocomplete class. This callback is executed after a user has selected an option and the input value has been set. It will pass the selected value (`String`) as the first argument and the autocomplete class (`Object`) as the second.
 
-    var autocomplete = access.inputAutocomplete({
+    var autocomplete = access.inputsAutocomplete({
       selected: function(value, autocomplete) {
         console.dir('Selected ' + value + '!');
       }
@@ -60,22 +60,22 @@ The InputAutocomplete class accepts an object `{}` with two properties; "selecto
 * `options` (`Array` required) The suggested terms to be displayed in the dropdown. Each item is an array with the first item being the visible value. The following values within each array are treated as synonyms that score the priority of term higher if the user types it.
 * `selected` (`Function` optional) A callback method that will be executed when a user has selected an option.
 * `selector` (`String` optional) The selector for the input element. If no selector is provided the default
-value will be set to `[data-js="input-autocomplete__input"]`.
+value will be set to `[data-js="inputs-autocomplete__input"]`.
 
 #### Cherry-picked Module Import
 
 The ES6, CommonJS, and IFFE modules all require importing and object instantiation in your main script. The methods and configurations described above will work with the dedicated module.
 
     // ES6
-    import InputAutocomplete from 'src/elements/inputs/input-autocomplete';
+    import InputAutocomplete from 'src/elements/inputs/inputs-autocomplete';
 
     // CommonJS
-    import InputAutocomplete from 'dist/elements/inputs/input-autocomplete.common';
+    import InputAutocomplete from 'dist/elements/inputs/inputs-autocomplete.common';
 
     <!-- IFFE -->
-    <script src="dist/elements/inputs/input-autocomplete.iffe.js"></script>
+    <script src="dist/elements/inputs/inputs-autocomplete.iffe.js"></script>
 
-    new InputAutocomplete({
+    new InputsAutocomplete({
       options: [
         ['Bronx'], ['Queens']
       ]

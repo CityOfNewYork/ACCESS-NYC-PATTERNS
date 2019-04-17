@@ -21,5 +21,5 @@
 
 = content('content');
   = mixin('content-header', title);
-  = mixin('section', 'Screen', 'utilities/media-screen');
-  = mixin('section', 'Print', 'utilities/media-print');
+  = mixin('section', 'Screen', 'utilities/media/media-screen');
+  = mixin('section', 'Print', 'utilities/media/media-print');

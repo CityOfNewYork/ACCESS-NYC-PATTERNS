@@ -6,6 +6,6 @@ nav class='nav-block' data-sketch-symbol=symbol data-sketch-symbol-instance=inst
   a href='#' Programs
   a href='#' Find help
   a class='td-inherit' href='#search'
-    svg class='icon icon-search'
-      use xlink:href='#icon-search'
+    svg class='icon icon-ui-search'
+      use xlink:href='#icon-ui-search'
     | Search

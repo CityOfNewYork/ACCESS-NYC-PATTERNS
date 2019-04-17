@@ -27,18 +27,19 @@ a, .btn-link {
 }
 
 .link-more {
-  &::after {
-    @include triangle(.6em .4em, $color-blue-dark, $text-direction-end);
+  &:after {
+    content: '';
     display: inline-block;
+    @include triangle(.6em .4em, $color-blue-dark, $text-direction-end);
     margin-#{$text-direction-start}: .3em;
   }
 }
 
 .link-back {
-  &::before {
-    @include triangle(.6em .4em, $color-blue-dark, $text-direction-start);
+  &:before {
     content: '';
     display: inline-block;
+    @include triangle(.6em .4em, $color-blue-dark, $text-direction-start);
     margin-#{$text-direction-end}: .3em;
   }
 }
@@ -62,13 +63,13 @@ a, .btn-link {
 }
 
 .links-invert .link-more {
-  &::after {
+  &:after {
     @include triangle(.6em .4em, $color-white, $text-direction-end);
   }
 }
 
 .links-invert .link-back {
-  &::after {
+  &:before {
     @include triangle(.6em .4em, $color-white, $text-direction-start);
   }
 }

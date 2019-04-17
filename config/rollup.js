@@ -104,7 +104,8 @@ const modules = [
     output: {
       name: 'AccessNyc',
       file: `./dist/scripts/AccessNyc.js`,
-      sourcemap: (process.env.NODE_ENV === 'production') ? false : rollup.sourcemap,
+      sourcemap: (process.env.NODE_ENV === 'production')
+        ? false : rollup.sourcemap,
       format: rollup.format,
       strict: rollup.strict,
       globals: rollup.globals
@@ -112,18 +113,18 @@ const modules = [
     plugins: rollup.local
   },
   {
-    input: './src/elements/inputs/input-autocomplete.js',
+    input: './src/elements/inputs/inputs-autocomplete.js',
     plugins: rollup.dist,
     output: [
       {
         name: 'InputAutocomplete',
-        file: `./dist/elements/inputs/input-autocomplete.iffe.js`,
+        file: `./dist/elements/inputs/inputs-autocomplete.iffe.js`,
         format: 'iife',
         strict: rollup.strict
       },
       {
         name: 'InputAutocomplete',
-        file: `./dist/elements/inputs/input-autocomplete.common.js`,
+        file: `./dist/elements/inputs/inputs-autocomplete.common.js`,
         format: 'cjs',
         strict: rollup.strict
       }

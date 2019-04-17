@@ -59,8 +59,8 @@
               <h2 class="text-font-size-small m-0 text-color-blue-dark screen-tablet:hidden">Patterns</h2>
               <h2 aria-hidden="true" class="type-h1 m-0 text-color-blue-dark hidden screen-tablet:inline-block">Patterns</h2>
               <nav class="text-font-size-small">
-                <a class="rounded-lg text-color-blue-dark border-2 no-underline px-1 ml-2 hidden screen-tablet:inline-block" href="https://github.com/CityOfNewYork/ACCESS-NYC-PATTERNS">0.4.0</a>
-                <a aria-hidden="true" class="ml-1 screen-tablet:ml-2 screen-tablet:hidden" href="https://github.com/CityOfNewYork/ACCESS-NYC-PATTERNS">0.4.0</a>
+                <a class="rounded-lg text-color-blue-dark border-2 no-underline px-1 ml-2 hidden screen-tablet:inline-block" href="https://github.com/CityOfNewYork/access-nyc-patterns/tree/v0.5.0">0.5.0</a>
+                <a aria-hidden="true" class="ml-1 screen-tablet:ml-2 screen-tablet:hidden" href="https://github.com/CityOfNewYork/access-nyc-patterns/tree/v0.5.0">0.5.0</a>
                 <a class="ml-1 screen-tablet:ml-2" data-js="toggle" href="#main-menu">Menu</a>
               </nav>
             </div>
@@ -77,7 +77,7 @@
               <a class="block p-1" href="design-tools">Design Tools</a>
               <a class="block p-1 screen-tablet:border-b screen-tablet:pb-2 screen-tablet:mb-1 border-color-white p-1" href="developer-tools">Developer Tools</a>
               <a class="block p-1" href="https://www.npmjs.com/package/access-nyc-patterns">NPM</a>
-              <a class="block p-1" href="https://github.com/CityOfNewYork/ACCESS-NYC-PATTERNS">GitHub</a>
+              <a class="block p-1" href="https://github.com/CityOfNewYork/access-nyc-patterns">GitHub</a>
             </nav>
             <nav class="screen-tablet:flex-1 mb-1 px-2 screen-desktop:pl-4"><span class="type-h3 text-font-size-small mb-1 block screen-tablet:border-b screen-tablet:pb-2 screen-tablet:mb-1 border-color-white p-1">Elements</span>
               <a class="block p-1" href="buttons">Buttons</a>
@@ -149,7 +149,11 @@
           <section class="pb-4 mb-4" id="">
             <div class="page-wrapper px-2">
               <header class="layout--home-body">
-                <div class="my-0 px-2 border-b border-color-grey-light screen-tablet:flex screen-tablet:justify-between items-center"></div>
+                <div class="my-0 px-2 pt-1 pb-4 border-b border-color-grey-light screen-tablet:flex screen-tablet:justify-between items-center">
+                  <div>
+                    <a href="https://github.com/CityOfNewYork/access-nyc-patterns/tree/v0.5.0/src/objects/search-box"><code class="code">src/objects/search-box</code></a>
+                  </div>
+                </div>
               </header>
               <div class="layout--home-body">
                 <div class="my-0 pt-4 px-2 text-font-size-small"><p>The Search Box is a custom module with specific classes to define its elements, including the search input and program links. This is based on the same interaction in
@@ -168,7 +172,7 @@
                           <form class="o-search-box__form">
                             <input name="lang" type="hidden" value="en" />
                             <label class="type-small" for="search-field">Search for programs and services</label>
-                            <div class="input-search" data-sketch-symbol-instance="elements/inputs/input-search">
+                            <div class="input-search" data-sketch-symbol-instance="elements/inputs/inputs-search">
                               <input id="search-field" name="s" placeholder="Search" type="text" value="" />
                               <button class="btn-link input-search__submit" type="submit">
                                 <svg class="icon icon-ui-search">
@@ -201,7 +205,7 @@
                   </div>
                 </div>
                 <div>
-                  <div class="code-block mb-1"><pre>&lt;div aria-hidden=&quot;true&quot; class=&quot;o-search-box active static&quot; data-sketch-symbol-instance=&quot;elements/inputs/input-search&quot; id=&quot;search&quot;&gt;
+                  <div class="code-block mb-1"><pre>&lt;div aria-hidden=&quot;true&quot; class=&quot;o-search-box active static&quot; data-sketch-symbol-instance=&quot;elements/inputs/inputs-search&quot; id=&quot;search&quot;&gt;
   &lt;div class=&quot;o-search-box__inner&quot;&gt;
     &lt;div class=&quot;usa-grid&quot;&gt;
       &lt;div class=&quot;usa-width-one-whole&quot;&gt;
@@ -212,7 +216,7 @@
         &lt;form class=&quot;o-search-box__form&quot;&gt;
           &lt;input name=&quot;lang&quot; type=&quot;hidden&quot; value=&quot;en&quot; /&gt;
           &lt;label class=&quot;type-small&quot; for=&quot;search-field&quot;&gt;Search for programs and services&lt;/label&gt;
-          &lt;div class=&quot;input-search&quot; data-sketch-symbol-instance=&quot;elements/inputs/input-search&quot;&gt;
+          &lt;div class=&quot;input-search&quot; data-sketch-symbol-instance=&quot;elements/inputs/inputs-search&quot;&gt;
             &lt;input id=&quot;search-field&quot; name=&quot;s&quot; placeholder=&quot;Search&quot; type=&quot;text&quot; value=&quot;&quot; /&gt;
             &lt;button class=&quot;btn-link input-search__submit&quot; type=&quot;submit&quot;&gt;
               &lt;svg class=&quot;icon icon-ui-search&quot;&gt;

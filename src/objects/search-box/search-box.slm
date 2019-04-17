@@ -17,7 +17,7 @@ div class='o-search-box active static' id='search' aria-hidden='true' data-sketc
 
           label class='type-small' for='search-field' Search for programs and services
           - symbol = false;
-          - instance = 'elements/inputs/input-search';
+          - instance = 'elements/inputs/inputs-search';
           = partial(`../../${instance}.slm`);
 
         div class='o-search-box__suggestions'

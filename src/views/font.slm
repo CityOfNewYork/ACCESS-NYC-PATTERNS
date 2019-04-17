@@ -21,7 +21,6 @@
 
 = content('content');
   = mixin('content-header', title);
-  / = mixin('section-text', 'Font Families', 'utilities/font');
-  = mixin('section', 'Font Families', 'utilities/font');
-  = mixin('section', 'Font Smoothing', 'utilities/font-smoothing');
-  = mixin('section', 'Font Serif/Sans-Serif', 'utilities/font-serif-sans');
+  = mixin('section', 'Font Families', 'utilities/font/font');
+  = mixin('section', 'Font Smoothing', 'utilities/font/font-smoothing');
+  = mixin('section', 'Font Serif/Sans-Serif', 'utilities/font/font-serif-sans');

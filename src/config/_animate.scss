@@ -14,3 +14,9 @@
   animation-fill-mode: both;
   animation-timing-function: map-get(map-get($variables, 'animate'), 'animate-timing-function');
 }
+
+@mixin transition() {
+  transition-property: opacity, background, color, border, box-shadow, outline, transform, stroke, stroke-dashoffset, fill;
+  transition-duration: 0.25s;
+  backface-visibility: hidden;
+}

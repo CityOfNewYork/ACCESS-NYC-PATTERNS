@@ -21,21 +21,21 @@
 
 = content('content');
   = mixin('content-header', title);
-  = mixin('section', 'Default Styling', 'elements/inputs/input');
-  = mixin('section', 'Input Error', 'elements/inputs/input-error');
-  = mixin('section', 'Min-width 400px', 'elements/inputs/input-mw-400px');
-  = mixin('section', 'Number', 'elements/inputs/input-number');
-  = mixin('section', 'US Currency', 'elements/inputs/input-currency-usd');
-  = mixin('section', 'US Currency Error', 'elements/inputs/input-currency-usd-error');
-  = mixin('section', 'US Phone', 'elements/inputs/input-phone-us');
-  = mixin('section', 'US Phone Error', 'elements/inputs/input-phone-us-error');
-  = mixin('section', 'Search', 'elements/inputs/input-search');
-  = mixin('section', 'Autocomplete', 'elements/inputs/input-autocomplete');
-  = mixin('section-text', 'Autocomplete Usage', 'elements/inputs/input-autocomplete.readme');
+  = mixin('section', 'Default Styling', 'elements/inputs/inputs');
+  = mixin('section', 'Input Error', 'elements/inputs/inputs-error');
+  = mixin('section', 'Min-width 400px', 'elements/inputs/inputs-mw-400px');
+  = mixin('section', 'Number', 'elements/inputs/inputs-number');
+  = mixin('section', 'US Currency', 'elements/inputs/inputs-currency-usd');
+  = mixin('section', 'US Currency Error', 'elements/inputs/inputs-currency-usd-error');
+  = mixin('section', 'US Phone', 'elements/inputs/inputs-phone-us');
+  = mixin('section', 'US Phone Error', 'elements/inputs/inputs-phone-us-error');
+  = mixin('section', 'Search', 'elements/inputs/inputs-search');
+  = mixin('section', 'Autocomplete', 'elements/inputs/inputs-autocomplete');
+  = mixin('section-text', 'Autocomplete Usage', 'elements/inputs/inputs-autocomplete.readme');
 
 = content('script');
   javascript:
-    var autocomplete = access.inputAutocomplete({
+    var autocomplete = access.inputsAutocomplete({
         // Providing a callback for the selected event.
         selected: function(value) {
             console.dir('Selected ' + value + '!');

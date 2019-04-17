@@ -7,7 +7,7 @@ import VueDemo from './modules/VueDemo';
 
 // Elements
 import Icons from '../elements/icons/icons';
-import InputAutocomplete from '../elements/inputs/input-autocomplete';
+import InputsAutocomplete from '../elements/inputs/inputs-autocomplete';
 
 // Components
 import CardVue from '../components/card/card.vue';
@@ -166,8 +166,8 @@ class main {
   * @param {object} settings
   * @return {object} instance of Autocomplete
   */
-  inputAutocomplete(settings = {}) {
-    return new InputAutocomplete(settings);
+  inputsAutocomplete(settings = {}) {
+    return new InputsAutocomplete(settings);
   }
 }
 

@@ -17,8 +17,8 @@
   = mixin('head', title);
 
 = content('header');
-  = mixin('header', title); 
+  = mixin('header', title);
 
 = content('content');
   = mixin('content-header', title);
-  = mixin('section', 'Screen Reader Only', 'utilities/accessibility');
+  = mixin('section', 'Screen Reader Only', 'utilities/accessibility/accessibility');

@@ -22,5 +22,5 @@
 
 = content('content');
   = mixin('content-header', title);
-  = mixin('section', 'Inline Comma', 'elements/lists/list-inline-comma');
-  = mixin('section', 'Inline Semicolon', 'elements/lists/list-inline-semicolon');
+  = mixin('section', 'Inline Comma', 'elements/lists/lists-inline-comma');
+  = mixin('section', 'Inline Semicolon', 'elements/lists/lists-inline-semicolon');

@@ -4,19 +4,21 @@
  * Asset Paths and CDN
  ***********************/
 
-// This is the path to your asset folders. Uncomment and set to override the default.
-// By default, it is set to look for assets one director up from the distributed
+// This is the path to your asset folders. Uncomment and set to override the
+// default. By default, it is set to look for assets one director up from the
+// distributed.
 // stylesheet '../' ex;
 // $cdn: 'path/to/assets/';
 
-// The CDN can be set to another local path, or, it can be set to the 'cdn' within
-// the $variables map. This default uses jsDelivr to pull the assets from the patterns
-// GitHub repository and the tag of the installed version. ex;
+// The CDN can be set to another local path, or, it can be set to the 'cdn'
+// within the $variables map. This default uses jsDelivr to pull the assets
+// from the patterns GitHub repository and the tag of the installed version.
+// ex;
 // @import 'config/variables';
 // $cdn: map-get($variables, 'cdn');
 
-// These are the default paths to the different asset types within the asset folder.
-// Uncomment and set to override their defaults.
+// These are the default paths to the different asset types within the asset
+// folder. Uncomment and set to override their defaults.
 // $path-to-fonts: 'fonts/';
 // $path-to-images: 'images/';
 // $path-to-svg: 'svg/';
@@ -33,18 +35,16 @@
  * External Dependencies
  ************************/
 
-// Any external dependency can be included here. It may also make sense to include
-// it within specific component and object styles if it is a dependency. Be sure
-// to add 'node_modules' to your include paths if you are using npm to manage
-// dependencies (recommended). Dependency examples include Bootstrap or Material
-// Components Web.
+// Any external dependency can be included here. It may also make sense to
+// include it within specific component and object styles if it is a dependency.
+// Be sure to add 'node_modules' to your include paths if you are using npm to
+// manage dependencies (recommended). Dependency examples include Bootstrap,
+// Material Components Web, etc.
 
 @import 'bourbon/app/assets/stylesheets/bourbon-deprecate';
 @import 'bourbon/app/assets/stylesheets/settings/deprecation-warnings';
 @import 'bourbon/app/assets/stylesheets/settings/asset-pipeline';
 @import 'bourbon/app/assets/stylesheets/helpers/directional-values';
-@import 'animate.scss/vendor/assets/stylesheets/animate/fadeInUp';
-@import 'animate.scss/vendor/assets/stylesheets/animate/fadeIn';
 // global - end
 
 /**********
@@ -57,37 +57,36 @@
 // namespace prefixes based on their attributes.
 
 @import 'elements/base/base';
-@import 'elements/animate/animate';
+@import 'elements/buttons/buttons';
+@import 'elements/checkboxes/checkboxes';
 @import 'elements/code/code';
+@import 'elements/divider/divider';
+@import 'elements/forms/forms';
+@import 'elements/icons/icons';
+@import 'elements/inputs/inputs';
+@import 'elements/labels/labels';
 @import 'elements/layouts/layouts';
 @import 'elements/links/links';
+@import 'elements/lists/lists';
 @import 'elements/nav/nav';
 @import 'elements/overlay/overlay';
-@import 'elements/forms/forms';
-@import 'elements/labels/labels';
-@import 'elements/buttons/buttons';
-@import 'elements/icons/icons';
-@import 'elements/spinner/spinner';
-@import 'elements/checkboxes/checkboxes';
-@import 'elements/radios/radios';
-@import 'elements/toggles/toggles';
-@import 'elements/selects/selects';
-@import 'elements/tables/tables';
-@import 'elements/tooltips/tooltips';
-@import 'elements/divider/divider';
 @import 'elements/program-labels/program-labels';
-@import 'elements/inputs/inputs';
-@import 'elements/lists/lists';
+@import 'elements/radios/radios';
+@import 'elements/selects/selects';
+@import 'elements/spinner/spinner';
+@import 'elements/tables/tables';
+@import 'elements/toggles/toggles';
+@import 'elements/tooltips/tooltips';
 // elements - end
 
 /*************
  * Components
  *************/
 
-// Components are elements that require isolated styling. Examples include buttons,
-// textfields, select boxes, grouped navigation, dropdowns, etc. They may include
-// utilities within them. Not all components are required for each application.
-// Component namespaces are prefixed with 'c-'.
+// Components are elements that require isolated styling. Examples include
+// buttons, textfields, select boxes, grouped navigation, dropdowns, etc. They
+// may include utilities within them. Not all components are required for each
+// application. Component namespaces are prefixed with 'c-'.
 
 @import 'components/accordion/accordion';
 @import 'components/alert-box/alert-box';
@@ -96,14 +95,14 @@
 @import 'components/disclaimer/disclaimer';
 @import 'components/filter/filter';
 @import 'components/filter/filter-multi';
-@import 'components/text-controller/text-controller';
 @import 'components/header/header';
-@import 'components/side-nav/side-nav';
-@import 'components/share-links/share-links';
-@import 'components/question/question';
-@import 'components/share-form/share-form';
 @import 'components/member-list/member-list';
 @import 'components/nearby-stops/nearby-stops';
+@import 'components/question/question';
+@import 'components/side-nav/side-nav';
+@import 'components/share-form/share-form';
+@import 'components/share-links/share-links';
+@import 'components/text-controller/text-controller';
 // components - end
 
 /**********
@@ -111,31 +110,33 @@
  **********/
 
 // Objects are elements with more robust styling requirements. They may include
-// Components and utilities within them. Examples include headers, footers, modals,
-// sliders, and charts. Not all Objects are required for each application and some
-// will require their own Objects. Object namespaces are prefixed with 'o-'.
+// Components and utilities within them. Examples include headers, footers,
+// modals, sliders, and charts. Not all Objects are required for each
+// application and some will require their own Objects. Object namespaces are
+// prefixed with 'o-'.
 
-@import 'objects/content/content';
-@import 'objects/navigation/navigation';
-@import 'objects/mobile-nav/mobile-nav';
 @import 'objects/banner/banner';
-@import 'objects/search-box/search-box';
+@import 'objects/content/content';
 @import 'objects/footer/footer';
+@import 'objects/mobile-nav/mobile-nav';
+@import 'objects/navigation/navigation';
+@import 'objects/search-box/search-box';
 // objects - end
 
 /************
  * Utilities
  ************/
 
-@import 'utilities/color';
+@import 'utilities/animate/animate';
+@import 'utilities/accessibility/accessibility';
+@import 'utilities/color/color';
+@import 'utilities/font/font';
+@import 'utilities/inherit/inherit';
+@import 'utilities/language/language';
+@import 'utilities/media/media-print';
+@import 'utilities/statuses/statuses';
+@import 'utilities/tailwind/tailwind';
+@import 'utilities/text/text';
+@import 'utilities/toggles/toggles';
 @import 'utilities/typography/typography';
-@import 'utilities/font';
-@import 'utilities/text';
-@import 'utilities/accessibility';
-@import 'utilities/inherit';
-@import 'utilities/language';
-@import 'utilities/statuses';
-@import 'utilities/print';
-@import 'tailwind';
-@import 'utilities/toggles';
 // utilities - end

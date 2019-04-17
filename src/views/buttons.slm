@@ -20,13 +20,13 @@
 
 = content('content');
   = mixin('content-header', title);
-  = mixin('section', 'Default Styling', 'elements/buttons/btn');
-  = mixin('section', 'Primary Button', 'elements/buttons/btn-primary');
-  = mixin('section', 'Secondary Button', 'elements/buttons/btn-secondary');
-  = mixin('section', 'Small Button', 'elements/buttons/btn-small');
-  = mixin('section', 'Normal Button', 'elements/buttons/btn-normal');
-  = mixin('section', 'Tag Button', 'elements/buttons/btn-tag');
-  = mixin('section', 'Toggle Button', 'elements/buttons/btn-toggle');
-  = mixin('section', 'Text Button', 'elements/buttons/btn-text');
-  = mixin('section', 'Next Button', 'elements/buttons/btn-next');
-  = mixin('section', 'Previous Button', 'elements/buttons/btn-previous');
+  = mixin('section', 'Default Styling', 'elements/buttons/buttons');
+  = mixin('section', 'Primary Button', 'elements/buttons/buttons-primary');
+  = mixin('section', 'Secondary Button', 'elements/buttons/buttons-secondary');
+  = mixin('section', 'Small Button', 'elements/buttons/buttons-small');
+  = mixin('section', 'Normal Button', 'elements/buttons/buttons-normal');
+  = mixin('section', 'Tag Button', 'elements/buttons/buttons-tag');
+  = mixin('section', 'Toggle Button', 'elements/buttons/buttons-toggle');
+  = mixin('section', 'Text Button', 'elements/buttons/buttons-text');
+  = mixin('section', 'Next Button', 'elements/buttons/buttons-next');
+  = mixin('section', 'Previous Button', 'elements/buttons/buttons-previous');

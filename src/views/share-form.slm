@@ -23,4 +23,4 @@
   = mixin('content-header', title);
   = mixin('section', 'Email Share Form', 'components/share-form/share-form-email');
   = mixin('section', 'Text Share Form', 'components/share-form/share-form-text');
-  = mixin('section-text', 'Develop', 'components/share-form/share-form-develop');
+  = mixin('section-text', 'Share Form Usage', 'components/share-form/share-form.readme');

@@ -15,5 +15,5 @@ div class='c-question' data-sketch-symbol=symbol data-sketch-symbol-instance=ins
     div class='error-message' aria-live='polite' id='person-0-age-error'
       | This entry is required to continue.
     - symbol = false;
-    - instance = 'elements/inputs/input-number-error';
+    - instance = 'elements/inputs/inputs-number-error';
     = partial(`../../${instance}.slm`);

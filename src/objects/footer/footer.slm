@@ -68,10 +68,11 @@ footer class='o-footer color-mid-background' data-sketch-symbol=symbol
         - instance = 'objects/newsletter/newsletter';
         = partial(`../../${instance}`);
 
-  div class='o-footer__copyright'
+  div class='o-footer__copyright mb-4'
     svg class='icon icon-logo-full text-color-blue-dark'
       use xlink:href='#icon-logo-full'
 
+  div class='o-footer__copyright'
     svg class='icon icon-logo-nyc'
       use xlink:href='#icon-logo-nyc'
 

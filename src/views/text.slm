@@ -21,4 +21,4 @@
 
 = content('content');
   = mixin('content-header', title);
-  = mixin('section', 'Alignment', 'utilities/text');
+  = mixin('section', 'Alignment', 'utilities/text/text');

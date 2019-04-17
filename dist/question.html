@@ -59,8 +59,8 @@
               <h2 class="text-font-size-small m-0 text-color-blue-dark screen-tablet:hidden">Patterns</h2>
               <h2 aria-hidden="true" class="type-h1 m-0 text-color-blue-dark hidden screen-tablet:inline-block">Patterns</h2>
               <nav class="text-font-size-small">
-                <a class="rounded-lg text-color-blue-dark border-2 no-underline px-1 ml-2 hidden screen-tablet:inline-block" href="https://github.com/CityOfNewYork/ACCESS-NYC-PATTERNS">0.4.0</a>
-                <a aria-hidden="true" class="ml-1 screen-tablet:ml-2 screen-tablet:hidden" href="https://github.com/CityOfNewYork/ACCESS-NYC-PATTERNS">0.4.0</a>
+                <a class="rounded-lg text-color-blue-dark border-2 no-underline px-1 ml-2 hidden screen-tablet:inline-block" href="https://github.com/CityOfNewYork/access-nyc-patterns/tree/v0.5.0">0.5.0</a>
+                <a aria-hidden="true" class="ml-1 screen-tablet:ml-2 screen-tablet:hidden" href="https://github.com/CityOfNewYork/access-nyc-patterns/tree/v0.5.0">0.5.0</a>
                 <a class="ml-1 screen-tablet:ml-2" data-js="toggle" href="#main-menu">Menu</a>
               </nav>
             </div>
@@ -77,7 +77,7 @@
               <a class="block p-1" href="design-tools">Design Tools</a>
               <a class="block p-1 screen-tablet:border-b screen-tablet:pb-2 screen-tablet:mb-1 border-color-white p-1" href="developer-tools">Developer Tools</a>
               <a class="block p-1" href="https://www.npmjs.com/package/access-nyc-patterns">NPM</a>
-              <a class="block p-1" href="https://github.com/CityOfNewYork/ACCESS-NYC-PATTERNS">GitHub</a>
+              <a class="block p-1" href="https://github.com/CityOfNewYork/access-nyc-patterns">GitHub</a>
             </nav>
             <nav class="screen-tablet:flex-1 mb-1 px-2 screen-desktop:pl-4"><span class="type-h3 text-font-size-small mb-1 block screen-tablet:border-b screen-tablet:pb-2 screen-tablet:mb-1 border-color-white p-1">Elements</span>
               <a class="block p-1" href="buttons">Buttons</a>
@@ -160,10 +160,13 @@
           <section class="pb-4 mb-4" id="number-question">
             <div class="page-wrapper px-2">
               <header class="layout--home-body">
-                <div class="my-0 px-2 border-b border-color-grey-light screen-tablet:flex screen-tablet:justify-between items-center">
-                  <h2 class="m-0 pt-1 pb-4">
+                <div class="my-0 px-2 pt-1 pb-4 border-b border-color-grey-light screen-tablet:flex screen-tablet:justify-between items-center">
+                  <h2 class="m-0">
                     <a class="text-color-grey-mid font-normal no-underline capitalize" href="#number-question">Number Question</a>
                   </h2>
+                  <div>
+                    <a href="https://github.com/CityOfNewYork/access-nyc-patterns/tree/v0.5.0/src/components/question"><code class="code">src/components/question</code></a>
+                  </div>
                 </div>
               </header>
               <div class="layout--home-body">
@@ -182,7 +185,7 @@
                       </button>
                     </p>
                     <div class="c-question__container">
-                      <div data-sketch-symbol-instance="elements/inputs/input-number">
+                      <div data-sketch-symbol-instance="elements/inputs/inputs-number">
                         <input aria-required="true" data-type="age" id="person-0-age" maxlength="3" min="0" name="Person[0].age" pattern="[0-9]" required="true" step="1" type="number" />
                       </div>
                     </div>
@@ -199,7 +202,7 @@
     &lt;/button&gt;
   &lt;/p&gt;
   &lt;div class=&quot;c-question__container&quot;&gt;
-    &lt;div data-sketch-symbol-instance=&quot;elements/inputs/input-number&quot;&gt;
+    &lt;div data-sketch-symbol-instance=&quot;elements/inputs/inputs-number&quot;&gt;
       &lt;input aria-required=&quot;true&quot; data-type=&quot;age&quot; id=&quot;person-0-age&quot; maxlength=&quot;3&quot; min=&quot;0&quot; name=&quot;Person[0].age&quot; pattern=&quot;[0-9]&quot; required=&quot;true&quot; step=&quot;1&quot; type=&quot;number&quot; /&gt;
     &lt;/div&gt;
   &lt;/div&gt;
@@ -211,10 +214,13 @@
           <section class="pb-4 mb-4" id="number-question-errors">
             <div class="page-wrapper px-2">
               <header class="layout--home-body">
-                <div class="my-0 px-2 border-b border-color-grey-light screen-tablet:flex screen-tablet:justify-between items-center">
-                  <h2 class="m-0 pt-1 pb-4">
+                <div class="my-0 px-2 pt-1 pb-4 border-b border-color-grey-light screen-tablet:flex screen-tablet:justify-between items-center">
+                  <h2 class="m-0">
                     <a class="text-color-grey-mid font-normal no-underline capitalize" href="#number-question-errors">Number Question Errors</a>
                   </h2>
+                  <div>
+                    <a href="https://github.com/CityOfNewYork/access-nyc-patterns/tree/v0.5.0/src/components/question"><code class="code">src/components/question</code></a>
+                  </div>
                 </div>
               </header>
               <div class="layout--home-body">
@@ -237,7 +243,7 @@
                     </p>
                     <div class="c-question__container error">
                       <div aria-live="polite" class="error-message" id="person-0-age-error">This entry is required to continue.</div>
-                      <div class="error" data-sketch-symbol-instance="elements/inputs/input-number-error">
+                      <div class="error" data-sketch-symbol-instance="elements/inputs/inputs-number-error">
                         <input aria-describedby="person-0-age-error" aria-invalid="true" aria-required="true" data-type="age" id="person-0-age-with-error" maxlength="3" min="0" name="Person[0].age-with-error" pattern="[0-9]" required="true" step="1" type="number"
                         />
                       </div>
@@ -245,7 +251,7 @@
                   </div>
                 </div>
                 <div>
-                  <div class="code-block mb-1"><pre>&lt;div class=&quot;c-question&quot; data-sketch-symbol-instance=&quot;elements/inputs/input-number&quot;&gt;
+                  <div class="code-block mb-1"><pre>&lt;div class=&quot;c-question&quot; data-sketch-symbol-instance=&quot;elements/inputs/inputs-number&quot;&gt;
   &lt;label class=&quot;c-question__label&quot; for=&quot;person-0-age-with-error&quot;&gt;How old are you?&lt;/label&gt;
   &lt;p&gt;
     &lt;button aria-describedby=&quot;tooltip-age&quot; class=&quot;c-question__info btn btn-text btn-link js-tooltip-trigger&quot; type=&quot;button&quot;&gt;Here’s why we are asking.&amp;nbsp;
@@ -256,7 +262,7 @@
   &lt;/p&gt;
   &lt;div class=&quot;c-question__container error&quot;&gt;
     &lt;div aria-live=&quot;polite&quot; class=&quot;error-message&quot; id=&quot;person-0-age-error&quot;&gt;This entry is required to continue.&lt;/div&gt;
-    &lt;div class=&quot;error&quot; data-sketch-symbol-instance=&quot;elements/inputs/input-number-error&quot;&gt;
+    &lt;div class=&quot;error&quot; data-sketch-symbol-instance=&quot;elements/inputs/inputs-number-error&quot;&gt;
       &lt;input aria-describedby=&quot;person-0-age-error&quot; aria-invalid=&quot;true&quot; aria-required=&quot;true&quot; data-type=&quot;age&quot; id=&quot;person-0-age-with-error&quot; maxlength=&quot;3&quot; min=&quot;0&quot; name=&quot;Person[0].age-with-error&quot; pattern=&quot;[0-9]&quot; required=&quot;true&quot; step=&quot;1&quot; type=&quot;number&quot; /&gt;
     &lt;/div&gt;
   &lt;/div&gt;
@@ -268,10 +274,13 @@
           <section class="pb-4 mb-4" id="text-question">
             <div class="page-wrapper px-2">
               <header class="layout--home-body">
-                <div class="my-0 px-2 border-b border-color-grey-light screen-tablet:flex screen-tablet:justify-between items-center">
-                  <h2 class="m-0 pt-1 pb-4">
+                <div class="my-0 px-2 pt-1 pb-4 border-b border-color-grey-light screen-tablet:flex screen-tablet:justify-between items-center">
+                  <h2 class="m-0">
                     <a class="text-color-grey-mid font-normal no-underline capitalize" href="#text-question">Text Question</a>
                   </h2>
+                  <div>
+                    <a href="https://github.com/CityOfNewYork/access-nyc-patterns/tree/v0.5.0/src/components/question"><code class="code">src/components/question</code></a>
+                  </div>
                 </div>
               </header>
               <div class="layout--home-body">
@@ -283,18 +292,18 @@
                     <label class="c-question__label" for="client-first-name">What is your email address?</label>
                     <div class="c-question__container">
                       <p>We can send you a link to this page to help you get back to it when you’re ready.</p>
-                      <div data-sketch-symbol-instance="elements/inputs/input">
+                      <div data-sketch-symbol-instance="elements/inputs/inputs">
                         <input name="Client[0].email" type="text" />
                       </div>
                     </div>
                   </div>
                 </div>
                 <div>
-                  <div class="code-block mb-1"><pre>&lt;div class=&quot;c-question&quot; data-sketch-symbol-instance=&quot;elements/inputs/input-number-error&quot;&gt;
+                  <div class="code-block mb-1"><pre>&lt;div class=&quot;c-question&quot; data-sketch-symbol-instance=&quot;elements/inputs/inputs-number-error&quot;&gt;
   &lt;label class=&quot;c-question__label&quot; for=&quot;client-first-name&quot;&gt;What is your email address?&lt;/label&gt;
   &lt;div class=&quot;c-question__container&quot;&gt;
     &lt;p&gt;We can send you a link to this page to help you get back to it when you’re ready.&lt;/p&gt;
-    &lt;div data-sketch-symbol-instance=&quot;elements/inputs/input&quot;&gt;
+    &lt;div data-sketch-symbol-instance=&quot;elements/inputs/inputs&quot;&gt;
       &lt;input name=&quot;Client[0].email&quot; type=&quot;text&quot; /&gt;
     &lt;/div&gt;
   &lt;/div&gt;
@@ -306,10 +315,13 @@
           <section class="pb-4 mb-4" id="multiple-choice-question">
             <div class="page-wrapper px-2">
               <header class="layout--home-body">
-                <div class="my-0 px-2 border-b border-color-grey-light screen-tablet:flex screen-tablet:justify-between items-center">
-                  <h2 class="m-0 pt-1 pb-4">
+                <div class="my-0 px-2 pt-1 pb-4 border-b border-color-grey-light screen-tablet:flex screen-tablet:justify-between items-center">
+                  <h2 class="m-0">
                     <a class="text-color-grey-mid font-normal no-underline capitalize" href="#multiple-choice-question">Multiple Choice Question</a>
                   </h2>
+                  <div>
+                    <a href="https://github.com/CityOfNewYork/access-nyc-patterns/tree/v0.5.0/src/components/question"><code class="code">src/components/question</code></a>
+                  </div>
                 </div>
               </header>
               <div class="layout--home-body">
@@ -339,7 +351,7 @@
                   </fieldset>
                 </div>
                 <div>
-                  <div class="code-block mb-1"><pre>&lt;fieldset class=&quot;c-question&quot; data-sketch-symbol-instance=&quot;elements/inputs/input&quot;&gt;
+                  <div class="code-block mb-1"><pre>&lt;fieldset class=&quot;c-question&quot; data-sketch-symbol-instance=&quot;elements/inputs/inputs&quot;&gt;
   &lt;legend class=&quot;c-question__label&quot;&gt;Do any of these apply to you?&lt;/legend&gt;
   &lt;p&gt;It’s OK to pick more than one. You can also leave this blank if none of these apply to you.&lt;/p&gt;
   &lt;div class=&quot;c-question__container screen-tablet:layout--columns&quot;&gt;
@@ -366,10 +378,13 @@
           <section class="pb-4 mb-4" id="toggle-question">
             <div class="page-wrapper px-2">
               <header class="layout--home-body">
-                <div class="my-0 px-2 border-b border-color-grey-light screen-tablet:flex screen-tablet:justify-between items-center">
-                  <h2 class="m-0 pt-1 pb-4">
+                <div class="my-0 px-2 pt-1 pb-4 border-b border-color-grey-light screen-tablet:flex screen-tablet:justify-between items-center">
+                  <h2 class="m-0">
                     <a class="text-color-grey-mid font-normal no-underline capitalize" href="#toggle-question">Toggle Question</a>
                   </h2>
+                  <div>
+                    <a href="https://github.com/CityOfNewYork/access-nyc-patterns/tree/v0.5.0/src/components/question"><code class="code">src/components/question</code></a>
+                  </div>
                 </div>
               </header>
               <div class="layout--home-body">
@@ -410,10 +425,13 @@
           <section class="pb-4 mb-4" id="select-question">
             <div class="page-wrapper px-2">
               <header class="layout--home-body">
-                <div class="my-0 px-2 border-b border-color-grey-light screen-tablet:flex screen-tablet:justify-between items-center">
-                  <h2 class="m-0 pt-1 pb-4">
+                <div class="my-0 px-2 pt-1 pb-4 border-b border-color-grey-light screen-tablet:flex screen-tablet:justify-between items-center">
+                  <h2 class="m-0">
                     <a class="text-color-grey-mid font-normal no-underline capitalize" href="#select-question">Select Question</a>
                   </h2>
+                  <div>
+                    <a href="https://github.com/CityOfNewYork/access-nyc-patterns/tree/v0.5.0/src/components/question"><code class="code">src/components/question</code></a>
+                  </div>
                 </div>
               </header>
               <div class="layout--home-body">
@@ -492,10 +510,13 @@
           <section class="pb-4 mb-4" id="radio-question">
             <div class="page-wrapper px-2">
               <header class="layout--home-body">
-                <div class="my-0 px-2 border-b border-color-grey-light screen-tablet:flex screen-tablet:justify-between items-center">
-                  <h2 class="m-0 pt-1 pb-4">
+                <div class="my-0 px-2 pt-1 pb-4 border-b border-color-grey-light screen-tablet:flex screen-tablet:justify-between items-center">
+                  <h2 class="m-0">
                     <a class="text-color-grey-mid font-normal no-underline capitalize" href="#radio-question">Radio Question</a>
                   </h2>
+                  <div>
+                    <a href="https://github.com/CityOfNewYork/access-nyc-patterns/tree/v0.5.0/src/components/question"><code class="code">src/components/question</code></a>
+                  </div>
                 </div>
               </header>
               <div class="layout--home-body">

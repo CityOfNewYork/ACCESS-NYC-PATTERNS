@@ -21,13 +21,13 @@
 
 = content('content');
   = mixin('content-header', title);
-  = mixin('section', 'Heading 1', 'utilities/typography/type-h1');
-  = mixin('section', 'Heading 2', 'utilities/typography/type-h2');
-  = mixin('section', 'Heading 3', 'utilities/typography/type-h3');
-  = mixin('section', 'Heading 4', 'utilities/typography/type-h4');
-  = mixin('section', 'Heading 5', 'utilities/typography/type-h5');
-  = mixin('section', 'Jumbo', 'utilities/typography/type-jumbo');
-  = mixin('section', 'Small', 'utilities/typography/type-small');
-  = mixin('section', 'Blockquote', 'utilities/typography/type-blockquote');
-  = mixin('section', 'Exposition', 'utilities/typography/type-exposition');
-  = mixin('section', 'Supplemental', 'utilities/typography/type-supplemental');
+  = mixin('section', 'Heading 1', 'utilities/typography/typography-h1');
+  = mixin('section', 'Heading 2', 'utilities/typography/typography-h2');
+  = mixin('section', 'Heading 3', 'utilities/typography/typography-h3');
+  = mixin('section', 'Heading 4', 'utilities/typography/typography-h4');
+  = mixin('section', 'Heading 5', 'utilities/typography/typography-h5');
+  = mixin('section', 'Jumbo', 'utilities/typography/typography-jumbo');
+  = mixin('section', 'Small', 'utilities/typography/typography-small');
+  = mixin('section', 'Blockquote', 'utilities/typography/typography-blockquote');
+  = mixin('section', 'Exposition', 'utilities/typography/typography-exposition');
+  = mixin('section', 'Supplemental', 'utilities/typography/typography-supplemental');
