@@ -41,9 +41,11 @@ class Autocomplete {
     window.addEventListener('keydown', (e) => {
       this.keydownEvent(e);
     });
+
     window.addEventListener('keyup', (e) => {
       this.keyupEvent(e);
     });
+
     window.addEventListener('input', (e) => {
       this.inputEvent(e);
     });
@@ -303,10 +305,6 @@ class Autocomplete {
           this.highlight(this.settings.getSiblingIndex(event.target));
       });
 
-      newUl.addEventListener('mouseleave', () => {
-        this.highlight(-1);
-      });
-
       newUl.addEventListener('mousedown', (event) =>
         event.preventDefault());
 
@@ -342,7 +340,7 @@ class Autocomplete {
    * @return  {object}  The Class
    */
   highlight(newIndex) {
-    if (newIndex >= -1 && newIndex < this.ul.children.length) {
+    if (newIndex > -1 && newIndex < this.ul.children.length) {
       // If any option already selected, then unselect it
       if (this.highlighted !== -1) {
         this.ul.children[this.highlighted].classList
