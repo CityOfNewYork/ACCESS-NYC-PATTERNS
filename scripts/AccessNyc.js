@@ -12430,9 +12430,11 @@ var AccessNyc = (function () {
     window.addEventListener('keydown', function (e) {
       this$1.keydownEvent(e);
     });
+
     window.addEventListener('keyup', function (e) {
       this$1.keyupEvent(e);
     });
+
     window.addEventListener('input', function (e) {
       this$1.inputEvent(e);
     });
@@ -12706,10 +12708,6 @@ var AccessNyc = (function () {
         }
       });
 
-      newUl.addEventListener('mouseleave', function () {
-        this$1.highlight(-1);
-      });
-
       newUl.addEventListener('mousedown', function (event) {
         return event.preventDefault();
       });
@@ -12747,7 +12745,7 @@ var AccessNyc = (function () {
    * @return{object}The Class
    */
   Autocomplete.prototype.highlight = function highlight(newIndex) {
-    if (newIndex >= -1 && newIndex < this.ul.children.length) {
+    if (newIndex > -1 && newIndex < this.ul.children.length) {
       // If any option already selected, then unselect it
       if (this.highlighted !== -1) {
         this.ul.children[this.highlighted].classList.remove(this.SELECTORS.HIGHLIGHT);
@@ -16501,7 +16499,7 @@ var AccessNyc = (function () {
   * @param {object} settings
   * @return {object} instance of Autocomplete
   */
-  main.prototype.inputAutocomplete = function inputAutocomplete(settings) {
+  main.prototype.inputsAutocomplete = function inputsAutocomplete(settings) {
     if (settings === void 0) settings = {};
 
     return new InputAutocomplete(settings);
