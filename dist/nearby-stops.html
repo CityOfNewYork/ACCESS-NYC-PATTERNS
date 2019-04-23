@@ -61,7 +61,7 @@
               <nav class="text-font-size-small">
                 <a class="rounded-lg text-color-blue-dark border-2 no-underline px-1 ml-2 hidden screen-tablet:inline-block" href="https://github.com/CityOfNewYork/access-nyc-patterns/tree/v0.5.0">0.5.0</a>
                 <a aria-hidden="true" class="ml-1 screen-tablet:ml-2 screen-tablet:hidden" href="https://github.com/CityOfNewYork/access-nyc-patterns/tree/v0.5.0">0.5.0</a>
-                <a class="ml-1 screen-tablet:ml-2" data-js="toggle" href="#main-menu">Menu</a>
+                <button aria-controls="main-menu" class="btn-small btn-text text-color-blue underline ml-1 screen-tablet:ml-2" data-js="toggle">Menu</button>
               </nav>
             </div>
           </div>
@@ -135,7 +135,7 @@
             </nav>
           </div>
           <div class="text-center">
-            <a data-js="toggle" href="#main-menu">Close Menu</a>
+            <button aria-controls="main-menu" class="btn-small btn-text text-color-blue underline" data-js="toggle">Close Menu</button>
           </div>
         </div>
       </aside>
@@ -146,12 +146,14 @@
               <h1 class="text-color-blue-dark px-2 pb-4 mb-4">Nearby Stops</h1>
             </div>
           </header>
-          <section class="pb-4 mb-4" id="">
+          <section class="pb-4 mb-4">
             <div class="page-wrapper px-2">
               <header class="layout--home-body">
-                <div class="my-0 px-2 pt-1 pb-4 border-b border-color-grey-light screen-tablet:flex screen-tablet:justify-between items-center">
+                <div class="my-0 px-2 pt-1 pb-4 border-b border-color-grey-light">
                   <div>
-                    <a href="https://github.com/CityOfNewYork/access-nyc-patterns/tree/v0.5.0/src/components/nearby-stops"><code class="code">src/components/nearby-stops</code></a>
+                    <p class="text-font-size-small m-0">Source:
+                      <a href="https://github.com/CityOfNewYork/access-nyc-patterns/tree/v0.5.0/src/components/nearby-stops"><code>src/components/nearby-stops/nearby-stops</code></a>
+                    </p>
                   </div>
                 </div>
               </header>
@@ -197,24 +199,7 @@
           </div>
         </header>
         <div class="layout--home-body">
-          <div class="my-0 pt-4 px-2 text-font-size-small"><h4>Global Script</h4>
-
-<p>This component requires JavaScript to function. To use it from the global ACCESS NYC Patterns script use the following code:</p>
-
-<pre><code>var access = new AccessNyc();
-access.nearbyStops();</code></pre>
-
-<h4>Module</h4>
-
-<p>The ES6, CommonJS, and IFFE modules all require importing and object instantiation in your main script:</p>
-
-<pre><code>import NearbyStops from &#39;../components/nearby-stops/nearby-stops&#39;;
-new NearbyStops();</code></pre>
-
-<p>The class will select any DOM element with the <code>data-js=&quot;nearby-stops&quot;</code> attribute and look up the closest stops to the location embedded in the <code>data-nearby-stops-location</code> attribute. The location attribute accepts an array
-  of latitude and longitude.</p>
-
-<p>Use the <code>data-nearby-stops-endpoint</code> attribute to set the endpoint of the data. The amount of stops defaults to 3 but can be overwritten using the <code>data-nearby-stops-amount</code> attribute, which accepts a number of stops to display.</p></div>
+          <div class="my-0 pt-4 px-2 text-font-size-small"></div>
         </div>
       </div>
     </section>

@@ -61,7 +61,7 @@
               <nav class="text-font-size-small">
                 <a class="rounded-lg text-color-blue-dark border-2 no-underline px-1 ml-2 hidden screen-tablet:inline-block" href="https://github.com/CityOfNewYork/access-nyc-patterns/tree/v0.5.0">0.5.0</a>
                 <a aria-hidden="true" class="ml-1 screen-tablet:ml-2 screen-tablet:hidden" href="https://github.com/CityOfNewYork/access-nyc-patterns/tree/v0.5.0">0.5.0</a>
-                <a class="ml-1 screen-tablet:ml-2" data-js="toggle" href="#main-menu">Menu</a>
+                <button aria-controls="main-menu" class="btn-small btn-text text-color-blue underline ml-1 screen-tablet:ml-2" data-js="toggle">Menu</button>
               </nav>
             </div>
           </div>
@@ -135,7 +135,7 @@
             </nav>
           </div>
           <div class="text-center">
-            <a data-js="toggle" href="#main-menu">Close Menu</a>
+            <button aria-controls="main-menu" class="btn-small btn-text text-color-blue underline" data-js="toggle">Close Menu</button>
           </div>
         </div>
       </aside>
@@ -149,12 +149,14 @@
           <section class="pb-4 mb-4" id="ordered-side-nav">
             <div class="page-wrapper px-2">
               <header class="layout--home-body">
-                <div class="my-0 px-2 pt-1 pb-4 border-b border-color-grey-light screen-tablet:flex screen-tablet:justify-between items-center">
+                <div class="my-0 px-2 pt-1 pb-4 border-b border-color-grey-light">
                   <h2 class="m-0">
-                    <a class="text-color-grey-mid font-normal no-underline capitalize" href="#ordered-side-nav">Ordered Side Nav</a>
+                    <a class="text-color-grey-mid font-normal no-underline capitalize" href="ordered-side-nav">Ordered Side Nav</a>
                   </h2>
-                  <div>
-                    <a href="https://github.com/CityOfNewYork/access-nyc-patterns/tree/v0.5.0/src/components/side-nav"><code class="code">src/components/side-nav</code></a>
+                  <div class="pt-2">
+                    <p class="text-font-size-small m-0">Source:
+                      <a href="https://github.com/CityOfNewYork/access-nyc-patterns/tree/v0.5.0/src/components/side-nav"><code>src/components/side-nav/side-nav-ol</code></a>
+                    </p>
                   </div>
                 </div>
               </header>
@@ -163,7 +165,7 @@
               </div>
               <div class="layout--gutter screen-tablet:layout--columns justify-between pt-4">
                 <div class="screen-tablet:pr-2">
-                  <nav class="c-side-nav hide-for-print" data-sketch-symbol="components/side-nav/side-nav-ol">
+                  <nav class="c-side-nav hide-for-print">
                     <ol>
                       <li>
                         <a class="active" href="#">How It Works</a>
@@ -184,7 +186,7 @@
                   </nav>
                 </div>
                 <div>
-                  <div class="code-block mb-1"><pre>&lt;nav class=&quot;c-side-nav hide-for-print&quot; data-sketch-symbol=&quot;components/share-links/share-links&quot;&gt;
+                  <div class="code-block mb-1"><pre>&lt;nav class=&quot;c-side-nav hide-for-print&quot;&gt;
   &lt;ol&gt;
     &lt;li&gt;
       &lt;a class=&quot;active&quot; href=&quot;#&quot;&gt;How It Works&lt;/a&gt;
@@ -210,12 +212,14 @@
           <section class="pb-4 mb-4" id="unordered-side-nav">
             <div class="page-wrapper px-2">
               <header class="layout--home-body">
-                <div class="my-0 px-2 pt-1 pb-4 border-b border-color-grey-light screen-tablet:flex screen-tablet:justify-between items-center">
+                <div class="my-0 px-2 pt-1 pb-4 border-b border-color-grey-light">
                   <h2 class="m-0">
-                    <a class="text-color-grey-mid font-normal no-underline capitalize" href="#unordered-side-nav">Unordered Side Nav</a>
+                    <a class="text-color-grey-mid font-normal no-underline capitalize" href="unordered-side-nav">Unordered Side Nav</a>
                   </h2>
-                  <div>
-                    <a href="https://github.com/CityOfNewYork/access-nyc-patterns/tree/v0.5.0/src/components/side-nav"><code class="code">src/components/side-nav</code></a>
+                  <div class="pt-2">
+                    <p class="text-font-size-small m-0">Source:
+                      <a href="https://github.com/CityOfNewYork/access-nyc-patterns/tree/v0.5.0/src/components/side-nav"><code>src/components/side-nav/side-nav-ul</code></a>
+                    </p>
                   </div>
                 </div>
               </header>
@@ -224,7 +228,7 @@
               </div>
               <div class="layout--gutter screen-tablet:layout--columns justify-between pt-4">
                 <div class="screen-tablet:pr-2">
-                  <nav class="c-side-nav hide-for-print" data-sketch-symbol="components/side-nav/side-nav-ul">
+                  <nav class="c-side-nav hide-for-print">
                     <ul>
                       <li>
                         <a class="active" href="#">Training Sessions & Events</a>
@@ -242,7 +246,7 @@
                   </nav>
                 </div>
                 <div>
-                  <div class="code-block mb-1"><pre>&lt;nav class=&quot;c-side-nav hide-for-print&quot; data-sketch-symbol=&quot;components/share-links/share-links&quot;&gt;
+                  <div class="code-block mb-1"><pre>&lt;nav class=&quot;c-side-nav hide-for-print&quot;&gt;
   &lt;ul&gt;
     &lt;li&gt;
       &lt;a class=&quot;active&quot; href=&quot;#&quot;&gt;Training Sessions &amp; Events&lt;/a&gt;
@@ -265,12 +269,14 @@
           <section class="pb-4 mb-4" id="share-links">
             <div class="page-wrapper px-2">
               <header class="layout--home-body">
-                <div class="my-0 px-2 pt-1 pb-4 border-b border-color-grey-light screen-tablet:flex screen-tablet:justify-between items-center">
+                <div class="my-0 px-2 pt-1 pb-4 border-b border-color-grey-light">
                   <h2 class="m-0">
-                    <a class="text-color-grey-mid font-normal no-underline capitalize" href="#share-links">Share Links</a>
+                    <a class="text-color-grey-mid font-normal no-underline capitalize" href="share-links">Share Links</a>
                   </h2>
-                  <div>
-                    <a href="https://github.com/CityOfNewYork/access-nyc-patterns/tree/v0.5.0/src/components/share-links"><code class="code">src/components/share-links</code></a>
+                  <div class="pt-2">
+                    <p class="text-font-size-small m-0">Source:
+                      <a href="https://github.com/CityOfNewYork/access-nyc-patterns/tree/v0.5.0/src/components/share-links"><code>src/components/share-links/share-links</code></a>
+                    </p>
                   </div>
                 </div>
               </header>
@@ -279,7 +285,7 @@
               </div>
               <div class="layout--gutter screen-tablet:layout--columns justify-between pt-4">
                 <div class="screen-tablet:pr-2">
-                  <nav class="c-share hide-for-print" data-sketch-symbol="components/share-links/share-links">
+                  <nav class="c-share hide-for-print">
                     <a class="c-share__link" href="#">
                       <svg class="icon icon-ui-printer">
                         <use xlink:href="#icon-ui-printer"></use>
@@ -287,7 +293,7 @@
                   </nav>
                 </div>
                 <div>
-                  <div class="code-block mb-1"><pre>&lt;nav class=&quot;c-share hide-for-print&quot; data-sketch-symbol=&quot;components/share-links/share-links&quot;&gt;
+                  <div class="code-block mb-1"><pre>&lt;nav class=&quot;c-share hide-for-print&quot;&gt;
   &lt;a class=&quot;c-share__link&quot; href=&quot;#&quot;&gt;
     &lt;svg class=&quot;icon icon-ui-printer&quot;&gt;
       &lt;use xlink:href=&quot;#icon-ui-printer&quot;&gt;&lt;/use&gt;

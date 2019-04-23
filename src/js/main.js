@@ -1,9 +1,9 @@
 'use strict';
 
-import Utility from './modules/utility.js';
-import Toggle from './modules/toggle';
-import VueDemo from './modules/VueDemo';
-
+// Utilities
+import Markdown from '../utilities/markdown/markdown';
+import Toggle from '../utilities/toggle/toggle';
+import VueDemo from '../utilities/vue-demo/vue-demo';
 
 // Elements
 import Icons from '../elements/icons/icons';
@@ -46,7 +46,7 @@ class main {
    * @return {object} The event listener on the window
    */
   markdown() {
-    return window.addEventListener('load', Utility.parseMarkdown);
+    return window.addEventListener('load', Markdown);
   }
 
   /**
@@ -63,7 +63,7 @@ class main {
    * @return {object} instance of toggling method
    */
   toggle() {
-    return new Toggle().init();
+    return new Toggle();
   }
 
   /**

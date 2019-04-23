@@ -1,99 +1,7 @@
 'use strict';
 
 /**
- * The Utility class
- * @class
- */
-var Utility = function Utility() {
-  return this;
-};
-
-/**
- * Boolean for debug mode
- * @return {boolean} wether or not the front-end is in debug mode.
- */
-Utility.debug = function () {
-  return Utility.getUrlParameter(Utility.PARAMS.DEBUG) === '1';
-};
-
-/**
- * Returns the value of a given key in a URL query string. If no URL query
- * string is provided, the current URL location is used.
- * @param  {string}  name        - Key name.
- * @param  {?string} queryString - Optional query string to check.
- * @return {?string} Query parameter value.
- */
-Utility.getUrlParameter = function (name, queryString) {
-  var query = queryString || window.location.search;
-  var param = name.replace(/[\[]/, '\\[').replace(/[\]]/, '\\]');
-  var regex = new RegExp('[\\?&]' + param + '=([^&#]*)');
-  var results = regex.exec(query);
-
-  return results === null ? '' : decodeURIComponent(results[1].replace(/\+/g, ' '));
-};
-
-/**
- * For translating strings, there is a global LOCALIZED_STRINGS array that
- * is defined on the HTML template level so that those strings are exposed to
- * WPML translation. The LOCALIZED_STRINGS array is composed of objects with a
- * `slug` key whose value is some constant, and a `label` value which is the
- * translated equivalent. This function takes a slug name and returns the
- * label.
- * @param  {string} slug
- * @return {string} localized value
- */
-Utility.localize = function (slug) {
-  var text = slug || '';
-  var strings = window.LOCALIZED_STRINGS || [];
-  var match = strings.filter(function (s) {
-    return s.hasOwnProperty('slug') && s['slug'] === slug ? s : false;
-  });
-  return match[0] && match[0].hasOwnProperty('label') ? match[0].label : text;
-};
-
-/**
- * Takes a a string and returns whether or not the string is a valid email
- * by using native browser validation if available. Otherwise, does a simple
- * Regex test.
- * @param {string} email
- * @return {boolean}
- */
-Utility.validateEmail = function (email) {
-  var input = document.createElement('input');
-  input.type = 'email';
-  input.value = email;
-
-  return typeof input.checkValidity === 'function' ? input.checkValidity() : /\S+@\S+\.\S+/.test(email);
-};
-
-/**
- * Map toggled checkbox values to an input.
- * @param  {Object} event The parent click event.
- * @return {Element}      The target element.
- */
-Utility.joinValues = function (event) {
-  if (!event.target.matches('input[type="checkbox"]')) {
-    return;
-  }
-
-  if (!event.target.closest('[data-js-join-values]')) {
-    return;
-  }
-
-  var el = event.target.closest('[data-js-join-values]');
-  var target = document.querySelector(el.dataset.jsJoinValues);
-
-  target.value = Array.from(el.querySelectorAll('input[type="checkbox"]')).filter(function (e) {
-    return e.value && e.checked;
-  }).map(function (e) {
-    return e.value;
-  }).join(', ');
-
-  return target;
-};
-
-/**
- * A simple form validation class that uses native form validation. It will
+ * A simple form validation function that uses native form validation. It will
  * add appropriate form feedback for each input that is invalid and native
  * localized browser messaging.
  *
@@ -104,10 +12,10 @@ Utility.joinValues = function (event) {
  * @param  {Array} STRINGS set of strings
  * @return {Event/Boolean} The original event or false if invalid.
  */
-Utility.valid = function (event, STRINGS) {
+function Valid (event, STRINGS) {
   event.preventDefault();
 
-  if (Utility.debug())
+  if (process.env.NODE_ENV !== 'production')
     // eslint-disable-next-line no-console
     {
       console.dir({ init: 'Validation', event: event });
@@ -152,74 +60,40 @@ Utility.valid = function (event, STRINGS) {
     container.insertBefore(message, container.childNodes[0]);
   }
 
-  if (Utility.debug())
+  if (process.env.NODE_ENV !== 'production')
     // eslint-disable-next-line no-console
     {
       console.dir({ complete: 'Validation', valid: validity, event: event });
     }
 
   return validity ? event : validity;
-};
+}
 
 /**
- * A markdown parsing method. It relies on the dist/markdown.min.js script
- * which is a browser compatible version of markdown-js
- * @url https://github.com/evilstreak/markdown-js
- * @return {Object} The iteration over the markdown DOM parents
+ * Map toggled checkbox values to an input.
+ * @param  {Object} event The parent click event.
+ * @return {Element}      The target element.
  */
-Utility.parseMarkdown = function () {
-  if (typeof markdown === 'undefined') {
-    return false;
+function JoinValues (event) {
+  if (!event.target.matches('input[type="checkbox"]')) {
+    return;
   }
 
-  var mds = document.querySelectorAll(Utility.SELECTORS.parseMarkdown);
-
-  var loop = function loop(i) {
-    var element = mds[i];
-    fetch(element.dataset.jsMarkdown).then(function (response) {
-      if (response.ok) {
-        return response.text();
-      } else {
-        element.innerHTML = '';
-        // eslint-disable-next-line no-console
-        if (Utility.debug()) {
-          console.dir(response);
-        }
-      }
-    }).catch(function (error) {
-      // eslint-disable-next-line no-console
-      if (Utility.debug()) {
-        console.dir(error);
-      }
-    }).then(function (data) {
-      try {
-        element.classList.toggle('animated');
-        element.classList.toggle('fadeIn');
-        element.innerHTML = markdown.toHTML(data);
-      } catch (error) {}
-    });
-  };
-
-  for (var i = 0; i < mds.length; i++) {
-    loop(i);
+  if (!event.target.closest('[data-js-join-values]')) {
+    return;
   }
-};
 
-/**
- * Application parameters
- * @type {Object}
- */
-Utility.PARAMS = {
-  DEBUG: 'debug'
-};
+  var el = event.target.closest('[data-js-join-values]');
+  var target = document.querySelector(el.dataset.jsJoinValues);
 
-/**
- * Selectors for the Utility module
- * @type {Object}
- */
-Utility.SELECTORS = {
-  parseMarkdown: '[data-js="markdown"]'
-};
+  target.value = Array.from(el.querySelectorAll('input[type="checkbox"]')).filter(function (e) {
+    return e.value && e.checked;
+  }).map(function (e) {
+    return e.value;
+  }).join(', ');
+
+  return target;
+}
 
 // get successful control from form and assemble into object
 // http://www.w3.org/TR/html401/interact/forms.html#h-17.13.2
@@ -494,7 +368,7 @@ var Newsletter = function Newsletter(element) {
   this.STRINGS = Newsletter.strings;
 
   // Map toggled checkbox values to an input.
-  this._el.addEventListener('click', Utility.joinValues);
+  this._el.addEventListener('click', JoinValues);
 
   // This sets the script callback function to a global function that
   // can be accessed by the the requested script.
@@ -503,7 +377,7 @@ var Newsletter = function Newsletter(element) {
   };
 
   this._el.querySelector('form').addEventListener('submit', function (event) {
-    return Utility.valid(event, this$1.STRINGS) ? this$1._submit(event).then(this$1._onload).catch(this$1._onerror) : false;
+    return Valid(event, this$1.STRINGS) ? this$1._submit(event).then(this$1._onload).catch(this$1._onerror) : false;
   });
 
   return this;
@@ -568,7 +442,7 @@ Newsletter.prototype._onload = function _onload(event) {
  */
 Newsletter.prototype._onerror = function _onerror(error) {
   // eslint-disable-next-line no-console
-  if (Utility.debug()) {
+  if (process.env.NODE_ENV !== 'production') {
     console.dir(error);
   }
   return this;
@@ -584,7 +458,7 @@ Newsletter.prototype._callback = function _callback(data) {
     this["_" + data[this._key('MC_RESULT')]](data.msg);
   } else
     // eslint-disable-next-line no-console
-    if (Utility.debug()) {
+    if (process.env.NODE_ENV !== 'production') {
       console.dir(data);
     }
   return this;
@@ -767,8 +641,8 @@ Newsletter.strings = {
   VALID_EMAIL_REQUIRED: 'Email is required.',
   VALID_EMAIL_INVALID: 'Please enter a valid email.',
   VALID_CHECKBOX_BOROUGH: 'Please select a borough.',
-  ERR_PLEASE_TRY_LATER: 'There was an error with your submission.' + 'Please try again later.',
-  SUCCESS_CONFIRM_EMAIL: 'Almost finished... We need to confirm your email' + 'address. To complete the subscription process,' + 'please click the link in the email we just sent you.',
+  ERR_PLEASE_TRY_LATER: 'There was an error with your submission. ' + 'Please try again later.',
+  SUCCESS_CONFIRM_EMAIL: 'Almost finished... We need to confirm your email ' + 'address. To complete the subscription process, ' + 'please click the link in the email we just sent you.',
   ERR_PLEASE_ENTER_VALUE: 'Please enter a value',
   ERR_TOO_MANY_RECENT: 'Recipient "{{ EMAIL }}" has too' + 'many recent signup requests',
   ERR_ALREADY_SUBSCRIBED: '{{ EMAIL }} is already subscribed' + 'to list {{ LIST_NAME }}.',

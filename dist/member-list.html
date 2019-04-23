@@ -61,7 +61,7 @@
               <nav class="text-font-size-small">
                 <a class="rounded-lg text-color-blue-dark border-2 no-underline px-1 ml-2 hidden screen-tablet:inline-block" href="https://github.com/CityOfNewYork/access-nyc-patterns/tree/v0.5.0">0.5.0</a>
                 <a aria-hidden="true" class="ml-1 screen-tablet:ml-2 screen-tablet:hidden" href="https://github.com/CityOfNewYork/access-nyc-patterns/tree/v0.5.0">0.5.0</a>
-                <a class="ml-1 screen-tablet:ml-2" data-js="toggle" href="#main-menu">Menu</a>
+                <button aria-controls="main-menu" class="btn-small btn-text text-color-blue underline ml-1 screen-tablet:ml-2" data-js="toggle">Menu</button>
               </nav>
             </div>
           </div>
@@ -135,7 +135,7 @@
             </nav>
           </div>
           <div class="text-center">
-            <a data-js="toggle" href="#main-menu">Close Menu</a>
+            <button aria-controls="main-menu" class="btn-small btn-text text-color-blue underline" data-js="toggle">Close Menu</button>
           </div>
         </div>
       </aside>
@@ -146,12 +146,14 @@
               <h1 class="text-color-blue-dark px-2 pb-4 mb-4">Member List</h1>
             </div>
           </header>
-          <section class="pb-4 mb-4" id="">
+          <section class="pb-4 mb-4">
             <div class="page-wrapper px-2">
               <header class="layout--home-body">
-                <div class="my-0 px-2 pt-1 pb-4 border-b border-color-grey-light screen-tablet:flex screen-tablet:justify-between items-center">
+                <div class="my-0 px-2 pt-1 pb-4 border-b border-color-grey-light">
                   <div>
-                    <a href="https://github.com/CityOfNewYork/access-nyc-patterns/tree/v0.5.0/src/components/member-list"><code class="code">src/components/member-list</code></a>
+                    <p class="text-font-size-small m-0">Source:
+                      <a href="https://github.com/CityOfNewYork/access-nyc-patterns/tree/v0.5.0/src/components/member-list"><code>src/components/member-list/member-list</code></a>
+                    </p>
                   </div>
                 </div>
               </header>
@@ -160,7 +162,7 @@
               </div>
               <div class="layout--gutter screen-tablet:layout--columns justify-between pt-4">
                 <div class="screen-tablet:pr-2">
-                  <ul class="c-member-list screen-tablet:layout--columns" data-sketch-symbol="components/member-list/member-list">
+                  <ul class="c-member-list screen-tablet:layout--columns">
                     <li><span class="c-member-list__item">You</span><span class="c-member-list__item">Head of Household</span><span class="c-member-list__item">30</span></li>
                     <li><span class="c-member-list__item">Spouse</span><span class="c-member-list__item">30</span></li>
                     <li><span class="c-member-list__item">Sister/Brother</span><span class="c-member-list__item">28</span></li>
@@ -172,7 +174,7 @@
                   </ul>
                 </div>
                 <div>
-                  <div class="code-block mb-1"><pre>&lt;ul class=&quot;c-member-list screen-tablet:layout--columns&quot; data-sketch-symbol=&quot;components/member-list/member-list&quot;&gt;
+                  <div class="code-block mb-1"><pre>&lt;ul class=&quot;c-member-list screen-tablet:layout--columns&quot;&gt;
   &lt;li&gt;&lt;span class=&quot;c-member-list__item&quot;&gt;You&lt;/span&gt;&lt;span class=&quot;c-member-list__item&quot;&gt;Head of Household&lt;/span&gt;&lt;span class=&quot;c-member-list__item&quot;&gt;30&lt;/span&gt;&lt;/li&gt;
   &lt;li&gt;&lt;span class=&quot;c-member-list__item&quot;&gt;Spouse&lt;/span&gt;&lt;span class=&quot;c-member-list__item&quot;&gt;30&lt;/span&gt;&lt;/li&gt;
   &lt;li&gt;&lt;span class=&quot;c-member-list__item&quot;&gt;Sister/Brother&lt;/span&gt;&lt;span class=&quot;c-member-list__item&quot;&gt;28&lt;/span&gt;&lt;/li&gt;

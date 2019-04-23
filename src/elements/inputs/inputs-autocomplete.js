@@ -1,6 +1,6 @@
 'use strict';
 
-import Autocomplete from '../../js/modules/autocomplete';
+import Autocomplete from '../../utilities/autocomplete/autocomplete';
 
 /**
  * The InputAutocomplete class.

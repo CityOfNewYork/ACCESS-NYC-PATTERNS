@@ -1,6 +1,7 @@
 div class='c-filter' data-sketch-symbol=symbol data-sketch-symbol-instance=instance
-  a href='#filter__list' class='c-filter__header active' data-js='filter' All Programs
-  ul#filter__list class='c-filter__list active'
+  button#filter__header type='button' class='c-filter__header active' data-js='filter' aria-controls='filter__list' aria-expanded='true' All Programs
+
+  ul#filter__list class='c-filter__list active' aria-hidden='false' role='region' aria-labelledby='filter__header'
     li
       span class='c-filter__item' All Programs
     li

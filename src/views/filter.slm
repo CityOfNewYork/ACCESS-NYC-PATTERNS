@@ -21,13 +21,14 @@
 
 = content('content');
   = mixin('content-header', title);
-  = mixin('section', '', 'components/filter/filter');
+
+  = mixin('section', false, 'components/filter/filter');
   = mixin('section', 'Multi Filter', 'components/filter/filter-multi');
-  = mixin('section-text', 'Usage', 'components/filter/readme');
+  = mixin('section-text', 'Filter Usage', 'components/filter/filter.readme');
 
   = mixin('section', 'Vue Filter', 'components/filter/filter.vue');
   = mixin('section', 'Vue Multi Filter', 'components/filter/filter-multi.vue');
-  = mixin('section-text', 'Vue Components', 'components/filter/readme.vue');
+  = mixin('section-text', 'Vue Component Usage', 'components/filter/filter.readme.vue');
 
 = content('script');
   javascript:

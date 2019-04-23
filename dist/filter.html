@@ -61,7 +61,7 @@
               <nav class="text-font-size-small">
                 <a class="rounded-lg text-color-blue-dark border-2 no-underline px-1 ml-2 hidden screen-tablet:inline-block" href="https://github.com/CityOfNewYork/access-nyc-patterns/tree/v0.5.0">0.5.0</a>
                 <a aria-hidden="true" class="ml-1 screen-tablet:ml-2 screen-tablet:hidden" href="https://github.com/CityOfNewYork/access-nyc-patterns/tree/v0.5.0">0.5.0</a>
-                <a class="ml-1 screen-tablet:ml-2" data-js="toggle" href="#main-menu">Menu</a>
+                <button aria-controls="main-menu" class="btn-small btn-text text-color-blue underline ml-1 screen-tablet:ml-2" data-js="toggle">Menu</button>
               </nav>
             </div>
           </div>
@@ -135,7 +135,7 @@
             </nav>
           </div>
           <div class="text-center">
-            <a data-js="toggle" href="#main-menu">Close Menu</a>
+            <button aria-controls="main-menu" class="btn-small btn-text text-color-blue underline" data-js="toggle">Close Menu</button>
           </div>
         </div>
       </aside>
@@ -146,12 +146,14 @@
               <h1 class="text-color-blue-dark px-2 pb-4 mb-4">Filter</h1>
             </div>
           </header>
-          <section class="pb-4 mb-4" id="">
+          <section class="pb-4 mb-4">
             <div class="page-wrapper px-2">
               <header class="layout--home-body">
-                <div class="my-0 px-2 pt-1 pb-4 border-b border-color-grey-light screen-tablet:flex screen-tablet:justify-between items-center">
+                <div class="my-0 px-2 pt-1 pb-4 border-b border-color-grey-light">
                   <div>
-                    <a href="https://github.com/CityOfNewYork/access-nyc-patterns/tree/v0.5.0/src/components/filter"><code class="code">src/components/filter</code></a>
+                    <p class="text-font-size-small m-0">Source:
+                      <a href="https://github.com/CityOfNewYork/access-nyc-patterns/tree/v0.5.0/src/components/filter"><code>src/components/filter/filter</code></a>
+                    </p>
                   </div>
                 </div>
               </header>
@@ -160,9 +162,9 @@
               </div>
               <div class="layout--gutter screen-tablet:layout--columns justify-between pt-4">
                 <div class="screen-tablet:pr-2">
-                  <div class="c-filter" data-sketch-symbol="components/filter/filter">
-                    <a class="c-filter__header active" data-js="filter" href="#filter__list">All Programs</a>
-                    <ul class="c-filter__list active" id="filter__list">
+                  <div class="c-filter">
+                    <button aria-controls="filter__list" aria-expanded="true" class="c-filter__header active" data-js="filter" id="filter__header" type="button">All Programs</button>
+                    <ul aria-hidden="false" aria-labelledby="filter__header" class="c-filter__list active" id="filter__list" role="region">
                       <li><span class="c-filter__item">All Programs</span></li>
                       <li>
                         <a class="c-filter__item" href="#">Cash &amp; Expenses</a>
@@ -201,9 +203,9 @@
                   </div>
                 </div>
                 <div>
-                  <div class="code-block mb-1"><pre>&lt;div class=&quot;c-filter&quot; data-sketch-symbol=&quot;components/filter/filter-multi.vue&quot;&gt;
-  &lt;a class=&quot;c-filter__header active&quot; data-js=&quot;filter&quot; href=&quot;#filter__list&quot;&gt;All Programs&lt;/a&gt;
-  &lt;ul class=&quot;c-filter__list active&quot; id=&quot;filter__list&quot;&gt;
+                  <div class="code-block mb-1"><pre>&lt;div class=&quot;c-filter&quot;&gt;
+  &lt;button aria-controls=&quot;filter__list&quot; aria-expanded=&quot;true&quot; class=&quot;c-filter__header active&quot; data-js=&quot;filter&quot; id=&quot;filter__header&quot; type=&quot;button&quot;&gt;All Programs&lt;/button&gt;
+  &lt;ul aria-hidden=&quot;false&quot; aria-labelledby=&quot;filter__header&quot; class=&quot;c-filter__list active&quot; id=&quot;filter__list&quot; role=&quot;region&quot;&gt;
     &lt;li&gt;&lt;span class=&quot;c-filter__item&quot;&gt;All Programs&lt;/span&gt;&lt;/li&gt;
     &lt;li&gt;
       &lt;a class=&quot;c-filter__item&quot; href=&quot;#&quot;&gt;Cash &amp;amp; Expenses&lt;/a&gt;
@@ -247,12 +249,14 @@
           <section class="pb-4 mb-4" id="multi-filter">
             <div class="page-wrapper px-2">
               <header class="layout--home-body">
-                <div class="my-0 px-2 pt-1 pb-4 border-b border-color-grey-light screen-tablet:flex screen-tablet:justify-between items-center">
+                <div class="my-0 px-2 pt-1 pb-4 border-b border-color-grey-light">
                   <h2 class="m-0">
-                    <a class="text-color-grey-mid font-normal no-underline capitalize" href="#multi-filter">Multi Filter</a>
+                    <a class="text-color-grey-mid font-normal no-underline capitalize" href="multi-filter">Multi Filter</a>
                   </h2>
-                  <div>
-                    <a href="https://github.com/CityOfNewYork/access-nyc-patterns/tree/v0.5.0/src/components/filter"><code class="code">src/components/filter</code></a>
+                  <div class="pt-2">
+                    <p class="text-font-size-small m-0">Source:
+                      <a href="https://github.com/CityOfNewYork/access-nyc-patterns/tree/v0.5.0/src/components/filter"><code>src/components/filter/filter-multi</code></a>
+                    </p>
                   </div>
                 </div>
               </header>
@@ -262,7 +266,7 @@
               </div>
               <div class="layout--gutter screen-tablet:layout--columns justify-between pt-4">
                 <div class="screen-tablet:pr-2">
-                  <div class="c-filter-multi active bg-color-white" data-sketch-symbol="components/filter/filter-multi">
+                  <div class="c-filter-multi active bg-color-white">
                     <ul class="c-filter-multi__list">
                       <li class="c-filter-multi__item">
                         <div class="c-filter-multi__item-header">
@@ -324,7 +328,7 @@
                   </div>
                 </div>
                 <div>
-                  <div class="code-block mb-1"><pre>&lt;div class=&quot;c-filter-multi active bg-color-white&quot; data-sketch-symbol=&quot;components/filter/filter-multi.vue&quot;&gt;
+                  <div class="code-block mb-1"><pre>&lt;div class=&quot;c-filter-multi active bg-color-white&quot;&gt;
   &lt;ul class=&quot;c-filter-multi__list&quot;&gt;
     &lt;li class=&quot;c-filter-multi__item&quot;&gt;
       &lt;div class=&quot;c-filter-multi__item-header&quot;&gt;
@@ -388,12 +392,12 @@
               </div>
             </div>
           </section>
-          <section class="pb-4 mb-4" id="usage">
+          <section class="pb-4 mb-4" id="filter-usage">
             <div class="page-wrapper px-2 screen-desktop:px-0">
               <header class="layout--home-body">
                 <div class="my-0 px-2 border-b border-color-grey-light screen-tablet:flex screen-tablet:justify-between">
                   <h2 class="m-0 pt-1 pb-4">
-                    <a class="text-color-grey-mid font-normal no-underline capitalize" href="#usage">Usage</a>
+                    <a class="text-color-grey-mid font-normal no-underline capitalize" href="#filter-usage">Filter Usage</a>
                   </h2>
                 </div>
               </header>
@@ -433,12 +437,14 @@ new Filter();</code></pre></div>
           <section class="pb-4 mb-4" id="vue-filter">
             <div class="page-wrapper px-2">
               <header class="layout--home-body">
-                <div class="my-0 px-2 pt-1 pb-4 border-b border-color-grey-light screen-tablet:flex screen-tablet:justify-between items-center">
+                <div class="my-0 px-2 pt-1 pb-4 border-b border-color-grey-light">
                   <h2 class="m-0">
-                    <a class="text-color-grey-mid font-normal no-underline capitalize" href="#vue-filter">Vue Filter</a>
+                    <a class="text-color-grey-mid font-normal no-underline capitalize" href="vue-filter">Vue Filter</a>
                   </h2>
-                  <div>
-                    <a href="https://github.com/CityOfNewYork/access-nyc-patterns/tree/v0.5.0/src/components/filter"><code class="code">src/components/filter</code></a>
+                  <div class="pt-2">
+                    <p class="text-font-size-small m-0">Source:
+                      <a href="https://github.com/CityOfNewYork/access-nyc-patterns/tree/v0.5.0/src/components/filter"><code>src/components/filter/filter.vue</code></a>
+                    </p>
                   </div>
                 </div>
               </header>
@@ -462,12 +468,14 @@ new Filter();</code></pre></div>
           <section class="pb-4 mb-4" id="vue-multi-filter">
             <div class="page-wrapper px-2">
               <header class="layout--home-body">
-                <div class="my-0 px-2 pt-1 pb-4 border-b border-color-grey-light screen-tablet:flex screen-tablet:justify-between items-center">
+                <div class="my-0 px-2 pt-1 pb-4 border-b border-color-grey-light">
                   <h2 class="m-0">
-                    <a class="text-color-grey-mid font-normal no-underline capitalize" href="#vue-multi-filter">Vue Multi Filter</a>
+                    <a class="text-color-grey-mid font-normal no-underline capitalize" href="vue-multi-filter">Vue Multi Filter</a>
                   </h2>
-                  <div>
-                    <a href="https://github.com/CityOfNewYork/access-nyc-patterns/tree/v0.5.0/src/components/filter"><code class="code">src/components/filter</code></a>
+                  <div class="pt-2">
+                    <p class="text-font-size-small m-0">Source:
+                      <a href="https://github.com/CityOfNewYork/access-nyc-patterns/tree/v0.5.0/src/components/filter"><code>src/components/filter/filter-multi.vue</code></a>
+                    </p>
                   </div>
                 </div>
               </header>
@@ -488,12 +496,12 @@ new Filter();</code></pre></div>
               </div>
             </div>
           </section>
-          <section class="pb-4 mb-4" id="vue-components">
+          <section class="pb-4 mb-4" id="vue-component-usage">
             <div class="page-wrapper px-2 screen-desktop:px-0">
               <header class="layout--home-body">
                 <div class="my-0 px-2 border-b border-color-grey-light screen-tablet:flex screen-tablet:justify-between">
                   <h2 class="m-0 pt-1 pb-4">
-                    <a class="text-color-grey-mid font-normal no-underline capitalize" href="#vue-components">Vue Components</a>
+                    <a class="text-color-grey-mid font-normal no-underline capitalize" href="#vue-component-usage">Vue Component Usage</a>
                   </h2>
                 </div>
               </header>

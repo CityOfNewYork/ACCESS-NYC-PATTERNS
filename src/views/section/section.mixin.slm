@@ -2,24 +2,29 @@
 = partial('demo-block.mixin.slm');
 
 = mixin('section', 'title', 'path', 'layout = columns', 'grid = false', 'specs = true', 'code = true');
-  - this.id = this.title.toLowerCase().split(' ').join('-');
+  - id = (this.title && this.title !== '') ? this.title.toLowerCase().split(' ').join('-') : false;
 
-  section id='${this.id}' class='pb-4 mb-4'
+  section id=id class='pb-4 mb-4'
     div class='page-wrapper px-2'
       header class='layout--home-body'
-        div class='my-0 px-2 pt-1 pb-4 border-b border-color-grey-light screen-tablet:flex screen-tablet:justify-between items-center'
+        div class='my-0 px-2 pt-1 pb-4 border-b border-color-grey-light'
+          - let srcPadding = false
           - if (this.title)
+            - srcPadding = 'pt-2'
             h2 class='m-0'
-              a href='#${this.id}' class='text-color-grey-mid font-normal no-underline capitalize'
+              a href=id class='text-color-grey-mid font-normal no-underline capitalize'
                 = this.title;
 
-          div
+          div class=srcPadding
             - let source = this.path.split('/')
             - source.splice(source.length - 1, 1)
             - source = source.join('/');
-            a href='${link_source}/tree/v${this.vars.version}/src/${source}'
-              code class='code'
-                = 'src/' + source
+
+            p class='text-font-size-small m-0'
+              = 'Source: ';
+              a href='${link_source}/tree/v${this.vars.version}/src/${source}'
+                code
+                  = 'src/' + this.path
 
       - if (this.specs != 'false')
         = mixin('demo-specs', this.path + '.md');

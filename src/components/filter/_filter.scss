@@ -19,10 +19,15 @@
 }
 
 .c-filter__header {
+  appearance: none;
+
   color: $color-white;
-  @include font-smooth;
+  font-size: inherit;
+  font-family: inherit;
   font-weight: $font-weight-bold;
+  @include font-smooth;
   text-decoration: none;
+  text-align: $text-direction-start;
 
   &:link,
   &:visited,
@@ -32,10 +37,14 @@
     color: $color-white;
   }
 
+  border: none;
   background: $color-blue-bright;
   border-radius: $btn-radius;
   display: block;
-  padding: .75*$spacing-base $spacing-base;
+  width: 100%;
+  padding: (.75 * $spacing-base) $spacing-base;
+
+  cursor: pointer;
 
   &::after {
     @include triangle(.6em .4em, $color-white, down);

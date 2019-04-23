@@ -1,0 +1,1 @@
+The anchor toggle uses an anchor in the `href` to jump to the target element.

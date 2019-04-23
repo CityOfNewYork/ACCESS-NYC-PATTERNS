@@ -1,6 +1,6 @@
 'use strict';
 
-import Toggle from '../../js/modules/toggle';
+import Toggle from '../../utilities/toggle/toggle';
 
 /**
  * The Accordion module
@@ -16,7 +16,7 @@ class Accordion {
       selector: Accordion.selector,
       namespace: Accordion.namespace,
       inactiveClass: Accordion.inactiveClass
-    }).init();
+    })
 
     return this;
   }

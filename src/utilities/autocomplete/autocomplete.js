@@ -1,8 +1,8 @@
 /* eslint-env browser */
 'use strict';
 
-import jaroWinkler from './jaroWinkler.js';
-import memoize from './memoize.js';
+import JaroWinkler from './jaro-winkler';
+import Memoize from './memoize';
 
 /**
  * Autocomplete for autocomplete.
@@ -22,7 +22,7 @@ class Autocomplete {
       'selected': (settings.hasOwnProperty('selected')) ?
         settings.selected : false,
       'score': (settings.hasOwnProperty('score')) ?
-        settings.score : memoize(Autocomplete.score),
+        settings.score : Memoize(Autocomplete.score),
       'listItem': (settings.hasOwnProperty('listItem')) ?
         settings.listItem : Autocomplete.listItem,
       'getSiblingIndex': (settings.hasOwnProperty('getSiblingIndex')) ?
@@ -219,7 +219,7 @@ class Autocomplete {
     let closestSynonym = null;
 
     synonyms.forEach((synonym) => {
-      let similarity = jaroWinkler(
+      let similarity = JaroWinkler(
           synonym.trim().toLowerCase(),
           value.trim().toLowerCase()
         );

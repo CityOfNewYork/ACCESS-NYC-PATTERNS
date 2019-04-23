@@ -41,19 +41,9 @@
 }
 
 .btn-toggle, .button-toggle {
-  align-items: center;
-  display: flex;
-  justify-content: space-between;
-  border-radius: 0;
-  font-size: $font-size-small;
-  padding: $spacing-base;
-  text-align: $text-direction-start;
-  border-radius: $btn-radius;
-
   &::after {
     content: '';
     position: relative;
-    top: -.1em;
 
     height: 0;
     width: 0;

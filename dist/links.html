@@ -61,7 +61,7 @@
               <nav class="text-font-size-small">
                 <a class="rounded-lg text-color-blue-dark border-2 no-underline px-1 ml-2 hidden screen-tablet:inline-block" href="https://github.com/CityOfNewYork/access-nyc-patterns/tree/v0.5.0">0.5.0</a>
                 <a aria-hidden="true" class="ml-1 screen-tablet:ml-2 screen-tablet:hidden" href="https://github.com/CityOfNewYork/access-nyc-patterns/tree/v0.5.0">0.5.0</a>
-                <a class="ml-1 screen-tablet:ml-2" data-js="toggle" href="#main-menu">Menu</a>
+                <button aria-controls="main-menu" class="btn-small btn-text text-color-blue underline ml-1 screen-tablet:ml-2" data-js="toggle">Menu</button>
               </nav>
             </div>
           </div>
@@ -135,7 +135,7 @@
             </nav>
           </div>
           <div class="text-center">
-            <a data-js="toggle" href="#main-menu">Close Menu</a>
+            <button aria-controls="main-menu" class="btn-small btn-text text-color-blue underline" data-js="toggle">Close Menu</button>
           </div>
         </div>
       </aside>
@@ -149,12 +149,14 @@
           <section class="pb-4 mb-4" id="default-styling">
             <div class="page-wrapper px-2">
               <header class="layout--home-body">
-                <div class="my-0 px-2 pt-1 pb-4 border-b border-color-grey-light screen-tablet:flex screen-tablet:justify-between items-center">
+                <div class="my-0 px-2 pt-1 pb-4 border-b border-color-grey-light">
                   <h2 class="m-0">
-                    <a class="text-color-grey-mid font-normal no-underline capitalize" href="#default-styling">Default Styling</a>
+                    <a class="text-color-grey-mid font-normal no-underline capitalize" href="default-styling">Default Styling</a>
                   </h2>
-                  <div>
-                    <a href="https://github.com/CityOfNewYork/access-nyc-patterns/tree/v0.5.0/src/elements/links"><code class="code">src/elements/links</code></a>
+                  <div class="pt-2">
+                    <p class="text-font-size-small m-0">Source:
+                      <a href="https://github.com/CityOfNewYork/access-nyc-patterns/tree/v0.5.0/src/elements/links"><code>src/elements/links/links</code></a>
+                    </p>
                   </div>
                 </div>
               </header>
@@ -163,13 +165,13 @@
               </div>
               <div class="layout--gutter screen-tablet:layout--columns justify-between pt-4">
                 <div class="screen-tablet:pr-2">
-                  <div class="p-4 bg-color-grey-lightest" data-sketch-symbol="elements/links/links">
-                    <a data-sketch-text="elements/links/links" href="#">Learn more about tax relief for parents</a>
+                  <div class="p-4 bg-color-grey-lightest">
+                    <a href="#">Learn more about tax relief for parents</a>
                   </div>
                 </div>
                 <div>
-                  <div class="code-block mb-1"><pre>&lt;div class=&quot;p-4 bg-color-grey-lightest&quot; data-sketch-symbol=&quot;elements/links/links-invert&quot;&gt;
-  &lt;a data-sketch-text=&quot;elements/links/links-invert&quot; href=&quot;#&quot;&gt;Learn more about tax relief for parents&lt;/a&gt;
+                  <div class="code-block mb-1"><pre>&lt;div class=&quot;p-4 bg-color-grey-lightest&quot;&gt;
+  &lt;a href=&quot;#&quot;&gt;Learn more about tax relief for parents&lt;/a&gt;
 &lt;/div&gt;</pre></div>
                 </div>
               </div>
@@ -178,12 +180,14 @@
           <section class="pb-4 mb-4" id="more-link">
             <div class="page-wrapper px-2">
               <header class="layout--home-body">
-                <div class="my-0 px-2 pt-1 pb-4 border-b border-color-grey-light screen-tablet:flex screen-tablet:justify-between items-center">
+                <div class="my-0 px-2 pt-1 pb-4 border-b border-color-grey-light">
                   <h2 class="m-0">
-                    <a class="text-color-grey-mid font-normal no-underline capitalize" href="#more-link">More Link</a>
+                    <a class="text-color-grey-mid font-normal no-underline capitalize" href="more-link">More Link</a>
                   </h2>
-                  <div>
-                    <a href="https://github.com/CityOfNewYork/access-nyc-patterns/tree/v0.5.0/src/elements/links"><code class="code">src/elements/links</code></a>
+                  <div class="pt-2">
+                    <p class="text-font-size-small m-0">Source:
+                      <a href="https://github.com/CityOfNewYork/access-nyc-patterns/tree/v0.5.0/src/elements/links"><code>src/elements/links/links-more</code></a>
+                    </p>
                   </div>
                 </div>
               </header>
@@ -192,12 +196,12 @@
               </div>
               <div class="layout--gutter screen-tablet:layout--columns justify-between pt-4">
                 <div class="screen-tablet:pr-2">
-                  <div class="p-4 bg-color-grey-lightest" data-sketch-symbol="elements/links/links-more">
+                  <div class="p-4 bg-color-grey-lightest">
                     <a class="link-more" href="#">Learn more about tax relief for parents</a>
                   </div>
                 </div>
                 <div>
-                  <div class="code-block mb-1"><pre>&lt;div class=&quot;p-4 bg-color-grey-lightest&quot; data-sketch-symbol=&quot;elements/links/links-invert&quot;&gt;
+                  <div class="code-block mb-1"><pre>&lt;div class=&quot;p-4 bg-color-grey-lightest&quot;&gt;
   &lt;a class=&quot;link-more&quot; href=&quot;#&quot;&gt;Learn more about tax relief for parents&lt;/a&gt;
 &lt;/div&gt;</pre></div>
                 </div>
@@ -207,12 +211,14 @@
           <section class="pb-4 mb-4" id="back-link">
             <div class="page-wrapper px-2">
               <header class="layout--home-body">
-                <div class="my-0 px-2 pt-1 pb-4 border-b border-color-grey-light screen-tablet:flex screen-tablet:justify-between items-center">
+                <div class="my-0 px-2 pt-1 pb-4 border-b border-color-grey-light">
                   <h2 class="m-0">
-                    <a class="text-color-grey-mid font-normal no-underline capitalize" href="#back-link">Back Link</a>
+                    <a class="text-color-grey-mid font-normal no-underline capitalize" href="back-link">Back Link</a>
                   </h2>
-                  <div>
-                    <a href="https://github.com/CityOfNewYork/access-nyc-patterns/tree/v0.5.0/src/elements/links"><code class="code">src/elements/links</code></a>
+                  <div class="pt-2">
+                    <p class="text-font-size-small m-0">Source:
+                      <a href="https://github.com/CityOfNewYork/access-nyc-patterns/tree/v0.5.0/src/elements/links"><code>src/elements/links/links-back</code></a>
+                    </p>
                   </div>
                 </div>
               </header>
@@ -221,12 +227,12 @@
               </div>
               <div class="layout--gutter screen-tablet:layout--columns justify-between pt-4">
                 <div class="screen-tablet:pr-2">
-                  <div class="p-4 bg-color-grey-lightest" data-sketch-symbol="elements/links/links-back">
+                  <div class="p-4 bg-color-grey-lightest">
                     <a class="link-back" href="#">Learn more about tax relief for parents</a>
                   </div>
                 </div>
                 <div>
-                  <div class="code-block mb-1"><pre>&lt;div class=&quot;p-4 bg-color-grey-lightest&quot; data-sketch-symbol=&quot;elements/links/links-invert&quot;&gt;
+                  <div class="code-block mb-1"><pre>&lt;div class=&quot;p-4 bg-color-grey-lightest&quot;&gt;
   &lt;a class=&quot;link-back&quot; href=&quot;#&quot;&gt;Learn more about tax relief for parents&lt;/a&gt;
 &lt;/div&gt;</pre></div>
                 </div>
@@ -236,12 +242,14 @@
           <section class="pb-4 mb-4" id="inverted-links">
             <div class="page-wrapper px-2">
               <header class="layout--home-body">
-                <div class="my-0 px-2 pt-1 pb-4 border-b border-color-grey-light screen-tablet:flex screen-tablet:justify-between items-center">
+                <div class="my-0 px-2 pt-1 pb-4 border-b border-color-grey-light">
                   <h2 class="m-0">
-                    <a class="text-color-grey-mid font-normal no-underline capitalize" href="#inverted-links">Inverted Links</a>
+                    <a class="text-color-grey-mid font-normal no-underline capitalize" href="inverted-links">Inverted Links</a>
                   </h2>
-                  <div>
-                    <a href="https://github.com/CityOfNewYork/access-nyc-patterns/tree/v0.5.0/src/elements/links"><code class="code">src/elements/links</code></a>
+                  <div class="pt-2">
+                    <p class="text-font-size-small m-0">Source:
+                      <a href="https://github.com/CityOfNewYork/access-nyc-patterns/tree/v0.5.0/src/elements/links"><code>src/elements/links/links-invert</code></a>
+                    </p>
                   </div>
                 </div>
               </header>
@@ -250,13 +258,13 @@
               </div>
               <div class="layout--gutter screen-tablet:layout--columns justify-between pt-4">
                 <div class="screen-tablet:pr-2">
-                  <div class="p-4 bg-color-blue-dark links-invert" data-sketch-symbol="elements/links/links-invert">
-                    <a class="link-more" data-sketch-text="elements/links/links-invert" href="#">Learn more about tax relief for parents</a>
+                  <div class="p-4 bg-color-blue-dark links-invert">
+                    <a class="link-more" href="#">Learn more about tax relief for parents</a>
                   </div>
                 </div>
                 <div>
-                  <div class="code-block mb-1"><pre>&lt;div class=&quot;p-4 bg-color-blue-dark links-invert&quot; data-sketch-symbol=&quot;elements/links/links-invert&quot;&gt;
-  &lt;a class=&quot;link-more&quot; data-sketch-text=&quot;elements/links/links-invert&quot; href=&quot;#&quot;&gt;Learn more about tax relief for parents&lt;/a&gt;
+                  <div class="code-block mb-1"><pre>&lt;div class=&quot;p-4 bg-color-blue-dark links-invert&quot;&gt;
+  &lt;a class=&quot;link-more&quot; href=&quot;#&quot;&gt;Learn more about tax relief for parents&lt;/a&gt;
 &lt;/div&gt;</pre></div>
                 </div>
               </div>

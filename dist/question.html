@@ -61,7 +61,7 @@
               <nav class="text-font-size-small">
                 <a class="rounded-lg text-color-blue-dark border-2 no-underline px-1 ml-2 hidden screen-tablet:inline-block" href="https://github.com/CityOfNewYork/access-nyc-patterns/tree/v0.5.0">0.5.0</a>
                 <a aria-hidden="true" class="ml-1 screen-tablet:ml-2 screen-tablet:hidden" href="https://github.com/CityOfNewYork/access-nyc-patterns/tree/v0.5.0">0.5.0</a>
-                <a class="ml-1 screen-tablet:ml-2" data-js="toggle" href="#main-menu">Menu</a>
+                <button aria-controls="main-menu" class="btn-small btn-text text-color-blue underline ml-1 screen-tablet:ml-2" data-js="toggle">Menu</button>
               </nav>
             </div>
           </div>
@@ -135,7 +135,7 @@
             </nav>
           </div>
           <div class="text-center">
-            <a data-js="toggle" href="#main-menu">Close Menu</a>
+            <button aria-controls="main-menu" class="btn-small btn-text text-color-blue underline" data-js="toggle">Close Menu</button>
           </div>
         </div>
       </aside>
@@ -160,12 +160,14 @@
           <section class="pb-4 mb-4" id="number-question">
             <div class="page-wrapper px-2">
               <header class="layout--home-body">
-                <div class="my-0 px-2 pt-1 pb-4 border-b border-color-grey-light screen-tablet:flex screen-tablet:justify-between items-center">
+                <div class="my-0 px-2 pt-1 pb-4 border-b border-color-grey-light">
                   <h2 class="m-0">
-                    <a class="text-color-grey-mid font-normal no-underline capitalize" href="#number-question">Number Question</a>
+                    <a class="text-color-grey-mid font-normal no-underline capitalize" href="number-question">Number Question</a>
                   </h2>
-                  <div>
-                    <a href="https://github.com/CityOfNewYork/access-nyc-patterns/tree/v0.5.0/src/components/question"><code class="code">src/components/question</code></a>
+                  <div class="pt-2">
+                    <p class="text-font-size-small m-0">Source:
+                      <a href="https://github.com/CityOfNewYork/access-nyc-patterns/tree/v0.5.0/src/components/question"><code>src/components/question/question-number</code></a>
+                    </p>
                   </div>
                 </div>
               </header>
@@ -175,7 +177,7 @@
               </div>
               <div class="layout--gutter screen-tablet:layout--columns justify-between pt-4">
                 <div class="screen-tablet:pr-2">
-                  <div class="c-question" data-sketch-symbol="components/question/question-number">
+                  <div class="c-question">
                     <label class="c-question__label" for="person-0-age">How old are you?</label>
                     <p>
                       <button aria-describedby="tooltip-age" class="c-question__info btn btn-text btn-link js-tooltip-trigger" type="button">Here’s why we are asking.&nbsp;
@@ -214,12 +216,14 @@
           <section class="pb-4 mb-4" id="number-question-errors">
             <div class="page-wrapper px-2">
               <header class="layout--home-body">
-                <div class="my-0 px-2 pt-1 pb-4 border-b border-color-grey-light screen-tablet:flex screen-tablet:justify-between items-center">
+                <div class="my-0 px-2 pt-1 pb-4 border-b border-color-grey-light">
                   <h2 class="m-0">
-                    <a class="text-color-grey-mid font-normal no-underline capitalize" href="#number-question-errors">Number Question Errors</a>
+                    <a class="text-color-grey-mid font-normal no-underline capitalize" href="number-question-errors">Number Question Errors</a>
                   </h2>
-                  <div>
-                    <a href="https://github.com/CityOfNewYork/access-nyc-patterns/tree/v0.5.0/src/components/question"><code class="code">src/components/question</code></a>
+                  <div class="pt-2">
+                    <p class="text-font-size-small m-0">Source:
+                      <a href="https://github.com/CityOfNewYork/access-nyc-patterns/tree/v0.5.0/src/components/question"><code>src/components/question/question-number-error</code></a>
+                    </p>
                   </div>
                 </div>
               </header>
@@ -232,7 +236,7 @@
               </div>
               <div class="layout--gutter screen-tablet:layout--columns justify-between pt-4">
                 <div class="screen-tablet:pr-2">
-                  <div class="c-question" data-sketch-symbol="components/question/question-number-error">
+                  <div class="c-question">
                     <label class="c-question__label" for="person-0-age-with-error">How old are you?</label>
                     <p>
                       <button aria-describedby="tooltip-age" class="c-question__info btn btn-text btn-link js-tooltip-trigger" type="button">Here’s why we are asking.&nbsp;
@@ -274,12 +278,14 @@
           <section class="pb-4 mb-4" id="text-question">
             <div class="page-wrapper px-2">
               <header class="layout--home-body">
-                <div class="my-0 px-2 pt-1 pb-4 border-b border-color-grey-light screen-tablet:flex screen-tablet:justify-between items-center">
+                <div class="my-0 px-2 pt-1 pb-4 border-b border-color-grey-light">
                   <h2 class="m-0">
-                    <a class="text-color-grey-mid font-normal no-underline capitalize" href="#text-question">Text Question</a>
+                    <a class="text-color-grey-mid font-normal no-underline capitalize" href="text-question">Text Question</a>
                   </h2>
-                  <div>
-                    <a href="https://github.com/CityOfNewYork/access-nyc-patterns/tree/v0.5.0/src/components/question"><code class="code">src/components/question</code></a>
+                  <div class="pt-2">
+                    <p class="text-font-size-small m-0">Source:
+                      <a href="https://github.com/CityOfNewYork/access-nyc-patterns/tree/v0.5.0/src/components/question"><code>src/components/question/question-text</code></a>
+                    </p>
                   </div>
                 </div>
               </header>
@@ -288,7 +294,7 @@
               </div>
               <div class="layout--gutter screen-tablet:layout--columns justify-between pt-4">
                 <div class="screen-tablet:pr-2">
-                  <div class="c-question" data-sketch-symbol="components/question/question-text">
+                  <div class="c-question">
                     <label class="c-question__label" for="client-first-name">What is your email address?</label>
                     <div class="c-question__container">
                       <p>We can send you a link to this page to help you get back to it when you’re ready.</p>
@@ -315,12 +321,14 @@
           <section class="pb-4 mb-4" id="multiple-choice-question">
             <div class="page-wrapper px-2">
               <header class="layout--home-body">
-                <div class="my-0 px-2 pt-1 pb-4 border-b border-color-grey-light screen-tablet:flex screen-tablet:justify-between items-center">
+                <div class="my-0 px-2 pt-1 pb-4 border-b border-color-grey-light">
                   <h2 class="m-0">
-                    <a class="text-color-grey-mid font-normal no-underline capitalize" href="#multiple-choice-question">Multiple Choice Question</a>
+                    <a class="text-color-grey-mid font-normal no-underline capitalize" href="multiple-choice-question">Multiple Choice Question</a>
                   </h2>
-                  <div>
-                    <a href="https://github.com/CityOfNewYork/access-nyc-patterns/tree/v0.5.0/src/components/question"><code class="code">src/components/question</code></a>
+                  <div class="pt-2">
+                    <p class="text-font-size-small m-0">Source:
+                      <a href="https://github.com/CityOfNewYork/access-nyc-patterns/tree/v0.5.0/src/components/question"><code>src/components/question/question-multiple-choice</code></a>
+                    </p>
                   </div>
                 </div>
               </header>
@@ -329,7 +337,7 @@
               </div>
               <div class="layout--gutter screen-tablet:layout--columns justify-between pt-4">
                 <div class="screen-tablet:pr-2">
-                  <fieldset class="c-question" data-sketch-symbol="components/question/question-multiple-choice">
+                  <fieldset class="c-question">
                     <legend class="c-question__label">Do any of these apply to you?</legend>
                     <p>It’s OK to pick more than one. You can also leave this blank if none of these apply to you.</p>
                     <div class="c-question__container screen-tablet:layout--columns">
@@ -378,12 +386,14 @@
           <section class="pb-4 mb-4" id="toggle-question">
             <div class="page-wrapper px-2">
               <header class="layout--home-body">
-                <div class="my-0 px-2 pt-1 pb-4 border-b border-color-grey-light screen-tablet:flex screen-tablet:justify-between items-center">
+                <div class="my-0 px-2 pt-1 pb-4 border-b border-color-grey-light">
                   <h2 class="m-0">
-                    <a class="text-color-grey-mid font-normal no-underline capitalize" href="#toggle-question">Toggle Question</a>
+                    <a class="text-color-grey-mid font-normal no-underline capitalize" href="toggle-question">Toggle Question</a>
                   </h2>
-                  <div>
-                    <a href="https://github.com/CityOfNewYork/access-nyc-patterns/tree/v0.5.0/src/components/question"><code class="code">src/components/question</code></a>
+                  <div class="pt-2">
+                    <p class="text-font-size-small m-0">Source:
+                      <a href="https://github.com/CityOfNewYork/access-nyc-patterns/tree/v0.5.0/src/components/question"><code>src/components/question/question-toggle</code></a>
+                    </p>
                   </div>
                 </div>
               </header>
@@ -392,7 +402,7 @@
               </div>
               <div class="layout--gutter screen-tablet:layout--columns justify-between pt-4">
                 <div class="screen-tablet:pr-2">
-                  <fieldset class="c-question" data-sketch-symbol="components/question/question-toggle">
+                  <fieldset class="c-question">
                     <legend class="c-question__label">Do you have an income?</legend>
                     <p>This includes money from jobs, alimony, investments, or gifts.</p>
                     <div class="c-question__container">
@@ -425,12 +435,14 @@
           <section class="pb-4 mb-4" id="select-question">
             <div class="page-wrapper px-2">
               <header class="layout--home-body">
-                <div class="my-0 px-2 pt-1 pb-4 border-b border-color-grey-light screen-tablet:flex screen-tablet:justify-between items-center">
+                <div class="my-0 px-2 pt-1 pb-4 border-b border-color-grey-light">
                   <h2 class="m-0">
-                    <a class="text-color-grey-mid font-normal no-underline capitalize" href="#select-question">Select Question</a>
+                    <a class="text-color-grey-mid font-normal no-underline capitalize" href="select-question">Select Question</a>
                   </h2>
-                  <div>
-                    <a href="https://github.com/CityOfNewYork/access-nyc-patterns/tree/v0.5.0/src/components/question"><code class="code">src/components/question</code></a>
+                  <div class="pt-2">
+                    <p class="text-font-size-small m-0">Source:
+                      <a href="https://github.com/CityOfNewYork/access-nyc-patterns/tree/v0.5.0/src/components/question"><code>src/components/question/question-select</code></a>
+                    </p>
                   </div>
                 </div>
               </header>
@@ -510,12 +522,14 @@
           <section class="pb-4 mb-4" id="radio-question">
             <div class="page-wrapper px-2">
               <header class="layout--home-body">
-                <div class="my-0 px-2 pt-1 pb-4 border-b border-color-grey-light screen-tablet:flex screen-tablet:justify-between items-center">
+                <div class="my-0 px-2 pt-1 pb-4 border-b border-color-grey-light">
                   <h2 class="m-0">
-                    <a class="text-color-grey-mid font-normal no-underline capitalize" href="#radio-question">Radio Question</a>
+                    <a class="text-color-grey-mid font-normal no-underline capitalize" href="radio-question">Radio Question</a>
                   </h2>
-                  <div>
-                    <a href="https://github.com/CityOfNewYork/access-nyc-patterns/tree/v0.5.0/src/components/question"><code class="code">src/components/question</code></a>
+                  <div class="pt-2">
+                    <p class="text-font-size-small m-0">Source:
+                      <a href="https://github.com/CityOfNewYork/access-nyc-patterns/tree/v0.5.0/src/components/question"><code>src/components/question/question-radio</code></a>
+                    </p>
                   </div>
                 </div>
               </header>
@@ -524,7 +538,7 @@
               </div>
               <div class="layout--gutter screen-tablet:layout--columns justify-between pt-4">
                 <div class="screen-tablet:pr-2">
-                  <fieldset class="c-question" data-sketch-symbol="components/question/question-radio">
+                  <fieldset class="c-question">
                     <legend class="c-question__label" for="person-0-age">Phone Type</legend>
                     <div class="c-question__container">
                       <label class="radio" data-sketch-symbol-instance="elements/radios/radios" for="client-phone-type-home">

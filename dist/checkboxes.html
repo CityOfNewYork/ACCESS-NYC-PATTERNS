@@ -61,7 +61,7 @@
               <nav class="text-font-size-small">
                 <a class="rounded-lg text-color-blue-dark border-2 no-underline px-1 ml-2 hidden screen-tablet:inline-block" href="https://github.com/CityOfNewYork/access-nyc-patterns/tree/v0.5.0">0.5.0</a>
                 <a aria-hidden="true" class="ml-1 screen-tablet:ml-2 screen-tablet:hidden" href="https://github.com/CityOfNewYork/access-nyc-patterns/tree/v0.5.0">0.5.0</a>
-                <a class="ml-1 screen-tablet:ml-2" data-js="toggle" href="#main-menu">Menu</a>
+                <button aria-controls="main-menu" class="btn-small btn-text text-color-blue underline ml-1 screen-tablet:ml-2" data-js="toggle">Menu</button>
               </nav>
             </div>
           </div>
@@ -135,7 +135,7 @@
             </nav>
           </div>
           <div class="text-center">
-            <a data-js="toggle" href="#main-menu">Close Menu</a>
+            <button aria-controls="main-menu" class="btn-small btn-text text-color-blue underline" data-js="toggle">Close Menu</button>
           </div>
         </div>
       </aside>
@@ -149,12 +149,14 @@
           <section class="pb-4 mb-4" id="default-styling">
             <div class="page-wrapper px-2">
               <header class="layout--home-body">
-                <div class="my-0 px-2 pt-1 pb-4 border-b border-color-grey-light screen-tablet:flex screen-tablet:justify-between items-center">
+                <div class="my-0 px-2 pt-1 pb-4 border-b border-color-grey-light">
                   <h2 class="m-0">
-                    <a class="text-color-grey-mid font-normal no-underline capitalize" href="#default-styling">Default Styling</a>
+                    <a class="text-color-grey-mid font-normal no-underline capitalize" href="default-styling">Default Styling</a>
                   </h2>
-                  <div>
-                    <a href="https://github.com/CityOfNewYork/access-nyc-patterns/tree/v0.5.0/src/elements/checkboxes"><code class="code">src/elements/checkboxes</code></a>
+                  <div class="pt-2">
+                    <p class="text-font-size-small m-0">Source:
+                      <a href="https://github.com/CityOfNewYork/access-nyc-patterns/tree/v0.5.0/src/elements/checkboxes"><code>src/elements/checkboxes/checkboxes</code></a>
+                    </p>
                   </div>
                 </div>
               </header>
@@ -163,12 +165,12 @@
               </div>
               <div class="layout--gutter screen-tablet:layout--columns justify-between pt-4">
                 <div class="screen-tablet:pr-2">
-                  <label class="checkbox" data-sketch-symbol="elements/checkboxes/checkboxes" for="person-0-snap">
-                    <input id="person-0-snap" name="Person[0].snap" type="checkbox" value="snap" /><span class="checkbox__label">SNAP (Supplemental Nutrition Assistance Program)</span></label>
+                  <label class="checkbox" for="">
+                    <input id="" name="" type="checkbox" value="" /><span class="checkbox__label"></span></label>
                 </div>
                 <div>
-                  <div class="code-block mb-1"><pre>&lt;label class=&quot;checkbox&quot; data-sketch-symbol=&quot;elements/checkboxes/checkboxes-with-icons&quot; for=&quot;person-0-snap&quot;&gt;
-  &lt;input id=&quot;person-0-snap&quot; name=&quot;Person[0].snap&quot; type=&quot;checkbox&quot; value=&quot;snap&quot; /&gt;&lt;span class=&quot;checkbox__label&quot;&gt;SNAP (Supplemental Nutrition Assistance Program)&lt;/span&gt;&lt;/label&gt;</pre></div>
+                  <div class="code-block mb-1"><pre>&lt;label class=&quot;checkbox&quot; for=&quot;&quot;&gt;
+  &lt;input id=&quot;&quot; name=&quot;&quot; type=&quot;checkbox&quot; value=&quot;&quot; /&gt;&lt;span class=&quot;checkbox__label&quot;&gt;&lt;/span&gt;&lt;/label&gt;</pre></div>
                 </div>
               </div>
             </div>
@@ -176,12 +178,14 @@
           <section class="pb-4 mb-4" id="checkboxes-with-icons">
             <div class="page-wrapper px-2">
               <header class="layout--home-body">
-                <div class="my-0 px-2 pt-1 pb-4 border-b border-color-grey-light screen-tablet:flex screen-tablet:justify-between items-center">
+                <div class="my-0 px-2 pt-1 pb-4 border-b border-color-grey-light">
                   <h2 class="m-0">
-                    <a class="text-color-grey-mid font-normal no-underline capitalize" href="#checkboxes-with-icons">Checkboxes With Icons</a>
+                    <a class="text-color-grey-mid font-normal no-underline capitalize" href="checkboxes-with-icons">Checkboxes With Icons</a>
                   </h2>
-                  <div>
-                    <a href="https://github.com/CityOfNewYork/access-nyc-patterns/tree/v0.5.0/src/elements/checkboxes"><code class="code">src/elements/checkboxes</code></a>
+                  <div class="pt-2">
+                    <p class="text-font-size-small m-0">Source:
+                      <a href="https://github.com/CityOfNewYork/access-nyc-patterns/tree/v0.5.0/src/elements/checkboxes"><code>src/elements/checkboxes/checkboxes-with-icons</code></a>
+                    </p>
                   </div>
                 </div>
               </header>
@@ -190,12 +194,12 @@
               </div>
               <div class="layout--gutter screen-tablet:layout--columns justify-between pt-4">
                 <div class="screen-tablet:pr-2">
-                  <label class="checkbox" data-sketch-symbol="elements/checkboxes/checkboxes-with-icons">
+                  <label class="checkbox">
                     <input name="category" type="checkbox" value="cash-expenses" /><span class="checkbox__label items-center"><span class="checkbox__icon bg-icon-cash-expenses"></span><span>Cash & Expenses</span></span>
                   </label>
                 </div>
                 <div>
-                  <div class="code-block mb-1"><pre>&lt;label class=&quot;checkbox&quot; data-sketch-symbol=&quot;elements/checkboxes/checkboxes-with-icons&quot;&gt;
+                  <div class="code-block mb-1"><pre>&lt;label class=&quot;checkbox&quot;&gt;
   &lt;input name=&quot;category&quot; type=&quot;checkbox&quot; value=&quot;cash-expenses&quot; /&gt;&lt;span class=&quot;checkbox__label items-center&quot;&gt;&lt;span class=&quot;checkbox__icon bg-icon-cash-expenses&quot;&gt;&lt;/span&gt;&lt;span&gt;Cash &amp; Expenses&lt;/span&gt;&lt;/span&gt;
 &lt;/label&gt;</pre></div>
                 </div>

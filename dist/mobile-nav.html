@@ -61,7 +61,7 @@
               <nav class="text-font-size-small">
                 <a class="rounded-lg text-color-blue-dark border-2 no-underline px-1 ml-2 hidden screen-tablet:inline-block" href="https://github.com/CityOfNewYork/access-nyc-patterns/tree/v0.5.0">0.5.0</a>
                 <a aria-hidden="true" class="ml-1 screen-tablet:ml-2 screen-tablet:hidden" href="https://github.com/CityOfNewYork/access-nyc-patterns/tree/v0.5.0">0.5.0</a>
-                <a class="ml-1 screen-tablet:ml-2" data-js="toggle" href="#main-menu">Menu</a>
+                <button aria-controls="main-menu" class="btn-small btn-text text-color-blue underline ml-1 screen-tablet:ml-2" data-js="toggle">Menu</button>
               </nav>
             </div>
           </div>
@@ -135,7 +135,7 @@
             </nav>
           </div>
           <div class="text-center">
-            <a data-js="toggle" href="#main-menu">Close Menu</a>
+            <button aria-controls="main-menu" class="btn-small btn-text text-color-blue underline" data-js="toggle">Close Menu</button>
           </div>
         </div>
       </aside>
@@ -146,12 +146,14 @@
               <h1 class="text-color-blue-dark px-2 pb-4 mb-4">Mobile Nav</h1>
             </div>
           </header>
-          <section class="pb-4 mb-4" id="">
+          <section class="pb-4 mb-4">
             <div class="page-wrapper px-2">
               <header class="layout--home-body">
-                <div class="my-0 px-2 pt-1 pb-4 border-b border-color-grey-light screen-tablet:flex screen-tablet:justify-between items-center">
+                <div class="my-0 px-2 pt-1 pb-4 border-b border-color-grey-light">
                   <div>
-                    <a href="https://github.com/CityOfNewYork/access-nyc-patterns/tree/v0.5.0/src/objects/mobile-nav"><code class="code">src/objects/mobile-nav</code></a>
+                    <p class="text-font-size-small m-0">Source:
+                      <a href="https://github.com/CityOfNewYork/access-nyc-patterns/tree/v0.5.0/src/objects/mobile-nav"><code>src/objects/mobile-nav/mobile-nav</code></a>
+                    </p>
                   </div>
                 </div>
               </header>
@@ -161,7 +163,7 @@
               </div>
               <div class="layout--gutter screen-tablet:layout--gutter justify-between pt-4">
                 <div>
-                  <div class="o-mobile-nav color-mid-background active:o-mobile-nav" data-sketch-symbol="objects/mobile-nav/mobile-nav" id="o-mobile-nav">
+                  <div class="o-mobile-nav color-mid-background active:o-mobile-nav" id="o-mobile-nav">
                     <a class="o-mobile-nav__close js-hide-nav" href="#o-mobile-nav">close &amp; return to site
                       <svg aria-hidden="true" class="icon icon-close">
                         <use xlink:href="#icon-close"></use>
@@ -182,7 +184,7 @@
                   </div>
                 </div>
                 <div>
-                  <div class="code-block mb-1"><pre>&lt;div class=&quot;o-mobile-nav color-mid-background active:o-mobile-nav&quot; data-sketch-symbol=&quot;objects/mobile-nav/mobile-nav&quot; id=&quot;o-mobile-nav&quot;&gt;
+                  <div class="code-block mb-1"><pre>&lt;div class=&quot;o-mobile-nav color-mid-background active:o-mobile-nav&quot; id=&quot;o-mobile-nav&quot;&gt;
   &lt;a class=&quot;o-mobile-nav__close js-hide-nav&quot; href=&quot;#o-mobile-nav&quot;&gt;close &amp;amp; return to site
     &lt;svg aria-hidden=&quot;true&quot; class=&quot;icon icon-close&quot;&gt;
       &lt;use xlink:href=&quot;#icon-close&quot;&gt;&lt;/use&gt;

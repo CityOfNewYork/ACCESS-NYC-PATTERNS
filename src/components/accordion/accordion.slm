@@ -7,9 +7,10 @@ article id='what-you-need-to-include' class='c-accordion m-0' data-sketch-symbol
     p
       | Free tax prep for New Yorkers
       em class='block font-normal' NYC Free Tax Prep
-    a data-js='accordion' href='#what-you-need-to-include__body' class="c-accordion__toggle print:hidden active"
+    button data-js='accordion' aria-controls='what-you-need-to-include__body' class="c-accordion__toggle print:hidden active"
       span class='c-accordion__toggle-active' hide this list
       span class='c-accordion__toggle-inactive' show this list
+
   div id='what-you-need-to-include__body' class='c-accordion__body print:active hidden:overflow animated active'
     div class='c-accordion__padding'
       p class='text-color-blue' NYC Department of Consumer Affairs

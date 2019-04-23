@@ -1,6 +1,5 @@
 'use strict';
 
-import Utility from '../../js/modules/utility.js';
 import {default as _template} from 'lodash-es/template';
 import {default as _forEach} from 'lodash-es/forEach';
 
@@ -96,13 +95,13 @@ class NearbyStops {
           return response.json();
         else {
           // eslint-disable-next-line no-console
-          if (Utility.debug()) console.dir(response);
+          if (process.env.NODE_ENV !== 'production') console.dir(response);
           callback('error', response);
         }
       })
       .catch((error) => {
         // eslint-disable-next-line no-console
-        if (Utility.debug()) console.dir(error);
+        if (process.env.NODE_ENV !== 'production') console.dir(error);
         callback('error', error);
       })
       .then((data) => callback('success', data));

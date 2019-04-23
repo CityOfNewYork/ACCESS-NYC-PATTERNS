@@ -1,6 +1,6 @@
 'use strict';
 
-import Toggle from '../../js/modules/toggle';
+import Toggle from '../../utilities/toggle/toggle';
 
 /**
  * The Filter module
@@ -16,7 +16,7 @@ class Filter {
       selector: Filter.selector,
       namespace: Filter.namespace,
       inactiveClass: Filter.inactiveClass
-    }).init();
+    });
 
     return this;
   }

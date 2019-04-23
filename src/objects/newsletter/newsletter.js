@@ -1,7 +1,8 @@
 'use strict';
 
-import Utility from '../../js/modules/utility.js';
-import formSerialize from 'form-serialize';
+import Valid from '../../utilities/valid/valid';
+import JoinValues from '../../utilities/join-values/join-values';
+import FormSerialize from 'form-serialize';
 
 /**
  * The Newsletter module
@@ -22,7 +23,7 @@ class Newsletter {
     this.STRINGS = Newsletter.strings;
 
     // Map toggled checkbox values to an input.
-    this._el.addEventListener('click', Utility.joinValues);
+    this._el.addEventListener('click', JoinValues);
 
     // This sets the script callback function to a global function that
     // can be accessed by the the requested script.
@@ -31,7 +32,7 @@ class Newsletter {
     };
 
     this._el.querySelector('form').addEventListener('submit', (event) =>
-      (Utility.valid(event, this.STRINGS)) ?
+      (Valid(event, this.STRINGS)) ?
         this._submit(event).then(this._onload).catch(this._onerror) : false
     );
 
@@ -49,7 +50,7 @@ class Newsletter {
     event.preventDefault();
 
     // Serialize the data
-    this._data = formSerialize(event.target, {hash: true});
+    this._data = FormSerialize(event.target, {hash: true});
 
     // Switch the action to post-json. This creates an endpoint for mailchimp
     // that acts as a script that can be loaded onto our page.
@@ -58,7 +59,7 @@ class Newsletter {
     );
 
     // Add our params to the action
-    action = action + formSerialize(event.target, {serializer: (...params) => {
+    action = action + FormSerialize(event.target, {serializer: (...params) => {
       let prev = (typeof params[0] === 'string') ? params[0] : '';
       return `${prev}&${params[1]}=${params[2]}`;
     }});
@@ -95,7 +96,7 @@ class Newsletter {
    */
   _onerror(error) {
     // eslint-disable-next-line no-console
-    if (Utility.debug()) console.dir(error);
+    if (process.env.NODE_ENV !== 'production') console.dir(error);
     return this;
   }
 
@@ -109,7 +110,7 @@ class Newsletter {
       this[`_${data[this._key('MC_RESULT')]}`](data.msg);
     else
       // eslint-disable-next-line no-console
-      if (Utility.debug()) console.dir(data);
+      if (process.env.NODE_ENV !== 'production') console.dir(data);
     return this;
   }
 
@@ -285,10 +286,10 @@ Newsletter.strings = {
   VALID_EMAIL_REQUIRED: 'Email is required.',
   VALID_EMAIL_INVALID: 'Please enter a valid email.',
   VALID_CHECKBOX_BOROUGH: 'Please select a borough.',
-  ERR_PLEASE_TRY_LATER: 'There was an error with your submission.' +
+  ERR_PLEASE_TRY_LATER: 'There was an error with your submission. ' +
                         'Please try again later.',
-  SUCCESS_CONFIRM_EMAIL: 'Almost finished... We need to confirm your email' +
-                         'address. To complete the subscription process,' +
+  SUCCESS_CONFIRM_EMAIL: 'Almost finished... We need to confirm your email ' +
+                         'address. To complete the subscription process, ' +
                          'please click the link in the email we just sent you.',
   ERR_PLEASE_ENTER_VALUE: 'Please enter a value',
   ERR_TOO_MANY_RECENT: 'Recipient "{{ EMAIL }}" has too' +

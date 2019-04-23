@@ -39,8 +39,18 @@
 }
 
 .c-accordion__toggle {
+  appearance: none;
   color: $color-white !important;
   // font-style: italic;
+  font-size: inherit;
+  font-weight: inherit;
+  text-decoration: underline;
+
+  background: transparent;
+  border: none;
+
+  padding: 0;
+
   display: inline-flex;
 
   * {

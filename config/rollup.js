@@ -51,7 +51,11 @@ const plugins = {
   }),
   common: commonjs(),
   vue: vue(),
-  buble: buble()
+  buble: buble({
+    transforms: {
+      forOf: false
+    }
+  })
 };
 
 /**

@@ -61,7 +61,7 @@
               <nav class="text-font-size-small">
                 <a class="rounded-lg text-color-blue-dark border-2 no-underline px-1 ml-2 hidden screen-tablet:inline-block" href="https://github.com/CityOfNewYork/access-nyc-patterns/tree/v0.5.0">0.5.0</a>
                 <a aria-hidden="true" class="ml-1 screen-tablet:ml-2 screen-tablet:hidden" href="https://github.com/CityOfNewYork/access-nyc-patterns/tree/v0.5.0">0.5.0</a>
-                <a class="ml-1 screen-tablet:ml-2" data-js="toggle" href="#main-menu">Menu</a>
+                <button aria-controls="main-menu" class="btn-small btn-text text-color-blue underline ml-1 screen-tablet:ml-2" data-js="toggle">Menu</button>
               </nav>
             </div>
           </div>
@@ -135,7 +135,7 @@
             </nav>
           </div>
           <div class="text-center">
-            <a data-js="toggle" href="#main-menu">Close Menu</a>
+            <button aria-controls="main-menu" class="btn-small btn-text text-color-blue underline" data-js="toggle">Close Menu</button>
           </div>
         </div>
       </aside>
@@ -146,12 +146,14 @@
               <h1 class="text-color-blue-dark px-2 pb-4 mb-4">Accordion</h1>
             </div>
           </header>
-          <section class="pb-4 mb-4" id="">
+          <section class="pb-4 mb-4">
             <div class="page-wrapper px-2">
               <header class="layout--home-body">
-                <div class="my-0 px-2 pt-1 pb-4 border-b border-color-grey-light screen-tablet:flex screen-tablet:justify-between items-center">
+                <div class="my-0 px-2 pt-1 pb-4 border-b border-color-grey-light">
                   <div>
-                    <a href="https://github.com/CityOfNewYork/access-nyc-patterns/tree/v0.5.0/src/components/accordion"><code class="code">src/components/accordion</code></a>
+                    <p class="text-font-size-small m-0">Source:
+                      <a href="https://github.com/CityOfNewYork/access-nyc-patterns/tree/v0.5.0/src/components/accordion"><code>src/components/accordion/accordion</code></a>
+                    </p>
                   </div>
                 </div>
               </header>
@@ -163,10 +165,10 @@
               </div>
               <div class="layout--gutter screen-tablet:layout--columns justify-between pt-4">
                 <div class="screen-tablet:pr-2">
-                  <article class="c-accordion m-0" data-sketch-symbol="components/accordion/accordion" id="what-you-need-to-include">
+                  <article class="c-accordion m-0" id="what-you-need-to-include">
                     <header class="c-accordion__header">
                       <p>Free tax prep for New Yorkers<em class="block font-normal">NYC Free Tax Prep</em></p>
-                      <a class="c-accordion__toggle print:hidden active" data-js="accordion" href="#what-you-need-to-include__body"><span class="c-accordion__toggle-active">hide this list</span><span class="c-accordion__toggle-inactive">show this list</span></a>
+                      <button aria-controls="what-you-need-to-include__body" class="c-accordion__toggle print:hidden active" data-js="accordion"><span class="c-accordion__toggle-active">hide this list</span><span class="c-accordion__toggle-inactive">show this list</span></button>
                     </header>
                     <div class="c-accordion__body print:active hidden:overflow animated active" id="what-you-need-to-include__body">
                       <div class="c-accordion__padding">
@@ -182,10 +184,10 @@
                   </article>
                 </div>
                 <div>
-                  <div class="code-block mb-1"><pre>&lt;article class=&quot;c-accordion m-0&quot; data-sketch-symbol=&quot;components/accordion/accordion&quot; id=&quot;what-you-need-to-include&quot;&gt;
+                  <div class="code-block mb-1"><pre>&lt;article class=&quot;c-accordion m-0&quot; id=&quot;what-you-need-to-include&quot;&gt;
   &lt;header class=&quot;c-accordion__header&quot;&gt;
     &lt;p&gt;Free tax prep for New Yorkers&lt;em class=&quot;block font-normal&quot;&gt;NYC Free Tax Prep&lt;/em&gt;&lt;/p&gt;
-    &lt;a class=&quot;c-accordion__toggle print:hidden active&quot; data-js=&quot;accordion&quot; href=&quot;#what-you-need-to-include__body&quot;&gt;&lt;span class=&quot;c-accordion__toggle-active&quot;&gt;hide this list&lt;/span&gt;&lt;span class=&quot;c-accordion__toggle-inactive&quot;&gt;show this list&lt;/span&gt;&lt;/a&gt;
+    &lt;button aria-controls=&quot;what-you-need-to-include__body&quot; class=&quot;c-accordion__toggle print:hidden active&quot; data-js=&quot;accordion&quot;&gt;&lt;span class=&quot;c-accordion__toggle-active&quot;&gt;hide this list&lt;/span&gt;&lt;span class=&quot;c-accordion__toggle-inactive&quot;&gt;show this list&lt;/span&gt;&lt;/button&gt;
   &lt;/header&gt;
   &lt;div class=&quot;c-accordion__body print:active hidden:overflow animated active&quot; id=&quot;what-you-need-to-include__body&quot;&gt;
     &lt;div class=&quot;c-accordion__padding&quot;&gt;
@@ -203,12 +205,12 @@
               </div>
             </div>
           </section>
-          <section class="pb-4 mb-4" id="usage">
+          <section class="pb-4 mb-4" id="accordion-usage">
             <div class="page-wrapper px-2 screen-desktop:px-0">
               <header class="layout--home-body">
                 <div class="my-0 px-2 border-b border-color-grey-light screen-tablet:flex screen-tablet:justify-between">
                   <h2 class="m-0 pt-1 pb-4">
-                    <a class="text-color-grey-mid font-normal no-underline capitalize" href="#usage">Usage</a>
+                    <a class="text-color-grey-mid font-normal no-underline capitalize" href="#accordion-usage">Accordion Usage</a>
                   </h2>
                 </div>
               </header>

@@ -2,5 +2,5 @@
 / Secondary Buttons
 /
 
-button class='btn-secondary mb-2' data-sketch-symbol=symbol data-sketch-symbol-instance=instance
+button type='button' class='btn-secondary' data-sketch-symbol=symbol data-sketch-symbol-instance=instance
   | Secondary Button
