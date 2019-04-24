@@ -34,6 +34,7 @@
   a {
     display: inline-block;
     margin-#{$text-direction-start}: 1em;
+    overflow: hidden;
   }
 
   .active {
