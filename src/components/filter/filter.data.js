@@ -2,6 +2,7 @@ export default [
   {
     name: 'Programs',
     slug: 'programs',
+    active: true,
     checkbox: false,
     toggle: true,
     filters: [

@@ -116,6 +116,15 @@
   }
 }
 
+.btn-link,
+.button-link {
+  font-size: inherit;
+  appearance: none;
+  border: none;
+  background: transparent;
+  padding: 0;
+}
+
 .btn-text,
 .button-text {
   background: none;

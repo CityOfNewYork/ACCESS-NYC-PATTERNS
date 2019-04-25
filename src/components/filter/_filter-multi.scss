@@ -45,14 +45,17 @@
 }
 
 .c-filter-multi__item-header-toggle {
+  font-size: inherit;
   padding: .5 * $spacing-base;
+  border: none;
+  cursor: pointer;
 
   &::after {
     width: 0;
     height: 0;
     @include triangle(.6em .4em, $color-blue, down);
     content: '';
-    display: inline-block;
+    // display: inline-block;
     float: $text-direction-end;
   }
 

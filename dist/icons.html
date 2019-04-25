@@ -40,7 +40,7 @@
   <body class="bg-color-white" onload="load()" style="visibility: hidden;">
     <a class="sr-only" href="#main-content">Skip to main content</a>
     <div class="min-h-screen">
-      <header class="px-2">
+      <header class="color-light-background px-2">
         <div class="border-b border-color-grey-light">
           <div class="flex items-center justify-between p-2 screen-tablet:py-4 screen-tablet:px-2">
             <div>
@@ -61,14 +61,14 @@
               <nav class="text-font-size-small">
                 <a class="rounded-lg text-color-blue-dark border-2 no-underline px-1 ml-2 hidden screen-tablet:inline-block" href="https://github.com/CityOfNewYork/access-nyc-patterns/tree/v0.5.0">0.5.0</a>
                 <a aria-hidden="true" class="ml-1 screen-tablet:ml-2 screen-tablet:hidden" href="https://github.com/CityOfNewYork/access-nyc-patterns/tree/v0.5.0">0.5.0</a>
-                <button aria-controls="main-menu" class="btn-small btn-text text-color-blue underline ml-1 screen-tablet:ml-2" data-js="toggle">Menu</button>
+                <button aria-controls="main-menu" aria-expanded="false" class="btn-link ml-1 screen-tablet:ml-2" data-js="toggle" id="main-menu-control">Menu</button>
               </nav>
             </div>
           </div>
         </div>
       </header>
-      <aside aria-hidden="true" class="text-font-size-small bg-color-blue-light hidden hidden:overflow animated" id="main-menu" style="position:relative;top:-1px">
-        <div class="page-wrapper py-4">
+      <aside aria-hidden="true" aria-labelledby="main-menu-control" class="color-mid-background text-font-size-small hidden hidden:overflowFadeInUp animated relative" id="main-menu" role="region" style="top: -1px">
+        <div class="page-wrapper py-4 animated">
           <div class="screen-tablet:flex">
             <nav class="screen-tablet:flex-1 mb-1 px-2">
               <a class="type-h3 text-font-size-small mb-1 block screen-tablet:border-b screen-tablet:pb-2 screen-tablet:mb-1 border-color-white p-1" href="index">Home</a>
@@ -135,11 +135,11 @@
             </nav>
           </div>
           <div class="text-center">
-            <button aria-controls="main-menu" class="btn-small btn-text text-color-blue underline" data-js="toggle">Close Menu</button>
+            <button aria-controls="main-menu" aria-expanded="false" class="btn-link" data-js="toggle">Close Menu</button>
           </div>
         </div>
       </aside>
-      <main class="pt-4" id="main-content">
+      <main class="color-light-background pt-4" id="main-content">
         <article class="pt-4">
           <header class="page-wrapper px-2 screen-desktop:px-0 layout--home-body">
             <div class="my-0 w-full">
@@ -151,17 +151,15 @@
               <header class="layout--home-body">
                 <div class="my-0 px-2 pt-1 pb-4 border-b border-color-grey-light">
                   <h2 class="m-0">
-                    <a class="text-color-grey-mid font-normal no-underline capitalize" href="program-category-icons">Program Category Icons</a>
+                    <a class="text-color-grey-mid font-normal no-underline capitalize" href="#program-category-icons">Program Category Icons</a>
                   </h2>
                   <div class="pt-2">
-                    <p class="text-font-size-small m-0">Source:
-                      <a href="https://github.com/CityOfNewYork/access-nyc-patterns/tree/v0.5.0/src/elements/icons"><code>src/elements/icons/icons-program-category</code></a>
-                    </p>
+                    <p class="text-font-size-small m-0">Source: <code><a href="https://github.com/CityOfNewYork/access-nyc-patterns/tree/v0.5.0/src/elements/icons">src/elements/icons/icons-program-category</a></code></p>
                   </div>
                 </div>
               </header>
               <div class="layout--home-body">
-                <div class="my-0 pt-4 px-2 text-font-size-small"><p>These icons are specific to certain types of programs that can be found on ACCESS NYC.</p></div>
+                <div class="my-0 pt-4 px-2 text-font-size-small table-align-start"><p>These icons are specific to certain types of programs that can be found on ACCESS NYC.</p></div>
               </div>
               <div class="layout--gutter screen-tablet:layout--gutter justify-between pt-4">
                 <div class="layout--gutter screen-mobile:layout--two-columns-gutter screen-tablet:layout--three-columns-gutter">
@@ -317,17 +315,15 @@
               <header class="layout--home-body">
                 <div class="my-0 px-2 pt-1 pb-4 border-b border-color-grey-light">
                   <h2 class="m-0">
-                    <a class="text-color-grey-mid font-normal no-underline capitalize" href="program-card-icons">Program Card Icons</a>
+                    <a class="text-color-grey-mid font-normal no-underline capitalize" href="#program-card-icons">Program Card Icons</a>
                   </h2>
                   <div class="pt-2">
-                    <p class="text-font-size-small m-0">Source:
-                      <a href="https://github.com/CityOfNewYork/access-nyc-patterns/tree/v0.5.0/src/elements/icons"><code>src/elements/icons/icons-program-card</code></a>
-                    </p>
+                    <p class="text-font-size-small m-0">Source: <code><a href="https://github.com/CityOfNewYork/access-nyc-patterns/tree/v0.5.0/src/elements/icons">src/elements/icons/icons-program-card</a></code></p>
                   </div>
                 </div>
               </header>
               <div class="layout--home-body">
-                <div class="my-0 pt-4 px-2 text-font-size-small"></div>
+                <div class="my-0 pt-4 px-2 text-font-size-small table-align-start"></div>
               </div>
               <div class="layout--gutter screen-tablet:layout--gutter justify-between pt-4">
                 <div class="layout--gutter screen-mobile:layout--two-columns-gutter screen-tablet:layout--three-columns-gutter">
@@ -497,17 +493,15 @@
               <header class="layout--home-body">
                 <div class="my-0 px-2 pt-1 pb-4 border-b border-color-grey-light">
                   <h2 class="m-0">
-                    <a class="text-color-grey-mid font-normal no-underline capitalize" href="checklist-category-icons">Checklist Category Icons</a>
+                    <a class="text-color-grey-mid font-normal no-underline capitalize" href="#checklist-category-icons">Checklist Category Icons</a>
                   </h2>
                   <div class="pt-2">
-                    <p class="text-font-size-small m-0">Source:
-                      <a href="https://github.com/CityOfNewYork/access-nyc-patterns/tree/v0.5.0/src/elements/icons"><code>src/elements/icons/icons-checklist</code></a>
-                    </p>
+                    <p class="text-font-size-small m-0">Source: <code><a href="https://github.com/CityOfNewYork/access-nyc-patterns/tree/v0.5.0/src/elements/icons">src/elements/icons/icons-checklist</a></code></p>
                   </div>
                 </div>
               </header>
               <div class="layout--home-body">
-                <div class="my-0 pt-4 px-2 text-font-size-small"><p>These icons are specific to certain kinds of documents needed for applying to specific programs. If there is no icon associated with the requirement, it defaults to displaying a checkmark. These icons can only be implemented using the &quot;Background
+                <div class="my-0 pt-4 px-2 text-font-size-small table-align-start"><p>These icons are specific to certain kinds of documents needed for applying to specific programs. If there is no icon associated with the requirement, it defaults to displaying a checkmark. These icons can only be implemented using the &quot;Background
   Image&quot; method described below.</p></div>
               </div>
               <div class="layout--gutter screen-tablet:layout--gutter justify-between pt-4">
@@ -600,17 +594,15 @@
               <header class="layout--home-body">
                 <div class="my-0 px-2 pt-1 pb-4 border-b border-color-grey-light">
                   <h2 class="m-0">
-                    <a class="text-color-grey-mid font-normal no-underline capitalize" href="logos">Logos</a>
+                    <a class="text-color-grey-mid font-normal no-underline capitalize" href="#logos">Logos</a>
                   </h2>
                   <div class="pt-2">
-                    <p class="text-font-size-small m-0">Source:
-                      <a href="https://github.com/CityOfNewYork/access-nyc-patterns/tree/v0.5.0/src/elements/icons"><code>src/elements/icons/icons-logo</code></a>
-                    </p>
+                    <p class="text-font-size-small m-0">Source: <code><a href="https://github.com/CityOfNewYork/access-nyc-patterns/tree/v0.5.0/src/elements/icons">src/elements/icons/icons-logo</a></code></p>
                   </div>
                 </div>
               </header>
               <div class="layout--home-body">
-                <div class="my-0 pt-4 px-2 text-font-size-small"></div>
+                <div class="my-0 pt-4 px-2 text-font-size-small table-align-start"></div>
               </div>
               <div class="layout--gutter screen-tablet:layout--gutter justify-between pt-4">
                 <div class="layout--gutter screen-mobile:layout--two-columns-gutter screen-tablet:layout--three-columns-gutter">
@@ -676,17 +668,15 @@
               <header class="layout--home-body">
                 <div class="my-0 px-2 pt-1 pb-4 border-b border-color-grey-light">
                   <h2 class="m-0">
-                    <a class="text-color-grey-mid font-normal no-underline capitalize" href="ui-icons">UI Icons</a>
+                    <a class="text-color-grey-mid font-normal no-underline capitalize" href="#ui-icons">UI Icons</a>
                   </h2>
                   <div class="pt-2">
-                    <p class="text-font-size-small m-0">Source:
-                      <a href="https://github.com/CityOfNewYork/access-nyc-patterns/tree/v0.5.0/src/elements/icons"><code>src/elements/icons/icons</code></a>
-                    </p>
+                    <p class="text-font-size-small m-0">Source: <code><a href="https://github.com/CityOfNewYork/access-nyc-patterns/tree/v0.5.0/src/elements/icons">src/elements/icons/icons</a></code></p>
                   </div>
                 </div>
               </header>
               <div class="layout--home-body">
-                <div class="my-0 pt-4 px-2 text-font-size-small"></div>
+                <div class="my-0 pt-4 px-2 text-font-size-small table-align-start"></div>
               </div>
               <div class="layout--gutter screen-tablet:layout--gutter justify-between pt-4">
                 <div class="layout--gutter screen-mobile:layout--two-columns-gutter screen-tablet:layout--three-columns-gutter">
@@ -960,17 +950,15 @@
               <header class="layout--home-body">
                 <div class="my-0 px-2 pt-1 pb-4 border-b border-color-grey-light">
                   <h2 class="m-0">
-                    <a class="text-color-grey-mid font-normal no-underline capitalize" href="other-icons">Other Icons</a>
+                    <a class="text-color-grey-mid font-normal no-underline capitalize" href="#other-icons">Other Icons</a>
                   </h2>
                   <div class="pt-2">
-                    <p class="text-font-size-small m-0">Source:
-                      <a href="https://github.com/CityOfNewYork/access-nyc-patterns/tree/v0.5.0/src/elements/icons"><code>src/elements/icons/icons</code></a>
-                    </p>
+                    <p class="text-font-size-small m-0">Source: <code><a href="https://github.com/CityOfNewYork/access-nyc-patterns/tree/v0.5.0/src/elements/icons">src/elements/icons/icons</a></code></p>
                   </div>
                 </div>
               </header>
               <div class="layout--home-body">
-                <div class="my-0 pt-4 px-2 text-font-size-small"></div>
+                <div class="my-0 pt-4 px-2 text-font-size-small table-align-start"></div>
               </div>
               <div class="layout--gutter screen-tablet:layout--gutter justify-between pt-4">
                 <div class="layout--gutter screen-mobile:layout--two-columns-gutter screen-tablet:layout--three-columns-gutter">
@@ -1171,7 +1159,7 @@
                 </div>
               </header>
               <div class="layout--home-body">
-                <div class="my-0 pt-4 px-2 text-font-size-small"></div>
+                <div class="my-0 pt-4 px-2 text-font-size-small table-align-start"></div>
               </div>
             </div>
           </section>
@@ -1180,17 +1168,15 @@
               <header class="layout--home-body">
                 <div class="my-0 px-2 pt-1 pb-4 border-b border-color-grey-light">
                   <h2 class="m-0">
-                    <a class="text-color-grey-mid font-normal no-underline capitalize" href="subway-icons">Subway Icons</a>
+                    <a class="text-color-grey-mid font-normal no-underline capitalize" href="#subway-icons">Subway Icons</a>
                   </h2>
                   <div class="pt-2">
-                    <p class="text-font-size-small m-0">Source:
-                      <a href="https://github.com/CityOfNewYork/access-nyc-patterns/tree/v0.5.0/src/elements/icons"><code>src/elements/icons/icons-subway</code></a>
-                    </p>
+                    <p class="text-font-size-small m-0">Source: <code><a href="https://github.com/CityOfNewYork/access-nyc-patterns/tree/v0.5.0/src/elements/icons">src/elements/icons/icons-subway</a></code></p>
                   </div>
                 </div>
               </header>
               <div class="layout--home-body">
-                <div class="my-0 pt-4 px-2 text-font-size-small"><p>The Subway icon set is a group of CSS only icons. The color of the icon is set with the background color utility <code>bg-</code> with a name that follows the
+                <div class="my-0 pt-4 px-2 text-font-size-small table-align-start"><p>The Subway icon set is a group of CSS only icons. The color of the icon is set with the background color utility <code>bg-</code> with a name that follows the
   <a href="https://en.wikipedia.org/wiki/New_York_City_Subway#Nomenclature">primary trunk line nomenclature</a>, ex: <code>bg-&lt;trunk&gt;</code>.</p>
 
 <pre><code>&lt;span class=&quot;icon-subway bg-lexington-avenue&quot;&gt;6&lt;/span&gt;</code></pre>

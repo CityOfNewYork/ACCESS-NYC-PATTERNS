@@ -62,8 +62,8 @@ class main {
    * An API for the Toggling Method
    * @return {object} instance of toggling method
    */
-  toggle() {
-    return new Toggle();
+  toggle(settings = false) {
+    return (settings) ? new Toggle(settings) : new Toggle();
   }
 
   /**
@@ -117,18 +117,18 @@ class main {
       }, {
         termsFilter: Object.assign({}, FilterData[0]),
         termsFilterMulti: FilterData,
-        STRINGS: {
+        strings: {
             'ALL': 'All',
             'EXPAND_CATEGORY': 'Expand Category',
             'COLLAPSE_CATEGORY': 'Collapse Category',
-            'TOGGLE_ALL': 'oh no'
+            'TOGGLE_ALL': 'Toggle All'
           }
       }, {
         fetch: function(params) {
           // eslint-disable-next-line no-console
           console.dir({
             'component': component,
-            'method': 'click',
+            'method': 'fetch',
             'params': params
           });
         },

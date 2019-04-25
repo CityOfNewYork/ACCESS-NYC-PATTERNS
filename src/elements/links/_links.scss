@@ -10,20 +10,20 @@
 @import 'bourbon/app/assets/stylesheets/addons/triangle';
 
 // Declarations
-a, .btn-link {
-  color: map-get(map-get($variables, 'colors'), 'color-blue');
+a, .btn-link, .button-link {
+  // color: map-get(map-get($variables, 'colors'), 'color-blue');
   text-decoration: underline;
   transition: color .2s ease-in;
 
-  &:visited {
-    color: map-get(map-get($variables, 'colors'), 'color-purple');
-  }
+  // &:visited {
+  //   color: map-get(map-get($variables, 'colors'), 'color-purple');
+  // }
 
-  &:hover,
-  &:active,
-  &:focus {
-    color: map-get(map-get($variables, 'colors'), 'color-blue-dark');
-  }
+  // &:hover,
+  // &:active,
+  // &:focus {
+  //   color: map-get(map-get($variables, 'colors'), 'color-blue-dark');
+  // }
 }
 
 .link-more {
@@ -46,19 +46,19 @@ a, .btn-link {
 
 .links-invert a,
 .links-invert .btn-link {
-  color: map-get(map-get($variables, 'colors'), 'color-white');
+  // color: map-get(map-get($variables, 'colors'), 'color-white');
   text-decoration: underline;
   transition: color .2s ease-in;
 
-  &:visited {
-    color: map-get(map-get($variables, 'colors'), 'color-blue-light');
-  }
+  // &:visited {
+  //   color: map-get(map-get($variables, 'colors'), 'color-blue-light');
+  // }
 
-  &:hover,
-  &:active,
-  &:focus {
-    color: map-get(map-get($variables, 'colors'), 'color-blue-bright');
-  }
+  // &:hover,
+  // &:active,
+  // &:focus {
+  //   color: map-get(map-get($variables, 'colors'), 'color-blue-bright');
+  // }
 
 }
 

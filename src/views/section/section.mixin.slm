@@ -12,7 +12,7 @@
           - if (this.title)
             - srcPadding = 'pt-2'
             h2 class='m-0'
-              a href=id class='text-color-grey-mid font-normal no-underline capitalize'
+              a href='#${id}' class='text-color-grey-mid font-normal no-underline capitalize'
                 = this.title;
 
           div class=srcPadding
@@ -22,8 +22,8 @@
 
             p class='text-font-size-small m-0'
               = 'Source: ';
-              a href='${link_source}/tree/v${this.vars.version}/src/${source}'
-                code
+              code
+                a href='${link_source}/tree/v${this.vars.version}/src/${source}'
                   = 'src/' + this.path
 
       - if (this.specs != 'false')

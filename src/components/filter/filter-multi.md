@@ -1,1 +1,1 @@
-The Multi Filter Component allows for multiple selections and nested filter categories. There are alternate patterns for toggling all checkboxes within a group which includes a checkbox on the parent menu toggle or a nested short link within the menu accordian.
+The Multi Filter Component allows for multiple selections and nested filter categories. There are alternate patterns for toggling all checkboxes within a group which include a checkbox on the parent menu toggle or a nested short link within the menu accordian.

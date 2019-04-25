@@ -1,35 +1,68 @@
 #### Attributes
 
+Attributes such as `aria-controls`, `aria-expanded`, and `type` will help assistive technologies understand the relationship between the toggle element and the toggle target. These three attributes should be considered the bare minimum but they may be interchanged with others based on the use case. Below is an explanation of other possible attributes that can be used with the toggle utility. *Static* attributes will not change. *Dynamic* attributes will change when the toggle event is fired.
+
 **Toggling Element Attributes**
 
-* `aria-controls` *static* (required) ID of the target element. Used by the toggle to select the target element.
-* `aria-expanded` *dynamic* (recommended) Announces that target content is "expanded" or "collapsed" when the toggling element is clicked.
-* `type` *static* (recommended) Setting a `<button>` element type to "button" will distinguish it from other button types, such as "submit" and "reset," but only within `<form>` elements. By default, a `<button>` is the type "submit" within a form.
-* `aria-pressed` *dynamic* (optional) Announces that the toggling element is toggled. Not recommended for use with `aria-expanded`.
-* `role` *static* (optional) If the toggling element is not a `<button>` type, but looks and behaves like a button (see documentation for the [Button Element](/buttons)), then setting the `role` attribute to "button" is recommended. See [MDN documentation for the "button" role](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Roles/button_role) for more information.
+Attribute       | State     | Importance    | Description
+----------------|-----------|---------------|-
+`aria-controls` | *static*  | required      | ID of the target element. Used by the toggle to select the target element.
+`aria-expanded` | *dynamic* | recommended   | Boolean that announces that target content is "expanded" or "collapsed" when the toggling element is clicked.
+`type`          | *static*  | recommended   | Setting a `<button>` element type to "button" will distinguish it from other button types, such as "submit" and "reset," but only within `<form>` elements. By default, a `<button>` is the type "submit" within a form.
+`aria-pressed`  | *dynamic* | optional      | Boolean that announces that the toggling element is toggled. Not recommended for use with `aria-expanded`.
+`role`          | *static*  | optional      | If the toggling element is not a `<button>` element, but looks and behaves like a button (see documentation for the [Button Element](/buttons)), then setting the `role` attribute to "button" is recommended. See [MDN documentation for the "button" role](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Roles/button_role) for more information
 
 **Target Element Attributes**
 
-* `aria-hidden` *dynamic* (recommended) Hides the content of the target element when "collapsed."
-* `role` *static* (optional) Setting the target element's `role` to "region" identifies the target as a significant area. See [MDN documentation for the "region" role](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Roles/Region_role) for more information.
-* `aria-labelledby` *static* (optional) This is used along with the `role` attribute to label the content of a "region." This can be set to the toggling elements `id` but can also be set to a different elements `id`.
+Attribute         | State     | Importance    | Description
+------------------|-----------|---------------|-
+`aria-hidden`     | *dynamic* | recommended   | Boolean that hides the content of the target element when "collapsed."
+`role`            | *static*  | optional      | Setting the target element's `role` to "region" identifies the target as a significant area. See [MDN documentation for the "region" role](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Roles/Region_role) for more information.
+`aria-labelledby` | *static*  | optional      | This is used along with the `role` attribute to label the content of a "region." This can be set to the toggling elements `id` but can also be set to a different elements `id`.
 
 #### Global Script
 
 To use the Toggle Utility in the global ACCESS NYC Patterns script use the following code:
 
-    var access = new AccessNyc();
-    var newsletter = access.newsletter();
+    <!-- Global Script -->
+    <script src="dist/scripts/AccessNyc.js"></script>
 
-This function will attach the Newsletter submission event and borough data processing to the body of the document.
+    <script>
+      var access = new AccessNyc();
+      var toggle = access.toggle();
+    </script>
 
-#### Global Script
+This function will instantiate the Toggle Utility (with provided options) and attach the event listener to the body of the document. The event will listen for clicks on elements with the matching selector `[data-js='toggle']` (see markup details in the examples above). Below is an advanced configuration that passes a custom selector to the instantiated method (see the next section for all of the configuration options):
 
-The ES6 and CommonJS modules require importing and object instantiation in your main script. The methods and configurations described above will work with the dedicated module.
+    var toggle = access.toggle({
+      selector: '#my-selector'
+    });
 
-    import Toggle from '../utilities/toggle/Toggle';
+#### Configuration
+
+The Toggle Utility accepts an object `{}` with the following properties:
+
+Option          | Type             | Importance | Description
+----------------|------------------|------------|-
+`selector`      | *string*         | optional   | Full selector string of the toggle element (this is passed to the `.matches()` method).
+`inactiveClass` | *string/boolean* | optional   | Single class name that will be toggled on the toggle and target element when the element is inactive or "collapsed." Pass "false" to skip toggling an inactive class (there is no inactive class for the toggle element).
+`activeClass`   | *string/boolean* | optional   | Single class name that will be toggled on the target element when the element is active or "expanded." Pass "false" to skip toggling an active class.
+
+#### Cherry-picked Module Import
+
+The ES6, CommonJS, and IFFE modules all require importing and object instantiation in your main script. The methods and configurations described above will work with the dedicated module.
+
+    // ES6
+    import InputAutocomplete from 'src/utilities/toggle/toggle';
+
+    // CommonJS
+    import InputAutocomplete from 'dist/utilities/toggle/toggle.common';
+
+    <!-- IFFE -->
+    <script src="dist/utilities/toggle/toggle.iffe.js"></script>
+
     new Toggle();
 
 #### Polyfills
 
-This uses the `.matches()` method which will require a polyfill for IE11 (and other older browser) support. The utility does not ship with a polyfill by default. See [Element Prototype Matches on MDN](https://polyfill.io/v2/docs/features/#Element_prototype_matches) for a suitable polyfill.
+This uses the `.matches()` method which will require a polyfill for IE11 support. The utility does not ship with a polyfill by default. See [Element Prototype Matches on MDN](https://polyfill.io/v2/docs/features/#Element_prototype_matches) for a suitable polyfill.

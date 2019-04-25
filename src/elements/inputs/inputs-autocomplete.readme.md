@@ -55,7 +55,7 @@ The list of strings below are used for screenreader accessiblity by default. The
 
 #### Configuration
 
-The InputAutocomplete class accepts an object `{}` with two properties; "selector" and "options."
+The InputAutocomplete class accepts an object `{}` with the following properties:
 
 * `options` (`Array` required) The suggested terms to be displayed in the dropdown. Each item is an array with the first item being the visible value. The following values within each array are treated as synonyms that score the priority of term higher if the user types it.
 * `selected` (`Function` optional) A callback method that will be executed when a user has selected an option.

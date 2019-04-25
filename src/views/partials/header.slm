@@ -1,4 +1,4 @@
-header class='px-2'
+header class='color-light-background px-2'
   div class='border-b border-color-grey-light'
     div class='flex items-center justify-between p-2 screen-tablet:py-4 screen-tablet:px-2'
       div
@@ -21,4 +21,4 @@ header class='px-2'
             = this.vars.version;
           a href='${link_source}/tree/v${this.vars.version}' class='ml-1 screen-tablet:ml-2 screen-tablet:hidden' aria-hidden='true'
             = this.vars.version;
-          button class='btn-small btn-text text-color-blue underline ml-1 screen-tablet:ml-2' aria-controls='main-menu' data-js='toggle' Menu
+          button#main-menu-control class='btn-link ml-1 screen-tablet:ml-2' aria-controls='main-menu' aria-expanded='false' data-js='toggle' Menu

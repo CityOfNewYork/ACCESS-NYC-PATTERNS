@@ -93,10 +93,19 @@ class Toggle {
     let attr = '';
     let value = '';
 
+    // Get other toggles that might control the same element
+    let others = document.querySelectorAll(
+      `[aria-controls="${el.getAttribute('aria-controls')}"]`);
+
     // Toggle classes
     if (this._settings.activeClass) {
       el.classList.toggle(this._settings.activeClass);
       target.classList.toggle(this._settings.activeClass);
+
+      // If there are other toggles that control the same element
+      if (others) others.forEach((other) => {
+        other.classList.toggle(this._settings.activeClass);
+      });
     }
 
     if (this._settings.inactiveClass) {
@@ -113,19 +122,28 @@ class Toggle {
       target.focus({preventScroll: true});
     }
 
-    // Toggle Aria Attributes
+    // Target Element Aria Attributes
     for (i = 0; i < Toggle.targetAriaRoles.length; i++) {
-      attr = Toggle.targetAriaRoles[i]
+      attr = Toggle.targetAriaRoles[i];
       value = target.getAttribute(attr);
+
       if (value != '' && value)
         target.setAttribute(attr, (value === 'true') ? 'false' : 'true');
     }
 
+    // Toggle Element (including multi toggles) Aria Attributes
     for (i = 0; i < Toggle.elAriaRoles.length; i++) {
       attr = Toggle.elAriaRoles[i];
       value = el.getAttribute(attr);
+
       if (value != '' && value)
         el.setAttribute(attr, (value === 'true') ? 'false' : 'true');
+
+      // If there are other toggles that control the same element
+      if (others) others.forEach((other) => {
+        if (other.getAttribute(attr))
+          other.setAttribute(attr, (value === 'true') ? 'false' : 'true');
+      });
     }
 
     return this;

@@ -85,10 +85,18 @@
 }
 
 .c-filter__item {
+  appearance: none;
+  border: none;
+  font-size: inherit;
+  font-family: inherit;
+  text-align: $text-direction-start;
+  cursor: pointer;
+
   color: $color-white;
   @include font-smooth;
   background: $color-blue-dark;
   display: block;
+  width: 100%;
   margin: 0;
   padding: ($grid-base * 2) $spacing-base;
   text-decoration: none;
@@ -102,11 +110,13 @@
   }
 }
 
-label.c-filter__item,
-a.c-filter__item {
+.c-filter a.c-filter__item:not(.btn),
+.c-filter label.c-filter__item,
+.c-filter button.c-filter__item {
+  color: $color-white;
+  text-decoration: none;
   transition: background .2s ease-in;
 
-  &:link:not(.btn),
   &:visited {
     color: $color-white;
     text-decoration: none;
@@ -116,8 +126,8 @@ a.c-filter__item {
   &:active,
   &:focus,
   &.focused {
-    background: $color-blue;
     color: $color-white;
+    background: $color-blue;
     cursor: pointer;
   }
 

@@ -23,7 +23,7 @@
 
 = content('content');
   = mixin('content-header', title);
-  = mixin('section', 'Basic Toggle', 'utilities/toggle/toggle');
+  = mixin('section', false, 'utilities/toggle/toggle');
   = mixin('section', 'Anchor Toggle', 'utilities/toggle/toggle-anchor');
   = mixin('section', 'Toggle Fade In Up', 'utilities/toggle/toggle-fade-in-up');
   = mixin('section', 'Toggle Overflow', 'utilities/toggle/toggle-overflow');

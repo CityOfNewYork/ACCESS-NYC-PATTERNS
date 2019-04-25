@@ -5,22 +5,21 @@
         <div class="c-filter-multi__item-header">
           <label v-if="t.checkbox" class="checkbox">
             <input data-toggles="#" type="checkbox" :checked="t.checked" @change="fetch({'event': $event, 'data': {'parent': t.slug}})" />
-            <span class="checkbox__label">{{ t.name }}</span>
+            <span class="checkbox__label" :id="ariaLabel(t.slug)">{{ t.name }}</span>
           </label>
-          <label v-else>
+          <label v-else :id="ariaLabel(t.slug)">
             {{ t.name }}
           </label>
 
-          <a :class="{'active': t.active, 'inactive': !(t.active)}" class="c-filter-multi__item-header-toggle" :href="'#' + t.slug" @click="toggle($event, t)">
-            <span class="c-filter-multi__item-header-expand" v-html="STRINGS.EXPAND_CATEGORY">Expand Category</span>
-            <span class="c-filter-multi__item-header-collapse" v-html="STRINGS.COLLAPSE_CATEGORY">Collapse Category</span>
-          </a>
+          <button type="button" class="c-filter-multi__item-header-toggle" :aria-controls="'c-filter-multi-' + t.slug" :aria-expanded="ariaActive(t.active)" :class="classActive(t)" @click="toggle($event, t)">
+            <span class="sr-only" v-html="t.name">{{ t.name }}</span>
+          </button>
         </div>
 
-        <div :aria-hidden="!(t.active)" :class="{'active': t.active, 'inactive': !(t.active)}" class="c-filter-multi__item-group" :id="t.slug">
+        <div role="region" :aria-labelledby="ariaLabel(t.slug)" class="c-filter-multi__item-group" :aria-hidden="ariaActive(!t.active)" :class="classActive(t)" :id="'c-filter-multi-' + t.slug">
           <ul class="c-filter-multi__item-group-list">
             <li class='c-filter-multi__item-group-subitem' v-if="t.toggle">
-              <a @click="reset({'event': $event, 'data': {'parent': t.slug}})" v-html="STRINGS.TOGGLE_ALL">Toggle All</a>
+              <button type='button' class='btn-link' @click="reset({'event': $event, 'data': {'parent': t.slug}})" v-html="strings.TOGGLE_ALL">Toggle All</button>
             </li>
 
             <li class="c-filter-multi__item-group-subitem" v-for="f in t.filters" :key="f.slug">
@@ -45,31 +44,39 @@
     props: {
       'terms': {type: Array},
       'active': {type: Boolean},
-      'STRINGS': {
+      'strings': {
         type: Object,
         default: () => ({
-          'EXPAND_CATEGORY': 'Expand category',
-          'COLLAPSE_CATEGORY': 'Collapse category',
+          'ALL': 'All',
           'TOGGLE_ALL': 'Toggle All'
         })
       }
     },
     methods: {
+      classActive: function (term) {
+        return {
+          'active': term.active,
+          'inactive': !(term.active)
+        };
+      },
+      ariaActive: function (active) {
+        return (active) ? 'true' : 'false';
+      },
+      ariaLabel: function(slug) {
+        return 'c-filter-multi__aria-label--' + slug;
+      },
       fetch: function(event) {
         this.$set(event.data, 'checked', !event.data.checked);
         this.$emit('fetch', event);
-
         return this;
       },
       reset: function(event) {
-        this.$emit('reset', {event: event, data: this});
-
+        this.$emit('reset', event);
         return this;
       },
       toggle: function(event, terms) {
         event.preventDefault();
         this.$set(terms, 'active', !terms.active);
-
         return this;
       }
     }

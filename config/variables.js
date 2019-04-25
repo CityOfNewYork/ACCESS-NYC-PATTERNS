@@ -146,6 +146,7 @@ const variables = {
       'headings': 'color-blue-dark',
       'color-alt': 'color-grey-mid',
       'hyperlinks': 'color-blue',
+      'hyperlinks-underline': 'color-blue',
       'visited': 'color-purple',
       'hover': 'color-blue-dark',
       'background-color': 'color-white'
@@ -155,6 +156,7 @@ const variables = {
       'headings': 'color-blue-dark',
       'color-alt': 'color-grey-mid',
       'hyperlinks': 'color-blue',
+      'hyperlinks-underline': 'color-blue',
       'visited': 'color-purple',
       'hover': 'color-blue-dark',
       'background-color': 'color-grey-lightest'
@@ -165,6 +167,7 @@ const variables = {
       'headings': 'color-white',
       'color-alt': 'color-white',
       'hyperlinks': 'color-white',
+      'hyperlinks-underline': 'color-blue-bright',
       'visited': 'color-white',
       'hover': 'color-white',
       'background-color': 'color-blue-dark'

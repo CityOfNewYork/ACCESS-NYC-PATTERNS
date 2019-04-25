@@ -1,9 +1,9 @@
 The base button class, `.btn`, is extended with either `.btn-primary` or `.btn-secondary`. Any button type class can be added by the the primary or secondary class (see examples below).
 
-There are 2 conventions for Button Elements:
+There are two types for Button Elements:
 
-* Buttons associated with functionality (Primary, Blue)
-* Buttons that navigate users through a set of pages, such as through the program pages (Secondary, Green)
+* Buttons associated with functionality (Primary, Blue).
+* Buttons that navigate users through a set of pages, such as through the program pages (Secondary, Green).
 
 ### Markup
 

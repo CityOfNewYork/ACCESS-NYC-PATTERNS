@@ -40,7 +40,7 @@
   <body class="bg-color-white" onload="load()" style="visibility: hidden;">
     <a class="sr-only" href="#main-content">Skip to main content</a>
     <div class="min-h-screen">
-      <header class="px-2">
+      <header class="color-light-background px-2">
         <div class="border-b border-color-grey-light">
           <div class="flex items-center justify-between p-2 screen-tablet:py-4 screen-tablet:px-2">
             <div>
@@ -61,14 +61,14 @@
               <nav class="text-font-size-small">
                 <a class="rounded-lg text-color-blue-dark border-2 no-underline px-1 ml-2 hidden screen-tablet:inline-block" href="https://github.com/CityOfNewYork/access-nyc-patterns/tree/v0.5.0">0.5.0</a>
                 <a aria-hidden="true" class="ml-1 screen-tablet:ml-2 screen-tablet:hidden" href="https://github.com/CityOfNewYork/access-nyc-patterns/tree/v0.5.0">0.5.0</a>
-                <button aria-controls="main-menu" class="btn-small btn-text text-color-blue underline ml-1 screen-tablet:ml-2" data-js="toggle">Menu</button>
+                <button aria-controls="main-menu" aria-expanded="false" class="btn-link ml-1 screen-tablet:ml-2" data-js="toggle" id="main-menu-control">Menu</button>
               </nav>
             </div>
           </div>
         </div>
       </header>
-      <aside aria-hidden="true" class="text-font-size-small bg-color-blue-light hidden hidden:overflow animated" id="main-menu" style="position:relative;top:-1px">
-        <div class="page-wrapper py-4">
+      <aside aria-hidden="true" aria-labelledby="main-menu-control" class="color-mid-background text-font-size-small hidden hidden:overflowFadeInUp animated relative" id="main-menu" role="region" style="top: -1px">
+        <div class="page-wrapper py-4 animated">
           <div class="screen-tablet:flex">
             <nav class="screen-tablet:flex-1 mb-1 px-2">
               <a class="type-h3 text-font-size-small mb-1 block screen-tablet:border-b screen-tablet:pb-2 screen-tablet:mb-1 border-color-white p-1" href="index">Home</a>
@@ -135,11 +135,11 @@
             </nav>
           </div>
           <div class="text-center">
-            <button aria-controls="main-menu" class="btn-small btn-text text-color-blue underline" data-js="toggle">Close Menu</button>
+            <button aria-controls="main-menu" aria-expanded="false" class="btn-link" data-js="toggle">Close Menu</button>
           </div>
         </div>
       </aside>
-      <main class="pt-4" id="main-content">
+      <main class="color-light-background pt-4" id="main-content">
         <article class="pt-4">
           <header class="page-wrapper px-2 screen-desktop:px-0 layout--home-body">
             <div class="my-0 w-full">
@@ -151,96 +151,50 @@
               <header class="layout--home-body">
                 <div class="my-0 px-2 pt-1 pb-4 border-b border-color-grey-light">
                   <div>
-                    <p class="text-font-size-small m-0">Source:
-                      <a href="https://github.com/CityOfNewYork/access-nyc-patterns/tree/v0.5.0/src/components/filter"><code>src/components/filter/filter</code></a>
-                    </p>
+                    <p class="text-font-size-small m-0">Source: <code><a href="https://github.com/CityOfNewYork/access-nyc-patterns/tree/v0.5.0/src/components/filter">src/components/filter/filter</a></code></p>
                   </div>
                 </div>
               </header>
               <div class="layout--home-body">
-                <div class="my-0 pt-4 px-2 text-font-size-small"><p>The Filter Component is a list of categories used to get more granular results in a search. With JavaScript enabled, the Filter Component will toggle open or closed.</p></div>
+                <div class="my-0 pt-4 px-2 text-font-size-small table-align-start"><p>The Filter Component is a list of categories used to get more granular results in a search. With JavaScript enabled, the Filter Component will toggle open or closed. The markup for the list can be a navigation <code>&lt;nav&gt;</code> element with hyperlinks
+  or standard unordered list <code>&lt;ul&gt;</code> element with hyperlinks <code>&lt;a&gt;</code> or buttons <code>&lt;buttons&gt;</code> as the filtering element. Hyperlinks would be used for filters that navigate to different pages and buttons would
+  trigger in-page functionality. Below is an example of a filter using a navigation element with hyperlinks.</p></div>
               </div>
               <div class="layout--gutter screen-tablet:layout--columns justify-between pt-4">
                 <div class="screen-tablet:pr-2">
                   <div class="c-filter">
-                    <button aria-controls="filter__list" aria-expanded="true" class="c-filter__header active" data-js="filter" id="filter__header" type="button">All Programs</button>
-                    <ul aria-hidden="false" aria-labelledby="filter__header" class="c-filter__list active" id="filter__list" role="region">
-                      <li><span class="c-filter__item">All Programs</span></li>
-                      <li>
-                        <a class="c-filter__item" href="#">Cash &amp; Expenses</a>
-                      </li>
-                      <li>
-                        <a class="c-filter__item" href="#">Child Care</a>
-                      </li>
-                      <li>
-                        <a class="c-filter__item" href="#">City ID Card</a>
-                      </li>
-                      <li>
-                        <a class="c-filter__item" href="#">Education</a>
-                      </li>
-                      <li>
-                        <a class="c-filter__item" href="#">Enrichment</a>
-                      </li>
-                      <li>
-                        <a class="c-filter__item" href="#">Family Services</a>
-                      </li>
-                      <li>
-                        <a class="c-filter__item" href="#">Food</a>
-                      </li>
-                      <li>
-                        <a class="c-filter__item" href="#">Health</a>
-                      </li>
-                      <li>
-                        <a class="c-filter__item" href="#">Housing</a>
-                      </li>
-                      <li>
-                        <a class="c-filter__item" href="#">Special Needs</a>
-                      </li>
-                      <li>
-                        <a class="c-filter__item" href="#">Work</a>
-                      </li>
-                    </ul>
+                    <button aria-controls="c-filter__list" aria-expanded="true" class="c-filter__header active" data-js="filter" id="c-filter__header" type="button">All Programs</button>
+                    <nav aria-hidden="false" aria-labelledby="c-filter__header" class="c-filter__list active" id="c-filter__list" role="region"><span class="c-filter__item">All Programs</span>
+                      <a class="c-filter__item" href="#">Cash &amp; Expenses</a>
+                      <a class="c-filter__item" href="#">Child Care</a>
+                      <a class="c-filter__item" href="#">City ID Card</a>
+                      <a class="c-filter__item" href="#">Education</a>
+                      <a class="c-filter__item" href="#">Enrichment</a>
+                      <a class="c-filter__item" href="#">Family Services</a>
+                      <a class="c-filter__item" href="#">Food</a>
+                      <a class="c-filter__item" href="#">Health</a>
+                      <a class="c-filter__item" href="#">Housing</a>
+                      <a class="c-filter__item" href="#">Special Needs</a>
+                      <a class="c-filter__item" href="#">Work</a>
+                    </nav>
                   </div>
                 </div>
                 <div>
                   <div class="code-block mb-1"><pre>&lt;div class=&quot;c-filter&quot;&gt;
-  &lt;button aria-controls=&quot;filter__list&quot; aria-expanded=&quot;true&quot; class=&quot;c-filter__header active&quot; data-js=&quot;filter&quot; id=&quot;filter__header&quot; type=&quot;button&quot;&gt;All Programs&lt;/button&gt;
-  &lt;ul aria-hidden=&quot;false&quot; aria-labelledby=&quot;filter__header&quot; class=&quot;c-filter__list active&quot; id=&quot;filter__list&quot; role=&quot;region&quot;&gt;
-    &lt;li&gt;&lt;span class=&quot;c-filter__item&quot;&gt;All Programs&lt;/span&gt;&lt;/li&gt;
-    &lt;li&gt;
-      &lt;a class=&quot;c-filter__item&quot; href=&quot;#&quot;&gt;Cash &amp;amp; Expenses&lt;/a&gt;
-    &lt;/li&gt;
-    &lt;li&gt;
-      &lt;a class=&quot;c-filter__item&quot; href=&quot;#&quot;&gt;Child Care&lt;/a&gt;
-    &lt;/li&gt;
-    &lt;li&gt;
-      &lt;a class=&quot;c-filter__item&quot; href=&quot;#&quot;&gt;City ID Card&lt;/a&gt;
-    &lt;/li&gt;
-    &lt;li&gt;
-      &lt;a class=&quot;c-filter__item&quot; href=&quot;#&quot;&gt;Education&lt;/a&gt;
-    &lt;/li&gt;
-    &lt;li&gt;
-      &lt;a class=&quot;c-filter__item&quot; href=&quot;#&quot;&gt;Enrichment&lt;/a&gt;
-    &lt;/li&gt;
-    &lt;li&gt;
-      &lt;a class=&quot;c-filter__item&quot; href=&quot;#&quot;&gt;Family Services&lt;/a&gt;
-    &lt;/li&gt;
-    &lt;li&gt;
-      &lt;a class=&quot;c-filter__item&quot; href=&quot;#&quot;&gt;Food&lt;/a&gt;
-    &lt;/li&gt;
-    &lt;li&gt;
-      &lt;a class=&quot;c-filter__item&quot; href=&quot;#&quot;&gt;Health&lt;/a&gt;
-    &lt;/li&gt;
-    &lt;li&gt;
-      &lt;a class=&quot;c-filter__item&quot; href=&quot;#&quot;&gt;Housing&lt;/a&gt;
-    &lt;/li&gt;
-    &lt;li&gt;
-      &lt;a class=&quot;c-filter__item&quot; href=&quot;#&quot;&gt;Special Needs&lt;/a&gt;
-    &lt;/li&gt;
-    &lt;li&gt;
-      &lt;a class=&quot;c-filter__item&quot; href=&quot;#&quot;&gt;Work&lt;/a&gt;
-    &lt;/li&gt;
-  &lt;/ul&gt;
+  &lt;button aria-controls=&quot;c-filter__list&quot; aria-expanded=&quot;true&quot; class=&quot;c-filter__header active&quot; data-js=&quot;filter&quot; id=&quot;c-filter__header&quot; type=&quot;button&quot;&gt;All Programs&lt;/button&gt;
+  &lt;nav aria-hidden=&quot;false&quot; aria-labelledby=&quot;c-filter__header&quot; class=&quot;c-filter__list active&quot; id=&quot;c-filter__list&quot; role=&quot;region&quot;&gt;&lt;span class=&quot;c-filter__item&quot;&gt;All Programs&lt;/span&gt;
+    &lt;a class=&quot;c-filter__item&quot; href=&quot;#&quot;&gt;Cash &amp;amp; Expenses&lt;/a&gt;
+    &lt;a class=&quot;c-filter__item&quot; href=&quot;#&quot;&gt;Child Care&lt;/a&gt;
+    &lt;a class=&quot;c-filter__item&quot; href=&quot;#&quot;&gt;City ID Card&lt;/a&gt;
+    &lt;a class=&quot;c-filter__item&quot; href=&quot;#&quot;&gt;Education&lt;/a&gt;
+    &lt;a class=&quot;c-filter__item&quot; href=&quot;#&quot;&gt;Enrichment&lt;/a&gt;
+    &lt;a class=&quot;c-filter__item&quot; href=&quot;#&quot;&gt;Family Services&lt;/a&gt;
+    &lt;a class=&quot;c-filter__item&quot; href=&quot;#&quot;&gt;Food&lt;/a&gt;
+    &lt;a class=&quot;c-filter__item&quot; href=&quot;#&quot;&gt;Health&lt;/a&gt;
+    &lt;a class=&quot;c-filter__item&quot; href=&quot;#&quot;&gt;Housing&lt;/a&gt;
+    &lt;a class=&quot;c-filter__item&quot; href=&quot;#&quot;&gt;Special Needs&lt;/a&gt;
+    &lt;a class=&quot;c-filter__item&quot; href=&quot;#&quot;&gt;Work&lt;/a&gt;
+  &lt;/nav&gt;
 &lt;/div&gt;</pre></div>
                 </div>
               </div>
@@ -251,18 +205,15 @@
               <header class="layout--home-body">
                 <div class="my-0 px-2 pt-1 pb-4 border-b border-color-grey-light">
                   <h2 class="m-0">
-                    <a class="text-color-grey-mid font-normal no-underline capitalize" href="multi-filter">Multi Filter</a>
+                    <a class="text-color-grey-mid font-normal no-underline capitalize" href="#multi-filter">Multi Filter</a>
                   </h2>
                   <div class="pt-2">
-                    <p class="text-font-size-small m-0">Source:
-                      <a href="https://github.com/CityOfNewYork/access-nyc-patterns/tree/v0.5.0/src/components/filter"><code>src/components/filter/filter-multi</code></a>
-                    </p>
+                    <p class="text-font-size-small m-0">Source: <code><a href="https://github.com/CityOfNewYork/access-nyc-patterns/tree/v0.5.0/src/components/filter">src/components/filter/filter-multi</a></code></p>
                   </div>
                 </div>
               </header>
               <div class="layout--home-body">
-                <div class="my-0 pt-4 px-2 text-font-size-small"><p>The Multi Filter Component allows for multiple selections and nested filter categories. There are alternate patterns for toggling all checkboxes within a group which includes a checkbox on the parent menu toggle or a nested short link within the menu
-  accordian.</p></div>
+                <div class="my-0 pt-4 px-2 text-font-size-small table-align-start"><p>The Multi Filter Component allows for multiple selections and nested filter categories. There are alternate patterns for toggling all checkboxes within a group which include a checkbox on the parent menu toggle or a nested short link within the menu accordian.</p></div>
               </div>
               <div class="layout--gutter screen-tablet:layout--columns justify-between pt-4">
                 <div class="screen-tablet:pr-2">
@@ -271,12 +222,12 @@
                       <li class="c-filter-multi__item">
                         <div class="c-filter-multi__item-header">
                           <label>Cash &amp; Expenses</label>
-                          <a class="c-filter-multi__item-header-toggle active" data-js="filter" href="#cash-and-expenses"><span class="c-filter-multi__item-header-expand">Expand category</span><span class="c-filter-multi__item-header-collapse">Collapse category</span></a>
+                          <button aria-controls="cash-and-expenses" class="c-filter-multi__item-header-toggle active" data-js="filter" type="button"><span class="c-filter-multi__item-header-expand">Expand category</span><span class="c-filter-multi__item-header-collapse">Collapse category</span></button>
                         </div>
                         <div aria-hidden="false" class="c-filter-multi__item-group active" id="cash-and-expenses">
                           <ul class="c-filter-multi__item-group-list">
                             <li class="c-filter-multi__item-group-subitem">
-                              <a>Toggle All</a>
+                              <button class="btn-link" type="button">Toggle All</button>
                             </li>
                             <li class="c-filter-multi__item-group-subitem">
                               <label class="checkbox">
@@ -293,7 +244,7 @@
                         <div class="c-filter-multi__item-header">
                           <label class="checkbox">
                             <input data-toggles="#program-child-care" type="checkbox" /><span class="checkbox__label">Child Care</span></label>
-                          <a class="c-filter-multi__item-header-toggle active" data-js="filter" href="#child-care"><span class="c-filter-multi__item-header-expand">Expand category</span><span class="c-filter-multi__item-header-collapse">Collapse category</span></a>
+                          <button aria-controls="child-care" class="c-filter-multi__item-header-toggle active" data-js="filter" type="button"><span class="c-filter-multi__item-header-expand">Expand category</span><span class="c-filter-multi__item-header-collapse">Collapse category</span></button>
                         </div>
                         <div aria-hidden="false" class="c-filter-multi__item-group active" id="child-care">
                           <ul class="c-filter-multi__item-group-list">
@@ -312,7 +263,7 @@
                           <div class="c-filter-multi__item-header">
                             <label class="checkbox">
                               <input data-toggles="#program-child-care" type="checkbox" /><span class="checkbox__label">City ID Card</span></label>
-                            <a class="c-filter-multi__item-header-toggle" data-js="filter" href="#city-id-card"><span class="c-filter-multi__item-header-expand">Expand category</span><span class="c-filter-multi__item-header-collapse">Collapse category</span></a>
+                            <button aria-controls="city-id-card" class="c-filter-multi__item-header-toggle" data-js="filter" type="button"><span class="c-filter-multi__item-header-expand">Expand category</span><span class="c-filter-multi__item-header-collapse">Collapse category</span></button>
                           </div>
                           <div aria-hidden="true" class="c-filter-multi__item-group" id="city-id-card">
                             <ul class="c-filter-multi__item-group-list">
@@ -333,12 +284,12 @@
     &lt;li class=&quot;c-filter-multi__item&quot;&gt;
       &lt;div class=&quot;c-filter-multi__item-header&quot;&gt;
         &lt;label&gt;Cash &amp;amp; Expenses&lt;/label&gt;
-        &lt;a class=&quot;c-filter-multi__item-header-toggle active&quot; data-js=&quot;filter&quot; href=&quot;#cash-and-expenses&quot;&gt;&lt;span class=&quot;c-filter-multi__item-header-expand&quot;&gt;Expand category&lt;/span&gt;&lt;span class=&quot;c-filter-multi__item-header-collapse&quot;&gt;Collapse category&lt;/span&gt;&lt;/a&gt;
+        &lt;button aria-controls=&quot;cash-and-expenses&quot; class=&quot;c-filter-multi__item-header-toggle active&quot; data-js=&quot;filter&quot; type=&quot;button&quot;&gt;&lt;span class=&quot;c-filter-multi__item-header-expand&quot;&gt;Expand category&lt;/span&gt;&lt;span class=&quot;c-filter-multi__item-header-collapse&quot;&gt;Collapse category&lt;/span&gt;&lt;/button&gt;
       &lt;/div&gt;
       &lt;div aria-hidden=&quot;false&quot; class=&quot;c-filter-multi__item-group active&quot; id=&quot;cash-and-expenses&quot;&gt;
         &lt;ul class=&quot;c-filter-multi__item-group-list&quot;&gt;
           &lt;li class=&quot;c-filter-multi__item-group-subitem&quot;&gt;
-            &lt;a&gt;Toggle All&lt;/a&gt;
+            &lt;button class=&quot;btn-link&quot; type=&quot;button&quot;&gt;Toggle All&lt;/button&gt;
           &lt;/li&gt;
           &lt;li class=&quot;c-filter-multi__item-group-subitem&quot;&gt;
             &lt;label class=&quot;checkbox&quot;&gt;
@@ -355,7 +306,7 @@
       &lt;div class=&quot;c-filter-multi__item-header&quot;&gt;
         &lt;label class=&quot;checkbox&quot;&gt;
           &lt;input data-toggles=&quot;#program-child-care&quot; type=&quot;checkbox&quot; /&gt;&lt;span class=&quot;checkbox__label&quot;&gt;Child Care&lt;/span&gt;&lt;/label&gt;
-        &lt;a class=&quot;c-filter-multi__item-header-toggle active&quot; data-js=&quot;filter&quot; href=&quot;#child-care&quot;&gt;&lt;span class=&quot;c-filter-multi__item-header-expand&quot;&gt;Expand category&lt;/span&gt;&lt;span class=&quot;c-filter-multi__item-header-collapse&quot;&gt;Collapse category&lt;/span&gt;&lt;/a&gt;
+        &lt;button aria-controls=&quot;child-care&quot; class=&quot;c-filter-multi__item-header-toggle active&quot; data-js=&quot;filter&quot; type=&quot;button&quot;&gt;&lt;span class=&quot;c-filter-multi__item-header-expand&quot;&gt;Expand category&lt;/span&gt;&lt;span class=&quot;c-filter-multi__item-header-collapse&quot;&gt;Collapse category&lt;/span&gt;&lt;/button&gt;
       &lt;/div&gt;
       &lt;div aria-hidden=&quot;false&quot; class=&quot;c-filter-multi__item-group active&quot; id=&quot;child-care&quot;&gt;
         &lt;ul class=&quot;c-filter-multi__item-group-list&quot;&gt;
@@ -374,7 +325,7 @@
         &lt;div class=&quot;c-filter-multi__item-header&quot;&gt;
           &lt;label class=&quot;checkbox&quot;&gt;
             &lt;input data-toggles=&quot;#program-child-care&quot; type=&quot;checkbox&quot; /&gt;&lt;span class=&quot;checkbox__label&quot;&gt;City ID Card&lt;/span&gt;&lt;/label&gt;
-          &lt;a class=&quot;c-filter-multi__item-header-toggle&quot; data-js=&quot;filter&quot; href=&quot;#city-id-card&quot;&gt;&lt;span class=&quot;c-filter-multi__item-header-expand&quot;&gt;Expand category&lt;/span&gt;&lt;span class=&quot;c-filter-multi__item-header-collapse&quot;&gt;Collapse category&lt;/span&gt;&lt;/a&gt;
+          &lt;button aria-controls=&quot;city-id-card&quot; class=&quot;c-filter-multi__item-header-toggle&quot; data-js=&quot;filter&quot; type=&quot;button&quot;&gt;&lt;span class=&quot;c-filter-multi__item-header-expand&quot;&gt;Expand category&lt;/span&gt;&lt;span class=&quot;c-filter-multi__item-header-collapse&quot;&gt;Collapse category&lt;/span&gt;&lt;/button&gt;
         &lt;/div&gt;
         &lt;div aria-hidden=&quot;true&quot; class=&quot;c-filter-multi__item-group&quot; id=&quot;city-id-card&quot;&gt;
           &lt;ul class=&quot;c-filter-multi__item-group-list&quot;&gt;
@@ -402,7 +353,7 @@
                 </div>
               </header>
               <div class="layout--home-body">
-                <div class="my-0 pt-4 px-2 text-font-size-small"><h4>Global Script</h4>
+                <div class="my-0 pt-4 px-2 text-font-size-small table-align-start"><h4>Global Script</h4>
 
 <p>The Filter and Filter Multi Components require the Filter JavaScript for toggling functionality and screen reader accessibility. It will work for both the Filter and Filter Multi Components. To use the Filter in the global ACCESS NYC Patterns script use
   the following code:</p>
@@ -439,27 +390,27 @@ new Filter();</code></pre></div>
               <header class="layout--home-body">
                 <div class="my-0 px-2 pt-1 pb-4 border-b border-color-grey-light">
                   <h2 class="m-0">
-                    <a class="text-color-grey-mid font-normal no-underline capitalize" href="vue-filter">Vue Filter</a>
+                    <a class="text-color-grey-mid font-normal no-underline capitalize" href="#vue-filter">Vue Filter</a>
                   </h2>
                   <div class="pt-2">
-                    <p class="text-font-size-small m-0">Source:
-                      <a href="https://github.com/CityOfNewYork/access-nyc-patterns/tree/v0.5.0/src/components/filter"><code>src/components/filter/filter.vue</code></a>
-                    </p>
+                    <p class="text-font-size-small m-0">Source: <code><a href="https://github.com/CityOfNewYork/access-nyc-patterns/tree/v0.5.0/src/components/filter">src/components/filter/filter.vue</a></code></p>
                   </div>
                 </div>
               </header>
               <div class="layout--home-body">
-                <div class="my-0 pt-4 px-2 text-font-size-small"></div>
+                <div class="my-0 pt-4 px-2 text-font-size-small table-align-start"><p>The Vue Filter is a packaged Filter Component for
+  <a href="https://vuejs.org/">Vue.js</a> applications. It encapselates markup, accessibility, data-binding, and event emitting for a fully functional component. See
+  <a href="#vue-component-usage">Vue Component Usage</a> below for details on data and events that can be passed as properties to the component.</p></div>
               </div>
               <div class="layout--gutter screen-tablet:layout--columns justify-between pt-4">
                 <div class="screen-tablet:pr-2">
                   <div id="app-c-filter">
-                    <c-filter :STRINGS="STRINGS" :terms="termsFilter" @fetch="fetch" @reset="reset"></c-filter>
+                    <c-filter :nav="true" :strings="strings" :terms="termsFilter" @fetch="fetch" @reset="reset"></c-filter>
                   </div>
                 </div>
                 <div>
                   <div class="code-block mb-1"><pre>&lt;div id=&quot;app-c-filter&quot;&gt;
-  &lt;c-filter :STRINGS=&quot;STRINGS&quot; :terms=&quot;termsFilter&quot; @fetch=&quot;fetch&quot; @reset=&quot;reset&quot;&gt;&lt;/c-filter&gt;
+  &lt;c-filter :nav=&quot;true&quot; :strings=&quot;strings&quot; :terms=&quot;termsFilter&quot; @fetch=&quot;fetch&quot; @reset=&quot;reset&quot;&gt;&lt;/c-filter&gt;
 &lt;/div&gt;</pre></div>
                 </div>
               </div>
@@ -470,27 +421,25 @@ new Filter();</code></pre></div>
               <header class="layout--home-body">
                 <div class="my-0 px-2 pt-1 pb-4 border-b border-color-grey-light">
                   <h2 class="m-0">
-                    <a class="text-color-grey-mid font-normal no-underline capitalize" href="vue-multi-filter">Vue Multi Filter</a>
+                    <a class="text-color-grey-mid font-normal no-underline capitalize" href="#vue-multi-filter">Vue Multi Filter</a>
                   </h2>
                   <div class="pt-2">
-                    <p class="text-font-size-small m-0">Source:
-                      <a href="https://github.com/CityOfNewYork/access-nyc-patterns/tree/v0.5.0/src/components/filter"><code>src/components/filter/filter-multi.vue</code></a>
-                    </p>
+                    <p class="text-font-size-small m-0">Source: <code><a href="https://github.com/CityOfNewYork/access-nyc-patterns/tree/v0.5.0/src/components/filter">src/components/filter/filter-multi.vue</a></code></p>
                   </div>
                 </div>
               </header>
               <div class="layout--home-body">
-                <div class="my-0 pt-4 px-2 text-font-size-small"></div>
+                <div class="my-0 pt-4 px-2 text-font-size-small table-align-start"></div>
               </div>
               <div class="layout--gutter screen-tablet:layout--columns justify-between pt-4">
                 <div class="screen-tablet:pr-2">
                   <div id="app-c-filter-multi">
-                    <c-filter-multi :STRINGS="STRINGS" :terms="termsFilterMulti" @fetch="fetch" @reset="reset"></c-filter-multi>
+                    <c-filter-multi :strings="strings" :terms="termsFilterMulti" @fetch="fetch" @reset="reset"></c-filter-multi>
                   </div>
                 </div>
                 <div>
                   <div class="code-block mb-1"><pre>&lt;div id=&quot;app-c-filter-multi&quot;&gt;
-  &lt;c-filter-multi :STRINGS=&quot;STRINGS&quot; :terms=&quot;termsFilterMulti&quot; @fetch=&quot;fetch&quot; @reset=&quot;reset&quot;&gt;&lt;/c-filter-multi&gt;
+  &lt;c-filter-multi :strings=&quot;strings&quot; :terms=&quot;termsFilterMulti&quot; @fetch=&quot;fetch&quot; @reset=&quot;reset&quot;&gt;&lt;/c-filter-multi&gt;
 &lt;/div&gt;</pre></div>
                 </div>
               </div>
@@ -506,9 +455,7 @@ new Filter();</code></pre></div>
                 </div>
               </header>
               <div class="layout--home-body">
-                <div class="my-0 pt-4 px-2 text-font-size-small"><p>The Vue Component implementation provides data binding and reactivity. The reactivity is based on events emitted on the individual filters on click. Open the console to see logged events.</p>
-
-<p>The
+                <div class="my-0 pt-4 px-2 text-font-size-small table-align-start"><p>The Vue Component implementation provides data binding and reactivity. The reactivity is based on events emitted on the individual filters on click. The
   <a href="#vue-filter">Vue Filter</a> and
   <a href="#vue-filter-multi">Vue Filter Multi</a> can be imported from this path in your main script and added to the Vue instance before your application declaration:</p>
 
@@ -520,20 +467,93 @@ Vue.component(&#39;c-filter-multi&#39;, FilterMultiVue);
 
 new Vue();</code></pre>
 
+<p>Below is a guide for using these particular components. For basic details of using Vue Components within a Vue application,
+  <a href="https://vuejs.org/v2/guide/components.html">refer to the Vue.js documentation</a>.</p>
+
 <h3>Props</h3>
 
-<h4>Data</h4>
+<p>Below is a description of accepted properties and their values.</p>
 
-<p>Data for the filter list can be passed by setting the <code>:terms</code> prop on the component tag. For example, on
-  <a href="#vue-filter-multi">Vue Filter Multi</a> the &quot;termsFilterMulti&quot; is an collection of filters bound to <code>terms</code>. A
-  <a href="https://github.com/CityOfNewYork/ACCESS-NYC-PATTERNS/blob/master/src/components/filter/filter.data.js">sample set of data can be seen here</a>.</p>
+<table>
+  <thead>
+    <tr>
+      <th>Prop</th>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code>:terms</code></td>
+      <td><em>object/array</em></td>
+      <td>Data for the filter list. A
+        <a href="https://github.com/CityOfNewYork/ACCESS-NYC-PATTERNS/blob/master/src/components/filter/filter.data.js">sample set of data can be seen here</a>. The Vue Filter will only accept one terms object from the sample array. The Vue Multi Filter will accept an array of term objects.</td>
+    </tr>
+    <tr>
+      <td><code>:nav</code></td>
+      <td><em>boolean</em></td>
+      <td>This determines wether the list is rendered as a navigation <code>&lt;nav&gt;</code> element with hyperlinks or as an unordered list <code>&lt;ul&gt;</code> with button <code>&lt;button&gt;</code> elements (default).</td>
+    </tr>
+    <tr>
+      <td><code>:strings</code></td>
+      <td><em>object</em></td>
+      <td>A dictionary containing static strings used in the component. Below is a table containing the available strings.</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><strong>Strings</strong></p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Key</th>
+      <th>Default</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code>ALL</code></td>
+      <td><em>All</em></td>
+      <td>The prefix before the term name, ex; &quot;All Programs&quot;</td>
+    </tr>
+    <tr>
+      <td><code>TOGGLE_ALL</code></td>
+      <td><em>Toggle All</em></td>
+      <td>Text for the button that toggles all filters within a term group.</td>
+    </tr>
+  </tbody>
+</table>
 
 <h4>Events</h4>
 
 <p>The
   <a href="#vue-filter">Vue Filter</a> and
-  <a href="#vue-filter-multi">Vue Filter Multi</a> accept the <code>@fetch</code> event which will emit when each filter is clicked (or checked). Pass a method to this prop to provide functionality.
-  <a href="#vue-filter">Vue Filter</a> will accept an additional <code>@reset</code> event which will emit an event when the &quot;All {{ filter }}&quot; item is clicked.</p></div>
+  <a href="#vue-filter-multi">Vue Filter Multi</a> accepts two event properties that are emitted on click. Passing methods to these props provides hooks for the parent application. You can open the console log of this page to see demonstration logs for each event.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Key</th>
+      <th>Params</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code>@fetch</code></td>
+      <td><em>event, data</em></td>
+      <td>Internally this event will set the state of the currently selected filter in a group. The emitter can be used to &quot;fetch&quot; data when the term is clicked. <em>Event</em> is the original click event. <em>Data</em> contains the data bound to
+        the clicked filter.</td>
+    </tr>
+    <tr>
+      <td><code>@reset</code></td>
+      <td><em>event, data</em></td>
+      <td>The emitter can be used to reset the filters data. <em>Event</em> is the original click event. <em>Data</em> contains the data bound to the clicked filter.</td>
+    </tr>
+  </tbody>
+</table></div>
               </div>
             </div>
           </section>
