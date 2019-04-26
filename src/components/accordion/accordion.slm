@@ -2,16 +2,16 @@
 / Accordion
 /
 
-article id='what-you-need-to-include' class='c-accordion m-0' data-sketch-symbol=symbol data-sketch-symbol-instance=instance
-  header class='c-accordion__header'
-    p
-      | Free tax prep for New Yorkers
+article class='c-accordion m-0' data-sketch-symbol=symbol data-sketch-symbol-instance=instance
+  header class='c-accordion__header color-dark-background'
+    p#aria-lb-what-you-need-to-include
+      span Free tax prep for New Yorkers
       em class='block font-normal' NYC Free Tax Prep
-    button data-js='accordion' aria-controls='what-you-need-to-include__body' class="c-accordion__toggle print:hidden active"
+    button data-js='accordion' aria-controls='aria-c-what-you-need-to-include' aria-expanded='true' class="c-accordion__toggle print:hidden active"
       span class='c-accordion__toggle-active' hide this list
       span class='c-accordion__toggle-inactive' show this list
 
-  div id='what-you-need-to-include__body' class='c-accordion__body print:active hidden:overflow animated active'
+  div#aria-c-what-you-need-to-include role='region' class='c-accordion__body color-mid-background print:active hidden:overflow animated active' aria-labelledby='aria-lb-what-you-need-to-include' aria-hidden='false'
     div class='c-accordion__padding'
       p class='text-color-blue' NYC Department of Consumer Affairs
       p If you earned $64,000 or less last tax year, the City can help you file your taxes for free. You can file online or, if you make under $54,000, you can file in person.

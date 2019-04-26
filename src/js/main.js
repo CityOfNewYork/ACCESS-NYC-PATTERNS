@@ -19,7 +19,6 @@ import FilterMultiVue from '../components/filter/filter-multi.vue';
 import FilterData from '../components/filter/filter.data';
 import NearbyStops from '../components/nearby-stops/nearby-stops';
 
-
 // Objects
 import Newsletter from '../objects/newsletter/newsletter';
 /** import components here as they are written. */
@@ -96,7 +95,7 @@ class main {
       'name': component,
       'module': modules[component]
     }, {
-      card: CardData,
+      card: CardData
     });
   }
 

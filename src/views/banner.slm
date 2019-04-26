@@ -20,4 +20,4 @@
 
 = content('content');
   = mixin('content-header', title);
-  = mixin('section', '', 'objects/banner/banner', 'gutter');
+  = mixin('section', false, 'objects/banner/banner', 'gutter');

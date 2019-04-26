@@ -28,9 +28,6 @@ var Filter = (function () {
       activeClass: s.activeClass ? s.activeClass : Toggle.activeClass
     };
 
-    // document.querySelectorAll(this._settings.selector)
-    // .forEach(el => el.addEventListener('click', (e) => {this._toggle(e)}));
-
     body.addEventListener('click', function (event) {
       if (!event.target.matches(this$1._settings.selector)) {
         return;
@@ -105,7 +102,9 @@ var Filter = (function () {
       // If there are other toggles that control the same element
       if (others) {
         others.forEach(function (other) {
-          other.classList.toggle(this$1._settings.activeClass);
+          if (other !== el) {
+            other.classList.toggle(this$1._settings.activeClass);
+          }
         });
       }
     }
@@ -143,7 +142,7 @@ var Filter = (function () {
       // If there are other toggles that control the same element
       if (others) {
         others.forEach(function (other) {
-          if (other.getAttribute(attr)) {
+          if (other !== el && other.getAttribute(attr)) {
             other.setAttribute(attr, value === 'true' ? 'false' : 'true');
           }
         });

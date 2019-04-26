@@ -21,7 +21,7 @@
 
 = content('content');
   = mixin('content-header', title);
-  = mixin('section', 'Default Styling', 'elements/inputs/inputs');
+  = mixin('section', false, 'elements/inputs/inputs');
   = mixin('section', 'Input Error', 'elements/inputs/inputs-error');
   = mixin('section', 'Min-width 400px', 'elements/inputs/inputs-mw-400px');
   = mixin('section', 'Number', 'elements/inputs/inputs-number');

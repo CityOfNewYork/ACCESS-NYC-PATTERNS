@@ -1,19 +1,19 @@
 <template>
   <div class='c-filter'>
-    <button type="button" class="c-filter__header" :id="ariaLabel" :aria-expanded="ariaActive(this.terms.active)" :aria-controls="ariaControls" :class="classActive" @click="toggle" v-html="this.terms.name">
+    <button type="button" class="c-filter__header" :id="ariaLabelledBy" :aria-expanded="ariaActive(this.terms.active)" :aria-controls="ariaControls" :class="classActive" @click="toggle" v-html="this.terms.name">
       {{ this.terms.name }}
     </button>
 
-    <nav v-if="nav" role="region" class="c-filter__list" :aria-labelledby="ariaLabel" :class="classActive" :id="ariaControls" :aria-hidden="ariaActive(!this.terms.active)">
+    <nav v-if="nav" role="region" class="c-filter__list" :aria-labelledby="ariaLabelledBy" :class="classActive" :id="ariaControls" :aria-hidden="ariaActive(!this.terms.active)">
       <a class="c-filter__item" @click="reset" v-html="[strings.ALL, terms.name].join(' ')">
         {{ [strings.ALL, terms.name].join(' ') }}
       </a>
 
-      <a v-for="t in terms.filters" :key="t.id" class="c-filter__item" :href="'#' + t.slug" @click="fetch({'event': $event, 'data': t})" v-html="t.name">
+      <a v-for="t in terms.filters" :key="t.id" class="c-filter__item" :href="t.href" @click="fetch({'event': $event, 'data': t})" v-html="t.name">
         {{ t.name }}
       </a>
     </nav>
-    <ul v-else role="region" class="c-filter__list" :aria-labelledby="ariaLabel" :class="classActive" :id="ariaControls" :aria-hidden="ariaActive(!this.terms.active)">
+    <ul v-else role="region" class="c-filter__list" :aria-labelledby="ariaLabelledBy" :class="classActive" :id="ariaControls" :aria-hidden="ariaActive(!this.terms.active)">
       <li>
         <button type="button" class="c-filter__item" :aria-pressed="ariaPressed(terms.name)" @click="reset" v-html="[strings.ALL, terms.name].join(' ')">
           {{ [strings.ALL, terms.name].join(' ') }}
@@ -56,10 +56,10 @@
         };
       },
       ariaControls: function() {
-        return 'c-filter__aria-controls--' + this.terms.slug
+        return 'aria-c-' + this.terms.slug
       },
-      ariaLabel: function() {
-        return 'c-filter__aria-label--' + this.terms.slug;
+      ariaLabelledBy: function() {
+        return 'aria-lb-' + this.terms.slug;
       },
       current: function() {
         return (this.terms.current && this.terms.current != '')

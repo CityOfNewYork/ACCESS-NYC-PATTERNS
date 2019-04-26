@@ -429,11 +429,11 @@
                       <div class="flex flex-col justify-between hide-for-print">
                         <div class="pb-1" style="width:240px">
                           <div>
-                            <a class="btn btn-primary btn-small block">Remove Program</a>
+                            <button class="btn btn-primary btn-small block w-full" type="button">Remove Program</button>
                           </div>
                         </div>
                         <div>
-                          <a class="btn-toggle btn" href="#">Learn More</a>
+                          <button class="btn-toggle btn-small w-full text-color-blue" href="#" type="button">Learn More</button>
                         </div>
                       </div>
                     </div>
@@ -477,11 +477,11 @@
     &lt;div class=&quot;flex flex-col justify-between hide-for-print&quot;&gt;
       &lt;div class=&quot;pb-1&quot; style=&quot;width:240px&quot;&gt;
         &lt;div&gt;
-          &lt;a class=&quot;btn btn-primary btn-small block&quot;&gt;Remove Program&lt;/a&gt;
+          &lt;button class=&quot;btn btn-primary btn-small block w-full&quot; type=&quot;button&quot;&gt;Remove Program&lt;/button&gt;
         &lt;/div&gt;
       &lt;/div&gt;
       &lt;div&gt;
-        &lt;a class=&quot;btn-toggle btn&quot; href=&quot;#&quot;&gt;Learn More&lt;/a&gt;
+        &lt;button class=&quot;btn-toggle btn-small w-full text-color-blue&quot; href=&quot;#&quot; type=&quot;button&quot;&gt;Learn More&lt;/button&gt;
       &lt;/div&gt;
     &lt;/div&gt;
   &lt;/div&gt;
@@ -503,17 +503,18 @@
                 </div>
               </header>
               <div class="layout--home-body">
-                <div class="my-0 pt-4 px-2 text-font-size-small table-align-start"></div>
+                <div class="my-0 pt-4 px-2 text-font-size-small table-align-start"><p>The Vue Card is a packaged Card Component for Vue.js applications. It encapselates markup, accessibility, and data-binding for a fully functional component. See
+  <a href="#vue-component-usage">Vue Component Usage</a> below for details on content and configuration that can be passed as properties to the component.</p></div>
               </div>
               <div class="layout--gutter screen-tablet:layout--columns justify-between pt-4">
                 <div class="screen-tablet:pr-2">
                   <div id="app-c-card">
-                    <c-card taxonomy="programs" v-bind="card"></c-card>
+                    <c-card v-bind="card"></c-card>
                   </div>
                 </div>
                 <div>
                   <div class="code-block mb-1"><pre>&lt;div id=&quot;app-c-card&quot;&gt;
-  &lt;c-card taxonomy=&quot;programs&quot; v-bind=&quot;card&quot;&gt;&lt;/c-card&gt;
+  &lt;c-card v-bind=&quot;card&quot;&gt;&lt;/c-card&gt;
 &lt;/div&gt;</pre></div>
                 </div>
               </div>
@@ -530,37 +531,42 @@
               </header>
               <div class="layout--home-body">
                 <div class="my-0 pt-4 px-2 text-font-size-small table-align-start"><p>The
-  <a href="#vue-card">Vue Card</a> can be imported from this path in your main script and added to the Vue instance before your application declaration:</p>
+  <a href="#vue-card">Vue Card</a> can be imported from from the paths below in your main script and added to the Vue instance before your application declaration:</p>
 
 <pre><code>import CardVue from &#39;src/components/card/card.vue&#39;;
 Vue.component(&#39;c-card&#39;, CardVue);
 
 new Vue();</code></pre>
 
+<p>Below is a guide for using these particular component properties. For basic details of using Vue Components within a Vue application,
+  <a href="https://vuejs.org/v2/guide/components.html">refer to the Vue.js documentation</a>.</p>
+
 <h4>Props</h4>
 
-<p>The follow props are expected on the card. In order to disable certain options, just omit these props.</p>
+<p>Below is a description of accepted properties and their values.</p>
 
-<p><code>cta</code> <em>type: String</em> - Wether to display the call to action button.</p>
-
-<p><code>title</code> <em>type: String</em> - The title of the card.</p>
-
-<p><code>link</code> <em>type: String</em> - The link to the full content the card is referring to.</p>
-
-<p><code>subtitle</code> <em>type: String</em> - The text displayed beneath the title of the card.</p>
-
-<p><code>summary</code> <em>type: String</em> - A short paragraph summary of the card content.</p>
-
-<p><code>category</code> <em>type: Object</em> - The category of the content, this will hide or show the icon.</p>
-
-<p><code>blank</code> <em>type: Boolean</em> - Wether to open the card&#39;s hyperlinks in a new tab.</p>
-
-<p><code>STRINGS</code> <em>type: Object</em> - This is a list of available strings within the Compnent that can be overidden for translation. Below are the default strings:</p>
-
-<pre><code>{
-  &#39;LEARN_MORE&#39;: &#39;Learn more&#39;,
-  &#39;CTA&#39;: &#39;Apply&#39;
-}</code></pre></div>
+<table>
+  <thead>
+    <tr>
+      <th>Prop</th>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code>:card</code></td>
+      <td><em>object</em></td>
+      <td>Content and configuration for the card to render. A
+        <a href="https://github.com/CityOfNewYork/ACCESS-NYC-PATTERNS/blob/master/src/components/card/card.data.js">sample set can be seen here</a>. In order to disable certain options, just omit those props.</td>
+    </tr>
+    <tr>
+      <td><code>:strings</code></td>
+      <td><em>object</em></td>
+      <td>A dictionary containing static strings used in the component. It can be packaged with the object above.</td>
+    </tr>
+  </tbody>
+</table></div>
               </div>
             </div>
           </section>

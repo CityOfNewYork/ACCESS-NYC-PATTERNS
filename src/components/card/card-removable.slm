@@ -29,8 +29,8 @@ article class='mb-4 print:pb-4 print:border-b' data-sketch-symbol=symbol data-sk
     div class='flex flex-col justify-between hide-for-print'
       div style='width:240px' class='pb-1'
         div
-          a class='btn btn-primary btn-small block'
+          button type='button' class='btn btn-primary btn-small block w-full'
             | Remove Program
       div
-        a class='btn-toggle btn' href='#'
+        button type='button' class='btn-toggle btn-small w-full text-color-blue' href='#'
           | Learn More

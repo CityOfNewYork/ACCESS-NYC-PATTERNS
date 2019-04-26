@@ -156,19 +156,20 @@
                 </div>
               </header>
               <div class="layout--home-body">
-                <div class="my-0 pt-4 px-2 text-font-size-small table-align-start"><p>The Accordion Component is a block of content with a header. With JavaScript enabled, the Accordion Component will toggle open or closed. Without JavaScript enabled and within print views, it will remain open. The script adds the appropriate ARIA attributes
-  to the accordion content based on whether the component is visible or hidden.</p>
+                <div class="my-0 pt-4 px-2 text-font-size-small table-align-start"><p>The Accordion Component is a block of content with a header. With JavaScript enabled, the Accordion Component will toggle open or closed using the
+  <a href="/toggle">Toggle JavaScript Utility</a>. All of the same accessible attribute toggling functionality the
+  <a href="/toggle">Toggle Utility</a> provides will apply (<code>aria-controls</code>, <code>aria-expanded</code>, and <code>aria-hidden</code>). Without JavaScript enabled or within print views, it will remain open.</p>
 
-<p>When implementing a set of accordions stacked on top of each other, the first accordion should be open when the user lands on the page. Opening one accordion does not automatically close the other accordions.</p></div>
+<p>When implementing a set of accordions stacked on top of each other, the first accordion should be open when the user lands on the page. Additionally, opening one accordion does not automatically close the other accordions.</p></div>
               </div>
               <div class="layout--gutter screen-tablet:layout--columns justify-between pt-4">
                 <div class="screen-tablet:pr-2">
-                  <article class="c-accordion m-0" id="what-you-need-to-include">
-                    <header class="c-accordion__header">
-                      <p>Free tax prep for New Yorkers<em class="block font-normal">NYC Free Tax Prep</em></p>
-                      <button aria-controls="what-you-need-to-include__body" class="c-accordion__toggle print:hidden active" data-js="accordion"><span class="c-accordion__toggle-active">hide this list</span><span class="c-accordion__toggle-inactive">show this list</span></button>
+                  <article class="c-accordion m-0">
+                    <header class="c-accordion__header color-dark-background">
+                      <p id="aria-lb-what-you-need-to-include"><span>Free tax prep for New Yorkers</span><em class="block font-normal">NYC Free Tax Prep</em></p>
+                      <button aria-controls="aria-c-what-you-need-to-include" aria-expanded="true" class="c-accordion__toggle print:hidden active" data-js="accordion"><span class="c-accordion__toggle-active">hide this list</span><span class="c-accordion__toggle-inactive">show this list</span></button>
                     </header>
-                    <div class="c-accordion__body print:active hidden:overflow animated active" id="what-you-need-to-include__body">
+                    <div aria-hidden="false" aria-labelledby="aria-lb-what-you-need-to-include" class="c-accordion__body color-mid-background print:active hidden:overflow animated active" id="aria-c-what-you-need-to-include" role="region">
                       <div class="c-accordion__padding">
                         <p class="text-color-blue">NYC Department of Consumer Affairs</p>
                         <p>If you earned $64,000 or less last tax year, the City can help you file your taxes for free. You can file online or, if you make under $54,000, you can file in person.</p>
@@ -182,12 +183,12 @@
                   </article>
                 </div>
                 <div>
-                  <div class="code-block mb-1"><pre>&lt;article class=&quot;c-accordion m-0&quot; id=&quot;what-you-need-to-include&quot;&gt;
-  &lt;header class=&quot;c-accordion__header&quot;&gt;
-    &lt;p&gt;Free tax prep for New Yorkers&lt;em class=&quot;block font-normal&quot;&gt;NYC Free Tax Prep&lt;/em&gt;&lt;/p&gt;
-    &lt;button aria-controls=&quot;what-you-need-to-include__body&quot; class=&quot;c-accordion__toggle print:hidden active&quot; data-js=&quot;accordion&quot;&gt;&lt;span class=&quot;c-accordion__toggle-active&quot;&gt;hide this list&lt;/span&gt;&lt;span class=&quot;c-accordion__toggle-inactive&quot;&gt;show this list&lt;/span&gt;&lt;/button&gt;
+                  <div class="code-block mb-1"><pre>&lt;article class=&quot;c-accordion m-0&quot;&gt;
+  &lt;header class=&quot;c-accordion__header color-dark-background&quot;&gt;
+    &lt;p id=&quot;aria-lb-what-you-need-to-include&quot;&gt;&lt;span&gt;Free tax prep for New Yorkers&lt;/span&gt;&lt;em class=&quot;block font-normal&quot;&gt;NYC Free Tax Prep&lt;/em&gt;&lt;/p&gt;
+    &lt;button aria-controls=&quot;aria-c-what-you-need-to-include&quot; aria-expanded=&quot;true&quot; class=&quot;c-accordion__toggle print:hidden active&quot; data-js=&quot;accordion&quot;&gt;&lt;span class=&quot;c-accordion__toggle-active&quot;&gt;hide this list&lt;/span&gt;&lt;span class=&quot;c-accordion__toggle-inactive&quot;&gt;show this list&lt;/span&gt;&lt;/button&gt;
   &lt;/header&gt;
-  &lt;div class=&quot;c-accordion__body print:active hidden:overflow animated active&quot; id=&quot;what-you-need-to-include__body&quot;&gt;
+  &lt;div aria-hidden=&quot;false&quot; aria-labelledby=&quot;aria-lb-what-you-need-to-include&quot; class=&quot;c-accordion__body color-mid-background print:active hidden:overflow animated active&quot; id=&quot;aria-c-what-you-need-to-include&quot; role=&quot;region&quot;&gt;
     &lt;div class=&quot;c-accordion__padding&quot;&gt;
       &lt;p class=&quot;text-color-blue&quot;&gt;NYC Department of Consumer Affairs&lt;/p&gt;
       &lt;p&gt;If you earned $64,000 or less last tax year, the City can help you file your taxes for free. You can file online or, if you make under $54,000, you can file in person.&lt;/p&gt;

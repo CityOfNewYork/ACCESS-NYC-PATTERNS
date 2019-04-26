@@ -39,9 +39,42 @@
   }
 }
 
+@mixin c-filter-multi__item-header-toggle {
+  @include triangle(.6em .4em, $color-blue, up);
+  border-top: 0
+}
+
 .c-filter-multi__item-header {
+  &[type='button'] {
+    appearance: none;
+    background: transparent;
+    color: inherit;
+    font-size: inherit;
+    font-family: inherit;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+
+    .c-filter-multi__item-header-toggle {
+      pointer-events: none;
+    }
+  }
+
+  font-weight: bold;
   display: flex;
+  width: 100%;
   justify-content: space-between;
+  align-items: center;
+
+  .c-filter-multi__item-header-collapse {
+    display: none
+  }
+
+  &.active {
+    .c-filter-multi__item-header-toggle::after {
+      @include c-filter-multi__item-header-toggle
+    }
+  }
 }
 
 .c-filter-multi__item-header-toggle {
@@ -53,29 +86,13 @@
   &::after {
     width: 0;
     height: 0;
-    @include triangle(.6em .4em, $color-blue, down);
     content: '';
-    // display: inline-block;
     float: $text-direction-end;
+    @include triangle(.6em .4em, $color-blue, down);
   }
 
-  &.active {
-    &::after {
-      @include triangle(.6em .4em, $color-blue, up);
-      border-top: 0
-    }
-
-    .c-filter-multi__item-header-collapse {
-      display: inline
-    }
-
-    .c-filter-multi__item-header-expand {
-      display: none
-    }
-  }
-
-  .c-filter-multi__item-header-collapse {
-    display: none
+  &.active::after {
+    @include c-filter-multi__item-header-toggle
   }
 }
 

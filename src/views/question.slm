@@ -21,7 +21,7 @@
 
 = content('content');
   = mixin('content-header', title);
-  = mixin('section-text', '', 'components/question/question');
+  = mixin('section-text', false, 'components/question/question');
   = mixin('section', 'Number Question', 'components/question/question-number');
   = mixin('section', 'Number Question Errors', 'components/question/question-number-error');
   = mixin('section', 'Text Question', 'components/question/question-text');

@@ -157,18 +157,18 @@
               </header>
               <div class="layout--home-body">
                 <div class="my-0 pt-4 px-2 text-font-size-small table-align-start"><p>The Text Controller Component contains two elements: a language menu and a text sizer. When JavaScript is enabled, it has two primary states: expanded language options and collapsed language options. All language options are visible at page landing, but
-  for all page visits afterwords, it collapses and gives the option of expanding to show the language options menu again.</p>
-
-<p>Note that the language the site is currently in (in the case below, English) is not displayed. If the site is switched to a different language, that language is removed from the list and the alternative languages are listed.</p></div>
+  for all page visits afterwords, it collapses and gives the option of expanding to show the language options menu again. The current language switcher on
+  <a href="https://access.nyc.gov">ACCESS NYC</a> is displayed through the
+  <a href="https://wpml.org/">WordPress Multilingual Plugin (WPML)</a>.</p></div>
               </div>
               <div class="layout--gutter screen-tablet:layout--gutter justify-between pt-4">
                 <div>
                   <div class="c-text-controller">
-                    <a class="c-text-controller__toggle mb-1" href="#text-controls">
+                    <button aria-controls="aria-c-text-controller__options" aria-expanded="false" class="c-text-controller__toggle mb-1 btn-link" data-js="toggle" type="button">
                       <svg class="icon icon-ui-settings">
                         <use xlink:href="#icon-ui-settings"></use>
-                      </svg><span class="c-text-controller__title-full">Translate &amp; Adjust Text</span><span class="c-text-controller__title-short">Translate Text</span></a>
-                    <div class="c-text-controller__options" id="text-controls">
+                      </svg><span class="c-text-controller__title-full">Translate &amp; Adjust Text</span><span class="c-text-controller__title-short">Translate Text</span></button>
+                    <div aria-hidden="true" class="c-text-controller__options hidden" id="aria-c-text-controller__options">
                       <div class="c-text-controller__languages">
                         <div class="wpml-ls-statics-shortcode_actions wpml-ls wpml-ls-legacy-list-horizontal">
                           <ul>
@@ -227,11 +227,11 @@
                 </div>
                 <div>
                   <div class="code-block mb-1"><pre>&lt;div class=&quot;c-text-controller&quot;&gt;
-  &lt;a class=&quot;c-text-controller__toggle mb-1&quot; href=&quot;#text-controls&quot;&gt;
+  &lt;button aria-controls=&quot;aria-c-text-controller__options&quot; aria-expanded=&quot;false&quot; class=&quot;c-text-controller__toggle mb-1 btn-link&quot; data-js=&quot;toggle&quot; type=&quot;button&quot;&gt;
     &lt;svg class=&quot;icon icon-ui-settings&quot;&gt;
       &lt;use xlink:href=&quot;#icon-ui-settings&quot;&gt;&lt;/use&gt;
-    &lt;/svg&gt;&lt;span class=&quot;c-text-controller__title-full&quot;&gt;Translate &amp;amp; Adjust Text&lt;/span&gt;&lt;span class=&quot;c-text-controller__title-short&quot;&gt;Translate Text&lt;/span&gt;&lt;/a&gt;
-  &lt;div class=&quot;c-text-controller__options&quot; id=&quot;text-controls&quot;&gt;
+    &lt;/svg&gt;&lt;span class=&quot;c-text-controller__title-full&quot;&gt;Translate &amp;amp; Adjust Text&lt;/span&gt;&lt;span class=&quot;c-text-controller__title-short&quot;&gt;Translate Text&lt;/span&gt;&lt;/button&gt;
+  &lt;div aria-hidden=&quot;true&quot; class=&quot;c-text-controller__options hidden&quot; id=&quot;aria-c-text-controller__options&quot;&gt;
     &lt;div class=&quot;c-text-controller__languages&quot;&gt;
       &lt;div class=&quot;wpml-ls-statics-shortcode_actions wpml-ls wpml-ls-legacy-list-horizontal&quot;&gt;
         &lt;ul&gt;
@@ -288,21 +288,6 @@
   &lt;/div&gt;
 &lt;/div&gt;</pre></div>
                 </div>
-              </div>
-            </div>
-          </section>
-          <section class="pb-4 mb-4" id="text-controller-usage">
-            <div class="page-wrapper px-2 screen-desktop:px-0">
-              <header class="layout--home-body">
-                <div class="my-0 px-2 border-b border-color-grey-light screen-tablet:flex screen-tablet:justify-between">
-                  <h2 class="m-0 pt-1 pb-4">
-                    <a class="text-color-grey-mid font-normal no-underline capitalize" href="#text-controller-usage">Text Controller Usage</a>
-                  </h2>
-                </div>
-              </header>
-              <div class="layout--home-body">
-                <div class="my-0 pt-4 px-2 text-font-size-small table-align-start"><p>The JavaScript dependencies for this component exist on ACCESS NYC and have not been integrated into the Patterns yet. The current language switcher is displayed through the
-  <a href="https://wpml.org/">WordPress Multilingual Plugin (WPML)</a>.</p></div>
               </div>
             </div>
           </section>

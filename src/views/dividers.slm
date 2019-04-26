@@ -22,5 +22,5 @@
 
 = content('content');
   = mixin('content-header', title);
-  = mixin('section', 'Default Styling', 'elements/divider/divider');
+  = mixin('section', false, 'elements/divider/divider');
   = mixin('section', 'Light Divider', 'elements/divider/divider-light');

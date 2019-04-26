@@ -27,9 +27,6 @@ var Toggle = function Toggle(s) {
     activeClass: s.activeClass ? s.activeClass : Toggle.activeClass
   };
 
-  // document.querySelectorAll(this._settings.selector)
-  // .forEach(el => el.addEventListener('click', (e) => {this._toggle(e)}));
-
   body.addEventListener('click', function (event) {
     if (!event.target.matches(this$1._settings.selector)) {
       return;
@@ -104,7 +101,9 @@ Toggle.prototype.elementToggle = function elementToggle(el, target) {
     // If there are other toggles that control the same element
     if (others) {
       others.forEach(function (other) {
-        other.classList.toggle(this$1._settings.activeClass);
+        if (other !== el) {
+          other.classList.toggle(this$1._settings.activeClass);
+        }
       });
     }
   }
@@ -142,7 +141,7 @@ Toggle.prototype.elementToggle = function elementToggle(el, target) {
     // If there are other toggles that control the same element
     if (others) {
       others.forEach(function (other) {
-        if (other.getAttribute(attr)) {
+        if (other !== el && other.getAttribute(attr)) {
           other.setAttribute(attr, value === 'true' ? 'false' : 'true');
         }
       });

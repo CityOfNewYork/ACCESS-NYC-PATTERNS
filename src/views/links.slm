@@ -22,7 +22,7 @@
 
 = content('content');
   = mixin('content-header', title);
-  = mixin('section', 'Default Styling', 'elements/links/links');
+  = mixin('section', false, 'elements/links/links');
   = mixin('section', 'More Link', 'elements/links/links-more');
   = mixin('section', 'Back Link', 'elements/links/links-back');
   = mixin('section', 'Inverted Links', 'elements/links/links-invert');

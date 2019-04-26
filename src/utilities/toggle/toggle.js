@@ -30,9 +30,6 @@ class Toggle {
       activeClass: (s.activeClass) ? s.activeClass : Toggle.activeClass,
     };
 
-    // document.querySelectorAll(this._settings.selector)
-      // .forEach(el => el.addEventListener('click', (e) => {this._toggle(e)}));
-
     body.addEventListener('click', (event) => {
       if (!event.target.matches(this._settings.selector))
         return;
@@ -104,7 +101,7 @@ class Toggle {
 
       // If there are other toggles that control the same element
       if (others) others.forEach((other) => {
-        other.classList.toggle(this._settings.activeClass);
+        if (other !== el) other.classList.toggle(this._settings.activeClass);
       });
     }
 
@@ -141,7 +138,7 @@ class Toggle {
 
       // If there are other toggles that control the same element
       if (others) others.forEach((other) => {
-        if (other.getAttribute(attr))
+        if (other !== el && other.getAttribute(attr))
           other.setAttribute(attr, (value === 'true') ? 'false' : 'true');
       });
     }

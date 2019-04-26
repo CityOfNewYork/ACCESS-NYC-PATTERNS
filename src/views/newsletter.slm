@@ -21,7 +21,7 @@
 
 = content('content');
   = mixin('content-header', title);
-  = mixin('section', '', 'objects/newsletter/newsletter');
+  = mixin('section', false, 'objects/newsletter/newsletter');
   = mixin('section-text', 'Usage', 'objects/newsletter/newsletter.readme');
 
 = content('script');

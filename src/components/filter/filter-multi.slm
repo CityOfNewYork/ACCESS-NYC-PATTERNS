@@ -1,50 +1,56 @@
-div class='c-filter-multi active bg-color-white' data-sketch-symbol=symbol data-sketch-symbol-instance=instance
+div class='c-filter-multi bg-color-white' data-sketch-symbol=symbol data-sketch-symbol-instance=instance
   ul class='c-filter-multi__list'
     li class='c-filter-multi__item'
-      div class='c-filter-multi__item-header'
-        label Cash &amp; Expenses
-        button type='button' data-js='filter' aria-controls='cash-and-expenses' class='c-filter-multi__item-header-toggle active'
-          span class='c-filter-multi__item-header-expand' Expand category
-          span class='c-filter-multi__item-header-collapse' Collapse category
-      div#cash-and-expenses class='c-filter-multi__item-group active' aria-hidden='false'
+      button#aria-lb-cash-and-expenses type='button' data-js='filter' aria-controls='aria-c-cash-and-expenses' class='c-filter-multi__item-header btn-link active'
+        | Cash &amp; Expenses
+        span class='c-filter-multi__item-header-toggle'
+
+      div#aria-c-cash-and-expenses role='region' aria-labelledby='aria-lb-cash-and-expenses' class='c-filter-multi__item-group active' aria-hidden='false'
         ul class='c-filter-multi__item-group-list'
           li class='c-filter-multi__item-group-subitem'
             button type='button' class='btn-link' Toggle All
+
           li class='c-filter-multi__item-group-subitem'
             label class='checkbox'
               input value='6871' type='checkbox'
               span class='checkbox__label text-font-size-small font-normal' Home Energy Assistance Program (HEAP)
+
           li class='c-filter-multi__item-group-subitem'
             label class='checkbox'
               input value='6868' type='checkbox'
               span class='checkbox__label text-font-size-small font-normal' Earned Income Tax Credit (EITC)
+
     li class='c-filter-multi__item'
       div class='c-filter-multi__item-header'
         label class='checkbox'
-          input data-toggles='#program-child-care' type='checkbox'
-          span class='checkbox__label' Child Care
-        button type='button' data-js='filter' aria-controls='child-care' class='c-filter-multi__item-header-toggle active'
-          span class='c-filter-multi__item-header-expand' Expand category
-          span class='c-filter-multi__item-header-collapse' Collapse category
-      div#child-care class='c-filter-multi__item-group active' aria-hidden='false'
+          input type='checkbox'
+          span#aria-lb-child-care class='checkbox__label' Child Care
+
+        button type='button' data-js='filter' aria-controls='aria-c-child-care'  class='c-filter-multi__item-header-toggle active'
+          span class='sr-only' Child Care
+
+      div#aria-c-child-care role='region' aria-labelledby='aria-lb-child-care' class='c-filter-multi__item-group active' aria-hidden='false'
         ul class='c-filter-multi__item-group-list'
           li class='c-filter-multi__item-group-subitem'
             label class='checkbox'
               input value='6866' type='checkbox'
               span class='checkbox__label text-font-size-small font-normal' EarlyLearn Child Car
+
           li class='c-filter-multi__item-group-subitem'
             label class='checkbox'
               input value='6867' type='checkbox'
                 span class='checkbox__label text-font-size-small font-normal' EarlyLearn Head Start
+
       li class='c-filter-multi__item'
         div class='c-filter-multi__item-header'
           label class='checkbox'
-            input data-toggles='#program-child-care' type='checkbox'
-            span class='checkbox__label' City ID Card
-          button type='button' data-js='filter' aria-controls='city-id-card' class='c-filter-multi__item-header-toggle'
-            span class='c-filter-multi__item-header-expand' Expand category
-            span class='c-filter-multi__item-header-collapse' Collapse category
-        div#city-id-card class='c-filter-multi__item-group' aria-hidden='true'
+            input type='checkbox'
+            span#aria-lb-city-id-card class='checkbox__label' City ID Card
+
+          button type='button' data-js='filter' aria-controls='aria-c-city-id-card' class='c-filter-multi__item-header-toggle'
+            span class='sr-only' City ID Card
+
+        div#aria-c-city-id-card role='region' aria-labelledby='aria-lb-city-id-card' class='c-filter-multi__item-group' aria-hidden='true'
           ul class='c-filter-multi__item-group-list'
             li class='c-filter-multi__item-group-subitem'
               label class='checkbox'

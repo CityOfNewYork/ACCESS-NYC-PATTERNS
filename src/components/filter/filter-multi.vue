@@ -2,21 +2,22 @@
   <div class="c-filter-multi">
     <ul class="c-filter-multi__list">
       <li class="c-filter-multi__item" v-for="t in terms" :key="t.term_id">
-        <div class="c-filter-multi__item-header">
+        <div v-if="t.checkbox" class="c-filter-multi__item-header">
           <label v-if="t.checkbox" class="checkbox">
             <input data-toggles="#" type="checkbox" :checked="t.checked" @change="fetch({'event': $event, 'data': {'parent': t.slug}})" />
-            <span class="checkbox__label" :id="ariaLabel(t.slug)">{{ t.name }}</span>
-          </label>
-          <label v-else :id="ariaLabel(t.slug)">
-            {{ t.name }}
+            <span class="checkbox__label" :id="ariaLabelledBy(t.slug)">{{ t.name }}</span>
           </label>
 
-          <button type="button" class="c-filter-multi__item-header-toggle" :aria-controls="'c-filter-multi-' + t.slug" :aria-expanded="ariaActive(t.active)" :class="classActive(t)" @click="toggle($event, t)">
+          <button type="button" class="c-filter-multi__item-header-toggle" :aria-controls="ariaControls(t.slug)" :aria-expanded="ariaActive(t.active)" :class="classActive(t)" @click="toggle($event, t)">
             <span class="sr-only" v-html="t.name">{{ t.name }}</span>
           </button>
         </div>
+        <button v-else type="button" class="c-filter-multi__item-header btn-link" :class="classActive(t)" :aria-controls="ariaControls(t.slug)" :aria-expanded="ariaActive(t.active)" @click="toggle($event, t)">
+          <span v-html="t.name">{{ t.name }}</span>
+          <span class="c-filter-multi__item-header-toggle"></span>
+        </button>
 
-        <div role="region" :aria-labelledby="ariaLabel(t.slug)" class="c-filter-multi__item-group" :aria-hidden="ariaActive(!t.active)" :class="classActive(t)" :id="'c-filter-multi-' + t.slug">
+        <div role="region" :aria-labelledby="ariaLabelledBy(t.slug)" class="c-filter-multi__item-group" :aria-hidden="ariaActive(!t.active)" :class="classActive(t)" :id="ariaControls(t.slug)">
           <ul class="c-filter-multi__item-group-list">
             <li class='c-filter-multi__item-group-subitem' v-if="t.toggle">
               <button type='button' class='btn-link' @click="reset({'event': $event, 'data': {'parent': t.slug}})" v-html="strings.TOGGLE_ALL">Toggle All</button>
@@ -62,8 +63,11 @@
       ariaActive: function (active) {
         return (active) ? 'true' : 'false';
       },
-      ariaLabel: function(slug) {
-        return 'c-filter-multi__aria-label--' + slug;
+      ariaLabelledBy: function(slug) {
+        return 'aria-l-' + slug;
+      },
+      ariaControls: function(slug) {
+        return 'aria-c-' + slug;
       },
       fetch: function(event) {
         this.$set(event.data, 'checked', !event.data.checked);

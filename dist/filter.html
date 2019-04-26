@@ -156,15 +156,16 @@
                 </div>
               </header>
               <div class="layout--home-body">
-                <div class="my-0 pt-4 px-2 text-font-size-small table-align-start"><p>The Filter Component is a list of categories used to get more granular results in a search. With JavaScript enabled, the Filter Component will toggle open or closed. The markup for the list can be a navigation <code>&lt;nav&gt;</code> element with hyperlinks
-  or standard unordered list <code>&lt;ul&gt;</code> element with hyperlinks <code>&lt;a&gt;</code> or buttons <code>&lt;buttons&gt;</code> as the filtering element. Hyperlinks would be used for filters that navigate to different pages and buttons would
-  trigger in-page functionality. Below is an example of a filter using a navigation element with hyperlinks.</p></div>
+                <div class="my-0 pt-4 px-2 text-font-size-small table-align-start"><p>The Filter Component is a list of categories used to get more granular results in a search. With JavaScript enabled, the Filter Component will toggle open or closed using the
+  <a href="/toggle">Toggle JavaScript Utility</a>. All of the same accessible attribute toggling functionality the
+  <a href="/toggle">Toggle Utility</a> provides will apply (<code>aria-controls</code>, <code>aria-expanded</code>, and <code>aria-hidden</code>). The markup for the list can be a navigation <code>&lt;nav&gt;</code> element with hyperlinks or standard unordered list <code>&lt;ul&gt;</code>  element with hyperlinks <code>&lt;a&gt;</code> or buttons <code>&lt;buttons&gt;</code> as the filtering element. Hyperlinks would be used for filters that navigate to different pages and buttons would trigger in-page functionality. Below is an example
+  of a filter using a navigation element with hyperlinks.</p></div>
               </div>
               <div class="layout--gutter screen-tablet:layout--columns justify-between pt-4">
                 <div class="screen-tablet:pr-2">
                   <div class="c-filter">
-                    <button aria-controls="c-filter__list" aria-expanded="true" class="c-filter__header active" data-js="filter" id="c-filter__header" type="button">All Programs</button>
-                    <nav aria-hidden="false" aria-labelledby="c-filter__header" class="c-filter__list active" id="c-filter__list" role="region"><span class="c-filter__item">All Programs</span>
+                    <button aria-controls="aria-c-programs" aria-expanded="true" class="c-filter__header active" data-js="filter" id="aria-lb-programs" type="button">All Programs</button>
+                    <nav aria-hidden="false" aria-labelledby="aria-lb-programs" class="c-filter__list active" id="aria-c-programs" role="region"><span class="c-filter__item">All Programs</span>
                       <a class="c-filter__item" href="#">Cash &amp; Expenses</a>
                       <a class="c-filter__item" href="#">Child Care</a>
                       <a class="c-filter__item" href="#">City ID Card</a>
@@ -181,8 +182,8 @@
                 </div>
                 <div>
                   <div class="code-block mb-1"><pre>&lt;div class=&quot;c-filter&quot;&gt;
-  &lt;button aria-controls=&quot;c-filter__list&quot; aria-expanded=&quot;true&quot; class=&quot;c-filter__header active&quot; data-js=&quot;filter&quot; id=&quot;c-filter__header&quot; type=&quot;button&quot;&gt;All Programs&lt;/button&gt;
-  &lt;nav aria-hidden=&quot;false&quot; aria-labelledby=&quot;c-filter__header&quot; class=&quot;c-filter__list active&quot; id=&quot;c-filter__list&quot; role=&quot;region&quot;&gt;&lt;span class=&quot;c-filter__item&quot;&gt;All Programs&lt;/span&gt;
+  &lt;button aria-controls=&quot;aria-c-programs&quot; aria-expanded=&quot;true&quot; class=&quot;c-filter__header active&quot; data-js=&quot;filter&quot; id=&quot;aria-lb-programs&quot; type=&quot;button&quot;&gt;All Programs&lt;/button&gt;
+  &lt;nav aria-hidden=&quot;false&quot; aria-labelledby=&quot;aria-lb-programs&quot; class=&quot;c-filter__list active&quot; id=&quot;aria-c-programs&quot; role=&quot;region&quot;&gt;&lt;span class=&quot;c-filter__item&quot;&gt;All Programs&lt;/span&gt;
     &lt;a class=&quot;c-filter__item&quot; href=&quot;#&quot;&gt;Cash &amp;amp; Expenses&lt;/a&gt;
     &lt;a class=&quot;c-filter__item&quot; href=&quot;#&quot;&gt;Child Care&lt;/a&gt;
     &lt;a class=&quot;c-filter__item&quot; href=&quot;#&quot;&gt;City ID Card&lt;/a&gt;
@@ -217,14 +218,11 @@
               </div>
               <div class="layout--gutter screen-tablet:layout--columns justify-between pt-4">
                 <div class="screen-tablet:pr-2">
-                  <div class="c-filter-multi active bg-color-white">
+                  <div class="c-filter-multi bg-color-white">
                     <ul class="c-filter-multi__list">
                       <li class="c-filter-multi__item">
-                        <div class="c-filter-multi__item-header">
-                          <label>Cash &amp; Expenses</label>
-                          <button aria-controls="cash-and-expenses" class="c-filter-multi__item-header-toggle active" data-js="filter" type="button"><span class="c-filter-multi__item-header-expand">Expand category</span><span class="c-filter-multi__item-header-collapse">Collapse category</span></button>
-                        </div>
-                        <div aria-hidden="false" class="c-filter-multi__item-group active" id="cash-and-expenses">
+                        <button aria-controls="aria-c-cash-and-expenses" class="c-filter-multi__item-header btn-link active" data-js="filter" id="aria-lb-cash-and-expenses" type="button">Cash &amp; Expenses<span class="c-filter-multi__item-header-toggle"></span></button>
+                        <div aria-hidden="false" aria-labelledby="aria-lb-cash-and-expenses" class="c-filter-multi__item-group active" id="aria-c-cash-and-expenses" role="region">
                           <ul class="c-filter-multi__item-group-list">
                             <li class="c-filter-multi__item-group-subitem">
                               <button class="btn-link" type="button">Toggle All</button>
@@ -243,10 +241,10 @@
                       <li class="c-filter-multi__item">
                         <div class="c-filter-multi__item-header">
                           <label class="checkbox">
-                            <input data-toggles="#program-child-care" type="checkbox" /><span class="checkbox__label">Child Care</span></label>
-                          <button aria-controls="child-care" class="c-filter-multi__item-header-toggle active" data-js="filter" type="button"><span class="c-filter-multi__item-header-expand">Expand category</span><span class="c-filter-multi__item-header-collapse">Collapse category</span></button>
+                            <input type="checkbox" /><span class="checkbox__label" id="aria-lb-child-care">Child Care</span></label>
+                          <button aria-controls="aria-c-child-care" class="c-filter-multi__item-header-toggle active" data-js="filter" type="button"><span class="sr-only">Child Care</span></button>
                         </div>
-                        <div aria-hidden="false" class="c-filter-multi__item-group active" id="child-care">
+                        <div aria-hidden="false" aria-labelledby="aria-lb-child-care" class="c-filter-multi__item-group active" id="aria-c-child-care" role="region">
                           <ul class="c-filter-multi__item-group-list">
                             <li class="c-filter-multi__item-group-subitem">
                               <label class="checkbox">
@@ -262,10 +260,10 @@
                         <li class="c-filter-multi__item">
                           <div class="c-filter-multi__item-header">
                             <label class="checkbox">
-                              <input data-toggles="#program-child-care" type="checkbox" /><span class="checkbox__label">City ID Card</span></label>
-                            <button aria-controls="city-id-card" class="c-filter-multi__item-header-toggle" data-js="filter" type="button"><span class="c-filter-multi__item-header-expand">Expand category</span><span class="c-filter-multi__item-header-collapse">Collapse category</span></button>
+                              <input type="checkbox" /><span class="checkbox__label" id="aria-lb-city-id-card">City ID Card</span></label>
+                            <button aria-controls="aria-c-city-id-card" class="c-filter-multi__item-header-toggle" data-js="filter" type="button"><span class="sr-only">City ID Card</span></button>
                           </div>
-                          <div aria-hidden="true" class="c-filter-multi__item-group" id="city-id-card">
+                          <div aria-hidden="true" aria-labelledby="aria-lb-city-id-card" class="c-filter-multi__item-group" id="aria-c-city-id-card" role="region">
                             <ul class="c-filter-multi__item-group-list">
                               <li class="c-filter-multi__item-group-subitem">
                                 <label class="checkbox">
@@ -279,14 +277,11 @@
                   </div>
                 </div>
                 <div>
-                  <div class="code-block mb-1"><pre>&lt;div class=&quot;c-filter-multi active bg-color-white&quot;&gt;
+                  <div class="code-block mb-1"><pre>&lt;div class=&quot;c-filter-multi bg-color-white&quot;&gt;
   &lt;ul class=&quot;c-filter-multi__list&quot;&gt;
     &lt;li class=&quot;c-filter-multi__item&quot;&gt;
-      &lt;div class=&quot;c-filter-multi__item-header&quot;&gt;
-        &lt;label&gt;Cash &amp;amp; Expenses&lt;/label&gt;
-        &lt;button aria-controls=&quot;cash-and-expenses&quot; class=&quot;c-filter-multi__item-header-toggle active&quot; data-js=&quot;filter&quot; type=&quot;button&quot;&gt;&lt;span class=&quot;c-filter-multi__item-header-expand&quot;&gt;Expand category&lt;/span&gt;&lt;span class=&quot;c-filter-multi__item-header-collapse&quot;&gt;Collapse category&lt;/span&gt;&lt;/button&gt;
-      &lt;/div&gt;
-      &lt;div aria-hidden=&quot;false&quot; class=&quot;c-filter-multi__item-group active&quot; id=&quot;cash-and-expenses&quot;&gt;
+      &lt;button aria-controls=&quot;aria-c-cash-and-expenses&quot; class=&quot;c-filter-multi__item-header btn-link active&quot; data-js=&quot;filter&quot; id=&quot;aria-lb-cash-and-expenses&quot; type=&quot;button&quot;&gt;Cash &amp;amp; Expenses&lt;span class=&quot;c-filter-multi__item-header-toggle&quot;&gt;&lt;/span&gt;&lt;/button&gt;
+      &lt;div aria-hidden=&quot;false&quot; aria-labelledby=&quot;aria-lb-cash-and-expenses&quot; class=&quot;c-filter-multi__item-group active&quot; id=&quot;aria-c-cash-and-expenses&quot; role=&quot;region&quot;&gt;
         &lt;ul class=&quot;c-filter-multi__item-group-list&quot;&gt;
           &lt;li class=&quot;c-filter-multi__item-group-subitem&quot;&gt;
             &lt;button class=&quot;btn-link&quot; type=&quot;button&quot;&gt;Toggle All&lt;/button&gt;
@@ -305,10 +300,10 @@
     &lt;li class=&quot;c-filter-multi__item&quot;&gt;
       &lt;div class=&quot;c-filter-multi__item-header&quot;&gt;
         &lt;label class=&quot;checkbox&quot;&gt;
-          &lt;input data-toggles=&quot;#program-child-care&quot; type=&quot;checkbox&quot; /&gt;&lt;span class=&quot;checkbox__label&quot;&gt;Child Care&lt;/span&gt;&lt;/label&gt;
-        &lt;button aria-controls=&quot;child-care&quot; class=&quot;c-filter-multi__item-header-toggle active&quot; data-js=&quot;filter&quot; type=&quot;button&quot;&gt;&lt;span class=&quot;c-filter-multi__item-header-expand&quot;&gt;Expand category&lt;/span&gt;&lt;span class=&quot;c-filter-multi__item-header-collapse&quot;&gt;Collapse category&lt;/span&gt;&lt;/button&gt;
+          &lt;input type=&quot;checkbox&quot; /&gt;&lt;span class=&quot;checkbox__label&quot; id=&quot;aria-lb-child-care&quot;&gt;Child Care&lt;/span&gt;&lt;/label&gt;
+        &lt;button aria-controls=&quot;aria-c-child-care&quot; class=&quot;c-filter-multi__item-header-toggle active&quot; data-js=&quot;filter&quot; type=&quot;button&quot;&gt;&lt;span class=&quot;sr-only&quot;&gt;Child Care&lt;/span&gt;&lt;/button&gt;
       &lt;/div&gt;
-      &lt;div aria-hidden=&quot;false&quot; class=&quot;c-filter-multi__item-group active&quot; id=&quot;child-care&quot;&gt;
+      &lt;div aria-hidden=&quot;false&quot; aria-labelledby=&quot;aria-lb-child-care&quot; class=&quot;c-filter-multi__item-group active&quot; id=&quot;aria-c-child-care&quot; role=&quot;region&quot;&gt;
         &lt;ul class=&quot;c-filter-multi__item-group-list&quot;&gt;
           &lt;li class=&quot;c-filter-multi__item-group-subitem&quot;&gt;
             &lt;label class=&quot;checkbox&quot;&gt;
@@ -324,10 +319,10 @@
       &lt;li class=&quot;c-filter-multi__item&quot;&gt;
         &lt;div class=&quot;c-filter-multi__item-header&quot;&gt;
           &lt;label class=&quot;checkbox&quot;&gt;
-            &lt;input data-toggles=&quot;#program-child-care&quot; type=&quot;checkbox&quot; /&gt;&lt;span class=&quot;checkbox__label&quot;&gt;City ID Card&lt;/span&gt;&lt;/label&gt;
-          &lt;button aria-controls=&quot;city-id-card&quot; class=&quot;c-filter-multi__item-header-toggle&quot; data-js=&quot;filter&quot; type=&quot;button&quot;&gt;&lt;span class=&quot;c-filter-multi__item-header-expand&quot;&gt;Expand category&lt;/span&gt;&lt;span class=&quot;c-filter-multi__item-header-collapse&quot;&gt;Collapse category&lt;/span&gt;&lt;/button&gt;
+            &lt;input type=&quot;checkbox&quot; /&gt;&lt;span class=&quot;checkbox__label&quot; id=&quot;aria-lb-city-id-card&quot;&gt;City ID Card&lt;/span&gt;&lt;/label&gt;
+          &lt;button aria-controls=&quot;aria-c-city-id-card&quot; class=&quot;c-filter-multi__item-header-toggle&quot; data-js=&quot;filter&quot; type=&quot;button&quot;&gt;&lt;span class=&quot;sr-only&quot;&gt;City ID Card&lt;/span&gt;&lt;/button&gt;
         &lt;/div&gt;
-        &lt;div aria-hidden=&quot;true&quot; class=&quot;c-filter-multi__item-group&quot; id=&quot;city-id-card&quot;&gt;
+        &lt;div aria-hidden=&quot;true&quot; aria-labelledby=&quot;aria-lb-city-id-card&quot; class=&quot;c-filter-multi__item-group&quot; id=&quot;aria-c-city-id-card&quot; role=&quot;region&quot;&gt;
           &lt;ul class=&quot;c-filter-multi__item-group-list&quot;&gt;
             &lt;li class=&quot;c-filter-multi__item-group-subitem&quot;&gt;
               &lt;label class=&quot;checkbox&quot;&gt;
@@ -455,9 +450,9 @@ new Filter();</code></pre></div>
                 </div>
               </header>
               <div class="layout--home-body">
-                <div class="my-0 pt-4 px-2 text-font-size-small table-align-start"><p>The Vue Component implementation provides data binding and reactivity. The reactivity is based on events emitted on the individual filters on click. The
+                <div class="my-0 pt-4 px-2 text-font-size-small table-align-start"><p>The
   <a href="#vue-filter">Vue Filter</a> and
-  <a href="#vue-filter-multi">Vue Filter Multi</a> can be imported from this path in your main script and added to the Vue instance before your application declaration:</p>
+  <a href="#vue-filter-multi">Vue Filter Multi</a> can be imported from the paths below in your main script and added to the Vue instance before your application declaration:</p>
 
 <pre><code>import FilterVue from &#39;src/components/filter/filter.vue&#39;;
 import FilterMultiVue from &#39;src/components/filter/filter-multi.vue&#39;;
@@ -467,7 +462,7 @@ Vue.component(&#39;c-filter-multi&#39;, FilterMultiVue);
 
 new Vue();</code></pre>
 
-<p>Below is a guide for using these particular components. For basic details of using Vue Components within a Vue application,
+<p>Below is a guide for using these particular component properties. For basic details of using Vue Components within a Vue application,
   <a href="https://vuejs.org/v2/guide/components.html">refer to the Vue.js documentation</a>.</p>
 
 <h3>Props</h3>
@@ -488,11 +483,6 @@ new Vue();</code></pre>
       <td><em>object/array</em></td>
       <td>Data for the filter list. A
         <a href="https://github.com/CityOfNewYork/ACCESS-NYC-PATTERNS/blob/master/src/components/filter/filter.data.js">sample set of data can be seen here</a>. The Vue Filter will only accept one terms object from the sample array. The Vue Multi Filter will accept an array of term objects.</td>
-    </tr>
-    <tr>
-      <td><code>:nav</code></td>
-      <td><em>boolean</em></td>
-      <td>This determines wether the list is rendered as a navigation <code>&lt;nav&gt;</code> element with hyperlinks or as an unordered list <code>&lt;ul&gt;</code> with button <code>&lt;button&gt;</code> elements (default).</td>
     </tr>
     <tr>
       <td><code>:strings</code></td>

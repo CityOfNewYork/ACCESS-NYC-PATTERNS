@@ -20,5 +20,5 @@
 
 = content('content');
   = mixin('content-header', title);
-  = mixin('section', 'List', 'objects/card-list/card-list', 'gutter');
+  = mixin('section', false, 'objects/card-list/card-list', 'gutter');
   = mixin('section', 'Grid Layout', 'objects/card-list/card-list-grid', 'gutter');

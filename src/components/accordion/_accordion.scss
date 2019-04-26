@@ -3,7 +3,6 @@
  */
 
 // Dependencies
-@import 'config/colors';
 @import 'config/fonts';
 @import 'config/dimensions';
 @import 'config/media';
@@ -11,14 +10,10 @@
 
 // Declarations
 .c-accordion {
-  background-color: $color-grey-lightest;
   margin: $spacing-base 0;
 }
 
 .c-accordion__header {
-  background-color: $color-blue-dark;
-  color: $color-white;
-  @include font-smooth();
   display: flex;
   overflow: hidden;
   padding: $spacing-base;
@@ -40,8 +35,8 @@
 
 .c-accordion__toggle {
   appearance: none;
-  color: $color-white !important;
-  // font-style: italic;
+  cursor: pointer;
+  color: inherit;
   font-size: inherit;
   font-weight: inherit;
   text-decoration: underline;
@@ -80,7 +75,6 @@
 
 .c-accordion__body {
   h5 {
-    color: $color-black;
     font-weight: bold;
     margin-top: $spacing-base * 2;
   }

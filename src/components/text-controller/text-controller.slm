@@ -4,14 +4,14 @@
 
 div class='c-text-controller' data-sketch-symbol=symbol data-sketch-symbol-instance=instance
 
-  a class='c-text-controller__toggle mb-1' href='#text-controls'
+  button type='button' class='c-text-controller__toggle mb-1 btn-link' data-js='toggle' aria-controls='aria-c-text-controller__options' aria-expanded='false'
     svg class='icon icon-ui-settings'
       use xlink:href='#icon-ui-settings'
 
     span class='c-text-controller__title-full' Translate &amp; Adjust Text
     span class='c-text-controller__title-short' Translate Text
 
-  div#text-controls class='c-text-controller__options'
+  div#aria-c-text-controller__options class='c-text-controller__options hidden' aria-hidden='true'
 
     div class='c-text-controller__languages'
       div class='wpml-ls-statics-shortcode_actions wpml-ls wpml-ls-legacy-list-horizontal'

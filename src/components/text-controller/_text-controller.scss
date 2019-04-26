@@ -27,6 +27,22 @@
 }
 
 .c-text-controller__toggle {
+  color: inherit;
+  font-size: inherit;
+  appearance: none;
+  background: transparent;
+  padding: 0;
+  border: none;
+  cursor: pointer;
+
+  &.active {
+    display: none;
+  }
+
+  > * {
+   pointer-events: none;
+  }
+
   .icon {
     margin-#{$text-direction-end}: 0.3em;
   }
@@ -53,11 +69,13 @@
 .c-text-controller__options {
   display: flex;
   flex-direction: column;
+  width: 100%;
+  flex-basis: 100%;
 }
 
 .c-text-controller__languages .wpml-ls {
   padding: 0;
-  text-align: $text-direction-end;
+  // text-align: $text-direction-end;
 
   ul {
     list-style: none;
@@ -71,10 +89,16 @@
     display: inline-block;
     padding: 0;
 
-    @if ($text-direction == rtl) {
-      margin-right: 1em;
-    } @else {
-      margin-left: 1em;
+    margin-left: $spacing-base / 2;
+    margin-right: $spacing-base / 2;
+    margin-bottom: $spacing-base / 2;
+
+    &:first-of-type {
+      margin-#{$text-direction-start}: 0;
+    }
+
+    &:last-of-type {
+      margin-#{$text-direction-end}: 0;
     }
   }
 
@@ -86,18 +110,15 @@
 .c-text-controller__sizer {
   display: none;
 
-  // @include media($bp-desktop-up) {
   @media screen and (min-width: $screen-desktop) {
     color: $color-grey-mid;
     display: flex;
     align-items: center;
-    justify-content: flex-end;
   }
 }
 
 .c-text-controller__sizer-text {
-  margin-left: 0.3em;
-  margin-right: 0.3em;
+  margin-#{$text-direction-end}: $spacing-base / 2;
 }
 
 .c-text-controller__sizer-btn {
@@ -105,6 +126,11 @@
   margin-left: 0.15em;
   margin-right: 0.15em;
   font-size: inherit;
+  cursor: pointer;
+
+  > * {
+    pointer-events: none;
+  }
 
   &:first-of-type {
     margin-#{$text-direction-start}: 0;
@@ -124,7 +150,7 @@
 // ====================================
 
 // Hides the current language translation in the language switcher
-.c-text-controller__languages .wpml-ls .wpml-ls-current-language,
-.c-text-controller__languages .wpml-ls .wpml-ls-display {
-  @include sr-only();
-}
+// .c-text-controller__languages .wpml-ls .wpml-ls-current-language,
+// .c-text-controller__languages .wpml-ls .wpml-ls-display {
+//   @include sr-only();
+// }

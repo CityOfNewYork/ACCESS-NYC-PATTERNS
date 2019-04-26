@@ -1,7 +1,7 @@
 div class='c-filter' data-sketch-symbol=symbol data-sketch-symbol-instance=instance
-  button#c-filter__header type='button' class='c-filter__header active' data-js='filter' aria-controls='c-filter__list' aria-expanded='true' All Programs
+  button#aria-lb-programs type='button' class='c-filter__header active' data-js='filter' aria-controls='aria-c-programs' aria-expanded='true' All Programs
 
-  nav#c-filter__list class='c-filter__list active' aria-hidden='false' role='region' aria-labelledby='c-filter__header'
+  nav#aria-c-programs class='c-filter__list active' aria-hidden='false' role='region' aria-labelledby='aria-lb-programs'
     span class='c-filter__item' All Programs
     a class='c-filter__item' href='#' Cash &amp; Expenses
     a class='c-filter__item' href='#' Child Care
