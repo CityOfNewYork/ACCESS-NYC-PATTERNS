@@ -5,6 +5,7 @@
 // Dependencies
 @import 'config/variables';
 @import 'config/direction';
+@import 'config/radios';
 @import 'config/dimensions';
 @import 'config/fonts';
 @import 'config/colors';
@@ -50,15 +51,13 @@
 
   input:checked + & {
     &::before {
-      background: $color-blue;
-      border: 0;
-      box-shadow: 0 0 0 2px $color-blue inset, 0 0 0 4px $color-white inset;
+      @include radios-btn-checked;
     }
   }
 
   input:focus + & {
     &::before {
-      box-shadow: 0 0 0 2px $color-blue inset, 0 0 0 4px $color-white inset, 0 0 2px 2px $color-blue-bright;
+      @include radios-btn-focused;
     }
   }
 }
