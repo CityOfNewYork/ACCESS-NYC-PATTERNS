@@ -22,21 +22,6 @@
     margin-bottom: -1px;
     position: relative;
     z-index: 1;
-
-    &::after {
-      position: absolute;
-      @if $text-direction == 'rtl' {
-        left: 34px;
-        bottom: (.3 * -$spacing-base);
-      } @else {
-        right: 34px;
-        bottom: (.3 * -$spacing-base);
-      }
-      @include triangle($spacing-base (.3 * $spacing-base), $color-blue-dark, down);
-      content: '';
-      display: block;
-      z-index: 0;
-    }
   }
 }
 
@@ -101,17 +86,33 @@
 }
 
 .c-share-form__button {
-  padding: 0 10px;
+  padding: 0 0 0 25px;
   flex-basis: 91px;
-  max-width: 91px;
-  min-width: 91px;
+  max-width: 128px;
+  min-width: 121px;
   display: flex;
   align-items: center;
 
   [class*='btn-'] {
-    padding-left: 0;
-    padding-right: 0;
+    padding-left: 2px;
+    padding-right: 2px;
     width: 100%;
+    font-size: 70%;
+  }
+
+  &::after {
+    position: relative;
+    @if $text-direction == 'rtl' {
+      left: 34px;
+      bottom: (.3 * -$spacing-base);
+    } @else {
+      right: 48%;
+      bottom: (-1.28 * -$spacing-base);
+    }
+    @include triangle($spacing-base (.3 * $spacing-base), $color-blue-dark, down);
+    content: '';
+    display: block;
+    z-index: 0;
   }
 }
 
