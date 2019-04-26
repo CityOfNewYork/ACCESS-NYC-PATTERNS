@@ -62,4 +62,5 @@ nav class='${class_nav} screen-desktop:pl-4'
   a class='${class_nav_item}' href='language' Language
   a class='${class_nav_item}' href='media' Media
   a class='${class_nav_item}' href='text' Text
+  a class='${class_nav_item}' href='toggle' Toggle
   a class='${class_nav_item}' href='typography' Typography
