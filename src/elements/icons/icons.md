@@ -1,0 +1,1 @@
+UI icons are integrated from the [Feather](https://feathericons.com/) kit.

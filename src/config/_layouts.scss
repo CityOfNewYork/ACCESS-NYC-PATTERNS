@@ -19,10 +19,6 @@ $homepage-max-width: 800px;
     margin-left: -#{$spacing-base};
     margin-right: -#{$spacing-base};
 
-    // @include media($bp-tablet-up) {
-    //   margin-left: 0;
-    //   margin-right: 0;
-    // }
     @media screen and (min-width: $screen-tablet) {
       margin-left: 0;
       margin-right: 0;

@@ -27,3 +27,4 @@
   = mixin('section', 'Program Label Warning', 'elements/program-labels/program-labels-warning');
   = mixin('section', 'Program Label Success', 'elements/program-labels/program-labels-success');
   = mixin('section', 'Program Label Urgent', 'elements/program-labels/program-labels-urgent');
+  = partial('section/nav.slm');

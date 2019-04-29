@@ -30,6 +30,8 @@
   = mixin('section', 'Vue Card', 'components/card/card.vue');
   = mixin('section-text', 'Vue Component Usage', 'components/card/card.readme.vue');
 
+  = partial('section/nav.slm');
+
 = content('script');
   javascript:
-    access.cardVue();
+    VueComponents.card();

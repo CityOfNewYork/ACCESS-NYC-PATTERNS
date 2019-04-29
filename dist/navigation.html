@@ -169,7 +169,7 @@
                           <use xlink:href="#icon-logo-full"></use>
                         </svg><span class="sr-only">Access NYC</span></a>
                     </div>
-                    <nav class="o-navigation__nav nav-inline">
+                    <nav class="o-navigation__nav nav-inline text-align-end">
                       <a class="screen-desktop:hidden" href="#o-mobile-nav">Menu</a>
                       <a class="hidden screen-desktop:inline-block active" href="#">Am I eligible?</a>
                       <a class="hidden screen-desktop:inline-block" href="#">Programs</a>
@@ -208,7 +208,7 @@
         &lt;use xlink:href=&quot;#icon-logo-full&quot;&gt;&lt;/use&gt;
       &lt;/svg&gt;&lt;span class=&quot;sr-only&quot;&gt;Access NYC&lt;/span&gt;&lt;/a&gt;
   &lt;/div&gt;
-  &lt;nav class=&quot;o-navigation__nav nav-inline&quot;&gt;
+  &lt;nav class=&quot;o-navigation__nav nav-inline text-align-end&quot;&gt;
     &lt;a class=&quot;screen-desktop:hidden&quot; href=&quot;#o-mobile-nav&quot;&gt;Menu&lt;/a&gt;
     &lt;a class=&quot;hidden screen-desktop:inline-block active&quot; href=&quot;#&quot;&gt;Am I eligible?&lt;/a&gt;
     &lt;a class=&quot;hidden screen-desktop:inline-block&quot; href=&quot;#&quot;&gt;Programs&lt;/a&gt;
@@ -267,12 +267,12 @@
         </nav>
       </p>
     </footer>
-    <script crossorigin="anonymous" src="https://polyfill.io/v3/polyfill.min.js?flags=gated&amp;features=Array.prototype.forEach,Element.prototype.matches,Element.prototype.remove,fetch,Promise"></script>
-    <script src="scripts/AccessNyc.js"></script>
-    <script src="scripts/markdown.min.js"></script>
+    <script src="scripts/polyfills.js"></script>
+    <script src="scripts/access-nyc.js"></script>
+    <script src="scripts/vue-components.js"></script>
     <script type="text/javascript">
       var access = new AccessNyc();
-      access.markdown();
+      var VueComponents = new VueComponents();
       access.icons();
       access.toggle();
     </script>

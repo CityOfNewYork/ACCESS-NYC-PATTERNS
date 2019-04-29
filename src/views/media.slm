@@ -23,3 +23,4 @@
   = mixin('content-header', title);
   = mixin('section', 'Screen', 'utilities/media/media-screen');
   = mixin('section', 'Print', 'utilities/media/media-print');
+  = partial('section/nav.slm');

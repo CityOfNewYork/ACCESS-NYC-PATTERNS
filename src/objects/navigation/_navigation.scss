@@ -15,6 +15,7 @@
 .o-navigation {
   align-items: center;
   display: flex;
+  justify-content: space-between;
   @include font-smooth;
   padding: (.5 * $spacing-base) $spacing-base;
 

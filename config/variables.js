@@ -413,7 +413,7 @@ const variables = {
     'checkbox-size': '30px',
     'toggle-size': '25px'
   },
-  'display': {
+  'shadows': {
     'up': '0px 5px 11px 1px rgba(0,0,0,0.45)'
   }
 };

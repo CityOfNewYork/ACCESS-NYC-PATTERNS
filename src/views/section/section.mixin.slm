@@ -1,8 +1,12 @@
 = partial('demo-specs.mixin.slm');
 = partial('demo-block.mixin.slm');
+- this.site.navigation = (this.site.navigation) ? this.site.navigation : [];
 
 = mixin('section', 'title', 'path', 'layout = columns', 'grid = false', 'specs = true', 'code = true');
   - id = (this.title && this.title !== '') ? this.title.toLowerCase().split(' ').join('-') : false;
+  - if (this.title)
+    - let navitem = {'title': this.title, 'id': id};
+    - this.site.navigation.push(navitem);
 
   section id=id class='pb-4 mb-4'
     div class='page-wrapper px-2'

@@ -24,3 +24,4 @@
   = mixin('content-header', title);
   = mixin('section', false, 'elements/checkboxes/checkboxes');
   = mixin('section', 'Checkboxes With Icons', 'elements/checkboxes/checkboxes-with-icons');
+  = partial('section/nav.slm');

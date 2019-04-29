@@ -161,12 +161,12 @@
               </div>
               <div class="layout--gutter screen-tablet:layout--columns justify-between pt-4">
                 <div class="screen-tablet:pr-2">
-                  <label class="checkbox" for="person-0-snap">
-                    <input id="person-0-snap" name="Person[0].snap" type="checkbox" value="snap" /><span class="checkbox__label">SNAP (Supplemental Nutrition Assistance Program)</span></label>
+                  <label class="checkbox" for="">
+                    <input id="" name="" type="checkbox" value="" /><span class="checkbox__label"></span></label>
                 </div>
                 <div>
-                  <div class="code-block mb-1"><pre>&lt;label class=&quot;checkbox&quot; for=&quot;person-0-snap&quot;&gt;
-  &lt;input id=&quot;person-0-snap&quot; name=&quot;Person[0].snap&quot; type=&quot;checkbox&quot; value=&quot;snap&quot; /&gt;&lt;span class=&quot;checkbox__label&quot;&gt;SNAP (Supplemental Nutrition Assistance Program)&lt;/span&gt;&lt;/label&gt;</pre></div>
+                  <div class="code-block mb-1"><pre>&lt;label class=&quot;checkbox&quot; for=&quot;&quot;&gt;
+  &lt;input id=&quot;&quot; name=&quot;&quot; type=&quot;checkbox&quot; value=&quot;&quot; /&gt;&lt;span class=&quot;checkbox__label&quot;&gt;&lt;/span&gt;&lt;/label&gt;</pre></div>
                 </div>
               </div>
             </div>
@@ -200,6 +200,11 @@
               </div>
             </div>
           </section>
+          <div class="sticky pin-b bg-color-white shadow-up relative overflow-y-scroll whitespace-no-wrap animated fadeInUp">
+            <nav class="nav-inline text-font-size-small p-4"><span class="mr-4">Jump to:</span>
+              <a class="mr-4" href="#checkboxes-with-icons">Checkboxes With Icons</a>
+            </nav>
+          </div>
         </article>
       </main>
     </div>
@@ -225,12 +230,12 @@
         </nav>
       </p>
     </footer>
-    <script crossorigin="anonymous" src="https://polyfill.io/v3/polyfill.min.js?flags=gated&amp;features=Array.prototype.forEach,Element.prototype.matches,Element.prototype.remove,fetch,Promise"></script>
-    <script src="scripts/AccessNyc.js"></script>
-    <script src="scripts/markdown.min.js"></script>
+    <script src="scripts/polyfills.js"></script>
+    <script src="scripts/access-nyc.js"></script>
+    <script src="scripts/vue-components.js"></script>
     <script type="text/javascript">
       var access = new AccessNyc();
-      access.markdown();
+      var VueComponents = new VueComponents();
       access.icons();
       access.toggle();
     </script>

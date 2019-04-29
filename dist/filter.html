@@ -355,7 +355,7 @@
   the following code:</p>
 
 <pre><code>&lt;!-- Global Script --&gt;
-&lt;script src=&quot;dist/scripts/AccessNyc.js&quot;&gt;&lt;/script&gt;
+&lt;script src=&quot;dist/scripts/access-nyc.js&quot;&gt;&lt;/script&gt;
 
 &lt;script&gt;
   var access = new AccessNyc();
@@ -377,7 +377,12 @@ import Filter from &#39;dist/components/filter/filter.common&#39;;
 &lt;!-- IFFE --&gt;
 &lt;script src=&quot;dist/components/filter/filter.iffe.js&quot;&gt;&lt;/script&gt;
 
-new Filter();</code></pre></div>
+new Filter();</code></pre>
+
+<h4>Polyfills</h4>
+
+<p>This script uses the Toggle Utility as a dependency and requres the same polyfills. See the
+  <a href="toggle#toggle-usage">&quot;Toggle Usage&quot; section</a> for more details.</p></div>
               </div>
             </div>
           </section>
@@ -548,6 +553,15 @@ new Vue();</code></pre>
               </div>
             </div>
           </section>
+          <div class="sticky pin-b bg-color-white shadow-up relative overflow-y-scroll whitespace-no-wrap animated fadeInUp">
+            <nav class="nav-inline text-font-size-small p-4"><span class="mr-4">Jump to:</span>
+              <a class="mr-4" href="#multi-filter">Multi Filter</a>
+              <a class="mr-4" href="#filter-usage">Filter Usage</a>
+              <a class="mr-4" href="#vue-filter">Vue Filter</a>
+              <a class="mr-4" href="#vue-multi-filter">Vue Multi Filter</a>
+              <a class="mr-4" href="#vue-component-usage">Vue Component Usage</a>
+            </nav>
+          </div>
         </article>
       </main>
     </div>
@@ -573,19 +587,19 @@ new Vue();</code></pre>
         </nav>
       </p>
     </footer>
-    <script crossorigin="anonymous" src="https://polyfill.io/v3/polyfill.min.js?flags=gated&amp;features=Array.prototype.forEach,Element.prototype.matches,Element.prototype.remove,fetch,Promise"></script>
-    <script src="scripts/AccessNyc.js"></script>
-    <script src="scripts/markdown.min.js"></script>
+    <script src="scripts/polyfills.js"></script>
+    <script src="scripts/access-nyc.js"></script>
+    <script src="scripts/vue-components.js"></script>
     <script type="text/javascript">
       var access = new AccessNyc();
-      access.markdown();
+      var VueComponents = new VueComponents();
       access.icons();
       access.toggle();
     </script>
     <script type="text/javascript">
       access.filter();
-      access.filterVue();
-      access.filterVue('c-filter-multi');
+      VueComponents.filter();
+      VueComponents.filter('c-filter-multi');
     </script>
   </body>
 

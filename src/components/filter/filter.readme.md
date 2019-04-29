@@ -3,7 +3,7 @@
 The Filter and Filter Multi Components require the Filter JavaScript for toggling functionality and screen reader accessibility. It will work for both the Filter and Filter Multi Components. To use the Filter in the global ACCESS NYC Patterns script use the following code:
 
     <!-- Global Script -->
-    <script src="dist/scripts/AccessNyc.js"></script>
+    <script src="dist/scripts/access-nyc.js"></script>
 
     <script>
       var access = new AccessNyc();
@@ -26,3 +26,7 @@ The ES6, CommonJS, and IFFE modules all require importing and object instantiati
     <script src="dist/components/filter/filter.iffe.js"></script>
 
     new Filter();
+
+#### Polyfills
+
+This script uses the Toggle Utility as a dependency and requres the same polyfills. See the ["Toggle Usage" section](toggle#toggle-usage) for more details.

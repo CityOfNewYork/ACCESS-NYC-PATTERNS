@@ -162,8 +162,8 @@
   <a href="https://access.nyc.gov">ACCESS NYC</a> is displayed through the
   <a href="https://wpml.org/">WordPress Multilingual Plugin (WPML)</a>.</p></div>
               </div>
-              <div class="layout--gutter screen-tablet:layout--gutter justify-between pt-4">
-                <div>
+              <div class="layout--gutter screen-tablet:layout--columns justify-between pt-4">
+                <div class="screen-tablet:pr-2">
                   <div class="c-text-controller">
                     <button aria-controls="aria-c-text-controller__options" aria-expanded="false" class="c-text-controller__toggle mb-1 btn-link" data-js="toggle" type="button">
                       <svg class="icon icon-ui-settings">
@@ -209,7 +209,7 @@
                           </ul>
                         </div>
                       </div>
-                      <div class="c-text-controller__sizer"><em class="c-text-controller__sizer-text">Adjust text size</em>
+                      <div class="c-text-controller__sizer"><span class="c-text-controller__sizer-text">Adjust text size</span>
                         <button class="c-text-controller__sizer-btn btn-text js-text-larger">
                           <svg class="icon icon-ui-plus-circle">
                             <use xlink:href="#icon-ui-plus-circle"></use>
@@ -272,7 +272,7 @@
         &lt;/ul&gt;
       &lt;/div&gt;
     &lt;/div&gt;
-    &lt;div class=&quot;c-text-controller__sizer&quot;&gt;&lt;em class=&quot;c-text-controller__sizer-text&quot;&gt;Adjust text size&lt;/em&gt;
+    &lt;div class=&quot;c-text-controller__sizer&quot;&gt;&lt;span class=&quot;c-text-controller__sizer-text&quot;&gt;Adjust text size&lt;/span&gt;
       &lt;button class=&quot;c-text-controller__sizer-btn btn-text js-text-larger&quot;&gt;
         &lt;svg class=&quot;icon icon-ui-plus-circle&quot;&gt;
           &lt;use xlink:href=&quot;#icon-ui-plus-circle&quot;&gt;&lt;/use&gt;
@@ -317,12 +317,12 @@
         </nav>
       </p>
     </footer>
-    <script crossorigin="anonymous" src="https://polyfill.io/v3/polyfill.min.js?flags=gated&amp;features=Array.prototype.forEach,Element.prototype.matches,Element.prototype.remove,fetch,Promise"></script>
-    <script src="scripts/AccessNyc.js"></script>
-    <script src="scripts/markdown.min.js"></script>
+    <script src="scripts/polyfills.js"></script>
+    <script src="scripts/access-nyc.js"></script>
+    <script src="scripts/vue-components.js"></script>
     <script type="text/javascript">
       var access = new AccessNyc();
-      access.markdown();
+      var VueComponents = new VueComponents();
       access.icons();
       access.toggle();
     </script>

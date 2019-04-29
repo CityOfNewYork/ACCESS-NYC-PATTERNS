@@ -260,12 +260,12 @@
               </div>
             </div>
           </section>
-          <section class="pb-4 mb-4" id="usage">
+          <section class="pb-4 mb-4" id="newsletter-usage">
             <div class="page-wrapper px-2 screen-desktop:px-0">
               <header class="layout--home-body">
                 <div class="my-0 px-2 border-b border-color-grey-light screen-tablet:flex screen-tablet:justify-between">
                   <h2 class="m-0 pt-1 pb-4">
-                    <a class="text-color-grey-mid font-normal no-underline capitalize" href="#usage">Usage</a>
+                    <a class="text-color-grey-mid font-normal no-underline capitalize" href="#newsletter-usage">Newsletter Usage</a>
                   </h2>
                 </div>
               </header>
@@ -312,6 +312,11 @@ if (element)
               </div>
             </div>
           </section>
+          <div class="sticky pin-b bg-color-white shadow-up relative overflow-y-scroll whitespace-no-wrap animated fadeInUp">
+            <nav class="nav-inline text-font-size-small p-4"><span class="mr-4">Jump to:</span>
+              <a class="mr-4" href="#newsletter-usage">Newsletter Usage</a>
+            </nav>
+          </div>
         </article>
       </main>
     </div>
@@ -337,12 +342,12 @@ if (element)
         </nav>
       </p>
     </footer>
-    <script crossorigin="anonymous" src="https://polyfill.io/v3/polyfill.min.js?flags=gated&amp;features=Array.prototype.forEach,Element.prototype.matches,Element.prototype.remove,fetch,Promise"></script>
-    <script src="scripts/AccessNyc.js"></script>
-    <script src="scripts/markdown.min.js"></script>
+    <script src="scripts/polyfills.js"></script>
+    <script src="scripts/access-nyc.js"></script>
+    <script src="scripts/vue-components.js"></script>
     <script type="text/javascript">
       var access = new AccessNyc();
-      access.markdown();
+      var VueComponents = new VueComponents();
       access.icons();
       access.toggle();
     </script>

@@ -22,13 +22,13 @@ html lang='en' class='bg-color-white text-size-0'
 
     = partial('/partials/footer.slm');
 
-    script crossorigin='anonymous' src='https://polyfill.io/v3/polyfill.min.js?flags=gated&features=Array.prototype.forEach,Element.prototype.matches,Element.prototype.remove,fetch,Promise'
-    script src='scripts/AccessNyc.js'
-    script src='scripts/markdown.min.js'
+    script src='scripts/polyfills.js'
+    script src='scripts/access-nyc.js'
+    script src='scripts/vue-components.js'
 
     javascript:
       var access = new AccessNyc();
-      access.markdown();
+      var VueComponents = new VueComponents();
       access.icons();
       access.toggle();
 

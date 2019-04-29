@@ -25,3 +25,4 @@
   = mixin('section', 'Combinations', 'utilities/color/color-combinations', 'gutter', this.vars['color-combinations']);
   = mixin('section', 'Statuses', 'utilities/color/color-statuses', 'gutter', this.vars['color-statuses']);
   = mixin('section', 'Utilities', 'utilities/color/color-utilities', 'gutter', this.vars.colors);
+  = partial('section/nav.slm');

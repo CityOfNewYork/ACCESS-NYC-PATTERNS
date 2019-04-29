@@ -2,8 +2,13 @@
 
 To use the inline SVGS, include the main icon sprite (`dist/icons.svg`) in your page markup. ACCESS NYC uses an AJAX method to cache the sprite file while not including it in the page cache to decrease the size of each page. To import the icon through the global ACCESS NYC Patterns script use the following code:
 
-    var access = new AccessNyc();
-    access.icons();
+    <!-- Global Script -->
+    <script src="dist/scripts/access-nyc.js"></script>
+
+    <script>
+      var access = new AccessNyc();
+      access.icons();
+    </script>
 
 The script expects the icon sprite path to be named `icons.svg` and live in the root directory of the site. To overwrite this, pass a path to the method:
 
@@ -11,8 +16,20 @@ The script expects the icon sprite path to be named `icons.svg` and live in the 
 
 The ES6, CommonJS, and IFFE modules all require global activation to be written into your main script:
 
-    import Icons from 'components/icons/icons.common';
+    // ES6
+    import Filter from 'src/elements/icons/icons';
+
+    // CommonJS
+    import Filter from 'dist/elements/icons/icons.common';
+
+    <!-- IFFE -->
+    <script src="dist/elements/icons/icons.iffe.js"></script>
+
     new Icons(); // or new Icons('path/to/icons.svg');
+
+#### Polyfills
+
+The script uses the `Fetch` method which requires a polyfill for IE11 support. See the ["Polyfills" section in the Installation docs](/installation) for recommendations.
 
 #### Markup
 

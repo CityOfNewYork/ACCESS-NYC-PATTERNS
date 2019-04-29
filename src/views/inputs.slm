@@ -32,6 +32,7 @@
   = mixin('section', 'Search', 'elements/inputs/inputs-search');
   = mixin('section', 'Autocomplete', 'elements/inputs/inputs-autocomplete');
   = mixin('section-text', 'Autocomplete Usage', 'elements/inputs/inputs-autocomplete.readme');
+  = partial('section/nav.slm');
 
 = content('script');
   javascript:

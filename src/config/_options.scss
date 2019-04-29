@@ -12,9 +12,9 @@
 
   // To ensure that the focus state is visible with checkboxes inside
   // elements with overflow - hidden (ex. c-filter-multi);
-  padding-#{$text-direction-start}: 3px;
-  padding-top: 3px;
-  padding-bottom: 3px;
+  padding-#{$text-direction-start}: 6px;
+  padding-top: 6px;
+  padding-bottom: 6px;
 
   cursor: pointer;
   display: block;

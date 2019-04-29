@@ -22,3 +22,4 @@
   = mixin('content-header', title);
   = mixin('section', false, 'objects/card-list/card-list', 'gutter');
   = mixin('section', 'Grid Layout', 'objects/card-list/card-list-grid', 'gutter');
+  = partial('section/nav.slm');

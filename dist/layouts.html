@@ -633,6 +633,24 @@
               </div>
             </div>
           </section>
+          <div class="sticky pin-b bg-color-white shadow-up relative overflow-y-scroll whitespace-no-wrap animated fadeInUp">
+            <nav class="nav-inline text-font-size-small p-4"><span class="mr-4">Jump to:</span>
+              <a class="mr-4" href="#columns">Columns</a>
+              <a class="mr-4" href="#rows">Rows</a>
+              <a class="mr-4" href="#gutter">Gutter</a>
+              <a class="mr-4" href="#columns-with-gutter">Columns with Gutter</a>
+              <a class="mr-4" href="#two-columns-with-gutter">Two Columns with Gutter</a>
+              <a class="mr-4" href="#three-columns-with-gutter">Three Columns with Gutter</a>
+              <a class="mr-4" href="#four-columns-with-gutter">Four Columns with Gutter</a>
+              <a class="mr-4" href="#sidebar">Sidebar</a>
+              <a class="mr-4" href="#sidebar-small">Sidebar Small</a>
+              <a class="mr-4" href="#sidebar-with-gutter">Sidebar with Gutter</a>
+              <a class="mr-4" href="#sidebar-small-with-gutter">Sidebar Small with Gutter</a>
+              <a class="mr-4" href="#home-body">Home Body</a>
+              <a class="mr-4" href="#topbar">Topbar</a>
+              <a class="mr-4" href="#map">Map</a>
+            </nav>
+          </div>
         </article>
       </main>
     </div>
@@ -658,12 +676,12 @@
         </nav>
       </p>
     </footer>
-    <script crossorigin="anonymous" src="https://polyfill.io/v3/polyfill.min.js?flags=gated&amp;features=Array.prototype.forEach,Element.prototype.matches,Element.prototype.remove,fetch,Promise"></script>
-    <script src="scripts/AccessNyc.js"></script>
-    <script src="scripts/markdown.min.js"></script>
+    <script src="scripts/polyfills.js"></script>
+    <script src="scripts/access-nyc.js"></script>
+    <script src="scripts/vue-components.js"></script>
     <script type="text/javascript">
       var access = new AccessNyc();
-      access.markdown();
+      var VueComponents = new VueComponents();
       access.icons();
       access.toggle();
     </script>

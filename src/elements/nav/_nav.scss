@@ -26,19 +26,38 @@
 .nav-inline {
   @include typography-nav();
   list-style: none;
-  text-align: $text-direction-end;
-  flex: 1 1 auto;
+  // text-align: $text-direction-end;
+  // flex: 1 1 auto;
   margin: 0;
   padding: 0;
 
   a {
     display: inline-block;
-    margin-#{$text-direction-start}: 1em;
+    margin-#{$text-direction-end}: 1em;
+
+    &:first-of-type {
+      margin-#{$text-direction-start}: 0;
+    }
+
+    &:last-of-type {
+      margin-#{$text-direction-end}: 0;
+    }
   }
 
   .active {
     font-weight: $font-weight-bold;
   }
+
+  .text-align-start & a { // based on utilities/text/text
+    margin-left: 0;
+    margin-right: 1em;
+  }
+
+  .text-align-end & a { // based on utilities/text/text
+    margin-right: 0;
+    margin-left: 1em;
+  }
+
 
   @include nav-icon;
 }

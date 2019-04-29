@@ -57,7 +57,6 @@
 }
 
 .o-banner__tout-body {
-  // @include media($bp-tablet-up) {
   @media screen and (min-width: $screen-tablet) {
     flex: 1 1 auto;
   }

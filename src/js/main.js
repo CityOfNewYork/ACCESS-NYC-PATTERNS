@@ -1,22 +1,15 @@
 'use strict';
 
 // Utilities
-import Markdown from '../utilities/markdown/markdown';
 import Toggle from '../utilities/toggle/toggle';
-import VueDemo from '../utilities/vue-demo/vue-demo';
 
 // Elements
 import Icons from '../elements/icons/icons';
 import InputsAutocomplete from '../elements/inputs/inputs-autocomplete';
 
 // Components
-import CardVue from '../components/card/card.vue';
-import CardData from '../components/card/card.data.js';
 import Accordion from '../components/accordion/accordion';
 import Filter from '../components/filter/filter';
-import FilterVue from '../components/filter/filter.vue';
-import FilterMultiVue from '../components/filter/filter-multi.vue';
-import FilterData from '../components/filter/filter.data';
 import NearbyStops from '../components/nearby-stops/nearby-stops';
 
 // Objects
@@ -79,67 +72,6 @@ class main {
    */
   accordion() {
     return new Accordion();
-  }
-
-  /**
-   * An API for the Vue Card Demo
-   * @param  {string} component The name of the Component to display
-   * @return {object} instance of the Vue Demo
-   */
-  cardVue(component = 'c-card') {
-    let modules = {
-      'c-card': CardVue
-    };
-
-    return new VueDemo({
-      'name': component,
-      'module': modules[component]
-    }, {
-      card: CardData
-    });
-  }
-
-  /**
-   * An API for the Vue Filter Demo
-   * @param  {string} component The name of the Component to display
-   * @return {object}           instance of the Vue Demo
-   */
-  filterVue(component = 'c-filter') {
-    let modules = {
-      'c-filter': FilterVue,
-      'c-filter-multi': FilterMultiVue
-    };
-
-    return new VueDemo({
-        'name': component,
-        'module': modules[component]
-      }, {
-        termsFilter: Object.assign({}, FilterData[0]),
-        termsFilterMulti: FilterData,
-        strings: {
-            'ALL': 'All',
-            'EXPAND_CATEGORY': 'Expand Category',
-            'COLLAPSE_CATEGORY': 'Collapse Category',
-            'TOGGLE_ALL': 'Toggle All'
-          }
-      }, {
-        fetch: function(params) {
-          // eslint-disable-next-line no-console
-          console.dir({
-            'component': component,
-            'method': 'fetch',
-            'params': params
-          });
-        },
-        reset: function(params) {
-          // eslint-disable-next-line no-console
-          console.dir({
-            'component': component,
-            'method': 'reset',
-            'params': params
-          });
-        }
-      });
   }
 
   /**

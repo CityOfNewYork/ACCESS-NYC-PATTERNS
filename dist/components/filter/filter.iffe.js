@@ -16,18 +16,14 @@ var Filter = (function () {
 
   var Toggle = function Toggle(s) {
     var this$1 = this;
-
     var body = document.querySelector('body');
-
     s = !s ? {} : s;
-
     this._settings = {
       selector: s.selector ? s.selector : Toggle.selector,
       namespace: s.namespace ? s.namespace : Toggle.namespace,
       inactiveClass: s.inactiveClass ? s.inactiveClass : Toggle.inactiveClass,
       activeClass: s.activeClass ? s.activeClass : Toggle.activeClass
     };
-
     body.addEventListener('click', function (event) {
       if (!event.target.matches(this$1._settings.selector)) {
         return;
@@ -35,39 +31,37 @@ var Filter = (function () {
 
       this$1._toggle(event);
     });
-
     return this;
   };
-
   /**
    * Logs constants to the debugger
    * @param{object} eventThe main click event
    * @return {object}      The class
    */
+
+
   Toggle.prototype._toggle = function _toggle(event) {
     var this$1 = this;
-
     var el = event.target;
     var target = false;
-
     event.preventDefault();
-
     /** Anchor Links */
+
     target = el.hasAttribute('href') ? document.querySelector(el.getAttribute('href')) : target;
-
     /** Toggle Controls */
-    target = el.hasAttribute('aria-controls') ? document.querySelector("#" + el.getAttribute('aria-controls')) : target;
 
+    target = el.hasAttribute('aria-controls') ? document.querySelector("#" + el.getAttribute('aria-controls')) : target;
     /** Main Functionality */
+
     if (!target) {
       return this;
     }
-    this.elementToggle(el, target);
 
+    this.elementToggle(el, target);
     /** Undo */
+
     if (el.dataset[this._settings.namespace + "Undo"]) {
       var undo = document.querySelector(el.dataset[this._settings.namespace + "Undo"]);
-
       undo.addEventListener('click', function (event) {
         event.preventDefault();
         this$1.elementToggle(el, target);
@@ -77,29 +71,26 @@ var Filter = (function () {
 
     return this;
   };
-
   /**
    * The main toggling method
    * @param{object} el   The current element to toggle active
    * @param{object} target The target element to toggle active/hidden
    * @return {object}      The class
    */
+
+
   Toggle.prototype.elementToggle = function elementToggle(el, target) {
     var this$1 = this;
-
     var i = 0;
     var attr = '';
-    var value = '';
+    var value = ''; // Get other toggles that might control the same element
 
-    // Get other toggles that might control the same element
-    var others = document.querySelectorAll("[aria-controls=\"" + el.getAttribute('aria-controls') + "\"]");
+    var others = document.querySelectorAll("[aria-controls=\"" + el.getAttribute('aria-controls') + "\"]"); // Toggle classes
 
-    // Toggle classes
     if (this._settings.activeClass) {
       el.classList.toggle(this._settings.activeClass);
-      target.classList.toggle(this._settings.activeClass);
+      target.classList.toggle(this._settings.activeClass); // If there are other toggles that control the same element
 
-      // If there are other toggles that control the same element
       if (others) {
         others.forEach(function (other) {
           if (other !== el) {
@@ -111,16 +102,18 @@ var Filter = (function () {
 
     if (this._settings.inactiveClass) {
       target.classList.toggle(this._settings.inactiveClass);
-    }
+    } // If this is a link, jump to the link
 
-    // If this is a link, jump to the link
+
     if (el.hasAttribute('href') && target.classList.contains(this._settings.activeClass)) {
       window.location.hash = '';
       window.location.hash = el.getAttribute('href');
-      target.focus({ preventScroll: true });
-    }
+      target.focus({
+        preventScroll: true
+      });
+    } // Target Element Aria Attributes
 
-    // Target Element Aria Attributes
+
     for (i = 0; i < Toggle.targetAriaRoles.length; i++) {
       attr = Toggle.targetAriaRoles[i];
       value = target.getAttribute(attr);
@@ -128,18 +121,18 @@ var Filter = (function () {
       if (value != '' && value) {
         target.setAttribute(attr, value === 'true' ? 'false' : 'true');
       }
-    }
+    } // Toggle Element (including multi toggles) Aria Attributes
 
-    // Toggle Element (including multi toggles) Aria Attributes
+
     for (i = 0; i < Toggle.elAriaRoles.length; i++) {
       attr = Toggle.elAriaRoles[i];
       value = el.getAttribute(attr);
 
       if (value != '' && value) {
         el.setAttribute(attr, value === 'true' ? 'false' : 'true');
-      }
+      } // If there are other toggles that control the same element
 
-      // If there are other toggles that control the same element
+
       if (others) {
         others.forEach(function (other) {
           if (other !== el && other.getAttribute(attr)) {
@@ -151,55 +144,57 @@ var Filter = (function () {
 
     return this;
   };
-
   /** @type {String} The main selector to add the toggling function to */
+
+
   Toggle.selector = '[data-js*="toggle"]';
-
   /** @type {String} The namespace for our data attribute settings */
+
   Toggle.namespace = 'toggle';
-
   /** @type {String} The hide class */
+
   Toggle.inactiveClass = 'hidden';
-
   /** @type {String} The active class */
+
   Toggle.activeClass = 'active';
-
   /** @type {Array} Aria roles to toggle true/false on the toggling element */
-  Toggle.elAriaRoles = ['aria-pressed', 'aria-expanded'];
 
+  Toggle.elAriaRoles = ['aria-pressed', 'aria-expanded'];
   /** @type {Array} Aria roles to toggle true/false on the target element */
+
   Toggle.targetAriaRoles = ['aria-hidden'];
 
   /**
    * The Filter module
    * @class
    */
+
   var Filter = function Filter() {
     this._toggle = new Toggle({
       selector: Filter.selector,
       namespace: Filter.namespace,
       inactiveClass: Filter.inactiveClass
     });
-
     return this;
   };
-
   /**
    * The dom selector for the module
    * @type {String}
    */
-  Filter.selector = '[data-js="filter"]';
 
+
+  Filter.selector = '[data-js="filter"]';
   /**
    * The namespace for the components JS options
    * @type {String}
    */
-  Filter.namespace = 'filter';
 
+  Filter.namespace = 'filter';
   /**
    * The incactive class name
    * @type {String}
    */
+
   Filter.inactiveClass = 'inactive';
 
   return Filter;

@@ -15,10 +15,12 @@
 function Valid (event, STRINGS) {
   event.preventDefault();
 
-  if (process.env.NODE_ENV !== 'production')
-    // eslint-disable-next-line no-console
+  if (process.env.NODE_ENV !== 'production') // eslint-disable-next-line no-console
     {
-      console.dir({ init: 'Validation', event: event });
+      console.dir({
+        init: 'Validation',
+        event: event
+      });
     }
 
   var validity = event.target.checkValidity();
@@ -29,21 +31,20 @@ function Valid (event, STRINGS) {
     var el = elements[i];
     var container = el.parentNode;
     var message = container.querySelector('.error-message');
-
     container.classList.remove('error');
+
     if (message) {
       message.remove();
-    }
+    } // If this input valid, skip messaging
 
-    // If this input valid, skip messaging
+
     if (el.validity.valid) {
       continue;
-    }
+    } // Create the new error message.
 
-    // Create the new error message.
-    message = document.createElement('div');
 
-    // Get the error message from localized strings.
+    message = document.createElement('div'); // Get the error message from localized strings.
+
     if (el.validity.valueMissing) {
       message.innerHTML = STRINGS.VALID_REQUIRED;
     } else if (!el.validity.valid) {
@@ -53,17 +54,19 @@ function Valid (event, STRINGS) {
     }
 
     message.setAttribute('aria-live', 'polite');
-    message.classList.add('error-message');
+    message.classList.add('error-message'); // Add the error class and error message.
 
-    // Add the error class and error message.
     container.classList.add('error');
     container.insertBefore(message, container.childNodes[0]);
   }
 
-  if (process.env.NODE_ENV !== 'production')
-    // eslint-disable-next-line no-console
+  if (process.env.NODE_ENV !== 'production') // eslint-disable-next-line no-console
     {
-      console.dir({ complete: 'Validation', valid: validity, event: event });
+      console.dir({
+        complete: 'Validation',
+        valid: validity,
+        event: event
+      });
     }
 
   return validity ? event : validity;
@@ -85,13 +88,11 @@ function JoinValues (event) {
 
   var el = event.target.closest('[data-js-join-values]');
   var target = document.querySelector(el.dataset.jsJoinValues);
-
   target.value = Array.from(el.querySelectorAll('input[type="checkbox"]')).filter(function (e) {
     return e.value && e.checked;
   }).map(function (e) {
     return e.value;
   }).join(', ');
-
   return target;
 }
 
@@ -360,29 +361,26 @@ var formSerialize = serialize;
  * The Newsletter module
  * @class
  */
+
 var Newsletter = function Newsletter(element) {
   var this$1 = this;
-
   this._el = element;
+  this.STRINGS = Newsletter.strings; // Map toggled checkbox values to an input.
 
-  this.STRINGS = Newsletter.strings;
-
-  // Map toggled checkbox values to an input.
-  this._el.addEventListener('click', JoinValues);
-
-  // This sets the script callback function to a global function that
+  this._el.addEventListener('click', JoinValues); // This sets the script callback function to a global function that
   // can be accessed by the the requested script.
+
+
   window[Newsletter.callback] = function (data) {
     this$1._callback(data);
   };
 
   this._el.querySelector('form').addEventListener('submit', function (event) {
-    return Valid(event, this$1.STRINGS) ? this$1._submit(event).then(this$1._onload).catch(this$1._onerror) : false;
+    return Valid(event, this$1.STRINGS) ? this$1._submit(event).then(this$1._onload)["catch"](this$1._onerror) : false;
   });
 
   return this;
 };
-
 /**
  * The form submission method. Requests a script with a callback function
  * to be executed on our page. The callback function will be passed the
@@ -390,31 +388,35 @@ var Newsletter = function Newsletter(element) {
  * @param{Event} event The form submission event
  * @return {Promise}     A promise containing the new script call
  */
+
+
 Newsletter.prototype._submit = function _submit(event) {
-  event.preventDefault();
+  event.preventDefault(); // Serialize the data
 
-  // Serialize the data
-  this._data = formSerialize(event.target, { hash: true });
-
-  // Switch the action to post-json. This creates an endpoint for mailchimp
+  this._data = formSerialize(event.target, {
+    hash: true
+  }); // Switch the action to post-json. This creates an endpoint for mailchimp
   // that acts as a script that can be loaded onto our page.
-  var action = event.target.action.replace(Newsletter.endpoints.MAIN + "?", Newsletter.endpoints.MAIN_JSON + "?");
 
-  // Add our params to the action
-  action = action + formSerialize(event.target, { serializer: function serializer() {
+  var action = event.target.action.replace(Newsletter.endpoints.MAIN + "?", Newsletter.endpoints.MAIN_JSON + "?"); // Add our params to the action
+
+  action = action + formSerialize(event.target, {
+    serializer: function serializer() {
       var params = [],
           len = arguments.length;
+
       while (len--) {
         params[len] = arguments[len];
-      }var prev = typeof params[0] === 'string' ? params[0] : '';
+      }
+
+      var prev = typeof params[0] === 'string' ? params[0] : '';
       return prev + "&" + params[1] + "=" + params[2];
-    } });
-
-  // Append the callback reference. Mailchimp will wrap the JSON response in
+    }
+  }); // Append the callback reference. Mailchimp will wrap the JSON response in
   // our callback method. Once we load the script the callback will execute.
-  action = action + "&c=window." + Newsletter.callback;
 
-  // Create a promise that appends the script response of the post-json method
+  action = action + "&c=window." + Newsletter.callback; // Create a promise that appends the script response of the post-json method
+
   return new Promise(function (resolve, reject) {
     var script = document.createElement('script');
     document.body.appendChild(script);
@@ -424,94 +426,104 @@ Newsletter.prototype._submit = function _submit(event) {
     script.src = encodeURI(action);
   });
 };
-
 /**
  * The script onload resolution
  * @param{Event} event The script on load event
  * @return {Class}     The Newsletter class
  */
+
+
 Newsletter.prototype._onload = function _onload(event) {
   event.path[0].remove();
   return this;
 };
-
 /**
  * The script on error resolution
  * @param{Object} error The script on error load event
  * @return {Class}      The Newsletter class
  */
+
+
 Newsletter.prototype._onerror = function _onerror(error) {
   // eslint-disable-next-line no-console
   if (process.env.NODE_ENV !== 'production') {
     console.dir(error);
   }
+
   return this;
 };
-
 /**
  * The callback function for the MailChimp Script call
  * @param{Object} data The success/error message from MailChimp
  * @return {Class}     The Newsletter class
  */
+
+
 Newsletter.prototype._callback = function _callback(data) {
   if (this["_" + data[this._key('MC_RESULT')]]) {
     this["_" + data[this._key('MC_RESULT')]](data.msg);
-  } else
-    // eslint-disable-next-line no-console
+  } else // eslint-disable-next-line no-console
     if (process.env.NODE_ENV !== 'production') {
       console.dir(data);
     }
+
   return this;
 };
-
 /**
  * Submission error handler
  * @param{string} msg The error message
  * @return {Class}    The Newsletter class
  */
+
+
 Newsletter.prototype._error = function _error(msg) {
   this._elementsReset();
+
   this._messaging('WARNING', msg);
+
   return this;
 };
-
 /**
  * Submission success handler
  * @param{string} msg The success message
  * @return {Class}    The Newsletter class
  */
+
+
 Newsletter.prototype._success = function _success(msg) {
   this._elementsReset();
+
   this._messaging('SUCCESS', msg);
+
   return this;
 };
-
 /**
  * Present the response message to the user
  * @param{String} type The message type
  * @param{String} msgThe message
  * @return {Class}     Newsletter
  */
+
+
 Newsletter.prototype._messaging = function _messaging(type, msg) {
   if (msg === void 0) msg = 'no message';
-
   var strings = Object.keys(Newsletter.stringKeys);
   var handled = false;
+
   var alertBox = this._el.querySelector(Newsletter.selectors[type + "_BOX"]);
 
-  var alertBoxMsg = alertBox.querySelector(Newsletter.selectors.ALERT_BOX_TEXT);
-
-  // Get the localized string, these should be written to the DOM already.
+  var alertBoxMsg = alertBox.querySelector(Newsletter.selectors.ALERT_BOX_TEXT); // Get the localized string, these should be written to the DOM already.
   // The utility contains a global method for retrieving them.
+
   for (var i = 0; i < strings.length; i++) {
     if (msg.indexOf(Newsletter.stringKeys[strings[i]]) > -1) {
       msg = this.STRINGS[strings[i]];
       handled = true;
     }
-  }
-
-  // Replace string templates with values from either our form data or
+  } // Replace string templates with values from either our form data or
   // the Newsletter strings object.
+
+
   for (var x = 0; x < Newsletter.templates.length; x++) {
     var template = Newsletter.templates[x];
     var key = template.replace('{{ ', '').replace(' }}', '');
@@ -532,23 +544,22 @@ Newsletter.prototype._messaging = function _messaging(type, msg) {
 
   return this;
 };
-
 /**
  * The main toggling method
  * @return {Class}       Newsletter
  */
+
+
 Newsletter.prototype._elementsReset = function _elementsReset() {
   var targets = this._el.querySelectorAll(Newsletter.selectors.ALERT_BOXES);
 
   var loop = function loop(i) {
     if (!targets[i].classList.contains(Newsletter.classes.HIDDEN)) {
       targets[i].classList.add(Newsletter.classes.HIDDEN);
-
       Newsletter.classes.ANIMATE.split(' ').forEach(function (item) {
         return targets[i].classList.remove(item);
-      });
+      }); // Screen Readers
 
-      // Screen Readers
       targets[i].setAttribute('aria-hidden', 'true');
       targets[i].querySelector(Newsletter.selectors.ALERT_BOX_TEXT).setAttribute('aria-live', 'off');
     }
@@ -556,9 +567,10 @@ Newsletter.prototype._elementsReset = function _elementsReset() {
 
   for (var i = 0; i < targets.length; i++) {
     loop(i);
-  }return this;
-};
+  }
 
+  return this;
+};
 /**
  * The main toggling method
  * @param{object} targetMessage container
@@ -566,55 +578,61 @@ Newsletter.prototype._elementsReset = function _elementsReset() {
  *                        be announced to screen readers.
  * @return {Class}        Newsletter
  */
+
+
 Newsletter.prototype._elementShow = function _elementShow(target, content) {
   target.classList.toggle(Newsletter.classes.HIDDEN);
   Newsletter.classes.ANIMATE.split(' ').forEach(function (item) {
     return target.classList.toggle(item);
-  });
-  // Screen Readers
+  }); // Screen Readers
+
   target.setAttribute('aria-hidden', 'true');
+
   if (content) {
     content.setAttribute('aria-live', 'polite');
   }
 
   return this;
 };
-
 /**
  * A proxy function for retrieving the proper key
  * @param{string} key The reference for the stored keys.
  * @return {string}   The desired key.
  */
+
+
 Newsletter.prototype._key = function _key(key) {
   return Newsletter.keys[key];
 };
-
 /**
  * Setter for the Autocomplete strings
  * @param {object}localizedStringsObject containing strings.
  * @return{object}                  The Newsletter Object.
  */
+
+
 Newsletter.prototype.strings = function strings(localizedStrings) {
   Object.assign(this.STRINGS, localizedStrings);
   return this;
 };
-
 /** @type {Object} API data keys */
+
+
 Newsletter.keys = {
   MC_RESULT: 'result',
   MC_MSG: 'msg'
 };
-
 /** @type {Object} API endpoints */
+
 Newsletter.endpoints = {
   MAIN: '/post',
   MAIN_JSON: '/post-json'
 };
-
 /** @type {String} The Mailchimp callback reference. */
-Newsletter.callback = 'AccessNycNewsletterCallback';
 
+Newsletter.callback = 'AccessNycNewsletterCallback';
 /** @type {Object} DOM selectors for the instance's concerns */
+
 Newsletter.selectors = {
   ELEMENT: '[data-js="newsletter"]',
   ALERT_BOXES: '[data-js-newsletter*="alert-box-"]',
@@ -622,11 +640,11 @@ Newsletter.selectors = {
   SUCCESS_BOX: '[data-js-newsletter="alert-box-success"]',
   ALERT_BOX_TEXT: '[data-js-newsletter="alert-box__text"]'
 };
-
 /** @type {String} The main DOM selector for the instance */
-Newsletter.selector = Newsletter.selectors.ELEMENT;
 
+Newsletter.selector = Newsletter.selectors.ELEMENT;
 /** @type {Object} String references for the instance */
+
 Newsletter.stringKeys = {
   SUCCESS_CONFIRM_EMAIL: 'Almost finished...',
   ERR_PLEASE_ENTER_VALUE: 'Please enter a value',
@@ -634,8 +652,8 @@ Newsletter.stringKeys = {
   ERR_ALREADY_SUBSCRIBED: 'is already subscribed',
   ERR_INVALID_EMAIL: 'looks fake or invalid'
 };
-
 /** @type {Object} Available strings */
+
 Newsletter.strings = {
   VALID_REQUIRED: 'This field is required.',
   VALID_EMAIL_REQUIRED: 'Email is required.',
@@ -649,10 +667,9 @@ Newsletter.strings = {
   ERR_INVALID_EMAIL: 'This email address looks fake or invalid.' + 'Please enter a real email address.',
   LIST_NAME: 'ACCESS NYC - Newsletter'
 };
-
 /** @type {Array} Placeholders that will be replaced in message strings */
-Newsletter.templates = ['{{ EMAIL }}', '{{ LIST_NAME }}'];
 
+Newsletter.templates = ['{{ EMAIL }}', '{{ LIST_NAME }}'];
 Newsletter.classes = {
   ANIMATE: 'animated fadeInUp',
   HIDDEN: 'hidden'

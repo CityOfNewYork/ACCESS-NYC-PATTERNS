@@ -397,6 +397,20 @@
               </div>
             </div>
           </section>
+          <div class="sticky pin-b bg-color-white shadow-up relative overflow-y-scroll whitespace-no-wrap animated fadeInUp">
+            <nav class="nav-inline text-font-size-small p-4"><span class="mr-4">Jump to:</span>
+              <a class="mr-4" href="#heading-1">Heading 1</a>
+              <a class="mr-4" href="#heading-2">Heading 2</a>
+              <a class="mr-4" href="#heading-3">Heading 3</a>
+              <a class="mr-4" href="#heading-4">Heading 4</a>
+              <a class="mr-4" href="#heading-5">Heading 5</a>
+              <a class="mr-4" href="#jumbo">Jumbo</a>
+              <a class="mr-4" href="#small">Small</a>
+              <a class="mr-4" href="#blockquote">Blockquote</a>
+              <a class="mr-4" href="#exposition">Exposition</a>
+              <a class="mr-4" href="#supplemental">Supplemental</a>
+            </nav>
+          </div>
         </article>
       </main>
     </div>
@@ -422,12 +436,12 @@
         </nav>
       </p>
     </footer>
-    <script crossorigin="anonymous" src="https://polyfill.io/v3/polyfill.min.js?flags=gated&amp;features=Array.prototype.forEach,Element.prototype.matches,Element.prototype.remove,fetch,Promise"></script>
-    <script src="scripts/AccessNyc.js"></script>
-    <script src="scripts/markdown.min.js"></script>
+    <script src="scripts/polyfills.js"></script>
+    <script src="scripts/access-nyc.js"></script>
+    <script src="scripts/vue-components.js"></script>
     <script type="text/javascript">
       var access = new AccessNyc();
-      access.markdown();
+      var VueComponents = new VueComponents();
       access.icons();
       access.toggle();
     </script>

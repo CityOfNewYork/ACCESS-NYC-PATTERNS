@@ -165,7 +165,7 @@
               </div>
               <div class="layout--gutter screen-tablet:layout--columns justify-between pt-4">
                 <div class="screen-tablet:pr-2">
-                  <article class="c-accordion m-0">
+                  <article class="c-accordion">
                     <header class="c-accordion__header color-dark-background">
                       <p id="aria-lb-what-you-need-to-include"><span>Free tax prep for New Yorkers</span><em class="block font-normal">NYC Free Tax Prep</em></p>
                       <button aria-controls="aria-c-what-you-need-to-include" aria-expanded="true" class="c-accordion__toggle print:hidden active" data-js="accordion"><span class="c-accordion__toggle-active">hide this list</span><span class="c-accordion__toggle-inactive">show this list</span></button>
@@ -184,7 +184,7 @@
                   </article>
                 </div>
                 <div>
-                  <div class="code-block mb-1"><pre>&lt;article class=&quot;c-accordion m-0&quot;&gt;
+                  <div class="code-block mb-1"><pre>&lt;article class=&quot;c-accordion&quot;&gt;
   &lt;header class=&quot;c-accordion__header color-dark-background&quot;&gt;
     &lt;p id=&quot;aria-lb-what-you-need-to-include&quot;&gt;&lt;span&gt;Free tax prep for New Yorkers&lt;/span&gt;&lt;em class=&quot;block font-normal&quot;&gt;NYC Free Tax Prep&lt;/em&gt;&lt;/p&gt;
     &lt;button aria-controls=&quot;aria-c-what-you-need-to-include&quot; aria-expanded=&quot;true&quot; class=&quot;c-accordion__toggle print:hidden active&quot; data-js=&quot;accordion&quot;&gt;&lt;span class=&quot;c-accordion__toggle-active&quot;&gt;hide this list&lt;/span&gt;&lt;span class=&quot;c-accordion__toggle-inactive&quot;&gt;show this list&lt;/span&gt;&lt;/button&gt;
@@ -215,26 +215,49 @@
                 </div>
               </header>
               <div class="layout--home-body">
-                <div class="my-0 pt-4 px-2 text-font-size-small table-align-start"><h4>Global Script</h4>
+                <div class="my-0 pt-4 px-2 text-font-size-small table-align-start"><h3>Global Script</h3>
 
 <p>The Accordion Component requires JavaScript for functionality and screen reader accessibility. To use the Accordion in the global ACCESS NYC Patterns script use the following code:</p>
 
-<pre><code>var access = new AccessNyc();
-access.accordion();</code></pre>
+<pre><code>&lt;!-- Global Script --&gt;
+&lt;script src=&quot;dist/scripts/access-nyc.js&quot;&gt;&lt;/script&gt;
+
+&lt;script&gt;
+  var access = new AccessNyc();
+  access.accordion();
+&lt;/script&gt;</code></pre>
 
 <p>This function will attach the accordion toggling event to the body of the document.</p>
 
-<h4>Module</h4>
+<h3>Module</h3>
 
 <p>The ES6, CommonJS, and IFFE modules all require importing and object instantiation in your main script:</p>
 
-<pre><code>import Accordion from &#39;components/accordion/accordion.common&#39;;
+<pre><code>// ES6
+import Filter from &#39;src/components/accordion/accordion&#39;;
+
+// CommonJS
+import Filter from &#39;dist/components/accordion/accordion.common&#39;;
+
+&lt;!-- IFFE --&gt;
+&lt;script src=&quot;dist/components/accordion/accordion.iffe.js&quot;&gt;&lt;/script&gt;
+
 new Accordion();</code></pre>
 
-<p>The component requires the <code>data-js=&quot;accordion&quot;</code> attribute and a unique ID targeting the Accordion body, on the toggling element, in order to function.</p></div>
+<p>The component requires the <code>data-js=&quot;accordion&quot;</code> attribute and a unique ID targeting the Accordion body, on the toggling element, in order to function.</p>
+
+<h4>Polyfills</h4>
+
+<p>This script uses the Toggle Utility as a dependency and requres the same polyfills. See the
+  <a href="toggle#toggle-usage">&quot;Toggle Usage&quot; section</a> for more details.</p></div>
               </div>
             </div>
           </section>
+          <div class="sticky pin-b bg-color-white shadow-up relative overflow-y-scroll whitespace-no-wrap animated fadeInUp">
+            <nav class="nav-inline text-font-size-small p-4"><span class="mr-4">Jump to:</span>
+              <a class="mr-4" href="#accordion-usage">Accordion Usage</a>
+            </nav>
+          </div>
         </article>
       </main>
     </div>
@@ -260,12 +283,12 @@ new Accordion();</code></pre>
         </nav>
       </p>
     </footer>
-    <script crossorigin="anonymous" src="https://polyfill.io/v3/polyfill.min.js?flags=gated&amp;features=Array.prototype.forEach,Element.prototype.matches,Element.prototype.remove,fetch,Promise"></script>
-    <script src="scripts/AccessNyc.js"></script>
-    <script src="scripts/markdown.min.js"></script>
+    <script src="scripts/polyfills.js"></script>
+    <script src="scripts/access-nyc.js"></script>
+    <script src="scripts/vue-components.js"></script>
     <script type="text/javascript">
       var access = new AccessNyc();
-      access.markdown();
+      var VueComponents = new VueComponents();
       access.icons();
       access.toggle();
     </script>

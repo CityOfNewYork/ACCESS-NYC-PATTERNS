@@ -1,0 +1,5 @@
+    npm run start
+
+This starts the [Express.js](https://expressjs.com/) development server, which uses Express to render the views in **src/views**. It also uses [Concurrently](https://www.npmjs.com/package/concurrently) to trigger **:watch** scripts for different compilation tasks as changes are detected within your project. The **NODE_ENV** is set to "development" which affects the the styles compilation process by only compiling the global stylesheet. It also affects script processing by disabling ESLint.
+
+The development server renders **slm** templates, but it does not display markup or markdown blocks for each Pattern. These are blocks included with `md{{ path/to/pattern.md }}` and `code{{ path/to/pattern.slm }}`. To see markup and markdown, append **.html** to the url (ex; **http://localhost:7000/developer-tools.html**). Because the **/dist** directory is mounted as the Express server's static directory, all of the compiled files can be previewed in the browser.

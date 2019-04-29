@@ -3,7 +3,7 @@
 The Accordion Component requires JavaScript for functionality and screen reader accessibility. To use the Accordion in the global ACCESS NYC Patterns script use the following code:
 
     <!-- Global Script -->
-    <script src="dist/scripts/AccessNyc.js"></script>
+    <script src="dist/scripts/access-nyc.js"></script>
 
     <script>
       var access = new AccessNyc();
@@ -29,6 +29,6 @@ The ES6, CommonJS, and IFFE modules all require importing and object instantiati
 
 The component requires the `data-js="accordion"` attribute and a unique ID targeting the Accordion body, on the toggling element, in order to function.
 
-### Polyfills
+#### Polyfills
 
-This uses the `.matches()` method which will require a polyfill for IE11 support. The utility does not ship with a polyfill by default. See [Element Prototype Matches on MDN](https://polyfill.io/v2/docs/features/#Element_prototype_matches) for a suitable polyfill.
+This script uses the Toggle Utility as a dependency and requres the same polyfills. See the ["Toggle Usage" section](toggle#toggle-usage) for more details.

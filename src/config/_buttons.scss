@@ -20,6 +20,7 @@ $btn-radius: 5px;
   border: none;
   padding: 0;
   cursor: pointer;
+  overflow: visible;
 }
 
 @mixin btn-normal() {

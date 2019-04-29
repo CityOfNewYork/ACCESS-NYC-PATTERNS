@@ -36,3 +36,4 @@
   = mixin('section', 'Home Body', 'elements/layouts/layouts-home-body', 'gutter');
   = mixin('section', 'Topbar', 'elements/layouts/layouts-topbar', 'gutter');
   = mixin('section', 'Map', 'elements/layouts/layouts-map', 'gutter');
+  = partial('section/nav.slm');

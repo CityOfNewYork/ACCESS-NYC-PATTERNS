@@ -8,8 +8,8 @@
 = partial('partials/links.slm');
 = partial('partials/head.mixin.slm');
 = partial('partials/content-header.mixin.slm');
-= partial('section/demo-specs.mixin.slm');
-= partial('section/demo-block.mixin.slm');
+= partial('section/section.mixin.slm');
+= partial('section/section-text.mixin.slm');
 
 / Content blocks
 = content('head');
@@ -20,11 +20,9 @@
 
 = content('content');
   = mixin('content-header', title);
-  section id='welcome' class='pb-4 mb-4'
-    div class='page-wrapper'
-      header class='layout--home-body'
-        div class='my-0 pt-1 px-2 border-b border-color-grey-light'
+  = mixin('section-text', 'NPM Install', 'content/installation/npm-install');
+  = mixin('section-text', 'Styles', 'content/installation/styles');
+  = mixin('section-text', 'JavaScript', 'content/installation/javascript');
+  = partial('section/nav.slm');
 
-      div class='layout--home-body'
-        div class='px-2 text-font-size-small'
-          = 'md{{ content/installation.md }}';
+= content('script');

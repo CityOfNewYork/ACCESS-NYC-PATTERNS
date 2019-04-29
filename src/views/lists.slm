@@ -24,3 +24,4 @@
   = mixin('content-header', title);
   = mixin('section', 'Inline Comma', 'elements/lists/lists-inline-comma');
   = mixin('section', 'Inline Semicolon', 'elements/lists/lists-inline-semicolon');
+  = partial('section/nav.slm');

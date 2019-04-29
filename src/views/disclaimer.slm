@@ -24,3 +24,4 @@
   = mixin('content-header', title);
   = mixin('section', false, 'components/disclaimer/disclaimer');
   = mixin('section', 'Small Disclaimer', 'components/disclaimer/disclaimer-small');
+  = partial('section/nav.slm');

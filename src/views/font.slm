@@ -24,3 +24,4 @@
   = mixin('section', 'Font Families', 'utilities/font/font');
   = mixin('section', 'Font Smoothing', 'utilities/font/font-smoothing');
   = mixin('section', 'Font Serif/Sans-Serif', 'utilities/font/font-serif-sans');
+  = partial('section/nav.slm');

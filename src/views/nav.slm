@@ -24,3 +24,4 @@
   = mixin('content-header', title);
   = mixin('section', 'Nav Inline', 'elements/nav/nav-inline');
   = mixin('section', 'Nav Block', 'elements/nav/nav-block');
+  = partial('section/nav.slm');

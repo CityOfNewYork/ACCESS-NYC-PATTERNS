@@ -147,14 +147,11 @@
               <h1 class="text-color-blue-dark px-2 pb-4 mb-4">Tooltips</h1>
             </div>
           </header>
-          <section class="pb-4 mb-4" id="toggles">
+          <section class="pb-4 mb-4">
             <div class="page-wrapper px-2">
               <header class="layout--home-body">
                 <div class="my-0 px-2 pt-1 pb-4 border-b border-color-grey-light">
-                  <h2 class="m-0">
-                    <a class="text-color-grey-mid font-normal no-underline capitalize" href="#toggles">Toggles</a>
-                  </h2>
-                  <div class="pt-2">
+                  <div>
                     <p class="text-font-size-small m-0">Source: <code><a href="https://github.com/CityOfNewYork/access-nyc-patterns/tree/v0.5.0/src/elements/tooltips">src/elements/tooltips/tooltips</a></code></p>
                   </div>
                 </div>
@@ -203,12 +200,12 @@
         </nav>
       </p>
     </footer>
-    <script crossorigin="anonymous" src="https://polyfill.io/v3/polyfill.min.js?flags=gated&amp;features=Array.prototype.forEach,Element.prototype.matches,Element.prototype.remove,fetch,Promise"></script>
-    <script src="scripts/AccessNyc.js"></script>
-    <script src="scripts/markdown.min.js"></script>
+    <script src="scripts/polyfills.js"></script>
+    <script src="scripts/access-nyc.js"></script>
+    <script src="scripts/vue-components.js"></script>
     <script type="text/javascript">
       var access = new AccessNyc();
-      access.markdown();
+      var VueComponents = new VueComponents();
       access.icons();
       access.toggle();
     </script>

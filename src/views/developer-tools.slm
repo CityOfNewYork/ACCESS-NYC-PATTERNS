@@ -8,8 +8,8 @@
 = partial('partials/links.slm');
 = partial('partials/head.mixin.slm');
 = partial('partials/content-header.mixin.slm');
-= partial('section/demo-specs.mixin.slm');
-= partial('section/demo-block.mixin.slm');
+= partial('section/section.mixin.slm');
+= partial('section/section-text.mixin.slm');
 
 / Content blocks
 = content('head');
@@ -20,12 +20,13 @@
 
 = content('content');
   = mixin('content-header', title);
-  section id='welcome' class='pb-4 mb-4'
-    div class='page-wrapper'
-      header class='layout--home-body'
-        div class='my-0 pt-1 px-2 border-b border-color-grey-light'
+  = mixin('section-text', 'NPM Scripts', 'content/developer-tools/npm-scripts');
+  = mixin('section-text', 'Development', 'content/developer-tools/development');
+  = mixin('section-text', 'Make', 'content/developer-tools/make');
+  = mixin('section-text', 'Pre-deploy', 'content/developer-tools/pre-deploy');
+  = mixin('section-text', 'Publish', 'content/developer-tools/publish');
+  = mixin('section-text', 'Other Scripts', 'content/developer-tools/other-scripts');
+  = mixin('section-text', 'Contributing', 'content/developer-tools/contributing');
+  = mixin('section-text', 'Patterns', 'content/developer-tools/patterns');
 
-      div class='layout--home-body color-light-background'
-        div class='px-2 text-font-size-small'
-          div class='o-content color-light-background pb-4'
-            = 'md{{ content/developer-tools.md }}';
+  = partial('section/nav.slm');

@@ -31,3 +31,4 @@
   = mixin('section', 'Blockquote', 'utilities/typography/typography-blockquote');
   = mixin('section', 'Exposition', 'utilities/typography/typography-exposition');
   = mixin('section', 'Supplemental', 'utilities/typography/typography-supplemental');
+  = partial('section/nav.slm');

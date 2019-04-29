@@ -65,4 +65,4 @@ The ES6, CommonJS, and IFFE modules all require importing and object instantiati
 
 #### Polyfills
 
-This uses the `.matches()` method which will require a polyfill for IE11 support. The utility does not ship with a polyfill by default. See [Element Prototype Matches on MDN](https://polyfill.io/v2/docs/features/#Element_prototype_matches) for a suitable polyfill.
+The script uses the `Element.prototype.matches`, `Element.prototype.removes`, `Nodelist.prototype.forEach` methods which require polyfills for IE11 support. See the ["Polyfills" section in the Installation docs](/installation) for recommendations.

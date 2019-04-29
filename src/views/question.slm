@@ -29,3 +29,4 @@
   = mixin('section', 'Toggle Question', 'components/question/question-toggle');
   = mixin('section', 'Select Question', 'components/question/question-select');
   = mixin('section', 'Radio Question', 'components/question/question-radio');
+  = partial('section/nav.slm');

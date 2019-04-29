@@ -188,20 +188,42 @@
     </div>
     </div>
     </section>
-    <section class="pb-4 mb-4" id="usage">
+    <section class="pb-4 mb-4" id="nearby-stops-usage">
       <div class="page-wrapper px-2 screen-desktop:px-0">
         <header class="layout--home-body">
           <div class="my-0 px-2 border-b border-color-grey-light screen-tablet:flex screen-tablet:justify-between">
             <h2 class="m-0 pt-1 pb-4">
-              <a class="text-color-grey-mid font-normal no-underline capitalize" href="#usage">Usage</a>
+              <a class="text-color-grey-mid font-normal no-underline capitalize" href="#nearby-stops-usage">Nearby Stops Usage</a>
             </h2>
           </div>
         </header>
         <div class="layout--home-body">
-          <div class="my-0 pt-4 px-2 text-font-size-small table-align-start"></div>
+          <div class="my-0 pt-4 px-2 text-font-size-small table-align-start"><h4>Global Script</h4>
+
+<p>This component requires JavaScript to function. To use it from the global ACCESS NYC Patterns script use the following code:</p>
+
+<pre><code>var access = new AccessNyc();
+access.nearbyStops();</code></pre>
+
+<h4>Module</h4>
+
+<p>The ES6, CommonJS, and IFFE modules all require importing and object instantiation in your main script:</p>
+
+<pre><code>import NearbyStops from &#39;../components/nearby-stops/nearby-stops&#39;;
+new NearbyStops();</code></pre>
+
+<p>The class will select any DOM element with the <code>data-js=&quot;nearby-stops&quot;</code> attribute and look up the closest stops to the location embedded in the <code>data-nearby-stops-location</code> attribute. The location attribute accepts an array
+  of latitude and longitude.</p>
+
+<p>Use the <code>data-nearby-stops-endpoint</code> attribute to set the endpoint of the data. The amount of stops defaults to 3 but can be overwritten using the <code>data-nearby-stops-amount</code> attribute, which accepts a number of stops to display.</p></div>
         </div>
       </div>
     </section>
+    <div class="sticky pin-b bg-color-white shadow-up relative overflow-y-scroll whitespace-no-wrap animated fadeInUp">
+      <nav class="nav-inline text-font-size-small p-4"><span class="mr-4">Jump to:</span>
+        <a class="mr-4" href="#nearby-stops-usage">Nearby Stops Usage</a>
+      </nav>
+    </div>
     </article>
     </main>
     </div>
@@ -227,12 +249,12 @@
         </nav>
       </p>
     </footer>
-    <script crossorigin="anonymous" src="https://polyfill.io/v3/polyfill.min.js?flags=gated&amp;features=Array.prototype.forEach,Element.prototype.matches,Element.prototype.remove,fetch,Promise"></script>
-    <script src="scripts/AccessNyc.js"></script>
-    <script src="scripts/markdown.min.js"></script>
+    <script src="scripts/polyfills.js"></script>
+    <script src="scripts/access-nyc.js"></script>
+    <script src="scripts/vue-components.js"></script>
     <script type="text/javascript">
       var access = new AccessNyc();
-      access.markdown();
+      var VueComponents = new VueComponents();
       access.icons();
       access.toggle();
     </script>

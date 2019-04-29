@@ -463,11 +463,20 @@ new Toggle();</code></pre>
 
 <h4>Polyfills</h4>
 
-<p>This uses the <code>.matches()</code> method which will require a polyfill for IE11 support. The utility does not ship with a polyfill by default. See
-  <a href="https://polyfill.io/v2/docs/features/#Element_prototype_matches">Element Prototype Matches on MDN</a> for a suitable polyfill.</p></div>
+<p>The script uses the <code>Element.prototype.matches</code>, <code>Element.prototype.removes</code>, <code>Nodelist.prototype.forEach</code> methods which require polyfills for IE11 support. See the
+  <a href="/installation">&quot;Polyfills&quot; section in the Installation docs</a> for recommendations.</p></div>
               </div>
             </div>
           </section>
+          <div class="sticky pin-b bg-color-white shadow-up relative overflow-y-scroll whitespace-no-wrap animated fadeInUp">
+            <nav class="nav-inline text-font-size-small p-4"><span class="mr-4">Jump to:</span>
+              <a class="mr-4" href="#anchor-toggle">Anchor Toggle</a>
+              <a class="mr-4" href="#toggle-fade-in-up">Toggle Fade In Up</a>
+              <a class="mr-4" href="#toggle-overflow">Toggle Overflow</a>
+              <a class="mr-4" href="#toggle-overflow-fade-in-up">Toggle Overflow Fade In Up</a>
+              <a class="mr-4" href="#toggle-usage">Toggle Usage</a>
+            </nav>
+          </div>
         </article>
       </main>
     </div>
@@ -493,12 +502,12 @@ new Toggle();</code></pre>
         </nav>
       </p>
     </footer>
-    <script crossorigin="anonymous" src="https://polyfill.io/v3/polyfill.min.js?flags=gated&amp;features=Array.prototype.forEach,Element.prototype.matches,Element.prototype.remove,fetch,Promise"></script>
-    <script src="scripts/AccessNyc.js"></script>
-    <script src="scripts/markdown.min.js"></script>
+    <script src="scripts/polyfills.js"></script>
+    <script src="scripts/access-nyc.js"></script>
+    <script src="scripts/vue-components.js"></script>
     <script type="text/javascript">
       var access = new AccessNyc();
-      access.markdown();
+      var VueComponents = new VueComponents();
       access.icons();
       access.toggle();
     </script>

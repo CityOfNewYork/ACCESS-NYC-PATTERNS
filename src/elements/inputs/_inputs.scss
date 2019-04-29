@@ -165,7 +165,7 @@ input[type='number'] {
   margin-top: 1px;
   z-index: 1;
 
-  box-shadow: map-get(map-get($variables, 'display'), 'up');
+  box-shadow: map-get(map-get($variables, 'shadows'), 'up');
 }
 
 .input-autocomplete__dropdown > ul > li {

@@ -3,7 +3,7 @@
 To use the Autocomplete Input in the global ACCESS NYC Patterns script use the following code:
 
     <!-- Global Script -->
-    <script src="dist/scripts/AccessNyc.js"></script>
+    <script src="dist/scripts/access-nyc.js"></script>
 
     <script>
       var access = new AccessNyc();

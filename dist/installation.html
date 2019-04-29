@@ -147,25 +147,19 @@
               <h1 class="text-color-blue-dark px-2 pb-4 mb-4">Installation</h1>
             </div>
           </header>
-          <section class="pb-4 mb-4" id="welcome">
-            <div class="page-wrapper">
+          <section class="pb-4 mb-4" id="npm-install">
+            <div class="page-wrapper px-2 screen-desktop:px-0">
               <header class="layout--home-body">
-                <div class="my-0 pt-1 px-2 border-b border-color-grey-light"></div>
+                <div class="my-0 px-2 border-b border-color-grey-light screen-tablet:flex screen-tablet:justify-between">
+                  <h2 class="m-0 pt-1 pb-4">
+                    <a class="text-color-grey-mid font-normal no-underline capitalize" href="#npm-install">NPM Install</a>
+                  </h2>
+                </div>
               </header>
               <div class="layout--home-body">
-                <div class="px-2 text-font-size-small"><h2>Styles</h2>
-
-<p>There are a few options when integrating the patterns.</p>
-
-<h3>Node Module (recommended)</h3>
-
-<p>This package is available as an NPM Module and can be included as a dependency with NPM...</p>
+                <div class="my-0 pt-4 px-2 text-font-size-small table-align-start"><p>There are a few options when integrating the patterns, but using NPM Install is recommended. This package is available as an NPM Module and can be included as a dependency with NPM...</p>
 
 <pre><code>$ npm install access-nyc-patterns -save</code></pre>
-
-<p>... or Yarn;</p>
-
-<pre><code>$ yarn add access-nyc-patterns</code></pre>
 
 <h3>Download</h3>
 
@@ -187,55 +181,102 @@
 <pre><code>&lt;link href=&quot;https://cdn.jsdelivr.net/gh/cityofnewyork/access-nyc-patterns@v0.0.1/dist/styles/site-default.css&quot; rel=&quot;stylesheet&quot;&gt;</code></pre>
 
 <p>You can learn more about the different ways to use JsDelivr on it’s
-  <a href="https://www.jsdelivr.com/features">feature page</a>. All Components and Objects are also distributed with their own styles and JavaScript dependencies in their corresponding <code>/dist</code> folder. For example, all of the accordion dependencies live in the <code>/dist/components/accordion</code>  folder.</p>
+  <a href="https://www.jsdelivr.com/features">feature page</a>. All Components and Objects are also distributed with their own styles and JavaScript dependencies in their corresponding <code>/dist</code> folder. For example, all of the accordion dependencies live in the <code>/dist/components/accordion</code>  folder.</p></div>
+              </div>
+            </div>
+          </section>
+          <section class="pb-4 mb-4" id="styles">
+            <div class="page-wrapper px-2 screen-desktop:px-0">
+              <header class="layout--home-body">
+                <div class="my-0 px-2 border-b border-color-grey-light screen-tablet:flex screen-tablet:justify-between">
+                  <h2 class="m-0 pt-1 pb-4">
+                    <a class="text-color-grey-mid font-normal no-underline capitalize" href="#styles">Styles</a>
+                  </h2>
+                </div>
+              </header>
+              <div class="layout--home-body">
+                <div class="my-0 pt-4 px-2 text-font-size-small table-align-start"><p>The ACCESS NYC main
+  <a href="https://github.com/CityOfNewYork/ACCESS-NYC/blob/master/wp-content/themes/access/src/scss/_imports.scss">SASS import</a> provides and example of how to include individual patterns into a project.</p>
 
-<h3>SASS Import</h3>
+<pre><code>@import &#39;node_modules/access-nyc-patterns/src/components/accordion/accordion&#39;;</code></pre>
 
-<p>The ACCESS NYC main
-  <a href="https://github.com/CityOfNewYork/ACCESS-NYC/blob/master/wp-content/themes/access/src/scss/_imports.scss">SASS import</a> shows how to include individual patterns into your project. Be sure to add <code>node_modules</code> to your “include” paths.</p>
+<h3>Asset Paths and CDN</h3>
+
+<p>This is the path to your asset folder that includes images, webfonts, and svgs. Uncomment and set to override the default. By default, it is set to look for assets one directory up from the distributed stylesheet &#39;../&#39;.</p>
+
+<pre><code>$cdn: &#39;path/to/assets/&#39;;</code></pre>
+
+<p>The CDN can be set to another local path, or, it can be set to the actual &#39;cdn&#39; url within the $variables map. This default uses
+  <a href="https://www.jsdelivr.com/">jsDelivr</a> to pull the assets from the patterns GitHub repository and the tag of the installed version. ex;</p>
+
+<pre><code>@import &#39;config/variables&#39;;
+$cdn: map-get($variables, &#39;cdn&#39;);</code></pre>
+
+<p>These are the default paths to the different asset types within the asset folder. Uncomment and set to override their defaults.</p>
+
+<pre><code>$path-to-fonts: &#39;fonts/&#39;;
+$path-to-images: &#39;images/&#39;;
+$path-to-svg: &#39;svg/&#39;;</code></pre>
+
+<h3>Include Paths</h3>
+
+<p>You can add <code>node_modules/access-nyc-patterns/src</code> to your “include” paths which will allow you to write the shorthand path;</p>
+
+<pre><code>@import &#39;components/accordion/accordion&#39;;</code></pre>
 
 <p>For example; the
   <a href="https://github.com/sass/node-sass">node-sass</a> <code>includePaths</code> option which is array of paths that attempt to resolve your <code>@import</code> declarations.</p>
 
 <pre><code>Sass.render({
-        file: &#39;./src/scss/site-default.scss&#39;,
-        outFile: &#39;site-default.css&#39;,
-        includePaths: [
-            &#39;./node_modules&#39;,
-            &#39;./node_modules/access-nyc-patterns/src&#39;
-        ]
-    }, (err, result) =&gt; {
-        Fs.writeFile(`./dist/styles/site-default.css`, result.css);
-    }
+    file: &#39;./src/scss/site-default.scss&#39;,
+    outFile: &#39;site-default.css&#39;,
+    includePaths: [
+      &#39;./node_modules&#39;,
+      &#39;./node_modules/access-nyc-patterns/src&#39;
+    ]
+  }, (err, result) =&gt; {
+    Fs.writeFile(`./dist/styles/site-default.css`, result.css);
+  }
 });</code></pre>
 
 <p>Similar to the the
   <a href="https://www.npmjs.com/package/gulp-sass">gulp-sass</a> <code>includePaths</code> option.</p>
 
 <pre><code>gulp.task(&#39;sass&#39;, () =&gt; {
-    return gulp.src(&#39;./sass/**/*.scss&#39;)
-        .pipe(sass.({includePaths: [
-            &#39;node_modules&#39;,
-            &#39;node_modules/access-nyc-patterns/src&#39;
-        ]}))
-         .pipe(gulp.dest(&#39;./css&#39;));
-});</code></pre>
+  return gulp.src(&#39;./sass/**/*.scss&#39;)
+    .pipe(sass.({includePaths: [
+      &#39;node_modules&#39;,
+      &#39;node_modules/access-nyc-patterns/src&#39;
+    ]})).pipe(gulp.dest(&#39;./css&#39;));
+});</code></pre></div>
+              </div>
+            </div>
+          </section>
+          <section class="pb-4 mb-4" id="javascript">
+            <div class="page-wrapper px-2 screen-desktop:px-0">
+              <header class="layout--home-body">
+                <div class="my-0 px-2 border-b border-color-grey-light screen-tablet:flex screen-tablet:justify-between">
+                  <h2 class="m-0 pt-1 pb-4">
+                    <a class="text-color-grey-mid font-normal no-underline capitalize" href="#javascript">JavaScript</a>
+                  </h2>
+                </div>
+              </header>
+              <div class="layout--home-body">
+                <div class="my-0 pt-4 px-2 text-font-size-small table-align-start"><p>The JavaScript source is written as ES6 Modules, and using
+  <a href="https://rollupjs.org">Rollup.js</a>, individual components with JavaScript dependencies are distributed as CommonJS and IFFE functions. Depending on your project, you can import any of the three. Below are examples of importing only the accordion component and initializing
+  it.</p>
 
-<h2>Javascript</h2>
+<h3>ES6 Component Import</h3>
 
-<p>The JavaScript source is written as ES6 Modules, and using
-  <a href="https://rollupjs.org">Rollup.js</a>, individual components with JavaScript dependencies are distributed as CommonJS and IFFE functions. Depending on your project, you can import any of the three.</p>
+<pre><code>import Accordion from &#39;src/components/accordion/accordion&#39;;
+new Accordion();</code></pre>
 
-<h3>CommonJS and ES6 Component Import</h3>
+<h3>CommonJS</h3>
 
-<p>Here is an example of importing only the accordion component and initializing it.</p>
-
-<pre><code>import Accordion from &#39;components/accordion/accordion&#39;;
+<pre><code>import Accordion from &#39;dist/components/accordion/accordion.common&#39;;
 new Accordion();</code></pre>
 
 <h3>IFFE</h3>
-
-<p>Here is an example of the accordion IFFE script.</p>
 
 <pre><code>&lt;script src=&quot;dist/components/accordion.iffe.js&quot;&gt;&lt;/script&gt;
 &lt;script type=&quot;text/javascript&quot;&gt;
@@ -244,19 +285,37 @@ new Accordion();</code></pre>
 
 <h3>Global Pattern Script</h3>
 
-<p>You may also import the main ACCESS NYC Patterns script with all of the dependencies in it. This script is exported as an IFFE function so it doesn&#39;t need to be compiled. Components must be initialized individually.</p>
+<p>You may also import the main ACCESS NYC Patterns script with all of the dependencies in it. This script is exported as an IFFE function so it doesn&#39;t need to be compiled but you may want to uglify it. Components must be initialized individually.</p>
 
-<pre><code>&lt;script src=&quot;dist/scripts/AccessNyc.js&quot;&gt;&lt;/script&gt;
+<pre><code>&lt;script src=&quot;dist/scripts/access-nyc.js&quot;&gt;&lt;/script&gt;
 &lt;script type=&quot;text/javascript&quot;&gt;
   var access = new AccessNyc();
   access.accordion();
 &lt;/script&gt;</code></pre>
 
 <p>The main
-  <a href="https://github.com/CityOfNewYork/ACCESS-NYC-PATTERNS/blob/master/src/js/main.js">Javascript import file</a> shows how each component needs to be initialized.</p></div>
+  <a href="https://github.com/CityOfNewYork/ACCESS-NYC-PATTERNS/blob/master/src/js/main.js">Javascript import file</a> shows how each component needs to be initialized.</p>
+
+<h3>Polyfills</h3>
+
+<p>The Patterns include a polyfill bundle <code>dist/scripts/polyfill.js</code> (see
+  <a href="https://github.com/CityOfNewYork/ACCESS-NYC-PATTERNS/blob/master/src/js/polyfills.js">source</a>) using
+  <a href="https://developer.mozilla.org/en-US/docs/Web/API/Element/matches#Polyfill">MDN Matches</a>,
+  <a href="https://developer.mozilla.org/en-US/docs/Web/API/ChildNode/remove#Polyfill">MDN Remove</a>,
+  <a href="https://www.npmjs.com/package/whatwg-fetch">whatwg-fetch</a> and
+  <a href="https://github.com/zloirock/core-js">Core JS Standard Libary</a> (a dependency of
+  <a href="https://babeljs.io/docs/en/babel-preset-env">@babel/preset-env</a>). However, this bundle includes all required polyfills so it is recommended to build your own polyfill based on your browser coverage requirements.</p></div>
               </div>
             </div>
           </section>
+          <div class="sticky pin-b bg-color-white shadow-up relative overflow-y-scroll whitespace-no-wrap animated fadeInUp">
+            <nav class="nav-inline text-font-size-small p-4"><span class="mr-4">Jump to:</span>
+              <a class="mr-4" href="#language-attribute">Language Attribute</a>
+              <a class="mr-4" href="#npm-install">NPM Install</a>
+              <a class="mr-4" href="#styles">Styles</a>
+              <a class="mr-4" href="#javascript">JavaScript</a>
+            </nav>
+          </div>
         </article>
       </main>
     </div>
@@ -282,12 +341,12 @@ new Accordion();</code></pre>
         </nav>
       </p>
     </footer>
-    <script crossorigin="anonymous" src="https://polyfill.io/v3/polyfill.min.js?flags=gated&amp;features=Array.prototype.forEach,Element.prototype.matches,Element.prototype.remove,fetch,Promise"></script>
-    <script src="scripts/AccessNyc.js"></script>
-    <script src="scripts/markdown.min.js"></script>
+    <script src="scripts/polyfills.js"></script>
+    <script src="scripts/access-nyc.js"></script>
+    <script src="scripts/vue-components.js"></script>
     <script type="text/javascript">
       var access = new AccessNyc();
-      access.markdown();
+      var VueComponents = new VueComponents();
       access.icons();
       access.toggle();
     </script>

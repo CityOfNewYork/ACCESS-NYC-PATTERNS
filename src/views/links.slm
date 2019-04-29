@@ -26,3 +26,4 @@
   = mixin('section', 'More Link', 'elements/links/links-more');
   = mixin('section', 'Back Link', 'elements/links/links-back');
   = mixin('section', 'Inverted Links', 'elements/links/links-invert');
+  = partial('section/nav.slm');
