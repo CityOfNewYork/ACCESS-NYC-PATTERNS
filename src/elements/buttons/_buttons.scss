@@ -15,6 +15,10 @@
 @import 'bourbon/app/assets/stylesheets/addons/size';
 
 // Declarations
+button {
+  @include btn-reset;
+}
+
 // Base styles for buttons
 .btn, [class*='btn-'],
 .button, [class*='button-'] {

@@ -34,18 +34,7 @@
 }
 
 .c-accordion__toggle {
-  appearance: none;
-  cursor: pointer;
-  color: inherit;
-  font-size: inherit;
-  font-weight: inherit;
   text-decoration: underline;
-
-  background: transparent;
-  border: none;
-
-  padding: 0;
-
   display: inline-flex;
 
   * {

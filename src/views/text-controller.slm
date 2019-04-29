@@ -21,4 +21,4 @@
 
 = content('content');
   = mixin('content-header', title);
-  = mixin('section', false, 'components/text-controller/text-controller', 'gutter');
+  = mixin('section', false, 'components/text-controller/text-controller');

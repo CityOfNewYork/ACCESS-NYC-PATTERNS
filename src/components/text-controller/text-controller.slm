@@ -51,7 +51,7 @@ div class='c-text-controller' data-sketch-symbol=symbol data-sketch-symbol-insta
               span class='wpml-ls-native' বাংলা
 
     div class='c-text-controller__sizer'
-      em class='c-text-controller__sizer-text' Adjust text size
+      span class='c-text-controller__sizer-text' Adjust text size
       button class='c-text-controller__sizer-btn btn-text js-text-larger'
         svg class='icon icon-ui-plus-circle'
           use xlink:href='#icon-ui-plus-circle'
