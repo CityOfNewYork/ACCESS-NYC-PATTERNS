@@ -28,7 +28,3 @@ You may also import the main ACCESS NYC Patterns script with all of the dependen
     </script>
 
 The main [Javascript import file](https://github.com/CityOfNewYork/ACCESS-NYC-PATTERNS/blob/master/src/js/main.js) shows how each component needs to be initialized.
-
-### Polyfills
-
-The Patterns include a polyfill bundle `dist/scripts/polyfill.js` (see [source](https://github.com/CityOfNewYork/ACCESS-NYC-PATTERNS/blob/master/src/js/polyfills.js)) using [MDN Matches](https://developer.mozilla.org/en-US/docs/Web/API/Element/matches#Polyfill), [MDN Remove](https://developer.mozilla.org/en-US/docs/Web/API/ChildNode/remove#Polyfill), [whatwg-fetch](https://www.npmjs.com/package/whatwg-fetch) and [Core JS Standard Libary](https://github.com/zloirock/core-js) (a dependency of [@babel/preset-env](https://babeljs.io/docs/en/babel-preset-env)). However, this bundle includes all required polyfills so it is recommended to build your own polyfill based on your browser coverage requirements.

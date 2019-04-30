@@ -2,10 +2,10 @@ doctype html
 html lang='en' class='bg-color-white text-size-0'
   = content('head');
 
-  body class='bg-color-white' style='visibility: hidden;' onload='load()'
+  body class='bg-color-blue-dark' style='visibility: hidden;' onload='load()'
     a class='sr-only' href='#main-content' Skip to main content
 
-    div class='min-h-screen'
+    div class='bg-color-white'
       = partial('/partials/header.slm');
 
       aside#main-menu role='region' aria-labelledby='main-menu-control' aria-hidden='true' class='color-mid-background text-font-size-small hidden hidden:overflowFadeInUp animated relative' style='top: -1px'
@@ -19,6 +19,7 @@ html lang='en' class='bg-color-white text-size-0'
       main#main-content class='color-light-background pt-4'
         article class='pt-4'
           = content('content');
+          = partial('/section/nav.slm');
 
     = partial('/partials/footer.slm');
 

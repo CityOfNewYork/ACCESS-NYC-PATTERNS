@@ -16,7 +16,7 @@ class Accordion {
       selector: Accordion.selector,
       namespace: Accordion.namespace,
       inactiveClass: Accordion.inactiveClass
-    })
+    });
 
     return this;
   }

@@ -1,14 +1,26 @@
-The ACCESS NYC main [SASS import](https://github.com/CityOfNewYork/ACCESS-NYC/blob/master/wp-content/themes/access/src/scss/_imports.scss) provides and example of how to include individual patterns into a project.
+The ACCESS NYC main [SASS import](https://github.com/CityOfNewYork/ACCESS-NYC/blob/master/wp-content/themes/access/src/scss/_imports.scss) provides and example of how to set up a stylesheet to cherry-pick individual patterns in a project.
 
     @import 'node_modules/access-nyc-patterns/src/components/accordion/accordion';
 
+All files can be imported directly from the source directory. The exception being [Tailwind Utilities](/utility), which are compiled to a Sass file in the distribution folder:
+
+    @import 'node_modules/access-nyc-patterns/dist/styles/_tailwind.scss';
+
 ### Asset Paths and CDN
 
-This is the path to your asset folder that includes images, webfonts, and svgs. Uncomment and set to override the default. By default, it is set to look for assets one directory up from the distributed stylesheet '../'.
+The styles use the `url()` for loading webfonts, images, and svgs. By default, it is set to look for asset directories one directory up from the distributed stylesheet like so:
 
+    styles/site-default.scss
+    images/..
+    fonts/..
+    svg/..
+
+However, you can set the path to a different path that includes all of these files using the `$cdn` variable.
+
+    // $cdn: '../'; (default)
     $cdn: 'path/to/assets/';
 
-The CDN can be set to another local path, or, it can be set to the actual 'cdn' url within the $variables map. This default uses [jsDelivr](https://www.jsdelivr.com/) to pull the assets from the patterns GitHub repository and the tag of the installed version. ex;
+The CDN can be set to another local path, or, it can be set to the remote url within the `$variables` map. This default uses [jsDelivr](https://www.jsdelivr.com/) to pull the assets from the patterns GitHub repository and the tag of the installed version. ex;
 
     @import 'config/variables';
     $cdn: map-get($variables, 'cdn');
@@ -21,7 +33,7 @@ These are the default paths to the different asset types within the asset folder
 
 ### Include Paths
 
-You can add `node_modules/access-nyc-patterns/src` to your “include” paths which will allow you to write the shorthand path;
+You can add **node_modules/access-nyc-patterns/src** to your “include” paths which will allow you to write the shorthand path;
 
     @import 'components/accordion/accordion';
 

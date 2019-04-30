@@ -30,8 +30,6 @@
   = mixin('section', 'Vue Multi Filter', 'components/filter/filter-multi.vue');
   = mixin('section-text', 'Vue Component Usage', 'components/filter/filter.readme.vue');
 
-  = partial('section/nav.slm');
-
 = content('script');
   javascript:
     access.filter();

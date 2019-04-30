@@ -27,4 +27,3 @@
   = mixin('section', 'Urgent', 'components/alert-box/alert-box-urgent');
   = mixin('section', 'Warning', 'components/alert-box/alert-box-warning');
   = mixin('section', 'Share Form', 'components/alert-box/alert-box-share-form', 'gutter');
-  = partial('section/nav.slm');

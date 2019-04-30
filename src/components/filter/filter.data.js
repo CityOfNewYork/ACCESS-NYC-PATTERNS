@@ -2,16 +2,34 @@ export default [
   {
     name: 'Programs',
     slug: 'programs',
-    active: true, // Expands or collapses the accordion.
-    checkbox: false, // Determines wether the parent of the filter group is displayed as a button <button> element or a checkbox.
-    toggle: true, // Shows or hides the "toggle all" short link for toggling all checkboxes within a group.
-    nav: true, // Determines wether the list is rendered as a navigation <nav> element with hyperlinks or as an unordered list <ul> with button <button> elements (default).
+    /** Expands or collapses the accordion. */
+    active: true,
+    /**
+     * Determines wether the parent of the filter group is displayed as a button
+     * <button> element or a checkbox.
+     */
+    checkbox: false,
+    /**
+     * Shows or hides the "toggle all" short link for toggling all checkboxes
+     * within a group.
+     */
+    toggle: true,
+    /**
+     * Determines wether the list is rendered as a navigation <nav> element with
+     * hyperlinks or as an unordered list <ul> with button <button> elements
+     * (default).
+     */
+    nav: true,
     filters: [
       {
         id: 154,
         name: 'Cash &amp; Expenses',
         slug: 'cash-expenses',
-        href: '#cash-expenses', // If the Vue Filter uses a navigation <nav> element with links, this will be used for the hyperlink.
+        /**
+         * If the Vue Filter uses a navigation <nav> element with links, this
+         * will be used for the hyperlink.
+         */
+        href: '#cash-expenses',
         parent: 'programs'
       },
       {

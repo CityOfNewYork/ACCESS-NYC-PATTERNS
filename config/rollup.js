@@ -143,6 +143,24 @@ const modules = [
     plugins: rollup.local
   },
   {
+    input: './src/utilities/toggle/toggle.js',
+    plugins: rollup.dist,
+    output: [
+      {
+        name: 'InputAutocomplete',
+        file: `./dist/utilities/toggle/toggle.iffe.js`,
+        format: 'iife',
+        strict: rollup.strict
+      },
+      {
+        name: 'InputAutocomplete',
+        file: `./dist/utilities/toggle/toggle.common.js`,
+        format: 'cjs',
+        strict: rollup.strict
+      }
+    ]
+  },
+  {
     input: './src/elements/inputs/inputs-autocomplete.js',
     plugins: rollup.dist,
     output: [

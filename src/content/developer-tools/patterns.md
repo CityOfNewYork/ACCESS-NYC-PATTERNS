@@ -2,7 +2,7 @@ All of the Patterns source is organized into four directories: elements, compone
 
 ### Elements
 
-Elements are the smallest building blocks and include colors, icons, buttons, links, layouts, and more. They can be seen within [Components](#components) and [Objects](#objects). They are often customized default HTML tags (&lt;button&gt;,  &lt;table&gt;, &lt;ul&gt;, &lt;a&gt;, etc.). They require smaller amounts of markup and styling to customize.
+Elements are the smallest building blocks and include colors, icons, buttons, links, layouts, and more. They can be seen within [Components](#components) and [Objects](#objects). They are often customized default HTML tags (`<button>`,  `<table>`, `<ul>`, `<a>`, etc.). They require smaller amounts of markup and styling to customize.
 
 ### Components
 
@@ -10,7 +10,7 @@ Components are smaller patterns that require more complex markup and styling tha
 
 ### Objects
 
-Objects are the most complex patterns and require a great deal of custom styling and markup to function. They can be global elements (&lt;footer&gt;) or appear only in certain views. Object CSS classes are denoted with the `.o-` prefix.
+Objects are the most complex patterns and require a great deal of custom styling and markup to function. They can be global elements (`<footer>`) or appear only in certain views. Object CSS classes are denoted with the `.o-` prefix.
 
 ### Utilities
 

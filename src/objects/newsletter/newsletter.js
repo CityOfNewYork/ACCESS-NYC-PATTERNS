@@ -1,8 +1,8 @@
 'use strict';
 
-import Valid from '../../utilities/valid/valid';
-import JoinValues from '../../utilities/join-values/join-values';
-import FormSerialize from 'form-serialize';
+import valid from '../../utilities/valid/valid';
+import joinValues from '../../utilities/join-values/join-values';
+import formSerialize from 'form-serialize';
 
 /**
  * The Newsletter module
@@ -23,7 +23,7 @@ class Newsletter {
     this.STRINGS = Newsletter.strings;
 
     // Map toggled checkbox values to an input.
-    this._el.addEventListener('click', JoinValues);
+    this._el.addEventListener('click', joinValues);
 
     // This sets the script callback function to a global function that
     // can be accessed by the the requested script.
@@ -32,7 +32,7 @@ class Newsletter {
     };
 
     this._el.querySelector('form').addEventListener('submit', (event) =>
-      (Valid(event, this.STRINGS)) ?
+      (valid(event, this.STRINGS)) ?
         this._submit(event).then(this._onload).catch(this._onerror) : false
     );
 
@@ -50,7 +50,7 @@ class Newsletter {
     event.preventDefault();
 
     // Serialize the data
-    this._data = FormSerialize(event.target, {hash: true});
+    this._data = formSerialize(event.target, {hash: true});
 
     // Switch the action to post-json. This creates an endpoint for mailchimp
     // that acts as a script that can be loaded onto our page.
@@ -59,7 +59,7 @@ class Newsletter {
     );
 
     // Add our params to the action
-    action = action + FormSerialize(event.target, {serializer: (...params) => {
+    action = action + formSerialize(event.target, {serializer: (...params) => {
       let prev = (typeof params[0] === 'string') ? params[0] : '';
       return `${prev}&${params[1]}=${params[2]}`;
     }});

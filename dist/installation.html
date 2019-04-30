@@ -37,9 +37,9 @@
     </script>
   </head>
 
-  <body class="bg-color-white" onload="load()" style="visibility: hidden;">
+  <body class="bg-color-blue-dark" onload="load()" style="visibility: hidden;">
     <a class="sr-only" href="#main-content">Skip to main content</a>
-    <div class="min-h-screen">
+    <div class="bg-color-white">
       <header class="color-light-background px-2">
         <div class="border-b border-color-grey-light">
           <div class="flex items-center justify-between p-2 screen-tablet:py-4 screen-tablet:px-2">
@@ -157,31 +157,32 @@
                 </div>
               </header>
               <div class="layout--home-body">
-                <div class="my-0 pt-4 px-2 text-font-size-small table-align-start"><p>There are a few options when integrating the patterns, but using NPM Install is recommended. This package is available as an NPM Module and can be included as a dependency with NPM...</p>
+                <div class="my-0 pt-4 px-2 text-font-size-small table-align-start"><p>There are a few options when integrating the patterns, but using NPM Install is recommended.</p>
 
-<pre><code>$ npm install access-nyc-patterns -save</code></pre>
+<pre><code>$ npm install access-nyc-patterns</code></pre>
 
 <h3>Download</h3>
 
-<p>
-  <a href="https://github.com/CityOfNewYork/ACCESS-NYC-PATTERNS/archive/master.zip">Download an archive</a> of this repository to include in your project.</p>
+<p>Optionally, you may
+  <a href="https://github.com/CityOfNewYork/ACCESS-NYC-PATTERNS/archive/master.zip">download an archive</a> of this repository to include in your project.</p>
 
 <h3>CDN</h3>
 
-<p>The global stylesheet (<code>style-default.css</code>) with all elements, components, objects, and utilities exists in the
-  <a href="https://github.com/CityOfNewYork/ACCESS-NYC-PATTERNS/tree/master/dist/styles"><code>dist/styles</code></a> directory. This includes the English (default) stylesheet as well as 10 other individual language stylesheets.</p>
+<p>You can pick which files in the
+  <a href="https://github.com/CityOfNewYork/ACCESS-NYC-PATTERNS/tree/v0.1.0/dist">distribution folder of the repository</a> to use by linking to them through
+  <a href="https://www.jsdelivr.com">JsDelivr</a>. For example, the link of the v0.1.0 default stylesheet:</p>
 
-<p>You can pick which stylesheet to use by linking to it through
-  <a href="https://www.jsdelivr.com">JsDelivr</a>. For example, the link of the v1.0.0 default stylesheet:</p>
+<pre><code>https://cdn.jsdelivr.net/gh/cityofnewyork/access-nyc-patterns@v0.1.0/dist/styles/site-default.css</code></pre>
 
-<pre><code>https://cdn.jsdelivr.net/gh/cityofnewyork/access-nyc-patterns@v1.0.0/dist/styles/site-default.css</code></pre>
+<p>You can include this link in the <code>&lt;head&gt;</code> of your html document.</p>
 
-<p>Once you have the link, you can drop it into the <code>&lt;head&gt;</code> of your html document.</p>
-
-<pre><code>&lt;link href=&quot;https://cdn.jsdelivr.net/gh/cityofnewyork/access-nyc-patterns@v0.0.1/dist/styles/site-default.css&quot; rel=&quot;stylesheet&quot;&gt;</code></pre>
+<pre><code>&lt;link href=&quot;https://cdn.jsdelivr.net/gh/cityofnewyork/access-nyc-patterns@v0.1.0/dist/styles/site-default.css&quot; rel=&quot;stylesheet&quot;&gt;</code></pre>
 
 <p>You can learn more about the different ways to use JsDelivr on it’s
-  <a href="https://www.jsdelivr.com/features">feature page</a>. All Components and Objects are also distributed with their own styles and JavaScript dependencies in their corresponding <code>/dist</code> folder. For example, all of the accordion dependencies live in the <code>/dist/components/accordion</code>  folder.</p></div>
+  <a href="https://www.jsdelivr.com/features">feature page</a>. All Components and Objects are also distributed with their own styles and JavaScript dependencies in their corresponding <strong>/dist</strong> folder. For example, all of the accordion dependencies live in the <strong>/dist/components/accordion</strong>  folder.</p>
+
+<p>Keep in mind, there are regular releases to the patterns which follow semantic versioning. You can follow the
+  <a href="https://github.com/CityOfNewYork/ACCESS-NYC-PATTERNS/releases">new releases on the repository releases page</a>.</p></div>
               </div>
             </div>
           </section>
@@ -196,17 +197,30 @@
               </header>
               <div class="layout--home-body">
                 <div class="my-0 pt-4 px-2 text-font-size-small table-align-start"><p>The ACCESS NYC main
-  <a href="https://github.com/CityOfNewYork/ACCESS-NYC/blob/master/wp-content/themes/access/src/scss/_imports.scss">SASS import</a> provides and example of how to include individual patterns into a project.</p>
+  <a href="https://github.com/CityOfNewYork/ACCESS-NYC/blob/master/wp-content/themes/access/src/scss/_imports.scss">SASS import</a> provides and example of how to set up a stylesheet to cherry-pick individual patterns in a project.</p>
 
 <pre><code>@import &#39;node_modules/access-nyc-patterns/src/components/accordion/accordion&#39;;</code></pre>
 
+<p>All files can be imported directly from the source directory. The exception being
+  <a href="/utility">Tailwind Utilities</a>, which are compiled to a Sass file in the distribution folder:</p>
+
+<pre><code>@import &#39;node_modules/access-nyc-patterns/dist/styles/_tailwind.scss&#39;;</code></pre>
+
 <h3>Asset Paths and CDN</h3>
 
-<p>This is the path to your asset folder that includes images, webfonts, and svgs. Uncomment and set to override the default. By default, it is set to look for assets one directory up from the distributed stylesheet &#39;../&#39;.</p>
+<p>The styles use the <code>url()</code> for loading webfonts, images, and svgs. By default, it is set to look for asset directories one directory up from the distributed stylesheet like so:</p>
 
-<pre><code>$cdn: &#39;path/to/assets/&#39;;</code></pre>
+<pre><code>styles/site-default.scss
+images/..
+fonts/..
+svg/..</code></pre>
 
-<p>The CDN can be set to another local path, or, it can be set to the actual &#39;cdn&#39; url within the $variables map. This default uses
+<p>However, you can set the path to a different path that includes all of these files using the <code>$cdn</code> variable.</p>
+
+<pre><code>// $cdn: &#39;../&#39;; (default)
+$cdn: &#39;path/to/assets/&#39;;</code></pre>
+
+<p>The CDN can be set to another local path, or, it can be set to the remote url within the <code>$variables</code> map. This default uses
   <a href="https://www.jsdelivr.com/">jsDelivr</a> to pull the assets from the patterns GitHub repository and the tag of the installed version. ex;</p>
 
 <pre><code>@import &#39;config/variables&#39;;
@@ -220,7 +234,7 @@ $path-to-svg: &#39;svg/&#39;;</code></pre>
 
 <h3>Include Paths</h3>
 
-<p>You can add <code>node_modules/access-nyc-patterns/src</code> to your “include” paths which will allow you to write the shorthand path;</p>
+<p>You can add <strong>node_modules/access-nyc-patterns/src</strong> to your “include” paths which will allow you to write the shorthand path;</p>
 
 <pre><code>@import &#39;components/accordion/accordion&#39;;</code></pre>
 
@@ -294,26 +308,36 @@ new Accordion();</code></pre>
 &lt;/script&gt;</code></pre>
 
 <p>The main
-  <a href="https://github.com/CityOfNewYork/ACCESS-NYC-PATTERNS/blob/master/src/js/main.js">Javascript import file</a> shows how each component needs to be initialized.</p>
-
-<h3>Polyfills</h3>
-
-<p>The Patterns include a polyfill bundle <code>dist/scripts/polyfill.js</code> (see
-  <a href="https://github.com/CityOfNewYork/ACCESS-NYC-PATTERNS/blob/master/src/js/polyfills.js">source</a>) using
-  <a href="https://developer.mozilla.org/en-US/docs/Web/API/Element/matches#Polyfill">MDN Matches</a>,
-  <a href="https://developer.mozilla.org/en-US/docs/Web/API/ChildNode/remove#Polyfill">MDN Remove</a>,
-  <a href="https://www.npmjs.com/package/whatwg-fetch">whatwg-fetch</a> and
-  <a href="https://github.com/zloirock/core-js">Core JS Standard Libary</a> (a dependency of
-  <a href="https://babeljs.io/docs/en/babel-preset-env">@babel/preset-env</a>). However, this bundle includes all required polyfills so it is recommended to build your own polyfill based on your browser coverage requirements.</p></div>
+  <a href="https://github.com/CityOfNewYork/ACCESS-NYC-PATTERNS/blob/master/src/js/main.js">Javascript import file</a> shows how each component needs to be initialized.</p></div>
               </div>
             </div>
           </section>
-          <div class="sticky pin-b bg-color-white shadow-up relative overflow-y-scroll whitespace-no-wrap animated fadeInUp">
+          <section class="pb-4 mb-4" id="polyfills">
+            <div class="page-wrapper px-2 screen-desktop:px-0">
+              <header class="layout--home-body">
+                <div class="my-0 px-2 border-b border-color-grey-light screen-tablet:flex screen-tablet:justify-between">
+                  <h2 class="m-0 pt-1 pb-4">
+                    <a class="text-color-grey-mid font-normal no-underline capitalize" href="#polyfills">Polyfills</a>
+                  </h2>
+                </div>
+              </header>
+              <div class="layout--home-body">
+                <div class="my-0 pt-4 px-2 text-font-size-small table-align-start"><p>The Patterns include a polyfill bundle
+  <a href="https://github.com/CityOfNewYork/ACCESS-NYC-PATTERNS/blob/master/src/js/polyfills.js"><strong>dist/scripts/polyfill.js</strong></a> using
+  <a href="https://developer.mozilla.org/en-US/docs/Web/API/Element/matches#Polyfill">MDN Matches</a>,
+  <a href="https://developer.mozilla.org/en-US/docs/Web/API/ChildNode/remove#Polyfill">MDN Remove</a>,
+  <a href="https://www.npmjs.com/package/whatwg-fetch">whatwg-fetch</a> and features from the
+  <a href="https://github.com/zloirock/core-js">Core JS Standard Libary</a> (a dependency of
+  <a href="https://babeljs.io/docs/en/babel-preset-env">@babel/preset-env</a>). However, because this bundle includes all required polyfills so it is recommended to build your own polyfill based on your browser coverage requirements.</p></div>
+              </div>
+            </div>
+          </section>
+          <div class="sticky pin-b bg-color-white shadow-up relative z-10 overflow-y-scroll whitespace-no-wrap animated fadeInUp">
             <nav class="nav-inline text-font-size-small p-4"><span class="mr-4">Jump to:</span>
-              <a class="mr-4" href="#language-attribute">Language Attribute</a>
               <a class="mr-4" href="#npm-install">NPM Install</a>
               <a class="mr-4" href="#styles">Styles</a>
               <a class="mr-4" href="#javascript">JavaScript</a>
+              <a class="mr-4" href="#polyfills">Polyfills</a>
             </nav>
           </div>
         </article>

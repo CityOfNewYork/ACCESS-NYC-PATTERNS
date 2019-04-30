@@ -105,9 +105,8 @@ class Toggle {
       });
     }
 
-    if (this._settings.inactiveClass) {
+    if (this._settings.inactiveClass)
       target.classList.toggle(this._settings.inactiveClass);
-    }
 
     // If this is a link, jump to the link
     if (

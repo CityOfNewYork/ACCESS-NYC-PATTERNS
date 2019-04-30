@@ -13,15 +13,15 @@ Once the script is run, a prompt will ask if you would like to create optional t
 
 ### Adding a File to an Existing Pattern
 
-**`npm run make {{ type }} {{ pattern }} {{ template }}`**
+    npm run make {{ type }} {{ pattern }} {{ template }}
 
 Running this command will generate a prompt to create the specified file using templates in the [**config/make.js**](https://github.com/CityOfNewYork/ACCESS-NYC-PATTERNS/blob/master/config/make.js) file. It will not permit overwritting existing pattern files.
 
-### Adding a Custom Template
+### Creating a New Template
 
 Adding a custom template to be created automatically when patterns are generated via this script can be done by adding or modifying variables in the [**config/make.js**](https://github.com/CityOfNewYork/ACCESS-NYC-PATTERNS/blob/master/config/make.js) file. For example, these are the steps that it would take to add a [React](https://reactjs.org/) template for each Pattern via the `npm run make` script.
 
-**Step 1**
+#### Step 1: Template contents
 
 First, the new template would be defined in the `templates` constant as "react" and the following template string would written to the content of any new React file;
 
@@ -50,15 +50,12 @@ First, the new template would be defined in the `templates` constant as "react" 
 
 Within the template string, there are a handful of variables referencing the new pattern's name that will be replaced when the template is compiled. They are denoted by double brackets `{{  }}`;
 
-`{{ type }}` The pattern type defined by the command. Will either be "elements", "objects", "utilities."
+* `{{ type }}` The pattern type defined by the command. Will either be "elements", "objects", "utilities."
+* `{{ prefix }}` The pattern prefix, will be defined by the type and `prefixes` constant in [**config/make.js**](https://github.com/CityOfNewYork/ACCESS-NYC-PATTERNS/blob/master/config/make.js).
+* `{{ pattern }}` The lower case name of the pattern.
+* `{{ Pattern }}` The uppercase name of the pattern.
 
-`{{ prefix }}` The pattern prefix, will be defined by the type and `prefixes` constant in [**config/make.js**](https://github.com/CityOfNewYork/ACCESS-NYC-PATTERNS/blob/master/config/make.js).
-
-`{{ pattern }}` The lower case name of the pattern.
-
-`{{ Pattern }}` The uppercase name of the pattern.
-
-**Step 2**
+#### Step 2: Filename
 
 Next, provide a filename in the `files` constant. Filenames use the same template variables above.
 
@@ -68,7 +65,7 @@ Next, provide a filename in the `files` constant. Filenames use the same templat
       ...
     };
 
-**Step 3**
+#### Step 3: Is it optional?
 
 Next, if it is an optional template then add 'react' to the `optional` constant. This will generate a prompt to create the file with a yes/no question when running the make script.
 
@@ -78,9 +75,9 @@ Next, if it is an optional template then add 'react' to the `optional` constant.
       ...
     ];
 
-**Step 4**
+#### Step 4: Where to write the template
 
-Next, it the template should written to every new pattern's dedicated directory (**src/{{ type }}/{{ pattern }}/**) then add 'react' to the `patterns` constant. This is generally recommended.
+Next, if the template should written to every new pattern's dedicated directory (ex; **src/{{ type }}/{{ pattern }}/**) then add 'react' to the `patterns` constant. This is the default for most templates except views and Sass config.
 
     const patterns = [
       ...

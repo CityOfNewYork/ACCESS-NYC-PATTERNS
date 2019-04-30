@@ -23,6 +23,4 @@
   = mixin('section-text', 'NPM Install', 'content/installation/npm-install');
   = mixin('section-text', 'Styles', 'content/installation/styles');
   = mixin('section-text', 'JavaScript', 'content/installation/javascript');
-  = partial('section/nav.slm');
-
-= content('script');
+  = mixin('section-text', 'Polyfills', 'content/installation/polyfills');

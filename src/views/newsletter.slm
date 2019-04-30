@@ -23,7 +23,6 @@
   = mixin('content-header', title);
   = mixin('section', false, 'objects/newsletter/newsletter');
   = mixin('section-text', 'Newsletter Usage', 'objects/newsletter/newsletter.readme');
-  = partial('section/nav.slm');
 
 = content('script');
   javascript:

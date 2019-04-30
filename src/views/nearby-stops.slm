@@ -23,7 +23,6 @@
   = mixin('content-header', title);
   = mixin('section', false, 'components/nearby-stops/nearby-stops');
   = mixin('section-text', 'Nearby Stops Usage', 'components/nearby-stops/nearby-stops.readme');
-  = partial('section/nav.slm');
 
 = content('script');
   javascript:

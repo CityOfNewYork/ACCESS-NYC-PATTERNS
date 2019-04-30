@@ -24,4 +24,3 @@
   = mixin('content-header', title);
   = mixin('section', false, 'elements/divider/divider');
   = mixin('section', 'Light Divider', 'elements/divider/divider-light');
-  = partial('section/nav.slm');

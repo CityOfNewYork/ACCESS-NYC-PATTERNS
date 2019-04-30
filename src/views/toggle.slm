@@ -29,4 +29,3 @@
   = mixin('section', 'Toggle Overflow', 'utilities/toggle/toggle-overflow');
   = mixin('section', 'Toggle Overflow Fade In Up', 'utilities/toggle/toggle-overflow-fade-in-up');
   = mixin('section-text', 'Toggle Usage', 'utilities/toggle/toggle.readme');
-  = partial('section/nav.slm');

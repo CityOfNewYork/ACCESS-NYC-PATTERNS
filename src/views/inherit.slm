@@ -21,4 +21,4 @@
 
 = content('content');
   = mixin('content-header', title);
-  = mixin('section', 'Display', 'utilities/inherit/inherit');
+  = mixin('section', false, 'utilities/inherit/inherit');

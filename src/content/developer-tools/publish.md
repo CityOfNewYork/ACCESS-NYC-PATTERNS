@@ -8,15 +8,15 @@ Here are the steps to publishing updates to the npm registry. This assumes that 
 
 * `git checkout master` - Change the working branch of your source to master.
 
-* `npm install` - Install any npm dependencies from the master package.json were not captured in your source.
+* `npm install` - Install any npm dependencies from the master **package.json** were not captured in your source.
 
 * Manually increment the package.json version number to the desired semantic version (patch, minor, major) and save the file.
 
 * `npm run predeploy` - Build the scripts, styles, and markup of to the distribution folder with the new version number in the file.
 
-* `git checkout package.json` - Undo the change made to the package.json file. This is temporary so that the next command can do it's work.
+* `git checkout package.json` - Undo the change made to the **package.json** file. This is temporary so that the next command can do it's work.
 
-* `npm version {{ patch, minor, or major }}` - This will update the package.json and package-lock.json file, commit the change and tag the repo with the desired version.
+* `npm version {{ patch, minor, or major }}` - This will update the **package.json** and **package-lock.json** file, commit the change and tag the repo with the desired version.
 
 * `git push origin && git push origin {{ tag (version number with 'v' prepended to it) }}` - Push changes and tag to the GitHub repository.
 

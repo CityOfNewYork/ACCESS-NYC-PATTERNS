@@ -12,7 +12,7 @@
  * @param  {Array} STRINGS set of strings
  * @return {Event/Boolean} The original event or false if invalid.
  */
-function Valid (event, STRINGS) {
+function valid (event, STRINGS) {
   event.preventDefault();
 
   if (process.env.NODE_ENV !== 'production') // eslint-disable-next-line no-console
@@ -77,7 +77,7 @@ function Valid (event, STRINGS) {
  * @param  {Object} event The parent click event.
  * @return {Element}      The target element.
  */
-function JoinValues (event) {
+function joinValues (event) {
   if (!event.target.matches('input[type="checkbox"]')) {
     return;
   }
@@ -367,7 +367,7 @@ var Newsletter = function Newsletter(element) {
   this._el = element;
   this.STRINGS = Newsletter.strings; // Map toggled checkbox values to an input.
 
-  this._el.addEventListener('click', JoinValues); // This sets the script callback function to a global function that
+  this._el.addEventListener('click', joinValues); // This sets the script callback function to a global function that
   // can be accessed by the the requested script.
 
 
@@ -376,7 +376,7 @@ var Newsletter = function Newsletter(element) {
   };
 
   this._el.querySelector('form').addEventListener('submit', function (event) {
-    return Valid(event, this$1.STRINGS) ? this$1._submit(event).then(this$1._onload)["catch"](this$1._onerror) : false;
+    return valid(event, this$1.STRINGS) ? this$1._submit(event).then(this$1._onload)["catch"](this$1._onerror) : false;
   });
 
   return this;

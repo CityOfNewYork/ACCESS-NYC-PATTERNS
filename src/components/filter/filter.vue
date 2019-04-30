@@ -49,14 +49,14 @@
       }
     },
     computed: {
-      classActive: function () {
+      classActive: function() {
         return {
           'active': this.terms.active,
           'inactive': !(this.terms.active)
         };
       },
       ariaControls: function() {
-        return 'aria-c-' + this.terms.slug
+        return 'aria-c-' + this.terms.slug;
       },
       ariaLabelledBy: function() {
         return 'aria-lb-' + this.terms.slug;
@@ -67,7 +67,7 @@
       }
     },
     methods: {
-      ariaActive: function (active) {
+      ariaActive: function(active) {
         return (active) ? 'true' : 'false';
       },
       ariaPressed: function(name) {

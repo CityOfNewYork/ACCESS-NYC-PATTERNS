@@ -5,7 +5,7 @@
 const Sass = require('node-sass');
 const Path = require('path');
 const Fs = require('fs');
-const modules = require('../config/modules');
+const modules = require('../config/styles');
 const mkdirp = require('mkdirp');
 const alerts = require('../config/alerts');
 

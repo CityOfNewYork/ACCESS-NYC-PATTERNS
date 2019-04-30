@@ -51,7 +51,7 @@ var InputAutocomplete = (function () {
    */
 
 
-  function JaroWinkler (s1, s2, prefixScalingFactor) {
+  function jaroWinkler (s1, s2, prefixScalingFactor) {
     if (prefixScalingFactor === void 0) prefixScalingFactor = 0.2;
     var jaroSimilarity = jaro(s1, s2);
     var commonPrefixLength = 0;
@@ -67,7 +67,7 @@ var InputAutocomplete = (function () {
     return jaroSimilarity + Math.min(commonPrefixLength, 4) * prefixScalingFactor * (1 - jaroSimilarity);
   }
 
-  function Memoize (fn) {
+  function memoize (fn) {
     var cache = {};
     return function () {
       var args = [],
@@ -99,7 +99,7 @@ var InputAutocomplete = (function () {
       'classname': settings.classname,
       // required
       'selected': settings.hasOwnProperty('selected') ? settings.selected : false,
-      'score': settings.hasOwnProperty('score') ? settings.score : Memoize(Autocomplete.score),
+      'score': settings.hasOwnProperty('score') ? settings.score : memoize(Autocomplete.score),
       'listItem': settings.hasOwnProperty('listItem') ? settings.listItem : Autocomplete.listItem,
       'getSiblingIndex': settings.hasOwnProperty('getSiblingIndex') ? settings.getSiblingIndex : Autocomplete.getSiblingIndex
     };
@@ -308,7 +308,7 @@ var InputAutocomplete = (function () {
   Autocomplete.score = function score(value, synonyms) {
     var closestSynonym = null;
     synonyms.forEach(function (synonym) {
-      var similarity = JaroWinkler(synonym.trim().toLowerCase(), value.trim().toLowerCase());
+      var similarity = jaroWinkler(synonym.trim().toLowerCase(), value.trim().toLowerCase());
 
       if (closestSynonym === null || similarity > closestSynonym.similarity) {
         closestSynonym = {

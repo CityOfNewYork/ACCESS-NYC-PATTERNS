@@ -6,7 +6,7 @@
  */
 
 /* eslint-disable no-undef */
-if (!Element.prototype.matches) {
+if (!Element.prototype.matches)
   Element.prototype.matches =
     Element.prototype.matchesSelector ||
     Element.prototype.mozMatchesSelector ||
@@ -21,5 +21,4 @@ if (!Element.prototype.matches) {
       while (--i >= 0 && matches.item(i) !== this) {}
       return i > -1;
     };
-}
 /* eslint-enable no-undef */

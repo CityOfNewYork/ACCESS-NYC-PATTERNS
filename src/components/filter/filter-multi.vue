@@ -54,13 +54,13 @@
       }
     },
     methods: {
-      classActive: function (term) {
+      classActive: function(term) {
         return {
           'active': term.active,
           'inactive': !(term.active)
         };
       },
-      ariaActive: function (active) {
+      ariaActive: function(active) {
         return (active) ? 'true' : 'false';
       },
       ariaLabelledBy: function(slug) {

@@ -22,26 +22,6 @@ import Newsletter from '../objects/newsletter/newsletter';
  */
 class main {
   /**
-   * Placeholder module for style reference.
-   * @param  {object} settings This could be some configuration options for the
-   *                           component or module.
-   * @param  {object} data     This could be a set of data that is needed for
-   *                           the component or module to render.
-   * @return {object}          The module
-   * module(settings, data) {
-   *   return new Module(settings, data).init();
-   * }
-   */
-
-  /**
-   * The markdown parsing method.
-   * @return {object} The event listener on the window
-   */
-  markdown() {
-    return window.addEventListener('load', Markdown);
-  }
-
-  /**
    * An API for the Icons Element
    * @param  {String} path The path of the icon file
    * @return {object} instance of Icons element
@@ -52,7 +32,8 @@ class main {
 
   /**
    * An API for the Toggling Method
-   * @return {object} instance of toggling method
+   * @param  {object} settings Settings for the Toggle Class
+   * @return {object}          Instance of toggling method
    */
   toggle(settings = false) {
     return (settings) ? new Toggle(settings) : new Toggle();
@@ -94,8 +75,8 @@ class main {
 
  /**
   * An API for the Autocomplete Object
-  * @param {object} settings
-  * @return {object} instance of Autocomplete
+  * @param {object} settings Settings for the Autocomplete Class
+  * @return {object}         Instance of Autocomplete
   */
   inputsAutocomplete(settings = {}) {
     return new InputsAutocomplete(settings);
