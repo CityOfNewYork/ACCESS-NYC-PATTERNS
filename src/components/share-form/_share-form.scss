@@ -7,6 +7,7 @@
 @import 'config/dimensions';
 @import 'config/fonts';
 @import 'config/direction';
+@import 'config/media';
 @import 'bourbon/app/assets/stylesheets/addons/triangle';
 
 // Declarations
@@ -90,6 +91,7 @@
   display: flex;
   align-items: center;
   position: relative;
+  flex-shrink: 0;
 
   [class*='btn-'] {
     padding-left: 8px;
@@ -100,7 +102,7 @@
 
   &::after {
     position: absolute;
-    top: -8px;
+    top: -10px;
     right: calc(50% - #{$spacing-base / 2});
     bottom: (-1.28 * -$spacing-base);
 
