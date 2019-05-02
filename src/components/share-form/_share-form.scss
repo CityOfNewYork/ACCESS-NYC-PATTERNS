@@ -7,6 +7,7 @@
 @import 'config/dimensions';
 @import 'config/fonts';
 @import 'config/direction';
+@import 'config/media';
 @import 'bourbon/app/assets/stylesheets/addons/triangle';
 
 // Declarations
@@ -22,21 +23,6 @@
     margin-bottom: -1px;
     position: relative;
     z-index: 1;
-
-    &::after {
-      position: absolute;
-      @if $text-direction == 'rtl' {
-        left: 34px;
-        bottom: (.3 * -$spacing-base);
-      } @else {
-        right: 34px;
-        bottom: (.3 * -$spacing-base);
-      }
-      @include triangle($spacing-base (.3 * $spacing-base), $color-blue-dark, down);
-      content: '';
-      display: block;
-      z-index: 0;
-    }
   }
 }
 
@@ -76,6 +62,7 @@
   display: flex;
   background: $color-white;
   border: 1px solid $color-grey-mid;
+  padding-right: 5px;
 
   .error & {
     border-color: $color-red;
@@ -101,27 +88,33 @@
 }
 
 .c-share-form__button {
-  padding: 0 10px;
-  flex-basis: 91px;
-  max-width: 91px;
-  min-width: 91px;
   display: flex;
   align-items: center;
+  position: relative;
+  flex-shrink: 0;
 
   [class*='btn-'] {
-    padding-left: 0;
-    padding-right: 0;
+    padding-left: 8px;
+    padding-right: 8px;
     width: 100%;
+    font-size: 70%;
+  }
+
+  &::after {
+    position: absolute;
+    top: -10px;
+    right: calc(50% - #{$spacing-base / 2});
+    bottom: (-1.28 * -$spacing-base);
+
+    @include triangle($spacing-base (.3 * $spacing-base), $color-blue-dark, down);
+    content: '';
+    display: block;
+    z-index: 0;
   }
 }
 
 .c-share-form__spinner {
   display: flex;
-
-  flex-basis: 69.89px;
-  max-width: 69.89px;
-  min-width: 69.89px;
-
   justify-content: center;
   align-items: center;
 }
