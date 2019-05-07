@@ -29,4 +29,4 @@ The ES6, CommonJS, and IFFE modules all require importing and object instantiati
 
 #### Polyfills
 
-This script uses the Toggle Utility as a dependency and requres the same polyfills. See the ["Toggle Usage" section](toggle#toggle-usage) for more details.
+This script uses the Toggle Utility as a dependency and requires the same polyfills. See the ["Toggle Usage" section](toggle#toggle-usage) for more details.
