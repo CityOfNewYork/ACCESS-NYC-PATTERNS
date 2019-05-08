@@ -50,6 +50,10 @@ p code, li code, td code {
   white-space: nowrap;
 }
 
+td > code {
+  display: inline-block
+}
+
 pre {
   color: $color-pink;
   background-color: $color-grey-lightest;
