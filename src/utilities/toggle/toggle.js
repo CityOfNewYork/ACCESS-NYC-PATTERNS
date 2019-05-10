@@ -142,10 +142,9 @@ class Toggle {
         window.location.hash = el.getAttribute('href');
 
         target.setAttribute('tabindex', '-1');
-        target.focus({ preventScroll: true });
-      } else {
+        target.focus({preventScroll: true});
+      } else
         target.removeAttribute('tabindex');
-      }
     }
 
     /**
