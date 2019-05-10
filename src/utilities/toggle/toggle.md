@@ -2,4 +2,6 @@ The toggle utility uses JavaScript to show and hide elements based on user inter
 
 The use of `aria-expanded` on the toggling element is recommended for toggling elements as it will announce that the target of the toggle is "expanded" or "collapsed." Additional dynamic attributes will only be toggled if they are present on the target element when the page loads. Other aria attributes and roles can be used in combination with the toggling elements to create different interactions with custom components. [View the usage section](#toggle-usage) to get an idea of what the different options are.
 
+Placement of the target should follow the toggling element so that it appears next in order on the page for screen readers. For targets that are far apart or appear in a different section of the page, the [Anchor Toggle](#anchor-toggle) may be more appropriate.
+
 The Toggle Utility supports having more than one toggle element per toggle target (the "Menu" and "Close Menu" links of this site are an example).

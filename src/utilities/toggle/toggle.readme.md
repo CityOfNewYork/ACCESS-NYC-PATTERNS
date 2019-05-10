@@ -47,6 +47,8 @@ Option          | Type             | Importance | Description
 `selector`      | *string*         | optional   | Full selector string of the toggle element (this is passed to the `.matches()` method).
 `inactiveClass` | *string/boolean* | optional   | Single class name that will be toggled on the toggle and target element when the element is inactive or "collapsed." Pass "false" to skip toggling an inactive class (there is no inactive class for the toggle element).
 `activeClass`   | *string/boolean* | optional   | Single class name that will be toggled on the target element when the element is active or "expanded." Pass "false" to skip toggling an active class.
+`before`        | *function*       | optional   | A function that will be executed before the toggling element and target classes and attributes are toggled. The function is passed the instance of the toggle class.
+`after`         | *function*       | optional   | A function that will be executed after the toggling element and target classes and attributes are toggled. The function is passed the instance of the toggle class.
 
 #### Cherry-picked Module Import
 

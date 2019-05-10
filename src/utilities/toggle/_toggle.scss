@@ -42,6 +42,7 @@ $animate: map-get($variables, 'animate');
   position: absolute;
   max-height: 0;
   overflow: hidden;
+  visibility: hidden;
 }
 
 .hidden.hidden\:overflow,
@@ -57,6 +58,7 @@ $animate: map-get($variables, 'animate');
   height: inherit;
   position: inherit;
   max-height: none;
+  visibility: visible;
 }
 
 /**

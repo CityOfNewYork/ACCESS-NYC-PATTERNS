@@ -164,6 +164,9 @@
   they are present on the target element when the page loads. Other aria attributes and roles can be used in combination with the toggling elements to create different interactions with custom components.
   <a href="#toggle-usage">View the usage section</a> to get an idea of what the different options are.</p>
 
+<p>Placement of the target should follow the toggling element so that it appears next in order on the page for screen readers. For targets that are far apart or appear in a different section of the page, the
+  <a href="#anchor-toggle">Anchor Toggle</a> may be more appropriate.</p>
+
 <p>The Toggle Utility supports having more than one toggle element per toggle target (the &quot;Menu&quot; and &quot;Close Menu&quot; links of this site are an example).</p></div>
               </div>
               <div class="layout--gutter screen-tablet:layout--columns justify-between pt-4">
@@ -191,16 +194,17 @@
                 </div>
               </header>
               <div class="layout--home-body">
-                <div class="my-0 pt-4 px-2 text-font-size-small table-align-start"><p>The anchor toggle uses an anchor in the <code>href</code> to jump to the target element.</p></div>
+                <div class="my-0 pt-4 px-2 text-font-size-small table-align-start"><p>The anchor toggle uses an anchor in the <code>href</code> to jump to the target element. While anchor toggles are an appropriate use case for target elements that are further away from the toggling element, it should be used sparingly as anchor links
+  can make the navigation of content more difficult. Always use descriptive text in the link such as &quot;Jump to&quot; to describe what the behavior of the link will be.</p></div>
               </div>
               <div class="layout--gutter screen-tablet:layout--columns justify-between pt-4">
                 <div class="screen-tablet:pr-2">
                   <a class="inline-block mb-3" data-js="toggle" href="#anchor-target">Toggle and Jump to Target</a>
-                  <div aria-hidden="true" class="bg-color-blue-light p-4 text-center hidden" id="anchor-target">Targeted toggle element</div>
+                  <section aria-hidden="true" class="bg-color-blue-light p-4 hidden text-center" id="anchor-target">Targeted toggle element</section>
                 </div>
                 <div>
                   <div class="code-block mb-1"><pre>&lt;a class=&quot;inline-block mb-3&quot; data-js=&quot;toggle&quot; href=&quot;#anchor-target&quot;&gt;Toggle and Jump to Target&lt;/a&gt;
-&lt;div aria-hidden=&quot;true&quot; class=&quot;bg-color-blue-light p-4 text-center hidden&quot; id=&quot;anchor-target&quot;&gt;Targeted toggle element&lt;/div&gt;</pre></div>
+&lt;section aria-hidden=&quot;true&quot; class=&quot;bg-color-blue-light p-4 hidden text-center&quot; id=&quot;anchor-target&quot;&gt;Targeted toggle element&lt;/section&gt;</pre></div>
                 </div>
               </div>
             </div>
@@ -442,6 +446,18 @@
       <td><em>string/boolean</em></td>
       <td>optional</td>
       <td>Single class name that will be toggled on the target element when the element is active or &quot;expanded.&quot; Pass &quot;false&quot; to skip toggling an active class.</td>
+    </tr>
+    <tr>
+      <td><code>before</code></td>
+      <td><em>function</em></td>
+      <td>optional</td>
+      <td>A function that will be executed before the toggling element and target classes and attributes are toggled. The function is passed the instance of the toggle class.</td>
+    </tr>
+    <tr>
+      <td><code>after</code></td>
+      <td><em>function</em></td>
+      <td>optional</td>
+      <td>A function that will be executed after the toggling element and target classes and attributes are toggled. The function is passed the instance of the toggle class.</td>
     </tr>
   </tbody>
 </table>

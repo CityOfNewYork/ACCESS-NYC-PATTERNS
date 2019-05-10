@@ -3,4 +3,4 @@
 /
 
 div data-sketch-symbol=symbol data-sketch-symbol-instance=instance
-  input name='Client[0].email' type='text'
+  input type='text' id=input__id name=input__name

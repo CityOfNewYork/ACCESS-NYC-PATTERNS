@@ -28,6 +28,8 @@ class Toggle {
       namespace: (s.namespace) ? s.namespace : Toggle.namespace,
       inactiveClass: (s.inactiveClass) ? s.inactiveClass : Toggle.inactiveClass,
       activeClass: (s.activeClass) ? s.activeClass : Toggle.activeClass,
+      before: (s.before) ? s.before : false,
+      after: (s.after) ? s.after : false
     };
 
     body.addEventListener('click', (event) => {
@@ -94,7 +96,14 @@ class Toggle {
     let others = document.querySelectorAll(
       `[aria-controls="${el.getAttribute('aria-controls')}"]`);
 
-    // Toggle classes
+    /**
+     * Toggling before hook.
+     */
+    if (this._settings.before) this._settings.before(this);
+
+    /**
+     * Toggle Element and Target classes
+     */
     if (this._settings.activeClass) {
       el.classList.toggle(this._settings.activeClass);
       target.classList.toggle(this._settings.activeClass);
@@ -108,17 +117,9 @@ class Toggle {
     if (this._settings.inactiveClass)
       target.classList.toggle(this._settings.inactiveClass);
 
-    // If this is a link, jump to the link
-    if (
-      el.hasAttribute('href') &&
-      target.classList.contains(this._settings.activeClass)
-    ) {
-      window.location.hash = '';
-      window.location.hash = el.getAttribute('href');
-      target.focus({preventScroll: true});
-    }
-
-    // Target Element Aria Attributes
+    /**
+     * Target Element Aria Attributes
+     */
     for (i = 0; i < Toggle.targetAriaRoles.length; i++) {
       attr = Toggle.targetAriaRoles[i];
       value = target.getAttribute(attr);
@@ -127,7 +128,29 @@ class Toggle {
         target.setAttribute(attr, (value === 'true') ? 'false' : 'true');
     }
 
-    // Toggle Element (including multi toggles) Aria Attributes
+    /**
+     * Jump Links
+     */
+    if (el.hasAttribute('href')) {
+      // Reset the history state, this will clear out
+      // the hash when the jump item is toggled closed.
+      history.pushState('', '',
+        window.location.pathname + window.location.search);
+
+      // Target element toggle.
+      if (target.classList.contains(this._settings.activeClass)) {
+        window.location.hash = el.getAttribute('href');
+
+        target.setAttribute('tabindex', '-1');
+        target.focus({ preventScroll: true });
+      } else {
+        target.removeAttribute('tabindex');
+      }
+    }
+
+    /**
+     * Toggle Element (including multi toggles) Aria Attributes
+     */
     for (i = 0; i < Toggle.elAriaRoles.length; i++) {
       attr = Toggle.elAriaRoles[i];
       value = el.getAttribute(attr);
@@ -141,6 +164,11 @@ class Toggle {
           other.setAttribute(attr, (value === 'true') ? 'false' : 'true');
       });
     }
+
+    /**
+     * Toggling complete hook.
+     */
+    if (this._settings.after) this._settings.after(this);
 
     return this;
   }
