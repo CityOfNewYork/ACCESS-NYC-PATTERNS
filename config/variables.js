@@ -167,7 +167,7 @@ const variables = {
       'headings': 'color-white',
       'color-alt': 'color-white',
       'hyperlinks': 'color-white',
-      'hyperlinks-underline': 'color-blue-bright',
+      'hyperlinks-underline': 'color-white',
       'visited': 'color-white',
       'hover': 'color-white',
       'background-color': 'color-blue-dark'
