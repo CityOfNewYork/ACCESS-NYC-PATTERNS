@@ -26,7 +26,7 @@ class Accordion {
  * The dom selector for the module
  * @type {String}
  */
-Accordion.selector = '[data-js="accordion"]';
+Accordion.selector = '[data-js*="accordion"]';
 
 /**
  * The namespace for the components JS options

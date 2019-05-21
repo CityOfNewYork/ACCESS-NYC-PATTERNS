@@ -220,7 +220,7 @@ var Accordion = function Accordion() {
  */
 
 
-Accordion.selector = '[data-js="accordion"]';
+Accordion.selector = '[data-js*="accordion"]';
 /**
  * The namespace for the components JS options
  * @type {String}

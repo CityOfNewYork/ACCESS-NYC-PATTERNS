@@ -825,7 +825,7 @@ var AccessNyc = (function () {
    */
 
 
-  Accordion.selector = '[data-js="accordion"]';
+  Accordion.selector = '[data-js*="accordion"]';
   /**
    * The namespace for the components JS options
    * @type {String}
@@ -858,7 +858,7 @@ var AccessNyc = (function () {
    */
 
 
-  Filter.selector = '[data-js="filter"]';
+  Filter.selector = '[data-js*="filter"]';
   /**
    * The namespace for the components JS options
    * @type {String}

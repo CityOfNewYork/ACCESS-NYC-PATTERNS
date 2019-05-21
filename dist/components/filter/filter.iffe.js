@@ -221,7 +221,7 @@ var Filter = (function () {
    */
 
 
-  Filter.selector = '[data-js="filter"]';
+  Filter.selector = '[data-js*="filter"]';
   /**
    * The namespace for the components JS options
    * @type {String}

@@ -26,7 +26,7 @@ class Filter {
  * The dom selector for the module
  * @type {String}
  */
-Filter.selector = '[data-js="filter"]';
+Filter.selector = '[data-js*="filter"]';
 
 /**
  * The namespace for the components JS options
