@@ -17,20 +17,12 @@ $search-icon-width: 24px;
 input, textarea {
   @include inputs;
 
-  &:focus {
-    @include input-focus();
-  }
-
   @media screen and (min-width: $screen-tablet) {
     width: auto;
   }
 
   .error & {
-    @include input-error();
-
-    &:focus {
-      @include input-focus-error();
-    }
+    border-color: $color-red;
   }
 }
 

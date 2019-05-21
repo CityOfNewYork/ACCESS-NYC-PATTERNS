@@ -1,5 +1,4 @@
 // Dependencies
-@import 'config/variables';
 @import 'config/media';
 @import 'config/colors';
 
@@ -11,22 +10,6 @@
   &::placeholder {
     color: $color-grey-mid;
   }
-}
-
-@mixin input-error() {
-  border-color: $color-red;
-
-  &::placeholder {
-    color: $color-red;
-  }
-}
-
-@mixin input-focus() {
-  outline: 4px solid $color-blue-bright;
-}
-
-@mixin input-focus-error {
-  outline-color: $color-red;
 }
 
 @mixin input-icon() {
