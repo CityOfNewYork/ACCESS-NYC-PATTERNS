@@ -10,8 +10,7 @@
 = partial('partials/head.mixin.slm');
 = partial('partials/content-header.mixin.slm');
 = partial('section/section.mixin.slm');
-= partial('section/demo-specs.mixin.slm');
-= partial('section/demo-block.mixin.slm');
+= partial('section/section-text.mixin.slm');
 
 / Content blocks
 = content('head');
@@ -22,4 +21,4 @@
 
 = content('content');
   = mixin('content-header', title);
-  = mixin('section', 'Default Styling', 'objects/formstack/formstack');
+  = mixin('section-text', '', 'objects/formstack/formstack');

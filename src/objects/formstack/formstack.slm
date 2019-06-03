@@ -1,19 +1,23 @@
 /
 / Formstack
-/ The Sketch attributes expose the markup to HTML Sketch App and should
-/ be included by default. They should only be set before the include
-/ statement of this partial. There should only be one Symbol definition
-/ library and all others should be Symbol Instances.
-/ data-sketch-symbol - Defines markup as a new Sketch Symbol
-/ data-sketch-symbol-instance - Relates the markup to a previously defined Symbol
 /
-/ ex;
-/ - symbol = false;
-/ - instance = 'elements/checkboxes/checkboxes';
-/ = partial(`../../${instance}.slm`);
-/
-/ Basically, if you are building an Object or a Component and including
-/ other Elements/Components/Objects, the symbol should be set to false
-/ and the instance should be set to the pattern's path.
 
-div data-sketch-symbol=symbol data-sketch-symbol-instance=instance
+div class='code-block'
+  pre
+    = "@import url('https://fonts.googleapis.com/css?family=Noto+Serif:400');\n";
+    = '\n';
+    = '/**\n';
+    = ' * ACCESS NYC Patterns v' + this.vars.version + '\n';
+    = ' * Formstack Object\n';
+    = ' * Documentation: https://accesspatterns.cityofnewyork.us/formstack\n';
+    = ' * Source: https://github.com/CityOfNewYork/ACCESS-NYC-PATTERNS/blob/v' + this.vars.version + '/dist/objects/formstack/formstack.css\n';
+    = ' *\n';
+    = ' * Below is compiled css copied and pasted from\n';
+    = ' * ACCESS NYC Patterns. See details above. Do not\n';
+    = ' * try to modify the code below. Follow ACCESS NYC\n';
+    = ' * Patterns development process for updating the\n';
+    = ' * styling of this theme. Please update the version\n';
+    = ' * number and this description if it is to be changed.\n';
+    = ' */\n';
+    = '\n';
+    = 'str{{ ../dist/objects/formstack/formstack.css }}';
