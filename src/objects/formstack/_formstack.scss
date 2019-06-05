@@ -438,7 +438,7 @@ html {
   }
 
   @include formstack-icon-success {
-    background-image: url('#{$cdn}/svg/icon-success.svg');
+    background-image: url('#{$cdn}/svg/icon-success-green.svg');
     margin: ($grid * 3) 0;
   }
 
