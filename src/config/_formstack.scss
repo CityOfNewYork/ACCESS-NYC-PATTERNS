@@ -264,13 +264,13 @@ $cdn: map-get($variables, 'cdn');
 }
 
 @mixin formstack-icon-success {
-  .fsSubmissionCheckmark {
+  #fsSubmissionCheckmark {
     @content;
   }
 }
 
 @mixin formstack-heading-success {
-  .fsSubmissionCheckmark + .fsSectionHeading {
+  #fsSubmissionCheckmark + .fsSectionHeading {
     @content;
   }
 }

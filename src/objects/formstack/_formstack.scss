@@ -216,6 +216,8 @@ html {
     @include question-label;
     color: initial;
     margin-bottom: 18px;
+    display: block;
+    max-width: 100%;
   }
 
   @include formstack-question__label-asterisk {
