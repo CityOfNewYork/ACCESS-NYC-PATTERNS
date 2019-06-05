@@ -3,62 +3,26 @@
  */
 
 // Dependencies
-@import 'config/variables';
-@import 'config/direction';
-@import 'config/dimensions';
-@import 'config/fonts';
-@import 'config/colors';
+@import 'config/toggles';
 @import 'config/accessibility';
 
 // Declarations
 .toggle {
-  font-size: $font-size-base;
-  font-weight: $font-weight-bold;
-
-  transition: all .2s;
-  background: $color-white;
-  border: 1px solid $color-grey-mid;
-  border-radius: map-get(map-get($variables, 'inputs'), 'checkbox-radius');
-  cursor: pointer;
-  line-height: 30px;
-  margin-#{$text-direction-end}: $spacing-base * .5;
-  padding: 8px;
-  padding-#{$text-direction-start}: $spacing-base * 1.75;
-  position: relative;
-  display: inline-block;
+  @include toggles();
 
   input {
     @include sr-only()
   }
 }
 
-.toggle__label {
-  &::before {
-    transition: all.2s;
-    @include size(map-get(map-get($variables, 'inputs'), 'toggle-size'));
+.toggle__label::before {
+  @include toggles-btn()
+}
 
-    position: absolute;
-    top: 50%;
-    @if $text-direction == 'rtl' { right: 8px; } @else { left: 8px; }
+.toggle input:checked + .toggle__label::before {
+  @include toggles-btn-toggled()
+}
 
-    border: 1px solid $color-grey-mid;
-    border-radius: 50%;
-    box-shadow: 0;
-    content: '';
-    margin-top: (map-get(map-get($variables, 'inputs'), 'toggle-size')/2) * -1;
-  }
-
-  input:checked + & {
-    &::before {
-      background: $color-blue;
-      border: 0;
-      box-shadow: 0 0 0 2px $color-blue inset, 0 0 0 4px $color-white inset;
-    }
-  }
-
-  input:focus + & {
-    &::before {
-      box-shadow: 0 0 0 2px $color-blue inset, 0 0 0 4px $color-white inset, 0 0 2px 2px $color-blue-bright;
-    }
-  }
+.toggle input:focus + .toggle__label::before {
+  @include toggles-btn-focused()
 }

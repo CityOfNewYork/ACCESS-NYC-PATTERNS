@@ -20,6 +20,7 @@
   "scripts": {
     "test": "",
     "start": "cross-env NODE_ENV=development cross-env PORT=$npm_package_config_port concurrently \"npm run *:watch\" \"npm run serve\" \"npm run sync\"",
+    "start:production": "cross-env NODE_ENV=production cross-env PORT=$npm_package_config_port concurrently \"npm run *:watch\" \"npm run serve\" \"npm run sync\"",
     "predeploy": "cross-env NODE_ENV=production concurrently \"npm run svgs\" \"npm run styles\" \"npm run scripts\" \"npm run build\"",
     "serve": "cross-env PORT=$npm_package_config_port node .app/serve.js --ext slm --watch src",
     "build": "cross-env VARS=$npm_package_config_vars node .app/build.js",

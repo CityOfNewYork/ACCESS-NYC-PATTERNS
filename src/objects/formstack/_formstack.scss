@@ -14,6 +14,7 @@
 @import 'config/options';
 @import 'config/radios';
 @import 'config/checkboxes';
+@import 'config/toggles';
 @import 'config/question';
 @import 'config/disclaimer';
 @import 'config/buttons';
@@ -21,8 +22,9 @@
 // Declarations
 html {
   @include typography-base();
+
   @if $text-direction == 'rtl' {
-    direction: rtl;
+    direction: rtl
   }
 }
 
@@ -42,6 +44,10 @@ html {
   p, ul, ol {
     margin-top: 0;
     margin-bottom: rem(strip-units($grid), $em-base);
+  }
+
+  @include formstack-page {
+    min-width: auto;
   }
 }
 
@@ -91,7 +97,7 @@ html {
     min-width: 200px !important;
 
     @media screen and (min-width: $screen-tablet) {
-      width: auto !important;
+      width: auto !important
     }
 
     height: auto;
@@ -101,7 +107,7 @@ html {
     width: 100% !important;
 
     @media screen and (min-width: $screen-tablet) {
-      width: 100% !important;
+      width: 100% !important
     }
   }
 
@@ -120,36 +126,48 @@ html {
 
   @include formstack-question--name {
     @include formstack-question__container {
-      width: 100%;
-      display: flex;
-      justify-content: space-between;
-
       @media screen and (min-width: $screen-tablet) {
         max-width: 100%;
         width: 447px;
       }
 
-      .fsSubField {
-        flex: 1;
-        width: calc(50% - #{$grid * 2}) !important;
-        max-width: calc(50% - #{$grid * 2});
-        flex-basis: calc(50% - #{$grid * 2});
-        margin: 0px;
+      @media screen and (min-width: $screen-mobile) {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+
+        .fsSubField {
+          flex: 1;
+          width: calc(50% - #{$grid * 2}) !important;
+          max-width: calc(50% - #{$grid * 2});
+          flex-basis: calc(50% - #{$grid * 2});
+          margin: 0px;
+        }
       }
     }
   }
 
   @include formstack-question--options {
-    @include formstack-question__container {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: space-between;
+    // @include formstack-question__container {
+    //   display: flex;
+    //   flex-wrap: wrap;
+    //   justify-content: space-between;
 
-      @include formstack-options {
-        width: calc(50% - #{$grid * 2});
-        flex-basis: calc(50% - #{$grid * 2});
-        max-width: calc(50% - #{$grid * 2});
-      }
+    //   @include formstack-options {
+    //     width: calc(50% - #{$grid * 2});
+    //     flex-basis: calc(50% - #{$grid * 2});
+    //     max-width: calc(50% - #{$grid * 2});
+    //   }
+    // }
+
+    @include formstack-options-vertical {
+      display: flex
+    }
+
+    @include formstack-options-horizontal {
+      @include toggles;
+      padding-left: $grid;
+      margin-bottom: 0;
     }
   }
 
@@ -164,11 +182,11 @@ html {
       }
 
       @include formstack-button-datepicker {
-        order: -1;
+        order: -1
       }
 
       @media screen and (min-width: $screen-desktop) {
-        width: 447px;
+        width: 447px
       }
 
       @media screen and (min-width: $screen-mobile) {
@@ -188,7 +206,7 @@ html {
         }
 
         @include formstack-button-datepicker {
-          margin-top: -($grid);
+          margin-top: -($grid)
         }
       }
     }
@@ -196,7 +214,6 @@ html {
 
   @include formstack-question__label {
     @include question-label;
-    display: block;
     color: initial;
     margin-bottom: 18px;
   }
@@ -234,7 +251,7 @@ html {
     width: auto;
 
     & + input:not([type='checkbox']):not([type='radio']).fsField {
-      padding-left: 30px !important;
+      padding-left: 30px !important
     }
   }
 
@@ -242,8 +259,8 @@ html {
     @include options;
     @include options-labels;
     color: initial;
+    border: none;
     background: none !important;
-    border: none !important;
 
     @include formstack-options__inputs {
       top: auto;
@@ -263,11 +280,11 @@ html {
     }
 
     @include formstack-options__radio-checked {
-      @include radios-btn-checked;
+      @include radios-btn-checked
     }
 
     @include formstack-options__radio-focus {
-      @include radios-btn-focused;
+      @include radios-btn-focused
     }
 
     @include formstack-options__checkbox {
@@ -276,11 +293,11 @@ html {
     }
 
     @include formstack-options__checkbox-checked {
-      @include checkboxes-btn-checked;
+      @include checkboxes-btn-checked
     }
 
     @include formstack-options__checkbox-focus {
-      @include checkboxes-btn-focused;
+      @include checkboxes-btn-focused
     }
   }
 
@@ -320,7 +337,7 @@ html {
   }
 
   @include formstack-disclaimer {
-    @include disclaimer;
+    @include disclaimer
   }
 
   @include formstack-button {
@@ -331,26 +348,36 @@ html {
     height: auto;
 
     .fsFull {
-      display: block;
+      display: block
     }
 
     &::before {
-      content: '';
+      content: ''
     }
   }
 
   @include formstack-button-submit {
     @include btn-primary(!important);
+    margin-top: 0 !important;
+    clear: both;
+
+    @media screen and (max-width: $screen-mobile) {
+      width: 100%;
+      display: block;
+      float: none;
+    }
   }
 
   @include formstack-button-previous {
     @include btn-primary(!important);
     @include btn-previous;
+    margin-bottom: $grid * 4;
   }
 
   @include formstack-button-next {
     @include btn-primary(!important);
     @include btn-next;
+    margin-bottom: $grid * 4;
   }
 
   @include formstack-button-datepicker() {
@@ -394,11 +421,11 @@ html {
     }
 
     @include formstack-progress-bar__text {
-      display: none;
+      display: none
     }
 
     @include formstack-progress-bar__progress {
-      background-color: $color-blue-bright;
+      background-color: $color-blue-bright
     }
   }
 
@@ -406,5 +433,15 @@ html {
     margin-top: 0;
     padding-top: ($grid * 2);
     padding-bottom: 0px;
+  }
+
+  @include formstack-icon-success {
+    background-image: url('#{$cdn}/svg/icon-success.svg');
+    margin: ($grid * 3) 0;
+  }
+
+  @include formstack-heading-success {
+    text-align: center;
+    border: none;
   }
 }

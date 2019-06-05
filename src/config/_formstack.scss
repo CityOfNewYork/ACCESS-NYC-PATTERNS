@@ -10,6 +10,12 @@ $cdn: map-get($variables, 'cdn');
   }
 }
 
+@mixin formstack-page() {
+  .fsPage {
+    @content;
+  }
+}
+
 @mixin formstack-form() {
   .fsBody .fsForm {
     @content;
@@ -39,6 +45,18 @@ $cdn: map-get($variables, 'cdn');
 
 @mixin formstack-options() {
   .fsOptionLabel {
+    @content;
+  }
+}
+
+@mixin formstack-options-vertical() {
+  .fsOptionLabel.vertical {
+    @content;
+  }
+}
+
+@mixin formstack-options-horizontal() {
+  .fsOptionLabel.horizontal {
     @content;
   }
 }
@@ -241,6 +259,18 @@ $cdn: map-get($variables, 'cdn');
 
 @mixin formstack-pagination {
   .fsPagination {
+    @content;
+  }
+}
+
+@mixin formstack-icon-success {
+  .fsSubmissionCheckmark {
+    @content;
+  }
+}
+
+@mixin formstack-heading-success {
+  .fsSubmissionCheckmark + .fsSectionHeading {
     @content;
   }
 }
