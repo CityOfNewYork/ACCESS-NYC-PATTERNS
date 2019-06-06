@@ -154,8 +154,12 @@
               </header>
               <div class="layout--home-body">
                 <div class="my-0 pt-4 px-2 text-font-size-small"><p>
-  <a href="https://www.formstack.com">Formstack</a> is a data collection service that features a form builder for custom online forms. Forms can be styled using
-  <a href="https://help.formstack.com/hc/en-us/articles/360019204492-Themes">themes</a> and the ACCESS NYC Patterns includes a stylesheet for Formstack Themes.</p>
+  <a href="https://www.formstack.com">Formstack</a> is an cloud based service that provides a custom form service building and publishing online forms. Custom forms hosted on their platform can be styled using
+  <a href="https://www.formstack.com/features/themes-css">themes</a> and the ACCESS NYC Patterns includes a stylesheet for integrating form styling for Formstack Themes.</p>
+
+<p><p class="align-center">
+  <img alt="Screenshot of the ACCESS NYC Patterns Formstack Theme applied to a form." src="images/formstack-theme.png" />
+</p></p>
 
 <h3>Usage</h3>
 
@@ -188,10 +192,16 @@
 
 <h3>Development</h3>
 
-<p>If you are modifying the theme for Formstack you import the development url for the distributed stylesheet. Copy and paste the following snippet into the <em>Advanced Code Editor</em>.</p>
+<p>If you are modifying the theme for Formstack you should create a new theme and import the development url of the distributed stylesheet into it. It helps to use
+  <a href="https://semver.org">semantic versioning</a> in the name of the theme when developing so you know which one is the most up to date.</p>
+
+<p>Once you have created a new theme, copy and paste the following snippet into the <em>Advanced Code Editor</em>.</p>
 
 <pre><code>@import url(&#39;https://fonts.googleapis.com/css?family=Noto+Serif:400&#39;);
-@import url(&#39;http://localhost:7000/objects/formstack/formstack.css&#39;);</code></pre></div>
+@import url(&#39;http://localhost:7000/objects/formstack/formstack.css&#39;);</code></pre>
+
+<p>It is also good practice to apply themes in development to sample forms. You can either copy an existing form or use a &quot;development&quot; form that utilizes all of the fields Formstack provides. Once the development theme is applied to the development
+  form, you can use the <em>View Live Form</em> link to view changes you are making.</p></div>
               </div>
             </div>
           </section>
