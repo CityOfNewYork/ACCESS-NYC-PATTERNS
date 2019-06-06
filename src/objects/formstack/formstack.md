@@ -1,4 +1,6 @@
-[Formstack](https://www.formstack.com) is a data collection service that features a form builder for custom online forms. Forms can be styled using [themes](https://help.formstack.com/hc/en-us/articles/360019204492-Themes) and the ACCESS NYC Patterns includes a stylesheet for Formstack Themes.
+[Formstack](https://www.formstack.com) is an cloud based service that provides a custom form service building and publishing online forms. Custom forms hosted on their platform can be styled using [themes](https://www.formstack.com/features/themes-css) and the ACCESS NYC Patterns includes a stylesheet for integrating form styling for Formstack Themes.
+
+slm{{ objects/formstack/formstack-theme-demo.slm }}
 
 ### Usage
 
@@ -12,7 +14,11 @@ The comment will let other users know where the code source is coming from and w
 
 ### Development
 
-If you are modifying the theme for Formstack you import the development url for the distributed stylesheet. Copy and paste the following snippet into the *Advanced Code Editor*.
+If you are modifying the theme for Formstack you should create a new theme and import the development url of the distributed stylesheet into it. It helps to use [semantic versioning](https://semver.org) in the name of the theme when developing so you know which one is the most up to date.
+
+Once you have created a new theme, copy and paste the following snippet into the *Advanced Code Editor*.
 
     @import url('https://fonts.googleapis.com/css?family=Noto+Serif:400');
     @import url('http://localhost:7000/objects/formstack/formstack.css');
+
+It is also good practice to apply themes in development to sample forms. You can either copy an existing form or use a "development" form that utilizes all of the fields Formstack provides. Once the development theme is applied to the development form, you can use the *View Live Form* link to view changes you are making.
