@@ -5,15 +5,17 @@
         <div v-if="t.checkbox" class="c-filter-multi__item-header">
           <label v-if="t.checkbox" class="checkbox">
             <input data-toggles="#" type="checkbox" :checked="t.checked" @change="fetch({'event': $event, 'data': {'parent': t.slug}})" />
-            <span class="checkbox__label" :id="ariaLabelledBy(t.slug)">{{ t.name }}</span>
+
+            <span class="checkbox__label">{{ t.name }}</span>
           </label>
 
           <button type="button" class="c-filter-multi__item-header-toggle" :aria-controls="ariaControls(t.slug)" :aria-expanded="ariaActive(t.active)" :class="classActive(t)" @click="toggle($event, t)">
-            <span class="sr-only" v-html="t.name">{{ t.name }}</span>
+            <span :id="ariaLabelledBy(t.slug)" class="sr-only" v-html="t.name">{{ t.name }}</span>
           </button>
         </div>
         <button v-else type="button" class="c-filter-multi__item-header btn-link" :class="classActive(t)" :aria-controls="ariaControls(t.slug)" :aria-expanded="ariaActive(t.active)" @click="toggle($event, t)">
-          <span v-html="t.name">{{ t.name }}</span>
+          <span :id="ariaLabelledBy(t.slug)" v-html="t.name">{{ t.name }}</span>
+
           <span class="c-filter-multi__item-header-toggle"></span>
         </button>
 
@@ -26,6 +28,7 @@
             <li class="c-filter-multi__item-group-subitem" v-for="f in t.filters" :key="f.slug">
               <label class="checkbox">
                 <input type="checkbox" :value="f.slug" :checked="f.checked" @change="fetch({'event': $event, 'data': f})" />
+
                 <span class="checkbox__label text-font-size-small font-normal" v-html="f.name">{{ f.name }}</span>
               </label>
             </li>

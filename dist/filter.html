@@ -222,7 +222,7 @@
                   <div class="c-filter-multi bg-color-white">
                     <ul class="c-filter-multi__list">
                       <li class="c-filter-multi__item">
-                        <button aria-controls="aria-c-cash-and-expenses" class="c-filter-multi__item-header btn-link active" data-js="filter" id="aria-lb-cash-and-expenses" type="button">Cash &amp; Expenses<span class="c-filter-multi__item-header-toggle"></span></button>
+                        <button aria-controls="aria-c-cash-and-expenses" aria-expanded="true" class="c-filter-multi__item-header btn-link active" data-js="filter" id="aria-lb-cash-and-expenses" type="button">Cash &amp; Expenses<span class="c-filter-multi__item-header-toggle"></span></button>
                         <div aria-hidden="false" aria-labelledby="aria-lb-cash-and-expenses" class="c-filter-multi__item-group active" id="aria-c-cash-and-expenses" role="region">
                           <ul class="c-filter-multi__item-group-list">
                             <li class="c-filter-multi__item-group-subitem">
@@ -242,8 +242,8 @@
                       <li class="c-filter-multi__item">
                         <div class="c-filter-multi__item-header">
                           <label class="checkbox">
-                            <input type="checkbox" /><span class="checkbox__label" id="aria-lb-child-care">Child Care</span></label>
-                          <button aria-controls="aria-c-child-care" class="c-filter-multi__item-header-toggle active" data-js="filter" type="button"><span class="sr-only">Child Care</span></button>
+                            <input type="checkbox" /><span class="checkbox__label">Child Care</span></label>
+                          <button aria-controls="aria-c-child-care" aria-expanded="true" class="c-filter-multi__item-header-toggle active" data-js="filter" type="button"><span class="sr-only" id="aria-lb-child-care">Child Care</span></button>
                         </div>
                         <div aria-hidden="false" aria-labelledby="aria-lb-child-care" class="c-filter-multi__item-group active" id="aria-c-child-care" role="region">
                           <ul class="c-filter-multi__item-group-list">
@@ -261,8 +261,8 @@
                         <li class="c-filter-multi__item">
                           <div class="c-filter-multi__item-header">
                             <label class="checkbox">
-                              <input type="checkbox" /><span class="checkbox__label" id="aria-lb-city-id-card">City ID Card</span></label>
-                            <button aria-controls="aria-c-city-id-card" class="c-filter-multi__item-header-toggle" data-js="filter" type="button"><span class="sr-only">City ID Card</span></button>
+                              <input type="checkbox" /><span class="checkbox__label">City ID Card</span></label>
+                            <button aria-controls="aria-c-city-id-card" aria-expanded="false" class="c-filter-multi__item-header-toggle" data-js="filter" type="button"><span class="sr-only" id="aria-lb-city-id-card">City ID Card</span></button>
                           </div>
                           <div aria-hidden="true" aria-labelledby="aria-lb-city-id-card" class="c-filter-multi__item-group" id="aria-c-city-id-card" role="region">
                             <ul class="c-filter-multi__item-group-list">
@@ -281,7 +281,7 @@
                   <div class="code-block mb-1"><pre>&lt;div class=&quot;c-filter-multi bg-color-white&quot;&gt;
   &lt;ul class=&quot;c-filter-multi__list&quot;&gt;
     &lt;li class=&quot;c-filter-multi__item&quot;&gt;
-      &lt;button aria-controls=&quot;aria-c-cash-and-expenses&quot; class=&quot;c-filter-multi__item-header btn-link active&quot; data-js=&quot;filter&quot; id=&quot;aria-lb-cash-and-expenses&quot; type=&quot;button&quot;&gt;Cash &amp;amp; Expenses&lt;span class=&quot;c-filter-multi__item-header-toggle&quot;&gt;&lt;/span&gt;&lt;/button&gt;
+      &lt;button aria-controls=&quot;aria-c-cash-and-expenses&quot; aria-expanded=&quot;true&quot; class=&quot;c-filter-multi__item-header btn-link active&quot; data-js=&quot;filter&quot; id=&quot;aria-lb-cash-and-expenses&quot; type=&quot;button&quot;&gt;Cash &amp;amp; Expenses&lt;span class=&quot;c-filter-multi__item-header-toggle&quot;&gt;&lt;/span&gt;&lt;/button&gt;
       &lt;div aria-hidden=&quot;false&quot; aria-labelledby=&quot;aria-lb-cash-and-expenses&quot; class=&quot;c-filter-multi__item-group active&quot; id=&quot;aria-c-cash-and-expenses&quot; role=&quot;region&quot;&gt;
         &lt;ul class=&quot;c-filter-multi__item-group-list&quot;&gt;
           &lt;li class=&quot;c-filter-multi__item-group-subitem&quot;&gt;
@@ -301,8 +301,8 @@
     &lt;li class=&quot;c-filter-multi__item&quot;&gt;
       &lt;div class=&quot;c-filter-multi__item-header&quot;&gt;
         &lt;label class=&quot;checkbox&quot;&gt;
-          &lt;input type=&quot;checkbox&quot; /&gt;&lt;span class=&quot;checkbox__label&quot; id=&quot;aria-lb-child-care&quot;&gt;Child Care&lt;/span&gt;&lt;/label&gt;
-        &lt;button aria-controls=&quot;aria-c-child-care&quot; class=&quot;c-filter-multi__item-header-toggle active&quot; data-js=&quot;filter&quot; type=&quot;button&quot;&gt;&lt;span class=&quot;sr-only&quot;&gt;Child Care&lt;/span&gt;&lt;/button&gt;
+          &lt;input type=&quot;checkbox&quot; /&gt;&lt;span class=&quot;checkbox__label&quot;&gt;Child Care&lt;/span&gt;&lt;/label&gt;
+        &lt;button aria-controls=&quot;aria-c-child-care&quot; aria-expanded=&quot;true&quot; class=&quot;c-filter-multi__item-header-toggle active&quot; data-js=&quot;filter&quot; type=&quot;button&quot;&gt;&lt;span class=&quot;sr-only&quot; id=&quot;aria-lb-child-care&quot;&gt;Child Care&lt;/span&gt;&lt;/button&gt;
       &lt;/div&gt;
       &lt;div aria-hidden=&quot;false&quot; aria-labelledby=&quot;aria-lb-child-care&quot; class=&quot;c-filter-multi__item-group active&quot; id=&quot;aria-c-child-care&quot; role=&quot;region&quot;&gt;
         &lt;ul class=&quot;c-filter-multi__item-group-list&quot;&gt;
@@ -320,8 +320,8 @@
       &lt;li class=&quot;c-filter-multi__item&quot;&gt;
         &lt;div class=&quot;c-filter-multi__item-header&quot;&gt;
           &lt;label class=&quot;checkbox&quot;&gt;
-            &lt;input type=&quot;checkbox&quot; /&gt;&lt;span class=&quot;checkbox__label&quot; id=&quot;aria-lb-city-id-card&quot;&gt;City ID Card&lt;/span&gt;&lt;/label&gt;
-          &lt;button aria-controls=&quot;aria-c-city-id-card&quot; class=&quot;c-filter-multi__item-header-toggle&quot; data-js=&quot;filter&quot; type=&quot;button&quot;&gt;&lt;span class=&quot;sr-only&quot;&gt;City ID Card&lt;/span&gt;&lt;/button&gt;
+            &lt;input type=&quot;checkbox&quot; /&gt;&lt;span class=&quot;checkbox__label&quot;&gt;City ID Card&lt;/span&gt;&lt;/label&gt;
+          &lt;button aria-controls=&quot;aria-c-city-id-card&quot; aria-expanded=&quot;false&quot; class=&quot;c-filter-multi__item-header-toggle&quot; data-js=&quot;filter&quot; type=&quot;button&quot;&gt;&lt;span class=&quot;sr-only&quot; id=&quot;aria-lb-city-id-card&quot;&gt;City ID Card&lt;/span&gt;&lt;/button&gt;
         &lt;/div&gt;
         &lt;div aria-hidden=&quot;true&quot; aria-labelledby=&quot;aria-lb-city-id-card&quot; class=&quot;c-filter-multi__item-group&quot; id=&quot;aria-c-city-id-card&quot; role=&quot;region&quot;&gt;
           &lt;ul class=&quot;c-filter-multi__item-group-list&quot;&gt;

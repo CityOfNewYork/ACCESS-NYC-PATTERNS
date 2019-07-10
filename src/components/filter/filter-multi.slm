@@ -1,7 +1,7 @@
 div class='c-filter-multi bg-color-white' data-sketch-symbol=symbol data-sketch-symbol-instance=instance
   ul class='c-filter-multi__list'
     li class='c-filter-multi__item'
-      button#aria-lb-cash-and-expenses type='button' data-js='filter' aria-controls='aria-c-cash-and-expenses' class='c-filter-multi__item-header btn-link active'
+      button#aria-lb-cash-and-expenses type='button' class='c-filter-multi__item-header btn-link active' data-js='filter' aria-controls='aria-c-cash-and-expenses' aria-expanded='true'
         | Cash &amp; Expenses
         span class='c-filter-multi__item-header-toggle'
 
@@ -24,10 +24,10 @@ div class='c-filter-multi bg-color-white' data-sketch-symbol=symbol data-sketch-
       div class='c-filter-multi__item-header'
         label class='checkbox'
           input type='checkbox'
-          span#aria-lb-child-care class='checkbox__label' Child Care
+          span class='checkbox__label' Child Care
 
-        button type='button' data-js='filter' aria-controls='aria-c-child-care'  class='c-filter-multi__item-header-toggle active'
-          span class='sr-only' Child Care
+        button type='button' class='c-filter-multi__item-header-toggle active' data-js='filter' aria-controls='aria-c-child-care' aria-expanded='true'
+          span#aria-lb-child-care class='sr-only' Child Care
 
       div#aria-c-child-care role='region' aria-labelledby='aria-lb-child-care' class='c-filter-multi__item-group active' aria-hidden='false'
         ul class='c-filter-multi__item-group-list'
@@ -45,10 +45,10 @@ div class='c-filter-multi bg-color-white' data-sketch-symbol=symbol data-sketch-
         div class='c-filter-multi__item-header'
           label class='checkbox'
             input type='checkbox'
-            span#aria-lb-city-id-card class='checkbox__label' City ID Card
+            span class='checkbox__label' City ID Card
 
-          button type='button' data-js='filter' aria-controls='aria-c-city-id-card' class='c-filter-multi__item-header-toggle'
-            span class='sr-only' City ID Card
+          button type='button' data-js='filter' aria-controls='aria-c-city-id-card' class='c-filter-multi__item-header-toggle' aria-expanded='false'
+            span#aria-lb-city-id-card  class='sr-only' City ID Card
 
         div#aria-c-city-id-card role='region' aria-labelledby='aria-lb-city-id-card' class='c-filter-multi__item-group' aria-hidden='true'
           ul class='c-filter-multi__item-group-list'
