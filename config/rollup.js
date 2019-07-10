@@ -143,6 +143,24 @@ const modules = [
     plugins: rollup.local
   },
   {
+    input: './src/utilities/forms/forms.js',
+    plugins: rollup.dist,
+    output: [
+      {
+        name: 'Forms',
+        file: `./dist/utilities/forms/forms.iffe.js`,
+        format: 'iife',
+        strict: rollup.strict
+      },
+      {
+        name: 'Forms',
+        file: `./dist/utilities/forms/forms.common.js`,
+        format: 'cjs',
+        strict: rollup.strict
+      }
+    ]
+  },
+  {
     input: './src/utilities/toggle/toggle.js',
     plugins: rollup.dist,
     output: [
