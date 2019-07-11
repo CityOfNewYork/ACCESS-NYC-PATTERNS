@@ -52,9 +52,9 @@ function fnWrite(filename, path, data) {
  * @param  {object} data     - the data to pass to the file
  */
 function fnCode(filename, path, data) {
-  let code = data.match(/code{{(.*)}}/g);
-  if (code) {
-    code.forEach(function(element, index) {
+  let blocks = data.match(/code{{(.*)}}/g);
+  if (blocks) {
+    blocks.forEach(function(element, index) {
       let file = element.replace('code{{', '').replace('}}', '').trim();
       let path = `${SOURCE}${file}`;
       let src = Fs.readFileSync(path, 'utf-8');
@@ -88,6 +88,49 @@ function fnMarkdown(filename, path, data) {
       } else {
         data = data.replace(element, '');
       }
+    });
+    fnSlm(filename, path, data);
+  } else {
+    fnSlm(filename, path, data);
+  }
+}
+
+/**
+ * Replace code blocks with the desired slm template
+ * @param  {string} filename - the filename to write
+ * @param  {object} data     - the data to pass to the file
+ */
+function fnSlm(filename, path, data) {
+  let blocks = data.match(/slm{{(.*)}}/g);
+  if (blocks) {
+    blocks.forEach(function(element, index) {
+      let file = element.replace('slm{{', '').replace('}}', '').trim();
+      let path = `${SOURCE}${file}`;
+      let src = Fs.readFileSync(path, 'utf-8');
+      let compiled = slm(src, {
+        filename: path
+      })(LOCALS);
+      data = data.replace(element, pretty(compiled));
+    });
+    fnStr(filename, path, data);
+  } else {
+    fnStr(filename, path, data);
+  }
+}
+
+/**
+ * Replace string blocks with the desired template
+ * @param  {string} filename - the filename to write
+ * @param  {object} data     - the data to pass to the file
+ */
+function fnStr(filename, path, data) {
+  let blocks = data.match(/str{{(.*)}}/g);
+  if (blocks) {
+    blocks.forEach(function(element, index) {
+      let file = element.replace('str{{', '').replace('}}', '').trim();
+      let path = `${SOURCE}${file}`;
+      let src = Fs.readFileSync(path, 'utf-8');
+      data = data.replace(element, src);
     });
     fnWrite(filename, path, data);
   } else {
