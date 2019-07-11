@@ -1,5 +1,5 @@
 <template>
-  <div class='c-filter'>
+  <div class="c-filter">
     <button type="button" class="c-filter__header" :id="ariaLabelledBy" :aria-expanded="ariaActive(this.terms.active)" :aria-controls="ariaControls" :class="classActive" @click="toggle" v-html="this.terms.name">
       {{ this.terms.name }}
     </button>
@@ -21,7 +21,7 @@
       </li>
 
       <li v-for="t in terms.filters" :key="t.id">
-        <button type="button"class="c-filter__item" :aria-pressed="ariaPressed(t.name)" :href="'#' + t.slug" @click="fetch({'event': $event, 'data': t})" v-html="t.name">
+        <button type="button" class="c-filter__item" :aria-pressed="ariaPressed(t.name)" :href="'#' + t.slug" @click="fetch({'event': $event, 'data': t})" v-html="t.name">
           {{ t.name }}
         </button>
       </li>
