@@ -1,4 +1,4 @@
-[Formstack](https://www.formstack.com) is an cloud based service that provides a custom form service building and publishing online forms. Custom forms hosted on their platform can be styled using [themes](https://www.formstack.com/features/themes-css) and the ACCESS NYC Patterns includes a stylesheet for integrating form styling for Formstack Themes.
+[Formstack](https://www.formstack.com) is an cloud based service for custom form building and publishing of online forms. Forms hosted on their platform can be styled using [themes](https://www.formstack.com/features/themes-css) and the ACCESS NYC Patterns includes a stylesheet for integrating form styling for Formstack Themes.
 
 slm{{ objects/formstack/formstack-theme-demo.slm }}
 

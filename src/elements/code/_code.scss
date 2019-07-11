@@ -3,9 +3,12 @@
  */
 
 // Dependencies
+@import 'config/variables';
 @import 'config/colors';
 @import 'config/fonts';
 @import 'config/typography';
+
+$grid: map-get(map-get($variables, 'dimensions'), 'grid-base');
 
 // Declarations
 code, pre {
@@ -34,7 +37,7 @@ code, pre {
   text-overflow: ellipsis;
 }
 
-p code, li code {
+p code, li code, td code {
   color: $color-purple;
   font-size: 85%;
   font-family: inherit;
@@ -44,6 +47,11 @@ p code, li code {
   padding: 0.2em 0.4em;
   margin: 0;
   display: inline;
+  white-space: nowrap;
+}
+
+td > code {
+  display: inline-block
 }
 
 pre {
@@ -56,6 +64,7 @@ pre {
   max-width: 100%;
   overflow: hidden;
   overflow-x: auto;
+  margin-bottom: $grid * 3;
 }
 
 .code-block {
@@ -65,11 +74,14 @@ pre {
   max-width: 100%;
   overflow: hidden;
   overflow-x: auto;
+  margin-bottom: $grid * 3;
+
   pre {
     color: inherit;
     background-color: transparent;
     margin: 0;
     padding: 16px 16px;
     border: none;
+    margin-bottom: 0;
   }
 }

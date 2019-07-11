@@ -37,10 +37,10 @@
     </script>
   </head>
 
-  <body class="bg-color-white" onload="load()" style="visibility: hidden;">
+  <body class="bg-color-blue-dark" onload="load()" style="visibility: hidden;">
     <a class="sr-only" href="#main-content">Skip to main content</a>
-    <div class="min-h-screen">
-      <header class="px-2">
+    <div class="bg-color-white">
+      <header class="color-light-background px-2">
         <div class="border-b border-color-grey-light">
           <div class="flex items-center justify-between p-2 screen-tablet:py-4 screen-tablet:px-2">
             <div>
@@ -61,14 +61,14 @@
               <nav class="text-font-size-small">
                 <a class="rounded-lg text-color-blue-dark border-2 no-underline px-1 ml-2 hidden screen-tablet:inline-block" href="https://github.com/CityOfNewYork/access-nyc-patterns/tree/v0.5.4">0.5.4</a>
                 <a aria-hidden="true" class="ml-1 screen-tablet:ml-2 screen-tablet:hidden" href="https://github.com/CityOfNewYork/access-nyc-patterns/tree/v0.5.4">0.5.4</a>
-                <a class="ml-1 screen-tablet:ml-2" data-js="toggle" href="#main-menu">Menu</a>
+                <button aria-controls="main-menu" aria-expanded="false" class="btn-link ml-1 screen-tablet:ml-2" data-js="toggle" id="main-menu-control">Menu</button>
               </nav>
             </div>
           </div>
         </div>
       </header>
-      <aside aria-hidden="true" class="text-font-size-small bg-color-blue-light hidden hidden:overflow animated" id="main-menu" style="position:relative;top:-1px">
-        <div class="page-wrapper py-4">
+      <aside aria-hidden="true" aria-labelledby="main-menu-control" class="color-mid-background text-font-size-small hidden hidden:overflowFadeInUp animated relative" id="main-menu" role="region" style="top: -1px">
+        <div class="page-wrapper py-4 animated">
           <div class="screen-tablet:flex">
             <nav class="screen-tablet:flex-1 mb-1 px-2">
               <a class="type-h3 text-font-size-small mb-1 block screen-tablet:border-b screen-tablet:pb-2 screen-tablet:mb-1 border-color-white p-1" href="index">Home</a>
@@ -132,32 +132,33 @@
               <a class="block p-1" href="language">Language</a>
               <a class="block p-1" href="media">Media</a>
               <a class="block p-1" href="text">Text</a>
+              <a class="block p-1" href="toggle">Toggle</a>
               <a class="block p-1" href="typography">Typography</a>
             </nav>
           </div>
           <div class="text-center">
-            <a data-js="toggle" href="#main-menu">Close Menu</a>
+            <button aria-controls="main-menu" aria-expanded="false" class="btn-link" data-js="toggle">Close Menu</button>
           </div>
         </div>
       </aside>
-      <main class="pt-4" id="main-content">
+      <main class="color-light-background pt-4" id="main-content">
         <article class="pt-4">
           <header class="page-wrapper px-2 screen-desktop:px-0 layout--home-body">
             <div class="my-0 w-full">
               <h1 class="text-color-blue-dark px-2 pb-4 mb-4">Card</h1>
             </div>
           </header>
-          <section class="pb-4 mb-4" id="">
+          <section class="pb-4 mb-4">
             <div class="page-wrapper px-2">
               <header class="layout--home-body">
-                <div class="my-0 px-2 pt-1 pb-4 border-b border-color-grey-light screen-tablet:flex screen-tablet:justify-between items-center">
+                <div class="my-0 px-2 pt-1 pb-4 border-b border-color-grey-light">
                   <div>
-                    <a href="https://github.com/CityOfNewYork/access-nyc-patterns/tree/v0.5.4/src/components/card"><code class="code">src/components/card</code></a>
+                    <p class="text-font-size-small m-0">Source: <code><a href="https://github.com/CityOfNewYork/access-nyc-patterns/tree/v0.5.4/src/components/card">src/components/card/card</a></code></p>
                   </div>
                 </div>
               </header>
               <div class="layout--home-body">
-                <div class="my-0 pt-4 px-2 text-font-size-small"><p>Card Components are thumbnails of content from other views. Cards include 5 possible elements:</p>
+                <div class="my-0 pt-4 px-2 text-font-size-small table-align-start"><p>Card Components are thumbnails of content from other views. Cards include 5 possible elements:</p>
 
 <ol>
   <li>Program icon (corresponds to category)</li>
@@ -169,7 +170,7 @@
               </div>
               <div class="layout--gutter screen-tablet:layout--columns justify-between pt-4">
                 <div class="screen-tablet:pr-2">
-                  <article class="c-card" data-sketch-symbol="components/card/card">
+                  <article class="c-card">
                     <div class="c-card__body">
                       <h3 class="c-card__title mb-3">Apply for Pre-K for All</h3>
                       <div class="c-card__summary">
@@ -179,7 +180,7 @@
                   </article>
                 </div>
                 <div>
-                  <div class="code-block mb-1"><pre>&lt;article class=&quot;c-card&quot; data-sketch-symbol=&quot;components/card/card.vue&quot;&gt;
+                  <div class="code-block mb-1"><pre>&lt;article class=&quot;c-card&quot;&gt;
   &lt;div class=&quot;c-card__body&quot;&gt;
     &lt;h3 class=&quot;c-card__title mb-3&quot;&gt;Apply for Pre-K for All&lt;/h3&gt;
     &lt;div class=&quot;c-card__summary&quot;&gt;
@@ -194,21 +195,21 @@
           <section class="pb-4 mb-4" id="card-with-icon">
             <div class="page-wrapper px-2">
               <header class="layout--home-body">
-                <div class="my-0 px-2 pt-1 pb-4 border-b border-color-grey-light screen-tablet:flex screen-tablet:justify-between items-center">
+                <div class="my-0 px-2 pt-1 pb-4 border-b border-color-grey-light">
                   <h2 class="m-0">
                     <a class="text-color-grey-mid font-normal no-underline capitalize" href="#card-with-icon">Card With Icon</a>
                   </h2>
-                  <div>
-                    <a href="https://github.com/CityOfNewYork/access-nyc-patterns/tree/v0.5.4/src/components/card"><code class="code">src/components/card</code></a>
+                  <div class="pt-2">
+                    <p class="text-font-size-small m-0">Source: <code><a href="https://github.com/CityOfNewYork/access-nyc-patterns/tree/v0.5.4/src/components/card">src/components/card/card-icon</a></code></p>
                   </div>
                 </div>
               </header>
               <div class="layout--home-body">
-                <div class="my-0 pt-4 px-2 text-font-size-small"></div>
+                <div class="my-0 pt-4 px-2 text-font-size-small table-align-start"></div>
               </div>
               <div class="layout--gutter screen-tablet:layout--columns justify-between pt-4">
                 <div class="screen-tablet:pr-2">
-                  <article class="c-card" data-sketch-symbol="components/card/card-icon">
+                  <article class="c-card">
                     <div class="c-card__icon">
                       <a href="#">
                         <div class="icon bg-icon-card-cash-expenses"></div>
@@ -225,7 +226,7 @@
                   </article>
                 </div>
                 <div>
-                  <div class="code-block mb-1"><pre>&lt;article class=&quot;c-card&quot; data-sketch-symbol=&quot;components/card/card.vue&quot;&gt;
+                  <div class="code-block mb-1"><pre>&lt;article class=&quot;c-card&quot;&gt;
   &lt;div class=&quot;c-card__icon&quot;&gt;
     &lt;a href=&quot;#&quot;&gt;
       &lt;div class=&quot;icon bg-icon-card-cash-expenses&quot;&gt;&lt;/div&gt;
@@ -247,21 +248,21 @@
           <section class="pb-4 mb-4" id="card-with-icon-and-information">
             <div class="page-wrapper px-2">
               <header class="layout--home-body">
-                <div class="my-0 px-2 pt-1 pb-4 border-b border-color-grey-light screen-tablet:flex screen-tablet:justify-between items-center">
+                <div class="my-0 px-2 pt-1 pb-4 border-b border-color-grey-light">
                   <h2 class="m-0">
                     <a class="text-color-grey-mid font-normal no-underline capitalize" href="#card-with-icon-and-information">Card With Icon and Information</a>
                   </h2>
-                  <div>
-                    <a href="https://github.com/CityOfNewYork/access-nyc-patterns/tree/v0.5.4/src/components/card"><code class="code">src/components/card</code></a>
+                  <div class="pt-2">
+                    <p class="text-font-size-small m-0">Source: <code><a href="https://github.com/CityOfNewYork/access-nyc-patterns/tree/v0.5.4/src/components/card">src/components/card/card-icon-info</a></code></p>
                   </div>
                 </div>
               </header>
               <div class="layout--home-body">
-                <div class="my-0 pt-4 px-2 text-font-size-small"></div>
+                <div class="my-0 pt-4 px-2 text-font-size-small table-align-start"></div>
               </div>
               <div class="layout--gutter screen-tablet:layout--columns justify-between pt-4">
                 <div class="screen-tablet:pr-2">
-                  <article class="c-card" data-sketch-symbol="components/card/card-icon-info">
+                  <article class="c-card">
                     <div class="c-card__icon">
                       <a href="#">
                         <div class="icon bg-icon-card-cash-expenses"></div>
@@ -283,7 +284,7 @@
                   </article>
                 </div>
                 <div>
-                  <div class="code-block mb-1"><pre>&lt;article class=&quot;c-card&quot; data-sketch-symbol=&quot;components/card/card.vue&quot;&gt;
+                  <div class="code-block mb-1"><pre>&lt;article class=&quot;c-card&quot;&gt;
   &lt;div class=&quot;c-card__icon&quot;&gt;
     &lt;a href=&quot;#&quot;&gt;
       &lt;div class=&quot;icon bg-icon-card-cash-expenses&quot;&gt;&lt;/div&gt;
@@ -310,21 +311,21 @@
           <section class="pb-4 mb-4" id="card-with-icon,-information,-and-apply-button">
             <div class="page-wrapper px-2">
               <header class="layout--home-body">
-                <div class="my-0 px-2 pt-1 pb-4 border-b border-color-grey-light screen-tablet:flex screen-tablet:justify-between items-center">
+                <div class="my-0 px-2 pt-1 pb-4 border-b border-color-grey-light">
                   <h2 class="m-0">
                     <a class="text-color-grey-mid font-normal no-underline capitalize" href="#card-with-icon,-information,-and-apply-button">Card With Icon, Information, and Apply Button</a>
                   </h2>
-                  <div>
-                    <a href="https://github.com/CityOfNewYork/access-nyc-patterns/tree/v0.5.4/src/components/card"><code class="code">src/components/card</code></a>
+                  <div class="pt-2">
+                    <p class="text-font-size-small m-0">Source: <code><a href="https://github.com/CityOfNewYork/access-nyc-patterns/tree/v0.5.4/src/components/card">src/components/card/card-icon-info-apply</a></code></p>
                   </div>
                 </div>
               </header>
               <div class="layout--home-body">
-                <div class="my-0 pt-4 px-2 text-font-size-small"></div>
+                <div class="my-0 pt-4 px-2 text-font-size-small table-align-start"></div>
               </div>
               <div class="layout--gutter screen-tablet:layout--columns justify-between pt-4">
                 <div class="screen-tablet:pr-2">
-                  <article class="c-card" data-sketch-symbol="components/card/card-icon-info-apply">
+                  <article class="c-card">
                     <div class="c-card__icon">
                       <svg class="icon icon-card-cash-expenses" role="img">
                         <title id="icon-card-cash-expenses_title">Cash &amp; Expenses</title>
@@ -349,7 +350,7 @@
                   </article>
                 </div>
                 <div>
-                  <div class="code-block mb-1"><pre>&lt;article class=&quot;c-card&quot; data-sketch-symbol=&quot;components/card/card.vue&quot;&gt;
+                  <div class="code-block mb-1"><pre>&lt;article class=&quot;c-card&quot;&gt;
   &lt;div class=&quot;c-card__icon&quot;&gt;
     &lt;svg class=&quot;icon icon-card-cash-expenses&quot; role=&quot;img&quot;&gt;
       &lt;title id=&quot;icon-card-cash-expenses_title&quot;&gt;Cash &amp;amp; Expenses&lt;/title&gt;
@@ -379,21 +380,21 @@
           <section class="pb-4 mb-4" id="removable-card">
             <div class="page-wrapper px-2">
               <header class="layout--home-body">
-                <div class="my-0 px-2 pt-1 pb-4 border-b border-color-grey-light screen-tablet:flex screen-tablet:justify-between items-center">
+                <div class="my-0 px-2 pt-1 pb-4 border-b border-color-grey-light">
                   <h2 class="m-0">
                     <a class="text-color-grey-mid font-normal no-underline capitalize" href="#removable-card">Removable Card</a>
                   </h2>
-                  <div>
-                    <a href="https://github.com/CityOfNewYork/access-nyc-patterns/tree/v0.5.4/src/components/card"><code class="code">src/components/card</code></a>
+                  <div class="pt-2">
+                    <p class="text-font-size-small m-0">Source: <code><a href="https://github.com/CityOfNewYork/access-nyc-patterns/tree/v0.5.4/src/components/card">src/components/card/card-removable</a></code></p>
                   </div>
                 </div>
               </header>
               <div class="layout--home-body">
-                <div class="my-0 pt-4 px-2 text-font-size-small"></div>
+                <div class="my-0 pt-4 px-2 text-font-size-small table-align-start"></div>
               </div>
               <div class="layout--gutter screen-tablet:layout--gutter justify-between pt-4">
                 <div>
-                  <article class="mb-4 print:pb-4 print:border-b" data-sketch-symbol="components/card/card-removable">
+                  <article class="mb-4 print:pb-4 print:border-b">
                     <div class="flex items-stretch bg-color-grey-lightest p-3 screen-desktop:p-4 print:flex print:p-0 print:bg-color-transparent">
                       <div class="w-100 pr-1 print:p-0">
                         <header class="c-card p-0 bg-color-transparent mb-2">
@@ -428,20 +429,20 @@
                         </div>
                       </div>
                       <div class="flex flex-col justify-between hide-for-print">
-                        <div class="pb-1" style="width:232px">
+                        <div class="pb-1" style="width:240px">
                           <div>
-                            <a class="btn btn-primary btn-small block">Remove Program</a>
+                            <button class="btn btn-primary btn-small block w-full" type="button">Remove Program</button>
                           </div>
                         </div>
                         <div>
-                          <a class="btn-toggle btn" href="#">Learn More</a>
+                          <button class="btn-toggle btn-small w-full text-color-blue" href="#" type="button">Learn More</button>
                         </div>
                       </div>
                     </div>
                   </article>
                 </div>
                 <div>
-                  <div class="code-block mb-1"><pre>&lt;article class=&quot;mb-4 print:pb-4 print:border-b&quot; data-sketch-symbol=&quot;components/card/card.vue&quot;&gt;
+                  <div class="code-block mb-1"><pre>&lt;article class=&quot;mb-4 print:pb-4 print:border-b&quot;&gt;
   &lt;div class=&quot;flex items-stretch bg-color-grey-lightest p-3 screen-desktop:p-4 print:flex print:p-0 print:bg-color-transparent&quot;&gt;
     &lt;div class=&quot;w-100 pr-1 print:p-0&quot;&gt;
       &lt;header class=&quot;c-card p-0 bg-color-transparent mb-2&quot;&gt;
@@ -476,13 +477,13 @@
       &lt;/div&gt;
     &lt;/div&gt;
     &lt;div class=&quot;flex flex-col justify-between hide-for-print&quot;&gt;
-      &lt;div class=&quot;pb-1&quot; style=&quot;width:232px&quot;&gt;
+      &lt;div class=&quot;pb-1&quot; style=&quot;width:240px&quot;&gt;
         &lt;div&gt;
-          &lt;a class=&quot;btn btn-primary btn-small block&quot;&gt;Remove Program&lt;/a&gt;
+          &lt;button class=&quot;btn btn-primary btn-small block w-full&quot; type=&quot;button&quot;&gt;Remove Program&lt;/button&gt;
         &lt;/div&gt;
       &lt;/div&gt;
       &lt;div&gt;
-        &lt;a class=&quot;btn-toggle btn&quot; href=&quot;#&quot;&gt;Learn More&lt;/a&gt;
+        &lt;button class=&quot;btn-toggle btn-small w-full text-color-blue&quot; href=&quot;#&quot; type=&quot;button&quot;&gt;Learn More&lt;/button&gt;
       &lt;/div&gt;
     &lt;/div&gt;
   &lt;/div&gt;
@@ -494,27 +495,28 @@
           <section class="pb-4 mb-4" id="vue-card">
             <div class="page-wrapper px-2">
               <header class="layout--home-body">
-                <div class="my-0 px-2 pt-1 pb-4 border-b border-color-grey-light screen-tablet:flex screen-tablet:justify-between items-center">
+                <div class="my-0 px-2 pt-1 pb-4 border-b border-color-grey-light">
                   <h2 class="m-0">
                     <a class="text-color-grey-mid font-normal no-underline capitalize" href="#vue-card">Vue Card</a>
                   </h2>
-                  <div>
-                    <a href="https://github.com/CityOfNewYork/access-nyc-patterns/tree/v0.5.4/src/components/card"><code class="code">src/components/card</code></a>
+                  <div class="pt-2">
+                    <p class="text-font-size-small m-0">Source: <code><a href="https://github.com/CityOfNewYork/access-nyc-patterns/tree/v0.5.4/src/components/card">src/components/card/card.vue</a></code></p>
                   </div>
                 </div>
               </header>
               <div class="layout--home-body">
-                <div class="my-0 pt-4 px-2 text-font-size-small"></div>
+                <div class="my-0 pt-4 px-2 text-font-size-small table-align-start"><p>The Vue Card is a packaged Card Component for Vue.js applications. It encapselates markup, accessibility, and data-binding for a fully functional component. See
+  <a href="#vue-component-usage">Vue Component Usage</a> below for details on content and configuration that can be passed as properties to the component.</p></div>
               </div>
               <div class="layout--gutter screen-tablet:layout--columns justify-between pt-4">
                 <div class="screen-tablet:pr-2">
                   <div id="app-c-card">
-                    <c-card taxonomy="programs" v-bind="card"></c-card>
+                    <c-card v-bind="card"></c-card>
                   </div>
                 </div>
                 <div>
                   <div class="code-block mb-1"><pre>&lt;div id=&quot;app-c-card&quot;&gt;
-  &lt;c-card taxonomy=&quot;programs&quot; v-bind=&quot;card&quot;&gt;&lt;/c-card&gt;
+  &lt;c-card v-bind=&quot;card&quot;&gt;&lt;/c-card&gt;
 &lt;/div&gt;</pre></div>
                 </div>
               </div>
@@ -530,41 +532,56 @@
                 </div>
               </header>
               <div class="layout--home-body">
-                <div class="my-0 pt-4 px-2 text-font-size-small"><p>The
-  <a href="#vue-card">Vue Card</a> can be imported from this path in your main script and added to the Vue instance before your application declaration:</p>
+                <div class="my-0 pt-4 px-2 text-font-size-small table-align-start"><p>The
+  <a href="#vue-card">Vue Card</a> can be imported from from the paths below in your main script and added to the Vue instance before your application declaration:</p>
 
 <pre><code>import CardVue from &#39;src/components/card/card.vue&#39;;
 Vue.component(&#39;c-card&#39;, CardVue);
 
 new Vue();</code></pre>
 
+<p>Below is a guide for using these particular component properties. For basic details of using Vue Components within a Vue application,
+  <a href="https://vuejs.org/v2/guide/components.html">refer to the Vue.js documentation</a>.</p>
+
 <h4>Props</h4>
 
-<p>The follow props are expected on the card. In order to disable certain options, just omit these props.</p>
+<p>Below is a description of accepted properties and their values.</p>
 
-<p><code>cta</code> <em>type: String</em> - Wether to display the call to action button.</p>
-
-<p><code>title</code> <em>type: String</em> - The title of the card.</p>
-
-<p><code>link</code> <em>type: String</em> - The link to the full content the card is referring to.</p>
-
-<p><code>subtitle</code> <em>type: String</em> - The text displayed beneath the title of the card.</p>
-
-<p><code>summary</code> <em>type: String</em> - A short paragraph summary of the card content.</p>
-
-<p><code>category</code> <em>type: Object</em> - The category of the content, this will hide or show the icon.</p>
-
-<p><code>blank</code> <em>type: Boolean</em> - Wether to open the card&#39;s hyperlinks in a new tab.</p>
-
-<p><code>STRINGS</code> <em>type: Object</em> - This is a list of available strings within the Compnent that can be overidden for translation. Below are the default strings:</p>
-
-<pre><code>{
-  &#39;LEARN_MORE&#39;: &#39;Learn more&#39;,
-  &#39;CTA&#39;: &#39;Apply&#39;
-}</code></pre></div>
+<table>
+  <thead>
+    <tr>
+      <th>Prop</th>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code>:card</code></td>
+      <td><em>object</em></td>
+      <td>Content and configuration for the card to render. A
+        <a href="https://github.com/CityOfNewYork/ACCESS-NYC-PATTERNS/blob/master/src/components/card/card.data.js">sample set can be seen here</a>. In order to disable certain options, just omit those props.</td>
+    </tr>
+    <tr>
+      <td><code>:strings</code></td>
+      <td><em>object</em></td>
+      <td>A dictionary containing static strings used in the component. It can be packaged with the object above.</td>
+    </tr>
+  </tbody>
+</table></div>
               </div>
             </div>
           </section>
+          <div class="sticky pin-b bg-color-white shadow-up relative z-10 overflow-y-scroll whitespace-no-wrap animated fadeInUp">
+            <nav class="nav-inline text-font-size-small p-4"><span class="mr-4">Jump to:</span>
+              <a class="mr-4" href="#card-with-icon">Card With Icon</a>
+              <a class="mr-4" href="#card-with-icon-and-information">Card With Icon and Information</a>
+              <a class="mr-4" href="#card-with-icon,-information,-and-apply-button">Card With Icon, Information, and Apply Button</a>
+              <a class="mr-4" href="#removable-card">Removable Card</a>
+              <a class="mr-4" href="#vue-card">Vue Card</a>
+              <a class="mr-4" href="#vue-component-usage">Vue Component Usage</a>
+            </nav>
+          </div>
         </article>
       </main>
     </div>
@@ -590,17 +607,17 @@ new Vue();</code></pre>
         </nav>
       </p>
     </footer>
-    <script crossorigin="anonymous" src="https://polyfill.io/v3/polyfill.min.js?flags=gated&amp;features=Array.prototype.forEach,Element.prototype.matches,Element.prototype.remove,fetch,Promise"></script>
-    <script src="scripts/AccessNyc.js"></script>
-    <script src="scripts/markdown.min.js"></script>
+    <script src="scripts/polyfills.js"></script>
+    <script src="scripts/access-nyc.js"></script>
+    <script src="scripts/vue-components.js"></script>
     <script type="text/javascript">
       var access = new AccessNyc();
-      access.markdown();
+      var VueComponents = new VueComponents();
       access.icons();
       access.toggle();
     </script>
     <script type="text/javascript">
-      access.cardVue();
+      VueComponents.card();
     </script>
   </body>
 

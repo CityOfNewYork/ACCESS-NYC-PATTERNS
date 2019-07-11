@@ -6,6 +6,7 @@
         <use :xlink:href="'#icon-card-' + category.slug" xmlns:xlink="http://www.w3.org/1999/xlink"></use>
       </svg>
     </div>
+
     <div class="c-card__body">
       <a class="text-color-blue-dark" :href="link" :target="blank ? '_blank' : false" v-if="title">
         <h3 class="c-card__title text-color-blue-dark">{{ title }}</h3>
@@ -20,13 +21,13 @@
 
         <p class="hide-for-print" v-if="link">
           <a :href="link" :target="blank ? '_blank' : false">
-            {{ STRINGS.LEARN_MORE }}
+            {{ strings.LEARN_MORE }}
             <span class="sr-only" v-if="subtitle">: {{ subtitle }}}</span>
           </a>
         </p>
 
         <p class="hide-for-print" v-if="cta">
-          <a class="btn btn-secondary btn-next" :href="cta" :target="blank ? '_blank' : false">{{ STRINGS.CTA }}</a>
+          <a class="btn btn-secondary btn-next" :href="cta" :target="blank ? '_blank' : false">{{ strings.CTA }}</a>
         </p>
       </div>
     </div>
@@ -47,7 +48,7 @@
       'summary': {type: String},
       'category': {type: Object},
       'blank': {type: Boolean},
-      'STRINGS': {
+      'strings': {
         type: Object,
         default: () => ({
           'LEARN_MORE': 'Learn more',

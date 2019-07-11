@@ -2,5 +2,5 @@
 / Normal Button
 /
 
-button class='btn-primary btn-small screen-desktop:btn-normal mb-2' data-sketch-symbol=symbol data-sketch-symbol-instance=instance
+button type='button' class='btn-primary btn-small screen-desktop:btn-normal' data-sketch-symbol=symbol data-sketch-symbol-instance=instance
   | Normal Button

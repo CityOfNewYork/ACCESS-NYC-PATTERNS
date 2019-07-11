@@ -1,15 +1,19 @@
 = partial('demo-specs.mixin.slm');
+- this.site.navigation = (this.site.navigation) ? this.site.navigation : [];
 
 = mixin('section-text', 'title', 'path');
-  - this.id = this.title.toLowerCase().split(' ').join('-');
+  - id = (this.title && this.title !== '') ? this.title.toLowerCase().split(' ').join('-') : false;
+  - if (this.title)
+    - let navitem = {'title': this.title, 'id': id};
+    - this.site.navigation.push(navitem);
 
-  section id='${this.id}' class='pb-4 mb-4'
+  section id=id class='pb-4 mb-4'
     div class='page-wrapper px-2 screen-desktop:px-0'
       header class='layout--home-body'
         div class='my-0 px-2 border-b border-color-grey-light screen-tablet:flex screen-tablet:justify-between'
           - if (this.title)
             h2 class='m-0 pt-1 pb-4'
-              a href='#${this.id}' class='text-color-grey-mid font-normal no-underline capitalize'
+              a href='#${id}' class='text-color-grey-mid font-normal no-underline capitalize'
                 = this.title;
 
       - if (this.specs != 'false')

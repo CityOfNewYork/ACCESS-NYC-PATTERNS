@@ -21,4 +21,4 @@
 
 = content('content');
   = mixin('content-header', title);
-  = mixin('section-text', '', 'objects/formstack/formstack');
+  = mixin('section-text', false, 'objects/formstack/formstack');

@@ -146,6 +146,7 @@ const variables = {
       'headings': 'color-blue-dark',
       'color-alt': 'color-grey-mid',
       'hyperlinks': 'color-blue',
+      'hyperlinks-underline': 'color-blue',
       'visited': 'color-purple',
       'hover': 'color-blue-dark',
       'background-color': 'color-white'
@@ -155,6 +156,7 @@ const variables = {
       'headings': 'color-blue-dark',
       'color-alt': 'color-grey-mid',
       'hyperlinks': 'color-blue',
+      'hyperlinks-underline': 'color-blue',
       'visited': 'color-purple',
       'hover': 'color-blue-dark',
       'background-color': 'color-grey-lightest'
@@ -165,6 +167,7 @@ const variables = {
       'headings': 'color-white',
       'color-alt': 'color-white',
       'hyperlinks': 'color-white',
+      'hyperlinks-underline': 'color-white',
       'visited': 'color-white',
       'hover': 'color-white',
       'background-color': 'color-blue-dark'
@@ -410,7 +413,7 @@ const variables = {
     'checkbox-size': '30px',
     'toggle-size': '25px'
   },
-  'display': {
+  'shadows': {
     'up': '0px 5px 11px 1px rgba(0,0,0,0.45)'
   }
 };

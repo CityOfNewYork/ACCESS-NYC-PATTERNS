@@ -3,10 +3,14 @@
 /
 
 div class='c-question' data-sketch-symbol=symbol data-sketch-symbol-instance=instance
-  label class='c-question__label' for='client-first-name' What is your email address?
+  label class='c-question__label' for=question__id = question__label
 
   div class='c-question__container'
-    p We can send you a link to this page to help you get back to it when you’re ready.
+    p = question__description
+
+    - input__id = question__id;
+    - input__name = question__name;
+
     - symbol = false;
     - instance = 'elements/inputs/inputs';
     = partial(`../../${instance}.slm`);

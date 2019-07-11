@@ -22,4 +22,4 @@
 
 = content('content');
   = mixin('content-header', title);
-  = mixin('section', '', 'elements/spinner/spinner');
+  = mixin('section', false, 'elements/spinner/spinner');

@@ -25,7 +25,9 @@
   = mixin('section', 'Program Card Icons', 'elements/icons/icons-program-card', 'gutter', this.vars['icons-program-card']);
   = mixin('section', 'Checklist Category Icons', 'elements/icons/icons-checklist', 'gutter', this.vars['icons-checklist']);
   = mixin('section', 'Logos', 'elements/icons/icons-logo', 'gutter', this.vars['icons-logo']);
+
   = mixin('section', 'UI Icons', 'elements/icons/icons', 'gutter', this.vars['icons-ui']);
+
   = mixin('section', 'Other Icons', 'elements/icons/icons', 'gutter', this.vars['icons-other']);
-  = mixin('section-text', 'Usage', 'elements/icons/readme');
+  = mixin('section-text', 'Icon Usage', 'elements/icons/icons.readme');
   = mixin('section', 'Subway Icons', 'elements/icons/icons-subway', 'gutter', this.vars['icons-subway']);

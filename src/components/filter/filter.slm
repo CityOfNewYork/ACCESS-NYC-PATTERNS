@@ -1,27 +1,16 @@
 div class='c-filter' data-sketch-symbol=symbol data-sketch-symbol-instance=instance
-  a href='#filter__list' class='c-filter__header active' data-js='filter' All Programs
-  ul#filter__list class='c-filter__list active'
-    li
-      span class='c-filter__item' All Programs
-    li
-      a class='c-filter__item' href='#' Cash &amp; Expenses
-    li
-      a class='c-filter__item' href='#' Child Care
-    li
-      a class='c-filter__item' href='#' City ID Card
-    li
-      a class='c-filter__item' href='#' Education
-    li
-      a class='c-filter__item' href='#' Enrichment
-    li
-      a class='c-filter__item' href='#' Family Services
-    li
-      a class='c-filter__item' href='#' Food
-    li
-      a class='c-filter__item' href='#' Health
-    li
-      a class='c-filter__item' href='#' Housing
-    li
-      a class='c-filter__item' href='#' Special Needs
-    li
-      a class='c-filter__item' href='#' Work
+  button#aria-lb-programs type='button' class='c-filter__header active' data-js='filter' aria-controls='aria-c-programs' aria-expanded='true' All Programs
+
+  nav#aria-c-programs class='c-filter__list active' aria-hidden='false' role='region' aria-labelledby='aria-lb-programs'
+    span class='c-filter__item' All Programs
+    a class='c-filter__item' href='#' Cash &amp; Expenses
+    a class='c-filter__item' href='#' Child Care
+    a class='c-filter__item' href='#' City ID Card
+    a class='c-filter__item' href='#' Education
+    a class='c-filter__item' href='#' Enrichment
+    a class='c-filter__item' href='#' Family Services
+    a class='c-filter__item' href='#' Food
+    a class='c-filter__item' href='#' Health
+    a class='c-filter__item' href='#' Housing
+    a class='c-filter__item' href='#' Special Needs
+    a class='c-filter__item' href='#' Work

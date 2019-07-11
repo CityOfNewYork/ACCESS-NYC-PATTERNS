@@ -38,6 +38,7 @@ module.exports = {
     '100vh': '100vh'
   },
   padding: variables.padding,
+  shadows: variables.shadows,
   modules: {
     backgroundColors: ['responsive', 'hover', 'focus'],
     borderColors: ['hover', 'focus'],
@@ -52,6 +53,7 @@ module.exports = {
     maxWidth: ['responsive'],
     overflow: ['responsive'],
     padding: ['responsive'],
+    shadows: ['responsive', 'hover', 'focus'],
     textColors: ['responsive', 'hover'],
     textSizes: ['responsive'],
     textStyle: ['responsive'],

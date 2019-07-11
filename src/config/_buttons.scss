@@ -12,8 +12,20 @@
 // Declaration
 $btn-radius: 5px;
 
+@mixin btn-reset() {
+  color: inherit;
+  font-size: inherit;
+  font-weight: inherit;
+  background: transparent;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  overflow: visible;
+}
+
 @mixin btn-normal() {
   @include typography-h4();
+  line-height: 1;
 }
 
 @mixin btn() {
@@ -24,7 +36,6 @@ $btn-radius: 5px;
   border: 0;
   border-radius: $btn-radius;
   display: inline-block;
-  line-height: 1;
   padding: (.6666 * $spacing-base) $spacing-base;
   text-align: center;
   text-decoration: none;

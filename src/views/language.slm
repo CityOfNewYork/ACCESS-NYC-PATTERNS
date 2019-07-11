@@ -21,4 +21,4 @@
 
 = content('content');
   = mixin('content-header', title);
-  = mixin('section', 'Language Attribute', 'utilities/language/language');
+  = mixin('section', false, 'utilities/language/language');

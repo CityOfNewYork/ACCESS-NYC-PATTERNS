@@ -51,7 +51,11 @@ const plugins = {
   }),
   common: commonjs(),
   vue: vue(),
-  buble: buble()
+  buble: buble({
+    transforms: {
+      forOf: false
+    }
+  })
 };
 
 /**
@@ -99,11 +103,11 @@ if (process.env.NODE_ENV === 'production') {
  */
 const modules = [
   {
-    // This is the mega distribution that packages all modules and peer dependencies
+    // This is the global distribution that packages all modules and peer dependencies
     input: './src/js/main.js',
     output: {
       name: 'AccessNyc',
-      file: `./dist/scripts/AccessNyc.js`,
+      file: `./dist/scripts/access-nyc.js`,
       sourcemap: (process.env.NODE_ENV === 'production')
         ? false : rollup.sourcemap,
       format: rollup.format,
@@ -111,6 +115,68 @@ const modules = [
       globals: rollup.globals
     },
     plugins: rollup.local
+  },
+  {
+    input: './src/js/vue-components.js',
+    output: {
+      name: 'VueComponents',
+      file: `./dist/scripts/vue-components.js`,
+      sourcemap: (process.env.NODE_ENV === 'production')
+        ? false : rollup.sourcemap,
+      format: rollup.format,
+      strict: rollup.strict,
+      globals: rollup.globals
+    },
+    plugins: rollup.local
+  },
+  {
+    input: './src/js/polyfills.js',
+    output: {
+      name: 'Polyfills',
+      file: `./dist/scripts/polyfills.js`,
+      sourcemap: (process.env.NODE_ENV === 'production')
+        ? false : rollup.sourcemap,
+      format: rollup.format,
+      strict: rollup.strict,
+      globals: rollup.globals
+    },
+    plugins: rollup.local
+  },
+  {
+    input: './src/utilities/forms/forms.js',
+    plugins: rollup.dist,
+    output: [
+      {
+        name: 'Forms',
+        file: `./dist/utilities/forms/forms.iffe.js`,
+        format: 'iife',
+        strict: rollup.strict
+      },
+      {
+        name: 'Forms',
+        file: `./dist/utilities/forms/forms.common.js`,
+        format: 'cjs',
+        strict: rollup.strict
+      }
+    ]
+  },
+  {
+    input: './src/utilities/toggle/toggle.js',
+    plugins: rollup.dist,
+    output: [
+      {
+        name: 'InputAutocomplete',
+        file: `./dist/utilities/toggle/toggle.iffe.js`,
+        format: 'iife',
+        strict: rollup.strict
+      },
+      {
+        name: 'InputAutocomplete',
+        file: `./dist/utilities/toggle/toggle.common.js`,
+        format: 'cjs',
+        strict: rollup.strict
+      }
+    ]
   },
   {
     input: './src/elements/inputs/inputs-autocomplete.js',
@@ -148,21 +214,39 @@ const modules = [
       }
     ]
   },
-  {
+  // {
+  //   input: './src/components/accordion/accordion.js',
+  //   plugins: rollup.dist,
+  //   // This enables us to declare peer dependencies and
+  //   // avoid packaging them with our module libraries!
+  //   external: ['vue/dist/vue.common'],
+  //   output: [
+  //     {
+  //       name: 'Accordion',
+  //       file: `./dist/components/accordion/accordion.iffe.js`,
+  //       format: 'iife',
+  //       strict: rollup.strict,
+  //       globals: { // This suppressess a warning regarding using a global peer
+  //         'vue/dist/vue.common': 'Vue'
+  //       }
+  //     },
+  //     {
+  //       name: 'Accordion',
+  //       file: `./dist/components/accordion/accordion.common.js`,
+  //       format: 'cjs',
+  //       strict: rollup.strict
+  //     }
+  //   ]
+  // },
+ {
     input: './src/components/accordion/accordion.js',
     plugins: rollup.dist,
-    // This enables us to declare peer dependencies and
-    // avoid packaging them with our module libraries!
-    external: ['vue/dist/vue.common'],
     output: [
       {
         name: 'Accordion',
         file: `./dist/components/accordion/accordion.iffe.js`,
         format: 'iife',
-        strict: rollup.strict,
-        globals: { // This suppressess a warning regarding using a global peer
-          'vue/dist/vue.common': 'Vue'
-        }
+        strict: rollup.strict
       },
       {
         name: 'Accordion',

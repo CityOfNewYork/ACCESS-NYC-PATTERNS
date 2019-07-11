@@ -1,1 +1,0 @@
-The JavaScript dependencies for this component exist on ACCESS NYC and have not been integrated into the Patterns yet. The current language switcher is displayed through the [WordPress Multilingual Plugin (WPML)](https://wpml.org/).

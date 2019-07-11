@@ -37,10 +37,10 @@
     </script>
   </head>
 
-  <body class="bg-color-white" onload="load()" style="visibility: hidden;">
+  <body class="bg-color-blue-dark" onload="load()" style="visibility: hidden;">
     <a class="sr-only" href="#main-content">Skip to main content</a>
-    <div class="min-h-screen">
-      <header class="px-2">
+    <div class="bg-color-white">
+      <header class="color-light-background px-2">
         <div class="border-b border-color-grey-light">
           <div class="flex items-center justify-between p-2 screen-tablet:py-4 screen-tablet:px-2">
             <div>
@@ -61,14 +61,14 @@
               <nav class="text-font-size-small">
                 <a class="rounded-lg text-color-blue-dark border-2 no-underline px-1 ml-2 hidden screen-tablet:inline-block" href="https://github.com/CityOfNewYork/access-nyc-patterns/tree/v0.5.4">0.5.4</a>
                 <a aria-hidden="true" class="ml-1 screen-tablet:ml-2 screen-tablet:hidden" href="https://github.com/CityOfNewYork/access-nyc-patterns/tree/v0.5.4">0.5.4</a>
-                <a class="ml-1 screen-tablet:ml-2" data-js="toggle" href="#main-menu">Menu</a>
+                <button aria-controls="main-menu" aria-expanded="false" class="btn-link ml-1 screen-tablet:ml-2" data-js="toggle" id="main-menu-control">Menu</button>
               </nav>
             </div>
           </div>
         </div>
       </header>
-      <aside aria-hidden="true" class="text-font-size-small bg-color-blue-light hidden hidden:overflow animated" id="main-menu" style="position:relative;top:-1px">
-        <div class="page-wrapper py-4">
+      <aside aria-hidden="true" aria-labelledby="main-menu-control" class="color-mid-background text-font-size-small hidden hidden:overflowFadeInUp animated relative" id="main-menu" role="region" style="top: -1px">
+        <div class="page-wrapper py-4 animated">
           <div class="screen-tablet:flex">
             <nav class="screen-tablet:flex-1 mb-1 px-2">
               <a class="type-h3 text-font-size-small mb-1 block screen-tablet:border-b screen-tablet:pb-2 screen-tablet:mb-1 border-color-white p-1" href="index">Home</a>
@@ -132,44 +132,45 @@
               <a class="block p-1" href="language">Language</a>
               <a class="block p-1" href="media">Media</a>
               <a class="block p-1" href="text">Text</a>
+              <a class="block p-1" href="toggle">Toggle</a>
               <a class="block p-1" href="typography">Typography</a>
             </nav>
           </div>
           <div class="text-center">
-            <a data-js="toggle" href="#main-menu">Close Menu</a>
+            <button aria-controls="main-menu" aria-expanded="false" class="btn-link" data-js="toggle">Close Menu</button>
           </div>
         </div>
       </aside>
-      <main class="pt-4" id="main-content">
+      <main class="color-light-background pt-4" id="main-content">
         <article class="pt-4">
           <header class="page-wrapper px-2 screen-desktop:px-0 layout--home-body">
             <div class="my-0 w-full">
               <h1 class="text-color-blue-dark px-2 pb-4 mb-4">Navigation</h1>
             </div>
           </header>
-          <section class="pb-4 mb-4" id="">
+          <section class="pb-4 mb-4">
             <div class="page-wrapper px-2">
               <header class="layout--home-body">
-                <div class="my-0 px-2 pt-1 pb-4 border-b border-color-grey-light screen-tablet:flex screen-tablet:justify-between items-center">
+                <div class="my-0 px-2 pt-1 pb-4 border-b border-color-grey-light">
                   <div>
-                    <a href="https://github.com/CityOfNewYork/access-nyc-patterns/tree/v0.5.4/src/objects/navigation"><code class="code">src/objects/navigation</code></a>
+                    <p class="text-font-size-small m-0">Source: <code><a href="https://github.com/CityOfNewYork/access-nyc-patterns/tree/v0.5.4/src/objects/navigation">src/objects/navigation/navigation</a></code></p>
                   </div>
                 </div>
               </header>
               <div class="layout--home-body">
-                <div class="my-0 pt-4 px-2 text-font-size-small"><p>The Navigation Object is a custom module with specific classes to define its elements, including the logo and nav. When a user is in a section of ACCESS NYC, the navigation item for that section gets a bolder type treatment. The Home page of ACCESS NYC
+                <div class="my-0 pt-4 px-2 text-font-size-small table-align-start"><p>The Navigation Object is a custom module with specific classes to define its elements, including the logo and nav. When a user is in a section of ACCESS NYC, the navigation item for that section gets a bolder type treatment. The Home page of ACCESS NYC
   features a larger logo size than the inner pages.</p></div>
               </div>
               <div class="layout--gutter screen-tablet:layout--gutter justify-between pt-4">
                 <div>
-                  <nav class="o-navigation color-dark-background" data-sketch-symbol="objects/navigation/navigation">
+                  <nav class="o-navigation color-dark-background">
                     <div class="logo-access">
                       <a href="/">
                         <svg class="icon icon-logo-full">
                           <use xlink:href="#icon-logo-full"></use>
                         </svg><span class="sr-only">Access NYC</span></a>
                     </div>
-                    <nav class="o-navigation__nav nav-inline">
+                    <nav class="o-navigation__nav nav-inline text-align-end">
                       <a class="screen-desktop:hidden" href="#o-mobile-nav">Menu</a>
                       <a class="hidden screen-desktop:inline-block active" href="#">Am I eligible?</a>
                       <a class="hidden screen-desktop:inline-block" href="#">Programs</a>
@@ -208,7 +209,7 @@
         &lt;use xlink:href=&quot;#icon-logo-full&quot;&gt;&lt;/use&gt;
       &lt;/svg&gt;&lt;span class=&quot;sr-only&quot;&gt;Access NYC&lt;/span&gt;&lt;/a&gt;
   &lt;/div&gt;
-  &lt;nav class=&quot;o-navigation__nav nav-inline&quot;&gt;
+  &lt;nav class=&quot;o-navigation__nav nav-inline text-align-end&quot;&gt;
     &lt;a class=&quot;screen-desktop:hidden&quot; href=&quot;#o-mobile-nav&quot;&gt;Menu&lt;/a&gt;
     &lt;a class=&quot;hidden screen-desktop:inline-block active&quot; href=&quot;#&quot;&gt;Am I eligible?&lt;/a&gt;
     &lt;a class=&quot;hidden screen-desktop:inline-block&quot; href=&quot;#&quot;&gt;Programs&lt;/a&gt;
@@ -267,12 +268,12 @@
         </nav>
       </p>
     </footer>
-    <script crossorigin="anonymous" src="https://polyfill.io/v3/polyfill.min.js?flags=gated&amp;features=Array.prototype.forEach,Element.prototype.matches,Element.prototype.remove,fetch,Promise"></script>
-    <script src="scripts/AccessNyc.js"></script>
-    <script src="scripts/markdown.min.js"></script>
+    <script src="scripts/polyfills.js"></script>
+    <script src="scripts/access-nyc.js"></script>
+    <script src="scripts/vue-components.js"></script>
     <script type="text/javascript">
       var access = new AccessNyc();
-      access.markdown();
+      var VueComponents = new VueComponents();
       access.icons();
       access.toggle();
     </script>

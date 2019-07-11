@@ -1,0 +1,1 @@
+Adding `hidden:fadeInUp animated` to the target element will animate the opacity and position target element.

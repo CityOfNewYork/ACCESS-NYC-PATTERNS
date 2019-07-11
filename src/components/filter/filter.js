@@ -1,6 +1,6 @@
 'use strict';
 
-import Toggle from '../../js/modules/toggle';
+import Toggle from '../../utilities/toggle/toggle';
 
 /**
  * The Filter module
@@ -16,7 +16,7 @@ class Filter {
       selector: Filter.selector,
       namespace: Filter.namespace,
       inactiveClass: Filter.inactiveClass
-    }).init();
+    });
 
     return this;
   }
@@ -26,7 +26,7 @@ class Filter {
  * The dom selector for the module
  * @type {String}
  */
-Filter.selector = '[data-js="filter"]';
+Filter.selector = '[data-js*="filter"]';
 
 /**
  * The namespace for the components JS options

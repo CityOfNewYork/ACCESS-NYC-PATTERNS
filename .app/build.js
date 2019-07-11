@@ -83,7 +83,7 @@ function fnMarkdown(filename, path, data) {
       let path = `${SOURCE}${file}`;
       if (Fs.existsSync(path)) {
         let src = Fs.readFileSync(path, 'utf-8');
-        let compiled = markdown.toHTML(src);
+        let compiled = markdown.toHTML(src, 'Maruku');
         data = data.replace(element, pretty(compiled));
       } else {
         data = data.replace(element, '');

@@ -16,7 +16,7 @@
 }
 
 @mixin transition() {
-  transition-property: opacity, background, color, border, box-shadow, outline, transform, stroke, stroke-dashoffset, fill;
+  transition-property: opacity, background, color, border, box-shadow, transform, stroke, stroke-dashoffset, fill;
   transition-duration: 0.25s;
   backface-visibility: hidden;
 }

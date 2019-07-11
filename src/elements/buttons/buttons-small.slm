@@ -2,5 +2,5 @@
 / Small Button
 /
 
-button class='btn-primary btn-small mb-2' data-sketch-symbol=symbol data-sketch-symbol-instance=instance
+button type='button' class='btn-primary btn-small' data-sketch-symbol=symbol data-sketch-symbol-instance=instance
   | Small Button

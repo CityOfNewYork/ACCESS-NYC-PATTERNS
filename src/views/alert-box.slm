@@ -21,7 +21,7 @@
 
 = content('content');
   = mixin('content-header', title);
-  = mixin('section-text', '', 'components/alert-box/alert-box');
+  = mixin('section-text', false, 'components/alert-box/alert-box');
   = mixin('section', 'Information', 'components/alert-box/alert-box-info');
   = mixin('section', 'Success', 'components/alert-box/alert-box-success');
   = mixin('section', 'Urgent', 'components/alert-box/alert-box-urgent');

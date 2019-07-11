@@ -23,9 +23,6 @@
 
     display: none;
 
-    // @include media($bp-desktop-up) {
-    //   display: none;
-    // }
     @media screen and (min-width: $screen-desktop) {
       display: none;
     }
@@ -36,9 +33,6 @@
   &::before {
     display: block;
 
-    // @include media($bp-desktop-up) {
-    //   display: none;
-    // }
     @media screen and (min-width: $screen-desktop) {
       display: none;
     }

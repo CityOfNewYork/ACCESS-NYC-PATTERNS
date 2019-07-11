@@ -78,9 +78,7 @@
   font-weight: $font-weight-bold;
   padding-#{$text-direction-end}: $spacing-base;
   margin-bottom: $spacing-base;
-  // width: 50%;
 
-  // @include media($bp-tablet-up) {
   @media screen and (min-width: $screen-tablet) {
     width: 33.33%;
   }

@@ -9,7 +9,7 @@ nav class='o-navigation color-dark-background' data-sketch-symbol=symbol
         use xlink:href='#icon-logo-full'
       span class='sr-only' Access NYC
 
-  nav class='o-navigation__nav nav-inline'
+  nav class='o-navigation__nav nav-inline text-align-end'
     a class='screen-desktop:hidden' href='#o-mobile-nav' Menu
     a class='hidden screen-desktop:inline-block active' href='#' Am I eligible?
     a class='hidden screen-desktop:inline-block' href='#' Programs

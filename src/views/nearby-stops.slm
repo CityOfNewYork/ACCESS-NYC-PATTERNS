@@ -21,8 +21,8 @@
 
 = content('content');
   = mixin('content-header', title);
-  = mixin('section', '', 'components/nearby-stops/nearby-stops');
-  = mixin('section-text', 'Usage', 'components/nearby-stops/readme');
+  = mixin('section', false, 'components/nearby-stops/nearby-stops');
+  = mixin('section-text', 'Nearby Stops Usage', 'components/nearby-stops/nearby-stops.readme');
 
 = content('script');
   javascript:

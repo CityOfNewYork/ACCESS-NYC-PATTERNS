@@ -22,7 +22,7 @@
 
 = content('content');
   = mixin('content-header', title);
-  = mixin('section', '', 'objects/footer/footer', 'gutter');
+  = mixin('section', false, 'objects/footer/footer', 'gutter');
 
 = content('script');
   javascript:

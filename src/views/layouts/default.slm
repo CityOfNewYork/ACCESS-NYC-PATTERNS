@@ -1,32 +1,36 @@
 doctype html
 html lang='en' class='bg-color-white text-size-0'
   = content('head');
-  body class='bg-color-white' style='visibility: hidden;' onload='load()'
+
+  body class='bg-color-blue-dark' style='visibility: hidden;' onload='load()'
     a class='sr-only' href='#main-content' Skip to main content
 
-    div class='min-h-screen'
+    div class='bg-color-white'
       = partial('/partials/header.slm');
 
-      aside#main-menu class='text-font-size-small bg-color-blue-light hidden hidden:overflow animated' style='position:relative;top:-1px' aria-hidden='true'
-        div class='page-wrapper py-4'
+      aside#main-menu role='region' aria-labelledby='main-menu-control' aria-hidden='true' class='color-mid-background text-font-size-small hidden hidden:overflowFadeInUp animated relative' style='top: -1px'
+        div class='page-wrapper py-4 animated'
           div class='screen-tablet:flex'
             = partial('/partials/nav.slm');
 
           div class='text-center'
-            a href='#main-menu' data-js='toggle' Close Menu
+            button class='btn-link' aria-controls='main-menu' aria-expanded='false' data-js='toggle' Close Menu
 
-      main#main-content class='pt-4'
+      main#main-content class='color-light-background pt-4'
         article class='pt-4'
           = content('content');
+          = partial('/section/nav.slm');
 
     = partial('/partials/footer.slm');
 
-    script crossorigin='anonymous' src='https://polyfill.io/v3/polyfill.min.js?flags=gated&features=Array.prototype.forEach,Element.prototype.matches,Element.prototype.remove,fetch,Promise'
-    script src='scripts/AccessNyc.js'
-    script src='scripts/markdown.min.js'
+    script src='scripts/polyfills.js'
+    script src='scripts/access-nyc.js'
+    script src='scripts/vue-components.js'
+
     javascript:
       var access = new AccessNyc();
-      access.markdown();
+      var VueComponents = new VueComponents();
       access.icons();
       access.toggle();
+
     = content('script');

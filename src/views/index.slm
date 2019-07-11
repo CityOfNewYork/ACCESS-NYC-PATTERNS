@@ -28,7 +28,7 @@
               | ACCESS NYC aims to increase the accessibility and convenience of discovering and enrolling in government benefits. The Patterns support this work by defining the UI and behavior that New Yorkers experience as they use the site.
 
             p class='text-center'
-              a class='btn btn-primary mb-2' href='#main-menu' data-js='toggle' Browse the patterns
+              button class='btn btn-primary mb-2' aria-controls='main-menu' data-js='toggle' Browse the patterns
 
             div class='bg-status-info mb-4 p-2 screen-desktop:p-4'
               h2#features Features

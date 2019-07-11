@@ -4,12 +4,10 @@
 
 // Dependencies
 @import 'config/fonts';
+@import 'config/colors';
 
 // Declarations
-// .o-banner { }
 .o-banner {
-  background: $color-blue-dark;
-  color: $color-white;
   padding: $spacing-base;
   @include font-smooth;
 }
@@ -20,7 +18,7 @@
 }
 
 .o-banner__title {
-  border-bottom: 1px solid $color-white;
+  border-bottom: 1px solid;
   color: $color-white;
   margin-bottom: 1.5*$spacing-base;
   padding-bottom: 1.5*$spacing-base;
@@ -38,7 +36,6 @@
 }
 
 .o-banner__touts {
-  // @include media($bp-tablet-up) {
   @media screen and (min-width: $screen-tablet) {
     display: flex;
   }
@@ -47,7 +44,6 @@
 .o-banner__tout {
   margin-bottom: $spacing-base;
 
-  // @include media($bp-tablet-up) {
   @media screen and (min-width: $screen-tablet) {
     display: flex;
     flex-direction: column;
@@ -61,7 +57,6 @@
 }
 
 .o-banner__tout-body {
-  // @include media($bp-tablet-up) {
   @media screen and (min-width: $screen-tablet) {
     flex: 1 1 auto;
   }

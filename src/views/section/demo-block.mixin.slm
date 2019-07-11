@@ -5,7 +5,7 @@
 
     - if (this.grid === 'false')
       div class='${this.padding}'
-        - symbol = this.markup.replace('.slm', '');
+        - symbol = false;
         - instance = false;
         = partial('../' + this.markup);
 
