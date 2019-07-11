@@ -1,4 +1,4 @@
-var Accordion = (function () {
+var InputAutocomplete = (function () {
   'use strict';
 
   /**
@@ -202,39 +202,6 @@ var Accordion = (function () {
 
   Toggle.targetAriaRoles = ['aria-hidden'];
 
-  /**
-   * The Accordion module
-   * @class
-   */
-
-  var Accordion = function Accordion() {
-    this._toggle = new Toggle({
-      selector: Accordion.selector,
-      namespace: Accordion.namespace,
-      inactiveClass: Accordion.inactiveClass
-    });
-    return this;
-  };
-  /**
-   * The dom selector for the module
-   * @type {String}
-   */
-
-
-  Accordion.selector = '[data-js*="accordion"]';
-  /**
-   * The namespace for the components JS options
-   * @type {String}
-   */
-
-  Accordion.namespace = 'accordion';
-  /**
-   * The incactive class name
-   * @type {String}
-   */
-
-  Accordion.inactiveClass = 'inactive';
-
-  return Accordion;
+  return Toggle;
 
 }());

@@ -1,5 +1,876 @@
-var NearbyStops = (function () {
+var AccessNyc = (function () {
   'use strict';
+
+  /**
+   * The Simple Toggle class. This will toggle the class 'active' and 'hidden'
+   * on target elements, determined by a click event on a selected link or
+   * element. This will also toggle the aria-hidden attribute for targeted
+   * elements to support screen readers. Target settings and other functionality
+   * can be controlled through data attributes.
+   *
+   * This uses the .matches() method which will require a polyfill for IE
+   * https://polyfill.io/v2/docs/features/#Element_prototype_matches
+   *
+   * @class
+   */
+
+  var Toggle = function Toggle(s) {
+    var this$1 = this;
+    var body = document.querySelector('body');
+    s = !s ? {} : s;
+    this._settings = {
+      selector: s.selector ? s.selector : Toggle.selector,
+      namespace: s.namespace ? s.namespace : Toggle.namespace,
+      inactiveClass: s.inactiveClass ? s.inactiveClass : Toggle.inactiveClass,
+      activeClass: s.activeClass ? s.activeClass : Toggle.activeClass,
+      before: s.before ? s.before : false,
+      after: s.after ? s.after : false
+    };
+    body.addEventListener('click', function (event) {
+      if (!event.target.matches(this$1._settings.selector)) {
+        return;
+      }
+
+      this$1._toggle(event);
+    });
+    return this;
+  };
+  /**
+   * Logs constants to the debugger
+   * @param{object} eventThe main click event
+   * @return {object}      The class
+   */
+
+
+  Toggle.prototype._toggle = function _toggle(event) {
+    var this$1 = this;
+    var el = event.target;
+    var target = false;
+    event.preventDefault();
+    /** Anchor Links */
+
+    target = el.hasAttribute('href') ? document.querySelector(el.getAttribute('href')) : target;
+    /** Toggle Controls */
+
+    target = el.hasAttribute('aria-controls') ? document.querySelector("#" + el.getAttribute('aria-controls')) : target;
+    /** Main Functionality */
+
+    if (!target) {
+      return this;
+    }
+
+    this.elementToggle(el, target);
+    /** Undo */
+
+    if (el.dataset[this._settings.namespace + "Undo"]) {
+      var undo = document.querySelector(el.dataset[this._settings.namespace + "Undo"]);
+      undo.addEventListener('click', function (event) {
+        event.preventDefault();
+        this$1.elementToggle(el, target);
+        undo.removeEventListener('click');
+      });
+    }
+
+    return this;
+  };
+  /**
+   * The main toggling method
+   * @param{object} el   The current element to toggle active
+   * @param{object} target The target element to toggle active/hidden
+   * @return {object}      The class
+   */
+
+
+  Toggle.prototype.elementToggle = function elementToggle(el, target) {
+    var this$1 = this;
+    var i = 0;
+    var attr = '';
+    var value = ''; // Get other toggles that might control the same element
+
+    var others = document.querySelectorAll("[aria-controls=\"" + el.getAttribute('aria-controls') + "\"]");
+    /**
+     * Toggling before hook.
+     */
+
+    if (this._settings.before) {
+      this._settings.before(this);
+    }
+    /**
+     * Toggle Element and Target classes
+     */
+
+
+    if (this._settings.activeClass) {
+      el.classList.toggle(this._settings.activeClass);
+      target.classList.toggle(this._settings.activeClass); // If there are other toggles that control the same element
+
+      if (others) {
+        others.forEach(function (other) {
+          if (other !== el) {
+            other.classList.toggle(this$1._settings.activeClass);
+          }
+        });
+      }
+    }
+
+    if (this._settings.inactiveClass) {
+      target.classList.toggle(this._settings.inactiveClass);
+    }
+    /**
+     * Target Element Aria Attributes
+     */
+
+
+    for (i = 0; i < Toggle.targetAriaRoles.length; i++) {
+      attr = Toggle.targetAriaRoles[i];
+      value = target.getAttribute(attr);
+
+      if (value != '' && value) {
+        target.setAttribute(attr, value === 'true' ? 'false' : 'true');
+      }
+    }
+    /**
+     * Jump Links
+     */
+
+
+    if (el.hasAttribute('href')) {
+      // Reset the history state, this will clear out
+      // the hash when the jump item is toggled closed.
+      history.pushState('', '', window.location.pathname + window.location.search); // Target element toggle.
+
+      if (target.classList.contains(this._settings.activeClass)) {
+        window.location.hash = el.getAttribute('href');
+        target.setAttribute('tabindex', '-1');
+        target.focus({
+          preventScroll: true
+        });
+      } else {
+        target.removeAttribute('tabindex');
+      }
+    }
+    /**
+     * Toggle Element (including multi toggles) Aria Attributes
+     */
+
+
+    for (i = 0; i < Toggle.elAriaRoles.length; i++) {
+      attr = Toggle.elAriaRoles[i];
+      value = el.getAttribute(attr);
+
+      if (value != '' && value) {
+        el.setAttribute(attr, value === 'true' ? 'false' : 'true');
+      } // If there are other toggles that control the same element
+
+
+      if (others) {
+        others.forEach(function (other) {
+          if (other !== el && other.getAttribute(attr)) {
+            other.setAttribute(attr, value === 'true' ? 'false' : 'true');
+          }
+        });
+      }
+    }
+    /**
+     * Toggling complete hook.
+     */
+
+
+    if (this._settings.after) {
+      this._settings.after(this);
+    }
+
+    return this;
+  };
+  /** @type {String} The main selector to add the toggling function to */
+
+
+  Toggle.selector = '[data-js*="toggle"]';
+  /** @type {String} The namespace for our data attribute settings */
+
+  Toggle.namespace = 'toggle';
+  /** @type {String} The hide class */
+
+  Toggle.inactiveClass = 'hidden';
+  /** @type {String} The active class */
+
+  Toggle.activeClass = 'active';
+  /** @type {Array} Aria roles to toggle true/false on the toggling element */
+
+  Toggle.elAriaRoles = ['aria-pressed', 'aria-expanded'];
+  /** @type {Array} Aria roles to toggle true/false on the target element */
+
+  Toggle.targetAriaRoles = ['aria-hidden'];
+
+  /**
+   * The Icon module
+   * @class
+   */
+
+  var Icons = function Icons(path) {
+    path = path ? path : Icons.path;
+    fetch(path).then(function (response) {
+      if (response.ok) {
+        return response.text();
+      }
+    })["catch"](function (error) {
+    }).then(function (data) {
+      var sprite = document.createElement('div');
+      sprite.innerHTML = data;
+      sprite.setAttribute('aria-hidden', true);
+      sprite.setAttribute('style', 'display: none;');
+      document.body.appendChild(sprite);
+    });
+    return this;
+  };
+  /** @type {String} The path of the icon file */
+
+
+  Icons.path = 'icons.svg';
+
+  /**
+   * JaroWinkler function.
+   * https://en.wikipedia.org/wiki/Jaro%E2%80%93Winkler_distance
+   * @param {string} s1 string one.
+   * @param {string} s2 second string.
+   * @return {number} amount of matches.
+   */
+  function jaro(s1, s2) {
+    var assign;
+    var shorter;
+    var longer;
+    assign = s1.length > s2.length ? [s1, s2] : [s2, s1], longer = assign[0], shorter = assign[1];
+    var matchingWindow = Math.floor(longer.length / 2) - 1;
+    var shorterMatches = [];
+    var longerMatches = [];
+
+    for (var i = 0; i < shorter.length; i++) {
+      var ch = shorter[i];
+      var windowStart = Math.max(0, i - matchingWindow);
+      var windowEnd = Math.min(i + matchingWindow + 1, longer.length);
+
+      for (var j = windowStart; j < windowEnd; j++) {
+        if (longerMatches[j] === undefined && ch === longer[j]) {
+          shorterMatches[i] = longerMatches[j] = ch;
+          break;
+        }
+      }
+    }
+
+    var shorterMatchesString = shorterMatches.join('');
+    var longerMatchesString = longerMatches.join('');
+    var numMatches = shorterMatchesString.length;
+    var transpositions = 0;
+
+    for (var i$1 = 0; i$1 < shorterMatchesString.length; i$1++) {
+      if (shorterMatchesString[i$1] !== longerMatchesString[i$1]) {
+        transpositions++;
+      }
+    }
+
+    return numMatches > 0 ? (numMatches / shorter.length + numMatches / longer.length + (numMatches - Math.floor(transpositions / 2)) / numMatches) / 3.0 : 0;
+  }
+  /**
+   * @param {string} s1 string one.
+   * @param {string} s2 second string.
+   * @param {number} prefixScalingFactor
+   * @return {number} jaroSimilarity
+   */
+
+
+  function jaroWinkler (s1, s2, prefixScalingFactor) {
+    if (prefixScalingFactor === void 0) prefixScalingFactor = 0.2;
+    var jaroSimilarity = jaro(s1, s2);
+    var commonPrefixLength = 0;
+
+    for (var i = 0; i < s1.length; i++) {
+      if (s1[i] === s2[i]) {
+        commonPrefixLength++;
+      } else {
+        break;
+      }
+    }
+
+    return jaroSimilarity + Math.min(commonPrefixLength, 4) * prefixScalingFactor * (1 - jaroSimilarity);
+  }
+
+  function memoize (fn) {
+    var cache = {};
+    return function () {
+      var args = [],
+          len = arguments.length;
+
+      while (len--) {
+        args[len] = arguments[len];
+      }
+
+      var key = JSON.stringify(args);
+      return cache[key] || (cache[key] = fn.apply(void 0, args));
+    };
+  }
+
+  /* eslint-env browser */
+  /**
+   * Autocomplete for autocomplete.
+   * Forked and modified from https://github.com/xavi/miss-plete
+   */
+
+  var Autocomplete = function Autocomplete(settings) {
+    var this$1 = this;
+    if (settings === void 0) settings = {};
+    this.settings = {
+      'selector': settings.selector,
+      // required
+      'options': settings.options,
+      // required
+      'classname': settings.classname,
+      // required
+      'selected': settings.hasOwnProperty('selected') ? settings.selected : false,
+      'score': settings.hasOwnProperty('score') ? settings.score : memoize(Autocomplete.score),
+      'listItem': settings.hasOwnProperty('listItem') ? settings.listItem : Autocomplete.listItem,
+      'getSiblingIndex': settings.hasOwnProperty('getSiblingIndex') ? settings.getSiblingIndex : Autocomplete.getSiblingIndex
+    };
+    this.scoredOptions = null;
+    this.container = null;
+    this.ul = null;
+    this.highlighted = -1;
+    this.SELECTORS = Autocomplete.selectors;
+    this.STRINGS = Autocomplete.strings;
+    this.MAX_ITEMS = Autocomplete.maxItems;
+    window.addEventListener('keydown', function (e) {
+      this$1.keydownEvent(e);
+    });
+    window.addEventListener('keyup', function (e) {
+      this$1.keyupEvent(e);
+    });
+    window.addEventListener('input', function (e) {
+      this$1.inputEvent(e);
+    });
+    var body = document.querySelector('body');
+    body.addEventListener('focus', function (e) {
+      this$1.focusEvent(e);
+    }, true);
+    body.addEventListener('blur', function (e) {
+      this$1.blurEvent(e);
+    }, true);
+    return this;
+  };
+  /**
+   * EVENTS
+   */
+
+  /**
+   * The input focus event
+   * @param {object}eventThe event object
+   */
+
+
+  Autocomplete.prototype.focusEvent = function focusEvent(event) {
+    if (!event.target.matches(this.settings.selector)) {
+      return;
+    }
+
+    this.input = event.target;
+
+    if (this.input.value === '') {
+      this.message('INIT');
+    }
+  };
+  /**
+   * The input keydown event
+   * @param {object}eventThe event object
+   */
+
+
+  Autocomplete.prototype.keydownEvent = function keydownEvent(event) {
+    if (!event.target.matches(this.settings.selector)) {
+      return;
+    }
+
+    this.input = event.target;
+
+    if (this.ul) {
+      switch (event.keyCode) {
+        case 13:
+          this.keyEnter(event);
+          break;
+
+        case 27:
+          this.keyEscape(event);
+          break;
+
+        case 40:
+          this.keyDown(event);
+          break;
+
+        case 38:
+          this.keyUp(event);
+          break;
+      }
+    }
+  };
+  /**
+   * The input keyup event
+   * @param {object}eventThe event object
+   */
+
+
+  Autocomplete.prototype.keyupEvent = function keyupEvent(event) {
+    if (!event.target.matches(this.settings.selector)) {
+      return;
+    }
+
+    this.input = event.target;
+  };
+  /**
+   * The input event
+   * @param {object}eventThe event object
+   */
+
+
+  Autocomplete.prototype.inputEvent = function inputEvent(event) {
+    var this$1 = this;
+
+    if (!event.target.matches(this.settings.selector)) {
+      return;
+    }
+
+    this.input = event.target;
+
+    if (this.input.value.length > 0) {
+      this.scoredOptions = this.settings.options.map(function (option) {
+        return this$1.settings.score(this$1.input.value, option);
+      }).sort(function (a, b) {
+        return b.score - a.score;
+      });
+    } else {
+      this.scoredOptions = [];
+    }
+
+    this.dropdown();
+  };
+  /**
+   * The input blur event
+   * @param {object}eventThe event object
+   */
+
+
+  Autocomplete.prototype.blurEvent = function blurEvent(event) {
+    if (event.target === window || !event.target.matches(this.settings.selector)) {
+      return;
+    }
+
+    this.input = event.target;
+
+    if (this.input.dataset.persistDropdown === 'true') {
+      return;
+    }
+
+    this.remove();
+    this.highlighted = -1;
+  };
+  /**
+   * KEY INPUT EVENTS
+   */
+
+  /**
+   * What happens when the user presses the down arrow
+   * @param {object}eventThe event object
+   * @return{object}       The Class
+   */
+
+
+  Autocomplete.prototype.keyDown = function keyDown(event) {
+    event.preventDefault();
+    this.highlight(this.highlighted < this.ul.children.length - 1 ? this.highlighted + 1 : -1);
+    return this;
+  };
+  /**
+   * What happens when the user presses the up arrow
+   * @param {object}eventThe event object
+   * @return{object}       The Class
+   */
+
+
+  Autocomplete.prototype.keyUp = function keyUp(event) {
+    event.preventDefault();
+    this.highlight(this.highlighted > -1 ? this.highlighted - 1 : this.ul.children.length - 1);
+    return this;
+  };
+  /**
+   * What happens when the user presses the enter key
+   * @param {object}eventThe event object
+   * @return{object}       The Class
+   */
+
+
+  Autocomplete.prototype.keyEnter = function keyEnter(event) {
+    this.selected();
+    return this;
+  };
+  /**
+   * What happens when the user presses the escape key
+   * @param {object}eventThe event object
+   * @return{object}       The Class
+   */
+
+
+  Autocomplete.prototype.keyEscape = function keyEscape(event) {
+    this.remove();
+    return this;
+  };
+  /**
+   * STATIC
+   */
+
+  /**
+   * It must return an object with at least the properties 'score'
+   * and 'displayValue.' Default is a Jaro–Winkler similarity function.
+   * @param{array}value
+   * @param{array}synonyms
+   * @return {int}  Score or displayValue
+   */
+
+
+  Autocomplete.score = function score(value, synonyms) {
+    var closestSynonym = null;
+    synonyms.forEach(function (synonym) {
+      var similarity = jaroWinkler(synonym.trim().toLowerCase(), value.trim().toLowerCase());
+
+      if (closestSynonym === null || similarity > closestSynonym.similarity) {
+        closestSynonym = {
+          similarity: similarity,
+          value: synonym
+        };
+
+        if (similarity === 1) {
+          return;
+        }
+      }
+    });
+    return {
+      score: closestSynonym.similarity,
+      displayValue: synonyms[0]
+    };
+  };
+  /**
+   * List item for dropdown list.
+   * @param{Number}scoredOption
+   * @param{Number}index
+   * @return {string}The a list item <li>.
+   */
+
+
+  Autocomplete.listItem = function listItem(scoredOption, index) {
+    var li = index > this.MAX_ITEMS ? null : document.createElement('li');
+    li.setAttribute('role', 'option');
+    li.setAttribute('tabindex', '-1');
+    li.setAttribute('aria-selected', 'false');
+    li && li.appendChild(document.createTextNode(scoredOption.displayValue));
+    return li;
+  };
+  /**
+   * Get index of previous element.
+   * @param{array} node
+   * @return {number}index of previous element.
+   */
+
+
+  Autocomplete.getSiblingIndex = function getSiblingIndex(node) {
+    var index = -1;
+    var n = node;
+
+    do {
+      index++;
+      n = n.previousElementSibling;
+    } while (n);
+
+    return index;
+  };
+  /**
+   * PUBLIC METHODS
+   */
+
+  /**
+   * Display options as a list.
+   * @return{object} The Class
+   */
+
+
+  Autocomplete.prototype.dropdown = function dropdown() {
+    var this$1 = this;
+    var documentFragment = document.createDocumentFragment();
+    this.scoredOptions.every(function (scoredOption, i) {
+      var listItem = this$1.settings.listItem(scoredOption, i);
+      listItem && documentFragment.appendChild(listItem);
+      return !!listItem;
+    });
+    this.remove();
+    this.highlighted = -1;
+
+    if (documentFragment.hasChildNodes()) {
+      var newUl = document.createElement('ul');
+      newUl.setAttribute('role', 'listbox');
+      newUl.setAttribute('tabindex', '0');
+      newUl.setAttribute('id', this.SELECTORS.OPTIONS);
+      newUl.addEventListener('mouseover', function (event) {
+        if (event.target.tagName === 'LI') {
+          this$1.highlight(this$1.settings.getSiblingIndex(event.target));
+        }
+      });
+      newUl.addEventListener('mousedown', function (event) {
+        return event.preventDefault();
+      });
+      newUl.addEventListener('click', function (event) {
+        if (event.target.tagName === 'LI') {
+          this$1.selected();
+        }
+      });
+      newUl.appendChild(documentFragment); // See CSS to understand why the <ul> has to be wrapped in a <div>
+
+      var newContainer = document.createElement('div');
+      newContainer.className = this.settings.classname;
+      newContainer.appendChild(newUl);
+      this.input.setAttribute('aria-expanded', 'true'); // Inserts the dropdown just after the <input> element
+
+      this.input.parentNode.insertBefore(newContainer, this.input.nextSibling);
+      this.container = newContainer;
+      this.ul = newUl;
+      this.message('TYPING', this.settings.options.length);
+    }
+
+    return this;
+  };
+  /**
+   * Highlight new option selected.
+   * @param {Number}newIndex
+   * @return{object}The Class
+   */
+
+
+  Autocomplete.prototype.highlight = function highlight(newIndex) {
+    if (newIndex > -1 && newIndex < this.ul.children.length) {
+      // If any option already selected, then unselect it
+      if (this.highlighted !== -1) {
+        this.ul.children[this.highlighted].classList.remove(this.SELECTORS.HIGHLIGHT);
+        this.ul.children[this.highlighted].removeAttribute('aria-selected');
+        this.ul.children[this.highlighted].removeAttribute('id');
+        this.input.removeAttribute('aria-activedescendant');
+      }
+
+      this.highlighted = newIndex;
+
+      if (this.highlighted !== -1) {
+        this.ul.children[this.highlighted].classList.add(this.SELECTORS.HIGHLIGHT);
+        this.ul.children[this.highlighted].setAttribute('aria-selected', 'true');
+        this.ul.children[this.highlighted].setAttribute('id', this.SELECTORS.ACTIVE_DESCENDANT);
+        this.input.setAttribute('aria-activedescendant', this.SELECTORS.ACTIVE_DESCENDANT);
+      }
+    }
+
+    return this;
+  };
+  /**
+   * Selects an option from a list of items.
+   * @return{object} The Class
+   */
+
+
+  Autocomplete.prototype.selected = function selected() {
+    if (this.highlighted !== -1) {
+      this.input.value = this.scoredOptions[this.highlighted].displayValue;
+      this.remove();
+      this.message('SELECTED', this.input.value);
+
+      if (window.innerWidth <= 768) {
+        this.input.scrollIntoView(true);
+      }
+    } // User provided callback method for selected option.
+
+
+    if (this.settings.selected) {
+      this.settings.selected(this.input.value, this);
+    }
+
+    return this;
+  };
+  /**
+   * Remove dropdown list once a list item is selected.
+   * @return{object} The Class
+   */
+
+
+  Autocomplete.prototype.remove = function remove() {
+    this.container && this.container.remove();
+    this.input.setAttribute('aria-expanded', 'false');
+    this.container = null;
+    this.ul = null;
+    return this;
+  };
+  /**
+   * Messaging that is passed to the screen reader
+   * @param {string}key     The Key of the message to write
+   * @param {string}variableA variable to provide to the string.
+   * @return{object}          The Class
+   */
+
+
+  Autocomplete.prototype.message = function message(key, variable) {
+    var this$1 = this;
+    if (key === void 0) key = false;
+    if (variable === void 0) variable = '';
+
+    if (!key) {
+      return this;
+    }
+
+    var messages = {
+      'INIT': function INIT() {
+        return this$1.STRINGS.DIRECTIONS_TYPE;
+      },
+      'TYPING': function TYPING() {
+        return [this$1.STRINGS.OPTION_AVAILABLE.replace('{{ NUMBER }}', variable), this$1.STRINGS.DIRECTIONS_REVIEW].join('. ');
+      },
+      'SELECTED': function SELECTED() {
+        return [this$1.STRINGS.OPTION_SELECTED.replace('{{ VALUE }}', variable), this$1.STRINGS.DIRECTIONS_TYPE].join('. ');
+      }
+    };
+    document.querySelector("#" + this.input.getAttribute('aria-describedby')).innerHTML = messages[key]();
+    return this;
+  };
+  /** Selectors for the Autocomplete class. */
+
+
+  Autocomplete.selectors = {
+    'HIGHLIGHT': 'input-autocomplete__highlight',
+    'OPTIONS': 'input-autocomplete__options',
+    'ACTIVE_DESCENDANT': 'input-autocomplete__selected',
+    'SCREEN_READER_ONLY': 'sr-only'
+  };
+  /**  */
+
+  Autocomplete.strings = {
+    'DIRECTIONS_TYPE': 'Start typing to generate a list of potential input options',
+    'DIRECTIONS_REVIEW': ['Keyboard users can use the up and down arrows to ', 'review options and press enter to select an option'].join(''),
+    'OPTION_AVAILABLE': '{{ NUMBER }} options available',
+    'OPTION_SELECTED': '{{ VALUE }} selected'
+  };
+  /** Maximum amount of results to be returned. */
+
+  Autocomplete.maxItems = 5;
+
+  /**
+   * The InputAutocomplete class.
+   */
+
+  var InputAutocomplete = function InputAutocomplete(settings) {
+    if (settings === void 0) settings = {};
+    this.library = new Autocomplete({
+      options: settings.hasOwnProperty('options') ? settings.options : InputAutocomplete.options,
+      selected: settings.hasOwnProperty('selected') ? settings.selected : false,
+      selector: settings.hasOwnProperty('selector') ? settings.selector : InputAutocomplete.selector,
+      classname: settings.hasOwnProperty('classname') ? settings.classname : InputAutocomplete.classname
+    });
+    return this;
+  };
+  /**
+   * Setter for the Autocomplete options
+   * @param{object} reset Set of array options for the Autocomplete class
+   * @return {object} InputAutocomplete object with new options.
+   */
+
+
+  InputAutocomplete.prototype.options = function options(reset) {
+    this.library.settings.options = reset;
+    return this;
+  };
+  /**
+   * Setter for the Autocomplete strings
+   * @param{object}localizedStringsObject containing strings.
+   * @return {object} Autocomplete strings
+   */
+
+
+  InputAutocomplete.prototype.strings = function strings(localizedStrings) {
+    Object.assign(this.library.STRINGS, localizedStrings);
+    return this;
+  };
+  /** @type {array} Default options for the autocomplete class */
+
+
+  InputAutocomplete.options = [];
+  /** @type {string} The search box dom selector */
+
+  InputAutocomplete.selector = '[data-js="input-autocomplete__input"]';
+  /** @type {string} The classname for the dropdown element */
+
+  InputAutocomplete.classname = 'input-autocomplete__dropdown';
+
+  /**
+   * The Accordion module
+   * @class
+   */
+
+  var Accordion = function Accordion() {
+    this._toggle = new Toggle({
+      selector: Accordion.selector,
+      namespace: Accordion.namespace,
+      inactiveClass: Accordion.inactiveClass
+    });
+    return this;
+  };
+  /**
+   * The dom selector for the module
+   * @type {String}
+   */
+
+
+  Accordion.selector = '[data-js*="accordion"]';
+  /**
+   * The namespace for the components JS options
+   * @type {String}
+   */
+
+  Accordion.namespace = 'accordion';
+  /**
+   * The incactive class name
+   * @type {String}
+   */
+
+  Accordion.inactiveClass = 'inactive';
+
+  /**
+   * The Filter module
+   * @class
+   */
+
+  var Filter = function Filter() {
+    this._toggle = new Toggle({
+      selector: Filter.selector,
+      namespace: Filter.namespace,
+      inactiveClass: Filter.inactiveClass
+    });
+    return this;
+  };
+  /**
+   * The dom selector for the module
+   * @type {String}
+   */
+
+
+  Filter.selector = '[data-js*="filter"]';
+  /**
+   * The namespace for the components JS options
+   * @type {String}
+   */
+
+  Filter.namespace = 'filter';
+  /**
+   * The incactive class name
+   * @type {String}
+   */
+
+  Filter.inactiveClass = 'inactive';
 
   /** Detect free variable `global` from Node.js. */
   var freeGlobal = typeof global == 'object' && global && global.Object === Object && global;
@@ -2131,18 +3002,10 @@ var NearbyStops = (function () {
       if (response.ok) {
         return response.json();
       } else {
-        // eslint-disable-next-line no-console
-        if (process.env.NODE_ENV !== 'production') {
-          console.dir(response);
-        }
 
         callback('error', response);
       }
     })["catch"](function (error) {
-      // eslint-disable-next-line no-console
-      if (process.env.NODE_ENV !== 'production') {
-        console.dir(error);
-      }
 
       callback('error', error);
     }).then(function (data) {
@@ -2352,6 +3215,731 @@ var NearbyStops = (function () {
     LINES: ['S']
   }];
 
-  return NearbyStops;
+  /**
+   * A simple form validation function that uses native form validation. It will
+   * add appropriate form feedback for each input that is invalid and native
+   * localized browser messaging.
+   *
+   * See https://developer.mozilla.org/en-US/docs/Learn/HTML/Forms/Form_validation
+   * See https://caniuse.com/#feat=form-validation for support
+   *
+   * @param  {Event}  event The form submission event.
+   * @param  {Array} STRINGS set of strings
+   * @return {Event/Boolean} The original event or false if invalid.
+   */
+  function valid (event, STRINGS) {
+    event.preventDefault();
+
+    var validity = event.target.checkValidity();
+    var elements = event.target.querySelectorAll('input[required="true"]');
+
+    for (var i = 0; i < elements.length; i++) {
+      // Remove old messaging if it exists
+      var el = elements[i];
+      var container = el.parentNode;
+      var message = container.querySelector('.error-message');
+      container.classList.remove('error');
+
+      if (message) {
+        message.remove();
+      } // If this input valid, skip messaging
+
+
+      if (el.validity.valid) {
+        continue;
+      } // Create the new error message.
+
+
+      message = document.createElement('div'); // Get the error message from localized strings.
+
+      if (el.validity.valueMissing) {
+        message.innerHTML = STRINGS.VALID_REQUIRED;
+      } else if (!el.validity.valid) {
+        message.innerHTML = STRINGS["VALID_" + el.type.toUpperCase() + "_INVALID"];
+      } else {
+        message.innerHTML = el.validationMessage;
+      }
+
+      message.setAttribute('aria-live', 'polite');
+      message.classList.add('error-message'); // Add the error class and error message.
+
+      container.classList.add('error');
+      container.insertBefore(message, container.childNodes[0]);
+    }
+
+    return validity ? event : validity;
+  }
+
+  /**
+   * Map toggled checkbox values to an input.
+   * @param  {Object} event The parent click event.
+   * @return {Element}      The target element.
+   */
+  function joinValues (event) {
+    if (!event.target.matches('input[type="checkbox"]')) {
+      return;
+    }
+
+    if (!event.target.closest('[data-js-join-values]')) {
+      return;
+    }
+
+    var el = event.target.closest('[data-js-join-values]');
+    var target = document.querySelector(el.dataset.jsJoinValues);
+    target.value = Array.from(el.querySelectorAll('input[type="checkbox"]')).filter(function (e) {
+      return e.value && e.checked;
+    }).map(function (e) {
+      return e.value;
+    }).join(', ');
+    return target;
+  }
+
+  // get successful control from form and assemble into object
+  // http://www.w3.org/TR/html401/interact/forms.html#h-17.13.2
+
+  // types which indicate a submit action and are not successful controls
+  // these will be ignored
+  var k_r_submitter = /^(?:submit|button|image|reset|file)$/i;
+
+  // node names which could be successful controls
+  var k_r_success_contrls = /^(?:input|select|textarea|keygen)/i;
+
+  // Matches bracket notation.
+  var brackets = /(\[[^\[\]]*\])/g;
+
+  // serializes form fields
+  // @param form MUST be an HTMLForm element
+  // @param options is an optional argument to configure the serialization. Default output
+  // with no options specified is a url encoded string
+  //    - hash: [true | false] Configure the output type. If true, the output will
+  //    be a js object.
+  //    - serializer: [function] Optional serializer function to override the default one.
+  //    The function takes 3 arguments (result, key, value) and should return new result
+  //    hash and url encoded str serializers are provided with this module
+  //    - disabled: [true | false]. If true serialize disabled fields.
+  //    - empty: [true | false]. If true serialize empty fields
+  function serialize(form, options) {
+      if (typeof options != 'object') {
+          options = { hash: !!options };
+      }
+      else if (options.hash === undefined) {
+          options.hash = true;
+      }
+
+      var result = (options.hash) ? {} : '';
+      var serializer = options.serializer || ((options.hash) ? hash_serializer : str_serialize);
+
+      var elements = form && form.elements ? form.elements : [];
+
+      //Object store each radio and set if it's empty or not
+      var radio_store = Object.create(null);
+
+      for (var i=0 ; i<elements.length ; ++i) {
+          var element = elements[i];
+
+          // ingore disabled fields
+          if ((!options.disabled && element.disabled) || !element.name) {
+              continue;
+          }
+          // ignore anyhting that is not considered a success field
+          if (!k_r_success_contrls.test(element.nodeName) ||
+              k_r_submitter.test(element.type)) {
+              continue;
+          }
+
+          var key = element.name;
+          var val = element.value;
+
+          // we can't just use element.value for checkboxes cause some browsers lie to us
+          // they say "on" for value when the box isn't checked
+          if ((element.type === 'checkbox' || element.type === 'radio') && !element.checked) {
+              val = undefined;
+          }
+
+          // If we want empty elements
+          if (options.empty) {
+              // for checkbox
+              if (element.type === 'checkbox' && !element.checked) {
+                  val = '';
+              }
+
+              // for radio
+              if (element.type === 'radio') {
+                  if (!radio_store[element.name] && !element.checked) {
+                      radio_store[element.name] = false;
+                  }
+                  else if (element.checked) {
+                      radio_store[element.name] = true;
+                  }
+              }
+
+              // if options empty is true, continue only if its radio
+              if (val == undefined && element.type == 'radio') {
+                  continue;
+              }
+          }
+          else {
+              // value-less fields are ignored unless options.empty is true
+              if (!val) {
+                  continue;
+              }
+          }
+
+          // multi select boxes
+          if (element.type === 'select-multiple') {
+              val = [];
+
+              var selectOptions = element.options;
+              var isSelectedOptions = false;
+              for (var j=0 ; j<selectOptions.length ; ++j) {
+                  var option = selectOptions[j];
+                  var allowedEmpty = options.empty && !option.value;
+                  var hasValue = (option.value || allowedEmpty);
+                  if (option.selected && hasValue) {
+                      isSelectedOptions = true;
+
+                      // If using a hash serializer be sure to add the
+                      // correct notation for an array in the multi-select
+                      // context. Here the name attribute on the select element
+                      // might be missing the trailing bracket pair. Both names
+                      // "foo" and "foo[]" should be arrays.
+                      if (options.hash && key.slice(key.length - 2) !== '[]') {
+                          result = serializer(result, key + '[]', option.value);
+                      }
+                      else {
+                          result = serializer(result, key, option.value);
+                      }
+                  }
+              }
+
+              // Serialize if no selected options and options.empty is true
+              if (!isSelectedOptions && options.empty) {
+                  result = serializer(result, key, '');
+              }
+
+              continue;
+          }
+
+          result = serializer(result, key, val);
+      }
+
+      // Check for all empty radio buttons and serialize them with key=""
+      if (options.empty) {
+          for (var key in radio_store) {
+              if (!radio_store[key]) {
+                  result = serializer(result, key, '');
+              }
+          }
+      }
+
+      return result;
+  }
+
+  function parse_keys(string) {
+      var keys = [];
+      var prefix = /^([^\[\]]*)/;
+      var children = new RegExp(brackets);
+      var match = prefix.exec(string);
+
+      if (match[1]) {
+          keys.push(match[1]);
+      }
+
+      while ((match = children.exec(string)) !== null) {
+          keys.push(match[1]);
+      }
+
+      return keys;
+  }
+
+  function hash_assign(result, keys, value) {
+      if (keys.length === 0) {
+          result = value;
+          return result;
+      }
+
+      var key = keys.shift();
+      var between = key.match(/^\[(.+?)\]$/);
+
+      if (key === '[]') {
+          result = result || [];
+
+          if (Array.isArray(result)) {
+              result.push(hash_assign(null, keys, value));
+          }
+          else {
+              // This might be the result of bad name attributes like "[][foo]",
+              // in this case the original `result` object will already be
+              // assigned to an object literal. Rather than coerce the object to
+              // an array, or cause an exception the attribute "_values" is
+              // assigned as an array.
+              result._values = result._values || [];
+              result._values.push(hash_assign(null, keys, value));
+          }
+
+          return result;
+      }
+
+      // Key is an attribute name and can be assigned directly.
+      if (!between) {
+          result[key] = hash_assign(result[key], keys, value);
+      }
+      else {
+          var string = between[1];
+          // +var converts the variable into a number
+          // better than parseInt because it doesn't truncate away trailing
+          // letters and actually fails if whole thing is not a number
+          var index = +string;
+
+          // If the characters between the brackets is not a number it is an
+          // attribute name and can be assigned directly.
+          if (isNaN(index)) {
+              result = result || {};
+              result[string] = hash_assign(result[string], keys, value);
+          }
+          else {
+              result = result || [];
+              result[index] = hash_assign(result[index], keys, value);
+          }
+      }
+
+      return result;
+  }
+
+  // Object/hash encoding serializer.
+  function hash_serializer(result, key, value) {
+      var matches = key.match(brackets);
+
+      // Has brackets? Use the recursive assignment function to walk the keys,
+      // construct any missing objects in the result tree and make the assignment
+      // at the end of the chain.
+      if (matches) {
+          var keys = parse_keys(key);
+          hash_assign(result, keys, value);
+      }
+      else {
+          // Non bracket notation can make assignments directly.
+          var existing = result[key];
+
+          // If the value has been assigned already (for instance when a radio and
+          // a checkbox have the same name attribute) convert the previous value
+          // into an array before pushing into it.
+          //
+          // NOTE: If this requirement were removed all hash creation and
+          // assignment could go through `hash_assign`.
+          if (existing) {
+              if (!Array.isArray(existing)) {
+                  result[key] = [ existing ];
+              }
+
+              result[key].push(value);
+          }
+          else {
+              result[key] = value;
+          }
+      }
+
+      return result;
+  }
+
+  // urlform encoding serializer
+  function str_serialize(result, key, value) {
+      // encode newlines as \r\n cause the html spec says so
+      value = value.replace(/(\r)?\n/g, '\r\n');
+      value = encodeURIComponent(value);
+
+      // spaces should be '+' rather than '%20'.
+      value = value.replace(/%20/g, '+');
+      return result + (result ? '&' : '') + encodeURIComponent(key) + '=' + value;
+  }
+
+  var formSerialize = serialize;
+
+  /**
+   * The Newsletter module
+   * @class
+   */
+
+  var Newsletter = function Newsletter(element) {
+    var this$1 = this;
+    this._el = element;
+    this.STRINGS = Newsletter.strings; // Map toggled checkbox values to an input.
+
+    this._el.addEventListener('click', joinValues); // This sets the script callback function to a global function that
+    // can be accessed by the the requested script.
+
+
+    window[Newsletter.callback] = function (data) {
+      this$1._callback(data);
+    };
+
+    this._el.querySelector('form').addEventListener('submit', function (event) {
+      return valid(event, this$1.STRINGS) ? this$1._submit(event).then(this$1._onload)["catch"](this$1._onerror) : false;
+    });
+
+    return this;
+  };
+  /**
+   * The form submission method. Requests a script with a callback function
+   * to be executed on our page. The callback function will be passed the
+   * response as a JSON object (function parameter).
+   * @param{Event} event The form submission event
+   * @return {Promise}     A promise containing the new script call
+   */
+
+
+  Newsletter.prototype._submit = function _submit(event) {
+    event.preventDefault(); // Serialize the data
+
+    this._data = formSerialize(event.target, {
+      hash: true
+    }); // Switch the action to post-json. This creates an endpoint for mailchimp
+    // that acts as a script that can be loaded onto our page.
+
+    var action = event.target.action.replace(Newsletter.endpoints.MAIN + "?", Newsletter.endpoints.MAIN_JSON + "?"); // Add our params to the action
+
+    action = action + formSerialize(event.target, {
+      serializer: function serializer() {
+        var params = [],
+            len = arguments.length;
+
+        while (len--) {
+          params[len] = arguments[len];
+        }
+
+        var prev = typeof params[0] === 'string' ? params[0] : '';
+        return prev + "&" + params[1] + "=" + params[2];
+      }
+    }); // Append the callback reference. Mailchimp will wrap the JSON response in
+    // our callback method. Once we load the script the callback will execute.
+
+    action = action + "&c=window." + Newsletter.callback; // Create a promise that appends the script response of the post-json method
+
+    return new Promise(function (resolve, reject) {
+      var script = document.createElement('script');
+      document.body.appendChild(script);
+      script.onload = resolve;
+      script.onerror = reject;
+      script.async = true;
+      script.src = encodeURI(action);
+    });
+  };
+  /**
+   * The script onload resolution
+   * @param{Event} event The script on load event
+   * @return {Class}     The Newsletter class
+   */
+
+
+  Newsletter.prototype._onload = function _onload(event) {
+    event.path[0].remove();
+    return this;
+  };
+  /**
+   * The script on error resolution
+   * @param{Object} error The script on error load event
+   * @return {Class}      The Newsletter class
+   */
+
+
+  Newsletter.prototype._onerror = function _onerror(error) {
+
+    return this;
+  };
+  /**
+   * The callback function for the MailChimp Script call
+   * @param{Object} data The success/error message from MailChimp
+   * @return {Class}     The Newsletter class
+   */
+
+
+  Newsletter.prototype._callback = function _callback(data) {
+    if (this["_" + data[this._key('MC_RESULT')]]) {
+      this["_" + data[this._key('MC_RESULT')]](data.msg);
+    }
+
+    return this;
+  };
+  /**
+   * Submission error handler
+   * @param{string} msg The error message
+   * @return {Class}    The Newsletter class
+   */
+
+
+  Newsletter.prototype._error = function _error(msg) {
+    this._elementsReset();
+
+    this._messaging('WARNING', msg);
+
+    return this;
+  };
+  /**
+   * Submission success handler
+   * @param{string} msg The success message
+   * @return {Class}    The Newsletter class
+   */
+
+
+  Newsletter.prototype._success = function _success(msg) {
+    this._elementsReset();
+
+    this._messaging('SUCCESS', msg);
+
+    return this;
+  };
+  /**
+   * Present the response message to the user
+   * @param{String} type The message type
+   * @param{String} msgThe message
+   * @return {Class}     Newsletter
+   */
+
+
+  Newsletter.prototype._messaging = function _messaging(type, msg) {
+    if (msg === void 0) msg = 'no message';
+    var strings = Object.keys(Newsletter.stringKeys);
+    var handled = false;
+
+    var alertBox = this._el.querySelector(Newsletter.selectors[type + "_BOX"]);
+
+    var alertBoxMsg = alertBox.querySelector(Newsletter.selectors.ALERT_BOX_TEXT); // Get the localized string, these should be written to the DOM already.
+    // The utility contains a global method for retrieving them.
+
+    for (var i = 0; i < strings.length; i++) {
+      if (msg.indexOf(Newsletter.stringKeys[strings[i]]) > -1) {
+        msg = this.STRINGS[strings[i]];
+        handled = true;
+      }
+    } // Replace string templates with values from either our form data or
+    // the Newsletter strings object.
+
+
+    for (var x = 0; x < Newsletter.templates.length; x++) {
+      var template = Newsletter.templates[x];
+      var key = template.replace('{{ ', '').replace(' }}', '');
+      var value = this._data[key] || this.STRINGS[key];
+      var reg = new RegExp(template, 'gi');
+      msg = msg.replace(reg, value ? value : '');
+    }
+
+    if (handled) {
+      alertBoxMsg.innerHTML = msg;
+    } else if (type === 'ERROR') {
+      alertBoxMsg.innerHTML = this.STRINGS.ERR_PLEASE_TRY_LATER;
+    }
+
+    if (alertBox) {
+      this._elementShow(alertBox, alertBoxMsg);
+    }
+
+    return this;
+  };
+  /**
+   * The main toggling method
+   * @return {Class}       Newsletter
+   */
+
+
+  Newsletter.prototype._elementsReset = function _elementsReset() {
+    var targets = this._el.querySelectorAll(Newsletter.selectors.ALERT_BOXES);
+
+    var loop = function loop(i) {
+      if (!targets[i].classList.contains(Newsletter.classes.HIDDEN)) {
+        targets[i].classList.add(Newsletter.classes.HIDDEN);
+        Newsletter.classes.ANIMATE.split(' ').forEach(function (item) {
+          return targets[i].classList.remove(item);
+        }); // Screen Readers
+
+        targets[i].setAttribute('aria-hidden', 'true');
+        targets[i].querySelector(Newsletter.selectors.ALERT_BOX_TEXT).setAttribute('aria-live', 'off');
+      }
+    };
+
+    for (var i = 0; i < targets.length; i++) {
+      loop(i);
+    }
+
+    return this;
+  };
+  /**
+   * The main toggling method
+   * @param{object} targetMessage container
+   * @param{object} content Content that changes dynamically that should
+   *                        be announced to screen readers.
+   * @return {Class}        Newsletter
+   */
+
+
+  Newsletter.prototype._elementShow = function _elementShow(target, content) {
+    target.classList.toggle(Newsletter.classes.HIDDEN);
+    Newsletter.classes.ANIMATE.split(' ').forEach(function (item) {
+      return target.classList.toggle(item);
+    }); // Screen Readers
+
+    target.setAttribute('aria-hidden', 'true');
+
+    if (content) {
+      content.setAttribute('aria-live', 'polite');
+    }
+
+    return this;
+  };
+  /**
+   * A proxy function for retrieving the proper key
+   * @param{string} key The reference for the stored keys.
+   * @return {string}   The desired key.
+   */
+
+
+  Newsletter.prototype._key = function _key(key) {
+    return Newsletter.keys[key];
+  };
+  /**
+   * Setter for the Autocomplete strings
+   * @param {object}localizedStringsObject containing strings.
+   * @return{object}                  The Newsletter Object.
+   */
+
+
+  Newsletter.prototype.strings = function strings(localizedStrings) {
+    Object.assign(this.STRINGS, localizedStrings);
+    return this;
+  };
+  /** @type {Object} API data keys */
+
+
+  Newsletter.keys = {
+    MC_RESULT: 'result',
+    MC_MSG: 'msg'
+  };
+  /** @type {Object} API endpoints */
+
+  Newsletter.endpoints = {
+    MAIN: '/post',
+    MAIN_JSON: '/post-json'
+  };
+  /** @type {String} The Mailchimp callback reference. */
+
+  Newsletter.callback = 'AccessNycNewsletterCallback';
+  /** @type {Object} DOM selectors for the instance's concerns */
+
+  Newsletter.selectors = {
+    ELEMENT: '[data-js="newsletter"]',
+    ALERT_BOXES: '[data-js-newsletter*="alert-box-"]',
+    WARNING_BOX: '[data-js-newsletter="alert-box-warning"]',
+    SUCCESS_BOX: '[data-js-newsletter="alert-box-success"]',
+    ALERT_BOX_TEXT: '[data-js-newsletter="alert-box__text"]'
+  };
+  /** @type {String} The main DOM selector for the instance */
+
+  Newsletter.selector = Newsletter.selectors.ELEMENT;
+  /** @type {Object} String references for the instance */
+
+  Newsletter.stringKeys = {
+    SUCCESS_CONFIRM_EMAIL: 'Almost finished...',
+    ERR_PLEASE_ENTER_VALUE: 'Please enter a value',
+    ERR_TOO_MANY_RECENT: 'too many',
+    ERR_ALREADY_SUBSCRIBED: 'is already subscribed',
+    ERR_INVALID_EMAIL: 'looks fake or invalid'
+  };
+  /** @type {Object} Available strings */
+
+  Newsletter.strings = {
+    VALID_REQUIRED: 'This field is required.',
+    VALID_EMAIL_REQUIRED: 'Email is required.',
+    VALID_EMAIL_INVALID: 'Please enter a valid email.',
+    VALID_CHECKBOX_BOROUGH: 'Please select a borough.',
+    ERR_PLEASE_TRY_LATER: 'There was an error with your submission. ' + 'Please try again later.',
+    SUCCESS_CONFIRM_EMAIL: 'Almost finished... We need to confirm your email ' + 'address. To complete the subscription process, ' + 'please click the link in the email we just sent you.',
+    ERR_PLEASE_ENTER_VALUE: 'Please enter a value',
+    ERR_TOO_MANY_RECENT: 'Recipient "{{ EMAIL }}" has too' + 'many recent signup requests',
+    ERR_ALREADY_SUBSCRIBED: '{{ EMAIL }} is already subscribed' + 'to list {{ LIST_NAME }}.',
+    ERR_INVALID_EMAIL: 'This email address looks fake or invalid.' + 'Please enter a real email address.',
+    LIST_NAME: 'ACCESS NYC - Newsletter'
+  };
+  /** @type {Array} Placeholders that will be replaced in message strings */
+
+  Newsletter.templates = ['{{ EMAIL }}', '{{ LIST_NAME }}'];
+  Newsletter.classes = {
+    ANIMATE: 'animated fadeInUp',
+    HIDDEN: 'hidden'
+  };
+
+  /** import components here as they are written. */
+
+  /**
+   * The Main module
+   * @class
+   */
+
+  var main = function main() {};
+
+  main.prototype.icons = function icons(path) {
+    return new Icons(path);
+  };
+  /**
+   * An API for the Toggling Method
+   * @param{object} settings Settings for the Toggle Class
+   * @return {object}        Instance of toggling method
+   */
+
+
+  main.prototype.toggle = function toggle(settings) {
+    if (settings === void 0) settings = false;
+    return settings ? new Toggle(settings) : new Toggle();
+  };
+  /**
+   * An API for the Filter Component
+   * @return {object} instance of Filter
+   */
+
+
+  main.prototype.filter = function filter() {
+    return new Filter();
+  };
+  /**
+   * An API for the Accordion Component
+   * @return {object} instance of Accordion
+   */
+
+
+  main.prototype.accordion = function accordion() {
+    return new Accordion();
+  };
+  /**
+   * An API for the Nearby Stops Component
+   * @return {object} instance of NearbyStops
+   */
+
+
+  main.prototype.nearbyStops = function nearbyStops() {
+    return new NearbyStops();
+  };
+  /**
+   * An API for the Newsletter Object
+   * @return {object} instance of Newsletter
+   */
+
+
+  main.prototype.newsletter = function newsletter() {
+    var element = document.querySelector(Newsletter.selector);
+    return element ? new Newsletter(element) : null;
+  };
+  /** add APIs here as they are written */
+
+  /**
+  * An API for the Autocomplete Object
+  * @param {object} settings Settings for the Autocomplete Class
+  * @return {object}       Instance of Autocomplete
+  */
+
+
+  main.prototype.inputsAutocomplete = function inputsAutocomplete(settings) {
+    if (settings === void 0) settings = {};
+    return new InputAutocomplete(settings);
+  };
+
+  return main;
 
 }());

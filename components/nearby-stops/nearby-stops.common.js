@@ -1,226 +1,5 @@
 'use strict';
 
-/**
- * The Utility class
- * @class
- */
-var Utility = function Utility() {
-  return this;
-};
-
-/**
- * Boolean for debug mode
- * @return {boolean} wether or not the front-end is in debug mode.
- */
-Utility.debug = function () {
-  return Utility.getUrlParameter(Utility.PARAMS.DEBUG) === '1';
-};
-
-/**
- * Returns the value of a given key in a URL query string. If no URL query
- * string is provided, the current URL location is used.
- * @param  {string}  name        - Key name.
- * @param  {?string} queryString - Optional query string to check.
- * @return {?string} Query parameter value.
- */
-Utility.getUrlParameter = function (name, queryString) {
-  var query = queryString || window.location.search;
-  var param = name.replace(/[\[]/, '\\[').replace(/[\]]/, '\\]');
-  var regex = new RegExp('[\\?&]' + param + '=([^&#]*)');
-  var results = regex.exec(query);
-
-  return results === null ? '' : decodeURIComponent(results[1].replace(/\+/g, ' '));
-};
-
-/**
- * For translating strings, there is a global LOCALIZED_STRINGS array that
- * is defined on the HTML template level so that those strings are exposed to
- * WPML translation. The LOCALIZED_STRINGS array is composed of objects with a
- * `slug` key whose value is some constant, and a `label` value which is the
- * translated equivalent. This function takes a slug name and returns the
- * label.
- * @param  {string} slug
- * @return {string} localized value
- */
-Utility.localize = function (slug) {
-  var text = slug || '';
-  var strings = window.LOCALIZED_STRINGS || [];
-  var match = strings.filter(function (s) {
-    return s.hasOwnProperty('slug') && s['slug'] === slug ? s : false;
-  });
-  return match[0] && match[0].hasOwnProperty('label') ? match[0].label : text;
-};
-
-/**
- * Takes a a string and returns whether or not the string is a valid email
- * by using native browser validation if available. Otherwise, does a simple
- * Regex test.
- * @param {string} email
- * @return {boolean}
- */
-Utility.validateEmail = function (email) {
-  var input = document.createElement('input');
-  input.type = 'email';
-  input.value = email;
-
-  return typeof input.checkValidity === 'function' ? input.checkValidity() : /\S+@\S+\.\S+/.test(email);
-};
-
-/**
- * Map toggled checkbox values to an input.
- * @param  {Object} event The parent click event.
- * @return {Element}      The target element.
- */
-Utility.joinValues = function (event) {
-  if (!event.target.matches('input[type="checkbox"]')) {
-    return;
-  }
-
-  if (!event.target.closest('[data-js-join-values]')) {
-    return;
-  }
-
-  var el = event.target.closest('[data-js-join-values]');
-  var target = document.querySelector(el.dataset.jsJoinValues);
-
-  target.value = Array.from(el.querySelectorAll('input[type="checkbox"]')).filter(function (e) {
-    return e.value && e.checked;
-  }).map(function (e) {
-    return e.value;
-  }).join(', ');
-
-  return target;
-};
-
-/**
- * A simple form validation class that uses native form validation. It will
- * add appropriate form feedback for each input that is invalid and native
- * localized browser messaging.
- *
- * See https://developer.mozilla.org/en-US/docs/Learn/HTML/Forms/Form_validation
- * See https://caniuse.com/#feat=form-validation for support
- *
- * @param  {Event}  event The form submission event.
- * @param  {Array} STRINGS set of strings
- * @return {Event/Boolean} The original event or false if invalid.
- */
-Utility.valid = function (event, STRINGS) {
-  event.preventDefault();
-
-  if (Utility.debug())
-    // eslint-disable-next-line no-console
-    {
-      console.dir({ init: 'Validation', event: event });
-    }
-
-  var validity = event.target.checkValidity();
-  var elements = event.target.querySelectorAll('input[required="true"]');
-
-  for (var i = 0; i < elements.length; i++) {
-    // Remove old messaging if it exists
-    var el = elements[i];
-    var container = el.parentNode;
-    var message = container.querySelector('.error-message');
-
-    container.classList.remove('error');
-    if (message) {
-      message.remove();
-    }
-
-    // If this input valid, skip messaging
-    if (el.validity.valid) {
-      continue;
-    }
-
-    // Create the new error message.
-    message = document.createElement('div');
-
-    // Get the error message from localized strings.
-    if (el.validity.valueMissing) {
-      message.innerHTML = STRINGS.VALID_REQUIRED;
-    } else if (!el.validity.valid) {
-      message.innerHTML = STRINGS["VALID_" + el.type.toUpperCase() + "_INVALID"];
-    } else {
-      message.innerHTML = el.validationMessage;
-    }
-
-    message.setAttribute('aria-live', 'polite');
-    message.classList.add('error-message');
-
-    // Add the error class and error message.
-    container.classList.add('error');
-    container.insertBefore(message, container.childNodes[0]);
-  }
-
-  if (Utility.debug())
-    // eslint-disable-next-line no-console
-    {
-      console.dir({ complete: 'Validation', valid: validity, event: event });
-    }
-
-  return validity ? event : validity;
-};
-
-/**
- * A markdown parsing method. It relies on the dist/markdown.min.js script
- * which is a browser compatible version of markdown-js
- * @url https://github.com/evilstreak/markdown-js
- * @return {Object} The iteration over the markdown DOM parents
- */
-Utility.parseMarkdown = function () {
-  if (typeof markdown === 'undefined') {
-    return false;
-  }
-
-  var mds = document.querySelectorAll(Utility.SELECTORS.parseMarkdown);
-
-  var loop = function loop(i) {
-    var element = mds[i];
-    fetch(element.dataset.jsMarkdown).then(function (response) {
-      if (response.ok) {
-        return response.text();
-      } else {
-        element.innerHTML = '';
-        // eslint-disable-next-line no-console
-        if (Utility.debug()) {
-          console.dir(response);
-        }
-      }
-    }).catch(function (error) {
-      // eslint-disable-next-line no-console
-      if (Utility.debug()) {
-        console.dir(error);
-      }
-    }).then(function (data) {
-      try {
-        element.classList.toggle('animated');
-        element.classList.toggle('fadeIn');
-        element.innerHTML = markdown.toHTML(data);
-      } catch (error) {}
-    });
-  };
-
-  for (var i = 0; i < mds.length; i++) {
-    loop(i);
-  }
-};
-
-/**
- * Application parameters
- * @type {Object}
- */
-Utility.PARAMS = {
-  DEBUG: 'debug'
-};
-
-/**
- * Selectors for the Utility module
- * @type {Object}
- */
-Utility.SELECTORS = {
-  parseMarkdown: '[data-js="markdown"]'
-};
-
 /** Detect free variable `global` from Node.js. */
 var freeGlobal = typeof global == 'object' && global && global.Object === Object && global;
 
@@ -1602,10 +1381,10 @@ function escapeStringChar(chr) {
 var nativeKeys = overArg(Object.keys, Object);
 
 /** Used for built-in method references. */
-var objectProto$10 = Object.prototype;
+var objectProto$a = Object.prototype;
 
 /** Used to check objects for own properties. */
-var hasOwnProperty$8 = objectProto$10.hasOwnProperty;
+var hasOwnProperty$8 = objectProto$a.hasOwnProperty;
 
 /**
  * The base implementation of `_.keys` which doesn't treat sparse arrays as dense.
@@ -2264,19 +2043,19 @@ function forEach(collection, iteratee) {
  * The NearbyStops Module
  * @class
  */
+
 var NearbyStops = function NearbyStops() {
   var this$1 = this;
-
   /** @type {Array} Collection of nearby stops DOM elements */
+
   this._elements = document.querySelectorAll(NearbyStops.selector);
-
   /** @type {Array} The collection all stops from the data */
+
   this._stops = [];
-
   /** @type {Array} The currated collection of stops that will be rendered */
-  this._locations = [];
 
-  // Loop through DOM Components.
+  this._locations = []; // Loop through DOM Components.
+
   forEach(this._elements, function (el) {
     // Fetch the data for the element.
     this$1._fetch(el, function (status, data) {
@@ -2284,19 +2063,18 @@ var NearbyStops = function NearbyStops() {
         return;
       }
 
-      this$1._stops = data;
-      // Get stops closest to the location.
-      this$1._locations = this$1._locate(el, this$1._stops);
-      // Assign the color names from patterns stylesheet.
-      this$1._locations = this$1._assignColors(this$1._locations);
-      // Render the markup for the stops.
+      this$1._stops = data; // Get stops closest to the location.
+
+      this$1._locations = this$1._locate(el, this$1._stops); // Assign the color names from patterns stylesheet.
+
+      this$1._locations = this$1._assignColors(this$1._locations); // Render the markup for the stops.
+
       this$1._render(el, this$1._locations);
     });
   });
 
   return this;
 };
-
 /**
  * This compares the latitude and longitude with the Subway Stops data, sorts
  * the data by distance from closest to farthest, and returns the stop and
@@ -2305,69 +2083,71 @@ var NearbyStops = function NearbyStops() {
  * @param{object} stops All of the stops data to compare to
  * @return {object}     A collection of the closest stops with distances
  */
+
+
 NearbyStops.prototype._locate = function _locate(el, stops) {
   var amount = parseInt(this._opt(el, 'AMOUNT')) || NearbyStops.defaults.AMOUNT;
   var loc = JSON.parse(this._opt(el, 'LOCATION'));
   var geo = [];
-  var distances = [];
+  var distances = []; // 1. Compare lat and lon of current location with list of stops
 
-  // 1. Compare lat and lon of current location with list of stops
   for (var i = 0; i < stops.length; i++) {
     geo = stops[i][this._key('ODATA_GEO')][this._key('ODATA_COOR')];
     geo = geo.reverse();
     distances.push({
       'distance': this._equirectangular(loc[0], loc[1], geo[0], geo[1]),
       'stop': i // index of stop in the data
-    });
-  }
 
-  // 2. Sort the distances shortest to longest
+    });
+  } // 2. Sort the distances shortest to longest
+
+
   distances.sort(function (a, b) {
     return a.distance < b.distance ? -1 : 1;
   });
-  distances = distances.slice(0, amount);
-
-  // 3. Return the list of closest stops (number based on Amount option)
+  distances = distances.slice(0, amount); // 3. Return the list of closest stops (number based on Amount option)
   // and replace the stop index with the actual stop data
+
   for (var x = 0; x < distances.length; x++) {
     distances[x].stop = stops[distances[x].stop];
   }
 
   return distances;
 };
-
 /**
  * Fetches the stop data from a local source
  * @param{object} el     The NearbyStops DOM element
  * @param{function} callback The function to execute on success
  * @return {funciton}        the fetch promise
  */
+
+
 NearbyStops.prototype._fetch = function _fetch(el, callback) {
   var headers = {
     'method': 'GET'
   };
-
   return fetch(this._opt(el, 'ENDPOINT'), headers).then(function (response) {
     if (response.ok) {
       return response.json();
     } else {
       // eslint-disable-next-line no-console
-      if (Utility.debug()) {
+      if (process.env.NODE_ENV !== 'production') {
         console.dir(response);
       }
+
       callback('error', response);
     }
-  }).catch(function (error) {
+  })["catch"](function (error) {
     // eslint-disable-next-line no-console
-    if (Utility.debug()) {
+    if (process.env.NODE_ENV !== 'production') {
       console.dir(error);
     }
+
     callback('error', error);
   }).then(function (data) {
     return callback('success', data);
   });
 };
-
 /**
  * Returns distance in miles comparing the latitude and longitude of two
  * points using decimal degrees.
@@ -2377,30 +2157,33 @@ NearbyStops.prototype._fetch = function _fetch(el, callback) {
  * @param{float} lon2 Longitude of point 2 (in decimal degrees)
  * @return {float}    [description]
  */
+
+
 NearbyStops.prototype._equirectangular = function _equirectangular(lat1, lon1, lat2, lon2) {
   Math.deg2rad = function (deg) {
     return deg * (Math.PI / 180);
   };
+
   var alpha = Math.abs(lon2) - Math.abs(lon1);
   var x = Math.deg2rad(alpha) * Math.cos(Math.deg2rad(lat1 + lat2) / 2);
   var y = Math.deg2rad(lat1 - lat2);
   var R = 3959; // earth radius in miles;
-  var distance = Math.sqrt(x * x + y * y) * R;
 
+  var distance = Math.sqrt(x * x + y * y) * R;
   return distance;
 };
-
 /**
  * Assigns colors to the data using the NearbyStops.truncks dictionary.
  * @param{object} locations Object of closest locations
  * @return {object}         Same object with colors assigned to each loc
  */
+
+
 NearbyStops.prototype._assignColors = function _assignColors(locations) {
   var locationLines = [];
   var line = 'S';
-  var lines = ['S'];
+  var lines = ['S']; // Loop through each location that we are going to display
 
-  // Loop through each location that we are going to display
   for (var i = 0; i < locations.length; i++) {
     // assign the line to a variable to lookup in our color dictionary
     locationLines = locations[i].stop[this._key('ODATA_LINE')].split('-');
@@ -2418,21 +2201,22 @@ NearbyStops.prototype._assignColors = function _assignColors(locations) {
           };
         }
       }
-    }
+    } // Add the trunk to the location
 
-    // Add the trunk to the location
+
     locations[i].trunks = locationLines;
   }
 
   return locations;
 };
-
 /**
  * The function to compile and render the location template
  * @param{object} element The parent DOM element of the component
  * @param{object} data  The data to pass to the template
  * @return {object}       The NearbyStops class
  */
+
+
 NearbyStops.prototype._render = function _render(element, data) {
   var compiled = template(NearbyStops.templates.SUBWAY, {
     'imports': {
@@ -2440,90 +2224,93 @@ NearbyStops.prototype._render = function _render(element, data) {
     }
   });
 
-  element.innerHTML = compiled({ 'stops': data });
-
+  element.innerHTML = compiled({
+    'stops': data
+  });
   return this;
 };
-
 /**
  * Get data attribute options
  * @param{object} element The element to pull the setting from.
  * @param{string} opt   The key reference to the attribute.
  * @return {string}       The setting of the data attribute.
  */
+
+
 NearbyStops.prototype._opt = function _opt(element, opt) {
   return element.dataset["" + NearbyStops.namespace + NearbyStops.options[opt]];
 };
-
 /**
  * A proxy function for retrieving the proper key
  * @param{string} key The reference for the stored keys.
  * @return {string}   The desired key.
  */
+
+
 NearbyStops.prototype._key = function _key(key) {
   return NearbyStops.keys[key];
 };
-
 /**
  * The dom selector for the module
  * @type {String}
  */
-NearbyStops.selector = '[data-js="nearby-stops"]';
 
+
+NearbyStops.selector = '[data-js="nearby-stops"]';
 /**
  * The namespace for the component's JS options. It's primarily used to lookup
  * attributes in an element's dataset.
  * @type {String}
  */
-NearbyStops.namespace = 'nearbyStops';
 
+NearbyStops.namespace = 'nearbyStops';
 /**
  * A list of options that can be assigned to the component. It's primarily used
  * to lookup attributes in an element's dataset.
  * @type {Object}
  */
+
 NearbyStops.options = {
   LOCATION: 'Location',
   AMOUNT: 'Amount',
   ENDPOINT: 'Endpoint'
 };
-
 /**
  * The documentation for the data attr options.
  * @type {Object}
  */
+
 NearbyStops.definition = {
   LOCATION: 'The current location to compare distance to stops.',
   AMOUNT: 'The amount of stops to list.',
   ENDPOINT: 'The endopoint for the data feed.'
 };
-
 /**
  * [defaults description]
  * @type {Object}
  */
+
 NearbyStops.defaults = {
   AMOUNT: 3
 };
-
 /**
  * Storage for some of the data keys.
  * @type {Object}
  */
+
 NearbyStops.keys = {
   ODATA_GEO: 'the_geom',
   ODATA_COOR: 'coordinates',
   ODATA_LINE: 'line'
 };
-
 /**
  * Templates for the Nearby Stops Component
  * @type {Object}
  */
+
 NearbyStops.templates = {
   SUBWAY: ['<% _each(stops, function(stop) { %>', '<div class="c-nearby-stops__stop">', '<% var lines = stop.stop.line.split("-") %>', '<% _each(stop.trunks, function(trunk) { %>', '<% var exp = (trunk.line.indexOf("Express") > -1) ? true : false %>', '<% if (exp) trunk.line = trunk.line.split(" ")[0] %>', '<span class="', 'c-nearby-stops__subway ', 'icon-subway<% if (exp) { %>-express<% } %> ', '<% if (exp) { %>border-<% } else { %>bg-<% } %><%- trunk.trunk %>', '">', '<%- trunk.line %>', '<% if (exp) { %> <span class="sr-only">Express</span><% } %>', '</span>', '<% }); %>', '<span class="c-nearby-stops__description">', '<%- stop.distance.toString().slice(0, 3) %> Miles, ', '<%- stop.stop.name %>', '</span>', '</div>', '<% }); %>'].join('')
 };
-
 /**
  * Color assignment for Subway Train lines, used in cunjunction with the
  * background colors defined in config/variables.js.
@@ -2531,6 +2318,7 @@ NearbyStops.templates = {
  * @url // https://en.wikipedia.org/wiki/New_York_City_Subway#Nomenclature
  * @type {Array}
  */
+
 NearbyStops.trunks = [{
   TRUNK: 'eighth-avenue',
   LINES: ['A', 'C', 'E']

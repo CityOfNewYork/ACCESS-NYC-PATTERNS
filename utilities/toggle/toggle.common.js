@@ -201,37 +201,4 @@ Toggle.elAriaRoles = ['aria-pressed', 'aria-expanded'];
 
 Toggle.targetAriaRoles = ['aria-hidden'];
 
-/**
- * The Filter module
- * @class
- */
-
-var Filter = function Filter() {
-  this._toggle = new Toggle({
-    selector: Filter.selector,
-    namespace: Filter.namespace,
-    inactiveClass: Filter.inactiveClass
-  });
-  return this;
-};
-/**
- * The dom selector for the module
- * @type {String}
- */
-
-
-Filter.selector = '[data-js*="filter"]';
-/**
- * The namespace for the components JS options
- * @type {String}
- */
-
-Filter.namespace = 'filter';
-/**
- * The incactive class name
- * @type {String}
- */
-
-Filter.inactiveClass = 'inactive';
-
-module.exports = Filter;
+module.exports = Toggle;

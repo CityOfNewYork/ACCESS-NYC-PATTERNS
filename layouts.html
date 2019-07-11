@@ -37,10 +37,10 @@
     </script>
   </head>
 
-  <body class="bg-color-white" onload="load()" style="visibility: hidden;">
+  <body class="bg-color-blue-dark" onload="load()" style="visibility: hidden;">
     <a class="sr-only" href="#main-content">Skip to main content</a>
-    <div class="min-h-screen">
-      <header class="px-2">
+    <div class="bg-color-white">
+      <header class="color-light-background px-2">
         <div class="border-b border-color-grey-light">
           <div class="flex items-center justify-between p-2 screen-tablet:py-4 screen-tablet:px-2">
             <div>
@@ -59,16 +59,16 @@
               <h2 class="text-font-size-small m-0 text-color-blue-dark screen-tablet:hidden">Patterns</h2>
               <h2 aria-hidden="true" class="type-h1 m-0 text-color-blue-dark hidden screen-tablet:inline-block">Patterns</h2>
               <nav class="text-font-size-small">
-                <a class="rounded-lg text-color-blue-dark border-2 no-underline px-1 ml-2 hidden screen-tablet:inline-block" href="https://github.com/CityOfNewYork/access-nyc-patterns/tree/v0.5.4">0.5.4</a>
-                <a aria-hidden="true" class="ml-1 screen-tablet:ml-2 screen-tablet:hidden" href="https://github.com/CityOfNewYork/access-nyc-patterns/tree/v0.5.4">0.5.4</a>
-                <a class="ml-1 screen-tablet:ml-2" data-js="toggle" href="#main-menu">Menu</a>
+                <a class="rounded-lg text-color-blue-dark border-2 no-underline px-1 ml-2 hidden screen-tablet:inline-block" href="https://github.com/CityOfNewYork/access-nyc-patterns/tree/v0.6.0">0.6.0</a>
+                <a aria-hidden="true" class="ml-1 screen-tablet:ml-2 screen-tablet:hidden" href="https://github.com/CityOfNewYork/access-nyc-patterns/tree/v0.6.0">0.6.0</a>
+                <button aria-controls="main-menu" aria-expanded="false" class="btn-link ml-1 screen-tablet:ml-2" data-js="toggle" id="main-menu-control">Menu</button>
               </nav>
             </div>
           </div>
         </div>
       </header>
-      <aside aria-hidden="true" class="text-font-size-small bg-color-blue-light hidden hidden:overflow animated" id="main-menu" style="position:relative;top:-1px">
-        <div class="page-wrapper py-4">
+      <aside aria-hidden="true" aria-labelledby="main-menu-control" class="color-mid-background text-font-size-small hidden hidden:overflowFadeInUp animated relative" id="main-menu" role="region" style="top: -1px">
+        <div class="page-wrapper py-4 animated">
           <div class="screen-tablet:flex">
             <nav class="screen-tablet:flex-1 mb-1 px-2">
               <a class="type-h3 text-font-size-small mb-1 block screen-tablet:border-b screen-tablet:pb-2 screen-tablet:mb-1 border-color-white p-1" href="index">Home</a>
@@ -132,15 +132,16 @@
               <a class="block p-1" href="language">Language</a>
               <a class="block p-1" href="media">Media</a>
               <a class="block p-1" href="text">Text</a>
+              <a class="block p-1" href="toggle">Toggle</a>
               <a class="block p-1" href="typography">Typography</a>
             </nav>
           </div>
           <div class="text-center">
-            <a data-js="toggle" href="#main-menu">Close Menu</a>
+            <button aria-controls="main-menu" aria-expanded="false" class="btn-link" data-js="toggle">Close Menu</button>
           </div>
         </div>
       </aside>
-      <main class="pt-4" id="main-content">
+      <main class="color-light-background pt-4" id="main-content">
         <article class="pt-4">
           <header class="page-wrapper px-2 screen-desktop:px-0 layout--home-body">
             <div class="my-0 w-full">
@@ -150,27 +151,27 @@
           <section class="pb-4 mb-4" id="columns">
             <div class="page-wrapper px-2">
               <header class="layout--home-body">
-                <div class="my-0 px-2 pt-1 pb-4 border-b border-color-grey-light screen-tablet:flex screen-tablet:justify-between items-center">
+                <div class="my-0 px-2 pt-1 pb-4 border-b border-color-grey-light">
                   <h2 class="m-0">
                     <a class="text-color-grey-mid font-normal no-underline capitalize" href="#columns">Columns</a>
                   </h2>
-                  <div>
-                    <a href="https://github.com/CityOfNewYork/access-nyc-patterns/tree/v0.5.4/src/elements/layouts"><code class="code">src/elements/layouts</code></a>
+                  <div class="pt-2">
+                    <p class="text-font-size-small m-0">Source: <code><a href="https://github.com/CityOfNewYork/access-nyc-patterns/tree/v0.6.0/src/elements/layouts">src/elements/layouts/layouts-columns</a></code></p>
                   </div>
                 </div>
               </header>
               <div class="layout--home-body">
-                <div class="my-0 pt-4 px-2 text-font-size-small"></div>
+                <div class="my-0 pt-4 px-2 text-font-size-small table-align-start"></div>
               </div>
               <div class="layout--gutter screen-tablet:layout--columns justify-between pt-4">
                 <div class="screen-tablet:pr-2">
-                  <div class="layout--columns flex text-center" data-sketch-symbol="elements/layouts/layouts-columns">
+                  <div class="layout--columns flex text-center">
                     <div class="bg-color-grey-light p-4">Column A</div>
                     <div class="bg-color-grey-lightest p-4">Column B</div>
                   </div>
                 </div>
                 <div>
-                  <div class="code-block mb-1"><pre>&lt;div class=&quot;layout--columns flex text-center&quot; data-sketch-symbol=&quot;elements/layouts/layouts-map&quot;&gt;
+                  <div class="code-block mb-1"><pre>&lt;div class=&quot;layout--columns flex text-center&quot;&gt;
   &lt;div class=&quot;bg-color-grey-light p-4&quot;&gt;Column A&lt;/div&gt;
   &lt;div class=&quot;bg-color-grey-lightest p-4&quot;&gt;Column B&lt;/div&gt;
 &lt;/div&gt;</pre></div>
@@ -181,27 +182,27 @@
           <section class="pb-4 mb-4" id="rows">
             <div class="page-wrapper px-2">
               <header class="layout--home-body">
-                <div class="my-0 px-2 pt-1 pb-4 border-b border-color-grey-light screen-tablet:flex screen-tablet:justify-between items-center">
+                <div class="my-0 px-2 pt-1 pb-4 border-b border-color-grey-light">
                   <h2 class="m-0">
                     <a class="text-color-grey-mid font-normal no-underline capitalize" href="#rows">Rows</a>
                   </h2>
-                  <div>
-                    <a href="https://github.com/CityOfNewYork/access-nyc-patterns/tree/v0.5.4/src/elements/layouts"><code class="code">src/elements/layouts</code></a>
+                  <div class="pt-2">
+                    <p class="text-font-size-small m-0">Source: <code><a href="https://github.com/CityOfNewYork/access-nyc-patterns/tree/v0.6.0/src/elements/layouts">src/elements/layouts/layouts-rows</a></code></p>
                   </div>
                 </div>
               </header>
               <div class="layout--home-body">
-                <div class="my-0 pt-4 px-2 text-font-size-small"></div>
+                <div class="my-0 pt-4 px-2 text-font-size-small table-align-start"></div>
               </div>
               <div class="layout--gutter screen-tablet:layout--columns justify-between pt-4">
                 <div class="screen-tablet:pr-2">
-                  <div class="layout--rows text-center" data-sketch-symbol="elements/layouts/layouts-rows">
+                  <div class="layout--rows text-center">
                     <div class="bg-color-grey-light p-4">Row A</div>
                     <div class="bg-color-grey-lightest p-4">Row B</div>
                   </div>
                 </div>
                 <div>
-                  <div class="code-block mb-1"><pre>&lt;div class=&quot;layout--rows text-center&quot; data-sketch-symbol=&quot;elements/layouts/layouts-map&quot;&gt;
+                  <div class="code-block mb-1"><pre>&lt;div class=&quot;layout--rows text-center&quot;&gt;
   &lt;div class=&quot;bg-color-grey-light p-4&quot;&gt;Row A&lt;/div&gt;
   &lt;div class=&quot;bg-color-grey-lightest p-4&quot;&gt;Row B&lt;/div&gt;
 &lt;/div&gt;</pre></div>
@@ -212,27 +213,27 @@
           <section class="pb-4 mb-4" id="gutter">
             <div class="page-wrapper px-2">
               <header class="layout--home-body">
-                <div class="my-0 px-2 pt-1 pb-4 border-b border-color-grey-light screen-tablet:flex screen-tablet:justify-between items-center">
+                <div class="my-0 px-2 pt-1 pb-4 border-b border-color-grey-light">
                   <h2 class="m-0">
                     <a class="text-color-grey-mid font-normal no-underline capitalize" href="#gutter">Gutter</a>
                   </h2>
-                  <div>
-                    <a href="https://github.com/CityOfNewYork/access-nyc-patterns/tree/v0.5.4/src/elements/layouts"><code class="code">src/elements/layouts</code></a>
+                  <div class="pt-2">
+                    <p class="text-font-size-small m-0">Source: <code><a href="https://github.com/CityOfNewYork/access-nyc-patterns/tree/v0.6.0/src/elements/layouts">src/elements/layouts/layouts-gutter</a></code></p>
                   </div>
                 </div>
               </header>
               <div class="layout--home-body">
-                <div class="my-0 pt-4 px-2 text-font-size-small"></div>
+                <div class="my-0 pt-4 px-2 text-font-size-small table-align-start"></div>
               </div>
               <div class="layout--gutter screen-tablet:layout--columns justify-between pt-4">
                 <div class="screen-tablet:pr-2">
-                  <div class="layout--gutter bg-color-grey-lightest p-4 text-center" data-sketch-symbol="elements/layouts/layouts-gutter">
+                  <div class="layout--gutter bg-color-grey-lightest p-4 text-center">
                     <div class="bg-color-grey-light p-4">Row A</div>
                     <div class="bg-color-grey-light p-4">Row B</div>
                   </div>
                 </div>
                 <div>
-                  <div class="code-block mb-1"><pre>&lt;div class=&quot;layout--gutter bg-color-grey-lightest p-4 text-center&quot; data-sketch-symbol=&quot;elements/layouts/layouts-map&quot;&gt;
+                  <div class="code-block mb-1"><pre>&lt;div class=&quot;layout--gutter bg-color-grey-lightest p-4 text-center&quot;&gt;
   &lt;div class=&quot;bg-color-grey-light p-4&quot;&gt;Row A&lt;/div&gt;
   &lt;div class=&quot;bg-color-grey-light p-4&quot;&gt;Row B&lt;/div&gt;
 &lt;/div&gt;</pre></div>
@@ -243,21 +244,21 @@
           <section class="pb-4 mb-4" id="columns-with-gutter">
             <div class="page-wrapper px-2">
               <header class="layout--home-body">
-                <div class="my-0 px-2 pt-1 pb-4 border-b border-color-grey-light screen-tablet:flex screen-tablet:justify-between items-center">
+                <div class="my-0 px-2 pt-1 pb-4 border-b border-color-grey-light">
                   <h2 class="m-0">
                     <a class="text-color-grey-mid font-normal no-underline capitalize" href="#columns-with-gutter">Columns with Gutter</a>
                   </h2>
-                  <div>
-                    <a href="https://github.com/CityOfNewYork/access-nyc-patterns/tree/v0.5.4/src/elements/layouts"><code class="code">src/elements/layouts</code></a>
+                  <div class="pt-2">
+                    <p class="text-font-size-small m-0">Source: <code><a href="https://github.com/CityOfNewYork/access-nyc-patterns/tree/v0.6.0/src/elements/layouts">src/elements/layouts/layouts-columns-gutter</a></code></p>
                   </div>
                 </div>
               </header>
               <div class="layout--home-body">
-                <div class="my-0 pt-4 px-2 text-font-size-small"></div>
+                <div class="my-0 pt-4 px-2 text-font-size-small table-align-start"></div>
               </div>
               <div class="layout--gutter screen-tablet:layout--columns justify-between pt-4">
                 <div class="screen-tablet:pr-2">
-                  <div class="layout--columns-gutter bg-color-grey-lightest p-4 text-center" data-sketch-symbol="elements/layouts/layouts-columns-gutter">
+                  <div class="layout--columns-gutter bg-color-grey-lightest p-4 text-center">
                     <div class="bg-color-grey-light p-4">Cell A</div>
                     <div class="bg-color-grey-light p-4">Cell B</div>
                     <div class="bg-color-grey-light p-4">Cell C</div>
@@ -265,7 +266,7 @@
                   </div>
                 </div>
                 <div>
-                  <div class="code-block mb-1"><pre>&lt;div class=&quot;layout--columns-gutter bg-color-grey-lightest p-4 text-center&quot; data-sketch-symbol=&quot;elements/layouts/layouts-map&quot;&gt;
+                  <div class="code-block mb-1"><pre>&lt;div class=&quot;layout--columns-gutter bg-color-grey-lightest p-4 text-center&quot;&gt;
   &lt;div class=&quot;bg-color-grey-light p-4&quot;&gt;Cell A&lt;/div&gt;
   &lt;div class=&quot;bg-color-grey-light p-4&quot;&gt;Cell B&lt;/div&gt;
   &lt;div class=&quot;bg-color-grey-light p-4&quot;&gt;Cell C&lt;/div&gt;
@@ -278,21 +279,21 @@
           <section class="pb-4 mb-4" id="two-columns-with-gutter">
             <div class="page-wrapper px-2">
               <header class="layout--home-body">
-                <div class="my-0 px-2 pt-1 pb-4 border-b border-color-grey-light screen-tablet:flex screen-tablet:justify-between items-center">
+                <div class="my-0 px-2 pt-1 pb-4 border-b border-color-grey-light">
                   <h2 class="m-0">
                     <a class="text-color-grey-mid font-normal no-underline capitalize" href="#two-columns-with-gutter">Two Columns with Gutter</a>
                   </h2>
-                  <div>
-                    <a href="https://github.com/CityOfNewYork/access-nyc-patterns/tree/v0.5.4/src/elements/layouts"><code class="code">src/elements/layouts</code></a>
+                  <div class="pt-2">
+                    <p class="text-font-size-small m-0">Source: <code><a href="https://github.com/CityOfNewYork/access-nyc-patterns/tree/v0.6.0/src/elements/layouts">src/elements/layouts/layouts-two-columns-gutter</a></code></p>
                   </div>
                 </div>
               </header>
               <div class="layout--home-body">
-                <div class="my-0 pt-4 px-2 text-font-size-small"></div>
+                <div class="my-0 pt-4 px-2 text-font-size-small table-align-start"></div>
               </div>
               <div class="layout--gutter screen-tablet:layout--columns justify-between pt-4">
                 <div class="screen-tablet:pr-2">
-                  <div class="layout--two-columns-gutter bg-color-grey-lightest p-4 text-center" data-sketch-symbol="elements/layouts/layouts-two-columns-gutter">
+                  <div class="layout--two-columns-gutter bg-color-grey-lightest p-4 text-center">
                     <div class="bg-color-grey-light p-4">Cell A</div>
                     <div class="bg-color-grey-light p-4">Cell B</div>
                     <div class="bg-color-grey-light p-4">Cell C</div>
@@ -302,7 +303,7 @@
                   </div>
                 </div>
                 <div>
-                  <div class="code-block mb-1"><pre>&lt;div class=&quot;layout--two-columns-gutter bg-color-grey-lightest p-4 text-center&quot; data-sketch-symbol=&quot;elements/layouts/layouts-map&quot;&gt;
+                  <div class="code-block mb-1"><pre>&lt;div class=&quot;layout--two-columns-gutter bg-color-grey-lightest p-4 text-center&quot;&gt;
   &lt;div class=&quot;bg-color-grey-light p-4&quot;&gt;Cell A&lt;/div&gt;
   &lt;div class=&quot;bg-color-grey-light p-4&quot;&gt;Cell B&lt;/div&gt;
   &lt;div class=&quot;bg-color-grey-light p-4&quot;&gt;Cell C&lt;/div&gt;
@@ -317,21 +318,21 @@
           <section class="pb-4 mb-4" id="three-columns-with-gutter">
             <div class="page-wrapper px-2">
               <header class="layout--home-body">
-                <div class="my-0 px-2 pt-1 pb-4 border-b border-color-grey-light screen-tablet:flex screen-tablet:justify-between items-center">
+                <div class="my-0 px-2 pt-1 pb-4 border-b border-color-grey-light">
                   <h2 class="m-0">
                     <a class="text-color-grey-mid font-normal no-underline capitalize" href="#three-columns-with-gutter">Three Columns with Gutter</a>
                   </h2>
-                  <div>
-                    <a href="https://github.com/CityOfNewYork/access-nyc-patterns/tree/v0.5.4/src/elements/layouts"><code class="code">src/elements/layouts</code></a>
+                  <div class="pt-2">
+                    <p class="text-font-size-small m-0">Source: <code><a href="https://github.com/CityOfNewYork/access-nyc-patterns/tree/v0.6.0/src/elements/layouts">src/elements/layouts/layouts-three-columns-gutter</a></code></p>
                   </div>
                 </div>
               </header>
               <div class="layout--home-body">
-                <div class="my-0 pt-4 px-2 text-font-size-small"></div>
+                <div class="my-0 pt-4 px-2 text-font-size-small table-align-start"></div>
               </div>
               <div class="layout--gutter screen-tablet:layout--columns justify-between pt-4">
                 <div class="screen-tablet:pr-2">
-                  <div class="layout--three-columns-gutter bg-color-grey-lightest p-4 text-center" data-sketch-symbol="elements/layouts/layouts-three-columns-gutter">
+                  <div class="layout--three-columns-gutter bg-color-grey-lightest p-4 text-center">
                     <div class="bg-color-grey-light p-4">Cell A</div>
                     <div class="bg-color-grey-light p-4">Cell B</div>
                     <div class="bg-color-grey-light p-4">Cell C</div>
@@ -344,7 +345,7 @@
                   </div>
                 </div>
                 <div>
-                  <div class="code-block mb-1"><pre>&lt;div class=&quot;layout--three-columns-gutter bg-color-grey-lightest p-4 text-center&quot; data-sketch-symbol=&quot;elements/layouts/layouts-map&quot;&gt;
+                  <div class="code-block mb-1"><pre>&lt;div class=&quot;layout--three-columns-gutter bg-color-grey-lightest p-4 text-center&quot;&gt;
   &lt;div class=&quot;bg-color-grey-light p-4&quot;&gt;Cell A&lt;/div&gt;
   &lt;div class=&quot;bg-color-grey-light p-4&quot;&gt;Cell B&lt;/div&gt;
   &lt;div class=&quot;bg-color-grey-light p-4&quot;&gt;Cell C&lt;/div&gt;
@@ -362,21 +363,21 @@
           <section class="pb-4 mb-4" id="four-columns-with-gutter">
             <div class="page-wrapper px-2">
               <header class="layout--home-body">
-                <div class="my-0 px-2 pt-1 pb-4 border-b border-color-grey-light screen-tablet:flex screen-tablet:justify-between items-center">
+                <div class="my-0 px-2 pt-1 pb-4 border-b border-color-grey-light">
                   <h2 class="m-0">
                     <a class="text-color-grey-mid font-normal no-underline capitalize" href="#four-columns-with-gutter">Four Columns with Gutter</a>
                   </h2>
-                  <div>
-                    <a href="https://github.com/CityOfNewYork/access-nyc-patterns/tree/v0.5.4/src/elements/layouts"><code class="code">src/elements/layouts</code></a>
+                  <div class="pt-2">
+                    <p class="text-font-size-small m-0">Source: <code><a href="https://github.com/CityOfNewYork/access-nyc-patterns/tree/v0.6.0/src/elements/layouts">src/elements/layouts/layouts-four-columns-gutter</a></code></p>
                   </div>
                 </div>
               </header>
               <div class="layout--home-body">
-                <div class="my-0 pt-4 px-2 text-font-size-small"></div>
+                <div class="my-0 pt-4 px-2 text-font-size-small table-align-start"></div>
               </div>
               <div class="layout--gutter screen-tablet:layout--gutter justify-between pt-4">
                 <div>
-                  <div class="layout--four-columns-gutter bg-color-grey-lightest p-4 text-center" data-sketch-symbol="elements/layouts/layouts-four-columns-gutter">
+                  <div class="layout--four-columns-gutter bg-color-grey-lightest p-4 text-center">
                     <div class="bg-color-grey-light p-4">Cell A</div>
                     <div class="bg-color-grey-light p-4">Cell B</div>
                     <div class="bg-color-grey-light p-4">Cell C</div>
@@ -392,7 +393,7 @@
                   </div>
                 </div>
                 <div>
-                  <div class="code-block mb-1"><pre>&lt;div class=&quot;layout--four-columns-gutter bg-color-grey-lightest p-4 text-center&quot; data-sketch-symbol=&quot;elements/layouts/layouts-map&quot;&gt;
+                  <div class="code-block mb-1"><pre>&lt;div class=&quot;layout--four-columns-gutter bg-color-grey-lightest p-4 text-center&quot;&gt;
   &lt;div class=&quot;bg-color-grey-light p-4&quot;&gt;Cell A&lt;/div&gt;
   &lt;div class=&quot;bg-color-grey-light p-4&quot;&gt;Cell B&lt;/div&gt;
   &lt;div class=&quot;bg-color-grey-light p-4&quot;&gt;Cell C&lt;/div&gt;
@@ -413,27 +414,27 @@
           <section class="pb-4 mb-4" id="sidebar">
             <div class="page-wrapper px-2">
               <header class="layout--home-body">
-                <div class="my-0 px-2 pt-1 pb-4 border-b border-color-grey-light screen-tablet:flex screen-tablet:justify-between items-center">
+                <div class="my-0 px-2 pt-1 pb-4 border-b border-color-grey-light">
                   <h2 class="m-0">
                     <a class="text-color-grey-mid font-normal no-underline capitalize" href="#sidebar">Sidebar</a>
                   </h2>
-                  <div>
-                    <a href="https://github.com/CityOfNewYork/access-nyc-patterns/tree/v0.5.4/src/elements/layouts"><code class="code">src/elements/layouts</code></a>
+                  <div class="pt-2">
+                    <p class="text-font-size-small m-0">Source: <code><a href="https://github.com/CityOfNewYork/access-nyc-patterns/tree/v0.6.0/src/elements/layouts">src/elements/layouts/layouts-sidebar</a></code></p>
                   </div>
                 </div>
               </header>
               <div class="layout--home-body">
-                <div class="my-0 pt-4 px-2 text-font-size-small"></div>
+                <div class="my-0 pt-4 px-2 text-font-size-small table-align-start"></div>
               </div>
               <div class="layout--gutter screen-tablet:layout--gutter justify-between pt-4">
                 <div>
-                  <div class="screen-tablet:layout--sidebar layout--rows text-center" data-sketch-symbol="elements/layouts/layouts-sidebar">
+                  <div class="screen-tablet:layout--sidebar layout--rows text-center">
                     <aside class="bg-color-grey-light p-4">Sidebar</aside>
                     <article class="layout--topbar__body bg-color-grey-lightest p-4">Content</article>
                   </div>
                 </div>
                 <div>
-                  <div class="code-block mb-1"><pre>&lt;div class=&quot;screen-tablet:layout--sidebar layout--rows text-center&quot; data-sketch-symbol=&quot;elements/layouts/layouts-map&quot;&gt;
+                  <div class="code-block mb-1"><pre>&lt;div class=&quot;screen-tablet:layout--sidebar layout--rows text-center&quot;&gt;
   &lt;aside class=&quot;bg-color-grey-light p-4&quot;&gt;Sidebar&lt;/aside&gt;
   &lt;article class=&quot;layout--topbar__body bg-color-grey-lightest p-4&quot;&gt;Content&lt;/article&gt;
 &lt;/div&gt;</pre></div>
@@ -444,27 +445,27 @@
           <section class="pb-4 mb-4" id="sidebar-small">
             <div class="page-wrapper px-2">
               <header class="layout--home-body">
-                <div class="my-0 px-2 pt-1 pb-4 border-b border-color-grey-light screen-tablet:flex screen-tablet:justify-between items-center">
+                <div class="my-0 px-2 pt-1 pb-4 border-b border-color-grey-light">
                   <h2 class="m-0">
                     <a class="text-color-grey-mid font-normal no-underline capitalize" href="#sidebar-small">Sidebar Small</a>
                   </h2>
-                  <div>
-                    <a href="https://github.com/CityOfNewYork/access-nyc-patterns/tree/v0.5.4/src/elements/layouts"><code class="code">src/elements/layouts</code></a>
+                  <div class="pt-2">
+                    <p class="text-font-size-small m-0">Source: <code><a href="https://github.com/CityOfNewYork/access-nyc-patterns/tree/v0.6.0/src/elements/layouts">src/elements/layouts/layouts-sidebar-small</a></code></p>
                   </div>
                 </div>
               </header>
               <div class="layout--home-body">
-                <div class="my-0 pt-4 px-2 text-font-size-small"></div>
+                <div class="my-0 pt-4 px-2 text-font-size-small table-align-start"></div>
               </div>
               <div class="layout--gutter screen-tablet:layout--gutter justify-between pt-4">
                 <div>
-                  <div class="screen-tablet:layout--sidebar-small layout--rows text-center" data-sketch-symbol="elements/layouts/layouts-sidebar-small">
+                  <div class="screen-tablet:layout--sidebar-small layout--rows text-center">
                     <aside class="bg-color-grey-light p-4">Sidebar</aside>
                     <article class="bg-color-grey-lightest p-4">Content</article>
                   </div>
                 </div>
                 <div>
-                  <div class="code-block mb-1"><pre>&lt;div class=&quot;screen-tablet:layout--sidebar-small layout--rows text-center&quot; data-sketch-symbol=&quot;elements/layouts/layouts-map&quot;&gt;
+                  <div class="code-block mb-1"><pre>&lt;div class=&quot;screen-tablet:layout--sidebar-small layout--rows text-center&quot;&gt;
   &lt;aside class=&quot;bg-color-grey-light p-4&quot;&gt;Sidebar&lt;/aside&gt;
   &lt;article class=&quot;bg-color-grey-lightest p-4&quot;&gt;Content&lt;/article&gt;
 &lt;/div&gt;</pre></div>
@@ -475,27 +476,27 @@
           <section class="pb-4 mb-4" id="sidebar-with-gutter">
             <div class="page-wrapper px-2">
               <header class="layout--home-body">
-                <div class="my-0 px-2 pt-1 pb-4 border-b border-color-grey-light screen-tablet:flex screen-tablet:justify-between items-center">
+                <div class="my-0 px-2 pt-1 pb-4 border-b border-color-grey-light">
                   <h2 class="m-0">
                     <a class="text-color-grey-mid font-normal no-underline capitalize" href="#sidebar-with-gutter">Sidebar with Gutter</a>
                   </h2>
-                  <div>
-                    <a href="https://github.com/CityOfNewYork/access-nyc-patterns/tree/v0.5.4/src/elements/layouts"><code class="code">src/elements/layouts</code></a>
+                  <div class="pt-2">
+                    <p class="text-font-size-small m-0">Source: <code><a href="https://github.com/CityOfNewYork/access-nyc-patterns/tree/v0.6.0/src/elements/layouts">src/elements/layouts/layouts-sidebar-gutter</a></code></p>
                   </div>
                 </div>
               </header>
               <div class="layout--home-body">
-                <div class="my-0 pt-4 px-2 text-font-size-small"></div>
+                <div class="my-0 pt-4 px-2 text-font-size-small table-align-start"></div>
               </div>
               <div class="layout--gutter screen-tablet:layout--gutter justify-between pt-4">
                 <div>
-                  <div class="screen-tablet:layout--sidebar-gutter layout--gutter bg-color-grey-lightest text-center p-4" data-sketch-symbol="elements/layouts/layouts-sidebar-gutter">
+                  <div class="screen-tablet:layout--sidebar-gutter layout--gutter bg-color-grey-lightest text-center p-4">
                     <aside class="bg-color-grey-light p-4">Sidebar</aside>
                     <article class="bg-color-grey-light p-4">Content</article>
                   </div>
                 </div>
                 <div>
-                  <div class="code-block mb-1"><pre>&lt;div class=&quot;screen-tablet:layout--sidebar-gutter layout--gutter bg-color-grey-lightest text-center p-4&quot; data-sketch-symbol=&quot;elements/layouts/layouts-map&quot;&gt;
+                  <div class="code-block mb-1"><pre>&lt;div class=&quot;screen-tablet:layout--sidebar-gutter layout--gutter bg-color-grey-lightest text-center p-4&quot;&gt;
   &lt;aside class=&quot;bg-color-grey-light p-4&quot;&gt;Sidebar&lt;/aside&gt;
   &lt;article class=&quot;bg-color-grey-light p-4&quot;&gt;Content&lt;/article&gt;
 &lt;/div&gt;</pre></div>
@@ -506,27 +507,27 @@
           <section class="pb-4 mb-4" id="sidebar-small-with-gutter">
             <div class="page-wrapper px-2">
               <header class="layout--home-body">
-                <div class="my-0 px-2 pt-1 pb-4 border-b border-color-grey-light screen-tablet:flex screen-tablet:justify-between items-center">
+                <div class="my-0 px-2 pt-1 pb-4 border-b border-color-grey-light">
                   <h2 class="m-0">
                     <a class="text-color-grey-mid font-normal no-underline capitalize" href="#sidebar-small-with-gutter">Sidebar Small with Gutter</a>
                   </h2>
-                  <div>
-                    <a href="https://github.com/CityOfNewYork/access-nyc-patterns/tree/v0.5.4/src/elements/layouts"><code class="code">src/elements/layouts</code></a>
+                  <div class="pt-2">
+                    <p class="text-font-size-small m-0">Source: <code><a href="https://github.com/CityOfNewYork/access-nyc-patterns/tree/v0.6.0/src/elements/layouts">src/elements/layouts/layouts-sidebar-small-gutter</a></code></p>
                   </div>
                 </div>
               </header>
               <div class="layout--home-body">
-                <div class="my-0 pt-4 px-2 text-font-size-small"></div>
+                <div class="my-0 pt-4 px-2 text-font-size-small table-align-start"></div>
               </div>
               <div class="layout--gutter screen-tablet:layout--gutter justify-between pt-4">
                 <div>
-                  <div class="screen-tablet:layout--sidebar-small-gutter layout--gutter bg-color-grey-lightest text-center p-4" data-sketch-symbol="elements/layouts/layouts-sidebar-small-gutter">
+                  <div class="screen-tablet:layout--sidebar-small-gutter layout--gutter bg-color-grey-lightest text-center p-4">
                     <aside class="bg-color-grey-light p-4">Sidebar</aside>
                     <article class="bg-color-grey-light p-4">Content</article>
                   </div>
                 </div>
                 <div>
-                  <div class="code-block mb-1"><pre>&lt;div class=&quot;screen-tablet:layout--sidebar-small-gutter layout--gutter bg-color-grey-lightest text-center p-4&quot; data-sketch-symbol=&quot;elements/layouts/layouts-map&quot;&gt;
+                  <div class="code-block mb-1"><pre>&lt;div class=&quot;screen-tablet:layout--sidebar-small-gutter layout--gutter bg-color-grey-lightest text-center p-4&quot;&gt;
   &lt;aside class=&quot;bg-color-grey-light p-4&quot;&gt;Sidebar&lt;/aside&gt;
   &lt;article class=&quot;bg-color-grey-light p-4&quot;&gt;Content&lt;/article&gt;
 &lt;/div&gt;</pre></div>
@@ -537,26 +538,26 @@
           <section class="pb-4 mb-4" id="home-body">
             <div class="page-wrapper px-2">
               <header class="layout--home-body">
-                <div class="my-0 px-2 pt-1 pb-4 border-b border-color-grey-light screen-tablet:flex screen-tablet:justify-between items-center">
+                <div class="my-0 px-2 pt-1 pb-4 border-b border-color-grey-light">
                   <h2 class="m-0">
                     <a class="text-color-grey-mid font-normal no-underline capitalize" href="#home-body">Home Body</a>
                   </h2>
-                  <div>
-                    <a href="https://github.com/CityOfNewYork/access-nyc-patterns/tree/v0.5.4/src/elements/layouts"><code class="code">src/elements/layouts</code></a>
+                  <div class="pt-2">
+                    <p class="text-font-size-small m-0">Source: <code><a href="https://github.com/CityOfNewYork/access-nyc-patterns/tree/v0.6.0/src/elements/layouts">src/elements/layouts/layouts-home-body</a></code></p>
                   </div>
                 </div>
               </header>
               <div class="layout--home-body">
-                <div class="my-0 pt-4 px-2 text-font-size-small"></div>
+                <div class="my-0 pt-4 px-2 text-font-size-small table-align-start"></div>
               </div>
               <div class="layout--gutter screen-tablet:layout--gutter justify-between pt-4">
                 <div>
-                  <div class="layout--home-body bg-color-grey-lightest p-4 text-center" data-sketch-symbol="elements/layouts/layouts-home-body">
+                  <div class="layout--home-body bg-color-grey-lightest p-4 text-center">
                     <div class="bg-color-grey-light p-4">Body</div>
                   </div>
                 </div>
                 <div>
-                  <div class="code-block mb-1"><pre>&lt;div class=&quot;layout--home-body bg-color-grey-lightest p-4 text-center&quot; data-sketch-symbol=&quot;elements/layouts/layouts-map&quot;&gt;
+                  <div class="code-block mb-1"><pre>&lt;div class=&quot;layout--home-body bg-color-grey-lightest p-4 text-center&quot;&gt;
   &lt;div class=&quot;bg-color-grey-light p-4&quot;&gt;Body&lt;/div&gt;
 &lt;/div&gt;</pre></div>
                 </div>
@@ -566,21 +567,21 @@
           <section class="pb-4 mb-4" id="topbar">
             <div class="page-wrapper px-2">
               <header class="layout--home-body">
-                <div class="my-0 px-2 pt-1 pb-4 border-b border-color-grey-light screen-tablet:flex screen-tablet:justify-between items-center">
+                <div class="my-0 px-2 pt-1 pb-4 border-b border-color-grey-light">
                   <h2 class="m-0">
                     <a class="text-color-grey-mid font-normal no-underline capitalize" href="#topbar">Topbar</a>
                   </h2>
-                  <div>
-                    <a href="https://github.com/CityOfNewYork/access-nyc-patterns/tree/v0.5.4/src/elements/layouts"><code class="code">src/elements/layouts</code></a>
+                  <div class="pt-2">
+                    <p class="text-font-size-small m-0">Source: <code><a href="https://github.com/CityOfNewYork/access-nyc-patterns/tree/v0.6.0/src/elements/layouts">src/elements/layouts/layouts-topbar</a></code></p>
                   </div>
                 </div>
               </header>
               <div class="layout--home-body">
-                <div class="my-0 pt-4 px-2 text-font-size-small"></div>
+                <div class="my-0 pt-4 px-2 text-font-size-small table-align-start"></div>
               </div>
               <div class="layout--gutter screen-tablet:layout--gutter justify-between pt-4">
                 <div>
-                  <div class="wrap" data-sketch-symbol="elements/layouts/layouts-topbar">
+                  <div class="wrap">
                     <article class="layout--topbar text-center">
                       <header class="bg-color-blue-dark text-color-white p-4">Topbar</header>
                       <div class="bg-color-grey-lightest p-4">
@@ -590,7 +591,7 @@
                   </div>
                 </div>
                 <div>
-                  <div class="code-block mb-1"><pre>&lt;div class=&quot;wrap&quot; data-sketch-symbol=&quot;elements/layouts/layouts-map&quot;&gt;
+                  <div class="code-block mb-1"><pre>&lt;div class=&quot;wrap&quot;&gt;
   &lt;article class=&quot;layout--topbar text-center&quot;&gt;
     &lt;header class=&quot;bg-color-blue-dark text-color-white p-4&quot;&gt;Topbar&lt;/header&gt;
     &lt;div class=&quot;bg-color-grey-lightest p-4&quot;&gt;
@@ -605,27 +606,27 @@
           <section class="pb-4 mb-4" id="map">
             <div class="page-wrapper px-2">
               <header class="layout--home-body">
-                <div class="my-0 px-2 pt-1 pb-4 border-b border-color-grey-light screen-tablet:flex screen-tablet:justify-between items-center">
+                <div class="my-0 px-2 pt-1 pb-4 border-b border-color-grey-light">
                   <h2 class="m-0">
                     <a class="text-color-grey-mid font-normal no-underline capitalize" href="#map">Map</a>
                   </h2>
-                  <div>
-                    <a href="https://github.com/CityOfNewYork/access-nyc-patterns/tree/v0.5.4/src/elements/layouts"><code class="code">src/elements/layouts</code></a>
+                  <div class="pt-2">
+                    <p class="text-font-size-small m-0">Source: <code><a href="https://github.com/CityOfNewYork/access-nyc-patterns/tree/v0.6.0/src/elements/layouts">src/elements/layouts/layouts-map</a></code></p>
                   </div>
                 </div>
               </header>
               <div class="layout--home-body">
-                <div class="my-0 pt-4 px-2 text-font-size-small"></div>
+                <div class="my-0 pt-4 px-2 text-font-size-small table-align-start"></div>
               </div>
               <div class="layout--gutter screen-tablet:layout--gutter justify-between pt-4">
                 <div>
-                  <div class="layout--map screen-desktop:layout--sidebar text-center" data-sketch-symbol="elements/layouts/layouts-map">
+                  <div class="layout--map screen-desktop:layout--sidebar text-center">
                     <div class="layout--map__sidebar bg-color-grey-lightest p-4">Sidebar</div>
                     <div class="layout--map__map bg-color-grey-light p-4">Map</div>
                   </div>
                 </div>
                 <div>
-                  <div class="code-block mb-1"><pre>&lt;div class=&quot;layout--map screen-desktop:layout--sidebar text-center&quot; data-sketch-symbol=&quot;elements/layouts/layouts-map&quot;&gt;
+                  <div class="code-block mb-1"><pre>&lt;div class=&quot;layout--map screen-desktop:layout--sidebar text-center&quot;&gt;
   &lt;div class=&quot;layout--map__sidebar bg-color-grey-lightest p-4&quot;&gt;Sidebar&lt;/div&gt;
   &lt;div class=&quot;layout--map__map bg-color-grey-light p-4&quot;&gt;Map&lt;/div&gt;
 &lt;/div&gt;</pre></div>
@@ -633,6 +634,24 @@
               </div>
             </div>
           </section>
+          <div class="sticky pin-b bg-color-white shadow-up relative z-10 overflow-y-scroll whitespace-no-wrap animated fadeInUp">
+            <nav class="nav-inline text-font-size-small p-4"><span class="mr-4">Jump to:</span>
+              <a class="mr-4" href="#columns">Columns</a>
+              <a class="mr-4" href="#rows">Rows</a>
+              <a class="mr-4" href="#gutter">Gutter</a>
+              <a class="mr-4" href="#columns-with-gutter">Columns with Gutter</a>
+              <a class="mr-4" href="#two-columns-with-gutter">Two Columns with Gutter</a>
+              <a class="mr-4" href="#three-columns-with-gutter">Three Columns with Gutter</a>
+              <a class="mr-4" href="#four-columns-with-gutter">Four Columns with Gutter</a>
+              <a class="mr-4" href="#sidebar">Sidebar</a>
+              <a class="mr-4" href="#sidebar-small">Sidebar Small</a>
+              <a class="mr-4" href="#sidebar-with-gutter">Sidebar with Gutter</a>
+              <a class="mr-4" href="#sidebar-small-with-gutter">Sidebar Small with Gutter</a>
+              <a class="mr-4" href="#home-body">Home Body</a>
+              <a class="mr-4" href="#topbar">Topbar</a>
+              <a class="mr-4" href="#map">Map</a>
+            </nav>
+          </div>
         </article>
       </main>
     </div>
@@ -658,12 +677,12 @@
         </nav>
       </p>
     </footer>
-    <script crossorigin="anonymous" src="https://polyfill.io/v3/polyfill.min.js?flags=gated&amp;features=Array.prototype.forEach,Element.prototype.matches,Element.prototype.remove,fetch,Promise"></script>
-    <script src="scripts/AccessNyc.js"></script>
-    <script src="scripts/markdown.min.js"></script>
+    <script src="scripts/polyfills.js"></script>
+    <script src="scripts/access-nyc.js"></script>
+    <script src="scripts/vue-components.js"></script>
     <script type="text/javascript">
       var access = new AccessNyc();
-      access.markdown();
+      var VueComponents = new VueComponents();
       access.icons();
       access.toggle();
     </script>

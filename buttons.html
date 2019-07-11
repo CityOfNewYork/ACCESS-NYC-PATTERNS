@@ -37,10 +37,10 @@
     </script>
   </head>
 
-  <body class="bg-color-white" onload="load()" style="visibility: hidden;">
+  <body class="bg-color-blue-dark" onload="load()" style="visibility: hidden;">
     <a class="sr-only" href="#main-content">Skip to main content</a>
-    <div class="min-h-screen">
-      <header class="px-2">
+    <div class="bg-color-white">
+      <header class="color-light-background px-2">
         <div class="border-b border-color-grey-light">
           <div class="flex items-center justify-between p-2 screen-tablet:py-4 screen-tablet:px-2">
             <div>
@@ -59,16 +59,16 @@
               <h2 class="text-font-size-small m-0 text-color-blue-dark screen-tablet:hidden">Patterns</h2>
               <h2 aria-hidden="true" class="type-h1 m-0 text-color-blue-dark hidden screen-tablet:inline-block">Patterns</h2>
               <nav class="text-font-size-small">
-                <a class="rounded-lg text-color-blue-dark border-2 no-underline px-1 ml-2 hidden screen-tablet:inline-block" href="https://github.com/CityOfNewYork/access-nyc-patterns/tree/v0.5.4">0.5.4</a>
-                <a aria-hidden="true" class="ml-1 screen-tablet:ml-2 screen-tablet:hidden" href="https://github.com/CityOfNewYork/access-nyc-patterns/tree/v0.5.4">0.5.4</a>
-                <a class="ml-1 screen-tablet:ml-2" data-js="toggle" href="#main-menu">Menu</a>
+                <a class="rounded-lg text-color-blue-dark border-2 no-underline px-1 ml-2 hidden screen-tablet:inline-block" href="https://github.com/CityOfNewYork/access-nyc-patterns/tree/v0.6.0">0.6.0</a>
+                <a aria-hidden="true" class="ml-1 screen-tablet:ml-2 screen-tablet:hidden" href="https://github.com/CityOfNewYork/access-nyc-patterns/tree/v0.6.0">0.6.0</a>
+                <button aria-controls="main-menu" aria-expanded="false" class="btn-link ml-1 screen-tablet:ml-2" data-js="toggle" id="main-menu-control">Menu</button>
               </nav>
             </div>
           </div>
         </div>
       </header>
-      <aside aria-hidden="true" class="text-font-size-small bg-color-blue-light hidden hidden:overflow animated" id="main-menu" style="position:relative;top:-1px">
-        <div class="page-wrapper py-4">
+      <aside aria-hidden="true" aria-labelledby="main-menu-control" class="color-mid-background text-font-size-small hidden hidden:overflowFadeInUp animated relative" id="main-menu" role="region" style="top: -1px">
+        <div class="page-wrapper py-4 animated">
           <div class="screen-tablet:flex">
             <nav class="screen-tablet:flex-1 mb-1 px-2">
               <a class="type-h3 text-font-size-small mb-1 block screen-tablet:border-b screen-tablet:pb-2 screen-tablet:mb-1 border-color-white p-1" href="index">Home</a>
@@ -132,52 +132,56 @@
               <a class="block p-1" href="language">Language</a>
               <a class="block p-1" href="media">Media</a>
               <a class="block p-1" href="text">Text</a>
+              <a class="block p-1" href="toggle">Toggle</a>
               <a class="block p-1" href="typography">Typography</a>
             </nav>
           </div>
           <div class="text-center">
-            <a data-js="toggle" href="#main-menu">Close Menu</a>
+            <button aria-controls="main-menu" aria-expanded="false" class="btn-link" data-js="toggle">Close Menu</button>
           </div>
         </div>
       </aside>
-      <main class="pt-4" id="main-content">
+      <main class="color-light-background pt-4" id="main-content">
         <article class="pt-4">
           <header class="page-wrapper px-2 screen-desktop:px-0 layout--home-body">
             <div class="my-0 w-full">
               <h1 class="text-color-blue-dark px-2 pb-4 mb-4">Buttons</h1>
             </div>
           </header>
-          <section class="pb-4 mb-4" id="default-styling">
+          <section class="pb-4 mb-4">
             <div class="page-wrapper px-2">
               <header class="layout--home-body">
-                <div class="my-0 px-2 pt-1 pb-4 border-b border-color-grey-light screen-tablet:flex screen-tablet:justify-between items-center">
-                  <h2 class="m-0">
-                    <a class="text-color-grey-mid font-normal no-underline capitalize" href="#default-styling">Default Styling</a>
-                  </h2>
+                <div class="my-0 px-2 pt-1 pb-4 border-b border-color-grey-light">
                   <div>
-                    <a href="https://github.com/CityOfNewYork/access-nyc-patterns/tree/v0.5.4/src/elements/buttons"><code class="code">src/elements/buttons</code></a>
+                    <p class="text-font-size-small m-0">Source: <code><a href="https://github.com/CityOfNewYork/access-nyc-patterns/tree/v0.6.0/src/elements/buttons">src/elements/buttons/buttons</a></code></p>
                   </div>
                 </div>
               </header>
               <div class="layout--home-body">
-                <div class="my-0 pt-4 px-2 text-font-size-small"><p>The base button class is extended with either <code>.btn-primary</code> or <code>.btn-secondary</code>. Any button type can be extended by the the primary or secondary class.</p>
+                <div class="my-0 pt-4 px-2 text-font-size-small table-align-start"><p>The base button class, <code>.btn</code>, is extended with either <code>.btn-primary</code> or <code>.btn-secondary</code>. Any button type class can be added by the the primary or secondary class (see examples below).</p>
 
-<p>For the most part, buttons should be marked up with the <code>&lt;button&gt;</code> tag for screen readers. If a button has link functionality, however, the <code>role</code> attribute can be set to <code>button</code>. This documentation displays both
-  markup types for reference.</p>
-
-<p>There are 2 primary conventions for Button Elements:</p>
+<p>There are two types for Button Elements:</p>
 
 <ul>
-  <li>Buttons associated with functionality (Primary)</li>
-  <li>Buttons that navigate users through a set of pages, such as through the program pages (Secondary)</li>
-</ul></div>
+  <li>Buttons associated with functionality (Primary, Blue).</li>
+  <li>Buttons that navigate users through a set of pages, such as through the program pages (Secondary, Green).</li>
+</ul>
+
+<h3>Markup</h3>
+
+<p>Buttons should be written using the <code>&lt;button&gt;</code> html tag. However, if a button is an <code>&lt;a&gt;</code> tag styled with the <code>.btn</code> class and has in-page functionality (such as toggling elements), the <code>role</code> attribute
+  should be set to &quot;button&quot; and the <code>tabindex</code> attribute should be set to &quot;0.&quot; Refer to the best practices illustrated in the
+  <a href="https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Roles/button_role#Best_practices">MDN documentation for the &quot;button&quot; role</a>.</p>
+
+<p>If the button is a <code>&lt;button&gt;</code> element and appears within a <code>&lt;form&gt;</code> tag, the <code>type</code> attribute should be explicitly set to &quot;submit,&quot; &quot;reset,&quot; or &quot;submit.&quot; By default (without the
+  type attribute) <code>&lt;button&gt;</code> elements are set to the &quot;submit&quot; type.</p></div>
               </div>
               <div class="layout--gutter screen-tablet:layout--columns justify-between pt-4">
                 <div class="screen-tablet:pr-2">
-                  <button class="btn mb-2" data-sketch-symbol="elements/buttons/buttons">Button</button>
+                  <button class="btn" type="button">Button</button>
                 </div>
                 <div>
-                  <div class="code-block mb-1"><pre>&lt;button class=&quot;btn mb-2&quot; data-sketch-symbol=&quot;elements/buttons/buttons-previous&quot;&gt;Button&lt;/button&gt;</pre></div>
+                  <div class="code-block mb-1"><pre>&lt;button class=&quot;btn&quot; type=&quot;button&quot;&gt;Button&lt;/button&gt;</pre></div>
                 </div>
               </div>
             </div>
@@ -185,24 +189,24 @@
           <section class="pb-4 mb-4" id="primary-button">
             <div class="page-wrapper px-2">
               <header class="layout--home-body">
-                <div class="my-0 px-2 pt-1 pb-4 border-b border-color-grey-light screen-tablet:flex screen-tablet:justify-between items-center">
+                <div class="my-0 px-2 pt-1 pb-4 border-b border-color-grey-light">
                   <h2 class="m-0">
                     <a class="text-color-grey-mid font-normal no-underline capitalize" href="#primary-button">Primary Button</a>
                   </h2>
-                  <div>
-                    <a href="https://github.com/CityOfNewYork/access-nyc-patterns/tree/v0.5.4/src/elements/buttons"><code class="code">src/elements/buttons</code></a>
+                  <div class="pt-2">
+                    <p class="text-font-size-small m-0">Source: <code><a href="https://github.com/CityOfNewYork/access-nyc-patterns/tree/v0.6.0/src/elements/buttons">src/elements/buttons/buttons-primary</a></code></p>
                   </div>
                 </div>
               </header>
               <div class="layout--home-body">
-                <div class="my-0 pt-4 px-2 text-font-size-small"><p>Primary Button Elements are used for functional actions and in some cases have an icon to the left of the call-to-action.</p></div>
+                <div class="my-0 pt-4 px-2 text-font-size-small table-align-start"><p>Primary Button Elements are used for functional actions and in some cases have an icon to the left of the call-to-action.</p></div>
               </div>
               <div class="layout--gutter screen-tablet:layout--columns justify-between pt-4">
                 <div class="screen-tablet:pr-2">
-                  <button class="btn-primary mb-2" data-sketch-symbol="elements/buttons/buttons-primary">Primary Button</button>
+                  <button class="btn-primary" type="button">Primary Button</button>
                 </div>
                 <div>
-                  <div class="code-block mb-1"><pre>&lt;button class=&quot;btn-primary mb-2&quot; data-sketch-symbol=&quot;elements/buttons/buttons-previous&quot;&gt;Primary Button&lt;/button&gt;</pre></div>
+                  <div class="code-block mb-1"><pre>&lt;button class=&quot;btn-primary&quot; type=&quot;button&quot;&gt;Primary Button&lt;/button&gt;</pre></div>
                 </div>
               </div>
             </div>
@@ -210,24 +214,24 @@
           <section class="pb-4 mb-4" id="secondary-button">
             <div class="page-wrapper px-2">
               <header class="layout--home-body">
-                <div class="my-0 px-2 pt-1 pb-4 border-b border-color-grey-light screen-tablet:flex screen-tablet:justify-between items-center">
+                <div class="my-0 px-2 pt-1 pb-4 border-b border-color-grey-light">
                   <h2 class="m-0">
                     <a class="text-color-grey-mid font-normal no-underline capitalize" href="#secondary-button">Secondary Button</a>
                   </h2>
-                  <div>
-                    <a href="https://github.com/CityOfNewYork/access-nyc-patterns/tree/v0.5.4/src/elements/buttons"><code class="code">src/elements/buttons</code></a>
+                  <div class="pt-2">
+                    <p class="text-font-size-small m-0">Source: <code><a href="https://github.com/CityOfNewYork/access-nyc-patterns/tree/v0.6.0/src/elements/buttons">src/elements/buttons/buttons-secondary</a></code></p>
                   </div>
                 </div>
               </header>
               <div class="layout--home-body">
-                <div class="my-0 pt-4 px-2 text-font-size-small"><p>Secondary Button Elements are used for navigation.</p></div>
+                <div class="my-0 pt-4 px-2 text-font-size-small table-align-start"><p>Secondary Button Elements are used for navigation.</p></div>
               </div>
               <div class="layout--gutter screen-tablet:layout--columns justify-between pt-4">
                 <div class="screen-tablet:pr-2">
-                  <button class="btn-secondary mb-2" data-sketch-symbol="elements/buttons/buttons-secondary">Secondary Button</button>
+                  <button class="btn-secondary" type="button">Secondary Button</button>
                 </div>
                 <div>
-                  <div class="code-block mb-1"><pre>&lt;button class=&quot;btn-secondary mb-2&quot; data-sketch-symbol=&quot;elements/buttons/buttons-previous&quot;&gt;Secondary Button&lt;/button&gt;</pre></div>
+                  <div class="code-block mb-1"><pre>&lt;button class=&quot;btn-secondary&quot; type=&quot;button&quot;&gt;Secondary Button&lt;/button&gt;</pre></div>
                 </div>
               </div>
             </div>
@@ -235,24 +239,24 @@
           <section class="pb-4 mb-4" id="small-button">
             <div class="page-wrapper px-2">
               <header class="layout--home-body">
-                <div class="my-0 px-2 pt-1 pb-4 border-b border-color-grey-light screen-tablet:flex screen-tablet:justify-between items-center">
+                <div class="my-0 px-2 pt-1 pb-4 border-b border-color-grey-light">
                   <h2 class="m-0">
                     <a class="text-color-grey-mid font-normal no-underline capitalize" href="#small-button">Small Button</a>
                   </h2>
-                  <div>
-                    <a href="https://github.com/CityOfNewYork/access-nyc-patterns/tree/v0.5.4/src/elements/buttons"><code class="code">src/elements/buttons</code></a>
+                  <div class="pt-2">
+                    <p class="text-font-size-small m-0">Source: <code><a href="https://github.com/CityOfNewYork/access-nyc-patterns/tree/v0.6.0/src/elements/buttons">src/elements/buttons/buttons-small</a></code></p>
                   </div>
                 </div>
               </header>
               <div class="layout--home-body">
-                <div class="my-0 pt-4 px-2 text-font-size-small"><p>The small button modifier will decrease any button font size to .727rem.</p></div>
+                <div class="my-0 pt-4 px-2 text-font-size-small table-align-start"><p>The small button modifier will decrease any button font size to .727rem.</p></div>
               </div>
               <div class="layout--gutter screen-tablet:layout--columns justify-between pt-4">
                 <div class="screen-tablet:pr-2">
-                  <button class="btn-primary btn-small mb-2" data-sketch-symbol="elements/buttons/buttons-small">Small Button</button>
+                  <button class="btn-primary btn-small" type="button">Small Button</button>
                 </div>
                 <div>
-                  <div class="code-block mb-1"><pre>&lt;button class=&quot;btn-primary btn-small mb-2&quot; data-sketch-symbol=&quot;elements/buttons/buttons-previous&quot;&gt;Small Button&lt;/button&gt;</pre></div>
+                  <div class="code-block mb-1"><pre>&lt;button class=&quot;btn-primary btn-small&quot; type=&quot;button&quot;&gt;Small Button&lt;/button&gt;</pre></div>
                 </div>
               </div>
             </div>
@@ -260,24 +264,24 @@
           <section class="pb-4 mb-4" id="normal-button">
             <div class="page-wrapper px-2">
               <header class="layout--home-body">
-                <div class="my-0 px-2 pt-1 pb-4 border-b border-color-grey-light screen-tablet:flex screen-tablet:justify-between items-center">
+                <div class="my-0 px-2 pt-1 pb-4 border-b border-color-grey-light">
                   <h2 class="m-0">
                     <a class="text-color-grey-mid font-normal no-underline capitalize" href="#normal-button">Normal Button</a>
                   </h2>
-                  <div>
-                    <a href="https://github.com/CityOfNewYork/access-nyc-patterns/tree/v0.5.4/src/elements/buttons"><code class="code">src/elements/buttons</code></a>
+                  <div class="pt-2">
+                    <p class="text-font-size-small m-0">Source: <code><a href="https://github.com/CityOfNewYork/access-nyc-patterns/tree/v0.6.0/src/elements/buttons">src/elements/buttons/buttons-normal</a></code></p>
                   </div>
                 </div>
               </header>
               <div class="layout--home-body">
-                <div class="my-0 pt-4 px-2 text-font-size-small"><p>The <code>btn-normal</code> class allows for setting responsive button sizes for tablet and desktop screens. This button will appear smaller on screens less than desktop width using the <code>screen-desktop:</code> media query utility.</p></div>
+                <div class="my-0 pt-4 px-2 text-font-size-small table-align-start"><p>The <code>btn-normal</code> class allows for setting responsive button sizes for tablet and desktop screens. This button will appear smaller on screens less than desktop width using the <code>screen-desktop:</code> media query utility.</p></div>
               </div>
               <div class="layout--gutter screen-tablet:layout--columns justify-between pt-4">
                 <div class="screen-tablet:pr-2">
-                  <button class="btn-primary btn-small screen-desktop:btn-normal mb-2" data-sketch-symbol="elements/buttons/buttons-normal">Normal Button</button>
+                  <button class="btn-primary btn-small screen-desktop:btn-normal" type="button">Normal Button</button>
                 </div>
                 <div>
-                  <div class="code-block mb-1"><pre>&lt;button class=&quot;btn-primary btn-small screen-desktop:btn-normal mb-2&quot; data-sketch-symbol=&quot;elements/buttons/buttons-previous&quot;&gt;Normal Button&lt;/button&gt;</pre></div>
+                  <div class="code-block mb-1"><pre>&lt;button class=&quot;btn-primary btn-small screen-desktop:btn-normal&quot; type=&quot;button&quot;&gt;Normal Button&lt;/button&gt;</pre></div>
                 </div>
               </div>
             </div>
@@ -285,24 +289,24 @@
           <section class="pb-4 mb-4" id="tag-button">
             <div class="page-wrapper px-2">
               <header class="layout--home-body">
-                <div class="my-0 px-2 pt-1 pb-4 border-b border-color-grey-light screen-tablet:flex screen-tablet:justify-between items-center">
+                <div class="my-0 px-2 pt-1 pb-4 border-b border-color-grey-light">
                   <h2 class="m-0">
                     <a class="text-color-grey-mid font-normal no-underline capitalize" href="#tag-button">Tag Button</a>
                   </h2>
-                  <div>
-                    <a href="https://github.com/CityOfNewYork/access-nyc-patterns/tree/v0.5.4/src/elements/buttons"><code class="code">src/elements/buttons</code></a>
+                  <div class="pt-2">
+                    <p class="text-font-size-small m-0">Source: <code><a href="https://github.com/CityOfNewYork/access-nyc-patterns/tree/v0.6.0/src/elements/buttons">src/elements/buttons/buttons-tag</a></code></p>
                   </div>
                 </div>
               </header>
               <div class="layout--home-body">
-                <div class="my-0 pt-4 px-2 text-font-size-small"><p>Tag Button Elements are associated with related programs. Clicking on a tag should bring up the programs page filtered to the appropriate tag.</p></div>
+                <div class="my-0 pt-4 px-2 text-font-size-small table-align-start"><p>Tag Button Elements are associated with related programs. Clicking on a tag should bring up the programs page filtered to the appropriate tag.</p></div>
               </div>
               <div class="layout--gutter screen-tablet:layout--columns justify-between pt-4">
                 <div class="screen-tablet:pr-2">
-                  <button class="btn-primary btn-tag mb-2" data-sketch-symbol="elements/buttons/buttons-tag">Tag</button>
+                  <button class="btn-primary btn-tag" type="button">Tag</button>
                 </div>
                 <div>
-                  <div class="code-block mb-1"><pre>&lt;button class=&quot;btn-primary btn-tag mb-2&quot; data-sketch-symbol=&quot;elements/buttons/buttons-previous&quot;&gt;Tag&lt;/button&gt;</pre></div>
+                  <div class="code-block mb-1"><pre>&lt;button class=&quot;btn-primary btn-tag&quot; type=&quot;button&quot;&gt;Tag&lt;/button&gt;</pre></div>
                 </div>
               </div>
             </div>
@@ -310,26 +314,53 @@
           <section class="pb-4 mb-4" id="toggle-button">
             <div class="page-wrapper px-2">
               <header class="layout--home-body">
-                <div class="my-0 px-2 pt-1 pb-4 border-b border-color-grey-light screen-tablet:flex screen-tablet:justify-between items-center">
+                <div class="my-0 px-2 pt-1 pb-4 border-b border-color-grey-light">
                   <h2 class="m-0">
                     <a class="text-color-grey-mid font-normal no-underline capitalize" href="#toggle-button">Toggle Button</a>
                   </h2>
-                  <div>
-                    <a href="https://github.com/CityOfNewYork/access-nyc-patterns/tree/v0.5.4/src/elements/buttons"><code class="code">src/elements/buttons</code></a>
+                  <div class="pt-2">
+                    <p class="text-font-size-small m-0">Source: <code><a href="https://github.com/CityOfNewYork/access-nyc-patterns/tree/v0.6.0/src/elements/buttons">src/elements/buttons/buttons-toggle</a></code></p>
                   </div>
                 </div>
               </header>
               <div class="layout--home-body">
-                <div class="my-0 pt-4 px-2 text-font-size-small"><p>Toggle Button Elements are used to indicate a change in state or appearance of another element.</p></div>
+                <div class="my-0 pt-4 px-2 text-font-size-small table-align-start"><p>Toggle Button Elements are used to change the state or appearance of another target element. This example uses the JavaScript
+  <a href="/toggle">Toggle Utility</a> for interactivity and accessibility. Additionally, refer to the
+  <a href="/toggle">Toggle Utility documentation</a> for different toggling animation options.</p></div>
               </div>
               <div class="layout--gutter screen-tablet:layout--columns justify-between pt-4">
                 <div class="screen-tablet:pr-2">
-                  <button class="btn-toggle btn-primary" data-js="toggle" data-sketch-symbol="elements/buttons/buttons-toggle" data-toggle-target="#btn-toggle-target">Toggle Button</button>
-                  <div id="btn-toggle-target"></div>
+                  <button aria-controls="btn-toggle-target" aria-expanded="true" class="btn-toggle btn-primary mb-2" data-js="toggle" id="btn-toggle" type="button">Toggle Button</button>
+                  <div aria-hidden="false" class="bg-color-blue-light p-4 text-center active" id="btn-toggle-target">Toggle button target element</div>
                 </div>
                 <div>
-                  <div class="code-block mb-1"><pre>&lt;button class=&quot;btn-toggle btn-primary&quot; data-js=&quot;toggle&quot; data-sketch-symbol=&quot;elements/buttons/buttons-previous&quot; data-toggle-target=&quot;#btn-toggle-target&quot;&gt;Toggle Button&lt;/button&gt;
-&lt;div id=&quot;btn-toggle-target&quot;&gt;&lt;/div&gt;</pre></div>
+                  <div class="code-block mb-1"><pre>&lt;button aria-controls=&quot;btn-toggle-target&quot; aria-expanded=&quot;true&quot; class=&quot;btn-toggle btn-primary mb-2&quot; data-js=&quot;toggle&quot; id=&quot;btn-toggle&quot; type=&quot;button&quot;&gt;Toggle Button&lt;/button&gt;
+&lt;div aria-hidden=&quot;false&quot; class=&quot;bg-color-blue-light p-4 text-center active&quot; id=&quot;btn-toggle-target&quot;&gt;Toggle button target element&lt;/div&gt;</pre></div>
+                </div>
+              </div>
+            </div>
+          </section>
+          <section class="pb-4 mb-4" id="link-button">
+            <div class="page-wrapper px-2">
+              <header class="layout--home-body">
+                <div class="my-0 px-2 pt-1 pb-4 border-b border-color-grey-light">
+                  <h2 class="m-0">
+                    <a class="text-color-grey-mid font-normal no-underline capitalize" href="#link-button">Link Button</a>
+                  </h2>
+                  <div class="pt-2">
+                    <p class="text-font-size-small m-0">Source: <code><a href="https://github.com/CityOfNewYork/access-nyc-patterns/tree/v0.6.0/src/elements/buttons">src/elements/buttons/buttons-link</a></code></p>
+                  </div>
+                </div>
+              </header>
+              <div class="layout--home-body">
+                <div class="my-0 pt-4 px-2 text-font-size-small table-align-start"><p>The Link Button Element appears as a hyperlink but because it is marked up as a button element, assistive technologies will convey interactions as they would for buttons.</p></div>
+              </div>
+              <div class="layout--gutter screen-tablet:layout--columns justify-between pt-4">
+                <div class="screen-tablet:pr-2">
+                  <button class="btn-link" type="button">Link Button</button>
+                </div>
+                <div>
+                  <div class="code-block mb-1"><pre>&lt;button class=&quot;btn-link&quot; type=&quot;button&quot;&gt;Link Button&lt;/button&gt;</pre></div>
                 </div>
               </div>
             </div>
@@ -337,24 +368,24 @@
           <section class="pb-4 mb-4" id="text-button">
             <div class="page-wrapper px-2">
               <header class="layout--home-body">
-                <div class="my-0 px-2 pt-1 pb-4 border-b border-color-grey-light screen-tablet:flex screen-tablet:justify-between items-center">
+                <div class="my-0 px-2 pt-1 pb-4 border-b border-color-grey-light">
                   <h2 class="m-0">
                     <a class="text-color-grey-mid font-normal no-underline capitalize" href="#text-button">Text Button</a>
                   </h2>
-                  <div>
-                    <a href="https://github.com/CityOfNewYork/access-nyc-patterns/tree/v0.5.4/src/elements/buttons"><code class="code">src/elements/buttons</code></a>
+                  <div class="pt-2">
+                    <p class="text-font-size-small m-0">Source: <code><a href="https://github.com/CityOfNewYork/access-nyc-patterns/tree/v0.6.0/src/elements/buttons">src/elements/buttons/buttons-text</a></code></p>
                   </div>
                 </div>
               </header>
               <div class="layout--home-body">
-                <div class="my-0 pt-4 px-2 text-font-size-small"></div>
+                <div class="my-0 pt-4 px-2 text-font-size-small table-align-start"></div>
               </div>
               <div class="layout--gutter screen-tablet:layout--columns justify-between pt-4">
                 <div class="screen-tablet:pr-2">
-                  <button class="btn-text mb-2" data-sketch-symbol="elements/buttons/buttons-text">Plain Text Button</button>
+                  <button class="btn-text" type="button">Plain Text Button</button>
                 </div>
                 <div>
-                  <div class="code-block mb-1"><pre>&lt;button class=&quot;btn-text mb-2&quot; data-sketch-symbol=&quot;elements/buttons/buttons-previous&quot;&gt;Plain Text Button&lt;/button&gt;</pre></div>
+                  <div class="code-block mb-1"><pre>&lt;button class=&quot;btn-text&quot; type=&quot;button&quot;&gt;Plain Text Button&lt;/button&gt;</pre></div>
                 </div>
               </div>
             </div>
@@ -362,24 +393,24 @@
           <section class="pb-4 mb-4" id="next-button">
             <div class="page-wrapper px-2">
               <header class="layout--home-body">
-                <div class="my-0 px-2 pt-1 pb-4 border-b border-color-grey-light screen-tablet:flex screen-tablet:justify-between items-center">
+                <div class="my-0 px-2 pt-1 pb-4 border-b border-color-grey-light">
                   <h2 class="m-0">
                     <a class="text-color-grey-mid font-normal no-underline capitalize" href="#next-button">Next Button</a>
                   </h2>
-                  <div>
-                    <a href="https://github.com/CityOfNewYork/access-nyc-patterns/tree/v0.5.4/src/elements/buttons"><code class="code">src/elements/buttons</code></a>
+                  <div class="pt-2">
+                    <p class="text-font-size-small m-0">Source: <code><a href="https://github.com/CityOfNewYork/access-nyc-patterns/tree/v0.6.0/src/elements/buttons">src/elements/buttons/buttons-next</a></code></p>
                   </div>
                 </div>
               </header>
               <div class="layout--home-body">
-                <div class="my-0 pt-4 px-2 text-font-size-small"><p>Next Button Elements prompt the user to navigate to the next page or view.</p></div>
+                <div class="my-0 pt-4 px-2 text-font-size-small table-align-start"><p>Next Button Elements prompt the user to navigate to the next page or view.</p></div>
               </div>
               <div class="layout--gutter screen-tablet:layout--columns justify-between pt-4">
                 <div class="screen-tablet:pr-2">
-                  <button class="btn-secondary btn-next mb-2" data-sketch-symbol="elements/buttons/buttons-next">Next Button</button>
+                  <button class="btn-secondary btn-next" type="button">Next Button</button>
                 </div>
                 <div>
-                  <div class="code-block mb-1"><pre>&lt;button class=&quot;btn-secondary btn-next mb-2&quot; data-sketch-symbol=&quot;elements/buttons/buttons-previous&quot;&gt;Next Button&lt;/button&gt;</pre></div>
+                  <div class="code-block mb-1"><pre>&lt;button class=&quot;btn-secondary btn-next&quot; type=&quot;button&quot;&gt;Next Button&lt;/button&gt;</pre></div>
                 </div>
               </div>
             </div>
@@ -387,28 +418,42 @@
           <section class="pb-4 mb-4" id="previous-button">
             <div class="page-wrapper px-2">
               <header class="layout--home-body">
-                <div class="my-0 px-2 pt-1 pb-4 border-b border-color-grey-light screen-tablet:flex screen-tablet:justify-between items-center">
+                <div class="my-0 px-2 pt-1 pb-4 border-b border-color-grey-light">
                   <h2 class="m-0">
                     <a class="text-color-grey-mid font-normal no-underline capitalize" href="#previous-button">Previous Button</a>
                   </h2>
-                  <div>
-                    <a href="https://github.com/CityOfNewYork/access-nyc-patterns/tree/v0.5.4/src/elements/buttons"><code class="code">src/elements/buttons</code></a>
+                  <div class="pt-2">
+                    <p class="text-font-size-small m-0">Source: <code><a href="https://github.com/CityOfNewYork/access-nyc-patterns/tree/v0.6.0/src/elements/buttons">src/elements/buttons/buttons-previous</a></code></p>
                   </div>
                 </div>
               </header>
               <div class="layout--home-body">
-                <div class="my-0 pt-4 px-2 text-font-size-small"><p>Previous Button Elements prompt the user to navigate back to the previous page or view.</p></div>
+                <div class="my-0 pt-4 px-2 text-font-size-small table-align-start"><p>Previous Button Elements prompt the user to navigate back to the previous page or view.</p></div>
               </div>
               <div class="layout--gutter screen-tablet:layout--columns justify-between pt-4">
                 <div class="screen-tablet:pr-2">
-                  <button class="btn-secondary btn-previous mb-2" data-sketch-symbol="elements/buttons/buttons-previous">Previous Button</button>
+                  <button class="btn-secondary btn-previous" type="button">Previous Button</button>
                 </div>
                 <div>
-                  <div class="code-block mb-1"><pre>&lt;button class=&quot;btn-secondary btn-previous mb-2&quot; data-sketch-symbol=&quot;elements/buttons/buttons-previous&quot;&gt;Previous Button&lt;/button&gt;</pre></div>
+                  <div class="code-block mb-1"><pre>&lt;button class=&quot;btn-secondary btn-previous&quot; type=&quot;button&quot;&gt;Previous Button&lt;/button&gt;</pre></div>
                 </div>
               </div>
             </div>
           </section>
+          <div class="sticky pin-b bg-color-white shadow-up relative z-10 overflow-y-scroll whitespace-no-wrap animated fadeInUp">
+            <nav class="nav-inline text-font-size-small p-4"><span class="mr-4">Jump to:</span>
+              <a class="mr-4" href="#primary-button">Primary Button</a>
+              <a class="mr-4" href="#secondary-button">Secondary Button</a>
+              <a class="mr-4" href="#small-button">Small Button</a>
+              <a class="mr-4" href="#normal-button">Normal Button</a>
+              <a class="mr-4" href="#tag-button">Tag Button</a>
+              <a class="mr-4" href="#toggle-button">Toggle Button</a>
+              <a class="mr-4" href="#link-button">Link Button</a>
+              <a class="mr-4" href="#text-button">Text Button</a>
+              <a class="mr-4" href="#next-button">Next Button</a>
+              <a class="mr-4" href="#previous-button">Previous Button</a>
+            </nav>
+          </div>
         </article>
       </main>
     </div>
@@ -434,12 +479,12 @@
         </nav>
       </p>
     </footer>
-    <script crossorigin="anonymous" src="https://polyfill.io/v3/polyfill.min.js?flags=gated&amp;features=Array.prototype.forEach,Element.prototype.matches,Element.prototype.remove,fetch,Promise"></script>
-    <script src="scripts/AccessNyc.js"></script>
-    <script src="scripts/markdown.min.js"></script>
+    <script src="scripts/polyfills.js"></script>
+    <script src="scripts/access-nyc.js"></script>
+    <script src="scripts/vue-components.js"></script>
     <script type="text/javascript">
       var access = new AccessNyc();
-      access.markdown();
+      var VueComponents = new VueComponents();
       access.icons();
       access.toggle();
     </script>

@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+<html class="bg-color-white text-size-0" lang="en">
+
+  <head>
+    <meta charset="utf-8" />
+    <meta content="IE=edge" http-equiv="X-UA-Compatible" />
+    <meta content="width=device-width, initial-scale=1" name="viewport" />
+    <link href="images/apple-icon-57x57.png" rel="apple-touch-icon" sizes="57x57" />
+    <link href="images/apple-icon-60x60.png" rel="apple-touch-icon" sizes="60x60" />
+    <link href="images/apple-icon-72x72.png" rel="apple-touch-icon" sizes="72x72" />
+    <link href="images/apple-icon-76x76.png" rel="apple-touch-icon" sizes="76x76" />
+    <link href="images/apple-icon-114x114.png" rel="apple-touch-icon" sizes="114x114" />
+    <link href="images/apple-icon-120x120.png" rel="apple-touch-icon" sizes="120x120" />
+    <link href="images/apple-icon-144x144.png" rel="apple-touch-icon" sizes="144x144" />
+    <link href="images/apple-icon-152x152.png" rel="apple-touch-icon" sizes="152x152" />
+    <link href="images/apple-icon-180x180.png" rel="apple-touch-icon" sizes="180x180" />
+    <link href="images/android-icon-192x192.png" rel="icon" sizes="192x192" type="image/png" />
+    <link href="images/favicon-32x32.png" rel="icon" sizes="32x32" type="image/png" />
+    <link href="images/favicon-96x96.png" rel="icon" sizes="96x96" type="image/png" />
+    <link href="images/favicon-16x16.png" rel="icon" sizes="16x16" type="image/png" />
+    <meta content="#112E51" name="msapplication-TileColor" />
+    <meta content="images/ms-icon-144x144.png" name="msapplication-TileImage" />
+    <link href="images/favicon.ico" rel="icon" type="image/x-icon" />
+    <link href="styles/site-default.css" rel="stylesheet" />
+    <title>Toggle | ACCESS NYC Patterns</title>
+    <noscript>
+      <style>
+        body {
+          visibility: visible !important;
+        }
+      </style>
+    </noscript>
+    <script type="text/javascript">
+      function load() {
+        document.body.style.visibility = 'visible'
+      };
+    </script>
+  </head>
+
+  <body class="bg-color-blue-dark" onload="load()" style="visibility: hidden;">
+    <a class="sr-only" href="#main-content">Skip to main content</a>
+    <div class="bg-color-white">
+      <header class="color-light-background px-2">
+        <div class="border-b border-color-grey-light">
+          <div class="flex items-center justify-between p-2 screen-tablet:py-4 screen-tablet:px-2">
+            <div>
+              <h1 class="m-0 p-0 leading-normal">
+                <a href="index"><span class="hidden">ACCESS NYC</span>
+                  <svg aria-hidden="true" class="icon-logo-mark screen-tablet:hidden">
+                    <use xlink:href="#icon-logo-mark"></use>
+                  </svg>
+                  <svg aria-hidden="true" class="icon-logo-full--large text-color-blue-dark hidden screen-tablet:inline-block">
+                    <use xlink:href="#icon-logo-full"></use>
+                  </svg>
+                </a>
+              </h1>
+            </div>
+            <div class="flex items-center">
+              <h2 class="text-font-size-small m-0 text-color-blue-dark screen-tablet:hidden">Patterns</h2>
+              <h2 aria-hidden="true" class="type-h1 m-0 text-color-blue-dark hidden screen-tablet:inline-block">Patterns</h2>
+              <nav class="text-font-size-small">
+                <a class="rounded-lg text-color-blue-dark border-2 no-underline px-1 ml-2 hidden screen-tablet:inline-block" href="https://github.com/CityOfNewYork/access-nyc-patterns/tree/v0.6.0">0.6.0</a>
+                <a aria-hidden="true" class="ml-1 screen-tablet:ml-2 screen-tablet:hidden" href="https://github.com/CityOfNewYork/access-nyc-patterns/tree/v0.6.0">0.6.0</a>
+                <button aria-controls="main-menu" aria-expanded="false" class="btn-link ml-1 screen-tablet:ml-2" data-js="toggle" id="main-menu-control">Menu</button>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </header>
+      <aside aria-hidden="true" aria-labelledby="main-menu-control" class="color-mid-background text-font-size-small hidden hidden:overflowFadeInUp animated relative" id="main-menu" role="region" style="top: -1px">
+        <div class="page-wrapper py-4 animated">
+          <div class="screen-tablet:flex">
+            <nav class="screen-tablet:flex-1 mb-1 px-2">
+              <a class="type-h3 text-font-size-small mb-1 block screen-tablet:border-b screen-tablet:pb-2 screen-tablet:mb-1 border-color-white p-1" href="index">Home</a>
+              <a class="block p-1" href="about">About</a>
+              <a class="block p-1" href="installation">Installation</a>
+              <a class="block p-1" href="design-tools">Design Tools</a>
+              <a class="block p-1 screen-tablet:border-b screen-tablet:pb-2 screen-tablet:mb-1 border-color-white p-1" href="developer-tools">Developer Tools</a>
+              <a class="block p-1" href="https://www.npmjs.com/package/access-nyc-patterns">NPM</a>
+              <a class="block p-1" href="https://github.com/CityOfNewYork/access-nyc-patterns">GitHub</a>
+            </nav>
+            <nav class="screen-tablet:flex-1 mb-1 px-2 screen-desktop:pl-4"><span class="type-h3 text-font-size-small mb-1 block screen-tablet:border-b screen-tablet:pb-2 screen-tablet:mb-1 border-color-white p-1">Elements</span>
+              <a class="block p-1" href="buttons">Buttons</a>
+              <a class="block p-1" href="checkboxes">Checkboxes</a>
+              <a class="block p-1" href="dividers">Dividers</a>
+              <a class="block p-1" href="inputs">Inputs</a>
+              <a class="block p-1" href="layouts">Layouts</a>
+              <a class="block p-1" href="links">Links</a>
+              <a class="block p-1" href="lists">Lists</a>
+              <a class="block p-1" href="nav">Nav</a>
+              <a class="block p-1" href="program-labels">Program Labels</a>
+              <a class="block p-1" href="radios">Radios</a>
+              <a class="block p-1" href="tables">Tables</a>
+              <a class="block p-1" href="tooltips">Tooltips</a>
+              <a class="block p-1" href="toggles">Toggles</a>
+              <a class="block p-1" href="selects">Selects</a>
+            </nav>
+            <nav class="screen-tablet:flex-1 mb-1 px-2 screen-desktop:pl-4"><span class="type-h3 text-font-size-small mb-1 block screen-tablet:border-b screen-tablet:pb-2 screen-tablet:mb-1 border-color-white p-1">Components</span>
+              <a class="block p-1" href="accordion">Accordion</a>
+              <a class="block p-1" href="alert-box">Alert Box</a>
+              <a class="block p-1" href="card">Card</a>
+              <a class="block p-1" href="checklist">Checklist</a>
+              <a class="block p-1" href="disclaimer">Disclaimer</a>
+              <a class="block p-1" href="filter">Filter</a>
+              <a class="block p-1" href="header">Header</a>
+              <a class="block p-1" href="member-list">Member List</a>
+              <a class="block p-1" href="nearby-stops">Nearby Stops</a>
+              <a class="block p-1" href="share-form">Share Form</a>
+              <a class="block p-1" href="side-nav">Side Nav</a>
+              <a class="block p-1" href="text-controller">Text Controller</a>
+              <a class="block p-1" href="question">Question</a>
+            </nav>
+            <nav class="screen-tablet:flex-1 mb-1 px-2 screen-desktop:pl-4"><span class="type-h3 text-font-size-small mb-1 block screen-tablet:border-b screen-tablet:pb-2 screen-tablet:mb-1 border-color-white p-1">Objects</span>
+              <a class="block p-1" href="announcements">Announcements</a>
+              <a class="block p-1" href="banner">Banner</a>
+              <a class="block p-1" href="card-list">Card Lists</a>
+              <a class="block p-1" href="content">Content</a>
+              <a class="block p-1" href="footer">Footer</a>
+              <a class="block p-1" href="formstack">Formstack</a>
+              <a class="block p-1" href="mobile-nav">Mobile Nav</a>
+              <a class="block p-1" href="navigation">Navigation</a>
+              <a class="block p-1" href="newsletter">Newsletter</a>
+              <a class="block p-1" href="search-box">Search Box</a>
+            </nav>
+            <nav class="screen-tablet:flex-1 mb-1 px-2 screen-desktop:pl-4">
+              <a class="type-h3 text-font-size-small mb-1 block screen-tablet:border-b screen-tablet:pb-2 screen-tablet:mb-1 border-color-white p-1" href="utility">Utilities</a>
+              <a class="block p-1" href="accessibility">Accessibility</a>
+              <a class="block p-1" href="colors">Colors</a>
+              <a class="block p-1" href="font">Fonts</a>
+              <a class="block p-1" href="icons">Icons</a>
+              <a class="block p-1" href="inherit">Inherit</a>
+              <a class="block p-1" href="language">Language</a>
+              <a class="block p-1" href="media">Media</a>
+              <a class="block p-1" href="text">Text</a>
+              <a class="block p-1" href="toggle">Toggle</a>
+              <a class="block p-1" href="typography">Typography</a>
+            </nav>
+          </div>
+          <div class="text-center">
+            <button aria-controls="main-menu" aria-expanded="false" class="btn-link" data-js="toggle">Close Menu</button>
+          </div>
+        </div>
+      </aside>
+      <main class="color-light-background pt-4" id="main-content">
+        <article class="pt-4">
+          <header class="page-wrapper px-2 screen-desktop:px-0 layout--home-body">
+            <div class="my-0 w-full">
+              <h1 class="text-color-blue-dark px-2 pb-4 mb-4">Toggle</h1>
+            </div>
+          </header>
+          <section class="pb-4 mb-4">
+            <div class="page-wrapper px-2">
+              <header class="layout--home-body">
+                <div class="my-0 px-2 pt-1 pb-4 border-b border-color-grey-light">
+                  <div>
+                    <p class="text-font-size-small m-0">Source: <code><a href="https://github.com/CityOfNewYork/access-nyc-patterns/tree/v0.6.0/src/utilities/toggle">src/utilities/toggle/toggle</a></code></p>
+                  </div>
+                </div>
+              </header>
+              <div class="layout--home-body">
+                <div class="my-0 pt-4 px-2 text-font-size-small table-align-start"><p>The Toggle utility uses JavaScript to expand and collapse elements based on user interaction. This will toggle dynamic aria attributes as well as dynamic classes on both the toggling element and target of the toggle. The class &quot;hidden&quot; will
+  be toggled on the target element and the class &quot;active&quot; will be toggled on the toggling element and target element. The target is selected using the static <code>aria-controls</code> attribute by its <code>id</code>.</p>
+
+<p>The use of the dynamic <code>aria-expanded</code> attribute on the toggling element is recommended for toggling elements as it will announce that the target of the toggle is &quot;expanded&quot; or &quot;collapsed.&quot; Optionally, the attribute <code>aria-pressed</code>  can be used instead to announce that the toggle button is &quot;pressed&quot; or &quot;not pressed&quot;. These attributes provide different feedback to screenreaders and are appropriate for different component types. <code>aria-expanded</code> would
+  be used for patterns such as
+  <a href="https://inclusive-components.design/collapsible-sections/"><strong>collapsible sections</strong></a> and <code>aria-pressed</code> would be used for
+  <a href="https://inclusive-components.design/toggle-button/"><strong>toggle buttons</strong></a> or <strong>switches</strong>. A full list of dynamic and static attributes is described in the
+  <a href="#toggle-usage">the usage section</a>.</p>
+
+<p>Placement of the target should follow the toggling element so that it appears next in order on the page for screen readers. For targets that are far apart or appear in a different section of the page, the
+  <a href="#anchor-toggle">Anchor Toggle</a> may be more appropriate.</p>
+
+<p>The Toggle Utility supports having more than one toggle element per toggle target (the &quot;Menu&quot; and &quot;Close Menu&quot; links of this site are an example).</p></div>
+              </div>
+              <div class="layout--gutter screen-tablet:layout--columns justify-between pt-4">
+                <div class="screen-tablet:pr-2">
+                  <button aria-controls="toggle-target" aria-expanded="true" class="btn btn-primary mb-3" data-js="toggle" type="button">Toggle</button>
+                  <div aria-hidden="false" class="bg-color-blue-light p-4 text-center active" id="toggle-target">Targeted toggle element</div>
+                </div>
+                <div>
+                  <div class="code-block mb-1"><pre>&lt;button aria-controls=&quot;toggle-target&quot; aria-expanded=&quot;true&quot; class=&quot;btn btn-primary mb-3&quot; data-js=&quot;toggle&quot; type=&quot;button&quot;&gt;Toggle&lt;/button&gt;
+&lt;div aria-hidden=&quot;false&quot; class=&quot;bg-color-blue-light p-4 text-center active&quot; id=&quot;toggle-target&quot;&gt;Targeted toggle element&lt;/div&gt;</pre></div>
+                </div>
+              </div>
+            </div>
+          </section>
+          <section class="pb-4 mb-4" id="anchor-toggle">
+            <div class="page-wrapper px-2">
+              <header class="layout--home-body">
+                <div class="my-0 px-2 pt-1 pb-4 border-b border-color-grey-light">
+                  <h2 class="m-0">
+                    <a class="text-color-grey-mid font-normal no-underline capitalize" href="#anchor-toggle">Anchor Toggle</a>
+                  </h2>
+                  <div class="pt-2">
+                    <p class="text-font-size-small m-0">Source: <code><a href="https://github.com/CityOfNewYork/access-nyc-patterns/tree/v0.6.0/src/utilities/toggle">src/utilities/toggle/toggle-anchor</a></code></p>
+                  </div>
+                </div>
+              </header>
+              <div class="layout--home-body">
+                <div class="my-0 pt-4 px-2 text-font-size-small table-align-start"><p>The anchor toggle uses an anchor in the <code>href</code> to jump to the target element. While anchor toggles are an appropriate use case for target elements that are further away from the toggling element, it should be used sparingly as anchor links
+  can make the navigation of content more difficult. Always use descriptive text in the link such as &quot;Jump to&quot; to describe what the behavior of the link will be.</p></div>
+              </div>
+              <div class="layout--gutter screen-tablet:layout--columns justify-between pt-4">
+                <div class="screen-tablet:pr-2">
+                  <a class="inline-block mb-3" data-js="toggle" href="#anchor-target">Toggle and Jump to Target</a>
+                  <section aria-hidden="true" class="bg-color-blue-light p-4 hidden text-center" id="anchor-target">Targeted toggle element</section>
+                </div>
+                <div>
+                  <div class="code-block mb-1"><pre>&lt;a class=&quot;inline-block mb-3&quot; data-js=&quot;toggle&quot; href=&quot;#anchor-target&quot;&gt;Toggle and Jump to Target&lt;/a&gt;
+&lt;section aria-hidden=&quot;true&quot; class=&quot;bg-color-blue-light p-4 hidden text-center&quot; id=&quot;anchor-target&quot;&gt;Targeted toggle element&lt;/section&gt;</pre></div>
+                </div>
+              </div>
+            </div>
+          </section>
+          <section class="pb-4 mb-4" id="toggle-fade-in-up">
+            <div class="page-wrapper px-2">
+              <header class="layout--home-body">
+                <div class="my-0 px-2 pt-1 pb-4 border-b border-color-grey-light">
+                  <h2 class="m-0">
+                    <a class="text-color-grey-mid font-normal no-underline capitalize" href="#toggle-fade-in-up">Toggle Fade In Up</a>
+                  </h2>
+                  <div class="pt-2">
+                    <p class="text-font-size-small m-0">Source: <code><a href="https://github.com/CityOfNewYork/access-nyc-patterns/tree/v0.6.0/src/utilities/toggle">src/utilities/toggle/toggle-fade-in-up</a></code></p>
+                  </div>
+                </div>
+              </header>
+              <div class="layout--home-body">
+                <div class="my-0 pt-4 px-2 text-font-size-small table-align-start"><p>Adding <code>hidden:fadeInUp animated</code> to the target element will animate the opacity and position target element.</p></div>
+              </div>
+              <div class="layout--gutter screen-tablet:layout--columns justify-between pt-4">
+                <div class="screen-tablet:pr-2">
+                  <button aria-controls="toggle-target-fade-in-up" aria-expanded="false" class="btn btn-primary mb-3" data-js="toggle" type="button">Fade In Up</button>
+                  <div aria-hidden="true" class="bg-color-blue-light p-4 text-center hidden hidden:fadeInUp animated" id="toggle-target-fade-in-up">Targeted toggle element</div>
+                </div>
+                <div>
+                  <div class="code-block mb-1"><pre>&lt;button aria-controls=&quot;toggle-target-fade-in-up&quot; aria-expanded=&quot;false&quot; class=&quot;btn btn-primary mb-3&quot; data-js=&quot;toggle&quot; type=&quot;button&quot;&gt;Fade In Up&lt;/button&gt;
+&lt;div aria-hidden=&quot;true&quot; class=&quot;bg-color-blue-light p-4 text-center hidden hidden:fadeInUp animated&quot; id=&quot;toggle-target-fade-in-up&quot;&gt;Targeted toggle element&lt;/div&gt;</pre></div>
+                </div>
+              </div>
+            </div>
+          </section>
+          <section class="pb-4 mb-4" id="toggle-overflow">
+            <div class="page-wrapper px-2">
+              <header class="layout--home-body">
+                <div class="my-0 px-2 pt-1 pb-4 border-b border-color-grey-light">
+                  <h2 class="m-0">
+                    <a class="text-color-grey-mid font-normal no-underline capitalize" href="#toggle-overflow">Toggle Overflow</a>
+                  </h2>
+                  <div class="pt-2">
+                    <p class="text-font-size-small m-0">Source: <code><a href="https://github.com/CityOfNewYork/access-nyc-patterns/tree/v0.6.0/src/utilities/toggle">src/utilities/toggle/toggle-overflow</a></code></p>
+                  </div>
+                </div>
+              </header>
+              <div class="layout--home-body">
+                <div class="my-0 pt-4 px-2 text-font-size-small table-align-start"><p>Adding <code>hidden:overflow animated</code> to the target element will animate the max-height property of the target element.</p></div>
+              </div>
+              <div class="layout--gutter screen-tablet:layout--columns justify-between pt-4">
+                <div class="screen-tablet:pr-2">
+                  <button aria-controls="toggle-target-overflow" aria-expanded="false" class="btn btn-primary mb-3" data-js="toggle" type="button">Overflow</button>
+                  <div aria-hidden="true" class="bg-color-blue-light w-full text-center hidden hidden:overflow animated" id="toggle-target-overflow">
+                    <div class="p-4">Targeted toggle element</div>
+                  </div>
+                </div>
+                <div>
+                  <div class="code-block mb-1"><pre>&lt;button aria-controls=&quot;toggle-target-overflow&quot; aria-expanded=&quot;false&quot; class=&quot;btn btn-primary mb-3&quot; data-js=&quot;toggle&quot; type=&quot;button&quot;&gt;Overflow&lt;/button&gt;
+&lt;div aria-hidden=&quot;true&quot; class=&quot;bg-color-blue-light w-full text-center hidden hidden:overflow animated&quot; id=&quot;toggle-target-overflow&quot;&gt;
+  &lt;div class=&quot;p-4&quot;&gt;Targeted toggle element&lt;/div&gt;
+&lt;/div&gt;</pre></div>
+                </div>
+              </div>
+            </div>
+          </section>
+          <section class="pb-4 mb-4" id="toggle-overflow-fade-in-up">
+            <div class="page-wrapper px-2">
+              <header class="layout--home-body">
+                <div class="my-0 px-2 pt-1 pb-4 border-b border-color-grey-light">
+                  <h2 class="m-0">
+                    <a class="text-color-grey-mid font-normal no-underline capitalize" href="#toggle-overflow-fade-in-up">Toggle Overflow Fade In Up</a>
+                  </h2>
+                  <div class="pt-2">
+                    <p class="text-font-size-small m-0">Source: <code><a href="https://github.com/CityOfNewYork/access-nyc-patterns/tree/v0.6.0/src/utilities/toggle">src/utilities/toggle/toggle-overflow-fade-in-up</a></code></p>
+                  </div>
+                </div>
+              </header>
+              <div class="layout--home-body">
+                <div class="my-0 pt-4 px-2 text-font-size-small table-align-start"><p>This is a combination of the &quot;overflow&quot; and &quot;fade in up&quot; animations. Adding <code>hidden:overflowFadeInUp</code> will animate the max-height property of the parent element. Adding <code>animated</code> to any immediate (<code>.parent &gt; .child</code>)
+  children of the parent will animate the opacity property fo the child.</p></div>
+              </div>
+              <div class="layout--gutter screen-tablet:layout--columns justify-between pt-4">
+                <div class="screen-tablet:pr-2">
+                  <button aria-controls="toggle-target-overflow-fade-in-up" aria-expanded="false" class="btn btn-primary mb-3" data-js="toggle" type="button">Overflow Fade In Up</button>
+                  <div aria-hidden="true" class="bg-color-blue-light w-full text-center hidden hidden:overflowFadeInUp animated" id="toggle-target-overflow-fade-in-up">
+                    <div class="p-4 animated">Targeted toggle element</div>
+                  </div>
+                </div>
+                <div>
+                  <div class="code-block mb-1"><pre>&lt;button aria-controls=&quot;toggle-target-overflow-fade-in-up&quot; aria-expanded=&quot;false&quot; class=&quot;btn btn-primary mb-3&quot; data-js=&quot;toggle&quot; type=&quot;button&quot;&gt;Overflow Fade In Up&lt;/button&gt;
+&lt;div aria-hidden=&quot;true&quot; class=&quot;bg-color-blue-light w-full text-center hidden hidden:overflowFadeInUp animated&quot; id=&quot;toggle-target-overflow-fade-in-up&quot;&gt;
+  &lt;div class=&quot;p-4 animated&quot;&gt;Targeted toggle element&lt;/div&gt;
+&lt;/div&gt;</pre></div>
+                </div>
+              </div>
+            </div>
+          </section>
+          <section class="pb-4 mb-4" id="toggle-usage">
+            <div class="page-wrapper px-2 screen-desktop:px-0">
+              <header class="layout--home-body">
+                <div class="my-0 px-2 border-b border-color-grey-light screen-tablet:flex screen-tablet:justify-between">
+                  <h2 class="m-0 pt-1 pb-4">
+                    <a class="text-color-grey-mid font-normal no-underline capitalize" href="#toggle-usage">Toggle Usage</a>
+                  </h2>
+                </div>
+              </header>
+              <div class="layout--home-body">
+                <div class="my-0 pt-4 px-2 text-font-size-small table-align-start"><h4>Attributes</h4>
+
+<p>Attributes such as <code>aria-controls</code>, <code>aria-expanded</code>, and <code>type</code> will help assistive technologies understand the relationship between the toggle element and the toggle target. These three attributes should be considered
+  the bare minimum but they may be interchanged with others based on the use case. Below is an explanation of other possible attributes that can be used with the toggle utility. <em>Static</em> attributes will not change. <em>Dynamic</em> attributes will
+  change when the toggle event is fired.</p>
+
+<p><strong>Toggling Element Attributes</strong></p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Attribute</th>
+      <th>State</th>
+      <th>Importance</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code>aria-controls</code></td>
+      <td><em>static</em></td>
+      <td>required</td>
+      <td>ID of the target element. Used by the toggle to select the target element.</td>
+    </tr>
+    <tr>
+      <td><code>aria-expanded</code></td>
+      <td><em>dynamic</em></td>
+      <td>recommended</td>
+      <td>Boolean that announces that target content is &quot;expanded&quot; or &quot;collapsed&quot; when the toggling element is clicked.</td>
+    </tr>
+    <tr>
+      <td><code>type</code></td>
+      <td><em>static</em></td>
+      <td>recommended</td>
+      <td>Setting a <code>&lt;button&gt;</code> element type to &quot;button&quot; will distinguish it from other button types, such as &quot;submit&quot; and &quot;reset,&quot; but only within <code>&lt;form&gt;</code> elements. By default, a <code>&lt;button&gt;</code>        is the type &quot;submit&quot; within a form.</td>
+    </tr>
+    <tr>
+      <td><code>aria-pressed</code></td>
+      <td><em>dynamic</em></td>
+      <td>optional</td>
+      <td>Boolean that announces that the toggling element is toggled. Not recommended for use with <code>aria-expanded</code>.</td>
+    </tr>
+    <tr>
+      <td><code>role</code></td>
+      <td><em>static</em></td>
+      <td>optional</td>
+      <td>If the toggling element is not a <code>&lt;button&gt;</code> element, but looks and behaves like a button (see documentation for the
+        <a href="/buttons">Button Element</a>), then setting the <code>role</code> attribute to &quot;button&quot; is recommended. See
+        <a href="https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Roles/button_role">MDN documentation for the &quot;button&quot; role</a> for more information</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><strong>Target Element Attributes</strong></p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Attribute</th>
+      <th>State</th>
+      <th>Importance</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code>aria-hidden</code></td>
+      <td><em>dynamic</em></td>
+      <td>recommended</td>
+      <td>Boolean that hides the content of the target element when &quot;collapsed.&quot;</td>
+    </tr>
+    <tr>
+      <td><code>role</code></td>
+      <td><em>static</em></td>
+      <td>optional</td>
+      <td>Setting the target element&#39;s <code>role</code> to &quot;region&quot; identifies the target as a significant area. See
+        <a href="https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Roles/Region_role">MDN documentation for the &quot;region&quot; role</a> for more information.</td>
+    </tr>
+    <tr>
+      <td><code>aria-labelledby</code></td>
+      <td><em>static</em></td>
+      <td>optional</td>
+      <td>This is used along with the <code>role</code> attribute to label the content of a &quot;region.&quot; This can be set to the toggling elements <code>id</code> but can also be set to a different elements <code>id</code>.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h4>Global Script</h4>
+
+<p>To use the Toggle Utility in the global ACCESS NYC Patterns script use the following code:</p>
+
+<pre><code>&lt;!-- Global Script --&gt;
+&lt;script src=&quot;dist/scripts/AccessNyc.js&quot;&gt;&lt;/script&gt;
+
+&lt;script&gt;
+  var access = new AccessNyc();
+  var toggle = access.toggle();
+&lt;/script&gt;</code></pre>
+
+<p>This function will instantiate the Toggle Utility (with provided options) and attach the event listener to the body of the document. The event will listen for clicks on elements with the matching selector <code>[data-js=&#39;toggle&#39;]</code> (see markup
+  details in the examples above). Below is an advanced configuration that passes a custom selector to the instantiated method (see the next section for all of the configuration options):</p>
+
+<pre><code>var toggle = access.toggle({
+  selector: &#39;#my-selector&#39;
+});</code></pre>
+
+<h4>Configuration</h4>
+
+<p>The Toggle Utility accepts an object <code>{}</code> with the following properties:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Option</th>
+      <th>Type</th>
+      <th>Importance</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code>selector</code></td>
+      <td><em>string</em></td>
+      <td>optional</td>
+      <td>Full selector string of the toggle element (this is passed to the <code>.matches()</code> method).</td>
+    </tr>
+    <tr>
+      <td><code>inactiveClass</code></td>
+      <td><em>string/boolean</em></td>
+      <td>optional</td>
+      <td>Single class name that will be toggled on the toggle and target element when the element is inactive or &quot;collapsed.&quot; Pass &quot;false&quot; to skip toggling an inactive class (there is no inactive class for the toggle element).</td>
+    </tr>
+    <tr>
+      <td><code>activeClass</code></td>
+      <td><em>string/boolean</em></td>
+      <td>optional</td>
+      <td>Single class name that will be toggled on the target element when the element is active or &quot;expanded.&quot; Pass &quot;false&quot; to skip toggling an active class.</td>
+    </tr>
+    <tr>
+      <td><code>before</code></td>
+      <td><em>function</em></td>
+      <td>optional</td>
+      <td>A function that will be executed before the toggling element and target classes and attributes are toggled. The function is passed the instance of the toggle class.</td>
+    </tr>
+    <tr>
+      <td><code>after</code></td>
+      <td><em>function</em></td>
+      <td>optional</td>
+      <td>A function that will be executed after the toggling element and target classes and attributes are toggled. The function is passed the instance of the toggle class.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h4>Cherry-picked Module Import</h4>
+
+<p>The ES6, CommonJS, and IFFE modules all require importing and object instantiation in your main script. The methods and configurations described above will work with the dedicated module.</p>
+
+<pre><code>// ES6
+import InputAutocomplete from &#39;src/utilities/toggle/toggle&#39;;
+
+// CommonJS
+import InputAutocomplete from &#39;dist/utilities/toggle/toggle.common&#39;;
+
+&lt;!-- IFFE --&gt;
+&lt;script src=&quot;dist/utilities/toggle/toggle.iffe.js&quot;&gt;&lt;/script&gt;
+
+new Toggle();</code></pre>
+
+<h4>Polyfills</h4>
+
+<p>The script uses the <code>Element.prototype.matches</code>, <code>Element.prototype.removes</code>, <code>Nodelist.prototype.forEach</code> methods which require polyfills for IE11 support. See the
+  <a href="/installation">&quot;Polyfills&quot; section in the Installation docs</a> for recommendations.</p></div>
+              </div>
+            </div>
+          </section>
+          <div class="sticky pin-b bg-color-white shadow-up relative z-10 overflow-y-scroll whitespace-no-wrap animated fadeInUp">
+            <nav class="nav-inline text-font-size-small p-4"><span class="mr-4">Jump to:</span>
+              <a class="mr-4" href="#anchor-toggle">Anchor Toggle</a>
+              <a class="mr-4" href="#toggle-fade-in-up">Toggle Fade In Up</a>
+              <a class="mr-4" href="#toggle-overflow">Toggle Overflow</a>
+              <a class="mr-4" href="#toggle-overflow-fade-in-up">Toggle Overflow Fade In Up</a>
+              <a class="mr-4" href="#toggle-usage">Toggle Usage</a>
+            </nav>
+          </div>
+        </article>
+      </main>
+    </div>
+    <footer class="py-4 text-center color-dark-background">
+      <p>
+        <nav>
+          <a class="px-1" href="index">Home</a>
+          <a class="px-1" href="about">About</a>
+          <a class="px-1" href="installation">Installation</a>
+          <a class="px-1" href="design-tools">Design Tools</a>
+          <a class="px-1" href="developer-tools">Developer Tools</a>
+        </nav>
+      </p>
+      <p>Maintained by&nbsp;
+        <a href="https://nyc.gov/opportunity">NYC Opportunity</a>
+      </p>
+      <p class="m-0">
+        <nav>
+          <a class="px-1" href="https://github.com/orgs/CityOfNewYork/teams/nycopportunity">GitHub</a>
+          <a class="px-1" href="https://twitter.com/nycopportunity">Twitter</a>
+          <a class="px-1" href="https://www.facebook.com/NYCOpportunity">Facebook</a>
+          <a class="px-1" href="https://www.instagram.com/nycopportunity">Instagram</a>
+        </nav>
+      </p>
+    </footer>
+    <script src="scripts/polyfills.js"></script>
+    <script src="scripts/access-nyc.js"></script>
+    <script src="scripts/vue-components.js"></script>
+    <script type="text/javascript">
+      var access = new AccessNyc();
+      var VueComponents = new VueComponents();
+      access.icons();
+      access.toggle();
+    </script>
+  </body>
+
+</html>
