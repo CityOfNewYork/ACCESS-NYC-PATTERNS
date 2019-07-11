@@ -157,12 +157,14 @@
                 </div>
               </header>
               <div class="layout--home-body">
-                <div class="my-0 pt-4 px-2 text-font-size-small table-align-start"><p>The toggle utility uses JavaScript to show and hide elements based on user interaction. This will toggle dynamic aria attributes as well as dynamic classes on both the toggling element and toggle target. &quot;hidden&quot; will be toggled on the target
-  element and the class &quot;active&quot; will be toggled on the toggling element and target element. The basic toggle uses the static <code>aria-controls</code> attribute to select the target element by its <code>id</code>.</p>
+                <div class="my-0 pt-4 px-2 text-font-size-small table-align-start"><p>The Toggle utility uses JavaScript to expand and collapse elements based on user interaction. This will toggle dynamic aria attributes as well as dynamic classes on both the toggling element and target of the toggle. The class &quot;hidden&quot; will
+  be toggled on the target element and the class &quot;active&quot; will be toggled on the toggling element and target element. The target is selected using the static <code>aria-controls</code> attribute by its <code>id</code>.</p>
 
-<p>The use of <code>aria-expanded</code> on the toggling element is recommended for toggling elements as it will announce that the target of the toggle is &quot;expanded&quot; or &quot;collapsed.&quot; Additional dynamic attributes will only be toggled if
-  they are present on the target element when the page loads. Other aria attributes and roles can be used in combination with the toggling elements to create different interactions with custom components.
-  <a href="#toggle-usage">View the usage section</a> to get an idea of what the different options are.</p>
+<p>The use of the dynamic <code>aria-expanded</code> attribute on the toggling element is recommended for toggling elements as it will announce that the target of the toggle is &quot;expanded&quot; or &quot;collapsed.&quot; Optionally, the attribute <code>aria-pressed</code>  can be used instead to announce that the toggle button is &quot;pressed&quot; or &quot;not pressed&quot;. These attributes provide different feedback to screenreaders and are appropriate for different component types. <code>aria-expanded</code> would
+  be used for patterns such as
+  <a href="https://inclusive-components.design/collapsible-sections/"><strong>collapsible sections</strong></a> and <code>aria-pressed</code> would be used for
+  <a href="https://inclusive-components.design/toggle-button/"><strong>toggle buttons</strong></a> or <strong>switches</strong>. A full list of dynamic and static attributes is described in the
+  <a href="#toggle-usage">the usage section</a>.</p>
 
 <p>Placement of the target should follow the toggling element so that it appears next in order on the page for screen readers. For targets that are far apart or appear in a different section of the page, the
   <a href="#anchor-toggle">Anchor Toggle</a> may be more appropriate.</p>
