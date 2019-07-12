@@ -110,7 +110,7 @@
     "bourbon": "^4.2.7",
     "form-serialize": "^0.7.2",
     "lodash": "^4.17.5",
-    "tailwindcss": "^0.7.2",
+    "tailwindcss": "^1.0.5",
     "vue": "^2.6.9",
     "whatwg-fetch": "^3.0.0"
   },

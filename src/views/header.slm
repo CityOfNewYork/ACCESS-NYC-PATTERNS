@@ -23,4 +23,4 @@
 = content('content');
   = mixin('content-header', title);
   = mixin('section', false, 'components/header/header', 'gutter');
-  = mixin('section', 'Alternate Styling', 'components/header/header-bg-color-blue-dark', 'gutter');
+  = mixin('section', 'Alternate Styling', 'components/header/header-alternate', 'gutter');

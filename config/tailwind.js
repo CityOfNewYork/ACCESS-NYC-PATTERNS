@@ -2,7 +2,7 @@
  * Dependencies
  */
 
-const defaultConfig = require('tailwindcss/defaultConfig')();
+// const defaultConfig = require('tailwindcss/defaultConfig');
 const variables = require('./variables.js');
 
 /**
@@ -10,60 +10,81 @@ const variables = require('./variables.js');
  */
 
 module.exports = {
-  colors: variables.colors,
-  textColors: variables.colors,
-  backgroundColors: variables.colors,
-  borderColors: global.Object.assign({ default: '' }, variables.colors),
-  screens: {
-    'screen-desktop': {'raw': `screen and (min-width: ${variables.screens['screen-desktop']}px)`},
-    'screen-tablet': {'raw': `screen and (min-width: ${variables.screens['screen-tablet']}px)`},
-    'screen-mobile': {'raw': `screen and (min-width: ${variables.screens['screen-mobile']}px)`},
-    'screen-sm-mobile': {'raw': `screen and (min-width: ${variables.screens['screen-sm-mobile']}px)`},
-    'print': {'raw': 'print'}
+  important: true,
+  theme: {
+    colors: variables.colors,
+    textColor: variables.colors,
+    backgroundColor: variables.colors,
+    borderColor: global.Object.assign({ default: '' }, variables.colors),
+    fontFamily: variables.fonts,
+    fontSize: variables['font-sizes'],
+    fontWeight: variables['font-weights'],
+    lineHeight: variables.leading,
+    borderWidth: variables['border-Widths'],
+    margin: variables.margin,
+    padding: variables.padding,
+    maxWidth: {
+      '1/2': '50%',
+      'full': '100%'
+    },
+    height: {
+      'auto': 'auto',
+      'full': '100%',
+      '90vh': '90vh',
+      '100vh': '100vh'
+    },
+    boxShadow: variables.shadows,
+    screens: {
+      'screen-desktop': {
+        'raw': `screen and (min-width: ${variables.screens['screen-desktop']}px)`
+      },
+      'screen-tablet': {
+        'raw': `screen and (min-width: ${variables.screens['screen-tablet']}px)`
+      },
+      'screen-mobile': {
+        'raw': `screen and (min-width: ${variables.screens['screen-mobile']}px)`
+      },
+      'screen-sm-mobile': {
+        'raw': `screen and (min-width: ${variables.screens['screen-sm-mobile']}px)`
+      },
+      'print': {'raw': 'print'}
+    },
   },
-  fonts: variables.fonts,
-  textSizes: variables['font-sizes'],
-  fontWeights: variables['font-weights'],
-  leading: variables.leading,
-  borderWidths: variables['border-Widths'],
-  margin: variables.margin,
-  maxWidth: {
-    '1/2': '50%',
-    'full': '100%'
-  },
-  height: {
-    'auto': 'auto',
-    'full': '100%',
-    '90vh': '90vh',
-    '100vh': '100vh'
-  },
-  padding: variables.padding,
-  shadows: variables.shadows,
-  modules: {
-    backgroundColors: ['responsive', 'hover', 'focus'],
-    borderColors: ['hover', 'focus'],
+  variants: {
+    backgroundColor: ['responsive', 'hover', 'focus'],
+    borderColor: ['hover', 'focus'],
     borderStyle: ['hover', 'focus'],
-    borderWidths: ['responsive', 'hover', 'focus'],
+    borderWidth: ['responsive', 'hover', 'focus'],
     display: ['responsive'],
-    flexbox: ['responsive'],
-    fonts: [],
-    fontWeights: [],
-    leading: [],
+    flexDirection: ['responsive'],
+    flexWrap: ['responsive'],
+    alignItems: ['responsive'],
+    alignSelf: ['responsive'],
+    justifyContent: ['responsive'],
+    alignContent: ['responsive'],
+    flex: ['responsive'],
+    flexGrow: ['responsive'],
+    flexShrink: ['responsive'],
+    fontFamily: [],
+    fontWeight: [],
+    fontSize: ['responsive'],
+    lineHeight: [],
+    textColor: ['responsive', 'hover'],
     margin: ['responsive'],
     maxWidth: ['responsive'],
     overflow: ['responsive'],
     padding: ['responsive'],
-    shadows: ['responsive', 'hover', 'focus'],
-    textColors: ['responsive', 'hover'],
-    textSizes: ['responsive'],
-    textStyle: ['responsive'],
+    boxShadow: ['responsive', 'hover', 'focus'],
+    fontStyle: ['responsive'],
+    fontSmoothing: [],
+    textDecoration: ['responsive'],
+    textTransform: ['responsive'],
     whitespace: ['responsive'],
+    wordBreak: ['responsive'],
     width: ['responsive'],
     height: ['responsive']
   },
-  options: {
-    prefix: '',
-    important: true,
-    separator: ':'
+  corePlugins: {
+    container: false
   }
 };

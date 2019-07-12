@@ -3,4 +3,4 @@
 /
 
 div data-sketch-symbol=symbol data-sketch-symbol-instance=instance
-  input id='person-0-age' name='Person[0].age' min='0' maxlength='3' pattern='[0-9]' step='1' type='number' data-type='age' required='true' aria-required='true'
+  input type='number' min='0' maxlength='3' pattern='[0-9]' step='1'

@@ -3,4 +3,4 @@
 /
 
 div class='error' data-sketch-symbol=symbol data-sketch-symbol-instance=instance
-  input type='text'
+  input type='text' aria-invalid='true'

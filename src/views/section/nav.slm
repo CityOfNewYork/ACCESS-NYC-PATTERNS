@@ -1,5 +1,5 @@
 - if (this.site.navigation.length)
-  div class='sticky pin-b bg-color-white shadow-up relative z-10 overflow-y-scroll whitespace-no-wrap animated fadeInUp'
+  div class='sticky bottom-0 bg-color-white shadow-up relative z-10 overflow-y-scroll whitespace-no-wrap animated fadeInUp'
     nav class='nav-inline text-font-size-small p-4'
       span class='mr-4' Jump to:
       - for (let i in this.site.navigation)

@@ -59,8 +59,8 @@
               <h2 class="text-font-size-small m-0 text-color-blue-dark screen-tablet:hidden">Patterns</h2>
               <h2 aria-hidden="true" class="type-h1 m-0 text-color-blue-dark hidden screen-tablet:inline-block">Patterns</h2>
               <nav class="text-font-size-small">
-                <a class="rounded-lg text-color-blue-dark border-2 no-underline px-1 ml-2 hidden screen-tablet:inline-block" href="https://github.com/CityOfNewYork/access-nyc-patterns/tree/v0.6.0">0.6.0</a>
-                <a aria-hidden="true" class="ml-1 screen-tablet:ml-2 screen-tablet:hidden" href="https://github.com/CityOfNewYork/access-nyc-patterns/tree/v0.6.0">0.6.0</a>
+                <a class="rounded-lg text-color-blue-dark border-2 no-underline px-1 ml-2 hidden screen-tablet:inline-block" href="https://github.com/CityOfNewYork/access-nyc-patterns/tree/v0.6.1">0.6.1</a>
+                <a aria-hidden="true" class="ml-1 screen-tablet:ml-2 screen-tablet:hidden" href="https://github.com/CityOfNewYork/access-nyc-patterns/tree/v0.6.1">0.6.1</a>
                 <button aria-controls="main-menu" aria-expanded="false" class="btn-link ml-1 screen-tablet:ml-2" data-js="toggle" id="main-menu-control">Menu</button>
               </nav>
             </div>
@@ -153,7 +153,7 @@
               <header class="layout--home-body">
                 <div class="my-0 px-2 pt-1 pb-4 border-b border-color-grey-light">
                   <div>
-                    <p class="text-font-size-small m-0">Source: <code><a href="https://github.com/CityOfNewYork/access-nyc-patterns/tree/v0.6.0/src/elements/inputs">src/elements/inputs/inputs</a></code></p>
+                    <p class="text-font-size-small m-0">Source: <code><a href="https://github.com/CityOfNewYork/access-nyc-patterns/tree/v0.6.1/src/elements/inputs">src/elements/inputs/inputs</a></code></p>
                   </div>
                 </div>
               </header>
@@ -164,12 +164,12 @@
               <div class="layout--gutter screen-tablet:layout--columns justify-between pt-4">
                 <div class="screen-tablet:pr-2">
                   <div>
-                    <input id="client-email-address" name="Client[0].emailAddress" type="text" />
+                    <input type="text" />
                   </div>
                 </div>
                 <div>
                   <div class="code-block mb-1"><pre>&lt;div&gt;
-  &lt;input id=&quot;client-email-address&quot; name=&quot;Client[0].emailAddress&quot; type=&quot;text&quot; /&gt;
+  &lt;input type=&quot;text&quot; /&gt;
 &lt;/div&gt;</pre></div>
                 </div>
               </div>
@@ -183,7 +183,7 @@
                     <a class="text-color-grey-mid font-normal no-underline capitalize" href="#input-error">Input Error</a>
                   </h2>
                   <div class="pt-2">
-                    <p class="text-font-size-small m-0">Source: <code><a href="https://github.com/CityOfNewYork/access-nyc-patterns/tree/v0.6.0/src/elements/inputs">src/elements/inputs/inputs-error</a></code></p>
+                    <p class="text-font-size-small m-0">Source: <code><a href="https://github.com/CityOfNewYork/access-nyc-patterns/tree/v0.6.1/src/elements/inputs">src/elements/inputs/inputs-error</a></code></p>
                   </div>
                 </div>
               </header>
@@ -193,12 +193,12 @@
               <div class="layout--gutter screen-tablet:layout--columns justify-between pt-4">
                 <div class="screen-tablet:pr-2">
                   <div class="error">
-                    <input type="text" />
+                    <input aria-invalid="true" type="text" />
                   </div>
                 </div>
                 <div>
                   <div class="code-block mb-1"><pre>&lt;div class=&quot;error&quot;&gt;
-  &lt;input type=&quot;text&quot; /&gt;
+  &lt;input aria-invalid=&quot;true&quot; type=&quot;text&quot; /&gt;
 &lt;/div&gt;</pre></div>
                 </div>
               </div>
@@ -212,7 +212,7 @@
                     <a class="text-color-grey-mid font-normal no-underline capitalize" href="#min-width-400px">Min-width 400px</a>
                   </h2>
                   <div class="pt-2">
-                    <p class="text-font-size-small m-0">Source: <code><a href="https://github.com/CityOfNewYork/access-nyc-patterns/tree/v0.6.0/src/elements/inputs">src/elements/inputs/inputs-mw-400px</a></code></p>
+                    <p class="text-font-size-small m-0">Source: <code><a href="https://github.com/CityOfNewYork/access-nyc-patterns/tree/v0.6.1/src/elements/inputs">src/elements/inputs/inputs-mw-400px</a></code></p>
                   </div>
                 </div>
               </header>
@@ -241,7 +241,7 @@
                     <a class="text-color-grey-mid font-normal no-underline capitalize" href="#number">Number</a>
                   </h2>
                   <div class="pt-2">
-                    <p class="text-font-size-small m-0">Source: <code><a href="https://github.com/CityOfNewYork/access-nyc-patterns/tree/v0.6.0/src/elements/inputs">src/elements/inputs/inputs-number</a></code></p>
+                    <p class="text-font-size-small m-0">Source: <code><a href="https://github.com/CityOfNewYork/access-nyc-patterns/tree/v0.6.1/src/elements/inputs">src/elements/inputs/inputs-number</a></code></p>
                   </div>
                 </div>
               </header>
@@ -251,12 +251,12 @@
               <div class="layout--gutter screen-tablet:layout--columns justify-between pt-4">
                 <div class="screen-tablet:pr-2">
                   <div>
-                    <input aria-required="true" data-type="age" id="person-0-age" maxlength="3" min="0" name="Person[0].age" pattern="[0-9]" required="true" step="1" type="number" />
+                    <input maxlength="3" min="0" pattern="[0-9]" step="1" type="number" />
                   </div>
                 </div>
                 <div>
                   <div class="code-block mb-1"><pre>&lt;div&gt;
-  &lt;input aria-required=&quot;true&quot; data-type=&quot;age&quot; id=&quot;person-0-age&quot; maxlength=&quot;3&quot; min=&quot;0&quot; name=&quot;Person[0].age&quot; pattern=&quot;[0-9]&quot; required=&quot;true&quot; step=&quot;1&quot; type=&quot;number&quot; /&gt;
+  &lt;input maxlength=&quot;3&quot; min=&quot;0&quot; pattern=&quot;[0-9]&quot; step=&quot;1&quot; type=&quot;number&quot; /&gt;
 &lt;/div&gt;</pre></div>
                 </div>
               </div>
@@ -270,7 +270,7 @@
                     <a class="text-color-grey-mid font-normal no-underline capitalize" href="#us-currency">US Currency</a>
                   </h2>
                   <div class="pt-2">
-                    <p class="text-font-size-small m-0">Source: <code><a href="https://github.com/CityOfNewYork/access-nyc-patterns/tree/v0.6.0/src/elements/inputs">src/elements/inputs/inputs-currency-usd</a></code></p>
+                    <p class="text-font-size-small m-0">Source: <code><a href="https://github.com/CityOfNewYork/access-nyc-patterns/tree/v0.6.1/src/elements/inputs">src/elements/inputs/inputs-currency-usd</a></code></p>
                   </div>
                 </div>
               </header>
@@ -299,7 +299,7 @@
                     <a class="text-color-grey-mid font-normal no-underline capitalize" href="#us-currency-error">US Currency Error</a>
                   </h2>
                   <div class="pt-2">
-                    <p class="text-font-size-small m-0">Source: <code><a href="https://github.com/CityOfNewYork/access-nyc-patterns/tree/v0.6.0/src/elements/inputs">src/elements/inputs/inputs-currency-usd-error</a></code></p>
+                    <p class="text-font-size-small m-0">Source: <code><a href="https://github.com/CityOfNewYork/access-nyc-patterns/tree/v0.6.1/src/elements/inputs">src/elements/inputs/inputs-currency-usd-error</a></code></p>
                   </div>
                 </div>
               </header>
@@ -328,7 +328,7 @@
                     <a class="text-color-grey-mid font-normal no-underline capitalize" href="#us-phone">US Phone</a>
                   </h2>
                   <div class="pt-2">
-                    <p class="text-font-size-small m-0">Source: <code><a href="https://github.com/CityOfNewYork/access-nyc-patterns/tree/v0.6.0/src/elements/inputs">src/elements/inputs/inputs-phone-us</a></code></p>
+                    <p class="text-font-size-small m-0">Source: <code><a href="https://github.com/CityOfNewYork/access-nyc-patterns/tree/v0.6.1/src/elements/inputs">src/elements/inputs/inputs-phone-us</a></code></p>
                   </div>
                 </div>
               </header>
@@ -357,7 +357,7 @@
                     <a class="text-color-grey-mid font-normal no-underline capitalize" href="#us-phone-error">US Phone Error</a>
                   </h2>
                   <div class="pt-2">
-                    <p class="text-font-size-small m-0">Source: <code><a href="https://github.com/CityOfNewYork/access-nyc-patterns/tree/v0.6.0/src/elements/inputs">src/elements/inputs/inputs-phone-us-error</a></code></p>
+                    <p class="text-font-size-small m-0">Source: <code><a href="https://github.com/CityOfNewYork/access-nyc-patterns/tree/v0.6.1/src/elements/inputs">src/elements/inputs/inputs-phone-us-error</a></code></p>
                   </div>
                 </div>
               </header>
@@ -386,7 +386,7 @@
                     <a class="text-color-grey-mid font-normal no-underline capitalize" href="#search">Search</a>
                   </h2>
                   <div class="pt-2">
-                    <p class="text-font-size-small m-0">Source: <code><a href="https://github.com/CityOfNewYork/access-nyc-patterns/tree/v0.6.0/src/elements/inputs">src/elements/inputs/inputs-search</a></code></p>
+                    <p class="text-font-size-small m-0">Source: <code><a href="https://github.com/CityOfNewYork/access-nyc-patterns/tree/v0.6.1/src/elements/inputs">src/elements/inputs/inputs-search</a></code></p>
                   </div>
                 </div>
               </header>
@@ -417,7 +417,7 @@
               </div>
             </div>
           </section>
-          <div class="sticky pin-b bg-color-white shadow-up relative z-10 overflow-y-scroll whitespace-no-wrap animated fadeInUp">
+          <div class="sticky bottom-0 bg-color-white shadow-up relative z-10 overflow-y-scroll whitespace-no-wrap animated fadeInUp">
             <nav class="nav-inline text-font-size-small p-4"><span class="mr-4">Jump to:</span>
               <a class="mr-4" href="#input-error">Input Error</a>
               <a class="mr-4" href="#min-width-400px">Min-width 400px</a>

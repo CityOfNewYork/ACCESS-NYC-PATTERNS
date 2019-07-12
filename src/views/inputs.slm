@@ -21,6 +21,10 @@
 
 = content('content');
   = mixin('content-header', title);
+
+  - input__id = false;
+  - input__name = false;
+
   = mixin('section', false, 'elements/inputs/inputs');
   = mixin('section', 'Input Error', 'elements/inputs/inputs-error');
   = mixin('section', 'Min-width 400px', 'elements/inputs/inputs-mw-400px');
