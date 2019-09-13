@@ -6,7 +6,7 @@
     <meta content="IE=edge" http-equiv="X-UA-Compatible" />
     <meta content="width=device-width, initial-scale=1" name="viewport" />
     <link href="../styles/site-default.css" rel="stylesheet" />
-    <title>Navigation Demo</title>
+    <title>Alert Banner Demo</title>
     <noscript>
       <style>
         body {
@@ -23,24 +23,21 @@
 
   <body onload="load()" style="visibility: hidden;">
     <main class="min-h-screen bg-color-white" id="demo-content">
-      <div class="overlay active:overlay">
-        <div class="o-mobile-nav color-mid-background active:o-mobile-nav" id="o-mobile-nav">
-          <a class="o-mobile-nav__close js-hide-nav" href="#o-mobile-nav">close &amp; return to site
-            <svg aria-hidden="true" class="icon icon-close">
-              <use xlink:href="#icon-close"></use>
+      <div aria-describedby="dialog-desc-site-alert-slug" aria-labelledby="dialog-title-site-alert-slug" class="c-alert-banner bg-status-info fixed bottom-0 w-screen left-0 px-8 js-alert c-alert hidden" data-cookie="site-alert-slug" role="dialog">
+        <div class="c-alert-banner-wrapper">
+          <div class="c-alert-banner__icon">
+            <svg class="c-alert-banner__svg icon icon-info">
+              <use xlink:href="#icon-info"></use>
             </svg>
-          </a>
-          <div class="o-mobile-nav__inner">
-            <h4 class="o-mobile-nav__header">Get help now</h4>
-            <nav class="nav-block">
-              <a class="active" href="#">Am I eligible?</a>
-              <a href="#">Programs</a>
-              <a href="#">Find help</a>
-              <a class="td-inherit" href="#search">
-                <svg class="icon icon-ui-search">
-                  <use xlink:href="#icon-ui-search"></use>
-                </svg>Search</a>
-            </nav>
+          </div>
+          <div class="c-alert-banner__body">ACCESS NYC will be undergoing maintenance Friday, February 2nd from 9pm to 11pm EST.</div>
+          <div class="c-alert-banner__closing">
+            <button id="alert-button" type="button">
+              <svg class="icon-ui-x" role="img">
+                <title>close</title>
+                <use xlink:href="#icon-ui-x"></use>
+              </svg>
+            </button>
           </div>
         </div>
       </div>

@@ -3216,6 +3216,162 @@ var AccessNyc = (function () {
   }];
 
   /**
+   * Cookie utility for reading and creating a cookie
+   */
+
+  var Cookie = function Cookie() {
+    /* eslint-disable no-undef */
+
+    /* eslint-enable no-undef */
+  };
+  /**
+  * Save a cookie
+  * @param {string} name - Cookie name
+  * @param {string} value - Cookie value
+  * @param {string} domain - Domain on which to set cookie
+  * @param {integer} days - Number of days before cookie expires
+  */
+
+
+  Cookie.prototype.createCookie = function createCookie(name, value, domain, days) {
+    var expires = days ? '; expires=' + new Date(days * 864E5 + new Date().getTime()).toGMTString() : '';
+    document.cookie = name + '=' + value + expires + '; path=/; domain=' + domain;
+  };
+  /**
+  * Utility module to get value of a data attribute
+  * @param {object} elem - DOM node attribute is retrieved from
+  * @param {string} attr - Attribute name (do not include the 'data-' part)
+  * @return {mixed} - Value of element's data attribute
+  */
+
+
+  Cookie.prototype.dataset = function dataset(elem, attr) {
+    if (typeof elem.dataset === 'undefined') {
+      return elem.getAttribute('data-' + attr);
+    }
+
+    return elem.dataset[attr];
+  };
+  /**
+  * Reads a cookie and returns the value
+  * @param {string} cookieName - Name of the cookie
+  * @param {string} cookie - Full list of cookies
+  * @return {string} - Value of cookie; undefined if cookie does not exist
+  */
+
+
+  Cookie.prototype.readCookie = function readCookie(cookieName, cookie) {
+    return (RegExp('(?:^|; )' + cookieName + '=([^;]*)').exec(cookie) || []).pop();
+  };
+  /**
+  * Get the domain from a URL
+  * @param {string} url - The URL
+  * @param {boolean} root - Whether to return root domain rather than subdomain
+  * @return {string} - The parsed domain
+  */
+
+
+  Cookie.prototype.getDomain = function getDomain(url, root) {
+    /**
+    * Parse the URL
+    * @param {string} url - The URL
+    * @return {string} - The link element
+    */
+    function parseUrl(url) {
+      var target = document.createElement('a');
+      target.href = url;
+      return target;
+    }
+
+    if (typeof url === 'string') {
+      url = parseUrl(url);
+    }
+
+    var domain = url.hostname;
+
+    if (root) {
+      var slice = domain.match(/\.uk$/) ? -3 : -2;
+      domain = domain.split('.').slice(slice).join('.');
+    }
+
+    return domain;
+  };
+
+  /**
+   * Alert Banner module
+   * @module modules/alert
+   * @see utilities/cookie
+   */
+  /**
+   * Displays an alert banner.
+   * @param {string} openClass - The class to toggle on if banner is visible
+   */
+
+  function AlertBanner () {
+    var cookieBuilder = new Cookie();
+    /**
+    * Make an alert visible
+    * @param {object} alert - DOM node of the alert to display
+    * @param {object} siblingElem - DOM node of alert's closest sibling,
+    * which gets some extra padding to make room for the alert
+    */
+
+    function displayAlert(alert) {
+      alert.classList.remove('hidden');
+    }
+    /**
+    * Check alert cookie
+    * @param {object} alert - DOM node of the alert
+    * @return {boolean} - Whether alert cookie is set
+    */
+
+
+    function checkAlertCookie(alert) {
+      var cookieName = cookieBuilder.dataset(alert, 'cookie');
+
+      if (!cookieName) {
+        return false;
+      }
+
+      return typeof cookieBuilder.readCookie(cookieName, document.cookie) !== 'undefined';
+    }
+    /**
+    * Add alert cookie
+    * @param {object} alert - DOM node of the alert
+    */
+
+
+    function addAlertCookie(alert) {
+      var cookieName = cookieBuilder.dataset(alert, 'cookie');
+
+      if (cookieName) {
+        cookieBuilder.createCookie(cookieName, 'dismissed', cookieBuilder.getDomain(window.location, false), 360);
+      }
+    }
+
+    var alerts = document.querySelectorAll('.js-alert');
+
+    if (alerts.length) {
+      var loop = function loop(i) {
+        if (checkAlertCookie(alerts[i])) {
+          var alertButton = document.getElementById('alert-button');
+          displayAlert(alerts[i]);
+          alertButton.addEventListener('click', function (e) {
+            alerts[i].classList.add('hidden');
+            addAlertCookie(alerts[i]);
+          });
+        } else {
+          alerts[i].classList.add('hidden');
+        }
+      };
+
+      for (var i = 0; i <= alert.length; i++) {
+        loop(i);
+      }
+    }
+  }
+
+  /**
    * A simple form validation function that uses native form validation. It will
    * add appropriate form feedback for each input that is invalid and native
    * localized browser messaging.
@@ -3938,6 +4094,15 @@ var AccessNyc = (function () {
   main.prototype.inputsAutocomplete = function inputsAutocomplete(settings) {
     if (settings === void 0) settings = {};
     return new InputAutocomplete(settings);
+  };
+  /**
+   * An API for the AlertBanner Object
+   * @return {object}       Instance of AlertBanner
+   */
+
+
+  main.prototype.alertBanner = function alertBanner() {
+    return new AlertBanner();
   };
 
   return main;

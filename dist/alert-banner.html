@@ -22,7 +22,7 @@
     <meta content="images/ms-icon-144x144.png" name="msapplication-TileImage" />
     <link href="images/favicon.ico" rel="icon" type="image/x-icon" />
     <link href="styles/site-default.css" rel="stylesheet" />
-    <title>About | ACCESS NYC Patterns</title>
+    <title>Alert Banner | ACCESS NYC Patterns</title>
     <noscript>
       <style>
         body {
@@ -145,123 +145,66 @@
         <article class="pt-4">
           <header class="page-wrapper px-2 screen-desktop:px-0 layout--home-body">
             <div class="my-0 w-full">
-              <h1 class="text-color-blue-dark px-2 pb-4 mb-4">About</h1>
+              <h1 class="text-color-blue-dark px-2 pb-4 mb-4">Alert Banner</h1>
             </div>
           </header>
           <section class="pb-4 mb-4">
-            <div class="page-wrapper">
+            <div class="page-wrapper px-2">
               <header class="layout--home-body">
-                <div class="my-0 pt-1 px-2 border-b border-color-grey-light"></div>
+                <div class="my-0 px-2 pt-1 pb-4 border-b border-color-grey-light">
+                  <div>
+                    <p class="text-font-size-small m-0">Source: <code><a href="https://github.com/CityOfNewYork/access-nyc-patterns/tree/v0.6.1/src/components/alert-banner">src/components/alert-banner/alert-banner</a></code></p>
+                  </div>
+                </div>
               </header>
               <div class="layout--home-body">
-                <div class="px-2 text-font-size-small">
-                  <div class="o-content color-light-background pb-4"><p>At NYC Opportunity, we believe government services should be:</p>
+                <div class="my-0 pt-4 px-2 text-font-size-small table-align-start"><p>TEST for the alert banner md.</p>
 
-<ul>
-  <li>Created with the people who use and deliver them</li>
-  <li>Equitably distributed</li>
-  <li>Prototyped and tested for usability</li>
-  <li>Rigorously tested and evaluated for effectiveness and impact</li>
-  <li>Accessible to all</li>
-</ul>
+<p>&lt;!-- Global Script --&gt; &lt;script src=&quot;dist/scripts/access-nyc.js&quot;&gt;&lt;/script&gt;</p>
 
-<p>This is the foundation on which we build and deliver all of our digital products. The Patterns are built with these principles in mind to make ACCESS NYC accessible for design and development teams internally and externally for peers in the field.</p>
-
-<h2>Development</h2>
-
-<p>ACCESS NYC was relaunched in 2017 to address the barriers New Yorkers face when trying to seek information about or apply for benefits. This involved an iterative prototyping process that engaged residents, social workers, case managers, and government
-  agency staff to deliver a new design and core user experience. The user interface started with the
-  <a href="https://designsystem.digital.gov/">U.S. Web Design System</a> as a boilerplate for UI Elements and WCAG AA compliance. It was extended for New York City residents by including support for seven different languages with RTL and LTR reading orientations.</p>
-
-<p>Learn more about the initial launch of ACCESS NYC through these two case studies:</p>
-
-<ul>
-  <li>
-    <a href="https://civicservicedesign.com/case-study-access-nyc-part-1-5ccdf1c4a520">Case Study: ACCESS NYC 1</a>
-  </li>
-  <li>
-    <a href="https://civicservicedesign.com/case-study-access-nyc-part-2-f86130ebdead">Case Study: ACCESS NYC 2</a>
-  </li>
-</ul>
-
-<p>In late summer of 2017, NYC Opportunity and the Mayor’s Public Engagement Unit (PEU) began designing, developing, and testing a version of the ACCESS NYC Eligibility benefits screener optimized for their Outreach Specialists. This process involved taking
-  the core user interface elements of ACCESS NYC and repurposing them for the outreach specialist with a nuanced and advanced understanding of enrolling New Yorkers in benefits.</p>
-
-<p>
-  <a href="https://medium.com/nyc-opportunity/nyc-opportunity-and-the-public-engagement-unit-partner-for-facilitated-benefits-screening-and-e889407ccf4c">Learn more about the NYC Opportunity and Public Engagement Unit partnership in this article</a>.</p>
-
-<p>During the development of the PEU Screener, the Product and Design teams were tasked with replatforming the ACCESS NYC interface, but there was no common language or easily accessible documentation for the designers and developers to reference. This realization
-  highlighted the need to formalize the ACCESS NYC interface and Service Design Studio principles into a Design System.</p>
-
-<h2>Design Systems</h2>
-
-<h5>“A design system is a set of interconnected patterns and shared practices coherently organized to achieve the purpose of digital products.”
-  <a href="http://designsystemsbook.com"><em>- Alla Kholmatova, Design Systems; A practical guide to creating design languages for digital products</em></a>
-</h5>
-
-<p>To further the purpose of ACCESS NYC as a digital product, we realized the need to create and document the Patterns used to create it. As our practice develops we will be able to utilize the Patterns conventions and documentation as a starting point for
-  understanding.</p>
-
-<h3>Naming Convention</h3>
-
-<p>The first step we took to creating the Patterns was to perform an audit of the existing ACCESS NYC modules and grouped them according to a naming convention influenced by “
-  <a href="https://csswizardry.com/2015/08/bemit-taking-the-bem-naming-convention-a-step-further/">BEMIT: Taking the BEM Naming Convention a Step Further</a>.” Our four buckets included Elements, Components, Objects, and Utilities. If you are familiar with Brad Frost’s
-  <a href="http://atomicdesign.bradfrost.com/chapter-2/">Atomic Design Methodology</a>, this structure will sound very familiar. As a team we picked names that resonated with us for each of the Patterns and assigned them to each group. The hope is that developing a common language will enable us work together
-  more effectively to focus on the users we are serve.</p>
-
-<p>The first step we took to create the Patterns was performing an audit of the existing ACCESS NYC modules and grouping them according to a naming convention influenced by “
-  <a href="https://csswizardry.com/2015/08/bemit-taking-the-bem-naming-convention-a-step-further/">BEMIT: Taking the BEM Naming Convention a Step Further</a>.” Our four buckets included Elements, Components, Objects, and Utilities. This structure will sound very familiar to those familiar with Brad Frost’s
-  <a href="http://atomicdesign.bradfrost.com/chapter-2/">Atomic Design Methodology</a>.</p>
-
-<p>As a team, we picked names that resonated with us for each of the Patterns and assigned them to each group. The hope was to develop a common language that would enable us to work together more effectively to focus on the users we serve.</p>
-
-<p>
-  <img alt="Image with graphics representing elements, components, and objects." title="Elements, Components, and Objects" src="images/naming-01.png" />
-</p>
-
-<h4>Elements</h4>
-
-<p>Element Patterns are the most primitive building blocks of a web page. They include some of the most standard HTML tags such as links, buttons, lists, and tables. They do not have complicated markup or any dependencies on other modules.</p>
-
-<h4>Components</h4>
-
-<p>Component Patterns are more complicated modules that may contain one or more Elements, complex markup, styling, or JavaScript dependencies. They are often repeated within a view.</p>
-
-<h4>Objects</h4>
-
-<p>Object Patterns contain the most complicated markup-specific styling. They may contain one or more Elements or Components. Objects generally do not repeat within a view but they may be globally visible across different views.</p>
-
-<p>
-  <img alt="Image with graphic describing how elements fit into components and components fit into objects." title="How Elements, Components, and Objects Fit Together" src="images/naming-02.png" />
-</p>
-
-<h4>Utilities</h4>
-
-<p>Utilities are single-purpose classes that allow teams to change specific styling features of Elements, Components, and Objects. For the ACCESS NYC Patterns we are leveraging
-  <a href="https://tailwindcss.com">Tailwind CSS</a>. By using utilities, the design system becomes far more flexible.</p>
-
-<p>
-  <img alt="Image with graphic describing how utilities can change the styling of an element." title="Utilities" src="images/naming-03.png" />
-</p>
-
-<h4>Views</h4>
-
-<p>Views are the pages that the ACCESS NYC Patterns live on. They are specific to every project that the Patterns are integrated into. For example, ACCESS NYC has 9 views, including:</p>
-
-<ul>
-  <li>Homepage</li>
-  <li>Eligibility Screener</li>
-  <li>Eligibility Screener Results Page</li>
-  <li>Program Landing</li>
-  <li>Single Program</li>
-  <li>Locations Landing</li>
-  <li>Single Locations</li>
-  <li>Search Page</li>
-  <li>Single Pages</li>
-</ul>
-
-<p>It is sometimes necessary to reference views for context in defining patterns. For instance, the
-  <a href="layouts#map">Map Layout Utility</a> was specifically created to address needs defined by the Locations Landing page on ACCESS NYC.</p></div>
+<p>&lt;script&gt; var access = new AccessNyc(); access.alertBanner(); &lt;/script&gt;
+</p></div>
+              </div>
+              <div class="layout--gutter screen-tablet:layout--gutter justify-between pt-4">
+                <div>
+                  <div aria-describedby="dialog-desc-site-alert-slug" aria-labelledby="dialog-title-site-alert-slug" class="c-alert-banner bg-status-info fixed bottom-0 w-screen left-0 px-8 js-alert c-alert hidden" data-cookie="site-alert-slug" role="dialog">
+                    <div class="c-alert-banner-wrapper">
+                      <div class="c-alert-banner__icon">
+                        <svg class="c-alert-banner__svg icon icon-info">
+                          <use xlink:href="#icon-info"></use>
+                        </svg>
+                      </div>
+                      <div class="c-alert-banner__body">ACCESS NYC will be undergoing maintenance Friday, February 2nd from 9pm to 11pm EST.</div>
+                      <div class="c-alert-banner__closing">
+                        <button id="alert-button" type="button">
+                          <svg class="icon-ui-x" role="img">
+                            <title>close</title>
+                            <use xlink:href="#icon-ui-x"></use>
+                          </svg>
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div>
+                  <div class="code-block mb-1"><pre>&lt;div aria-describedby=&quot;dialog-desc-site-alert-slug&quot; aria-labelledby=&quot;dialog-title-site-alert-slug&quot; class=&quot;c-alert-banner bg-status-info fixed bottom-0 w-screen left-0 px-8 js-alert c-alert hidden&quot; data-cookie=&quot;site-alert-slug&quot; role=&quot;dialog&quot;&gt;
+  &lt;div class=&quot;c-alert-banner-wrapper&quot;&gt;
+    &lt;div class=&quot;c-alert-banner__icon&quot;&gt;
+      &lt;svg class=&quot;c-alert-banner__svg icon icon-info&quot;&gt;
+        &lt;use xlink:href=&quot;#icon-info&quot;&gt;&lt;/use&gt;
+      &lt;/svg&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;c-alert-banner__body&quot;&gt;ACCESS NYC will be undergoing maintenance Friday, February 2nd from 9pm to 11pm EST.&lt;/div&gt;
+    &lt;div class=&quot;c-alert-banner__closing&quot;&gt;
+      &lt;button id=&quot;alert-button&quot; type=&quot;button&quot;&gt;
+        &lt;svg class=&quot;icon-ui-x&quot; role=&quot;img&quot;&gt;
+          &lt;title&gt;close&lt;/title&gt;
+          &lt;use xlink:href=&quot;#icon-ui-x&quot;&gt;&lt;/use&gt;
+        &lt;/svg&gt;
+      &lt;/button&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</pre></div>
                 </div>
               </div>
             </div>

@@ -4,7 +4,6 @@
 
 // Dependencies
 @import 'config/language';
-// @import 'config/alert-box';
 @import 'config/colors';
 @import 'config/dimensions';
 @import 'config/direction';
@@ -16,22 +15,41 @@
   margin: 0 auto;
   display: flex;
 }
+
 .c-alert-banner {
-  @extend .c-alert-box;
+  background: $color-grey-lightest;
+  padding: $spacing-base;
   left: 0;
   bottom: 0;
+
+  @media screen and (min-width: $screen-mobile) {
+    align-items: stretch;
+    display: flex;
+  }
 }
 
 .c-alert-banner__icon {
-  @extend .c-alert-box__icon;
+  margin-bottom: $grid-base;
+
+  @media screen and (min-width: $screen-mobile) {
+    padding-#{$text-direction-end}: ($grid-base * 2);
+    margin-bottom: 0;
+  }
 }
 
-.c-alert-banner__svg {
-  @extend .c-alert-box__svg;
+.c-alert-banner__svg,
+[class*='icon-'].c-alert-banner__svg,
+[class*='bg-icon-'].c-alert-banner__svg {
+  display: block;
+  max-width: inherit;
 }
 
 .c-alert-banner__body {
-  @extend .c-alert-box__body;
+  flex: 1 1 auto;
+
+  p:last-child {
+    margin-bottom: 0
+  }
 }
 
 .c-alert-banner__closing button {
