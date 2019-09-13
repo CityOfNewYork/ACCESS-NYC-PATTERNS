@@ -10,10 +10,7 @@ import Cookie from '../../utilities/cookie/cookie';
  * Displays an alert banner.
  * @param {string} openClass - The class to toggle on if banner is visible
  */
-export default function(openClass) {
-  if (!openClass) {
-    openClass = 'is-open';
-  }
+export default function() {
 
   let cookieBuilder = new Cookie();
 
@@ -23,9 +20,8 @@ export default function(openClass) {
   * @param {object} siblingElem - DOM node of alert's closest sibling,
   * which gets some extra padding to make room for the alert
   */
-  function displayAlert(alert, siblingElem) {
+  function displayAlert(alert) {
     alert.classList.remove('hidden');
-    alert.classList.add(openClass);
   }
 
   /**
@@ -64,9 +60,9 @@ export default function(openClass) {
   if (alerts.length) {
     for (let i=0; i <= alert.length; i++) {
       if (checkAlertCookie(alerts[i])) {
-        const alertSibling = alerts[i].previousElementSibling;
         const alertButton = document.getElementById('alert-button');
-        displayAlert(alerts[i], alertSibling);
+        displayAlert(alerts[i]);
+
         alertButton.addEventListener('click', e => {
             alerts[i].classList.add('hidden');
             addAlertCookie(alerts[i]);

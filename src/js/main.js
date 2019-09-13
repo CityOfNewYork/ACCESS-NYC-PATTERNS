@@ -11,6 +11,7 @@ import InputsAutocomplete from '../elements/inputs/inputs-autocomplete';
 import Accordion from '../components/accordion/accordion';
 import Filter from '../components/filter/filter';
 import NearbyStops from '../components/nearby-stops/nearby-stops';
+import AlertBanner from '../components/alert-banner/alert-banner';
 
 // Objects
 import Newsletter from '../objects/newsletter/newsletter';
@@ -81,6 +82,14 @@ class main {
   inputsAutocomplete(settings = {}) {
     return new InputsAutocomplete(settings);
   }
+
+  /**
+   * An API for the AlertBanner Object
+   * @return {object}         Instance of AlertBanner
+   */
+   alertBanner() {
+     return new AlertBanner();
+   }
 }
 
 export default main;

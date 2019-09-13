@@ -8,8 +8,7 @@
 
 / Content blocks
 = content('head');
-  = mixin('head', 'Navigation Demo');
+  = mixin('head', 'Alert Banner Demo');
 
 = content('content');
-  div class='overlay active:overlay'
-    = partial('../../objects/mobile-nav/mobile-nav.slm')
+    = partial('../../components/alert-banner/alert-banner')
