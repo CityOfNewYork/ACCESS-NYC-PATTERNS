@@ -11,6 +11,7 @@
   = mixin('head', 'Alert Banner Demo');
 
 = content('content');
+  = partial('../../components/alert-banner/alert-banner-reset');
   = partial('../../components/alert-banner/alert-banner');
 
 = content('script');

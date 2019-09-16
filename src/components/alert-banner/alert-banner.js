@@ -8,7 +8,6 @@ import Cookie from '../../utilities/cookie/cookie';
 
 /**
  * Displays an alert banner.
- * @param {string} openClass - The class to toggle on if banner is visible
  */
 export default function() {
 
@@ -62,7 +61,6 @@ export default function() {
       if (!checkAlertCookie(alerts[i])) {
         const alertButton = document.getElementById('alert-button');
         displayAlert(alerts[i]);
-
         alertButton.addEventListener('click', e => {
             alerts[i].classList.add('hidden');
             addAlertCookie(alerts[i]);

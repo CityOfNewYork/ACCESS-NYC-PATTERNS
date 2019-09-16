@@ -1,4 +1,8 @@
-The Alert Banner is a component that sticks to the bottom of the page as you
-scroll to the site. It's purpose is to notify the user of an event that is of
-importance. When you click on the closing icon, an event is trigger to create
-a cookie thus not displaying the alert banner again. 
+The Alert Banner is a block of content that is used to display information of
+importance on the site. The Alert Banner will be open while navigating the site
+until close. This alert component consist of an icon, a block to display the
+content of the alert and a button that uses the closing icon.
+
+Once the closing button is triggered a cookie is created to not display the
+banner again. The web cookie is created using the Cookie JavaScript Utility.
+[Click here to see a full page demonstration](demos/alert-banner).
