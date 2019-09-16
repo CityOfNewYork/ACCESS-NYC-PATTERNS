@@ -2,7 +2,7 @@
 / Alert Banner
 /
 
-div class="c-alert-banner bg-status-info fixed bottom-0 w-screen left-0 px-8 js-alert c-alert hidden" data-cookie="site-alert-slug" role="dialog" aria-labelledby="dialog-title-site-alert-slug" aria-describedby="dialog-desc-site-alert-slug"
+div class="c-alert-banner bg-status-info fixed bottom-0 w-screen px-8 js-alert" data-cookie="site-alert-slug" role="dialog" aria-labelledby="dialog-title-site-alert-slug" aria-describedby="dialog-desc-site-alert-slug"
   div class="c-alert-banner-wrapper"
     div class="c-alert-banner__icon"
       svg class="c-alert-banner__svg icon icon-info"

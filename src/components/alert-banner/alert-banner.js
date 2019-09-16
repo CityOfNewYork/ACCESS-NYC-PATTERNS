@@ -59,7 +59,7 @@ export default function() {
 
   if (alerts.length) {
     for (let i=0; i <= alert.length; i++) {
-      if (checkAlertCookie(alerts[i])) {
+      if (!checkAlertCookie(alerts[i])) {
         const alertButton = document.getElementById('alert-button');
         displayAlert(alerts[i]);
 

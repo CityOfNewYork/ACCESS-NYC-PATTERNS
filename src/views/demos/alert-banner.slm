@@ -11,4 +11,12 @@
   = mixin('head', 'Alert Banner Demo');
 
 = content('content');
-    = partial('../../components/alert-banner/alert-banner')
+  = partial('../../components/alert-banner/alert-banner');
+
+= content('script');
+    script src='../scripts/access-nyc.js'
+
+    javascript:
+      var access = new AccessNyc();
+      access.icons('../icons.svg');
+      access.alertBanner();
