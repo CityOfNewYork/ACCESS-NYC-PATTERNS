@@ -28,3 +28,5 @@ The ES6, CommonJS, and IFFE modules all require importing and object instantiati
     <script src="dist/utilities/cookie/cookie.iffe.js"></script>
 
     new Cookie();
+
+####  Storing cookie in data- attribute

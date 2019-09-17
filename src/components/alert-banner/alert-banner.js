@@ -10,7 +10,6 @@ import Cookie from '../../utilities/cookie/cookie';
  * Displays an alert banner.
  */
 export default function() {
-
   let cookieBuilder = new Cookie();
 
   /**
@@ -30,9 +29,8 @@ export default function() {
   */
   function checkAlertCookie(alert) {
     const cookieName = cookieBuilder.dataset(alert, 'cookie');
-    if (!cookieName) {
+    if (!cookieName)
       return false;
-    }
 
     return typeof
       cookieBuilder.readCookie(cookieName, document.cookie) !== 'undefined';
@@ -44,30 +42,27 @@ export default function() {
   */
   function addAlertCookie(alert) {
     const cookieName = cookieBuilder.dataset(alert, 'cookie');
-    if (cookieName) {
+    if (cookieName)
       cookieBuilder.createCookie(
           cookieName,
           'dismissed',
           cookieBuilder.getDomain(window.location, false),
           360
       );
-    }
   }
 
   const alerts = document.querySelectorAll('.js-alert');
 
-  if (alerts.length) {
+  if (alerts.length)
     for (let i=0; i <= alert.length; i++) {
       if (!checkAlertCookie(alerts[i])) {
         const alertButton = document.getElementById('alert-button');
         displayAlert(alerts[i]);
-        alertButton.addEventListener('click', e => {
+        alertButton.addEventListener('click', (e) => {
             alerts[i].classList.add('hidden');
             addAlertCookie(alerts[i]);
           });
-      } else {
+      } else
         alerts[i].classList.add('hidden');
-      }
     }
-  }
 }

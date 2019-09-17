@@ -21,5 +21,4 @@
 
 = content('content');
   = mixin('content-header', title);
-  = mixin('section-text', '', 'utilities/cookie/cookie.readme');
   = mixin('section', false, 'utilities/cookie/cookie');

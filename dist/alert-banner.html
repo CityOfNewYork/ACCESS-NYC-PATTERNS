@@ -98,6 +98,7 @@
             <nav class="screen-tablet:flex-1 mb-1 px-2 screen-desktop:pl-4"><span class="type-h3 text-font-size-small mb-1 block screen-tablet:border-b screen-tablet:pb-2 screen-tablet:mb-1 border-color-white p-1">Components</span>
               <a class="block p-1" href="accordion">Accordion</a>
               <a class="block p-1" href="alert-box">Alert Box</a>
+              <a class="block p-1" href="alert-banner">Alert Banner</a>
               <a class="block p-1" href="card">Card</a>
               <a class="block p-1" href="checklist">Checklist</a>
               <a class="block p-1" href="disclaimer">Disclaimer</a>
@@ -126,6 +127,7 @@
               <a class="type-h3 text-font-size-small mb-1 block screen-tablet:border-b screen-tablet:pb-2 screen-tablet:mb-1 border-color-white p-1" href="utility">Utilities</a>
               <a class="block p-1" href="accessibility">Accessibility</a>
               <a class="block p-1" href="colors">Colors</a>
+              <a class="block p-1" href="cookie">Cookie</a>
               <a class="block p-1" href="font">Fonts</a>
               <a class="block p-1" href="icons">Icons</a>
               <a class="block p-1" href="inherit">Inherit</a>
@@ -158,16 +160,15 @@
                 </div>
               </header>
               <div class="layout--home-body">
-                <div class="my-0 pt-4 px-2 text-font-size-small table-align-start"><p>TEST for the alert banner md.</p>
+                <div class="my-0 pt-4 px-2 text-font-size-small table-align-start"><p>The Alert Banner is a block of content that is used to display information of importance on the site. The Alert Banner will be open while navigating the site until close. This alert component consist of an icon, a block to display the content of the alert
+  and a button that uses the closing icon.</p>
 
-<p>&lt;!-- Global Script --&gt; &lt;script src=&quot;dist/scripts/access-nyc.js&quot;&gt;&lt;/script&gt;</p>
-
-<p>&lt;script&gt; var access = new AccessNyc(); access.alertBanner(); &lt;/script&gt;
-</p></div>
+<p>Once the closing button is triggered a cookie is created to not display the banner again. The web cookie is created using the Cookie JavaScript Utility.
+  <a href="demos/alert-banner">Click here to see a full page demonstration</a>.</p></div>
               </div>
               <div class="layout--gutter screen-tablet:layout--gutter justify-between pt-4">
                 <div>
-                  <div aria-describedby="dialog-desc-site-alert-slug" aria-labelledby="dialog-title-site-alert-slug" class="c-alert-banner bg-status-info fixed bottom-0 w-screen left-0 px-8 js-alert c-alert hidden" data-cookie="site-alert-slug" role="dialog">
+                  <div aria-describedby="dialog-desc-site-alert-slug" aria-labelledby="dialog-title-site-alert-slug" class="c-alert-banner bg-status-info fixed bottom-0 w-screen px-8 js-alert hidden" data-cookie="site-alert-slug" role="dialog">
                     <div class="c-alert-banner-wrapper">
                       <div class="c-alert-banner__icon">
                         <svg class="c-alert-banner__svg icon icon-info">
@@ -187,7 +188,7 @@
                   </div>
                 </div>
                 <div>
-                  <div class="code-block mb-1"><pre>&lt;div aria-describedby=&quot;dialog-desc-site-alert-slug&quot; aria-labelledby=&quot;dialog-title-site-alert-slug&quot; class=&quot;c-alert-banner bg-status-info fixed bottom-0 w-screen left-0 px-8 js-alert c-alert hidden&quot; data-cookie=&quot;site-alert-slug&quot; role=&quot;dialog&quot;&gt;
+                  <div class="code-block mb-1"><pre>&lt;div aria-describedby=&quot;dialog-desc-site-alert-slug&quot; aria-labelledby=&quot;dialog-title-site-alert-slug&quot; class=&quot;c-alert-banner bg-status-info fixed bottom-0 w-screen px-8 js-alert hidden&quot; data-cookie=&quot;site-alert-slug&quot; role=&quot;dialog&quot;&gt;
   &lt;div class=&quot;c-alert-banner-wrapper&quot;&gt;
     &lt;div class=&quot;c-alert-banner__icon&quot;&gt;
       &lt;svg class=&quot;c-alert-banner__svg icon icon-info&quot;&gt;

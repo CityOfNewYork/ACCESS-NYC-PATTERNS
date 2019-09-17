@@ -24,7 +24,8 @@ class Cookie {
     const expires = days ? '; expires=' + (
       new Date(days * 864E5 + (new Date()).getTime())
     ).toGMTString() : '';
-    document.cookie = name + '=' + value + expires + '; path=/; domain=' + domain;
+    document.cookie =
+              name + '=' + value + expires +'; path=/; domain=' + domain;
   }
 
   /**
@@ -34,9 +35,9 @@ class Cookie {
   * @return {mixed} - Value of element's data attribute
   */
   dataset(elem, attr) {
-    if (typeof elem.dataset === 'undefined') {
+    if (typeof elem.dataset === 'undefined')
       return elem.getAttribute('data-' + attr);
-    }
+
     return elem.dataset[attr];
   }
 
@@ -70,9 +71,9 @@ class Cookie {
       return target;
     }
 
-    if (typeof url === 'string') {
+    if (typeof url === 'string')
       url = parseUrl(url);
-    }
+
     let domain = url.hostname;
     if (root) {
       const slice = domain.match(/\.uk$/) ? -3 : -2;
