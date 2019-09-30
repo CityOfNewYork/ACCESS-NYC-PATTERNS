@@ -42,27 +42,30 @@ export default function() {
   */
   function addAlertCookie(alert) {
     const cookieName = cookieBuilder.dataset(alert, 'cookie');
-    if (cookieName)
+    if (cookieName) {
       cookieBuilder.createCookie(
           cookieName,
           'dismissed',
           cookieBuilder.getDomain(window.location, false),
           360
       );
+    }
   }
 
   const alerts = document.querySelectorAll('.js-alert');
 
-  if (alerts.length)
+  /* eslint curly: ["error", "multi-or-nest"]*/
+  if (alerts.length) {
     for (let i=0; i <= alert.length; i++) {
       if (!checkAlertCookie(alerts[i])) {
         const alertButton = document.getElementById('alert-button');
         displayAlert(alerts[i]);
         alertButton.addEventListener('click', (e) => {
-            alerts[i].classList.add('hidden');
-            addAlertCookie(alerts[i]);
-          });
+          alerts[i].classList.add('hidden');
+          addAlertCookie(alerts[i]);
+        });
       } else
-        alerts[i].classList.add('hidden');
+      alerts[i].classList.add('hidden');
     }
+  }
 }

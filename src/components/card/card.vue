@@ -1,4 +1,5 @@
 <template>
+  <!-- eslint-disable max-len -->
   <article class="c-card">
     <div class="c-card__icon" v-if="category">
       <svg :class="'icon icon-' + category.slug" role="img">
