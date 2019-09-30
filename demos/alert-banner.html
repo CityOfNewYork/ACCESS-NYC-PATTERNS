@@ -22,7 +22,7 @@
     <meta content="../images/ms-icon-144x144.png" name="msapplication-TileImage" />
     <link href="../images/favicon.ico" rel="icon" type="image/x-icon" />
     <link href="../styles/site-default.css" rel="stylesheet" />
-    <title>Navigation Demo</title>
+    <title>Alert Banner Demo</title>
     <noscript>
       <style>
         body {
@@ -39,24 +39,25 @@
 
   <body onload="load()" style="visibility: hidden;">
     <main class="min-h-screen bg-color-white" id="demo-content">
-      <div class="overlay active:overlay">
-        <div class="o-mobile-nav color-mid-background active:o-mobile-nav" id="o-mobile-nav">
-          <a class="o-mobile-nav__close js-hide-nav" href="#o-mobile-nav">close &amp; return to site
-            <svg aria-hidden="true" class="icon icon-close">
-              <use xlink:href="#icon-close"></use>
+      <div class="p-1 mb-1 bg-color-grey-lightest">
+        <input class="btn-primary mt-40" onclick="document.cookie = &quot;site-alert-slug=; Path=/; expires=Thu, 01 Jan 1970 00:00:01 GMT;&quot;;" type="button" value="delete cookie" />
+        <p class="font-serif m-0 p-4">Refresh browser after deleting the cookie.</p>
+      </div>
+      <div aria-describedby="dialog-desc-site-alert-slug" aria-labelledby="dialog-title-site-alert-slug" class="c-alert-banner bg-status-info fixed bottom-0 w-screen px-8 js-alert hidden" data-cookie="site-alert-slug" role="dialog">
+        <div class="c-alert-banner-wrapper">
+          <div class="c-alert-banner__icon">
+            <svg class="c-alert-banner__svg icon icon-info">
+              <use xlink:href="#icon-info"></use>
             </svg>
-          </a>
-          <div class="o-mobile-nav__inner">
-            <h4 class="o-mobile-nav__header">Get help now</h4>
-            <nav class="nav-block">
-              <a class="active" href="#">Am I eligible?</a>
-              <a href="#">Programs</a>
-              <a href="#">Find help</a>
-              <a class="td-inherit" href="#search">
-                <svg class="icon icon-ui-search">
-                  <use xlink:href="#icon-ui-search"></use>
-                </svg>Search</a>
-            </nav>
+          </div>
+          <div class="c-alert-banner__body">ACCESS NYC will be undergoing maintenance Friday, February 2nd from 9pm to 11pm EST.</div>
+          <div class="c-alert-banner__closing">
+            <button id="alert-button" type="button">
+              <svg class="icon-ui-x" role="img">
+                <title>close</title>
+                <use xlink:href="#icon-ui-x"></use>
+              </svg>
+            </button>
           </div>
         </div>
       </div>
@@ -85,6 +86,12 @@
         </p>
       </footer>
     </footer>
+    <script src="../scripts/access-nyc.js"></script>
+    <script type="text/javascript">
+      var access = new AccessNyc();
+      access.icons('../icons.svg');
+      access.alertBanner();
+    </script>
   </body>
 
 </html>
