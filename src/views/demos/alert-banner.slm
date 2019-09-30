@@ -1,0 +1,23 @@
+/ Layout
+= extend('/layouts/demos');
+
+/ Partials
+= partial('/partials/styles.slm');
+= partial('/partials/links.slm');
+= partial('/partials/head-demos.mixin.slm');
+
+/ Content blocks
+= content('head');
+  = mixin('head', 'Alert Banner Demo');
+
+= content('content');
+  = partial('../../components/alert-banner/alert-banner-reset');
+  = partial('../../components/alert-banner/alert-banner');
+
+= content('script');
+    script src='../scripts/access-nyc.js'
+
+    javascript:
+      var access = new AccessNyc();
+      access.icons('../icons.svg');
+      access.alertBanner();

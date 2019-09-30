@@ -1,0 +1,5 @@
+div class='p-1 mb-1 bg-color-grey-lightest'
+  input class="btn-primary mt-40" type="button" value ="delete cookie" onclick= 'document.cookie = "site-alert-slug=; Path=/; expires=Thu, 01 Jan 1970 00:00:01 GMT;";'
+  p class="font-serif m-0 p-4"
+    | Refresh browser after deleting the cookie.
+

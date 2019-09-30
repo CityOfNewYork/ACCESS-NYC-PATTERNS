@@ -1,4 +1,5 @@
 <template>
+  <!-- eslint-disable max-len -->
   <div class="c-filter-multi">
     <ul class="c-filter-multi__list">
       <li class="c-filter-multi__item" v-for="t in terms" :key="t.term_id">

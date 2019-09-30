@@ -1,4 +1,5 @@
 <template>
+  <!-- eslint-disable max-len -->
   <div class="c-filter">
     <button type="button" class="c-filter__header" :id="ariaLabelledBy" :aria-expanded="ariaActive(this.terms.active)" :aria-controls="ariaControls" :class="classActive" @click="toggle" v-html="this.terms.name">
       {{ this.terms.name }}
