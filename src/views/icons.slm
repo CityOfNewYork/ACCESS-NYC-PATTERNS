@@ -21,12 +21,12 @@
 
 = content('content');
   = mixin('content-header', title);
-  = mixin('section', 'Program Category Icons', 'elements/icons/icons-program-category', 'gutter', this.vars['icons-program-category']);
-  = mixin('section', 'Program Card Icons', 'elements/icons/icons-program-card', 'gutter', this.vars['icons-program-card']);
-  = mixin('section', 'Checklist Category Icons', 'elements/icons/icons-checklist', 'gutter', this.vars['icons-checklist']);
-  = mixin('section', 'Logos', 'elements/icons/icons-logo', 'gutter', this.vars['icons-logo']);
+  = mixin('section', 'Program Category Icons', 'elements/icons/icons-program-category', 'gutter', this.variables['icons-program-category']);
+  = mixin('section', 'Program Card Icons', 'elements/icons/icons-program-card', 'gutter', this.variables['icons-program-card']);
+  = mixin('section', 'Checklist Category Icons', 'elements/icons/icons-checklist', 'gutter', this.variables['icons-checklist']);
+  = mixin('section', 'Logos', 'elements/icons/icons-logo', 'gutter', this.variables['icons-logo']);
 
-  = mixin('section', 'UI Icons', 'elements/icons/icons', 'gutter', this.vars['icons-ui']);
+  = mixin('section', 'UI Icons', 'elements/icons/icons', 'gutter', this.variables['icons-ui']);
 
   = mixin('section-text', 'Icon Usage', 'elements/icons/icons.readme');
-  = mixin('section', 'Subway Icons', 'elements/icons/icons-subway', 'gutter', this.vars['icons-subway']);
+  = mixin('section', 'Subway Icons', 'elements/icons/icons-subway', 'gutter', this.variables['icons-subway']);

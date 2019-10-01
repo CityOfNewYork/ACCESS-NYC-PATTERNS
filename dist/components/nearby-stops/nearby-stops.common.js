@@ -968,6 +968,14 @@ var freeProcess = moduleExports$1 && freeGlobal.process;
 /** Used to access faster Node.js helpers. */
 var nodeUtil = (function() {
   try {
+    // Use `util.types` for Node.js 10+.
+    var types = freeModule$1 && freeModule$1.require && freeModule$1.require('util').types;
+
+    if (types) {
+      return types;
+    }
+
+    // Legacy `process.binding('util')` for Node.js < 10.
     return freeProcess && freeProcess.binding && freeProcess.binding('util');
   } catch (e) {}
 }());
@@ -1676,6 +1684,12 @@ var reNoMatch = /($^)/;
 /** Used to match unescaped characters in compiled string literals. */
 var reUnescapedString = /['\n\r\u2028\u2029\\]/g;
 
+/** Used for built-in method references. */
+var objectProto$b = Object.prototype;
+
+/** Used to check objects for own properties. */
+var hasOwnProperty$9 = objectProto$b.hasOwnProperty;
+
 /**
  * Creates a compiled template function that can interpolate data properties
  * in "interpolate" delimiters, HTML-escape interpolated data properties in
@@ -1811,7 +1825,14 @@ function template(string, options, guard) {
   , 'g');
 
   // Use a sourceURL for easier debugging.
-  var sourceURL = 'sourceURL' in options ? '//# sourceURL=' + options.sourceURL + '\n' : '';
+  // The sourceURL gets injected into the source that's eval-ed, so be careful
+  // with lookup (in case of e.g. prototype pollution), and strip newlines if any.
+  // A newline wouldn't be a valid sourceURL anyway, and it'd enable code injection.
+  var sourceURL = hasOwnProperty$9.call(options, 'sourceURL')
+    ? ('//# sourceURL=' +
+       (options.sourceURL + '').replace(/[\r\n]/g, ' ') +
+       '\n')
+    : '';
 
   string.replace(reDelimiters, function(match, escapeValue, interpolateValue, esTemplateValue, evaluateValue, offset) {
     interpolateValue || (interpolateValue = esTemplateValue);
@@ -1842,7 +1863,9 @@ function template(string, options, guard) {
 
   // If `variable` is not specified wrap a with-statement around the generated
   // code to add the data object to the top of the scope chain.
-  var variable = options.variable;
+  // Like with sourceURL, we take care to not check the option's prototype,
+  // as this configuration is a code injection vector.
+  var variable = hasOwnProperty$9.call(options, 'variable') && options.variable;
   if (!variable) {
     source = 'with (obj) {\n' + source + '\n}\n';
   }

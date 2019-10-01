@@ -17,8 +17,8 @@ header class='color-light-background px-2'
         h2 class='type-h1 m-0 text-color-blue-dark hidden screen-tablet:inline-block' aria-hidden='true'
           | Patterns
         nav class='text-font-size-small'
-          a href='${link_source}/tree/v${this.vars.version}' class='rounded-lg text-color-blue-dark border-2 no-underline px-1 ml-2 hidden screen-tablet:inline-block'
-            = this.vars.version;
-          a href='${link_source}/tree/v${this.vars.version}' class='ml-1 screen-tablet:ml-2 screen-tablet:hidden' aria-hidden='true'
-            = this.vars.version;
+          a href='${link_source}/tree/v${this.variables.version}' class='rounded-lg text-color-blue-dark border-2 no-underline px-1 ml-2 hidden screen-tablet:inline-block'
+            = this.variables.version;
+          a href='${link_source}/tree/v${this.variables.version}' class='ml-1 screen-tablet:ml-2 screen-tablet:hidden' aria-hidden='true'
+            = this.variables.version;
           button#main-menu-control class='btn-link ml-1 screen-tablet:ml-2' aria-controls='main-menu' aria-expanded='false' data-js='toggle' Menu

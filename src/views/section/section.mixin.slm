@@ -27,7 +27,7 @@
             p class='text-font-size-small m-0'
               = 'Source: ';
               code
-                a href='${link_source}/tree/v${this.vars.version}/src/${source}'
+                a href='${link_source}/tree/v${this.variables.version}/src/${source}'
                   = 'src/' + this.path
 
       - if (this.specs != 'false')
