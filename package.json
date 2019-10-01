@@ -18,7 +18,7 @@
   },
   "scripts": {
     "start": "cross-env NODE_ENV=development cross-env PORT=7000 concurrently \"pttrn default -w\" \"pttrn serve -w\" -p \"none\"",
-    "preversion": "cross-env NODE_ENV=production pttrn default",
+    "version": "cross-env NODE_ENV=production pttrn default",
     "prepublishOnly": "cross-env NODE_ENV=production pttrn default",
     "publish": "cross-env NODE_ENV=production pttrn publish"
   },
