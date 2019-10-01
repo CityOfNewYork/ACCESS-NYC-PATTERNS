@@ -18,8 +18,9 @@
   },
   "scripts": {
     "start": "cross-env NODE_ENV=development cross-env PORT=7000 concurrently \"pttrn default -w\" \"pttrn serve -w\" -p \"none\"",
-    "version": "cross-env NODE_ENV=production pttrn default && git add .",
-    "prepublishOnly": "cross-env NODE_ENV=production pttrn default",
+    "default": "cross-env NODE_ENV=production pttrn default",
+    "version": "npm run default && git add .",
+    "prepublishOnly": "git push && git push --tags",
     "publish": "cross-env NODE_ENV=production pttrn publish"
   },
   "babel": {
