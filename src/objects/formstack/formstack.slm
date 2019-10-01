@@ -7,10 +7,10 @@ div class='code-block'
     = "@import url('https://fonts.googleapis.com/css?family=Noto+Serif:400');\n";
     = '\n';
     = '/**\n';
-    = ' * ACCESS NYC Patterns v' + this.vars.version + '\n';
+    = ' * ACCESS NYC Patterns v' + this.variables.version + '\n';
     = ' * Formstack Object\n';
     = ' * Documentation: https://accesspatterns.cityofnewyork.us/formstack\n';
-    = ' * Source: https://github.com/CityOfNewYork/ACCESS-NYC-PATTERNS/blob/v' + this.vars.version + '/dist/objects/formstack/formstack.css\n';
+    = ' * Source: https://github.com/CityOfNewYork/ACCESS-NYC-PATTERNS/blob/v' + this.variables.version + '/dist/objects/formstack/formstack.css\n';
     = ' *\n';
     = ' * Below is compiled css copied and pasted from\n';
     = ' * ACCESS NYC Patterns. See details above. Do not\n';

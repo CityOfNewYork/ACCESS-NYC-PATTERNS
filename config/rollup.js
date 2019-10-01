@@ -6,7 +6,6 @@ import alias from 'rollup-plugin-alias';
 import resolve from 'rollup-plugin-node-resolve';
 import babel from 'rollup-plugin-babel';
 import replace from 'rollup-plugin-replace';
-import eslint from 'rollup-plugin-eslint';
 import vue from 'rollup-plugin-vue';
 import buble from 'rollup-plugin-buble';
 import commonjs from 'rollup-plugin-commonjs';
@@ -81,21 +80,6 @@ rollup.dist = [
   plugins.buble,
   plugins.babel
 ];
-
-/**
- * Only use ESLint in Production scripts
- */
-if (process.env.NODE_ENV === 'production') {
-  plugins['eslint'] = eslint({
-    parserOptions: {
-      ecmaVersion: 6,
-      sourceType: 'module'
-    }}
-  );
-
-  rollup.dist.unshift(plugins.eslint);
-  rollup.local.unshift(plugins.eslint);
-}
 
 /**
  * Our list of modules we are exporting

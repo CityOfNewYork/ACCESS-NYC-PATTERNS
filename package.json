@@ -50,24 +50,26 @@
   },
   "eslintConfig": {
     "extends": [
-      "google",
-      "plugin:vue/base"
+      "eslint:recommended",
+      "google"
     ],
-    "env": {
-      "browser": true,
-      "node": true
-    },
-    "globals": {
-      "FB": false
-    },
     "rules": {
-      "no-console": 1,
-      "one-var": 0,
-      "comma-dangle": 0,
       "curly": [
         "error",
-        "multi"
+        "multi-line"
+      ],
+      "comma-dangle": [
+        "error",
+        "never"
+      ],
+      "arrow-parens": [
+        "error",
+        "as-needed"
       ]
+    },
+    "parserOptions": {
+      "ecmaVersion": 6,
+      "sourceType": "module"
     }
   },
   "stylelint": {

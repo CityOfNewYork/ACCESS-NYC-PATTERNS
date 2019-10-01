@@ -22,6 +22,6 @@
 
 = content('content');
   = mixin('content-header', title);
-  = mixin('section', 'Combinations', 'utilities/color/color-combinations', 'gutter', this.vars['color-combinations']);
-  = mixin('section', 'Statuses', 'utilities/color/color-statuses', 'gutter', this.vars['color-statuses']);
-  = mixin('section', 'Utilities', 'utilities/color/color-utilities', 'gutter', this.vars.colors);
+  = mixin('section', 'Combinations', 'utilities/color/color-combinations', 'gutter', this.variables['color-combinations']);
+  = mixin('section', 'Statuses', 'utilities/color/color-statuses', 'gutter', this.variables['color-statuses']);
+  = mixin('section', 'Utilities', 'utilities/color/color-utilities', 'gutter', this.variables.colors);

@@ -225,7 +225,7 @@ const patterns = [
  * to write files to, it should be added here.
  */
 const dirs = {
-  'base': '../',
+  'base': process.env.PWD,
   'src': 'src',
   'config': 'config',
   'views': 'views'
