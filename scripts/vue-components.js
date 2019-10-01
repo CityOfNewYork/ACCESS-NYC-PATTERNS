@@ -2,7 +2,7 @@ var VueComponents = (function () {
   'use strict';
 
   /*!
-   * Vue.js v2.6.9
+   * Vue.js v2.6.10
    * (c) 2014-2019 Evan You
    * Released under the MIT License.
    */
@@ -2545,8 +2545,8 @@ var VueComponents = (function () {
     prevSlots
   ) {
     var res;
-    var isStable = slots ? !!slots.$stable : true;
     var hasNormalSlots = Object.keys(normalSlots).length > 0;
+    var isStable = slots ? !!slots.$stable : !hasNormalSlots;
     var key = slots && slots.$key;
     if (!slots) {
       res = {};
@@ -3630,7 +3630,9 @@ var VueComponents = (function () {
 
     if (owner && !isDef(factory.owners)) {
       var owners = factory.owners = [owner];
-      var sync = true
+      var sync = true;
+      var timerLoading = null;
+      var timerTimeout = null
 
       ;(owner).$on('hook:destroyed', function () { return remove(owners, owner); });
 
@@ -3641,6 +3643,14 @@ var VueComponents = (function () {
 
         if (renderCompleted) {
           owners.length = 0;
+          if (timerLoading !== null) {
+            clearTimeout(timerLoading);
+            timerLoading = null;
+          }
+          if (timerTimeout !== null) {
+            clearTimeout(timerTimeout);
+            timerTimeout = null;
+          }
         }
       };
 
@@ -3687,7 +3697,8 @@ var VueComponents = (function () {
             if (res.delay === 0) {
               factory.loading = true;
             } else {
-              setTimeout(function () {
+              timerLoading = setTimeout(function () {
+                timerLoading = null;
                 if (isUndef(factory.resolved) && isUndef(factory.error)) {
                   factory.loading = true;
                   forceRender(false);
@@ -3697,7 +3708,8 @@ var VueComponents = (function () {
           }
 
           if (isDef(res.timeout)) {
-            setTimeout(function () {
+            timerTimeout = setTimeout(function () {
+              timerTimeout = null;
               if (isUndef(factory.resolved)) {
                 reject(
                   ("timeout (" + (res.timeout) + "ms)")
@@ -4243,16 +4255,21 @@ var VueComponents = (function () {
   // timestamp can either be hi-res (relative to page load) or low-res
   // (relative to UNIX epoch), so in order to compare time we have to use the
   // same timestamp type when saving the flush timestamp.
-  if (
-    inBrowser &&
-    window.performance &&
-    typeof performance.now === 'function' &&
-    document.createEvent('Event').timeStamp <= performance.now()
-  ) {
-    // if the event timestamp is bigger than the hi-res timestamp
-    // (which is evaluated AFTER) it means the event is using a lo-res timestamp,
-    // and we need to use the lo-res version for event listeners as well.
-    getNow = function () { return performance.now(); };
+  // All IE versions use low-res event timestamps, and have problematic clock
+  // implementations (#9632)
+  if (inBrowser && !isIE) {
+    var performance = window.performance;
+    if (
+      performance &&
+      typeof performance.now === 'function' &&
+      getNow() > document.createEvent('Event').timeStamp
+    ) {
+      // if the event timestamp, although evaluated AFTER the Date.now(), is
+      // smaller than it, it means the event is using a hi-res timestamp,
+      // and we need to use the hi-res version for event listener timestamps as
+      // well.
+      getNow = function () { return performance.now(); };
+    }
   }
 
   /**
@@ -5417,7 +5434,7 @@ var VueComponents = (function () {
     value: FunctionalRenderContext
   });
 
-  Vue.version = '2.6.9';
+  Vue.version = '2.6.10';
 
   /*  */
 
@@ -7579,10 +7596,11 @@ var VueComponents = (function () {
     }
 
     for (key in oldProps) {
-      if (isUndef(props[key])) {
+      if (!(key in props)) {
         elm[key] = '';
       }
     }
+
     for (key in props) {
       cur = props[key];
       // ignore children if the node has textContent or innerHTML,
@@ -10699,7 +10717,7 @@ var VueComponents = (function () {
 
   /*  */
 
-  var fnExpRE = /^([\w$_]+|\([^)]*?\))\s*=>|^function\s*\(/;
+  var fnExpRE = /^([\w$_]+|\([^)]*?\))\s*=>|^function\s*(?:[\w$]+)?\s*\(/;
   var fnInvokeRE = /\([^)]*?\);*$/;
   var simplePathRE = /^[A-Za-z_$][\w$]*(?:\.[A-Za-z_$][\w$]*|\['[^']*?']|\["[^"]*?"]|\[\d+]|\[[A-Za-z_$][\w$]*])*$/;
 
@@ -12013,9 +12031,94 @@ var VueComponents = (function () {
     }
   };
 
+  function normalizeComponent(template, style, script, scopeId, isFunctionalTemplate, moduleIdentifier
+  /* server only */
+  , shadowMode, createInjector, createInjectorSSR, createInjectorShadow) {
+    if (typeof shadowMode !== 'boolean') {
+      createInjectorSSR = createInjector;
+      createInjector = shadowMode;
+      shadowMode = false;
+    } // Vue.extend constructor export interop.
+
+
+    var options = typeof script === 'function' ? script.options : script; // render functions
+
+    if (template && template.render) {
+      options.render = template.render;
+      options.staticRenderFns = template.staticRenderFns;
+      options._compiled = true; // functional template
+
+      if (isFunctionalTemplate) {
+        options.functional = true;
+      }
+    } // scopedId
+
+
+    if (scopeId) {
+      options._scopeId = scopeId;
+    }
+
+    var hook;
+
+    if (moduleIdentifier) {
+      // server build
+      hook = function hook(context) {
+        // 2.3 injection
+        context = context || // cached call
+        this.$vnode && this.$vnode.ssrContext || // stateful
+        this.parent && this.parent.$vnode && this.parent.$vnode.ssrContext; // functional
+        // 2.2 with runInNewContext: true
+
+        if (!context && typeof __VUE_SSR_CONTEXT__ !== 'undefined') {
+          context = __VUE_SSR_CONTEXT__;
+        } // inject component styles
+
+
+        if (style) {
+          style.call(this, createInjectorSSR(context));
+        } // register component module identifier for async chunk inference
+
+
+        if (context && context._registeredComponents) {
+          context._registeredComponents.add(moduleIdentifier);
+        }
+      }; // used by ssr in case component is cached and beforeCreate
+      // never gets called
+
+
+      options._ssrRegister = hook;
+    } else if (style) {
+      hook = shadowMode ? function () {
+        style.call(this, createInjectorShadow(this.$root.$options.shadowRoot));
+      } : function (context) {
+        style.call(this, createInjector(context));
+      };
+    }
+
+    if (hook) {
+      if (options.functional) {
+        // register for functional component in vue file
+        var originalRender = options.render;
+
+        options.render = function renderWithStyleInjection(h, context) {
+          hook.call(context);
+          return originalRender(h, context);
+        };
+      } else {
+        // inject component registration as beforeCreate hook
+        var existing = options.beforeCreate;
+        options.beforeCreate = existing ? [].concat(existing, hook) : [hook];
+      }
+    }
+
+    return script;
+  }
+
+  var normalizeComponent_1 = normalizeComponent;
+
   /* script */
-              var __vue_script__ = script;
-              
+  var __vue_script__ = script;
+
   /* template */
   var __vue_render__ = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('article',{staticClass:"c-card"},[(_vm.category)?_c('div',{staticClass:"c-card__icon"},[_c('svg',{class:'icon icon-' + _vm.category.slug,attrs:{"role":"img"}},[_c('title',{attrs:{"id":'#icon-card-' + _vm.category.slug + '_title'},domProps:{"innerHTML":_vm._s(_vm.category.name)}}),_vm._v(" "),_c('use',{attrs:{"xlink:href":'#icon-card-' + _vm.category.slug,"xmlns:xlink":"http://www.w3.org/1999/xlink"}})])]):_vm._e(),_vm._v(" "),_c('div',{staticClass:"c-card__body"},[(_vm.title)?_c('a',{staticClass:"text-color-blue-dark",attrs:{"href":_vm.link,"target":_vm.blank ? '_blank' : false}},[_c('h3',{staticClass:"c-card__title text-color-blue-dark"},[_vm._v(_vm._s(_vm.title))])]):_vm._e(),_vm._v(" "),(_vm.subtitle)?_c('p',{staticClass:"c-card__subtitle type-small",domProps:{"innerHTML":_vm._s(_vm.subtitle)}},[_vm._v("\n      "+_vm._s(_vm.subtitle)+"\n    ")]):_vm._e(),_vm._v(" "),_c('div',{staticClass:"c-card__summary"},[(_vm.summary)?_c('p',{domProps:{"innerHTML":_vm._s(_vm.summary)}},[_vm._v(_vm._s(_vm.summary))]):_vm._e(),_vm._v(" "),(_vm.link)?_c('p',{staticClass:"hide-for-print"},[_c('a',{attrs:{"href":_vm.link,"target":_vm.blank ? '_blank' : false}},[_vm._v("\n          "+_vm._s(_vm.strings.LEARN_MORE)+"\n          "),(_vm.subtitle)?_c('span',{staticClass:"sr-only"},[_vm._v(": "+_vm._s(_vm.subtitle)+"}")]):_vm._e()])]):_vm._e(),_vm._v(" "),(_vm.cta)?_c('p',{staticClass:"hide-for-print"},[_c('a',{staticClass:"btn btn-secondary btn-next",attrs:{"href":_vm.cta,"target":_vm.blank ? '_blank' : false}},[_vm._v(_vm._s(_vm.strings.CTA))])]):_vm._e()])])])};
   var __vue_staticRenderFns__ = [];
@@ -12028,36 +12131,13 @@ var VueComponents = (function () {
     var __vue_module_identifier__ = undefined;
     /* functional template */
     var __vue_is_functional_template__ = false;
-    /* component normalizer */
-    function __vue_normalize__(
-      template, style, script,
-      scope, functional, moduleIdentifier,
-      createInjector, createInjectorSSR
-    ) {
-      var component = (typeof script === 'function' ? script.options : script) || {};
-
-      // For security concerns, we use only base name in production mode.
-      component.__file = "card.vue";
-
-      if (!component.render) {
-        component.render = template.render;
-        component.staticRenderFns = template.staticRenderFns;
-        component._compiled = true;
-
-        if (functional) { component.functional = true; }
-      }
-
-      component._scopeId = scope;
-
-      return component
-    }
     /* style inject */
     
     /* style inject SSR */
     
 
     
-    var CardVue = __vue_normalize__(
+    var CardVue = normalizeComponent_1(
       { render: __vue_render__, staticRenderFns: __vue_staticRenderFns__ },
       __vue_inject_styles__,
       __vue_script__,
@@ -12211,8 +12291,8 @@ var VueComponents = (function () {
   };
 
   /* script */
-              var __vue_script__$1 = script$1;
-              
+  var __vue_script__$1 = script$1;
+
   /* template */
   var __vue_render__$1 = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{staticClass:"c-filter"},[_c('button',{staticClass:"c-filter__header",class:_vm.classActive,attrs:{"type":"button","id":_vm.ariaLabelledBy,"aria-expanded":_vm.ariaActive(this.terms.active),"aria-controls":_vm.ariaControls},domProps:{"innerHTML":_vm._s(this.terms.name)},on:{"click":_vm.toggle}},[_vm._v("\n    "+_vm._s(this.terms.name)+"\n  ")]),_vm._v(" "),(_vm.nav)?_c('nav',{staticClass:"c-filter__list",class:_vm.classActive,attrs:{"role":"region","aria-labelledby":_vm.ariaLabelledBy,"id":_vm.ariaControls,"aria-hidden":_vm.ariaActive(!this.terms.active)}},[_c('a',{staticClass:"c-filter__item",domProps:{"innerHTML":_vm._s([_vm.strings.ALL, _vm.terms.name].join(' '))},on:{"click":_vm.reset}},[_vm._v("\n      "+_vm._s([_vm.strings.ALL, _vm.terms.name].join(' '))+"\n    ")]),_vm._v(" "),_vm._l((_vm.terms.filters),function(t){return _c('a',{key:t.id,staticClass:"c-filter__item",attrs:{"href":t.href},domProps:{"innerHTML":_vm._s(t.name)},on:{"click":function($event){return _vm.fetch({'event': $event, 'data': t})}}},[_vm._v("\n      "+_vm._s(t.name)+"\n    ")])})],2):_c('ul',{staticClass:"c-filter__list",class:_vm.classActive,attrs:{"role":"region","aria-labelledby":_vm.ariaLabelledBy,"id":_vm.ariaControls,"aria-hidden":_vm.ariaActive(!this.terms.active)}},[_c('li',[_c('button',{staticClass:"c-filter__item",attrs:{"type":"button","aria-pressed":_vm.ariaPressed(_vm.terms.name)},domProps:{"innerHTML":_vm._s([_vm.strings.ALL, _vm.terms.name].join(' '))},on:{"click":_vm.reset}},[_vm._v("\n        "+_vm._s([_vm.strings.ALL, _vm.terms.name].join(' '))+"\n      ")])]),_vm._v(" "),_vm._l((_vm.terms.filters),function(t){return _c('li',{key:t.id},[_c('button',{staticClass:"c-filter__item",attrs:{"type":"button","aria-pressed":_vm.ariaPressed(t.name),"href":'#' + t.slug},domProps:{"innerHTML":_vm._s(t.name)},on:{"click":function($event){return _vm.fetch({'event': $event, 'data': t})}}},[_vm._v("\n        "+_vm._s(t.name)+"\n      ")])])})],2)])};
   var __vue_staticRenderFns__$1 = [];
@@ -12225,36 +12305,13 @@ var VueComponents = (function () {
     var __vue_module_identifier__$1 = undefined;
     /* functional template */
     var __vue_is_functional_template__$1 = false;
-    /* component normalizer */
-    function __vue_normalize__$1(
-      template, style, script,
-      scope, functional, moduleIdentifier,
-      createInjector, createInjectorSSR
-    ) {
-      var component = (typeof script === 'function' ? script.options : script) || {};
-
-      // For security concerns, we use only base name in production mode.
-      component.__file = "filter.vue";
-
-      if (!component.render) {
-        component.render = template.render;
-        component.staticRenderFns = template.staticRenderFns;
-        component._compiled = true;
-
-        if (functional) { component.functional = true; }
-      }
-
-      component._scopeId = scope;
-
-      return component
-    }
     /* style inject */
     
     /* style inject SSR */
     
 
     
-    var FilterVue = __vue_normalize__$1(
+    var FilterVue = normalizeComponent_1(
       { render: __vue_render__$1, staticRenderFns: __vue_staticRenderFns__$1 },
       __vue_inject_styles__$1,
       __vue_script__$1,
@@ -12363,8 +12420,8 @@ var VueComponents = (function () {
   };
 
   /* script */
-              var __vue_script__$2 = script$2;
-              
+  var __vue_script__$2 = script$2;
+
   /* template */
   var __vue_render__$2 = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{staticClass:"c-filter-multi"},[_c('ul',{staticClass:"c-filter-multi__list"},_vm._l((_vm.terms),function(t){return _c('li',{key:t.term_id,staticClass:"c-filter-multi__item"},[(t.checkbox)?_c('div',{staticClass:"c-filter-multi__item-header"},[(t.checkbox)?_c('label',{staticClass:"checkbox"},[_c('input',{attrs:{"data-toggles":"#","type":"checkbox"},domProps:{"checked":t.checked},on:{"change":function($event){return _vm.fetch({'event': $event, 'data': {'parent': t.slug}})}}}),_vm._v(" "),_c('span',{staticClass:"checkbox__label"},[_vm._v(_vm._s(t.name))])]):_vm._e(),_vm._v(" "),_c('button',{staticClass:"c-filter-multi__item-header-toggle",class:_vm.classActive(t),attrs:{"type":"button","aria-controls":_vm.ariaControls(t.slug),"aria-expanded":_vm.ariaActive(t.active)},on:{"click":function($event){return _vm.toggle($event, t)}}},[_c('span',{staticClass:"sr-only",attrs:{"id":_vm.ariaLabelledBy(t.slug)},domProps:{"innerHTML":_vm._s(t.name)}},[_vm._v(_vm._s(t.name))])])]):_c('button',{staticClass:"c-filter-multi__item-header btn-link",class:_vm.classActive(t),attrs:{"type":"button","aria-controls":_vm.ariaControls(t.slug),"aria-expanded":_vm.ariaActive(t.active)},on:{"click":function($event){return _vm.toggle($event, t)}}},[_c('span',{attrs:{"id":_vm.ariaLabelledBy(t.slug)},domProps:{"innerHTML":_vm._s(t.name)}},[_vm._v(_vm._s(t.name))]),_vm._v(" "),_c('span',{staticClass:"c-filter-multi__item-header-toggle"})]),_vm._v(" "),_c('div',{staticClass:"c-filter-multi__item-group",class:_vm.classActive(t),attrs:{"role":"region","aria-labelledby":_vm.ariaLabelledBy(t.slug),"aria-hidden":_vm.ariaActive(!t.active),"id":_vm.ariaControls(t.slug)}},[_c('ul',{staticClass:"c-filter-multi__item-group-list"},[(t.toggle)?_c('li',{staticClass:"c-filter-multi__item-group-subitem"},[_c('button',{staticClass:"btn-link",attrs:{"type":"button"},domProps:{"innerHTML":_vm._s(_vm.strings.TOGGLE_ALL)},on:{"click":function($event){return _vm.reset({'event': $event, 'data': {'parent': t.slug}})}}},[_vm._v("Toggle All")])]):_vm._e(),_vm._v(" "),_vm._l((t.filters),function(f){return _c('li',{key:f.slug,staticClass:"c-filter-multi__item-group-subitem"},[_c('label',{staticClass:"checkbox"},[_c('input',{attrs:{"type":"checkbox"},domProps:{"value":f.slug,"checked":f.checked},on:{"change":function($event){return _vm.fetch({'event': $event, 'data': f})}}}),_vm._v(" "),_c('span',{staticClass:"checkbox__label text-font-size-small font-normal",domProps:{"innerHTML":_vm._s(f.name)}},[_vm._v(_vm._s(f.name))])])])})],2)])])}),0)])};
   var __vue_staticRenderFns__$2 = [];
@@ -12377,36 +12434,13 @@ var VueComponents = (function () {
     var __vue_module_identifier__$2 = undefined;
     /* functional template */
     var __vue_is_functional_template__$2 = false;
-    /* component normalizer */
-    function __vue_normalize__$2(
-      template, style, script,
-      scope, functional, moduleIdentifier,
-      createInjector, createInjectorSSR
-    ) {
-      var component = (typeof script === 'function' ? script.options : script) || {};
-
-      // For security concerns, we use only base name in production mode.
-      component.__file = "filter-multi.vue";
-
-      if (!component.render) {
-        component.render = template.render;
-        component.staticRenderFns = template.staticRenderFns;
-        component._compiled = true;
-
-        if (functional) { component.functional = true; }
-      }
-
-      component._scopeId = scope;
-
-      return component
-    }
     /* style inject */
     
     /* style inject SSR */
     
 
     
-    var FilterMultiVue = __vue_normalize__$2(
+    var FilterMultiVue = normalizeComponent_1(
       { render: __vue_render__$2, staticRenderFns: __vue_staticRenderFns__$2 },
       __vue_inject_styles__$2,
       __vue_script__$2,
