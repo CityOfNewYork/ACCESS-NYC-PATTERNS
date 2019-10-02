@@ -1,8 +1,8 @@
 {
-  "name": "access-nyc-patterns",
+  "name": "@nycopportunity/access-patterns",
   "version": "0.8.0",
-  "description": "User Interface Patterns for Benefits Access",
-  "author": "products@nycopportunity.nyc.gov<NYC Opportunity>",
+  "description": "ACCESS NYC Pattern library and design system documentation",
+  "author": "NYC Opportunity<technology@nycopportunity.nyc.gov>",
   "license": "GPL-3.0+",
   "homepage": "https://accesspatterns.cityofnewyork.us",
   "repository": {
@@ -12,7 +12,7 @@
   "bugs": {
     "url": "https://github.com/CityOfNewYork/ACCESS-NYC-PATTERNS/issues"
   },
-  "main": "npm run start",
+  "main": "npm start",
   "config": {
     "dev_module": "./src/scss/site-default.scss"
   },
