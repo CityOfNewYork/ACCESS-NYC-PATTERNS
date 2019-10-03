@@ -48,7 +48,7 @@ $color-transparent: map-get($colors, 'color-transparent');
 
   a:not(.btn), .btn-link, .button-link {
     color: map-get($colors, map-get($combination, 'hyperlinks'));
-    text-decoration-color: map-get($colors, map-get($combination, 'hyperlinks-underline'));
+    // text-decoration-color: map-get($colors, map-get($combination, 'hyperlinks-underline'));
 
     &:visited {
       color: map-get($colors, map-get($combination, 'visited'));
