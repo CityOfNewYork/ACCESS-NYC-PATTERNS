@@ -97,13 +97,7 @@ class main {
    * @return {object} Instance of TextController
    */
   textController() {
-    let elements = document.querySelectorAll(TextController.selector);
-
-    elements.forEach(element => {
-      new TextController(element).init();
-    });
-
-    return elements;
+    return new TextController(document.querySelector(TextController.selector));
   }
 }
 

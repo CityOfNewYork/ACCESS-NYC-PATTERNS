@@ -33,6 +33,8 @@ class TextController {
       selector: TextController.selectors.TOGGLE
     });
 
+    this.init();
+
     return this;
   }
 

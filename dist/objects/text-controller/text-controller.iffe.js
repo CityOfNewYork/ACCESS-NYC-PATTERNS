@@ -388,6 +388,7 @@ var TextController = (function () {
 	  this._toggle = new Toggle({
 	    selector: TextController.selectors.TOGGLE
 	  });
+	  this.init();
 	  return this;
 	};
 	/**
