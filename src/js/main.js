@@ -12,6 +12,7 @@ import Accordion from '../components/accordion/accordion';
 import Filter from '../components/filter/filter';
 import NearbyStops from '../components/nearby-stops/nearby-stops';
 import AlertBanner from '../components/alert-banner/alert-banner';
+import TextController from '../components/text-controller/text-controller';
 
 // Objects
 import Newsletter from '../objects/newsletter/newsletter';
@@ -84,12 +85,26 @@ class main {
   }
 
   /**
-   * An API for the AlertBanner Object
-   * @return {object}         Instance of AlertBanner
+   * An API for the AlertBanner Component
+   * @return {object} Instance of AlertBanner
    */
-   alertBanner() {
-     return new AlertBanner();
-   }
+  alertBanner() {
+    return new AlertBanner();
+  }
+
+  /**
+   * An API for the TextController Component
+   * @return {object} Instance of TextController
+   */
+  textController() {
+    let elements = document.querySelectorAll(TextController.selector);
+
+    elements.forEach(element => {
+      new TextController(element).init();
+    });
+
+    return elements;
+  }
 }
 
 export default main;

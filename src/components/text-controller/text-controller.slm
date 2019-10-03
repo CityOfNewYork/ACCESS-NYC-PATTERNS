@@ -2,9 +2,9 @@
 / Text Controller
 /
 
-div class='c-text-controller' data-sketch-symbol=symbol data-sketch-symbol-instance=instance
+div class='c-text-controller' data-js='text-controller' data-sketch-symbol=symbol data-sketch-symbol-instance=instance
 
-  button type='button' class='c-text-controller__toggle mb-1 btn-link' data-js='toggle' aria-controls='aria-c-text-controller__options' aria-expanded='false'
+  button type='button' class='c-text-controller__toggle mb-1 btn-link' data-js='text-options' aria-controls='aria-c-text-controller__options' aria-expanded='false'
     svg class='icon icon-ui-settings'
       use xlink:href='#icon-ui-settings'
 
@@ -52,11 +52,13 @@ div class='c-text-controller' data-sketch-symbol=symbol data-sketch-symbol-insta
 
     div class='c-text-controller__sizer'
       span class='c-text-controller__sizer-text' Adjust text size
-      button class='c-text-controller__sizer-btn btn-text js-text-larger'
+
+      button class='c-text-controller__sizer-btn btn-text' data-js='text-larger'
         svg class='icon icon-ui-plus-circle'
           use xlink:href='#icon-ui-plus-circle'
         div class='sr-only' Larger
-      button class='c-text-controller__sizer-btn btn-text js-text-smaller'
+
+      button class='c-text-controller__sizer-btn btn-text' data-js='text-smaller'
         svg class='icon icon-ui-minus-circle'
           use xlink:href='#icon-ui-minus-circle'
         div class='sr-only' Smaller

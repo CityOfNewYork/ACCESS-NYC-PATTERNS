@@ -45,6 +45,7 @@
     "animate.scss": "0.0.6",
     "bourbon": "^4.2.7",
     "form-serialize": "^0.7.2",
+    "js-cookie": "^2.2.1",
     "lodash-es": "^4.17.15",
     "vue": "^2.6.9",
     "whatwg-fetch": "^3.0.0"

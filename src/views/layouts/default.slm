@@ -1,5 +1,5 @@
 doctype html
-html lang='en' class='bg-color-white text-size-0'
+html lang='en' class='bg-color-white'
   = content('head');
 
   body class='bg-color-blue-dark' style='visibility: hidden;' onload='load()'

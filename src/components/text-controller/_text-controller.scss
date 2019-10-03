@@ -70,7 +70,7 @@
     display: inline-block;
     padding: 0;
 
-    margin-#{$text-direction-end}: $spacing-base;
+    margin-#{$text-direction-end}: $grid-base * 2;
     margin-bottom: $spacing-base / 2;
 
     &:first-of-type {
@@ -102,7 +102,15 @@
 
   @media screen and (min-width: $screen-desktop) {
     color: $color-grey-mid;
-    display: block;
+    display: flex;
+  }
+
+  .text-align-start & {
+    justify-content: flex-start
+  }
+
+  .text-align-end & {
+    justify-content: flex-end
   }
 }
 
@@ -114,21 +122,22 @@
   color: $color-blue;
   margin-left: 0.15em;
   margin-right: 0.15em;
+  font-size: inherit;
 
   > * {
-    pointer-events: none;
+    pointer-events: none
   }
 
   &:first-of-type {
-    margin-#{$text-direction-start}: 0;
+    margin-#{$text-direction-start}: 0
   }
 
   &:last-of-type {
-    margin-#{$text-direction-end}: 0;
+    margin-#{$text-direction-end}: 0
   }
 
   &:disabled {
-    color: $color-grey-light;
+    color: $color-grey-light
   }
 }
 

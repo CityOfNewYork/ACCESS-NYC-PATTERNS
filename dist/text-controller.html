@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html class="bg-color-white text-size-0" lang="en">
+<html class="bg-color-white" lang="en">
 
   <head>
     <meta charset="utf-8" />
@@ -89,7 +89,7 @@
               </div>
               <div class="layout--gutter screen-tablet:layout--columns justify-between pt-4">
                 <div class="screen-tablet:pr-2">
-                  <div class="c-text-controller"><button aria-controls="aria-c-text-controller__options" aria-expanded="false" class="c-text-controller__toggle mb-1 btn-link" data-js="toggle" type="button"><svg class="icon icon-ui-settings">
+                  <div class="c-text-controller" data-js="text-controller"><button aria-controls="aria-c-text-controller__options" aria-expanded="false" class="c-text-controller__toggle mb-1 btn-link" data-js="text-options" type="button"><svg class="icon icon-ui-settings">
                         <use xlink:href="#icon-ui-settings"></use>
                       </svg><span class="c-text-controller__title-full">Translate &amp; Adjust Text</span><span class="c-text-controller__title-short">Translate Text</span></button>
                     <div aria-hidden="true" class="c-text-controller__options hidden" id="aria-c-text-controller__options">
@@ -110,11 +110,11 @@
                           </ul>
                         </div>
                       </div>
-                      <div class="c-text-controller__sizer"><span class="c-text-controller__sizer-text">Adjust text size</span><button class="c-text-controller__sizer-btn btn-text js-text-larger"><svg class="icon icon-ui-plus-circle">
+                      <div class="c-text-controller__sizer"><span class="c-text-controller__sizer-text">Adjust text size</span><button class="c-text-controller__sizer-btn btn-text" data-js="text-larger"><svg class="icon icon-ui-plus-circle">
                             <use xlink:href="#icon-ui-plus-circle"></use>
                           </svg>
                           <div class="sr-only">Larger</div>
-                        </button><button class="c-text-controller__sizer-btn btn-text js-text-smaller"><svg class="icon icon-ui-minus-circle">
+                        </button><button class="c-text-controller__sizer-btn btn-text" data-js="text-smaller"><svg class="icon icon-ui-minus-circle">
                             <use xlink:href="#icon-ui-minus-circle"></use>
                           </svg>
                           <div class="sr-only">Smaller</div>
@@ -123,7 +123,7 @@
                   </div>
                 </div>
                 <div>
-                  <div class="code-block mb-1"><pre>&lt;div class=&quot;c-text-controller&quot;&gt;&lt;button aria-controls=&quot;aria-c-text-controller__options&quot; aria-expanded=&quot;false&quot; class=&quot;c-text-controller__toggle mb-1 btn-link&quot; data-js=&quot;toggle&quot; type=&quot;button&quot;&gt;&lt;svg class=&quot;icon icon-ui-settings&quot;&gt;
+                  <div class="code-block mb-1"><pre>&lt;div class=&quot;c-text-controller&quot; data-js=&quot;text-controller&quot;&gt;&lt;button aria-controls=&quot;aria-c-text-controller__options&quot; aria-expanded=&quot;false&quot; class=&quot;c-text-controller__toggle mb-1 btn-link&quot; data-js=&quot;text-options&quot; type=&quot;button&quot;&gt;&lt;svg class=&quot;icon icon-ui-settings&quot;&gt;
       &lt;use xlink:href=&quot;#icon-ui-settings&quot;&gt;&lt;/use&gt;
     &lt;/svg&gt;&lt;span class=&quot;c-text-controller__title-full&quot;&gt;Translate &amp;amp; Adjust Text&lt;/span&gt;&lt;span class=&quot;c-text-controller__title-short&quot;&gt;Translate Text&lt;/span&gt;&lt;/button&gt;
   &lt;div aria-hidden=&quot;true&quot; class=&quot;c-text-controller__options hidden&quot; id=&quot;aria-c-text-controller__options&quot;&gt;
@@ -144,11 +144,11 @@
         &lt;/ul&gt;
       &lt;/div&gt;
     &lt;/div&gt;
-    &lt;div class=&quot;c-text-controller__sizer&quot;&gt;&lt;span class=&quot;c-text-controller__sizer-text&quot;&gt;Adjust text size&lt;/span&gt;&lt;button class=&quot;c-text-controller__sizer-btn btn-text js-text-larger&quot;&gt;&lt;svg class=&quot;icon icon-ui-plus-circle&quot;&gt;
+    &lt;div class=&quot;c-text-controller__sizer&quot;&gt;&lt;span class=&quot;c-text-controller__sizer-text&quot;&gt;Adjust text size&lt;/span&gt;&lt;button class=&quot;c-text-controller__sizer-btn btn-text&quot; data-js=&quot;text-larger&quot;&gt;&lt;svg class=&quot;icon icon-ui-plus-circle&quot;&gt;
           &lt;use xlink:href=&quot;#icon-ui-plus-circle&quot;&gt;&lt;/use&gt;
         &lt;/svg&gt;
         &lt;div class=&quot;sr-only&quot;&gt;Larger&lt;/div&gt;
-      &lt;/button&gt;&lt;button class=&quot;c-text-controller__sizer-btn btn-text js-text-smaller&quot;&gt;&lt;svg class=&quot;icon icon-ui-minus-circle&quot;&gt;
+      &lt;/button&gt;&lt;button class=&quot;c-text-controller__sizer-btn btn-text&quot; data-js=&quot;text-smaller&quot;&gt;&lt;svg class=&quot;icon icon-ui-minus-circle&quot;&gt;
           &lt;use xlink:href=&quot;#icon-ui-minus-circle&quot;&gt;&lt;/use&gt;
         &lt;/svg&gt;
         &lt;div class=&quot;sr-only&quot;&gt;Smaller&lt;/div&gt;
@@ -181,6 +181,9 @@
       access.icons();
       access.toggle();
       access.alertBanner();
+    </script>
+    <script type="text/javascript">
+      access.textController();
     </script>
   </body>
 
