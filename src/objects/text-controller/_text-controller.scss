@@ -84,12 +84,12 @@
 
   .text-align-start & li { // based on utilities/text/text
     margin-left: 0;
-    margin-right: $spacing-base;
+    margin-right: $grid-base * 2;
   }
 
   .text-align-end & li { // based on utilities/text/text
     margin-right: 0;
-    margin-left: $spacing-base;
+    margin-left: $grid-base * 2;
   }
 
   a {
