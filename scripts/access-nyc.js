@@ -4231,6 +4231,7 @@ var AccessNyc = (function () {
     this._toggle = new Toggle({
       selector: TextController.selectors.TOGGLE
     });
+    this.init();
     return this;
   };
   /**
@@ -4480,11 +4481,7 @@ var AccessNyc = (function () {
 
 
   main.prototype.textController = function textController() {
-    var elements = document.querySelectorAll(TextController.selector);
-    elements.forEach(function (element) {
-      new TextController(element).init();
-    });
-    return elements;
+    return new TextController(document.querySelector(TextController.selector));
   };
 
   return main;
