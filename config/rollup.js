@@ -295,18 +295,18 @@ const modules = [
     ]
   },
   {
-    input: './src/components/text-controller/text-controller.js',
+    input: './src/objects/text-controller/text-controller.js',
     plugins: rollup.dist,
     output: [
       {
         name: 'TextController',
-        file: `./dist/components/text-controller/text-controller.iffe.js`,
+        file: `./dist/objects/text-controller/text-controller.iffe.js`,
         format: 'iife',
         strict: rollup.strict
       },
       {
         name: 'TextController',
-        file: `./dist/components/text-controller/text-controller.common.js`,
+        file: `./dist/objects/text-controller/text-controller.common.js`,
         format: 'cjs',
         strict: rollup.strict
       }

@@ -55,10 +55,10 @@ Option          | Type             | Importance | Description
 The ES6, CommonJS, and IFFE modules all require importing and object instantiation in your main script. The methods and configurations described above will work with the dedicated module.
 
     // ES6
-    import InputAutocomplete from 'src/utilities/toggle/toggle';
+    import Toggle from 'src/utilities/toggle/toggle';
 
     // CommonJS
-    import InputAutocomplete from 'dist/utilities/toggle/toggle.common';
+    import Toggle from 'dist/utilities/toggle/toggle.common';
 
     <!-- IFFE -->
     <script src="dist/utilities/toggle/toggle.iffe.js"></script>

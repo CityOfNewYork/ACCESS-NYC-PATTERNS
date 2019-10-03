@@ -38,7 +38,6 @@ nav class='${class_nav} screen-desktop:pl-4'
   a class='${class_nav_item}' href='nearby-stops' Nearby Stops
   a class='${class_nav_item}' href='share-form' Share Form
   a class='${class_nav_item}' href='side-nav' Side Nav
-  a class='${class_nav_item}' href='text-controller' Text Controller
   a class='${class_nav_item}' href='question' Question
 
 nav class='${class_nav} screen-desktop:pl-4'
@@ -53,6 +52,7 @@ nav class='${class_nav} screen-desktop:pl-4'
   a class='${class_nav_item}' href='navigation' Navigation
   a class='${class_nav_item}' href='newsletter' Newsletter
   a class='${class_nav_item}' href='search-box' Search Box
+  a class='${class_nav_item}' href='text-controller' Text Controller
 
 nav class='${class_nav} screen-desktop:pl-4'
   a class='${class_nav_heading} ${class_nav_divider}' href='utility' Utilities

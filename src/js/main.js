@@ -12,10 +12,10 @@ import Accordion from '../components/accordion/accordion';
 import Filter from '../components/filter/filter';
 import NearbyStops from '../components/nearby-stops/nearby-stops';
 import AlertBanner from '../components/alert-banner/alert-banner';
-import TextController from '../components/text-controller/text-controller';
 
 // Objects
 import Newsletter from '../objects/newsletter/newsletter';
+import TextController from '../objects/text-controller/text-controller';
 /** import components here as they are written. */
 
 /**

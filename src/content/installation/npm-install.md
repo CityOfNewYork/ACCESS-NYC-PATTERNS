@@ -1,6 +1,6 @@
 There are a few options when integrating the patterns, but using NPM Install is recommended.
 
-    $ npm install access-nyc-patterns
+    $ npm install @nycopportunity/access-patterns
 
 ### Download
 

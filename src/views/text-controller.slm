@@ -21,7 +21,8 @@
 
 = content('content');
   = mixin('content-header', title);
-  = mixin('section', false, 'components/text-controller/text-controller');
+  = mixin('section', false, 'objects/text-controller/text-controller');
+  = mixin('section-text', 'Text Controller Usage', 'objects/text-controller/text-controller.readme');
 
 = content('script');
   javascript:
