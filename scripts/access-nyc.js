@@ -2465,7 +2465,7 @@ var AccessNyc = (function () {
    * _.escape('fred, barney, & pebbles');
    * // => 'fred, barney, &amp; pebbles'
    */
-  function escape(string) {
+  function escape$1(string) {
     string = toString(string);
     return (string && reHasUnescapedHtml.test(string))
       ? string.replace(reUnescapedHtml, escapeHtmlChar)
@@ -2535,7 +2535,7 @@ var AccessNyc = (function () {
        * @memberOf _.templateSettings.imports
        * @type {Function}
        */
-      '_': { 'escape': escape }
+      '_': { 'escape': escape$1 }
     }
   };
 
@@ -4045,6 +4045,352 @@ var AccessNyc = (function () {
     HIDDEN: 'hidden'
   };
 
+  function createCommonjsModule(fn, module) {
+  	return module = { exports: {} }, fn(module, module.exports), module.exports;
+  }
+
+  var js_cookie = createCommonjsModule(function (module, exports) {
+  (function (factory) {
+  	var registeredInModuleLoader;
+  	{
+  		module.exports = factory();
+  		registeredInModuleLoader = true;
+  	}
+  	if (!registeredInModuleLoader) {
+  		var OldCookies = window.Cookies;
+  		var api = window.Cookies = factory();
+  		api.noConflict = function () {
+  			window.Cookies = OldCookies;
+  			return api;
+  		};
+  	}
+  }(function () {
+  	function extend () {
+  		var arguments$1 = arguments;
+
+  		var i = 0;
+  		var result = {};
+  		for (; i < arguments.length; i++) {
+  			var attributes = arguments$1[ i ];
+  			for (var key in attributes) {
+  				result[key] = attributes[key];
+  			}
+  		}
+  		return result;
+  	}
+
+  	function decode (s) {
+  		return s.replace(/(%[0-9A-Z]{2})+/g, decodeURIComponent);
+  	}
+
+  	function init (converter) {
+  		function api() {}
+
+  		function set (key, value, attributes) {
+  			if (typeof document === 'undefined') {
+  				return;
+  			}
+
+  			attributes = extend({
+  				path: '/'
+  			}, api.defaults, attributes);
+
+  			if (typeof attributes.expires === 'number') {
+  				attributes.expires = new Date(new Date() * 1 + attributes.expires * 864e+5);
+  			}
+
+  			// We're using "expires" because "max-age" is not supported by IE
+  			attributes.expires = attributes.expires ? attributes.expires.toUTCString() : '';
+
+  			try {
+  				var result = JSON.stringify(value);
+  				if (/^[\{\[]/.test(result)) {
+  					value = result;
+  				}
+  			} catch (e) {}
+
+  			value = converter.write ?
+  				converter.write(value, key) :
+  				encodeURIComponent(String(value))
+  					.replace(/%(23|24|26|2B|3A|3C|3E|3D|2F|3F|40|5B|5D|5E|60|7B|7D|7C)/g, decodeURIComponent);
+
+  			key = encodeURIComponent(String(key))
+  				.replace(/%(23|24|26|2B|5E|60|7C)/g, decodeURIComponent)
+  				.replace(/[\(\)]/g, escape);
+
+  			var stringifiedAttributes = '';
+  			for (var attributeName in attributes) {
+  				if (!attributes[attributeName]) {
+  					continue;
+  				}
+  				stringifiedAttributes += '; ' + attributeName;
+  				if (attributes[attributeName] === true) {
+  					continue;
+  				}
+
+  				// Considers RFC 6265 section 5.2:
+  				// ...
+  				// 3.  If the remaining unparsed-attributes contains a %x3B (";")
+  				//     character:
+  				// Consume the characters of the unparsed-attributes up to,
+  				// not including, the first %x3B (";") character.
+  				// ...
+  				stringifiedAttributes += '=' + attributes[attributeName].split(';')[0];
+  			}
+
+  			return (document.cookie = key + '=' + value + stringifiedAttributes);
+  		}
+
+  		function get (key, json) {
+  			if (typeof document === 'undefined') {
+  				return;
+  			}
+
+  			var jar = {};
+  			// To prevent the for loop in the first place assign an empty array
+  			// in case there are no cookies at all.
+  			var cookies = document.cookie ? document.cookie.split('; ') : [];
+  			var i = 0;
+
+  			for (; i < cookies.length; i++) {
+  				var parts = cookies[i].split('=');
+  				var cookie = parts.slice(1).join('=');
+
+  				if (!json && cookie.charAt(0) === '"') {
+  					cookie = cookie.slice(1, -1);
+  				}
+
+  				try {
+  					var name = decode(parts[0]);
+  					cookie = (converter.read || converter)(cookie, name) ||
+  						decode(cookie);
+
+  					if (json) {
+  						try {
+  							cookie = JSON.parse(cookie);
+  						} catch (e) {}
+  					}
+
+  					jar[name] = cookie;
+
+  					if (key === name) {
+  						break;
+  					}
+  				} catch (e) {}
+  			}
+
+  			return key ? jar[key] : jar;
+  		}
+
+  		api.set = set;
+  		api.get = function (key) {
+  			return get(key, false /* read as raw */);
+  		};
+  		api.getJSON = function (key) {
+  			return get(key, true /* read as json */);
+  		};
+  		api.remove = function (key, attributes) {
+  			set(key, '', extend(attributes, {
+  				expires: -1
+  			}));
+  		};
+
+  		api.defaults = {};
+
+  		api.withConverter = init;
+
+  		return api;
+  	}
+
+  	return init(function () {});
+  }));
+  });
+
+  /* eslint-env browser */
+  /**
+   * This controls the text sizer module at the top of page. A text-size-X class
+   * is added to the html root element. X is an integer to indicate the scale of
+   * text adjustment with 0 being neutral.
+   * @class
+   */
+
+  var TextController = function TextController(el) {
+    /** @private {HTMLElement} The component element. */
+    this._el = el;
+    /** @private {Number} The relative scale of text adjustment. */
+
+    this._textSize = 0;
+    /** @private {boolean} Whether the textSizer is displayed. */
+
+    this._active = false;
+    /** @private {boolean} Whether the map has been initialized. */
+
+    this._initialized = false;
+    /** @private {object} The toggle instance for the Text Controller */
+
+    this._toggle = new Toggle({
+      selector: TextController.selectors.TOGGLE
+    });
+    return this;
+  };
+  /**
+   * Attaches event listeners to controller. Checks for textSize cookie and
+   * sets the text size class appropriately.
+   * @return {this} TextSizer
+   */
+
+
+  TextController.prototype.init = function init() {
+    var this$1 = this;
+
+    if (this._initialized) {
+      return this;
+    }
+
+    var btnSmaller = this._el.querySelector(TextController.selectors.SMALLER);
+
+    var btnLarger = this._el.querySelector(TextController.selectors.LARGER);
+
+    btnSmaller.addEventListener('click', function (event) {
+      event.preventDefault();
+      var newSize = this$1._textSize - 1;
+
+      if (newSize >= TextController.min) {
+        this$1._adjustSize(newSize);
+      }
+    });
+    btnLarger.addEventListener('click', function (event) {
+      event.preventDefault();
+      var newSize = this$1._textSize + 1;
+
+      if (newSize <= TextController.max) {
+        this$1._adjustSize(newSize);
+      }
+    }); // If there is a text size cookie, set the textSize variable to the setting.
+    // If not, textSize initial setting remains at zero and we toggle on the
+    // text sizer/language controls and add a cookie.
+
+    if (js_cookie.get('textSize')) {
+      var size = parseInt(js_cookie.get('textSize'), 10);
+      this._textSize = size;
+
+      this._adjustSize(size);
+    } else {
+      var html = document.querySelector('html');
+      html.classList.add("text-size-" + this._textSize);
+      this.show();
+
+      this._setCookie();
+    }
+
+    this._initialized = true;
+    return this;
+  };
+  /**
+   * Shows the text sizer controls.
+   * @return {this} TextSizer
+   */
+
+
+  TextController.prototype.show = function show() {
+    this._active = true; // Retrieve selectors required for the main toggling method
+
+    var el = this._el.querySelector(TextController.selectors.TOGGLE);
+
+    var targetSelector = "#" + el.getAttribute('aria-controls');
+
+    var target = this._el.querySelector(targetSelector); // Invoke main toggling method from toggle.js
+
+
+    this._toggle.elementToggle(el, target);
+
+    return this;
+  };
+  /**
+   * Sets the `textSize` cookie to store the value of this._textSize. Expires
+   * in 1 hour (1/24 of a day).
+   * @return {this} TextSizer
+   */
+
+
+  TextController.prototype._setCookie = function _setCookie() {
+    js_cookie.set('textSize', this._textSize, {
+      expires: 1 / 24
+    });
+    return this;
+  };
+  /**
+   * Sets the text-size-X class on the html root element. Updates the cookie
+   * if necessary.
+   * @param {Number} size - new size to set.
+   * @return {this} TextSizer
+   */
+
+
+  TextController.prototype._adjustSize = function _adjustSize(size) {
+    var originalSize = this._textSize;
+    var html = document.querySelector('html');
+
+    if (size !== originalSize) {
+      this._textSize = size;
+
+      this._setCookie();
+
+      html.classList.remove("text-size-" + originalSize);
+    }
+
+    html.classList.add("text-size-" + size);
+
+    this._checkForMinMax();
+
+    return this;
+  };
+  /**
+   * Checks the current text size against the min and max. If the limits are
+   * reached, disable the controls for going smaller/larger as appropriate.
+   * @return {this} TextSizer
+   */
+
+
+  TextController.prototype._checkForMinMax = function _checkForMinMax() {
+    var btnSmaller = this._el.querySelector(TextController.selectors.SMALLER);
+
+    var btnLarger = this._el.querySelector(TextController.selectors.LARGER);
+
+    if (this._textSize <= TextController.min) {
+      this._textSize = TextController.min;
+      btnSmaller.setAttribute('disabled', '');
+    } else {
+      btnSmaller.removeAttribute('disabled');
+    }
+
+    if (this._textSize >= TextController.max) {
+      this._textSize = TextController.max;
+      btnLarger.setAttribute('disabled', '');
+    } else {
+      btnLarger.removeAttribute('disabled');
+    }
+
+    return this;
+  };
+  /** @type {Integer} The minimum text size */
+
+
+  TextController.min = -3;
+  /** @type {Integer} The maximum text size */
+
+  TextController.max = 3;
+  /** @type {String} The component selector */
+
+  TextController.selector = '[data-js*="text-controller"]';
+  /** @type {Object} element selectors within the component */
+
+  TextController.selectors = {
+    LARGER: '[data-js*="text-larger"]',
+    SMALLER: '[data-js*="text-smaller"]',
+    TOGGLE: '[data-js*="text-options"]'
+  };
+
   /** import components here as they are written. */
 
   /**
@@ -4119,13 +4465,26 @@ var AccessNyc = (function () {
     return new InputAutocomplete(settings);
   };
   /**
-   * An API for the AlertBanner Object
-   * @return {object}       Instance of AlertBanner
+   * An API for the AlertBanner Component
+   * @return {object} Instance of AlertBanner
    */
 
 
   main.prototype.alertBanner = function alertBanner() {
     return new AlertBanner();
+  };
+  /**
+   * An API for the TextController Component
+   * @return {object} Instance of TextController
+   */
+
+
+  main.prototype.textController = function textController() {
+    var elements = document.querySelectorAll(TextController.selector);
+    elements.forEach(function (element) {
+      new TextController(element).init();
+    });
+    return elements;
   };
 
   return main;
