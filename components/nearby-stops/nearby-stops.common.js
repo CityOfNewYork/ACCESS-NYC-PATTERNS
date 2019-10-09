@@ -1,5 +1,27 @@
 'use strict';
 
+function _classCallCheck(instance, Constructor) {
+  if (!(instance instanceof Constructor)) {
+    throw new TypeError("Cannot call a class as a function");
+  }
+}
+
+function _defineProperties(target, props) {
+  for (var i = 0; i < props.length; i++) {
+    var descriptor = props[i];
+    descriptor.enumerable = descriptor.enumerable || false;
+    descriptor.configurable = true;
+    if ("value" in descriptor) descriptor.writable = true;
+    Object.defineProperty(target, descriptor.key, descriptor);
+  }
+}
+
+function _createClass(Constructor, protoProps, staticProps) {
+  if (protoProps) _defineProperties(Constructor.prototype, protoProps);
+  if (staticProps) _defineProperties(Constructor, staticProps);
+  return Constructor;
+}
+
 /** Detect free variable `global` from Node.js. */
 var freeGlobal = typeof global == 'object' && global && global.Object === Object && global;
 
@@ -2067,212 +2089,215 @@ function forEach(collection, iteratee) {
  * @class
  */
 
-var NearbyStops = function NearbyStops() {
-  var this$1 = this;
-  /** @type {Array} Collection of nearby stops DOM elements */
+var NearbyStops =
+/*#__PURE__*/
+function () {
+  /**
+   * @constructor
+   * @return {object} The NearbyStops class
+   */
+  function NearbyStops() {
+    var _this = this;
 
-  this._elements = document.querySelectorAll(NearbyStops.selector);
-  /** @type {Array} The collection all stops from the data */
+    _classCallCheck(this, NearbyStops);
 
-  this._stops = [];
-  /** @type {Array} The currated collection of stops that will be rendered */
+    /** @type {Array} Collection of nearby stops DOM elements */
+    this._elements = document.querySelectorAll(NearbyStops.selector);
+    /** @type {Array} The collection all stops from the data */
 
-  this._locations = []; // Loop through DOM Components.
+    this._stops = [];
+    /** @type {Array} The currated collection of stops that will be rendered */
 
-  forEach(this._elements, function (el) {
-    // Fetch the data for the element.
-    this$1._fetch(el, function (status, data) {
-      if (status !== 'success') {
-        return;
-      }
+    this._locations = []; // Loop through DOM Components.
 
-      this$1._stops = data; // Get stops closest to the location.
+    forEach(this._elements, function (el) {
+      // Fetch the data for the element.
+      _this._fetch(el, function (status, data) {
+        if (status !== 'success') { return; }
+        _this._stops = data; // Get stops closest to the location.
 
-      this$1._locations = this$1._locate(el, this$1._stops); // Assign the color names from patterns stylesheet.
+        _this._locations = _this._locate(el, _this._stops); // Assign the color names from patterns stylesheet.
 
-      this$1._locations = this$1._assignColors(this$1._locations); // Render the markup for the stops.
+        _this._locations = _this._assignColors(_this._locations); // Render the markup for the stops.
 
-      this$1._render(el, this$1._locations);
+        _this._render(el, _this._locations);
+      });
     });
-  });
 
-  return this;
-};
-/**
- * This compares the latitude and longitude with the Subway Stops data, sorts
- * the data by distance from closest to farthest, and returns the stop and
- * distances of the stations.
- * @param{object} el  The DOM Component with the data attr options
- * @param{object} stops All of the stops data to compare to
- * @return {object}     A collection of the closest stops with distances
- */
-
-
-NearbyStops.prototype._locate = function _locate(el, stops) {
-  var amount = parseInt(this._opt(el, 'AMOUNT')) || NearbyStops.defaults.AMOUNT;
-  var loc = JSON.parse(this._opt(el, 'LOCATION'));
-  var geo = [];
-  var distances = []; // 1. Compare lat and lon of current location with list of stops
-
-  for (var i = 0; i < stops.length; i++) {
-    geo = stops[i][this._key('ODATA_GEO')][this._key('ODATA_COOR')];
-    geo = geo.reverse();
-    distances.push({
-      'distance': this._equirectangular(loc[0], loc[1], geo[0], geo[1]),
-      'stop': i // index of stop in the data
-
-    });
-  } // 2. Sort the distances shortest to longest
-
-
-  distances.sort(function (a, b) {
-    return a.distance < b.distance ? -1 : 1;
-  });
-  distances = distances.slice(0, amount); // 3. Return the list of closest stops (number based on Amount option)
-  // and replace the stop index with the actual stop data
-
-  for (var x = 0; x < distances.length; x++) {
-    distances[x].stop = stops[distances[x].stop];
+    return this;
   }
+  /**
+   * This compares the latitude and longitude with the Subway Stops data, sorts
+   * the data by distance from closest to farthest, and returns the stop and
+   * distances of the stations.
+   * @param  {object} el    The DOM Component with the data attr options
+   * @param  {object} stops All of the stops data to compare to
+   * @return {object}       A collection of the closest stops with distances
+   */
 
-  return distances;
-};
-/**
- * Fetches the stop data from a local source
- * @param{object} el     The NearbyStops DOM element
- * @param{function} callback The function to execute on success
- * @return {funciton}        the fetch promise
- */
+
+  _createClass(NearbyStops, [{
+    key: "_locate",
+    value: function _locate(el, stops) {
+      var amount = parseInt(this._opt(el, 'AMOUNT')) || NearbyStops.defaults.AMOUNT;
+      var loc = JSON.parse(this._opt(el, 'LOCATION'));
+      var geo = [];
+      var distances = []; // 1. Compare lat and lon of current location with list of stops
+
+      for (var i = 0; i < stops.length; i++) {
+        geo = stops[i][this._key('ODATA_GEO')][this._key('ODATA_COOR')];
+        geo = geo.reverse();
+        distances.push({
+          'distance': this._equirectangular(loc[0], loc[1], geo[0], geo[1]),
+          'stop': i // index of stop in the data
+
+        });
+      } // 2. Sort the distances shortest to longest
 
 
-NearbyStops.prototype._fetch = function _fetch(el, callback) {
-  var headers = {
-    'method': 'GET'
-  };
-  return fetch(this._opt(el, 'ENDPOINT'), headers).then(function (response) {
-    if (response.ok) {
-      return response.json();
-    } else {
-      // eslint-disable-next-line no-console
-      if (process.env.NODE_ENV !== 'production') {
-        console.dir(response);
+      distances.sort(function (a, b) {
+        return a.distance < b.distance ? -1 : 1;
+      });
+      distances = distances.slice(0, amount); // 3. Return the list of closest stops (number based on Amount option)
+      // and replace the stop index with the actual stop data
+
+      for (var x = 0; x < distances.length; x++) {
+        distances[x].stop = stops[distances[x].stop];
       }
 
-      callback('error', response);
+      return distances;
     }
-  })["catch"](function (error) {
-    // eslint-disable-next-line no-console
-    if (process.env.NODE_ENV !== 'production') {
-      console.dir(error);
-    }
+    /**
+     * Fetches the stop data from a local source
+     * @param  {object}   el       The NearbyStops DOM element
+     * @param  {function} callback The function to execute on success
+     * @return {funciton}          the fetch promise
+     */
 
-    callback('error', error);
-  }).then(function (data) {
-    return callback('success', data);
-  });
-};
-/**
- * Returns distance in miles comparing the latitude and longitude of two
- * points using decimal degrees.
- * @param{float} lat1 Latitude of point 1 (in decimal degrees)
- * @param{float} lon1 Longitude of point 1 (in decimal degrees)
- * @param{float} lat2 Latitude of point 2 (in decimal degrees)
- * @param{float} lon2 Longitude of point 2 (in decimal degrees)
- * @return {float}    [description]
- */
-
-
-NearbyStops.prototype._equirectangular = function _equirectangular(lat1, lon1, lat2, lon2) {
-  Math.deg2rad = function (deg) {
-    return deg * (Math.PI / 180);
-  };
-
-  var alpha = Math.abs(lon2) - Math.abs(lon1);
-  var x = Math.deg2rad(alpha) * Math.cos(Math.deg2rad(lat1 + lat2) / 2);
-  var y = Math.deg2rad(lat1 - lat2);
-  var R = 3959; // earth radius in miles;
-
-  var distance = Math.sqrt(x * x + y * y) * R;
-  return distance;
-};
-/**
- * Assigns colors to the data using the NearbyStops.truncks dictionary.
- * @param{object} locations Object of closest locations
- * @return {object}         Same object with colors assigned to each loc
- */
-
-
-NearbyStops.prototype._assignColors = function _assignColors(locations) {
-  var locationLines = [];
-  var line = 'S';
-  var lines = ['S']; // Loop through each location that we are going to display
-
-  for (var i = 0; i < locations.length; i++) {
-    // assign the line to a variable to lookup in our color dictionary
-    locationLines = locations[i].stop[this._key('ODATA_LINE')].split('-');
-
-    for (var x = 0; x < locationLines.length; x++) {
-      line = locationLines[x];
-
-      for (var y = 0; y < NearbyStops.trunks.length; y++) {
-        lines = NearbyStops.trunks[y]['LINES'];
-
-        if (lines.indexOf(line) > -1) {
-          locationLines[x] = {
-            'line': line,
-            'trunk': NearbyStops.trunks[y]['TRUNK']
-          };
+  }, {
+    key: "_fetch",
+    value: function _fetch(el, callback) {
+      var headers = {
+        'method': 'GET'
+      };
+      return fetch(this._opt(el, 'ENDPOINT'), headers).then(function (response) {
+        if (response.ok) { return response.json(); }else {
+          callback('error', response);
         }
-      }
-    } // Add the trunk to the location
-
-
-    locations[i].trunks = locationLines;
-  }
-
-  return locations;
-};
-/**
- * The function to compile and render the location template
- * @param{object} element The parent DOM element of the component
- * @param{object} data  The data to pass to the template
- * @return {object}       The NearbyStops class
- */
-
-
-NearbyStops.prototype._render = function _render(element, data) {
-  var compiled = template(NearbyStops.templates.SUBWAY, {
-    'imports': {
-      '_each': forEach
+      })["catch"](function (error) {
+        callback('error', error);
+      }).then(function (data) {
+        return callback('success', data);
+      });
     }
-  });
+    /**
+     * Returns distance in miles comparing the latitude and longitude of two
+     * points using decimal degrees.
+     * @param  {float} lat1 Latitude of point 1 (in decimal degrees)
+     * @param  {float} lon1 Longitude of point 1 (in decimal degrees)
+     * @param  {float} lat2 Latitude of point 2 (in decimal degrees)
+     * @param  {float} lon2 Longitude of point 2 (in decimal degrees)
+     * @return {float}      [description]
+     */
 
-  element.innerHTML = compiled({
-    'stops': data
-  });
-  return this;
-};
-/**
- * Get data attribute options
- * @param{object} element The element to pull the setting from.
- * @param{string} opt   The key reference to the attribute.
- * @return {string}       The setting of the data attribute.
- */
+  }, {
+    key: "_equirectangular",
+    value: function _equirectangular(lat1, lon1, lat2, lon2) {
+      Math.deg2rad = function (deg) {
+        return deg * (Math.PI / 180);
+      };
+
+      var alpha = Math.abs(lon2) - Math.abs(lon1);
+      var x = Math.deg2rad(alpha) * Math.cos(Math.deg2rad(lat1 + lat2) / 2);
+      var y = Math.deg2rad(lat1 - lat2);
+      var R = 3959; // earth radius in miles;
+
+      var distance = Math.sqrt(x * x + y * y) * R;
+      return distance;
+    }
+    /**
+     * Assigns colors to the data using the NearbyStops.truncks dictionary.
+     * @param  {object} locations Object of closest locations
+     * @return {object}           Same object with colors assigned to each loc
+     */
+
+  }, {
+    key: "_assignColors",
+    value: function _assignColors(locations) {
+      var locationLines = [];
+      var line = 'S';
+      var lines = ['S']; // Loop through each location that we are going to display
+
+      for (var i = 0; i < locations.length; i++) {
+        // assign the line to a variable to lookup in our color dictionary
+        locationLines = locations[i].stop[this._key('ODATA_LINE')].split('-');
+
+        for (var x = 0; x < locationLines.length; x++) {
+          line = locationLines[x];
+
+          for (var y = 0; y < NearbyStops.trunks.length; y++) {
+            lines = NearbyStops.trunks[y]['LINES'];
+            if (lines.indexOf(line) > -1) { locationLines[x] = {
+              'line': line,
+              'trunk': NearbyStops.trunks[y]['TRUNK']
+            }; }
+          }
+        } // Add the trunk to the location
 
 
-NearbyStops.prototype._opt = function _opt(element, opt) {
-  return element.dataset["" + NearbyStops.namespace + NearbyStops.options[opt]];
-};
-/**
- * A proxy function for retrieving the proper key
- * @param{string} key The reference for the stored keys.
- * @return {string}   The desired key.
- */
+        locations[i].trunks = locationLines;
+      }
 
+      return locations;
+    }
+    /**
+     * The function to compile and render the location template
+     * @param  {object} element The parent DOM element of the component
+     * @param  {object} data    The data to pass to the template
+     * @return {object}         The NearbyStops class
+     */
 
-NearbyStops.prototype._key = function _key(key) {
-  return NearbyStops.keys[key];
-};
+  }, {
+    key: "_render",
+    value: function _render(element, data) {
+      var compiled = template(NearbyStops.templates.SUBWAY, {
+        'imports': {
+          '_each': forEach
+        }
+      });
+
+      element.innerHTML = compiled({
+        'stops': data
+      });
+      return this;
+    }
+    /**
+     * Get data attribute options
+     * @param  {object} element The element to pull the setting from.
+     * @param  {string} opt     The key reference to the attribute.
+     * @return {string}         The setting of the data attribute.
+     */
+
+  }, {
+    key: "_opt",
+    value: function _opt(element, opt) {
+      return element.dataset["".concat(NearbyStops.namespace).concat(NearbyStops.options[opt])];
+    }
+    /**
+     * A proxy function for retrieving the proper key
+     * @param  {string} key The reference for the stored keys.
+     * @return {string}     The desired key.
+     */
+
+  }, {
+    key: "_key",
+    value: function _key(key) {
+      return NearbyStops.keys[key];
+    }
+  }]);
+
+  return NearbyStops;
+}();
 /**
  * The dom selector for the module
  * @type {String}

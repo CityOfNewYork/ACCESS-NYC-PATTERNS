@@ -1,6 +1,28 @@
 var VueComponents = (function () {
   'use strict';
 
+  function _classCallCheck(instance, Constructor) {
+    if (!(instance instanceof Constructor)) {
+      throw new TypeError("Cannot call a class as a function");
+    }
+  }
+
+  function _defineProperties(target, props) {
+    for (var i = 0; i < props.length; i++) {
+      var descriptor = props[i];
+      descriptor.enumerable = descriptor.enumerable || false;
+      descriptor.configurable = true;
+      if ("value" in descriptor) descriptor.writable = true;
+      Object.defineProperty(target, descriptor.key, descriptor);
+    }
+  }
+
+  function _createClass(Constructor, protoProps, staticProps) {
+    if (protoProps) _defineProperties(Constructor.prototype, protoProps);
+    if (staticProps) _defineProperties(Constructor, staticProps);
+    return Constructor;
+  }
+
   /*!
    * Vue.js v2.6.10
    * (c) 2014-2019 Evan You
@@ -11939,17 +11961,27 @@ var VueComponents = (function () {
    * The class for the Vue Demo used to render Vue Components
    */
 
-  var VueDemo = function VueDemo(component, data, methods) {
-    if (data === void 0) data = {};
-    if (methods === void 0) methods = {};
+  var VueDemo =
+  /**
+   * The Vue Demo constructor
+   *
+   * @param   {object}  component  The name and module of the Vue Component to
+   *                               render
+   * @param   {object}  data       The data needed for the component to render
+   * @param   {object}  methods    The methods needed for the component to
+   *                               function
+   * @return  {[type]}             The instance of the Vue app
+   */
+  function VueDemo(component) {
+    var data = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
+    var methods = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : {};
 
-    if (!component) {
-      return false;
-    }
+    _classCallCheck(this, VueDemo);
 
+    if (!component) { return false; }
     Vue.component(component.name, component.module);
     return new Vue({
-      el: "#app-" + component.name,
+      el: "#app-".concat(component.name),
       methods: methods,
       data: data
     });
@@ -12264,10 +12296,7 @@ var VueComponents = (function () {
         return this.terms.current === name ? 'true' : 'false';
       },
       fetch: function fetch(event) {
-        if (this.nav) {
-          event.event.preventDefault();
-        }
-
+        if (this.nav) { event.event.preventDefault(); }
         this.$set(this.terms, 'current', event.data.name);
         this.$emit('fetch', event);
         return this;
@@ -12629,64 +12658,82 @@ var VueComponents = (function () {
    * @class
    */
 
-  var VueComponents = function VueComponents() {};
+  var VueComponents =
+  /*#__PURE__*/
+  function () {
+    function VueComponents() {
+      _classCallCheck(this, VueComponents);
+    }
 
-  VueComponents.prototype.card = function card(component) {
-    if (component === void 0) component = 'c-card';
-    var modules = {
-      'c-card': CardVue
-    };
-    return new VueDemo({
-      'name': component,
-      'module': modules[component]
-    }, {
-      card: CardData
-    });
-  };
-  /**
-   * An API for the Vue Filter Demo
-   * @param{string} component The name of the Component to display
-   * @return {object}         instance of the Vue Demo
-   */
+    _createClass(VueComponents, [{
+      key: "card",
 
-
-  VueComponents.prototype.filter = function filter(component) {
-    if (component === void 0) component = 'c-filter';
-    var modules = {
-      'c-filter': FilterVue,
-      'c-filter-multi': FilterMultiVue
-    };
-    return new VueDemo({
-      'name': component,
-      'module': modules[component]
-    }, {
-      termsFilter: Object.assign({}, FilterData[0]),
-      termsFilterMulti: FilterData,
-      strings: {
-        'ALL': 'All',
-        'EXPAND_CATEGORY': 'Expand Category',
-        'COLLAPSE_CATEGORY': 'Collapse Category',
-        'TOGGLE_ALL': 'Toggle All'
-      }
-    }, {
-      fetch: function fetch(params) {
-        // eslint-disable-next-line no-console
-        console.dir({
-          'component': component,
-          'method': 'fetch',
-          'params': params
-        });
-      },
-      reset: function reset(params) {
-        // eslint-disable-next-line no-console
-        console.dir({
-          'component': component,
-          'method': 'reset',
-          'params': params
+      /**
+       * An API for the Vue Card Demo
+       * @param  {string} component The name of the Component to display
+       * @return {object} instance of the Vue Demo
+       */
+      value: function card() {
+        var component = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 'c-card';
+        var modules = {
+          'c-card': CardVue
+        };
+        return new VueDemo({
+          'name': component,
+          'module': modules[component]
+        }, {
+          card: CardData
         });
       }
-    });
-  };
+      /**
+       * An API for the Vue Filter Demo
+       * @param  {string} component The name of the Component to display
+       * @return {object}           instance of the Vue Demo
+       */
+
+    }, {
+      key: "filter",
+      value: function filter() {
+        var component = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 'c-filter';
+        var modules = {
+          'c-filter': FilterVue,
+          'c-filter-multi': FilterMultiVue
+        };
+        return new VueDemo({
+          'name': component,
+          'module': modules[component]
+        }, {
+          termsFilter: Object.assign({}, FilterData[0]),
+          termsFilterMulti: FilterData,
+          strings: {
+            'ALL': 'All',
+            'EXPAND_CATEGORY': 'Expand Category',
+            'COLLAPSE_CATEGORY': 'Collapse Category',
+            'TOGGLE_ALL': 'Toggle All'
+          }
+        }, {
+          fetch: function fetch(params) {
+            // eslint-disable-next-line no-console
+            console.dir({
+              'component': component,
+              'method': 'fetch',
+              'params': params
+            });
+          },
+          reset: function reset(params) {
+            // eslint-disable-next-line no-console
+            console.dir({
+              'component': component,
+              'method': 'reset',
+              'params': params
+            });
+          }
+        });
+      }
+    }]);
+
+    return VueComponents;
+  }();
 
   return VueComponents;
 

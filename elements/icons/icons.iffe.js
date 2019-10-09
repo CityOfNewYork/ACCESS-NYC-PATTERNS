@@ -1,25 +1,25 @@
 var Icons = (function () {
   'use strict';
 
-  /**
-   * The Icon module
-   * @class
-   */
+  function _classCallCheck(instance, Constructor) {
+    if (!(instance instanceof Constructor)) {
+      throw new TypeError("Cannot call a class as a function");
+    }
+  }
 
-  var Icons = function Icons(path) {
+  var Icons =
+  /**
+   * @constructor
+   * @param  {String} path The path of the icon file
+   * @return {object} The class
+   */
+  function Icons(path) {
+    _classCallCheck(this, Icons);
+
     path = path ? path : Icons.path;
     fetch(path).then(function (response) {
-      if (response.ok) {
-        return response.text();
-      } else // eslint-disable-next-line no-console
-        if (process.env.NODE_ENV !== 'production') {
-          console.dir(response);
-        }
+      if (response.ok) { return response.text(); }
     })["catch"](function (error) {
-      // eslint-disable-next-line no-console
-      if (process.env.NODE_ENV !== 'production') {
-        console.dir(error);
-      }
     }).then(function (data) {
       var sprite = document.createElement('div');
       sprite.innerHTML = data;
