@@ -36,10 +36,6 @@ function _createClass(Constructor, protoProps, staticProps) {
  */
 function valid (event, STRINGS) {
   event.preventDefault();
-  { console.dir({
-      init: 'Validation',
-      event: event
-    }); }
   var validity = event.target.checkValidity();
   var elements = event.target.querySelectorAll('input[required="true"]');
 
@@ -62,12 +58,6 @@ function valid (event, STRINGS) {
     container.classList.add('error');
     container.insertBefore(message, container.childNodes[0]);
   }
-
-  { console.dir({
-      complete: 'Validation',
-      valid: validity,
-      event: event
-    }); }
   return validity ? event : validity;
 }
 
@@ -450,8 +440,6 @@ function () {
   }, {
     key: "_onerror",
     value: function _onerror(error) {
-      // eslint-disable-next-line no-console
-      { console.dir(error); }
       return this;
     }
     /**
@@ -463,8 +451,7 @@ function () {
   }, {
     key: "_callback",
     value: function _callback(data) {
-      if (this["_".concat(data[this._key('MC_RESULT')])]) { this["_".concat(data[this._key('MC_RESULT')])](data.msg); }else // eslint-disable-next-line no-console
-        { console.dir(data); }
+      if (this["_".concat(data[this._key('MC_RESULT')])]) { this["_".concat(data[this._key('MC_RESULT')])](data.msg); }
       return this;
     }
     /**

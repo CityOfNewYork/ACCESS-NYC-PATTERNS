@@ -18,11 +18,8 @@ var Icons = (function () {
 
     path = path ? path : Icons.path;
     fetch(path).then(function (response) {
-      if (response.ok) { return response.text(); }else // eslint-disable-next-line no-console
-        { console.dir(response); }
+      if (response.ok) { return response.text(); }
     })["catch"](function (error) {
-      // eslint-disable-next-line no-console
-      { console.dir(error); }
     }).then(function (data) {
       var sprite = document.createElement('div');
       sprite.innerHTML = data;
