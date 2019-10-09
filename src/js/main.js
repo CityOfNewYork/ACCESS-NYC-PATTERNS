@@ -1,7 +1,7 @@
 'use strict';
 
 // Utilities
-import Toggle from '../utilities/toggle/toggle';
+import Toggle from '@nycopportunity/patterns-framework/src/utilities/toggle/toggle';
 
 // Elements
 import Icons from '../elements/icons/icons';
@@ -9,9 +9,11 @@ import InputsAutocomplete from '../elements/inputs/inputs-autocomplete';
 
 // Components
 import Accordion from '../components/accordion/accordion';
+import AlertBanner from '../components/alert-banner/alert-banner';
+import Disclaimer from '../components/disclaimer/disclaimer';
 import Filter from '../components/filter/filter';
 import NearbyStops from '../components/nearby-stops/nearby-stops';
-import AlertBanner from '../components/alert-banner/alert-banner';
+import ShareForm from '../components/share-form/share-form';
 
 // Objects
 import Newsletter from '../objects/newsletter/newsletter';
@@ -93,11 +95,34 @@ class main {
   }
 
   /**
-   * An API for the TextController Component
+   * An API for the ShareForm Component
+   * @return {object} Instance of ShareForm
+   */
+  shareForm() {
+    let elements = document.querySelectorAll(ShareForm.selector);
+
+    elements.forEach(element => {
+      new ShareForm(element);
+    });
+
+    return (elements.length) ? elements : null;
+  }
+
+  /**
+   * An API for the Disclaimer Component
+   * @return {object} Instance of Disclaimer
+   */
+  disclaimer() {
+    return new Disclaimer();
+  }
+
+  /**
+   * An API for the TextController Object
    * @return {object} Instance of TextController
    */
   textController() {
-    return new TextController(document.querySelector(TextController.selector));
+    let element = document.querySelector(TextController.selector);
+    return (element) ? new TextController(element) : null;
   }
 }
 

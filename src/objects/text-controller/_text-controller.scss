@@ -21,7 +21,10 @@
   }
 }
 
-.c-text-controller__toggle {
+.c-text-controller__control {
+  font-weight: normal;
+  font-style: italic;
+
   &.active {
     display: none;
   }
@@ -115,6 +118,7 @@
 }
 
 .c-text-controller__sizer-text {
+  font-style: italic;
   margin-#{$text-direction-end}: $spacing-base / 3;
 }
 

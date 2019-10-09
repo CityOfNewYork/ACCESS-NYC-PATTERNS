@@ -1,6 +1,6 @@
 'use strict';
 
-import Toggle from '../../utilities/toggle/toggle';
+import Toggle from '@nycopportunity/patterns-framework/src/utilities/toggle/toggle';
 
 /**
  * The Filter module

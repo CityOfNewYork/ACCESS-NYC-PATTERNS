@@ -52,7 +52,7 @@ Option          | Type             | Importance | Description
 
 #### Cherry-picked Module Import
 
-The ES6, CommonJS, and IFFE modules all require importing and object instantiation in your main script. The methods and configurations described above will work with the dedicated module.
+**Note**: The Toggle Utility source and distribution scripts in the ACCESS NYC Patterns has been deprecated and moved to the [NYCO Patterns Framework](https://github.com/CityOfNewYork/nyco-patterns-framework). The ES6, CommonJS, and IFFE modules all require importing and object instantiation in your main script. The methods and configurations described above will work with the dedicated module.
 
     // ES6
     import Toggle from 'src/utilities/toggle/toggle';
@@ -67,4 +67,4 @@ The ES6, CommonJS, and IFFE modules all require importing and object instantiati
 
 #### Polyfills
 
-The script uses the `Element.prototype.matches`, `Element.prototype.removes`, `Nodelist.prototype.forEach` methods which require polyfills for IE11 support. See the ["Polyfills" section in the Installation docs](/installation) for recommendations.
+The script uses the `Element.prototype.matches`, `Element.prototype.removes`, `Nodelist.prototype.forEach` methods which require polyfills for IE11 support. See the ["Polyfills" section in the Installation docs](/installation#polyfills) for recommendations.

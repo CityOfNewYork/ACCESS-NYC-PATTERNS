@@ -99,7 +99,7 @@
                   </div>
                 </div>
                 <div>
-                  <div class="code-block mb-1"><pre>&lt;div class=&quot;c-disclaimer&quot;&gt;
+                  <div class="code-block mb-1"><pre>&lt;div class=&quot;c-disclaimer&quot; data-sketch-symbol-instance=&quot;components/disclaimer/disclaimer-small&quot;&gt;
   &lt;h4&gt;ACCESS NYC Disclaimer for Public Benefit Program Screening&lt;/h4&gt;
   &lt;p&gt;ACCESS NYC offers a screening tool that recommends public benefits programs for you to consider based upon information you provide about your household.&lt;/p&gt;
   &lt;/p&gt;
@@ -135,7 +135,7 @@
                   </div>
                 </div>
                 <div>
-                  <div class="code-block mb-1"><pre>&lt;div class=&quot;c-disclaimer&quot;&gt;
+                  <div class="code-block mb-1"><pre>&lt;div class=&quot;c-disclaimer&quot; data-sketch-symbol-instance=&quot;components/disclaimer/disclaimer-small&quot;&gt;
   &lt;p&gt;&lt;small&gt;&lt;svg class=&quot;c-disclaimer__icon c-disclaimer__icon--pre icon icon-ui-info&quot; role=&quot;img&quot;&gt;
         &lt;title&gt;Information Alert&lt;/title&gt;
         &lt;use xlink:href=&quot;#icon-ui-info&quot;&gt;&lt;/use&gt;
@@ -146,8 +146,105 @@
               </div>
             </div>
           </section>
+          <section class="pb-4 mb-4" id="disclaimer-toggle">
+            <div class="page-wrapper px-2">
+              <header class="layout--home-body">
+                <div class="my-0 px-2 pt-1 pb-4 border-b border-color-grey-light">
+                  <h2 class="m-0"><a class="text-color-grey-mid font-normal no-underline capitalize" href="#disclaimer-toggle">Disclaimer Toggle</a></h2>
+                  <div class="pt-2">
+                    <p class="text-font-size-small m-0">Source: <code><a href="https://github.com/CityOfNewYork/access-nyc-patterns/tree/v0.9.3/src/components/disclaimer">src/components/disclaimer/disclaimer-toggle</a></code></p>
+                  </div>
+                </div>
+              </header>
+              <div class="layout--home-body">
+                <div class="my-0 pt-4 px-2 text-font-size-small table-align-start"><p>The Disclaimer Component&#39;s visibility can be toggled based on the visibility of another component on the page. It uses the <code>aria-describedby</code> attribute to select the disclaimer and reveal it.</p></div>
+              </div>
+              <div class="layout--gutter screen-tablet:layout--columns justify-between pt-4">
+                <div class="screen-tablet:pr-2"><button aria-controls="provide-phone" aria-describedby="share-disclaimer" class="btn btn-primary mb-2" data-js="toggle disclaimer-control" data-scroll-offset="16">Share this page</button>
+                  <div aria-hidden="true" class="c-question hidden" id="provide-phone"><label class="c-question__label">Enter your phone number</label>
+                    <div class="c-question__container">
+                      <div class="input-phone-us"><input type="tel" /></div>
+                    </div>
+                  </div>
+                  <div aria-hidden="true" class="hidden" id="share-disclaimer">
+                    <div class="c-disclaimer" data-sketch-symbol-instance="components/disclaimer/disclaimer-small">
+                      <p><small><svg class="c-disclaimer__icon c-disclaimer__icon--pre icon icon-ui-info" role="img">
+                            <title>Information Alert</title>
+                            <use xlink:href="#icon-ui-info"></use>
+                          </svg>By providing your email address or phone number, you agree to be contacted by the City of New York regarding your ACCESS NYC public benefit screening results. Your activity on ACCESS NYC is anonymous, but providing your phone number may identify you and reveal that you used the website. To find out more about how the City might use the data you share with ACCESS NYC, visit the <a href="http://www1.nyc.gov/home/terms-of-use.page" target="_blank" rel="noopener noreferrer"> Terms of Use for NYC.gov</a>, and <a href="http://www1.nyc.gov/home/privacy-policy.page" target="_blank" rel="noopener noreferrer"> Privacy Policy for NYC.gov</a>.</small></p>
+                    </div>
+                  </div>
+                </div>
+                <div>
+                  <div class="code-block mb-1"><pre>&lt;button aria-controls=&quot;provide-phone&quot; aria-describedby=&quot;share-disclaimer&quot; class=&quot;btn btn-primary mb-2&quot; data-js=&quot;toggle disclaimer-control&quot; data-scroll-offset=&quot;16&quot;&gt;Share this page&lt;/button&gt;
+&lt;div aria-hidden=&quot;true&quot; class=&quot;c-question hidden&quot; id=&quot;provide-phone&quot;&gt;&lt;label class=&quot;c-question__label&quot;&gt;Enter your phone number&lt;/label&gt;
+  &lt;div class=&quot;c-question__container&quot;&gt;
+    &lt;div class=&quot;input-phone-us&quot;&gt;&lt;input type=&quot;tel&quot; /&gt;&lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;div aria-hidden=&quot;true&quot; class=&quot;hidden&quot; id=&quot;share-disclaimer&quot;&gt;
+  &lt;div class=&quot;c-disclaimer&quot; data-sketch-symbol-instance=&quot;components/disclaimer/disclaimer-small&quot;&gt;
+    &lt;p&gt;&lt;small&gt;&lt;svg class=&quot;c-disclaimer__icon c-disclaimer__icon--pre icon icon-ui-info&quot; role=&quot;img&quot;&gt;
+          &lt;title&gt;Information Alert&lt;/title&gt;
+          &lt;use xlink:href=&quot;#icon-ui-info&quot;&gt;&lt;/use&gt;
+        &lt;/svg&gt;By providing your email address or phone number, you agree to be contacted by the City of New York regarding your ACCESS NYC public benefit screening results. Your activity on ACCESS NYC is anonymous, but providing your phone number may identify you and reveal that you used the website. To find out more about how the City might use the data you share with ACCESS NYC, visit the &lt;a href=&quot;http://www1.nyc.gov/home/terms-of-use.page&quot; target=&quot;_blank&quot; rel=&quot;noopener noreferrer&quot;&gt; Terms of Use for NYC.gov&lt;/a&gt;, and &lt;a href=&quot;http://www1.nyc.gov/home/privacy-policy.page&quot; target=&quot;_blank&quot; rel=&quot;noopener noreferrer&quot;&gt; Privacy Policy for NYC.gov&lt;/a&gt;.&lt;/small&gt;&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</pre>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+          <section class="pb-4 mb-4" id="disclaimer-toggle-usage">
+            <div class="page-wrapper px-2 screen-desktop:px-0">
+              <header class="layout--home-body">
+                <div class="my-0 px-2 border-b border-color-grey-light screen-tablet:flex screen-tablet:justify-between">
+                  <h2 class="m-0 pt-1 pb-4"><a class="text-color-grey-mid font-normal no-underline capitalize" href="#disclaimer-toggle-usage">Disclaimer Toggle Usage</a></h2>
+                </div>
+              </header>
+              <div class="layout--home-body">
+                <div class="my-0 pt-4 px-2 text-font-size-small table-align-start"><h4>Global Script</h4>
+
+<p>The Disclaimer Component Toggle requires JavaScript for showing and hiding the Disclaimer. To use the Disclaimer Component Toggle through the global ACCESS NYC Patterns script use the following code:</p>
+
+<pre><code>&lt;!-- Global Script --&gt;
+&lt;script src=&quot;dist/scripts/AccessNyc.js&quot;&gt;&lt;/script&gt;
+
+&lt;script&gt;
+  var access = new AccessNyc();
+  access.toggle();
+  access.disclaimer();
+&lt;/script&gt;</code></pre>
+
+<p>This will instantiate the Disclaimer Component and Toggle Utility, attaching event listeners for toggling the disclaimer visible.</p>
+
+<h4>Cherry-picked Module Import</h4>
+
+<p>The ES6, CommonJS, and IFFE modules all require importing and object instantiation in your main script.</p>
+
+<pre><code>// ES6
+import Disclaimer from &#39;src/components/disclaimer/disclaimer&#39;;
+import Toggle from &#39;src/utilities/toggle/toggle&#39;;
+
+// CommonJS
+import Disclaimer from &#39;dist/components/disclaimer/disclaimer.common&#39;;
+import Toggle from &#39;dist/utilities/toggle/toggle.common&#39;;
+
+&lt;!-- IFFE --&gt;
+&lt;script src=&quot;dist/components/disclaimer/disclaimer.iffe.js&quot;&gt;&lt;/script&gt;
+&lt;script src=&quot;dist/utilities/toggle/toggle.iffe.js&quot;&gt;&lt;/script&gt;
+
+new Toggle();
+new Disclaimer();</code></pre>
+
+<h4>Polyfills</h4>
+
+<p>The <a href="/toggle">Toggle Utility</a> reqiures polyfills for IE11 support. See the <a href="toggle#toggle-usage">&quot;Toggle Usage&quot; section</a> for more details.</p></div>
+              </div>
+            </div>
+          </section>
           <div class="sticky bottom-0 bg-color-white shadow-up relative z-10 overflow-y-scroll whitespace-no-wrap animated fadeInUp">
-            <nav class="nav-inline text-font-size-small p-4"><span class="mr-4">Jump to:</span><a class="mr-4" href="#small-disclaimer">Small Disclaimer</a></nav>
+            <nav class="nav-inline text-font-size-small p-4"><span class="mr-4">Jump to:</span><a class="mr-4" href="#small-disclaimer">Small Disclaimer</a><a class="mr-4" href="#disclaimer-toggle">Disclaimer Toggle</a><a class="mr-4" href="#disclaimer-toggle-usage">Disclaimer Toggle Usage</a></nav>
           </div>
         </article>
       </main>
@@ -170,6 +267,9 @@
       access.icons();
       access.toggle();
       access.alertBanner();
+    </script>
+    <script type="text/javascript">
+      access.disclaimer();
     </script>
   </body>
 

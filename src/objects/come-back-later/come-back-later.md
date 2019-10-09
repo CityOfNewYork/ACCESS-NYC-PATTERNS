@@ -1,0 +1,1 @@
+This Object uses the [Alert Box](/alert-box), [Share Form](/share-form), and [Disclaimer](disclaimer) components. It requires JavaScript to show and hide the disclaimer as well as provide functionality for the form submission.

@@ -1,5 +1,5 @@
 /
-/ Alert Box Info
+/ Come Back Later
 /
 
 article class='c-alert-box bg-status-info mb-4' data-sketch-symbol=symbol data-sketch-symbol-instance=instance
@@ -7,6 +7,7 @@ article class='c-alert-box bg-status-info mb-4' data-sketch-symbol=symbol data-s
     svg class='c-alert-box__svg icon icon-4 icon-ui-info' role='img'
       title Information Alert
       use xlink:href='#icon-ui-info'
+
   div class='c-alert-box__body'
     header
       h1 class='type-h4 m-0' Come back to it later.
@@ -16,9 +17,9 @@ article class='c-alert-box bg-status-info mb-4' data-sketch-symbol=symbol data-s
       - symbol = false;
       - instance = 'components/share-form/share-form-email';
       = partial(`../../${instance}.slm`);
-      - instance = 'components/share-form/share-form-text';
+      - instance = 'components/share-form/share-form';
       = partial(`../../${instance}.slm`);
 
-    div class='mt-3 screen-tablet:m-0'
+    div id='share-disclaimer' class='mt-3 screen-tablet:m-0 hidden' aria-hidden='true'
       - instance = 'components/disclaimer/disclaimer-small';
       = partial(`../../${instance}.slm`);

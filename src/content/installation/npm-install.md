@@ -8,7 +8,7 @@ Optionally, you may [download an archive](https://github.com/CityOfNewYork/ACCES
 
 ### CDN
 
-You can pick which files in the [distribution folder of the repository](https://github.com/CityOfNewYork/ACCESS-NYC-PATTERNS/tree/v0.1.0/dist) to use by linking to them through [JsDelivr](https://www.jsdelivr.com). For example, the link of the v0.1.0 default stylesheet:
+You can pick which files in the [distribution folder of the repository](https://github.com/CityOfNewYork/ACCESS-NYC-PATTERNS/tree/master/dist) to use by linking to them through [JsDelivr](https://www.jsdelivr.com). For example, the link of the v0.1.0 default stylesheet:
 
     https://cdn.jsdelivr.net/gh/cityofnewyork/access-nyc-patterns@v0.1.0/dist/styles/site-default.css
 

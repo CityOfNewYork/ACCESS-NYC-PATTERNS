@@ -1,6 +1,6 @@
 #### Global Script
 
-The Text Controller Object requires JavaScript for showing and hiding the text control options and for resizing the page's text size. It uses a Cookie to store the user's preferred text size. To use the Text Controller Object throught the global ACCESS NYC Patterns script use the following code:
+The Text Controller Object requires JavaScript for showing and hiding the text control options and for resizing the page's text size. It uses a Cookie to store the user's preferred text size. To use the Text Controller Object through the global ACCESS NYC Patterns script use the following code:
 
     <!-- Global Script -->
     <script src="dist/scripts/AccessNyc.js"></script>

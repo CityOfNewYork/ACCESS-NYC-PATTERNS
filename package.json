@@ -36,7 +36,7 @@
     ]
   },
   "devDependencies": {
-    "@nycopportunity/patterns-framework": "0.0.10-alpha",
+    "@nycopportunity/patterns-framework": "0.0.10",
     "rollup-plugin-alias": "^1.5.2",
     "rollup-plugin-vue": "^4.2.0",
     "vue-template-compiler": "^2.6.9"
@@ -44,6 +44,7 @@
   "dependencies": {
     "animate.scss": "0.0.6",
     "bourbon": "^4.2.7",
+    "cleave.js": "^1.5.3",
     "form-serialize": "^0.7.2",
     "js-cookie": "^2.2.1",
     "lodash-es": "^4.17.15",

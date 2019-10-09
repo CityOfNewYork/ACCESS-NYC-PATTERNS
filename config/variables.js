@@ -2,8 +2,8 @@
  * Config
  */
 
-const package = require('../package.json');
-const version = process.env.V || package.version;
+const packageJson = require('../package.json');
+const version = process.env.V || packageJson.version;
 
 const variables = {
   'version': version,

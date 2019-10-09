@@ -2,7 +2,7 @@
 'use strict';
 
 import Cookies from 'js-cookie';
-import Toggle from '../../utilities/toggle/toggle';
+import Toggle from '@nycopportunity/patterns-framework/src/utilities/toggle/toggle';
 
 /**
  * This controls the text sizer module at the top of page. A text-size-X class
@@ -17,7 +17,7 @@ class TextController {
    */
   constructor(el) {
     /** @private {HTMLElement} The component element. */
-    this._el = el;
+    this.el = el;
 
     /** @private {Number} The relative scale of text adjustment. */
     this._textSize = 0;
@@ -47,8 +47,8 @@ class TextController {
     if (this._initialized)
       return this;
 
-    const btnSmaller = this._el.querySelector(TextController.selectors.SMALLER);
-    const btnLarger = this._el.querySelector(TextController.selectors.LARGER);
+    const btnSmaller = this.el.querySelector(TextController.selectors.SMALLER);
+    const btnLarger = this.el.querySelector(TextController.selectors.LARGER);
 
     btnSmaller.addEventListener('click', event => {
       event.preventDefault();
@@ -99,9 +99,9 @@ class TextController {
     this._active = true;
 
     // Retrieve selectors required for the main toggling method
-    let el = this._el.querySelector(TextController.selectors.TOGGLE);
+    let el = this.el.querySelector(TextController.selectors.TOGGLE);
     let targetSelector = `#${el.getAttribute('aria-controls')}`;
-    let target = this._el.querySelector(targetSelector);
+    let target = this.el.querySelector(targetSelector);
 
     // Invoke main toggling method from toggle.js
     this._toggle.elementToggle(el, target);
@@ -149,8 +149,8 @@ class TextController {
    * @return {this} TextSizer
    */
   _checkForMinMax() {
-    const btnSmaller = this._el.querySelector(TextController.selectors.SMALLER);
-    const btnLarger = this._el.querySelector(TextController.selectors.LARGER);
+    const btnSmaller = this.el.querySelector(TextController.selectors.SMALLER);
+    const btnLarger = this.el.querySelector(TextController.selectors.LARGER);
 
     if (this._textSize <= TextController.min) {
       this._textSize = TextController.min;
@@ -175,13 +175,13 @@ TextController.min = -3;
 TextController.max = 3;
 
 /** @type {String} The component selector */
-TextController.selector = '[data-js*="text-controller"]';
+TextController.selector = '[data-js="text-controller"]';
 
 /** @type {Object} element selectors within the component */
 TextController.selectors = {
   LARGER: '[data-js*="text-larger"]',
   SMALLER: '[data-js*="text-smaller"]',
-  TOGGLE: '[data-js*="text-options"]'
+  TOGGLE: '[data-js*="text-controller__control"]'
 };
 
 export default TextController;

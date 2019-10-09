@@ -1,0 +1,12 @@
+button class='btn btn-primary mb-2' data-scroll-offset='16' data-js='toggle disclaimer-control' aria-controls='provide-phone' aria-describedby='share-disclaimer' Share this page
+
+div id='provide-phone' class='c-question hidden' aria-hidden='true'
+  label class='c-question__label' Enter your phone number
+
+  div class='c-question__container'
+    div class='input-phone-us'
+      input type='tel'
+
+div id='share-disclaimer' class='hidden' aria-hidden='true'
+  - instance = 'components/disclaimer/disclaimer-small';
+  = partial(`../../${instance}.slm`);

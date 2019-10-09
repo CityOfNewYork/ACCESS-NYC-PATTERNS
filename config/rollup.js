@@ -2,13 +2,13 @@
  * Dependencies
  */
 
-import alias from 'rollup-plugin-alias';
-import resolve from 'rollup-plugin-node-resolve';
-import babel from 'rollup-plugin-babel';
-import replace from 'rollup-plugin-replace';
-import vue from 'rollup-plugin-vue';
-import buble from 'rollup-plugin-buble';
-import commonjs from 'rollup-plugin-commonjs';
+import alias from 'rollup-plugin-alias';          // Define require aliases when bundling packages with Rollup.
+import resolve from 'rollup-plugin-node-resolve'; // Locate modules using the Node resolution algorithm, for using third party modules in node_modules.
+import commonjs from 'rollup-plugin-commonjs';    // Convert CommonJS modules to ES6, so they can be included in a Rollup bundle
+import vue from 'rollup-plugin-vue';              // Roll .vue files.
+import babel from 'rollup-plugin-babel';          // Transpile source code.
+import buble from 'rollup-plugin-buble';          // Convert ES2015 with buble.
+import replace from 'rollup-plugin-replace';      // Replace content while bundling.
 
 /**
  * Config
@@ -46,7 +46,11 @@ const plugins = {
     'vue/dist/vue.common': 'node_modules/vue/dist/vue.esm.js'
   }),
   replace: replace({
-    'process.env.NODE_ENV': JSON.stringify('production')
+    'process.env.NODE_ENV': `'${process.env.NODE_ENV}'`,
+    'SCREEN_DESKTOP': 960,
+    'SCREEN_TABLET': 768,
+    'SCREEN_MOBILE': 480,
+    'SCREEM_SM_MOBILE': 400
   }),
   common: commonjs(),
   vue: vue(),
@@ -68,8 +72,8 @@ rollup.local = [
   plugins.resolve,
   plugins.common,
   plugins.vue,
-  plugins.buble,
   plugins.babel,
+  plugins.buble,
   plugins.replace
 ];
 
@@ -77,8 +81,9 @@ rollup.dist = [
   plugins.resolve,
   plugins.common,
   plugins.vue,
+  plugins.babel,
   plugins.buble,
-  plugins.babel
+  plugins.replace
 ];
 
 /**
@@ -125,42 +130,6 @@ const modules = [
       globals: rollup.globals
     },
     plugins: rollup.local
-  },
-  {
-    input: './src/utilities/forms/forms.js',
-    plugins: rollup.dist,
-    output: [
-      {
-        name: 'Forms',
-        file: `./dist/utilities/forms/forms.iffe.js`,
-        format: 'iife',
-        strict: rollup.strict
-      },
-      {
-        name: 'Forms',
-        file: `./dist/utilities/forms/forms.common.js`,
-        format: 'cjs',
-        strict: rollup.strict
-      }
-    ]
-  },
-  {
-    input: './src/utilities/toggle/toggle.js',
-    plugins: rollup.dist,
-    output: [
-      {
-        name: 'InputAutocomplete',
-        file: `./dist/utilities/toggle/toggle.iffe.js`,
-        format: 'iife',
-        strict: rollup.strict
-      },
-      {
-        name: 'InputAutocomplete',
-        file: `./dist/utilities/toggle/toggle.common.js`,
-        format: 'cjs',
-        strict: rollup.strict
-      }
-    ]
   },
   {
     input: './src/elements/inputs/inputs-autocomplete.js',
@@ -271,6 +240,42 @@ const modules = [
       {
         name: 'NearbyStops',
         file: `./dist/components/nearby-stops/nearby-stops.common.js`,
+        format: 'cjs',
+        strict: rollup.strict
+      }
+    ]
+  },
+  {
+    input: './src/components/share-form/share-form.js',
+    plugins: rollup.dist,
+    output: [
+      {
+        name: 'ShareForm',
+        file: `./dist/components/share-form/share-form.iffe.js`,
+        format: 'iife',
+        strict: rollup.strict
+      },
+      {
+        name: 'ShareForm',
+        file: `./dist/components/share-form/share-form.common.js`,
+        format: 'cjs',
+        strict: rollup.strict
+      }
+    ]
+  },
+  {
+    input: './src/components/disclaimer/disclaimer.js',
+    plugins: rollup.dist,
+    output: [
+      {
+        name: 'Disclaimer',
+        file: `./dist/components/disclaimer/disclaimer.iffe.js`,
+        format: 'iife',
+        strict: rollup.strict
+      },
+      {
+        name: 'Disclaimer',
+        file: `./dist/components/disclaimer/disclaimer.common.js`,
         format: 'cjs',
         strict: rollup.strict
       }
