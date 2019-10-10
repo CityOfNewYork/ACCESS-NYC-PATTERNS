@@ -5682,7 +5682,6 @@ var AccessNyc = (function () {
         }).then(function (response) {
           _this.response(response);
         })["catch"](function (data) {
-          _this.error(data);
         });
       };
 
@@ -5794,11 +5793,11 @@ var AccessNyc = (function () {
 
         this.form.FORM.classList.replace(this.classes.PROCESSING, this.classes.SUCCESS);
         this.enable();
-        this.form.FORM.addEventListener('keyup', function () {
+        this.form.FORM.addEventListener('input', function () {
           _this3.form.FORM.classList.remove(_this3.classes.SUCCESS);
         }); // Successful messages hook (fn provided to the class upon instatiation)
 
-        if (this.sent) { this.sent(type); }
+        if (this.sent) { this.sent(this); }
         return this;
       }
       /**
