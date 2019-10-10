@@ -167,7 +167,7 @@ class ShareForm {
    */
   response(data) {
     if (data.success) {
-      this.success().enable();
+      this.success();
     } else {
       if (data.error === 21211) {
         this.feedback('INVALID').enable();
@@ -188,7 +188,10 @@ class ShareForm {
    * @return  {Object}  The instantiated class
    */
   success() {
-    this.feedback('SUCCESS').reset();
+    this.form.FORM.classList
+      .replace(this.classes.PROCESSING, this.classes.SUCCESS);
+
+    this.enable();
 
     this.form.FORM.addEventListener('keyup', () => {
       this.form.FORM.classList.remove(this.classes.SUCCESS);
@@ -221,9 +224,6 @@ class ShareForm {
    * @return  {Object}       The instantiated class
    */
   feedback(KEY) {
-    if (!this.strings.hasOwnProperty(KEY))
-      return this;
-
     // Create the new error message
     let message = document.createElement('div');
 

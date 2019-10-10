@@ -2434,7 +2434,7 @@ function () {
     key: "response",
     value: function response(data) {
       if (data.success) {
-        this.success().enable();
+        this.success();
       } else {
         if (data.error === 21211) {
           this.feedback('INVALID').enable();
@@ -2442,6 +2442,8 @@ function () {
           this.feedback('SERVER').enable();
         }
       }
+
+      { console.dir(data); }
       return this;
     }
     /**
@@ -2455,7 +2457,8 @@ function () {
     value: function success() {
       var _this3 = this;
 
-      this.feedback('SUCCESS').reset();
+      this.form.FORM.classList.replace(this.classes.PROCESSING, this.classes.SUCCESS);
+      this.enable();
       this.form.FORM.addEventListener('keyup', function () {
         _this3.form.FORM.classList.remove(_this3.classes.SUCCESS);
       }); // Successful messages hook (fn provided to the class upon instatiation)
@@ -2473,6 +2476,7 @@ function () {
     key: "error",
     value: function error(response) {
       this.feedback('SERVER').enable();
+      { console.dir(response); }
       return this;
     }
     /**
@@ -2485,8 +2489,7 @@ function () {
   }, {
     key: "feedback",
     value: function feedback(KEY) {
-      if (!this.strings.hasOwnProperty(KEY)) { return this; } // Create the new error message
-
+      // Create the new error message
       var message = document.createElement('div'); // Set the feedback class and insert text
 
       message.classList.add("".concat(this.classes[KEY]).concat(this.classes.MESSAGE));
