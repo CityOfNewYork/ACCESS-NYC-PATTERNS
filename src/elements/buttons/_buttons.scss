@@ -45,6 +45,12 @@ button {
 }
 
 .btn-toggle, .button-toggle {
+  text-align: $text-direction-start;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
   &::after {
     content: '';
     position: relative;

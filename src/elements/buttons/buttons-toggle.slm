@@ -2,7 +2,7 @@
 / Toggle Button
 /
 
-button#btn-toggle type='button' class='btn-toggle btn-primary mb-2' data-js='toggle' aria-controls='btn-toggle-target' aria-expanded='true' data-sketch-symbol=symbol data-sketch-symbol-instance=instance
+button#btn-toggle type='button' class='btn-toggle btn-primary w-full mb-2' data-js='toggle' aria-controls='btn-toggle-target' aria-expanded='true' data-sketch-symbol=symbol data-sketch-symbol-instance=instance
   | Toggle Button
 
 div#btn-toggle-target class='bg-color-blue-light p-4 text-center active' aria-hidden='false' Toggle button target element
