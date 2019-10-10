@@ -13,6 +13,7 @@
 @mixin table($alignment: $text-direction-end) {
   font-size: $font-size-small;
   margin-bottom: $spacing-base;
+  width: 100%;
   max-width: 100%;
   text-align: $alignment;
 
