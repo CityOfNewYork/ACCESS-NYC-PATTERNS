@@ -1,7 +1,7 @@
 /* eslint-env browser */
 'use strict';
 
-import Cookies from 'js-cookie';
+import Cookies from 'js-cookie/dist/js.cookie.mjs';
 import Toggle from '@nycopportunity/patterns-framework/src/utilities/toggle/toggle';
 
 /**

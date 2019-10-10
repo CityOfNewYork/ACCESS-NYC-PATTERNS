@@ -1,7 +1,6 @@
 'use strict';
 
-import valid from '../../utilities/valid/valid';
-import joinValues from '../../utilities/join-values/join-values';
+import Forms from '@nycopportunity/patterns-framework/src/utilities/forms/forms';
 import formSerialize from 'form-serialize';
 
 /**
@@ -10,9 +9,6 @@ import formSerialize from 'form-serialize';
  */
 class Newsletter {
   /**
-   * [constructor description]
-   */
-  /**
    * The class constructor
    * @param  {Object} element The Newsletter DOM Object
    * @return {Class}          The instantiated Newsletter object
@@ -20,10 +16,23 @@ class Newsletter {
   constructor(element) {
     this._el = element;
 
-    this.STRINGS = Newsletter.strings;
+    this.keys = Newsletter.keys;
 
-    // Map toggled checkbox values to an input.
-    this._el.addEventListener('click', joinValues);
+    this.endpoints = Newsletter.endpoints;
+
+    this.callback = Newsletter.callback;
+
+    this.selectors = Newsletter.selectors;
+
+    this.selector = Newsletter.selector;
+
+    this.stringKeys = Newsletter.stringKeys;
+
+    this.strings = Newsletter.strings;
+
+    this.templates = Newsletter.templates;
+
+    this.classes = Newsletter.classes;
 
     // This sets the script callback function to a global function that
     // can be accessed by the the requested script.
@@ -31,10 +40,19 @@ class Newsletter {
       this._callback(data);
     };
 
-    this._el.querySelector('form').addEventListener('submit', (event) =>
-      (valid(event, this.STRINGS)) ?
-        this._submit(event).then(this._onload).catch(this._onerror) : false
-    );
+    this.form = new Forms(this._el.querySelector('form'));
+
+    this.form.strings = this.strings;
+
+    this.form.submit = (event) => {
+      event.preventDefault();
+
+      this._submit(event)
+        .then(this._onload)
+        .catch(this._onerror);
+    };
+
+    this.form.watch();
 
     return this;
   }
@@ -157,7 +175,7 @@ class Newsletter {
     // The utility contains a global method for retrieving them.
     for (let i = 0; i < strings.length; i++)
       if (msg.indexOf(Newsletter.stringKeys[strings[i]]) > -1) {
-        msg = this.STRINGS[strings[i]];
+        msg = this.strings[strings[i]];
         handled = true;
       }
 
@@ -166,7 +184,7 @@ class Newsletter {
     for (let x = 0; x < Newsletter.templates.length; x++) {
       let template = Newsletter.templates[x];
       let key = template.replace('{{ ', '').replace(' }}', '');
-      let value = this._data[key] || this.STRINGS[key];
+      let value = this._data[key] || this.strings[key];
       let reg = new RegExp(template, 'gi');
       msg = msg.replace(reg, (value) ? value : '');
     }
@@ -174,7 +192,7 @@ class Newsletter {
     if (handled)
       alertBoxMsg.innerHTML = msg;
     else if (type === 'ERROR')
-      alertBoxMsg.innerHTML = this.STRINGS.ERR_PLEASE_TRY_LATER;
+      alertBoxMsg.innerHTML = this.strings.ERR_PLEASE_TRY_LATER;
 
     if (alertBox) this._elementShow(alertBox, alertBoxMsg);
 
@@ -231,16 +249,6 @@ class Newsletter {
    */
   _key(key) {
     return Newsletter.keys[key];
-  }
-
-  /**
-   * Setter for the Autocomplete strings
-   * @param   {object}  localizedStrings  Object containing strings.
-   * @return  {object}                    The Newsletter Object.
-   */
-  strings(localizedStrings) {
-    Object.assign(this.STRINGS, localizedStrings);
-    return this;
   }
 }
 
