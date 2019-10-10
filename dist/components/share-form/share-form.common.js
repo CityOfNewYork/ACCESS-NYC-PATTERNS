@@ -2442,8 +2442,6 @@ function () {
           this.feedback('SERVER').enable();
         }
       }
-
-      { console.dir(data); }
       return this;
     }
     /**
@@ -2476,7 +2474,6 @@ function () {
     key: "error",
     value: function error(response) {
       this.feedback('SERVER').enable();
-      { console.dir(response); }
       return this;
     }
     /**
