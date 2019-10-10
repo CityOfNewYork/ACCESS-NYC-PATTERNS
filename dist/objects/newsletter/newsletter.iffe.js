@@ -611,8 +611,6 @@ var Newsletter = (function () {
     }, {
       key: "_onerror",
       value: function _onerror(error) {
-        // eslint-disable-next-line no-console
-        { console.dir(error); }
         return this;
       }
       /**
@@ -624,8 +622,7 @@ var Newsletter = (function () {
     }, {
       key: "_callback",
       value: function _callback(data) {
-        if (this["_".concat(data[this._key('MC_RESULT')])]) { this["_".concat(data[this._key('MC_RESULT')])](data.msg); }else // eslint-disable-next-line no-console
-          { console.dir(data); }
+        if (this["_".concat(data[this._key('MC_RESULT')])]) { this["_".concat(data[this._key('MC_RESULT')])](data.msg); }
         return this;
       }
       /**
