@@ -77,12 +77,12 @@
   border: none;
   min-width: 0px;
   width: 100%;
-  text-overflow: ellipsis;
-  padding-#{$text-direction-end}: 0;
 
   input {
     border: none;
     width: 100%;
+    text-overflow: ellipsis;
+    padding-#{$text-direction-end}: 0;
   }
 }
 

@@ -81,7 +81,8 @@ class ShareForm {
         .then(response => {
           this.response(response);
         }).catch(data => {
-          this.error(data);
+          if (process.env.NODE_ENV !== 'production')
+            console.dir(data);
         });
     };
 
@@ -193,12 +194,12 @@ class ShareForm {
 
     this.enable();
 
-    this.form.FORM.addEventListener('keyup', () => {
+    this.form.FORM.addEventListener('input', () => {
       this.form.FORM.classList.remove(this.classes.SUCCESS);
     });
 
     // Successful messages hook (fn provided to the class upon instatiation)
-    if (this.sent) this.sent(type);
+    if (this.sent) this.sent(this);
 
     return this;
   }
