@@ -5297,10 +5297,6 @@ var AccessNyc = (function () {
 
   var commonjsGlobal$1 = typeof globalThis !== 'undefined' ? globalThis : typeof window !== 'undefined' ? window : typeof global !== 'undefined' ? global : typeof self !== 'undefined' ? self : {};
 
-  function createCommonjsModule(fn, module) {
-  	return module = { exports: {} }, fn(module, module.exports), module.exports;
-  }
-
   !function(){function l(l,n){var u=l.split("."),t=Y;u[0]in t||!t.execScript||t.execScript("var "+u[0]);for(var e;u.length&&(e=u.shift());){ u.length||void 0===n?t=t[e]?t[e]:t[e]={}:t[e]=n; }}function n(l,n){function u(){}u.prototype=n.prototype,l.M=n.prototype,l.prototype=new u,l.prototype.constructor=l,l.N=function(l,u,t){
   var arguments$1 = arguments;
   for(var e=Array(arguments.length-2),r=2;r<arguments.length;r++){ e[r-2]=arguments$1[r]; }return n.prototype[u].apply(l,e)};}function u(l,n){null!=l&&this.a.apply(this,arguments);}function t(l){l.b="";}function e(l,n){l.sort(n||r);}function r(l,n){return l>n?1:l<n?-1:0}function i(l){var n,u=[],t=0;for(n in l){ u[t++]=l[n]; }return u}function a(l,n){this.b=l,this.a={};for(var u=0;u<n.length;u++){var t=n[u];this.a[t.b]=t;}}function d(l){return l=i(l.a),e(l,function(l,n){return l.b-n.b}),l}function o(l,n){switch(this.b=l,this.g=!!n.v,this.a=n.c,this.i=n.type,this.h=!1,this.a){case O:case H:case q:case X:case k:case L:case J:this.h=!0;}this.f=n.defaultValue;}function s(){this.a={},this.f=this.j().a,this.b=this.g=null;}function f(l,n){for(var u=d(l.j()),t=0;t<u.length;t++){var e=u[t],r=e.b;if(null!=n.a[r]){l.b&&delete l.b[e.b];var i=11==e.a||10==e.a;if(e.g){ for(var e=p(n,r)||[],a=0;a<e.length;a++){var o=l,s=r,c=i?e[a].clone():e[a];o.a[s]||(o.a[s]=[]),o.a[s].push(c),o.b&&delete o.b[s];} }else { e=p(n,r),i?(i=p(l,r))?f(i,e):m(l,r,e.clone()):m(l,r,e); }}}}function p(l,n){var u=l.a[n];if(null==u){ return null; }if(l.g){if(!(n in l.b)){var t=l.g,e=l.f[n];if(null!=u){ if(e.g){for(var r=[],i=0;i<u.length;i++){ r[i]=t.b(e,u[i]); }u=r;}else { u=t.b(e,u); } }return l.b[n]=u}return l.b[n]}return u}function c(l,n,u){var t=p(l,n);return l.f[n].g?t[u||0]:t}function h(l,n){var u;if(null!=l.a[n]){ u=c(l,n,void 0); }else { l:{if(u=l.f[n],void 0===u.f){var t=u.i;if(t===Boolean){ u.f=!1; }else if(t===Number){ u.f=0; }else{if(t!==String){u=new t;break l}u.f=u.h?"0":"";}}u=u.f;} }return u}function g(l,n){return l.f[n].g?null!=l.a[n]?l.a[n].length:0:null!=l.a[n]?1:0}function m(l,n,u){l.a[n]=u,l.b&&(l.b[n]=u);}function b(l,n){var u,t=[];for(u in n){ 0!=u&&t.push(new o(u,n[u])); }return new a(l,t)}/*
@@ -5911,63 +5907,6 @@ var AccessNyc = (function () {
   ShareForm.sent = false;
 
   /**
-   * A simple form validation function that uses native form validation. It will
-   * add appropriate form feedback for each input that is invalid and native
-   * localized browser messaging.
-   *
-   * See https://developer.mozilla.org/en-US/docs/Learn/HTML/Forms/Form_validation
-   * See https://caniuse.com/#feat=form-validation for support
-   *
-   * @param  {Event}  event The form submission event.
-   * @param  {Array} STRINGS set of strings
-   * @return {Event/Boolean} The original event or false if invalid.
-   */
-  function valid (event, STRINGS) {
-    event.preventDefault();
-    var validity = event.target.checkValidity();
-    var elements = event.target.querySelectorAll('input[required="true"]');
-
-    for (var i = 0; i < elements.length; i++) {
-      // Remove old messaging if it exists
-      var el = elements[i];
-      var container = el.parentNode;
-      var message = container.querySelector('.error-message');
-      container.classList.remove('error');
-      if (message) { message.remove(); } // If this input valid, skip messaging
-
-      if (el.validity.valid) { continue; } // Create the new error message.
-
-      message = document.createElement('div'); // Get the error message from localized strings.
-
-      if (el.validity.valueMissing) { message.innerHTML = STRINGS.VALID_REQUIRED; }else if (!el.validity.valid) { message.innerHTML = STRINGS["VALID_".concat(el.type.toUpperCase(), "_INVALID")]; }else { message.innerHTML = el.validationMessage; }
-      message.setAttribute('aria-live', 'polite');
-      message.classList.add('error-message'); // Add the error class and error message.
-
-      container.classList.add('error');
-      container.insertBefore(message, container.childNodes[0]);
-    }
-    return validity ? event : validity;
-  }
-
-  /**
-   * Map toggled checkbox values to an input.
-   * @param  {Object} event The parent click event.
-   * @return {Element}      The target element.
-   */
-  function joinValues (event) {
-    if (!event.target.matches('input[type="checkbox"]')) { return; }
-    if (!event.target.closest('[data-js-join-values]')) { return; }
-    var el = event.target.closest('[data-js-join-values]');
-    var target = document.querySelector(el.dataset.jsJoinValues);
-    target.value = Array.from(el.querySelectorAll('input[type="checkbox"]')).filter(function (e) {
-      return e.value && e.checked;
-    }).map(function (e) {
-      return e.value;
-    }).join(', ');
-    return target;
-  }
-
-  /**
    * The Newsletter module
    * @class
    */
@@ -5975,10 +5914,6 @@ var AccessNyc = (function () {
   var Newsletter =
   /*#__PURE__*/
   function () {
-    /**
-     * [constructor description]
-     */
-
     /**
      * The class constructor
      * @param  {Object} element The Newsletter DOM Object
@@ -5990,20 +5925,31 @@ var AccessNyc = (function () {
       _classCallCheck(this, Newsletter);
 
       this._el = element;
-      this.STRINGS = Newsletter.strings; // Map toggled checkbox values to an input.
-
-      this._el.addEventListener('click', joinValues); // This sets the script callback function to a global function that
+      this.keys = Newsletter.keys;
+      this.endpoints = Newsletter.endpoints;
+      this.callback = Newsletter.callback;
+      this.selectors = Newsletter.selectors;
+      this.selector = Newsletter.selector;
+      this.stringKeys = Newsletter.stringKeys;
+      this.strings = Newsletter.strings;
+      this.templates = Newsletter.templates;
+      this.classes = Newsletter.classes; // This sets the script callback function to a global function that
       // can be accessed by the the requested script.
-
 
       window[Newsletter.callback] = function (data) {
         _this._callback(data);
       };
 
-      this._el.querySelector('form').addEventListener('submit', function (event) {
-        return valid(event, _this.STRINGS) ? _this._submit(event).then(_this._onload)["catch"](_this._onerror) : false;
-      });
+      this.form = new Forms(this._el.querySelector('form'));
+      this.form.strings = this.strings;
 
+      this.form.submit = function (event) {
+        event.preventDefault();
+
+        _this._submit(event).then(_this._onload)["catch"](_this._onerror);
+      };
+
+      this.form.watch();
       return this;
     }
     /**
@@ -6132,7 +6078,7 @@ var AccessNyc = (function () {
 
         for (var i = 0; i < strings.length; i++) {
           if (msg.indexOf(Newsletter.stringKeys[strings[i]]) > -1) {
-            msg = this.STRINGS[strings[i]];
+            msg = this.strings[strings[i]];
             handled = true;
           }
         } // Replace string templates with values from either our form data or
@@ -6142,12 +6088,12 @@ var AccessNyc = (function () {
         for (var x = 0; x < Newsletter.templates.length; x++) {
           var template = Newsletter.templates[x];
           var key = template.replace('{{ ', '').replace(' }}', '');
-          var value = this._data[key] || this.STRINGS[key];
+          var value = this._data[key] || this.strings[key];
           var reg = new RegExp(template, 'gi');
           msg = msg.replace(reg, value ? value : '');
         }
 
-        if (handled) { alertBoxMsg.innerHTML = msg; }else if (type === 'ERROR') { alertBoxMsg.innerHTML = this.STRINGS.ERR_PLEASE_TRY_LATER; }
+        if (handled) { alertBoxMsg.innerHTML = msg; }else if (type === 'ERROR') { alertBoxMsg.innerHTML = this.strings.ERR_PLEASE_TRY_LATER; }
         if (alertBox) { this._elementShow(alertBox, alertBoxMsg); }
         return this;
       }
@@ -6209,18 +6155,6 @@ var AccessNyc = (function () {
       key: "_key",
       value: function _key(key) {
         return Newsletter.keys[key];
-      }
-      /**
-       * Setter for the Autocomplete strings
-       * @param   {object}  localizedStrings  Object containing strings.
-       * @return  {object}                    The Newsletter Object.
-       */
-
-    }, {
-      key: "strings",
-      value: function strings(localizedStrings) {
-        Object.assign(this.STRINGS, localizedStrings);
-        return this;
       }
     }]);
 
@@ -6286,162 +6220,126 @@ var AccessNyc = (function () {
     HIDDEN: 'hidden'
   };
 
-  var js_cookie = createCommonjsModule(function (module, exports) {
-  (function (factory) {
-  	var registeredInModuleLoader;
-  	{
-  		module.exports = factory();
-  		registeredInModuleLoader = true;
-  	}
-  	if (!registeredInModuleLoader) {
-  		var OldCookies = window.Cookies;
-  		var api = window.Cookies = factory();
-  		api.noConflict = function () {
-  			window.Cookies = OldCookies;
-  			return api;
-  		};
-  	}
-  }(function () {
-  	function extend () {
-  		var arguments$1 = arguments;
+  /*! js-cookie v3.0.0-beta.0 | MIT */
+  function extend () {
+    var arguments$1 = arguments;
 
-  		var i = 0;
-  		var result = {};
-  		for (; i < arguments.length; i++) {
-  			var attributes = arguments$1[ i ];
-  			for (var key in attributes) {
-  				result[key] = attributes[key];
-  			}
-  		}
-  		return result;
-  	}
+    var result = {};
+    for (var i = 0; i < arguments.length; i++) {
+      var attributes = arguments$1[i];
+      for (var key in attributes) {
+        result[key] = attributes[key];
+      }
+    }
+    return result
+  }
 
-  	function decode (s) {
-  		return s.replace(/(%[0-9A-Z]{2})+/g, decodeURIComponent);
-  	}
+  function decode (s) {
+    return s.replace(/(%[\dA-F]{2})+/gi, decodeURIComponent)
+  }
 
-  	function init (converter) {
-  		function api() {}
+  function init (converter) {
+    function set (key, value, attributes) {
+      if (typeof document === 'undefined') {
+        return
+      }
 
-  		function set (key, value, attributes) {
-  			if (typeof document === 'undefined') {
-  				return;
-  			}
+      attributes = extend(api.defaults, attributes);
 
-  			attributes = extend({
-  				path: '/'
-  			}, api.defaults, attributes);
+      if (typeof attributes.expires === 'number') {
+        attributes.expires = new Date(new Date() * 1 + attributes.expires * 864e5);
+      }
+      if (attributes.expires) {
+        attributes.expires = attributes.expires.toUTCString();
+      }
 
-  			if (typeof attributes.expires === 'number') {
-  				attributes.expires = new Date(new Date() * 1 + attributes.expires * 864e+5);
-  			}
+      value = converter.write
+        ? converter.write(value, key)
+        : encodeURIComponent(String(value)).replace(
+          /%(23|24|26|2B|3A|3C|3E|3D|2F|3F|40|5B|5D|5E|60|7B|7D|7C)/g,
+          decodeURIComponent
+        );
 
-  			// We're using "expires" because "max-age" is not supported by IE
-  			attributes.expires = attributes.expires ? attributes.expires.toUTCString() : '';
+      key = encodeURIComponent(String(key))
+        .replace(/%(23|24|26|2B|5E|60|7C)/g, decodeURIComponent)
+        .replace(/[()]/g, escape);
 
-  			try {
-  				var result = JSON.stringify(value);
-  				if (/^[\{\[]/.test(result)) {
-  					value = result;
-  				}
-  			} catch (e) {}
+      var stringifiedAttributes = '';
+      for (var attributeName in attributes) {
+        if (!attributes[attributeName]) {
+          continue
+        }
+        stringifiedAttributes += '; ' + attributeName;
+        if (attributes[attributeName] === true) {
+          continue
+        }
 
-  			value = converter.write ?
-  				converter.write(value, key) :
-  				encodeURIComponent(String(value))
-  					.replace(/%(23|24|26|2B|3A|3C|3E|3D|2F|3F|40|5B|5D|5E|60|7B|7D|7C)/g, decodeURIComponent);
+        // Considers RFC 6265 section 5.2:
+        // ...
+        // 3.  If the remaining unparsed-attributes contains a %x3B (";")
+        //     character:
+        // Consume the characters of the unparsed-attributes up to,
+        // not including, the first %x3B (";") character.
+        // ...
+        stringifiedAttributes += '=' + attributes[attributeName].split(';')[0];
+      }
 
-  			key = encodeURIComponent(String(key))
-  				.replace(/%(23|24|26|2B|5E|60|7C)/g, decodeURIComponent)
-  				.replace(/[\(\)]/g, escape);
+      return (document.cookie = key + '=' + value + stringifiedAttributes)
+    }
 
-  			var stringifiedAttributes = '';
-  			for (var attributeName in attributes) {
-  				if (!attributes[attributeName]) {
-  					continue;
-  				}
-  				stringifiedAttributes += '; ' + attributeName;
-  				if (attributes[attributeName] === true) {
-  					continue;
-  				}
+    function get (key) {
+      if (typeof document === 'undefined' || (arguments.length && !key)) {
+        return
+      }
 
-  				// Considers RFC 6265 section 5.2:
-  				// ...
-  				// 3.  If the remaining unparsed-attributes contains a %x3B (";")
-  				//     character:
-  				// Consume the characters of the unparsed-attributes up to,
-  				// not including, the first %x3B (";") character.
-  				// ...
-  				stringifiedAttributes += '=' + attributes[attributeName].split(';')[0];
-  			}
+      // To prevent the for loop in the first place assign an empty array
+      // in case there are no cookies at all.
+      var cookies = document.cookie ? document.cookie.split('; ') : [];
+      var jar = {};
+      for (var i = 0; i < cookies.length; i++) {
+        var parts = cookies[i].split('=');
+        var cookie = parts.slice(1).join('=');
 
-  			return (document.cookie = key + '=' + value + stringifiedAttributes);
-  		}
+        if (cookie.charAt(0) === '"') {
+          cookie = cookie.slice(1, -1);
+        }
 
-  		function get (key, json) {
-  			if (typeof document === 'undefined') {
-  				return;
-  			}
+        try {
+          var name = decode(parts[0]);
+          jar[name] =
+            (converter.read || converter)(cookie, name) || decode(cookie);
 
-  			var jar = {};
-  			// To prevent the for loop in the first place assign an empty array
-  			// in case there are no cookies at all.
-  			var cookies = document.cookie ? document.cookie.split('; ') : [];
-  			var i = 0;
+          if (key === name) {
+            break
+          }
+        } catch (e) {}
+      }
 
-  			for (; i < cookies.length; i++) {
-  				var parts = cookies[i].split('=');
-  				var cookie = parts.slice(1).join('=');
+      return key ? jar[key] : jar
+    }
 
-  				if (!json && cookie.charAt(0) === '"') {
-  					cookie = cookie.slice(1, -1);
-  				}
+    var api = {
+      defaults: {
+        path: '/'
+      },
+      set: set,
+      get: get,
+      remove: function (key, attributes) {
+        set(
+          key,
+          '',
+          extend(attributes, {
+            expires: -1
+          })
+        );
+      },
+      withConverter: init
+    };
 
-  				try {
-  					var name = decode(parts[0]);
-  					cookie = (converter.read || converter)(cookie, name) ||
-  						decode(cookie);
+    return api
+  }
 
-  					if (json) {
-  						try {
-  							cookie = JSON.parse(cookie);
-  						} catch (e) {}
-  					}
-
-  					jar[name] = cookie;
-
-  					if (key === name) {
-  						break;
-  					}
-  				} catch (e) {}
-  			}
-
-  			return key ? jar[key] : jar;
-  		}
-
-  		api.set = set;
-  		api.get = function (key) {
-  			return get(key, false /* read as raw */);
-  		};
-  		api.getJSON = function (key) {
-  			return get(key, true /* read as json */);
-  		};
-  		api.remove = function (key, attributes) {
-  			set(key, '', extend(attributes, {
-  				expires: -1
-  			}));
-  		};
-
-  		api.defaults = {};
-
-  		api.withConverter = init;
-
-  		return api;
-  	}
-
-  	return init(function () {});
-  }));
-  });
+  var js_cookie = init(function () {});
 
   /* eslint-env browser */
   /**
