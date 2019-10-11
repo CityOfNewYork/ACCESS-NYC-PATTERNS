@@ -4,14 +4,14 @@
 
 div class='o-text-controller' data-js='text-controller' data-sketch-symbol=symbol data-sketch-symbol-instance=instance
 
-  button type='button' class='o-text-controller__control mb-1 btn-link' data-js='text-controller__control' aria-controls='aria-o-text-controller__options' aria-expanded='false'
+  button type='button' class='o-text-controller__control mb-1 btn-link' data-js='text-controller__control' aria-controls='aria-c-text-controller__options' aria-expanded='false'
     svg class='icon icon-ui-settings'
       use xlink:href='#icon-ui-settings'
 
     span class='o-text-controller__title-full' Translate &amp; Adjust Text
     span class='o-text-controller__title-short' Translate Text
 
-  div#aria-o-text-controller__options class='o-text-controller__options hidden' aria-hidden='true'
+  div#aria-c-text-controller__options class='o-text-controller__options hidden' aria-hidden='true'
 
     div class='o-text-controller__languages'
       div class='wpml-ls-statics-shortcode_actions wpml-ls wpml-ls-legacy-list-horizontal'
