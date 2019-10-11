@@ -43,6 +43,8 @@ var Forms = function Forms(form) {
 
   this.attrs = Forms.attrs;
 
+  this.form.setAttribute('novalidate', true);
+
   return this;
 };
 
@@ -2335,10 +2337,10 @@ function () {
     this.form.selectors = {
       'REQUIRED': this.selectors.REQUIRED,
       'ERROR_MESSAGE_PARENT': this.selectors.FORM
-    }; // Set the submit handler
-
-    this.form.submit = function (event) {
+    };
+    this.form.FORM.addEventListener('submit', function (event) {
       event.preventDefault();
+      if (_this.form.valid(event) === false) { return false; }
 
       _this.sanitize().processing().submit(event).then(function (response) {
         return response.json();
@@ -2346,9 +2348,24 @@ function () {
         _this.response(response);
       })["catch"](function (data) {
       });
-    };
+    }); // Set the submit handler
+    // this.form.submit = (event) => {
+    //   event.preventDefault();
+    //   console.dir(this.form);
+    //   if (!this.form.valid(event)) return false;
+    //   this.sanitize()
+    //     .processing()
+    //     .submit(event)
+    //     .then(response => response.json())
+    //     .then(response => {
+    //       this.response(response);
+    //     }).catch(data => {
+    //       if ('production' !== 'production')
+    //         console.dir(data);
+    //     });
+    // };
+    // this.form.watch();
 
-    this.form.watch();
     /**
      * Instatiate the ShareForm's toggle component
      */
@@ -2419,7 +2436,7 @@ function () {
         formData.append(k, _this2._data[k]);
       });
       return fetch(this.form.FORM.getAttribute('action'), {
-        method: 'POST',
+        method: this.form.FORM.getAttribute('method'),
         body: formData
       });
     }

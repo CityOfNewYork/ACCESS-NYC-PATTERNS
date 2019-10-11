@@ -70,9 +70,11 @@ class ShareForm {
       'ERROR_MESSAGE_PARENT': this.selectors.FORM
     };
 
-    // Set the submit handler
-    this.form.submit = (event) => {
+    this.form.FORM.addEventListener('submit', (event) => {
       event.preventDefault();
+
+      if (this.form.valid(event) === false)
+        return false;
 
       this.sanitize()
         .processing()
@@ -84,9 +86,28 @@ class ShareForm {
           if (process.env.NODE_ENV !== 'production')
             console.dir(data);
         });
-    };
+    });
 
-    this.form.watch();
+    // Set the submit handler
+    // this.form.submit = (event) => {
+    //   event.preventDefault();
+
+    //   console.dir(this.form);
+    //   if (!this.form.valid(event)) return false;
+
+    //   this.sanitize()
+    //     .processing()
+    //     .submit(event)
+    //     .then(response => response.json())
+    //     .then(response => {
+    //       this.response(response);
+    //     }).catch(data => {
+    //       if (process.env.NODE_ENV !== 'production')
+    //         console.dir(data);
+    //     });
+    // };
+
+    // this.form.watch();
 
     /**
      * Instatiate the ShareForm's toggle component
@@ -156,7 +177,7 @@ class ShareForm {
     });
 
     return fetch(this.form.FORM.getAttribute('action'), {
-      method: 'POST',
+      method: this.form.FORM.getAttribute('method'),
       body: formData
     });
   }

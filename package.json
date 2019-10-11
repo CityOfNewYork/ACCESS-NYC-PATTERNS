@@ -36,7 +36,7 @@
     ]
   },
   "devDependencies": {
-    "@nycopportunity/patterns-framework": "0.0.10",
+    "@nycopportunity/patterns-framework": "0.0.11",
     "rollup-plugin-alias": "^1.5.2",
     "rollup-plugin-vue": "^4.2.0",
     "vue-template-compiler": "^2.6.9"

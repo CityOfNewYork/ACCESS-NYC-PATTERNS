@@ -43,6 +43,8 @@ var Forms = function Forms(form) {
 
   this.attrs = Forms.attrs;
 
+  this.form.setAttribute('novalidate', true);
+
   return this;
 };
 

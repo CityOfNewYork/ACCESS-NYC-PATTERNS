@@ -37,11 +37,17 @@ $animate: map-get($variables, 'animate');
 .hidden.hidden\:overflow,
 .hidden\:overflowFadeInUp,
 .hidden.hidden\:overflowFadeInUp {
+  overflow: hidden;
+}
+
+.hidden\:overflow:not(.animated),
+.hidden.hidden\:overflow:not(.animated),
+.hidden\:overflowFadeInUp:not(.animated),
+.hidden.hidden\:overflowFadeInUp:not(.animated) {
   width: 0;
   height: 0;
   position: absolute;
   max-height: 0;
-  overflow: hidden;
   visibility: hidden;
 }
 
@@ -78,6 +84,11 @@ $animate: map-get($variables, 'animate');
 /**
  * Animated Overflow
   */
+.hidden.hidden\:overflow.animated,
+.hidden.hidden\:overflowFadeInUp.animated {
+  max-height: 0;
+}
+
 .animated.hidden\:overflow,
 .animated.hidden\:overflowFadeInUp {
   transition-property: max-height;
@@ -97,16 +108,16 @@ $animate: map-get($variables, 'animate');
   */
 .animated.hidden\:overflowFadeInUp {
   > .animated {
-    max-height: 0;
-    overflow: hidden;
+    // max-height: 0;
+    // overflow: hidden;
     @include animate();
   }
 }
 
 .animated.active.hidden\:overflowFadeInUp {
   > .animated {
-    max-height: none;
-    overflow: initial;
+    // max-height: none;
+    // overflow: initial;
     animation-name: fadeInUp;
   }
 }

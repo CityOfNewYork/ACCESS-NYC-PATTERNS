@@ -32,6 +32,10 @@ The ES6, CommonJS, and IFFE modules all require importing and object instantiati
     new Toggle();
     new Disclaimer();
 
+#### Replace
+
+The ES6 module includes a constant named `SCREEN_DESKTOP` which determines wether the browser needs scroll the disclaimer in the browser's view. The ACCESS Patterns Rollup configuration replaces this constant in the script during processing with the number `960` so that if the browser width is less than 960px wide, the browser will scroll to the disclamer. The same will need to be done in any project using the ES6 Module.
+
 #### Polyfills
 
 The [Toggle Utility](/toggle) reqiures polyfills for IE11 support. See the ["Toggle Usage" section](toggle#toggle-usage) for more details.

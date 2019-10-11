@@ -13,9 +13,7 @@ class Accordion {
    */
   constructor() {
     this._toggle = new Toggle({
-      selector: Accordion.selector,
-      namespace: Accordion.namespace,
-      inactiveClass: Accordion.inactiveClass
+      selector: Accordion.selector
     });
 
     return this;
@@ -27,17 +25,5 @@ class Accordion {
  * @type {String}
  */
 Accordion.selector = '[data-js*="accordion"]';
-
-/**
- * The namespace for the components JS options
- * @type {String}
- */
-Accordion.namespace = 'accordion';
-
-/**
- * The incactive class name
- * @type {String}
- */
-Accordion.inactiveClass = 'inactive';
 
 export default Accordion;

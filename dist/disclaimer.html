@@ -237,6 +237,10 @@ import Toggle from &#39;dist/utilities/toggle/toggle.common&#39;;
 new Toggle();
 new Disclaimer();</code></pre>
 
+<h4>Replace</h4>
+
+<p>The ES6 module includes a constant named <code>SCREEN_DESKTOP</code> which determines wether the browser needs scroll the disclaimer in the browser&#39;s view. The ACCESS Patterns Rollup configuration replaces this constant in the script during processing with the number <code>960</code> so that if the browser width is less than 960px wide, the browser will scroll to the disclamer. The same will need to be done in any project using the ES6 Module.</p>
+
 <h4>Polyfills</h4>
 
 <p>The <a href="/toggle">Toggle Utility</a> reqiures polyfills for IE11 support. See the <a href="toggle#toggle-usage">&quot;Toggle Usage&quot; section</a> for more details.</p></div>
