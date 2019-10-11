@@ -2,18 +2,18 @@
 / Text Controller
 /
 
-div class='c-text-controller' data-js='text-controller' data-sketch-symbol=symbol data-sketch-symbol-instance=instance
+div class='o-text-controller' data-js='text-controller' data-sketch-symbol=symbol data-sketch-symbol-instance=instance
 
-  button type='button' class='c-text-controller__control mb-1 btn-link' data-js='text-controller__control' aria-controls='aria-c-text-controller__options' aria-expanded='false'
+  button type='button' class='o-text-controller__control mb-1 btn-link' data-js='text-controller__control' aria-controls='aria-o-text-controller__options' aria-expanded='false'
     svg class='icon icon-ui-settings'
       use xlink:href='#icon-ui-settings'
 
-    span class='c-text-controller__title-full' Translate &amp; Adjust Text
-    span class='c-text-controller__title-short' Translate Text
+    span class='o-text-controller__title-full' Translate &amp; Adjust Text
+    span class='o-text-controller__title-short' Translate Text
 
-  div#aria-c-text-controller__options class='c-text-controller__options hidden' aria-hidden='true'
+  div#aria-o-text-controller__options class='o-text-controller__options hidden' aria-hidden='true'
 
-    div class='c-text-controller__languages'
+    div class='o-text-controller__languages'
       div class='wpml-ls-statics-shortcode_actions wpml-ls wpml-ls-legacy-list-horizontal'
         ul
           li class='wpml-ls-slot-shortcode_actions wpml-ls-item wpml-ls-item-en wpml-ls-current-language wpml-ls-first-item wpml-ls-item-legacy-list-horizontal'
@@ -50,15 +50,15 @@ div class='c-text-controller' data-js='text-controller' data-sketch-symbol=symbo
             a href='#' class='wpml-ls-link'
               span class='wpml-ls-native' বাংলা
 
-    div class='c-text-controller__sizer'
-      span class='c-text-controller__sizer-text' Adjust text size
+    div class='o-text-controller__sizer'
+      span class='o-text-controller__sizer-text' Adjust text size
 
-      button class='c-text-controller__sizer-btn btn-text' data-js='text-larger'
+      button class='o-text-controller__sizer-btn btn-text' data-js='text-larger'
         svg class='icon icon-ui-plus-circle'
           use xlink:href='#icon-ui-plus-circle'
         div class='sr-only' Larger
 
-      button class='c-text-controller__sizer-btn btn-text' data-js='text-smaller'
+      button class='o-text-controller__sizer-btn btn-text' data-js='text-smaller'
         svg class='icon icon-ui-minus-circle'
           use xlink:href='#icon-ui-minus-circle'
         div class='sr-only' Smaller

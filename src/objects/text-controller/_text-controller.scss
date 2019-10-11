@@ -11,17 +11,17 @@
 @import 'config/accessibility';
 
 // Declarations
-.c-text-controller {
+.o-text-controller {
   font-size: 18px; // px value freezes the font size for the controller
 
   .icon,
-  .c-text-controller__title-full,
-  .c-text-controller__title-short {
+  .o-text-controller__title-full,
+  .o-text-controller__title-short {
     vertical-align: middle;
   }
 }
 
-.c-text-controller__control {
+.o-text-controller__control {
   font-weight: normal;
   font-style: italic;
 
@@ -38,7 +38,7 @@
   }
 }
 
-.c-text-controller__title-full {
+.o-text-controller__title-full {
   display: none;
 
   @media screen and (min-width: $screen-desktop) {
@@ -46,7 +46,7 @@
   }
 }
 
-.c-text-controller__title-short {
+.o-text-controller__title-short {
   display: inline-block;
 
   @media screen and (min-width: $screen-desktop) {
@@ -54,11 +54,11 @@
   }
 }
 
-.c-text-controller__options {
+.o-text-controller__options {
   width: 100%;
 }
 
-.c-text-controller__languages .wpml-ls {
+.o-text-controller__languages .wpml-ls {
   padding: 0;
 
   ul {
@@ -100,7 +100,7 @@
   }
 }
 
-.c-text-controller__sizer {
+.o-text-controller__sizer {
   display: none;
 
   @media screen and (min-width: $screen-desktop) {
@@ -117,12 +117,12 @@
   }
 }
 
-.c-text-controller__sizer-text {
+.o-text-controller__sizer-text {
   font-style: italic;
   margin-#{$text-direction-end}: $spacing-base / 3;
 }
 
-.c-text-controller__sizer-btn {
+.o-text-controller__sizer-btn {
   color: $color-blue;
   margin-left: 0.15em;
   margin-right: 0.15em;
@@ -150,7 +150,7 @@
 // ====================================
 
 // Hides the current language translation in the language switcher
-.c-text-controller__languages .wpml-ls .wpml-ls-current-language,
-.c-text-controller__languages .wpml-ls .wpml-ls-display {
+.o-text-controller__languages .wpml-ls .wpml-ls-current-language,
+.o-text-controller__languages .wpml-ls .wpml-ls-display {
   @include sr-only();
 }
