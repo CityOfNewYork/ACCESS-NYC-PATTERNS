@@ -226,9 +226,7 @@ function Accordion() {
   _classCallCheck(this, Accordion);
 
   this._toggle = new Toggle({
-    selector: Accordion.selector,
-    namespace: Accordion.namespace,
-    inactiveClass: Accordion.inactiveClass
+    selector: Accordion.selector
   });
   return this;
 };
@@ -239,17 +237,5 @@ function Accordion() {
 
 
 Accordion.selector = '[data-js*="accordion"]';
-/**
- * The namespace for the components JS options
- * @type {String}
- */
-
-Accordion.namespace = 'accordion';
-/**
- * The incactive class name
- * @type {String}
- */
-
-Accordion.inactiveClass = 'inactive';
 
 module.exports = Accordion;

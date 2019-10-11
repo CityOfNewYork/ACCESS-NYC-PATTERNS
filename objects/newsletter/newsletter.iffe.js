@@ -44,6 +44,8 @@ var Newsletter = (function () {
 
     this.attrs = Forms.attrs;
 
+    this.form.setAttribute('novalidate', true);
+
     return this;
   };
 
