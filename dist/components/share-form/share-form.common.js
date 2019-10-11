@@ -2348,24 +2348,7 @@ function () {
         _this.response(response);
       })["catch"](function (data) {
       });
-    }); // Set the submit handler
-    // this.form.submit = (event) => {
-    //   event.preventDefault();
-    //   console.dir(this.form);
-    //   if (!this.form.valid(event)) return false;
-    //   this.sanitize()
-    //     .processing()
-    //     .submit(event)
-    //     .then(response => response.json())
-    //     .then(response => {
-    //       this.response(response);
-    //     }).catch(data => {
-    //       if ('production' !== 'production')
-    //         console.dir(data);
-    //     });
-    // };
-    // this.form.watch();
-
+    });
     /**
      * Instatiate the ShareForm's toggle component
      */

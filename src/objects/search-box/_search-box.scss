@@ -38,18 +38,22 @@
 
 .o-search-box__close {
   float: $text-direction-end;
+
+  svg {
+    pointer-events: none
+  }
 }
 
 .o-search-box__form,
 .o-search-box__suggestions {
   clear: both;
-  margin: 2*$spacing-base auto;
+  margin: (2 * $spacing-base) auto;
   max-width: 800px;
 }
 
 .o-search-box__form label {
   display: block;
-  margin-bottom: .5*$spacing-base;
+  margin-bottom: (.5 * $spacing-base);
 }
 
 .o-search-box__suggestions-header {

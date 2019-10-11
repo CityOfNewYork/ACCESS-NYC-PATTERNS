@@ -88,27 +88,6 @@ class ShareForm {
         });
     });
 
-    // Set the submit handler
-    // this.form.submit = (event) => {
-    //   event.preventDefault();
-
-    //   console.dir(this.form);
-    //   if (!this.form.valid(event)) return false;
-
-    //   this.sanitize()
-    //     .processing()
-    //     .submit(event)
-    //     .then(response => response.json())
-    //     .then(response => {
-    //       this.response(response);
-    //     }).catch(data => {
-    //       if (process.env.NODE_ENV !== 'production')
-    //         console.dir(data);
-    //     });
-    // };
-
-    // this.form.watch();
-
     /**
      * Instatiate the ShareForm's toggle component
      */
