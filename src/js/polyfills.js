@@ -13,3 +13,4 @@ import 'whatwg-fetch';
 import '../utilities/element/matches';
 import '../utilities/element/closest';
 import '../utilities/element/remove';
+import '../utilities/nodelist/foreach';

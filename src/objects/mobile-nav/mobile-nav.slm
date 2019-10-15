@@ -4,8 +4,8 @@
 div#o-mobile-nav class='o-mobile-nav color-mid-background o-mobile-nav active' data-sketch-symbol=symbol data-sketch-symbol-instance=instance
   a class='o-mobile-nav__close js-hide-nav' href='#o-mobile-nav'
     | close &amp; return to site
-    svg class='icon icon-close' aria-hidden='true'
-      use xlink:href='#icon-close'
+    svg class='icon icon-ui-x' aria-hidden='true'
+      use xlink:href='#icon-ui-x'
 
   div class='o-mobile-nav__inner'
     h4 class='o-mobile-nav__header' Get help now
