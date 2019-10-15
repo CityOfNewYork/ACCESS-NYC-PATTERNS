@@ -27,16 +27,14 @@
       display: none;
     }
   }
-}
 
-.active\:overlay {
-  &::before {
-    display: block;
+  &.active {
+    &::before {
+      display: block;
 
-    @media screen and (min-width: $screen-desktop) {
-      display: none;
+      @media screen and (min-width: $screen-desktop) {
+        display: none;
+      }
     }
   }
 }
-
-
