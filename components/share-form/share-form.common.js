@@ -2436,7 +2436,7 @@ function () {
         this.success();
       } else {
         if (data.error === 21211) {
-          this.feedback('INVALID').enable();
+          this.feedback('SERVER_TEL_INVALID').enable();
         } else {
           this.feedback('SERVER').enable();
         }
@@ -2543,7 +2543,7 @@ ShareForm.selectors = {
 ShareForm.classes = {
   ERROR: 'error',
   SERVER: 'error',
-  INVALID: 'error',
+  SERVER_TEL_INVALID: 'error',
   MESSAGE: '-message',
   PROCESSING: 'processing',
   SUCCESS: 'success'
@@ -2554,10 +2554,10 @@ ShareForm.classes = {
 
 ShareForm.strings = {
   SERVER: 'Something went wrong. Please try again later.',
-  INVALID: 'Unable to send to number provided. Please use another number.',
+  SERVER_TEL_INVALID: 'Unable to send to number provided. Please use another number.',
   VALID_REQUIRED: 'This is required',
   VALID_EMAIL_INVALID: 'Please enter a valid email.',
-  VALID_TEL_INVALID: 'Unable to send to number provided. Please use another number.'
+  VALID_TEL_INVALID: 'Please provide 10-digit number with area code.'
 };
 /**
  * Input patterns for form input elements
