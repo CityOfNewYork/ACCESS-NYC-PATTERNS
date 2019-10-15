@@ -2348,7 +2348,6 @@ var ShareForm = (function () {
         }).then(function (response) {
           _this.response(response);
         })["catch"](function (data) {
-          { console.dir(data); }
         });
       });
       /**
@@ -2443,8 +2442,6 @@ var ShareForm = (function () {
             this.feedback('SERVER').enable();
           }
         }
-
-        { console.dir(data); }
         return this;
       }
       /**
@@ -2477,7 +2474,6 @@ var ShareForm = (function () {
       key: "error",
       value: function error(response) {
         this.feedback('SERVER').enable();
-        { console.dir(response); }
         return this;
       }
       /**
