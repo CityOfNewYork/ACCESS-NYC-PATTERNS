@@ -52,7 +52,7 @@ Option          | Type             | Importance | Description
 
 #### Cherry-picked Module Import
 
-**Note**: The Toggle Utility source and distribution scripts in the ACCESS NYC Patterns has been deprecated and moved to the [NYCO Patterns Framework](https://github.com/CityOfNewYork/nyco-patterns-framework). The ES6, CommonJS, and IFFE modules all require importing and object instantiation in your main script. The methods and configurations described above will work with the dedicated module.
+The ES6, CommonJS, and IFFE modules all require importing and object instantiation in your main script. The methods and configurations described above will work with the dedicated module.
 
     // ES6
     import Toggle from 'src/utilities/toggle/toggle';
@@ -64,6 +64,8 @@ Option          | Type             | Importance | Description
     <script src="dist/utilities/toggle/toggle.iffe.js"></script>
 
     new Toggle();
+
+**Note**: The Icon Utility source and distribution scripts in the ACCESS NYC Patterns has been deprecated and moved to the [NYCO Patterns Framework](https://github.com/CityOfNewYork/nyco-patterns-framework). Install the `@nycopportunity/patterns-framework` module to use this script.
 
 #### Polyfills
 

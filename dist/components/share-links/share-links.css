@@ -1,1 +1,25 @@
-.c-share{font-weight:400;font-size:.72rem;line-height:1.3;font-family:Noto Sans,sans-serif;text-align:right}.c-share .icon{display:inline-block;height:24px;margin-right:12px;vertical-align:middle}@media screen and (min-width:768px){.c-share{font-size:1rem}}@media screen and (min-width:960px){.c-share{text-align:left}.c-share__link{display:block;margin-bottom:24px}}
+/**
+ * Share Links
+ */
+.c-share {
+  font-weight: normal;
+  font-size: 0.72rem;
+  line-height: 1.3;
+  font-family: "Noto Sans", sans-serif;
+  text-align: right; }
+  @media screen and (min-width: 768px) {
+    .c-share {
+      font-size: 1rem; } }
+  .c-share .icon {
+    display: inline-block;
+    height: 24px;
+    margin-right: 12px;
+    vertical-align: middle; }
+  @media screen and (min-width: 960px) {
+    .c-share {
+      text-align: left; } }
+
+@media screen and (min-width: 960px) {
+  .c-share__link {
+    display: block;
+    margin-bottom: 24px; } }

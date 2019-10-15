@@ -149,24 +149,6 @@ const modules = [
       }
     ]
   },
-  {
-    input: './src/elements/icons/icons.js',
-    plugins: rollup.dist,
-    output: [
-      {
-        name: 'Icons',
-        file: `./dist/elements/icons/icons.iffe.js`,
-        format: 'iife',
-        strict: rollup.strict
-      },
-      {
-        name: 'Icons',
-        file: `./dist/elements/icons/icons.common.js`,
-        format: 'cjs',
-        strict: rollup.strict
-      }
-    ]
-  },
   // {
   //   input: './src/components/accordion/accordion.js',
   //   plugins: rollup.dist,

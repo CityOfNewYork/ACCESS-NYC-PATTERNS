@@ -2,9 +2,9 @@
 
 // Utilities
 import Toggle from '@nycopportunity/patterns-framework/src/utilities/toggle/toggle';
+import Icons from '@nycopportunity/patterns-framework/src/utilities/icons/icons';
 
 // Elements
-import Icons from '../elements/icons/icons';
 import InputsAutocomplete from '../elements/inputs/inputs-autocomplete';
 
 // Components

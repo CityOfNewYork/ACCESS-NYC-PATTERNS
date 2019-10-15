@@ -17,15 +17,17 @@ The script expects the icon sprite path to be named `icons.svg` and live in the 
 The ES6, CommonJS, and IFFE modules all require global activation to be written into your main script:
 
     // ES6
-    import Filter from 'src/elements/icons/icons';
+    import Filter from 'src/utilities/icons/icons';
 
     // CommonJS
-    import Filter from 'dist/elements/icons/icons.common';
+    import Filter from 'dist/utilities/icons/icons.common';
 
     <!-- IFFE -->
-    <script src="dist/elements/icons/icons.iffe.js"></script>
+    <script src="dist/utilities/icons/icons.iffe.js"></script>
 
     new Icons(); // or new Icons('path/to/icons.svg');
+
+**Note**: The Icon Utility source and distribution scripts in the ACCESS NYC Patterns has been deprecated and moved to the [NYCO Patterns Framework](https://github.com/CityOfNewYork/nyco-patterns-framework). Install the `@nycopportunity/patterns-framework` module to use this script.
 
 #### Polyfills
 
