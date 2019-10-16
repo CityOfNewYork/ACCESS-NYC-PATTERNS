@@ -29,7 +29,7 @@ class AlertBanner {
     /**
      * Create new Toggle for this alert
      */
-    this.toggle = new Toggle({
+    this._toggle = new Toggle({
       selector: this.selectors.BUTTON,
       after: () => {
         if (element.classList.contains(Toggle.inactiveClass))
@@ -41,7 +41,7 @@ class AlertBanner {
 
     // If the cookie is present and the Alert is active, hide it.
     if (Cookies.get(this.name) && element.classList.contains(Toggle.activeClass))
-      this.toggle.elementToggle(this.button, element);
+      this._toggle.elementToggle(this.button, element);
 
     return this;
   }
@@ -51,7 +51,7 @@ class AlertBanner {
    * @return {Object} Instance of AlertBanner
    */
   toggle() {
-    this.toggle.elementToggle(this.button, this.element);
+    this._toggle.elementToggle(this.button, this.element);
 
     return this;
   }
