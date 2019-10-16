@@ -264,6 +264,24 @@ const modules = [
     ]
   },
   {
+    input: './src/objects/alert-banner/alert-banner.js',
+    plugins: rollup.dist,
+    output: [
+      {
+        name: 'AlertBanner',
+        file: `./dist/objects/alert-banner/alert-banner.iffe.js`,
+        format: 'iife',
+        strict: rollup.strict
+      },
+      {
+        name: 'AlertBanner',
+        file: `./dist/objects/alert-banner/alert-banner.common.js`,
+        format: 'cjs',
+        strict: rollup.strict
+      }
+    ]
+  },
+  {
     input: './src/objects/newsletter/newsletter.js',
     plugins: rollup.dist,
     output: [

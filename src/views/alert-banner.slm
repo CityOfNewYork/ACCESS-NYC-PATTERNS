@@ -21,4 +21,9 @@
 
 = content('content');
   = mixin('content-header', title);
-  = mixin('section', false, 'components/alert-banner/alert-banner', 'gutter');
+  = mixin('section', false, 'objects/alert-banner/alert-banner', 'gutter');
+  = mixin('section-text', 'Alert Banner Usage', 'objects/alert-banner/alert-banner.readme');
+
+= content('script');
+  javascript:
+    access.alertBanner();

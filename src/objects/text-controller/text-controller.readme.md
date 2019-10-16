@@ -27,3 +27,7 @@ The ES6, CommonJS, and IFFE modules all require importing and object instantiati
 
     let element = document.querySelector(TextController.selector);
     new TextController(element);
+
+#### Dependencies and Polyfills
+
+This script uses the [Toggle Utility](/toggle) as a dependency and reqiures the same polyfills for IE11 support. See the ["Toggle Usage" section](/toggle#toggle-usage) for details on specific methods. Additionally, it uses [JavaScript Cookie](https://github.com/js-cookie/js-cookie) as a dependency.

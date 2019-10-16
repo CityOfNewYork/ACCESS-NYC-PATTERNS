@@ -9,4 +9,12 @@ html lang='en' class='text-size-0'
     footer class='py-4 text-center bg-color-blue-dark text-color-white links-invert'
       = partial('/partials/footer');
 
+    script src='../scripts/polyfills.js'
+    script src='../scripts/access-nyc.js'
+
+    javascript:
+      var access = new AccessNyc();
+      access.icons('../icons.svg');
+      access.toggle();
+
     = content('script');

@@ -32,6 +32,5 @@ html lang='en' class='bg-color-white'
       var VueComponents = new VueComponents();
       access.icons();
       access.toggle();
-      access.alertBanner();
 
     = content('script');

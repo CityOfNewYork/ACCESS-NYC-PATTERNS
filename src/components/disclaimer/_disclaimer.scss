@@ -4,6 +4,7 @@
 
 // Dependencies
 @import 'config/disclaimer';
+@import 'config/dimensions';
 @import 'config/fonts';
 @import 'config/typography';
 @import 'config/direction';
@@ -14,8 +15,8 @@
 }
 
 .c-disclaimer__icon {
-  width: 24px !important;
-  height: 24px !important
+  width: ($grid-base * 3) !important;
+  height: ($grid-base * 3) !important
 }
 
 .c-disclaimer__icon--pre {

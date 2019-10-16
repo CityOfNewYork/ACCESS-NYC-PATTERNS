@@ -1,0 +1,92 @@
+/**
+ * Alert-Banner
+ */
+
+// Dependencies
+@import 'config/variables';
+@import 'config/typography';
+@import 'config/colors';
+@import 'config/dimensions';
+@import 'config/direction';
+@import 'config/media';
+
+.c-alert-banner {
+  width: 100vw;
+  background: $color-grey-lightest;
+  padding: $spacing-base;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+
+  box-shadow: map-get(map-get($variables, 'shadows'), 'up');
+
+  @include typography-dislaimer-small;
+
+  @media screen and (min-width: $screen-tablet) {
+    font-size: $font-size-normal;
+    line-height: map-get($leading, 'medium');
+  }
+}
+
+.c-alert-banner-wrapper {
+  max-width: 1200px;
+  margin: 0 auto;
+
+  display: flex;
+}
+
+.c-alert-banner__content {
+  flex: 1
+}
+
+.c-alert-banner__icon {
+  display: inline;
+  float: $text-direction-start;
+  margin-#{$text-direction-end}: $grid-base;
+
+  position: relative;
+  bottom: -3px;
+
+  @media screen and (min-width: $screen-tablet) {
+    margin-#{$text-direction-end}: $grid-base * 2;
+    bottom: 0;
+  }
+}
+
+.c-alert-banner__svg {
+  @media screen and (max-width: $screen-tablet) {
+    width: ($grid-base * 3) !important;
+    height: ($grid-base * 3) !important;
+  }
+}
+
+.c-alert-banner__body {
+  flex: 1 1 auto;
+
+  @media screen and (min-width: $screen-tablet) {
+    padding-top: 2px;
+  }
+
+  > *:last-child {
+    margin-bottom: 0
+  }
+}
+
+.c-alert-banner__closing button {
+  width: 24px;
+  height: 24px;
+  background: transparent;
+  border: none;
+  text-align: right;
+  padding: 0;
+
+  svg {
+    pointer-events: none
+  }
+
+  margin-#{$text-direction-end}: $grid-base;
+
+  @media screen and (min-width: $screen-tablet) {
+    margin-#{$text-direction-end}: $grid-base * 2;
+  }
+}

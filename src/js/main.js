@@ -9,13 +9,13 @@ import InputsAutocomplete from '../elements/inputs/inputs-autocomplete';
 
 // Components
 import Accordion from '../components/accordion/accordion';
-import AlertBanner from '../components/alert-banner/alert-banner';
 import Disclaimer from '../components/disclaimer/disclaimer';
 import Filter from '../components/filter/filter';
 import NearbyStops from '../components/nearby-stops/nearby-stops';
 import ShareForm from '../components/share-form/share-form';
 
 // Objects
+import AlertBanner from '../objects/alert-banner/alert-banner';
 import Newsletter from '../objects/newsletter/newsletter';
 import TextController from '../objects/text-controller/text-controller';
 /** import components here as they are written. */
@@ -91,7 +91,8 @@ class main {
    * @return {object} Instance of AlertBanner
    */
   alertBanner() {
-    return new AlertBanner();
+    let element = document.querySelector(AlertBanner.selector);
+    return (element) ? new AlertBanner(element) : null;
   }
 
   /**

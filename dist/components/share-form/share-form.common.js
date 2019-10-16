@@ -2347,6 +2347,7 @@ function () {
       }).then(function (response) {
         _this.response(response);
       })["catch"](function (data) {
+        { console.dir(data); }
       });
     });
     /**
@@ -2441,6 +2442,8 @@ function () {
           this.feedback('SERVER').enable();
         }
       }
+
+      { console.dir(data); }
       return this;
     }
     /**
@@ -2473,6 +2476,7 @@ function () {
     key: "error",
     value: function error(response) {
       this.feedback('SERVER').enable();
+      { console.dir(response); }
       return this;
     }
     /**

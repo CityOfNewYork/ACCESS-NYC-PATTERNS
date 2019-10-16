@@ -28,7 +28,6 @@ nav class='${class_nav} screen-desktop:pl-4'
   span class='${class_nav_heading} ${class_nav_divider}' Components
   a class='${class_nav_item}' href='accordion' Accordion
   a class='${class_nav_item}' href='alert-box' Alert Box
-  a class='${class_nav_item}' href='alert-banner' Alert Banner
   a class='${class_nav_item}' href='card' Card
   a class='${class_nav_item}' href='checklist' Checklist
   a class='${class_nav_item}' href='disclaimer' Disclaimer
@@ -42,6 +41,7 @@ nav class='${class_nav} screen-desktop:pl-4'
 
 nav class='${class_nav} screen-desktop:pl-4'
   span class='${class_nav_heading} ${class_nav_divider}' Objects
+  a class='${class_nav_item}' href='alert-banner' Alert Banner
   a class='${class_nav_item}' href='announcements' Announcements
   a class='${class_nav_item}' href='banner' Banner
   a class='${class_nav_item}' href='card-list' Card Lists
