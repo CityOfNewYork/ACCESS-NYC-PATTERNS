@@ -5883,7 +5883,7 @@ var AccessNyc = (function () {
        * Create new Toggle for this alert
        */
 
-      this.toggle = new Toggle({
+      this._toggle = new Toggle({
         selector: this.selectors.BUTTON,
         after: function after() {
           if (element.classList.contains(Toggle.inactiveClass)) { js_cookie.set(_this.name, 'dismissed', {
@@ -5892,7 +5892,7 @@ var AccessNyc = (function () {
         }
       }); // If the cookie is present and the Alert is active, hide it.
 
-      if (js_cookie.get(this.name) && element.classList.contains(Toggle.activeClass)) { this.toggle.elementToggle(this.button, element); }
+      if (js_cookie.get(this.name) && element.classList.contains(Toggle.activeClass)) { this._toggle.elementToggle(this.button, element); }
       return this;
     }
     /**
@@ -5904,7 +5904,8 @@ var AccessNyc = (function () {
     _createClass(AlertBanner, [{
       key: "toggle",
       value: function toggle() {
-        this.toggle.elementToggle(this.button, this.element);
+        this._toggle.elementToggle(this.button, this.element);
+
         return this;
       }
     }]);
