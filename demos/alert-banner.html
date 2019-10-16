@@ -38,21 +38,20 @@
 
   <body onload="load()" style="visibility: hidden;">
     <main class="min-h-screen bg-color-white" id="demo-content">
-      <div class="p-1 mb-1 bg-color-grey-lightest"><input class="btn-primary mt-40" onclick="document.cookie = &quot;site-alert-slug=; Path=/; expires=Thu, 01 Jan 1970 00:00:01 GMT;&quot;;" type="button" value="delete cookie" />
-        <p class="font-serif m-0 p-4">Refresh browser after deleting the cookie.</p>
-      </div>
-      <div aria-describedby="dialog-desc-site-alert-slug" aria-labelledby="dialog-title-site-alert-slug" class="c-alert-banner bg-status-info fixed bottom-0 w-screen px-8 js-alert hidden" data-cookie="site-alert-slug" role="dialog">
+      <article aria-hidden="false" class="c-alert-banner z-20 bg-status-info animated hidden:fadeInUp active" data-alert-name="maintenance" data-js="alert-banner" id="aria-c-alert-banner" role="dialog">
         <div class="c-alert-banner-wrapper">
-          <div class="c-alert-banner__icon"><svg class="c-alert-banner__svg icon icon-info">
-              <use xlink:href="#icon-info"></use>
-            </svg></div>
-          <div class="c-alert-banner__body">ACCESS NYC will be undergoing maintenance Friday, February 2nd from 9pm to 11pm EST.</div>
-          <div class="c-alert-banner__closing"><button id="alert-button" type="button"><svg class="icon-ui-x" role="img">
-                <title>close</title>
+          <div class="c-alert-banner__content">
+            <div class="c-alert-banner__icon"><svg aria-hidden="true" class="c-alert-banner__svg icon icon-info">
+                <use xlink:href="#icon-info"></use>
+              </svg></div>
+            <div class="c-alert-banner__body">ACCESS NYC will be undergoing maintenance Friday, February 2nd from 9pm to 11pm EST.</div>
+          </div>
+          <div class="c-alert-banner__closing"><button aria-controls="aria-c-alert-banner" aria-expanded="true" class="text-color-blue" data-js="alert-controller"><span class="sr-only">close & return to site</span><svg aria-hidden="true" class="icon-ui-x">
                 <use xlink:href="#icon-ui-x"></use>
               </svg></button></div>
         </div>
-      </div>
+      </article>
+      <div class="min-h-screen min-w-screen flex items-center justify-center flex-col color-mid-background"><button aria-controls="aria-c-alert-banner" aria-expanded="true" class="btn btn-primary mb-4 active" data-js="alert-controller">Toggle Alert Banner</button><a href="/alert-banner">Back to documentation</a></div>
     </main>
     <footer class="py-4 text-center bg-color-blue-dark text-color-white links-invert">
       <footer class="py-4 text-center color-dark-background">
@@ -65,10 +64,14 @@
         </p>
       </footer>
     </footer>
+    <script src="../scripts/polyfills.js"></script>
     <script src="../scripts/access-nyc.js"></script>
     <script type="text/javascript">
       var access = new AccessNyc();
       access.icons('../icons.svg');
+      access.toggle();
+    </script>
+    <script type="text/javascript">
       access.alertBanner();
     </script>
   </body>

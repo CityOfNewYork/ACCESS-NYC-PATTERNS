@@ -908,163 +908,6 @@ var AccessNyc = (function () {
 
   Accordion.selector = '[data-js*="accordion"]';
 
-  var Cookie =
-  /*#__PURE__*/
-  function () {
-    /**
-     * Class contructor
-     */
-    function Cookie() {
-      _classCallCheck(this, Cookie);
-    }
-    /* eslint-disable no-undef */
-
-    /* eslint-enable no-undef */
-
-    /**
-    * Save a cookie
-    * @param {string} name - Cookie name
-    * @param {string} value - Cookie value
-    * @param {string} domain - Domain on which to set cookie
-    * @param {integer} days - Number of days before cookie expires
-    */
-
-
-    _createClass(Cookie, [{
-      key: "createCookie",
-      value: function createCookie(name, value, domain, days) {
-        var expires = days ? '; expires=' + new Date(days * 864E5 + new Date().getTime()).toGMTString() : '';
-        document.cookie = name + '=' + value + expires + '; path=/; domain=' + domain;
-      }
-      /**
-      * Utility module to get value of a data attribute
-      * @param {object} elem - DOM node attribute is retrieved from
-      * @param {string} attr - Attribute name (do not include the 'data-' part)
-      * @return {mixed} - Value of element's data attribute
-      */
-
-    }, {
-      key: "dataset",
-      value: function dataset(elem, attr) {
-        if (typeof elem.dataset === 'undefined') { return elem.getAttribute('data-' + attr); }
-        return elem.dataset[attr];
-      }
-      /**
-      * Reads a cookie and returns the value
-      * @param {string} cookieName - Name of the cookie
-      * @param {string} cookie - Full list of cookies
-      * @return {string} - Value of cookie; undefined if cookie does not exist
-      */
-
-    }, {
-      key: "readCookie",
-      value: function readCookie(cookieName, cookie) {
-        return (RegExp('(?:^|; )' + cookieName + '=([^;]*)').exec(cookie) || []).pop();
-      }
-      /**
-      * Get the domain from a URL
-      * @param {string} url - The URL
-      * @param {boolean} root - Whether to return root domain rather than subdomain
-      * @return {string} - The parsed domain
-      */
-
-    }, {
-      key: "getDomain",
-      value: function getDomain(url, root) {
-        /**
-        * Parse the URL
-        * @param {string} url - The URL
-        * @return {string} - The link element
-        */
-        function parseUrl(url) {
-          var target = document.createElement('a');
-          target.href = url;
-          return target;
-        }
-
-        if (typeof url === 'string') { url = parseUrl(url); }
-        var domain = url.hostname;
-
-        if (root) {
-          var slice = domain.match(/\.uk$/) ? -3 : -2;
-          domain = domain.split('.').slice(slice).join('.');
-        }
-
-        return domain;
-      }
-    }]);
-
-    return Cookie;
-  }();
-
-  /**
-   * Alert Banner module
-   * @module modules/alert
-   * @see utilities/cookie
-   */
-  /**
-   * Displays an alert banner.
-   */
-
-  function AlertBanner () {
-    var cookieBuilder = new Cookie();
-    /**
-    * Make an alert visible
-    * @param {object} alert - DOM node of the alert to display
-    * @param {object} siblingElem - DOM node of alert's closest sibling,
-    * which gets some extra padding to make room for the alert
-    */
-
-    function displayAlert(alert) {
-      alert.classList.remove('hidden');
-    }
-    /**
-    * Check alert cookie
-    * @param {object} alert - DOM node of the alert
-    * @return {boolean} - Whether alert cookie is set
-    */
-
-
-    function checkAlertCookie(alert) {
-      var cookieName = cookieBuilder.dataset(alert, 'cookie');
-      if (!cookieName) { return false; }
-      return typeof cookieBuilder.readCookie(cookieName, document.cookie) !== 'undefined';
-    }
-    /**
-    * Add alert cookie
-    * @param {object} alert - DOM node of the alert
-    */
-
-
-    function addAlertCookie(alert) {
-      var cookieName = cookieBuilder.dataset(alert, 'cookie');
-
-      if (cookieName) {
-        cookieBuilder.createCookie(cookieName, 'dismissed', cookieBuilder.getDomain(window.location, false), 360);
-      }
-    }
-
-    var alerts = document.querySelectorAll('.js-alert');
-    /* eslint curly: ["error", "multi-or-nest"]*/
-
-    if (alerts.length) {
-      var _loop = function _loop(i) {
-        if (!checkAlertCookie(alerts[i])) {
-          var alertButton = document.getElementById('alert-button');
-          displayAlert(alerts[i]);
-          alertButton.addEventListener('click', function (e) {
-            alerts[i].classList.add('hidden');
-            addAlertCookie(alerts[i]);
-          });
-        } else { alerts[i].classList.add('hidden'); }
-      };
-
-      for (var i = 0; i <= alert.length; i++) {
-        _loop(i);
-      }
-    }
-  }
-
   /* eslint-env browser */
 
   var Disclaimer =
@@ -5892,6 +5735,200 @@ var AccessNyc = (function () {
   };
   ShareForm.sent = false;
 
+  /*! js-cookie v3.0.0-beta.0 | MIT */
+  function extend () {
+    var arguments$1 = arguments;
+
+    var result = {};
+    for (var i = 0; i < arguments.length; i++) {
+      var attributes = arguments$1[i];
+      for (var key in attributes) {
+        result[key] = attributes[key];
+      }
+    }
+    return result
+  }
+
+  function decode (s) {
+    return s.replace(/(%[\dA-F]{2})+/gi, decodeURIComponent)
+  }
+
+  function init (converter) {
+    function set (key, value, attributes) {
+      if (typeof document === 'undefined') {
+        return
+      }
+
+      attributes = extend(api.defaults, attributes);
+
+      if (typeof attributes.expires === 'number') {
+        attributes.expires = new Date(new Date() * 1 + attributes.expires * 864e5);
+      }
+      if (attributes.expires) {
+        attributes.expires = attributes.expires.toUTCString();
+      }
+
+      value = converter.write
+        ? converter.write(value, key)
+        : encodeURIComponent(String(value)).replace(
+          /%(23|24|26|2B|3A|3C|3E|3D|2F|3F|40|5B|5D|5E|60|7B|7D|7C)/g,
+          decodeURIComponent
+        );
+
+      key = encodeURIComponent(String(key))
+        .replace(/%(23|24|26|2B|5E|60|7C)/g, decodeURIComponent)
+        .replace(/[()]/g, escape);
+
+      var stringifiedAttributes = '';
+      for (var attributeName in attributes) {
+        if (!attributes[attributeName]) {
+          continue
+        }
+        stringifiedAttributes += '; ' + attributeName;
+        if (attributes[attributeName] === true) {
+          continue
+        }
+
+        // Considers RFC 6265 section 5.2:
+        // ...
+        // 3.  If the remaining unparsed-attributes contains a %x3B (";")
+        //     character:
+        // Consume the characters of the unparsed-attributes up to,
+        // not including, the first %x3B (";") character.
+        // ...
+        stringifiedAttributes += '=' + attributes[attributeName].split(';')[0];
+      }
+
+      return (document.cookie = key + '=' + value + stringifiedAttributes)
+    }
+
+    function get (key) {
+      if (typeof document === 'undefined' || (arguments.length && !key)) {
+        return
+      }
+
+      // To prevent the for loop in the first place assign an empty array
+      // in case there are no cookies at all.
+      var cookies = document.cookie ? document.cookie.split('; ') : [];
+      var jar = {};
+      for (var i = 0; i < cookies.length; i++) {
+        var parts = cookies[i].split('=');
+        var cookie = parts.slice(1).join('=');
+
+        if (cookie.charAt(0) === '"') {
+          cookie = cookie.slice(1, -1);
+        }
+
+        try {
+          var name = decode(parts[0]);
+          jar[name] =
+            (converter.read || converter)(cookie, name) || decode(cookie);
+
+          if (key === name) {
+            break
+          }
+        } catch (e) {}
+      }
+
+      return key ? jar[key] : jar
+    }
+
+    var api = {
+      defaults: {
+        path: '/'
+      },
+      set: set,
+      get: get,
+      remove: function (key, attributes) {
+        set(
+          key,
+          '',
+          extend(attributes, {
+            expires: -1
+          })
+        );
+      },
+      withConverter: init
+    };
+
+    return api
+  }
+
+  var js_cookie = init(function () {});
+
+  /**
+   * Alert Banner module
+   */
+
+  var AlertBanner =
+  /*#__PURE__*/
+  function () {
+    /**
+     * @param {Object} element
+     * @return {Object} AlertBanner
+     */
+    function AlertBanner(element) {
+      var _this = this;
+
+      _classCallCheck(this, AlertBanner);
+
+      this.selector = AlertBanner.selector;
+      this.selectors = AlertBanner.selectors;
+      this.data = AlertBanner.data;
+      this.expires = AlertBanner.expires;
+      this.element = element;
+      this.name = element.dataset[this.data.NAME];
+      this.button = element.querySelector(this.selectors.BUTTON);
+      /**
+       * Create new Toggle for this alert
+       */
+
+      this.toggle = new Toggle({
+        selector: this.selectors.BUTTON,
+        after: function after() {
+          if (element.classList.contains(Toggle.inactiveClass)) { js_cookie.set(_this.name, 'dismissed', {
+            expires: _this.expires
+          }); }else if (element.classList.contains(Toggle.activeClass)) { js_cookie.remove(_this.name); }
+        }
+      }); // If the cookie is present and the Alert is active, hide it.
+
+      if (js_cookie.get(this.name) && element.classList.contains(Toggle.activeClass)) { this.toggle.elementToggle(this.button, element); }
+      return this;
+    }
+    /**
+     * Method to toggle the alert banner
+     * @return {Object} Instance of AlertBanner
+     */
+
+
+    _createClass(AlertBanner, [{
+      key: "toggle",
+      value: function toggle() {
+        this.toggle.elementToggle(this.button, this.element);
+        return this;
+      }
+    }]);
+
+    return AlertBanner;
+  }();
+  /** Main selector for the Alert Banner Element */
+
+
+  AlertBanner.selector = '[data-js*="alert-banner"]';
+  /** Other internal selectors */
+
+  AlertBanner.selectors = {
+    'BUTTON': '[data-js*="alert-controller"]'
+  };
+  /** Data attributes set to the pattern */
+
+  AlertBanner.data = {
+    'NAME': 'alertName'
+  };
+  /** Expiration for the cookie. */
+
+  AlertBanner.expires = 360;
+
   /**
    * The Newsletter module
    * @class
@@ -6206,127 +6243,6 @@ var AccessNyc = (function () {
     HIDDEN: 'hidden'
   };
 
-  /*! js-cookie v3.0.0-beta.0 | MIT */
-  function extend () {
-    var arguments$1 = arguments;
-
-    var result = {};
-    for (var i = 0; i < arguments.length; i++) {
-      var attributes = arguments$1[i];
-      for (var key in attributes) {
-        result[key] = attributes[key];
-      }
-    }
-    return result
-  }
-
-  function decode (s) {
-    return s.replace(/(%[\dA-F]{2})+/gi, decodeURIComponent)
-  }
-
-  function init (converter) {
-    function set (key, value, attributes) {
-      if (typeof document === 'undefined') {
-        return
-      }
-
-      attributes = extend(api.defaults, attributes);
-
-      if (typeof attributes.expires === 'number') {
-        attributes.expires = new Date(new Date() * 1 + attributes.expires * 864e5);
-      }
-      if (attributes.expires) {
-        attributes.expires = attributes.expires.toUTCString();
-      }
-
-      value = converter.write
-        ? converter.write(value, key)
-        : encodeURIComponent(String(value)).replace(
-          /%(23|24|26|2B|3A|3C|3E|3D|2F|3F|40|5B|5D|5E|60|7B|7D|7C)/g,
-          decodeURIComponent
-        );
-
-      key = encodeURIComponent(String(key))
-        .replace(/%(23|24|26|2B|5E|60|7C)/g, decodeURIComponent)
-        .replace(/[()]/g, escape);
-
-      var stringifiedAttributes = '';
-      for (var attributeName in attributes) {
-        if (!attributes[attributeName]) {
-          continue
-        }
-        stringifiedAttributes += '; ' + attributeName;
-        if (attributes[attributeName] === true) {
-          continue
-        }
-
-        // Considers RFC 6265 section 5.2:
-        // ...
-        // 3.  If the remaining unparsed-attributes contains a %x3B (";")
-        //     character:
-        // Consume the characters of the unparsed-attributes up to,
-        // not including, the first %x3B (";") character.
-        // ...
-        stringifiedAttributes += '=' + attributes[attributeName].split(';')[0];
-      }
-
-      return (document.cookie = key + '=' + value + stringifiedAttributes)
-    }
-
-    function get (key) {
-      if (typeof document === 'undefined' || (arguments.length && !key)) {
-        return
-      }
-
-      // To prevent the for loop in the first place assign an empty array
-      // in case there are no cookies at all.
-      var cookies = document.cookie ? document.cookie.split('; ') : [];
-      var jar = {};
-      for (var i = 0; i < cookies.length; i++) {
-        var parts = cookies[i].split('=');
-        var cookie = parts.slice(1).join('=');
-
-        if (cookie.charAt(0) === '"') {
-          cookie = cookie.slice(1, -1);
-        }
-
-        try {
-          var name = decode(parts[0]);
-          jar[name] =
-            (converter.read || converter)(cookie, name) || decode(cookie);
-
-          if (key === name) {
-            break
-          }
-        } catch (e) {}
-      }
-
-      return key ? jar[key] : jar
-    }
-
-    var api = {
-      defaults: {
-        path: '/'
-      },
-      set: set,
-      get: get,
-      remove: function (key, attributes) {
-        set(
-          key,
-          '',
-          extend(attributes, {
-            expires: -1
-          })
-        );
-      },
-      withConverter: init
-    };
-
-    return api
-  }
-
-  var js_cookie = init(function () {});
-
   /* eslint-env browser */
   /**
    * This controls the text sizer module at the top of page. A text-size-X class
@@ -6619,7 +6535,8 @@ var AccessNyc = (function () {
     }, {
       key: "alertBanner",
       value: function alertBanner() {
-        return new AlertBanner();
+        var element = document.querySelector(AlertBanner.selector);
+        return element ? new AlertBanner(element) : null;
       }
       /**
        * An API for the ShareForm Component
