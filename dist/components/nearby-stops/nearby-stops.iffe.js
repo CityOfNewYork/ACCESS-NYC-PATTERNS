@@ -2183,13 +2183,9 @@ var NearbyStops = (function () {
         };
         return fetch(this._opt(el, 'ENDPOINT'), headers).then(function (response) {
           if (response.ok) { return response.json(); }else {
-            // eslint-disable-next-line no-console
-            { console.dir(response); }
             callback('error', response);
           }
         })["catch"](function (error) {
-          // eslint-disable-next-line no-console
-          { console.dir(error); }
           callback('error', error);
         }).then(function (data) {
           return callback('success', data);
