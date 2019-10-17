@@ -20,7 +20,7 @@ The ES6, CommonJS, and IFFE modules all require importing and object instantiati
     import TextController from 'src/objects/text-controller/text-controller';
 
     // CommonJS
-    import TextController from 'dist/objects/text-controller/text-controller.common';
+    let TextController = require('dist/objects/text-controller/text-controller.common');
 
     <!-- IFFE -->
     <script src="dist/objects/text-controller/text-controller.iffe.js"></script>

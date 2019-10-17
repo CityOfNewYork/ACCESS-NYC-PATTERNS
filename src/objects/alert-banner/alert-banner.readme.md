@@ -20,7 +20,7 @@ The ES6, CommonJS, and IFFE modules all require importing and object instantiati
     import AlertBanner from 'src/objects/alert-banner/alert-banner';
 
     // CommonJS
-    import AlertBanner from 'dist/objects/alert-banner/alert-banner.common';
+    let AlertBanner = require('dist/objects/alert-banner/alert-banner.common');
 
     <!-- IFFE -->
     <script src="dist/objects/alert-banner/alert-banner.iffe.js"></script>

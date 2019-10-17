@@ -414,7 +414,7 @@ const variables = {
     'toggle-size': '25px'
   },
   'shadows': {
-    'up': '0px 5px 11px 1px rgba(0,0,0,0.45)'
+    'up': '0 3px 12px 2px rgba(0, 0, 0, 0.25)'
   }
 };
 

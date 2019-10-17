@@ -1,6 +1,0 @@
-/
-/ Input Number Error
-/
-
-div class='error' data-sketch-symbol=symbol data-sketch-symbol-instance=instance
-  input id='person-0-age-with-error' name='Person[0].age-with-error' min='0' maxlength='3' pattern='[0-9]' step='1' type='number' data-type='age' required='true' aria-required='true' aria-invalid='true' aria-describedby='person-0-age-error'

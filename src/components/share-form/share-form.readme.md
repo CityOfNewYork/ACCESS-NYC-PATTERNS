@@ -20,7 +20,7 @@ The ES6, CommonJS, and IFFE modules all require importing and object instantiati
     import ShareForm from 'src/components/share-form/share-form';
 
     // CommonJS
-    import ShareForm from 'dist/components/share-form/share-form.common';
+    let ShareForm = require('dist/components/share-form/share-form.common');
 
     <!-- IFFE -->
     <script src="dist/components/share-form/share-form.iffe.js"></script>

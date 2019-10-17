@@ -66,6 +66,240 @@ var AccessNyc = (function () {
   }
 
   /**
+   * Utilities for Form components
+   * @class
+   */
+  var Forms = function Forms(form) {
+    if ( form === void 0 ) form = false;
+
+    this.FORM = form;
+
+    this.strings = Forms.strings;
+
+    this.submit = Forms.submit;
+
+    this.classes = Forms.classes;
+
+    this.markup = Forms.markup;
+
+    this.selectors = Forms.selectors;
+
+    this.attrs = Forms.attrs;
+
+    this.FORM.setAttribute('novalidate', true);
+
+    return this;
+  };
+
+  /**
+   * Map toggled checkbox values to an input.
+   * @param{Object} event The parent click event.
+   * @return {Element}    The target element.
+   */
+  Forms.prototype.joinValues = function joinValues (event) {
+    if (!event.target.matches('input[type="checkbox"]'))
+      { return; }
+
+    if (!event.target.closest('[data-js-join-values]'))
+      { return; }
+
+    var el = event.target.closest('[data-js-join-values]');
+    var target = document.querySelector(el.dataset.jsJoinValues);
+
+    target.value = Array.from(
+        el.querySelectorAll('input[type="checkbox"]')
+      )
+      .filter(function (e) { return (e.value && e.checked); })
+      .map(function (e) { return e.value; })
+      .join(', ');
+
+    return target;
+  };
+
+  /**
+   * A simple form validation class that uses native form validation. It will
+   * add appropriate form feedback for each input that is invalid and native
+   * localized browser messaging.
+   *
+   * See https://developer.mozilla.org/en-US/docs/Learn/HTML/Forms/Form_validation
+   * See https://caniuse.com/#feat=form-validation for support
+   *
+   * @param{Event}       event The form submission event
+   * @return {Class/Boolean}     The form class or false if invalid
+   */
+  Forms.prototype.valid = function valid (event) {
+    var validity = event.target.checkValidity();
+    var elements = event.target.querySelectorAll(this.selectors.REQUIRED);
+
+    for (var i = 0; i < elements.length; i++) {
+      // Remove old messaging if it exists
+      var el = elements[i];
+
+      this.reset(el);
+
+      // If this input valid, skip messaging
+      if (el.validity.valid) { continue; }
+
+      this.highlight(el);
+    }
+
+    return (validity) ? this : validity;
+  };
+
+  /**
+   * Adds focus and blur events to inputs with required attributes
+   * @param {object}formPassing a form is possible, otherwise it will use
+   *                        the form passed to the constructor.
+   * @return{class}       The form class
+   */
+  Forms.prototype.watch = function watch (form) {
+      var this$1 = this;
+      if ( form === void 0 ) form = false;
+
+    this.FORM = (form) ? form : this.FORM;
+
+    var elements = this.FORM.querySelectorAll(this.selectors.REQUIRED);
+
+    /** Watch Individual Inputs */
+    var loop = function ( i ) {
+      // Remove old messaging if it exists
+      var el = elements[i];
+
+      el.addEventListener('focus', function () {
+        this$1.reset(el);
+      });
+
+      el.addEventListener('blur', function () {
+        if (!el.validity.valid)
+          { this$1.highlight(el); }
+      });
+    };
+
+      for (var i = 0; i < elements.length; i++) loop( i );
+
+    /** Submit Event */
+    this.FORM.addEventListener('submit', function (event) {
+      event.preventDefault();
+
+      if (this$1.valid(event) === false)
+        { return false; }
+
+      this$1.submit(event);
+    });
+
+    return this;
+  };
+
+  /**
+   * Removes the validity message and classes from the message.
+   * @param {object}elThe input element
+   * @return{class}     The form class
+   */
+  Forms.prototype.reset = function reset (el) {
+    var container = (this.selectors.ERROR_MESSAGE_PARENT)
+      ? el.closest(this.selectors.ERROR_MESSAGE_PARENT) : el.parentNode;
+
+    var message = container.querySelector('.' + this.classes.ERROR_MESSAGE);
+
+    // Remove old messaging if it exists
+    container.classList.remove(this.classes.ERROR_CONTAINER);
+    if (message) { message.remove(); }
+
+    // Remove error class from the form
+    container.closest('form').classList.remove(this.classes.ERROR_CONTAINER);
+
+    // Remove dynamic attributes from the input
+    el.removeAttribute(this.attrs.ERROR_INPUT[0]);
+    el.removeAttribute(this.attrs.ERROR_LABEL);
+
+    return this;
+  };
+
+  /**
+   * Displays a validity message to the user. It will first use any localized
+   * string passed to the class for required fields missing input. If the
+   * input is filled in but doesn't match the required pattern, it will use
+   * a localized string set for the specific input type. If one isn't provided
+   * it will use the default browser provided message.
+   * @param {object}elThe invalid input element
+   * @return{class}     The form class
+   */
+  Forms.prototype.highlight = function highlight (el) {
+    var container = (this.selectors.ERROR_MESSAGE_PARENT)
+      ? el.closest(this.selectors.ERROR_MESSAGE_PARENT) : el.parentNode;
+
+    // Create the new error message.
+    var message = document.createElement(this.markup.ERROR_MESSAGE);
+    var id = (el.getAttribute('id')) + "-" + (this.classes.ERROR_MESSAGE);
+
+    // Get the error message from localized strings (if set).
+    if (el.validity.valueMissing && this.strings.VALID_REQUIRED)
+      { message.innerHTML = this.strings.VALID_REQUIRED; }
+    else if (!el.validity.valid &&
+      this.strings[("VALID_" + (el.type.toUpperCase()) + "_INVALID")]) {
+      var stringKey = "VALID_" + (el.type.toUpperCase()) + "_INVALID";
+      message.innerHTML = this.strings[stringKey];
+    } else
+      { message.innerHTML = el.validationMessage; }
+
+    // Set aria attributes and css classes to the message
+    message.setAttribute('id', id);
+    message.setAttribute(this.attrs.ERROR_MESSAGE[0],
+      this.attrs.ERROR_MESSAGE[1]);
+    message.classList.add(this.classes.ERROR_MESSAGE);
+
+    // Add the error class and error message to the dom.
+    container.classList.add(this.classes.ERROR_CONTAINER);
+    container.insertBefore(message, container.childNodes[0]);
+
+    // Add the error class to the form
+    container.closest('form').classList.add(this.classes.ERROR_CONTAINER);
+
+    // Add dynamic attributes to the input
+    el.setAttribute(this.attrs.ERROR_INPUT[0], this.attrs.ERROR_INPUT[1]);
+    el.setAttribute(this.attrs.ERROR_LABEL, id);
+
+    return this;
+  };
+
+  /**
+   * A dictionairy of strings in the format.
+   * {
+   *   'VALID_REQUIRED': 'This is required',
+   *   'VALID_{{ TYPE }}_INVALID': 'Invalid'
+   * }
+   */
+  Forms.strings = {};
+
+  /** Placeholder for the submit function */
+  Forms.submit = function() {};
+
+  /** Classes for various containers */
+  Forms.classes = {
+    'ERROR_MESSAGE': 'error-message', // error class for the validity message
+    'ERROR_CONTAINER': 'error', // class for the validity message parent
+    'ERROR_FORM': 'error'
+  };
+
+  /** HTML tags and markup for various elements */
+  Forms.markup = {
+    'ERROR_MESSAGE': 'div',
+  };
+
+  /** DOM Selectors for various elements */
+  Forms.selectors = {
+    'REQUIRED': '[required="true"]', // Selector for required input elements
+    'ERROR_MESSAGE_PARENT': false
+  };
+
+  /** Attributes for various elements */
+  Forms.attrs = {
+    'ERROR_MESSAGE': ['aria-live', 'polite'], // Attribute for valid error message
+    'ERROR_INPUT': ['aria-invalid', 'true'],
+    'ERROR_LABEL': 'aria-describedby'
+  };
+
+  /**
    * The Simple Toggle class. This will toggle the class 'active' and 'hidden'
    * on target elements, determined by a click event on a selected link or
    * element. This will also toggle the aria-hidden attribute for targeted
@@ -881,6 +1115,222 @@ var AccessNyc = (function () {
   /** @type {string} The classname for the dropdown element */
 
   InputAutocomplete.classname = 'input-autocomplete__dropdown';
+
+  var Tooltips =
+  /*#__PURE__*/
+  function () {
+    /**
+     * @param {HTMLElement} el - The trigger element for the component.
+     * @constructor
+     */
+    function Tooltips(el) {
+      var _this = this;
+
+      _classCallCheck(this, Tooltips);
+
+      this.trigger = el;
+      this.tooltip = document.getElementById(el.getAttribute('aria-describedby'));
+      this.active = false; // $(this.tooltip).addClass(`${Tooltips.CssClass.TOOLTIP}
+      //     ${Tooltips.CssClass.HIDDEN}`).attr({
+      //       'aria-hidden': true,
+      //       'role': 'tooltip'
+      //     }).on('click', e => {
+      //       // Stop click propagation so clicking on the tip doesn't trigger a
+      //       // click on body, which would close the tooltips.
+      //       e.stopPropagation();
+      //     }).detach().appendTo('body');
+
+      this.tooltip.classList.add(Tooltips.CssClass.TOOLTIP);
+      this.tooltip.classList.add(Tooltips.CssClass.HIDDEN);
+      this.tooltip.setAttribute('aria-hidden', 'true');
+      this.tooltip.setAttribute('role', 'tooltip'); // Stop click propagation so clicking on the tip doesn't trigger a
+      // click on body, which would close the tooltips.
+
+      this.tooltip.addEventListener('click', function (event) {
+        event.stopPropagation();
+      });
+      document.querySelector('body').append(this.tooltip); // $(this.trigger).on('click', e => {
+      //   e.preventDefault();
+      //   e.stopPropagation();
+      //   this.toggle();
+      // });
+
+      this.trigger.addEventListener('click', function (event) {
+        event.preventDefault();
+        event.stopPropagation();
+
+        _this.toggle();
+      }); // $(window).on('hashchange', e => {
+      //   this.hide();
+      // });
+
+      window.addEventListener('hashchange', function () {
+        _this.hide();
+      });
+      Tooltips.AllTips.push(this);
+      return this;
+    }
+    /**
+     * Sets event listeners, decorates the tooltip element, and appends the
+     * tooltip to the body to avoid positioning issues.
+     * @method
+     * @return {this} Tooltip
+     */
+    // init() {
+    // }
+
+    /**
+     * Displays the tooltips. Sets a one-time listener on the body to close the
+     * tooltip when a click event bubbles up to it.
+     * @method
+     * @return {this} Tooltip
+     */
+
+
+    _createClass(Tooltips, [{
+      key: "show",
+      value: function show() {
+        var _this2 = this;
+
+        Tooltips.hideAll();
+        this.tooltip.classList.remove(Tooltips.CssClass.HIDDEN);
+        this.tooltip.setAttribute('aria-hidden', 'false');
+        var body = document.querySelector('body');
+
+        var hideTooltipOnce = function hideTooltipOnce() {
+          _this2.hide();
+
+          body.removeEventListener('click', hideTooltipOnce);
+        };
+
+        body.addEventListener('click', hideTooltipOnce);
+        window.addEventListener('resize', function () {
+          // setTimeout(() => {
+          _this2.reposition(); // }, 200);
+
+        });
+        this.reposition();
+        this.active = true;
+        return this;
+      }
+      /**
+       * Hides the tooltip and removes the click event listener on the body.
+       * @method
+       * @return {this} Tooltip
+       */
+
+    }, {
+      key: "hide",
+      value: function hide() {
+        this.tooltip.classList.add(Tooltips.CssClass.HIDDEN);
+        this.tooltip.setAttribute('aria-hidden', 'true');
+        this.active = false;
+        return this;
+      }
+      /**
+       * Toggles the state of the tooltips.
+       * @method
+       * @return {this} Tooltip
+       */
+
+    }, {
+      key: "toggle",
+      value: function toggle() {
+        if (this.active) {
+          this.hide();
+        } else {
+          this.show();
+        }
+
+        return this;
+      }
+      /**
+       * Positions the tooltip beneath the triggering element.
+       * @method
+       * @return {this} Tooltip
+       */
+
+    }, {
+      key: "reposition",
+      value: function reposition() {
+        var pos = {
+          'position': 'absolute',
+          'left': 'auto',
+          'right': 'auto',
+          'top': 'auto',
+          'width': ''
+        };
+
+        var style = function style(attrs) {
+          return Object.keys(attrs).map(function (key) {
+            return "".concat(key, ": ").concat(attrs[key]);
+          }).join('; ');
+        };
+
+        var g = 24; // Gutter. Minimum distance from screen edge.
+
+        var tt = this.tooltip;
+        var tr = this.trigger;
+        var w = window; // Reset
+
+        this.tooltip.style = style(pos); // Determine left or right alignment.
+
+        if (tt.offsetWidth >= w.innerWidth - 2 * g) {
+          // If the tooltip is wider than the screen minus gutters, then position
+          // the tooltip to extend to the gutters.
+          pos.left = g + 'px';
+          pos.right = g + 'px';
+          pos.width = 'auto';
+        } else if (tr.offsetLeft + tt.offsetWidth + g > w.innerWidth) {
+          // If the tooltip, when left aligned with the trigger, would cause the
+          // tip to go offscreen (determined by taking the trigger left offset and
+          // adding the tooltip width and the left gutter) then align the tooltip
+          // to the right side of the trigger element.
+          pos.left = 'auto';
+          pos.right = w.innerWidth - (tr.offsetLeft + tr.offsetWidth) + 'px';
+        } else {
+          // Align the tooltip to the left of the trigger element.
+          pos.left = tr.offsetLeft + 'px';
+          pos.right = 'auto';
+        } // Set styling positions, reversing left and right if this is an RTL lang.
+
+
+        pos.top = tr.offsetTop + tr.offsetHeight + 'px';
+        this.tooltip.style = style(pos);
+        return this;
+      }
+    }]);
+
+    return Tooltips;
+  }();
+
+  Tooltips.selector = '[data-js*="tooltip-control"]';
+  /**
+   * Array of all the instantiated tooltips.
+   * @type {Array<Tooltip>}
+   */
+
+  Tooltips.AllTips = [];
+  /**
+   * Hide all Tooltips.
+   * @public
+   */
+
+  Tooltips.hideAll = function () {
+    Tooltips.AllTips.forEach(function (element) {
+      element.hide();
+    });
+  };
+  /**
+   * CSS classes used by this component.
+   * @enum {string}
+   */
+
+
+  Tooltips.CssClass = {
+    HIDDEN: 'hidden',
+    TOOLTIP: 'tooltip-bubble'
+  };
 
   /**
    * The Accordion module
@@ -3394,228 +3844,6 @@ var AccessNyc = (function () {
     TRUNK: 'shuttles',
     LINES: ['S']
   }];
-
-  /**
-   * Utilities for Form components
-   * @class
-   */
-  var Forms = function Forms(form) {
-    if ( form === void 0 ) form = false;
-
-    this.FORM = form;
-
-    this.strings = Forms.strings;
-
-    this.submit = Forms.submit;
-
-    this.classes = Forms.classes;
-
-    this.markup = Forms.markup;
-
-    this.selectors = Forms.selectors;
-
-    this.attrs = Forms.attrs;
-
-    this.FORM.setAttribute('novalidate', true);
-
-    return this;
-  };
-
-  /**
-   * Map toggled checkbox values to an input.
-   * @param{Object} event The parent click event.
-   * @return {Element}    The target element.
-   */
-  Forms.prototype.joinValues = function joinValues (event) {
-    if (!event.target.matches('input[type="checkbox"]'))
-      { return; }
-
-    if (!event.target.closest('[data-js-join-values]'))
-      { return; }
-
-    var el = event.target.closest('[data-js-join-values]');
-    var target = document.querySelector(el.dataset.jsJoinValues);
-
-    target.value = Array.from(
-        el.querySelectorAll('input[type="checkbox"]')
-      )
-      .filter(function (e) { return (e.value && e.checked); })
-      .map(function (e) { return e.value; })
-      .join(', ');
-
-    return target;
-  };
-
-  /**
-   * A simple form validation class that uses native form validation. It will
-   * add appropriate form feedback for each input that is invalid and native
-   * localized browser messaging.
-   *
-   * See https://developer.mozilla.org/en-US/docs/Learn/HTML/Forms/Form_validation
-   * See https://caniuse.com/#feat=form-validation for support
-   *
-   * @param{Event}       event The form submission event
-   * @return {Class/Boolean}     The form class or false if invalid
-   */
-  Forms.prototype.valid = function valid (event) {
-    var validity = event.target.checkValidity();
-    var elements = event.target.querySelectorAll(this.selectors.REQUIRED);
-
-    for (var i = 0; i < elements.length; i++) {
-      // Remove old messaging if it exists
-      var el = elements[i];
-
-      this.reset(el);
-
-      // If this input valid, skip messaging
-      if (el.validity.valid) { continue; }
-
-      this.highlight(el);
-    }
-
-    return (validity) ? this : validity;
-  };
-
-  /**
-   * Adds focus and blur events to inputs with required attributes
-   * @param {object}formPassing a form is possible, otherwise it will use
-   *                        the form passed to the constructor.
-   * @return{class}       The form class
-   */
-  Forms.prototype.watch = function watch (form) {
-      var this$1 = this;
-      if ( form === void 0 ) form = false;
-
-    this.FORM = (form) ? form : this.FORM;
-
-    var elements = this.FORM.querySelectorAll(this.selectors.REQUIRED);
-
-    /** Watch Individual Inputs */
-    var loop = function ( i ) {
-      // Remove old messaging if it exists
-      var el = elements[i];
-
-      el.addEventListener('focus', function () {
-        this$1.reset(el);
-      });
-
-      el.addEventListener('blur', function () {
-        if (!el.validity.valid)
-          { this$1.highlight(el); }
-      });
-    };
-
-      for (var i = 0; i < elements.length; i++) loop( i );
-
-    /** Submit Event */
-    this.FORM.addEventListener('submit', function (event) {
-      event.preventDefault();
-
-      if (this$1.valid(event) === false)
-        { return false; }
-
-      this$1.submit(event);
-    });
-
-    return this;
-  };
-
-  /**
-   * Removes the validity message and classes from the message.
-   * @param {object}elThe input element
-   * @return{class}     The form class
-   */
-  Forms.prototype.reset = function reset (el) {
-    var container = (this.selectors.ERROR_MESSAGE_PARENT)
-      ? el.closest(this.selectors.ERROR_MESSAGE_PARENT) : el.parentNode;
-
-    var message = container.querySelector('.' + this.classes.ERROR_MESSAGE);
-
-    // Remove old messaging if it exists
-    container.classList.remove(this.classes.ERROR_CONTAINER);
-    if (message) { message.remove(); }
-
-    // Remove error class from the form
-    container.closest('form').classList.remove(this.classes.ERROR_CONTAINER);
-
-    return this;
-  };
-
-  /**
-   * Displays a validity message to the user. It will first use any localized
-   * string passed to the class for required fields missing input. If the
-   * input is filled in but doesn't match the required pattern, it will use
-   * a localized string set for the specific input type. If one isn't provided
-   * it will use the default browser provided message.
-   * @param {object}elThe invalid input element
-   * @return{class}     The form class
-   */
-  Forms.prototype.highlight = function highlight (el) {
-    var container = (this.selectors.ERROR_MESSAGE_PARENT)
-      ? el.closest(this.selectors.ERROR_MESSAGE_PARENT) : el.parentNode;
-
-    // Create the new error message.
-    var message = document.createElement(this.markup.ERROR_MESSAGE);
-
-    // Get the error message from localized strings (if set).
-    if (el.validity.valueMissing && this.strings.VALID_REQUIRED)
-      { message.innerHTML = this.strings.VALID_REQUIRED; }
-    else if (!el.validity.valid &&
-      this.strings[("VALID_" + (el.type.toUpperCase()) + "_INVALID")]) {
-      var stringKey = "VALID_" + (el.type.toUpperCase()) + "_INVALID";
-      message.innerHTML = this.strings[stringKey];
-    } else
-      { message.innerHTML = el.validationMessage; }
-
-    // Set aria attributes and css classes to the message
-    message.setAttribute(this.attrs.ERROR_MESSAGE[0],
-      this.attrs.ERROR_MESSAGE[1]);
-    message.classList.add(this.classes.ERROR_MESSAGE);
-
-    // Add the error class and error message to the dom.
-    container.classList.add(this.classes.ERROR_CONTAINER);
-    container.insertBefore(message, container.childNodes[0]);
-
-    // Add the error class to the form
-    container.closest('form').classList.add(this.classes.ERROR_CONTAINER);
-
-    return this;
-  };
-
-  /**
-   * A dictionairy of strings in the format.
-   * {
-   *   'VALID_REQUIRED': 'This is required',
-   *   'VALID_{{ TYPE }}_INVALID': 'Invalid'
-   * }
-   */
-  Forms.strings = {};
-
-  /** Placeholder for the submit function */
-  Forms.submit = function() {};
-
-  /** Classes for various containers */
-  Forms.classes = {
-    'ERROR_MESSAGE': 'error-message', // error class for the validity message
-    'ERROR_CONTAINER': 'error', // class for the validity message parent
-    'ERROR_FORM': 'error'
-  };
-
-  /** HTML tags and markup for various elements */
-  Forms.markup = {
-    'ERROR_MESSAGE': 'div',
-  };
-
-  /** DOM Selectors for various elements */
-  Forms.selectors = {
-    'REQUIRED': '[required="true"]', // Selector for required input elements
-    'ERROR_MESSAGE_PARENT': false
-  };
-
-  /** Attributes for various elements */
-  Forms.attrs = {
-    'ERROR_MESSAGE': ['aria-live', 'polite'] // Attribute for valid error message
-  };
 
   var commonjsGlobal = typeof window !== 'undefined' ? window : typeof global !== 'undefined' ? global : typeof self !== 'undefined' ? self : {};
 
@@ -6454,17 +6682,17 @@ var AccessNyc = (function () {
       key: "icons",
 
       /**
-       * An API for the Icons Element
+       * An API for the Icons Utility
        * @param  {String} path The path of the icon file
-       * @return {object} instance of Icons element
+       * @return {object} instance of Icons
        */
       value: function icons(path) {
         return new Icons(path);
       }
       /**
-       * An API for the Toggling Method
+       * An API for the Toggle Utility
        * @param  {object} settings Settings for the Toggle Class
-       * @return {object}          Instance of toggling method
+       * @return {object}          Instance of toggle
        */
 
     }, {
@@ -6472,6 +6700,35 @@ var AccessNyc = (function () {
       value: function toggle() {
         var settings = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : false;
         return settings ? new Toggle(settings) : new Toggle();
+      }
+      /**
+       *
+       * @param {string}   selector
+       * @param {function} submit
+       */
+
+    }, {
+      key: "valid",
+      value: function valid(selector, submit) {
+        this.form = new Forms(document.querySelector(selector));
+        this.form.submit = submit;
+        this.form.selectors.ERROR_MESSAGE_PARENT = '.c-question__container';
+        this.form.watch();
+      }
+      /**
+       * An API for the Tooltips element
+       * @param  {object}   settings Settings for the Tooltips Class
+       * @return {nodelist}          Tooltip elements
+       */
+
+    }, {
+      key: "tooltips",
+      value: function tooltips() {
+        var elements = document.querySelectorAll(Tooltips.selector);
+        elements.forEach(function (element) {
+          new Tooltips(element);
+        });
+        return elements.length ? elements : null;
       }
       /**
        * An API for the Filter Component
@@ -6514,8 +6771,6 @@ var AccessNyc = (function () {
         var element = document.querySelector(Newsletter.selector);
         return element ? new Newsletter(element) : null;
       }
-      /** add APIs here as they are written */
-
       /**
        * An API for the Autocomplete Object
        * @param {object} settings Settings for the Autocomplete Class

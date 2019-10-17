@@ -20,7 +20,7 @@ The ES6, CommonJS, and IFFE modules all require importing and object instantiati
     import Filter from 'src/components/filter/filter';
 
     // CommonJS
-    import Filter from 'dist/components/filter/filter.common';
+    let Filter = require('dist/components/filter/filter.common');
 
     <!-- IFFE -->
     <script src="dist/components/filter/filter.iffe.js"></script>

@@ -16,7 +16,11 @@
   margin-top: .5 * $spacing-base;
   max-width: 100%;
   width: $tooltip-width;
+
+  box-shadow: map-get(map-get($variables, 'shadows'), 'up');
+
   z-index: 3;
+
   :last-child {
     margin-bottom: 0;
   }

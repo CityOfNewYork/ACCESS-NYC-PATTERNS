@@ -37,7 +37,8 @@
     ]
   },
   "devDependencies": {
-    "@nycopportunity/patterns-framework": "0.0.16",
+    "@nycopportunity/patterns-framework": "0.0.17",
+    "prettier": "^1.18.2",
     "rollup-plugin-alias": "^1.5.2",
     "rollup-plugin-vue": "^4.2.0",
     "vue-template-compiler": "^2.6.9"
@@ -85,5 +86,9 @@
       "number-leading-zero": "never",
       "selector-pseudo-element-colon-notation": null
     }
+  },
+  "prettier": {
+    "parser": "html",
+    "singleQuote": true
   }
 }

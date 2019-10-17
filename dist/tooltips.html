@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html class="bg-color-white" lang="en">
+<html class="bg-color-white" dir="ltr" lang="en">
 
   <head>
     <meta charset="utf-8" />
@@ -89,12 +89,18 @@
               </div>
               <div class="layout--gutter screen-tablet:layout--columns justify-between pt-4">
                 <div class="screen-tablet:pr-2">
-                  <div aria-hidden="false" class="tooltip" role="tooltip">
+                  <p><button aria-describedby="aria-db-tooltip-age" class="c-question__info btn btn-text btn-link" data-js="tooltip-control" type="button">Here’s why we are asking.&nbsp;<svg class="icon icon-info">
+                        <use xlink:href="#icon-info"></use>
+                      </svg></button></p>
+                  <div class="tooltip animated fadeInUp" id="aria-db-tooltip-age">
                     <p>Many benefit programs are meant for people of a specific age group. Sharing your age will help us choose the programs that will be most helpful to you right now. The information you share for the purposes of public benefits screening will be anonymous.</p>
                   </div>
                 </div>
                 <div>
-                  <div class="code-block mb-1"><pre>&lt;div aria-hidden=&quot;false&quot; class=&quot;tooltip&quot; role=&quot;tooltip&quot;&gt;
+                  <div class="code-block mb-1"><pre>&lt;p&gt;&lt;button aria-describedby=&quot;aria-db-tooltip-age&quot; class=&quot;c-question__info btn btn-text btn-link&quot; data-js=&quot;tooltip-control&quot; type=&quot;button&quot;&gt;Here’s why we are asking.&amp;nbsp;&lt;svg class=&quot;icon icon-info&quot;&gt;
+      &lt;use xlink:href=&quot;#icon-info&quot;&gt;&lt;/use&gt;
+    &lt;/svg&gt;&lt;/button&gt;&lt;/p&gt;
+&lt;div class=&quot;tooltip animated fadeInUp&quot; id=&quot;aria-db-tooltip-age&quot;&gt;
   &lt;p&gt;Many benefit programs are meant for people of a specific age group. Sharing your age will help us choose the programs that will be most helpful to you right now. The information you share for the purposes of public benefits screening will be anonymous.&lt;/p&gt;
 &lt;/div&gt;</pre>
                   </div>
@@ -102,6 +108,52 @@
               </div>
             </div>
           </section>
+          <section class="pb-4 mb-4" id="tooltip-usage">
+            <div class="page-wrapper px-2 screen-desktop:px-0">
+              <header class="layout--home-body">
+                <div class="my-0 px-2 border-b border-color-grey-light screen-tablet:flex screen-tablet:justify-between">
+                  <h2 class="m-0 pt-1 pb-4"><a class="text-color-grey-mid font-normal no-underline capitalize" href="#tooltip-usage">Tooltip Usage</a></h2>
+                </div>
+              </header>
+              <div class="layout--home-body">
+                <div class="my-0 pt-4 px-2 text-font-size-small table-align-start"><h4>Global Script</h4>
+
+<p>The Tooltip Element requires JavaScript for showing and hiding the tooltip. To use the Tooltip Element through the global ACCESS NYC Patterns script use the following code:</p>
+
+<pre><code>&lt;!-- Global Script --&gt;
+&lt;script src=&quot;dist/scripts/AccessNyc.js&quot;&gt;&lt;/script&gt;
+
+&lt;script&gt;
+  var access = new AccessNyc();
+  access.tooltips();
+&lt;/script&gt;</code></pre>
+
+<p>This will instantiate each Tooltip Element and attach event listeners for toggling.</p>
+
+<h4>Cherry-picked Module Import</h4>
+
+<p>The ES6, CommonJS, and IFFE modules all require importing and object instantiation in your main script. You must pass a dom selection of the Tooltip Element to the instantiated class. A selector reference is stored in the class.</p>
+
+<pre><code>// ES6
+import Tooltips from &#39;src/objects/text-controller/text-controller&#39;;
+
+// CommonJS
+let Tooltips = require(&#39;dist/objects/text-controller/text-controller.common&#39;);
+
+&lt;!-- IFFE --&gt;
+&lt;script src=&quot;dist/objects/text-controller/text-controller.iffe.js&quot;&gt;&lt;/script&gt;
+
+let elements = document.querySelectorAll(Tooltips.selector);
+
+elements.forEach(element =&gt; {
+  new Tooltips(element);
+});</code></pre></div>
+              </div>
+            </div>
+          </section>
+          <div class="sticky bottom-0 bg-color-white shadow-up relative z-10 overflow-y-scroll whitespace-no-wrap animated fadeInUp">
+            <nav class="nav-inline text-font-size-small p-4"><span class="mr-4">Jump to:</span><a class="mr-4" href="#main-content">Page Top</a><a class="mr-4" href="#tooltip-usage">Tooltip Usage</a></nav>
+          </div>
         </article>
       </main>
     </div>
@@ -122,6 +174,9 @@
       var VueComponents = new VueComponents();
       access.icons();
       access.toggle();
+    </script>
+    <script type="text/javascript">
+      access.tooltips();
     </script>
   </body>
 

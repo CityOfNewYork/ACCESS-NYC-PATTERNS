@@ -20,7 +20,7 @@ The ES6, CommonJS, and IFFE modules all require global activation to be written 
     import Filter from 'src/utilities/icons/icons';
 
     // CommonJS
-    import Filter from 'dist/utilities/icons/icons.common';
+    let Filter = require('dist/utilities/icons/icons.common');
 
     <!-- IFFE -->
     <script src="dist/utilities/icons/icons.iffe.js"></script>

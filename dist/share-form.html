@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html class="bg-color-white" lang="en">
+<html class="bg-color-white" dir="ltr" lang="en">
 
   <head>
     <meta charset="utf-8" />
@@ -152,7 +152,7 @@
 import ShareForm from &#39;src/components/share-form/share-form&#39;;
 
 // CommonJS
-import ShareForm from &#39;dist/components/share-form/share-form.common&#39;;
+let ShareForm = require(&#39;dist/components/share-form/share-form.common&#39;);
 
 &lt;!-- IFFE --&gt;
 &lt;script src=&quot;dist/components/share-form/share-form.iffe.js&quot;&gt;&lt;/script&gt;

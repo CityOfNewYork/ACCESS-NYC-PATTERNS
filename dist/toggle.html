@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html class="bg-color-white" lang="en">
+<html class="bg-color-white" dir="ltr" lang="en">
 
   <head>
     <meta charset="utf-8" />
@@ -373,13 +373,13 @@
 <p>The ES6, CommonJS, and IFFE modules all require importing and object instantiation in your main script. The methods and configurations described above will work with the dedicated module.</p>
 
 <pre><code>// ES6
-import Toggle from &#39;src/utilities/toggle/toggle&#39;;
+import Toggle from &#39;@nycopportunity/patterns-framework/src/utilities/toggle/toggle&#39;;
 
 // CommonJS
-import Toggle from &#39;dist/utilities/toggle/toggle.common&#39;;
+let Toggle = require(&#39;@nycopportunity/patterns-framework/dist/utilities/toggle/toggle.common&#39;);
 
 &lt;!-- IFFE --&gt;
-&lt;script src=&quot;dist/utilities/toggle/toggle.iffe.js&quot;&gt;&lt;/script&gt;
+&lt;script src=&quot;@nycopportunity/patterns-framework/dist/utilities/toggle/toggle.iffe.js&quot;&gt;&lt;/script&gt;
 
 new Toggle();</code></pre>
 

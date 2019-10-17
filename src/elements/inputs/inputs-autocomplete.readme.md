@@ -70,7 +70,7 @@ The ES6, CommonJS, and IFFE modules all require importing and object instantiati
     import InputAutocomplete from 'src/elements/inputs/inputs-autocomplete';
 
     // CommonJS
-    import InputAutocomplete from 'dist/elements/inputs/inputs-autocomplete.common';
+    let InputAutocomplete = require('dist/elements/inputs/inputs-autocomplete.common');
 
     <!-- IFFE -->
     <script src="dist/elements/inputs/inputs-autocomplete.iffe.js"></script>

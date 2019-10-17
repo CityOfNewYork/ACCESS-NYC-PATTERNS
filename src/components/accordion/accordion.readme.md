@@ -20,7 +20,7 @@ The ES6, CommonJS, and IFFE modules all require importing and object instantiati
     import Filter from 'src/components/accordion/accordion';
 
     // CommonJS
-    import Filter from 'dist/components/accordion/accordion.common';
+    let Filter = require('dist/components/accordion/accordion.common');
 
     <!-- IFFE -->
     <script src="dist/components/accordion/accordion.iffe.js"></script>

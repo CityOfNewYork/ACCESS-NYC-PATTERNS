@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html class="bg-color-white" lang="en">
+<html class="bg-color-white" dir="ltr" lang="en">
 
   <head>
     <meta charset="utf-8" />
@@ -156,7 +156,7 @@
 import Filter from &#39;src/components/accordion/accordion&#39;;
 
 // CommonJS
-import Filter from &#39;dist/components/accordion/accordion.common&#39;;
+let Filter = require(&#39;dist/components/accordion/accordion.common&#39;);
 
 &lt;!-- IFFE --&gt;
 &lt;script src=&quot;dist/components/accordion/accordion.iffe.js&quot;&gt;&lt;/script&gt;

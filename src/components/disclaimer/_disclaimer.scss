@@ -21,7 +21,7 @@
 
 .c-disclaimer__icon--pre {
   float: #{$text-direction-start};
-  margin-#{$text-direction-end}: 7px;
+  margin-#{$text-direction-end}: $grid-base;
   position: relative;
   bottom: -3px
 }

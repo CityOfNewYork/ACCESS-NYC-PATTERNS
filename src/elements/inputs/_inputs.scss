@@ -21,7 +21,7 @@ input, textarea {
     width: auto;
   }
 
-  .error & {
+  .c-question__container.error & {
     border-color: $color-red;
   }
 }

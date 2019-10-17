@@ -3,7 +3,7 @@
 /
 
 fieldset class='c-question' data-sketch-symbol=symbol data-sketch-symbol-instance=instance
-  legend class='c-question__label' for='person-0-age' Phone Type
+  legend class='c-question__label' Phone Type
 
   div class='c-question__container'
     - values = [['Home', 'home'], ['Work', 'pregnant'], ['Cell Phone', 'unemployed']];

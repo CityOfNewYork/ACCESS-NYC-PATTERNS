@@ -39,9 +39,9 @@ div class='c-filter-multi bg-color-white' data-sketch-symbol=symbol data-sketch-
           li class='c-filter-multi__item-group-subitem'
             label class='checkbox'
               input value='6867' type='checkbox'
-                span class='checkbox__label text-font-size-small font-normal' EarlyLearn Head Start
+              span class='checkbox__label text-font-size-small font-normal' EarlyLearn Head Start
 
-      li class='c-filter-multi__item'
+    li class='c-filter-multi__item'
         div class='c-filter-multi__item-header'
           label class='checkbox'
             input type='checkbox'

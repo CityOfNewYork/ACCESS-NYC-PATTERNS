@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html class="bg-color-white" lang="en">
+<html class="bg-color-white" dir="ltr" lang="en">
 
   <head>
     <meta charset="utf-8" />
@@ -190,7 +190,7 @@
 import TextController from &#39;src/objects/text-controller/text-controller&#39;;
 
 // CommonJS
-import TextController from &#39;dist/objects/text-controller/text-controller.common&#39;;
+let TextController = require(&#39;dist/objects/text-controller/text-controller.common&#39;);
 
 &lt;!-- IFFE --&gt;
 &lt;script src=&quot;dist/objects/text-controller/text-controller.iffe.js&quot;&gt;&lt;/script&gt;

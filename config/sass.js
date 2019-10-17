@@ -172,9 +172,30 @@ const modules = [
     includePaths: sass.includePaths
   },
   {
-    file: './src/components/text-controller/_text-controller.scss',
-    outDir: './dist/components/text-controller/',
+    file: './src/objects/text-controller/_text-controller.scss',
+    outDir: './dist/objects/text-controller/',
     outFile: 'text-controller.css',
+    precision: sass.precision,
+    includePaths: sass.includePaths
+  },
+  {
+    file: './src/objects/content/_content.scss',
+    outDir: './dist/objects/content/',
+    outFile: 'content.css',
+    precision: sass.precision,
+    includePaths: sass.includePaths
+  },
+  {
+    file: './src/objects/banner/_banner.scss',
+    outDir: './dist/objects/banner/',
+    outFile: 'banner.css',
+    precision: sass.precision,
+    includePaths: sass.includePaths
+  },
+  {
+    file: './src/objects/alert-banner/_alert-banner.scss',
+    outDir: './dist/objects/alert-banner/',
+    outFile: 'alert-banner.css',
     precision: sass.precision,
     includePaths: sass.includePaths
   },

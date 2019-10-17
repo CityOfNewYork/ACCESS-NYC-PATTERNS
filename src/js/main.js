@@ -1,11 +1,13 @@
 'use strict';
 
 // Utilities
+import Forms from '@nycopportunity/patterns-framework/src/utilities/forms/forms';
 import Toggle from '@nycopportunity/patterns-framework/src/utilities/toggle/toggle';
 import Icons from '@nycopportunity/patterns-framework/src/utilities/icons/icons';
 
 // Elements
 import InputsAutocomplete from '../elements/inputs/inputs-autocomplete';
+import Tooltips from '../elements/tooltips/tooltips';
 
 // Components
 import Accordion from '../components/accordion/accordion';
@@ -26,21 +28,51 @@ import TextController from '../objects/text-controller/text-controller';
  */
 class main {
   /**
-   * An API for the Icons Element
+   * An API for the Icons Utility
    * @param  {String} path The path of the icon file
-   * @return {object} instance of Icons element
+   * @return {object} instance of Icons
    */
   icons(path) {
     return new Icons(path);
   }
 
   /**
-   * An API for the Toggling Method
+   * An API for the Toggle Utility
    * @param  {object} settings Settings for the Toggle Class
-   * @return {object}          Instance of toggling method
+   * @return {object}          Instance of toggle
    */
   toggle(settings = false) {
     return (settings) ? new Toggle(settings) : new Toggle();
+  }
+
+  /**
+   *
+   * @param {string}   selector
+   * @param {function} submit
+   */
+  valid(selector, submit) {
+    this.form = new Forms(document.querySelector(selector));
+
+    this.form.submit = submit;
+
+    this.form.selectors.ERROR_MESSAGE_PARENT = '.c-question__container';
+
+    this.form.watch();
+  }
+
+  /**
+   * An API for the Tooltips element
+   * @param  {object}   settings Settings for the Tooltips Class
+   * @return {nodelist}          Tooltip elements
+   */
+  tooltips() {
+    let elements = document.querySelectorAll(Tooltips.selector);
+
+    elements.forEach(element => {
+      new Tooltips(element);
+    });
+
+    return (elements.length) ? elements : null;
   }
 
   /**
@@ -75,7 +107,6 @@ class main {
     let element = document.querySelector(Newsletter.selector);
     return (element) ? new Newsletter(element) : null;
   }
-  /** add APIs here as they are written */
 
  /**
   * An API for the Autocomplete Object

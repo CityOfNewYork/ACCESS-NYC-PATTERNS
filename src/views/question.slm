@@ -20,18 +20,21 @@
   = mixin('header', title);
 
 = content('content');
-  = mixin('content-header', title);
-  = mixin('section-text', false, 'components/question/question');
-  = mixin('section', 'Number Question', 'components/question/question-number');
-  = mixin('section', 'Number Question Errors', 'components/question/question-number-error');
+  form id='question-demo'
+    = mixin('content-header', title);
+    = mixin('section-text', false, 'components/question/question');
+    = mixin('section', 'Number Question', 'components/question/question-number');
+    = mixin('section', 'Text Question', 'components/question/question-text');
+    = mixin('section', 'Multiple Choice Question', 'components/question/question-multiple-choice');
+    = mixin('section', 'Toggle Question', 'components/question/question-toggle');
+    = mixin('section', 'Select Question', 'components/question/question-select');
+    = mixin('section', 'Radio Question', 'components/question/question-radio');
+    = mixin('section-text', 'Question Usage', 'components/question/question.readme');
 
-  - question__label = 'What is your email?';
-  - question__description = 'We can send you a link to this page to help you get back to it when you’re ready.';
-  - question__id = 'client-email-address';
-  - question__name = 'Client[0].emailAddress';
-  = mixin('section', 'Text Question', 'components/question/question-text');
-
-  = mixin('section', 'Multiple Choice Question', 'components/question/question-multiple-choice');
-  = mixin('section', 'Toggle Question', 'components/question/question-toggle');
-  = mixin('section', 'Select Question', 'components/question/question-select');
-  = mixin('section', 'Radio Question', 'components/question/question-radio');
+= content('script');
+  javascript:
+    access.tooltips();
+    access.valid('#question-demo', function(event) {
+      event.preventDefault();
+      return false;
+    });

@@ -55,13 +55,13 @@ Option          | Type             | Importance | Description
 The ES6, CommonJS, and IFFE modules all require importing and object instantiation in your main script. The methods and configurations described above will work with the dedicated module.
 
     // ES6
-    import Toggle from 'src/utilities/toggle/toggle';
+    import Toggle from '@nycopportunity/patterns-framework/src/utilities/toggle/toggle';
 
     // CommonJS
-    import Toggle from 'dist/utilities/toggle/toggle.common';
+    let Toggle = require('@nycopportunity/patterns-framework/dist/utilities/toggle/toggle.common');
 
     <!-- IFFE -->
-    <script src="dist/utilities/toggle/toggle.iffe.js"></script>
+    <script src="@nycopportunity/patterns-framework/dist/utilities/toggle/toggle.iffe.js"></script>
 
     new Toggle();
 

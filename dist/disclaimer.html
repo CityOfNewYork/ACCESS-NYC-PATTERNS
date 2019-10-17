@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html class="bg-color-white" lang="en">
+<html class="bg-color-white" dir="ltr" lang="en">
 
   <head>
     <meta charset="utf-8" />
@@ -92,9 +92,7 @@
                   <div class="c-disclaimer">
                     <h4>ACCESS NYC Disclaimer for Public Benefit Program Screening</h4>
                     <p>ACCESS NYC offers a screening tool that recommends public benefits programs for you to consider based upon information you provide about your household.</p>
-                    </p>
                     <p>To enroll in a benefit, you need to apply through the appropriate administering agency. ACCESS NYC will tell you how to apply for any benefit on this website, but cannot guarantee eligibility. The administering agency will determine final eligibility upon your submission of an application for each program.</p>
-                    </p>
                     <p>The information you share for purposes of public benefits screening will be anonymous and can be shared with City agencies to improve access to benefits and programs. To find out more about how the City might use the data you share with ACCESS NYC, visit the <a href="#">Terms of Use for NYC.gov</a>, and <a href="#">Privacy Policy for NYC.gov</a>.</p>
                   </div>
                 </div>
@@ -102,9 +100,7 @@
                   <div class="code-block mb-1"><pre>&lt;div class=&quot;c-disclaimer&quot; data-sketch-symbol-instance=&quot;components/disclaimer/disclaimer-small&quot;&gt;
   &lt;h4&gt;ACCESS NYC Disclaimer for Public Benefit Program Screening&lt;/h4&gt;
   &lt;p&gt;ACCESS NYC offers a screening tool that recommends public benefits programs for you to consider based upon information you provide about your household.&lt;/p&gt;
-  &lt;/p&gt;
   &lt;p&gt;To enroll in a benefit, you need to apply through the appropriate administering agency. ACCESS NYC will tell you how to apply for any benefit on this website, but cannot guarantee eligibility. The administering agency will determine final eligibility upon your submission of an application for each program.&lt;/p&gt;
-  &lt;/p&gt;
   &lt;p&gt;The information you share for purposes of public benefits screening will be anonymous and can be shared with City agencies to improve access to benefits and programs. To find out more about how the City might use the data you share with ACCESS NYC, visit the &lt;a href=&quot;#&quot;&gt;Terms of Use for NYC.gov&lt;/a&gt;, and &lt;a href=&quot;#&quot;&gt;Privacy Policy for NYC.gov&lt;/a&gt;.&lt;/p&gt;
 &lt;/div&gt;</pre>
                   </div>
@@ -227,8 +223,8 @@ import Disclaimer from &#39;src/components/disclaimer/disclaimer&#39;;
 import Toggle from &#39;src/utilities/toggle/toggle&#39;;
 
 // CommonJS
-import Disclaimer from &#39;dist/components/disclaimer/disclaimer.common&#39;;
-import Toggle from &#39;dist/utilities/toggle/toggle.common&#39;;
+let Disclaimer = require(&#39;dist/components/disclaimer/disclaimer.common&#39;);
+let Toggle = require(&#39;dist/utilities/toggle/toggle.common&#39;);
 
 &lt;!-- IFFE --&gt;
 &lt;script src=&quot;dist/components/disclaimer/disclaimer.iffe.js&quot;&gt;&lt;/script&gt;

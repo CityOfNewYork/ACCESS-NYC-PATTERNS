@@ -12,10 +12,10 @@
 // Declarations
 @mixin table($alignment: $text-direction-end) {
   font-size: $font-size-small;
-  margin-bottom: $spacing-base;
+  text-align: $alignment;
   width: 100%;
   max-width: 100%;
-  text-align: $alignment;
+  margin-bottom: $spacing-base;
 
   @media screen and (min-width: $screen-tablet) {
     font-size: inherit;

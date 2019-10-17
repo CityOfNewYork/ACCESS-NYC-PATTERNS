@@ -22,8 +22,8 @@ The ES6, CommonJS, and IFFE modules all require importing and object instantiati
     import Toggle from 'src/utilities/toggle/toggle';
 
     // CommonJS
-    import Disclaimer from 'dist/components/disclaimer/disclaimer.common';
-    import Toggle from 'dist/utilities/toggle/toggle.common';
+    let Disclaimer = require('dist/components/disclaimer/disclaimer.common');
+    let Toggle = require('dist/utilities/toggle/toggle.common');
 
     <!-- IFFE -->
     <script src="dist/components/disclaimer/disclaimer.iffe.js"></script>
