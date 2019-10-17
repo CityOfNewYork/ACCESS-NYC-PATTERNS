@@ -21,16 +21,6 @@ class Tooltips {
 
     this.active = false;
 
-    // $(this.tooltip).addClass(`${Tooltips.CssClass.TOOLTIP}
-    //     ${Tooltips.CssClass.HIDDEN}`).attr({
-    //       'aria-hidden': true,
-    //       'role': 'tooltip'
-    //     }).on('click', e => {
-    //       // Stop click propagation so clicking on the tip doesn't trigger a
-    //       // click on body, which would close the tooltips.
-    //       e.stopPropagation();
-    //     }).detach().appendTo('body');
-
     this.tooltip.classList.add(Tooltips.CssClass.TOOLTIP);
     this.tooltip.classList.add(Tooltips.CssClass.HIDDEN);
 
@@ -43,13 +33,8 @@ class Tooltips {
       event.stopPropagation();
     });
 
-    document.querySelector('body').append(this.tooltip);
+    document.querySelector('body').appendChild(this.tooltip);
 
-    // $(this.trigger).on('click', e => {
-    //   e.preventDefault();
-    //   e.stopPropagation();
-    //   this.toggle();
-    // });
     this.trigger.addEventListener('click', event => {
       event.preventDefault();
       event.stopPropagation();
@@ -57,9 +42,6 @@ class Tooltips {
       this.toggle();
     })
 
-    // $(window).on('hashchange', e => {
-    //   this.hide();
-    // });
     window.addEventListener('hashchange', () => {
       this.hide();
     });
@@ -68,15 +50,6 @@ class Tooltips {
 
     return this;
   }
-
-  /**
-   * Sets event listeners, decorates the tooltip element, and appends the
-   * tooltip to the body to avoid positioning issues.
-   * @method
-   * @return {this} Tooltip
-   */
-  // init() {
-  // }
 
   /**
    * Displays the tooltips. Sets a one-time listener on the body to close the
@@ -99,9 +72,7 @@ class Tooltips {
     body.addEventListener('click', hideTooltipOnce);
 
     window.addEventListener('resize', () => {
-      // setTimeout(() => {
       this.reposition();
-      // }, 200);
     });
 
     this.reposition();
@@ -163,7 +134,7 @@ class Tooltips {
     let w = window;
 
     // Reset
-    this.tooltip.style = style(pos);
+    this.tooltip.setAttribute('style', style(pos));
 
     // Determine left or right alignment.
     if (tt.offsetWidth >= w.innerWidth - (2 * g)) {
@@ -188,7 +159,7 @@ class Tooltips {
     // Set styling positions, reversing left and right if this is an RTL lang.
     pos.top = tr.offsetTop + tr.offsetHeight + 'px';
 
-    this.tooltip.style = style(pos);
+    this.tooltip.setAttribute('style', style(pos));
 
     return this;
   }
