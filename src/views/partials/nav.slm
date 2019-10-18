@@ -58,7 +58,6 @@ nav class='${class_nav} screen-desktop:pl-4'
   a class='${class_nav_heading} ${class_nav_divider}' href='utility' Utilities
   a class='${class_nav_item}' href='accessibility' Accessibility
   a class='${class_nav_item}' href='colors' Colors
-  a class='${class_nav_item}' href='cookie' Cookie
   a class='${class_nav_item}' href='font' Fonts
   a class='${class_nav_item}' href='icons' Icons
   a class='${class_nav_item}' href='inherit' Inherit
