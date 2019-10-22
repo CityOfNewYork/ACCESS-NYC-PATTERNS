@@ -5742,9 +5742,7 @@ var AccessNyc = (function () {
           hash: true
         }); // Sanitize the phone number (if there is a phone number)
 
-        if (this.phone && this._data.to) { this._data.to = this._data.to.replace(/[-]/g, ''); } // Encode the URL field
-
-        if (this._data.url) { this._data.url = encodeURI(this._data.url); }
+        if (this.phone && this._data.to) { this._data.to = this._data.to.replace(/[-]/g, ''); }
         return this;
       }
       /**
