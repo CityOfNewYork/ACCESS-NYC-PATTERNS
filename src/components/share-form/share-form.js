@@ -113,10 +113,6 @@ class ShareForm {
     if (this.phone && this._data.to)
       this._data.to = this._data.to.replace(/[-]/g, '');
 
-    // Encode the URL field
-    if (this._data.url)
-      this._data.url = encodeURI(this._data.url);
-
     return this;
   }
 
