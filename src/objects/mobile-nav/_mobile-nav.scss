@@ -54,6 +54,7 @@
   .icon {
     margin-#{$text-direction-start}: .3em;
     vertical-align: middle;
+    pointer-events: none;
   }
 }
 
