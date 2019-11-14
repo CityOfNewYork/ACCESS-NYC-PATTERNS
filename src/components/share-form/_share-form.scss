@@ -61,7 +61,8 @@
   display: flex;
   background: $color-white;
   border: 1px solid $color-grey-mid;
-  padding-right: 5px;
+  padding-#{$text-direction-end}: 5px;
+  align-items: stretch;
 
   .error & {
     border-color: $color-red
@@ -83,6 +84,7 @@
     width: 100%;
     text-overflow: ellipsis;
     padding-#{$text-direction-end}: 0;
+    min-width: 0;
   }
 }
 
@@ -102,7 +104,7 @@
   // Triangle
   &::after {
     position: absolute;
-    top: -10px;
+    top: 0px;
     right: calc(50% - #{$spacing-base / 2});
     bottom: (-1.28 * -$spacing-base);
 
