@@ -49,6 +49,7 @@ $animate: map-get($variables, 'animate');
   position: absolute;
   max-height: 0;
   visibility: hidden;
+  /** styles here affect the print. .print\:active.hidden\:overflow below **/
 }
 
 .hidden.hidden\:overflow,
@@ -133,6 +134,9 @@ $animate: map-get($variables, 'animate');
   .print\:active.hidden\:overflow {
     max-height: inherit !important;
     overflow: visible !important;
+    height: auto !important;
+    visibility: visible !important;
+    position: static !important;
   }
 }
 
