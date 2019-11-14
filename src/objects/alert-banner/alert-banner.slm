@@ -2,7 +2,7 @@
 / Alert Banner
 /
 
-article#aria-c-alert-banner role='dialog' class='c-alert-banner z-20 bg-status-info animated hidden:fadeInUp active' data-js='alert-banner' data-alert-name='maintenance' aria-hidden='false'
+article#aria-c-alert-banner role='dialog' class='c-alert-banner z-20 bg-status-info animated hidden:fadeInUp active print:hidden' data-js='alert-banner' data-alert-name='maintenance' aria-hidden='false'
   div class='c-alert-banner-wrapper'
     div class='c-alert-banner__content'
       div class='c-alert-banner__icon'
