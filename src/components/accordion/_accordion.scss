@@ -98,6 +98,11 @@
   .c-accordion__padding {
     padding: 0;
   }
+
+  .c-accordion__body {
+    color: inherit;
+    background-color: transparent;
+  }
 }
 
 .print-view {
