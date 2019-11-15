@@ -2428,6 +2428,12 @@ function () {
       Object.keys(this._data).map(function (k) {
         formData.append(k, _this2._data[k]);
       });
+      var html = document.querySelector('html');
+
+      if (html.hasAttribute('lang')) {
+        formData.append('lang', html.getAttribute('lang'));
+      }
+
       return fetch(this.form.FORM.getAttribute('action'), {
         method: this.form.FORM.getAttribute('method'),
         body: formData
