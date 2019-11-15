@@ -151,6 +151,12 @@ class ShareForm {
       formData.append(k, this._data[k]);
     });
 
+    let html = document.querySelector('html');
+
+    if (html.hasAttribute('lang')) {
+      formData.append('lang', html.getAttribute('lang'));
+    }
+
     return fetch(this.form.FORM.getAttribute('action'), {
       method: this.form.FORM.getAttribute('method'),
       body: formData
