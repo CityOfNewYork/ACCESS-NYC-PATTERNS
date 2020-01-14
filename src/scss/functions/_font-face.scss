@@ -1,0 +1,30 @@
+//
+// font-face('Noto Sans', '#{$cdn}#{$path-to-fonts}/noto-sans/NotoSans', normal, normal, (eot woff2 woff ttf));
+
+@mixin font-face($font-family, $file-path, $font-weight, $font-style, $file-formats) {
+  $src: ();
+
+  $formats-map: (
+    "eot": url("#{$file-path}.eot?#iefix") format("embedded-opentype"),
+    "woff2": url("#{$file-path}.woff2") format("woff2"),
+    "woff": url("#{$file-path}.woff") format("woff"),
+    "ttf": url("#{$file-path}.ttf") format("truetype"),
+    "svg": url("#{$file-path}.svg##{$font-family}") format("svg")
+  );
+
+  @each $format in $file-formats {
+    $value: map-get($formats-map, $format);
+    // @debug $value;
+    // $path: nth($value, 1);
+    // @debug $path;
+    // $format: nth($value, 2);
+    $src: append($src, $value, comma);
+  }
+
+  @font-face {
+    font-family: '#{$font-family}';
+    src: $src;
+    font-weight: $font-weight;
+    font-style: $font-style;
+  }
+}

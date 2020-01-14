@@ -2,7 +2,7 @@
   "name": "@nycopportunity/access-patterns",
   "version": "0.11.12",
   "description": "ACCESS NYC Pattern library and design system documentation",
-  "author": "NYC Opportunity<technology@nycopportunity.nyc.gov>",
+  "author": "NYC Opportunity<products@nycopportunity.nyc.gov>",
   "license": "GPL-3.0+",
   "homepage": "https://accesspatterns.cityofnewyork.us",
   "repository": {
@@ -24,6 +24,34 @@
     "prepublishOnly": "git push && git push --tags",
     "publish": "cross-env NODE_ENV=production pttrn publish"
   },
+  "devDependencies": {
+    "@nycopportunity/patterns-framework": "0.0.17",
+    "chalk": "^3.0.0",
+    "cssnano": "^4.1.10",
+    "eslint-config-google": "^0.14.0",
+    "node-emoji": "^1.10.0",
+    "prettier": "^1.18.2",
+    "rollup-plugin-alias": "^1.5.2",
+    "rollup-plugin-babel": "^4.3.3",
+    "rollup-plugin-buble": "^0.19.8",
+    "rollup-plugin-commonjs": "^10.1.0",
+    "rollup-plugin-node-resolve": "^5.2.0",
+    "rollup-plugin-replace": "^2.2.0",
+    "rollup-plugin-vue": "^4.2.0",
+    "stylelint-config-standard": "^19.0.0",
+    "tailwindcss": "^1.1.4",
+    "vue-template-compiler": "^2.6.9"
+  },
+  "dependencies": {
+    "animate.scss": "0.0.6",
+    "bourbon": "^4.3.4",
+    "cleave.js": "^1.5.3",
+    "form-serialize": "^0.7.2",
+    "js-cookie": "^3.0.0-beta.0",
+    "lodash-es": "^4.17.15",
+    "vue": "^2.6.9",
+    "whatwg-fetch": "^3.0.0"
+  },
   "babel": {
     "presets": [
       [
@@ -35,23 +63,6 @@
         }
       ]
     ]
-  },
-  "devDependencies": {
-    "@nycopportunity/patterns-framework": "0.0.17",
-    "prettier": "^1.18.2",
-    "rollup-plugin-alias": "^1.5.2",
-    "rollup-plugin-vue": "^4.2.0",
-    "vue-template-compiler": "^2.6.9"
-  },
-  "dependencies": {
-    "animate.scss": "0.0.6",
-    "bourbon": "^4.2.7",
-    "cleave.js": "^1.5.3",
-    "form-serialize": "^0.7.2",
-    "js-cookie": "^3.0.0-beta.0",
-    "lodash-es": "^4.17.15",
-    "vue": "^2.6.9",
-    "whatwg-fetch": "^3.0.0"
   },
   "eslintConfig": {
     "extends": [
@@ -86,9 +97,5 @@
       "number-leading-zero": "never",
       "selector-pseudo-element-colon-notation": null
     }
-  },
-  "prettier": {
-    "parser": "html",
-    "singleQuote": true
   }
 }
