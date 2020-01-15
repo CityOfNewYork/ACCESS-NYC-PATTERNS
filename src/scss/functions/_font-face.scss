@@ -5,6 +5,7 @@
   $src: ();
 
   $formats-map: (
+    "otf": url("#{$file-path}.otf") format("opentype"),
     "eot": url("#{$file-path}.eot?#iefix") format("embedded-opentype"),
     "woff2": url("#{$file-path}.woff2") format("woff2"),
     "woff": url("#{$file-path}.woff") format("woff"),
@@ -14,10 +15,6 @@
 
   @each $format in $file-formats {
     $value: map-get($formats-map, $format);
-    // @debug $value;
-    // $path: nth($value, 1);
-    // @debug $path;
-    // $format: nth($value, 2);
     $src: append($src, $value, comma);
   }
 

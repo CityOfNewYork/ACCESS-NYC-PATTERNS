@@ -67,6 +67,16 @@ const variables = {
       '"Noto Naskh Arabic"',
       '"Noto Serif"',
       'serif'
+    ],
+    'ur-sans': [
+      '"Noto Nastaliq Urdu"',
+      '"Noto Sans"',
+      'sans-serif'
+    ],
+    'ur-serif': [
+      '"Noto Nastaliq Urdu"',
+      '"Noto Serif"',
+      'serif'
     ]
   },
   'font-weights': {

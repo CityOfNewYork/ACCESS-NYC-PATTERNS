@@ -100,7 +100,7 @@ $leading: map-get($variables, 'leading');
 }
 
 @mixin typography-blockquote() {
-  font: #{$font-size-large};
+  font-size: #{$font-size-large};
   line-height: map-get($leading, 'medium');
   font-family: $font-family-serif;
 }
