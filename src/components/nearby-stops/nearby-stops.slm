@@ -9,14 +9,14 @@ section
       span class='c-nearby-stops__subway icon-subway bg-shuttles'
       span class='c-nearby-stops__subway icon-subway bg-shuttles'
       span class='c-nearby-stops__subway icon-subway bg-shuttles'
-      span class='c-nearby-stops__description w-full bg-color-grey-lightest' &nbsp;
+      span class='c-nearby-stops__description w-full bg-grey-lightest' &nbsp;
     div class='c-nearby-stops__stop'
       span class='c-nearby-stops__subway icon-subway bg-shuttles'
       span class='c-nearby-stops__subway icon-subway bg-shuttles'
       span class='c-nearby-stops__subway icon-subway bg-shuttles'
-      span class='c-nearby-stops__description w-full bg-color-grey-lightest' &nbsp;
+      span class='c-nearby-stops__description w-full bg-grey-lightest' &nbsp;
     div class='c-nearby-stops__stop'
       span class='c-nearby-stops__subway icon-subway bg-shuttles'
       span class='c-nearby-stops__subway icon-subway bg-shuttles'
       span class='c-nearby-stops__subway icon-subway bg-shuttles'
-      span class='c-nearby-stops__description w-full bg-color-grey-lightest' &nbsp;
+      span class='c-nearby-stops__description w-full bg-grey-lightest' &nbsp;

@@ -1,6 +1,6 @@
 article
-  div class='bg-color-blue-dark font-smooth'
-    h1 class='text-color-white m-0 p-4' Font Smooth
+  div class='bg-blue-dark font-smooth'
+    h1 class='text-white m-0 p-4' Font Smooth
 
   div class='color-dark-background font-smooth-auto'
     h1 class='m-0 p-4' Font Smooth Auto

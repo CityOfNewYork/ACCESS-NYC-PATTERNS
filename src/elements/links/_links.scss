@@ -11,19 +11,8 @@
 
 // Declarations
 a, .btn-link, .button-link {
-  // color: map-get(map-get($tokens, 'colors'), 'color-blue');
   text-decoration: underline;
   transition: color .2s ease-in;
-
-  // &:visited {
-  //   color: map-get(map-get($tokens, 'colors'), 'color-purple');
-  // }
-
-  // &:hover,
-  // &:active,
-  // &:focus {
-  //   color: map-get(map-get($tokens, 'colors'), 'color-blue-dark');
-  // }
 }
 
 .link-more {
@@ -46,20 +35,8 @@ a, .btn-link, .button-link {
 
 .links-invert a,
 .links-invert .btn-link {
-  // color: map-get(map-get($tokens, 'colors'), 'color-white');
   text-decoration: underline;
   transition: color .2s ease-in;
-
-  // &:visited {
-  //   color: map-get(map-get($tokens, 'colors'), 'color-blue-light');
-  // }
-
-  // &:hover,
-  // &:active,
-  // &:focus {
-  //   color: map-get(map-get($tokens, 'colors'), 'color-blue-bright');
-  // }
-
 }
 
 .links-invert .link-more {

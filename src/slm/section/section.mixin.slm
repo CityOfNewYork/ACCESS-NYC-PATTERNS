@@ -11,12 +11,12 @@
   section id=id class='pb-4 mb-4'
     div class='page-wrapper px-2'
       header class='layout--home-body'
-        div class='my-0 px-2 pt-1 pb-4 border-b border-color-grey-light'
+        div class='my-0 px-2 pt-1 pb-4 border-b border-grey-light'
           - let srcPadding = false
           - if (this.title)
             - srcPadding = 'pt-2'
             h2 class='m-0'
-              a href='#${id}' class='text-color-grey-mid font-normal no-underline capitalize'
+              a href='#${id}' class='text-grey-mid font-normal no-underline capitalize'
                 = this.title;
 
           div class=srcPadding

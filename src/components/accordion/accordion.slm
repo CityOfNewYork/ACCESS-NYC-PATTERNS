@@ -13,7 +13,7 @@ article class='c-accordion'
 
   div#aria-c-what-you-need-to-include role='region' class='c-accordion__body color-mid-background print:active hidden:overflow animated active' aria-labelledby='aria-lb-what-you-need-to-include' aria-hidden='false'
     div class='c-accordion__padding'
-      p class='text-color-blue' NYC Department of Consumer Affairs
+      p class='text-blue' NYC Department of Consumer Affairs
       p If you earned $64,000 or less last tax year, the City can help you file your taxes for free. You can file online or, if you make under $54,000, you can file in person.
       h4 Apply in person
       p There are more than 200 NYC Free Tax Prep sites in all five boroughs that can help you file for free.

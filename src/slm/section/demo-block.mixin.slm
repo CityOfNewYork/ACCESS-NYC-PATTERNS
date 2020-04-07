@@ -22,7 +22,7 @@
 
         - for (key in this.grid)
           - value = this.grid[key];
-          div class='flex flex-col justify-between items-center border border-color-grey-lightest p-2'
+          div class='flex flex-col justify-between items-center border border-grey-lightest p-2'
             div class='w-full'
               = partial('../' + this.markup);
 

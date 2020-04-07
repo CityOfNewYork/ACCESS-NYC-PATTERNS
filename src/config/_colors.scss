@@ -6,32 +6,32 @@
 @import 'config/tokens';
 @import 'config/fonts';
 
-$colors: map-get($tokens, 'colors');
-$statuses: map-get($tokens, 'color-statuses');
-$combinations: map-get($tokens, 'color-combinations');
+$colors: map-get($tokens, colors);
+$statuses: map-get($tokens, color-statuses);
+$combinations: map-get($tokens, color-combinations);
 
 // Variables
-$color-black: map-get($colors, 'color-black');
-$color-blue: map-get($colors, 'color-blue');
-$color-blue-bright: map-get($colors, 'color-blue-bright');
-$color-blue-dark: map-get($colors, 'color-blue-dark');
-$color-blue-light: map-get($colors, 'color-blue-light');
-$color-green: map-get($colors, 'color-green');
-$color-green-dark: map-get($colors, 'color-green-dark');
-$color-green-mid: map-get($colors, 'color-green-mid');
-$color-green-light: map-get($colors, 'color-green-light');
-$color-grey-dark: map-get($colors, 'color-grey-dark');
-$color-grey-light: map-get($colors, 'color-grey-light');
-$color-grey-lightest: map-get($colors, 'color-grey-lightest');
-$color-grey-mid: map-get($colors, 'color-grey-mid');
-$color-pink: map-get($colors, 'color-pink');
-$color-pink-light: map-get($colors, 'color-pink-light');
-$color-purple: map-get($colors, 'color-purple');
-$color-red: map-get($colors, 'color-red');
-$color-yellow-access: map-get($colors, 'color-yellow-access');
-$color-yellow-light: map-get($colors, 'color-yellow-light');
-$color-white: map-get($colors, 'color-white');
-$color-transparent: map-get($colors, 'color-transparent');
+$color-black: map-get($colors, black);
+$color-blue: map-get($colors, blue);
+$color-blue-bright: map-get($colors, blue-bright);
+$color-blue-dark: map-get($colors, blue-dark);
+$color-blue-light: map-get($colors, blue-light);
+$color-green: map-get($colors, green);
+$color-green-dark: map-get($colors, green-dark);
+$color-green-mid: map-get($colors, green-mid);
+$color-green-light: map-get($colors, green-light);
+$color-grey-dark: map-get($colors, grey-dark);
+$color-grey-light: map-get($colors, grey-light);
+$color-grey-lightest: map-get($colors, grey-lightest);
+$color-grey-mid: map-get($colors, grey-mid);
+$color-pink: map-get($colors, pink);
+$color-pink-light: map-get($colors, pink-light);
+$color-purple: map-get($colors, purple);
+$color-red: map-get($colors, red);
+$color-yellow-access: map-get($colors, yellow-access);
+$color-yellow-light: map-get($colors, yellow-light);
+$color-white: map-get($colors, white);
+$color-transparent: map-get($colors, transparent);
 
 // Mixins
 @mixin combination($selector, $combination, $colors, $smoothing: false) {
@@ -48,7 +48,6 @@ $color-transparent: map-get($colors, 'color-transparent');
 
   a:not(.btn), .btn-link, .button-link {
     color: map-get($colors, map-get($combination, 'hyperlinks'));
-    // text-decoration-color: map-get($colors, map-get($combination, 'hyperlinks-underline'));
 
     &:visited {
       color: map-get($colors, map-get($combination, 'visited'));

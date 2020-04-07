@@ -2,13 +2,13 @@
  * Dependencies
  */
 
-const alias = require('rollup-plugin-alias');               // Define require aliases when bundling packages with Rollup.
+const alias = require('rollup-plugin-alias');           // Define require aliases when bundling packages with Rollup.
 const resolve = require('@rollup/plugin-node-resolve'); // Locate modules using the Node resolution algorithm, for using third party modules in node_modules.
-const commonjs = require('@rollup/plugin-commonjs');        // Convert CommonJS modules to ES6, so they can be included in a Rollup bundle
-const babel = require('rollup-plugin-babel');               // Transpile source code.
-const buble = require('@rollup/plugin-buble');              // Convert ES2015 with buble.
-const replace = require('@rollup/plugin-replace');          // Replace content while bundling.
-const vue = require('rollup-plugin-vue');                   // Roll .vue files.
+const commonjs = require('@rollup/plugin-commonjs');    // Convert CommonJS modules to ES6, so they can be included in a Rollup bundle
+const babel = require('rollup-plugin-babel');           // Transpile source code.
+const buble = require('@rollup/plugin-buble');          // Convert ES2015 with buble.
+const replace = require('@rollup/plugin-replace');      // Replace content while bundling.
+const vue = require('rollup-plugin-vue');               // Roll .vue files.
 
 /**
  * Config
@@ -94,7 +94,7 @@ module.exports = [
   {
     // This is the global distribution that packages all modules and peer dependencies
     input: './src/js/main.js',
-    output: {
+    output: [{
       name: 'AccessNyc',
       file: `./dist/scripts/access-nyc.js`,
       sourcemap: (process.env.NODE_ENV === 'production')
@@ -102,12 +102,13 @@ module.exports = [
       format: rollup.format,
       strict: rollup.strict,
       globals: rollup.globals
-    },
-    plugins: rollup.local
+    }],
+    plugins: rollup.local,
+    devModule: true
   },
   {
     input: './src/js/vue-components.js',
-    output: {
+    output: [{
       name: 'VueComponents',
       file: `./dist/scripts/vue-components.js`,
       sourcemap: (process.env.NODE_ENV === 'production')
@@ -115,12 +116,13 @@ module.exports = [
       format: rollup.format,
       strict: rollup.strict,
       globals: rollup.globals
-    },
-    plugins: rollup.local
+    }],
+    plugins: rollup.local,
+    devModule: true
   },
   {
     input: './src/js/polyfills.js',
-    output: {
+    output: [{
       name: 'Polyfills',
       file: `./dist/scripts/polyfills.js`,
       sourcemap: (process.env.NODE_ENV === 'production')
@@ -128,8 +130,9 @@ module.exports = [
       format: rollup.format,
       strict: rollup.strict,
       globals: rollup.globals
-    },
-    plugins: rollup.local
+    }],
+    plugins: rollup.local,
+    devModule: true
   },
   {
     input: './src/elements/tooltips/tooltips.js',

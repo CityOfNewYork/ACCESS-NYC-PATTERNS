@@ -3,7 +3,7 @@
 @import 'config/dimensions';
 
 [class*='icon-subway'] {
-  color: map-get($colors, 'color-white');
+  color: $color-white;
   font-size: 65%;
   font-family: helvetica, arial, sans-serif;
   font-weight: bold;
@@ -24,7 +24,7 @@
   justify-content: center;
 
   &.bg-broadway {
-    color: map-get($colors, 'color-black');
+    color: $color-black;
   }
 }
 

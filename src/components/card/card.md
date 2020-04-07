@@ -1,7 +1,7 @@
 Card Components are thumbnails of content from other views. Cards include 5 possible elements:
 
-1. Program icon (corresponds to category)
-1. Plain language headline (program.name.plain)
-1. Program name (program)
-1. Brief description (excerpt)
+1. Program icon. Corresponds to program category. [See the full set of icons here](./icons#program-card-icons).
+1. Plain language headline
+1. Program name
+1. Brief description
 1. Link to the program guide

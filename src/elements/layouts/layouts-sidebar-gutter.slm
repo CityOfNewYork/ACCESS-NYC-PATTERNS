@@ -1,6 +1,6 @@
 
-div class='screen-tablet:layout--sidebar-gutter layout--gutter bg-color-grey-lightest text-center p-4'
-  aside class='bg-color-grey-light p-4'
+div class='screen-tablet:layout--sidebar-gutter layout--gutter bg-grey-lightest text-center p-4'
+  aside class='bg-grey-light p-4'
     | Sidebar
-  article class='bg-color-grey-light p-4'
+  article class='bg-grey-light p-4'
     | Content

@@ -81,6 +81,13 @@ const modules = [
     includePaths: sass.includePaths
   },
   {
+    file: './src/elements/icons/_icons.scss',
+    outDir: './dist/elements/icons/',
+    outFile: 'icons.css',
+    precision: sass.precision,
+    includePaths: sass.includePaths
+  },
+  {
     file: './src/components/accordion/_accordion.scss',
     outDir: './dist/components/accordion/',
     outFile: 'accordion.css',

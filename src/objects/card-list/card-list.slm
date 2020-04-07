@@ -2,7 +2,7 @@
 / Card List
 /
 
-div class='p-4 bg-color-grey-lightest'
+div class='p-4 bg-grey-lightest'
   div class='layout--gutter'
     - symbol = false;
     - instance = 'components/card/card-icon-info';

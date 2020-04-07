@@ -104,33 +104,33 @@ module.exports = {
     'larger': '1.5'
   },
   'colors': {
-    'color-blue-light': '#E1EEFF',
-    'color-blue-bright': '#118DF0',
-    'color-blue': '#184E9E',
-    'color-blue-dark': '#112E51',
+    'blue-light': '#E1EEFF',
+    'blue-bright': '#118DF0',
+    'blue': '#184E9E',
+    'blue-dark': '#112E51',
 
-    'color-yellow-light': '#FFE6A9',
-    'color-yellow-access': '#FBB720',
+    'yellow-light': '#FFE6A9',
+    'yellow-access': '#FBB720',
 
-    'color-green-light': '#D4FFE7',
-    'color-green': '#05CE7C',
-    'color-green-mid': '#0D6D3B',
-    'color-green-dark': '#094727',
+    'green-light': '#D4FFE7',
+    'green': '#05CE7C',
+    'green-mid': '#0D6D3B',
+    'green-dark': '#094727',
 
-    'color-pink-light': '#F1B3bD',
-    'color-pink': '#F1647C',
-    'color-red': '#C6252b',
+    'pink-light': '#F1B3bD',
+    'pink': '#F1647C',
+    'red': '#C6252b',
 
-    'color-purple': '#4C2C92',
+    'purple': '#4C2C92',
 
-    'color-grey-light': '#D1D5D9',
-    'color-grey-lightest': '#EEF3F7',
-    'color-grey-mid': '#505C66',
-    'color-grey-dark': '#172129',
-    'color-black': '#000000',
+    'grey-light': '#D1D5D9',
+    'grey-lightest': '#EEF3F7',
+    'grey-mid': '#505C66',
+    'grey-dark': '#172129',
+    'black': '#000000',
 
-    'color-white': '#ffffff',
-    'color-transparent': 'rgba(255,255,255,0)',
+    'white': '#FFFFFF',
+    'transparent': 'rgba(255, 255, 255, 0)',
 
     // https://en.wikipedia.org/wiki/New_York_City_Subway#Nomenclature
     'eighth-avenue': '#2850AD', // Vivid Blue, A C E
@@ -145,52 +145,52 @@ module.exports = {
     'shuttles': '#808183' // Dark Slate Gray, S
   },
   'color-statuses': {
-    'success': 'color-green-light',
-    'info': 'color-blue-light',
-    'warning': 'color-yellow-light',
-    'urgent': 'color-pink-light'
+    'success': 'green-light',
+    'info': 'blue-light',
+    'warning': 'yellow-light',
+    'urgent': 'pink-light'
   },
   'color-combinations': {
     'light-background': {
-      'color': 'color-black',
-      'headings': 'color-blue-dark',
-      'color-alt': 'color-grey-mid',
-      'hyperlinks': 'color-blue',
-      'hyperlinks-underline': 'color-blue',
-      'visited': 'color-purple',
-      'hover': 'color-blue-dark',
-      'background-color': 'color-white'
+      'color': 'black',
+      'headings': 'blue-dark',
+      'color-alt': 'grey-mid',
+      'hyperlinks': 'blue',
+      'hyperlinks-underline': 'blue',
+      'visited': 'purple',
+      'hover': 'blue-dark',
+      'background-color': 'white'
     },
     'mid-background': {
-      'color': 'color-black',
-      'headings': 'color-blue-dark',
-      'color-alt': 'color-grey-mid',
-      'hyperlinks': 'color-blue',
-      'hyperlinks-underline': 'color-blue',
-      'visited': 'color-purple',
-      'hover': 'color-blue-dark',
-      'background-color': 'color-grey-lightest'
+      'color': 'black',
+      'headings': 'blue-dark',
+      'color-alt': 'grey-mid',
+      'hyperlinks': 'blue',
+      'hyperlinks-underline': 'blue',
+      'visited': 'purple',
+      'hover': 'blue-dark',
+      'background-color': 'grey-lightest'
     },
     'dark-background': {
-      'color': 'color-white',
+      'color': 'white',
       'font-smooth': true,
-      'headings': 'color-white',
-      'color-alt': 'color-white',
-      'hyperlinks': 'color-white',
-      'hyperlinks-underline': 'color-white',
-      'visited': 'color-white',
-      'hover': 'color-white',
-      'background-color': 'color-blue-dark'
+      'headings': 'white',
+      'color-alt': 'white',
+      'hyperlinks': 'white',
+      'hyperlinks-underline': 'white',
+      'visited': 'white',
+      'hover': 'white',
+      'background-color': 'blue-dark'
     },
     'primary-button': {
-      'color': 'color-white',
+      'color': 'white',
       'font-smooth': true,
-      'background-color': 'color-blue'
+      'background-color': 'blue'
     },
     'secondary-button': {
-      'color': 'color-white',
+      'color': 'white',
       'font-smooth': true,
-      'background-color': 'color-green-mid'
+      'background-color': 'green-mid'
     }
   },
   'screens': {
@@ -304,6 +304,7 @@ module.exports = {
     'icon-ui-printer': '24px 24px',
     'icon-ui-search': '24px 24px',
     'icon-ui-settings': '24px 24px',
+    'icon-ui-translate': '24px 24px',
     'icon-ui-user-check': '24px 24px',
     'icon-ui-x-circle': '24px 24px',
     'icon-ui-x': '24px 24px'
@@ -403,6 +404,7 @@ module.exports = {
     'icon-ui-printer',
     'icon-ui-search',
     'icon-ui-settings',
+    'icon-ui-translate',
     'icon-ui-user-check',
     'icon-ui-x-circle',
     'icon-ui-x'

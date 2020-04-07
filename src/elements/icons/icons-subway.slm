@@ -4,7 +4,7 @@
 
     h3 class='text-font-size-small capitalize mb-2' ${key.replace(/-/g," ")}
 
-    div class='text-font-size-normal py-4 text-center bg-color-grey-lightest px-2 mb-2 flex items-center justify-center' style='min-height:150px'
+    div class='text-font-size-normal py-4 text-center bg-grey-lightest px-2 mb-2 flex items-center justify-center' style='min-height:150px'
       - for (i in value)
         - line = value[i];
         - express = false;

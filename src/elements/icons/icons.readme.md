@@ -1,6 +1,6 @@
 #### The SVG Sprite
 
-To use the inline SVGS, include the main icon sprite (`dist/icons.svg`) in your page markup. ACCESS NYC uses an AJAX method to cache the sprite file while not including it in the page cache to decrease the size of each page. To import the icon through the global ACCESS NYC Patterns script use the following code:
+To use the inline SVGS, include the main icon sprite ([dist/svgs/icons.svg](https://github.com/CityOfNewYork/ACCESS-NYC-PATTERNS/tree/master/dist/svg/icons.svg)) in your page markup. ACCESS NYC uses an AJAX method to cache the sprite file while not including it in the page cache to decrease the size of each page. To import the icon through the global ACCESS NYC Patterns script use the following code:
 
     <!-- Global Script -->
     <script src="dist/scripts/access-nyc.js"></script>
@@ -10,24 +10,9 @@ To use the inline SVGS, include the main icon sprite (`dist/icons.svg`) in your 
       access.icons();
     </script>
 
-The script expects the icon sprite path to be named `icons.svg` and live in the root directory of the site. To overwrite this, pass a path to the method:
+The script expects the icon sprite path to be `svg/icons.svg` in the root directory of the site. Pass a new string to the method to specify a different path:
 
     access.icons('path/to/icons.svg');
-
-The ES6, CommonJS, and IFFE modules all require global activation to be written into your main script:
-
-    // ES6
-    import Filter from 'src/utilities/icons/icons';
-
-    // CommonJS
-    let Filter = require('dist/utilities/icons/icons.common');
-
-    <!-- IFFE -->
-    <script src="dist/utilities/icons/icons.iffe.js"></script>
-
-    new Icons(); // or new Icons('path/to/icons.svg');
-
-**Note**: The Icon Utility source and distribution scripts in the ACCESS NYC Patterns has been deprecated and moved to the [NYCO Patterns Framework](https://github.com/CityOfNewYork/nyco-patterns-framework). Install the `@nycopportunity/patterns-framework` module to use this script.
 
 #### Polyfills
 
@@ -41,7 +26,7 @@ There are a few options for using icons after the sprite has been loaded on the 
 
 The first option allows you to inline an SVG with the `use` tag. This is the preferred method for ACCESS NYC. Note that you can change the color of inline SVG icon shapes that have their fill set as currentColor by using a text color utility. Also, note the role="img" attribute, title tag, and title tag id for accessibility support.
 
-    <svg class="icon-logo-full text-color-blue-dark" role="img">
+    <svg class="icon-logo-full text-blue-dark" role="img">
       <title id="icon-logo-full-title">ACCESS NYC Logo</title>
       <use xlink:href="#icon-logo-full"></use>
     </svg>

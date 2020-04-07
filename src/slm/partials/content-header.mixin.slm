@@ -1,4 +1,4 @@
 = mixin('content-header', 'title = Page Title');
   header class='page-wrapper px-2 screen-desktop:px-0 layout--home-body'
     div class='my-0 w-full'
-      h1 class='text-color-blue-dark px-2 pb-4 mb-4' = this.title;
+      h1 class='text-blue-dark px-2 pb-4 mb-4' = this.title;

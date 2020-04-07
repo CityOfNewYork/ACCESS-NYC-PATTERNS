@@ -6,7 +6,7 @@ import Toggle from '@nycopportunity/patterns-framework/src/utilities/toggle/togg
 import Icons from '@nycopportunity/patterns-framework/src/utilities/icons/icons';
 
 // Elements
-import InputsAutocomplete from '../elements/inputs/inputs-autocomplete';
+// import InputsAutocomplete from '../elements/inputs/inputs-autocomplete';
 import Tooltips from '../elements/tooltips/tooltips';
 
 // Components
@@ -32,7 +32,7 @@ class main {
    * @param  {String} path The path of the icon file
    * @return {object} instance of Icons
    */
-  icons(path) {
+  icons(path = 'svg/icons.svg') {
     return new Icons(path);
   }
 
@@ -113,9 +113,9 @@ class main {
   * @param {object} settings Settings for the Autocomplete Class
   * @return {object}         Instance of Autocomplete
   */
-  inputsAutocomplete(settings = {}) {
-    return new InputsAutocomplete(settings);
-  }
+  // inputsAutocomplete(settings = {}) {
+  //   return new InputsAutocomplete(settings);
+  // }
 
   /**
    * An API for the AlertBanner Component

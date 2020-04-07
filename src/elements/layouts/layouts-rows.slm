@@ -1,6 +1,6 @@
 
 div class='layout--rows text-center'
-  div class='bg-color-grey-light p-4'
+  div class='bg-grey-light p-4'
     | Row A
-  div class='bg-color-grey-lightest p-4'
+  div class='bg-grey-lightest p-4'
     | Row B

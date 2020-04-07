@@ -1,8 +1,8 @@
 / This is the layout styling
-- class_content_headers = 'page-wrapper px-2 text-color-blue-dark'
+- class_content_headers = 'page-wrapper px-2 text-blue-dark'
 
 - class_demo = 'pb-4'
--   class_demo_headers = 'pt-1 px-2 border-b border-color-grey-light mb-3';
+-   class_demo_headers = 'pt-1 px-2 border-b border-grey-light mb-3';
 /     The title of the demo
 
 - class_demo_cols = 'layout--columns';
@@ -14,7 +14,7 @@
 - class_demo_class_containers = 'mb-2';
 
 / This is the styling for the color swatches
-- class_swatch = 'my-1 p-1 border border-color-grey-light';
+- class_swatch = 'my-1 p-1 border border-grey-light';
 -   class_swatch__block = 'p-4';
 -   class_swatch__label = 'mt-1';
 
@@ -22,4 +22,4 @@
 - class_nav = 'screen-tablet:flex-1 mb-1 px-2';
 -   class_nav_heading = 'type-h3 text-font-size-small mb-1 block';
 -   class_nav_item = 'block p-1';
--   class_nav_divider = 'screen-tablet:border-b screen-tablet:pb-2 screen-tablet:mb-1 border-color-white p-1'
+-   class_nav_divider = 'screen-tablet:border-b screen-tablet:pb-2 screen-tablet:mb-1 border-white p-1'

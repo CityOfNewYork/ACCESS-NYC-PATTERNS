@@ -1,11 +1,11 @@
 doctype html
-html lang='en' class='bg-color-white' dir='ltr'
+html lang='en' class='bg-white' dir='ltr'
   = content('head');
 
-  body class='bg-color-blue-dark' style='visibility: hidden;' onload='load()'
+  body class='bg-blue-dark' style='visibility: hidden;' onload='load()'
     a class='sr-only' href='#main-content' Skip to main content
 
-    div class='bg-color-white'
+    div class='bg-white'
       = partial('../partials/header.slm');
 
       aside#main-menu role='region' aria-labelledby='main-menu-control' aria-hidden='true' class='color-mid-background text-font-size-small hidden hidden:overflowFadeInUp animated relative' style='top: -1px'

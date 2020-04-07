@@ -1,5 +1,5 @@
 header class='color-light-background px-2'
-  div class='border-b border-color-grey-light'
+  div class='border-b border-grey-light'
     div class='flex items-center justify-between p-2 screen-tablet:py-4 screen-tablet:px-2'
       div
         h1 class='m-0 p-0 leading-normal'
@@ -8,16 +8,16 @@ header class='color-light-background px-2'
               | ACCESS NYC
             svg class='icon-logo-mark screen-tablet:hidden' aria-hidden='true'
               use xlink:href='#icon-logo-mark'
-            svg class='icon-logo-full--large text-color-blue-dark hidden screen-tablet:inline-block' aria-hidden='true'
+            svg class='icon-logo-full--large text-blue-dark hidden screen-tablet:inline-block' aria-hidden='true'
                 use xlink:href='#icon-logo-full'
 
       div class='flex items-center'
-        h2 class='text-font-size-small m-0 text-color-blue-dark screen-tablet:hidden'
+        h2 class='text-font-size-small m-0 text-blue-dark screen-tablet:hidden'
           | Patterns
-        h2 class='type-h1 m-0 text-color-blue-dark hidden screen-tablet:inline-block' aria-hidden='true'
+        h2 class='type-h1 m-0 text-blue-dark hidden screen-tablet:inline-block' aria-hidden='true'
           | Patterns
         nav class='text-font-size-small'
-          a href='${link_source}/tree/v${this.tokens.version}' class='rounded-lg text-color-blue-dark border-2 no-underline px-1 ml-2 hidden screen-tablet:inline-block'
+          a href='${link_source}/tree/v${this.tokens.version}' class='rounded-lg text-blue-dark border-2 no-underline px-1 ml-2 hidden screen-tablet:inline-block'
             = this.tokens.version;
           a href='${link_source}/tree/v${this.tokens.version}' class='ml-1 screen-tablet:ml-2 screen-tablet:hidden' aria-hidden='true'
             = this.tokens.version;

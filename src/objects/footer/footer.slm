@@ -69,7 +69,7 @@ footer class='o-footer color-mid-background'
         = partial(`../../${instance}`);
 
   div class='o-footer__copyright mb-4'
-    svg class='icon icon-logo-full text-color-blue-dark'
+    svg class='icon icon-logo-full text-blue-dark'
       use xlink:href='#icon-logo-full'
 
   div class='o-footer__copyright'

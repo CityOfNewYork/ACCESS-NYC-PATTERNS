@@ -1,0 +1,1 @@
+These icons are used inside of [Card Component](/card#card-with-icon) to categorize different types of programs.

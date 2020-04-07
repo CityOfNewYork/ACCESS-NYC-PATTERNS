@@ -1,7 +1,7 @@
 article class='mb-4 print:pb-4 print:border-b'
-  div class='flex items-stretch bg-color-grey-lightest p-3 screen-desktop:p-4 print:flex print:p-0 print:bg-color-transparent'
+  div class='flex items-stretch bg-grey-lightest p-3 screen-desktop:p-4 print:flex print:p-0 print:bg-transparent'
     div class='w-100 pr-1 print:p-0'
-      header class='c-card p-0 bg-color-transparent mb-2'
+      header class='c-card p-0 bg-transparent mb-2'
         div class='c-card__icon-large print:hidden'
           div class='icon bg-icon-card-cash-expenses'
         div class='pr-2 hidden print:inline-block' aria-hidden='true'
@@ -9,13 +9,13 @@ article class='mb-4 print:pb-4 print:border-b'
 
         div class='c-card__body pt-1'
           a href='#'
-            h3 class='c-card__title text-color-blue-dark' Money for heat and utility expenses
-          p class='c-card__subtitle text-color-grey-mid mb-0' HEAP can help you pay for the costs of heating your home during the winter months.
+            h3 class='c-card__title text-blue-dark' Money for heat and utility expenses
+          p class='c-card__subtitle text-grey-mid mb-0' HEAP can help you pay for the costs of heating your home during the winter months.
 
-      h3 class='type-h4 print:hidden text-color-blue-dark' Ongoing Engagement
+      h3 class='type-h4 print:hidden text-blue-dark' Ongoing Engagement
 
       div class='print:mb-2'
-        h3 class='type-h4 text-color-blue-dark' Heads Up
+        h3 class='type-h4 text-blue-dark' Heads Up
         div class='c-checklist' id='heads-up-S2R010'
           ul
             li Requires proof of identity, where you live, income, and citizenship status.
@@ -32,5 +32,5 @@ article class='mb-4 print:pb-4 print:border-b'
           button type='button' class='btn btn-primary btn-small block w-full'
             | Remove Program
       div
-        button type='button' class='btn-toggle btn-small w-full text-color-blue' href='#'
+        button type='button' class='btn-toggle btn-small w-full text-blue' href='#'
           | Learn More

@@ -13,6 +13,7 @@ nav class='${class_nav} screen-desktop:pl-4'
   a class='${class_nav_item}' href='checkboxes' Checkboxes
   a class='${class_nav_item}' href='dividers' Dividers
   a class='${class_nav_item}' href='inputs' Inputs
+  a class='${class_nav_item}' href='icons' Icons
   a class='${class_nav_item}' href='layouts' Layouts
   a class='${class_nav_item}' href='links' Links
   a class='${class_nav_item}' href='lists' Lists
@@ -61,7 +62,6 @@ nav class='${class_nav} screen-desktop:pl-4'
   a class='${class_nav_item}' href='accessibility' Accessibility
   a class='${class_nav_item}' href='colors' Colors
   a class='${class_nav_item}' href='font' Fonts
-  a class='${class_nav_item}' href='icons' Icons
   a class='${class_nav_item}' href='inherit' Inherit
   a class='${class_nav_item}' href='language' Language
   a class='${class_nav_item}' href='media' Media

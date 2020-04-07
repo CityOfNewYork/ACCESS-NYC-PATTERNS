@@ -13,7 +13,7 @@ article#aria-c-alert-banner role='dialog' class='c-alert-banner z-20 bg-status-i
         | ACCESS NYC will be undergoing maintenance Friday, February 2nd from 9pm to 11pm EST.
 
     div class='c-alert-banner__closing'
-      button class='text-color-blue' data-js='alert-controller' aria-controls='aria-c-alert-banner' aria-expanded='true'
+      button class='text-blue' data-js='alert-controller' aria-controls='aria-c-alert-banner' aria-expanded='true'
         span class='sr-only' close & return to site
 
         svg class='icon-ui-x' aria-hidden='true'

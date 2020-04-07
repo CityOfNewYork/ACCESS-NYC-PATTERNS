@@ -9,11 +9,11 @@
     </div>
 
     <div class="c-card__body">
-      <a class="text-color-blue-dark" :href="link" :target="blank ? '_blank' : false" v-if="title">
-        <h3 class="c-card__title text-color-blue-dark">{{ title }}</h3>
+      <a class="text-blue-dark" :href="link" :target="blank ? '_blank' : false" v-if="title">
+        <h3 class="c-card__title text-blue-dark">{{ title }}</h3>
       </a>
 
-      <p class="c-card__subtitle type-small" v-if="subtitle" v-html="subtitle">
+      <p class="c-card__subtitle type-small text-grey-mid" v-if="subtitle" v-html="subtitle">
         {{ subtitle }}
       </p>
 

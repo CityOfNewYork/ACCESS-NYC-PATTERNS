@@ -2,7 +2,7 @@
 / Newsletter
 /
 
-div class='mb-4 p-3 screen-desktop:p-4 bg-color-white' data-js='newsletter'
+div class='mb-4 p-3 screen-desktop:p-4 bg-white' data-js='newsletter'
 
   div class='type-h3' Get Updates
 
