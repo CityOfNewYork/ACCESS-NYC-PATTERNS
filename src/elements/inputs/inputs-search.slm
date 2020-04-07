@@ -2,7 +2,7 @@
 / Input Search
 /
 
-div class='input-search' data-sketch-symbol=symbol data-sketch-symbol-instance=instance
+div class='input-search'
   input name='s' value='' placeholder='Search' id='search-field' type='text'
   button class='btn-link input-search__submit' type='submit'
     svg class='icon icon-ui-search'

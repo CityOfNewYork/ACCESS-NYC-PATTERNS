@@ -1,4 +1,4 @@
-div class='c-filter-multi bg-color-white' data-sketch-symbol=symbol data-sketch-symbol-instance=instance
+div class='c-filter-multi bg-color-white'
   ul class='c-filter-multi__list'
     li class='c-filter-multi__item'
       button#aria-lb-cash-and-expenses type='button' class='c-filter-multi__item-header btn-link active' data-js='filter' aria-controls='aria-c-cash-and-expenses' aria-expanded='true'

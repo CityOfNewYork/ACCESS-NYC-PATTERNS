@@ -3,15 +3,15 @@
 //
 
 // Dependencies
-@import 'config/variables';
+@import 'config/tokens';
 @import 'config/language';
 @import 'scss/functions/rem';
 
-$fonts: map-get($variables, 'fonts');
-$font-sizes: map-get($variables, 'font-sizes');
-$font-weights: map-get($variables, 'font-weights');
+$fonts: map-get($tokens, 'fonts');
+$font-sizes: map-get($tokens, 'font-sizes');
+$font-weights: map-get($tokens, 'font-weights');
 
-$em-base: map-get($variables, 'em-base');
+$em-base: map-get($tokens, 'em-base');
 
 $font-size-xsmall: map-get($font-sizes, 'font-size-xsmall');
 $font-size-small: map-get($font-sizes, 'font-size-small');

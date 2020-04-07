@@ -3,19 +3,45 @@
  */
 
 const package = require('../package.json');
-const version = process.env.V || package.version;
+const tokens = require('./tokens');
 
 /**
  * Config
  */
 
-const site = {
-  versions: {
-    package: version
+module.exports = {
+  src: 'src',
+  views: 'views',
+  dist: 'dist',
+  blacklist: [
+    'partials',
+    'layouts'
+  ],
+  marked: {
+    gfm: true,
+    headerIds: true,
+    smartypants: true
+  },
+  beautify: {
+    indent_size: 2,
+    indent_char: ' ',
+    preserve_newlines: false,
+    indent_inner_html: false,
+    // wrap_line_length: 55,
+    wrap_line_length: 0,
+    inline: [],
+    indent_inner_html: false,
+  },
+  package: package,
+  tokens: tokens,
+  process: {
+    env: {
+      NODE_ENV: process.env.NODE_ENV
+    }
   },
   urls: {
     production: 'https://cityofnewyork.github.io/ACCESS-NYC-PATTERNS',
-    cdn: '"https://cdn.jsdelivr.net/gh/CityOfNewYork/ACCESS-NYC-PATTERNS@v' + version + '/dist"'
+    cdn: '"https://cdn.jsdelivr.net/gh/CityOfNewYork/ACCESS-NYC-PATTERNS@v' + package.version + '/dist"'
   },
   defaults: {
     checkboxes: {
@@ -101,5 +127,3 @@ const site = {
     ]
   }
 };
-
-module.exports = site;

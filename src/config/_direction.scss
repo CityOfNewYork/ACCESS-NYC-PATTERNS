@@ -4,14 +4,17 @@
 
 // Dependencies
 @import 'config/language';
-@import 'config/variables';
+@import 'config/tokens';
 
 // Variables
 $text-direction: ltr;
 $text-direction-start: left;
 $text-direction-end: right;
 
-@each $lang in map-get($variables, 'rtl-languages') {
+$default-layout-direction: null;
+$layout-direction: null;
+
+@each $lang in map-get($tokens, 'rtl-languages') {
   @if $language == $lang {
     $default-layout-direction: RTL !global;
     // Below variable is used for the USWDS grid which built on an old

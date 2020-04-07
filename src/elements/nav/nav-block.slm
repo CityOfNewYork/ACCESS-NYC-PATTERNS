@@ -1,7 +1,7 @@
 /
 / Nav Block
 /
-nav class='nav-block' data-sketch-symbol=symbol data-sketch-symbol-instance=instance
+nav class='nav-block'
   a class='active' href='#' Am I eligible?
   a href='#' Programs
   a href='#' Find help

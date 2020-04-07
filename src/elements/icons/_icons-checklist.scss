@@ -1,8 +1,8 @@
-@import 'config/variables';
+@import 'config/tokens';
 @import 'config/cdn';
 
-@each $key, $var in map-get($variables, 'icons-checklist') {
-  $size: map-get($variables, 'icons-checklist-size');
+@each $key, $var in map-get($tokens, 'icons-checklist') {
+  $size: map-get($tokens, 'icons-checklist-size');
 
   .bg-#{$key} {
     @include size($size);

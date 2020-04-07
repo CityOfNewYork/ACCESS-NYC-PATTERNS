@@ -1,16 +1,16 @@
 / Layout
-= extend('layouts/default');
+= extend('/slm/layouts/default');
 
 / Component
 - title = 'Card';
 
 / Partials
-= partial('partials/styles.slm');
-= partial('partials/links.slm');
-= partial('partials/head.mixin.slm');
-= partial('partials/content-header.mixin.slm');
-= partial('section/section.mixin.slm');
-= partial('section/section-text.mixin.slm');
+= partial('/slm/partials/styles.slm');
+= partial('/slm/partials/links.slm');
+= partial('/slm/partials/head.mixin.slm');
+= partial('/slm/partials/content-header.mixin.slm');
+= partial('/slm/section/section.mixin.slm');
+= partial('/slm/section/section-text.mixin.slm');
 
 / Content blocks
 = content('head');
@@ -25,7 +25,7 @@
   = mixin('section', 'Card With Icon', 'components/card/card-icon');
   = mixin('section', 'Card With Icon and Information', 'components/card/card-icon-info');
   = mixin('section', 'Card With Icon, Information, and Apply Button', 'components/card/card-icon-info-apply');
-  = mixin('section', 'Removable Card', 'components/card/card-removable', 'gutter');
+  / = mixin('section', 'Removable Card', 'components/card/card-removable', 'gutter');
 
   = mixin('section', 'Vue Card', 'components/card/card.vue');
   = mixin('section-text', 'Vue Component Usage', 'components/card/card.readme.vue');

@@ -17,7 +17,7 @@
   max-width: 100%;
   width: $tooltip-width;
 
-  box-shadow: map-get(map-get($variables, 'shadows'), 'up');
+  box-shadow: map-get(map-get($tokens, 'shadows'), 'up');
 
   z-index: 3;
 

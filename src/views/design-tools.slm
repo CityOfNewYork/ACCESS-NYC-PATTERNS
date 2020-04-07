@@ -1,15 +1,15 @@
 / Layout
-= extend('layouts/default');
+= extend('/slm/layouts/default');
 
 - title = 'Design Tools';
 
 / Partials
-= partial('partials/styles.slm');
-= partial('partials/links.slm');
-= partial('partials/head.mixin.slm');
-= partial('partials/content-header.mixin.slm');
-= partial('section/demo-specs.mixin.slm');
-= partial('section/demo-block.mixin.slm');
+= partial('/slm/partials/styles.slm');
+= partial('/slm/partials/links.slm');
+= partial('/slm/partials/head.mixin.slm');
+= partial('/slm/partials/content-header.mixin.slm');
+= partial('/slm/section/demo-specs.mixin.slm');
+= partial('/slm/section/demo-block.mixin.slm');
 
 / Content blocks
 = content('head');
@@ -28,7 +28,7 @@
       div class='layout--home-body color-light-background'
         div class='px-2 text-font-size-small'
           div class='o-content color-light-background pb-4'
-            = 'md{{ content/design-tools.md }}';
+            == this.include('content/design-tools.md');
 
             p class='text-center pt-3'
               a class='btn btn-primary mb-2' href='#' Coming Soon

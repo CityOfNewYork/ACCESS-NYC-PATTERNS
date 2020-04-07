@@ -2,7 +2,7 @@
 / Question Toggle
 /
 
-fieldset class='c-question' data-sketch-symbol=symbol data-sketch-symbol-instance=instance
+fieldset class='c-question'
   legend class='c-question__label' Do you have an income?
 
   p This includes money from jobs, alimony, investments, or gifts.

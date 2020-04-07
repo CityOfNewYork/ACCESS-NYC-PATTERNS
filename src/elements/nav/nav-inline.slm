@@ -1,7 +1,7 @@
 /
 / Nav Inline
 /
-nav class='nav-inline' data-sketch-symbol=symbol data-sketch-symbol-instance=instance
+nav class='nav-inline'
   a class='active' href='#' Am I eligible?
   a href='#' Programs
   a href='#' Find help

@@ -2,7 +2,7 @@
 / Question Multiple Choice
 /
 
-fieldset class='c-question' data-sketch-symbol=symbol data-sketch-symbol-instance=instance
+fieldset class='c-question'
   legend class='c-question__label' Phone Type
 
   div class='c-question__container'

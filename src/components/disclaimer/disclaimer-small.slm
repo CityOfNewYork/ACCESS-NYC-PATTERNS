@@ -2,7 +2,7 @@
 / Disclaimer Small
 /
 
-div class='c-disclaimer' data-sketch-symbol=symbol data-sketch-symbol-instance=instance
+div class='c-disclaimer'
   p
     small
       svg class='c-disclaimer__icon c-disclaimer__icon--pre icon icon-ui-info' role='img'

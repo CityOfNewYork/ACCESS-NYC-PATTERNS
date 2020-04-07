@@ -1,4 +1,4 @@
-article class='c-card' data-sketch-symbol=symbol data-sketch-symbol-instance=instance
+article class='c-card'
   div class='c-card__icon'
     a href='#'
       div class='icon bg-icon-card-cash-expenses'

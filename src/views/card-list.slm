@@ -1,15 +1,15 @@
 / Layout
-= extend('layouts/default');
+= extend('/slm/layouts/default');
 
 / Component
 - title = 'Card List';
 
 / Partials
-= partial('partials/styles.slm');
-= partial('partials/links.slm');
-= partial('partials/head.mixin.slm');
-= partial('partials/content-header.mixin.slm');
-= partial('section/section.mixin.slm');
+= partial('/slm/partials/styles.slm');
+= partial('/slm/partials/links.slm');
+= partial('/slm/partials/head.mixin.slm');
+= partial('/slm/partials/content-header.mixin.slm');
+= partial('/slm/section/section.mixin.slm');
 
 / Content blocks
 = content('head');

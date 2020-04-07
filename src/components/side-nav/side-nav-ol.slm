@@ -2,7 +2,7 @@
 / Side Nav
 /
 
-nav class='c-side-nav hide-for-print' data-sketch-symbol=symbol data-sketch-symbol-instance=instance
+nav class='c-side-nav hide-for-print'
   ol
     li
       a class='active' href='#'

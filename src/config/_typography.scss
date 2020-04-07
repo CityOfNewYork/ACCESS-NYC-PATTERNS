@@ -3,12 +3,12 @@
 //
 
 // Dependencies
-@import 'config/variables';
+@import 'config/tokens';
 @import 'config/fonts';
 @import 'config/media';
 @import 'config/direction';
 
-$leading: map-get($variables, 'leading');
+$leading: map-get($tokens, 'leading');
 
 // Declarations
 @mixin typography-jumbo() {

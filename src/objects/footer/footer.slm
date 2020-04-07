@@ -2,7 +2,7 @@
 / Footer
 /
 
-footer class='o-footer color-mid-background' data-sketch-symbol=symbol
+footer class='o-footer color-mid-background'
   nav class='o-footer__nav'
     ul class='o-footer__nav-list px-3'
       li class='o-footer__column-first'

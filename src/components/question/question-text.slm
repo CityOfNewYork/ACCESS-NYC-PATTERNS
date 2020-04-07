@@ -7,7 +7,7 @@
 / - question__id = 'client-email-address';
 / - question__name = 'Client[0].emailAddress';
 
-div class='c-question' data-sketch-symbol=symbol data-sketch-symbol-instance=instance
+div class='c-question'
   label class='c-question__label' for='client-0-email-address' What is your email?
 
   p = 'We can send you a link to this page to help you get back to it when you’re ready.'

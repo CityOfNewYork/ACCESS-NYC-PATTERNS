@@ -1,6 +1,6 @@
 [Formstack](https://www.formstack.com) is an cloud based service for custom form building and publishing of online forms. Forms hosted on their platform can be styled using [themes](https://www.formstack.com/features/themes-css) and the ACCESS NYC Patterns includes a stylesheet for integrating form styling for Formstack Themes.
 
-slm{{ objects/formstack/formstack-theme-demo.slm }}
+include{{ objects/formstack/formstack-theme-demo.slm }}
 
 ### Usage
 
@@ -8,7 +8,7 @@ slm{{ objects/formstack/formstack-theme-demo.slm }}
 1. Under *Quick Styles*, change the form font to **Noto Sans**. You do not need to modify any of the other settings.
 1. Under *Advanced Code Editor*, copy and paste the following code into the css editor and save your changes.
 
-slm{{ objects/formstack/formstack.slm }}
+include{{ objects/formstack/formstack.slm }}
 
 The comment will let other users know where the code source is coming from and what version of the ACCESS NYC Patterns are being used in the theme.
 

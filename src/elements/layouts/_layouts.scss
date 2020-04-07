@@ -3,14 +3,14 @@
  */
 
 // Dependencies
-@import 'config/variables';
+@import 'config/tokens';
 @import 'config/layouts';
 @import 'config/dimensions';
 @import 'config/direction';
 @import 'config/media';
 @import 'scss/functions/strip-units';
 
-$breakpoints: map-get($variables, 'screens');
+$breakpoints: map-get($tokens, 'screens');
 
 // Mixins
 // Do not include any layouts in here that require custom responsive breakpoints

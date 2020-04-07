@@ -3,7 +3,7 @@
  */
 
 const Path = require('path');
-const alerts = require('./alerts.js');
+const alerts = require('../node_modules/@nycopportunity/patterns-framework/config/alerts');
 
 /**
  * Config
@@ -33,23 +33,9 @@ const templates = {
   'markup': [
       "/",
       "/ {{ Pattern }}",
-      "/ The Sketch attributes expose the markup to HTML Sketch App and should",
-      "/ be included by default. They should only be set before the include",
-      "/ statement of this partial. There should only be one Symbol definition",
-      "/ library and all others should be Symbol Instances.",
-      "/ data-sketch-symbol - Defines markup as a new Sketch Symbol",
-      "/ data-sketch-symbol-instance - Relates the markup to a previously defined Symbol",
       "/",
-      "/ ex;",
-      "/ - symbol = false;",
-      "/ - instance = 'elements/checkboxes/checkboxes';",
-      "/ = partial(`../../${instance}.slm`);",
-      "/",
-      "/ Basically, if you are building an Object or a Component and including",
-      "/ other Elements/Components/Objects, the symbol should be set to false",
-      "/ and the instance should be set to the pattern's path.",
       "",
-      "div class=\"{{ prefix }}{{ pattern }}\" data-sketch-symbol=symbol data-sketch-symbol-instance=instance"
+      "div class=\"{{ prefix }}{{ pattern }}\""
     ].join("\n"),
   'markdown': "",
   'styles': [
@@ -103,19 +89,20 @@ const templates = {
     ].join("\n"),
   'views': [
       "/ Layout",
-      "= extend('layouts/default');",
+      "= extend('/slm/layouts/default');",
       "",
       "/ Component",
       "- title = '{{ Pattern }}';",
       "",
       "/ Partials",
-      "= partial('partials/styles.slm');",
-      "= partial('partials/links.slm');",
-      "= partial('partials/head.mixin.slm');",
-      "= partial('partials/content-header.mixin.slm');",
-      "= partial('section/section.mixin.slm');",
-      "= partial('section/demo-specs.mixin.slm');",
-      "= partial('section/demo-block.mixin.slm');",
+      "= partial('/slm/partials/styles.slm');",
+      "= partial('/slm/partials/links.slm');",
+      "= partial('/slm/partials/head.mixin.slm');",
+      "= partial('/slm/partials/content-header.mixin.slm');",
+      "= partial('/slm/section/section.mixin.slm');",
+      "= partial('/slm/section/section-text.mixin.slm');",
+      "= partial('/slm/section/demo-specs.mixin.slm');",
+      "= partial('/slm/section/demo-block.mixin.slm');",
       "",
       "/ Content blocks",
       "= content('head');",
@@ -254,24 +241,19 @@ const paths = {
 const messages = {
   'styles': [
     '\n',
-    `${alerts.styles} Styles Info. `,
-    `Import the "{{ pattern }}" stylesheet into the "${paths.styles_global}" file. `,
-    `This is technically optional but necessary for integrating styles into the `,
-    `global stylesheet. Also, add the "{{ pattern }}" stylesheet module `,
-    `"${paths.styles_modules}" to create an independent distribution with all of `,
-    `the styles needed for it to function (this is mostly done for Object and `,
-    `Component types).`,
+    `${alerts.styles} Import the ${alerts.str.string('{{ pattern }}')} stylesheet `,
+    `into the ${alerts.str.path(paths.scss)} file (recommended). Add the `,
+    `${alerts.str.string('{{ pattern }}')} stylesheet to ${alerts.str.path(paths.sass)} `,
+    'to create an independent distribution (optional).',
     '\n'
   ],
   'scripts': [
     '\n',
-    `${alerts.scripts} Scripts Info. `,
-    `Import the "{{ pattern }}" script into the "${paths.scripts_global}" file `,
-    `and create a public function for it in the main class. This is technically `,
-    `optional but necessary for integrating scripts into the global script. `,
-    `Also, add the "{{ pattern }}" script module to "${paths.scripts_modules}" to `,
-    `create an independent distribution (this could be any Pattern type that `,
-    `requires JavaScript to function) `,
+    `${alerts.scripts} Import the ${alerts.str.string('{{ pattern }}')} script `,
+    `into the ${alerts.str.path(paths.js)} file and create a public function `,
+    `for it in the main class (recommended). Add the `,
+    `${alerts.str.string('{{ pattern }}')} script to ${alerts.str.path(paths.rollup)} `,
+    `to create an independent distribution (optional).`,
     '\n'
   ],
   'vue': [

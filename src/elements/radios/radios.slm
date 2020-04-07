@@ -4,12 +4,12 @@
 
 - if (typeof text === 'undefined')
   - ;
-  label class='radio' for='client-phone-type-home' data-sketch-symbol=symbol data-sketch-symbol-instance=instance
+  label class='radio' for='client-phone-type-home'
     input id='client-phone-type-home' value='home' type='radio' name='Client.phoneType'
     span class='radio__label' Home
 - else
   - ;
-  label class='radio' for='client-phone-type-${text[1]}' data-sketch-symbol=symbol data-sketch-symbol-instance=instance
+  label class='radio' for='client-phone-type-${text[1]}'
     input id='client-phone-type-${text[1]}' value='${text[1]}' type='radio' name='Client.phoneType'
     span class='radio__label'
       = text[0];

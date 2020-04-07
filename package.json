@@ -7,7 +7,7 @@
   "homepage": "https://accesspatterns.cityofnewyork.us",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/CityOfNewYork/ACCESS-NYC-PATTERNS.git"
+    "url": "https://github.com/CityOfNewYork/ACCESS-NYC-PATTERNS.git"
   },
   "bugs": {
     "url": "https://github.com/CityOfNewYork/ACCESS-NYC-PATTERNS/issues"
@@ -17,29 +17,19 @@
     "dev_module": "./src/scss/site-default.scss"
   },
   "scripts": {
-    "start": "cross-env NODE_ENV=development cross-env PORT=7000 concurrently \"pttrn default -w\" \"pttrn serve -w\" -p \"none\"",
-    "production": "cross-env NODE_ENV=production cross-env PORT=7000 concurrently \"pttrn default -w\" \"pttrn serve -w\" -p \"none\"",
+    "start": "cross-env NODE_ENV=development cross-env PORT=7000 concurrently \"pttrn default -w -np\" \"pttrn serve -w\" -p \"none\"",
+    "production": "cross-env NODE_ENV=production cross-env PORT=7000 concurrently \"pttrn default -w -np\" \"pttrn serve -w\" -p \"none\"",
     "default": "cross-env NODE_ENV=production pttrn default",
     "version": "npm run default && git add .",
     "prepublishOnly": "git push && git push --tags",
-    "publish": "cross-env NODE_ENV=production pttrn publish"
+    "publish": "cross-env NODE_ENV=production pttrn publish",
+    "pttrn": "node_modules/.bin/pttrn"
   },
   "devDependencies": {
-    "@nycopportunity/patterns-framework": "0.0.17",
-    "chalk": "^3.0.0",
-    "cssnano": "^4.1.10",
-    "eslint-config-google": "^0.14.0",
-    "node-emoji": "^1.10.0",
-    "prettier": "^1.18.2",
-    "rollup-plugin-alias": "^1.5.2",
-    "rollup-plugin-babel": "^4.3.3",
-    "rollup-plugin-buble": "^0.19.8",
-    "rollup-plugin-commonjs": "^10.1.0",
-    "rollup-plugin-node-resolve": "^5.2.0",
-    "rollup-plugin-replace": "^2.2.0",
-    "rollup-plugin-vue": "^4.2.0",
-    "stylelint-config-standard": "^19.0.0",
-    "tailwindcss": "^1.1.4",
+    "@nycopportunity/patterns-framework": "../nyco-patterns-framework",
+    "css-mqpacker": "^7.0.0",
+    "rollup-plugin-alias": "^2.2.0",
+    "rollup-plugin-vue": "^5.1.6",
     "vue-template-compiler": "^2.6.9"
   },
   "dependencies": {
@@ -51,51 +41,5 @@
     "lodash-es": "^4.17.15",
     "vue": "^2.6.9",
     "whatwg-fetch": "^3.0.0"
-  },
-  "babel": {
-    "presets": [
-      [
-        "@babel/preset-env",
-        {
-          "modules": "false",
-          "useBuiltIns": "entry",
-          "corejs": 3
-        }
-      ]
-    ]
-  },
-  "eslintConfig": {
-    "extends": [
-      "eslint:recommended",
-      "google"
-    ],
-    "rules": {
-      "curly": [
-        "error",
-        "multi-line"
-      ],
-      "comma-dangle": [
-        "error",
-        "never"
-      ],
-      "arrow-parens": [
-        "error",
-        "as-needed"
-      ]
-    },
-    "parserOptions": {
-      "ecmaVersion": 6,
-      "sourceType": "module"
-    }
-  },
-  "stylelint": {
-    "extends": "stylelint-config-standard",
-    "rules": {
-      "comment-whitespace-inside": null,
-      "no-missing-end-of-source-newline": null,
-      "at-rule-empty-line-before": null,
-      "number-leading-zero": "never",
-      "selector-pseudo-element-colon-notation": null
-    }
   }
 }

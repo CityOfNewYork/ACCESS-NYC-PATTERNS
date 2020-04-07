@@ -3,7 +3,7 @@
  */
 
 // Dependencies
-@import 'config/variables';
+@import 'config/tokens';
 @import 'config/cdn';
 @import 'config/icons';
 @import 'config/media';
@@ -22,10 +22,10 @@
   display: inline-block;
 }
 
-@each $key, $var in map-get($variables, 'icons') {
+@each $key, $var in map-get($tokens, 'icons') {
   $path: $key;
 
-  @each $str in map-get($variables, 'icons-variants') {
+  @each $str in map-get($tokens, 'icons-variants') {
     $path: str-replace($path, $str);
   }
 

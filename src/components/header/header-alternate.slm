@@ -1,7 +1,7 @@
 /
 / Header
 /
-header class='c-header color-dark-background' data-sketch-symbol=symbol data-sketch-symbol-instance=instance
+header class='c-header color-dark-background'
   div class='c-header__icon print:hidden'
     svg class='icon icon-success rounded-full text-color-green bg-color-white'
       use xlink:href='#icon-success'

@@ -1,7 +1,7 @@
 /
 / Header
 /
-header class='c-header' data-sketch-symbol=symbol data-sketch-symbol-instance=instance
+header class='c-header'
   div class='c-header__icon'
     a href='#'
       div class='bg-icon-card-cash-expenses'

@@ -3,12 +3,12 @@
 //
 
 // Dependencies
-@import 'config/variables';
+@import 'config/tokens';
 @import 'config/fonts';
 
-$colors: map-get($variables, 'colors');
-$statuses: map-get($variables, 'color-statuses');
-$combinations: map-get($variables, 'color-combinations');
+$colors: map-get($tokens, 'colors');
+$statuses: map-get($tokens, 'color-statuses');
+$combinations: map-get($tokens, 'color-combinations');
 
 // Variables
 $color-black: map-get($colors, 'color-black');

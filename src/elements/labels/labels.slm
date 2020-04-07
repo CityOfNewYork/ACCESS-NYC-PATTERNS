@@ -2,5 +2,5 @@
 / Label
 /
 
-label class='label' data-sketch-type=symbol
+label class='label'
   | What kind of help are you looking for?

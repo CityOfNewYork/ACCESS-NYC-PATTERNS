@@ -2,7 +2,7 @@
 / Disclaimer
 /
 
-div class='c-disclaimer' data-sketch-symbol=symbol data-sketch-symbol-instance=instance
+div class='c-disclaimer'
   h4
     | ACCESS NYC Disclaimer for Public Benefit Program Screening
   p

@@ -1,4 +1,4 @@
-div class='c-filter' data-sketch-symbol=symbol data-sketch-symbol-instance=instance
+div class='c-filter'
   button#aria-lb-programs type='button' class='c-filter__header active' data-js='filter' aria-controls='aria-c-programs' aria-expanded='true' All Programs
 
   nav#aria-c-programs class='c-filter__list active' aria-hidden='false' role='region' aria-labelledby='aria-lb-programs'

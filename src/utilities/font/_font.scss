@@ -3,7 +3,7 @@
  */
 
 // Dependencies
-@import 'config/variables';
+@import 'config/tokens';
 @import 'config/language';
 @import 'config/fonts';
 
@@ -18,16 +18,16 @@
 
 .font-serif {
   @if $language == '' {
-    font-family: map-get(map-get($variables, 'fonts'), 'default-serif');
+    font-family: map-get(map-get($tokens, 'fonts'), 'default-serif');
   } @else {
-    font-family: map-get(map-get($variables, 'fonts'), '#{$language}-serif');
+    font-family: map-get(map-get($tokens, 'fonts'), '#{$language}-serif');
   }
 }
 
 .font-sans {
   @if $language == '' {
-    font-family: map-get(map-get($variables, 'fonts'), 'default-sans');
+    font-family: map-get(map-get($tokens, 'fonts'), 'default-sans');
   } @else {
-    font-family: map-get(map-get($variables, 'fonts'), '#{$language}-sans');
+    font-family: map-get(map-get($tokens, 'fonts'), '#{$language}-sans');
   }
 }

@@ -3,7 +3,7 @@
  */
 
 // Dependencies
-@import 'config/variables';
+@import 'config/tokens';
 
 // Declarations
 html {
@@ -18,7 +18,7 @@ html {
 
 html,
 body {
-  background-color: map-get(map-get($variables, 'colors'), 'color-grey-lightest');
+  background-color: map-get(map-get($tokens, 'colors'), 'color-grey-lightest');
   height: auto;
   margin: 0;
   min-height: 100vh;

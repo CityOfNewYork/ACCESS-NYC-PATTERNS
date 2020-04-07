@@ -1,2 +1,2 @@
-div class='table' data-sketch-symbol=symbol data-sketch-symbol-instance=instance
+div class='table'
   = partial('tables-markup.slm');

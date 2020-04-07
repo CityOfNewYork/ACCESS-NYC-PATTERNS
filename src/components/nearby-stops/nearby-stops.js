@@ -287,7 +287,7 @@ NearbyStops.templates = {
 
 /**
  * Color assignment for Subway Train lines, used in cunjunction with the
- * background colors defined in config/variables.js.
+ * background colors defined in config/tokens.js.
  * Based on the nomenclature described here;
  * @url // https://en.wikipedia.org/wiki/New_York_City_Subway#Nomenclature
  * @type {Array}

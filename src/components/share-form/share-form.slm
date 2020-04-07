@@ -2,7 +2,7 @@
 / Share Form
 /
 
-div class='c-share-form' data-js='share-form' data-sketch-symbol=symbol data-sketch-symbol-instance=instance
+div class='c-share-form' data-js='share-form'
   button class='btn btn-primary c-share-form__toggle' data-scroll-offset='16' data-js='share-form__control disclaimer-control' aria-controls='aria-c-share-form__text' aria-expanded='false' aria-describedby='share-disclaimer' Text
 
   form id='aria-c-share-form__text' class='c-share-form__form hidden' aria-hidden='true' method='post'
@@ -16,7 +16,7 @@ div class='c-share-form' data-js='share-form' data-sketch-symbol=symbol data-ske
         input type='tel' name='to' placeholder='Phone Number' required='true' data-js='share-form__input'
 
       div class='c-share-form__button'
-        button type='submit' class='btn btn-primary btn-small' data-sketch-symbol-instance='elements/buttons/btn-small' Send
+        button type='submit' class='btn btn-primary btn-small' Send
 
         div class='c-share-form__spinner' data-js='spinner' aria-hidden='true'
           - symbol = false;

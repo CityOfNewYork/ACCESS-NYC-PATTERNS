@@ -45,7 +45,9 @@ nav class='${class_nav} screen-desktop:pl-4'
   a class='${class_nav_item}' href='announcements' Announcements
   a class='${class_nav_item}' href='banner' Banner
   a class='${class_nav_item}' href='card-list' Card Lists
+  a class='${class_nav_item}' href='come-back-later' Come Back Later
   a class='${class_nav_item}' href='content' Content
+  a class='${class_nav_item}' href='emails' Emails
   a class='${class_nav_item}' href='footer' Footer
   a class='${class_nav_item}' href='formstack' Formstack
   a class='${class_nav_item}' href='mobile-nav' Mobile Nav

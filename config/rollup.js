@@ -2,13 +2,13 @@
  * Dependencies
  */
 
-import alias from 'rollup-plugin-alias';          // Define require aliases when bundling packages with Rollup.
-import resolve from 'rollup-plugin-node-resolve'; // Locate modules using the Node resolution algorithm, for using third party modules in node_modules.
-import commonjs from 'rollup-plugin-commonjs';    // Convert CommonJS modules to ES6, so they can be included in a Rollup bundle
-import vue from 'rollup-plugin-vue';              // Roll .vue files.
-import babel from 'rollup-plugin-babel';          // Transpile source code.
-import buble from 'rollup-plugin-buble';          // Convert ES2015 with buble.
-import replace from 'rollup-plugin-replace';      // Replace content while bundling.
+const alias = require('rollup-plugin-alias');               // Define require aliases when bundling packages with Rollup.
+const resolve = require('@rollup/plugin-node-resolve'); // Locate modules using the Node resolution algorithm, for using third party modules in node_modules.
+const commonjs = require('@rollup/plugin-commonjs');        // Convert CommonJS modules to ES6, so they can be included in a Rollup bundle
+const babel = require('rollup-plugin-babel');               // Transpile source code.
+const buble = require('@rollup/plugin-buble');              // Convert ES2015 with buble.
+const replace = require('@rollup/plugin-replace');          // Replace content while bundling.
+const vue = require('rollup-plugin-vue');                   // Roll .vue files.
 
 /**
  * Config
@@ -90,7 +90,7 @@ rollup.dist = [
  * Our list of modules we are exporting
  * @type {Array}
  */
-const modules = [
+module.exports = [
   {
     // This is the global distribution that packages all modules and peer dependencies
     input: './src/js/main.js',
@@ -336,5 +336,3 @@ const modules = [
     ]
   }
 ];
-
-export default modules;

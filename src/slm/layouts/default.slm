@@ -6,12 +6,12 @@ html lang='en' class='bg-color-white' dir='ltr'
     a class='sr-only' href='#main-content' Skip to main content
 
     div class='bg-color-white'
-      = partial('/partials/header.slm');
+      = partial('../partials/header.slm');
 
       aside#main-menu role='region' aria-labelledby='main-menu-control' aria-hidden='true' class='color-mid-background text-font-size-small hidden hidden:overflowFadeInUp animated relative' style='top: -1px'
         div class='page-wrapper py-4 animated'
           div class='screen-tablet:flex'
-            = partial('/partials/nav.slm');
+            = partial('../partials/nav.slm');
 
           div class='text-center'
             button class='btn-link' aria-controls='main-menu' aria-expanded='false' data-js='toggle' Close Menu
@@ -19,9 +19,9 @@ html lang='en' class='bg-color-white' dir='ltr'
       main#main-content class='color-light-background pt-4'
         article class='pt-4'
           = content('content');
-          = partial('/section/nav.slm');
+          = partial('../section/nav.slm');
 
-    = partial('/partials/footer.slm');
+    = partial('../partials/footer.slm');
 
     script src='scripts/polyfills.js'
     script src='scripts/access-nyc.js'
@@ -30,7 +30,13 @@ html lang='en' class='bg-color-white' dir='ltr'
     javascript:
       var access = new AccessNyc();
       var VueComponents = new VueComponents();
+
       access.icons();
       access.toggle();
 
     = content('script');
+
+    / The reload script. This should not be compile during production builds
+    / @source https://www.npmjs.com/package/reload
+    - if this.process.env.NODE_ENV !== 'production'
+      script src='/reload/reload.js'

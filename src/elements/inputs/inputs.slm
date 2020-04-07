@@ -2,5 +2,5 @@
 / Input
 /
 
-div data-sketch-symbol=symbol data-sketch-symbol-instance=instance
+div
   input type='text' id=input__id name=input__name

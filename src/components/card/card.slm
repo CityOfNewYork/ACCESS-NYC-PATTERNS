@@ -1,4 +1,4 @@
-article class='c-card' data-sketch-symbol=symbol data-sketch-symbol-instance=instance
+article class='c-card'
   div class='c-card__body'
     h3 class='c-card__title mb-3' Apply for Pre-K for All
     div class='c-card__summary'

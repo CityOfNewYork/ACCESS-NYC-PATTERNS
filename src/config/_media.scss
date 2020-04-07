@@ -3,14 +3,14 @@
 //
 
 // Dependencies
-@import 'config/variables';
+@import 'config/tokens';
 
-$screen-desktop: #{map-get(map-get($variables, 'screens'), 'screen-desktop')}px;
-$screen-tablet: #{map-get(map-get($variables, 'screens'), 'screen-tablet')}px;
-$screen-mobile: #{map-get(map-get($variables, 'screens'), 'screen-mobile')}px;
-$screen-sm-mobile: #{map-get(map-get($variables, 'screens'), 'screen-sm-mobile')}px;
+$screen-desktop: #{map-get(map-get($tokens, 'screens'), 'screen-desktop')}px;
+$screen-tablet: #{map-get(map-get($tokens, 'screens'), 'screen-tablet')}px;
+$screen-mobile: #{map-get(map-get($tokens, 'screens'), 'screen-mobile')}px;
+$screen-sm-mobile: #{map-get(map-get($tokens, 'screens'), 'screen-sm-mobile')}px;
 
-@mixin screens($screens: map-get($variables, 'screens')) {
+@mixin screens($screens: map-get($tokens, 'screens')) {
   $variant: '' !global; // !global allows us to "pass" $variant to the @content
   @content; // mobile first... then other breakpoints
   @each $screen, $s in $screens {

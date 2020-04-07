@@ -1,21 +1,7 @@
 /
 / Input-autocomplete
-/ The Sketch attributes expose the markup to HTML Sketch App and should
-/ be included by default. They should only be set before the include
-/ statement of this partial. There should only be one Symbol definition
-/ library and all others should be Symbol Instances.
-/ data-sketch-symbol - Defines markup as a new Sketch Symbol
-/ data-sketch-symbol-instance - Relates the markup to a previously defined Symbol
 /
-/ ex;
-/ - symbol = false;
-/ - instance = 'elements/checkboxes/checkboxes';
-/ = partial(`../../${instance}.slm`);
-/
-/ Basically, if you are building an Object or a Component and including
-/ other Elements/Components/Objects, the symbol should be set to false
-/ and the instance should be set to the pattern's path.
 
-div class='input-autocomplete' data-sketch-symbol=symbol data-sketch-instance=instance
+div class='input-autocomplete'
   input data-js='input-autocomplete__input' data-persist-dropdown='true' type='text' autocomplete='off' aria-describedby='input-autocomplete__instructions-0' aria-autocomplete='both' aria-owns='input-autocomplete__options' aria-expanded='false'
   div class='sr-only' id='input-autocomplete__instructions-0' aria-live='polite'

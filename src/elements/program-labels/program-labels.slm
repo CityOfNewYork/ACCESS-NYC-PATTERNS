@@ -2,5 +2,5 @@
 / Program Labels
 /
 
-div class='program-label program-label-secondary' data-sketch-symbol=symbol data-sketch-symbol-instance=instance
+div class='program-label program-label-secondary'
   | NEW

@@ -2,10 +2,10 @@
  * Dependencies
  */
 
-const tailwindcss = require('tailwindcss'); // utility framework/management
+const tailwindcss = require('tailwindcss');   // utility framework/management
 const autoprefixer = require('autoprefixer'); // adds vendor spec prefixes
-const cssnano = require('cssnano'); // modern css compiling/minification
-const mqpacker = require('css-mqpacker'); // packs media queries together
+const cssnano = require('cssnano');           // modern css compiling/minification
+const mqpacker = require('css-mqpacker');     // packs media queries together
 
 /**
  * Config

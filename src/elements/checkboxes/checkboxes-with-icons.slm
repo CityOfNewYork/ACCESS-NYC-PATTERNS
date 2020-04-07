@@ -2,7 +2,7 @@
 / Checkboxes With Icons
 /
 
-label class='checkbox' data-sketch-symbol=symbol data-sketch-symbol-instance=instance
+label class='checkbox'
   input name='category' value='cash-expenses' type='checkbox'
   span class='checkbox__label items-center'
     span class='checkbox__icon bg-icon-cash-expenses'

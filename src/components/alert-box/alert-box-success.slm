@@ -2,7 +2,7 @@
 / Alert Box Success
 /
 
-article class='c-alert-box bg-status-success mb-4' data-sketch-symbol=symbol data-sketch-symbol-instance=instance
+article class='c-alert-box bg-status-success mb-4'
   div class='c-alert-box__icon'
     svg class='c-alert-box__svg icon icon-4 icon-ui-check-circle' role='img'
       title Success Alert

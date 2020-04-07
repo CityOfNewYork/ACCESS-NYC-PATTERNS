@@ -1,0 +1,5 @@
+iframe src='/emails/screener-results.html' frameborder='0' width='375' height='700' class='block m-auto overflow-scroll scrolling-touch' style='border: 12px solid; border-radius: 40px; border-top-width: 60px; border-bottom-width: 60px;'
+
+div class='code-block mb-1'
+  pre
+    = this.include('/views/emails/screener-results')

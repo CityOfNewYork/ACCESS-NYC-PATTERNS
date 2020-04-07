@@ -2,5 +2,5 @@
 / Inputs 400px
 /
 
-div class='screen-tablet:input-w-400px' data-sketch-symbol=symbol data-sketch-symbol-instance=instance
+div class='screen-tablet:input-w-400px'
   input type='text'

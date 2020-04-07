@@ -1,18 +1,18 @@
 / Layout
-= extend('layouts/default');
+= extend('/slm/layouts/default');
 
 / Component
 - title = 'Disclaimer';
 
 / Partials
-= partial('partials/styles.slm');
-= partial('partials/links.slm');
-= partial('partials/head.mixin.slm');
-= partial('partials/content-header.mixin.slm');
-= partial('section/section.mixin.slm');
-= partial('section/section-text.mixin.slm');
-= partial('section/demo-specs.mixin.slm');
-= partial('section/demo-block.mixin.slm');
+= partial('/slm/partials/styles.slm');
+= partial('/slm/partials/links.slm');
+= partial('/slm/partials/head.mixin.slm');
+= partial('/slm/partials/content-header.mixin.slm');
+= partial('/slm/section/section.mixin.slm');
+= partial('/slm/section/section-text.mixin.slm');
+= partial('/slm/section/demo-specs.mixin.slm');
+= partial('/slm/section/demo-block.mixin.slm');
 
 / Content blocks
 = content('head');

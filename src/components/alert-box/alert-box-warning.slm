@@ -2,7 +2,7 @@
 / Alert Box Warning
 /
 
-article class='c-alert-box bg-status-warning mb-4' data-sketch-symbol=symbol data-sketch-symbol-instance=instance
+article class='c-alert-box bg-status-warning mb-4'
   div class='c-alert-box__icon'
     svg class='c-alert-box__svg icon icon-4 icon-ui-alert-triangle' role='img'
       title Warning Alert

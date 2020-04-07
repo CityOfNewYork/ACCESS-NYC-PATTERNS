@@ -13,7 +13,7 @@
       div
         div class='code-block mb-1'
           pre
-            = 'code{{ '+ this.markup +' }}';
+            = this.include(this.markup.replace('.slm', ''));
 
     - if (typeof this.grid === 'object')
       div class='layout--gutter screen-mobile:layout--two-columns-gutter screen-tablet:layout--three-columns-gutter'

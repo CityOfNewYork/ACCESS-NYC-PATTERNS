@@ -2,12 +2,12 @@
  * Config
  */
 
-const packageJson = require('../package.json');
-const version = process.env.V || packageJson.version;
+const package = require('../package.json');
 
-const variables = {
-  'version': version,
-  'cdn': '"https://cdn.jsdelivr.net/gh/CityOfNewYork/ACCESS-NYC-PATTERNS@v' + version + '/dist/"',
+module.exports = {
+  'output': '"./src/config/_tokens.scss"',
+  'version': package.version,
+  'cdn': '"https://cdn.jsdelivr.net/gh/CityOfNewYork/ACCESS-NYC-PATTERNS@v' + package.version + '/dist/"',
   'languages': ['default', 'ar', 'es', 'kr', 'ur', 'tc'],
   'rtl-languages': ['ar', 'ur'],
   'fonts': {
@@ -216,7 +216,7 @@ const variables = {
   },
   'border-widths': {
     0: '0',
-    'default': '1px',
+    default: '1px',
     2: '2px',
     4: '4px',
     8: '8px'
@@ -233,7 +233,8 @@ const variables = {
     1: '8px',
     2: '16px',
     3: '24px',
-    4: '32px'
+    4: '32px',
+    auto: 'auto'
   },
   'icons': {
     // Logos
@@ -427,5 +428,3 @@ const variables = {
     'up': '0 3px 12px 2px rgba(0, 0, 0, 0.25)'
   }
 };
-
-module.exports = variables;

@@ -2,7 +2,7 @@
 / Announcements
 /
 
-div class='py-4' data-sketch-symbol=symbol
+div class='py-4'
   h2 class='type-h5 divider m-0' Announcements
   div class='screen-tablet:layout--columns'
     - symbol = false;

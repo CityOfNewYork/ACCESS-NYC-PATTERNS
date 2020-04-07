@@ -2,5 +2,5 @@
 / Tag Button
 /
 
-button type='button' class='btn-primary btn-tag' data-sketch-symbol=symbol data-sketch-symbol-instance=instance
+button type='button' class='btn-primary btn-tag'
   | Tag

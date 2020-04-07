@@ -1,5 +1,5 @@
 // Dependencies
-@import 'config/variables';
+@import 'config/tokens';
 @import 'config/checkboxes';
 @import 'config/direction';
 @import 'config/dimensions';
@@ -29,7 +29,7 @@
 
 // @mixin radio-label {
 //   display: flex;
-//   line-height: map-get(map-get($variables, 'inputs'), 'checkbox-size');
+//   line-height: map-get(map-get($tokens, 'inputs'), 'checkbox-size');
 // }
 
 @mixin radios-btn() {

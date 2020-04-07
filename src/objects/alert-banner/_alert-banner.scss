@@ -3,7 +3,7 @@
  */
 
 // Dependencies
-@import 'config/variables';
+@import 'config/tokens';
 @import 'config/typography';
 @import 'config/colors';
 @import 'config/dimensions';
@@ -18,7 +18,7 @@
   left: 0;
   bottom: 0;
 
-  box-shadow: map-get(map-get($variables, 'shadows'), 'up');
+  box-shadow: map-get(map-get($tokens, 'shadows'), 'up');
 
   @include typography-dislaimer-small;
 

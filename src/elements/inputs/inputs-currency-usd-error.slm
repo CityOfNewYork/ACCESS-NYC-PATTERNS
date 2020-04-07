@@ -2,5 +2,5 @@
 / Input Currency Error
 /
 
-div class='error input-currency-usd' data-sketch-symbol=symbol data-sketch-symbol-instance=instance
+div class='error input-currency-usd'
   input type='text' aria-invalid='true'

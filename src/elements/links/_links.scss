@@ -3,7 +3,7 @@
  */
 
 // Dependencies
-@import 'config/variables';
+@import 'config/tokens';
 @import 'config/cdn';
 @import 'config/colors';
 @import 'config/direction';
@@ -11,18 +11,18 @@
 
 // Declarations
 a, .btn-link, .button-link {
-  // color: map-get(map-get($variables, 'colors'), 'color-blue');
+  // color: map-get(map-get($tokens, 'colors'), 'color-blue');
   text-decoration: underline;
   transition: color .2s ease-in;
 
   // &:visited {
-  //   color: map-get(map-get($variables, 'colors'), 'color-purple');
+  //   color: map-get(map-get($tokens, 'colors'), 'color-purple');
   // }
 
   // &:hover,
   // &:active,
   // &:focus {
-  //   color: map-get(map-get($variables, 'colors'), 'color-blue-dark');
+  //   color: map-get(map-get($tokens, 'colors'), 'color-blue-dark');
   // }
 }
 
@@ -46,18 +46,18 @@ a, .btn-link, .button-link {
 
 .links-invert a,
 .links-invert .btn-link {
-  // color: map-get(map-get($variables, 'colors'), 'color-white');
+  // color: map-get(map-get($tokens, 'colors'), 'color-white');
   text-decoration: underline;
   transition: color .2s ease-in;
 
   // &:visited {
-  //   color: map-get(map-get($variables, 'colors'), 'color-blue-light');
+  //   color: map-get(map-get($tokens, 'colors'), 'color-blue-light');
   // }
 
   // &:hover,
   // &:active,
   // &:focus {
-  //   color: map-get(map-get($variables, 'colors'), 'color-blue-bright');
+  //   color: map-get(map-get($tokens, 'colors'), 'color-blue-bright');
   // }
 
 }

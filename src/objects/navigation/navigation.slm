@@ -2,7 +2,7 @@
 / Navigation
 /
 
-nav class='o-navigation color-dark-background' data-sketch-symbol=symbol
+nav class='o-navigation color-dark-background'
   div class='logo-access'
     a href='/'
       svg class='icon icon-logo-full'

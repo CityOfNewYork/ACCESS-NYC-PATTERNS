@@ -3,13 +3,13 @@
 //
 
 // Dependencies
-@import 'config/variables';
+@import 'config/tokens';
 
 // Variables
-$grid-base: map-get(map-get($variables, 'dimensions'), 'grid-base');
-$spacing-base: map-get(map-get($variables, 'dimensions'), 'spacing-base');
-$homepage-max-width: map-get(map-get($variables, 'dimensions'), 'homepage-max-width');
-$site-max-width: map-get(map-get($variables, 'dimensions'), 'site-max-width');
-$site-margins: map-get(map-get($variables, 'dimensions'), 'site-margins');
-$site-margins-mobile: map-get(map-get($variables, 'dimensions'), 'site-margins-mobile');
-$site-min-width: map-get(map-get($variables, 'dimensions'), 'site-min-width');
+$grid-base: map-get(map-get($tokens, 'dimensions'), 'grid-base');
+$spacing-base: map-get(map-get($tokens, 'dimensions'), 'spacing-base');
+$homepage-max-width: map-get(map-get($tokens, 'dimensions'), 'homepage-max-width');
+$site-max-width: map-get(map-get($tokens, 'dimensions'), 'site-max-width');
+$site-margins: map-get(map-get($tokens, 'dimensions'), 'site-margins');
+$site-margins-mobile: map-get(map-get($tokens, 'dimensions'), 'site-margins-mobile');
+$site-min-width: map-get(map-get($tokens, 'dimensions'), 'site-min-width');

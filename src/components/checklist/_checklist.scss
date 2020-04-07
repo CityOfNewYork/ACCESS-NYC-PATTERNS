@@ -3,12 +3,12 @@
  */
 
 // Dependencies
-@import 'config/variables';
+@import 'config/tokens';
 @import 'config/cdn';
 @import 'config/direction';
 @import 'config/dimensions';
 
-$icons: map-get($variables, 'icons-checklist');
+$icons: map-get($tokens, 'icons-checklist');
 
 // Declarations
 @mixin checklist {
@@ -24,7 +24,7 @@ $icons: map-get($variables, 'icons-checklist');
     background-image: url('#{$cdn}#{$path-to-images}#{map-get($icons, 'icon-check')}');
     background-position: $text-direction-start top;
     background-repeat: no-repeat;
-    background-size: map-get($variables, 'em-base') * 1.5 + px auto;
+    background-size: map-get($tokens, 'em-base') * 1.5 + px auto;
   }
 
   // Nested lists

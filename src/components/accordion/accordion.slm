@@ -2,7 +2,7 @@
 / Accordion
 /
 
-article class='c-accordion' data-sketch-symbol=symbol data-sketch-symbol-instance=instance
+article class='c-accordion'
   header class='c-accordion__header color-dark-background'
     p#aria-lb-what-you-need-to-include
       span Free tax prep for New Yorkers

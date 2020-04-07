@@ -3,12 +3,12 @@
  */
 
 // Dependencies
-@import 'config/variables';
+@import 'config/tokens';
 @import 'config/colors';
 @import 'config/fonts';
 @import 'config/typography';
 
-$grid: map-get(map-get($variables, 'dimensions'), 'grid-base');
+$grid: map-get(map-get($tokens, 'dimensions'), 'grid-base');
 
 // Declarations
 code, pre {

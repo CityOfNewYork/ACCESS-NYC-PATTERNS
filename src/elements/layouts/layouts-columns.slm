@@ -1,5 +1,5 @@
 
-div class='layout--columns flex text-center' data-sketch-symbol=symbol data-sketch-symbol-instance=instance
+div class='layout--columns flex text-center'
   div class='bg-color-grey-light p-4'
     | Column A
   div class='bg-color-grey-lightest p-4'

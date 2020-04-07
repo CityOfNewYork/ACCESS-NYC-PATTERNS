@@ -1,12 +1,12 @@
 // Dependencies
-@import 'config/variables';
+@import 'config/tokens';
 @import 'config/cdn';
 @import 'config/direction';
 @import 'config/dimensions';
 @import 'config/colors';
 
-$checkbox-size: map-get(map-get($variables, 'inputs'), 'checkbox-size');
-$checkbox-radius: map-get(map-get($variables, 'inputs'), 'checkbox-radius');
+$checkbox-size: map-get(map-get($tokens, 'inputs'), 'checkbox-size');
+$checkbox-radius: map-get(map-get($tokens, 'inputs'), 'checkbox-radius');
 
 // Declarations
 @mixin checkboxes-btn {

@@ -1,8 +1,8 @@
-@import 'config/variables';
+@import 'config/tokens';
 
 // In order to overide the $cdn default it needs to be set before it is declared
-$grid: map-get(map-get($variables, 'dimensions'), 'grid-base');
-$cdn: map-get($variables, 'cdn');
+$grid: map-get(map-get($tokens, 'dimensions'), 'grid-base');
+$cdn: map-get($tokens, 'cdn');
 
 @mixin formstack-body() {
   .fsBody {

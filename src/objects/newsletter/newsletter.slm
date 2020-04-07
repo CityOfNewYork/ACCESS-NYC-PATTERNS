@@ -2,11 +2,11 @@
 / Newsletter
 /
 
-div class='mb-4 p-3 screen-desktop:p-4 bg-color-white' data-js='newsletter' data-sketch-symbol=symbol data-sketch-symbol-instance=instance
+div class='mb-4 p-3 screen-desktop:p-4 bg-color-white' data-js='newsletter'
 
   div class='type-h3' Get Updates
 
-  form action='${this.site.newsletter.action}' id='mc-embedded-subscribe-form' method='post' target='_blank' novalidate='true'
+  form action='${this.newsletter.action}' id='mc-embedded-subscribe-form' method='post' target='_blank' novalidate='true'
     div class='c-question'
       label class='c-question__label' Receive benefits news and reminders about upcoming open enrollment periods.
 
@@ -20,8 +20,8 @@ div class='mb-4 p-3 screen-desktop:p-4 bg-color-white' data-js='newsletter' data
         div class='c-question__container screen-tablet:layout--columns'
           - symbol = false;
           - instance = 'elements/checkboxes/checkboxes';
-          - for (index in this.site.newsletter.boroughs)
-            - value = this.site.newsletter.boroughs[index];
+          - for (index in this.newsletter.boroughs)
+            - value = this.newsletter.boroughs[index];
             = partial(`../../${instance}.slm`);
             - value = null;
 

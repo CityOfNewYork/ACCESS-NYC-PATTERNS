@@ -3,7 +3,7 @@
  */
 
 // Dependencies
-@import 'config/variables';
+@import 'config/tokens';
 @import 'config/accessibility';
 @import 'config/colors';
 @import 'config/buttons';
@@ -121,7 +121,7 @@
   font-size: $font-size-small;
   font-weight: $font-weight-normal;
   margin: (.5 * $spacing-base) 0;
-  min-height: map-get(map-get($variables, 'inputs'), 'checkbox-size');
+  min-height: map-get(map-get($tokens, 'inputs'), 'checkbox-size');
 
   a {
     cursor: pointer

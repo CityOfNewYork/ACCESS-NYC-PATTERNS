@@ -2,7 +2,7 @@
 / Text Controller
 /
 
-div class='o-text-controller' data-js='text-controller' data-sketch-symbol=symbol data-sketch-symbol-instance=instance
+div class='o-text-controller' data-js='text-controller'
 
   button type='button' class='o-text-controller__control mb-1 btn-link' data-js='text-controller__control' aria-controls='aria-c-text-controller__options' aria-expanded='false'
     svg class='icon icon-ui-settings'
