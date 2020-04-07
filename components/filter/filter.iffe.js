@@ -1,12 +1,6 @@
 var Filter = (function () {
   'use strict';
 
-  function _classCallCheck(instance, Constructor) {
-    if (!(instance instanceof Constructor)) {
-      throw new TypeError("Cannot call a class as a function");
-    }
-  }
-
   /**
    * The Simple Toggle class. This will toggle the class 'active' and 'hidden'
    * on target elements, determined by a click event on a selected link or
@@ -218,14 +212,7 @@ var Filter = (function () {
    * @class
    */
 
-  var Filter =
-  /**
-   * @constructor
-   * @return {object}   The class
-   */
-  function Filter() {
-    _classCallCheck(this, Filter);
-
+  var Filter = function Filter() {
     this._toggle = new Toggle({
       selector: Filter.selector,
       namespace: Filter.namespace,

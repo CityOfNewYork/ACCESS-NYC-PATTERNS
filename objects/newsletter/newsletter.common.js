@@ -1,27 +1,5 @@
 'use strict';
 
-function _classCallCheck(instance, Constructor) {
-  if (!(instance instanceof Constructor)) {
-    throw new TypeError("Cannot call a class as a function");
-  }
-}
-
-function _defineProperties(target, props) {
-  for (var i = 0; i < props.length; i++) {
-    var descriptor = props[i];
-    descriptor.enumerable = descriptor.enumerable || false;
-    descriptor.configurable = true;
-    if ("value" in descriptor) descriptor.writable = true;
-    Object.defineProperty(target, descriptor.key, descriptor);
-  }
-}
-
-function _createClass(Constructor, protoProps, staticProps) {
-  if (protoProps) _defineProperties(Constructor.prototype, protoProps);
-  if (staticProps) _defineProperties(Constructor, staticProps);
-  return Constructor;
-}
-
 /**
  * Utilities for Form components
  * @class
@@ -522,255 +500,226 @@ var formSerialize = serialize;
  * @class
  */
 
-var Newsletter =
-/*#__PURE__*/
-function () {
-  /**
-   * The class constructor
-   * @param  {Object} element The Newsletter DOM Object
-   * @return {Class}          The instantiated Newsletter object
-   */
-  function Newsletter(element) {
-    var _this = this;
+var Newsletter = function Newsletter(element) {
+  var this$1 = this;
 
-    _classCallCheck(this, Newsletter);
+  this._el = element;
+  this.keys = Newsletter.keys;
+  this.endpoints = Newsletter.endpoints;
+  this.callback = Newsletter.callback;
+  this.selectors = Newsletter.selectors;
+  this.selector = Newsletter.selector;
+  this.stringKeys = Newsletter.stringKeys;
+  this.strings = Newsletter.strings;
+  this.templates = Newsletter.templates;
+  this.classes = Newsletter.classes; // This sets the script callback function to a global function that
+  // can be accessed by the the requested script.
 
-    this._el = element;
-    this.keys = Newsletter.keys;
-    this.endpoints = Newsletter.endpoints;
-    this.callback = Newsletter.callback;
-    this.selectors = Newsletter.selectors;
-    this.selector = Newsletter.selector;
-    this.stringKeys = Newsletter.stringKeys;
-    this.strings = Newsletter.strings;
-    this.templates = Newsletter.templates;
-    this.classes = Newsletter.classes; // This sets the script callback function to a global function that
-    // can be accessed by the the requested script.
+  window[Newsletter.callback] = function (data) {
+    this$1._callback(data);
+  };
 
-    window[Newsletter.callback] = function (data) {
-      _this._callback(data);
-    };
+  this.form = new Forms(this._el.querySelector('form'));
+  this.form.strings = this.strings;
 
-    this.form = new Forms(this._el.querySelector('form'));
-    this.form.strings = this.strings;
+  this.form.submit = function (event) {
+    event.preventDefault();
 
-    this.form.submit = function (event) {
-      event.preventDefault();
+    this$1._submit(event).then(this$1._onload).catch(this$1._onerror);
+  };
 
-      _this._submit(event).then(_this._onload)["catch"](_this._onerror);
-    };
+  this.form.watch();
+  return this;
+};
+/**
+ * The form submission method. Requests a script with a callback function
+ * to be executed on our page. The callback function will be passed the
+ * response as a JSON object (function parameter).
+ * @param{Event} event The form submission event
+ * @return {Promise}     A promise containing the new script call
+ */
 
-    this.form.watch();
-    return this;
+
+Newsletter.prototype._submit = function _submit (event) {
+  event.preventDefault(); // Serialize the data
+
+  this._data = formSerialize(event.target, {
+    hash: true
+  }); // Switch the action to post-json. This creates an endpoint for mailchimp
+  // that acts as a script that can be loaded onto our page.
+
+  var action = event.target.action.replace(((Newsletter.endpoints.MAIN) + "?"), ((Newsletter.endpoints.MAIN_JSON) + "?")); // Add our params to the action
+
+  action = action + formSerialize(event.target, {
+    serializer: function () {
+        var params = [], len = arguments.length;
+        while ( len-- ) params[ len ] = arguments[ len ];
+
+      var prev = typeof params[0] === 'string' ? params[0] : '';
+      return (prev + "&" + (params[1]) + "=" + (params[2]));
+    }
+  }); // Append the callback reference. Mailchimp will wrap the JSON response in
+  // our callback method. Once we load the script the callback will execute.
+
+  action = action + "&c=window." + (Newsletter.callback); // Create a promise that appends the script response of the post-json method
+
+  return new Promise(function (resolve, reject) {
+    var script = document.createElement('script');
+    document.body.appendChild(script);
+    script.onload = resolve;
+    script.onerror = reject;
+    script.async = true;
+    script.src = encodeURI(action);
+  });
+};
+/**
+ * The script onload resolution
+ * @param{Event} event The script on load event
+ * @return {Class}     The Newsletter class
+ */
+
+
+Newsletter.prototype._onload = function _onload (event) {
+  event.path[0].remove();
+  return this;
+};
+/**
+ * The script on error resolution
+ * @param{Object} error The script on error load event
+ * @return {Class}      The Newsletter class
+ */
+
+
+Newsletter.prototype._onerror = function _onerror (error) {
+  return this;
+};
+/**
+ * The callback function for the MailChimp Script call
+ * @param{Object} data The success/error message from MailChimp
+ * @return {Class}     The Newsletter class
+ */
+
+
+Newsletter.prototype._callback = function _callback (data) {
+  if (this[("_" + (data[this._key('MC_RESULT')]))]) { this[("_" + (data[this._key('MC_RESULT')]))](data.msg); }
+  return this;
+};
+/**
+ * Submission error handler
+ * @param{string} msg The error message
+ * @return {Class}    The Newsletter class
+ */
+
+
+Newsletter.prototype._error = function _error (msg) {
+  this._elementsReset();
+
+  this._messaging('WARNING', msg);
+
+  return this;
+};
+/**
+ * Submission success handler
+ * @param{string} msg The success message
+ * @return {Class}    The Newsletter class
+ */
+
+
+Newsletter.prototype._success = function _success (msg) {
+  this._elementsReset();
+
+  this._messaging('SUCCESS', msg);
+
+  return this;
+};
+/**
+ * Present the response message to the user
+ * @param{String} type The message type
+ * @param{String} msgThe message
+ * @return {Class}     Newsletter
+ */
+
+
+Newsletter.prototype._messaging = function _messaging (type, msg) {
+    if ( msg === void 0 ) msg = 'no message';
+
+  var strings = Object.keys(Newsletter.stringKeys);
+  var handled = false;
+
+  var alertBox = this._el.querySelector(Newsletter.selectors[(type + "_BOX")]);
+
+  var alertBoxMsg = alertBox.querySelector(Newsletter.selectors.ALERT_BOX_TEXT); // Get the localized string, these should be written to the DOM already.
+  // The utility contains a global method for retrieving them.
+
+  for (var i = 0; i < strings.length; i++) { if (msg.indexOf(Newsletter.stringKeys[strings[i]]) > -1) {
+    msg = this.strings[strings[i]];
+    handled = true;
+  } } // Replace string templates with values from either our form data or
+  // the Newsletter strings object.
+
+
+  for (var x = 0; x < Newsletter.templates.length; x++) {
+    var template = Newsletter.templates[x];
+    var key = template.replace('{{ ', '').replace(' }}', '');
+    var value = this._data[key] || this.strings[key];
+    var reg = new RegExp(template, 'gi');
+    msg = msg.replace(reg, value ? value : '');
   }
-  /**
-   * The form submission method. Requests a script with a callback function
-   * to be executed on our page. The callback function will be passed the
-   * response as a JSON object (function parameter).
-   * @param  {Event}   event The form submission event
-   * @return {Promise}       A promise containing the new script call
-   */
+
+  if (handled) { alertBoxMsg.innerHTML = msg; }else if (type === 'ERROR') { alertBoxMsg.innerHTML = this.strings.ERR_PLEASE_TRY_LATER; }
+  if (alertBox) { this._elementShow(alertBox, alertBoxMsg); }
+  return this;
+};
+/**
+ * The main toggling method
+ * @return {Class}       Newsletter
+ */
 
 
-  _createClass(Newsletter, [{
-    key: "_submit",
-    value: function _submit(event) {
-      event.preventDefault(); // Serialize the data
+Newsletter.prototype._elementsReset = function _elementsReset () {
+  var targets = this._el.querySelectorAll(Newsletter.selectors.ALERT_BOXES);
 
-      this._data = formSerialize(event.target, {
-        hash: true
-      }); // Switch the action to post-json. This creates an endpoint for mailchimp
-      // that acts as a script that can be loaded onto our page.
+  var loop = function ( i ) {
+      if (!targets[i].classList.contains(Newsletter.classes.HIDDEN)) {
+    targets[i].classList.add(Newsletter.classes.HIDDEN);
+    Newsletter.classes.ANIMATE.split(' ').forEach(function (item) { return targets[i].classList.remove(item); }); // Screen Readers
 
-      var action = event.target.action.replace("".concat(Newsletter.endpoints.MAIN, "?"), "".concat(Newsletter.endpoints.MAIN_JSON, "?")); // Add our params to the action
+    targets[i].setAttribute('aria-hidden', 'true');
+    targets[i].querySelector(Newsletter.selectors.ALERT_BOX_TEXT).setAttribute('aria-live', 'off');
+  }
+    };
 
-      action = action + formSerialize(event.target, {
-        serializer: function serializer() {
-          var prev = typeof (arguments.length <= 0 ? undefined : arguments[0]) === 'string' ? arguments.length <= 0 ? undefined : arguments[0] : '';
-          return "".concat(prev, "&").concat(arguments.length <= 1 ? undefined : arguments[1], "=").concat(arguments.length <= 2 ? undefined : arguments[2]);
-        }
-      }); // Append the callback reference. Mailchimp will wrap the JSON response in
-      // our callback method. Once we load the script the callback will execute.
+    for (var i = 0; i < targets.length; i++) loop( i );
 
-      action = "".concat(action, "&c=window.").concat(Newsletter.callback); // Create a promise that appends the script response of the post-json method
-
-      return new Promise(function (resolve, reject) {
-        var script = document.createElement('script');
-        document.body.appendChild(script);
-        script.onload = resolve;
-        script.onerror = reject;
-        script.async = true;
-        script.src = encodeURI(action);
-      });
-    }
-    /**
-     * The script onload resolution
-     * @param  {Event} event The script on load event
-     * @return {Class}       The Newsletter class
-     */
-
-  }, {
-    key: "_onload",
-    value: function _onload(event) {
-      event.path[0].remove();
-      return this;
-    }
-    /**
-     * The script on error resolution
-     * @param  {Object} error The script on error load event
-     * @return {Class}        The Newsletter class
-     */
-
-  }, {
-    key: "_onerror",
-    value: function _onerror(error) {
-      return this;
-    }
-    /**
-     * The callback function for the MailChimp Script call
-     * @param  {Object} data The success/error message from MailChimp
-     * @return {Class}       The Newsletter class
-     */
-
-  }, {
-    key: "_callback",
-    value: function _callback(data) {
-      if (this["_".concat(data[this._key('MC_RESULT')])]) { this["_".concat(data[this._key('MC_RESULT')])](data.msg); }
-      return this;
-    }
-    /**
-     * Submission error handler
-     * @param  {string} msg The error message
-     * @return {Class}      The Newsletter class
-     */
-
-  }, {
-    key: "_error",
-    value: function _error(msg) {
-      this._elementsReset();
-
-      this._messaging('WARNING', msg);
-
-      return this;
-    }
-    /**
-     * Submission success handler
-     * @param  {string} msg The success message
-     * @return {Class}      The Newsletter class
-     */
-
-  }, {
-    key: "_success",
-    value: function _success(msg) {
-      this._elementsReset();
-
-      this._messaging('SUCCESS', msg);
-
-      return this;
-    }
-    /**
-     * Present the response message to the user
-     * @param  {String} type The message type
-     * @param  {String} msg  The message
-     * @return {Class}       Newsletter
-     */
-
-  }, {
-    key: "_messaging",
-    value: function _messaging(type) {
-      var msg = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 'no message';
-      var strings = Object.keys(Newsletter.stringKeys);
-      var handled = false;
-
-      var alertBox = this._el.querySelector(Newsletter.selectors["".concat(type, "_BOX")]);
-
-      var alertBoxMsg = alertBox.querySelector(Newsletter.selectors.ALERT_BOX_TEXT); // Get the localized string, these should be written to the DOM already.
-      // The utility contains a global method for retrieving them.
-
-      for (var i = 0; i < strings.length; i++) {
-        if (msg.indexOf(Newsletter.stringKeys[strings[i]]) > -1) {
-          msg = this.strings[strings[i]];
-          handled = true;
-        }
-      } // Replace string templates with values from either our form data or
-      // the Newsletter strings object.
+  return this;
+};
+/**
+ * The main toggling method
+ * @param{object} targetMessage container
+ * @param{object} content Content that changes dynamically that should
+ *                        be announced to screen readers.
+ * @return {Class}        Newsletter
+ */
 
 
-      for (var x = 0; x < Newsletter.templates.length; x++) {
-        var template = Newsletter.templates[x];
-        var key = template.replace('{{ ', '').replace(' }}', '');
-        var value = this._data[key] || this.strings[key];
-        var reg = new RegExp(template, 'gi');
-        msg = msg.replace(reg, value ? value : '');
-      }
+Newsletter.prototype._elementShow = function _elementShow (target, content) {
+  target.classList.toggle(Newsletter.classes.HIDDEN);
+  Newsletter.classes.ANIMATE.split(' ').forEach(function (item) { return target.classList.toggle(item); }); // Screen Readers
 
-      if (handled) { alertBoxMsg.innerHTML = msg; }else if (type === 'ERROR') { alertBoxMsg.innerHTML = this.strings.ERR_PLEASE_TRY_LATER; }
-      if (alertBox) { this._elementShow(alertBox, alertBoxMsg); }
-      return this;
-    }
-    /**
-     * The main toggling method
-     * @return {Class}         Newsletter
-     */
+  target.setAttribute('aria-hidden', 'true');
+  if (content) { content.setAttribute('aria-live', 'polite'); }
+  return this;
+};
+/**
+ * A proxy function for retrieving the proper key
+ * @param{string} key The reference for the stored keys.
+ * @return {string}   The desired key.
+ */
 
-  }, {
-    key: "_elementsReset",
-    value: function _elementsReset() {
-      var targets = this._el.querySelectorAll(Newsletter.selectors.ALERT_BOXES);
 
-      var _loop = function _loop(i) {
-        if (!targets[i].classList.contains(Newsletter.classes.HIDDEN)) {
-          targets[i].classList.add(Newsletter.classes.HIDDEN);
-          Newsletter.classes.ANIMATE.split(' ').forEach(function (item) {
-            return targets[i].classList.remove(item);
-          }); // Screen Readers
-
-          targets[i].setAttribute('aria-hidden', 'true');
-          targets[i].querySelector(Newsletter.selectors.ALERT_BOX_TEXT).setAttribute('aria-live', 'off');
-        }
-      };
-
-      for (var i = 0; i < targets.length; i++) {
-        _loop(i);
-      }
-
-      return this;
-    }
-    /**
-     * The main toggling method
-     * @param  {object} target  Message container
-     * @param  {object} content Content that changes dynamically that should
-     *                          be announced to screen readers.
-     * @return {Class}          Newsletter
-     */
-
-  }, {
-    key: "_elementShow",
-    value: function _elementShow(target, content) {
-      target.classList.toggle(Newsletter.classes.HIDDEN);
-      Newsletter.classes.ANIMATE.split(' ').forEach(function (item) {
-        return target.classList.toggle(item);
-      }); // Screen Readers
-
-      target.setAttribute('aria-hidden', 'true');
-      if (content) { content.setAttribute('aria-live', 'polite'); }
-      return this;
-    }
-    /**
-     * A proxy function for retrieving the proper key
-     * @param  {string} key The reference for the stored keys.
-     * @return {string}     The desired key.
-     */
-
-  }, {
-    key: "_key",
-    value: function _key(key) {
-      return Newsletter.keys[key];
-    }
-  }]);
-
-  return Newsletter;
-}();
+Newsletter.prototype._key = function _key (key) {
+  return Newsletter.keys[key];
+};
 /** @type {Object} API data keys */
 
 

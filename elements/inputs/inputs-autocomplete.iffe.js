@@ -1,70 +1,6 @@
 var InputAutocomplete = (function () {
   'use strict';
 
-  function _classCallCheck(instance, Constructor) {
-    if (!(instance instanceof Constructor)) {
-      throw new TypeError("Cannot call a class as a function");
-    }
-  }
-
-  function _defineProperties(target, props) {
-    for (var i = 0; i < props.length; i++) {
-      var descriptor = props[i];
-      descriptor.enumerable = descriptor.enumerable || false;
-      descriptor.configurable = true;
-      if ("value" in descriptor) descriptor.writable = true;
-      Object.defineProperty(target, descriptor.key, descriptor);
-    }
-  }
-
-  function _createClass(Constructor, protoProps, staticProps) {
-    if (protoProps) _defineProperties(Constructor.prototype, protoProps);
-    if (staticProps) _defineProperties(Constructor, staticProps);
-    return Constructor;
-  }
-
-  function _slicedToArray(arr, i) {
-    return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _nonIterableRest();
-  }
-
-  function _arrayWithHoles(arr) {
-    if (Array.isArray(arr)) return arr;
-  }
-
-  function _iterableToArrayLimit(arr, i) {
-    if (!(Symbol.iterator in Object(arr) || Object.prototype.toString.call(arr) === "[object Arguments]")) {
-      return;
-    }
-
-    var _arr = [];
-    var _n = true;
-    var _d = false;
-    var _e = undefined;
-
-    try {
-      for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) {
-        _arr.push(_s.value);
-
-        if (i && _arr.length === i) break;
-      }
-    } catch (err) {
-      _d = true;
-      _e = err;
-    } finally {
-      try {
-        if (!_n && _i["return"] != null) _i["return"]();
-      } finally {
-        if (_d) throw _e;
-      }
-    }
-
-    return _arr;
-  }
-
-  function _nonIterableRest() {
-    throw new TypeError("Invalid attempt to destructure non-iterable instance");
-  }
-
   /**
    * JaroWinkler function.
    * https://en.wikipedia.org/wiki/Jaro%E2%80%93Winkler_distance
@@ -73,15 +9,11 @@ var InputAutocomplete = (function () {
    * @return {number} amount of matches.
    */
   function jaro(s1, s2) {
+    var assign;
+
     var shorter;
     var longer;
-
-    var _ref = s1.length > s2.length ? [s1, s2] : [s2, s1];
-
-    var _ref2 = _slicedToArray(_ref, 2);
-
-    longer = _ref2[0];
-    shorter = _ref2[1];
+    (assign = s1.length > s2.length ? [s1, s2] : [s2, s1], longer = assign[0], shorter = assign[1]);
     var matchingWindow = Math.floor(longer.length / 2) - 1;
     var shorterMatches = [];
     var longerMatches = [];
@@ -91,12 +23,10 @@ var InputAutocomplete = (function () {
       var windowStart = Math.max(0, i - matchingWindow);
       var windowEnd = Math.min(i + matchingWindow + 1, longer.length);
 
-      for (var j = windowStart; j < windowEnd; j++) {
-        if (longerMatches[j] === undefined && ch === longer[j]) {
-          shorterMatches[i] = longerMatches[j] = ch;
-          break;
-        }
-      }
+      for (var j = windowStart; j < windowEnd; j++) { if (longerMatches[j] === undefined && ch === longer[j]) {
+        shorterMatches[i] = longerMatches[j] = ch;
+        break;
+      } }
     }
 
     var shorterMatchesString = shorterMatches.join('');
@@ -104,9 +34,7 @@ var InputAutocomplete = (function () {
     var numMatches = shorterMatchesString.length;
     var transpositions = 0;
 
-    for (var _i = 0; _i < shorterMatchesString.length; _i++) {
-      if (shorterMatchesString[_i] !== longerMatchesString[_i]) { transpositions++; }
-    }
+    for (var i$1 = 0; i$1 < shorterMatchesString.length; i$1++) { if (shorterMatchesString[i$1] !== longerMatchesString[i$1]) { transpositions++; } }
 
     return numMatches > 0 ? (numMatches / shorter.length + numMatches / longer.length + (numMatches - Math.floor(transpositions / 2)) / numMatches) / 3.0 : 0;
   }
@@ -118,14 +46,13 @@ var InputAutocomplete = (function () {
    */
 
 
-  function jaroWinkler (s1, s2) {
-    var prefixScalingFactor = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : 0.2;
+  function jaroWinkler (s1, s2, prefixScalingFactor) {
+    if ( prefixScalingFactor === void 0 ) prefixScalingFactor = 0.2;
+
     var jaroSimilarity = jaro(s1, s2);
     var commonPrefixLength = 0;
 
-    for (var i = 0; i < s1.length; i++) {
-      if (s1[i] === s2[i]) { commonPrefixLength++; }else { break; }
-    }
+    for (var i = 0; i < s1.length; i++) { if (s1[i] === s2[i]) { commonPrefixLength++; }else { break; } }
 
     return jaroSimilarity + Math.min(commonPrefixLength, 4) * prefixScalingFactor * (1 - jaroSimilarity);
   }
@@ -133,11 +60,8 @@ var InputAutocomplete = (function () {
   var memoize = (function (fn) {
     var cache = {};
     return function () {
-      var arguments$1 = arguments;
-
-      for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
-        args[_key] = arguments$1[_key];
-      }
+      var args = [], len = arguments.length;
+      while ( len-- ) args[ len ] = arguments[ len ];
 
       var key = JSON.stringify(args);
       return cache[key] || (cache[key] = fn.apply(void 0, args));
@@ -150,418 +74,372 @@ var InputAutocomplete = (function () {
    * Forked and modified from https://github.com/xavi/miss-plete
    */
 
-  var Autocomplete =
-  /*#__PURE__*/
-  function () {
-    /**
-     * @param   {object} settings  Configuration options
-     * @return  {this}             The class
-     * @constructor
-     */
-    function Autocomplete() {
-      var _this = this;
+  var Autocomplete = function Autocomplete(settings) {
+    var this$1 = this;
+    if ( settings === void 0 ) settings = {};
 
-      var settings = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
+    this.settings = {
+      'selector': settings.selector,
+      // required
+      'options': settings.options,
+      // required
+      'classname': settings.classname,
+      // required
+      'selected': settings.hasOwnProperty('selected') ? settings.selected : false,
+      'score': settings.hasOwnProperty('score') ? settings.score : memoize(Autocomplete.score),
+      'listItem': settings.hasOwnProperty('listItem') ? settings.listItem : Autocomplete.listItem,
+      'getSiblingIndex': settings.hasOwnProperty('getSiblingIndex') ? settings.getSiblingIndex : Autocomplete.getSiblingIndex
+    };
+    this.scoredOptions = null;
+    this.container = null;
+    this.ul = null;
+    this.highlighted = -1;
+    this.SELECTORS = Autocomplete.selectors;
+    this.STRINGS = Autocomplete.strings;
+    this.MAX_ITEMS = Autocomplete.maxItems;
+    window.addEventListener('keydown', function (e) {
+      this$1.keydownEvent(e);
+    });
+    window.addEventListener('keyup', function (e) {
+      this$1.keyupEvent(e);
+    });
+    window.addEventListener('input', function (e) {
+      this$1.inputEvent(e);
+    });
+    var body = document.querySelector('body');
+    body.addEventListener('focus', function (e) {
+      this$1.focusEvent(e);
+    }, true);
+    body.addEventListener('blur', function (e) {
+      this$1.blurEvent(e);
+    }, true);
+    return this;
+  };
+  /**
+   * EVENTS
+   */
 
-      _classCallCheck(this, Autocomplete);
+  /**
+   * The input focus event
+   * @param {object}eventThe event object
+   */
 
-      this.settings = {
-        'selector': settings.selector,
-        // required
-        'options': settings.options,
-        // required
-        'classname': settings.classname,
-        // required
-        'selected': settings.hasOwnProperty('selected') ? settings.selected : false,
-        'score': settings.hasOwnProperty('score') ? settings.score : memoize(Autocomplete.score),
-        'listItem': settings.hasOwnProperty('listItem') ? settings.listItem : Autocomplete.listItem,
-        'getSiblingIndex': settings.hasOwnProperty('getSiblingIndex') ? settings.getSiblingIndex : Autocomplete.getSiblingIndex
-      };
-      this.scoredOptions = null;
-      this.container = null;
-      this.ul = null;
-      this.highlighted = -1;
-      this.SELECTORS = Autocomplete.selectors;
-      this.STRINGS = Autocomplete.strings;
-      this.MAX_ITEMS = Autocomplete.maxItems;
-      window.addEventListener('keydown', function (e) {
-        _this.keydownEvent(e);
+
+  Autocomplete.prototype.focusEvent = function focusEvent (event) {
+    if (!event.target.matches(this.settings.selector)) { return; }
+    this.input = event.target;
+    if (this.input.value === '') { this.message('INIT'); }
+  };
+  /**
+   * The input keydown event
+   * @param {object}eventThe event object
+   */
+
+
+  Autocomplete.prototype.keydownEvent = function keydownEvent (event) {
+    if (!event.target.matches(this.settings.selector)) { return; }
+    this.input = event.target;
+    if (this.ul) { switch (event.keyCode) {
+      case 13:
+        this.keyEnter(event);
+        break;
+
+      case 27:
+        this.keyEscape(event);
+        break;
+
+      case 40:
+        this.keyDown(event);
+        break;
+
+      case 38:
+        this.keyUp(event);
+        break;
+    } }
+  };
+  /**
+   * The input keyup event
+   * @param {object}eventThe event object
+   */
+
+
+  Autocomplete.prototype.keyupEvent = function keyupEvent (event) {
+    if (!event.target.matches(this.settings.selector)) { return; }
+    this.input = event.target;
+  };
+  /**
+   * The input event
+   * @param {object}eventThe event object
+   */
+
+
+  Autocomplete.prototype.inputEvent = function inputEvent (event) {
+      var this$1 = this;
+
+    if (!event.target.matches(this.settings.selector)) { return; }
+    this.input = event.target;
+    if (this.input.value.length > 0) { this.scoredOptions = this.settings.options.map(function (option) { return this$1.settings.score(this$1.input.value, option); }).sort(function (a, b) { return b.score - a.score; }); }else { this.scoredOptions = []; }
+    this.dropdown();
+  };
+  /**
+   * The input blur event
+   * @param {object}eventThe event object
+   */
+
+
+  Autocomplete.prototype.blurEvent = function blurEvent (event) {
+    if (event.target === window || !event.target.matches(this.settings.selector)) { return; }
+    this.input = event.target;
+    if (this.input.dataset.persistDropdown === 'true') { return; }
+    this.remove();
+    this.highlighted = -1;
+  };
+  /**
+   * KEY INPUT EVENTS
+   */
+
+  /**
+   * What happens when the user presses the down arrow
+   * @param {object}eventThe event object
+   * @return{object}       The Class
+   */
+
+
+  Autocomplete.prototype.keyDown = function keyDown (event) {
+    event.preventDefault();
+    this.highlight(this.highlighted < this.ul.children.length - 1 ? this.highlighted + 1 : -1);
+    return this;
+  };
+  /**
+   * What happens when the user presses the up arrow
+   * @param {object}eventThe event object
+   * @return{object}       The Class
+   */
+
+
+  Autocomplete.prototype.keyUp = function keyUp (event) {
+    event.preventDefault();
+    this.highlight(this.highlighted > -1 ? this.highlighted - 1 : this.ul.children.length - 1);
+    return this;
+  };
+  /**
+   * What happens when the user presses the enter key
+   * @param {object}eventThe event object
+   * @return{object}       The Class
+   */
+
+
+  Autocomplete.prototype.keyEnter = function keyEnter (event) {
+    this.selected();
+    return this;
+  };
+  /**
+   * What happens when the user presses the escape key
+   * @param {object}eventThe event object
+   * @return{object}       The Class
+   */
+
+
+  Autocomplete.prototype.keyEscape = function keyEscape (event) {
+    this.remove();
+    return this;
+  };
+  /**
+   * STATIC
+   */
+
+  /**
+   * It must return an object with at least the properties 'score'
+   * and 'displayValue.' Default is a Jaro–Winkler similarity function.
+   * @param{array}value
+   * @param{array}synonyms
+   * @return {int}  Score or displayValue
+   */
+
+
+  Autocomplete.score = function score (value, synonyms) {
+    var closestSynonym = null;
+    synonyms.forEach(function (synonym) {
+      var similarity = jaroWinkler(synonym.trim().toLowerCase(), value.trim().toLowerCase());
+
+      if (closestSynonym === null || similarity > closestSynonym.similarity) {
+        closestSynonym = {
+          similarity: similarity,
+          value: synonym
+        };
+        if (similarity === 1) { return; }
+      }
+    });
+    return {
+      score: closestSynonym.similarity,
+      displayValue: synonyms[0]
+    };
+  };
+  /**
+   * List item for dropdown list.
+   * @param{Number}scoredOption
+   * @param{Number}index
+   * @return {string}The a list item <li>.
+   */
+
+
+  Autocomplete.listItem = function listItem (scoredOption, index) {
+    var li = index > this.MAX_ITEMS ? null : document.createElement('li');
+    li.setAttribute('role', 'option');
+    li.setAttribute('tabindex', '-1');
+    li.setAttribute('aria-selected', 'false');
+    li && li.appendChild(document.createTextNode(scoredOption.displayValue));
+    return li;
+  };
+  /**
+   * Get index of previous element.
+   * @param{array} node
+   * @return {number}index of previous element.
+   */
+
+
+  Autocomplete.getSiblingIndex = function getSiblingIndex (node) {
+    var index = -1;
+    var n = node;
+
+    do {
+      index++;
+      n = n.previousElementSibling;
+    } while (n);
+
+    return index;
+  };
+  /**
+   * PUBLIC METHODS
+   */
+
+  /**
+   * Display options as a list.
+   * @return{object} The Class
+   */
+
+
+  Autocomplete.prototype.dropdown = function dropdown () {
+      var this$1 = this;
+
+    var documentFragment = document.createDocumentFragment();
+    this.scoredOptions.every(function (scoredOption, i) {
+      var listItem = this$1.settings.listItem(scoredOption, i);
+      listItem && documentFragment.appendChild(listItem);
+      return !!listItem;
+    });
+    this.remove();
+    this.highlighted = -1;
+
+    if (documentFragment.hasChildNodes()) {
+      var newUl = document.createElement('ul');
+      newUl.setAttribute('role', 'listbox');
+      newUl.setAttribute('tabindex', '0');
+      newUl.setAttribute('id', this.SELECTORS.OPTIONS);
+      newUl.addEventListener('mouseover', function (event) {
+        if (event.target.tagName === 'LI') { this$1.highlight(this$1.settings.getSiblingIndex(event.target)); }
       });
-      window.addEventListener('keyup', function (e) {
-        _this.keyupEvent(e);
+      newUl.addEventListener('mousedown', function (event) { return event.preventDefault(); });
+      newUl.addEventListener('click', function (event) {
+        if (event.target.tagName === 'LI') { this$1.selected(); }
       });
-      window.addEventListener('input', function (e) {
-        _this.inputEvent(e);
-      });
-      var body = document.querySelector('body');
-      body.addEventListener('focus', function (e) {
-        _this.focusEvent(e);
-      }, true);
-      body.addEventListener('blur', function (e) {
-        _this.blurEvent(e);
-      }, true);
-      return this;
+      newUl.appendChild(documentFragment); // See CSS to understand why the <ul> has to be wrapped in a <div>
+
+      var newContainer = document.createElement('div');
+      newContainer.className = this.settings.classname;
+      newContainer.appendChild(newUl);
+      this.input.setAttribute('aria-expanded', 'true'); // Inserts the dropdown just after the <input> element
+
+      this.input.parentNode.insertBefore(newContainer, this.input.nextSibling);
+      this.container = newContainer;
+      this.ul = newUl;
+      this.message('TYPING', this.settings.options.length);
     }
-    /**
-     * EVENTS
-     */
 
-    /**
-     * The input focus event
-     * @param   {object}  event  The event object
-     */
+    return this;
+  };
+  /**
+   * Highlight new option selected.
+   * @param {Number}newIndex
+   * @return{object}The Class
+   */
 
 
-    _createClass(Autocomplete, [{
-      key: "focusEvent",
-      value: function focusEvent(event) {
-        if (!event.target.matches(this.settings.selector)) { return; }
-        this.input = event.target;
-        if (this.input.value === '') { this.message('INIT'); }
+  Autocomplete.prototype.highlight = function highlight (newIndex) {
+    if (newIndex > -1 && newIndex < this.ul.children.length) {
+      // If any option already selected, then unselect it
+      if (this.highlighted !== -1) {
+        this.ul.children[this.highlighted].classList.remove(this.SELECTORS.HIGHLIGHT);
+        this.ul.children[this.highlighted].removeAttribute('aria-selected');
+        this.ul.children[this.highlighted].removeAttribute('id');
+        this.input.removeAttribute('aria-activedescendant');
       }
-      /**
-       * The input keydown event
-       * @param   {object}  event  The event object
-       */
 
-    }, {
-      key: "keydownEvent",
-      value: function keydownEvent(event) {
-        if (!event.target.matches(this.settings.selector)) { return; }
-        this.input = event.target;
-        if (this.ul) { switch (event.keyCode) {
-          case 13:
-            this.keyEnter(event);
-            break;
+      this.highlighted = newIndex;
 
-          case 27:
-            this.keyEscape(event);
-            break;
-
-          case 40:
-            this.keyDown(event);
-            break;
-
-          case 38:
-            this.keyUp(event);
-            break;
-        } }
+      if (this.highlighted !== -1) {
+        this.ul.children[this.highlighted].classList.add(this.SELECTORS.HIGHLIGHT);
+        this.ul.children[this.highlighted].setAttribute('aria-selected', 'true');
+        this.ul.children[this.highlighted].setAttribute('id', this.SELECTORS.ACTIVE_DESCENDANT);
+        this.input.setAttribute('aria-activedescendant', this.SELECTORS.ACTIVE_DESCENDANT);
       }
-      /**
-       * The input keyup event
-       * @param   {object}  event  The event object
-       */
+    }
 
-    }, {
-      key: "keyupEvent",
-      value: function keyupEvent(event) {
-        if (!event.target.matches(this.settings.selector)) { return; }
-        this.input = event.target;
-      }
-      /**
-       * The input event
-       * @param   {object}  event  The event object
-       */
-
-    }, {
-      key: "inputEvent",
-      value: function inputEvent(event) {
-        var _this2 = this;
-
-        if (!event.target.matches(this.settings.selector)) { return; }
-        this.input = event.target;
-        if (this.input.value.length > 0) { this.scoredOptions = this.settings.options.map(function (option) {
-          return _this2.settings.score(_this2.input.value, option);
-        }).sort(function (a, b) {
-          return b.score - a.score;
-        }); }else { this.scoredOptions = []; }
-        this.dropdown();
-      }
-      /**
-       * The input blur event
-       * @param   {object}  event  The event object
-       */
-
-    }, {
-      key: "blurEvent",
-      value: function blurEvent(event) {
-        if (event.target === window || !event.target.matches(this.settings.selector)) { return; }
-        this.input = event.target;
-        if (this.input.dataset.persistDropdown === 'true') { return; }
-        this.remove();
-        this.highlighted = -1;
-      }
-      /**
-       * KEY INPUT EVENTS
-       */
-
-      /**
-       * What happens when the user presses the down arrow
-       * @param   {object}  event  The event object
-       * @return  {object}         The Class
-       */
-
-    }, {
-      key: "keyDown",
-      value: function keyDown(event) {
-        event.preventDefault();
-        this.highlight(this.highlighted < this.ul.children.length - 1 ? this.highlighted + 1 : -1);
-        return this;
-      }
-      /**
-       * What happens when the user presses the up arrow
-       * @param   {object}  event  The event object
-       * @return  {object}         The Class
-       */
-
-    }, {
-      key: "keyUp",
-      value: function keyUp(event) {
-        event.preventDefault();
-        this.highlight(this.highlighted > -1 ? this.highlighted - 1 : this.ul.children.length - 1);
-        return this;
-      }
-      /**
-       * What happens when the user presses the enter key
-       * @param   {object}  event  The event object
-       * @return  {object}         The Class
-       */
-
-    }, {
-      key: "keyEnter",
-      value: function keyEnter(event) {
-        this.selected();
-        return this;
-      }
-      /**
-       * What happens when the user presses the escape key
-       * @param   {object}  event  The event object
-       * @return  {object}         The Class
-       */
-
-    }, {
-      key: "keyEscape",
-      value: function keyEscape(event) {
-        this.remove();
-        return this;
-      }
-      /**
-       * STATIC
-       */
-
-      /**
-       * It must return an object with at least the properties 'score'
-       * and 'displayValue.' Default is a Jaro–Winkler similarity function.
-       * @param  {array}  value
-       * @param  {array}  synonyms
-       * @return {int}    Score or displayValue
-       */
-
-    }, {
-      key: "dropdown",
-
-      /**
-       * PUBLIC METHODS
-       */
-
-      /**
-       * Display options as a list.
-       * @return  {object} The Class
-       */
-      value: function dropdown() {
-        var _this3 = this;
-
-        var documentFragment = document.createDocumentFragment();
-        this.scoredOptions.every(function (scoredOption, i) {
-          var listItem = _this3.settings.listItem(scoredOption, i);
-
-          listItem && documentFragment.appendChild(listItem);
-          return !!listItem;
-        });
-        this.remove();
-        this.highlighted = -1;
-
-        if (documentFragment.hasChildNodes()) {
-          var newUl = document.createElement('ul');
-          newUl.setAttribute('role', 'listbox');
-          newUl.setAttribute('tabindex', '0');
-          newUl.setAttribute('id', this.SELECTORS.OPTIONS);
-          newUl.addEventListener('mouseover', function (event) {
-            if (event.target.tagName === 'LI') { _this3.highlight(_this3.settings.getSiblingIndex(event.target)); }
-          });
-          newUl.addEventListener('mousedown', function (event) {
-            return event.preventDefault();
-          });
-          newUl.addEventListener('click', function (event) {
-            if (event.target.tagName === 'LI') { _this3.selected(); }
-          });
-          newUl.appendChild(documentFragment); // See CSS to understand why the <ul> has to be wrapped in a <div>
-
-          var newContainer = document.createElement('div');
-          newContainer.className = this.settings.classname;
-          newContainer.appendChild(newUl);
-          this.input.setAttribute('aria-expanded', 'true'); // Inserts the dropdown just after the <input> element
-
-          this.input.parentNode.insertBefore(newContainer, this.input.nextSibling);
-          this.container = newContainer;
-          this.ul = newUl;
-          this.message('TYPING', this.settings.options.length);
-        }
-
-        return this;
-      }
-      /**
-       * Highlight new option selected.
-       * @param   {Number}  newIndex
-       * @return  {object}  The Class
-       */
-
-    }, {
-      key: "highlight",
-      value: function highlight(newIndex) {
-        if (newIndex > -1 && newIndex < this.ul.children.length) {
-          // If any option already selected, then unselect it
-          if (this.highlighted !== -1) {
-            this.ul.children[this.highlighted].classList.remove(this.SELECTORS.HIGHLIGHT);
-            this.ul.children[this.highlighted].removeAttribute('aria-selected');
-            this.ul.children[this.highlighted].removeAttribute('id');
-            this.input.removeAttribute('aria-activedescendant');
-          }
-
-          this.highlighted = newIndex;
-
-          if (this.highlighted !== -1) {
-            this.ul.children[this.highlighted].classList.add(this.SELECTORS.HIGHLIGHT);
-            this.ul.children[this.highlighted].setAttribute('aria-selected', 'true');
-            this.ul.children[this.highlighted].setAttribute('id', this.SELECTORS.ACTIVE_DESCENDANT);
-            this.input.setAttribute('aria-activedescendant', this.SELECTORS.ACTIVE_DESCENDANT);
-          }
-        }
-
-        return this;
-      }
-      /**
-       * Selects an option from a list of items.
-       * @return  {object} The Class
-       */
-
-    }, {
-      key: "selected",
-      value: function selected() {
-        if (this.highlighted !== -1) {
-          this.input.value = this.scoredOptions[this.highlighted].displayValue;
-          this.remove();
-          this.message('SELECTED', this.input.value);
-          if (window.innerWidth <= 768) { this.input.scrollIntoView(true); }
-        } // User provided callback method for selected option.
+    return this;
+  };
+  /**
+   * Selects an option from a list of items.
+   * @return{object} The Class
+   */
 
 
-        if (this.settings.selected) { this.settings.selected(this.input.value, this); }
-        return this;
-      }
-      /**
-       * Remove dropdown list once a list item is selected.
-       * @return  {object} The Class
-       */
+  Autocomplete.prototype.selected = function selected () {
+    if (this.highlighted !== -1) {
+      this.input.value = this.scoredOptions[this.highlighted].displayValue;
+      this.remove();
+      this.message('SELECTED', this.input.value);
+      if (window.innerWidth <= 768) { this.input.scrollIntoView(true); }
+    } // User provided callback method for selected option.
 
-    }, {
-      key: "remove",
-      value: function remove() {
-        this.container && this.container.remove();
-        this.input.setAttribute('aria-expanded', 'false');
-        this.container = null;
-        this.ul = null;
-        return this;
-      }
-      /**
-       * Messaging that is passed to the screen reader
-       * @param   {string}  key       The Key of the message to write
-       * @param   {string}  variable  A variable to provide to the string.
-       * @return  {object}            The Class
-       */
 
-    }, {
-      key: "message",
-      value: function message() {
-        var _this4 = this;
+    if (this.settings.selected) { this.settings.selected(this.input.value, this); }
+    return this;
+  };
+  /**
+   * Remove dropdown list once a list item is selected.
+   * @return{object} The Class
+   */
 
-        var key = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : false;
-        var variable = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : '';
-        if (!key) { return this; }
-        var messages = {
-          'INIT': function INIT() {
-            return _this4.STRINGS.DIRECTIONS_TYPE;
-          },
-          'TYPING': function TYPING() {
-            return [_this4.STRINGS.OPTION_AVAILABLE.replace('{{ NUMBER }}', variable), _this4.STRINGS.DIRECTIONS_REVIEW].join('. ');
-          },
-          'SELECTED': function SELECTED() {
-            return [_this4.STRINGS.OPTION_SELECTED.replace('{{ VALUE }}', variable), _this4.STRINGS.DIRECTIONS_TYPE].join('. ');
-          }
-        };
-        document.querySelector("#".concat(this.input.getAttribute('aria-describedby'))).innerHTML = messages[key]();
-        return this;
-      }
-    }], [{
-      key: "score",
-      value: function score(value, synonyms) {
-        var closestSynonym = null;
-        synonyms.forEach(function (synonym) {
-          var similarity = jaroWinkler(synonym.trim().toLowerCase(), value.trim().toLowerCase());
 
-          if (closestSynonym === null || similarity > closestSynonym.similarity) {
-            closestSynonym = {
-              similarity: similarity,
-              value: synonym
-            };
-            if (similarity === 1) { return; }
-          }
-        });
-        return {
-          score: closestSynonym.similarity,
-          displayValue: synonyms[0]
-        };
-      }
-      /**
-       * List item for dropdown list.
-       * @param  {Number}  scoredOption
-       * @param  {Number}  index
-       * @return {string}  The a list item <li>.
-       */
+  Autocomplete.prototype.remove = function remove () {
+    this.container && this.container.remove();
+    this.input.setAttribute('aria-expanded', 'false');
+    this.container = null;
+    this.ul = null;
+    return this;
+  };
+  /**
+   * Messaging that is passed to the screen reader
+   * @param {string}key     The Key of the message to write
+   * @param {string}variableA variable to provide to the string.
+   * @return{object}          The Class
+   */
 
-    }, {
-      key: "listItem",
-      value: function listItem(scoredOption, index) {
-        var li = index > this.MAX_ITEMS ? null : document.createElement('li');
-        li.setAttribute('role', 'option');
-        li.setAttribute('tabindex', '-1');
-        li.setAttribute('aria-selected', 'false');
-        li && li.appendChild(document.createTextNode(scoredOption.displayValue));
-        return li;
-      }
-      /**
-       * Get index of previous element.
-       * @param  {array}   node
-       * @return {number}  index of previous element.
-       */
 
-    }, {
-      key: "getSiblingIndex",
-      value: function getSiblingIndex(node) {
-        var index = -1;
-        var n = node;
+  Autocomplete.prototype.message = function message (key, variable) {
+      var this$1 = this;
+      if ( key === void 0 ) key = false;
+      if ( variable === void 0 ) variable = '';
 
-        do {
-          index++;
-          n = n.previousElementSibling;
-        } while (n);
-
-        return index;
-      }
-    }]);
-
-    return Autocomplete;
-  }();
+    if (!key) { return this; }
+    var messages = {
+      'INIT': function () { return this$1.STRINGS.DIRECTIONS_TYPE; },
+      'TYPING': function () { return [this$1.STRINGS.OPTION_AVAILABLE.replace('{{ NUMBER }}', variable), this$1.STRINGS.DIRECTIONS_REVIEW].join('. '); },
+      'SELECTED': function () { return [this$1.STRINGS.OPTION_SELECTED.replace('{{ VALUE }}', variable), this$1.STRINGS.DIRECTIONS_TYPE].join('. '); }
+    };
+    document.querySelector(("#" + (this.input.getAttribute('aria-describedby')))).innerHTML = messages[key]();
+    return this;
+  };
   /** Selectors for the Autocomplete class. */
 
 
@@ -587,56 +465,39 @@ var InputAutocomplete = (function () {
    * The InputAutocomplete class.
    */
 
-  var InputAutocomplete =
-  /*#__PURE__*/
-  function () {
-    /**
-     * @param  {object} settings This could be some configuration options.
-     *                           for the pattern module.
-     * @constructor
-     */
-    function InputAutocomplete() {
-      var settings = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
+  var InputAutocomplete = function InputAutocomplete(settings) {
+    if ( settings === void 0 ) settings = {};
 
-      _classCallCheck(this, InputAutocomplete);
-
-      this.library = new Autocomplete({
-        options: settings.hasOwnProperty('options') ? settings.options : InputAutocomplete.options,
-        selected: settings.hasOwnProperty('selected') ? settings.selected : false,
-        selector: settings.hasOwnProperty('selector') ? settings.selector : InputAutocomplete.selector,
-        classname: settings.hasOwnProperty('classname') ? settings.classname : InputAutocomplete.classname
-      });
-      return this;
-    }
-    /**
-     * Setter for the Autocomplete options
-     * @param  {object} reset Set of array options for the Autocomplete class
-     * @return {object} InputAutocomplete object with new options.
-     */
+    this.library = new Autocomplete({
+      options: settings.hasOwnProperty('options') ? settings.options : InputAutocomplete.options,
+      selected: settings.hasOwnProperty('selected') ? settings.selected : false,
+      selector: settings.hasOwnProperty('selector') ? settings.selector : InputAutocomplete.selector,
+      classname: settings.hasOwnProperty('classname') ? settings.classname : InputAutocomplete.classname
+    });
+    return this;
+  };
+  /**
+   * Setter for the Autocomplete options
+   * @param{object} reset Set of array options for the Autocomplete class
+   * @return {object} InputAutocomplete object with new options.
+   */
 
 
-    _createClass(InputAutocomplete, [{
-      key: "options",
-      value: function options(reset) {
-        this.library.settings.options = reset;
-        return this;
-      }
-      /**
-       * Setter for the Autocomplete strings
-       * @param  {object}  localizedStrings  Object containing strings.
-       * @return {object} Autocomplete strings
-       */
+  InputAutocomplete.prototype.options = function options (reset) {
+    this.library.settings.options = reset;
+    return this;
+  };
+  /**
+   * Setter for the Autocomplete strings
+   * @param{object}localizedStringsObject containing strings.
+   * @return {object} Autocomplete strings
+   */
 
-    }, {
-      key: "strings",
-      value: function strings(localizedStrings) {
-        Object.assign(this.library.STRINGS, localizedStrings);
-        return this;
-      }
-    }]);
 
-    return InputAutocomplete;
-  }();
+  InputAutocomplete.prototype.strings = function strings (localizedStrings) {
+    Object.assign(this.library.STRINGS, localizedStrings);
+    return this;
+  };
   /** @type {array} Default options for the autocomplete class */
 
 
