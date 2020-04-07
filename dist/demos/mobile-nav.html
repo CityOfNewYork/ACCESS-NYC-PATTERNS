@@ -1,74 +1,96 @@
 <!DOCTYPE html>
 <html class="text-size-0" lang="en">
 
-  <head>
-    <meta charset="utf-8" />
-    <meta content="IE=edge" http-equiv="X-UA-Compatible" />
-    <meta content="width=device-width, initial-scale=1" name="viewport" />
-    <link href="../images/apple-icon-57x57.png" rel="apple-touch-icon" sizes="57x57" />
-    <link href="../images/apple-icon-60x60.png" rel="apple-touch-icon" sizes="60x60" />
-    <link href="../images/apple-icon-72x72.png" rel="apple-touch-icon" sizes="72x72" />
-    <link href="../images/apple-icon-76x76.png" rel="apple-touch-icon" sizes="76x76" />
-    <link href="../images/apple-icon-114x114.png" rel="apple-touch-icon" sizes="114x114" />
-    <link href="../images/apple-icon-120x120.png" rel="apple-touch-icon" sizes="120x120" />
-    <link href="../images/apple-icon-144x144.png" rel="apple-touch-icon" sizes="144x144" />
-    <link href="../images/apple-icon-152x152.png" rel="apple-touch-icon" sizes="152x152" />
-    <link href="../images/apple-icon-180x180.png" rel="apple-touch-icon" sizes="180x180" />
-    <link href="../images/android-icon-192x192.png" rel="icon" sizes="192x192" type="image/png" />
-    <link href="../images/favicon-32x32.png" rel="icon" sizes="32x32" type="image/png" />
-    <link href="../images/favicon-96x96.png" rel="icon" sizes="96x96" type="image/png" />
-    <link href="../images/favicon-16x16.png" rel="icon" sizes="16x16" type="image/png" />
-    <meta content="#112E51" name="msapplication-TileColor" />
-    <meta content="../images/ms-icon-144x144.png" name="msapplication-TileImage" />
-    <link href="../images/favicon.ico" rel="icon" type="image/x-icon" />
-    <link href="../styles/site-default.css" rel="stylesheet" />
-    <title>Navigation Demo</title><noscript>
-      <style>
-        body {
-          visibility: visible !important;
-        }
-      </style>
-    </noscript>
-    <script type="text/javascript">
-      function load() {
-        document.body.style.visibility = 'visible'
-      };
-    </script>
-  </head>
+<head>
+  <meta charset="utf-8" />
+  <meta content="IE=edge" http-equiv="X-UA-Compatible" />
+  <meta content="width=device-width, initial-scale=1" name="viewport" />
+  <link href="../images/apple-icon-57x57.png" rel="apple-touch-icon" sizes="57x57" />
+  <link href="../images/apple-icon-60x60.png" rel="apple-touch-icon" sizes="60x60" />
+  <link href="../images/apple-icon-72x72.png" rel="apple-touch-icon" sizes="72x72" />
+  <link href="../images/apple-icon-76x76.png" rel="apple-touch-icon" sizes="76x76" />
+  <link href="../images/apple-icon-114x114.png" rel="apple-touch-icon" sizes="114x114" />
+  <link href="../images/apple-icon-120x120.png" rel="apple-touch-icon" sizes="120x120" />
+  <link href="../images/apple-icon-144x144.png" rel="apple-touch-icon" sizes="144x144" />
+  <link href="../images/apple-icon-152x152.png" rel="apple-touch-icon" sizes="152x152" />
+  <link href="../images/apple-icon-180x180.png" rel="apple-touch-icon" sizes="180x180" />
+  <link href="../images/android-icon-192x192.png" rel="icon" sizes="192x192" type="image/png" />
+  <link href="../images/favicon-32x32.png" rel="icon" sizes="32x32" type="image/png" />
+  <link href="../images/favicon-96x96.png" rel="icon" sizes="96x96" type="image/png" />
+  <link href="../images/favicon-16x16.png" rel="icon" sizes="16x16" type="image/png" />
+  <meta content="#112E51" name="msapplication-TileColor" />
+  <meta content="../images/ms-icon-144x144.png" name="msapplication-TileImage" />
+  <link href="../images/favicon.ico" rel="icon" type="image/x-icon" />
+  <link href="../styles/site-default.css" rel="stylesheet" />
+  <title>Navigation Demo</title>
+  <noscript>
+    <style>
+      body {
+        visibility: visible !important;
+      }
+    </style>
+  </noscript>
+  <script type="text/javascript">
+    function load() {
+      document.body.style.visibility = 'visible'
+    };
+  </script>
+</head>
 
-  <body onload="load()" style="visibility: hidden;">
-    <main class="min-h-screen bg-color-white" id="demo-content">
-      <div class="overlay active:overlay">
-        <div class="o-mobile-nav color-mid-background o-mobile-nav active" data-sketch-symbol-instance="objects/mobile-nav/mobile-nav" id="o-mobile-nav"><a class="o-mobile-nav__close js-hide-nav" href="#o-mobile-nav">close &amp; return to site<svg aria-hidden="true" class="icon icon-ui-x">
-              <use xlink:href="#icon-ui-x"></use>
-            </svg></a>
-          <div class="o-mobile-nav__inner">
-            <h4 class="o-mobile-nav__header">Get help now</h4>
-            <nav class="nav-block"><a class="active" href="#">Am I eligible?</a><a href="#">Programs</a><a href="#">Find help</a><a class="td-inherit" href="#search"><svg class="icon icon-ui-search">
-                  <use xlink:href="#icon-ui-search"></use>
-                </svg>Search</a></nav>
-          </div>
+<body onload="load()" style="visibility: hidden;">
+  <main class="min-h-screen bg-color-white" id="demo-content">
+    <div class="overlay active:overlay">
+      <div class="o-mobile-nav color-mid-background o-mobile-nav active" id="o-mobile-nav">
+        <a class="o-mobile-nav__close js-hide-nav" href="#o-mobile-nav">close &amp; return to site<svg aria-hidden="true" class="icon icon-ui-x">
+            <use xlink:href="#icon-ui-x"></use>
+          </svg>
+        </a>
+        <div class="o-mobile-nav__inner">
+          <h4 class="o-mobile-nav__header">Get help now</h4>
+          <nav class="nav-block">
+            <a class="active" href="#">Am I eligible?</a>
+            <a href="#">Programs</a>
+            <a href="#">Find help</a>
+            <a class="td-inherit" href="#search">
+              <svg class="icon icon-ui-search">
+                <use xlink:href="#icon-ui-search"></use>
+              </svg>Search
+            </a>
+          </nav>
         </div>
       </div>
-    </main>
-    <footer class="py-4 text-center bg-color-blue-dark text-color-white links-invert">
-      <footer class="py-4 text-center color-dark-background">
-        <p>
-          <nav><a class="px-1" href="index">Home</a><a class="px-1" href="about">About</a><a class="px-1" href="installation">Installation</a><a class="px-1" href="design-tools">Design Tools</a><a class="px-1" href="developer-tools">Developer Tools</a></nav>
-        </p>
-        <p>Maintained by&nbsp;<a href="https://nyc.gov/opportunity">NYC Opportunity</a></p>
-        <p class="m-0">
-          <nav><a class="px-1" href="https://github.com/orgs/CityOfNewYork/teams/nycopportunity">GitHub</a><a class="px-1" href="https://twitter.com/nycopportunity">Twitter</a><a class="px-1" href="https://www.facebook.com/NYCOpportunity">Facebook</a><a class="px-1" href="https://www.instagram.com/nycopportunity">Instagram</a></nav>
-        </p>
-      </footer>
+    </div>
+  </main>
+  <footer class="py-4 text-center bg-color-blue-dark text-color-white links-invert">
+    <footer class="py-4 text-center color-dark-background">
+      <p>
+        <nav>
+          <a class="px-1" href="index">Home</a>
+          <a class="px-1" href="about">About</a>
+          <a class="px-1" href="installation">Installation</a>
+          <a class="px-1" href="design-tools">Design Tools</a>
+          <a class="px-1" href="developer-tools">Developer Tools</a>
+        </nav>
+      </p>
+      <p>Maintained by&nbsp;<a href="https://nyc.gov/opportunity">NYC Opportunity</a>
+      </p>
+      <p class="m-0">
+        <nav>
+          <a class="px-1" href="https://github.com/orgs/CityOfNewYork/teams/nycopportunity">GitHub</a>
+          <a class="px-1" href="https://twitter.com/nycopportunity">Twitter</a>
+          <a class="px-1" href="https://www.facebook.com/NYCOpportunity">Facebook</a>
+          <a class="px-1" href="https://www.instagram.com/nycopportunity">Instagram</a>
+        </nav>
+      </p>
     </footer>
-    <script src="../scripts/polyfills.js"></script>
-    <script src="../scripts/access-nyc.js"></script>
-    <script type="text/javascript">
-      var access = new AccessNyc();
-      access.icons('../icons.svg');
-      access.toggle();
-    </script>
-  </body>
+  </footer>
+  <script src="../scripts/polyfills.js"></script>
+  <script src="../scripts/access-nyc.js"></script>
+  <script type="text/javascript">
+    var access = new AccessNyc();
+    access.icons('../icons.svg');
+    access.toggle();
+  </script>
+</body>
 
 </html>

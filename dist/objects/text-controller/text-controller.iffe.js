@@ -1,89 +1,59 @@
 var TextController = (function () {
   'use strict';
 
-  function _classCallCheck(instance, Constructor) {
-    if (!(instance instanceof Constructor)) {
-      throw new TypeError("Cannot call a class as a function");
-    }
-  }
-
-  function _defineProperties(target, props) {
-    for (var i = 0; i < props.length; i++) {
-      var descriptor = props[i];
-      descriptor.enumerable = descriptor.enumerable || false;
-      descriptor.configurable = true;
-      if ("value" in descriptor) descriptor.writable = true;
-      Object.defineProperty(target, descriptor.key, descriptor);
-    }
-  }
-
-  function _createClass(Constructor, protoProps, staticProps) {
-    if (protoProps) _defineProperties(Constructor.prototype, protoProps);
-    if (staticProps) _defineProperties(Constructor, staticProps);
-    return Constructor;
-  }
-
-  /*! js-cookie v3.0.0-beta.0 | MIT */
-  function extend () {
+  /*! js-cookie v3.0.0-rc.0 | MIT */
+  function assign (target) {
     var arguments$1 = arguments;
 
-    var result = {};
-    for (var i = 0; i < arguments.length; i++) {
-      var attributes = arguments$1[i];
-      for (var key in attributes) {
-        result[key] = attributes[key];
+    for (var i = 1; i < arguments.length; i++) {
+      var source = arguments$1[i];
+      for (var key in source) {
+        target[key] = source[key];
       }
     }
-    return result
+    return target
   }
 
-  function decode (s) {
-    return s.replace(/(%[\dA-F]{2})+/gi, decodeURIComponent)
-  }
+  var defaultConverter = {
+    read: function (value) {
+      return value.replace(/%3B/g, ';')
+    },
+    write: function (value) {
+      return value.replace(/;/g, '%3B')
+    }
+  };
 
-  function init (converter) {
+  function init (converter, defaultAttributes) {
     function set (key, value, attributes) {
       if (typeof document === 'undefined') {
         return
       }
 
-      attributes = extend(api.defaults, attributes);
+      attributes = assign({}, defaultAttributes, attributes);
 
       if (typeof attributes.expires === 'number') {
-        attributes.expires = new Date(new Date() * 1 + attributes.expires * 864e5);
+        attributes.expires = new Date(Date.now() + attributes.expires * 864e5);
       }
       if (attributes.expires) {
         attributes.expires = attributes.expires.toUTCString();
       }
 
-      value = converter.write
-        ? converter.write(value, key)
-        : encodeURIComponent(String(value)).replace(
-          /%(23|24|26|2B|3A|3C|3E|3D|2F|3F|40|5B|5D|5E|60|7B|7D|7C)/g,
-          decodeURIComponent
-        );
+      key = defaultConverter.write(key).replace(/=/g, '%3D');
 
-      key = encodeURIComponent(String(key))
-        .replace(/%(23|24|26|2B|5E|60|7C)/g, decodeURIComponent)
-        .replace(/[()]/g, escape);
+      value = converter.write(String(value), key);
 
       var stringifiedAttributes = '';
       for (var attributeName in attributes) {
         if (!attributes[attributeName]) {
           continue
         }
+
         stringifiedAttributes += '; ' + attributeName;
+
         if (attributes[attributeName] === true) {
           continue
         }
 
-        // Considers RFC 6265 section 5.2:
-        // ...
-        // 3.  If the remaining unparsed-attributes contains a %x3B (";")
-        //     character:
-        // Consume the characters of the unparsed-attributes up to,
-        // not including, the first %x3B (";") character.
-        // ...
         stringifiedAttributes += '=' + attributes[attributeName].split(';')[0];
       }
 
@@ -101,48 +71,46 @@ var TextController = (function () {
       var jar = {};
       for (var i = 0; i < cookies.length; i++) {
         var parts = cookies[i].split('=');
-        var cookie = parts.slice(1).join('=');
+        var value = parts.slice(1).join('=');
+        var foundKey = defaultConverter.read(parts[0]).replace(/%3D/g, '=');
+        jar[foundKey] = converter.read(value, foundKey);
 
-        if (cookie.charAt(0) === '"') {
-          cookie = cookie.slice(1, -1);
+        if (key === foundKey) {
+          break
         }
-
-        try {
-          var name = decode(parts[0]);
-          jar[name] =
-            (converter.read || converter)(cookie, name) || decode(cookie);
-
-          if (key === name) {
-            break
-          }
-        } catch (e) {}
       }
 
       return key ? jar[key] : jar
     }
 
-    var api = {
-      defaults: {
-        path: '/'
+    return Object.create(
+      {
+        set: set,
+        get: get,
+        remove: function (key, attributes) {
+          set(
+            key,
+            '',
+            assign({}, attributes, {
+              expires: -1
+            })
+          );
+        },
+        withAttributes: function (attributes) {
+          return init(this.converter, assign({}, this.attributes, attributes))
+        },
+        withConverter: function (converter) {
+          return init(assign({}, this.converter, converter), this.attributes)
+        }
       },
-      set: set,
-      get: get,
-      remove: function (key, attributes) {
-        set(
-          key,
-          '',
-          extend(attributes, {
-            expires: -1
-          })
-        );
-      },
-      withConverter: init
-    };
-
-    return api
+      {
+        attributes: { value: Object.freeze(defaultAttributes) },
+        converter: { value: Object.freeze(converter) }
+      }
+    )
   }
 
-  var js_cookie = init(function () {});
+  var api = init(defaultConverter, { path: '/' });
 
   /**
    * The Simple Toggle class. This will toggle the class 'active' and 'hidden'
@@ -358,172 +326,153 @@ var TextController = (function () {
    * @class
    */
 
-  var TextController =
-  /*#__PURE__*/
-  function () {
-    /**
-     * @param {HTMLElement} el - The html element for the component.
-     * @constructor
-     */
-    function TextController(el) {
-      _classCallCheck(this, TextController);
+  var TextController = function TextController(el) {
+    /** @private {HTMLElement} The component element. */
+    this.el = el;
+    /** @private {Number} The relative scale of text adjustment. */
 
-      /** @private {HTMLElement} The component element. */
-      this.el = el;
-      /** @private {Number} The relative scale of text adjustment. */
+    this._textSize = 0;
+    /** @private {boolean} Whether the textSizer is displayed. */
 
-      this._textSize = 0;
-      /** @private {boolean} Whether the textSizer is displayed. */
+    this._active = false;
+    /** @private {boolean} Whether the map has been initialized. */
 
-      this._active = false;
-      /** @private {boolean} Whether the map has been initialized. */
+    this._initialized = false;
+    /** @private {object} The toggle instance for the Text Controller */
 
-      this._initialized = false;
-      /** @private {object} The toggle instance for the Text Controller */
+    this._toggle = new Toggle({
+      selector: TextController.selectors.TOGGLE
+    });
+    this.init();
+    return this;
+  };
+  /**
+   * Attaches event listeners to controller. Checks for textSize cookie and
+   * sets the text size class appropriately.
+   * @return {this} TextSizer
+   */
 
-      this._toggle = new Toggle({
-        selector: TextController.selectors.TOGGLE
-      });
-      this.init();
-      return this;
+
+  TextController.prototype.init = function init () {
+      var this$1 = this;
+
+    if (this._initialized) { return this; }
+    var btnSmaller = this.el.querySelector(TextController.selectors.SMALLER);
+    var btnLarger = this.el.querySelector(TextController.selectors.LARGER);
+    btnSmaller.addEventListener('click', function (event) {
+      event.preventDefault();
+      var newSize = this$1._textSize - 1;
+
+      if (newSize >= TextController.min) {
+        this$1._adjustSize(newSize);
+      }
+    });
+    btnLarger.addEventListener('click', function (event) {
+      event.preventDefault();
+      var newSize = this$1._textSize + 1;
+
+      if (newSize <= TextController.max) {
+        this$1._adjustSize(newSize);
+      }
+    }); // If there is a text size cookie, set the textSize variable to the setting.
+    // If not, textSize initial setting remains at zero and we toggle on the
+    // text sizer/language controls and add a cookie.
+
+    if (api.get('textSize')) {
+      var size = parseInt(api.get('textSize'), 10);
+      this._textSize = size;
+
+      this._adjustSize(size);
+    } else {
+      var html = document.querySelector('html');
+      html.classList.add(("text-size-" + (this._textSize)));
+      this.show();
+
+      this._setCookie();
     }
-    /**
-     * Attaches event listeners to controller. Checks for textSize cookie and
-     * sets the text size class appropriately.
-     * @return {this} TextSizer
-     */
+
+    this._initialized = true;
+    return this;
+  };
+  /**
+   * Shows the text sizer controls.
+   * @return {this} TextSizer
+   */
 
 
-    _createClass(TextController, [{
-      key: "init",
-      value: function init() {
-        var _this = this;
+  TextController.prototype.show = function show () {
+    this._active = true; // Retrieve selectors required for the main toggling method
 
-        if (this._initialized) { return this; }
-        var btnSmaller = this.el.querySelector(TextController.selectors.SMALLER);
-        var btnLarger = this.el.querySelector(TextController.selectors.LARGER);
-        btnSmaller.addEventListener('click', function (event) {
-          event.preventDefault();
-          var newSize = _this._textSize - 1;
+    var el = this.el.querySelector(TextController.selectors.TOGGLE);
+    var targetSelector = "#" + (el.getAttribute('aria-controls'));
+    var target = this.el.querySelector(targetSelector); // Invoke main toggling method from toggle.js
 
-          if (newSize >= TextController.min) {
-            _this._adjustSize(newSize);
-          }
-        });
-        btnLarger.addEventListener('click', function (event) {
-          event.preventDefault();
-          var newSize = _this._textSize + 1;
+    this._toggle.elementToggle(el, target);
 
-          if (newSize <= TextController.max) {
-            _this._adjustSize(newSize);
-          }
-        }); // If there is a text size cookie, set the textSize variable to the setting.
-        // If not, textSize initial setting remains at zero and we toggle on the
-        // text sizer/language controls and add a cookie.
+    return this;
+  };
+  /**
+   * Sets the `textSize` cookie to store the value of this._textSize. Expires
+   * in 1 hour (1/24 of a day).
+   * @return {this} TextSizer
+   */
 
-        if (js_cookie.get('textSize')) {
-          var size = parseInt(js_cookie.get('textSize'), 10);
-          this._textSize = size;
 
-          this._adjustSize(size);
-        } else {
-          var html = document.querySelector('html');
-          html.classList.add("text-size-".concat(this._textSize));
-          this.show();
+  TextController.prototype._setCookie = function _setCookie () {
+    api.set('textSize', this._textSize, {
+      expires: 1 / 24
+    });
+    return this;
+  };
+  /**
+   * Sets the text-size-X class on the html root element. Updates the cookie
+   * if necessary.
+   * @param {Number} size - new size to set.
+   * @return {this} TextSizer
+   */
 
-          this._setCookie();
-        }
 
-        this._initialized = true;
-        return this;
-      }
-      /**
-       * Shows the text sizer controls.
-       * @return {this} TextSizer
-       */
+  TextController.prototype._adjustSize = function _adjustSize (size) {
+    var originalSize = this._textSize;
+    var html = document.querySelector('html');
 
-    }, {
-      key: "show",
-      value: function show() {
-        this._active = true; // Retrieve selectors required for the main toggling method
+    if (size !== originalSize) {
+      this._textSize = size;
 
-        var el = this.el.querySelector(TextController.selectors.TOGGLE);
-        var targetSelector = "#".concat(el.getAttribute('aria-controls'));
-        var target = this.el.querySelector(targetSelector); // Invoke main toggling method from toggle.js
+      this._setCookie();
 
-        this._toggle.elementToggle(el, target);
+      html.classList.remove(("text-size-" + originalSize));
+    }
 
-        return this;
-      }
-      /**
-       * Sets the `textSize` cookie to store the value of this._textSize. Expires
-       * in 1 hour (1/24 of a day).
-       * @return {this} TextSizer
-       */
+    html.classList.add(("text-size-" + size));
 
-    }, {
-      key: "_setCookie",
-      value: function _setCookie() {
-        js_cookie.set('textSize', this._textSize, {
-          expires: 1 / 24
-        });
-        return this;
-      }
-      /**
-       * Sets the text-size-X class on the html root element. Updates the cookie
-       * if necessary.
-       * @param {Number} size - new size to set.
-       * @return {this} TextSizer
-       */
+    this._checkForMinMax();
 
-    }, {
-      key: "_adjustSize",
-      value: function _adjustSize(size) {
-        var originalSize = this._textSize;
-        var html = document.querySelector('html');
+    return this;
+  };
+  /**
+   * Checks the current text size against the min and max. If the limits are
+   * reached, disable the controls for going smaller/larger as appropriate.
+   * @return {this} TextSizer
+   */
 
-        if (size !== originalSize) {
-          this._textSize = size;
 
-          this._setCookie();
+  TextController.prototype._checkForMinMax = function _checkForMinMax () {
+    var btnSmaller = this.el.querySelector(TextController.selectors.SMALLER);
+    var btnLarger = this.el.querySelector(TextController.selectors.LARGER);
 
-          html.classList.remove("text-size-".concat(originalSize));
-        }
+    if (this._textSize <= TextController.min) {
+      this._textSize = TextController.min;
+      btnSmaller.setAttribute('disabled', '');
+    } else { btnSmaller.removeAttribute('disabled'); }
 
-        html.classList.add("text-size-".concat(size));
+    if (this._textSize >= TextController.max) {
+      this._textSize = TextController.max;
+      btnLarger.setAttribute('disabled', '');
+    } else { btnLarger.removeAttribute('disabled'); }
 
-        this._checkForMinMax();
-
-        return this;
-      }
-      /**
-       * Checks the current text size against the min and max. If the limits are
-       * reached, disable the controls for going smaller/larger as appropriate.
-       * @return {this} TextSizer
-       */
-
-    }, {
-      key: "_checkForMinMax",
-      value: function _checkForMinMax() {
-        var btnSmaller = this.el.querySelector(TextController.selectors.SMALLER);
-        var btnLarger = this.el.querySelector(TextController.selectors.LARGER);
-
-        if (this._textSize <= TextController.min) {
-          this._textSize = TextController.min;
-          btnSmaller.setAttribute('disabled', '');
-        } else { btnSmaller.removeAttribute('disabled'); }
-
-        if (this._textSize >= TextController.max) {
-          this._textSize = TextController.max;
-          btnLarger.setAttribute('disabled', '');
-        } else { btnLarger.removeAttribute('disabled'); }
-
-        return this;
-      }
-    }]);
-
-    return TextController;
-  }();
+    return this;
+  };
   /** @type {Integer} The minimum text size */
 
 

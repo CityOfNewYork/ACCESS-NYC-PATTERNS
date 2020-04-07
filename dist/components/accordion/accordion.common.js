@@ -1,11 +1,5 @@
 'use strict';
 
-function _classCallCheck(instance, Constructor) {
-  if (!(instance instanceof Constructor)) {
-    throw new TypeError("Cannot call a class as a function");
-  }
-}
-
 /**
  * The Simple Toggle class. This will toggle the class 'active' and 'hidden'
  * on target elements, determined by a click event on a selected link or
@@ -217,14 +211,7 @@ Toggle.targetAriaRoles = ['aria-hidden'];
  * @class
  */
 
-var Accordion =
-/**
- * @constructor
- * @return {object} The class
- */
-function Accordion() {
-  _classCallCheck(this, Accordion);
-
+var Accordion = function Accordion() {
   this._toggle = new Toggle({
     selector: Accordion.selector
   });

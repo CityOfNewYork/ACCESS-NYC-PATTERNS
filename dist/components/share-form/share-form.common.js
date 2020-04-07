@@ -1,27 +1,5 @@
 'use strict';
 
-function _classCallCheck(instance, Constructor) {
-  if (!(instance instanceof Constructor)) {
-    throw new TypeError("Cannot call a class as a function");
-  }
-}
-
-function _defineProperties(target, props) {
-  for (var i = 0; i < props.length; i++) {
-    var descriptor = props[i];
-    descriptor.enumerable = descriptor.enumerable || false;
-    descriptor.configurable = true;
-    if ("value" in descriptor) descriptor.writable = true;
-    Object.defineProperty(target, descriptor.key, descriptor);
-  }
-}
-
-function _createClass(Constructor, protoProps, staticProps) {
-  if (protoProps) _defineProperties(Constructor.prototype, protoProps);
-  if (staticProps) _defineProperties(Constructor, staticProps);
-  return Constructor;
-}
-
 /**
  * Utilities for Form components
  * @class
@@ -472,6 +450,7 @@ var NumeralFormatter = function (numeralDecimalMark,
                                  stripLeadingZeroes,
                                  prefix,
                                  signBeforePrefix,
+                                 tailPrefix,
                                  delimiter) {
     var owner = this;
 
@@ -483,6 +462,7 @@ var NumeralFormatter = function (numeralDecimalMark,
     owner.stripLeadingZeroes = stripLeadingZeroes !== false;
     owner.prefix = (prefix || prefix === '') ? prefix : '';
     owner.signBeforePrefix = !!signBeforePrefix;
+    owner.tailPrefix = !!tailPrefix;
     owner.delimiter = (delimiter || delimiter === '') ? delimiter : ',';
     owner.delimiterRE = delimiter ? new RegExp('\\' + delimiter, 'g') : '';
 };
@@ -570,6 +550,10 @@ NumeralFormatter.prototype = {
             partInteger = partInteger.replace(/(\d)(?=(\d{3})+$)/g, '$1' + owner.delimiter);
 
             break;
+        }
+
+        if (owner.tailPrefix) {
+            return partSign + partInteger.toString() + (owner.numeralDecimalScale > 0 ? partDecimal.toString() : '') + owner.prefix;
         }
 
         return partSignAndPrefix + partInteger.toString() + (owner.numeralDecimalScale > 0 ? partDecimal.toString() : '');
@@ -1113,8 +1097,8 @@ var CreditCardDetector = {
         // starts with 4; 16 digits
         visa: /^4\d{0,15}/,
 
-        // starts with 62; 16 digits
-        unionPay: /^62\d{0,14}/
+        // starts with 62/81; 16 digits
+        unionPay: /^(62|81)\d{0,14}/
     },
 
     getStrictBlocks: function (block) {
@@ -1239,30 +1223,40 @@ var Util = {
     // PREFIX-123   |   PEFIX-123     |     123
     // PREFIX-123   |   PREFIX-23     |     23
     // PREFIX-123   |   PREFIX-1234   |     1234
-    getPrefixStrippedValue: function (value, prefix, prefixLength, prevResult, delimiter, delimiters, noImmediatePrefix) {
+    getPrefixStrippedValue: function (value, prefix, prefixLength, prevResult, delimiter, delimiters, noImmediatePrefix, tailPrefix, signBeforePrefix) {
         // No prefix
         if (prefixLength === 0) {
           return value;
         }
 
-        // Pre result prefix string does not match pre-defined prefix
-        if (prevResult.slice(0, prefixLength) !== prefix) {
-          // Check if the first time user entered something
-          if (noImmediatePrefix && !prevResult && value) { return value; }
+        if (signBeforePrefix && (value.slice(0, 1) == '-')) {
+            var prev = (prevResult.slice(0, 1) == '-') ? prevResult.slice(1) : prevResult;
+            return '-' + this.getPrefixStrippedValue(value.slice(1), prefix, prefixLength, prev, delimiter, delimiters, noImmediatePrefix, tailPrefix, signBeforePrefix);
+        }
 
-          return '';
+        // Pre result prefix string does not match pre-defined prefix
+        if (prevResult.slice(0, prefixLength) !== prefix && !tailPrefix) {
+            // Check if the first time user entered something
+            if (noImmediatePrefix && !prevResult && value) { return value; }
+            return '';
+        } else if (prevResult.slice(-prefixLength) !== prefix && tailPrefix) {
+            // Check if the first time user entered something
+            if (noImmediatePrefix && !prevResult && value) { return value; }
+            return '';
         }
 
         var prevValue = this.stripDelimiters(prevResult, delimiter, delimiters);
 
         // New value has issue, someone typed in between prefix letters
         // Revert to pre value
-        if (value.slice(0, prefixLength) !== prefix) {
-          return prevValue.slice(prefixLength);
+        if (value.slice(0, prefixLength) !== prefix && !tailPrefix) {
+            return prevValue.slice(prefixLength);
+        } else if (value.slice(-prefixLength) !== prefix && tailPrefix) {
+            return prevValue.slice(0, -prefixLength - 1);
         }
 
         // No issue, strip prefix for new value
-        return value.slice(prefixLength);
+        return tailPrefix ? value.slice(0, -prefixLength) : value.slice(prefixLength);
     },
 
     getFirstDiffIndex: function (prev, current) {
@@ -1330,7 +1324,7 @@ var Util = {
         var val = el.value,
             appendix = delimiter || (delimiters[0] || ' ');
 
-        if (!el.setSelectionRange || !prefix || (prefix.length + appendix.length) < val.length) {
+        if (!el.setSelectionRange || !prefix || (prefix.length + appendix.length) <= val.length) {
             return;
         }
 
@@ -1451,6 +1445,7 @@ var DefaultProperties = {
         target.numeralPositiveOnly = !!opts.numeralPositiveOnly;
         target.stripLeadingZeroes = opts.stripLeadingZeroes !== false;
         target.signBeforePrefix = !!opts.signBeforePrefix;
+        target.tailPrefix = !!opts.tailPrefix;
 
         // others
         target.numericOnly = target.creditCard || target.date || !!opts.numericOnly;
@@ -1595,6 +1590,7 @@ Cleave.prototype = {
             pps.stripLeadingZeroes,
             pps.prefix,
             pps.signBeforePrefix,
+            pps.tailPrefix,
             pps.delimiter
         );
     },
@@ -1772,10 +1768,7 @@ Cleave.prototype = {
         value = Util.stripDelimiters(value, pps.delimiter, pps.delimiters);
 
         // strip prefix
-        value = Util.getPrefixStrippedValue(
-            value, pps.prefix, pps.prefixLength,
-            pps.result, pps.delimiter, pps.delimiters, pps.noImmediatePrefix
-        );
+        value = Util.getPrefixStrippedValue(value, pps.prefix, pps.prefixLength, pps.result, pps.delimiter, pps.delimiters, pps.noImmediatePrefix, pps.tailPrefix, pps.signBeforePrefix);
 
         // strip non-numeric characters
         value = pps.numericOnly ? Util.strip(value, /[^\d]/g) : value;
@@ -1786,7 +1779,12 @@ Cleave.prototype = {
 
         // prevent from showing prefix when no immediate option enabled with empty input value
         if (pps.prefix && (!pps.noImmediatePrefix || value.length)) {
-            value = pps.prefix + value;
+            if (pps.tailPrefix) {
+                value = value + pps.prefix;
+            } else {
+                value = pps.prefix + value;
+            }
+
 
             // no blocks specified, no need to do formatting
             if (pps.blocksLength === 0) {
@@ -1877,6 +1875,7 @@ Cleave.prototype = {
 
         pps.onValueChanged.call(owner, {
             target: {
+                name: owner.element.name,
                 value: pps.result,
                 rawValue: owner.getRawValue()
             }
@@ -1913,7 +1912,7 @@ Cleave.prototype = {
             rawValue = owner.element.value;
 
         if (pps.rawValueTrimPrefix) {
-            rawValue = Util.getPrefixStrippedValue(rawValue, pps.prefix, pps.prefixLength, pps.result, pps.delimiter, pps.delimiters);
+            rawValue = Util.getPrefixStrippedValue(rawValue, pps.prefix, pps.prefixLength, pps.result, pps.delimiter, pps.delimiters, pps.noImmediatePrefix, pps.tailPrefix, pps.signBeforePrefix);
         }
 
         if (pps.numeral) {
@@ -1976,7 +1975,7 @@ var commonjsGlobal$1 = typeof globalThis !== 'undefined' ? globalThis : typeof w
 
 !function(){function l(l,n){var u=l.split("."),t=Y;u[0]in t||!t.execScript||t.execScript("var "+u[0]);for(var e;u.length&&(e=u.shift());){ u.length||void 0===n?t=t[e]?t[e]:t[e]={}:t[e]=n; }}function n(l,n){function u(){}u.prototype=n.prototype,l.M=n.prototype,l.prototype=new u,l.prototype.constructor=l,l.N=function(l,u,t){
 var arguments$1 = arguments;
-for(var e=Array(arguments.length-2),r=2;r<arguments.length;r++){ e[r-2]=arguments$1[r]; }return n.prototype[u].apply(l,e)};}function u(l,n){null!=l&&this.a.apply(this,arguments);}function t(l){l.b="";}function e(l,n){l.sort(n||r);}function r(l,n){return l>n?1:l<n?-1:0}function i(l){var n,u=[],t=0;for(n in l){ u[t++]=l[n]; }return u}function a(l,n){this.b=l,this.a={};for(var u=0;u<n.length;u++){var t=n[u];this.a[t.b]=t;}}function d(l){return l=i(l.a),e(l,function(l,n){return l.b-n.b}),l}function o(l,n){switch(this.b=l,this.g=!!n.v,this.a=n.c,this.i=n.type,this.h=!1,this.a){case O:case H:case q:case X:case k:case L:case J:this.h=!0;}this.f=n.defaultValue;}function s(){this.a={},this.f=this.j().a,this.b=this.g=null;}function f(l,n){for(var u=d(l.j()),t=0;t<u.length;t++){var e=u[t],r=e.b;if(null!=n.a[r]){l.b&&delete l.b[e.b];var i=11==e.a||10==e.a;if(e.g){ for(var e=p(n,r)||[],a=0;a<e.length;a++){var o=l,s=r,c=i?e[a].clone():e[a];o.a[s]||(o.a[s]=[]),o.a[s].push(c),o.b&&delete o.b[s];} }else { e=p(n,r),i?(i=p(l,r))?f(i,e):m(l,r,e.clone()):m(l,r,e); }}}}function p(l,n){var u=l.a[n];if(null==u){ return null; }if(l.g){if(!(n in l.b)){var t=l.g,e=l.f[n];if(null!=u){ if(e.g){for(var r=[],i=0;i<u.length;i++){ r[i]=t.b(e,u[i]); }u=r;}else { u=t.b(e,u); } }return l.b[n]=u}return l.b[n]}return u}function c(l,n,u){var t=p(l,n);return l.f[n].g?t[u||0]:t}function h(l,n){var u;if(null!=l.a[n]){ u=c(l,n,void 0); }else { l:{if(u=l.f[n],void 0===u.f){var t=u.i;if(t===Boolean){ u.f=!1; }else if(t===Number){ u.f=0; }else{if(t!==String){u=new t;break l}u.f=u.h?"0":"";}}u=u.f;} }return u}function g(l,n){return l.f[n].g?null!=l.a[n]?l.a[n].length:0:null!=l.a[n]?1:0}function m(l,n,u){l.a[n]=u,l.b&&(l.b[n]=u);}function b(l,n){var u,t=[];for(u in n){ 0!=u&&t.push(new o(u,n[u])); }return new a(l,t)}/*
+for(var e=Array(arguments.length-2),r=2;r<arguments.length;r++){ e[r-2]=arguments$1[r]; }return n.prototype[u].apply(l,e)};}function u(l,n){null!=l&&this.a.apply(this,arguments);}function t(l){l.b="";}function e(l,n){l.sort(n||r);}function r(l,n){return l>n?1:l<n?-1:0}function i(l){var n,u=[],t=0;for(n in l){ u[t++]=l[n]; }return u}function a(l,n){this.b=l,this.a={};for(var u=0;u<n.length;u++){var t=n[u];this.a[t.b]=t;}}function d(l){return l=i(l.a),e(l,function(l,n){return l.b-n.b}),l}function o(l,n){switch(this.b=l,this.g=!!n.v,this.a=n.c,this.i=n.type,this.h=!1,this.a){case O:case H:case q:case X:case k:case L:case J:this.h=!0;}this.f=n.defaultValue;}function s(){this.a={},this.f=this.j().a,this.b=this.g=null;}function f(l,n){for(var u=d(l.j()),t=0;t<u.length;t++){var e=u[t],r=e.b;if(null!=n.a[r]){l.b&&delete l.b[e.b];var i=11==e.a||10==e.a;if(e.g){ for(var e=p(n,r)||[],a=0;a<e.length;a++){var o=l,s=r,c=i?e[a].clone():e[a];o.a[s]||(o.a[s]=[]),o.a[s].push(c),o.b&&delete o.b[s];} }else { e=p(n,r),i?(i=p(l,r))?f(i,e):m(l,r,e.clone()):m(l,r,e); }}}}function p(l,n){var u=l.a[n];if(null==u){ return null; }if(l.g){if(!(n in l.b)){var t=l.g,e=l.f[n];if(null!=u){ if(e.g){for(var r=[],i=0;i<u.length;i++){ r[i]=t.b(e,u[i]); }u=r;}else { u=t.b(e,u); } }return l.b[n]=u}return l.b[n]}return u}function c(l,n,u){var t=p(l,n);return l.f[n].g?t[u||0]:t}function h(l,n){var u;if(null!=l.a[n]){ u=c(l,n,void 0); }else { l:{if(u=l.f[n],void 0===u.f){var t=u.i;if(t===Boolean){ u.f=!1; }else if(t===Number){ u.f=0; }else {if(t!==String){u=new t;break l}u.f=u.h?"0":"";}}u=u.f;} }return u}function g(l,n){return l.f[n].g?null!=l.a[n]?l.a[n].length:0:null!=l.a[n]?1:0}function m(l,n,u){l.a[n]=u,l.b&&(l.b[n]=u);}function b(l,n){var u,t=[];for(u in n){ 0!=u&&t.push(new o(u,n[u])); }return new a(l,t)}/*
 
  Protocol Buffer 2 Copyright 2008 Google Inc.
  All other code copyright its respective owners.
@@ -2010,7 +2009,7 @@ function y(){s.call(this);}function v(){s.call(this);}function S(){s.call(this);
  See the License for the specific language governing permissions and
  limitations under the License.
 */
-function x(){this.a={};}function B(l){return 0==l.length||rl.test(l)}function C(l,n){if(null==n){ return null; }n=n.toUpperCase();var u=l.a[n];if(null==u){if(u=nl[n],null==u){ return null; }u=(new A).a(S.j(),u),l.a[n]=u;}return u}function M(l){return l=ll[l],null==l?"ZZ":l[0]}function N(l){this.H=RegExp(" "),this.C="",this.m=new u,this.w="",this.i=new u,this.u=new u,this.l=!0,this.A=this.o=this.F=!1,this.G=x.b(),this.s=0,this.b=new u,this.B=!1,this.h="",this.a=new u,this.f=[],this.D=l,this.J=this.g=D(this,this.D);}function D(l,n){var u;if(null!=n&&isNaN(n)&&n.toUpperCase()in nl){if(u=C(l.G,n),null==u){ throw Error("Invalid region code: "+n); }u=h(u,10);}else { u=0; }return u=C(l.G,M(u)),null!=u?u:il}function G(l){for(var n=l.f.length,u=0;u<n;++u){var e=l.f[u],r=h(e,1);if(l.w==r){ return !1; }var i;i=l;var a=e,d=h(a,1);if(-1!=d.indexOf("|")){ i=!1; }else{d=d.replace(al,"\\d"),d=d.replace(dl,"\\d"),t(i.m);var o;o=i;var a=h(a,2),s="999999999999999".match(d)[0];s.length<o.a.b.length?o="":(o=s.replace(new RegExp(d,"g"),a),o=o.replace(RegExp("9","g")," ")),0<o.length?(i.m.a(o),i=!0):i=!1;}if(i){ return l.w=r,l.B=sl.test(c(e,4)),l.s=0,!0 }}return l.l=!1}function j(l,n){for(var u=[],t=n.length-3,e=l.f.length,r=0;r<e;++r){var i=l.f[r];0==g(i,3)?u.push(l.f[r]):(i=c(i,3,Math.min(t,g(i,3)-1)),0==n.search(i)&&u.push(l.f[r]));}l.f=u;}function I(l,n){l.i.a(n);var u=n;if(el.test(u)||1==l.i.b.length&&tl.test(u)){var e,u=n;"+"==u?(e=u,l.u.a(u)):(e=ul[u],l.u.a(e),l.a.a(e)),n=e;}else { l.l=!1,l.F=!0; }if(!l.l){if(!l.F){ if(F(l)){if(U(l)){ return V(l) }}else if(0<l.h.length&&(u=l.a.toString(),t(l.a),l.a.a(l.h),l.a.a(u),u=l.b.toString(),e=u.lastIndexOf(l.h),t(l.b),l.b.a(u.substring(0,e))),l.h!=P(l)){ return l.b.a(" "),V(l); } }return l.i.toString()}switch(l.u.b.length){case 0:case 1:case 2:return l.i.toString();case 3:if(!F(l)){ return l.h=P(l),E(l); }l.A=!0;default:return l.A?(U(l)&&(l.A=!1),l.b.toString()+l.a.toString()):0<l.f.length?(u=K(l,n),e=$(l),0<e.length?e:(j(l,l.a.toString()),G(l)?T(l):l.l?R(l,u):l.i.toString())):E(l)}}function V(l){return l.l=!0,l.A=!1,l.f=[],l.s=0,t(l.m),l.w="",E(l)}function $(l){for(var n=l.a.toString(),u=l.f.length,t=0;t<u;++t){var e=l.f[t],r=h(e,1);if(new RegExp("^(?:"+r+")$").test(n)){ return l.B=sl.test(c(e,4)),n=n.replace(new RegExp(r,"g"),c(e,2)),R(l,n) }}return ""}function R(l,n){var u=l.b.b.length;return l.B&&0<u&&" "!=l.b.toString().charAt(u-1)?l.b+" "+n:l.b+n}function E(l){var n=l.a.toString();if(3<=n.length){for(var u=l.o&&0==l.h.length&&0<g(l.g,20)?p(l.g,20)||[]:p(l.g,19)||[],t=u.length,e=0;e<t;++e){var r=u[e];0<l.h.length&&B(h(r,4))&&!c(r,6)&&null==r.a[5]||(0!=l.h.length||l.o||B(h(r,4))||c(r,6))&&ol.test(h(r,2))&&l.f.push(r);}return j(l,n),n=$(l),0<n.length?n:G(l)?T(l):l.i.toString()}return R(l,n)}function T(l){var n=l.a.toString(),u=n.length;if(0<u){for(var t="",e=0;e<u;e++){ t=K(l,n.charAt(e)); }return l.l?R(l,t):l.i.toString()}return l.b.toString()}function P(l){var n,u=l.a.toString(),e=0;return 1!=c(l.g,10)?n=!1:(n=l.a.toString(),n="1"==n.charAt(0)&&"0"!=n.charAt(1)&&"1"!=n.charAt(1)),n?(e=1,l.b.a("1").a(" "),l.o=!0):null!=l.g.a[15]&&(n=new RegExp("^(?:"+c(l.g,15)+")"),n=u.match(n),null!=n&&null!=n[0]&&0<n[0].length&&(l.o=!0,e=n[0].length,l.b.a(u.substring(0,e)))),t(l.a),l.a.a(u.substring(e)),u.substring(0,e)}function F(l){var n=l.u.toString(),u=new RegExp("^(?:\\+|"+c(l.g,11)+")"),u=n.match(u);return null!=u&&null!=u[0]&&0<u[0].length&&(l.o=!0,u=u[0].length,t(l.a),l.a.a(n.substring(u)),t(l.b),l.b.a(n.substring(0,u)),"+"!=n.charAt(0)&&l.b.a(" "),!0)}function U(l){if(0==l.a.b.length){ return !1; }var n,e=new u;l:{if(n=l.a.toString(),0!=n.length&&"0"!=n.charAt(0)){ for(var r,i=n.length,a=1;3>=a&&a<=i;++a){ if(r=parseInt(n.substring(0,a),10),r in ll){e.a(n.substring(a)),n=r;break l} } }n=0;}return 0!=n&&(t(l.a),l.a.a(e.toString()),e=M(n),"001"==e?l.g=C(l.G,""+n):e!=l.D&&(l.g=D(l,e)),l.b.a(""+n).a(" "),l.h="",!0)}function K(l,n){var u=l.m.toString();if(0<=u.substring(l.s).search(l.H)){var e=u.search(l.H),u=u.replace(l.H,n);return t(l.m),l.m.a(u),l.s=e,u.substring(0,l.s+1)}return 1==l.f.length&&(l.l=!1),l.w="",l.i.toString()}var Y=this;u.prototype.b="",u.prototype.set=function(l){this.b=""+l;},u.prototype.a=function(l,n,u){
+function x(){this.a={};}function B(l){return 0==l.length||rl.test(l)}function C(l,n){if(null==n){ return null; }n=n.toUpperCase();var u=l.a[n];if(null==u){if(u=nl[n],null==u){ return null; }u=(new A).a(S.j(),u),l.a[n]=u;}return u}function M(l){return l=ll[l],null==l?"ZZ":l[0]}function N(l){this.H=RegExp(" "),this.C="",this.m=new u,this.w="",this.i=new u,this.u=new u,this.l=!0,this.A=this.o=this.F=!1,this.G=x.b(),this.s=0,this.b=new u,this.B=!1,this.h="",this.a=new u,this.f=[],this.D=l,this.J=this.g=D(this,this.D);}function D(l,n){var u;if(null!=n&&isNaN(n)&&n.toUpperCase()in nl){if(u=C(l.G,n),null==u){ throw Error("Invalid region code: "+n); }u=h(u,10);}else { u=0; }return u=C(l.G,M(u)),null!=u?u:il}function G(l){for(var n=l.f.length,u=0;u<n;++u){var e=l.f[u],r=h(e,1);if(l.w==r){ return !1; }var i;i=l;var a=e,d=h(a,1);if(-1!=d.indexOf("|")){ i=!1; }else {d=d.replace(al,"\\d"),d=d.replace(dl,"\\d"),t(i.m);var o;o=i;var a=h(a,2),s="999999999999999".match(d)[0];s.length<o.a.b.length?o="":(o=s.replace(new RegExp(d,"g"),a),o=o.replace(RegExp("9","g")," ")),0<o.length?(i.m.a(o),i=!0):i=!1;}if(i){ return l.w=r,l.B=sl.test(c(e,4)),l.s=0,!0 }}return l.l=!1}function j(l,n){for(var u=[],t=n.length-3,e=l.f.length,r=0;r<e;++r){var i=l.f[r];0==g(i,3)?u.push(l.f[r]):(i=c(i,3,Math.min(t,g(i,3)-1)),0==n.search(i)&&u.push(l.f[r]));}l.f=u;}function I(l,n){l.i.a(n);var u=n;if(el.test(u)||1==l.i.b.length&&tl.test(u)){var e,u=n;"+"==u?(e=u,l.u.a(u)):(e=ul[u],l.u.a(e),l.a.a(e)),n=e;}else { l.l=!1,l.F=!0; }if(!l.l){if(!l.F){ if(F(l)){if(U(l)){ return V(l) }}else if(0<l.h.length&&(u=l.a.toString(),t(l.a),l.a.a(l.h),l.a.a(u),u=l.b.toString(),e=u.lastIndexOf(l.h),t(l.b),l.b.a(u.substring(0,e))),l.h!=P(l)){ return l.b.a(" "),V(l); } }return l.i.toString()}switch(l.u.b.length){case 0:case 1:case 2:return l.i.toString();case 3:if(!F(l)){ return l.h=P(l),E(l); }l.A=!0;default:return l.A?(U(l)&&(l.A=!1),l.b.toString()+l.a.toString()):0<l.f.length?(u=K(l,n),e=$(l),0<e.length?e:(j(l,l.a.toString()),G(l)?T(l):l.l?R(l,u):l.i.toString())):E(l)}}function V(l){return l.l=!0,l.A=!1,l.f=[],l.s=0,t(l.m),l.w="",E(l)}function $(l){for(var n=l.a.toString(),u=l.f.length,t=0;t<u;++t){var e=l.f[t],r=h(e,1);if(new RegExp("^(?:"+r+")$").test(n)){ return l.B=sl.test(c(e,4)),n=n.replace(new RegExp(r,"g"),c(e,2)),R(l,n) }}return ""}function R(l,n){var u=l.b.b.length;return l.B&&0<u&&" "!=l.b.toString().charAt(u-1)?l.b+" "+n:l.b+n}function E(l){var n=l.a.toString();if(3<=n.length){for(var u=l.o&&0==l.h.length&&0<g(l.g,20)?p(l.g,20)||[]:p(l.g,19)||[],t=u.length,e=0;e<t;++e){var r=u[e];0<l.h.length&&B(h(r,4))&&!c(r,6)&&null==r.a[5]||(0!=l.h.length||l.o||B(h(r,4))||c(r,6))&&ol.test(h(r,2))&&l.f.push(r);}return j(l,n),n=$(l),0<n.length?n:G(l)?T(l):l.i.toString()}return R(l,n)}function T(l){var n=l.a.toString(),u=n.length;if(0<u){for(var t="",e=0;e<u;e++){ t=K(l,n.charAt(e)); }return l.l?R(l,t):l.i.toString()}return l.b.toString()}function P(l){var n,u=l.a.toString(),e=0;return 1!=c(l.g,10)?n=!1:(n=l.a.toString(),n="1"==n.charAt(0)&&"0"!=n.charAt(1)&&"1"!=n.charAt(1)),n?(e=1,l.b.a("1").a(" "),l.o=!0):null!=l.g.a[15]&&(n=new RegExp("^(?:"+c(l.g,15)+")"),n=u.match(n),null!=n&&null!=n[0]&&0<n[0].length&&(l.o=!0,e=n[0].length,l.b.a(u.substring(0,e)))),t(l.a),l.a.a(u.substring(e)),u.substring(0,e)}function F(l){var n=l.u.toString(),u=new RegExp("^(?:\\+|"+c(l.g,11)+")"),u=n.match(u);return null!=u&&null!=u[0]&&0<u[0].length&&(l.o=!0,u=u[0].length,t(l.a),l.a.a(n.substring(u)),t(l.b),l.b.a(n.substring(0,u)),"+"!=n.charAt(0)&&l.b.a(" "),!0)}function U(l){if(0==l.a.b.length){ return !1; }var n,e=new u;l:{if(n=l.a.toString(),0!=n.length&&"0"!=n.charAt(0)){ for(var r,i=n.length,a=1;3>=a&&a<=i;++a){ if(r=parseInt(n.substring(0,a),10),r in ll){e.a(n.substring(a)),n=r;break l} } }n=0;}return 0!=n&&(t(l.a),l.a.a(e.toString()),e=M(n),"001"==e?l.g=C(l.G,""+n):e!=l.D&&(l.g=D(l,e)),l.b.a(""+n).a(" "),l.h="",!0)}function K(l,n){var u=l.m.toString();if(0<=u.substring(l.s).search(l.H)){var e=u.search(l.H),u=u.replace(l.H,n);return t(l.m),l.m.a(u),l.s=e,u.substring(0,l.s+1)}return 1==l.f.length&&(l.l=!1),l.w="",l.i.toString()}var Y=this;u.prototype.b="",u.prototype.set=function(l){this.b=""+l;},u.prototype.a=function(l,n,u){
 var arguments$1 = arguments;
 if(this.b+=String(l),null!=n){ for(var t=1;t<arguments.length;t++){ this.b+=arguments$1[t]; } }return this},u.prototype.toString=function(){return this.b};var J=1,L=2,O=3,H=4,q=6,X=16,k=18;s.prototype.set=function(l,n){m(this,l.b,n);},s.prototype.clone=function(){var l=new this.constructor;return l!=this&&(l.a={},l.b&&(l.b={}),f(l,this)),l},n(y,s);var Z=null;n(v,s);var z=null;n(S,s);var Q=null;y.prototype.j=function(){var l=Z;return l||(Z=l=b(y,{0:{name:"NumberFormat",I:"i18n.phonenumbers.NumberFormat"},1:{name:"pattern",required:!0,c:9,type:String},2:{name:"format",required:!0,c:9,type:String},3:{name:"leading_digits_pattern",v:!0,c:9,type:String},4:{name:"national_prefix_formatting_rule",c:9,type:String},6:{name:"national_prefix_optional_when_formatting",c:8,defaultValue:!1,type:Boolean},5:{name:"domestic_carrier_code_formatting_rule",c:9,type:String}})),l},y.j=y.prototype.j,v.prototype.j=function(){var l=z;return l||(z=l=b(v,{0:{name:"PhoneNumberDesc",I:"i18n.phonenumbers.PhoneNumberDesc"},2:{name:"national_number_pattern",c:9,type:String},9:{name:"possible_length",v:!0,c:5,type:Number},10:{name:"possible_length_local_only",v:!0,c:5,type:Number},6:{name:"example_number",c:9,type:String}})),l},v.j=v.prototype.j,S.prototype.j=function(){var l=Q;return l||(Q=l=b(S,{0:{name:"PhoneMetadata",I:"i18n.phonenumbers.PhoneMetadata"},1:{name:"general_desc",c:11,type:v},2:{name:"fixed_line",c:11,type:v},3:{name:"mobile",c:11,type:v},4:{name:"toll_free",c:11,type:v},5:{name:"premium_rate",c:11,type:v},6:{name:"shared_cost",c:11,type:v},7:{name:"personal_number",c:11,type:v},8:{name:"voip",c:11,type:v},21:{name:"pager",c:11,type:v},25:{name:"uan",c:11,type:v},27:{name:"emergency",c:11,type:v},28:{name:"voicemail",c:11,type:v},29:{name:"short_code",c:11,type:v},30:{name:"standard_rate",c:11,type:v},31:{name:"carrier_specific",c:11,type:v},33:{name:"sms_services",c:11,type:v},24:{name:"no_international_dialling",c:11,type:v},9:{name:"id",required:!0,c:9,type:String},10:{name:"country_code",c:5,type:Number},11:{name:"international_prefix",c:9,type:String},17:{name:"preferred_international_prefix",c:9,type:String},12:{name:"national_prefix",c:9,type:String},13:{name:"preferred_extn_prefix",c:9,type:String},15:{name:"national_prefix_for_parsing",c:9,type:String},16:{name:"national_prefix_transform_rule",c:9,type:String},18:{name:"same_mobile_and_fixed_line_pattern",c:8,defaultValue:!1,type:Boolean},19:{name:"number_format",v:!0,c:11,type:y},20:{name:"intl_number_format",v:!0,c:11,type:y},22:{name:"main_country_for_code",c:8,defaultValue:!1,type:Boolean},23:{name:"leading_digits",c:9,type:String},26:{name:"leading_zero_possible",c:8,defaultValue:!1,type:Boolean}})),l},S.j=S.prototype.j,_.prototype.a=function(l){throw new l.b,Error("Unimplemented")},_.prototype.b=function(l,n){if(11==l.a||10==l.a){ return n instanceof s?n:this.a(l.i.prototype.j(),n); }if(14==l.a){if("string"==typeof n&&W.test(n)){var u=Number(n);if(0<u){ return u }}return n}if(!l.h){ return n; }if(u=l.i,u===String){if("number"==typeof n){ return String(n) }}else if(u===Number&&"string"==typeof n&&("Infinity"===n||"-Infinity"===n||"NaN"===n||W.test(n))){ return Number(n); }return n};var W=/^-?[0-9]+$/;n(w,_),w.prototype.a=function(l,n){var u=new l.b;return u.g=this,u.a=n,u.b={},u},n(A,w),A.prototype.b=function(l,n){return 8==l.a?!!n:_.prototype.b.apply(this,arguments)},A.prototype.a=function(l,n){return A.M.a.call(this,l,n)};/*
 
@@ -2298,244 +2297,214 @@ var formSerialize = serialize;
  * @class
  */
 
-var ShareForm =
-/*#__PURE__*/
-function () {
+var ShareForm = function ShareForm(element) {
+  var this$1 = this;
+
+  this.element = element;
   /**
-   * Class Constructor
-   * @param   {Object}  el  The DOM Share Form Element
-   * @return  {Object}      The instantiated class
+   * Setting class variables to our constants
    */
-  function ShareForm(element) {
-    var _this = this;
 
-    _classCallCheck(this, ShareForm);
+  this.selector = ShareForm.selector;
+  this.selectors = ShareForm.selectors;
+  this.classes = ShareForm.classes;
+  this.strings = ShareForm.strings;
+  this.patterns = ShareForm.patterns;
+  this.sent = ShareForm.sent;
+  /**
+   * Set up masking for phone numbers (if this is a texting module)
+   */
 
-    this.element = element;
-    /**
-     * Setting class variables to our constants
-     */
+  this.phone = this.element.querySelector(this.selectors.PHONE);
 
-    this.selector = ShareForm.selector;
-    this.selectors = ShareForm.selectors;
-    this.classes = ShareForm.classes;
-    this.strings = ShareForm.strings;
-    this.patterns = ShareForm.patterns;
-    this.sent = ShareForm.sent;
-    /**
-     * Set up masking for phone numbers (if this is a texting module)
-     */
-
-    this.phone = this.element.querySelector(this.selectors.PHONE);
-
-    if (this.phone) {
-      this.cleave = new Cleave_1(this.phone, {
-        phone: true,
-        phoneRegionCode: 'us',
-        delimiter: '-'
-      });
-      this.phone.setAttribute('pattern', this.patterns.PHONE);
-      this.type = 'text';
-    } else {
-      this.type = 'email';
-    }
-    /**
-     * Configure the validation for the form using the form utility
-     */
-
-
-    this.form = new Forms(this.element.querySelector(this.selectors.FORM));
-    this.form.strings = this.strings;
-    this.form.selectors = {
-      'REQUIRED': this.selectors.REQUIRED,
-      'ERROR_MESSAGE_PARENT': this.selectors.FORM
-    };
-    this.form.FORM.addEventListener('submit', function (event) {
-      event.preventDefault();
-      if (_this.form.valid(event) === false) { return false; }
-
-      _this.sanitize().processing().submit(event).then(function (response) {
-        return response.json();
-      }).then(function (response) {
-        _this.response(response);
-      })["catch"](function (data) {
-      });
+  if (this.phone) {
+    this.cleave = new Cleave_1(this.phone, {
+      phone: true,
+      phoneRegionCode: 'us',
+      delimiter: '-'
     });
-    /**
-     * Instatiate the ShareForm's toggle component
-     */
-
-    this.toggle = new Toggle({
-      element: this.element.querySelector(this.selectors.TOGGLE),
-      after: function after() {
-        _this.element.querySelector(_this.selectors.INPUT).focus();
-      }
-    });
-    return this;
+    this.phone.setAttribute('pattern', this.patterns.PHONE);
+    this.type = 'text';
+  } else {
+    this.type = 'email';
   }
   /**
-   * Serialize and clean any data sent to the server
-   * @return  {Object}  The instantiated class
+   * Configure the validation for the form using the form utility
    */
 
 
-  _createClass(ShareForm, [{
-    key: "sanitize",
-    value: function sanitize() {
-      // Serialize the data
-      this._data = formSerialize(this.form.FORM, {
-        hash: true
-      }); // Sanitize the phone number (if there is a phone number)
+  this.form = new Forms(this.element.querySelector(this.selectors.FORM));
+  this.form.strings = this.strings;
+  this.form.selectors = {
+    'REQUIRED': this.selectors.REQUIRED,
+    'ERROR_MESSAGE_PARENT': this.selectors.FORM
+  };
+  this.form.FORM.addEventListener('submit', function (event) {
+    event.preventDefault();
+    if (this$1.form.valid(event) === false) { return false; }
+    this$1.sanitize().processing().submit(event).then(function (response) { return response.json(); }).then(function (response) {
+      this$1.response(response);
+    }).catch(function (data) {
+    });
+  });
+  /**
+   * Instatiate the ShareForm's toggle component
+   */
 
-      if (this.phone && this._data.to) { this._data.to = this._data.to.replace(/[-]/g, ''); }
-      return this;
+  this.toggle = new Toggle({
+    element: this.element.querySelector(this.selectors.TOGGLE),
+    after: function () {
+      this$1.element.querySelector(this$1.selectors.INPUT).focus();
     }
-    /**
-     * Switch the form to the processing state
-     * @return  {Object}  The instantiated class
-     */
+  });
+  return this;
+};
+/**
+ * Serialize and clean any data sent to the server
+ * @return{Object}The instantiated class
+ */
 
-  }, {
-    key: "processing",
-    value: function processing() {
-      // Disable the form
-      var inputs = this.form.FORM.querySelectorAll(this.selectors.INPUTS);
 
-      for (var i = 0; i < inputs.length; i++) {
-        inputs[i].setAttribute('disabled', true);
-      }
+ShareForm.prototype.sanitize = function sanitize () {
+  // Serialize the data
+  this._data = formSerialize(this.form.FORM, {
+    hash: true
+  }); // Sanitize the phone number (if there is a phone number)
 
-      var button = this.form.FORM.querySelector(this.selectors.SUBMIT);
-      button.setAttribute('disabled', true); // Show processing state
+  if (this.phone && this._data.to) { this._data.to = this._data.to.replace(/[-]/g, ''); }
+  return this;
+};
+/**
+ * Switch the form to the processing state
+ * @return{Object}The instantiated class
+ */
 
-      this.form.FORM.classList.add(this.classes.PROCESSING);
-      return this;
-    }
-    /**
-     * POSTs the serialized form data using the Fetch Method
-     * @return {Promise} Fetch promise
-     */
 
-  }, {
-    key: "submit",
-    value: function submit() {
-      var _this2 = this;
+ShareForm.prototype.processing = function processing () {
+  // Disable the form
+  var inputs = this.form.FORM.querySelectorAll(this.selectors.INPUTS);
 
-      // To send the data with the application/x-www-form-urlencoded header
-      // we need to use URLSearchParams(); instead of FormData(); which uses
-      // multipart/form-data
-      var formData = new URLSearchParams();
-      Object.keys(this._data).map(function (k) {
-        formData.append(k, _this2._data[k]);
-      });
-      var html = document.querySelector('html');
+  for (var i = 0; i < inputs.length; i++) { inputs[i].setAttribute('disabled', true); }
 
-      if (html.hasAttribute('lang')) {
-        formData.append('lang', html.getAttribute('lang'));
-      }
+  var button = this.form.FORM.querySelector(this.selectors.SUBMIT);
+  button.setAttribute('disabled', true); // Show processing state
 
-      return fetch(this.form.FORM.getAttribute('action'), {
-        method: this.form.FORM.getAttribute('method'),
-        body: formData
-      });
-    }
-    /**
-     * The response handler
-     * @param   {Object}  data  Data from the request
-     * @return  {Object}        The instantiated class
-     */
+  this.form.FORM.classList.add(this.classes.PROCESSING);
+  return this;
+};
+/**
+ * POSTs the serialized form data using the Fetch Method
+ * @return {Promise} Fetch promise
+ */
 
-  }, {
-    key: "response",
-    value: function response(data) {
-      if (data.success) {
-        this.success();
-      } else {
-        if (data.error === 21211) {
-          this.feedback('SERVER_TEL_INVALID').enable();
-        } else {
-          this.feedback('SERVER').enable();
-        }
-      }
-      return this;
-    }
-    /**
-     * Queues the success message and adds an event listener to reset the form
-     * to it's default state.
-     * @return  {Object}  The instantiated class
-     */
 
-  }, {
-    key: "success",
-    value: function success() {
-      var _this3 = this;
+ShareForm.prototype.submit = function submit () {
+    var this$1 = this;
 
-      this.form.FORM.classList.replace(this.classes.PROCESSING, this.classes.SUCCESS);
-      this.enable();
-      this.form.FORM.addEventListener('input', function () {
-        _this3.form.FORM.classList.remove(_this3.classes.SUCCESS);
-      }); // Successful messages hook (fn provided to the class upon instatiation)
+  // To send the data with the application/x-www-form-urlencoded header
+  // we need to use URLSearchParams(); instead of FormData(); which uses
+  // multipart/form-data
+  var formData = new URLSearchParams();
+  Object.keys(this._data).map(function (k) {
+    formData.append(k, this$1._data[k]);
+  });
+  var html = document.querySelector('html');
 
-      if (this.sent) { this.sent(this); }
-      return this;
-    }
-    /**
-     * Queues the server error message
-     * @param   {Object}  response  The error response from the request
-     * @return  {Object}            The instantiated class
-     */
+  if (html.hasAttribute('lang')) {
+    formData.append('lang', html.getAttribute('lang'));
+  }
 
-  }, {
-    key: "error",
-    value: function error(response) {
+  return fetch(this.form.FORM.getAttribute('action'), {
+    method: this.form.FORM.getAttribute('method'),
+    body: formData
+  });
+};
+/**
+ * The response handler
+ * @param {Object}dataData from the request
+ * @return{Object}      The instantiated class
+ */
+
+
+ShareForm.prototype.response = function response (data) {
+  if (data.success) {
+    this.success();
+  } else {
+    if (data.error === 21211) {
+      this.feedback('SERVER_TEL_INVALID').enable();
+    } else {
       this.feedback('SERVER').enable();
-      return this;
     }
-    /**
-     * Adds a div containing the feedback message to the user and toggles the
-     * class of the form
-     * @param   {string}  KEY  The key of message paired in messages and classes
-     * @return  {Object}       The instantiated class
-     */
+  }
+  return this;
+};
+/**
+ * Queues the success message and adds an event listener to reset the form
+ * to it's default state.
+ * @return{Object}The instantiated class
+ */
 
-  }, {
-    key: "feedback",
-    value: function feedback(KEY) {
-      // Create the new error message
-      var message = document.createElement('div'); // Set the feedback class and insert text
 
-      message.classList.add("".concat(this.classes[KEY]).concat(this.classes.MESSAGE));
-      message.innerHTML = this.strings[KEY]; // Add message to the form and add feedback class
+ShareForm.prototype.success = function success () {
+    var this$1 = this;
 
-      this.form.FORM.insertBefore(message, this.form.FORM.childNodes[0]);
-      this.form.FORM.classList.add(this.classes[KEY]);
-      return this;
-    }
-    /**
-     * Enables the ShareForm (after submitting a request)
-     * @return  {Object}  The instantiated class
-     */
+  this.form.FORM.classList.replace(this.classes.PROCESSING, this.classes.SUCCESS);
+  this.enable();
+  this.form.FORM.addEventListener('input', function () {
+    this$1.form.FORM.classList.remove(this$1.classes.SUCCESS);
+  }); // Successful messages hook (fn provided to the class upon instatiation)
 
-  }, {
-    key: "enable",
-    value: function enable() {
-      // Enable the form
-      var inputs = this.form.FORM.querySelectorAll(this.selectors.INPUTS);
+  if (this.sent) { this.sent(this); }
+  return this;
+};
+/**
+ * Queues the server error message
+ * @param {Object}responseThe error response from the request
+ * @return{Object}          The instantiated class
+ */
 
-      for (var i = 0; i < inputs.length; i++) {
-        inputs[i].removeAttribute('disabled');
-      }
 
-      var button = this.form.FORM.querySelector(this.selectors.SUBMIT);
-      button.removeAttribute('disabled'); // Remove the processing class
+ShareForm.prototype.error = function error (response) {
+  this.feedback('SERVER').enable();
+  return this;
+};
+/**
+ * Adds a div containing the feedback message to the user and toggles the
+ * class of the form
+ * @param {string}KEYThe key of message paired in messages and classes
+ * @return{Object}     The instantiated class
+ */
 
-      this.form.FORM.classList.remove(this.classes.PROCESSING);
-      return this;
-    }
-  }]);
 
-  return ShareForm;
-}();
+ShareForm.prototype.feedback = function feedback (KEY) {
+  // Create the new error message
+  var message = document.createElement('div'); // Set the feedback class and insert text
+
+  message.classList.add(("" + (this.classes[KEY]) + (this.classes.MESSAGE)));
+  message.innerHTML = this.strings[KEY]; // Add message to the form and add feedback class
+
+  this.form.FORM.insertBefore(message, this.form.FORM.childNodes[0]);
+  this.form.FORM.classList.add(this.classes[KEY]);
+  return this;
+};
+/**
+ * Enables the ShareForm (after submitting a request)
+ * @return{Object}The instantiated class
+ */
+
+
+ShareForm.prototype.enable = function enable () {
+  // Enable the form
+  var inputs = this.form.FORM.querySelectorAll(this.selectors.INPUTS);
+
+  for (var i = 0; i < inputs.length; i++) { inputs[i].removeAttribute('disabled'); }
+
+  var button = this.form.FORM.querySelector(this.selectors.SUBMIT);
+  button.removeAttribute('disabled'); // Remove the processing class
+
+  this.form.FORM.classList.remove(this.classes.PROCESSING);
+  return this;
+};
 /** The main component selector */
 
 
