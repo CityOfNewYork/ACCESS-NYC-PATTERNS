@@ -1,30 +1,8 @@
 var VueComponents = (function () {
   'use strict';
 
-  function _classCallCheck(instance, Constructor) {
-    if (!(instance instanceof Constructor)) {
-      throw new TypeError("Cannot call a class as a function");
-    }
-  }
-
-  function _defineProperties(target, props) {
-    for (var i = 0; i < props.length; i++) {
-      var descriptor = props[i];
-      descriptor.enumerable = descriptor.enumerable || false;
-      descriptor.configurable = true;
-      if ("value" in descriptor) descriptor.writable = true;
-      Object.defineProperty(target, descriptor.key, descriptor);
-    }
-  }
-
-  function _createClass(Constructor, protoProps, staticProps) {
-    if (protoProps) _defineProperties(Constructor.prototype, protoProps);
-    if (staticProps) _defineProperties(Constructor, staticProps);
-    return Constructor;
-  }
-
   /*!
-   * Vue.js v2.6.10
+   * Vue.js v2.6.11
    * (c) 2014-2019 Evan You
    * Released under the MIT License.
    */
@@ -1988,7 +1966,7 @@ var VueComponents = (function () {
     isUsingMicroTask = true;
   } else if (typeof setImmediate !== 'undefined' && isNative(setImmediate)) {
     // Fallback to setImmediate.
-    // Techinically it leverages the (macro) task queue,
+    // Technically it leverages the (macro) task queue,
     // but it is still a better choice than setTimeout.
     timerFunc = function () {
       setImmediate(flushCallbacks);
@@ -2077,7 +2055,7 @@ var VueComponents = (function () {
       warn(
         "Property \"" + key + "\" must be accessed with \"$data." + key + "\" because " +
         'properties starting with "$" or "_" are not proxied in the Vue instance to ' +
-        'prevent conflicts with Vue internals' +
+        'prevent conflicts with Vue internals. ' +
         'See: https://vuejs.org/v2/api/#data',
         target
       );
@@ -2937,7 +2915,7 @@ var VueComponents = (function () {
       if (typeof key === 'string' && key) {
         baseObj[values[i]] = values[i + 1];
       } else if (key !== '' && key !== null) {
-        // null is a speical value for explicitly removing a binding
+        // null is a special value for explicitly removing a binding
         warn(
           ("Invalid value for dynamic directive argument (expected string or null): " + key),
           this
@@ -3432,6 +3410,12 @@ var VueComponents = (function () {
       ns = (context.$vnode && context.$vnode.ns) || config.getTagNamespace(tag);
       if (config.isReservedTag(tag)) {
         // platform built-in elements
+        if (isDef(data) && isDef(data.nativeOn)) {
+          warn(
+            ("The .native modifier for v-on is only valid on components but it was used on <" + tag + ">."),
+            context
+          );
+        }
         vnode = new VNode(
           config.parsePlatformTagName(tag), data, children,
           undefined, undefined, context
@@ -3557,7 +3541,7 @@ var VueComponents = (function () {
       // render self
       var vnode;
       try {
-        // There's no need to maintain a stack becaues all render fns are called
+        // There's no need to maintain a stack because all render fns are called
         // separately from one another. Nested component's render fns are called
         // when parent component is patched.
         currentRenderingInstance = vm;
@@ -5456,7 +5440,7 @@ var VueComponents = (function () {
     value: FunctionalRenderContext
   });
 
-  Vue.version = '2.6.10';
+  Vue.version = '2.6.11';
 
   /*  */
 
@@ -6129,7 +6113,7 @@ var VueComponents = (function () {
       }
     }
 
-    function removeVnodes (parentElm, vnodes, startIdx, endIdx) {
+    function removeVnodes (vnodes, startIdx, endIdx) {
       for (; startIdx <= endIdx; ++startIdx) {
         var ch = vnodes[startIdx];
         if (isDef(ch)) {
@@ -6240,7 +6224,7 @@ var VueComponents = (function () {
         refElm = isUndef(newCh[newEndIdx + 1]) ? null : newCh[newEndIdx + 1].elm;
         addVnodes(parentElm, refElm, newCh, newStartIdx, newEndIdx, insertedVnodeQueue);
       } else if (newStartIdx > newEndIdx) {
-        removeVnodes(parentElm, oldCh, oldStartIdx, oldEndIdx);
+        removeVnodes(oldCh, oldStartIdx, oldEndIdx);
       }
     }
 
@@ -6332,7 +6316,7 @@ var VueComponents = (function () {
           if (isDef(oldVnode.text)) { nodeOps.setTextContent(elm, ''); }
           addVnodes(elm, null, ch, 0, ch.length - 1, insertedVnodeQueue);
         } else if (isDef(oldCh)) {
-          removeVnodes(elm, oldCh, 0, oldCh.length - 1);
+          removeVnodes(oldCh, 0, oldCh.length - 1);
         } else if (isDef(oldVnode.text)) {
           nodeOps.setTextContent(elm, '');
         }
@@ -6561,7 +6545,7 @@ var VueComponents = (function () {
 
           // destroy old node
           if (isDef(parentElm)) {
-            removeVnodes(parentElm, [oldVnode], 0, 0);
+            removeVnodes([oldVnode], 0, 0);
           } else if (isDef(oldVnode.tag)) {
             invokeDestroyHook(oldVnode);
           }
@@ -9267,7 +9251,7 @@ var VueComponents = (function () {
   var startTagClose = /^\s*(\/?)>/;
   var endTag = new RegExp(("^<\\/" + qnameCapture + "[^>]*>"));
   var doctype = /^<!DOCTYPE [^>]+>/i;
-  // #7298: escape - to avoid being pased as HTML comment when inlined in page
+  // #7298: escape - to avoid being passed as HTML comment when inlined in page
   var comment = /^<!\--/;
   var conditionalComment = /^<!\[/;
 
@@ -9552,7 +9536,7 @@ var VueComponents = (function () {
   /*  */
 
   var onRE = /^@|^v-on:/;
-  var dirRE = /^v-|^@|^:/;
+  var dirRE = /^v-|^@|^:|^#/;
   var forAliasRE = /([\s\S]*?)\s+(?:in|of)\s+([\s\S]*)/;
   var forIteratorRE = /,([^,\}\]]*)(?:,([^,\}\]]*))?$/;
   var stripParensRE = /^\(|\)$/g;
@@ -10176,7 +10160,7 @@ var VueComponents = (function () {
             if (el.parent && !maybeComponent(el.parent)) {
               warn$2(
                 "<template v-slot> can only appear at the root level inside " +
-                "the receiving the component",
+                "the receiving component",
                 el
               );
             }
@@ -10739,7 +10723,7 @@ var VueComponents = (function () {
 
   /*  */
 
-  var fnExpRE = /^([\w$_]+|\([^)]*?\))\s*=>|^function\s*(?:[\w$]+)?\s*\(/;
+  var fnExpRE = /^([\w$_]+|\([^)]*?\))\s*=>|^function(?:\s+[\w$]+)?\s*\(/;
   var fnInvokeRE = /\([^)]*?\);*$/;
   var simplePathRE = /^[A-Za-z_$][\w$]*(?:\.[A-Za-z_$][\w$]*|\['[^']*?']|\["[^"]*?"]|\[\d+]|\[[A-Za-z_$][\w$]*])*$/;
 
@@ -11508,6 +11492,8 @@ var VueComponents = (function () {
             var range = node.rawAttrsMap[name];
             if (name === 'v-for') {
               checkFor(node, ("v-for=\"" + value + "\""), warn, range);
+            } else if (name === 'v-slot' || name[0] === '#') {
+              checkFunctionParameterExpression(value, (name + "=\"" + value + "\""), warn, range);
             } else if (onRE.test(name)) {
               checkEvent(value, (name + "=\"" + value + "\""), warn, range);
             } else {
@@ -11527,9 +11513,9 @@ var VueComponents = (function () {
   }
 
   function checkEvent (exp, text, warn, range) {
-    var stipped = exp.replace(stripStringRE, '');
-    var keywordMatch = stipped.match(unaryOperatorsRE);
-    if (keywordMatch && stipped.charAt(keywordMatch.index - 1) !== '$') {
+    var stripped = exp.replace(stripStringRE, '');
+    var keywordMatch = stripped.match(unaryOperatorsRE);
+    if (keywordMatch && stripped.charAt(keywordMatch.index - 1) !== '$') {
       warn(
         "avoid using JavaScript unary operator as property name: " +
         "\"" + (keywordMatch[0]) + "\" in expression " + (text.trim()),
@@ -11581,6 +11567,19 @@ var VueComponents = (function () {
           range
         );
       }
+    }
+  }
+
+  function checkFunctionParameterExpression (exp, text, warn, range) {
+    try {
+      new Function(exp, '');
+    } catch (e) {
+      warn(
+        "invalid function parameter expression: " + (e.message) + " in\n\n" +
+        "    " + exp + "\n\n" +
+        "  Raw expression: " + (text.trim()) + "\n",
+        range
+      );
     }
   }
 
@@ -11961,27 +11960,14 @@ var VueComponents = (function () {
    * The class for the Vue Demo used to render Vue Components
    */
 
-  var VueDemo =
-  /**
-   * The Vue Demo constructor
-   *
-   * @param   {object}  component  The name and module of the Vue Component to
-   *                               render
-   * @param   {object}  data       The data needed for the component to render
-   * @param   {object}  methods    The methods needed for the component to
-   *                               function
-   * @return  {[type]}             The instance of the Vue app
-   */
-  function VueDemo(component) {
-    var data = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
-    var methods = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : {};
-
-    _classCallCheck(this, VueDemo);
+  var VueDemo = function VueDemo(component, data, methods) {
+    if ( data === void 0 ) data = {};
+    if ( methods === void 0 ) methods = {};
 
     if (!component) { return false; }
     Vue.component(component.name, component.module);
     return new Vue({
-      el: "#app-".concat(component.name),
+      el: ("#app-" + (component.name)),
       methods: methods,
       data: data
     });
@@ -12053,106 +12039,94 @@ var VueComponents = (function () {
       },
       'strings': {
         type: Object,
-        "default": function _default() {
-          return {
-            'LEARN_MORE': 'Learn more',
-            'CTA': 'Apply'
-          };
-        }
+        default: function () { return ({
+          'LEARN_MORE': 'Learn more',
+          'CTA': 'Apply'
+        }); }
       }
     }
   };
 
-  function normalizeComponent(template, style, script, scopeId, isFunctionalTemplate, moduleIdentifier
-  /* server only */
-  , shadowMode, createInjector, createInjectorSSR, createInjectorShadow) {
-    if (typeof shadowMode !== 'boolean') {
-      createInjectorSSR = createInjector;
-      createInjector = shadowMode;
-      shadowMode = false;
-    } // Vue.extend constructor export interop.
-
-
-    var options = typeof script === 'function' ? script.options : script; // render functions
-
-    if (template && template.render) {
-      options.render = template.render;
-      options.staticRenderFns = template.staticRenderFns;
-      options._compiled = true; // functional template
-
-      if (isFunctionalTemplate) {
-        options.functional = true;
+  function normalizeComponent(template, style, script, scopeId, isFunctionalTemplate, moduleIdentifier /* server only */, shadowMode, createInjector, createInjectorSSR, createInjectorShadow) {
+      if (typeof shadowMode !== 'boolean') {
+          createInjectorSSR = createInjector;
+          createInjector = shadowMode;
+          shadowMode = false;
       }
-    } // scopedId
-
-
-    if (scopeId) {
-      options._scopeId = scopeId;
-    }
-
-    var hook;
-
-    if (moduleIdentifier) {
-      // server build
-      hook = function hook(context) {
-        // 2.3 injection
-        context = context || // cached call
-        this.$vnode && this.$vnode.ssrContext || // stateful
-        this.parent && this.parent.$vnode && this.parent.$vnode.ssrContext; // functional
-        // 2.2 with runInNewContext: true
-
-        if (!context && typeof __VUE_SSR_CONTEXT__ !== 'undefined') {
-          context = __VUE_SSR_CONTEXT__;
-        } // inject component styles
-
-
-        if (style) {
-          style.call(this, createInjectorSSR(context));
-        } // register component module identifier for async chunk inference
-
-
-        if (context && context._registeredComponents) {
-          context._registeredComponents.add(moduleIdentifier);
-        }
-      }; // used by ssr in case component is cached and beforeCreate
-      // never gets called
-
-
-      options._ssrRegister = hook;
-    } else if (style) {
-      hook = shadowMode ? function () {
-        style.call(this, createInjectorShadow(this.$root.$options.shadowRoot));
-      } : function (context) {
-        style.call(this, createInjector(context));
-      };
-    }
-
-    if (hook) {
-      if (options.functional) {
-        // register for functional component in vue file
-        var originalRender = options.render;
-
-        options.render = function renderWithStyleInjection(h, context) {
-          hook.call(context);
-          return originalRender(h, context);
-        };
-      } else {
-        // inject component registration as beforeCreate hook
-        var existing = options.beforeCreate;
-        options.beforeCreate = existing ? [].concat(existing, hook) : [hook];
+      // Vue.extend constructor export interop.
+      var options = typeof script === 'function' ? script.options : script;
+      // render functions
+      if (template && template.render) {
+          options.render = template.render;
+          options.staticRenderFns = template.staticRenderFns;
+          options._compiled = true;
+          // functional template
+          if (isFunctionalTemplate) {
+              options.functional = true;
+          }
       }
-    }
-
-    return script;
+      // scopedId
+      if (scopeId) {
+          options._scopeId = scopeId;
+      }
+      var hook;
+      if (moduleIdentifier) {
+          // server build
+          hook = function (context) {
+              // 2.3 injection
+              context =
+                  context || // cached call
+                      (this.$vnode && this.$vnode.ssrContext) || // stateful
+                      (this.parent && this.parent.$vnode && this.parent.$vnode.ssrContext); // functional
+              // 2.2 with runInNewContext: true
+              if (!context && typeof __VUE_SSR_CONTEXT__ !== 'undefined') {
+                  context = __VUE_SSR_CONTEXT__;
+              }
+              // inject component styles
+              if (style) {
+                  style.call(this, createInjectorSSR(context));
+              }
+              // register component module identifier for async chunk inference
+              if (context && context._registeredComponents) {
+                  context._registeredComponents.add(moduleIdentifier);
+              }
+          };
+          // used by ssr in case component is cached and beforeCreate
+          // never gets called
+          options._ssrRegister = hook;
+      }
+      else if (style) {
+          hook = shadowMode
+              ? function (context) {
+                  style.call(this, createInjectorShadow(context, this.$root.$options.shadowRoot));
+              }
+              : function (context) {
+                  style.call(this, createInjector(context));
+              };
+      }
+      if (hook) {
+          if (options.functional) {
+              // register for functional component in vue file
+              var originalRender = options.render;
+              options.render = function renderWithStyleInjection(h, context) {
+                  hook.call(context);
+                  return originalRender(h, context);
+              };
+          }
+          else {
+              // inject component registration as beforeCreate hook
+              var existing = options.beforeCreate;
+              options.beforeCreate = existing ? [].concat(existing, hook) : [hook];
+          }
+      }
+      return script;
   }
-
-  var normalizeComponent_1 = normalizeComponent;
 
   /* script */
   var __vue_script__ = script;
 
   /* template */
-  var __vue_render__ = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('article',{staticClass:"c-card"},[(_vm.category)?_c('div',{staticClass:"c-card__icon"},[_c('svg',{class:'icon icon-' + _vm.category.slug,attrs:{"role":"img"}},[_c('title',{attrs:{"id":'#icon-card-' + _vm.category.slug + '_title'},domProps:{"innerHTML":_vm._s(_vm.category.name)}}),_vm._v(" "),_c('use',{attrs:{"xlink:href":'#icon-card-' + _vm.category.slug,"xmlns:xlink":"http://www.w3.org/1999/xlink"}})])]):_vm._e(),_vm._v(" "),_c('div',{staticClass:"c-card__body"},[(_vm.title)?_c('a',{staticClass:"text-color-blue-dark",attrs:{"href":_vm.link,"target":_vm.blank ? '_blank' : false}},[_c('h3',{staticClass:"c-card__title text-color-blue-dark"},[_vm._v(_vm._s(_vm.title))])]):_vm._e(),_vm._v(" "),(_vm.subtitle)?_c('p',{staticClass:"c-card__subtitle type-small",domProps:{"innerHTML":_vm._s(_vm.subtitle)}},[_vm._v("\n      "+_vm._s(_vm.subtitle)+"\n    ")]):_vm._e(),_vm._v(" "),_c('div',{staticClass:"c-card__summary"},[(_vm.summary)?_c('p',{domProps:{"innerHTML":_vm._s(_vm.summary)}},[_vm._v(_vm._s(_vm.summary))]):_vm._e(),_vm._v(" "),(_vm.link)?_c('p',{staticClass:"hide-for-print"},[_c('a',{attrs:{"href":_vm.link,"target":_vm.blank ? '_blank' : false}},[_vm._v("\n          "+_vm._s(_vm.strings.LEARN_MORE)+"\n          "),(_vm.subtitle)?_c('span',{staticClass:"sr-only"},[_vm._v(": "+_vm._s(_vm.subtitle)+"}")]):_vm._e()])]):_vm._e(),_vm._v(" "),(_vm.cta)?_c('p',{staticClass:"hide-for-print"},[_c('a',{staticClass:"btn btn-secondary btn-next",attrs:{"href":_vm.cta,"target":_vm.blank ? '_blank' : false}},[_vm._v(_vm._s(_vm.strings.CTA))])]):_vm._e()])])])};
+  var __vue_render__ = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('article',{staticClass:"c-card"},[(_vm.category)?_c('div',{staticClass:"c-card__icon"},[_c('svg',{class:'icon icon-' + _vm.category.slug,attrs:{"role":"img"}},[_c('title',{attrs:{"id":'#icon-card-' + _vm.category.slug + '_title'},domProps:{"innerHTML":_vm._s(_vm.category.name)}}),_vm._v(" "),_c('use',{attrs:{"xlink:href":'#icon-card-' + _vm.category.slug,"xmlns:xlink":"http://www.w3.org/1999/xlink"}})])]):_vm._e(),_vm._v(" "),_c('div',{staticClass:"c-card__body"},[(_vm.title)?_c('a',{staticClass:"text-blue-dark",attrs:{"href":_vm.link,"target":_vm.blank ? '_blank' : false}},[_c('h3',{staticClass:"c-card__title text-blue-dark"},[_vm._v(_vm._s(_vm.title))])]):_vm._e(),_vm._v(" "),(_vm.subtitle)?_c('p',{staticClass:"c-card__subtitle type-small text-grey-mid",domProps:{"innerHTML":_vm._s(_vm.subtitle)}},[_vm._v("\n      "+_vm._s(_vm.subtitle)+"\n    ")]):_vm._e(),_vm._v(" "),_c('div',{staticClass:"c-card__summary"},[(_vm.summary)?_c('p',{domProps:{"innerHTML":_vm._s(_vm.summary)}},[_vm._v(_vm._s(_vm.summary))]):_vm._e(),_vm._v(" "),(_vm.link)?_c('p',{staticClass:"hide-for-print"},[_c('a',{attrs:{"href":_vm.link,"target":_vm.blank ? '_blank' : false}},[_vm._v("\n          "+_vm._s(_vm.strings.LEARN_MORE)+"\n          "),(_vm.subtitle)?_c('span',{staticClass:"sr-only"},[_vm._v(": "+_vm._s(_vm.subtitle)+"}")]):_vm._e()])]):_vm._e(),_vm._v(" "),(_vm.cta)?_c('p',{staticClass:"hide-for-print"},[_c('a',{staticClass:"btn btn-secondary btn-next",attrs:{"href":_vm.cta,"target":_vm.blank ? '_blank' : false}},[_vm._v(_vm._s(_vm.strings.CTA))])]):_vm._e()])])])};
   var __vue_staticRenderFns__ = [];
 
     /* style */
@@ -12167,15 +12141,19 @@ var VueComponents = (function () {
     
     /* style inject SSR */
     
+    /* style inject shadow dom */
+    
 
     
-    var CardVue = normalizeComponent_1(
+    var __vue_component__ = normalizeComponent(
       { render: __vue_render__, staticRenderFns: __vue_staticRenderFns__ },
       __vue_inject_styles__,
       __vue_script__,
       __vue_scope_id__,
       __vue_is_functional_template__,
       __vue_module_identifier__,
+      false,
+      undefined,
       undefined,
       undefined
     );
@@ -12260,48 +12238,46 @@ var VueComponents = (function () {
       },
       'nav': {
         type: Boolean,
-        "default": false
+        default: false
       },
       'strings': {
         type: Object,
-        "default": function _default() {
-          return {
-            'ALL': 'All'
-          };
-        }
+        default: function () { return ({
+          'ALL': 'All'
+        }); }
       }
     },
     computed: {
-      classActive: function classActive() {
+      classActive: function () {
         return {
           'active': this.terms.active,
           'inactive': !this.terms.active
         };
       },
-      ariaControls: function ariaControls() {
+      ariaControls: function () {
         return 'aria-c-' + this.terms.slug;
       },
-      ariaLabelledBy: function ariaLabelledBy() {
+      ariaLabelledBy: function () {
         return 'aria-lb-' + this.terms.slug;
       },
-      current: function current() {
+      current: function () {
         return this.terms.current && this.terms.current != '' ? this.terms.current : this.terms.name;
       }
     },
     methods: {
-      ariaActive: function ariaActive(active) {
+      ariaActive: function (active) {
         return active ? 'true' : 'false';
       },
-      ariaPressed: function ariaPressed(name) {
+      ariaPressed: function (name) {
         return this.terms.current === name ? 'true' : 'false';
       },
-      fetch: function fetch(event) {
+      fetch: function (event) {
         if (this.nav) { event.event.preventDefault(); }
         this.$set(this.terms, 'current', event.data.name);
         this.$emit('fetch', event);
         return this;
       },
-      reset: function reset(event) {
+      reset: function (event) {
         this.$set(this.terms, 'current', '');
         this.$emit('reset', {
           event: event,
@@ -12311,7 +12287,7 @@ var VueComponents = (function () {
         });
         return this;
       },
-      toggle: function toggle(event) {
+      toggle: function (event) {
         event.preventDefault();
         this.$set(this.terms, 'active', !this.terms.active);
         return this;
@@ -12338,15 +12314,19 @@ var VueComponents = (function () {
     
     /* style inject SSR */
     
+    /* style inject shadow dom */
+    
 
     
-    var FilterVue = normalizeComponent_1(
+    var __vue_component__$1 = normalizeComponent(
       { render: __vue_render__$1, staticRenderFns: __vue_staticRenderFns__$1 },
       __vue_inject_styles__$1,
       __vue_script__$1,
       __vue_scope_id__$1,
       __vue_is_functional_template__$1,
       __vue_module_identifier__$1,
+      false,
+      undefined,
       undefined,
       undefined
     );
@@ -12407,40 +12387,38 @@ var VueComponents = (function () {
       },
       'strings': {
         type: Object,
-        "default": function _default() {
-          return {
-            'ALL': 'All',
-            'TOGGLE_ALL': 'Toggle All'
-          };
-        }
+        default: function () { return ({
+          'ALL': 'All',
+          'TOGGLE_ALL': 'Toggle All'
+        }); }
       }
     },
     methods: {
-      classActive: function classActive(term) {
+      classActive: function (term) {
         return {
           'active': term.active,
           'inactive': !term.active
         };
       },
-      ariaActive: function ariaActive(active) {
+      ariaActive: function (active) {
         return active ? 'true' : 'false';
       },
-      ariaLabelledBy: function ariaLabelledBy(slug) {
+      ariaLabelledBy: function (slug) {
         return 'aria-l-' + slug;
       },
-      ariaControls: function ariaControls(slug) {
+      ariaControls: function (slug) {
         return 'aria-c-' + slug;
       },
-      fetch: function fetch(event) {
+      fetch: function (event) {
         this.$set(event.data, 'checked', !event.data.checked);
         this.$emit('fetch', event);
         return this;
       },
-      reset: function reset(event) {
+      reset: function (event) {
         this.$emit('reset', event);
         return this;
       },
-      toggle: function toggle(event, terms) {
+      toggle: function (event, terms) {
         event.preventDefault();
         this.$set(terms, 'active', !terms.active);
         return this;
@@ -12467,15 +12445,19 @@ var VueComponents = (function () {
     
     /* style inject SSR */
     
+    /* style inject shadow dom */
+    
 
     
-    var FilterMultiVue = normalizeComponent_1(
+    var __vue_component__$2 = normalizeComponent(
       { render: __vue_render__$2, staticRenderFns: __vue_staticRenderFns__$2 },
       __vue_inject_styles__$2,
       __vue_script__$2,
       __vue_scope_id__$2,
       __vue_is_functional_template__$2,
       __vue_module_identifier__$2,
+      false,
+      undefined,
       undefined,
       undefined
     );
@@ -12658,82 +12640,66 @@ var VueComponents = (function () {
    * @class
    */
 
-  var VueComponents =
-  /*#__PURE__*/
-  function () {
-    function VueComponents() {
-      _classCallCheck(this, VueComponents);
-    }
+  var VueComponents = function VueComponents () {};
 
-    _createClass(VueComponents, [{
-      key: "card",
+  VueComponents.prototype.card = function card (component) {
+      if ( component === void 0 ) component = 'c-card';
 
-      /**
-       * An API for the Vue Card Demo
-       * @param  {string} component The name of the Component to display
-       * @return {object} instance of the Vue Demo
-       */
-      value: function card() {
-        var component = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 'c-card';
-        var modules = {
-          'c-card': CardVue
-        };
-        return new VueDemo({
-          'name': component,
-          'module': modules[component]
-        }, {
-          card: CardData
-        });
-      }
-      /**
-       * An API for the Vue Filter Demo
-       * @param  {string} component The name of the Component to display
-       * @return {object}           instance of the Vue Demo
-       */
-
+    var modules = {
+      'c-card': __vue_component__
+    };
+    return new VueDemo({
+      'name': component,
+      'module': modules[component]
     }, {
-      key: "filter",
-      value: function filter() {
-        var component = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 'c-filter';
-        var modules = {
-          'c-filter': FilterVue,
-          'c-filter-multi': FilterMultiVue
-        };
-        return new VueDemo({
-          'name': component,
-          'module': modules[component]
-        }, {
-          termsFilter: Object.assign({}, FilterData[0]),
-          termsFilterMulti: FilterData,
-          strings: {
-            'ALL': 'All',
-            'EXPAND_CATEGORY': 'Expand Category',
-            'COLLAPSE_CATEGORY': 'Collapse Category',
-            'TOGGLE_ALL': 'Toggle All'
-          }
-        }, {
-          fetch: function fetch(params) {
-            // eslint-disable-next-line no-console
-            console.dir({
-              'component': component,
-              'method': 'fetch',
-              'params': params
-            });
-          },
-          reset: function reset(params) {
-            // eslint-disable-next-line no-console
-            console.dir({
-              'component': component,
-              'method': 'reset',
-              'params': params
-            });
-          }
+      card: CardData
+    });
+  };
+  /**
+   * An API for the Vue Filter Demo
+   * @param{string} component The name of the Component to display
+   * @return {object}         instance of the Vue Demo
+   */
+
+
+  VueComponents.prototype.filter = function filter (component) {
+      if ( component === void 0 ) component = 'c-filter';
+
+    var modules = {
+      'c-filter': __vue_component__$1,
+      'c-filter-multi': __vue_component__$2
+    };
+    return new VueDemo({
+      'name': component,
+      'module': modules[component]
+    }, {
+      termsFilter: Object.assign({}, FilterData[0]),
+      termsFilterMulti: FilterData,
+      strings: {
+        'ALL': 'All',
+        'EXPAND_CATEGORY': 'Expand Category',
+        'COLLAPSE_CATEGORY': 'Collapse Category',
+        'TOGGLE_ALL': 'Toggle All'
+      }
+    }, {
+      fetch: function (params) {
+        // eslint-disable-next-line no-console
+        console.dir({
+          'component': component,
+          'method': 'fetch',
+          'params': params
+        });
+      },
+      reset: function (params) {
+        // eslint-disable-next-line no-console
+        console.dir({
+          'component': component,
+          'method': 'reset',
+          'params': params
         });
       }
-    }]);
-
-    return VueComponents;
-  }();
+    });
+  };
 
   return VueComponents;
 

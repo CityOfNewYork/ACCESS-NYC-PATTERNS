@@ -1,6 +1,6 @@
 {
   "name": "@nycopportunity/access-patterns",
-  "version": "0.11.14",
+  "version": "0.12.0",
   "description": "ACCESS NYC Pattern library and design system documentation",
   "author": "NYC Opportunity<products@nycopportunity.nyc.gov>",
   "license": "GPL-3.0+",
@@ -19,7 +19,7 @@
   "scripts": {
     "start": "cross-env NODE_ENV=development cross-env PORT=7000 concurrently \"pttrn default -w -np\" \"pttrn serve -w\" -p \"none\"",
     "production": "cross-env NODE_ENV=production cross-env PORT=7000 concurrently \"pttrn default -w -np\" \"pttrn serve -w\" -p \"none\"",
-    "default": "cross-env NODE_ENV=production pttrn default",
+    "default": "cross-env NODE_ENV=production pttrn default -np",
     "version": "npm run default && git add .",
     "prepublishOnly": "git push && git push --tags",
     "publish": "cross-env NODE_ENV=production pttrn publish",

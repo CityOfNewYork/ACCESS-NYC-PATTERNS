@@ -1,70 +1,6 @@
 var AccessNyc = (function () {
   'use strict';
 
-  function _classCallCheck(instance, Constructor) {
-    if (!(instance instanceof Constructor)) {
-      throw new TypeError("Cannot call a class as a function");
-    }
-  }
-
-  function _defineProperties(target, props) {
-    for (var i = 0; i < props.length; i++) {
-      var descriptor = props[i];
-      descriptor.enumerable = descriptor.enumerable || false;
-      descriptor.configurable = true;
-      if ("value" in descriptor) descriptor.writable = true;
-      Object.defineProperty(target, descriptor.key, descriptor);
-    }
-  }
-
-  function _createClass(Constructor, protoProps, staticProps) {
-    if (protoProps) _defineProperties(Constructor.prototype, protoProps);
-    if (staticProps) _defineProperties(Constructor, staticProps);
-    return Constructor;
-  }
-
-  function _slicedToArray(arr, i) {
-    return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _nonIterableRest();
-  }
-
-  function _arrayWithHoles(arr) {
-    if (Array.isArray(arr)) return arr;
-  }
-
-  function _iterableToArrayLimit(arr, i) {
-    if (!(Symbol.iterator in Object(arr) || Object.prototype.toString.call(arr) === "[object Arguments]")) {
-      return;
-    }
-
-    var _arr = [];
-    var _n = true;
-    var _d = false;
-    var _e = undefined;
-
-    try {
-      for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) {
-        _arr.push(_s.value);
-
-        if (i && _arr.length === i) break;
-      }
-    } catch (err) {
-      _d = true;
-      _e = err;
-    } finally {
-      try {
-        if (!_n && _i["return"] != null) _i["return"]();
-      } finally {
-        if (_d) throw _e;
-      }
-    }
-
-    return _arr;
-  }
-
-  function _nonIterableRest() {
-    throw new TypeError("Invalid attempt to destructure non-iterable instance");
-  }
-
   /**
    * Utilities for Form components
    * @class
@@ -531,750 +467,152 @@ var AccessNyc = (function () {
   };
 
   /** @type {String} The path of the icon file */
-  Icons.path = 'icons.svg';
+  Icons.path = 'svg/icons.svg';
+
+  // import _ from 'underscore';
 
   /**
-   * JaroWinkler function.
-   * https://en.wikipedia.org/wiki/Jaro%E2%80%93Winkler_distance
-   * @param {string} s1 string one.
-   * @param {string} s2 second string.
-   * @return {number} amount of matches.
+   * Creates a tooltips. The constructor is passed an HTML element that serves as
+   * the trigger to show or hide the tooltips. The tooltip should have an
+   * `aria-describedby` attribute, the value of which is the ID of the tooltip
+   * content to show or hide.
    */
-  function jaro(s1, s2) {
-    var shorter;
-    var longer;
 
-    var _ref = s1.length > s2.length ? [s1, s2] : [s2, s1];
+  var Tooltips = function Tooltips(el) {
+    var this$1 = this;
 
-    var _ref2 = _slicedToArray(_ref, 2);
+    this.trigger = el;
+    this.tooltip = document.getElementById(el.getAttribute('aria-describedby'));
+    this.active = false;
+    this.tooltip.classList.add(Tooltips.CssClass.TOOLTIP);
+    this.tooltip.classList.add(Tooltips.CssClass.HIDDEN);
+    this.tooltip.setAttribute('aria-hidden', 'true');
+    this.tooltip.setAttribute('role', 'tooltip'); // Stop click propagation so clicking on the tip doesn't trigger a
+    // click on body, which would close the tooltips.
 
-    longer = _ref2[0];
-    shorter = _ref2[1];
-    var matchingWindow = Math.floor(longer.length / 2) - 1;
-    var shorterMatches = [];
-    var longerMatches = [];
-
-    for (var i = 0; i < shorter.length; i++) {
-      var ch = shorter[i];
-      var windowStart = Math.max(0, i - matchingWindow);
-      var windowEnd = Math.min(i + matchingWindow + 1, longer.length);
-
-      for (var j = windowStart; j < windowEnd; j++) {
-        if (longerMatches[j] === undefined && ch === longer[j]) {
-          shorterMatches[i] = longerMatches[j] = ch;
-          break;
-        }
-      }
-    }
-
-    var shorterMatchesString = shorterMatches.join('');
-    var longerMatchesString = longerMatches.join('');
-    var numMatches = shorterMatchesString.length;
-    var transpositions = 0;
-
-    for (var _i = 0; _i < shorterMatchesString.length; _i++) {
-      if (shorterMatchesString[_i] !== longerMatchesString[_i]) { transpositions++; }
-    }
-
-    return numMatches > 0 ? (numMatches / shorter.length + numMatches / longer.length + (numMatches - Math.floor(transpositions / 2)) / numMatches) / 3.0 : 0;
-  }
+    this.tooltip.addEventListener('click', function (event) {
+      event.stopPropagation();
+    });
+    document.querySelector('body').appendChild(this.tooltip);
+    this.trigger.addEventListener('click', function (event) {
+      event.preventDefault();
+      event.stopPropagation();
+      this$1.toggle();
+    });
+    window.addEventListener('hashchange', function () {
+      this$1.hide();
+    });
+    Tooltips.AllTips.push(this);
+    return this;
+  };
   /**
-   * @param {string} s1 string one.
-   * @param {string} s2 second string.
-   * @param {number} prefixScalingFactor
-   * @return {number} jaroSimilarity
+   * Displays the tooltips. Sets a one-time listener on the body to close the
+   * tooltip when a click event bubbles up to it.
+   * @method
+   * @return {this} Tooltip
    */
 
 
-  function jaroWinkler (s1, s2) {
-    var prefixScalingFactor = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : 0.2;
-    var jaroSimilarity = jaro(s1, s2);
-    var commonPrefixLength = 0;
+  Tooltips.prototype.show = function show () {
+      var this$1 = this;
 
-    for (var i = 0; i < s1.length; i++) {
-      if (s1[i] === s2[i]) { commonPrefixLength++; }else { break; }
-    }
+    Tooltips.hideAll();
+    this.tooltip.classList.remove(Tooltips.CssClass.HIDDEN);
+    this.tooltip.setAttribute('aria-hidden', 'false');
+    var body = document.querySelector('body');
 
-    return jaroSimilarity + Math.min(commonPrefixLength, 4) * prefixScalingFactor * (1 - jaroSimilarity);
-  }
-
-  var memoize = (function (fn) {
-    var cache = {};
-    return function () {
-      var arguments$1 = arguments;
-
-      for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
-        args[_key] = arguments$1[_key];
-      }
-
-      var key = JSON.stringify(args);
-      return cache[key] || (cache[key] = fn.apply(void 0, args));
+    var hideTooltipOnce = function () {
+      this$1.hide();
+      body.removeEventListener('click', hideTooltipOnce);
     };
-  });
 
-  /* eslint-env browser */
+    body.addEventListener('click', hideTooltipOnce);
+    window.addEventListener('resize', function () {
+      this$1.reposition();
+    });
+    this.reposition();
+    this.active = true;
+    return this;
+  };
   /**
-   * Autocomplete for autocomplete.
-   * Forked and modified from https://github.com/xavi/miss-plete
+   * Hides the tooltip and removes the click event listener on the body.
+   * @method
+   * @return {this} Tooltip
    */
 
-  var Autocomplete =
-  /*#__PURE__*/
-  function () {
-    /**
-     * @param   {object} settings  Configuration options
-     * @return  {this}             The class
-     * @constructor
-     */
-    function Autocomplete() {
-      var _this = this;
 
-      var settings = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
-
-      _classCallCheck(this, Autocomplete);
-
-      this.settings = {
-        'selector': settings.selector,
-        // required
-        'options': settings.options,
-        // required
-        'classname': settings.classname,
-        // required
-        'selected': settings.hasOwnProperty('selected') ? settings.selected : false,
-        'score': settings.hasOwnProperty('score') ? settings.score : memoize(Autocomplete.score),
-        'listItem': settings.hasOwnProperty('listItem') ? settings.listItem : Autocomplete.listItem,
-        'getSiblingIndex': settings.hasOwnProperty('getSiblingIndex') ? settings.getSiblingIndex : Autocomplete.getSiblingIndex
-      };
-      this.scoredOptions = null;
-      this.container = null;
-      this.ul = null;
-      this.highlighted = -1;
-      this.SELECTORS = Autocomplete.selectors;
-      this.STRINGS = Autocomplete.strings;
-      this.MAX_ITEMS = Autocomplete.maxItems;
-      window.addEventListener('keydown', function (e) {
-        _this.keydownEvent(e);
-      });
-      window.addEventListener('keyup', function (e) {
-        _this.keyupEvent(e);
-      });
-      window.addEventListener('input', function (e) {
-        _this.inputEvent(e);
-      });
-      var body = document.querySelector('body');
-      body.addEventListener('focus', function (e) {
-        _this.focusEvent(e);
-      }, true);
-      body.addEventListener('blur', function (e) {
-        _this.blurEvent(e);
-      }, true);
-      return this;
-    }
-    /**
-     * EVENTS
-     */
-
-    /**
-     * The input focus event
-     * @param   {object}  event  The event object
-     */
-
-
-    _createClass(Autocomplete, [{
-      key: "focusEvent",
-      value: function focusEvent(event) {
-        if (!event.target.matches(this.settings.selector)) { return; }
-        this.input = event.target;
-        if (this.input.value === '') { this.message('INIT'); }
-      }
-      /**
-       * The input keydown event
-       * @param   {object}  event  The event object
-       */
-
-    }, {
-      key: "keydownEvent",
-      value: function keydownEvent(event) {
-        if (!event.target.matches(this.settings.selector)) { return; }
-        this.input = event.target;
-        if (this.ul) { switch (event.keyCode) {
-          case 13:
-            this.keyEnter(event);
-            break;
-
-          case 27:
-            this.keyEscape(event);
-            break;
-
-          case 40:
-            this.keyDown(event);
-            break;
-
-          case 38:
-            this.keyUp(event);
-            break;
-        } }
-      }
-      /**
-       * The input keyup event
-       * @param   {object}  event  The event object
-       */
-
-    }, {
-      key: "keyupEvent",
-      value: function keyupEvent(event) {
-        if (!event.target.matches(this.settings.selector)) { return; }
-        this.input = event.target;
-      }
-      /**
-       * The input event
-       * @param   {object}  event  The event object
-       */
-
-    }, {
-      key: "inputEvent",
-      value: function inputEvent(event) {
-        var _this2 = this;
-
-        if (!event.target.matches(this.settings.selector)) { return; }
-        this.input = event.target;
-        if (this.input.value.length > 0) { this.scoredOptions = this.settings.options.map(function (option) {
-          return _this2.settings.score(_this2.input.value, option);
-        }).sort(function (a, b) {
-          return b.score - a.score;
-        }); }else { this.scoredOptions = []; }
-        this.dropdown();
-      }
-      /**
-       * The input blur event
-       * @param   {object}  event  The event object
-       */
-
-    }, {
-      key: "blurEvent",
-      value: function blurEvent(event) {
-        if (event.target === window || !event.target.matches(this.settings.selector)) { return; }
-        this.input = event.target;
-        if (this.input.dataset.persistDropdown === 'true') { return; }
-        this.remove();
-        this.highlighted = -1;
-      }
-      /**
-       * KEY INPUT EVENTS
-       */
-
-      /**
-       * What happens when the user presses the down arrow
-       * @param   {object}  event  The event object
-       * @return  {object}         The Class
-       */
-
-    }, {
-      key: "keyDown",
-      value: function keyDown(event) {
-        event.preventDefault();
-        this.highlight(this.highlighted < this.ul.children.length - 1 ? this.highlighted + 1 : -1);
-        return this;
-      }
-      /**
-       * What happens when the user presses the up arrow
-       * @param   {object}  event  The event object
-       * @return  {object}         The Class
-       */
-
-    }, {
-      key: "keyUp",
-      value: function keyUp(event) {
-        event.preventDefault();
-        this.highlight(this.highlighted > -1 ? this.highlighted - 1 : this.ul.children.length - 1);
-        return this;
-      }
-      /**
-       * What happens when the user presses the enter key
-       * @param   {object}  event  The event object
-       * @return  {object}         The Class
-       */
-
-    }, {
-      key: "keyEnter",
-      value: function keyEnter(event) {
-        this.selected();
-        return this;
-      }
-      /**
-       * What happens when the user presses the escape key
-       * @param   {object}  event  The event object
-       * @return  {object}         The Class
-       */
-
-    }, {
-      key: "keyEscape",
-      value: function keyEscape(event) {
-        this.remove();
-        return this;
-      }
-      /**
-       * STATIC
-       */
-
-      /**
-       * It must return an object with at least the properties 'score'
-       * and 'displayValue.' Default is a Jaro–Winkler similarity function.
-       * @param  {array}  value
-       * @param  {array}  synonyms
-       * @return {int}    Score or displayValue
-       */
-
-    }, {
-      key: "dropdown",
-
-      /**
-       * PUBLIC METHODS
-       */
-
-      /**
-       * Display options as a list.
-       * @return  {object} The Class
-       */
-      value: function dropdown() {
-        var _this3 = this;
-
-        var documentFragment = document.createDocumentFragment();
-        this.scoredOptions.every(function (scoredOption, i) {
-          var listItem = _this3.settings.listItem(scoredOption, i);
-
-          listItem && documentFragment.appendChild(listItem);
-          return !!listItem;
-        });
-        this.remove();
-        this.highlighted = -1;
-
-        if (documentFragment.hasChildNodes()) {
-          var newUl = document.createElement('ul');
-          newUl.setAttribute('role', 'listbox');
-          newUl.setAttribute('tabindex', '0');
-          newUl.setAttribute('id', this.SELECTORS.OPTIONS);
-          newUl.addEventListener('mouseover', function (event) {
-            if (event.target.tagName === 'LI') { _this3.highlight(_this3.settings.getSiblingIndex(event.target)); }
-          });
-          newUl.addEventListener('mousedown', function (event) {
-            return event.preventDefault();
-          });
-          newUl.addEventListener('click', function (event) {
-            if (event.target.tagName === 'LI') { _this3.selected(); }
-          });
-          newUl.appendChild(documentFragment); // See CSS to understand why the <ul> has to be wrapped in a <div>
-
-          var newContainer = document.createElement('div');
-          newContainer.className = this.settings.classname;
-          newContainer.appendChild(newUl);
-          this.input.setAttribute('aria-expanded', 'true'); // Inserts the dropdown just after the <input> element
-
-          this.input.parentNode.insertBefore(newContainer, this.input.nextSibling);
-          this.container = newContainer;
-          this.ul = newUl;
-          this.message('TYPING', this.settings.options.length);
-        }
-
-        return this;
-      }
-      /**
-       * Highlight new option selected.
-       * @param   {Number}  newIndex
-       * @return  {object}  The Class
-       */
-
-    }, {
-      key: "highlight",
-      value: function highlight(newIndex) {
-        if (newIndex > -1 && newIndex < this.ul.children.length) {
-          // If any option already selected, then unselect it
-          if (this.highlighted !== -1) {
-            this.ul.children[this.highlighted].classList.remove(this.SELECTORS.HIGHLIGHT);
-            this.ul.children[this.highlighted].removeAttribute('aria-selected');
-            this.ul.children[this.highlighted].removeAttribute('id');
-            this.input.removeAttribute('aria-activedescendant');
-          }
-
-          this.highlighted = newIndex;
-
-          if (this.highlighted !== -1) {
-            this.ul.children[this.highlighted].classList.add(this.SELECTORS.HIGHLIGHT);
-            this.ul.children[this.highlighted].setAttribute('aria-selected', 'true');
-            this.ul.children[this.highlighted].setAttribute('id', this.SELECTORS.ACTIVE_DESCENDANT);
-            this.input.setAttribute('aria-activedescendant', this.SELECTORS.ACTIVE_DESCENDANT);
-          }
-        }
-
-        return this;
-      }
-      /**
-       * Selects an option from a list of items.
-       * @return  {object} The Class
-       */
-
-    }, {
-      key: "selected",
-      value: function selected() {
-        if (this.highlighted !== -1) {
-          this.input.value = this.scoredOptions[this.highlighted].displayValue;
-          this.remove();
-          this.message('SELECTED', this.input.value);
-          if (window.innerWidth <= 768) { this.input.scrollIntoView(true); }
-        } // User provided callback method for selected option.
-
-
-        if (this.settings.selected) { this.settings.selected(this.input.value, this); }
-        return this;
-      }
-      /**
-       * Remove dropdown list once a list item is selected.
-       * @return  {object} The Class
-       */
-
-    }, {
-      key: "remove",
-      value: function remove() {
-        this.container && this.container.remove();
-        this.input.setAttribute('aria-expanded', 'false');
-        this.container = null;
-        this.ul = null;
-        return this;
-      }
-      /**
-       * Messaging that is passed to the screen reader
-       * @param   {string}  key       The Key of the message to write
-       * @param   {string}  variable  A variable to provide to the string.
-       * @return  {object}            The Class
-       */
-
-    }, {
-      key: "message",
-      value: function message() {
-        var _this4 = this;
-
-        var key = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : false;
-        var variable = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : '';
-        if (!key) { return this; }
-        var messages = {
-          'INIT': function INIT() {
-            return _this4.STRINGS.DIRECTIONS_TYPE;
-          },
-          'TYPING': function TYPING() {
-            return [_this4.STRINGS.OPTION_AVAILABLE.replace('{{ NUMBER }}', variable), _this4.STRINGS.DIRECTIONS_REVIEW].join('. ');
-          },
-          'SELECTED': function SELECTED() {
-            return [_this4.STRINGS.OPTION_SELECTED.replace('{{ VALUE }}', variable), _this4.STRINGS.DIRECTIONS_TYPE].join('. ');
-          }
-        };
-        document.querySelector("#".concat(this.input.getAttribute('aria-describedby'))).innerHTML = messages[key]();
-        return this;
-      }
-    }], [{
-      key: "score",
-      value: function score(value, synonyms) {
-        var closestSynonym = null;
-        synonyms.forEach(function (synonym) {
-          var similarity = jaroWinkler(synonym.trim().toLowerCase(), value.trim().toLowerCase());
-
-          if (closestSynonym === null || similarity > closestSynonym.similarity) {
-            closestSynonym = {
-              similarity: similarity,
-              value: synonym
-            };
-            if (similarity === 1) { return; }
-          }
-        });
-        return {
-          score: closestSynonym.similarity,
-          displayValue: synonyms[0]
-        };
-      }
-      /**
-       * List item for dropdown list.
-       * @param  {Number}  scoredOption
-       * @param  {Number}  index
-       * @return {string}  The a list item <li>.
-       */
-
-    }, {
-      key: "listItem",
-      value: function listItem(scoredOption, index) {
-        var li = index > this.MAX_ITEMS ? null : document.createElement('li');
-        li.setAttribute('role', 'option');
-        li.setAttribute('tabindex', '-1');
-        li.setAttribute('aria-selected', 'false');
-        li && li.appendChild(document.createTextNode(scoredOption.displayValue));
-        return li;
-      }
-      /**
-       * Get index of previous element.
-       * @param  {array}   node
-       * @return {number}  index of previous element.
-       */
-
-    }, {
-      key: "getSiblingIndex",
-      value: function getSiblingIndex(node) {
-        var index = -1;
-        var n = node;
-
-        do {
-          index++;
-          n = n.previousElementSibling;
-        } while (n);
-
-        return index;
-      }
-    }]);
-
-    return Autocomplete;
-  }();
-  /** Selectors for the Autocomplete class. */
-
-
-  Autocomplete.selectors = {
-    'HIGHLIGHT': 'input-autocomplete__highlight',
-    'OPTIONS': 'input-autocomplete__options',
-    'ACTIVE_DESCENDANT': 'input-autocomplete__selected',
-    'SCREEN_READER_ONLY': 'sr-only'
+  Tooltips.prototype.hide = function hide () {
+    this.tooltip.classList.add(Tooltips.CssClass.HIDDEN);
+    this.tooltip.setAttribute('aria-hidden', 'true');
+    this.active = false;
+    return this;
   };
-  /**  */
-
-  Autocomplete.strings = {
-    'DIRECTIONS_TYPE': 'Start typing to generate a list of potential input options',
-    'DIRECTIONS_REVIEW': ['Keyboard users can use the up and down arrows to ', 'review options and press enter to select an option'].join(''),
-    'OPTION_AVAILABLE': '{{ NUMBER }} options available',
-    'OPTION_SELECTED': '{{ VALUE }} selected'
-  };
-  /** Maximum amount of results to be returned. */
-
-  Autocomplete.maxItems = 5;
-
   /**
-   * The InputAutocomplete class.
+   * Toggles the state of the tooltips.
+   * @method
+   * @return {this} Tooltip
    */
 
-  var InputAutocomplete =
-  /*#__PURE__*/
-  function () {
-    /**
-     * @param  {object} settings This could be some configuration options.
-     *                           for the pattern module.
-     * @constructor
-     */
-    function InputAutocomplete() {
-      var settings = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
 
-      _classCallCheck(this, InputAutocomplete);
-
-      this.library = new Autocomplete({
-        options: settings.hasOwnProperty('options') ? settings.options : InputAutocomplete.options,
-        selected: settings.hasOwnProperty('selected') ? settings.selected : false,
-        selector: settings.hasOwnProperty('selector') ? settings.selector : InputAutocomplete.selector,
-        classname: settings.hasOwnProperty('classname') ? settings.classname : InputAutocomplete.classname
-      });
-      return this;
+  Tooltips.prototype.toggle = function toggle () {
+    if (this.active) {
+      this.hide();
+    } else {
+      this.show();
     }
-    /**
-     * Setter for the Autocomplete options
-     * @param  {object} reset Set of array options for the Autocomplete class
-     * @return {object} InputAutocomplete object with new options.
-     */
+
+    return this;
+  };
+  /**
+   * Positions the tooltip beneath the triggering element.
+   * @method
+   * @return {this} Tooltip
+   */
 
 
-    _createClass(InputAutocomplete, [{
-      key: "options",
-      value: function options(reset) {
-        this.library.settings.options = reset;
-        return this;
-      }
-      /**
-       * Setter for the Autocomplete strings
-       * @param  {object}  localizedStrings  Object containing strings.
-       * @return {object} Autocomplete strings
-       */
+  Tooltips.prototype.reposition = function reposition () {
+    var pos = {
+      'position': 'absolute',
+      'left': 'auto',
+      'right': 'auto',
+      'top': 'auto',
+      'width': ''
+    };
 
-    }, {
-      key: "strings",
-      value: function strings(localizedStrings) {
-        Object.assign(this.library.STRINGS, localizedStrings);
-        return this;
-      }
-    }]);
+    var style = function (attrs) { return Object.keys(attrs).map(function (key) { return (key + ": " + (attrs[key])); }).join('; '); };
 
-    return InputAutocomplete;
-  }();
-  /** @type {array} Default options for the autocomplete class */
+    var g = 24; // Gutter. Minimum distance from screen edge.
 
+    var tt = this.tooltip;
+    var tr = this.trigger;
+    var w = window; // Reset
 
-  InputAutocomplete.options = [];
-  /** @type {string} The search box dom selector */
+    this.tooltip.setAttribute('style', style(pos)); // Determine left or right alignment.
 
-  InputAutocomplete.selector = '[data-js="input-autocomplete__input"]';
-  /** @type {string} The classname for the dropdown element */
-
-  InputAutocomplete.classname = 'input-autocomplete__dropdown';
-
-  var Tooltips =
-  /*#__PURE__*/
-  function () {
-    /**
-     * @param {HTMLElement} el - The trigger element for the component.
-     * @constructor
-     */
-    function Tooltips(el) {
-      var _this = this;
-
-      _classCallCheck(this, Tooltips);
-
-      this.trigger = el;
-      this.tooltip = document.getElementById(el.getAttribute('aria-describedby'));
-      this.active = false;
-      this.tooltip.classList.add(Tooltips.CssClass.TOOLTIP);
-      this.tooltip.classList.add(Tooltips.CssClass.HIDDEN);
-      this.tooltip.setAttribute('aria-hidden', 'true');
-      this.tooltip.setAttribute('role', 'tooltip'); // Stop click propagation so clicking on the tip doesn't trigger a
-      // click on body, which would close the tooltips.
-
-      this.tooltip.addEventListener('click', function (event) {
-        event.stopPropagation();
-      });
-      document.querySelector('body').appendChild(this.tooltip);
-      this.trigger.addEventListener('click', function (event) {
-        event.preventDefault();
-        event.stopPropagation();
-
-        _this.toggle();
-      });
-      window.addEventListener('hashchange', function () {
-        _this.hide();
-      });
-      Tooltips.AllTips.push(this);
-      return this;
-    }
-    /**
-     * Displays the tooltips. Sets a one-time listener on the body to close the
-     * tooltip when a click event bubbles up to it.
-     * @method
-     * @return {this} Tooltip
-     */
+    if (tt.offsetWidth >= w.innerWidth - 2 * g) {
+      // If the tooltip is wider than the screen minus gutters, then position
+      // the tooltip to extend to the gutters.
+      pos.left = g + 'px';
+      pos.right = g + 'px';
+      pos.width = 'auto';
+    } else if (tr.offsetLeft + tt.offsetWidth + g > w.innerWidth) {
+      // If the tooltip, when left aligned with the trigger, would cause the
+      // tip to go offscreen (determined by taking the trigger left offset and
+      // adding the tooltip width and the left gutter) then align the tooltip
+      // to the right side of the trigger element.
+      pos.left = 'auto';
+      pos.right = w.innerWidth - (tr.offsetLeft + tr.offsetWidth) + 'px';
+    } else {
+      // Align the tooltip to the left of the trigger element.
+      pos.left = tr.offsetLeft + 'px';
+      pos.right = 'auto';
+    } // Set styling positions, reversing left and right if this is an RTL lang.
 
 
-    _createClass(Tooltips, [{
-      key: "show",
-      value: function show() {
-        var _this2 = this;
-
-        Tooltips.hideAll();
-        this.tooltip.classList.remove(Tooltips.CssClass.HIDDEN);
-        this.tooltip.setAttribute('aria-hidden', 'false');
-        var body = document.querySelector('body');
-
-        var hideTooltipOnce = function hideTooltipOnce() {
-          _this2.hide();
-
-          body.removeEventListener('click', hideTooltipOnce);
-        };
-
-        body.addEventListener('click', hideTooltipOnce);
-        window.addEventListener('resize', function () {
-          _this2.reposition();
-        });
-        this.reposition();
-        this.active = true;
-        return this;
-      }
-      /**
-       * Hides the tooltip and removes the click event listener on the body.
-       * @method
-       * @return {this} Tooltip
-       */
-
-    }, {
-      key: "hide",
-      value: function hide() {
-        this.tooltip.classList.add(Tooltips.CssClass.HIDDEN);
-        this.tooltip.setAttribute('aria-hidden', 'true');
-        this.active = false;
-        return this;
-      }
-      /**
-       * Toggles the state of the tooltips.
-       * @method
-       * @return {this} Tooltip
-       */
-
-    }, {
-      key: "toggle",
-      value: function toggle() {
-        if (this.active) {
-          this.hide();
-        } else {
-          this.show();
-        }
-
-        return this;
-      }
-      /**
-       * Positions the tooltip beneath the triggering element.
-       * @method
-       * @return {this} Tooltip
-       */
-
-    }, {
-      key: "reposition",
-      value: function reposition() {
-        var pos = {
-          'position': 'absolute',
-          'left': 'auto',
-          'right': 'auto',
-          'top': 'auto',
-          'width': ''
-        };
-
-        var style = function style(attrs) {
-          return Object.keys(attrs).map(function (key) {
-            return "".concat(key, ": ").concat(attrs[key]);
-          }).join('; ');
-        };
-
-        var g = 24; // Gutter. Minimum distance from screen edge.
-
-        var tt = this.tooltip;
-        var tr = this.trigger;
-        var w = window; // Reset
-
-        this.tooltip.setAttribute('style', style(pos)); // Determine left or right alignment.
-
-        if (tt.offsetWidth >= w.innerWidth - 2 * g) {
-          // If the tooltip is wider than the screen minus gutters, then position
-          // the tooltip to extend to the gutters.
-          pos.left = g + 'px';
-          pos.right = g + 'px';
-          pos.width = 'auto';
-        } else if (tr.offsetLeft + tt.offsetWidth + g > w.innerWidth) {
-          // If the tooltip, when left aligned with the trigger, would cause the
-          // tip to go offscreen (determined by taking the trigger left offset and
-          // adding the tooltip width and the left gutter) then align the tooltip
-          // to the right side of the trigger element.
-          pos.left = 'auto';
-          pos.right = w.innerWidth - (tr.offsetLeft + tr.offsetWidth) + 'px';
-        } else {
-          // Align the tooltip to the left of the trigger element.
-          pos.left = tr.offsetLeft + 'px';
-          pos.right = 'auto';
-        } // Set styling positions, reversing left and right if this is an RTL lang.
-
-
-        pos.top = tr.offsetTop + tr.offsetHeight + 'px';
-        this.tooltip.setAttribute('style', style(pos));
-        return this;
-      }
-    }]);
-
-    return Tooltips;
-  }();
+    pos.top = tr.offsetTop + tr.offsetHeight + 'px';
+    this.tooltip.setAttribute('style', style(pos));
+    return this;
+  };
 
   Tooltips.selector = '[data-js*="tooltip-control"]';
   /**
@@ -1309,14 +647,7 @@ var AccessNyc = (function () {
    * @class
    */
 
-  var Accordion =
-  /**
-   * @constructor
-   * @return {object} The class
-   */
-  function Accordion() {
-    _classCallCheck(this, Accordion);
-
+  var Accordion = function Accordion() {
     this._toggle = new Toggle({
       selector: Accordion.selector
     });
@@ -1332,62 +663,50 @@ var AccessNyc = (function () {
 
   /* eslint-env browser */
 
-  var Disclaimer =
-  /*#__PURE__*/
-  function () {
-    function Disclaimer() {
-      var _this = this;
+  var Disclaimer = function Disclaimer() {
+    var this$1 = this;
 
-      _classCallCheck(this, Disclaimer);
-
-      this.selector = Disclaimer.selector;
-      this.selectors = Disclaimer.selectors;
-      this.classes = Disclaimer.classes;
-      document.querySelector('body').addEventListener('click', function (event) {
-        if (!event.target.matches(_this.selectors.TOGGLE)) { return; }
-
-        _this.toggle(event);
-      });
-    }
-    /**
-     * Toggles the disclaimer to be visible or invisible.
-     * @param   {object}  event  The body click event
-     * @return  {object}         The disclaimer class
-     */
+    this.selector = Disclaimer.selector;
+    this.selectors = Disclaimer.selectors;
+    this.classes = Disclaimer.classes;
+    document.querySelector('body').addEventListener('click', function (event) {
+      if (!event.target.matches(this$1.selectors.TOGGLE)) { return; }
+      this$1.toggle(event);
+    });
+  };
+  /**
+   * Toggles the disclaimer to be visible or invisible.
+   * @param {object}eventThe body click event
+   * @return{object}       The disclaimer class
+   */
 
 
-    _createClass(Disclaimer, [{
-      key: "toggle",
-      value: function toggle(event) {
-        event.preventDefault();
-        var id = event.target.getAttribute('aria-describedby');
-        var selector = "[aria-describedby=\"".concat(id, "\"].").concat(this.classes.ACTIVE);
-        var triggers = document.querySelectorAll(selector);
-        var disclaimer = document.querySelector("#".concat(id));
+  Disclaimer.prototype.toggle = function toggle (event) {
+    event.preventDefault();
+    var id = event.target.getAttribute('aria-describedby');
+    var selector = "[aria-describedby=\"" + id + "\"]." + (this.classes.ACTIVE);
+    var triggers = document.querySelectorAll(selector);
+    var disclaimer = document.querySelector(("#" + id));
 
-        if (triggers.length > 0 && disclaimer) {
-          disclaimer.classList.remove(this.classes.HIDDEN);
-          disclaimer.classList.add(this.classes.ANIMATED);
-          disclaimer.classList.add(this.classes.ANIMATION);
-          disclaimer.setAttribute('aria-hidden', false); // Scroll-to functionality for mobile
+    if (triggers.length > 0 && disclaimer) {
+      disclaimer.classList.remove(this.classes.HIDDEN);
+      disclaimer.classList.add(this.classes.ANIMATED);
+      disclaimer.classList.add(this.classes.ANIMATION);
+      disclaimer.setAttribute('aria-hidden', false); // Scroll-to functionality for mobile
 
-          if (window.scrollTo && window.innerWidth < 960) {
-            var offset = event.target.offsetTop - event.target.dataset.scrollOffset;
-            window.scrollTo(0, offset);
-          }
-        } else {
-          disclaimer.classList.add(this.classes.HIDDEN);
-          disclaimer.classList.remove(this.classes.ANIMATED);
-          disclaimer.classList.remove(this.classes.ANIMATION);
-          disclaimer.setAttribute('aria-hidden', true);
-        }
-
-        return this;
+      if (window.scrollTo && window.innerWidth < 960) {
+        var offset = event.target.offsetTop - event.target.dataset.scrollOffset;
+        window.scrollTo(0, offset);
       }
-    }]);
+    } else {
+      disclaimer.classList.add(this.classes.HIDDEN);
+      disclaimer.classList.remove(this.classes.ANIMATED);
+      disclaimer.classList.remove(this.classes.ANIMATION);
+      disclaimer.setAttribute('aria-hidden', true);
+    }
 
-    return Disclaimer;
-  }();
+    return this;
+  };
 
   Disclaimer.selector = '[data-js="disclaimer"]';
   Disclaimer.selectors = {
@@ -1405,14 +724,7 @@ var AccessNyc = (function () {
    * @class
    */
 
-  var Filter =
-  /**
-   * @constructor
-   * @return {object}   The class
-   */
-  function Filter() {
-    _classCallCheck(this, Filter);
-
+  var Filter = function Filter() {
     this._toggle = new Toggle({
       selector: Filter.selector,
       namespace: Filter.namespace,
@@ -1450,7 +762,7 @@ var AccessNyc = (function () {
   var root = freeGlobal || freeSelf || Function('return this')();
 
   /** Built-in value references. */
-  var Symbol$1 = root.Symbol;
+  var Symbol = root.Symbol;
 
   /** Used for built-in method references. */
   var objectProto = Object.prototype;
@@ -1466,7 +778,7 @@ var AccessNyc = (function () {
   var nativeObjectToString = objectProto.toString;
 
   /** Built-in value references. */
-  var symToStringTag = Symbol$1 ? Symbol$1.toStringTag : undefined;
+  var symToStringTag = Symbol ? Symbol.toStringTag : undefined;
 
   /**
    * A specialized version of `baseGetTag` which ignores `Symbol.toStringTag` values.
@@ -1521,7 +833,7 @@ var AccessNyc = (function () {
       undefinedTag = '[object Undefined]';
 
   /** Built-in value references. */
-  var symToStringTag$1 = Symbol$1 ? Symbol$1.toStringTag : undefined;
+  var symToStringTag$1 = Symbol ? Symbol.toStringTag : undefined;
 
   /**
    * The base implementation of `getTag` without fallbacks for buggy environments.
@@ -2949,7 +2261,7 @@ var AccessNyc = (function () {
   var INFINITY = 1 / 0;
 
   /** Used to convert symbols to primitives and strings. */
-  var symbolProto = Symbol$1 ? Symbol$1.prototype : undefined,
+  var symbolProto = Symbol ? Symbol.prototype : undefined,
       symbolToString = symbolProto ? symbolProto.toString : undefined;
 
   /**
@@ -3033,7 +2345,7 @@ var AccessNyc = (function () {
    * _.escape('fred, barney, & pebbles');
    * // => 'fred, barney, &amp; pebbles'
    */
-  function escape$1(string) {
+  function escape(string) {
     string = toString(string);
     return (string && reHasUnescapedHtml.test(string))
       ? string.replace(reUnescapedHtml, escapeHtmlChar)
@@ -3103,7 +2415,7 @@ var AccessNyc = (function () {
        * @memberOf _.templateSettings.imports
        * @type {Function}
        */
-      '_': { 'escape': escape$1 }
+      '_': { 'escape': escape }
     }
   };
 
@@ -3507,215 +2819,186 @@ var AccessNyc = (function () {
    * @class
    */
 
-  var NearbyStops =
-  /*#__PURE__*/
-  function () {
-    /**
-     * @constructor
-     * @return {object} The NearbyStops class
-     */
-    function NearbyStops() {
-      var _this = this;
+  var NearbyStops = function NearbyStops() {
+    var this$1 = this;
 
-      _classCallCheck(this, NearbyStops);
+    /** @type {Array} Collection of nearby stops DOM elements */
+    this._elements = document.querySelectorAll(NearbyStops.selector);
+    /** @type {Array} The collection all stops from the data */
 
-      /** @type {Array} Collection of nearby stops DOM elements */
-      this._elements = document.querySelectorAll(NearbyStops.selector);
-      /** @type {Array} The collection all stops from the data */
+    this._stops = [];
+    /** @type {Array} The currated collection of stops that will be rendered */
 
-      this._stops = [];
-      /** @type {Array} The currated collection of stops that will be rendered */
+    this._locations = []; // Loop through DOM Components.
 
-      this._locations = []; // Loop through DOM Components.
+    forEach(this._elements, function (el) {
+      // Fetch the data for the element.
+      this$1._fetch(el, function (status, data) {
+        if (status !== 'success') { return; }
+        this$1._stops = data; // Get stops closest to the location.
 
-      forEach(this._elements, function (el) {
-        // Fetch the data for the element.
-        _this._fetch(el, function (status, data) {
-          if (status !== 'success') { return; }
-          _this._stops = data; // Get stops closest to the location.
+        this$1._locations = this$1._locate(el, this$1._stops); // Assign the color names from patterns stylesheet.
 
-          _this._locations = _this._locate(el, _this._stops); // Assign the color names from patterns stylesheet.
+        this$1._locations = this$1._assignColors(this$1._locations); // Render the markup for the stops.
 
-          _this._locations = _this._assignColors(_this._locations); // Render the markup for the stops.
-
-          _this._render(el, _this._locations);
-        });
+        this$1._render(el, this$1._locations);
       });
+    });
 
-      return this;
+    return this;
+  };
+  /**
+   * This compares the latitude and longitude with the Subway Stops data, sorts
+   * the data by distance from closest to farthest, and returns the stop and
+   * distances of the stations.
+   * @param{object} el  The DOM Component with the data attr options
+   * @param{object} stops All of the stops data to compare to
+   * @return {object}     A collection of the closest stops with distances
+   */
+
+
+  NearbyStops.prototype._locate = function _locate (el, stops) {
+    var amount = parseInt(this._opt(el, 'AMOUNT')) || NearbyStops.defaults.AMOUNT;
+    var loc = JSON.parse(this._opt(el, 'LOCATION'));
+    var geo = [];
+    var distances = []; // 1. Compare lat and lon of current location with list of stops
+
+    for (var i = 0; i < stops.length; i++) {
+      geo = stops[i][this._key('ODATA_GEO')][this._key('ODATA_COOR')];
+      geo = geo.reverse();
+      distances.push({
+        'distance': this._equirectangular(loc[0], loc[1], geo[0], geo[1]),
+        'stop': i // index of stop in the data
+
+      });
+    } // 2. Sort the distances shortest to longest
+
+
+    distances.sort(function (a, b) { return a.distance < b.distance ? -1 : 1; });
+    distances = distances.slice(0, amount); // 3. Return the list of closest stops (number based on Amount option)
+    // and replace the stop index with the actual stop data
+
+    for (var x = 0; x < distances.length; x++) { distances[x].stop = stops[distances[x].stop]; }
+
+    return distances;
+  };
+  /**
+   * Fetches the stop data from a local source
+   * @param{object} el     The NearbyStops DOM element
+   * @param{function} callback The function to execute on success
+   * @return {funciton}        the fetch promise
+   */
+
+
+  NearbyStops.prototype._fetch = function _fetch (el, callback) {
+    var headers = {
+      'method': 'GET'
+    };
+    return fetch(this._opt(el, 'ENDPOINT'), headers).then(function (response) {
+      if (response.ok) { return response.json(); }else {
+        callback('error', response);
+      }
+    }).catch(function (error) {
+      callback('error', error);
+    }).then(function (data) { return callback('success', data); });
+  };
+  /**
+   * Returns distance in miles comparing the latitude and longitude of two
+   * points using decimal degrees.
+   * @param{float} lat1 Latitude of point 1 (in decimal degrees)
+   * @param{float} lon1 Longitude of point 1 (in decimal degrees)
+   * @param{float} lat2 Latitude of point 2 (in decimal degrees)
+   * @param{float} lon2 Longitude of point 2 (in decimal degrees)
+   * @return {float}    [description]
+   */
+
+
+  NearbyStops.prototype._equirectangular = function _equirectangular (lat1, lon1, lat2, lon2) {
+    Math.deg2rad = function (deg) { return deg * (Math.PI / 180); };
+
+    var alpha = Math.abs(lon2) - Math.abs(lon1);
+    var x = Math.deg2rad(alpha) * Math.cos(Math.deg2rad(lat1 + lat2) / 2);
+    var y = Math.deg2rad(lat1 - lat2);
+    var R = 3959; // earth radius in miles;
+
+    var distance = Math.sqrt(x * x + y * y) * R;
+    return distance;
+  };
+  /**
+   * Assigns colors to the data using the NearbyStops.truncks dictionary.
+   * @param{object} locations Object of closest locations
+   * @return {object}         Same object with colors assigned to each loc
+   */
+
+
+  NearbyStops.prototype._assignColors = function _assignColors (locations) {
+    var locationLines = [];
+    var line = 'S';
+    var lines = ['S']; // Loop through each location that we are going to display
+
+    for (var i = 0; i < locations.length; i++) {
+      // assign the line to a variable to lookup in our color dictionary
+      locationLines = locations[i].stop[this._key('ODATA_LINE')].split('-');
+
+      for (var x = 0; x < locationLines.length; x++) {
+        line = locationLines[x];
+
+        for (var y = 0; y < NearbyStops.trunks.length; y++) {
+          lines = NearbyStops.trunks[y]['LINES'];
+          if (lines.indexOf(line) > -1) { locationLines[x] = {
+            'line': line,
+            'trunk': NearbyStops.trunks[y]['TRUNK']
+          }; }
+        }
+      } // Add the trunk to the location
+
+
+      locations[i].trunks = locationLines;
     }
-    /**
-     * This compares the latitude and longitude with the Subway Stops data, sorts
-     * the data by distance from closest to farthest, and returns the stop and
-     * distances of the stations.
-     * @param  {object} el    The DOM Component with the data attr options
-     * @param  {object} stops All of the stops data to compare to
-     * @return {object}       A collection of the closest stops with distances
-     */
+
+    return locations;
+  };
+  /**
+   * The function to compile and render the location template
+   * @param{object} element The parent DOM element of the component
+   * @param{object} data  The data to pass to the template
+   * @return {object}       The NearbyStops class
+   */
 
 
-    _createClass(NearbyStops, [{
-      key: "_locate",
-      value: function _locate(el, stops) {
-        var amount = parseInt(this._opt(el, 'AMOUNT')) || NearbyStops.defaults.AMOUNT;
-        var loc = JSON.parse(this._opt(el, 'LOCATION'));
-        var geo = [];
-        var distances = []; // 1. Compare lat and lon of current location with list of stops
-
-        for (var i = 0; i < stops.length; i++) {
-          geo = stops[i][this._key('ODATA_GEO')][this._key('ODATA_COOR')];
-          geo = geo.reverse();
-          distances.push({
-            'distance': this._equirectangular(loc[0], loc[1], geo[0], geo[1]),
-            'stop': i // index of stop in the data
-
-          });
-        } // 2. Sort the distances shortest to longest
-
-
-        distances.sort(function (a, b) {
-          return a.distance < b.distance ? -1 : 1;
-        });
-        distances = distances.slice(0, amount); // 3. Return the list of closest stops (number based on Amount option)
-        // and replace the stop index with the actual stop data
-
-        for (var x = 0; x < distances.length; x++) {
-          distances[x].stop = stops[distances[x].stop];
-        }
-
-        return distances;
+  NearbyStops.prototype._render = function _render (element, data) {
+    var compiled = template(NearbyStops.templates.SUBWAY, {
+      'imports': {
+        '_each': forEach
       }
-      /**
-       * Fetches the stop data from a local source
-       * @param  {object}   el       The NearbyStops DOM element
-       * @param  {function} callback The function to execute on success
-       * @return {funciton}          the fetch promise
-       */
+    });
 
-    }, {
-      key: "_fetch",
-      value: function _fetch(el, callback) {
-        var headers = {
-          'method': 'GET'
-        };
-        return fetch(this._opt(el, 'ENDPOINT'), headers).then(function (response) {
-          if (response.ok) { return response.json(); }else {
-            callback('error', response);
-          }
-        })["catch"](function (error) {
-          callback('error', error);
-        }).then(function (data) {
-          return callback('success', data);
-        });
-      }
-      /**
-       * Returns distance in miles comparing the latitude and longitude of two
-       * points using decimal degrees.
-       * @param  {float} lat1 Latitude of point 1 (in decimal degrees)
-       * @param  {float} lon1 Longitude of point 1 (in decimal degrees)
-       * @param  {float} lat2 Latitude of point 2 (in decimal degrees)
-       * @param  {float} lon2 Longitude of point 2 (in decimal degrees)
-       * @return {float}      [description]
-       */
-
-    }, {
-      key: "_equirectangular",
-      value: function _equirectangular(lat1, lon1, lat2, lon2) {
-        Math.deg2rad = function (deg) {
-          return deg * (Math.PI / 180);
-        };
-
-        var alpha = Math.abs(lon2) - Math.abs(lon1);
-        var x = Math.deg2rad(alpha) * Math.cos(Math.deg2rad(lat1 + lat2) / 2);
-        var y = Math.deg2rad(lat1 - lat2);
-        var R = 3959; // earth radius in miles;
-
-        var distance = Math.sqrt(x * x + y * y) * R;
-        return distance;
-      }
-      /**
-       * Assigns colors to the data using the NearbyStops.truncks dictionary.
-       * @param  {object} locations Object of closest locations
-       * @return {object}           Same object with colors assigned to each loc
-       */
-
-    }, {
-      key: "_assignColors",
-      value: function _assignColors(locations) {
-        var locationLines = [];
-        var line = 'S';
-        var lines = ['S']; // Loop through each location that we are going to display
-
-        for (var i = 0; i < locations.length; i++) {
-          // assign the line to a variable to lookup in our color dictionary
-          locationLines = locations[i].stop[this._key('ODATA_LINE')].split('-');
-
-          for (var x = 0; x < locationLines.length; x++) {
-            line = locationLines[x];
-
-            for (var y = 0; y < NearbyStops.trunks.length; y++) {
-              lines = NearbyStops.trunks[y]['LINES'];
-              if (lines.indexOf(line) > -1) { locationLines[x] = {
-                'line': line,
-                'trunk': NearbyStops.trunks[y]['TRUNK']
-              }; }
-            }
-          } // Add the trunk to the location
+    element.innerHTML = compiled({
+      'stops': data
+    });
+    return this;
+  };
+  /**
+   * Get data attribute options
+   * @param{object} element The element to pull the setting from.
+   * @param{string} opt   The key reference to the attribute.
+   * @return {string}       The setting of the data attribute.
+   */
 
 
-          locations[i].trunks = locationLines;
-        }
+  NearbyStops.prototype._opt = function _opt (element, opt) {
+    return element.dataset[("" + (NearbyStops.namespace) + (NearbyStops.options[opt]))];
+  };
+  /**
+   * A proxy function for retrieving the proper key
+   * @param{string} key The reference for the stored keys.
+   * @return {string}   The desired key.
+   */
 
-        return locations;
-      }
-      /**
-       * The function to compile and render the location template
-       * @param  {object} element The parent DOM element of the component
-       * @param  {object} data    The data to pass to the template
-       * @return {object}         The NearbyStops class
-       */
 
-    }, {
-      key: "_render",
-      value: function _render(element, data) {
-        var compiled = template(NearbyStops.templates.SUBWAY, {
-          'imports': {
-            '_each': forEach
-          }
-        });
-
-        element.innerHTML = compiled({
-          'stops': data
-        });
-        return this;
-      }
-      /**
-       * Get data attribute options
-       * @param  {object} element The element to pull the setting from.
-       * @param  {string} opt     The key reference to the attribute.
-       * @return {string}         The setting of the data attribute.
-       */
-
-    }, {
-      key: "_opt",
-      value: function _opt(element, opt) {
-        return element.dataset["".concat(NearbyStops.namespace).concat(NearbyStops.options[opt])];
-      }
-      /**
-       * A proxy function for retrieving the proper key
-       * @param  {string} key The reference for the stored keys.
-       * @return {string}     The desired key.
-       */
-
-    }, {
-      key: "_key",
-      value: function _key(key) {
-        return NearbyStops.keys[key];
-      }
-    }]);
-
-    return NearbyStops;
-  }();
+  NearbyStops.prototype._key = function _key (key) {
+    return NearbyStops.keys[key];
+  };
   /**
    * The dom selector for the module
    * @type {String}
@@ -3779,7 +3062,7 @@ var AccessNyc = (function () {
   };
   /**
    * Color assignment for Subway Train lines, used in cunjunction with the
-   * background colors defined in config/variables.js.
+   * background colors defined in config/tokens.js.
    * Based on the nomenclature described here;
    * @url // https://en.wikipedia.org/wiki/New_York_City_Subway#Nomenclature
    * @type {Array}
@@ -3827,6 +3110,7 @@ var AccessNyc = (function () {
                                    stripLeadingZeroes,
                                    prefix,
                                    signBeforePrefix,
+                                   tailPrefix,
                                    delimiter) {
       var owner = this;
 
@@ -3838,6 +3122,7 @@ var AccessNyc = (function () {
       owner.stripLeadingZeroes = stripLeadingZeroes !== false;
       owner.prefix = (prefix || prefix === '') ? prefix : '';
       owner.signBeforePrefix = !!signBeforePrefix;
+      owner.tailPrefix = !!tailPrefix;
       owner.delimiter = (delimiter || delimiter === '') ? delimiter : ',';
       owner.delimiterRE = delimiter ? new RegExp('\\' + delimiter, 'g') : '';
   };
@@ -3925,6 +3210,10 @@ var AccessNyc = (function () {
               partInteger = partInteger.replace(/(\d)(?=(\d{3})+$)/g, '$1' + owner.delimiter);
 
               break;
+          }
+
+          if (owner.tailPrefix) {
+              return partSign + partInteger.toString() + (owner.numeralDecimalScale > 0 ? partDecimal.toString() : '') + owner.prefix;
           }
 
           return partSignAndPrefix + partInteger.toString() + (owner.numeralDecimalScale > 0 ? partDecimal.toString() : '');
@@ -4468,8 +3757,8 @@ var AccessNyc = (function () {
           // starts with 4; 16 digits
           visa: /^4\d{0,15}/,
 
-          // starts with 62; 16 digits
-          unionPay: /^62\d{0,14}/
+          // starts with 62/81; 16 digits
+          unionPay: /^(62|81)\d{0,14}/
       },
 
       getStrictBlocks: function (block) {
@@ -4594,30 +3883,40 @@ var AccessNyc = (function () {
       // PREFIX-123   |   PEFIX-123     |     123
       // PREFIX-123   |   PREFIX-23     |     23
       // PREFIX-123   |   PREFIX-1234   |     1234
-      getPrefixStrippedValue: function (value, prefix, prefixLength, prevResult, delimiter, delimiters, noImmediatePrefix) {
+      getPrefixStrippedValue: function (value, prefix, prefixLength, prevResult, delimiter, delimiters, noImmediatePrefix, tailPrefix, signBeforePrefix) {
           // No prefix
           if (prefixLength === 0) {
             return value;
           }
 
-          // Pre result prefix string does not match pre-defined prefix
-          if (prevResult.slice(0, prefixLength) !== prefix) {
-            // Check if the first time user entered something
-            if (noImmediatePrefix && !prevResult && value) { return value; }
+          if (signBeforePrefix && (value.slice(0, 1) == '-')) {
+              var prev = (prevResult.slice(0, 1) == '-') ? prevResult.slice(1) : prevResult;
+              return '-' + this.getPrefixStrippedValue(value.slice(1), prefix, prefixLength, prev, delimiter, delimiters, noImmediatePrefix, tailPrefix, signBeforePrefix);
+          }
 
-            return '';
+          // Pre result prefix string does not match pre-defined prefix
+          if (prevResult.slice(0, prefixLength) !== prefix && !tailPrefix) {
+              // Check if the first time user entered something
+              if (noImmediatePrefix && !prevResult && value) { return value; }
+              return '';
+          } else if (prevResult.slice(-prefixLength) !== prefix && tailPrefix) {
+              // Check if the first time user entered something
+              if (noImmediatePrefix && !prevResult && value) { return value; }
+              return '';
           }
 
           var prevValue = this.stripDelimiters(prevResult, delimiter, delimiters);
 
           // New value has issue, someone typed in between prefix letters
           // Revert to pre value
-          if (value.slice(0, prefixLength) !== prefix) {
-            return prevValue.slice(prefixLength);
+          if (value.slice(0, prefixLength) !== prefix && !tailPrefix) {
+              return prevValue.slice(prefixLength);
+          } else if (value.slice(-prefixLength) !== prefix && tailPrefix) {
+              return prevValue.slice(0, -prefixLength - 1);
           }
 
           // No issue, strip prefix for new value
-          return value.slice(prefixLength);
+          return tailPrefix ? value.slice(0, -prefixLength) : value.slice(prefixLength);
       },
 
       getFirstDiffIndex: function (prev, current) {
@@ -4685,7 +3984,7 @@ var AccessNyc = (function () {
           var val = el.value,
               appendix = delimiter || (delimiters[0] || ' ');
 
-          if (!el.setSelectionRange || !prefix || (prefix.length + appendix.length) < val.length) {
+          if (!el.setSelectionRange || !prefix || (prefix.length + appendix.length) <= val.length) {
               return;
           }
 
@@ -4806,6 +4105,7 @@ var AccessNyc = (function () {
           target.numeralPositiveOnly = !!opts.numeralPositiveOnly;
           target.stripLeadingZeroes = opts.stripLeadingZeroes !== false;
           target.signBeforePrefix = !!opts.signBeforePrefix;
+          target.tailPrefix = !!opts.tailPrefix;
 
           // others
           target.numericOnly = target.creditCard || target.date || !!opts.numericOnly;
@@ -4950,6 +4250,7 @@ var AccessNyc = (function () {
               pps.stripLeadingZeroes,
               pps.prefix,
               pps.signBeforePrefix,
+              pps.tailPrefix,
               pps.delimiter
           );
       },
@@ -5127,10 +4428,7 @@ var AccessNyc = (function () {
           value = Util.stripDelimiters(value, pps.delimiter, pps.delimiters);
 
           // strip prefix
-          value = Util.getPrefixStrippedValue(
-              value, pps.prefix, pps.prefixLength,
-              pps.result, pps.delimiter, pps.delimiters, pps.noImmediatePrefix
-          );
+          value = Util.getPrefixStrippedValue(value, pps.prefix, pps.prefixLength, pps.result, pps.delimiter, pps.delimiters, pps.noImmediatePrefix, pps.tailPrefix, pps.signBeforePrefix);
 
           // strip non-numeric characters
           value = pps.numericOnly ? Util.strip(value, /[^\d]/g) : value;
@@ -5141,7 +4439,12 @@ var AccessNyc = (function () {
 
           // prevent from showing prefix when no immediate option enabled with empty input value
           if (pps.prefix && (!pps.noImmediatePrefix || value.length)) {
-              value = pps.prefix + value;
+              if (pps.tailPrefix) {
+                  value = value + pps.prefix;
+              } else {
+                  value = pps.prefix + value;
+              }
+
 
               // no blocks specified, no need to do formatting
               if (pps.blocksLength === 0) {
@@ -5232,6 +4535,7 @@ var AccessNyc = (function () {
 
           pps.onValueChanged.call(owner, {
               target: {
+                  name: owner.element.name,
                   value: pps.result,
                   rawValue: owner.getRawValue()
               }
@@ -5268,7 +4572,7 @@ var AccessNyc = (function () {
               rawValue = owner.element.value;
 
           if (pps.rawValueTrimPrefix) {
-              rawValue = Util.getPrefixStrippedValue(rawValue, pps.prefix, pps.prefixLength, pps.result, pps.delimiter, pps.delimiters);
+              rawValue = Util.getPrefixStrippedValue(rawValue, pps.prefix, pps.prefixLength, pps.result, pps.delimiter, pps.delimiters, pps.noImmediatePrefix, pps.tailPrefix, pps.signBeforePrefix);
           }
 
           if (pps.numeral) {
@@ -5331,7 +4635,7 @@ var AccessNyc = (function () {
 
   !function(){function l(l,n){var u=l.split("."),t=Y;u[0]in t||!t.execScript||t.execScript("var "+u[0]);for(var e;u.length&&(e=u.shift());){ u.length||void 0===n?t=t[e]?t[e]:t[e]={}:t[e]=n; }}function n(l,n){function u(){}u.prototype=n.prototype,l.M=n.prototype,l.prototype=new u,l.prototype.constructor=l,l.N=function(l,u,t){
   var arguments$1 = arguments;
-  for(var e=Array(arguments.length-2),r=2;r<arguments.length;r++){ e[r-2]=arguments$1[r]; }return n.prototype[u].apply(l,e)};}function u(l,n){null!=l&&this.a.apply(this,arguments);}function t(l){l.b="";}function e(l,n){l.sort(n||r);}function r(l,n){return l>n?1:l<n?-1:0}function i(l){var n,u=[],t=0;for(n in l){ u[t++]=l[n]; }return u}function a(l,n){this.b=l,this.a={};for(var u=0;u<n.length;u++){var t=n[u];this.a[t.b]=t;}}function d(l){return l=i(l.a),e(l,function(l,n){return l.b-n.b}),l}function o(l,n){switch(this.b=l,this.g=!!n.v,this.a=n.c,this.i=n.type,this.h=!1,this.a){case O:case H:case q:case X:case k:case L:case J:this.h=!0;}this.f=n.defaultValue;}function s(){this.a={},this.f=this.j().a,this.b=this.g=null;}function f(l,n){for(var u=d(l.j()),t=0;t<u.length;t++){var e=u[t],r=e.b;if(null!=n.a[r]){l.b&&delete l.b[e.b];var i=11==e.a||10==e.a;if(e.g){ for(var e=p(n,r)||[],a=0;a<e.length;a++){var o=l,s=r,c=i?e[a].clone():e[a];o.a[s]||(o.a[s]=[]),o.a[s].push(c),o.b&&delete o.b[s];} }else { e=p(n,r),i?(i=p(l,r))?f(i,e):m(l,r,e.clone()):m(l,r,e); }}}}function p(l,n){var u=l.a[n];if(null==u){ return null; }if(l.g){if(!(n in l.b)){var t=l.g,e=l.f[n];if(null!=u){ if(e.g){for(var r=[],i=0;i<u.length;i++){ r[i]=t.b(e,u[i]); }u=r;}else { u=t.b(e,u); } }return l.b[n]=u}return l.b[n]}return u}function c(l,n,u){var t=p(l,n);return l.f[n].g?t[u||0]:t}function h(l,n){var u;if(null!=l.a[n]){ u=c(l,n,void 0); }else { l:{if(u=l.f[n],void 0===u.f){var t=u.i;if(t===Boolean){ u.f=!1; }else if(t===Number){ u.f=0; }else{if(t!==String){u=new t;break l}u.f=u.h?"0":"";}}u=u.f;} }return u}function g(l,n){return l.f[n].g?null!=l.a[n]?l.a[n].length:0:null!=l.a[n]?1:0}function m(l,n,u){l.a[n]=u,l.b&&(l.b[n]=u);}function b(l,n){var u,t=[];for(u in n){ 0!=u&&t.push(new o(u,n[u])); }return new a(l,t)}/*
+  for(var e=Array(arguments.length-2),r=2;r<arguments.length;r++){ e[r-2]=arguments$1[r]; }return n.prototype[u].apply(l,e)};}function u(l,n){null!=l&&this.a.apply(this,arguments);}function t(l){l.b="";}function e(l,n){l.sort(n||r);}function r(l,n){return l>n?1:l<n?-1:0}function i(l){var n,u=[],t=0;for(n in l){ u[t++]=l[n]; }return u}function a(l,n){this.b=l,this.a={};for(var u=0;u<n.length;u++){var t=n[u];this.a[t.b]=t;}}function d(l){return l=i(l.a),e(l,function(l,n){return l.b-n.b}),l}function o(l,n){switch(this.b=l,this.g=!!n.v,this.a=n.c,this.i=n.type,this.h=!1,this.a){case O:case H:case q:case X:case k:case L:case J:this.h=!0;}this.f=n.defaultValue;}function s(){this.a={},this.f=this.j().a,this.b=this.g=null;}function f(l,n){for(var u=d(l.j()),t=0;t<u.length;t++){var e=u[t],r=e.b;if(null!=n.a[r]){l.b&&delete l.b[e.b];var i=11==e.a||10==e.a;if(e.g){ for(var e=p(n,r)||[],a=0;a<e.length;a++){var o=l,s=r,c=i?e[a].clone():e[a];o.a[s]||(o.a[s]=[]),o.a[s].push(c),o.b&&delete o.b[s];} }else { e=p(n,r),i?(i=p(l,r))?f(i,e):m(l,r,e.clone()):m(l,r,e); }}}}function p(l,n){var u=l.a[n];if(null==u){ return null; }if(l.g){if(!(n in l.b)){var t=l.g,e=l.f[n];if(null!=u){ if(e.g){for(var r=[],i=0;i<u.length;i++){ r[i]=t.b(e,u[i]); }u=r;}else { u=t.b(e,u); } }return l.b[n]=u}return l.b[n]}return u}function c(l,n,u){var t=p(l,n);return l.f[n].g?t[u||0]:t}function h(l,n){var u;if(null!=l.a[n]){ u=c(l,n,void 0); }else { l:{if(u=l.f[n],void 0===u.f){var t=u.i;if(t===Boolean){ u.f=!1; }else if(t===Number){ u.f=0; }else {if(t!==String){u=new t;break l}u.f=u.h?"0":"";}}u=u.f;} }return u}function g(l,n){return l.f[n].g?null!=l.a[n]?l.a[n].length:0:null!=l.a[n]?1:0}function m(l,n,u){l.a[n]=u,l.b&&(l.b[n]=u);}function b(l,n){var u,t=[];for(u in n){ 0!=u&&t.push(new o(u,n[u])); }return new a(l,t)}/*
 
    Protocol Buffer 2 Copyright 2008 Google Inc.
    All other code copyright its respective owners.
@@ -5365,7 +4669,7 @@ var AccessNyc = (function () {
    See the License for the specific language governing permissions and
    limitations under the License.
   */
-  function x(){this.a={};}function B(l){return 0==l.length||rl.test(l)}function C(l,n){if(null==n){ return null; }n=n.toUpperCase();var u=l.a[n];if(null==u){if(u=nl[n],null==u){ return null; }u=(new A).a(S.j(),u),l.a[n]=u;}return u}function M(l){return l=ll[l],null==l?"ZZ":l[0]}function N(l){this.H=RegExp(" "),this.C="",this.m=new u,this.w="",this.i=new u,this.u=new u,this.l=!0,this.A=this.o=this.F=!1,this.G=x.b(),this.s=0,this.b=new u,this.B=!1,this.h="",this.a=new u,this.f=[],this.D=l,this.J=this.g=D(this,this.D);}function D(l,n){var u;if(null!=n&&isNaN(n)&&n.toUpperCase()in nl){if(u=C(l.G,n),null==u){ throw Error("Invalid region code: "+n); }u=h(u,10);}else { u=0; }return u=C(l.G,M(u)),null!=u?u:il}function G(l){for(var n=l.f.length,u=0;u<n;++u){var e=l.f[u],r=h(e,1);if(l.w==r){ return !1; }var i;i=l;var a=e,d=h(a,1);if(-1!=d.indexOf("|")){ i=!1; }else{d=d.replace(al,"\\d"),d=d.replace(dl,"\\d"),t(i.m);var o;o=i;var a=h(a,2),s="999999999999999".match(d)[0];s.length<o.a.b.length?o="":(o=s.replace(new RegExp(d,"g"),a),o=o.replace(RegExp("9","g")," ")),0<o.length?(i.m.a(o),i=!0):i=!1;}if(i){ return l.w=r,l.B=sl.test(c(e,4)),l.s=0,!0 }}return l.l=!1}function j(l,n){for(var u=[],t=n.length-3,e=l.f.length,r=0;r<e;++r){var i=l.f[r];0==g(i,3)?u.push(l.f[r]):(i=c(i,3,Math.min(t,g(i,3)-1)),0==n.search(i)&&u.push(l.f[r]));}l.f=u;}function I(l,n){l.i.a(n);var u=n;if(el.test(u)||1==l.i.b.length&&tl.test(u)){var e,u=n;"+"==u?(e=u,l.u.a(u)):(e=ul[u],l.u.a(e),l.a.a(e)),n=e;}else { l.l=!1,l.F=!0; }if(!l.l){if(!l.F){ if(F(l)){if(U(l)){ return V(l) }}else if(0<l.h.length&&(u=l.a.toString(),t(l.a),l.a.a(l.h),l.a.a(u),u=l.b.toString(),e=u.lastIndexOf(l.h),t(l.b),l.b.a(u.substring(0,e))),l.h!=P(l)){ return l.b.a(" "),V(l); } }return l.i.toString()}switch(l.u.b.length){case 0:case 1:case 2:return l.i.toString();case 3:if(!F(l)){ return l.h=P(l),E(l); }l.A=!0;default:return l.A?(U(l)&&(l.A=!1),l.b.toString()+l.a.toString()):0<l.f.length?(u=K(l,n),e=$(l),0<e.length?e:(j(l,l.a.toString()),G(l)?T(l):l.l?R(l,u):l.i.toString())):E(l)}}function V(l){return l.l=!0,l.A=!1,l.f=[],l.s=0,t(l.m),l.w="",E(l)}function $(l){for(var n=l.a.toString(),u=l.f.length,t=0;t<u;++t){var e=l.f[t],r=h(e,1);if(new RegExp("^(?:"+r+")$").test(n)){ return l.B=sl.test(c(e,4)),n=n.replace(new RegExp(r,"g"),c(e,2)),R(l,n) }}return ""}function R(l,n){var u=l.b.b.length;return l.B&&0<u&&" "!=l.b.toString().charAt(u-1)?l.b+" "+n:l.b+n}function E(l){var n=l.a.toString();if(3<=n.length){for(var u=l.o&&0==l.h.length&&0<g(l.g,20)?p(l.g,20)||[]:p(l.g,19)||[],t=u.length,e=0;e<t;++e){var r=u[e];0<l.h.length&&B(h(r,4))&&!c(r,6)&&null==r.a[5]||(0!=l.h.length||l.o||B(h(r,4))||c(r,6))&&ol.test(h(r,2))&&l.f.push(r);}return j(l,n),n=$(l),0<n.length?n:G(l)?T(l):l.i.toString()}return R(l,n)}function T(l){var n=l.a.toString(),u=n.length;if(0<u){for(var t="",e=0;e<u;e++){ t=K(l,n.charAt(e)); }return l.l?R(l,t):l.i.toString()}return l.b.toString()}function P(l){var n,u=l.a.toString(),e=0;return 1!=c(l.g,10)?n=!1:(n=l.a.toString(),n="1"==n.charAt(0)&&"0"!=n.charAt(1)&&"1"!=n.charAt(1)),n?(e=1,l.b.a("1").a(" "),l.o=!0):null!=l.g.a[15]&&(n=new RegExp("^(?:"+c(l.g,15)+")"),n=u.match(n),null!=n&&null!=n[0]&&0<n[0].length&&(l.o=!0,e=n[0].length,l.b.a(u.substring(0,e)))),t(l.a),l.a.a(u.substring(e)),u.substring(0,e)}function F(l){var n=l.u.toString(),u=new RegExp("^(?:\\+|"+c(l.g,11)+")"),u=n.match(u);return null!=u&&null!=u[0]&&0<u[0].length&&(l.o=!0,u=u[0].length,t(l.a),l.a.a(n.substring(u)),t(l.b),l.b.a(n.substring(0,u)),"+"!=n.charAt(0)&&l.b.a(" "),!0)}function U(l){if(0==l.a.b.length){ return !1; }var n,e=new u;l:{if(n=l.a.toString(),0!=n.length&&"0"!=n.charAt(0)){ for(var r,i=n.length,a=1;3>=a&&a<=i;++a){ if(r=parseInt(n.substring(0,a),10),r in ll){e.a(n.substring(a)),n=r;break l} } }n=0;}return 0!=n&&(t(l.a),l.a.a(e.toString()),e=M(n),"001"==e?l.g=C(l.G,""+n):e!=l.D&&(l.g=D(l,e)),l.b.a(""+n).a(" "),l.h="",!0)}function K(l,n){var u=l.m.toString();if(0<=u.substring(l.s).search(l.H)){var e=u.search(l.H),u=u.replace(l.H,n);return t(l.m),l.m.a(u),l.s=e,u.substring(0,l.s+1)}return 1==l.f.length&&(l.l=!1),l.w="",l.i.toString()}var Y=this;u.prototype.b="",u.prototype.set=function(l){this.b=""+l;},u.prototype.a=function(l,n,u){
+  function x(){this.a={};}function B(l){return 0==l.length||rl.test(l)}function C(l,n){if(null==n){ return null; }n=n.toUpperCase();var u=l.a[n];if(null==u){if(u=nl[n],null==u){ return null; }u=(new A).a(S.j(),u),l.a[n]=u;}return u}function M(l){return l=ll[l],null==l?"ZZ":l[0]}function N(l){this.H=RegExp(" "),this.C="",this.m=new u,this.w="",this.i=new u,this.u=new u,this.l=!0,this.A=this.o=this.F=!1,this.G=x.b(),this.s=0,this.b=new u,this.B=!1,this.h="",this.a=new u,this.f=[],this.D=l,this.J=this.g=D(this,this.D);}function D(l,n){var u;if(null!=n&&isNaN(n)&&n.toUpperCase()in nl){if(u=C(l.G,n),null==u){ throw Error("Invalid region code: "+n); }u=h(u,10);}else { u=0; }return u=C(l.G,M(u)),null!=u?u:il}function G(l){for(var n=l.f.length,u=0;u<n;++u){var e=l.f[u],r=h(e,1);if(l.w==r){ return !1; }var i;i=l;var a=e,d=h(a,1);if(-1!=d.indexOf("|")){ i=!1; }else {d=d.replace(al,"\\d"),d=d.replace(dl,"\\d"),t(i.m);var o;o=i;var a=h(a,2),s="999999999999999".match(d)[0];s.length<o.a.b.length?o="":(o=s.replace(new RegExp(d,"g"),a),o=o.replace(RegExp("9","g")," ")),0<o.length?(i.m.a(o),i=!0):i=!1;}if(i){ return l.w=r,l.B=sl.test(c(e,4)),l.s=0,!0 }}return l.l=!1}function j(l,n){for(var u=[],t=n.length-3,e=l.f.length,r=0;r<e;++r){var i=l.f[r];0==g(i,3)?u.push(l.f[r]):(i=c(i,3,Math.min(t,g(i,3)-1)),0==n.search(i)&&u.push(l.f[r]));}l.f=u;}function I(l,n){l.i.a(n);var u=n;if(el.test(u)||1==l.i.b.length&&tl.test(u)){var e,u=n;"+"==u?(e=u,l.u.a(u)):(e=ul[u],l.u.a(e),l.a.a(e)),n=e;}else { l.l=!1,l.F=!0; }if(!l.l){if(!l.F){ if(F(l)){if(U(l)){ return V(l) }}else if(0<l.h.length&&(u=l.a.toString(),t(l.a),l.a.a(l.h),l.a.a(u),u=l.b.toString(),e=u.lastIndexOf(l.h),t(l.b),l.b.a(u.substring(0,e))),l.h!=P(l)){ return l.b.a(" "),V(l); } }return l.i.toString()}switch(l.u.b.length){case 0:case 1:case 2:return l.i.toString();case 3:if(!F(l)){ return l.h=P(l),E(l); }l.A=!0;default:return l.A?(U(l)&&(l.A=!1),l.b.toString()+l.a.toString()):0<l.f.length?(u=K(l,n),e=$(l),0<e.length?e:(j(l,l.a.toString()),G(l)?T(l):l.l?R(l,u):l.i.toString())):E(l)}}function V(l){return l.l=!0,l.A=!1,l.f=[],l.s=0,t(l.m),l.w="",E(l)}function $(l){for(var n=l.a.toString(),u=l.f.length,t=0;t<u;++t){var e=l.f[t],r=h(e,1);if(new RegExp("^(?:"+r+")$").test(n)){ return l.B=sl.test(c(e,4)),n=n.replace(new RegExp(r,"g"),c(e,2)),R(l,n) }}return ""}function R(l,n){var u=l.b.b.length;return l.B&&0<u&&" "!=l.b.toString().charAt(u-1)?l.b+" "+n:l.b+n}function E(l){var n=l.a.toString();if(3<=n.length){for(var u=l.o&&0==l.h.length&&0<g(l.g,20)?p(l.g,20)||[]:p(l.g,19)||[],t=u.length,e=0;e<t;++e){var r=u[e];0<l.h.length&&B(h(r,4))&&!c(r,6)&&null==r.a[5]||(0!=l.h.length||l.o||B(h(r,4))||c(r,6))&&ol.test(h(r,2))&&l.f.push(r);}return j(l,n),n=$(l),0<n.length?n:G(l)?T(l):l.i.toString()}return R(l,n)}function T(l){var n=l.a.toString(),u=n.length;if(0<u){for(var t="",e=0;e<u;e++){ t=K(l,n.charAt(e)); }return l.l?R(l,t):l.i.toString()}return l.b.toString()}function P(l){var n,u=l.a.toString(),e=0;return 1!=c(l.g,10)?n=!1:(n=l.a.toString(),n="1"==n.charAt(0)&&"0"!=n.charAt(1)&&"1"!=n.charAt(1)),n?(e=1,l.b.a("1").a(" "),l.o=!0):null!=l.g.a[15]&&(n=new RegExp("^(?:"+c(l.g,15)+")"),n=u.match(n),null!=n&&null!=n[0]&&0<n[0].length&&(l.o=!0,e=n[0].length,l.b.a(u.substring(0,e)))),t(l.a),l.a.a(u.substring(e)),u.substring(0,e)}function F(l){var n=l.u.toString(),u=new RegExp("^(?:\\+|"+c(l.g,11)+")"),u=n.match(u);return null!=u&&null!=u[0]&&0<u[0].length&&(l.o=!0,u=u[0].length,t(l.a),l.a.a(n.substring(u)),t(l.b),l.b.a(n.substring(0,u)),"+"!=n.charAt(0)&&l.b.a(" "),!0)}function U(l){if(0==l.a.b.length){ return !1; }var n,e=new u;l:{if(n=l.a.toString(),0!=n.length&&"0"!=n.charAt(0)){ for(var r,i=n.length,a=1;3>=a&&a<=i;++a){ if(r=parseInt(n.substring(0,a),10),r in ll){e.a(n.substring(a)),n=r;break l} } }n=0;}return 0!=n&&(t(l.a),l.a.a(e.toString()),e=M(n),"001"==e?l.g=C(l.G,""+n):e!=l.D&&(l.g=D(l,e)),l.b.a(""+n).a(" "),l.h="",!0)}function K(l,n){var u=l.m.toString();if(0<=u.substring(l.s).search(l.H)){var e=u.search(l.H),u=u.replace(l.H,n);return t(l.m),l.m.a(u),l.s=e,u.substring(0,l.s+1)}return 1==l.f.length&&(l.l=!1),l.w="",l.i.toString()}var Y=this;u.prototype.b="",u.prototype.set=function(l){this.b=""+l;},u.prototype.a=function(l,n,u){
   var arguments$1 = arguments;
   if(this.b+=String(l),null!=n){ for(var t=1;t<arguments.length;t++){ this.b+=arguments$1[t]; } }return this},u.prototype.toString=function(){return this.b};var J=1,L=2,O=3,H=4,q=6,X=16,k=18;s.prototype.set=function(l,n){m(this,l.b,n);},s.prototype.clone=function(){var l=new this.constructor;return l!=this&&(l.a={},l.b&&(l.b={}),f(l,this)),l},n(y,s);var Z=null;n(v,s);var z=null;n(S,s);var Q=null;y.prototype.j=function(){var l=Z;return l||(Z=l=b(y,{0:{name:"NumberFormat",I:"i18n.phonenumbers.NumberFormat"},1:{name:"pattern",required:!0,c:9,type:String},2:{name:"format",required:!0,c:9,type:String},3:{name:"leading_digits_pattern",v:!0,c:9,type:String},4:{name:"national_prefix_formatting_rule",c:9,type:String},6:{name:"national_prefix_optional_when_formatting",c:8,defaultValue:!1,type:Boolean},5:{name:"domestic_carrier_code_formatting_rule",c:9,type:String}})),l},y.j=y.prototype.j,v.prototype.j=function(){var l=z;return l||(z=l=b(v,{0:{name:"PhoneNumberDesc",I:"i18n.phonenumbers.PhoneNumberDesc"},2:{name:"national_number_pattern",c:9,type:String},9:{name:"possible_length",v:!0,c:5,type:Number},10:{name:"possible_length_local_only",v:!0,c:5,type:Number},6:{name:"example_number",c:9,type:String}})),l},v.j=v.prototype.j,S.prototype.j=function(){var l=Q;return l||(Q=l=b(S,{0:{name:"PhoneMetadata",I:"i18n.phonenumbers.PhoneMetadata"},1:{name:"general_desc",c:11,type:v},2:{name:"fixed_line",c:11,type:v},3:{name:"mobile",c:11,type:v},4:{name:"toll_free",c:11,type:v},5:{name:"premium_rate",c:11,type:v},6:{name:"shared_cost",c:11,type:v},7:{name:"personal_number",c:11,type:v},8:{name:"voip",c:11,type:v},21:{name:"pager",c:11,type:v},25:{name:"uan",c:11,type:v},27:{name:"emergency",c:11,type:v},28:{name:"voicemail",c:11,type:v},29:{name:"short_code",c:11,type:v},30:{name:"standard_rate",c:11,type:v},31:{name:"carrier_specific",c:11,type:v},33:{name:"sms_services",c:11,type:v},24:{name:"no_international_dialling",c:11,type:v},9:{name:"id",required:!0,c:9,type:String},10:{name:"country_code",c:5,type:Number},11:{name:"international_prefix",c:9,type:String},17:{name:"preferred_international_prefix",c:9,type:String},12:{name:"national_prefix",c:9,type:String},13:{name:"preferred_extn_prefix",c:9,type:String},15:{name:"national_prefix_for_parsing",c:9,type:String},16:{name:"national_prefix_transform_rule",c:9,type:String},18:{name:"same_mobile_and_fixed_line_pattern",c:8,defaultValue:!1,type:Boolean},19:{name:"number_format",v:!0,c:11,type:y},20:{name:"intl_number_format",v:!0,c:11,type:y},22:{name:"main_country_for_code",c:8,defaultValue:!1,type:Boolean},23:{name:"leading_digits",c:9,type:String},26:{name:"leading_zero_possible",c:8,defaultValue:!1,type:Boolean}})),l},S.j=S.prototype.j,_.prototype.a=function(l){throw new l.b,Error("Unimplemented")},_.prototype.b=function(l,n){if(11==l.a||10==l.a){ return n instanceof s?n:this.a(l.i.prototype.j(),n); }if(14==l.a){if("string"==typeof n&&W.test(n)){var u=Number(n);if(0<u){ return u }}return n}if(!l.h){ return n; }if(u=l.i,u===String){if("number"==typeof n){ return String(n) }}else if(u===Number&&"string"==typeof n&&("Infinity"===n||"-Infinity"===n||"NaN"===n||W.test(n))){ return Number(n); }return n};var W=/^-?[0-9]+$/;n(w,_),w.prototype.a=function(l,n){var u=new l.b;return u.g=this,u.a=n,u.b={},u},n(A,w),A.prototype.b=function(l,n){return 8==l.a?!!n:_.prototype.b.apply(this,arguments)},A.prototype.a=function(l,n){return A.M.a.call(this,l,n)};/*
 
@@ -5653,244 +4957,214 @@ var AccessNyc = (function () {
    * @class
    */
 
-  var ShareForm =
-  /*#__PURE__*/
-  function () {
+  var ShareForm = function ShareForm(element) {
+    var this$1 = this;
+
+    this.element = element;
     /**
-     * Class Constructor
-     * @param   {Object}  el  The DOM Share Form Element
-     * @return  {Object}      The instantiated class
+     * Setting class variables to our constants
      */
-    function ShareForm(element) {
-      var _this = this;
 
-      _classCallCheck(this, ShareForm);
+    this.selector = ShareForm.selector;
+    this.selectors = ShareForm.selectors;
+    this.classes = ShareForm.classes;
+    this.strings = ShareForm.strings;
+    this.patterns = ShareForm.patterns;
+    this.sent = ShareForm.sent;
+    /**
+     * Set up masking for phone numbers (if this is a texting module)
+     */
 
-      this.element = element;
-      /**
-       * Setting class variables to our constants
-       */
+    this.phone = this.element.querySelector(this.selectors.PHONE);
 
-      this.selector = ShareForm.selector;
-      this.selectors = ShareForm.selectors;
-      this.classes = ShareForm.classes;
-      this.strings = ShareForm.strings;
-      this.patterns = ShareForm.patterns;
-      this.sent = ShareForm.sent;
-      /**
-       * Set up masking for phone numbers (if this is a texting module)
-       */
-
-      this.phone = this.element.querySelector(this.selectors.PHONE);
-
-      if (this.phone) {
-        this.cleave = new Cleave_1(this.phone, {
-          phone: true,
-          phoneRegionCode: 'us',
-          delimiter: '-'
-        });
-        this.phone.setAttribute('pattern', this.patterns.PHONE);
-        this.type = 'text';
-      } else {
-        this.type = 'email';
-      }
-      /**
-       * Configure the validation for the form using the form utility
-       */
-
-
-      this.form = new Forms(this.element.querySelector(this.selectors.FORM));
-      this.form.strings = this.strings;
-      this.form.selectors = {
-        'REQUIRED': this.selectors.REQUIRED,
-        'ERROR_MESSAGE_PARENT': this.selectors.FORM
-      };
-      this.form.FORM.addEventListener('submit', function (event) {
-        event.preventDefault();
-        if (_this.form.valid(event) === false) { return false; }
-
-        _this.sanitize().processing().submit(event).then(function (response) {
-          return response.json();
-        }).then(function (response) {
-          _this.response(response);
-        })["catch"](function (data) {
-        });
+    if (this.phone) {
+      this.cleave = new Cleave_1(this.phone, {
+        phone: true,
+        phoneRegionCode: 'us',
+        delimiter: '-'
       });
-      /**
-       * Instatiate the ShareForm's toggle component
-       */
-
-      this.toggle = new Toggle({
-        element: this.element.querySelector(this.selectors.TOGGLE),
-        after: function after() {
-          _this.element.querySelector(_this.selectors.INPUT).focus();
-        }
-      });
-      return this;
+      this.phone.setAttribute('pattern', this.patterns.PHONE);
+      this.type = 'text';
+    } else {
+      this.type = 'email';
     }
     /**
-     * Serialize and clean any data sent to the server
-     * @return  {Object}  The instantiated class
+     * Configure the validation for the form using the form utility
      */
 
 
-    _createClass(ShareForm, [{
-      key: "sanitize",
-      value: function sanitize() {
-        // Serialize the data
-        this._data = formSerialize(this.form.FORM, {
-          hash: true
-        }); // Sanitize the phone number (if there is a phone number)
+    this.form = new Forms(this.element.querySelector(this.selectors.FORM));
+    this.form.strings = this.strings;
+    this.form.selectors = {
+      'REQUIRED': this.selectors.REQUIRED,
+      'ERROR_MESSAGE_PARENT': this.selectors.FORM
+    };
+    this.form.FORM.addEventListener('submit', function (event) {
+      event.preventDefault();
+      if (this$1.form.valid(event) === false) { return false; }
+      this$1.sanitize().processing().submit(event).then(function (response) { return response.json(); }).then(function (response) {
+        this$1.response(response);
+      }).catch(function (data) {
+      });
+    });
+    /**
+     * Instatiate the ShareForm's toggle component
+     */
 
-        if (this.phone && this._data.to) { this._data.to = this._data.to.replace(/[-]/g, ''); }
-        return this;
+    this.toggle = new Toggle({
+      element: this.element.querySelector(this.selectors.TOGGLE),
+      after: function () {
+        this$1.element.querySelector(this$1.selectors.INPUT).focus();
       }
-      /**
-       * Switch the form to the processing state
-       * @return  {Object}  The instantiated class
-       */
+    });
+    return this;
+  };
+  /**
+   * Serialize and clean any data sent to the server
+   * @return{Object}The instantiated class
+   */
 
-    }, {
-      key: "processing",
-      value: function processing() {
-        // Disable the form
-        var inputs = this.form.FORM.querySelectorAll(this.selectors.INPUTS);
 
-        for (var i = 0; i < inputs.length; i++) {
-          inputs[i].setAttribute('disabled', true);
-        }
+  ShareForm.prototype.sanitize = function sanitize () {
+    // Serialize the data
+    this._data = formSerialize(this.form.FORM, {
+      hash: true
+    }); // Sanitize the phone number (if there is a phone number)
 
-        var button = this.form.FORM.querySelector(this.selectors.SUBMIT);
-        button.setAttribute('disabled', true); // Show processing state
+    if (this.phone && this._data.to) { this._data.to = this._data.to.replace(/[-]/g, ''); }
+    return this;
+  };
+  /**
+   * Switch the form to the processing state
+   * @return{Object}The instantiated class
+   */
 
-        this.form.FORM.classList.add(this.classes.PROCESSING);
-        return this;
-      }
-      /**
-       * POSTs the serialized form data using the Fetch Method
-       * @return {Promise} Fetch promise
-       */
 
-    }, {
-      key: "submit",
-      value: function submit() {
-        var _this2 = this;
+  ShareForm.prototype.processing = function processing () {
+    // Disable the form
+    var inputs = this.form.FORM.querySelectorAll(this.selectors.INPUTS);
 
-        // To send the data with the application/x-www-form-urlencoded header
-        // we need to use URLSearchParams(); instead of FormData(); which uses
-        // multipart/form-data
-        var formData = new URLSearchParams();
-        Object.keys(this._data).map(function (k) {
-          formData.append(k, _this2._data[k]);
-        });
-        var html = document.querySelector('html');
+    for (var i = 0; i < inputs.length; i++) { inputs[i].setAttribute('disabled', true); }
 
-        if (html.hasAttribute('lang')) {
-          formData.append('lang', html.getAttribute('lang'));
-        }
+    var button = this.form.FORM.querySelector(this.selectors.SUBMIT);
+    button.setAttribute('disabled', true); // Show processing state
 
-        return fetch(this.form.FORM.getAttribute('action'), {
-          method: this.form.FORM.getAttribute('method'),
-          body: formData
-        });
-      }
-      /**
-       * The response handler
-       * @param   {Object}  data  Data from the request
-       * @return  {Object}        The instantiated class
-       */
+    this.form.FORM.classList.add(this.classes.PROCESSING);
+    return this;
+  };
+  /**
+   * POSTs the serialized form data using the Fetch Method
+   * @return {Promise} Fetch promise
+   */
 
-    }, {
-      key: "response",
-      value: function response(data) {
-        if (data.success) {
-          this.success();
-        } else {
-          if (data.error === 21211) {
-            this.feedback('SERVER_TEL_INVALID').enable();
-          } else {
-            this.feedback('SERVER').enable();
-          }
-        }
-        return this;
-      }
-      /**
-       * Queues the success message and adds an event listener to reset the form
-       * to it's default state.
-       * @return  {Object}  The instantiated class
-       */
 
-    }, {
-      key: "success",
-      value: function success() {
-        var _this3 = this;
+  ShareForm.prototype.submit = function submit () {
+      var this$1 = this;
 
-        this.form.FORM.classList.replace(this.classes.PROCESSING, this.classes.SUCCESS);
-        this.enable();
-        this.form.FORM.addEventListener('input', function () {
-          _this3.form.FORM.classList.remove(_this3.classes.SUCCESS);
-        }); // Successful messages hook (fn provided to the class upon instatiation)
+    // To send the data with the application/x-www-form-urlencoded header
+    // we need to use URLSearchParams(); instead of FormData(); which uses
+    // multipart/form-data
+    var formData = new URLSearchParams();
+    Object.keys(this._data).map(function (k) {
+      formData.append(k, this$1._data[k]);
+    });
+    var html = document.querySelector('html');
 
-        if (this.sent) { this.sent(this); }
-        return this;
-      }
-      /**
-       * Queues the server error message
-       * @param   {Object}  response  The error response from the request
-       * @return  {Object}            The instantiated class
-       */
+    if (html.hasAttribute('lang')) {
+      formData.append('lang', html.getAttribute('lang'));
+    }
 
-    }, {
-      key: "error",
-      value: function error(response) {
+    return fetch(this.form.FORM.getAttribute('action'), {
+      method: this.form.FORM.getAttribute('method'),
+      body: formData
+    });
+  };
+  /**
+   * The response handler
+   * @param {Object}dataData from the request
+   * @return{Object}      The instantiated class
+   */
+
+
+  ShareForm.prototype.response = function response (data) {
+    if (data.success) {
+      this.success();
+    } else {
+      if (data.error === 21211) {
+        this.feedback('SERVER_TEL_INVALID').enable();
+      } else {
         this.feedback('SERVER').enable();
-        return this;
       }
-      /**
-       * Adds a div containing the feedback message to the user and toggles the
-       * class of the form
-       * @param   {string}  KEY  The key of message paired in messages and classes
-       * @return  {Object}       The instantiated class
-       */
+    }
+    return this;
+  };
+  /**
+   * Queues the success message and adds an event listener to reset the form
+   * to it's default state.
+   * @return{Object}The instantiated class
+   */
 
-    }, {
-      key: "feedback",
-      value: function feedback(KEY) {
-        // Create the new error message
-        var message = document.createElement('div'); // Set the feedback class and insert text
 
-        message.classList.add("".concat(this.classes[KEY]).concat(this.classes.MESSAGE));
-        message.innerHTML = this.strings[KEY]; // Add message to the form and add feedback class
+  ShareForm.prototype.success = function success () {
+      var this$1 = this;
 
-        this.form.FORM.insertBefore(message, this.form.FORM.childNodes[0]);
-        this.form.FORM.classList.add(this.classes[KEY]);
-        return this;
-      }
-      /**
-       * Enables the ShareForm (after submitting a request)
-       * @return  {Object}  The instantiated class
-       */
+    this.form.FORM.classList.replace(this.classes.PROCESSING, this.classes.SUCCESS);
+    this.enable();
+    this.form.FORM.addEventListener('input', function () {
+      this$1.form.FORM.classList.remove(this$1.classes.SUCCESS);
+    }); // Successful messages hook (fn provided to the class upon instatiation)
 
-    }, {
-      key: "enable",
-      value: function enable() {
-        // Enable the form
-        var inputs = this.form.FORM.querySelectorAll(this.selectors.INPUTS);
+    if (this.sent) { this.sent(this); }
+    return this;
+  };
+  /**
+   * Queues the server error message
+   * @param {Object}responseThe error response from the request
+   * @return{Object}          The instantiated class
+   */
 
-        for (var i = 0; i < inputs.length; i++) {
-          inputs[i].removeAttribute('disabled');
-        }
 
-        var button = this.form.FORM.querySelector(this.selectors.SUBMIT);
-        button.removeAttribute('disabled'); // Remove the processing class
+  ShareForm.prototype.error = function error (response) {
+    this.feedback('SERVER').enable();
+    return this;
+  };
+  /**
+   * Adds a div containing the feedback message to the user and toggles the
+   * class of the form
+   * @param {string}KEYThe key of message paired in messages and classes
+   * @return{Object}     The instantiated class
+   */
 
-        this.form.FORM.classList.remove(this.classes.PROCESSING);
-        return this;
-      }
-    }]);
 
-    return ShareForm;
-  }();
+  ShareForm.prototype.feedback = function feedback (KEY) {
+    // Create the new error message
+    var message = document.createElement('div'); // Set the feedback class and insert text
+
+    message.classList.add(("" + (this.classes[KEY]) + (this.classes.MESSAGE)));
+    message.innerHTML = this.strings[KEY]; // Add message to the form and add feedback class
+
+    this.form.FORM.insertBefore(message, this.form.FORM.childNodes[0]);
+    this.form.FORM.classList.add(this.classes[KEY]);
+    return this;
+  };
+  /**
+   * Enables the ShareForm (after submitting a request)
+   * @return{Object}The instantiated class
+   */
+
+
+  ShareForm.prototype.enable = function enable () {
+    // Enable the form
+    var inputs = this.form.FORM.querySelectorAll(this.selectors.INPUTS);
+
+    for (var i = 0; i < inputs.length; i++) { inputs[i].removeAttribute('disabled'); }
+
+    var button = this.form.FORM.querySelector(this.selectors.SUBMIT);
+    button.removeAttribute('disabled'); // Remove the processing class
+
+    this.form.FORM.classList.remove(this.classes.PROCESSING);
+    return this;
+  };
   /** The main component selector */
 
 
@@ -5939,67 +5213,59 @@ var AccessNyc = (function () {
   };
   ShareForm.sent = false;
 
-  /*! js-cookie v3.0.0-beta.0 | MIT */
-  function extend () {
+  /*! js-cookie v3.0.0-rc.0 | MIT */
+  function assign (target) {
     var arguments$1 = arguments;
 
-    var result = {};
-    for (var i = 0; i < arguments.length; i++) {
-      var attributes = arguments$1[i];
-      for (var key in attributes) {
-        result[key] = attributes[key];
+    for (var i = 1; i < arguments.length; i++) {
+      var source = arguments$1[i];
+      for (var key in source) {
+        target[key] = source[key];
       }
     }
-    return result
+    return target
   }
 
-  function decode (s) {
-    return s.replace(/(%[\dA-F]{2})+/gi, decodeURIComponent)
-  }
+  var defaultConverter = {
+    read: function (value) {
+      return value.replace(/%3B/g, ';')
+    },
+    write: function (value) {
+      return value.replace(/;/g, '%3B')
+    }
+  };
 
-  function init (converter) {
+  function init (converter, defaultAttributes) {
     function set (key, value, attributes) {
       if (typeof document === 'undefined') {
         return
       }
 
-      attributes = extend(api.defaults, attributes);
+      attributes = assign({}, defaultAttributes, attributes);
 
       if (typeof attributes.expires === 'number') {
-        attributes.expires = new Date(new Date() * 1 + attributes.expires * 864e5);
+        attributes.expires = new Date(Date.now() + attributes.expires * 864e5);
       }
       if (attributes.expires) {
         attributes.expires = attributes.expires.toUTCString();
       }
 
-      value = converter.write
-        ? converter.write(value, key)
-        : encodeURIComponent(String(value)).replace(
-          /%(23|24|26|2B|3A|3C|3E|3D|2F|3F|40|5B|5D|5E|60|7B|7D|7C)/g,
-          decodeURIComponent
-        );
+      key = defaultConverter.write(key).replace(/=/g, '%3D');
 
-      key = encodeURIComponent(String(key))
-        .replace(/%(23|24|26|2B|5E|60|7C)/g, decodeURIComponent)
-        .replace(/[()]/g, escape);
+      value = converter.write(String(value), key);
 
       var stringifiedAttributes = '';
       for (var attributeName in attributes) {
         if (!attributes[attributeName]) {
           continue
         }
+
         stringifiedAttributes += '; ' + attributeName;
+
         if (attributes[attributeName] === true) {
           continue
         }
 
-        // Considers RFC 6265 section 5.2:
-        // ...
-        // 3.  If the remaining unparsed-attributes contains a %x3B (";")
-        //     character:
-        // Consume the characters of the unparsed-attributes up to,
-        // not including, the first %x3B (";") character.
-        // ...
         stringifiedAttributes += '=' + attributes[attributeName].split(';')[0];
       }
 
@@ -6017,105 +5283,88 @@ var AccessNyc = (function () {
       var jar = {};
       for (var i = 0; i < cookies.length; i++) {
         var parts = cookies[i].split('=');
-        var cookie = parts.slice(1).join('=');
+        var value = parts.slice(1).join('=');
+        var foundKey = defaultConverter.read(parts[0]).replace(/%3D/g, '=');
+        jar[foundKey] = converter.read(value, foundKey);
 
-        if (cookie.charAt(0) === '"') {
-          cookie = cookie.slice(1, -1);
+        if (key === foundKey) {
+          break
         }
-
-        try {
-          var name = decode(parts[0]);
-          jar[name] =
-            (converter.read || converter)(cookie, name) || decode(cookie);
-
-          if (key === name) {
-            break
-          }
-        } catch (e) {}
       }
 
       return key ? jar[key] : jar
     }
 
-    var api = {
-      defaults: {
-        path: '/'
+    return Object.create(
+      {
+        set: set,
+        get: get,
+        remove: function (key, attributes) {
+          set(
+            key,
+            '',
+            assign({}, attributes, {
+              expires: -1
+            })
+          );
+        },
+        withAttributes: function (attributes) {
+          return init(this.converter, assign({}, this.attributes, attributes))
+        },
+        withConverter: function (converter) {
+          return init(assign({}, this.converter, converter), this.attributes)
+        }
       },
-      set: set,
-      get: get,
-      remove: function (key, attributes) {
-        set(
-          key,
-          '',
-          extend(attributes, {
-            expires: -1
-          })
-        );
-      },
-      withConverter: init
-    };
-
-    return api
+      {
+        attributes: { value: Object.freeze(defaultAttributes) },
+        converter: { value: Object.freeze(converter) }
+      }
+    )
   }
 
-  var js_cookie = init(function () {});
+  var api = init(defaultConverter, { path: '/' });
 
   /**
    * Alert Banner module
    */
 
-  var AlertBanner =
-  /*#__PURE__*/
-  function () {
+  var AlertBanner = function AlertBanner(element) {
+    var this$1 = this;
+
+    this.selector = AlertBanner.selector;
+    this.selectors = AlertBanner.selectors;
+    this.data = AlertBanner.data;
+    this.expires = AlertBanner.expires;
+    this.element = element;
+    this.name = element.dataset[this.data.NAME];
+    this.button = element.querySelector(this.selectors.BUTTON);
     /**
-     * @param {Object} element
-     * @return {Object} AlertBanner
-     */
-    function AlertBanner(element) {
-      var _this = this;
-
-      _classCallCheck(this, AlertBanner);
-
-      this.selector = AlertBanner.selector;
-      this.selectors = AlertBanner.selectors;
-      this.data = AlertBanner.data;
-      this.expires = AlertBanner.expires;
-      this.element = element;
-      this.name = element.dataset[this.data.NAME];
-      this.button = element.querySelector(this.selectors.BUTTON);
-      /**
-       * Create new Toggle for this alert
-       */
-
-      this._toggle = new Toggle({
-        selector: this.selectors.BUTTON,
-        after: function after() {
-          if (element.classList.contains(Toggle.inactiveClass)) { js_cookie.set(_this.name, 'dismissed', {
-            expires: _this.expires
-          }); }else if (element.classList.contains(Toggle.activeClass)) { js_cookie.remove(_this.name); }
-        }
-      }); // If the cookie is present and the Alert is active, hide it.
-
-      if (js_cookie.get(this.name) && element.classList.contains(Toggle.activeClass)) { this._toggle.elementToggle(this.button, element); }
-      return this;
-    }
-    /**
-     * Method to toggle the alert banner
-     * @return {Object} Instance of AlertBanner
+     * Create new Toggle for this alert
      */
 
-
-    _createClass(AlertBanner, [{
-      key: "toggle",
-      value: function toggle() {
-        this._toggle.elementToggle(this.button, this.element);
-
-        return this;
+    this._toggle = new Toggle({
+      selector: this.selectors.BUTTON,
+      after: function () {
+        if (element.classList.contains(Toggle.inactiveClass)) { api.set(this$1.name, 'dismissed', {
+          expires: this$1.expires
+        }); }else if (element.classList.contains(Toggle.activeClass)) { api.remove(this$1.name); }
       }
-    }]);
+    }); // If the cookie is present and the Alert is active, hide it.
 
-    return AlertBanner;
-  }();
+    if (api.get(this.name) && element.classList.contains(Toggle.activeClass)) { this._toggle.elementToggle(this.button, element); }
+    return this;
+  };
+  /**
+   * Method to toggle the alert banner
+   * @return {Object} Instance of AlertBanner
+   */
+
+
+  AlertBanner.prototype.toggle = function toggle () {
+    this._toggle.elementToggle(this.button, this.element);
+
+    return this;
+  };
   /** Main selector for the Alert Banner Element */
 
 
@@ -6139,255 +5388,226 @@ var AccessNyc = (function () {
    * @class
    */
 
-  var Newsletter =
-  /*#__PURE__*/
-  function () {
-    /**
-     * The class constructor
-     * @param  {Object} element The Newsletter DOM Object
-     * @return {Class}          The instantiated Newsletter object
-     */
-    function Newsletter(element) {
-      var _this = this;
+  var Newsletter = function Newsletter(element) {
+    var this$1 = this;
 
-      _classCallCheck(this, Newsletter);
+    this._el = element;
+    this.keys = Newsletter.keys;
+    this.endpoints = Newsletter.endpoints;
+    this.callback = Newsletter.callback;
+    this.selectors = Newsletter.selectors;
+    this.selector = Newsletter.selector;
+    this.stringKeys = Newsletter.stringKeys;
+    this.strings = Newsletter.strings;
+    this.templates = Newsletter.templates;
+    this.classes = Newsletter.classes; // This sets the script callback function to a global function that
+    // can be accessed by the the requested script.
 
-      this._el = element;
-      this.keys = Newsletter.keys;
-      this.endpoints = Newsletter.endpoints;
-      this.callback = Newsletter.callback;
-      this.selectors = Newsletter.selectors;
-      this.selector = Newsletter.selector;
-      this.stringKeys = Newsletter.stringKeys;
-      this.strings = Newsletter.strings;
-      this.templates = Newsletter.templates;
-      this.classes = Newsletter.classes; // This sets the script callback function to a global function that
-      // can be accessed by the the requested script.
+    window[Newsletter.callback] = function (data) {
+      this$1._callback(data);
+    };
 
-      window[Newsletter.callback] = function (data) {
-        _this._callback(data);
-      };
+    this.form = new Forms(this._el.querySelector('form'));
+    this.form.strings = this.strings;
 
-      this.form = new Forms(this._el.querySelector('form'));
-      this.form.strings = this.strings;
+    this.form.submit = function (event) {
+      event.preventDefault();
 
-      this.form.submit = function (event) {
-        event.preventDefault();
+      this$1._submit(event).then(this$1._onload).catch(this$1._onerror);
+    };
 
-        _this._submit(event).then(_this._onload)["catch"](_this._onerror);
-      };
+    this.form.watch();
+    return this;
+  };
+  /**
+   * The form submission method. Requests a script with a callback function
+   * to be executed on our page. The callback function will be passed the
+   * response as a JSON object (function parameter).
+   * @param{Event} event The form submission event
+   * @return {Promise}     A promise containing the new script call
+   */
 
-      this.form.watch();
-      return this;
+
+  Newsletter.prototype._submit = function _submit (event) {
+    event.preventDefault(); // Serialize the data
+
+    this._data = formSerialize(event.target, {
+      hash: true
+    }); // Switch the action to post-json. This creates an endpoint for mailchimp
+    // that acts as a script that can be loaded onto our page.
+
+    var action = event.target.action.replace(((Newsletter.endpoints.MAIN) + "?"), ((Newsletter.endpoints.MAIN_JSON) + "?")); // Add our params to the action
+
+    action = action + formSerialize(event.target, {
+      serializer: function () {
+          var params = [], len = arguments.length;
+          while ( len-- ) params[ len ] = arguments[ len ];
+
+        var prev = typeof params[0] === 'string' ? params[0] : '';
+        return (prev + "&" + (params[1]) + "=" + (params[2]));
+      }
+    }); // Append the callback reference. Mailchimp will wrap the JSON response in
+    // our callback method. Once we load the script the callback will execute.
+
+    action = action + "&c=window." + (Newsletter.callback); // Create a promise that appends the script response of the post-json method
+
+    return new Promise(function (resolve, reject) {
+      var script = document.createElement('script');
+      document.body.appendChild(script);
+      script.onload = resolve;
+      script.onerror = reject;
+      script.async = true;
+      script.src = encodeURI(action);
+    });
+  };
+  /**
+   * The script onload resolution
+   * @param{Event} event The script on load event
+   * @return {Class}     The Newsletter class
+   */
+
+
+  Newsletter.prototype._onload = function _onload (event) {
+    event.path[0].remove();
+    return this;
+  };
+  /**
+   * The script on error resolution
+   * @param{Object} error The script on error load event
+   * @return {Class}      The Newsletter class
+   */
+
+
+  Newsletter.prototype._onerror = function _onerror (error) {
+    return this;
+  };
+  /**
+   * The callback function for the MailChimp Script call
+   * @param{Object} data The success/error message from MailChimp
+   * @return {Class}     The Newsletter class
+   */
+
+
+  Newsletter.prototype._callback = function _callback (data) {
+    if (this[("_" + (data[this._key('MC_RESULT')]))]) { this[("_" + (data[this._key('MC_RESULT')]))](data.msg); }
+    return this;
+  };
+  /**
+   * Submission error handler
+   * @param{string} msg The error message
+   * @return {Class}    The Newsletter class
+   */
+
+
+  Newsletter.prototype._error = function _error (msg) {
+    this._elementsReset();
+
+    this._messaging('WARNING', msg);
+
+    return this;
+  };
+  /**
+   * Submission success handler
+   * @param{string} msg The success message
+   * @return {Class}    The Newsletter class
+   */
+
+
+  Newsletter.prototype._success = function _success (msg) {
+    this._elementsReset();
+
+    this._messaging('SUCCESS', msg);
+
+    return this;
+  };
+  /**
+   * Present the response message to the user
+   * @param{String} type The message type
+   * @param{String} msgThe message
+   * @return {Class}     Newsletter
+   */
+
+
+  Newsletter.prototype._messaging = function _messaging (type, msg) {
+      if ( msg === void 0 ) msg = 'no message';
+
+    var strings = Object.keys(Newsletter.stringKeys);
+    var handled = false;
+
+    var alertBox = this._el.querySelector(Newsletter.selectors[(type + "_BOX")]);
+
+    var alertBoxMsg = alertBox.querySelector(Newsletter.selectors.ALERT_BOX_TEXT); // Get the localized string, these should be written to the DOM already.
+    // The utility contains a global method for retrieving them.
+
+    for (var i = 0; i < strings.length; i++) { if (msg.indexOf(Newsletter.stringKeys[strings[i]]) > -1) {
+      msg = this.strings[strings[i]];
+      handled = true;
+    } } // Replace string templates with values from either our form data or
+    // the Newsletter strings object.
+
+
+    for (var x = 0; x < Newsletter.templates.length; x++) {
+      var template = Newsletter.templates[x];
+      var key = template.replace('{{ ', '').replace(' }}', '');
+      var value = this._data[key] || this.strings[key];
+      var reg = new RegExp(template, 'gi');
+      msg = msg.replace(reg, value ? value : '');
     }
-    /**
-     * The form submission method. Requests a script with a callback function
-     * to be executed on our page. The callback function will be passed the
-     * response as a JSON object (function parameter).
-     * @param  {Event}   event The form submission event
-     * @return {Promise}       A promise containing the new script call
-     */
+
+    if (handled) { alertBoxMsg.innerHTML = msg; }else if (type === 'ERROR') { alertBoxMsg.innerHTML = this.strings.ERR_PLEASE_TRY_LATER; }
+    if (alertBox) { this._elementShow(alertBox, alertBoxMsg); }
+    return this;
+  };
+  /**
+   * The main toggling method
+   * @return {Class}       Newsletter
+   */
 
 
-    _createClass(Newsletter, [{
-      key: "_submit",
-      value: function _submit(event) {
-        event.preventDefault(); // Serialize the data
+  Newsletter.prototype._elementsReset = function _elementsReset () {
+    var targets = this._el.querySelectorAll(Newsletter.selectors.ALERT_BOXES);
 
-        this._data = formSerialize(event.target, {
-          hash: true
-        }); // Switch the action to post-json. This creates an endpoint for mailchimp
-        // that acts as a script that can be loaded onto our page.
+    var loop = function ( i ) {
+        if (!targets[i].classList.contains(Newsletter.classes.HIDDEN)) {
+      targets[i].classList.add(Newsletter.classes.HIDDEN);
+      Newsletter.classes.ANIMATE.split(' ').forEach(function (item) { return targets[i].classList.remove(item); }); // Screen Readers
 
-        var action = event.target.action.replace("".concat(Newsletter.endpoints.MAIN, "?"), "".concat(Newsletter.endpoints.MAIN_JSON, "?")); // Add our params to the action
+      targets[i].setAttribute('aria-hidden', 'true');
+      targets[i].querySelector(Newsletter.selectors.ALERT_BOX_TEXT).setAttribute('aria-live', 'off');
+    }
+      };
 
-        action = action + formSerialize(event.target, {
-          serializer: function serializer() {
-            var prev = typeof (arguments.length <= 0 ? undefined : arguments[0]) === 'string' ? arguments.length <= 0 ? undefined : arguments[0] : '';
-            return "".concat(prev, "&").concat(arguments.length <= 1 ? undefined : arguments[1], "=").concat(arguments.length <= 2 ? undefined : arguments[2]);
-          }
-        }); // Append the callback reference. Mailchimp will wrap the JSON response in
-        // our callback method. Once we load the script the callback will execute.
+      for (var i = 0; i < targets.length; i++) loop( i );
 
-        action = "".concat(action, "&c=window.").concat(Newsletter.callback); // Create a promise that appends the script response of the post-json method
-
-        return new Promise(function (resolve, reject) {
-          var script = document.createElement('script');
-          document.body.appendChild(script);
-          script.onload = resolve;
-          script.onerror = reject;
-          script.async = true;
-          script.src = encodeURI(action);
-        });
-      }
-      /**
-       * The script onload resolution
-       * @param  {Event} event The script on load event
-       * @return {Class}       The Newsletter class
-       */
-
-    }, {
-      key: "_onload",
-      value: function _onload(event) {
-        event.path[0].remove();
-        return this;
-      }
-      /**
-       * The script on error resolution
-       * @param  {Object} error The script on error load event
-       * @return {Class}        The Newsletter class
-       */
-
-    }, {
-      key: "_onerror",
-      value: function _onerror(error) {
-        return this;
-      }
-      /**
-       * The callback function for the MailChimp Script call
-       * @param  {Object} data The success/error message from MailChimp
-       * @return {Class}       The Newsletter class
-       */
-
-    }, {
-      key: "_callback",
-      value: function _callback(data) {
-        if (this["_".concat(data[this._key('MC_RESULT')])]) { this["_".concat(data[this._key('MC_RESULT')])](data.msg); }
-        return this;
-      }
-      /**
-       * Submission error handler
-       * @param  {string} msg The error message
-       * @return {Class}      The Newsletter class
-       */
-
-    }, {
-      key: "_error",
-      value: function _error(msg) {
-        this._elementsReset();
-
-        this._messaging('WARNING', msg);
-
-        return this;
-      }
-      /**
-       * Submission success handler
-       * @param  {string} msg The success message
-       * @return {Class}      The Newsletter class
-       */
-
-    }, {
-      key: "_success",
-      value: function _success(msg) {
-        this._elementsReset();
-
-        this._messaging('SUCCESS', msg);
-
-        return this;
-      }
-      /**
-       * Present the response message to the user
-       * @param  {String} type The message type
-       * @param  {String} msg  The message
-       * @return {Class}       Newsletter
-       */
-
-    }, {
-      key: "_messaging",
-      value: function _messaging(type) {
-        var msg = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 'no message';
-        var strings = Object.keys(Newsletter.stringKeys);
-        var handled = false;
-
-        var alertBox = this._el.querySelector(Newsletter.selectors["".concat(type, "_BOX")]);
-
-        var alertBoxMsg = alertBox.querySelector(Newsletter.selectors.ALERT_BOX_TEXT); // Get the localized string, these should be written to the DOM already.
-        // The utility contains a global method for retrieving them.
-
-        for (var i = 0; i < strings.length; i++) {
-          if (msg.indexOf(Newsletter.stringKeys[strings[i]]) > -1) {
-            msg = this.strings[strings[i]];
-            handled = true;
-          }
-        } // Replace string templates with values from either our form data or
-        // the Newsletter strings object.
+    return this;
+  };
+  /**
+   * The main toggling method
+   * @param{object} targetMessage container
+   * @param{object} content Content that changes dynamically that should
+   *                        be announced to screen readers.
+   * @return {Class}        Newsletter
+   */
 
 
-        for (var x = 0; x < Newsletter.templates.length; x++) {
-          var template = Newsletter.templates[x];
-          var key = template.replace('{{ ', '').replace(' }}', '');
-          var value = this._data[key] || this.strings[key];
-          var reg = new RegExp(template, 'gi');
-          msg = msg.replace(reg, value ? value : '');
-        }
+  Newsletter.prototype._elementShow = function _elementShow (target, content) {
+    target.classList.toggle(Newsletter.classes.HIDDEN);
+    Newsletter.classes.ANIMATE.split(' ').forEach(function (item) { return target.classList.toggle(item); }); // Screen Readers
 
-        if (handled) { alertBoxMsg.innerHTML = msg; }else if (type === 'ERROR') { alertBoxMsg.innerHTML = this.strings.ERR_PLEASE_TRY_LATER; }
-        if (alertBox) { this._elementShow(alertBox, alertBoxMsg); }
-        return this;
-      }
-      /**
-       * The main toggling method
-       * @return {Class}         Newsletter
-       */
+    target.setAttribute('aria-hidden', 'true');
+    if (content) { content.setAttribute('aria-live', 'polite'); }
+    return this;
+  };
+  /**
+   * A proxy function for retrieving the proper key
+   * @param{string} key The reference for the stored keys.
+   * @return {string}   The desired key.
+   */
 
-    }, {
-      key: "_elementsReset",
-      value: function _elementsReset() {
-        var targets = this._el.querySelectorAll(Newsletter.selectors.ALERT_BOXES);
 
-        var _loop = function _loop(i) {
-          if (!targets[i].classList.contains(Newsletter.classes.HIDDEN)) {
-            targets[i].classList.add(Newsletter.classes.HIDDEN);
-            Newsletter.classes.ANIMATE.split(' ').forEach(function (item) {
-              return targets[i].classList.remove(item);
-            }); // Screen Readers
-
-            targets[i].setAttribute('aria-hidden', 'true');
-            targets[i].querySelector(Newsletter.selectors.ALERT_BOX_TEXT).setAttribute('aria-live', 'off');
-          }
-        };
-
-        for (var i = 0; i < targets.length; i++) {
-          _loop(i);
-        }
-
-        return this;
-      }
-      /**
-       * The main toggling method
-       * @param  {object} target  Message container
-       * @param  {object} content Content that changes dynamically that should
-       *                          be announced to screen readers.
-       * @return {Class}          Newsletter
-       */
-
-    }, {
-      key: "_elementShow",
-      value: function _elementShow(target, content) {
-        target.classList.toggle(Newsletter.classes.HIDDEN);
-        Newsletter.classes.ANIMATE.split(' ').forEach(function (item) {
-          return target.classList.toggle(item);
-        }); // Screen Readers
-
-        target.setAttribute('aria-hidden', 'true');
-        if (content) { content.setAttribute('aria-live', 'polite'); }
-        return this;
-      }
-      /**
-       * A proxy function for retrieving the proper key
-       * @param  {string} key The reference for the stored keys.
-       * @return {string}     The desired key.
-       */
-
-    }, {
-      key: "_key",
-      value: function _key(key) {
-        return Newsletter.keys[key];
-      }
-    }]);
-
-    return Newsletter;
-  }();
+  Newsletter.prototype._key = function _key (key) {
+    return Newsletter.keys[key];
+  };
   /** @type {Object} API data keys */
 
 
@@ -6456,172 +5676,153 @@ var AccessNyc = (function () {
    * @class
    */
 
-  var TextController =
-  /*#__PURE__*/
-  function () {
-    /**
-     * @param {HTMLElement} el - The html element for the component.
-     * @constructor
-     */
-    function TextController(el) {
-      _classCallCheck(this, TextController);
+  var TextController = function TextController(el) {
+    /** @private {HTMLElement} The component element. */
+    this.el = el;
+    /** @private {Number} The relative scale of text adjustment. */
 
-      /** @private {HTMLElement} The component element. */
-      this.el = el;
-      /** @private {Number} The relative scale of text adjustment. */
+    this._textSize = 0;
+    /** @private {boolean} Whether the textSizer is displayed. */
 
-      this._textSize = 0;
-      /** @private {boolean} Whether the textSizer is displayed. */
+    this._active = false;
+    /** @private {boolean} Whether the map has been initialized. */
 
-      this._active = false;
-      /** @private {boolean} Whether the map has been initialized. */
+    this._initialized = false;
+    /** @private {object} The toggle instance for the Text Controller */
 
-      this._initialized = false;
-      /** @private {object} The toggle instance for the Text Controller */
+    this._toggle = new Toggle({
+      selector: TextController.selectors.TOGGLE
+    });
+    this.init();
+    return this;
+  };
+  /**
+   * Attaches event listeners to controller. Checks for textSize cookie and
+   * sets the text size class appropriately.
+   * @return {this} TextSizer
+   */
 
-      this._toggle = new Toggle({
-        selector: TextController.selectors.TOGGLE
-      });
-      this.init();
-      return this;
+
+  TextController.prototype.init = function init () {
+      var this$1 = this;
+
+    if (this._initialized) { return this; }
+    var btnSmaller = this.el.querySelector(TextController.selectors.SMALLER);
+    var btnLarger = this.el.querySelector(TextController.selectors.LARGER);
+    btnSmaller.addEventListener('click', function (event) {
+      event.preventDefault();
+      var newSize = this$1._textSize - 1;
+
+      if (newSize >= TextController.min) {
+        this$1._adjustSize(newSize);
+      }
+    });
+    btnLarger.addEventListener('click', function (event) {
+      event.preventDefault();
+      var newSize = this$1._textSize + 1;
+
+      if (newSize <= TextController.max) {
+        this$1._adjustSize(newSize);
+      }
+    }); // If there is a text size cookie, set the textSize variable to the setting.
+    // If not, textSize initial setting remains at zero and we toggle on the
+    // text sizer/language controls and add a cookie.
+
+    if (api.get('textSize')) {
+      var size = parseInt(api.get('textSize'), 10);
+      this._textSize = size;
+
+      this._adjustSize(size);
+    } else {
+      var html = document.querySelector('html');
+      html.classList.add(("text-size-" + (this._textSize)));
+      this.show();
+
+      this._setCookie();
     }
-    /**
-     * Attaches event listeners to controller. Checks for textSize cookie and
-     * sets the text size class appropriately.
-     * @return {this} TextSizer
-     */
+
+    this._initialized = true;
+    return this;
+  };
+  /**
+   * Shows the text sizer controls.
+   * @return {this} TextSizer
+   */
 
 
-    _createClass(TextController, [{
-      key: "init",
-      value: function init() {
-        var _this = this;
+  TextController.prototype.show = function show () {
+    this._active = true; // Retrieve selectors required for the main toggling method
 
-        if (this._initialized) { return this; }
-        var btnSmaller = this.el.querySelector(TextController.selectors.SMALLER);
-        var btnLarger = this.el.querySelector(TextController.selectors.LARGER);
-        btnSmaller.addEventListener('click', function (event) {
-          event.preventDefault();
-          var newSize = _this._textSize - 1;
+    var el = this.el.querySelector(TextController.selectors.TOGGLE);
+    var targetSelector = "#" + (el.getAttribute('aria-controls'));
+    var target = this.el.querySelector(targetSelector); // Invoke main toggling method from toggle.js
 
-          if (newSize >= TextController.min) {
-            _this._adjustSize(newSize);
-          }
-        });
-        btnLarger.addEventListener('click', function (event) {
-          event.preventDefault();
-          var newSize = _this._textSize + 1;
+    this._toggle.elementToggle(el, target);
 
-          if (newSize <= TextController.max) {
-            _this._adjustSize(newSize);
-          }
-        }); // If there is a text size cookie, set the textSize variable to the setting.
-        // If not, textSize initial setting remains at zero and we toggle on the
-        // text sizer/language controls and add a cookie.
+    return this;
+  };
+  /**
+   * Sets the `textSize` cookie to store the value of this._textSize. Expires
+   * in 1 hour (1/24 of a day).
+   * @return {this} TextSizer
+   */
 
-        if (js_cookie.get('textSize')) {
-          var size = parseInt(js_cookie.get('textSize'), 10);
-          this._textSize = size;
 
-          this._adjustSize(size);
-        } else {
-          var html = document.querySelector('html');
-          html.classList.add("text-size-".concat(this._textSize));
-          this.show();
+  TextController.prototype._setCookie = function _setCookie () {
+    api.set('textSize', this._textSize, {
+      expires: 1 / 24
+    });
+    return this;
+  };
+  /**
+   * Sets the text-size-X class on the html root element. Updates the cookie
+   * if necessary.
+   * @param {Number} size - new size to set.
+   * @return {this} TextSizer
+   */
 
-          this._setCookie();
-        }
 
-        this._initialized = true;
-        return this;
-      }
-      /**
-       * Shows the text sizer controls.
-       * @return {this} TextSizer
-       */
+  TextController.prototype._adjustSize = function _adjustSize (size) {
+    var originalSize = this._textSize;
+    var html = document.querySelector('html');
 
-    }, {
-      key: "show",
-      value: function show() {
-        this._active = true; // Retrieve selectors required for the main toggling method
+    if (size !== originalSize) {
+      this._textSize = size;
 
-        var el = this.el.querySelector(TextController.selectors.TOGGLE);
-        var targetSelector = "#".concat(el.getAttribute('aria-controls'));
-        var target = this.el.querySelector(targetSelector); // Invoke main toggling method from toggle.js
+      this._setCookie();
 
-        this._toggle.elementToggle(el, target);
+      html.classList.remove(("text-size-" + originalSize));
+    }
 
-        return this;
-      }
-      /**
-       * Sets the `textSize` cookie to store the value of this._textSize. Expires
-       * in 1 hour (1/24 of a day).
-       * @return {this} TextSizer
-       */
+    html.classList.add(("text-size-" + size));
 
-    }, {
-      key: "_setCookie",
-      value: function _setCookie() {
-        js_cookie.set('textSize', this._textSize, {
-          expires: 1 / 24
-        });
-        return this;
-      }
-      /**
-       * Sets the text-size-X class on the html root element. Updates the cookie
-       * if necessary.
-       * @param {Number} size - new size to set.
-       * @return {this} TextSizer
-       */
+    this._checkForMinMax();
 
-    }, {
-      key: "_adjustSize",
-      value: function _adjustSize(size) {
-        var originalSize = this._textSize;
-        var html = document.querySelector('html');
+    return this;
+  };
+  /**
+   * Checks the current text size against the min and max. If the limits are
+   * reached, disable the controls for going smaller/larger as appropriate.
+   * @return {this} TextSizer
+   */
 
-        if (size !== originalSize) {
-          this._textSize = size;
 
-          this._setCookie();
+  TextController.prototype._checkForMinMax = function _checkForMinMax () {
+    var btnSmaller = this.el.querySelector(TextController.selectors.SMALLER);
+    var btnLarger = this.el.querySelector(TextController.selectors.LARGER);
 
-          html.classList.remove("text-size-".concat(originalSize));
-        }
+    if (this._textSize <= TextController.min) {
+      this._textSize = TextController.min;
+      btnSmaller.setAttribute('disabled', '');
+    } else { btnSmaller.removeAttribute('disabled'); }
 
-        html.classList.add("text-size-".concat(size));
+    if (this._textSize >= TextController.max) {
+      this._textSize = TextController.max;
+      btnLarger.setAttribute('disabled', '');
+    } else { btnLarger.removeAttribute('disabled'); }
 
-        this._checkForMinMax();
-
-        return this;
-      }
-      /**
-       * Checks the current text size against the min and max. If the limits are
-       * reached, disable the controls for going smaller/larger as appropriate.
-       * @return {this} TextSizer
-       */
-
-    }, {
-      key: "_checkForMinMax",
-      value: function _checkForMinMax() {
-        var btnSmaller = this.el.querySelector(TextController.selectors.SMALLER);
-        var btnLarger = this.el.querySelector(TextController.selectors.LARGER);
-
-        if (this._textSize <= TextController.min) {
-          this._textSize = TextController.min;
-          btnSmaller.setAttribute('disabled', '');
-        } else { btnSmaller.removeAttribute('disabled'); }
-
-        if (this._textSize >= TextController.max) {
-          this._textSize = TextController.max;
-          btnLarger.setAttribute('disabled', '');
-        } else { btnLarger.removeAttribute('disabled'); }
-
-        return this;
-      }
-    }]);
-
-    return TextController;
-  }();
+    return this;
+  };
   /** @type {Integer} The minimum text size */
 
 
@@ -6647,168 +5848,140 @@ var AccessNyc = (function () {
    * @class
    */
 
-  var main =
-  /*#__PURE__*/
-  function () {
-    function main() {
-      _classCallCheck(this, main);
-    }
+  var main = function main () {};
 
-    _createClass(main, [{
-      key: "icons",
+  main.prototype.icons = function icons (path) {
+      if ( path === void 0 ) path = 'svg/icons.svg';
 
-      /**
-       * An API for the Icons Utility
-       * @param  {String} path The path of the icon file
-       * @return {object} instance of Icons
-       */
-      value: function icons(path) {
-        return new Icons(path);
-      }
-      /**
-       * An API for the Toggle Utility
-       * @param  {object} settings Settings for the Toggle Class
-       * @return {object}          Instance of toggle
-       */
+    return new Icons(path);
+  };
+  /**
+   * An API for the Toggle Utility
+   * @param{object} settings Settings for the Toggle Class
+   * @return {object}        Instance of toggle
+   */
 
-    }, {
-      key: "toggle",
-      value: function toggle() {
-        var settings = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : false;
-        return settings ? new Toggle(settings) : new Toggle();
-      }
-      /**
-       *
-       * @param {string}   selector
-       * @param {function} submit
-       */
 
-    }, {
-      key: "valid",
-      value: function valid(selector, submit) {
-        this.form = new Forms(document.querySelector(selector));
-        this.form.submit = submit;
-        this.form.selectors.ERROR_MESSAGE_PARENT = '.c-question__container';
-        this.form.watch();
-      }
-      /**
-       * An API for the Tooltips element
-       * @param  {object}   settings Settings for the Tooltips Class
-       * @return {nodelist}          Tooltip elements
-       */
+  main.prototype.toggle = function toggle (settings) {
+      if ( settings === void 0 ) settings = false;
 
-    }, {
-      key: "tooltips",
-      value: function tooltips() {
-        var elements = document.querySelectorAll(Tooltips.selector);
-        elements.forEach(function (element) {
-          new Tooltips(element);
-        });
-        return elements.length ? elements : null;
-      }
-      /**
-       * An API for the Filter Component
-       * @return {object} instance of Filter
-       */
+    return settings ? new Toggle(settings) : new Toggle();
+  };
+  /**
+   *
+   * @param {string} selector
+   * @param {function} submit
+   */
 
-    }, {
-      key: "filter",
-      value: function filter() {
-        return new Filter();
-      }
-      /**
-       * An API for the Accordion Component
-       * @return {object} instance of Accordion
-       */
 
-    }, {
-      key: "accordion",
-      value: function accordion() {
-        return new Accordion();
-      }
-      /**
-       * An API for the Nearby Stops Component
-       * @return {object} instance of NearbyStops
-       */
+  main.prototype.valid = function valid (selector, submit) {
+    this.form = new Forms(document.querySelector(selector));
+    this.form.submit = submit;
+    this.form.selectors.ERROR_MESSAGE_PARENT = '.c-question__container';
+    this.form.watch();
+  };
+  /**
+   * An API for the Tooltips element
+   * @param{object} settings Settings for the Tooltips Class
+   * @return {nodelist}        Tooltip elements
+   */
 
-    }, {
-      key: "nearbyStops",
-      value: function nearbyStops() {
-        return new NearbyStops();
-      }
-      /**
-       * An API for the Newsletter Object
-       * @return {object} instance of Newsletter
-       */
 
-    }, {
-      key: "newsletter",
-      value: function newsletter() {
-        var element = document.querySelector(Newsletter.selector);
-        return element ? new Newsletter(element) : null;
-      }
-      /**
-       * An API for the Autocomplete Object
-       * @param {object} settings Settings for the Autocomplete Class
-       * @return {object}         Instance of Autocomplete
-       */
+  main.prototype.tooltips = function tooltips () {
+    var elements = document.querySelectorAll(Tooltips.selector);
+    elements.forEach(function (element) {
+      new Tooltips(element);
+    });
+    return elements.length ? elements : null;
+  };
+  /**
+   * An API for the Filter Component
+   * @return {object} instance of Filter
+   */
 
-    }, {
-      key: "inputsAutocomplete",
-      value: function inputsAutocomplete() {
-        var settings = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
-        return new InputAutocomplete(settings);
-      }
-      /**
-       * An API for the AlertBanner Component
-       * @return {object} Instance of AlertBanner
-       */
 
-    }, {
-      key: "alertBanner",
-      value: function alertBanner() {
-        var element = document.querySelector(AlertBanner.selector);
-        return element ? new AlertBanner(element) : null;
-      }
-      /**
-       * An API for the ShareForm Component
-       * @return {object} Instance of ShareForm
-       */
+  main.prototype.filter = function filter () {
+    return new Filter();
+  };
+  /**
+   * An API for the Accordion Component
+   * @return {object} instance of Accordion
+   */
 
-    }, {
-      key: "shareForm",
-      value: function shareForm() {
-        var elements = document.querySelectorAll(ShareForm.selector);
-        elements.forEach(function (element) {
-          new ShareForm(element);
-        });
-        return elements.length ? elements : null;
-      }
-      /**
-       * An API for the Disclaimer Component
-       * @return {object} Instance of Disclaimer
-       */
 
-    }, {
-      key: "disclaimer",
-      value: function disclaimer() {
-        return new Disclaimer();
-      }
-      /**
-       * An API for the TextController Object
-       * @return {object} Instance of TextController
-       */
+  main.prototype.accordion = function accordion () {
+    return new Accordion();
+  };
+  /**
+   * An API for the Nearby Stops Component
+   * @return {object} instance of NearbyStops
+   */
 
-    }, {
-      key: "textController",
-      value: function textController() {
-        var element = document.querySelector(TextController.selector);
-        return element ? new TextController(element) : null;
-      }
-    }]);
 
-    return main;
-  }();
+  main.prototype.nearbyStops = function nearbyStops () {
+    return new NearbyStops();
+  };
+  /**
+   * An API for the Newsletter Object
+   * @return {object} instance of Newsletter
+   */
+
+
+  main.prototype.newsletter = function newsletter () {
+    var element = document.querySelector(Newsletter.selector);
+    return element ? new Newsletter(element) : null;
+  };
+  /**
+   * An API for the Autocomplete Object
+   * @param {object} settings Settings for the Autocomplete Class
+   * @return {object}       Instance of Autocomplete
+   */
+  // inputsAutocomplete(settings = {}) {
+  // return new InputsAutocomplete(settings);
+  // }
+
+  /**
+   * An API for the AlertBanner Component
+   * @return {object} Instance of AlertBanner
+   */
+
+
+  main.prototype.alertBanner = function alertBanner () {
+    var element = document.querySelector(AlertBanner.selector);
+    return element ? new AlertBanner(element) : null;
+  };
+  /**
+   * An API for the ShareForm Component
+   * @return {object} Instance of ShareForm
+   */
+
+
+  main.prototype.shareForm = function shareForm () {
+    var elements = document.querySelectorAll(ShareForm.selector);
+    elements.forEach(function (element) {
+      new ShareForm(element);
+    });
+    return elements.length ? elements : null;
+  };
+  /**
+   * An API for the Disclaimer Component
+   * @return {object} Instance of Disclaimer
+   */
+
+
+  main.prototype.disclaimer = function disclaimer () {
+    return new Disclaimer();
+  };
+  /**
+   * An API for the TextController Object
+   * @return {object} Instance of TextController
+   */
+
+
+  main.prototype.textController = function textController () {
+    var element = document.querySelector(TextController.selector);
+    return element ? new TextController(element) : null;
+  };
 
   return main;
 

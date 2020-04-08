@@ -1,7 +1,7 @@
 $tokens:(
   output: "./src/config/_tokens.scss",
-  version: 0.11.14,
-  cdn: "https://cdn.jsdelivr.net/gh/CityOfNewYork/ACCESS-NYC-PATTERNS@v0.11.14/dist/",
+  version: 0.12.0,
+  cdn: "https://cdn.jsdelivr.net/gh/CityOfNewYork/ACCESS-NYC-PATTERNS@v0.12.0/dist/",
   languages: (default, ar, es, kr, ur, tc),
   rtl-languages: (ar, ur),
   fonts: (
@@ -78,8 +78,7 @@ $tokens:(
     success: green-light,
     info: blue-light,
     warning: yellow-light,
-    urgent: pink-light,
-    covid-response: covid-response-light
+    urgent: pink-light
   ),
   color-combinations: (
     light-background: (
