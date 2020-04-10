@@ -1,7 +1,7 @@
 {
   "name": "@nycopportunity/access-patterns",
   "nice": "ACCESS NYC Patterns",
-  "version": "0.12.2",
+  "version": "0.12.3",
   "description": "ACCESS NYC Pattern library and design system documentation",
   "author": "NYC Opportunity<products@nycopportunity.nyc.gov>",
   "license": "GPL-3.0+",
