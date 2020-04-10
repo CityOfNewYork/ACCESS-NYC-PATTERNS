@@ -47,7 +47,7 @@ h5, .h5, .type-h5, .typography-h5 {
 
 small, .small .type-small, .typography-small {
   @include margin(0 null rem($spacing-base, $em-base));
-  @include typography-supplemental();
+  @include typography-dislaimer-small();
 }
 
 blockquote, .blockquote, .type-blockquote, .typography-blockquote {
