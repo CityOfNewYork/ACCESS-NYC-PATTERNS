@@ -60,8 +60,8 @@
             <h2 class="text-font-size-small m-0 text-blue-dark screen-tablet:hidden">Patterns</h2>
             <h2 aria-hidden="true" class="type-h1 m-0 text-blue-dark hidden screen-tablet:inline-block">Patterns</h2>
             <nav class="text-font-size-small">
-              <a class="rounded-lg text-blue-dark border-2 no-underline px-1 ml-2 hidden screen-tablet:inline-block" href="https://github.com/CityOfNewYork/access-nyc-patterns/tree/v0.12.0">0.12.0</a>
-              <a aria-hidden="true" class="ml-1 screen-tablet:ml-2 screen-tablet:hidden" href="https://github.com/CityOfNewYork/access-nyc-patterns/tree/v0.12.0">0.12.0</a>
+              <a class="rounded-lg text-blue-dark border-2 no-underline px-1 ml-2 hidden screen-tablet:inline-block" href="https://github.com/CityOfNewYork/access-nyc-patterns/tree/v0.12.2">0.12.2</a>
+              <a aria-hidden="true" class="ml-1 screen-tablet:ml-2 screen-tablet:hidden" href="https://github.com/CityOfNewYork/access-nyc-patterns/tree/v0.12.2">0.12.2</a>
               <button aria-controls="main-menu" aria-expanded="false" class="btn-link ml-1 screen-tablet:ml-2" data-js="toggle" id="main-menu-control">Menu</button>
             </nav>
           </div>
@@ -75,10 +75,10 @@
             <a class="type-h3 text-font-size-small mb-1 block screen-tablet:border-b screen-tablet:pb-2 screen-tablet:mb-1 border-white p-1" href="index">Home</a>
             <a class="block p-1" href="about">About</a>
             <a class="block p-1" href="installation">Installation</a>
-            <a class="block p-1" href="design-tools">Design Tools</a>
-            <a class="block p-1 screen-tablet:border-b screen-tablet:pb-2 screen-tablet:mb-1 border-white p-1" href="developer-tools">Developer Tools</a>
-            <a class="block p-1" href="https://www.npmjs.com/package/access-nyc-patterns">NPM</a>
-            <a class="block p-1" href="https://github.com/CityOfNewYork/access-nyc-patterns">GitHub</a>
+            <a class="block p-1" href="developer-tools">Developer Tools</a>
+            <a class="block p-1 screen-tablet:border-b screen-tablet:pb-2 screen-tablet:mb-1 border-white p-1" href="prototyping">Prototyping</a>
+            <a class="block p-1" href="https://www.npmjs.com/package/access-nyc-patterns">NPM Package</a>
+            <a class="block p-1" href="https://github.com/CityOfNewYork/access-nyc-patterns">GitHub Repository</a>
           </nav>
           <nav class="screen-tablet:flex-1 mb-1 px-2 screen-desktop:pl-4">
             <span class="type-h3 text-font-size-small mb-1 block screen-tablet:border-b screen-tablet:pb-2 screen-tablet:mb-1 border-white p-1">Elements</span>
@@ -148,11 +148,11 @@
         </div>
       </div>
     </aside>
-    <main class="color-light-background pt-4" id="main-content">
-      <article class="pt-4">
+    <main class="color-light-background screen-tablet:pt-4" id="main-content">
+      <article class="screen-tablet:pt-4 clearfix">
         <header class="page-wrapper px-2 screen-desktop:px-0 layout--home-body">
           <div class="my-0 w-full">
-            <h1 class="text-blue-dark px-2 pb-4 mb-4">Member List</h1>
+            <h1 class="text-blue-dark px-2 mb-0 screen-tablet:pb-4 screen-tablet:mb-4">Member List</h1>
           </div>
         </header>
         <section class="pb-4 mb-4">
@@ -161,7 +161,7 @@
               <div class="my-0 px-2 pt-1 pb-4 border-b border-grey-light">
                 <div>
                   <p class="text-font-size-small m-0">Source: <code>
-                      <a href="https://github.com/CityOfNewYork/access-nyc-patterns/tree/v0.12.0/src/components/member-list">src/components/member-list/member-list</a>
+                      <a href="https://github.com/CityOfNewYork/access-nyc-patterns/tree/v0.12.2/src/components/member-list">src/components/member-list/member-list</a>
                     </code>
                   </p>
                 </div>
@@ -255,26 +255,108 @@
       </article>
     </main>
   </div>
-  <footer class="py-4 text-center color-dark-background">
-    <p>
-      <nav>
-        <a class="px-1" href="index">Home</a>
-        <a class="px-1" href="about">About</a>
-        <a class="px-1" href="installation">Installation</a>
-        <a class="px-1" href="design-tools">Design Tools</a>
-        <a class="px-1" href="developer-tools">Developer Tools</a>
-      </nav>
-    </p>
-    <p>Maintained by&nbsp;<a href="https://nyc.gov/opportunity">NYC Opportunity</a>
-    </p>
-    <p class="m-0">
-      <nav>
-        <a class="px-1" href="https://github.com/orgs/CityOfNewYork/teams/nycopportunity">GitHub</a>
-        <a class="px-1" href="https://twitter.com/nycopportunity">Twitter</a>
-        <a class="px-1" href="https://www.facebook.com/NYCOpportunity">Facebook</a>
-        <a class="px-1" href="https://www.instagram.com/nycopportunity">Instagram</a>
-      </nav>
-    </p>
+  <footer class="color-mid-background text-blue-dark border-solid border-t-4 border-blue-dark text-font-size-small py-4 z-20 relative">
+    <div class="layout--home-body p-2">
+      <div class="screen-tablet:px-4">
+        <div class="screen-tablet:px-4">
+          <div class="screen-tablet:px-4 mb-4">
+            <p class="mb-4">Maintained by&nbsp;<a href="https://nyc.gov/opportunity"></a>
+            </p>
+            <a class="text-blue-dark" href="https://nyc.gov/opportunity">
+              <span class="sr-only">The Mayor's Office for Economic Opportunity</span>
+              <svg class="icon-logo-secondary mb-4" style="height: 53px; width: 300px;">
+                <use xlink:href="#icon-logo-secondary"></use>
+              </svg>
+            </a>
+            <p>We are committed to sharing open source software that we use in our products. Feel free to ask questions and share feedback. Follow @nycopportunity on&nbsp;</p>
+            <div class="mb-4">
+              <nav>
+                <a class="px-1" href="https://github.com/orgs/CityOfNewYork/teams/nycopportunity">GitHub</a>
+                <a class="px-1" href="https://twitter.com/nycopportunity">Twitter</a>
+                <a class="px-1" href="https://www.facebook.com/NYCOpportunity">Facebook</a>
+                <a class="px-1" href="https://www.instagram.com/nycopportunity">Instagram</a>
+              </nav>
+            </div>
+            <small>© City of New York, 2020 All Rights Reserved. NYC is a trademark and service mark of the City of New York.</small>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="page-wrapper">
+      <div class="screen-tablet:flex">
+        <nav class="screen-tablet:flex-1 mb-1 px-2">
+          <a class="type-h3 text-font-size-small mb-1 block screen-tablet:border-b screen-tablet:pb-2 screen-tablet:mb-1 border-white p-1" href="index">Home</a>
+          <a class="block p-1" href="about">About</a>
+          <a class="block p-1" href="installation">Installation</a>
+          <a class="block p-1" href="developer-tools">Developer Tools</a>
+          <a class="block p-1 screen-tablet:border-b screen-tablet:pb-2 screen-tablet:mb-1 border-white p-1" href="prototyping">Prototyping</a>
+          <a class="block p-1" href="https://www.npmjs.com/package/access-nyc-patterns">NPM Package</a>
+          <a class="block p-1" href="https://github.com/CityOfNewYork/access-nyc-patterns">GitHub Repository</a>
+        </nav>
+        <nav class="screen-tablet:flex-1 mb-1 px-2 screen-desktop:pl-4">
+          <span class="type-h3 text-font-size-small mb-1 block screen-tablet:border-b screen-tablet:pb-2 screen-tablet:mb-1 border-white p-1">Elements</span>
+          <a class="block p-1" href="buttons">Buttons</a>
+          <a class="block p-1" href="checkboxes">Checkboxes</a>
+          <a class="block p-1" href="dividers">Dividers</a>
+          <a class="block p-1" href="inputs">Inputs</a>
+          <a class="block p-1" href="icons">Icons</a>
+          <a class="block p-1" href="layouts">Layouts</a>
+          <a class="block p-1" href="links">Links</a>
+          <a class="block p-1" href="lists">Lists</a>
+          <a class="block p-1" href="nav">Nav</a>
+          <a class="block p-1" href="program-labels">Program Labels</a>
+          <a class="block p-1" href="radios">Radios</a>
+          <a class="block p-1" href="tables">Tables</a>
+          <a class="block p-1" href="tooltips">Tooltips</a>
+          <a class="block p-1" href="toggles">Toggles</a>
+          <a class="block p-1" href="selects">Selects</a>
+        </nav>
+        <nav class="screen-tablet:flex-1 mb-1 px-2 screen-desktop:pl-4">
+          <span class="type-h3 text-font-size-small mb-1 block screen-tablet:border-b screen-tablet:pb-2 screen-tablet:mb-1 border-white p-1">Components</span>
+          <a class="block p-1" href="accordion">Accordion</a>
+          <a class="block p-1" href="alert-box">Alert Box</a>
+          <a class="block p-1" href="card">Card</a>
+          <a class="block p-1" href="checklist">Checklist</a>
+          <a class="block p-1" href="disclaimer">Disclaimer</a>
+          <a class="block p-1" href="filter">Filter</a>
+          <a class="block p-1" href="header">Header</a>
+          <a class="block p-1" href="member-list">Member List</a>
+          <a class="block p-1" href="nearby-stops">Nearby Stops</a>
+          <a class="block p-1" href="share-form">Share Form</a>
+          <a class="block p-1" href="side-nav">Side Nav</a>
+          <a class="block p-1" href="question">Question</a>
+        </nav>
+        <nav class="screen-tablet:flex-1 mb-1 px-2 screen-desktop:pl-4">
+          <span class="type-h3 text-font-size-small mb-1 block screen-tablet:border-b screen-tablet:pb-2 screen-tablet:mb-1 border-white p-1">Objects</span>
+          <a class="block p-1" href="alert-banner">Alert Banner</a>
+          <a class="block p-1" href="announcements">Announcements</a>
+          <a class="block p-1" href="banner">Banner</a>
+          <a class="block p-1" href="card-list">Card Lists</a>
+          <a class="block p-1" href="come-back-later">Come Back Later</a>
+          <a class="block p-1" href="content">Content</a>
+          <a class="block p-1" href="emails">Emails</a>
+          <a class="block p-1" href="footer">Footer</a>
+          <a class="block p-1" href="formstack">Formstack</a>
+          <a class="block p-1" href="mobile-nav">Mobile Nav</a>
+          <a class="block p-1" href="navigation">Navigation</a>
+          <a class="block p-1" href="newsletter">Newsletter</a>
+          <a class="block p-1" href="search-box">Search Box</a>
+          <a class="block p-1" href="text-controller">Text Controller</a>
+        </nav>
+        <nav class="screen-tablet:flex-1 mb-1 px-2 screen-desktop:pl-4">
+          <a class="type-h3 text-font-size-small mb-1 block screen-tablet:border-b screen-tablet:pb-2 screen-tablet:mb-1 border-white p-1" href="utility">Utilities</a>
+          <a class="block p-1" href="accessibility">Accessibility</a>
+          <a class="block p-1" href="colors">Colors</a>
+          <a class="block p-1" href="font">Fonts</a>
+          <a class="block p-1" href="inherit">Inherit</a>
+          <a class="block p-1" href="language">Language</a>
+          <a class="block p-1" href="media">Media</a>
+          <a class="block p-1" href="text">Text</a>
+          <a class="block p-1" href="toggle">Toggle</a>
+          <a class="block p-1" href="typography">Typography</a>
+        </nav>
+      </div>
+    </div>
   </footer>
   <script src="scripts/polyfills.js"></script>
   <script src="scripts/access-nyc.js"></script>
@@ -283,6 +365,7 @@
     var access = new AccessNyc();
     var VueComponents = new VueComponents();
     access.icons();
+    access.icons('https://cdn.jsdelivr.net/gh/cityofnewyork/nyco-patterns@v2.3.1/dist/icons.svg');
     access.toggle();
   </script>
 </body>
