@@ -1,0 +1,12 @@
+@import 'config/tokens';
+@import 'config/direction';
+
+@each $token, $value in map-get($tokens, 'margin') {
+  .me-#{$token} {
+    margin-#{$text-direction-end}: $value
+  }
+
+  .ms-#{$token} {
+    margin-#{$text-direction-start}: $value
+  }
+}

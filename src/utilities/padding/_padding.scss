@@ -1,0 +1,12 @@
+@import 'config/tokens';
+@import 'config/direction';
+
+@each $token, $value in map-get($tokens, 'padding') {
+  .pe-#{$token} {
+    padding-#{$text-direction-end}: $value
+  }
+
+  .ps-#{$token} {
+    padding-#{$text-direction-start}: $value
+  }
+}
