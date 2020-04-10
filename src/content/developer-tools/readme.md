@@ -1,0 +1,1 @@
+The ACCESS NYC Patterns are built using the [NYCO Patterns Framework](https://github.com/CityOfNewYork/nyco-patterns-framework); a front-end stack, CLI, and cross-utility library for design systems. For more details about using the framework to develop with the ACCESS NYC Patterns visit the [GitHub repository](https://github.com/CityOfNewYork/nyco-patterns-framework).

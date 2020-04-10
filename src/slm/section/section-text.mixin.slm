@@ -7,7 +7,7 @@
     - let navitem = {'title': this.title, 'id': id};
     - this.navigation.push(navitem);
 
-  section id=id class='pb-4 mb-4'
+  section id=id class='pb-2 screen-tablet:pb-4 screen-tablet:mb-4'
     div class='page-wrapper px-2 screen-desktop:px-0'
       header class='layout--home-body'
         div class='my-0 px-2 py-0 border-b border-grey-light screen-tablet:flex screen-tablet:justify-between'

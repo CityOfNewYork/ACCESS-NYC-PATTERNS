@@ -6,7 +6,7 @@ div class='o-banner color-dark-background'
   div class='o-banner__inner'
 
     h1 class='o-banner__title'
-      | Find help in NYC with food, money, housing, work and more on ACCESS NYC.
+      | Find help in NYC with <a href="#">food</a>, <a href="#">money</a>, <a href="#">housing</a>, <a href="#">work</a> and more on ACCESS NYC.
 
     div class='o-banner__touts'
       div class='o-banner__tout'

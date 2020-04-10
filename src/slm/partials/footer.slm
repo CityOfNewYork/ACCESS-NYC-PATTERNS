@@ -1,12 +1,29 @@
-footer class='py-4 text-center color-dark-background'
-  p
-    = partial('nav-sub.slm');
+footer class='color-mid-background text-blue-dark border-solid border-t-4 border-blue-dark text-font-size-small py-4 z-20 relative'
+  div class='layout--home-body p-2'
+    div class='screen-tablet:px-4'
+      div class='screen-tablet:px-4'
+        div class='screen-tablet:px-4 mb-4'
+          p class='mb-4'
+            | Maintained by&nbsp;
+            a href='${link_nycopportunity}'
 
-  p
-    | Maintained by&nbsp;
-    a href='${link_nycopportunity}' NYC Opportunity
+          a href='${link_nycopportunity}' class='text-blue-dark'
+            span class='sr-only'
+              | The Mayor's Office for Economic Opportunity
 
-  p class='m-0'
-    = partial('nav-social.slm');
+            svg class='icon-logo-secondary mb-4' style='height: 53px; width: 300px;'
+              use xlink:href='#icon-logo-secondary'
 
+          p We are committed to sharing open source software that we use in our products. Feel free to ask questions and share feedback. Follow @nycopportunity on&nbsp;
 
+          div class='mb-4'
+            = partial('nav-social.slm');
+
+          small
+            - let date = new Date();
+            - let year = date.getFullYear();
+            | © City of New York, ${year} All Rights Reserved. NYC is a trademark and service mark of the City of New York.
+
+  div class='page-wrapper'
+    div class='screen-tablet:flex'
+      = partial('../partials/nav.slm');

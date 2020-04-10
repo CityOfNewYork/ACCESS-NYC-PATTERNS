@@ -20,11 +20,4 @@
 
 = content('content');
   = mixin('content-header', title);
-  = mixin('section-text', 'NPM Scripts', 'content/developer-tools/npm-scripts');
-  = mixin('section-text', 'Development Script', 'content/developer-tools/development');
-  = mixin('section-text', 'Make Script', 'content/developer-tools/make');
-  = mixin('section-text', 'Pre-deploy Script', 'content/developer-tools/pre-deploy');
-  = mixin('section-text', 'Publish Script', 'content/developer-tools/publish');
-  = mixin('section-text', 'Other Scripts', 'content/developer-tools/other-scripts');
-  = mixin('section-text', 'Contributing', 'content/developer-tools/contributing');
-  = mixin('section-text', 'Patterns', 'content/developer-tools/patterns');
+  = mixin('section-text', false, 'content/developer-tools/readme');

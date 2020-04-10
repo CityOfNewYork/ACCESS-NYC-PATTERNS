@@ -1,7 +1,7 @@
 / Layout
 = extend('/slm/layouts/default');
 
-- title = 'Installation';
+- title = 'Prototyping';
 
 / Partials
 = partial('/slm/partials/styles.slm');
@@ -20,6 +20,4 @@
 
 = content('content');
   = mixin('content-header', title);
-  = mixin('section-text', false, '../node_modules/@nycopportunity/patterns-framework/docs/installation');
-  = mixin('section-text', 'Polyfills', 'content/installation/polyfills');
-  = mixin('section-text', 'NYCO Patterns Framework', 'content/installation/readme');
+  = mixin('section-text', false, '../node_modules/@nycopportunity/patterns-framework/docs/prototyping');

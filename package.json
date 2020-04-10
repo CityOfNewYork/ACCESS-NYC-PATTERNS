@@ -1,5 +1,6 @@
 {
   "name": "@nycopportunity/access-patterns",
+  "nice": "ACCESS NYC Patterns",
   "version": "0.12.0",
   "description": "ACCESS NYC Pattern library and design system documentation",
   "author": "NYC Opportunity<products@nycopportunity.nyc.gov>",
@@ -12,10 +13,27 @@
   "bugs": {
     "url": "https://github.com/CityOfNewYork/ACCESS-NYC-PATTERNS/issues"
   },
-  "main": "npm start",
-  "config": {
-    "dev_module": "./src/scss/site-default.scss"
+  "cdn": {
+    "url": "https://cdn.jsdelivr.net/gh/cityofnewyork/access-nyc-patterns",
+    "source": "https://github.com/CityOfNewYork/ACCESS-NYC-PATTERNS",
+    "archive": "https://github.com/CityOfNewYork/ACCESS-NYC-PATTERNS/archive",
+    "styles": "/dist/styles/site-default.css",
+    "styles-ar": "/dist/styles/site-ar.css",
+    "styles-es": "/dist/styles/site-es.css",
+    "styles-ko": "/dist/styles/site-ko.css",
+    "styles-ur": "/dist/styles/site-ur.css",
+    "styles-zh-hant": "/dist/styles/site-zh-hant.css",
+    "tailwindcss": "/dist/styles/tailwind.css",
+    "tailwindsass": "/dist/styles/_tailwind.scss",
+    "scripts": "/dist/scripts/access-nyc.js",
+    "polyfills": "/dist/scripts/polyfills.js",
+    "vue": "/dist/scripts/vue-components.js",
+    "svg": "/svg/icons.svg"
   },
+  "instantiations": {
+    "scripts": "AccessNyc"
+  },
+  "main": "npm start",
   "scripts": {
     "start": "cross-env NODE_ENV=development cross-env PORT=7000 concurrently \"pttrn default -w -np\" \"pttrn serve -w\" -p \"none\"",
     "production": "cross-env NODE_ENV=production cross-env PORT=7000 concurrently \"pttrn default -w -np\" \"pttrn serve -w\" -p \"none\"",

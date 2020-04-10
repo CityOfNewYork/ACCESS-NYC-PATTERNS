@@ -75,10 +75,10 @@
             <a class="type-h3 text-font-size-small mb-1 block screen-tablet:border-b screen-tablet:pb-2 screen-tablet:mb-1 border-white p-1" href="index">Home</a>
             <a class="block p-1" href="about">About</a>
             <a class="block p-1" href="installation">Installation</a>
-            <a class="block p-1" href="design-tools">Design Tools</a>
-            <a class="block p-1 screen-tablet:border-b screen-tablet:pb-2 screen-tablet:mb-1 border-white p-1" href="developer-tools">Developer Tools</a>
-            <a class="block p-1" href="https://www.npmjs.com/package/access-nyc-patterns">NPM</a>
-            <a class="block p-1" href="https://github.com/CityOfNewYork/access-nyc-patterns">GitHub</a>
+            <a class="block p-1" href="developer-tools">Developer Tools</a>
+            <a class="block p-1 screen-tablet:border-b screen-tablet:pb-2 screen-tablet:mb-1 border-white p-1" href="prototyping">Prototyping</a>
+            <a class="block p-1" href="https://www.npmjs.com/package/access-nyc-patterns">NPM Package</a>
+            <a class="block p-1" href="https://github.com/CityOfNewYork/access-nyc-patterns">GitHub Repository</a>
           </nav>
           <nav class="screen-tablet:flex-1 mb-1 px-2 screen-desktop:pl-4">
             <span class="type-h3 text-font-size-small mb-1 block screen-tablet:border-b screen-tablet:pb-2 screen-tablet:mb-1 border-white p-1">Elements</span>
@@ -148,115 +148,218 @@
         </div>
       </div>
     </aside>
-    <main class="color-light-background pt-4" id="main-content">
-      <article class="pt-4">
+    <main class="color-light-background screen-tablet:pt-4" id="main-content">
+      <article class="screen-tablet:pt-4 clearfix">
         <header class="page-wrapper px-2 screen-desktop:px-0 layout--home-body">
           <div class="my-0 w-full">
-            <h1 class="text-blue-dark px-2 pb-4 mb-4">About</h1>
+            <h1 class="text-blue-dark px-2 mb-0 screen-tablet:pb-4 screen-tablet:mb-4">About</h1>
           </div>
         </header>
-        <section class="pb-4 mb-4">
-          <div class="page-wrapper">
+        <section class="pb-2 screen-tablet:pb-4 screen-tablet:mb-4">
+          <div class="page-wrapper px-2 screen-desktop:px-0">
             <header class="layout--home-body">
-              <div class="my-0 pt-1 px-2 border-b border-grey-light"></div>
+              <div class="my-0 px-2 py-0 border-b border-grey-light screen-tablet:flex screen-tablet:justify-between"></div>
             </header>
             <div class="layout--home-body">
-              <div class="px-2 text-font-size-small">
-                <div class="o-content color-light-background pb-4">
-                  <p>At NYC Opportunity, we believe government services should be:</p>
-                  <ul>
-                    <li>Created with the people who use and deliver them</li>
-                    <li>Equitably distributed</li>
-                    <li>Prototyped and tested for usability</li>
-                    <li>Rigorously tested and evaluated for effectiveness and impact</li>
-                    <li>Accessible to all</li>
-                  </ul>
-                  <p>This is the foundation on which we build and deliver all of our digital products. The Patterns are built with these principles in mind to make ACCESS NYC accessible for design and development teams internally and externally for peers in the field.</p>
-                  <h2 id="development">Development</h2>
-                  <p>ACCESS NYC was relaunched in 2017 to address the barriers New Yorkers face when trying to seek information about or apply for benefits. This involved an iterative prototyping process that engaged residents, social workers, case managers, and government agency staff to deliver a new design and core user experience. The user interface started with the <a href="https://designsystem.digital.gov/">U.S. Web Design System</a> as a boilerplate for UI Elements and WCAG AA compliance. It was extended for New York City residents by including support for seven different languages with RTL and LTR reading orientations.</p>
-                  <p>Learn more about the initial launch of ACCESS NYC through these two case studies:</p>
-                  <ul>
-                    <li>
-                      <a href="https://civicservicedesign.com/case-study-access-nyc-part-1-5ccdf1c4a520">Case Study: ACCESS NYC 1</a>
-                    </li>
-                    <li>
-                      <a href="https://civicservicedesign.com/case-study-access-nyc-part-2-f86130ebdead">Case Study: ACCESS NYC 2</a>
-                    </li>
-                  </ul>
-                  <p>In late summer of 2017, NYC Opportunity and the Mayor’s Public Engagement Unit (PEU) began designing, developing, and testing a version of the ACCESS NYC Eligibility benefits screener optimized for their Outreach Specialists. This process involved taking the core user interface elements of ACCESS NYC and repurposing them for the outreach specialist with a nuanced and advanced understanding of enrolling New Yorkers in benefits.</p>
-                  <p>
-                    <a href="https://medium.com/nyc-opportunity/nyc-opportunity-and-the-public-engagement-unit-partner-for-facilitated-benefits-screening-and-e889407ccf4c">Learn more about the NYC Opportunity and Public Engagement Unit partnership in this article</a>.
-                  </p>
-                  <p>During the development of the PEU Screener, the Product and Design teams were tasked with replatforming the ACCESS NYC interface, but there was no common language or easily accessible documentation for the designers and developers to reference. This realization highlighted the need to formalize the ACCESS NYC interface and Service Design Studio principles into a Design System.</p>
-                  <h2 id="design-systems">Design Systems</h2>
-                  <h5 id="a-design-system-is-a-set-of-interconnected-patterns-and-shared-practices-coherently-organized-to-achieve-the-purpose-of-digital-products---alla-kholmatova-design-systems-a-practical-guide-to-creating-design-languages-for-digital-products">“A design system is a set of interconnected patterns and shared practices coherently organized to achieve the purpose of digital products.” <a href="http://designsystemsbook.com">
-                      <em>- Alla Kholmatova, Design Systems; A practical guide to creating design languages for digital products</em>
-                    </a>
-                  </h5>
-                  <p>To further the purpose of ACCESS NYC as a digital product, we realized the need to create and document the Patterns used to create it. As our practice develops we will be able to utilize the Patterns conventions and documentation as a starting point for understanding.</p>
-                  <h3 id="naming-convention">Naming Convention</h3>
-                  <p>The first step we took to creating the Patterns was to perform an audit of the existing ACCESS NYC modules and grouped them according to a naming convention influenced by “<a href="https://csswizardry.com/2015/08/bemit-taking-the-bem-naming-convention-a-step-further/">BEMIT: Taking the BEM Naming Convention a Step Further</a>.” Our four buckets included Elements, Components, Objects, and Utilities. If you are familiar with Brad Frost’s <a href="http://atomicdesign.bradfrost.com/chapter-2/">Atomic Design Methodology</a>, this structure will sound very familiar. As a team we picked names that resonated with us for each of the Patterns and assigned them to each group. The hope is that developing a common language will enable us work together more effectively to focus on the users we are serve.</p>
-                  <p>The first step we took to create the Patterns was performing an audit of the existing ACCESS NYC modules and grouping them according to a naming convention influenced by “<a href="https://csswizardry.com/2015/08/bemit-taking-the-bem-naming-convention-a-step-further/">BEMIT: Taking the BEM Naming Convention a Step Further</a>.” Our four buckets included Elements, Components, Objects, and Utilities. This structure will sound very familiar to those familiar with Brad Frost’s <a href="http://atomicdesign.bradfrost.com/chapter-2/">Atomic Design Methodology</a>.</p>
-                  <p>As a team, we picked names that resonated with us for each of the Patterns and assigned them to each group. The hope was to develop a common language that would enable us to work together more effectively to focus on the users we serve.</p>
-                  <p>
-                    <img src="images/naming-01.png" alt="Image with graphics representing elements, components, and objects." title="Elements, Components, and Objects">
-                  </p>
-                  <h4 id="elements">Elements</h4>
-                  <p>Element Patterns are the most primitive building blocks of a web page. They include some of the most standard HTML tags such as links, buttons, lists, and tables. They do not have complicated markup or any dependencies on other modules.</p>
-                  <h4 id="components">Components</h4>
-                  <p>Component Patterns are more complicated modules that may contain one or more Elements, complex markup, styling, or JavaScript dependencies. They are often repeated within a view.</p>
-                  <h4 id="objects">Objects</h4>
-                  <p>Object Patterns contain the most complicated markup-specific styling. They may contain one or more Elements or Components. Objects generally do not repeat within a view but they may be globally visible across different views.</p>
-                  <p>
-                    <img src="images/naming-02.png" alt="Image with graphic describing how elements fit into components and components fit into objects." title="How Elements, Components, and Objects Fit Together">
-                  </p>
-                  <h4 id="utilities">Utilities</h4>
-                  <p>Utilities are single-purpose classes that allow teams to change specific styling features of Elements, Components, and Objects. For the ACCESS NYC Patterns we are leveraging <a href="https://tailwindcss.com">Tailwind CSS</a>. By using utilities, the design system becomes far more flexible.</p>
-                  <p>
-                    <img src="images/naming-03.png" alt="Image with graphic describing how utilities can change the styling of an element." title="Utilities">
-                  </p>
-                  <h4 id="views">Views</h4>
-                  <p>Views are the pages that the ACCESS NYC Patterns live on. They are specific to every project that the Patterns are integrated into. For example, ACCESS NYC has 9 views, including:</p>
-                  <ul>
-                    <li>Homepage</li>
-                    <li>Eligibility Screener</li>
-                    <li>Eligibility Screener Results Page</li>
-                    <li>Program Landing</li>
-                    <li>Single Program</li>
-                    <li>Locations Landing</li>
-                    <li>Single Locations</li>
-                    <li>Search Page</li>
-                    <li>Single Pages</li>
-                  </ul>
-                  <p>It is sometimes necessary to reference views for context in defining patterns. For instance, the <a href="layouts#map">Map Layout Utility</a> was specifically created to address needs defined by the Locations Landing page on ACCESS NYC.</p>
-                </div>
+              <div class="my-0 pt-4 px-2 text-font-size-small table-align-start">
+                <p>At NYC Opportunity, we believe government services should be:</p>
+                <ul>
+                  <li>Created with the people who use and deliver them</li>
+                  <li>Equitably distributed</li>
+                  <li>Prototyped and tested for usability</li>
+                  <li>Rigorously tested and evaluated for effectiveness and impact</li>
+                  <li>Accessible to all</li>
+                </ul>
+                <p>This is the foundation on which we build and deliver all of our digital products. The Patterns are built with these principles in mind to make ACCESS NYC accessible for design and development teams internally and externally for peers in the field.</p>
+                <h2 id="development">Development</h2>
+                <p>ACCESS NYC was relaunched in 2017 to address the barriers New Yorkers face when trying to seek information about or apply for benefits. This involved an iterative prototyping process that engaged residents, social workers, case managers, and government agency staff to deliver a new design and core user experience. The user interface started with the <a href="https://designsystem.digital.gov/">U.S. Web Design System</a> as a boilerplate for UI Elements and WCAG AA compliance. It was extended for New York City residents by including support for seven different languages with RTL and LTR reading orientations.</p>
+                <p>Learn more about the initial launch of ACCESS NYC through these two case studies:</p>
+                <ul>
+                  <li>
+                    <a href="https://civicservicedesign.com/case-study-access-nyc-part-1-5ccdf1c4a520">Case Study: ACCESS NYC 1</a>
+                  </li>
+                  <li>
+                    <a href="https://civicservicedesign.com/case-study-access-nyc-part-2-f86130ebdead">Case Study: ACCESS NYC 2</a>
+                  </li>
+                </ul>
+                <p>In late summer of 2017, NYC Opportunity and the Mayor’s Public Engagement Unit (PEU) began designing, developing, and testing a version of the ACCESS NYC Eligibility benefits screener optimized for their Outreach Specialists. This process involved taking the core user interface elements of ACCESS NYC and repurposing them for the outreach specialist with a nuanced and advanced understanding of enrolling New Yorkers in benefits.</p>
+                <p>
+                  <a href="https://medium.com/nyc-opportunity/nyc-opportunity-and-the-public-engagement-unit-partner-for-facilitated-benefits-screening-and-e889407ccf4c">Learn more about the NYC Opportunity and Public Engagement Unit partnership in this article</a>.
+                </p>
+                <p>During the development of the PEU Screener, the Product and Design teams were tasked with replatforming the ACCESS NYC interface, but there was no common language or easily accessible documentation for the designers and developers to reference. This realization highlighted the need to formalize the ACCESS NYC interface and Service Design Studio principles into a Design System.</p>
+                <h2 id="design-systems">Design Systems</h2>
+                <h5 id="a-design-system-is-a-set-of-interconnected-patterns-and-shared-practices-coherently-organized-to-achieve-the-purpose-of-digital-products---alla-kholmatova-design-systems-a-practical-guide-to-creating-design-languages-for-digital-products">“A design system is a set of interconnected patterns and shared practices coherently organized to achieve the purpose of digital products.” <a href="http://designsystemsbook.com">
+                    <em>- Alla Kholmatova, Design Systems; A practical guide to creating design languages for digital products</em>
+                  </a>
+                </h5>
+                <p>To further the purpose of ACCESS NYC as a digital product, we realized the need to create and document the Patterns used to create it. As our practice develops we will be able to utilize the Patterns conventions and documentation as a starting point for understanding.</p>
+                <h3 id="naming-convention">Naming Convention</h3>
+                <p>The first step we took to creating the Patterns was to perform an audit of the existing ACCESS NYC modules and grouped them according to a naming convention influenced by “<a href="https://csswizardry.com/2015/08/bemit-taking-the-bem-naming-convention-a-step-further/">BEMIT: Taking the BEM Naming Convention a Step Further</a>.” Our four buckets included Elements, Components, Objects, and Utilities. If you are familiar with Brad Frost’s <a href="http://atomicdesign.bradfrost.com/chapter-2/">Atomic Design Methodology</a>, this structure will sound very familiar. As a team we picked names that resonated with us for each of the Patterns and assigned them to each group. The hope is that developing a common language will enable us work together more effectively to focus on the users we are serve.</p>
+                <p>The first step we took to create the Patterns was performing an audit of the existing ACCESS NYC modules and grouping them according to a naming convention influenced by “<a href="https://csswizardry.com/2015/08/bemit-taking-the-bem-naming-convention-a-step-further/">BEMIT: Taking the BEM Naming Convention a Step Further</a>.” Our four buckets included Elements, Components, Objects, and Utilities. This structure will sound very familiar to those familiar with Brad Frost’s <a href="http://atomicdesign.bradfrost.com/chapter-2/">Atomic Design Methodology</a>.</p>
+                <p>As a team, we picked names that resonated with us for each of the Patterns and assigned them to each group. The hope was to develop a common language that would enable us to work together more effectively to focus on the users we serve.</p>
+                <p>
+                  <img src="images/naming-01.png" alt="Image with graphics representing elements, components, and objects." title="Elements, Components, and Objects">
+                </p>
+                <h4 id="elements">Elements</h4>
+                <p>Element Patterns are the most primitive building blocks of a web page. They include some of the most standard HTML tags such as links, buttons, lists, and tables. They do not have complicated markup or any dependencies on other modules.</p>
+                <h4 id="components">Components</h4>
+                <p>Component Patterns are more complicated modules that may contain one or more Elements, complex markup, styling, or JavaScript dependencies. They are often repeated within a view.</p>
+                <h4 id="objects">Objects</h4>
+                <p>Object Patterns contain the most complicated markup-specific styling. They may contain one or more Elements or Components. Objects generally do not repeat within a view but they may be globally visible across different views.</p>
+                <p>
+                  <img src="images/naming-02.png" alt="Image with graphic describing how elements fit into components and components fit into objects." title="How Elements, Components, and Objects Fit Together">
+                </p>
+                <h4 id="utilities">Utilities</h4>
+                <p>Utilities are single-purpose classes that allow teams to change specific styling features of Elements, Components, and Objects. For the ACCESS NYC Patterns we are leveraging <a href="https://tailwindcss.com">Tailwind CSS</a>. By using utilities, the design system becomes far more flexible.</p>
+                <p>
+                  <img src="images/naming-03.png" alt="Image with graphic describing how utilities can change the styling of an element." title="Utilities">
+                </p>
+                <h4 id="views">Views</h4>
+                <p>Views are the pages that the ACCESS NYC Patterns live on. They are specific to every project that the Patterns are integrated into. For example, ACCESS NYC has 9 views, including:</p>
+                <ul>
+                  <li>Homepage</li>
+                  <li>Eligibility Screener</li>
+                  <li>Eligibility Screener Results Page</li>
+                  <li>Program Landing</li>
+                  <li>Single Program</li>
+                  <li>Locations Landing</li>
+                  <li>Single Locations</li>
+                  <li>Search Page</li>
+                  <li>Single Pages</li>
+                </ul>
+                <p>It is sometimes necessary to reference views for context in defining patterns. For instance, the <a href="layouts#map">Map Layout Utility</a> was specifically created to address needs defined by the Locations Landing page on ACCESS NYC.</p>
               </div>
             </div>
           </div>
         </section>
+        <section class="pb-2 screen-tablet:pb-4 screen-tablet:mb-4" id="nyco-patterns-framework">
+          <div class="page-wrapper px-2 screen-desktop:px-0">
+            <header class="layout--home-body">
+              <div class="my-0 px-2 py-0 border-b border-grey-light screen-tablet:flex screen-tablet:justify-between">
+                <h2 class="m-0 pt-1 pb-4">
+                  <a class="text-grey-mid font-normal no-underline capitalize" href="#nyco-patterns-framework">NYCO Patterns Framework</a>
+                </h2>
+              </div>
+            </header>
+            <div class="layout--home-body">
+              <div class="my-0 pt-4 px-2 text-font-size-small table-align-start">
+                <p>The ACCESS NYC Patterns are built using the <a href="https://github.com/CityOfNewYork/nyco-patterns-framework">NYCO Patterns Framework</a>; a front-end stack, CLI, and cross-utility library for design systems. For more details about using the framework to develop with the ACCESS NYC Patterns visit the <a href="https://github.com/CityOfNewYork/nyco-patterns-framework">GitHub repository</a>.</p>
+              </div>
+            </div>
+          </div>
+        </section>
+        <div class="sticky bottom-0 bg-white shadow-up relative z-10 overflow-y-scroll whitespace-no-wrap animated fadeInUp">
+          <nav class="nav-inline text-font-size-small p-2 screen-tablet:p-4">
+            <span class="mr-2 screen-tablet:mr-4">Jump to:</span>
+            <a class="mr-2 screen-tablet:mr-4" href="#main-content">Page Top</a>
+            <a class="mr-2 screen-tablet:mr-4" href="#nyco-patterns-framework">NYCO Patterns Framework</a>
+          </nav>
+        </div>
       </article>
     </main>
   </div>
-  <footer class="py-4 text-center color-dark-background">
-    <p>
-      <nav>
-        <a class="px-1" href="index">Home</a>
-        <a class="px-1" href="about">About</a>
-        <a class="px-1" href="installation">Installation</a>
-        <a class="px-1" href="design-tools">Design Tools</a>
-        <a class="px-1" href="developer-tools">Developer Tools</a>
-      </nav>
-    </p>
-    <p>Maintained by&nbsp;<a href="https://nyc.gov/opportunity">NYC Opportunity</a>
-    </p>
-    <p class="m-0">
-      <nav>
-        <a class="px-1" href="https://github.com/orgs/CityOfNewYork/teams/nycopportunity">GitHub</a>
-        <a class="px-1" href="https://twitter.com/nycopportunity">Twitter</a>
-        <a class="px-1" href="https://www.facebook.com/NYCOpportunity">Facebook</a>
-        <a class="px-1" href="https://www.instagram.com/nycopportunity">Instagram</a>
-      </nav>
-    </p>
+  <footer class="color-mid-background text-blue-dark border-solid border-t-4 border-blue-dark text-font-size-small py-4 z-20 relative">
+    <div class="layout--home-body p-2">
+      <div class="screen-tablet:px-4">
+        <div class="screen-tablet:px-4">
+          <div class="screen-tablet:px-4 mb-4">
+            <p class="mb-4">Maintained by&nbsp;<a href="https://nyc.gov/opportunity"></a>
+            </p>
+            <a class="text-blue-dark" href="https://nyc.gov/opportunity">
+              <span class="sr-only">The Mayor's Office for Economic Opportunity</span>
+              <svg class="icon-logo-secondary mb-4" style="height: 53px; width: 300px;">
+                <use xlink:href="#icon-logo-secondary"></use>
+              </svg>
+            </a>
+            <p>We are committed to sharing open source software that we use in our products. Feel free to ask questions and share feedback. Follow @nycopportunity on&nbsp;</p>
+            <div class="mb-4">
+              <nav>
+                <a class="px-1" href="https://github.com/orgs/CityOfNewYork/teams/nycopportunity">GitHub</a>
+                <a class="px-1" href="https://twitter.com/nycopportunity">Twitter</a>
+                <a class="px-1" href="https://www.facebook.com/NYCOpportunity">Facebook</a>
+                <a class="px-1" href="https://www.instagram.com/nycopportunity">Instagram</a>
+              </nav>
+            </div>
+            <small>© City of New York, 2020 All Rights Reserved. NYC is a trademark and service mark of the City of New York.</small>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="page-wrapper">
+      <div class="screen-tablet:flex">
+        <nav class="screen-tablet:flex-1 mb-1 px-2">
+          <a class="type-h3 text-font-size-small mb-1 block screen-tablet:border-b screen-tablet:pb-2 screen-tablet:mb-1 border-white p-1" href="index">Home</a>
+          <a class="block p-1" href="about">About</a>
+          <a class="block p-1" href="installation">Installation</a>
+          <a class="block p-1" href="developer-tools">Developer Tools</a>
+          <a class="block p-1 screen-tablet:border-b screen-tablet:pb-2 screen-tablet:mb-1 border-white p-1" href="prototyping">Prototyping</a>
+          <a class="block p-1" href="https://www.npmjs.com/package/access-nyc-patterns">NPM Package</a>
+          <a class="block p-1" href="https://github.com/CityOfNewYork/access-nyc-patterns">GitHub Repository</a>
+        </nav>
+        <nav class="screen-tablet:flex-1 mb-1 px-2 screen-desktop:pl-4">
+          <span class="type-h3 text-font-size-small mb-1 block screen-tablet:border-b screen-tablet:pb-2 screen-tablet:mb-1 border-white p-1">Elements</span>
+          <a class="block p-1" href="buttons">Buttons</a>
+          <a class="block p-1" href="checkboxes">Checkboxes</a>
+          <a class="block p-1" href="dividers">Dividers</a>
+          <a class="block p-1" href="inputs">Inputs</a>
+          <a class="block p-1" href="icons">Icons</a>
+          <a class="block p-1" href="layouts">Layouts</a>
+          <a class="block p-1" href="links">Links</a>
+          <a class="block p-1" href="lists">Lists</a>
+          <a class="block p-1" href="nav">Nav</a>
+          <a class="block p-1" href="program-labels">Program Labels</a>
+          <a class="block p-1" href="radios">Radios</a>
+          <a class="block p-1" href="tables">Tables</a>
+          <a class="block p-1" href="tooltips">Tooltips</a>
+          <a class="block p-1" href="toggles">Toggles</a>
+          <a class="block p-1" href="selects">Selects</a>
+        </nav>
+        <nav class="screen-tablet:flex-1 mb-1 px-2 screen-desktop:pl-4">
+          <span class="type-h3 text-font-size-small mb-1 block screen-tablet:border-b screen-tablet:pb-2 screen-tablet:mb-1 border-white p-1">Components</span>
+          <a class="block p-1" href="accordion">Accordion</a>
+          <a class="block p-1" href="alert-box">Alert Box</a>
+          <a class="block p-1" href="card">Card</a>
+          <a class="block p-1" href="checklist">Checklist</a>
+          <a class="block p-1" href="disclaimer">Disclaimer</a>
+          <a class="block p-1" href="filter">Filter</a>
+          <a class="block p-1" href="header">Header</a>
+          <a class="block p-1" href="member-list">Member List</a>
+          <a class="block p-1" href="nearby-stops">Nearby Stops</a>
+          <a class="block p-1" href="share-form">Share Form</a>
+          <a class="block p-1" href="side-nav">Side Nav</a>
+          <a class="block p-1" href="question">Question</a>
+        </nav>
+        <nav class="screen-tablet:flex-1 mb-1 px-2 screen-desktop:pl-4">
+          <span class="type-h3 text-font-size-small mb-1 block screen-tablet:border-b screen-tablet:pb-2 screen-tablet:mb-1 border-white p-1">Objects</span>
+          <a class="block p-1" href="alert-banner">Alert Banner</a>
+          <a class="block p-1" href="announcements">Announcements</a>
+          <a class="block p-1" href="banner">Banner</a>
+          <a class="block p-1" href="card-list">Card Lists</a>
+          <a class="block p-1" href="come-back-later">Come Back Later</a>
+          <a class="block p-1" href="content">Content</a>
+          <a class="block p-1" href="emails">Emails</a>
+          <a class="block p-1" href="footer">Footer</a>
+          <a class="block p-1" href="formstack">Formstack</a>
+          <a class="block p-1" href="mobile-nav">Mobile Nav</a>
+          <a class="block p-1" href="navigation">Navigation</a>
+          <a class="block p-1" href="newsletter">Newsletter</a>
+          <a class="block p-1" href="search-box">Search Box</a>
+          <a class="block p-1" href="text-controller">Text Controller</a>
+        </nav>
+        <nav class="screen-tablet:flex-1 mb-1 px-2 screen-desktop:pl-4">
+          <a class="type-h3 text-font-size-small mb-1 block screen-tablet:border-b screen-tablet:pb-2 screen-tablet:mb-1 border-white p-1" href="utility">Utilities</a>
+          <a class="block p-1" href="accessibility">Accessibility</a>
+          <a class="block p-1" href="colors">Colors</a>
+          <a class="block p-1" href="font">Fonts</a>
+          <a class="block p-1" href="inherit">Inherit</a>
+          <a class="block p-1" href="language">Language</a>
+          <a class="block p-1" href="media">Media</a>
+          <a class="block p-1" href="text">Text</a>
+          <a class="block p-1" href="toggle">Toggle</a>
+          <a class="block p-1" href="typography">Typography</a>
+        </nav>
+      </div>
+    </div>
   </footer>
   <script src="scripts/polyfills.js"></script>
   <script src="scripts/access-nyc.js"></script>
@@ -265,6 +368,7 @@
     var access = new AccessNyc();
     var VueComponents = new VueComponents();
     access.icons();
+    access.icons('https://cdn.jsdelivr.net/gh/cityofnewyork/nyco-patterns@v2.3.1/dist/icons.svg');
     access.toggle();
   </script>
 </body>

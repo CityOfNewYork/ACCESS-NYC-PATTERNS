@@ -75,10 +75,10 @@
             <a class="type-h3 text-font-size-small mb-1 block screen-tablet:border-b screen-tablet:pb-2 screen-tablet:mb-1 border-white p-1" href="index">Home</a>
             <a class="block p-1" href="about">About</a>
             <a class="block p-1" href="installation">Installation</a>
-            <a class="block p-1" href="design-tools">Design Tools</a>
-            <a class="block p-1 screen-tablet:border-b screen-tablet:pb-2 screen-tablet:mb-1 border-white p-1" href="developer-tools">Developer Tools</a>
-            <a class="block p-1" href="https://www.npmjs.com/package/access-nyc-patterns">NPM</a>
-            <a class="block p-1" href="https://github.com/CityOfNewYork/access-nyc-patterns">GitHub</a>
+            <a class="block p-1" href="developer-tools">Developer Tools</a>
+            <a class="block p-1 screen-tablet:border-b screen-tablet:pb-2 screen-tablet:mb-1 border-white p-1" href="prototyping">Prototyping</a>
+            <a class="block p-1" href="https://www.npmjs.com/package/access-nyc-patterns">NPM Package</a>
+            <a class="block p-1" href="https://github.com/CityOfNewYork/access-nyc-patterns">GitHub Repository</a>
           </nav>
           <nav class="screen-tablet:flex-1 mb-1 px-2 screen-desktop:pl-4">
             <span class="type-h3 text-font-size-small mb-1 block screen-tablet:border-b screen-tablet:pb-2 screen-tablet:mb-1 border-white p-1">Elements</span>
@@ -148,11 +148,11 @@
         </div>
       </div>
     </aside>
-    <main class="color-light-background pt-4" id="main-content">
-      <article class="pt-4">
+    <main class="color-light-background screen-tablet:pt-4" id="main-content">
+      <article class="screen-tablet:pt-4 clearfix">
         <header class="page-wrapper px-2 screen-desktop:px-0 layout--home-body">
           <div class="my-0 w-full">
-            <h1 class="text-blue-dark px-2 pb-4 mb-4">Content</h1>
+            <h1 class="text-blue-dark px-2 mb-0 screen-tablet:pb-4 screen-tablet:mb-4">Content</h1>
           </div>
         </header>
         <section class="pb-4 mb-4">
@@ -175,19 +175,31 @@
             <div class="layout--gutter screen-tablet:layout--columns justify-between pt-4">
               <div class="screen-tablet:pr-2">
                 <div class="o-content">
+                  <h3>1. How it Works</h3>
+                  <div class="type-exposition">
+                    <p>Get help paying for groceries with SNAP. SNAP benefits are sometimes called food stamps. They come on a debit card that you can use at many grocery stores and farmers markets.</p>
+                  </div>
+                  <div class="c-checklist" id="how-it-works">
+                    <ul>
+                      <li class="c-checklist__item-generic">Shop for groceries online with your <a href='https://www1.nyc.gov/site/hra/help/snap-online-shopping.page' target='_blank' rel='noopener noreferrer'>SNAP Benefits (EBT Card)</a> at Amazon, ShopRite and Walmart. Visit these online retailers to order your groceries online! <strong>Note</strong>: SNAP benefits cannot be used to pay delivery fees.</li>
+                      <li class="c-checklist__item-calendar">If you are eligible, you will receive your benefits within 30 days</li>
+                      <li class="c-checklist__item-flag">You must be a US citizen or have satisfactory immigration status to receive SNAP; a worker will help you determine your status when you apply</li>
+                      <li class="c-checklist__item-badge">Requires proof of identity, where you live, and income</li>
+                      <li class="c-checklist__item-badge">You can allow someone who knows your household situation apply for you</li>
+                      <li class="c-checklist__item-application">Apply online, in person, by fax, or by mail</li>
+                      <li class="c-checklist__item-generic">You will have to complete an interview after you submit your application</li>
+                      <li class="c-checklist__item-generic">SNAP recipients in New York City ages 16 and over are eligible for discounted Citi Bike memberships. For $5 per month, you’ll get unlimited 45-minute rides and access to thousands of bikes across Manhattan, Brooklyn, Queens and Jersey City. <a href='https://try.citibikenyc.com/snap-nyc/' target='_blank' rel='noopener noreferrer'>Enter your EBT card number to verify your eligibility</a>.</li>
+                    </ul>
+                  </div>
+                  <h2>2. Determine your eligibility</h2>
+                  <p>This program looks at several things to decide if you are eligible. They include:</p>
                   <ul>
-                    <li class="c-checklist__item-application">Checklist item Application</li>
-                    <li class="c-checklist__item-badge">Checklist item Badge</li>
-                    <li class="c-checklist__item-flag">Checklist item Flag</li>
-                    <li class="c-checklist__item-calendar">Checklist item Calendar</li>
-                    <li class="c-checklist__item-generic">Checklist item Generic</li>
-                    <li>Checklist item Eligibility Check (default)<ul>
-                        <li>Nested checklist item</li>
-                        <li>Nested checklist item</li>
-                        <li>Nested checklist item</li>
-                      </ul>
-                    </li>
+                    <li>how much money you earn</li>
+                    <li>how much money you receive from benefits</li>
+                    <li>how many people are in your house</li>
+                    <li>your citizenship or immigration status</li>
                   </ul>
+                  <p>With a few questions, we can help you <a href='http://nyc.gov/accessnyc' target='_blank' rel='noopener noreferrer'>find out if you may be eligible</a>.</p>
                   <table>
                     <thead>
                       <tr>
@@ -235,19 +247,31 @@
               <div>
                 <div class="code-block mb-1">
                   <pre>&lt;div class=&quot;o-content&quot;&gt;
+  &lt;h3&gt;1. How it Works&lt;/h3&gt;
+  &lt;div class=&quot;type-exposition&quot;&gt;
+    &lt;p&gt;Get help paying for groceries with SNAP. SNAP benefits are sometimes called food stamps. They come on a debit card that you can use at many grocery stores and farmers markets.&lt;/p&gt;
+  &lt;/div&gt;
+  &lt;div class=&quot;c-checklist&quot; id=&quot;how-it-works&quot;&gt;
+    &lt;ul&gt;
+      &lt;li class=&quot;c-checklist__item-generic&quot;&gt;Shop for groceries online with your &lt;a href='https://www1.nyc.gov/site/hra/help/snap-online-shopping.page' target='_blank' rel='noopener noreferrer'&gt;SNAP Benefits (EBT Card)&lt;/a&gt; at Amazon, ShopRite and Walmart. Visit these online retailers to order your groceries online! &lt;strong&gt;Note&lt;/strong&gt;: SNAP benefits cannot be used to pay delivery fees.&lt;/li&gt;
+      &lt;li class=&quot;c-checklist__item-calendar&quot;&gt;If you are eligible, you will receive your benefits within 30 days&lt;/li&gt;
+      &lt;li class=&quot;c-checklist__item-flag&quot;&gt;You must be a US citizen or have satisfactory immigration status to receive SNAP; a worker will help you determine your status when you apply&lt;/li&gt;
+      &lt;li class=&quot;c-checklist__item-badge&quot;&gt;Requires proof of identity, where you live, and income&lt;/li&gt;
+      &lt;li class=&quot;c-checklist__item-badge&quot;&gt;You can allow someone who knows your household situation apply for you&lt;/li&gt;
+      &lt;li class=&quot;c-checklist__item-application&quot;&gt;Apply online, in person, by fax, or by mail&lt;/li&gt;
+      &lt;li class=&quot;c-checklist__item-generic&quot;&gt;You will have to complete an interview after you submit your application&lt;/li&gt;
+      &lt;li class=&quot;c-checklist__item-generic&quot;&gt;SNAP recipients in New York City ages 16 and over are eligible for discounted Citi Bike memberships. For $5 per month, you’ll get unlimited 45-minute rides and access to thousands of bikes across Manhattan, Brooklyn, Queens and Jersey City. &lt;a href='https://try.citibikenyc.com/snap-nyc/' target='_blank' rel='noopener noreferrer'&gt;Enter your EBT card number to verify your eligibility&lt;/a&gt;.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/div&gt;
+  &lt;h2&gt;2. Determine your eligibility&lt;/h2&gt;
+  &lt;p&gt;This program looks at several things to decide if you are eligible. They include:&lt;/p&gt;
   &lt;ul&gt;
-    &lt;li class=&quot;c-checklist__item-application&quot;&gt;Checklist item Application&lt;/li&gt;
-    &lt;li class=&quot;c-checklist__item-badge&quot;&gt;Checklist item Badge&lt;/li&gt;
-    &lt;li class=&quot;c-checklist__item-flag&quot;&gt;Checklist item Flag&lt;/li&gt;
-    &lt;li class=&quot;c-checklist__item-calendar&quot;&gt;Checklist item Calendar&lt;/li&gt;
-    &lt;li class=&quot;c-checklist__item-generic&quot;&gt;Checklist item Generic&lt;/li&gt;
-    &lt;li&gt;Checklist item Eligibility Check (default)&lt;ul&gt;
-        &lt;li&gt;Nested checklist item&lt;/li&gt;
-        &lt;li&gt;Nested checklist item&lt;/li&gt;
-        &lt;li&gt;Nested checklist item&lt;/li&gt;
-      &lt;/ul&gt;
-    &lt;/li&gt;
+    &lt;li&gt;how much money you earn&lt;/li&gt;
+    &lt;li&gt;how much money you receive from benefits&lt;/li&gt;
+    &lt;li&gt;how many people are in your house&lt;/li&gt;
+    &lt;li&gt;your citizenship or immigration status&lt;/li&gt;
   &lt;/ul&gt;
+  &lt;p&gt;With a few questions, we can help you &lt;a href='http://nyc.gov/accessnyc' target='_blank' rel='noopener noreferrer'&gt;find out if you may be eligible&lt;/a&gt;.&lt;/p&gt;
   &lt;table&gt;
     &lt;thead&gt;
       &lt;tr&gt;
@@ -299,26 +323,108 @@
       </article>
     </main>
   </div>
-  <footer class="py-4 text-center color-dark-background">
-    <p>
-      <nav>
-        <a class="px-1" href="index">Home</a>
-        <a class="px-1" href="about">About</a>
-        <a class="px-1" href="installation">Installation</a>
-        <a class="px-1" href="design-tools">Design Tools</a>
-        <a class="px-1" href="developer-tools">Developer Tools</a>
-      </nav>
-    </p>
-    <p>Maintained by&nbsp;<a href="https://nyc.gov/opportunity">NYC Opportunity</a>
-    </p>
-    <p class="m-0">
-      <nav>
-        <a class="px-1" href="https://github.com/orgs/CityOfNewYork/teams/nycopportunity">GitHub</a>
-        <a class="px-1" href="https://twitter.com/nycopportunity">Twitter</a>
-        <a class="px-1" href="https://www.facebook.com/NYCOpportunity">Facebook</a>
-        <a class="px-1" href="https://www.instagram.com/nycopportunity">Instagram</a>
-      </nav>
-    </p>
+  <footer class="color-mid-background text-blue-dark border-solid border-t-4 border-blue-dark text-font-size-small py-4 z-20 relative">
+    <div class="layout--home-body p-2">
+      <div class="screen-tablet:px-4">
+        <div class="screen-tablet:px-4">
+          <div class="screen-tablet:px-4 mb-4">
+            <p class="mb-4">Maintained by&nbsp;<a href="https://nyc.gov/opportunity"></a>
+            </p>
+            <a class="text-blue-dark" href="https://nyc.gov/opportunity">
+              <span class="sr-only">The Mayor's Office for Economic Opportunity</span>
+              <svg class="icon-logo-secondary mb-4" style="height: 53px; width: 300px;">
+                <use xlink:href="#icon-logo-secondary"></use>
+              </svg>
+            </a>
+            <p>We are committed to sharing open source software that we use in our products. Feel free to ask questions and share feedback. Follow @nycopportunity on&nbsp;</p>
+            <div class="mb-4">
+              <nav>
+                <a class="px-1" href="https://github.com/orgs/CityOfNewYork/teams/nycopportunity">GitHub</a>
+                <a class="px-1" href="https://twitter.com/nycopportunity">Twitter</a>
+                <a class="px-1" href="https://www.facebook.com/NYCOpportunity">Facebook</a>
+                <a class="px-1" href="https://www.instagram.com/nycopportunity">Instagram</a>
+              </nav>
+            </div>
+            <small>© City of New York, 2020 All Rights Reserved. NYC is a trademark and service mark of the City of New York.</small>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="page-wrapper">
+      <div class="screen-tablet:flex">
+        <nav class="screen-tablet:flex-1 mb-1 px-2">
+          <a class="type-h3 text-font-size-small mb-1 block screen-tablet:border-b screen-tablet:pb-2 screen-tablet:mb-1 border-white p-1" href="index">Home</a>
+          <a class="block p-1" href="about">About</a>
+          <a class="block p-1" href="installation">Installation</a>
+          <a class="block p-1" href="developer-tools">Developer Tools</a>
+          <a class="block p-1 screen-tablet:border-b screen-tablet:pb-2 screen-tablet:mb-1 border-white p-1" href="prototyping">Prototyping</a>
+          <a class="block p-1" href="https://www.npmjs.com/package/access-nyc-patterns">NPM Package</a>
+          <a class="block p-1" href="https://github.com/CityOfNewYork/access-nyc-patterns">GitHub Repository</a>
+        </nav>
+        <nav class="screen-tablet:flex-1 mb-1 px-2 screen-desktop:pl-4">
+          <span class="type-h3 text-font-size-small mb-1 block screen-tablet:border-b screen-tablet:pb-2 screen-tablet:mb-1 border-white p-1">Elements</span>
+          <a class="block p-1" href="buttons">Buttons</a>
+          <a class="block p-1" href="checkboxes">Checkboxes</a>
+          <a class="block p-1" href="dividers">Dividers</a>
+          <a class="block p-1" href="inputs">Inputs</a>
+          <a class="block p-1" href="icons">Icons</a>
+          <a class="block p-1" href="layouts">Layouts</a>
+          <a class="block p-1" href="links">Links</a>
+          <a class="block p-1" href="lists">Lists</a>
+          <a class="block p-1" href="nav">Nav</a>
+          <a class="block p-1" href="program-labels">Program Labels</a>
+          <a class="block p-1" href="radios">Radios</a>
+          <a class="block p-1" href="tables">Tables</a>
+          <a class="block p-1" href="tooltips">Tooltips</a>
+          <a class="block p-1" href="toggles">Toggles</a>
+          <a class="block p-1" href="selects">Selects</a>
+        </nav>
+        <nav class="screen-tablet:flex-1 mb-1 px-2 screen-desktop:pl-4">
+          <span class="type-h3 text-font-size-small mb-1 block screen-tablet:border-b screen-tablet:pb-2 screen-tablet:mb-1 border-white p-1">Components</span>
+          <a class="block p-1" href="accordion">Accordion</a>
+          <a class="block p-1" href="alert-box">Alert Box</a>
+          <a class="block p-1" href="card">Card</a>
+          <a class="block p-1" href="checklist">Checklist</a>
+          <a class="block p-1" href="disclaimer">Disclaimer</a>
+          <a class="block p-1" href="filter">Filter</a>
+          <a class="block p-1" href="header">Header</a>
+          <a class="block p-1" href="member-list">Member List</a>
+          <a class="block p-1" href="nearby-stops">Nearby Stops</a>
+          <a class="block p-1" href="share-form">Share Form</a>
+          <a class="block p-1" href="side-nav">Side Nav</a>
+          <a class="block p-1" href="question">Question</a>
+        </nav>
+        <nav class="screen-tablet:flex-1 mb-1 px-2 screen-desktop:pl-4">
+          <span class="type-h3 text-font-size-small mb-1 block screen-tablet:border-b screen-tablet:pb-2 screen-tablet:mb-1 border-white p-1">Objects</span>
+          <a class="block p-1" href="alert-banner">Alert Banner</a>
+          <a class="block p-1" href="announcements">Announcements</a>
+          <a class="block p-1" href="banner">Banner</a>
+          <a class="block p-1" href="card-list">Card Lists</a>
+          <a class="block p-1" href="come-back-later">Come Back Later</a>
+          <a class="block p-1" href="content">Content</a>
+          <a class="block p-1" href="emails">Emails</a>
+          <a class="block p-1" href="footer">Footer</a>
+          <a class="block p-1" href="formstack">Formstack</a>
+          <a class="block p-1" href="mobile-nav">Mobile Nav</a>
+          <a class="block p-1" href="navigation">Navigation</a>
+          <a class="block p-1" href="newsletter">Newsletter</a>
+          <a class="block p-1" href="search-box">Search Box</a>
+          <a class="block p-1" href="text-controller">Text Controller</a>
+        </nav>
+        <nav class="screen-tablet:flex-1 mb-1 px-2 screen-desktop:pl-4">
+          <a class="type-h3 text-font-size-small mb-1 block screen-tablet:border-b screen-tablet:pb-2 screen-tablet:mb-1 border-white p-1" href="utility">Utilities</a>
+          <a class="block p-1" href="accessibility">Accessibility</a>
+          <a class="block p-1" href="colors">Colors</a>
+          <a class="block p-1" href="font">Fonts</a>
+          <a class="block p-1" href="inherit">Inherit</a>
+          <a class="block p-1" href="language">Language</a>
+          <a class="block p-1" href="media">Media</a>
+          <a class="block p-1" href="text">Text</a>
+          <a class="block p-1" href="toggle">Toggle</a>
+          <a class="block p-1" href="typography">Typography</a>
+        </nav>
+      </div>
+    </div>
   </footer>
   <script src="scripts/polyfills.js"></script>
   <script src="scripts/access-nyc.js"></script>
@@ -327,6 +433,7 @@
     var access = new AccessNyc();
     var VueComponents = new VueComponents();
     access.icons();
+    access.icons('https://cdn.jsdelivr.net/gh/cityofnewyork/nyco-patterns@v2.3.1/dist/icons.svg');
     access.toggle();
   </script>
 </body>

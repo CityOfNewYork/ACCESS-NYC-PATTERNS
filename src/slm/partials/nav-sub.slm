@@ -2,5 +2,4 @@ nav
   a class='px-1' href='index' Home
   a class='px-1' href='about' About
   a class='px-1' href='installation' Installation
-  a class='px-1' href='design-tools' Design Tools
   a class='px-1' href='developer-tools' Developer Tools

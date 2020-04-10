@@ -16,8 +16,8 @@ html lang='en' class='bg-white' dir='ltr'
           div class='text-center'
             button class='btn-link' aria-controls='main-menu' aria-expanded='false' data-js='toggle' Close Menu
 
-      main#main-content class='color-light-background pt-4'
-        article class='pt-4'
+      main#main-content class='color-light-background screen-tablet:pt-4'
+        article class='screen-tablet:pt-4 clearfix'
           = content('content');
           = partial('../section/nav.slm');
 
@@ -32,6 +32,7 @@ html lang='en' class='bg-white' dir='ltr'
       var VueComponents = new VueComponents();
 
       access.icons();
+      access.icons('https://cdn.jsdelivr.net/gh/cityofnewyork/nyco-patterns@v2.3.1/dist/icons.svg');
       access.toggle();
 
     = content('script');

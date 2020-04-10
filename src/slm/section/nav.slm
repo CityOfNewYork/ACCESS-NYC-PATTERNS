@@ -1,12 +1,12 @@
 - if (this.navigation && this.navigation.length)
   div class='sticky bottom-0 bg-white shadow-up relative z-10 overflow-y-scroll whitespace-no-wrap animated fadeInUp'
-    nav class='nav-inline text-font-size-small p-4'
-      span class='mr-4' Jump to:
+    nav class='nav-inline text-font-size-small p-2 screen-tablet:p-4'
+      span class='mr-2 screen-tablet:mr-4' Jump to:
 
-      a href='#main-content' class='mr-4' Page Top
+      a href='#main-content' class='mr-2 screen-tablet:mr-4' Page Top
 
       - for (let i in this.navigation)
-        a href='#${this.navigation[i].id}' class='mr-4'
+        a href='#${this.navigation[i].id}' class='mr-2 screen-tablet:mr-4'
           = this.navigation[i].title
 
 - this.navigation = false;

@@ -22,7 +22,7 @@
   <meta content="images/ms-icon-144x144.png" name="msapplication-TileImage" />
   <link href="images/favicon.ico" rel="icon" type="image/x-icon" />
   <link href="styles/site-default.css" rel="stylesheet" />
-  <title>Alert Banner | ACCESS NYC Patterns</title>
+  <title>Prototyping | ACCESS NYC Patterns</title>
   <noscript>
     <style>
       body {
@@ -152,123 +152,56 @@
       <article class="screen-tablet:pt-4 clearfix">
         <header class="page-wrapper px-2 screen-desktop:px-0 layout--home-body">
           <div class="my-0 w-full">
-            <h1 class="text-blue-dark px-2 mb-0 screen-tablet:pb-4 screen-tablet:mb-4">Alert Banner</h1>
+            <h1 class="text-blue-dark px-2 mb-0 screen-tablet:pb-4 screen-tablet:mb-4">Prototyping</h1>
           </div>
         </header>
-        <section class="pb-4 mb-4">
-          <div class="page-wrapper px-2">
-            <header class="layout--home-body">
-              <div class="my-0 px-2 pt-1 pb-4 border-b border-grey-light">
-                <div>
-                  <p class="text-font-size-small m-0">Source: <code>
-                      <a href="https://github.com/CityOfNewYork/access-nyc-patterns/tree/v0.12.0/src/objects/alert-banner">src/objects/alert-banner/alert-banner</a>
-                    </code>
-                  </p>
-                </div>
-              </div>
-            </header>
-            <div class="layout--home-body">
-              <div class="my-0 pt-4 px-2 text-font-size-small table-align-start">
-                <p>The Alert Banner Object contains messages and information relevant to users. When JavaScript is enabled the alert is visible at page landing allowing a user the option to close it. When a user closes the banner, it will be hidden for all page visits afterwards unless there is a new message or the alert’s cookie has expired or cleared. <a href="demos/alert-banner">Click here to see a full page demonstration</a>.</p>
-              </div>
-            </div>
-            <div class="layout--gutter screen-tablet:layout--gutter justify-between pt-4">
-              <div>
-                <article aria-hidden="false" class="c-alert-banner z-20 bg-status-info animated hidden:fadeInUp active print:hidden" data-alert-name="maintenance" data-js="alert-banner" id="aria-c-alert-banner" role="dialog">
-                  <div class="c-alert-banner-wrapper">
-                    <div class="c-alert-banner__content">
-                      <div class="c-alert-banner__icon">
-                        <svg aria-hidden="true" class="c-alert-banner__svg icon icon-info">
-                          <use xlink:href="#icon-info"></use>
-                        </svg>
-                      </div>
-                      <div class="c-alert-banner__body">ACCESS NYC will be undergoing maintenance Friday, February 2nd from 9pm to 11pm EST.</div>
-                    </div>
-                    <div class="c-alert-banner__closing">
-                      <button aria-controls="aria-c-alert-banner" aria-expanded="true" class="text-blue" data-js="alert-controller">
-                        <span class="sr-only">close & return to site</span>
-                        <svg aria-hidden="true" class="icon-ui-x">
-                          <use xlink:href="#icon-ui-x"></use>
-                        </svg>
-                      </button>
-                    </div>
-                  </div>
-                </article>
-              </div>
-              <div>
-                <div class="code-block mb-1">
-                  <pre>&lt;article aria-hidden=&quot;false&quot; class=&quot;c-alert-banner z-20 bg-status-info animated hidden:fadeInUp active print:hidden&quot; data-alert-name=&quot;maintenance&quot; data-js=&quot;alert-banner&quot; id=&quot;aria-c-alert-banner&quot; role=&quot;dialog&quot;&gt;
-  &lt;div class=&quot;c-alert-banner-wrapper&quot;&gt;
-    &lt;div class=&quot;c-alert-banner__content&quot;&gt;
-      &lt;div class=&quot;c-alert-banner__icon&quot;&gt;
-        &lt;svg aria-hidden=&quot;true&quot; class=&quot;c-alert-banner__svg icon icon-info&quot;&gt;
-          &lt;use xlink:href=&quot;#icon-info&quot;&gt;&lt;/use&gt;
-        &lt;/svg&gt;
-      &lt;/div&gt;
-      &lt;div class=&quot;c-alert-banner__body&quot;&gt;ACCESS NYC will be undergoing maintenance Friday, February 2nd from 9pm to 11pm EST.&lt;/div&gt;
-    &lt;/div&gt;
-    &lt;div class=&quot;c-alert-banner__closing&quot;&gt;
-      &lt;button aria-controls=&quot;aria-c-alert-banner&quot; aria-expanded=&quot;true&quot; class=&quot;text-blue&quot; data-js=&quot;alert-controller&quot;&gt;
-        &lt;span class=&quot;sr-only&quot;&gt;close &amp; return to site&lt;/span&gt;
-        &lt;svg aria-hidden=&quot;true&quot; class=&quot;icon-ui-x&quot;&gt;
-          &lt;use xlink:href=&quot;#icon-ui-x&quot;&gt;&lt;/use&gt;
-        &lt;/svg&gt;
-      &lt;/button&gt;
-    &lt;/div&gt;
-  &lt;/div&gt;
-&lt;/article&gt;</pre>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-        <section class="pb-2 screen-tablet:pb-4 screen-tablet:mb-4" id="alert-banner-usage">
+        <section class="pb-2 screen-tablet:pb-4 screen-tablet:mb-4">
           <div class="page-wrapper px-2 screen-desktop:px-0">
             <header class="layout--home-body">
-              <div class="my-0 px-2 py-0 border-b border-grey-light screen-tablet:flex screen-tablet:justify-between">
-                <h2 class="m-0 pt-1 pb-4">
-                  <a class="text-grey-mid font-normal no-underline capitalize" href="#alert-banner-usage">Alert Banner Usage</a>
-                </h2>
-              </div>
+              <div class="my-0 px-2 py-0 border-b border-grey-light screen-tablet:flex screen-tablet:justify-between"></div>
             </header>
             <div class="layout--home-body">
               <div class="my-0 pt-4 px-2 text-font-size-small table-align-start">
-                <h4 id="global-script">Global Script</h4>
-                <p>The Alert Banner Object requires JavaScript for showing and hiding the alert. It uses a Cookie to store the dismissed state for hiding the banner after subsequent page visits if the user has dismissed it. To use the Alert Banner Object through the global ACCESS NYC Patterns script use the following code:</p>
-                <pre><code>&lt;!-- Global Script --&gt;
-&lt;script src=&quot;dist/scripts/AccessNyc.js&quot;&gt;&lt;/script&gt;
+                <p>
+                  <a href="#figma">Figma</a> | <a href="#browser">Browser</a>
+                </p>
+                <h2 id="figma">Figma</h2>
+                <p>Using Figma and the <a href="https://www.figma.com/c/plugin/747985167520967365/HTML-To-Figma">HTML to Figma Plugin</a> is recommended for creating static prototypes using a pattern library created with the Patterns Framework.</p>
+                <p>
+                  <img src="https://www.figma.com/community/plugin/747985167520967365/thumbnail" alt="HTML to Figma Plugin">
+                </p>
+                <p>It will allow you to import styled HTML from a pattern’s static site to retrieve basic elements such as colors, layouts, etc. The HTML to Figma app will not be able to include fonts and svgs and may have trouble with the styling of background, psuedo elements, and elements hidden on the screen.</p>
+                <p>Pattern library assets including fonts, SVGs, and images can be downloaded. <a href="https://github.com/CityOfNewYork/ACCESS-NYC-PATTERNS/archive/v0.12.0.zip">Click here to download a copy of v0.12.0.zip</a>. Assets for can be found in the following directories;</p>
+                <ul>
+                  <li>Fonts; <strong>/dist/fonts</strong>
+                  </li>
+                  <li>SVGs (icons); <strong>/dist/svg</strong>
+                  </li>
+                  <li>Images; <strong>/dist/images</strong>
+                  </li>
+                </ul>
+                <h2 id="browser">Browser</h2>
+                <p>Using the CDN method of the installation is recommended for building prototypes in the browser. Import the pattern library’s global stylesheet and scripts via the CDN into any web page.</p>
+                <p>Compiled styles and scripts in the <strong>/dist</strong> folder of the GitHub repository can be imported on the page using a CDN such as <a href="https://www.jsdelivr.com">JsDelivr</a>. The following global stylesheet link can be copied and pasted into the the <code>&lt;head&gt;</code> of your html document.</p>
+                <pre><code>&lt;link href=&quot;https://cdn.jsdelivr.net/gh/cityofnewyork/access-nyc-patterns@v0.12.0/dist/styles/site-default.css&quot; rel=&quot;stylesheet&quot;&gt;</code></pre>
+                <p>The following global script source can copied and pasted before the closing <code>&lt;/body&gt;</code> tag of your html document.</p>
+                <pre><code>&lt;script src=&quot;https://cdn.jsdelivr.net/gh/cityofnewyork/access-nyc-patterns@v0.12.0/dist/scripts/access-nyc.js&quot;&gt;&lt;/script&gt;</code></pre>
+                <p>The following url is the base url for all distributed files available via a CDN.</p>
+                <pre><code>https://cdn.jsdelivr.net/gh/cityofnewyork/access-nyc-patterns@v0.12.0/dist/</code></pre>
+                <p>
+                  <a href="https://github.com/CityOfNewYork/ACCESS-NYC-PATTERNS/tree/v0.12.0/dist/">Visit the GitHub repository to browse all available files</a>. All Patterns are distributed with their own styles and script dependencies in the <strong>/dist</strong> folder. For example, all of the “Accordion” dependencies would live in the <strong>/dist/components/accordion</strong> folder.
+                </p>
+                <p>Components scripts must be initialized individually.</p>
+                <pre><code>&lt;script type=&quot;text/javascript&quot;&gt;
+  var patterns = new AccessNyc(); // initialize the global script
 
-&lt;script&gt;
-  var access = new AccessNyc();
-  access.alertBanner();
+  patterns.accordion(); // initialize an individual component
 &lt;/script&gt;</code></pre>
-                <p>This will instantiate the Alert Banner Object and attach event listeners for the close option.</p>
-                <h4 id="cherry-picked-module-import">Cherry-picked Module Import</h4>
-                <p>The ES6, CommonJS, and IFFE modules all require importing and object instantiation in your main script. You must pass a dom selection of the Alert Banner Object to the instantiated class. A selector reference is stored in the class.</p>
-                <pre><code>// ES6
-import AlertBanner from &#39;src/objects/alert-banner/alert-banner&#39;;
-
-// CommonJS
-let AlertBanner = require(&#39;dist/objects/alert-banner/alert-banner.common&#39;);
-
-&lt;!-- IFFE --&gt;
-&lt;script src=&quot;dist/objects/alert-banner/alert-banner.iffe.js&quot;&gt;&lt;/script&gt;
-
-let element = document.querySelector(AlertBanner.selector);
-new AlertBanner(element);</code></pre>
-                <h4 id="dependencies-and-polyfills">Dependencies and Polyfills</h4>
-                <p>This script uses the <a href="/toggle">Toggle Utility</a> as a dependency and reqiures the same polyfills for IE11 support. See the <a href="/toggle#toggle-usage">“Toggle Usage” section</a> for details on specific methods. Additionally, it uses <a href="https://github.com/js-cookie/js-cookie">JavaScript Cookie</a> as a dependency.</p>
+                <p>Each pattern’s initialization is documented on it’s dedicated page.</p>
               </div>
             </div>
           </div>
         </section>
-        <div class="sticky bottom-0 bg-white shadow-up relative z-10 overflow-y-scroll whitespace-no-wrap animated fadeInUp">
-          <nav class="nav-inline text-font-size-small p-2 screen-tablet:p-4">
-            <span class="mr-2 screen-tablet:mr-4">Jump to:</span>
-            <a class="mr-2 screen-tablet:mr-4" href="#main-content">Page Top</a>
-            <a class="mr-2 screen-tablet:mr-4" href="#alert-banner-usage">Alert Banner Usage</a>
-          </nav>
-        </div>
       </article>
     </main>
   </div>
@@ -384,9 +317,6 @@ new AlertBanner(element);</code></pre>
     access.icons();
     access.icons('https://cdn.jsdelivr.net/gh/cityofnewyork/nyco-patterns@v2.3.1/dist/icons.svg');
     access.toggle();
-  </script>
-  <script type="text/javascript">
-    access.alertBanner();
   </script>
 </body>
 
