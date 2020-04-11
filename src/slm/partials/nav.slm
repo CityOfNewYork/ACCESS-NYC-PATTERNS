@@ -59,7 +59,6 @@ nav class='${class_nav} screen-desktop:ps-4'
 
 nav class='${class_nav} screen-desktop:ps-4'
   span class='${class_nav_heading} ${class_nav_divider}' Utilities
-  a class='${class_nav_item}' href='screen-readers-only' Screen Readers Only
   a class='${class_nav_item}' href='animate' Animate
   a class='${class_nav_item}' href='clearfix' Clearfix
   a class='${class_nav_item}' href='colors' Colors
@@ -69,6 +68,7 @@ nav class='${class_nav} screen-desktop:ps-4'
   a class='${class_nav_item}' href='margin' Margin
   a class='${class_nav_item}' href='media' Media
   a class='${class_nav_item}' href='padding' Padding
+  a class='${class_nav_item}' href='screen-reader' Screen Reader
   a class='${class_nav_item}' href='tailwindcss' tailwindcss
   a class='${class_nav_item}' href='text' Text
   a class='${class_nav_item}' href='toggle' Toggle
