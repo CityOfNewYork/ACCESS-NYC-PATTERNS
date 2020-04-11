@@ -1,12 +1,20 @@
 @import 'config/tokens';
 @import 'config/direction';
+@import 'config/media';
 
-@each $token, $value in map-get($tokens, 'margin') {
-  .me-#{$token} {
-    margin-#{$text-direction-end}: $value
-  }
+// @mixin margins($variant: '') {
+@responsive {
+  @each $token, $value in map-get($tokens, 'margin') {
+    .#{$variant}me-#{$token} {
+      margin-#{$text-direction-end}: $value
+    }
 
-  .ms-#{$token} {
-    margin-#{$text-direction-start}: $value
+    .#{$variant}ms-#{$token} {
+      margin-#{$text-direction-start}: $value
+    }
   }
 }
+
+// @include screens {
+//   @include margins($variant);
+// }

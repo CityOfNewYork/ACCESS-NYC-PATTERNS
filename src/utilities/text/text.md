@@ -1,1 +1,1 @@
-Using the `.text-align-start` or `.text-align-end` will align text content to the alignment of the current language selected.
+Using the `.text-start` or `.text-end` will align text content based on the reading direction of the stylesheet language.

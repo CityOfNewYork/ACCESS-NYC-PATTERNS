@@ -30,7 +30,7 @@
               <label class="checkbox">
                 <input type="checkbox" :value="f.slug" :checked="f.checked" @change="fetch({'event': $event, 'data': f})" />
 
-                <span class="checkbox__label text-font-size-small font-normal" v-html="f.name">{{ f.name }}</span>
+                <span class="checkbox__label text-small font-normal" v-html="f.name">{{ f.name }}</span>
               </label>
             </li>
           </ul>

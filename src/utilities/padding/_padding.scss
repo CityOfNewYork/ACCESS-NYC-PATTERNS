@@ -1,12 +1,20 @@
 @import 'config/tokens';
 @import 'config/direction';
+@import 'config/media';
 
-@each $token, $value in map-get($tokens, 'padding') {
-  .pe-#{$token} {
-    padding-#{$text-direction-end}: $value
-  }
+// @mixin padding($variant: '') {
+@responsive {
+  @each $token, $value in map-get($tokens, 'padding') {
+    .#{$variant}pe-#{$token} {
+      padding-#{$text-direction-end}: $value
+    }
 
-  .ps-#{$token} {
-    padding-#{$text-direction-start}: $value
+    .#{$variant}ps-#{$token} {
+      padding-#{$text-direction-start}: $value
+    }
   }
 }
+
+// @include screens {
+//   @include padding($variant);
+// }

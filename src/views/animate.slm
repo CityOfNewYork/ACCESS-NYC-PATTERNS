@@ -2,7 +2,7 @@
 = extend('/slm/layouts/default');
 
 / Component
-- title = 'Accessibility';
+- title = 'Animate';
 
 / Partials
 = partial('/slm/partials/styles.slm');
@@ -21,4 +21,5 @@
 
 = content('content');
   = mixin('content-header', title);
-  = mixin('section', 'Screen Reader Only', 'utilities/accessibility/accessibility');
+  = mixin('section', 'Fade In', 'utilities/animate/animate-fade-in');
+  = mixin('section', 'Fade In Up', 'utilities/animate/animate-fade-in-up');

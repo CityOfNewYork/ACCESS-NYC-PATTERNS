@@ -8,7 +8,7 @@ html lang='en' class='bg-white' dir='ltr'
     div class='bg-white'
       = partial('../partials/header.slm');
 
-      aside#main-menu role='region' aria-labelledby='main-menu-control' aria-hidden='true' class='color-mid-background text-font-size-small hidden hidden:overflowFadeInUp animated relative' style='top: -1px'
+      aside#main-menu role='region' aria-labelledby='main-menu-control' aria-hidden='true' class='color-mid-background text-small hidden hidden:overflowFadeInUp animated relative' style='top: -1px'
         div class='page-wrapper py-4 animated'
           div class='screen-tablet:flex'
             = partial('../partials/nav.slm');

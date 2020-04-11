@@ -1,10 +1,10 @@
 article class='mb-4 print:pb-4 print:border-b'
   div class='flex items-stretch bg-grey-lightest p-3 screen-desktop:p-4 print:flex print:p-0 print:bg-transparent'
-    div class='w-100 pr-1 print:p-0'
+    div class='w-100 pe-1 print:p-0'
       header class='c-card p-0 bg-transparent mb-2'
         div class='c-card__icon-large print:hidden'
           div class='icon bg-icon-card-cash-expenses'
-        div class='pr-2 hidden print:inline-block' aria-hidden='true'
+        div class='pe-2 hidden print:inline-block' aria-hidden='true'
           div class='icon bg-icon-card-cash-expenses'
 
         div class='c-card__body pt-1'

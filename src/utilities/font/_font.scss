@@ -8,17 +8,9 @@
 @import 'config/fonts';
 
 // Declarations
-.font-smooth {
-  @include font-smooth
-}
-
-.font-smooth-auto {
-  @include font-smooth-auto
-}
-
 .font-serif {
   @if $language == '' {
-    font-family: map-get(map-get($tokens, 'fonts'), 'default-serif');
+    font-family: map-get(map-get($tokens, 'fonts'), 'serif');
   } @else {
     font-family: map-get(map-get($tokens, 'fonts'), '#{$language}-serif');
   }
@@ -26,7 +18,7 @@
 
 .font-sans {
   @if $language == '' {
-    font-family: map-get(map-get($tokens, 'fonts'), 'default-sans');
+    font-family: map-get(map-get($tokens, 'fonts'), 'sans');
   } @else {
     font-family: map-get(map-get($tokens, 'fonts'), '#{$language}-sans');
   }

@@ -1,8 +1,8 @@
 - if (typeof value !== 'undefined')
   - ;
-  div class='text-font-size-small'
+  div class='text-small'
 
-    h3 class='text-font-size-small capitalize mb-2' ${value.replace(/-/g," ")}
+    h3 class='text-small capitalize mb-2' ${value.replace(/-/g," ")}
 
     div class='py-4 text-center bg-grey-lightest px-2 mb-2 flex items-center justify-center' style='min-height:150px'
       svg class='${value} text-blue-dark'

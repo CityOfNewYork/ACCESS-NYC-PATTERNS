@@ -7,7 +7,7 @@ nav class='${class_nav}'
   a class='${class_nav_item}' href='${link_npm}' NPM Package
   a class='${class_nav_item}' href='${link_source}' GitHub Repository
 
-nav class='${class_nav} screen-desktop:pl-4'
+nav class='${class_nav} screen-desktop:ps-4'
   span class='${class_nav_heading} ${class_nav_divider}' Elements
   a class='${class_nav_item}' href='buttons' Buttons
   a class='${class_nav_item}' href='checkboxes' Checkboxes
@@ -25,7 +25,7 @@ nav class='${class_nav} screen-desktop:pl-4'
   a class='${class_nav_item}' href='toggles' Toggles
   a class='${class_nav_item}' href='selects' Selects
 
-nav class='${class_nav} screen-desktop:pl-4'
+nav class='${class_nav} screen-desktop:ps-4'
   span class='${class_nav_heading} ${class_nav_divider}' Components
   a class='${class_nav_item}' href='accordion' Accordion
   a class='${class_nav_item}' href='alert-box' Alert Box
@@ -40,7 +40,7 @@ nav class='${class_nav} screen-desktop:pl-4'
   a class='${class_nav_item}' href='side-nav' Side Nav
   a class='${class_nav_item}' href='question' Question
 
-nav class='${class_nav} screen-desktop:pl-4'
+nav class='${class_nav} screen-desktop:ps-4'
   span class='${class_nav_heading} ${class_nav_divider}' Objects
   a class='${class_nav_item}' href='alert-banner' Alert Banner
   a class='${class_nav_item}' href='announcements' Announcements
@@ -57,14 +57,19 @@ nav class='${class_nav} screen-desktop:pl-4'
   a class='${class_nav_item}' href='search-box' Search Box
   a class='${class_nav_item}' href='text-controller' Text Controller
 
-nav class='${class_nav} screen-desktop:pl-4'
-  a class='${class_nav_heading} ${class_nav_divider}' href='utility' Utilities
-  a class='${class_nav_item}' href='accessibility' Accessibility
+nav class='${class_nav} screen-desktop:ps-4'
+  span class='${class_nav_heading} ${class_nav_divider}' Utilities
+  a class='${class_nav_item}' href='screen-readers-only' Screen Readers Only
+  a class='${class_nav_item}' href='animate' Animate
+  a class='${class_nav_item}' href='clearfix' Clearfix
   a class='${class_nav_item}' href='colors' Colors
   a class='${class_nav_item}' href='font' Fonts
   a class='${class_nav_item}' href='inherit' Inherit
   a class='${class_nav_item}' href='language' Language
+  a class='${class_nav_item}' href='margin' Margin
   a class='${class_nav_item}' href='media' Media
+  a class='${class_nav_item}' href='padding' Padding
+  a class='${class_nav_item}' href='tailwindcss' tailwindcss
   a class='${class_nav_item}' href='text' Text
   a class='${class_nav_item}' href='toggle' Toggle
   a class='${class_nav_item}' href='typography' Typography

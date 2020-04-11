@@ -2,7 +2,7 @@
 = extend('/slm/layouts/default');
 
 / Component
-- title = 'Fonts';
+- title = 'Font';
 
 / Partials
 = partial('/slm/partials/styles.slm');
@@ -21,6 +21,4 @@
 
 = content('content');
   = mixin('content-header', title);
-  = mixin('section', 'Font Families', 'utilities/font/font');
-  = mixin('section', 'Font Smoothing', 'utilities/font/font-smoothing');
-  = mixin('section', 'Font Serif/Sans-Serif', 'utilities/font/font-serif-sans');
+  = mixin('section', false, 'utilities/font/font');

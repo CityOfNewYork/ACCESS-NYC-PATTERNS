@@ -13,23 +13,23 @@ $font-weights: map-get($tokens, 'font-weights');
 
 $em-base: map-get($tokens, 'em-base');
 
-$font-size-xsmall: map-get($font-sizes, 'font-size-xsmall');
-$font-size-small: map-get($font-sizes, 'font-size-small');
+$font-size-xsmall: map-get($font-sizes, 'xsmall');
+$font-size-small: map-get($font-sizes, 'small');
 $font-size-base: #{$em-base}px;
-$font-size-normal: map-get($font-sizes, 'font-size-normal');
-$font-size-medium: map-get($font-sizes, 'font-size-medium');
-$font-size-large: map-get($font-sizes, 'font-size-large');
-$font-size-larger: map-get($font-sizes, 'font-size-larger');
-$font-size-largest: map-get($font-sizes, 'font-size-largest');
-$font-size-jumbo: map-get($font-sizes, 'font-size-jumbo');
+$font-size-normal: map-get($font-sizes, 'normal');
+$font-size-medium: map-get($font-sizes, 'medium');
+$font-size-large: map-get($font-sizes, 'large');
+$font-size-larger: map-get($font-sizes, 'larger');
+$font-size-largest: map-get($font-sizes, 'largest');
+$font-size-jumbo: map-get($font-sizes, 'jumbo');
 
-$font-size-print: map-get($font-sizes, 'font-size-print');
+$font-size-print: map-get($font-sizes, 'print');
 
 $font-weight-normal: map-get($font-weights, 'normal');
 $font-weight-bold: map-get($font-weights, 'bold');
 
-$font-family-sans: map-get($fonts, 'default-sans');
-$font-family-serif: map-get($fonts, 'default-serif');
+$font-family-sans: map-get($fonts, 'sans');
+$font-family-serif: map-get($fonts, 'serif');
 
 @if $language == 'kr' {
   $font-family-sans: map-get($fonts, 'kr-sans');

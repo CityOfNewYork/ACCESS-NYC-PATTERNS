@@ -39,7 +39,7 @@ footer class='o-footer color-mid-background'
       li class='o-footer__column-middle'
         div class='type-h3' Programs
 
-        ul class='screen-tablet:layout--columns-gutter screen-desktop:layout--rows'
+        ul class='screen-tablet:layout-columns-gutter screen-desktop:layout-rows'
           li
             a href='#' Cash &amp; Expenses
           li

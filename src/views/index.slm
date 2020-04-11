@@ -17,7 +17,7 @@
 
 = content('content');
   section
-    div class='page-wrapper layout--home-body px-2'
+    div class='page-wrapper layout-home-body px-2'
       div
         div class='o-banner my-0 w-full color-light-background p-0'
           div class='o-banner__inner max-w-full'
@@ -52,11 +52,11 @@
                     | Get started
 
   section class='pb-4 color-mid-background'
-    div class='page-wrapper layout--home-body px-4'
+    div class='page-wrapper layout-home-body px-4'
       div class='w-full pb-0'
         h4#links Links
 
-        div class='layout--gutter screen-tablet:layout--columns-gutter'
+        div class='layout-gutter screen-tablet:layout-columns-gutter'
           article class='c-card'
             div class='c-card__body'
               h3 class='c-card__title mb-3' About Patterns
@@ -82,7 +82,7 @@
                 a href='colors' The Color Pattern reference.
 
   section class='py-4'
-    div class='page-wrapper layout--home-body px-2'
+    div class='page-wrapper layout-home-body px-2'
       div class='px-2'
         h3#nyc-civic-service-design NYC Civic Service Design
 

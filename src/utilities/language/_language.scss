@@ -6,7 +6,7 @@
 @import 'config/tokens';
 
 // Declarations
-@each $lang in map-get($tokens, 'rtlLanguages') {
+@each $lang in map-get($tokens, 'rtl-languages') {
   :lang(#{$lang}) {
     direction: rtl;
   }

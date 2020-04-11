@@ -13,12 +13,12 @@ div class='c-filter-multi bg-white'
           li class='c-filter-multi__item-group-subitem'
             label class='checkbox'
               input value='6871' type='checkbox'
-              span class='checkbox__label text-font-size-small font-normal' Home Energy Assistance Program (HEAP)
+              span class='checkbox__label text-small font-normal' Home Energy Assistance Program (HEAP)
 
           li class='c-filter-multi__item-group-subitem'
             label class='checkbox'
               input value='6868' type='checkbox'
-              span class='checkbox__label text-font-size-small font-normal' Earned Income Tax Credit (EITC)
+              span class='checkbox__label text-small font-normal' Earned Income Tax Credit (EITC)
 
     li class='c-filter-multi__item'
       div class='c-filter-multi__item-header'
@@ -34,12 +34,12 @@ div class='c-filter-multi bg-white'
           li class='c-filter-multi__item-group-subitem'
             label class='checkbox'
               input value='6866' type='checkbox'
-              span class='checkbox__label text-font-size-small font-normal' EarlyLearn Child Car
+              span class='checkbox__label text-small font-normal' EarlyLearn Child Car
 
           li class='c-filter-multi__item-group-subitem'
             label class='checkbox'
               input value='6867' type='checkbox'
-              span class='checkbox__label text-font-size-small font-normal' EarlyLearn Head Start
+              span class='checkbox__label text-small font-normal' EarlyLearn Head Start
 
     li class='c-filter-multi__item'
         div class='c-filter-multi__item-header'
@@ -55,7 +55,7 @@ div class='c-filter-multi bg-white'
             li class='c-filter-multi__item-group-subitem'
               label class='checkbox'
                 input value='6871' type='checkbox'
-                span class='checkbox__label text-font-size-small font-normal' IDNYC
+                span class='checkbox__label text-small font-normal' IDNYC
 
 
 

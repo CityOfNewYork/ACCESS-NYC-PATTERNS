@@ -1,0 +1,8 @@
+div class='color-mid-background'
+  div class='px-4 my-4'
+    | Without Clearfix
+
+div class='clearfix color-mid-background'
+  div class='px-4 my-4'
+    | With Clearfix
+

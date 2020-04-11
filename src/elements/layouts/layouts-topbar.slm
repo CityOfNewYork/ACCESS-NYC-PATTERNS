@@ -1,6 +1,6 @@
 
 div class='wrap'
-  article class='layout--topbar text-center'
+  article class='layout-topbar text-center'
     header class='bg-blue-dark text-white p-4' Topbar
     div class='bg-grey-lightest p-4'
       div Body

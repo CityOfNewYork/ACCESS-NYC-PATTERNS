@@ -13,7 +13,7 @@ article class='c-alert-box bg-status-info mb-4'
       h1 class='type-h4 m-0' Come back to it later.
     p We can send you a link to this page to help you get back to it when you’re ready.
 
-    div class='layout--gutter screen-tablet:layout--columns-gutter'
+    div class='layout-gutter screen-tablet:layout-columns-gutter'
       - symbol = false;
       - instance = 'components/share-form/share-form-email';
       = partial(`../../${instance}.slm`);

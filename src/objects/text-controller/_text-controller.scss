@@ -70,6 +70,7 @@
   }
 
   li {
+    line-height: normal;
     margin-bottom: $spacing-base * 0.5;
     display: inline-block;
     padding: 0;
@@ -86,14 +87,14 @@
     }
   }
 
-  .text-align-start & li { // based on utilities/text/text
-    margin-left: 0;
-    margin-right: $grid-base * 2;
-  }
-
-  .text-align-end & li { // based on utilities/text/text
+  .text-start & li { // based on utilities/text/text
     margin-right: 0;
     margin-left: $grid-base * 2;
+  }
+
+  .text-end & li { // based on utilities/text/text
+    margin-left: 0;
+    margin-right: $grid-base * 2;
   }
 
   a {
@@ -109,11 +110,11 @@
     display: flex;
   }
 
-  .text-align-start & {
+  .text-start & {
     justify-content: flex-start
   }
 
-  .text-align-end & {
+  .text-end & {
     justify-content: flex-end
   }
 }

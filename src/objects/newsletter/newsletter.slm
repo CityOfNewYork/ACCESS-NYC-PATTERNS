@@ -17,7 +17,7 @@ div class='mb-4 p-3 screen-desktop:p-4 bg-white' data-js='newsletter'
       fieldset class='c-question'
         legend class='c-question__label' Which borough(s) would you like to recieve updates for?
 
-        div class='c-question__container screen-tablet:layout--columns'
+        div class='c-question__container screen-tablet:layout-columns'
           - symbol = false;
           - instance = 'elements/checkboxes/checkboxes';
           - for (index in this.newsletter.boroughs)
@@ -30,12 +30,12 @@ div class='mb-4 p-3 screen-desktop:p-4 bg-white' data-js='newsletter'
 
     button type='submit' class='btn-primary btn-small' Sign Up
 
-    article class='c-alert-box bg-status-warning mt-3 text-font-size-small hidden' data-js-newsletter='alert-box-warning' aria-hidden='true'
+    article class='c-alert-box bg-status-warning mt-3 text-small hidden' data-js-newsletter='alert-box-warning' aria-hidden='true'
       div class='c-alert-box__icon'
         div class='c-alert-box__svg bg-icon-warning'
       div class='c-alert-box__body' data-js-newsletter='alert-box__text'
 
-    article class='c-alert-box bg-status-success mt-3 text-font-size-small hidden' data-js-newsletter='alert-box-success' aria-hidden='true'
+    article class='c-alert-box bg-status-success mt-3 text-small hidden' data-js-newsletter='alert-box-success' aria-hidden='true'
       div class='c-alert-box__icon'
         div class='c-alert-box__svg bg-icon-success'
       div class='c-alert-box__body' data-js-newsletter='alert-box__text'

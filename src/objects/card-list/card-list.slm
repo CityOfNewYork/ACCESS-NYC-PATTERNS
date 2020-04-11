@@ -3,7 +3,7 @@
 /
 
 div class='p-4 bg-grey-lightest'
-  div class='layout--gutter'
+  div class='layout-gutter'
     - symbol = false;
     - instance = 'components/card/card-icon-info';
     = partial(`../../${instance}.slm`)

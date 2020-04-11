@@ -25,40 +25,20 @@ $breakpoints: map-get($tokens, 'screens');
     min-width: $site-min-width;
   }
 
-  //
-  // General layout for two equal columns, no gutters, tablet up screens.
-  //
-  //  .------------------.
-  //  |.-------..-------.|
-  //  ||       ||       ||
-  //  ||       ||       ||
-  //  ||       ||       ||
-  //  |.-------..-------.|
-  //  .------------------.
-  //
-  .#{$variant}layout--columns {
+  .#{$variant}layout-columns {
     display: flex;
     flex-wrap: wrap;
+
     > * {
       width: 50%;
       max-width: 50%
     }
   }
 
-  //
-  // General layout for two equal rows, no gutters, tablet up screens.
-  //
-  //  .------------------.
-  //  |.----------------.|
-  //  ||                ||
-  //  |.----------------.|
-  //  ||                ||
-  //  |.----------------.|
-  //  .------------------.
-  //
-  .#{$variant}layout--rows {
+  .#{$variant}layout-rows {
     display: flex;
     flex-wrap: wrap;
+
     > * {
       height: 50%;
       width: 100%;
@@ -67,25 +47,7 @@ $breakpoints: map-get($tokens, 'screens');
     }
   }
 
-  //
-  // General layout for single column with horizontal gutters (margin bottom)
-  // on nested elements (the rows), except for the last row. Mobile up.
-  //
-  //  .-------------------.
-  //  |.-----------------.|
-  //  ||                 ||
-  //  |.-----------------.|
-  //  |                   |
-  //  |.-----------------.|
-  //  ||                 ||
-  //  |.-----------------.|
-  //  |                   |
-  //  |.-----------------.|
-  //  ||                 ||
-  //  |.-----------------.|
-  //  .-------------------.
-  //
-  .#{$variant}layout--gutter {
+  .#{$variant}layout-gutter {
     > * {
       width: 100%;
       margin-bottom: $spacing-base
@@ -96,26 +58,7 @@ $breakpoints: map-get($tokens, 'screens');
     }
   }
 
-  //
-  // General layout for two equal columns with gutter down the middle and
-  // horizontal gutter between rows. No gutter beneath the last row. Stacks
-  // elements on top of each other for screens smaller than desktop.
-  //
-  //  .-------------------.
-  //  |.------.  .-------.|
-  //  ||      |  |       ||
-  //  |.------.  .-------.|
-  //  |                   |
-  //  |.------.  .-------.|
-  //  ||      |  |       ||
-  //  |.------.  .-------.|
-  //  |                   |
-  //  |.------.  .-------.|
-  //  ||      |  |       ||
-  //  |.------.  .-------.|
-  //  .-------------------.
-  //
-  .#{$variant}layout--columns-gutter {
+  .#{$variant}layout-columns-gutter {
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
@@ -133,24 +76,23 @@ $breakpoints: map-get($tokens, 'screens');
     }
   }
 
-  //
-  // A layout for four column grid with gutter
-  //
-  //  .-------------------.
-  //  |.--. .--. .--. .--.|
-  //  ||  | |  | |  | |  ||
-  //  |.--. .--. .--. .--.|
-  //  |                   |
-  //  |.--. .--. .--. .--.|
-  //  ||  | |  | |  | |  ||
-  //  |.--. .--. .--. .--.|
-  //  |                   |
-  //  |.--. .--. .--. .--.|
-  //  ||  | |  | |  | |  ||
-  //  |.--. .--. .--. .--.|
-  //  .-------------------.
-  //
-  .#{$variant}layout--four-columns-gutter {
+  .#{$variant}layout-four-columns {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+
+    > * {
+      width: 25%;
+      max-width: 25%;
+      flex-basis: 25%
+    }
+
+    > * {
+      margin-bottom: $spacing-base
+    }
+  }
+
+  .#{$variant}layout-four-columns-gutter {
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
@@ -166,24 +108,19 @@ $breakpoints: map-get($tokens, 'screens');
     }
   }
 
-  //
-  // A layout for three column grid with gutter
-  //
-  //  .--------------.
-  //  |.--. .--. .--.|
-  //  ||  | |  | |  ||
-  //  |.--. .--. .--.|
-  //  |              |
-  //  |.--. .--. .--.|
-  //  ||  | |  | |  ||
-  //  |.--. .--. .--.|
-  //  |              |
-  //  |.--. .--. .--.|
-  //  ||  | |  | |  ||
-  //  |.--. .--. .--.|
-  //  .--------- ----.
-  //
-  .#{$variant}layout--three-columns-gutter {
+  .#{$variant}layout-three-columns {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+
+    > * {
+      width: 33.33%;
+      max-width: 33.33%;
+      flex-basis: 33.33%
+    }
+  }
+
+  .#{$variant}layout-three-columns-gutter {
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
@@ -199,24 +136,24 @@ $breakpoints: map-get($tokens, 'screens');
     }
   }
 
-  //
-  // A layout for two column grid with gutter
-  //
-  //  .---------.
-  //  |.--. .--.|
-  //  ||  | |  ||
-  //  |.--. .--.|
-  //  |         |
-  //  |.--. .--.|
-  //  ||  | |  ||
-  //  |.--. .--.|
-  //  |         |
-  //  |.--. .--.|
-  //  ||  | |  ||
-  //  |.--. .--.|
-  //  .---------.
-  //
-  .#{$variant}layout--two-columns-gutter {
+  .#{$variant}layout-two-columns {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+
+    > *, &:after {
+      width: 50%;
+      max-width: 50%;
+      flex-basis: 50%
+    }
+
+    &:after {
+      content: '';
+      margin-bottom: 0;
+    }
+  }
+
+  .#{$variant}layout-two-columns-gutter {
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
@@ -237,19 +174,7 @@ $breakpoints: map-get($tokens, 'screens');
     }
   }
 
-  //
-  // Layout for single sidebar with 16rem width. No gutters. Stacks sidebar on
-  // top for screens smaller than desktop width.
-  //
-  //  .-------------------.
-  //  |.----..-----------.|
-  //  ||    ||           ||
-  //  ||    ||           ||
-  //  ||    ||           ||
-  //  |.----..-----------.|
-  //  .-------------------.
-  //
-  .#{$variant}layout--sidebar {
+  .#{$variant}layout-sidebar {
     display: flex;
     align-items: stretch;
 
@@ -266,19 +191,7 @@ $breakpoints: map-get($tokens, 'screens');
     }
   }
 
-  //
-  // Layout for single sidebar with 16rem width. No gutters. Stacks sidebar on
-  // top for screens smaller than desktop width.
-  //
-  //  .-------------------.
-  //  |.----..-----------.|
-  //  ||    ||           ||
-  //  ||    ||           ||
-  //  ||    ||           ||
-  //  |.----..-----------.|
-  //  .-------------------.
-  //
-  .#{$variant}layout--sidebar-small {
+  .#{$variant}layout-sidebar-small {
     display: flex;
     align-items: stretch;
 
@@ -295,19 +208,7 @@ $breakpoints: map-get($tokens, 'screens');
     }
   }
 
-  //
-  // Layout for smaller single sidebar with 12rem width. No gutters. Stacks
-  // sidebar on top for screens smaller than desktop width.
-  //
-  //  .-------------------.
-  //  |.--. .------------.|
-  //  ||  | |            ||
-  //  ||  | |            ||
-  //  ||  | |            ||
-  //  |.--. .------------.|
-  //  .-------------------.
-  //
-  .#{$variant}layout--sidebar-gutter {
+  .#{$variant}layout-sidebar-gutter {
     display: flex;
     align-items: stretch;
 
@@ -329,19 +230,7 @@ $breakpoints: map-get($tokens, 'screens');
     }
   }
 
-  //
-  // Layout for smaller single sidebar with 12rem width. No gutters. Stacks
-  // sidebar on top for screens smaller than desktop width.
-  //
-  //  .-------------------.
-  //  |.--. .------------.|
-  //  ||  | |            ||
-  //  ||  | |            ||
-  //  ||  | |            ||
-  //  |.--. .------------.|
-  //  .-------------------.
-  //
-  .#{$variant}layout--sidebar-small-gutter {
+  .#{$variant}layout-sidebar-small-gutter {
     display: flex;
     align-items: stretch;
 
@@ -363,19 +252,7 @@ $breakpoints: map-get($tokens, 'screens');
     }
   }
 
-  //
-  // Layout for the home body which is a smaller centered column.
-  //
-  //  .------------------.
-  //  |    .--------.    |
-  //  |    |        |    |
-  //  |    |        |    |
-  //  |    |        |    |
-  //  |    |        |    |
-  //  |    .--------.    |
-  //  .------------------.
-  //
-  .#{$variant}layout--home-body {
+  .#{$variant}layout-home-body {
     align-items: center;
 
     > *:first-child {
@@ -387,30 +264,13 @@ $breakpoints: map-get($tokens, 'screens');
     }
   }
 
-  //
-  // Fixed topbar layout for tablets or other mobile devices (Field Screener).
-  // The main content overflow scrolls while the topbar remains at the top of
-  // the page. For print, the main content overflow is fully visible.
-  //
-  //  .------------------.
-  //  |.----------------.|
-  //  ||                ||
-  //  |.----------------.|
-  //  |.----------------.|
-  //  ||                ||
-  //  ||                ||
-  //  ||                ||
-  //  ||                ||
-  //  |.----------------.|
-  //  .------------------.
-  //
-  .#{$variant}layout--topbar {
+  .#{$variant}layout-topbar {
     > *:first-child {
       height: 90px
     }
   }
 
-  .#{$variant}layout--topbar {
+  .#{$variant}layout-topbar {
     > *:first-child + * {
       position: relative;
       height: calc(100vh - 90px);
@@ -418,7 +278,7 @@ $breakpoints: map-get($tokens, 'screens');
     }
   }
 
-  .#{$variant}layout--topbar {
+  .#{$variant}layout-topbar {
     > *:first-child + * > *:first-child {
       width: 100%;
       position: absolute;
@@ -430,7 +290,7 @@ $breakpoints: map-get($tokens, 'screens');
     }
   }
 
-  .#{$variant}layout--topbar {
+  .#{$variant}layout-topbar {
     > *:first-child + * > *:first-child:after {
       content: '';
       height: 100%;
@@ -464,7 +324,7 @@ $breakpoints: map-get($tokens, 'screens');
 //  |.----------------.|
 //  .------------------.
 //
-.layout--map {
+.layout-map {
   position: relative;
   display: flex;
   flex-wrap: wrap;
@@ -475,7 +335,7 @@ $breakpoints: map-get($tokens, 'screens');
     flex-direction: row
   }
 
-  .layout--map__sidebar {
+  .layout-map__sidebar {
     width: 100%;
     max-width: 100%;
 
@@ -486,7 +346,7 @@ $breakpoints: map-get($tokens, 'screens');
     }
   }
 
-  .layout--map__map {
+  .layout-map__map {
     height: 50vh;
     width: 100%;
     max-width: 100%;
@@ -502,14 +362,14 @@ $breakpoints: map-get($tokens, 'screens');
     display: block
   }
 
-  .layout--topbar {
+  .layout-topbar {
     > *:first-child + * {
       position: static;
       height: auto;
     }
   }
 
-  .layout--topbar {
+  .layout-topbar {
     > *:first-child + * > *:first-child {
       position: static
     }

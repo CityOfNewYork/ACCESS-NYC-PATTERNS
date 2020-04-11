@@ -1,4 +1,4 @@
 
-div class='layout--home-body bg-grey-lightest p-4 text-center'
+div class='layout-home-body bg-grey-lightest p-4 text-center'
   div class='bg-grey-light p-4'
     | Body

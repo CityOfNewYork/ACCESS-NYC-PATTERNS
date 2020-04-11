@@ -1,0 +1,3 @@
+a href='#' This text will be read aloud and visible to users.
+
+a href='#' class='sr-only' However, this text will be read aloud by screen readers.

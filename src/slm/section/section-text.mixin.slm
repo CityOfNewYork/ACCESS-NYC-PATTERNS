@@ -9,7 +9,7 @@
 
   section id=id class='pb-2 screen-tablet:pb-4 screen-tablet:mb-4'
     div class='page-wrapper px-2 screen-desktop:px-0'
-      header class='layout--home-body'
+      header class='layout-home-body'
         div class='my-0 px-2 py-0 border-b border-grey-light screen-tablet:flex screen-tablet:justify-between'
           - if (this.title)
             h2 class='m-0 pt-1 pb-4'

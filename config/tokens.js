@@ -22,11 +22,11 @@ module.exports = {
       '"Helvetica Neue"',
       'sans-serif'
     ],
-    'default-sans': [
+    'sans': [
       '"Noto Sans"',
       'sans-serif'
     ],
-    'default-serif': [
+    'serif': [
       '"Noto Serif"',
       'serif'
     ],
@@ -77,7 +77,10 @@ module.exports = {
       '"Noto Nastaliq Urdu"',
       '"Noto Serif"',
       'serif'
-    ]
+    ],
+    'code': [
+      'monospace'
+    ],
   },
   'font-weights': {
     'normal': 'normal',
@@ -85,15 +88,15 @@ module.exports = {
   },
   'em-base': 22,
   'font-sizes': {
-    'font-size-xsmall': '0.54rem',
-    'font-size-small': '0.72rem',
-    'font-size-normal': '1rem',
-    'font-size-medium': '1.09rem',
-    'font-size-large': '1.25rem',
-    'font-size-larger': '1.45rem',
-    'font-size-largest': '1.81rem',
-    'font-size-jumbo': '2.54rem',
-    'font-size-print': '16px'
+    'xsmall': '0.54rem',
+    'small': '0.72rem',
+    'normal': '1rem',
+    'medium': '1.09rem',
+    'large': '1.25rem',
+    'larger': '1.45rem',
+    'largest': '1.81rem',
+    'jumbo': '2.54rem',
+    'print': '16px'
   },
   'leading': {
     'xsmall': '0.8',
@@ -191,7 +194,11 @@ module.exports = {
       'color': 'white',
       'font-smooth': true,
       'background-color': 'green-mid'
-    }
+    },
+    'code': {
+      'color': 'pink',
+      'background-color': 'grey-lightest'
+    },
   },
   'screens': {
     'screen-desktop': 960,

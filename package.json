@@ -8,15 +8,15 @@
   "homepage": "https://accesspatterns.cityofnewyork.us",
   "repository": {
     "type": "git",
-    "url": "https://github.com/CityOfNewYork/ACCESS-NYC-PATTERNS.git"
+    "url": "https://github.com/cityofnewyork/access-nyc-patterns.git"
   },
   "bugs": {
-    "url": "https://github.com/CityOfNewYork/ACCESS-NYC-PATTERNS/issues"
+    "url": "https://github.com/cityofnewyork/access-nyc-patterns/issues"
   },
   "cdn": {
     "url": "https://cdn.jsdelivr.net/gh/cityofnewyork/access-nyc-patterns",
-    "source": "https://github.com/CityOfNewYork/ACCESS-NYC-PATTERNS",
-    "archive": "https://github.com/CityOfNewYork/ACCESS-NYC-PATTERNS/archive",
+    "source": "https://github.com/cityofnewyork/access-nyc-patterns",
+    "archive": "https://github.com/cityofnewyork/access-nyc-patterns/archive",
     "styles": "/dist/styles/site-default.css",
     "styles-ar": "/dist/styles/site-ar.css",
     "styles-es": "/dist/styles/site-es.css",
@@ -28,7 +28,7 @@
     "scripts": "/dist/scripts/access-nyc.js",
     "polyfills": "/dist/scripts/polyfills.js",
     "vue": "/dist/scripts/vue-components.js",
-    "svg": "/svg/icons.svg"
+    "svg": "/dist/svg/icons.svg"
   },
   "instantiations": {
     "scripts": "AccessNyc"

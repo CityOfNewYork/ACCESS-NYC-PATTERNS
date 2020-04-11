@@ -1,0 +1,1 @@
+Specific animations from [Animate.css](https://daneden.github.io/animate.css) are integrated into the Patterns.

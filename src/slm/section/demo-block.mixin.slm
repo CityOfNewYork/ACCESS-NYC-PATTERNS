@@ -1,7 +1,7 @@
 = mixin('demo-block', 'markup', 'layout = columns', 'grid = false');
-  div class='layout--gutter screen-tablet:layout--${this.layout} justify-between pt-4'
+  div class='layout-gutter screen-tablet:layout-${this.layout} justify-between pt-4'
     - if (this.layout === 'columns')
-      - this.padding = 'screen-tablet:pr-2';
+      - this.padding = 'screen-tablet:pe-2';
 
     - if (this.grid === 'false')
       div class='${this.padding}'
@@ -16,7 +16,7 @@
             = this.include(this.markup.replace('.slm', ''));
 
     - if (typeof this.grid === 'object')
-      div class='layout--gutter screen-mobile:layout--two-columns-gutter screen-tablet:layout--three-columns-gutter'
+      div class='layout-gutter screen-mobile:layout-two-columns-gutter screen-tablet:layout-three-columns-gutter'
         - let keys = Object.keys(this.grid);
         - let even = (keys.length % 2 == 0);
 

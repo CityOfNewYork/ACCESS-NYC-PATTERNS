@@ -5,9 +5,9 @@
 -   class_demo_headers = 'pt-1 px-2 border-b border-grey-light mb-3';
 /     The title of the demo
 
-- class_demo_cols = 'layout--columns';
+- class_demo_cols = 'layout-columns';
 - class_demo_col1 = '';
-- class_demo_spec = 'page-wrapper pb-3 px-2 text-font-size-small';
+- class_demo_spec = 'page-wrapper pb-3 px-2 text-small';
 
 - class_demo_col2 = '';
 - class_demo_content = '';
@@ -20,6 +20,6 @@
 
 / Styling for the nav
 - class_nav = 'screen-tablet:flex-1 mb-1 px-2';
--   class_nav_heading = 'type-h3 text-font-size-small mb-1 block';
+-   class_nav_heading = 'type-h3 text-small mb-1 block';
 -   class_nav_item = 'block p-1';
 -   class_nav_divider = 'screen-tablet:border-b screen-tablet:pb-2 screen-tablet:mb-1 border-white p-1'

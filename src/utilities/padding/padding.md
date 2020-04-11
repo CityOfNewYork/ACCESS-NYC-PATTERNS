@@ -1,0 +1,2 @@
+`.ps-{{ token }}` and `.pe-{{ token }}` extend [tailwindcss](https://tailwindcss.com/docs/padding/#app
+) padding utilities by adding padding to the *start* `.ps-` or *end* `.pe-` of an element based on the reading direction of the stylesheet language.

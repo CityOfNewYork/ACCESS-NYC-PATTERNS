@@ -7,10 +7,12 @@
 @import 'config/direction';
 
 // Declarations
-.text-align-start {
-  text-align: $text-direction-start
-}
+@responsive {
+  .text-start {
+    text-align: $text-direction-start
+  }
 
-.text-align-end {
-  text-align: $text-direction-end
+  .text-end {
+    text-align: $text-direction-end
+  }
 }

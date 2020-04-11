@@ -2,8 +2,4 @@ Utilities allow the flexibility to change specific properties of every Pattern i
 
 A Utility class, such as Tailwind’s `.inline` [display utility](https://tailwindcss.com/docs/display), allows the developer to reuse this attribute without creating a different pattern type. This use case can be extended to every possible CSS attribute, such as color, position, font-families, margin, padding, etc. In addition, they can be bundled within media queries so certain utilities can work for specific screen sizes.
 
-[![Tailwind CSS](https://tailwindcss.com/img/twitter-large-card.png)](https://tailwindcss.com)
-
-ACCESS NYC Patterns integrates the [Tailwind Utility Framework](https://tailwindcss.com), a library processed by [PostCSS](https://postcss.org/) that allows [custom configuration](https://tailwindcss.com/docs/configuration) so that we can include specific utility modules, breakpoints, colors, etc. To get started using the Patterns utilities look at the Tailwind documentation along with the [configuration file of this library](https://github.com/CityOfNewYork/ACCESS-NYC-PATTERNS/blob/master/config/tailwind.js). By default, not all properties are enabled so it’s important to be familiar with the Pattern's configuration.
-
-Documentation for some of the most critical and customized Utilities exist here, but developers should refer to the [Tailwind Documentation](https://tailwindcss.com/docs/) for further details.
+The ACCESS NYC Patterns integrate the [tailwindcss utility-first framework](/tailwindcss). Other utilities extend tailwindcss to include support for screen readers and right-to-left reading directions.

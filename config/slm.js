@@ -4,6 +4,7 @@
 
 const package = require('../package.json');
 const tokens = require('./tokens');
+const tailwind = require('./tailwind');
 
 /**
  * Config
@@ -27,13 +28,13 @@ module.exports = {
     indent_char: ' ',
     preserve_newlines: false,
     indent_inner_html: false,
-    // wrap_line_length: 55,
     wrap_line_length: 0,
     inline: [],
     indent_inner_html: false,
   },
   package: package,
   tokens: tokens,
+  tailwind: tailwind,
   process: {
     env: {
       NODE_ENV: process.env.NODE_ENV

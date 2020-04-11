@@ -1,6 +1,6 @@
 
-div class='layout--map screen-desktop:layout--sidebar text-center'
-  div class='layout--map__sidebar bg-grey-lightest p-4'
+div class='layout-map screen-desktop:layout-sidebar text-center'
+  div class='layout-map__sidebar bg-grey-lightest p-4'
     | Sidebar
-  div class='layout--map__map bg-grey-light p-4'
+  div class='layout-map__map bg-grey-light p-4'
     | Map

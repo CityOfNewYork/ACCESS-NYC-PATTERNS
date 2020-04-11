@@ -1,5 +1,5 @@
 
-div class='layout--four-columns-gutter bg-grey-lightest p-4 text-center'
+div class='layout-four-columns-gutter bg-grey-lightest p-4 text-center'
   div class='bg-grey-light p-4'
     | Cell A
   div class='bg-grey-light p-4'

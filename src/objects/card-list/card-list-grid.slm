@@ -5,7 +5,7 @@
 div class='p-4 bg-grey-lightest'
   h2 class='type-h3 m-0' Featured Programs
   h3 class='type-supplemental text-grey-mid' Each year, over 1 million New Yorkers use ACCESS NYC to get:
-  div class='layout--gutter screen-desktop:layout--columns-gutter'
+  div class='layout-gutter screen-desktop:layout-columns-gutter'
     - symbol = false;
     - instance = 'components/card/card-icon';
     = partial(`../../${instance}.slm`)

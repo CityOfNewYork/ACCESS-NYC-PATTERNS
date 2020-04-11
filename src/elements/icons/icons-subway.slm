@@ -1,10 +1,10 @@
 - if (typeof key !== 'undefined')
   - ;
-  div class='text-font-size-small'
+  div class='text-small'
 
-    h3 class='text-font-size-small capitalize mb-2' ${key.replace(/-/g," ")}
+    h3 class='text-small capitalize mb-2' ${key.replace(/-/g," ")}
 
-    div class='text-font-size-normal py-4 text-center bg-grey-lightest px-2 mb-2 flex items-center justify-center' style='min-height:150px'
+    div class='text-normal py-4 text-center bg-grey-lightest px-2 mb-2 flex items-center justify-center' style='min-height:150px'
       - for (i in value)
         - line = value[i];
         - express = false;
