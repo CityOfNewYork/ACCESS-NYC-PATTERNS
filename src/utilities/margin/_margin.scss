@@ -2,8 +2,8 @@
 @import 'config/direction';
 @import 'config/media';
 
-// @mixin margins($variant: '') {
-@responsive {
+@mixin margins($variant: '') {
+// @responsive {
   @each $token, $value in map-get($tokens, 'margin') {
     .#{$variant}me-#{$token} {
       margin-#{$text-direction-end}: $value
@@ -15,6 +15,6 @@
   }
 }
 
-// @include screens {
-//   @include margins($variant);
-// }
+@include screens {
+  @include margins($variant);
+}

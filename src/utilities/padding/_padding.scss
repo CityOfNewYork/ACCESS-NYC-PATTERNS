@@ -2,8 +2,8 @@
 @import 'config/direction';
 @import 'config/media';
 
-// @mixin padding($variant: '') {
-@responsive {
+@mixin padding($variant: '') {
+// @responsive {
   @each $token, $value in map-get($tokens, 'padding') {
     .#{$variant}pe-#{$token} {
       padding-#{$text-direction-end}: $value
@@ -15,6 +15,6 @@
   }
 }
 
-// @include screens {
-//   @include padding($variant);
-// }
+@include screens {
+  @include padding($variant);
+}

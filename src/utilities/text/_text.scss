@@ -5,14 +5,20 @@
 // Dependencies
 @import 'config/tokens';
 @import 'config/direction';
+@import 'config/media';
 
 // Declarations
-@responsive {
-  .text-start {
+@mixin text($variant: '') {
+// @responsive {
+  .#{$variant}text-start {
     text-align: $text-direction-start
   }
 
-  .text-end {
+  .#{$variant}text-end {
     text-align: $text-direction-end
   }
+}
+
+@include screens {
+  @include text($variant);
 }
