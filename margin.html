@@ -22,7 +22,7 @@
   <meta content="images/ms-icon-144x144.png" name="msapplication-TileImage" />
   <link href="images/favicon.ico" rel="icon" type="image/x-icon" />
   <link href="styles/site-default.css" rel="stylesheet" />
-  <title>Language | ACCESS NYC Patterns</title>
+  <title>Margin | ACCESS NYC Patterns</title>
   <noscript>
     <style>
       body {
@@ -167,7 +167,7 @@
       <article class="screen-tablet:pt-4 clearfix">
         <header class="page-wrapper px-2 screen-desktop:px-0 layout-home-body">
           <div class="my-0 w-full">
-            <h1 class="text-blue-dark px-2 mb-0 screen-tablet:pb-4 screen-tablet:mb-4">Language</h1>
+            <h1 class="text-blue-dark px-2 mb-0 screen-tablet:pb-4 screen-tablet:mb-4">Margin</h1>
           </div>
         </header>
         <section class="pb-4 mb-4">
@@ -176,7 +176,7 @@
               <div class="my-0 px-2 pt-1 pb-4 border-b border-grey-light">
                 <div>
                   <p class="text-small m-0">Source: <code>
-                      <a href="https://github.com/CityOfNewYork/access-nyc-patterns/tree/v0.13.2/src/utilities/language">src/utilities/language/language</a>
+                      <a href="https://github.com/CityOfNewYork/access-nyc-patterns/tree/v0.13.2/src/utilities/margin">src/utilities/margin/margin</a>
                     </code>
                   </p>
                 </div>
@@ -184,38 +184,30 @@
             </header>
             <div class="layout-home-body">
               <div class="my-0 pt-4 px-2 text-small table-align-start">
-                <p>The languages featured in ACCESS NYC are set by the <code>lang</code> attribute. Changing this will render the content in the language-specific font-face and reading direction.</p>
+                <p>
+                  <code>.ms-{{ token }}</code> and <code>.me-{{ token }}</code> extend <a href="https://tailwindcss.com/docs/margin/#app">tailwindcss</a> margin utilities by adding margin to the <em>start</em>
+                  <code>.ms-</code> or <em>end</em>
+                  <code>.me-</code> of an element based on the reading direction of the stylesheet language.
+                </p>
               </div>
             </div>
             <div class="layout-gutter screen-tablet:layout-columns justify-between pt-4">
               <div class="screen-tablet:pe-2">
-                <p class="font-serif">Inherit Stylesheet Language</p>
-                <p class="font-sans">Inherit Stylesheet Language</p>
-                <p class="font-default-serif">Default (English, LTR)</p>
-                <p class="font-default-sans">Default (English, LTR)</p>
-                <p class="font-kr-serif" lang="ko">한국어 (Korean, LTR)</p>
-                <p class="font-kr-sans" lang="ko">한국어 (Korean, LTR)</p>
-                <p class="font-tc-serif" lang="zh-hant">繁體中文 (Chinese, LTR)</p>
-                <p class="font-tc-sans" lang="zh-hant">繁體中文 (Chinese, LTR)</p>
-                <p class="font-ar-serif" lang="ar">العربية (Arabic, RTL)</p>
-                <p class="font-ar-sans" lang="ar">العربية (Arabic, RTL)</p>
-                <p class="font-ur-serif" lang="ur">اردو (Urdu, RTL)</p>
-                <p class="font-ur-sans" lang="ur">اردو (Urdu, RTL)</p>
+                <div class="bg-grey-lightest">
+                  <p class="me-4 color-dark-background">Margin End 4×</p>
+                </div>
+                <div class="bg-grey-lightest">
+                  <p class="ms-4 color-dark-background">Margin Start 4×</p>
+                </div>
               </div>
               <div>
                 <div class="code-block mb-1">
-                  <pre>&lt;p class=&quot;font-serif&quot;&gt;Inherit Stylesheet Language&lt;/p&gt;
-&lt;p class=&quot;font-sans&quot;&gt;Inherit Stylesheet Language&lt;/p&gt;
-&lt;p class=&quot;font-default-serif&quot;&gt;Default (English, LTR)&lt;/p&gt;
-&lt;p class=&quot;font-default-sans&quot;&gt;Default (English, LTR)&lt;/p&gt;
-&lt;p class=&quot;font-kr-serif&quot; lang=&quot;ko&quot;&gt;한국어 (Korean, LTR)&lt;/p&gt;
-&lt;p class=&quot;font-kr-sans&quot; lang=&quot;ko&quot;&gt;한국어 (Korean, LTR)&lt;/p&gt;
-&lt;p class=&quot;font-tc-serif&quot; lang=&quot;zh-hant&quot;&gt;繁體中文 (Chinese, LTR)&lt;/p&gt;
-&lt;p class=&quot;font-tc-sans&quot; lang=&quot;zh-hant&quot;&gt;繁體中文 (Chinese, LTR)&lt;/p&gt;
-&lt;p class=&quot;font-ar-serif&quot; lang=&quot;ar&quot;&gt;العربية (Arabic, RTL)&lt;/p&gt;
-&lt;p class=&quot;font-ar-sans&quot; lang=&quot;ar&quot;&gt;العربية (Arabic, RTL)&lt;/p&gt;
-&lt;p class=&quot;font-ur-serif&quot; lang=&quot;ur&quot;&gt;اردو (Urdu, RTL)&lt;/p&gt;
-&lt;p class=&quot;font-ur-sans&quot; lang=&quot;ur&quot;&gt;اردو (Urdu, RTL)&lt;/p&gt;</pre>
+                  <pre>&lt;div class=&quot;bg-grey-lightest&quot;&gt;
+  &lt;p class=&quot;me-4 color-dark-background&quot;&gt;Margin End 4×&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;bg-grey-lightest&quot;&gt;
+  &lt;p class=&quot;ms-4 color-dark-background&quot;&gt;Margin Start 4×&lt;/p&gt;
+&lt;/div&gt;</pre>
                 </div>
               </div>
             </div>
