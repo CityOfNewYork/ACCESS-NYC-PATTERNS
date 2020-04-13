@@ -45,7 +45,12 @@
               div class='px-2'
                 h3 Installation
 
-                p Developers can import the Patterns into their projects using NPM, Yarn, or via CDN. All of the source code is publicly available to fork or contribute to.
+                p The Patterns are available as an NPM package and can be installed with the following command.
+
+                div class='code-block'
+                  pre npm install @nycopportunity/access-patterns
+
+                p All of the source code is publicly available and can also be integrated via cdn. See the intallation docs for more details and usage.
 
                 div class='text-center'
                   a class='btn btn-secondary btn-next' href='installation'
@@ -59,27 +64,27 @@
         div class='layout-gutter screen-tablet:layout-columns-gutter'
           article class='c-card'
             div class='c-card__body'
-              h3 class='c-card__title mb-3' About Patterns
-              div class='c-card__summary'
-                a href='about' Learn more about ACCESS NYC Patterns.
+              a href='about'
+                h3 class='c-card__title mb-3' About
+              div class='c-card__summary' Learn more about ACCESS NYC Patterns.
 
           article class='c-card'
             div class='c-card__body'
-              h3 class='c-card__title mb-3' Icon Patterns
-              div class='c-card__summary'
-                a href='icons' The Icon Pattern set reference and usage.
+              a href='icons'
+                h3 class='c-card__title mb-3' Icons
+              div class='c-card__summary' The Icon Pattern set reference and usage.
 
           article class='c-card'
             div class='c-card__body'
-              h3 class='c-card__title mb-3' Typography Patterns
-              div class='c-card__summary'
-                a href='typography' The Typography Pattern reference.
+              a href='typography'
+                h3 class='c-card__title mb-3' Typography
+              div class='c-card__summary' The Typography Pattern reference.
 
           article class='c-card'
             div class='c-card__body'
-              h3 class='c-card__title mb-3' Color Patterns
-              div class='c-card__summary'
-                a href='colors' The Color Pattern reference.
+              a href='colors'
+                h3 class='c-card__title mb-3' Colors
+              div class='c-card__summary' The Color Pattern reference.
 
   section class='py-4'
     div class='page-wrapper layout-home-body px-2'
@@ -91,10 +96,6 @@
         div class='text-center mb-4'
           a class='btn btn-secondary btn-next' href='https://civicservicedesign.com/service-design-principles-c763f64ac950'
             | Read the Principles
-
-        div class='text-center mb-4'
-          a class='btn btn-secondary btn-next' href='http://eepurl.com/dJmW5X'
-            | Contact the Studio
 
         h4#more-nyc-design-resources More NYC Design and Technology Resources
 
