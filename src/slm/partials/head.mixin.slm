@@ -31,9 +31,26 @@
       - else
         = this.title;
 
+    / Do not show the body until everything is loaded
     noscript
       style
         = 'body { visibility: visible !important; }';
 
+    / Google Analytics
+    - this.GOOGLE_ANALYTICS = (this.process.env.NODE_ENV === 'production') ? 'UA-163470527-1' : 'UA-163470527-0'
+
+    script async src='https://www.googletagmanager.com/gtag/js?id=${this.GOOGLE_ANALYTICS}'
+
     javascript:
-      function load() { document.body.style.visibility = 'visible' };
+      function load() {
+        document.body.style.visibility = 'visible';
+      };
+
+      window.dataLayer = window.dataLayer || [];
+
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+
+      gtag('js', new Date());
+      gtag('config', '${this.GOOGLE_ANALYTICS}');

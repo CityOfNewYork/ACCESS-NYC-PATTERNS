@@ -30,10 +30,20 @@
       }
     </style>
   </noscript>
+  <script>
+    async src = 'https://www.googletagmanager.com/gtag/js?id=UA-163470527-0'
+  </script>
   <script type="text/javascript">
     function load() {
-      document.body.style.visibility = 'visible'
+      document.body.style.visibility = 'visible';
     };
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+    gtag('js', new Date());
+    gtag('config', 'UA-163470527-0');
   </script>
 </head>
 
@@ -182,7 +192,11 @@
                   <div>
                     <div class="px-2">
                       <h3>Installation</h3>
-                      <p>Developers can import the Patterns into their projects using NPM, Yarn, or via CDN. All of the source code is publicly available to fork or contribute to.</p>
+                      <p>The Patterns are available as an NPM package and can be installed with the following command.</p>
+                      <div class="code-block">
+                        <pre>npm install @nycopportunity/access-patterns</pre>
+                      </div>
+                      <p>All of the source code is publicly available and can also be integrated via cdn. See the intallation docs for more details and usage.</p>
                       <div class="text-center">
                         <a class="btn btn-secondary btn-next" href="installation">Get started</a>
                       </div>
@@ -200,34 +214,34 @@
               <div class="layout-gutter screen-tablet:layout-columns-gutter">
                 <article class="c-card">
                   <div class="c-card__body">
-                    <h3 class="c-card__title mb-3">About Patterns</h3>
-                    <div class="c-card__summary">
-                      <a href="about">Learn more about ACCESS NYC Patterns.</a>
-                    </div>
+                    <a href="about">
+                      <h3 class="c-card__title mb-3">About</h3>
+                    </a>
+                    <div class="c-card__summary">Learn more about ACCESS NYC Patterns.</div>
                   </div>
                 </article>
                 <article class="c-card">
                   <div class="c-card__body">
-                    <h3 class="c-card__title mb-3">Icon Patterns</h3>
-                    <div class="c-card__summary">
-                      <a href="icons">The Icon Pattern set reference and usage.</a>
-                    </div>
+                    <a href="icons">
+                      <h3 class="c-card__title mb-3">Icons</h3>
+                    </a>
+                    <div class="c-card__summary">The Icon Pattern set reference and usage.</div>
                   </div>
                 </article>
                 <article class="c-card">
                   <div class="c-card__body">
-                    <h3 class="c-card__title mb-3">Typography Patterns</h3>
-                    <div class="c-card__summary">
-                      <a href="typography">The Typography Pattern reference.</a>
-                    </div>
+                    <a href="typography">
+                      <h3 class="c-card__title mb-3">Typography</h3>
+                    </a>
+                    <div class="c-card__summary">The Typography Pattern reference.</div>
                   </div>
                 </article>
                 <article class="c-card">
                   <div class="c-card__body">
-                    <h3 class="c-card__title mb-3">Color Patterns</h3>
-                    <div class="c-card__summary">
-                      <a href="colors">The Color Pattern reference.</a>
-                    </div>
+                    <a href="colors">
+                      <h3 class="c-card__title mb-3">Colors</h3>
+                    </a>
+                    <div class="c-card__summary">The Color Pattern reference.</div>
                   </div>
                 </article>
               </div>
@@ -241,9 +255,6 @@
               <p>ACCESS NYC was built using <a href='http://nyc.gov/servicedesign'>NYC Civic Service Design</a> principles. The corresponding site is an introduction to service design for public servants, and a set of practical ways to include design methods in your work. Use this collection of tools and tactics to see your service in context, talk with people who use it, and try out ideas in low-risk ways. Additionally, you can <a href='http://eepurl.com/dJmW5X'>contact the Service Design Studio</a> to find out how you can implement service design in your work.</p>
               <div class="text-center mb-4">
                 <a class="btn btn-secondary btn-next" href="https://civicservicedesign.com/service-design-principles-c763f64ac950">Read the Principles</a>
-              </div>
-              <div class="text-center mb-4">
-                <a class="btn btn-secondary btn-next" href="http://eepurl.com/dJmW5X">Contact the Studio</a>
               </div>
               <h4 id="more-nyc-design-resources">More NYC Design and Technology Resources</h4>
               <ul>
@@ -374,6 +385,7 @@
     access.icons('https://cdn.jsdelivr.net/gh/cityofnewyork/nyco-patterns@v2.3.1/dist/icons.svg');
     access.toggle();
   </script>
+  <script src="/reload/reload.js"></script>
 </body>
 
 </html>

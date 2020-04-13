@@ -30,10 +30,20 @@
       }
     </style>
   </noscript>
+  <script>
+    async src = 'https://www.googletagmanager.com/gtag/js?id=UA-163470527-0'
+  </script>
   <script type="text/javascript">
     function load() {
-      document.body.style.visibility = 'visible'
+      document.body.style.visibility = 'visible';
     };
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+    gtag('js', new Date());
+    gtag('config', 'UA-163470527-0');
   </script>
 </head>
 
@@ -308,6 +318,7 @@
     access.icons('https://cdn.jsdelivr.net/gh/cityofnewyork/nyco-patterns@v2.3.1/dist/icons.svg');
     access.toggle();
   </script>
+  <script src="/reload/reload.js"></script>
 </body>
 
 </html>
