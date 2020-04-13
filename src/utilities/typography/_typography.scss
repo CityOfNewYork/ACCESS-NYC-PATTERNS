@@ -15,50 +15,66 @@
 // Declarations
 html {
   @include typography-base();
+
   @if $text-direction == 'rtl' {
     direction: rtl;
   }
 }
 
 h1, .h1, .type-h1, .typography-h1 {
-  @include margin(0 null rem($spacing-base, $em-base));
   @include typography-h1();
+
+  margin-top: 0;
+  margin-bottom: rem($spacing-base, $em-base);
 }
 
 h2, .h2, .type-h2, .typography-h2 {
-  @include margin(0 null rem($spacing-base, $em-base));
   @include typography-h2();
+
+  margin-top: 0;
+  margin-bottom: rem($spacing-base, $em-base);
 }
 
 h3, .h3, .type-h3, .typography-h3 {
-  @include margin(0 null rem($spacing-base, $em-base));
   @include typography-h3();
+
+  margin-top: 0;
+  margin-bottom: rem($spacing-base, $em-base);
 }
 
 h4, .h4, .type-h4, .typography-h4 {
-  @include margin(0 null rem($spacing-base, $em-base));
   @include typography-h4();
+
+  margin-top: 0;
+  margin-bottom: rem($spacing-base, $em-base);
 }
 
 h5, .h5, .type-h5, .typography-h5 {
-  @include margin(0 null rem($spacing-base, $em-base));
   @include typography-h5();
+
+  margin-top: 0;
+  margin-bottom: rem($spacing-base, $em-base);
 }
 
 small, .small .type-small, .typography-small {
-  @include margin(0 null rem($spacing-base, $em-base));
   @include typography-dislaimer-small();
+
+  margin-top: 0;
+  margin-bottom: rem($spacing-base, $em-base);
 }
 
 blockquote, .blockquote, .type-blockquote, .typography-blockquote {
-  @include margin(rem((.5 * $spacing-base), $em-base) null rem((1.5 * $spacing-base), $em-base));
   @include typography-blockquote();
+
+  margin-top: rem((.5 * $spacing-base), $em-base);
+  margin-bottom: rem((1.5 * $spacing-base), $em-base);
   margin-left: 0;
   margin-right: 0;
 }
 
 .exposition, .type-exposition, .typography-exposition {
   @include typography-exposition();
+
   margin-bottom: $spacing-base * 2;
 }
 
