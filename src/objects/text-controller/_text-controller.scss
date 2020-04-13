@@ -63,13 +63,14 @@
   border: none;
 
   ul {
-    list-style: none;
+    list-style-type: none;
     display: inline;
     margin: 0;
     padding: 0;
   }
 
   li {
+    list-style-type: none;
     line-height: normal;
     margin-bottom: $spacing-base * 0.5;
     display: inline-block;
@@ -88,13 +89,13 @@
   }
 
   .text-start & li { // based on utilities/text/text
-    margin-right: 0;
-    margin-left: $grid-base * 2;
+    margin-#{$text-direction-end}: $grid-base * 2;
+    margin-#{$text-direction-start}: 0;
   }
 
   .text-end & li { // based on utilities/text/text
-    margin-left: 0;
-    margin-right: $grid-base * 2;
+    margin-#{$text-direction-end}: 0;
+    margin-#{$text-direction-start}: $grid-base * 2;
   }
 
   a {
