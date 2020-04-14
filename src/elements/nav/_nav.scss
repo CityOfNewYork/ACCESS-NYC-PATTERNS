@@ -27,8 +27,6 @@
 .nav-inline {
   @include typography-nav();
   list-style: none;
-  // text-align: $text-direction-end;
-  // flex: 1 1 auto;
   margin: 0;
   padding: 0;
 

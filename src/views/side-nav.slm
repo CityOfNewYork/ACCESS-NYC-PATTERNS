@@ -24,4 +24,3 @@
   = mixin('section', 'Ordered Side Nav', 'components/side-nav/side-nav-ol');
   = mixin('section', 'Unordered Side Nav', 'components/side-nav/side-nav-ul');
   = mixin('section', 'Share Links', 'components/share-links/share-links');
-  = mixin('section-text', 'Side Nav Usage', 'components/side-nav/side-nav.readme');
