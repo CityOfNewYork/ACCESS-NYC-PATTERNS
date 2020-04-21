@@ -1,0 +1,1 @@
+The COVID Response button is reserved for linking to content about city announcements, stimulus programs, and other information related to the New York City COVID-19 Response.

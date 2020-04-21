@@ -3,6 +3,7 @@
 //
 
 // Dependencies
+@import 'config/tokens';
 @import 'config/colors';
 @import 'config/fonts';
 @import 'config/dimensions';
@@ -46,42 +47,45 @@ $btn-radius: 5px;
   }
 }
 
-@mixin btn-primary($important: null) {
-  color: $color-white $important;
-  background-color: $color-blue $important;
-  @include font-smooth;
+@mixin btn-color($c: white, $bg: blue, $smooth: true, $important: null) {
+  $c: map-get($colors, $c);
+  $bg: map-get($colors, $bg);
+
+  color: $c $important;
+  background-color: $bg $important;
+
+  @if $smooth {
+    @include font-smooth;
+  }
 
   &:link,
   &:visited {
-    color: $color-white $important;
-    background-color: $color-blue $important;
+    color: $c $important;
+    background-color: $bg $important;
   }
 
   &:hover,
   &:focus,
   &:active {
-    color: $color-white $important;
-    background-color: saturate(lighten($color-blue, 5%), 5%) $important;
+    color: $c $important;
+    background-color: saturate(lighten($bg, 5%), 5%) $important;
   }
 }
 
+@mixin btn-primary($important: null) {
+  @include btn-color(white, blue, true, $important);
+}
+
 @mixin btn-secondary($important: null) {
-  color: $color-white $important;
-  background-color: $color-green-mid $important;
-  @include font-smooth;
+  @include btn-color(white, green-mid, true, $important);
+}
 
-  &:link,
-  &:visited {
-    color: $color-white $important;
-    background-color: $color-green-mid $important;
-  }
+@mixin btn-tertiary($important: null) {
+  @include btn-color(blue-dark, yellow-access, false, $important);
+}
 
-  &:hover,
-  &:focus,
-  &:active {
-    color: $color-white $important;
-    background-color: saturate(lighten($color-green-mid, 5%), 5%) $important;
-  }
+@mixin btn-covid-response($important: null) {
+  @include btn-color(white, covid-response, true, $important);
 }
 
 @mixin btn-next() {

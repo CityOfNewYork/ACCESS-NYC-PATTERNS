@@ -30,10 +30,11 @@ button {
 // Types
 //
 .btn-tag, .button-tag {
-  @include typography-supplemental();
-  border-radius: 15px;
+  @include typography-h4();
+
+  border-radius: 50px;
   margin: 5px 2px;
-  padding: 8px;
+  padding: 8px 16px;
 
   &:first-of-type {
     margin-#{$text-direction-start}: 0;
@@ -79,7 +80,7 @@ button {
 //
 // Modifiers
 //
-.btn-small, .button-small {
+.btn-small, .button-small, .btn-tag {
   font-size: .727rem;
 }
 
@@ -111,6 +112,16 @@ button {
 .btn-secondary,
 .button-secondary {
   @include btn-secondary;
+}
+
+.btn-tertiary,
+.button-tertiary {
+  @include btn-tertiary;
+}
+
+.btn-covid-response,
+.button-covid-response {
+  @include btn-covid-response;
 }
 
 .btn-next,
