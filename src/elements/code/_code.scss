@@ -11,7 +11,7 @@
 $grid: map-get(map-get($tokens, 'dimensions'), 'grid-base');
 
 // Declarations
-code, pre {
+code, pre, .hljs {
   display: inline-block;
 }
 
@@ -19,7 +19,7 @@ code, pre {
 .code-block {
   font-weight: $font-weight-normal;
   font-size: $font-size-small;
-  line-height: 1.3;
+  line-height: 1.8;
   font-family: monospace;
 
   background-color: $color-grey-lightest;
@@ -54,7 +54,7 @@ td > code {
   display: inline-block
 }
 
-pre {
+pre, .hljs {
   color: $color-pink;
   background-color: $color-grey-lightest;
   display: block;
@@ -76,7 +76,7 @@ pre {
   overflow-x: auto;
   margin-bottom: $grid * 3;
 
-  pre {
+  pre, .hljs {
     color: inherit;
     background-color: transparent;
     margin: 0;
@@ -84,4 +84,50 @@ pre {
     border: none;
     margin-bottom: 0;
   }
+}
+
+/**
+ * Highlight.js Overrides
+ */
+
+/*.code-block .hljs,*/
+.hljs-subst {
+  color: $color-grey-mid;
+}
+
+.hljs-tag {
+  color: $color-pink-light;
+}
+
+.hljs-name, .hljs-attr {
+  font-weight: normal;
+  color: $color-pink;
+}
+
+// .css {
+//   color: $color-yellow-access;
+// }
+
+.javascript {
+  color: $color-blue-bright;
+}
+
+.hljs-keyword {
+  color: $color-purple;
+}
+
+.hljs-comment {
+  color: $color-grey-mid;
+  display: inline-block;
+  padding-top: $grid * 3;
+  padding-bottom: $grid;
+}
+
+.hljs-type, .hljs-string, .hljs-number, .hljs-selector-id,
+.hljs-selector-class, .hljs-quote, .hljs-template-tag, .hljs-deletion {
+  color: $color-purple;
+}
+
+.hljs-built_in {
+  color: $color-grey-dark;
 }
