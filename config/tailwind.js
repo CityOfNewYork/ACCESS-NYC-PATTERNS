@@ -2,7 +2,7 @@
  * Dependencies
  */
 
-const tokens =require('./tokens.js');
+const tokens = require('./tokens.js');
 
 /**
  * Config
@@ -21,6 +21,7 @@ module.exports = {
     borderColor: global.Object.assign({ default: '' }, tokens.colors),
     borderWidth: tokens['border-Widths'],
     boxShadow: tokens.shadows,
+    fill: tokens.colors,
     fontFamily: tokens.fonts,
     fontSize: tokens['font-sizes'],
     fontWeight: tokens['font-weights'],
@@ -58,14 +59,14 @@ module.exports = {
     preflight: [],
     container: [],
     accessibility: ['responsive'],
-    appearance: [],
+    appearance: ['responsive'],
     backgroundAttachment: [],
-    backgroundColor: ['responsive', 'hover', 'focus'],
+    backgroundColor: ['responsive'],
     backgroundPosition: [],
     backgroundRepeat: [],
     backgroundSize: [],
     borderCollapse: [],
-    borderColor: ['hover', 'focus'],
+    borderColor: ['responsive'],
     borderRadius: [],
     borderStyle: [],
     borderWidth: ['responsive'],
@@ -109,7 +110,7 @@ module.exports = {
     stroke: [],
     tableLayout: [],
     textAlign: [],
-    textColor: ['responsive', 'hover', 'focus'],
+    textColor: [],
     fontSize: ['responsive'],
     fontStyle: ['responsive'],
     textTransform: [],
@@ -168,7 +169,7 @@ module.exports = {
     'minWidth',
     // 'objectFit',
     // 'objectPosition',
-    // 'opacity',
+    'opacity',
     // 'outline',
     'overflow',
     'padding',

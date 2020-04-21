@@ -1,1 +1,0 @@
-The inherit display utilities will encourage elements to display with their inherit or parent properties.

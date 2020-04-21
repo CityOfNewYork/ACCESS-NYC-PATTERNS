@@ -33,6 +33,9 @@ $color-yellow-light: map-get($colors, yellow-light);
 $color-white: map-get($colors, white);
 $color-transparent: map-get($colors, transparent);
 
+$color-covid-response: map-get($colors, covid-response);
+$color-covid-response-light: map-get($colors, covid-response-light);
+
 // Mixins
 @mixin combination($selector, $combination, $colors, $smoothing: false) {
   color: map-get($colors, map-get($combination, 'color'));
@@ -42,7 +45,7 @@ $color-transparent: map-get($colors, transparent);
     @include font-smooth;
   }
 
-  #{$selector}__alt {
+  #{$selector}__alt, .color__alt {
     color: map-get($colors, map-get($combination, 'color-alt'));
   }
 
@@ -58,7 +61,24 @@ $color-transparent: map-get($colors, transparent);
     }
   }
 
-  h1, h3, h5, .type-h1, .type-h2, .type-h3 {
+  h1, h3, h5,
+  .h1, .h2, .h3,
+  .type-h1, .type-h2, .type-h3,
+  .typography-h1, .typography-h2, .typography-h3 {
     color: map-get($colors, map-get($combination, 'headings'));
+  }
+
+  .o-banner__title a:after {
+    background-color: map-get($colors, map-get($combination, 'hyperlinks-banner-underline'));
+  }
+
+  .o-banner__title {
+    a {
+      color: inherit
+    }
+
+    a:hover {
+      color: map-get($colors, map-get($combination, 'hyperlinks-banner-hover'));
+    }
   }
 }

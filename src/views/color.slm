@@ -2,7 +2,7 @@
 = extend('/slm/layouts/default');
 
 / Component
-- title = 'Colors';
+- title = 'Color';
 
 / Partials
 = partial('/slm/partials/styles.slm');
@@ -23,5 +23,4 @@
 = content('content');
   = mixin('content-header', title);
   = mixin('section', 'Combinations', 'utilities/color/color-combinations', 'gutter', this.tokens['color-combinations']);
-  = mixin('section', 'Statuses', 'utilities/color/color-statuses', 'gutter', this.tokens['color-statuses']);
   = mixin('section', 'Utilities', 'utilities/color/color-utilities', 'gutter', this.tokens.colors);

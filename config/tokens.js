@@ -7,10 +7,11 @@ const package = require('../package.json');
 module.exports = {
   'output': '"./src/config/_tokens.scss"',
   'version': package.version,
-  'cdn': '"https://cdn.jsdelivr.net/gh/CityOfNewYork/ACCESS-NYC-PATTERNS@v' + package.version + '/dist/"',
+  'cdn': '"https://cdn.jsdelivr.net/gh/cityofnewyork/access-nyc-patterns@v' + package.version + '/dist/"',
   'languages': ['default', 'ar', 'es', 'kr', 'ur', 'tc'],
   'rtl-languages': ['ar', 'ur'],
   'fonts': {
+    'inherit': 'inherit',
     'system': [
       '-apple-system',
       'BlinkMacSystemFont',
@@ -83,11 +84,13 @@ module.exports = {
     ],
   },
   'font-weights': {
+    'inherit': 'inherit',
     'normal': 'normal',
     'bold': 'bold'
   },
   'em-base': 22,
   'font-sizes': {
+    'inherit': 'inherit',
     'xsmall': '0.54rem',
     'small': '0.72rem',
     'normal': '1rem',
@@ -99,6 +102,7 @@ module.exports = {
     'print': '16px'
   },
   'leading': {
+    'inherit': 'inherit',
     'xsmall': '0.8',
     'small': '0.9',
     'normal': '1',
@@ -107,7 +111,8 @@ module.exports = {
     'larger': '1.5'
   },
   'colors': {
-    'blue-light': '#E1EEFF',
+    // 'blue-light': '#E1EEFF',
+    'blue-light': '#C3DDFF',
     'blue-bright': '#118DF0',
     'blue': '#184E9E',
     'blue-dark': '#112E51',
@@ -115,7 +120,8 @@ module.exports = {
     'yellow-light': '#FFE6A9',
     'yellow-access': '#FBB720',
 
-    'green-light': '#D4FFE7',
+    // 'green-light': '#D4FFE7',
+    'green-light': '#B7ECCF',
     'green': '#05CE7C',
     'green-mid': '#0D6D3B',
     'green-dark': '#094727',
@@ -126,14 +132,19 @@ module.exports = {
 
     'purple': '#4C2C92',
 
+    'covid-response': '#803D8D',
+    'covid-response-light': '#DAB7E0',
+
     'grey-light': '#D1D5D9',
     'grey-lightest': '#EEF3F7',
     'grey-mid': '#505C66',
     'grey-dark': '#172129',
-    'black': '#000000',
 
+    'black': '#000000',
     'white': '#FFFFFF',
+
     'transparent': 'rgba(255, 255, 255, 0)',
+    'inherit': 'inherit',
 
     // https://en.wikipedia.org/wiki/New_York_City_Subway#Nomenclature
     'eighth-avenue': '#2850AD', // Vivid Blue, A C E
@@ -151,7 +162,8 @@ module.exports = {
     'success': 'green-light',
     'info': 'blue-light',
     'warning': 'yellow-light',
-    'urgent': 'pink-light'
+    'urgent': 'pink-light',
+    'covid-response': 'covid-response-light'
   },
   'color-combinations': {
     'light-background': {
@@ -159,7 +171,8 @@ module.exports = {
       'headings': 'blue-dark',
       'color-alt': 'grey-mid',
       'hyperlinks': 'blue',
-      'hyperlinks-underline': 'blue',
+      'hyperlinks-banner-underline': 'yellow-access',
+      'hyperlinks-banner-hover': 'blue',
       'visited': 'purple',
       'hover': 'blue-dark',
       'background-color': 'white'
@@ -169,7 +182,8 @@ module.exports = {
       'headings': 'blue-dark',
       'color-alt': 'grey-mid',
       'hyperlinks': 'blue',
-      'hyperlinks-underline': 'blue',
+      'hyperlinks-banner-underline': 'white',
+      'hyperlinks-banner-hover': 'blue',
       'visited': 'purple',
       'hover': 'blue-dark',
       'background-color': 'grey-lightest'
@@ -178,9 +192,10 @@ module.exports = {
       'color': 'white',
       'font-smooth': true,
       'headings': 'white',
-      'color-alt': 'white',
+      'color-alt': 'blue-bright',
       'hyperlinks': 'white',
-      'hyperlinks-underline': 'white',
+      'hyperlinks-banner-underline': 'blue-bright',
+      'hyperlinks-banner-hover': 'blue-bright',
       'visited': 'white',
       'hover': 'white',
       'background-color': 'blue-dark'
@@ -194,6 +209,31 @@ module.exports = {
       'color': 'white',
       'font-smooth': true,
       'background-color': 'green-mid'
+    },
+    'tertiary-button': {
+      'color': 'blue-dark',
+      'font-smooth': true,
+      'background-color': 'yellow-access'
+    },
+    'info-status': {
+      'background-color': 'blue-light',
+      'hyperlinks': 'blue-dark'
+    },
+    'warning-status': {
+      'background-color': 'yellow-light',
+      'hyperlinks': 'blue-dark'
+    },
+    'success-status': {
+      'background-color': 'green-light',
+      'hyperlinks': 'blue-dark'
+    },
+    'urgent-status': {
+      'background-color': 'pink-light',
+      'hyperlinks': 'blue-dark'
+    },
+    'covid-response-status': {
+      'background-color': 'covid-response-light',
+      'hyperlinks': 'blue-dark'
     },
     'code': {
       'color': 'pink',
@@ -261,7 +301,6 @@ module.exports = {
     'icon-plus': '32px 32px',
     'icon-screening': '30px',
     'icon-search': '16px',
-    // Sizes weren't documented
     'icon-printer': '32px 32px',
     'icon-share': '32px 32px',
     'icon-eligibilitycheck': '32px 32px',
@@ -274,29 +313,50 @@ module.exports = {
     'icon-warning': '32px 32px',
     // Program Card Icons
     'icon-card-cash-expenses': '50px 50px',
+    'icon-card-cash-expenses-v2': '50px 50px',
     'icon-card-child-care': '50px 50px',
+    'icon-card-child-care-v2': '50px 50px',
     'icon-card-city-id-card': '50px 50px',
+    'icon-card-city-id-card-v2': '50px 50px',
     'icon-card-education': '50px 50px',
+    'icon-card-education-v2': '50px 50px',
     'icon-card-enrichment': '50px 50px',
-    'icon-card-expenses': '50px 50px',
+    'icon-card-enrichment-v2': '50px 50px',
     'icon-card-family-services': '50px 50px',
+    'icon-card-family-services-v2': '50px 50px',
     'icon-card-food': '50px 50px',
+    'icon-card-food-v2': '50px 50px',
     'icon-card-health': '50px 50px',
+    'icon-card-health-v2': '50px 50px',
     'icon-card-housing': '50px 50px',
+    'icon-card-housing-v2': '50px 50px',
     'icon-card-people-with-disabilities': '50px 50px',
+    'icon-card-people-with-disabilities-v2': '50px 50px',
     'icon-card-work': '50px 50px',
+    'icon-card-work-v2': '50px 50px',
     // Program Type Icons
     'icon-cash-expenses': '50px 50px',
+    'icon-cash-expenses-v2': '50px 50px',
     'icon-child-care': '50px 52px',
+    'icon-child-care-v2': '50px 50px',
     'icon-city-id-card': '50px 50px',
+    'icon-city-id-card-v2': '50px 50px',
     'icon-education': '50px 50px',
+    'icon-education-v2': '50px 50px',
     'icon-enrichment': '50px 50px',
+    'icon-enrichment-v2': '50px 50px',
     'icon-family-services': '50px 50px',
+    'icon-family-services-v2': '50px 50px',
     'icon-food': '50px 52px',
+    'icon-food-v2': '50px 50px',
     'icon-health': '50px 50px',
+    'icon-health-v2': '50px 50px',
     'icon-housing': '50px 50px',
+    'icon-housing-v2': '50px 50px',
     'icon-people-with-disabilities': '50px 50px',
+    'icon-people-with-disabilities-v2': '50px 50px',
     'icon-work': '50px 52px',
+    'icon-work-v2': '50px 50px',
     // UI Icons
     'icon-ui-alert-octagon': '24px 24px',
     'icon-ui-alert-triangle': '24px 24px',
@@ -352,19 +412,44 @@ module.exports = {
     'icon-people-with-disabilities',
     'icon-work'
   ],
+  'icons-program-category-v2': [
+    'icon-cash-expenses-v2',
+    'icon-child-care-v2',
+    'icon-city-id-card-v2',
+    'icon-education-v2',
+    'icon-enrichment-v2',
+    'icon-family-services-v2',
+    'icon-food-v2',
+    'icon-health-v2',
+    'icon-housing-v2',
+    'icon-people-with-disabilities-v2',
+    'icon-work-v2'
+  ],
   'icons-program-card': [
     'icon-card-cash-expenses',
     'icon-card-child-care',
     'icon-card-city-id-card',
     'icon-card-education',
     'icon-card-enrichment',
-    'icon-card-expenses',
     'icon-card-family-services',
     'icon-card-food',
     'icon-card-health',
     'icon-card-housing',
     'icon-card-people-with-disabilities',
-    'icon-card-work',
+    'icon-card-work'
+  ],
+  'icons-program-card-v2': [
+    'icon-card-cash-expenses-v2',
+    'icon-card-child-care-v2',
+    'icon-card-city-id-card-v2',
+    'icon-card-education-v2',
+    'icon-card-enrichment-v2',
+    'icon-card-family-services-v2',
+    'icon-card-food-v2',
+    'icon-card-health-v2',
+    'icon-card-housing-v2',
+    'icon-card-people-with-disabilities-v2',
+    'icon-card-work-v2'
   ],
   'icons-checklist-size': '50px 50px',
   'icons-checklist': {
@@ -381,33 +466,23 @@ module.exports = {
     'icon-logo-mark',
     'icon-logo-nyc',
   ],
-  'icons-other': [
-    'icon-close',
-    'icon-contact',
-    'icon-gear',
-    'icon-minus',
-    'icon-plus',
-    'icon-screening',
-    'icon-share',
-    'icon-eligibilitycheck',
-    'icon-checkmark',
-    'icon-arrow-down',
+  'icons-status': [
     'icon-info',
     'icon-success',
     'icon-urgent',
     'icon-warning'
   ],
   'icons-ui': [
-    'icon-ui-alert-octagon',
-    'icon-ui-alert-triangle',
+    // 'icon-ui-alert-octagon',
+    // 'icon-ui-alert-triangle',
     'icon-ui-calendar',
-    'icon-ui-check-circle',
+    // 'icon-ui-check-circle',
     'icon-ui-check',
     'icon-ui-chevron-down',
     'icon-ui-chevron-left',
     'icon-ui-chevron-right',
     'icon-ui-chevron-up',
-    'icon-ui-info',
+    // 'icon-ui-info',
     'icon-ui-mail',
     'icon-ui-message-circle',
     'icon-ui-minus-circle',

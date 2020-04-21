@@ -21,13 +21,15 @@
       div
         div class='o-banner my-0 w-full color-light-background p-0'
           div class='o-banner__inner max-w-full'
-            h1 class='o-banner__title px-2'
+            h1 class='o-banner__title px-2 screen-desktop:px-4'
               | The Patterns of ACCESS NYC are a shared vocabulary between the code, design, and user interface (UI) of <a href='https://access.nyc.gov'>ACCESS NYC</a>.
 
-            p class='px-2'
+            hr class='divider border-blue'
+
+            p class='px-2 screen-desktop:px-4'
               | ACCESS NYC aims to increase the accessibility and convenience of discovering and enrolling in government benefits. The Patterns support this work by defining the UI and behavior that New Yorkers experience as they use the site.
 
-            p class='text-center px-2'
+            p class='text-center'
               button class='btn btn-primary mb-2' aria-controls='main-menu' data-js='toggle' Browse the patterns
 
             div class='bg-status-info mb-4 p-2 screen-desktop:p-4'
@@ -42,7 +44,7 @@
                   li class='c-checklist__item-generic pb-1' <a href='utility'>Tailwind.css Utility Framework</a> integration.
 
             div
-              div class='px-2'
+              div class='px-2 screen-desktop:px-4'
                 h3 Installation
 
                 p The Patterns are available as an NPM package and can be installed with the following command.
@@ -82,7 +84,7 @@
 
           article class='c-card'
             div class='c-card__body'
-              a href='colors'
+              a href='color'
                 h3 class='c-card__title mb-3' Colors
               div class='c-card__summary' The Color Pattern reference.
 

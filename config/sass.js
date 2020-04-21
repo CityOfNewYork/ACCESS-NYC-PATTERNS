@@ -85,12 +85,14 @@ let modules = [
   {
     file: './src/utilities/tailwindcss/_tailwindcss.scss',
     outDir: './dist/styles/',
-    outFile: 'tailwindcss.css'
+    outFile: 'tailwindcss.css',
+    devModule: true
   },
   {
     file: './src/utilities/tailwindcss/_tailwindcss.scss',
     outDir: './dist/styles/',
-    outFile: '_tailwindcss.scss'
+    outFile: '_tailwindcss.scss',
+    devModule: true
   },
   {
     file: './src/elements/icons/_icons.scss',
