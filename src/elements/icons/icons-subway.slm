@@ -1,5 +1,4 @@
 - if (typeof key !== 'undefined')
-  - ;
   div class='text-small'
 
     h3 class='text-small capitalize mb-2' ${key.replace(/-/g," ")}
@@ -18,7 +17,6 @@
         span class='icon-subway ${color} ${express} mx-1'
           = line;
           - if (express)
-            - ;
             span class='sr-only' Express
 
     p class='mb-0 flex justify-between'

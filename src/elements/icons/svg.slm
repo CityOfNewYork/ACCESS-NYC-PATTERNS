@@ -1,0 +1,8 @@
+- if (this.svg)
+  - classAttr = (typeof this.classname === 'string')
+  -   ? [this.svg].concat(this.classname.split(' ')).join(' ') : this.svg;
+
+  svg class='${classAttr}'
+    title id='${this.svg}-title' ${this.svg.replace(/-/g, ' ')}
+
+    use xlink:href='#${this.svg.split("--")[0]}'

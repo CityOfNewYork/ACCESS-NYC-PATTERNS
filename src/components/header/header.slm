@@ -5,6 +5,8 @@ header class='c-header'
   div class='c-header__icon'
     a href='#'
       div class='bg-icon-card-cash-expenses'
+
   div
     h1 class='c-header__descriptor' Money for heat and utility expenses
-    h2 class='c-header__information' Home Energy Assistance Program (HEAP) | NYC Human Resource Administration
+
+    h2 class='c-header__information color__alt' Home Energy Assistance Program (HEAP) | NYC Human Resource Administration

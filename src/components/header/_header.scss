@@ -25,6 +25,7 @@
 .c-header__icon {
   $icon-height: $spacing-base * 2;
   $icon-width: $spacing-base * 2;
+
   margin-bottom: $spacing-base / 3;
 
   .icon {
@@ -47,7 +48,13 @@
 
 .c-header__descriptor {
   @include typography-h1();
+
+  margin-top: 2px;
   margin-bottom: 2px;
+
+  @media screen and (min-width: $screen-tablet) {
+    margin-top: -2px;
+  }
 }
 
 .c-header__information {

@@ -2,17 +2,21 @@
 
 To use the inline SVGS, include the main icon sprite ([dist/svgs/icons.svg](https://github.com/CityOfNewYork/ACCESS-NYC-PATTERNS/tree/master/dist/svg/icons.svg)) in your page markup. ACCESS NYC uses an AJAX method to cache the sprite file while not including it in the page cache to decrease the size of each page. To import the icon through the global ACCESS NYC Patterns script use the following code:
 
-    <!-- Global Script -->
-    <script src="dist/scripts/access-nyc.js"></script>
+    <script src="{{ this.package.cdn.url }}@v{{ this.package.version }}{{ this.package.cdn.scripts }}"></script>
 
     <script>
-      var access = new AccessNyc();
-      access.icons();
+      var patterns = new {{ this.package.instantiations.scripts }}();
+
+      patterns.icons();
     </script>
 
-The script expects the icon sprite path to be `svg/icons.svg` in the root directory of the site. Pass a new string to the method to specify a different path:
+The script expects the icon sprite path to be `svg/icons.svg` in the root directory of your site. Pass a new string to the method to specify a different path;
 
-    access.icons('path/to/icons.svg');
+    patterns.icons('path/to/icons.svg');
+
+Or use a cdn path;
+
+    patterns.icons('{{ this.package.cdn.url }}@v{{ this.package.version }}{{ this.package.cdn.svg }}');
 
 #### Polyfills
 
@@ -28,6 +32,7 @@ The first option allows you to inline an SVG with the `use` tag. This is the pre
 
     <svg class="icon-logo-full text-blue-dark" role="img">
       <title id="icon-logo-full-title">ACCESS NYC Logo</title>
+
       <use xlink:href="#icon-logo-full"></use>
     </svg>
 
@@ -41,6 +46,6 @@ The second option does not require the icon sprite to be added to the page throu
 
 The third option is to use the individual SVG path as a source attribute in an image tag. Note the alt text attribute for accessibility.
 
-    <img src="svgs/icon-logo-full.svg" alt="The ACCESS NYC Logo">
+    <img src="svg/icon-logo-full.svg" alt="The ACCESS NYC Logo">
 
 **Accessibility Note**: If the SVG graphic doesn't serve a function, it may not be useful to screen readers. Therefore, it may be hidden using the `aria-hidden="true"` attribute.
