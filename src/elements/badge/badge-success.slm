@@ -2,5 +2,5 @@
 / Badge Info
 /
 
-mark class='badge bg-status-success'
+mark class='badge color-success-status'
   | New

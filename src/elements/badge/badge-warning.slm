@@ -2,5 +2,5 @@
 / Badge Warning
 /
 
-mark class='badge bg-status-warning'
+mark class='badge color-warning-status'
   | New

@@ -26,3 +26,4 @@
   = mixin('section', 'Success', 'components/alert-box/alert-box-success');
   = mixin('section', 'Urgent', 'components/alert-box/alert-box-urgent');
   = mixin('section', 'Warning', 'components/alert-box/alert-box-warning');
+  = mixin('section', 'COVID Response', 'components/alert-box/alert-box-covid-response');

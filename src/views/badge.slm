@@ -23,6 +23,7 @@
 = content('content');
   = mixin('content-header', title);
   = mixin('section', false, 'elements/badge/badge');
-  = mixin('section', 'Badge Warning', 'elements/badge/badge-warning');
-  = mixin('section', 'Badge Success', 'elements/badge/badge-success');
-  = mixin('section', 'Badge Urgent', 'elements/badge/badge-urgent');
+  = mixin('section', 'Warning Badge', 'elements/badge/badge-warning');
+  = mixin('section', 'Success Badge', 'elements/badge/badge-success');
+  = mixin('section', 'Urgent Badge', 'elements/badge/badge-urgent');
+  = mixin('section', 'COVID Response Badge', 'elements/badge/badge-covid-response');

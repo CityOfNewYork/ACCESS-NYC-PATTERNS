@@ -2,11 +2,12 @@
 / Alert Box Success
 /
 
-article class='c-alert-box bg-status-success mb-4'
+article class='c-alert-box color-success-status'
   div class='c-alert-box__icon'
-    svg class='c-alert-box__svg icon icon-4 icon-ui-check-circle' role='img'
+    svg class='c-alert-box__svg icon icon-4 icon-success' role='img'
       title Success Alert
-      use xlink:href='#icon-ui-check-circle'
+      use xlink:href='#icon-success'
+
   div class='c-alert-box__body'
     header
       h1 class='type-h4 m-0' Finished! We found 8 programs for you.
