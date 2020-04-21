@@ -8,7 +8,7 @@ import Toggle from '@nycopportunity/patterns-framework/src/utilities/toggle/togg
 import Cleave from 'cleave.js';
 import 'cleave.js/dist/addons/cleave-phone.us';
 
-import FormSerialize from 'form-serialize';
+import serialize from 'for-cerial';
 
 /**
  * This component handles validation and submission for share by email and
@@ -107,7 +107,7 @@ class ShareForm {
    */
   sanitize() {
     // Serialize the data
-    this._data = FormSerialize(this.form.FORM, {hash: true});
+    this._data = serialize(this.form.FORM, {hash: true});
 
     // Sanitize the phone number (if there is a phone number)
     if (this.phone && this._data.to)

@@ -1,7 +1,8 @@
 'use strict';
 
 import Forms from '@nycopportunity/patterns-framework/src/utilities/forms/forms';
-import formSerialize from 'form-serialize';
+
+import serialize from 'for-cerial';
 
 /**
  * The Newsletter module
@@ -68,7 +69,7 @@ class Newsletter {
     event.preventDefault();
 
     // Serialize the data
-    this._data = formSerialize(event.target, {hash: true});
+    this._data = serialize(event.target, {hash: true});
 
     // Switch the action to post-json. This creates an endpoint for mailchimp
     // that acts as a script that can be loaded onto our page.
@@ -77,8 +78,9 @@ class Newsletter {
     );
 
     // Add our params to the action
-    action = action + formSerialize(event.target, {serializer: (...params) => {
+    action = action + serialize(event.target, {serializer: (...params) => {
       let prev = (typeof params[0] === 'string') ? params[0] : '';
+
       return `${prev}&${params[1]}=${params[2]}`;
     }});
 
@@ -89,6 +91,7 @@ class Newsletter {
     // Create a promise that appends the script response of the post-json method
     return new Promise((resolve, reject) => {
       const script = document.createElement('script');
+
       document.body.appendChild(script);
       script.onload = resolve;
       script.onerror = reject;
@@ -104,6 +107,7 @@ class Newsletter {
    */
   _onload(event) {
     event.path[0].remove();
+
     return this;
   }
 
@@ -115,6 +119,7 @@ class Newsletter {
   _onerror(error) {
     // eslint-disable-next-line no-console
     if (process.env.NODE_ENV !== 'production') console.dir(error);
+
     return this;
   }
 
@@ -124,11 +129,13 @@ class Newsletter {
    * @return {Class}       The Newsletter class
    */
   _callback(data) {
-    if (this[`_${data[this._key('MC_RESULT')]}`])
+    if (this[`_${data[this._key('MC_RESULT')]}`]) {
       this[`_${data[this._key('MC_RESULT')]}`](data.msg);
-    else
+    } else {
       // eslint-disable-next-line no-console
       if (process.env.NODE_ENV !== 'production') console.dir(data);
+    }
+
     return this;
   }
 
@@ -140,6 +147,7 @@ class Newsletter {
   _error(msg) {
     this._elementsReset();
     this._messaging('WARNING', msg);
+
     return this;
   }
 
@@ -151,6 +159,7 @@ class Newsletter {
   _success(msg) {
     this._elementsReset();
     this._messaging('SUCCESS', msg);
+
     return this;
   }
 
@@ -163,6 +172,7 @@ class Newsletter {
   _messaging(type, msg = 'no message') {
     let strings = Object.keys(Newsletter.stringKeys);
     let handled = false;
+
     let alertBox = this._el.querySelector(
       Newsletter.selectors[`${type}_BOX`]
     );
@@ -173,11 +183,9 @@ class Newsletter {
 
     // Get the localized string, these should be written to the DOM already.
     // The utility contains a global method for retrieving them.
-    for (let i = 0; i < strings.length; i++)
-      if (msg.indexOf(Newsletter.stringKeys[strings[i]]) > -1) {
-        msg = this.strings[strings[i]];
-        handled = true;
-      }
+    let stringKeys = strings.filter(s => msg.includes(Newsletter.stringKeys[s]));
+    msg = (stringKeys.length) ? this.strings[stringKeys[0]] : msg;
+    handled = (stringKeys.length) ? true : false;
 
     // Replace string templates with values from either our form data or
     // the Newsletter strings object.
@@ -186,13 +194,15 @@ class Newsletter {
       let key = template.replace('{{ ', '').replace(' }}', '');
       let value = this._data[key] || this.strings[key];
       let reg = new RegExp(template, 'gi');
+
       msg = msg.replace(reg, (value) ? value : '');
     }
 
-    if (handled)
+    if (handled) {
       alertBoxMsg.innerHTML = msg;
-    else if (type === 'ERROR')
+    } else if (type === 'ERROR') {
       alertBoxMsg.innerHTML = this.strings.ERR_PLEASE_TRY_LATER;
+    }
 
     if (alertBox) this._elementShow(alertBox, alertBoxMsg);
 
@@ -237,7 +247,10 @@ class Newsletter {
     );
     // Screen Readers
     target.setAttribute('aria-hidden', 'true');
-    if (content) content.setAttribute('aria-live', 'polite');
+
+    if (content) {
+      content.setAttribute('aria-live', 'polite');
+    }
 
     return this;
   }
@@ -300,11 +313,11 @@ Newsletter.strings = {
                          'address. To complete the subscription process, ' +
                          'please click the link in the email we just sent you.',
   ERR_PLEASE_ENTER_VALUE: 'Please enter a value',
-  ERR_TOO_MANY_RECENT: 'Recipient "{{ EMAIL }}" has too' +
+  ERR_TOO_MANY_RECENT: 'Recipient "{{ EMAIL }}" has too ' +
                        'many recent signup requests',
-  ERR_ALREADY_SUBSCRIBED: '{{ EMAIL }} is already subscribed' +
+  ERR_ALREADY_SUBSCRIBED: '{{ EMAIL }} is already subscribed ' +
                           'to list {{ LIST_NAME }}.',
-  ERR_INVALID_EMAIL: 'This email address looks fake or invalid.' +
+  ERR_INVALID_EMAIL: 'This email address looks fake or invalid. ' +
                      'Please enter a real email address.',
   LIST_NAME: 'ACCESS NYC - Newsletter'
 };

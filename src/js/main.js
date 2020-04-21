@@ -65,9 +65,7 @@ class main {
    * @param  {object}   settings Settings for the Tooltips Class
    * @return {nodelist}          Tooltip elements
    */
-  tooltips() {
-    let elements = document.querySelectorAll(Tooltips.selector);
-
+  tooltips(elements = document.querySelectorAll(Tooltips.selector)) {
     elements.forEach(element => {
       new Tooltips(element);
     });
@@ -103,8 +101,7 @@ class main {
    * An API for the Newsletter Object
    * @return {object} instance of Newsletter
    */
-  newsletter() {
-    let element = document.querySelector(Newsletter.selector);
+  newsletter(element = document.querySelector(Newsletter.selector)) {
     return (element) ? new Newsletter(element) : null;
   }
 
@@ -121,8 +118,7 @@ class main {
    * An API for the AlertBanner Component
    * @return {object} Instance of AlertBanner
    */
-  alertBanner() {
-    let element = document.querySelector(AlertBanner.selector);
+  alertBanner(element = document.querySelector(AlertBanner.selector)) {
     return (element) ? new AlertBanner(element) : null;
   }
 
@@ -130,9 +126,7 @@ class main {
    * An API for the ShareForm Component
    * @return {object} Instance of ShareForm
    */
-  shareForm() {
-    let elements = document.querySelectorAll(ShareForm.selector);
-
+  shareForm(elements = document.querySelectorAll(ShareForm.selector)) {
     elements.forEach(element => {
       new ShareForm(element);
     });
@@ -152,8 +146,7 @@ class main {
    * An API for the TextController Object
    * @return {object} Instance of TextController
    */
-  textController() {
-    let element = document.querySelector(TextController.selector);
+  textController(element = document.querySelector(TextController.selector)) {
     return (element) ? new TextController(element) : null;
   }
 }
