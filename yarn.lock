@@ -2736,6 +2736,11 @@ flatted@^2.0.0:
   resolved "https://registry.yarnpkg.com/flatted/-/flatted-2.0.1.tgz#69e57caa8f0eacbc281d2e2cb458d46fdb449e08"
   integrity sha512-a1hQMktqW9Nmqr5aktAux3JMNqaucxGcjtjWnZLHX7yyPCmlSV3M54nGYbqT8K+0GhF3NBgmJCc3ma+WOgX8Jg==
 
+for-cerial@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/for-cerial/-/for-cerial-1.0.0.tgz#08f0af9659df524c878ce5ffaa956f38dbeda973"
+  integrity sha512-ZoY0ydL/W36m/sDIF9WkcZ5QrUBMwdoVpHfGiCzdQtS4BZnUUX0ucjTymI7YJnWEIYCNsTBuLW29RYL8E7qqgg==
+
 forever-agent@~0.6.1:
   version "0.6.1"
   resolved "https://registry.yarnpkg.com/forever-agent/-/forever-agent-0.6.1.tgz#fbc71f0c41adeb37f96c577ad1ed42d8fdacca91"

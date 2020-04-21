@@ -49,6 +49,7 @@
   },
   "devDependencies": {
     "@nycopportunity/patterns-framework": "../nyco-patterns-framework",
+    "cross-env": "^7.0.2",
     "css-mqpacker": "^7.0.0",
     "rollup-plugin-alias": "^2.2.0",
     "rollup-plugin-vue": "^5.1.6",
@@ -58,6 +59,7 @@
     "animate.scss": "0.0.6",
     "bourbon": "^4.3.4",
     "cleave.js": "^1.5.3",
+    "for-cerial": "^1.0.0",
     "form-serialize": "^0.7.2",
     "js-cookie": "^3.0.0-beta.0",
     "lodash-es": "^4.17.15",
