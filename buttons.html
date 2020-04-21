@@ -21,7 +21,6 @@
   <meta content="#112E51" name="msapplication-TileColor" />
   <meta content="images/ms-icon-144x144.png" name="msapplication-TileImage" />
   <link href="images/favicon.ico" rel="icon" type="image/x-icon" />
-  <link href="styles/site-default.css" rel="stylesheet" />
   <title>Buttons | ACCESS NYC Patterns</title>
   <noscript>
     <style>
@@ -30,13 +29,20 @@
       }
     </style>
   </noscript>
-  <script>
-    async src = 'https://www.googletagmanager.com/gtag/js?id=UA-163470527-1'
-  </script>
+  <script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-163470527-1"></script>
+  <link href="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.18.1/build/styles/default.min.css" rel="stylesheet" />
+  <script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.18.1/build/highlight.min.js"></script>
+  <link href="styles/site-default.css" rel="stylesheet" />
   <script type="text/javascript">
-    function load() {
+    document.addEventListener('DOMContentLoaded', event => {
+      hljs.configure({
+        languages: ['html', 'javascript', 'css', 'sass']
+      });
+      document.querySelectorAll('pre').forEach(block => {
+        hljs.highlightBlock(block);
+      });
       document.body.style.visibility = 'visible';
-    };
+    });
     window.dataLayer = window.dataLayer || [];
 
     function gtag() {
@@ -47,7 +53,7 @@
   </script>
 </head>
 
-<body class="bg-blue-dark" onload="load()" style="visibility: hidden;">
+<body class="bg-blue-dark" style="visibility: hidden;">
   <a class="sr-only" href="#main-content">Skip to main content</a>
   <div class="bg-white">
     <header class="color-light-background px-2">
@@ -70,8 +76,8 @@
             <h2 class="text-small m-0 text-blue-dark screen-tablet:hidden">Patterns</h2>
             <h2 aria-hidden="true" class="type-h1 m-0 text-blue-dark hidden screen-tablet:inline-block">Patterns</h2>
             <nav class="text-small">
-              <a class="rounded-lg text-blue-dark border-2 no-underline px-1 ms-2 hidden screen-tablet:inline-block" href="https://github.com/CityOfNewYork/access-nyc-patterns/tree/v0.13.5">0.13.5</a>
-              <a aria-hidden="true" class="ms-1 screen-tablet:ms-2 screen-tablet:hidden" href="https://github.com/CityOfNewYork/access-nyc-patterns/tree/v0.13.5">0.13.5</a>
+              <a class="rounded-lg text-blue-dark border-2 no-underline px-1 ms-2 hidden screen-tablet:inline-block" href="https://github.com/CityOfNewYork/access-nyc-patterns/tree/v0.14.0">0.14.0</a>
+              <a aria-hidden="true" class="ms-1 screen-tablet:ms-2 screen-tablet:hidden" href="https://github.com/CityOfNewYork/access-nyc-patterns/tree/v0.14.0">0.14.0</a>
               <button aria-controls="main-menu" aria-expanded="false" class="btn-link ms-1 screen-tablet:ms-2" data-js="toggle" id="main-menu-control">Menu</button>
             </nav>
           </div>
@@ -92,6 +98,7 @@
           </nav>
           <nav class="screen-tablet:flex-1 mb-1 px-2 screen-desktop:ps-4">
             <span class="type-h3 text-small mb-1 block screen-tablet:border-b screen-tablet:pb-2 screen-tablet:mb-1 border-white p-1">Elements</span>
+            <a class="block p-1" href="badge">Badge</a>
             <a class="block p-1" href="buttons">Buttons</a>
             <a class="block p-1" href="checkboxes">Checkboxes</a>
             <a class="block p-1" href="dividers">Dividers</a>
@@ -101,7 +108,6 @@
             <a class="block p-1" href="links">Links</a>
             <a class="block p-1" href="lists">Lists</a>
             <a class="block p-1" href="nav">Nav</a>
-            <a class="block p-1" href="program-labels">Program Labels</a>
             <a class="block p-1" href="radios">Radios</a>
             <a class="block p-1" href="tables">Tables</a>
             <a class="block p-1" href="tooltips">Tooltips</a>
@@ -144,9 +150,8 @@
             <span class="type-h3 text-small mb-1 block screen-tablet:border-b screen-tablet:pb-2 screen-tablet:mb-1 border-white p-1">Utilities</span>
             <a class="block p-1" href="animate">Animate</a>
             <a class="block p-1" href="clearfix">Clearfix</a>
-            <a class="block p-1" href="colors">Colors</a>
+            <a class="block p-1" href="color">Color</a>
             <a class="block p-1" href="font">Fonts</a>
-            <a class="block p-1" href="inherit">Inherit</a>
             <a class="block p-1" href="language">Language</a>
             <a class="block p-1" href="margin">Margin</a>
             <a class="block p-1" href="media">Media</a>
@@ -176,7 +181,7 @@
               <div class="my-0 px-2 pt-1 pb-4 border-b border-grey-light">
                 <div>
                   <p class="text-small m-0">Source: <code>
-                      <a href="https://github.com/CityOfNewYork/access-nyc-patterns/tree/v0.13.5/src/elements/buttons">src/elements/buttons/buttons</a>
+                      <a href="https://github.com/CityOfNewYork/access-nyc-patterns/tree/v0.14.0/src/elements/buttons">src/elements/buttons/buttons</a>
                     </code>
                   </p>
                 </div>
@@ -184,15 +189,9 @@
             </header>
             <div class="layout-home-body">
               <div class="my-0 pt-4 px-2 text-small table-align-start">
-                <p>The base button class, <code>.btn</code>, is extended with either <code>.btn-primary</code> or <code>.btn-secondary</code>. Any button type class can be added by the the primary or secondary class (see examples below).</p>
-                <p>There are two types for Button Elements:</p>
-                <ul>
-                  <li>Buttons associated with functionality (Primary, Blue).</li>
-                  <li>Buttons that navigate users through a set of pages, such as through the program pages (Secondary, Green).</li>
-                </ul>
-                <h3 id="markup">Markup</h3>
                 <p>Buttons should be written using the <code>&lt;button&gt;</code> html tag. However, if a button is an <code>&lt;a&gt;</code> tag styled with the <code>.btn</code> class and has in-page functionality (such as toggling elements), the <code>role</code> attribute should be set to “button” and the <code>tabindex</code> attribute should be set to “0.” Refer to the best practices illustrated in the <a href="https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Roles/button_role#Best_practices">MDN documentation for the “button” role</a>.</p>
                 <p>If the button is a <code>&lt;button&gt;</code> element and appears within a <code>&lt;form&gt;</code> tag, the <code>type</code> attribute should be explicitly set to “submit,” “reset,” or “submit.” By default (without the type attribute) <code>&lt;button&gt;</code> elements are set to the “submit” type.</p>
+                <p>The base button class, <code>.btn</code>, is extended with additional button classes below.</p>
               </div>
             </div>
             <div class="layout-gutter screen-tablet:layout-columns justify-between pt-4">
@@ -216,7 +215,7 @@
                 </h2>
                 <div class="pt-2">
                   <p class="text-small m-0">Source: <code>
-                      <a href="https://github.com/CityOfNewYork/access-nyc-patterns/tree/v0.13.5/src/elements/buttons">src/elements/buttons/buttons-primary</a>
+                      <a href="https://github.com/CityOfNewYork/access-nyc-patterns/tree/v0.14.0/src/elements/buttons">src/elements/buttons/buttons-primary</a>
                     </code>
                   </p>
                 </div>
@@ -248,7 +247,7 @@
                 </h2>
                 <div class="pt-2">
                   <p class="text-small m-0">Source: <code>
-                      <a href="https://github.com/CityOfNewYork/access-nyc-patterns/tree/v0.13.5/src/elements/buttons">src/elements/buttons/buttons-secondary</a>
+                      <a href="https://github.com/CityOfNewYork/access-nyc-patterns/tree/v0.14.0/src/elements/buttons">src/elements/buttons/buttons-secondary</a>
                     </code>
                   </p>
                 </div>
@@ -256,7 +255,7 @@
             </header>
             <div class="layout-home-body">
               <div class="my-0 pt-4 px-2 text-small table-align-start">
-                <p>Secondary Button Elements are used for navigation.</p>
+                <p>Secondary Button Elements are used used for navigating users through a set of pages such as through the program pages.</p>
               </div>
             </div>
             <div class="layout-gutter screen-tablet:layout-columns justify-between pt-4">
@@ -271,6 +270,70 @@
             </div>
           </div>
         </section>
+        <section class="pb-4 mb-4" id="tertiary-button">
+          <div class="page-wrapper px-2">
+            <header class="layout-home-body">
+              <div class="my-0 px-2 pt-1 pb-4 border-b border-grey-light">
+                <h2 class="m-0">
+                  <a class="text-grey-mid font-normal no-underline capitalize" href="#tertiary-button">Tertiary Button</a>
+                </h2>
+                <div class="pt-2">
+                  <p class="text-small m-0">Source: <code>
+                      <a href="https://github.com/CityOfNewYork/access-nyc-patterns/tree/v0.14.0/src/elements/buttons">src/elements/buttons/buttons-tertiary</a>
+                    </code>
+                  </p>
+                </div>
+              </div>
+            </header>
+            <div class="layout-home-body">
+              <div class="my-0 pt-4 px-2 text-small table-align-start">
+                <p>Tertiary Buttons use the ACCESS NYC color brand and have limited use cases.</p>
+              </div>
+            </div>
+            <div class="layout-gutter screen-tablet:layout-columns justify-between pt-4">
+              <div class="screen-tablet:pe-2">
+                <button class="btn-tertiary" type="button">Tertiary Button</button>
+              </div>
+              <div>
+                <div class="code-block mb-1">
+                  <pre>&lt;button class=&quot;btn-tertiary&quot; type=&quot;button&quot;&gt;Tertiary Button&lt;/button&gt;</pre>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section class="pb-4 mb-4" id="covid-response-button">
+          <div class="page-wrapper px-2">
+            <header class="layout-home-body">
+              <div class="my-0 px-2 pt-1 pb-4 border-b border-grey-light">
+                <h2 class="m-0">
+                  <a class="text-grey-mid font-normal no-underline capitalize" href="#covid-response-button">COVID Response Button</a>
+                </h2>
+                <div class="pt-2">
+                  <p class="text-small m-0">Source: <code>
+                      <a href="https://github.com/CityOfNewYork/access-nyc-patterns/tree/v0.14.0/src/elements/buttons">src/elements/buttons/buttons-covid-response</a>
+                    </code>
+                  </p>
+                </div>
+              </div>
+            </header>
+            <div class="layout-home-body">
+              <div class="my-0 pt-4 px-2 text-small table-align-start">
+                <p>The COVID Response button is reserved for linking to content about city announcements, stimulus programs, and other information related to the New York City COVID-19 Response.</p>
+              </div>
+            </div>
+            <div class="layout-gutter screen-tablet:layout-columns justify-between pt-4">
+              <div class="screen-tablet:pe-2">
+                <button class="btn-covid-response" type="button">COVID Response Button</button>
+              </div>
+              <div>
+                <div class="code-block mb-1">
+                  <pre>&lt;button class=&quot;btn-covid-response&quot; type=&quot;button&quot;&gt;COVID Response Button&lt;/button&gt;</pre>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
         <section class="pb-4 mb-4" id="small-button">
           <div class="page-wrapper px-2">
             <header class="layout-home-body">
@@ -280,7 +343,7 @@
                 </h2>
                 <div class="pt-2">
                   <p class="text-small m-0">Source: <code>
-                      <a href="https://github.com/CityOfNewYork/access-nyc-patterns/tree/v0.13.5/src/elements/buttons">src/elements/buttons/buttons-small</a>
+                      <a href="https://github.com/CityOfNewYork/access-nyc-patterns/tree/v0.14.0/src/elements/buttons">src/elements/buttons/buttons-small</a>
                     </code>
                   </p>
                 </div>
@@ -312,7 +375,7 @@
                 </h2>
                 <div class="pt-2">
                   <p class="text-small m-0">Source: <code>
-                      <a href="https://github.com/CityOfNewYork/access-nyc-patterns/tree/v0.13.5/src/elements/buttons">src/elements/buttons/buttons-normal</a>
+                      <a href="https://github.com/CityOfNewYork/access-nyc-patterns/tree/v0.14.0/src/elements/buttons">src/elements/buttons/buttons-normal</a>
                     </code>
                   </p>
                 </div>
@@ -344,7 +407,7 @@
                 </h2>
                 <div class="pt-2">
                   <p class="text-small m-0">Source: <code>
-                      <a href="https://github.com/CityOfNewYork/access-nyc-patterns/tree/v0.13.5/src/elements/buttons">src/elements/buttons/buttons-tag</a>
+                      <a href="https://github.com/CityOfNewYork/access-nyc-patterns/tree/v0.14.0/src/elements/buttons">src/elements/buttons/buttons-tag</a>
                     </code>
                   </p>
                 </div>
@@ -376,7 +439,7 @@
                 </h2>
                 <div class="pt-2">
                   <p class="text-small m-0">Source: <code>
-                      <a href="https://github.com/CityOfNewYork/access-nyc-patterns/tree/v0.13.5/src/elements/buttons">src/elements/buttons/buttons-toggle</a>
+                      <a href="https://github.com/CityOfNewYork/access-nyc-patterns/tree/v0.14.0/src/elements/buttons">src/elements/buttons/buttons-toggle</a>
                     </code>
                   </p>
                 </div>
@@ -410,7 +473,7 @@
                 </h2>
                 <div class="pt-2">
                   <p class="text-small m-0">Source: <code>
-                      <a href="https://github.com/CityOfNewYork/access-nyc-patterns/tree/v0.13.5/src/elements/buttons">src/elements/buttons/buttons-link</a>
+                      <a href="https://github.com/CityOfNewYork/access-nyc-patterns/tree/v0.14.0/src/elements/buttons">src/elements/buttons/buttons-link</a>
                     </code>
                   </p>
                 </div>
@@ -442,7 +505,7 @@
                 </h2>
                 <div class="pt-2">
                   <p class="text-small m-0">Source: <code>
-                      <a href="https://github.com/CityOfNewYork/access-nyc-patterns/tree/v0.13.5/src/elements/buttons">src/elements/buttons/buttons-text</a>
+                      <a href="https://github.com/CityOfNewYork/access-nyc-patterns/tree/v0.14.0/src/elements/buttons">src/elements/buttons/buttons-text</a>
                     </code>
                   </p>
                 </div>
@@ -472,7 +535,7 @@
                 </h2>
                 <div class="pt-2">
                   <p class="text-small m-0">Source: <code>
-                      <a href="https://github.com/CityOfNewYork/access-nyc-patterns/tree/v0.13.5/src/elements/buttons">src/elements/buttons/buttons-next</a>
+                      <a href="https://github.com/CityOfNewYork/access-nyc-patterns/tree/v0.14.0/src/elements/buttons">src/elements/buttons/buttons-next</a>
                     </code>
                   </p>
                 </div>
@@ -504,7 +567,7 @@
                 </h2>
                 <div class="pt-2">
                   <p class="text-small m-0">Source: <code>
-                      <a href="https://github.com/CityOfNewYork/access-nyc-patterns/tree/v0.13.5/src/elements/buttons">src/elements/buttons/buttons-previous</a>
+                      <a href="https://github.com/CityOfNewYork/access-nyc-patterns/tree/v0.14.0/src/elements/buttons">src/elements/buttons/buttons-previous</a>
                     </code>
                   </p>
                 </div>
@@ -528,11 +591,13 @@
           </div>
         </section>
         <div class="sticky bottom-0 bg-white shadow-up relative z-10 overflow-y-scroll whitespace-no-wrap animated fadeInUp">
-          <nav class="nav-inline text-small p-2 screen-tablet:p-4">
-            <span class="me-2 screen-tablet:me-4">Jump to:</span>
-            <a class="me-2 screen-tablet:me-4" href="#main-content">Page Top</a>
+          <nav class="nav-inline inline-block text-small p-2 screen-tablet:p-4">
+            <span class="me-2">Jump to:</span>
+            <a class="me-2 screen-tablet:me-4" href="#main-content">Top</a>
             <a class="me-2 screen-tablet:me-4" href="#primary-button">Primary Button</a>
             <a class="me-2 screen-tablet:me-4" href="#secondary-button">Secondary Button</a>
+            <a class="me-2 screen-tablet:me-4" href="#tertiary-button">Tertiary Button</a>
+            <a class="me-2 screen-tablet:me-4" href="#covid-response-button">COVID Response Button</a>
             <a class="me-2 screen-tablet:me-4" href="#small-button">Small Button</a>
             <a class="me-2 screen-tablet:me-4" href="#normal-button">Normal Button</a>
             <a class="me-2 screen-tablet:me-4" href="#tag-button">Tag Button</a>
@@ -582,6 +647,7 @@
         </nav>
         <nav class="screen-tablet:flex-1 mb-1 px-2 screen-desktop:ps-4">
           <span class="type-h3 text-small mb-1 block screen-tablet:border-b screen-tablet:pb-2 screen-tablet:mb-1 border-white p-1">Elements</span>
+          <a class="block p-1" href="badge">Badge</a>
           <a class="block p-1" href="buttons">Buttons</a>
           <a class="block p-1" href="checkboxes">Checkboxes</a>
           <a class="block p-1" href="dividers">Dividers</a>
@@ -591,7 +657,6 @@
           <a class="block p-1" href="links">Links</a>
           <a class="block p-1" href="lists">Lists</a>
           <a class="block p-1" href="nav">Nav</a>
-          <a class="block p-1" href="program-labels">Program Labels</a>
           <a class="block p-1" href="radios">Radios</a>
           <a class="block p-1" href="tables">Tables</a>
           <a class="block p-1" href="tooltips">Tooltips</a>
@@ -634,9 +699,8 @@
           <span class="type-h3 text-small mb-1 block screen-tablet:border-b screen-tablet:pb-2 screen-tablet:mb-1 border-white p-1">Utilities</span>
           <a class="block p-1" href="animate">Animate</a>
           <a class="block p-1" href="clearfix">Clearfix</a>
-          <a class="block p-1" href="colors">Colors</a>
+          <a class="block p-1" href="color">Color</a>
           <a class="block p-1" href="font">Fonts</a>
-          <a class="block p-1" href="inherit">Inherit</a>
           <a class="block p-1" href="language">Language</a>
           <a class="block p-1" href="margin">Margin</a>
           <a class="block p-1" href="media">Media</a>

@@ -12016,32 +12016,38 @@ var VueComponents = (function () {
   //
   var script = {
     props: {
-      'cta': {
+      cta: {
         type: String
       },
-      'title': {
+      title: {
         type: String
       },
-      'link': {
+      link: {
         type: String
       },
-      'subtitle': {
+      subtitle: {
         type: String
       },
-      'summary': {
+      summary: {
         type: String
       },
-      'category': {
+      category: {
         type: Object
       },
-      'blank': {
+      icon: {
+        type: Object
+      },
+      status: {
+        type: Object
+      },
+      blank: {
         type: Boolean
       },
-      'strings': {
+      strings: {
         type: Object,
         default: function () { return ({
-          'LEARN_MORE': 'Learn more',
-          'CTA': 'Apply'
+          LEARN_MORE: 'Learn more',
+          CTA: 'Apply'
         }); }
       }
     }
@@ -12126,7 +12132,7 @@ var VueComponents = (function () {
   var __vue_script__ = script;
 
   /* template */
-  var __vue_render__ = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('article',{staticClass:"c-card"},[(_vm.category)?_c('div',{staticClass:"c-card__icon"},[_c('svg',{class:'icon icon-' + _vm.category.slug,attrs:{"role":"img"}},[_c('title',{attrs:{"id":'#icon-card-' + _vm.category.slug + '_title'},domProps:{"innerHTML":_vm._s(_vm.category.name)}}),_vm._v(" "),_c('use',{attrs:{"xlink:href":'#icon-card-' + _vm.category.slug,"xmlns:xlink":"http://www.w3.org/1999/xlink"}})])]):_vm._e(),_vm._v(" "),_c('div',{staticClass:"c-card__body"},[(_vm.title)?_c('a',{staticClass:"text-blue-dark",attrs:{"href":_vm.link,"target":_vm.blank ? '_blank' : false}},[_c('h3',{staticClass:"c-card__title text-blue-dark"},[_vm._v(_vm._s(_vm.title))])]):_vm._e(),_vm._v(" "),(_vm.subtitle)?_c('p',{staticClass:"c-card__subtitle type-small text-grey-mid",domProps:{"innerHTML":_vm._s(_vm.subtitle)}},[_vm._v("\n      "+_vm._s(_vm.subtitle)+"\n    ")]):_vm._e(),_vm._v(" "),_c('div',{staticClass:"c-card__summary"},[(_vm.summary)?_c('p',{domProps:{"innerHTML":_vm._s(_vm.summary)}},[_vm._v(_vm._s(_vm.summary))]):_vm._e(),_vm._v(" "),(_vm.link)?_c('p',{staticClass:"hide-for-print"},[_c('a',{attrs:{"href":_vm.link,"target":_vm.blank ? '_blank' : false}},[_vm._v("\n          "+_vm._s(_vm.strings.LEARN_MORE)+"\n          "),(_vm.subtitle)?_c('span',{staticClass:"sr-only"},[_vm._v(": "+_vm._s(_vm.subtitle)+"}")]):_vm._e()])]):_vm._e(),_vm._v(" "),(_vm.cta)?_c('p',{staticClass:"hide-for-print"},[_c('a',{staticClass:"btn btn-secondary btn-next",attrs:{"href":_vm.cta,"target":_vm.blank ? '_blank' : false}},[_vm._v(_vm._s(_vm.strings.CTA))])]):_vm._e()])])])};
+  var __vue_render__ = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('article',{staticClass:"c-card"},[(_vm.category)?_c('div',{staticClass:"c-card__icon"},[_c('svg',{class:'icon icon-' + _vm.category.slug + ((_vm.icon && _vm.icon.version) ? ("-v" + (_vm.icon.version)) : '') + ' ' + ((_vm.icon && _vm.icon.class) ? _vm.icon.class : ''),attrs:{"role":"img"}},[_c('title',{attrs:{"id":'#icon-card-' + _vm.category.slug + '_title'},domProps:{"innerHTML":_vm._s(_vm.category.name)}}),_vm._v(" "),_c('use',{attrs:{"xlink:href":'#icon-card-' + _vm.category.slug + ((_vm.icon && _vm.icon.version) ? ("-v" + (_vm.icon.version)) : ''),"xmlns:xlink":"http://www.w3.org/1999/xlink"}})])]):_vm._e(),_vm._v(" "),_c('div',{staticClass:"c-card__body"},[_c('h3',{staticClass:"c-card__title"},[(_vm.status)?_c('mark',{class:'badge color-' + _vm.status.type + '-status'},[_vm._v(_vm._s(_vm.status.text))]):_vm._e(),_vm._v(" "),(_vm.title)?_c('a',{staticClass:"text-inherit",attrs:{"href":_vm.link,"target":_vm.blank ? '_blank' : false}},[_vm._v("\n        "+_vm._s(_vm.title)+"\n      ")]):_vm._e()]),_vm._v(" "),(_vm.subtitle)?_c('p',{staticClass:"c-card__subtitle type-small color__alt",domProps:{"innerHTML":_vm._s(_vm.subtitle)}},[_vm._v("\n      "+_vm._s(_vm.subtitle)+"\n    ")]):_vm._e(),_vm._v(" "),_c('div',{staticClass:"c-card__summary"},[(_vm.summary)?_c('div',{domProps:{"innerHTML":_vm._s(_vm.summary)}},[_vm._v(_vm._s(_vm.summary))]):_vm._e(),_vm._v(" "),(_vm.link)?_c('p',{staticClass:"hide-for-print"},[_c('a',{attrs:{"href":_vm.link,"target":_vm.blank ? '_blank' : false}},[_vm._v("\n          "+_vm._s(_vm.strings.LEARN_MORE)+"\n          "),(_vm.subtitle)?_c('span',{staticClass:"sr-only"},[_vm._v(": "+_vm._s(_vm.subtitle)+"}")]):_vm._e()])]):_vm._e(),_vm._v(" "),(_vm.cta)?_c('p',{staticClass:"hide-for-print"},[_c('a',{staticClass:"btn btn-secondary btn-next",attrs:{"href":_vm.cta,"target":_vm.blank ? '_blank' : false}},[_vm._v(_vm._s(_vm.strings.CTA))])]):_vm._e()])])])};
   var __vue_staticRenderFns__ = [];
 
     /* style */
@@ -12159,39 +12165,37 @@ var VueComponents = (function () {
     );
 
   var CardData = {
-    /** The title of the card. */
+    // The plain language title of the card content.
     title: 'Money for heat and utility expenses',
-
-    /** The link to the full content the card is referring to. */
+    // The link to the full content the card is referring to.
     link: 'https://access.nyc.gov/programs/home-energy-assistance-program-heap/',
-
-    /** The text displayed beneath the title of the card. */
+    // The real title of the card content.
     subtitle: 'Home Energy Assistance Program (HEAP)',
-
-    /** A short paragraph summary of the card content. */
-    summary: ['<p>HEAP can help you pay for the costs of ', 'heating your home during the winter months.</p>'].join(''),
-
-    /** The category of the content, this will hide or show the icon. */
+    // A short paragraph summary of the card content.
+    summary: '<p>HEAP can help you pay for the costs of heating your home during the winter months.</p>',
+    // The category of the content, this will hide or show the icon.
     category: {
       slug: 'cash-expenses',
       name: 'Cash &amp; Expenses'
     },
-
-    /** Call to action button. */
+    // Settings for the icon including version to be used and color combination.
+    icon: {
+      version: '2',
+      class: 'text-blue-bright fill-blue-light'
+    },
+    // The status of the card content and the status type (info, warning, error, success).
+    status: {
+      type: 'info',
+      text: 'New'
+    },
+    // Call to action button.
     cta: 'https://access.nyc.gov/programs/home-energy-assistance-program-heap/',
-
-    /** Wether to open the card's hyperlinks in a new tab. */
+    // Wether to open the card's hyperlinks in a new tab.
     blank: true,
-
-    /**
-     * This is a list of available strings within the Compnent that can be
-     * overidden for translation. Below are the default strings.
-     */
+    // This is a list of available strings within the Compnent that can be overidden for translation. Below are the default strings.
     strings: {
-      'LEARN_MORE': 'Learn more',
-      // CTA text
-      'CTA': 'Apply' // Text for the call to action
-
+      LEARN_MORE: 'Learn more',
+      CTA: 'Apply'
     }
   };
 
