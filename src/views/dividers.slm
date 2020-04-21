@@ -23,4 +23,5 @@
 = content('content');
   = mixin('content-header', title);
   = mixin('section', false, 'elements/divider/divider');
-  = mixin('section', 'Light Divider', 'elements/divider/divider-light');
+  = mixin('section', 'Light Divider', 'elements/divider/divider-large');
+  = mixin('section', 'ACCESS NYC Divider', 'elements/divider/divider-access');

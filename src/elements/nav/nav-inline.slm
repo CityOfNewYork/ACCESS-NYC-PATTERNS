@@ -5,7 +5,7 @@ nav class='nav-inline'
   a class='active' href='#' Am I eligible?
   a href='#' Programs
   a href='#' Find help
-  a class='td-inherit' href='#search'
+  a class='no-underline' href='#search'
     svg class='icon icon-ui-search'
       use xlink:href='#icon-ui-search'
     | Search

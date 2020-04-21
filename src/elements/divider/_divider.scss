@@ -12,33 +12,42 @@
 .divider {
   border: none;
   margin: 0;
+
+  display: block;
+  width: 100%;
   border-bottom: 1px solid;
+  border-color: currentColor;
   border-color: inherit;
-  margin-bottom: $spacing-base;
-  padding-bottom: $spacing-base;
+}
+
+.divider-access {
   position: relative;
 
   &::after {
-    width: 130px;
-    height: 5px;
-    #{$text-direction-start}: 0;
-    background: $color-yellow-access;
-    bottom: -3px;
     content: '';
     display: block;
     position: absolute;
+    width: 130px;
+    height: 5px;
+
+    #{$text-direction-start}: 0;
+    background: $color-yellow-access;
+    bottom: -3px;
   }
 }
 
-.divider-light {
-  background: $color-grey-light;
-  border: 0;
-  display: block;
-  height: 1px;
-  margin: (1.5 * $spacing-base) 0;
-  width: 100%;
-
-  @media screen and (min-width: $screen-tablet) {
-    margin: (2.5 * $spacing-base) 0;
+@mixin divider($variant: '') {
+  .#{$variant}divider {
+    margin-top: 1.5 * $spacing-base;
+    margin-bottom: 1.5 * $spacing-base;
   }
+
+  .#{$variant}divider-large {
+    margin-top: 2.5 * $spacing-base;
+    margin-bottom: 2.5 * $spacing-base;
+  }
+}
+
+@include screens {
+  @include divider($variant);
 }

@@ -12,7 +12,6 @@
 // Declarations
 .o-banner {
   padding: $spacing-base;
-  @include font-smooth;
 }
 
 .o-banner__inner {
@@ -21,29 +20,50 @@
 }
 
 .o-banner__title {
-  border-bottom: 1px solid;
-  color: $color-white;
-  margin-bottom: 1.5*$spacing-base;
-  padding-bottom: 1.5*$spacing-base;
-  position: relative;
+  margin-bottom: 0;
 
-  &::after {
-    width: 130px;
-    height: 5px;
-    #{$text-direction-start}: 0;
-    content: '';
-    bottom: -3px;
-    background: $color-yellow-access;
-    display: block;
-    position: absolute;
+  a {
+    color: inherit;
+    position: relative;
+    text-decoration: none;
+    z-index: 1;
+
+    &:after {
+      content: ' ';
+      position: absolute;
+      width: calc(100% + 4px);
+      left: -2px;
+      z-index: -1;
+      transition: opacity 0.15s, bottom 0.15s;
+
+      height: 10px;
+      bottom: 2px;
+
+      @media screen and (min-width: $screen-tablet) {
+        height: 11px;
+        bottom: 4px;
+      }
+
+      @media screen and (min-width: $screen-desktop) {
+        height: 12px;
+        bottom: 4px;
+      }
+    }
+
+    &:hover {
+      &:after {
+        opacity: 0;
+        bottom: 2px;
+      }
+    }
   }
 }
 
-.o-banner__touts {
-  @media screen and (min-width: $screen-tablet) {
-    display: flex;
-  }
-}
+// .o-banner__touts {
+//   @media screen and (min-width: $screen-tablet) {
+//     display: flex;
+//   }
+// }
 
 .o-banner__tout {
   margin-bottom: $spacing-base;
@@ -51,8 +71,6 @@
   @media screen and (min-width: $screen-tablet) {
     display: flex;
     flex-direction: column;
-    padding-#{$text-direction-end}: $spacing-base;
-    width: 50%;
   }
 }
 
