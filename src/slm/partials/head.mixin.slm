@@ -18,11 +18,9 @@
     link rel='icon' type='image/png' sizes='96x96' href='images/favicon-96x96.png'
     link rel='icon' type='image/png' sizes='16x16' href='images/favicon-16x16.png'
 
-    meta name="msapplication-TileColor" content="#112E51"
-    meta name="msapplication-TileImage" content="images/ms-icon-144x144.png"
-    link rel="icon" type="image/x-icon" href="images/favicon.ico"
-
-    link rel='stylesheet' href='styles/site-default.css'
+    meta name='msapplication-TileColor' content='#112E51'
+    meta name='msapplication-TileImage' content='images/ms-icon-144x144.png'
+    link rel='icon' type='image/x-icon' href='images/favicon.ico'
 
     title
       - if (this.title != 'ACCESS NYC Patterns')
@@ -39,12 +37,25 @@
     / Google Analytics
     - this.GOOGLE_ANALYTICS = (this.process.env.NODE_ENV === 'production') ? 'UA-163470527-1' : 'UA-163470527-0'
 
-    script async src='https://www.googletagmanager.com/gtag/js?id=${this.GOOGLE_ANALYTICS}'
+    script(async src='https://www.googletagmanager.com/gtag/js?id=${this.GOOGLE_ANALYTICS}')
+
+    link href='//cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.18.1/build/styles/default.min.css' rel='stylesheet'
+    script src='//cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.18.1/build/highlight.min.js'
+
+    link href='styles/site-default.css' rel='stylesheet'
 
     javascript:
-      function load() {
+      document.addEventListener('DOMContentLoaded', event => {
+        hljs.configure({
+          languages: ['html', 'javascript', 'css', 'sass']
+        });
+
+        document.querySelectorAll('pre').forEach(block => {
+          hljs.highlightBlock(block);
+        });
+
         document.body.style.visibility = 'visible';
-      };
+      });
 
       window.dataLayer = window.dataLayer || [];
 

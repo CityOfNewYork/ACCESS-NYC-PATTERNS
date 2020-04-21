@@ -9,6 +9,7 @@ nav class='${class_nav}'
 
 nav class='${class_nav} screen-desktop:ps-4'
   span class='${class_nav_heading} ${class_nav_divider}' Elements
+  a class='${class_nav_item}' href='badge' Badge
   a class='${class_nav_item}' href='buttons' Buttons
   a class='${class_nav_item}' href='checkboxes' Checkboxes
   a class='${class_nav_item}' href='dividers' Dividers
@@ -18,7 +19,6 @@ nav class='${class_nav} screen-desktop:ps-4'
   a class='${class_nav_item}' href='links' Links
   a class='${class_nav_item}' href='lists' Lists
   a class='${class_nav_item}' href='nav' Nav
-  a class='${class_nav_item}' href='program-labels' Program Labels
   a class='${class_nav_item}' href='radios' Radios
   a class='${class_nav_item}' href='tables' Tables
   a class='${class_nav_item}' href='tooltips' Tooltips
@@ -61,9 +61,8 @@ nav class='${class_nav} screen-desktop:ps-4'
   span class='${class_nav_heading} ${class_nav_divider}' Utilities
   a class='${class_nav_item}' href='animate' Animate
   a class='${class_nav_item}' href='clearfix' Clearfix
-  a class='${class_nav_item}' href='colors' Colors
+  a class='${class_nav_item}' href='color' Color
   a class='${class_nav_item}' href='font' Fonts
-  a class='${class_nav_item}' href='inherit' Inherit
   a class='${class_nav_item}' href='language' Language
   a class='${class_nav_item}' href='margin' Margin
   a class='${class_nav_item}' href='media' Media

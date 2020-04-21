@@ -2,7 +2,7 @@ doctype html
 html lang='en' class='bg-white' dir='ltr'
   = content('head');
 
-  body class='bg-blue-dark' style='visibility: hidden;' onload='load()'
+  body class='bg-blue-dark' style='visibility: hidden;'
     a class='sr-only' href='#main-content' Skip to main content
 
     div class='bg-white'
