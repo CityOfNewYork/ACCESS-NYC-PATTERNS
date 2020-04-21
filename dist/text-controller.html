@@ -21,7 +21,6 @@
   <meta content="#112E51" name="msapplication-TileColor" />
   <meta content="images/ms-icon-144x144.png" name="msapplication-TileImage" />
   <link href="images/favicon.ico" rel="icon" type="image/x-icon" />
-  <link href="styles/site-default.css" rel="stylesheet" />
   <title>Text Controller | ACCESS NYC Patterns</title>
   <noscript>
     <style>
@@ -30,24 +29,31 @@
       }
     </style>
   </noscript>
-  <script>
-    async src = 'https://www.googletagmanager.com/gtag/js?id=UA-163470527-1'
-  </script>
+  <script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-163470527-0"></script>
+  <link href="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.18.1/build/styles/default.min.css" rel="stylesheet" />
+  <script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.18.1/build/highlight.min.js"></script>
+  <link href="styles/site-default.css" rel="stylesheet" />
   <script type="text/javascript">
-    function load() {
+    document.addEventListener('DOMContentLoaded', event => {
+      hljs.configure({
+        languages: ['html', 'javascript', 'css', 'sass']
+      });
+      document.querySelectorAll('pre').forEach(block => {
+        hljs.highlightBlock(block);
+      });
       document.body.style.visibility = 'visible';
-    };
+    });
     window.dataLayer = window.dataLayer || [];
 
     function gtag() {
       dataLayer.push(arguments);
     }
     gtag('js', new Date());
-    gtag('config', 'UA-163470527-1');
+    gtag('config', 'UA-163470527-0');
   </script>
 </head>
 
-<body class="bg-blue-dark" onload="load()" style="visibility: hidden;">
+<body class="bg-blue-dark" style="visibility: hidden;">
   <a class="sr-only" href="#main-content">Skip to main content</a>
   <div class="bg-white">
     <header class="color-light-background px-2">
@@ -92,6 +98,7 @@
           </nav>
           <nav class="screen-tablet:flex-1 mb-1 px-2 screen-desktop:ps-4">
             <span class="type-h3 text-small mb-1 block screen-tablet:border-b screen-tablet:pb-2 screen-tablet:mb-1 border-white p-1">Elements</span>
+            <a class="block p-1" href="badge">Badge</a>
             <a class="block p-1" href="buttons">Buttons</a>
             <a class="block p-1" href="checkboxes">Checkboxes</a>
             <a class="block p-1" href="dividers">Dividers</a>
@@ -101,7 +108,6 @@
             <a class="block p-1" href="links">Links</a>
             <a class="block p-1" href="lists">Lists</a>
             <a class="block p-1" href="nav">Nav</a>
-            <a class="block p-1" href="program-labels">Program Labels</a>
             <a class="block p-1" href="radios">Radios</a>
             <a class="block p-1" href="tables">Tables</a>
             <a class="block p-1" href="tooltips">Tooltips</a>
@@ -144,9 +150,8 @@
             <span class="type-h3 text-small mb-1 block screen-tablet:border-b screen-tablet:pb-2 screen-tablet:mb-1 border-white p-1">Utilities</span>
             <a class="block p-1" href="animate">Animate</a>
             <a class="block p-1" href="clearfix">Clearfix</a>
-            <a class="block p-1" href="colors">Colors</a>
+            <a class="block p-1" href="color">Color</a>
             <a class="block p-1" href="font">Fonts</a>
-            <a class="block p-1" href="inherit">Inherit</a>
             <a class="block p-1" href="language">Language</a>
             <a class="block p-1" href="margin">Margin</a>
             <a class="block p-1" href="media">Media</a>
@@ -412,9 +417,9 @@ new TextController(element);</code></pre>
           </div>
         </section>
         <div class="sticky bottom-0 bg-white shadow-up relative z-10 overflow-y-scroll whitespace-no-wrap animated fadeInUp">
-          <nav class="nav-inline text-small p-2 screen-tablet:p-4">
-            <span class="me-2 screen-tablet:me-4">Jump to:</span>
-            <a class="me-2 screen-tablet:me-4" href="#main-content">Page Top</a>
+          <nav class="nav-inline inline-block text-small p-2 screen-tablet:p-4">
+            <span class="me-2">Jump to:</span>
+            <a class="me-2 screen-tablet:me-4" href="#main-content">Top</a>
             <a class="me-2 screen-tablet:me-4" href="#text-controller-usage">Text Controller Usage</a>
           </nav>
         </div>
@@ -457,6 +462,7 @@ new TextController(element);</code></pre>
         </nav>
         <nav class="screen-tablet:flex-1 mb-1 px-2 screen-desktop:ps-4">
           <span class="type-h3 text-small mb-1 block screen-tablet:border-b screen-tablet:pb-2 screen-tablet:mb-1 border-white p-1">Elements</span>
+          <a class="block p-1" href="badge">Badge</a>
           <a class="block p-1" href="buttons">Buttons</a>
           <a class="block p-1" href="checkboxes">Checkboxes</a>
           <a class="block p-1" href="dividers">Dividers</a>
@@ -466,7 +472,6 @@ new TextController(element);</code></pre>
           <a class="block p-1" href="links">Links</a>
           <a class="block p-1" href="lists">Lists</a>
           <a class="block p-1" href="nav">Nav</a>
-          <a class="block p-1" href="program-labels">Program Labels</a>
           <a class="block p-1" href="radios">Radios</a>
           <a class="block p-1" href="tables">Tables</a>
           <a class="block p-1" href="tooltips">Tooltips</a>
@@ -509,9 +514,8 @@ new TextController(element);</code></pre>
           <span class="type-h3 text-small mb-1 block screen-tablet:border-b screen-tablet:pb-2 screen-tablet:mb-1 border-white p-1">Utilities</span>
           <a class="block p-1" href="animate">Animate</a>
           <a class="block p-1" href="clearfix">Clearfix</a>
-          <a class="block p-1" href="colors">Colors</a>
+          <a class="block p-1" href="color">Color</a>
           <a class="block p-1" href="font">Fonts</a>
-          <a class="block p-1" href="inherit">Inherit</a>
           <a class="block p-1" href="language">Language</a>
           <a class="block p-1" href="margin">Margin</a>
           <a class="block p-1" href="media">Media</a>
@@ -538,6 +542,7 @@ new TextController(element);</code></pre>
   <script type="text/javascript">
     access.textController();
   </script>
+  <script src="/reload/reload.js"></script>
 </body>
 
 </html>
