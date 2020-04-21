@@ -5,7 +5,6 @@
 div class='code-block'
   pre
     = '@import url("https://fonts.googleapis.com/css?family=Noto+Serif:400");\n';
-    = '\n';
     = '/**\n';
     = ' * ACCESS NYC Patterns v' + this.package.version + '\n';
     = ' * Formstack Object\n';
@@ -19,5 +18,4 @@ div class='code-block'
     = ' * styling of this theme. Please update the version\n';
     = ' * number and this description if it is to be changed.\n';
     = ' */\n';
-    = '\n';
     = this.include('../dist/objects/formstack/formstack.css');
