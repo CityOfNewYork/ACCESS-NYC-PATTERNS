@@ -2,7 +2,7 @@
 = extend('/slm/layouts/default');
 
 / Component
-- title = 'Program Labels';
+- title = 'Badge';
 
 / Partials
 = partial('/slm/partials/styles.slm');
@@ -22,8 +22,7 @@
 
 = content('content');
   = mixin('content-header', title);
-  = mixin('section', false, 'elements/program-labels/program-labels');
-  = mixin('section', 'Program Label Info', 'elements/program-labels/program-labels-info');
-  = mixin('section', 'Program Label Warning', 'elements/program-labels/program-labels-warning');
-  = mixin('section', 'Program Label Success', 'elements/program-labels/program-labels-success');
-  = mixin('section', 'Program Label Urgent', 'elements/program-labels/program-labels-urgent');
+  = mixin('section', false, 'elements/badge/badge');
+  = mixin('section', 'Badge Warning', 'elements/badge/badge-warning');
+  = mixin('section', 'Badge Success', 'elements/badge/badge-success');
+  = mixin('section', 'Badge Urgent', 'elements/badge/badge-urgent');

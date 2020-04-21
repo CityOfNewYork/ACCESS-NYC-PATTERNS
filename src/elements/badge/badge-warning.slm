@@ -1,0 +1,6 @@
+/
+/ Badge Warning
+/
+
+mark class='badge bg-status-warning'
+  | New
