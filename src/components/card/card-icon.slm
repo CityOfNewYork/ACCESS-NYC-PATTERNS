@@ -1,9 +1,0 @@
-article class='c-card'
-  div class='c-card__icon'
-    a href='#'
-      div class='icon bg-icon-card-cash-expenses'
-  div class='c-card__body'
-    a href='#'
-      h3 class='c-card__title' Tax relief for dependent care
-    div class='c-card__summary hide-for-print'
-      a href='#' Learn more

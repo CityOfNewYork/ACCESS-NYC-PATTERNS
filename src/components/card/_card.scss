@@ -8,7 +8,6 @@
 @import 'config/direction';
 @import 'config/media';
 @import 'config/typography';
-// @import 'bourbon-neat/app/assets/stylesheets/grid/media';
 
 // Declarations
 .c-card {
@@ -34,11 +33,13 @@
 [class*='c-card__icon'] {
   $icon-height: $spacing-base * 2;
   $icon-width: $spacing-base * 2;
-  margin-bottom: $spacing-base/3;
+
+  margin-bottom: $spacing-base / 3;
 
   .icon {
     width: $icon-width;
     height: $icon-height;
+
     display: inline-block;
     vertical-align: middle;
   }
@@ -48,10 +49,6 @@
     margin-#{$text-direction-end}: $spacing-base;
     min-width: $icon-width; // Fixes an iOS 9 flexbox bug.
     width: $icon-width;
-
-    .program-label {
-      display: none;
-    }
   }
 }
 
@@ -77,23 +74,17 @@
 .c-card__title {
   color: $color-black;
   @include typography-h4();
-  margin-bottom: 0;
 
-  .label {
-    display: none;
-
-    @media screen and (min-width: $screen-mobile) {
-      display: inline-block;
-    }
-  }
+  margin-top: $grid-base - 1;
+  margin-bottom: $grid-base;
 }
 
 .c-card__subtitle {
-  @include typography-base;
+  @include typography-base();
 }
 
 .c-card__summary {
-  :last-child {
+  > :last-child {
     margin-bottom: 0;
   }
 }

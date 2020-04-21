@@ -21,10 +21,8 @@
 
 = content('content');
   = mixin('content-header', title);
-  = mixin('section', false, 'components/card/card');
-  = mixin('section', 'Card With Icon', 'components/card/card-icon');
-  = mixin('section', 'Card With Icon and Information', 'components/card/card-icon-info');
-  = mixin('section', 'Card With Icon, Information, and Apply Button', 'components/card/card-icon-info-apply');
+  = mixin('section', false, 'components/card/card', 'gutter');
+  = mixin('section', 'Simple Card', 'components/card/card-simple');
 
   = mixin('section', 'Vue Card', 'components/card/card.vue');
   = mixin('section-text', 'Vue Component Usage', 'components/card/card.readme.vue');

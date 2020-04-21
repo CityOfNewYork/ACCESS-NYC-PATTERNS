@@ -4,8 +4,20 @@ The [Vue Card](#vue-card) can be imported from from the paths below in your main
 
     Vue.component('c-card', CardVue);
 
-    new Vue();
-Below is a guide for using these particular component properties. For basic details of using Vue Components within a Vue application, [refer to the Vue.js documentation](https://vuejs.org/v2/guide/components.html).
+    new Vue({
+      el: '#app-c-card'
+      data: {
+        card: {Object: 'See sample data below'}
+      }
+    });
+
+Markup;
+
+    <div id='app-c-card'>
+      <c-card v-bind='card'></c-card>
+    </div>
+
+Below is a guide for using component properties. For basic details of using Vue Components within a Vue application, [refer to the Vue.js documentation](https://vuejs.org/v2/guide/components.html).
 
 #### Props
 
@@ -13,5 +25,9 @@ Below is a description of accepted properties and their values.
 
 Prop       | Type      | Description
 -----------|-----------|-
-`:card`    | *object*  | Content and configuration for the card to render. A [sample set can be seen here](https://github.com/CityOfNewYork/ACCESS-NYC-PATTERNS/blob/master/src/components/card/card.data.js). In order to disable certain options, just omit those props.
+`:card`    | *object*  | Content and configuration for the card to render. [The sample set can be seen here](#sample-data). In order to disable certain options, just omit those props.
 `:strings` | *object*  | A dictionary containing static strings used in the component. It can be packaged with the object above.
+
+#### Sample Data
+
+    include{{ components/card/card.data.js }}

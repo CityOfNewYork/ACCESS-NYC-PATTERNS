@@ -2,23 +2,27 @@
   <!-- eslint-disable max-len -->
   <article class="c-card">
     <div class="c-card__icon" v-if="category">
-      <svg :class="'icon icon-' + category.slug" role="img">
+      <svg :class="'icon icon-' + category.slug + ((icon && icon.version) ? `-v${icon.version}` : '') + ' ' + ((icon && icon.class) ? icon.class : '')" role="img">
         <title :id="'#icon-card-' + category.slug + '_title'" v-html="category.name"></title>
-        <use :xlink:href="'#icon-card-' + category.slug" xmlns:xlink="http://www.w3.org/1999/xlink"></use>
+        <use :xlink:href="'#icon-card-' + category.slug + ((icon && icon.version) ? `-v${icon.version}` : '')" xmlns:xlink="http://www.w3.org/1999/xlink"></use>
       </svg>
     </div>
 
     <div class="c-card__body">
-      <a class="text-blue-dark" :href="link" :target="blank ? '_blank' : false" v-if="title">
-        <h3 class="c-card__title text-blue-dark">{{ title }}</h3>
-      </a>
+      <h3 class="c-card__title">
+        <mark v-if="status" :class="'badge color-' + status.type + '-status'">{{ status.text }}</mark>
 
-      <p class="c-card__subtitle type-small text-grey-mid" v-if="subtitle" v-html="subtitle">
+        <a class="text-inherit" :href="link" :target="blank ? '_blank' : false" v-if="title">
+          {{ title }}
+        </a>
+      </h3>
+
+      <p class="c-card__subtitle type-small color__alt" v-if="subtitle" v-html="subtitle">
         {{ subtitle }}
       </p>
 
       <div class="c-card__summary">
-        <p v-if="summary" v-html="summary">{{ summary }}</p>
+        <div v-if="summary" v-html="summary">{{ summary }}</div>
 
         <p class="hide-for-print" v-if="link">
           <a :href="link" :target="blank ? '_blank' : false">
@@ -35,25 +39,23 @@
   </article>
 </template>
 
-<style>
-  /* @import 'components/card/card'; */
-</style>
-
 <script>
   export default {
     props: {
-      'cta': {type: String},
-      'title': {type: String},
-      'link': {type: String},
-      'subtitle': {type: String},
-      'summary': {type: String},
-      'category': {type: Object},
-      'blank': {type: Boolean},
-      'strings': {
+      cta: {type: String},
+      title: {type: String},
+      link: {type: String},
+      subtitle: {type: String},
+      summary: {type: String},
+      category: {type: Object},
+      icon: {type: Object},
+      status: {type: Object},
+      blank: {type: Boolean},
+      strings: {
         type: Object,
         default: () => ({
-          'LEARN_MORE': 'Learn more',
-          'CTA': 'Apply'
+          LEARN_MORE: 'Learn more',
+          CTA: 'Apply'
         })
       }
     }
