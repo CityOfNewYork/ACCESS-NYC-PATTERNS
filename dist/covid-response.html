@@ -1,0 +1,1059 @@
+<!DOCTYPE html>
+<html class="bg-white" dir="ltr" lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta content="IE=edge" http-equiv="X-UA-Compatible" />
+  <meta content="width=device-width, initial-scale=1" name="viewport" />
+  <link href="images/apple-icon-57x57.png" rel="apple-touch-icon" sizes="57x57" />
+  <link href="images/apple-icon-60x60.png" rel="apple-touch-icon" sizes="60x60" />
+  <link href="images/apple-icon-72x72.png" rel="apple-touch-icon" sizes="72x72" />
+  <link href="images/apple-icon-76x76.png" rel="apple-touch-icon" sizes="76x76" />
+  <link href="images/apple-icon-114x114.png" rel="apple-touch-icon" sizes="114x114" />
+  <link href="images/apple-icon-120x120.png" rel="apple-touch-icon" sizes="120x120" />
+  <link href="images/apple-icon-144x144.png" rel="apple-touch-icon" sizes="144x144" />
+  <link href="images/apple-icon-152x152.png" rel="apple-touch-icon" sizes="152x152" />
+  <link href="images/apple-icon-180x180.png" rel="apple-touch-icon" sizes="180x180" />
+  <link href="images/android-icon-192x192.png" rel="icon" sizes="192x192" type="image/png" />
+  <link href="images/favicon-32x32.png" rel="icon" sizes="32x32" type="image/png" />
+  <link href="images/favicon-96x96.png" rel="icon" sizes="96x96" type="image/png" />
+  <link href="images/favicon-16x16.png" rel="icon" sizes="16x16" type="image/png" />
+  <meta content="#112E51" name="msapplication-TileColor" />
+  <meta content="images/ms-icon-144x144.png" name="msapplication-TileImage" />
+  <link href="images/favicon.ico" rel="icon" type="image/x-icon" />
+  <title>COVID Response | ACCESS NYC Patterns</title>
+  <noscript>
+    <style>
+      body {
+        visibility: visible !important;
+      }
+    </style>
+  </noscript>
+  <script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-163470527-0"></script>
+  <link href="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.18.1/build/styles/default.min.css" rel="stylesheet" />
+  <script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.18.1/build/highlight.min.js"></script>
+  <link href="styles/site-default.css" rel="stylesheet" />
+  <script type="text/javascript">
+    document.addEventListener('DOMContentLoaded', event => {
+      hljs.configure({
+        languages: ['html', 'javascript', 'css', 'sass']
+      });
+      document.querySelectorAll('pre').forEach(block => {
+        hljs.highlightBlock(block);
+      });
+      document.body.style.visibility = 'visible';
+    });
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+    gtag('js', new Date());
+    gtag('config', 'UA-163470527-0');
+  </script>
+</head>
+
+<body class="bg-blue-dark" style="visibility: hidden;">
+  <a class="sr-only" href="#main-content">Skip to main content</a>
+  <div class="bg-white">
+    <header class="color-light-background px-2">
+      <div class="border-b border-grey-light">
+        <div class="flex items-center justify-between p-2 screen-tablet:py-4 screen-tablet:px-2">
+          <div>
+            <h1 class="m-0 p-0 leading-normal">
+              <a href="index">
+                <span class="hidden">ACCESS NYC</span>
+                <svg aria-hidden="true" class="icon-logo-mark screen-tablet:hidden">
+                  <use xlink:href="#icon-logo-mark"></use>
+                </svg>
+                <svg aria-hidden="true" class="icon-logo-full--large text-blue-dark hidden screen-tablet:inline-block">
+                  <use xlink:href="#icon-logo-full"></use>
+                </svg>
+              </a>
+            </h1>
+          </div>
+          <div class="flex items-center">
+            <h2 class="text-small m-0 text-blue-dark screen-tablet:hidden">Patterns</h2>
+            <h2 aria-hidden="true" class="type-h1 m-0 text-blue-dark hidden screen-tablet:inline-block">Patterns</h2>
+            <nav class="text-small">
+              <a class="rounded-lg text-blue-dark border-2 no-underline px-1 ms-2 hidden screen-tablet:inline-block" href="https://github.com/CityOfNewYork/access-nyc-patterns/tree/v0.14.0">0.14.0</a>
+              <a aria-hidden="true" class="ms-1 screen-tablet:ms-2 screen-tablet:hidden" href="https://github.com/CityOfNewYork/access-nyc-patterns/tree/v0.14.0">0.14.0</a>
+              <button aria-controls="main-menu" aria-expanded="false" class="btn-link ms-1 screen-tablet:ms-2" data-js="toggle" id="main-menu-control">Menu</button>
+            </nav>
+          </div>
+        </div>
+      </div>
+    </header>
+    <aside aria-hidden="true" aria-labelledby="main-menu-control" class="color-mid-background text-small hidden hidden:overflowFadeInUp animated relative" id="main-menu" role="region" style="top: -1px">
+      <div class="page-wrapper py-4 animated">
+        <div class="screen-tablet:flex">
+          <nav class="screen-tablet:flex-1 mb-1 px-2">
+            <span class="type-h3 text-small mb-1 block screen-tablet:border-b screen-tablet:pb-2 screen-tablet:mb-1 border-white p-1">Guides</span>
+            <a class="block p-1" href="index">Home</a>
+            <a class="block p-1" href="about">About</a>
+            <a class="block p-1" href="installation">Installation</a>
+            <a class="block p-1" href="developer-tools">Developer Tools</a>
+            <a class="block p-1 screen-tablet:border-b screen-tablet:pb-2 screen-tablet:mb-1 border-white p-1" href="prototyping">Prototyping</a>
+            <span class="type-h3 text-small mb-1 block screen-tablet:border-b screen-tablet:pb-2 screen-tablet:mb-1 border-white p-1">Collections</span>
+            <a class="block p-1 screen-tablet:border-b screen-tablet:pb-2 screen-tablet:mb-1 border-white p-1" href="covid-response">COVID Response</a>
+            <span class="type-h3 text-small mb-1 block screen-tablet:border-b screen-tablet:pb-2 screen-tablet:mb-1 border-white p-1">Links</span>
+            <a class="block p-1" href="https://www.npmjs.com/package/access-nyc-patterns">NPM Package</a>
+            <a class="block p-1" href="https://github.com/CityOfNewYork/access-nyc-patterns">GitHub Repository</a>
+          </nav>
+          <nav class="screen-tablet:flex-1 mb-1 px-2 screen-desktop:ps-4">
+            <span class="type-h3 text-small mb-1 block screen-tablet:border-b screen-tablet:pb-2 screen-tablet:mb-1 border-white p-1">Elements</span>
+            <a class="block p-1" href="badge">Badge</a>
+            <a class="block p-1" href="buttons">Buttons</a>
+            <a class="block p-1" href="checkboxes">Checkboxes</a>
+            <a class="block p-1" href="dividers">Dividers</a>
+            <a class="block p-1" href="inputs">Inputs</a>
+            <a class="block p-1" href="icons">Icons</a>
+            <a class="block p-1" href="layouts">Layouts</a>
+            <a class="block p-1" href="links">Links</a>
+            <a class="block p-1" href="lists">Lists</a>
+            <a class="block p-1" href="nav">Nav</a>
+            <a class="block p-1" href="radios">Radios</a>
+            <a class="block p-1" href="tables">Tables</a>
+            <a class="block p-1" href="tooltips">Tooltips</a>
+            <a class="block p-1" href="toggles">Toggles</a>
+            <a class="block p-1" href="selects">Selects</a>
+          </nav>
+          <nav class="screen-tablet:flex-1 mb-1 px-2 screen-desktop:ps-4">
+            <span class="type-h3 text-small mb-1 block screen-tablet:border-b screen-tablet:pb-2 screen-tablet:mb-1 border-white p-1">Components</span>
+            <a class="block p-1" href="accordion">Accordion</a>
+            <a class="block p-1" href="alert-box">Alert Box</a>
+            <a class="block p-1" href="card">Card</a>
+            <a class="block p-1" href="checklist">Checklist</a>
+            <a class="block p-1" href="disclaimer">Disclaimer</a>
+            <a class="block p-1" href="filter">Filter</a>
+            <a class="block p-1" href="header">Header</a>
+            <a class="block p-1" href="member-list">Member List</a>
+            <a class="block p-1" href="nearby-stops">Nearby Stops</a>
+            <a class="block p-1" href="share-form">Share Form</a>
+            <a class="block p-1" href="side-nav">Side Nav</a>
+            <a class="block p-1" href="question">Question</a>
+          </nav>
+          <nav class="screen-tablet:flex-1 mb-1 px-2 screen-desktop:ps-4">
+            <span class="type-h3 text-small mb-1 block screen-tablet:border-b screen-tablet:pb-2 screen-tablet:mb-1 border-white p-1">Objects</span>
+            <a class="block p-1" href="alert-banner">Alert Banner</a>
+            <a class="block p-1" href="announcements">Announcements</a>
+            <a class="block p-1" href="banner">Banner</a>
+            <a class="block p-1" href="card-list">Card Lists</a>
+            <a class="block p-1" href="come-back-later">Come Back Later</a>
+            <a class="block p-1" href="content">Content</a>
+            <a class="block p-1" href="emails">Emails</a>
+            <a class="block p-1" href="footer">Footer</a>
+            <a class="block p-1" href="formstack">Formstack</a>
+            <a class="block p-1" href="mobile-nav">Mobile Nav</a>
+            <a class="block p-1" href="navigation">Navigation</a>
+            <a class="block p-1" href="newsletter">Newsletter</a>
+            <a class="block p-1" href="search-box">Search Box</a>
+            <a class="block p-1" href="text-controller">Text Controller</a>
+          </nav>
+          <nav class="screen-tablet:flex-1 mb-1 px-2 screen-desktop:ps-4">
+            <span class="type-h3 text-small mb-1 block screen-tablet:border-b screen-tablet:pb-2 screen-tablet:mb-1 border-white p-1">Utilities</span>
+            <a class="block p-1" href="animate">Animate</a>
+            <a class="block p-1" href="clearfix">Clearfix</a>
+            <a class="block p-1" href="color">Color</a>
+            <a class="block p-1" href="font">Fonts</a>
+            <a class="block p-1" href="language">Language</a>
+            <a class="block p-1" href="margin">Margin</a>
+            <a class="block p-1" href="media">Media</a>
+            <a class="block p-1" href="padding">Padding</a>
+            <a class="block p-1" href="screen-reader">Screen Reader</a>
+            <a class="block p-1" href="tailwindcss">tailwindcss</a>
+            <a class="block p-1" href="text">Text</a>
+            <a class="block p-1" href="toggle">Toggle</a>
+            <a class="block p-1" href="typography">Typography</a>
+          </nav>
+        </div>
+        <div class="text-center">
+          <button aria-controls="main-menu" aria-expanded="false" class="btn-link" data-js="toggle">Close Menu</button>
+        </div>
+      </div>
+    </aside>
+    <main class="color-light-background screen-tablet:pt-4" id="main-content">
+      <article class="screen-tablet:pt-4 clearfix">
+        <header class="page-wrapper px-2 screen-desktop:px-0 layout-home-body">
+          <div class="my-0 w-full">
+            <h1 class="text-blue-dark px-2 mb-0 screen-tablet:pb-4 screen-tablet:mb-4">COVID Response</h1>
+          </div>
+        </header>
+        <section class="pb-4 mb-4" id="badge">
+          <div class="page-wrapper px-2">
+            <header class="layout-home-body">
+              <div class="my-0 px-2 pt-1 pb-4 border-b border-grey-light">
+                <h2 class="m-0">
+                  <a class="text-grey-mid font-normal no-underline capitalize" href="#badge">Badge</a>
+                </h2>
+                <div class="pt-2">
+                  <p class="text-small m-0">Source: <code>
+                      <a href="https://github.com/CityOfNewYork/access-nyc-patterns/tree/v0.14.0/src/elements/badge">src/elements/badge/badge-covid-response</a>
+                    </code>
+                  </p>
+                </div>
+              </div>
+            </header>
+            <div class="layout-home-body">
+              <div class="my-0 pt-4 px-2 text-small table-align-start"></div>
+            </div>
+            <div class="layout-gutter screen-tablet:layout-columns justify-between pt-4">
+              <div class="screen-tablet:pe-2">
+                <mark class="badge color-covid-response-status">New</mark>
+              </div>
+              <div>
+                <div class="code-block mb-1">
+                  <pre>&lt;mark class=&quot;badge color-covid-response-status&quot;&gt;New&lt;/mark&gt;</pre>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section class="pb-4 mb-4" id="program-category-icons">
+          <div class="page-wrapper px-2">
+            <header class="layout-home-body">
+              <div class="my-0 px-2 pt-1 pb-4 border-b border-grey-light">
+                <h2 class="m-0">
+                  <a class="text-grey-mid font-normal no-underline capitalize" href="#program-category-icons">Program Category Icons</a>
+                </h2>
+                <div class="pt-2">
+                  <p class="text-small m-0">Source: <code>
+                      <a href="https://github.com/CityOfNewYork/access-nyc-patterns/tree/v0.14.0/src/elements/icons">src/elements/icons/icons-program-category-covid-response</a>
+                    </code>
+                  </p>
+                </div>
+              </div>
+            </header>
+            <div class="layout-home-body">
+              <div class="my-0 pt-4 px-2 text-small table-align-start"></div>
+            </div>
+            <div class="layout-gutter screen-tablet:layout-gutter justify-between pt-4">
+              <div class="layout-gutter screen-mobile:layout-two-columns-gutter screen-tablet:layout-three-columns-gutter">
+                <div class="flex flex-col justify-between items-center border border-grey-lightest p-2">
+                  <div class="w-full">
+                    <div>
+                      <h3 class="text-small capitalize mb-2">
+                        <a href="https://cdn.jsdelivr.net/gh/cityofnewyork/access-nyc-patterns@v0.14.0/dist/svg/icon-cash-expenses-v2.svg" target="_blank">icon cash expenses v2</a>
+                      </h3>
+                      <div class="py-4 text-center px-2 flex items-center justify-center" style="min-height: 150px">
+                        <svg class="icon-cash-expenses-v2 text-covid-response fill-covid-response-light">
+                          <title id="icon-cash-expenses-v2-title">icon cash expenses v2</title>
+                          <use xlink:href="#icon-cash-expenses-v2"></use>
+                        </svg>
+                      </div>
+                      <div class="code-block mb-0">
+                        <pre>&lt;svg class=&quot;icon-cash-expenses-v2 text-covid-response fill-covid-response-light&quot;&gt;
+  &lt;title id=&quot;icon-cash-expenses-v2-title&quot;&gt;icon cash expenses v2&lt;/title&gt;
+  &lt;use xlink:href=&quot;#icon-cash-expenses-v2&quot;&gt;&lt;/use&gt;
+&lt;/svg&gt;</pre>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="flex flex-col justify-between items-center border border-grey-lightest p-2">
+                  <div class="w-full">
+                    <div>
+                      <h3 class="text-small capitalize mb-2">
+                        <a href="https://cdn.jsdelivr.net/gh/cityofnewyork/access-nyc-patterns@v0.14.0/dist/svg/icon-child-care-v2.svg" target="_blank">icon child care v2</a>
+                      </h3>
+                      <div class="py-4 text-center px-2 flex items-center justify-center" style="min-height: 150px">
+                        <svg class="icon-child-care-v2 text-covid-response fill-covid-response-light">
+                          <title id="icon-child-care-v2-title">icon child care v2</title>
+                          <use xlink:href="#icon-child-care-v2"></use>
+                        </svg>
+                      </div>
+                      <div class="code-block mb-0">
+                        <pre>&lt;svg class=&quot;icon-child-care-v2 text-covid-response fill-covid-response-light&quot;&gt;
+  &lt;title id=&quot;icon-child-care-v2-title&quot;&gt;icon child care v2&lt;/title&gt;
+  &lt;use xlink:href=&quot;#icon-child-care-v2&quot;&gt;&lt;/use&gt;
+&lt;/svg&gt;</pre>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="flex flex-col justify-between items-center border border-grey-lightest p-2">
+                  <div class="w-full">
+                    <div>
+                      <h3 class="text-small capitalize mb-2">
+                        <a href="https://cdn.jsdelivr.net/gh/cityofnewyork/access-nyc-patterns@v0.14.0/dist/svg/icon-city-id-card-v2.svg" target="_blank">icon city id card v2</a>
+                      </h3>
+                      <div class="py-4 text-center px-2 flex items-center justify-center" style="min-height: 150px">
+                        <svg class="icon-city-id-card-v2 text-covid-response fill-covid-response-light">
+                          <title id="icon-city-id-card-v2-title">icon city id card v2</title>
+                          <use xlink:href="#icon-city-id-card-v2"></use>
+                        </svg>
+                      </div>
+                      <div class="code-block mb-0">
+                        <pre>&lt;svg class=&quot;icon-city-id-card-v2 text-covid-response fill-covid-response-light&quot;&gt;
+  &lt;title id=&quot;icon-city-id-card-v2-title&quot;&gt;icon city id card v2&lt;/title&gt;
+  &lt;use xlink:href=&quot;#icon-city-id-card-v2&quot;&gt;&lt;/use&gt;
+&lt;/svg&gt;</pre>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="flex flex-col justify-between items-center border border-grey-lightest p-2">
+                  <div class="w-full">
+                    <div>
+                      <h3 class="text-small capitalize mb-2">
+                        <a href="https://cdn.jsdelivr.net/gh/cityofnewyork/access-nyc-patterns@v0.14.0/dist/svg/icon-education-v2.svg" target="_blank">icon education v2</a>
+                      </h3>
+                      <div class="py-4 text-center px-2 flex items-center justify-center" style="min-height: 150px">
+                        <svg class="icon-education-v2 text-covid-response fill-covid-response-light">
+                          <title id="icon-education-v2-title">icon education v2</title>
+                          <use xlink:href="#icon-education-v2"></use>
+                        </svg>
+                      </div>
+                      <div class="code-block mb-0">
+                        <pre>&lt;svg class=&quot;icon-education-v2 text-covid-response fill-covid-response-light&quot;&gt;
+  &lt;title id=&quot;icon-education-v2-title&quot;&gt;icon education v2&lt;/title&gt;
+  &lt;use xlink:href=&quot;#icon-education-v2&quot;&gt;&lt;/use&gt;
+&lt;/svg&gt;</pre>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="flex flex-col justify-between items-center border border-grey-lightest p-2">
+                  <div class="w-full">
+                    <div>
+                      <h3 class="text-small capitalize mb-2">
+                        <a href="https://cdn.jsdelivr.net/gh/cityofnewyork/access-nyc-patterns@v0.14.0/dist/svg/icon-enrichment-v2.svg" target="_blank">icon enrichment v2</a>
+                      </h3>
+                      <div class="py-4 text-center px-2 flex items-center justify-center" style="min-height: 150px">
+                        <svg class="icon-enrichment-v2 text-covid-response fill-covid-response-light">
+                          <title id="icon-enrichment-v2-title">icon enrichment v2</title>
+                          <use xlink:href="#icon-enrichment-v2"></use>
+                        </svg>
+                      </div>
+                      <div class="code-block mb-0">
+                        <pre>&lt;svg class=&quot;icon-enrichment-v2 text-covid-response fill-covid-response-light&quot;&gt;
+  &lt;title id=&quot;icon-enrichment-v2-title&quot;&gt;icon enrichment v2&lt;/title&gt;
+  &lt;use xlink:href=&quot;#icon-enrichment-v2&quot;&gt;&lt;/use&gt;
+&lt;/svg&gt;</pre>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="flex flex-col justify-between items-center border border-grey-lightest p-2">
+                  <div class="w-full">
+                    <div>
+                      <h3 class="text-small capitalize mb-2">
+                        <a href="https://cdn.jsdelivr.net/gh/cityofnewyork/access-nyc-patterns@v0.14.0/dist/svg/icon-family-services-v2.svg" target="_blank">icon family services v2</a>
+                      </h3>
+                      <div class="py-4 text-center px-2 flex items-center justify-center" style="min-height: 150px">
+                        <svg class="icon-family-services-v2 text-covid-response fill-covid-response-light">
+                          <title id="icon-family-services-v2-title">icon family services v2</title>
+                          <use xlink:href="#icon-family-services-v2"></use>
+                        </svg>
+                      </div>
+                      <div class="code-block mb-0">
+                        <pre>&lt;svg class=&quot;icon-family-services-v2 text-covid-response fill-covid-response-light&quot;&gt;
+  &lt;title id=&quot;icon-family-services-v2-title&quot;&gt;icon family services v2&lt;/title&gt;
+  &lt;use xlink:href=&quot;#icon-family-services-v2&quot;&gt;&lt;/use&gt;
+&lt;/svg&gt;</pre>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="flex flex-col justify-between items-center border border-grey-lightest p-2">
+                  <div class="w-full">
+                    <div>
+                      <h3 class="text-small capitalize mb-2">
+                        <a href="https://cdn.jsdelivr.net/gh/cityofnewyork/access-nyc-patterns@v0.14.0/dist/svg/icon-food-v2.svg" target="_blank">icon food v2</a>
+                      </h3>
+                      <div class="py-4 text-center px-2 flex items-center justify-center" style="min-height: 150px">
+                        <svg class="icon-food-v2 text-covid-response fill-covid-response-light">
+                          <title id="icon-food-v2-title">icon food v2</title>
+                          <use xlink:href="#icon-food-v2"></use>
+                        </svg>
+                      </div>
+                      <div class="code-block mb-0">
+                        <pre>&lt;svg class=&quot;icon-food-v2 text-covid-response fill-covid-response-light&quot;&gt;
+  &lt;title id=&quot;icon-food-v2-title&quot;&gt;icon food v2&lt;/title&gt;
+  &lt;use xlink:href=&quot;#icon-food-v2&quot;&gt;&lt;/use&gt;
+&lt;/svg&gt;</pre>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="flex flex-col justify-between items-center border border-grey-lightest p-2">
+                  <div class="w-full">
+                    <div>
+                      <h3 class="text-small capitalize mb-2">
+                        <a href="https://cdn.jsdelivr.net/gh/cityofnewyork/access-nyc-patterns@v0.14.0/dist/svg/icon-health-v2.svg" target="_blank">icon health v2</a>
+                      </h3>
+                      <div class="py-4 text-center px-2 flex items-center justify-center" style="min-height: 150px">
+                        <svg class="icon-health-v2 text-covid-response fill-covid-response-light">
+                          <title id="icon-health-v2-title">icon health v2</title>
+                          <use xlink:href="#icon-health-v2"></use>
+                        </svg>
+                      </div>
+                      <div class="code-block mb-0">
+                        <pre>&lt;svg class=&quot;icon-health-v2 text-covid-response fill-covid-response-light&quot;&gt;
+  &lt;title id=&quot;icon-health-v2-title&quot;&gt;icon health v2&lt;/title&gt;
+  &lt;use xlink:href=&quot;#icon-health-v2&quot;&gt;&lt;/use&gt;
+&lt;/svg&gt;</pre>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="flex flex-col justify-between items-center border border-grey-lightest p-2">
+                  <div class="w-full">
+                    <div>
+                      <h3 class="text-small capitalize mb-2">
+                        <a href="https://cdn.jsdelivr.net/gh/cityofnewyork/access-nyc-patterns@v0.14.0/dist/svg/icon-housing-v2.svg" target="_blank">icon housing v2</a>
+                      </h3>
+                      <div class="py-4 text-center px-2 flex items-center justify-center" style="min-height: 150px">
+                        <svg class="icon-housing-v2 text-covid-response fill-covid-response-light">
+                          <title id="icon-housing-v2-title">icon housing v2</title>
+                          <use xlink:href="#icon-housing-v2"></use>
+                        </svg>
+                      </div>
+                      <div class="code-block mb-0">
+                        <pre>&lt;svg class=&quot;icon-housing-v2 text-covid-response fill-covid-response-light&quot;&gt;
+  &lt;title id=&quot;icon-housing-v2-title&quot;&gt;icon housing v2&lt;/title&gt;
+  &lt;use xlink:href=&quot;#icon-housing-v2&quot;&gt;&lt;/use&gt;
+&lt;/svg&gt;</pre>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="flex flex-col justify-between items-center border border-grey-lightest p-2">
+                  <div class="w-full">
+                    <div>
+                      <h3 class="text-small capitalize mb-2">
+                        <a href="https://cdn.jsdelivr.net/gh/cityofnewyork/access-nyc-patterns@v0.14.0/dist/svg/icon-people-with-disabilities-v2.svg" target="_blank">icon people with disabilities v2</a>
+                      </h3>
+                      <div class="py-4 text-center px-2 flex items-center justify-center" style="min-height: 150px">
+                        <svg class="icon-people-with-disabilities-v2 text-covid-response fill-covid-response-light">
+                          <title id="icon-people-with-disabilities-v2-title">icon people with disabilities v2</title>
+                          <use xlink:href="#icon-people-with-disabilities-v2"></use>
+                        </svg>
+                      </div>
+                      <div class="code-block mb-0">
+                        <pre>&lt;svg class=&quot;icon-people-with-disabilities-v2 text-covid-response fill-covid-response-light&quot;&gt;
+  &lt;title id=&quot;icon-people-with-disabilities-v2-title&quot;&gt;icon people with disabilities v2&lt;/title&gt;
+  &lt;use xlink:href=&quot;#icon-people-with-disabilities-v2&quot;&gt;&lt;/use&gt;
+&lt;/svg&gt;</pre>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="flex flex-col justify-between items-center border border-grey-lightest p-2">
+                  <div class="w-full">
+                    <div>
+                      <h3 class="text-small capitalize mb-2">
+                        <a href="https://cdn.jsdelivr.net/gh/cityofnewyork/access-nyc-patterns@v0.14.0/dist/svg/icon-work-v2.svg" target="_blank">icon work v2</a>
+                      </h3>
+                      <div class="py-4 text-center px-2 flex items-center justify-center" style="min-height: 150px">
+                        <svg class="icon-work-v2 text-covid-response fill-covid-response-light">
+                          <title id="icon-work-v2-title">icon work v2</title>
+                          <use xlink:href="#icon-work-v2"></use>
+                        </svg>
+                      </div>
+                      <div class="code-block mb-0">
+                        <pre>&lt;svg class=&quot;icon-work-v2 text-covid-response fill-covid-response-light&quot;&gt;
+  &lt;title id=&quot;icon-work-v2-title&quot;&gt;icon work v2&lt;/title&gt;
+  &lt;use xlink:href=&quot;#icon-work-v2&quot;&gt;&lt;/use&gt;
+&lt;/svg&gt;</pre>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section class="pb-4 mb-4" id="program-card-icons">
+          <div class="page-wrapper px-2">
+            <header class="layout-home-body">
+              <div class="my-0 px-2 pt-1 pb-4 border-b border-grey-light">
+                <h2 class="m-0">
+                  <a class="text-grey-mid font-normal no-underline capitalize" href="#program-card-icons">Program Card Icons</a>
+                </h2>
+                <div class="pt-2">
+                  <p class="text-small m-0">Source: <code>
+                      <a href="https://github.com/CityOfNewYork/access-nyc-patterns/tree/v0.14.0/src/elements/icons">src/elements/icons/icons-program-card-covid-response</a>
+                    </code>
+                  </p>
+                </div>
+              </div>
+            </header>
+            <div class="layout-home-body">
+              <div class="my-0 pt-4 px-2 text-small table-align-start"></div>
+            </div>
+            <div class="layout-gutter screen-tablet:layout-gutter justify-between pt-4">
+              <div class="layout-gutter screen-mobile:layout-two-columns-gutter screen-tablet:layout-three-columns-gutter">
+                <div class="flex flex-col justify-between items-center border border-grey-lightest p-2">
+                  <div class="w-full">
+                    <div>
+                      <h3 class="text-small capitalize mb-2">
+                        <a href="https://cdn.jsdelivr.net/gh/cityofnewyork/access-nyc-patterns@v0.14.0/dist/svg/icon-card-cash-expenses-v2.svg" target="_blank">icon card cash expenses v2</a>
+                      </h3>
+                      <div class="py-4 text-center px-2 flex items-center justify-center" style="min-height: 150px">
+                        <svg class="icon-card-cash-expenses-v2 text-covid-response fill-covid-response-light">
+                          <title id="icon-card-cash-expenses-v2-title">icon card cash expenses v2</title>
+                          <use xlink:href="#icon-card-cash-expenses-v2"></use>
+                        </svg>
+                      </div>
+                      <div class="code-block mb-0">
+                        <pre>&lt;svg class=&quot;icon-card-cash-expenses-v2 text-covid-response fill-covid-response-light&quot;&gt;
+  &lt;title id=&quot;icon-card-cash-expenses-v2-title&quot;&gt;icon card cash expenses v2&lt;/title&gt;
+  &lt;use xlink:href=&quot;#icon-card-cash-expenses-v2&quot;&gt;&lt;/use&gt;
+&lt;/svg&gt;</pre>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="flex flex-col justify-between items-center border border-grey-lightest p-2">
+                  <div class="w-full">
+                    <div>
+                      <h3 class="text-small capitalize mb-2">
+                        <a href="https://cdn.jsdelivr.net/gh/cityofnewyork/access-nyc-patterns@v0.14.0/dist/svg/icon-card-child-care-v2.svg" target="_blank">icon card child care v2</a>
+                      </h3>
+                      <div class="py-4 text-center px-2 flex items-center justify-center" style="min-height: 150px">
+                        <svg class="icon-card-child-care-v2 text-covid-response fill-covid-response-light">
+                          <title id="icon-card-child-care-v2-title">icon card child care v2</title>
+                          <use xlink:href="#icon-card-child-care-v2"></use>
+                        </svg>
+                      </div>
+                      <div class="code-block mb-0">
+                        <pre>&lt;svg class=&quot;icon-card-child-care-v2 text-covid-response fill-covid-response-light&quot;&gt;
+  &lt;title id=&quot;icon-card-child-care-v2-title&quot;&gt;icon card child care v2&lt;/title&gt;
+  &lt;use xlink:href=&quot;#icon-card-child-care-v2&quot;&gt;&lt;/use&gt;
+&lt;/svg&gt;</pre>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="flex flex-col justify-between items-center border border-grey-lightest p-2">
+                  <div class="w-full">
+                    <div>
+                      <h3 class="text-small capitalize mb-2">
+                        <a href="https://cdn.jsdelivr.net/gh/cityofnewyork/access-nyc-patterns@v0.14.0/dist/svg/icon-card-city-id-card-v2.svg" target="_blank">icon card city id card v2</a>
+                      </h3>
+                      <div class="py-4 text-center px-2 flex items-center justify-center" style="min-height: 150px">
+                        <svg class="icon-card-city-id-card-v2 text-covid-response fill-covid-response-light">
+                          <title id="icon-card-city-id-card-v2-title">icon card city id card v2</title>
+                          <use xlink:href="#icon-card-city-id-card-v2"></use>
+                        </svg>
+                      </div>
+                      <div class="code-block mb-0">
+                        <pre>&lt;svg class=&quot;icon-card-city-id-card-v2 text-covid-response fill-covid-response-light&quot;&gt;
+  &lt;title id=&quot;icon-card-city-id-card-v2-title&quot;&gt;icon card city id card v2&lt;/title&gt;
+  &lt;use xlink:href=&quot;#icon-card-city-id-card-v2&quot;&gt;&lt;/use&gt;
+&lt;/svg&gt;</pre>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="flex flex-col justify-between items-center border border-grey-lightest p-2">
+                  <div class="w-full">
+                    <div>
+                      <h3 class="text-small capitalize mb-2">
+                        <a href="https://cdn.jsdelivr.net/gh/cityofnewyork/access-nyc-patterns@v0.14.0/dist/svg/icon-card-education-v2.svg" target="_blank">icon card education v2</a>
+                      </h3>
+                      <div class="py-4 text-center px-2 flex items-center justify-center" style="min-height: 150px">
+                        <svg class="icon-card-education-v2 text-covid-response fill-covid-response-light">
+                          <title id="icon-card-education-v2-title">icon card education v2</title>
+                          <use xlink:href="#icon-card-education-v2"></use>
+                        </svg>
+                      </div>
+                      <div class="code-block mb-0">
+                        <pre>&lt;svg class=&quot;icon-card-education-v2 text-covid-response fill-covid-response-light&quot;&gt;
+  &lt;title id=&quot;icon-card-education-v2-title&quot;&gt;icon card education v2&lt;/title&gt;
+  &lt;use xlink:href=&quot;#icon-card-education-v2&quot;&gt;&lt;/use&gt;
+&lt;/svg&gt;</pre>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="flex flex-col justify-between items-center border border-grey-lightest p-2">
+                  <div class="w-full">
+                    <div>
+                      <h3 class="text-small capitalize mb-2">
+                        <a href="https://cdn.jsdelivr.net/gh/cityofnewyork/access-nyc-patterns@v0.14.0/dist/svg/icon-card-enrichment-v2.svg" target="_blank">icon card enrichment v2</a>
+                      </h3>
+                      <div class="py-4 text-center px-2 flex items-center justify-center" style="min-height: 150px">
+                        <svg class="icon-card-enrichment-v2 text-covid-response fill-covid-response-light">
+                          <title id="icon-card-enrichment-v2-title">icon card enrichment v2</title>
+                          <use xlink:href="#icon-card-enrichment-v2"></use>
+                        </svg>
+                      </div>
+                      <div class="code-block mb-0">
+                        <pre>&lt;svg class=&quot;icon-card-enrichment-v2 text-covid-response fill-covid-response-light&quot;&gt;
+  &lt;title id=&quot;icon-card-enrichment-v2-title&quot;&gt;icon card enrichment v2&lt;/title&gt;
+  &lt;use xlink:href=&quot;#icon-card-enrichment-v2&quot;&gt;&lt;/use&gt;
+&lt;/svg&gt;</pre>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="flex flex-col justify-between items-center border border-grey-lightest p-2">
+                  <div class="w-full">
+                    <div>
+                      <h3 class="text-small capitalize mb-2">
+                        <a href="https://cdn.jsdelivr.net/gh/cityofnewyork/access-nyc-patterns@v0.14.0/dist/svg/icon-card-family-services-v2.svg" target="_blank">icon card family services v2</a>
+                      </h3>
+                      <div class="py-4 text-center px-2 flex items-center justify-center" style="min-height: 150px">
+                        <svg class="icon-card-family-services-v2 text-covid-response fill-covid-response-light">
+                          <title id="icon-card-family-services-v2-title">icon card family services v2</title>
+                          <use xlink:href="#icon-card-family-services-v2"></use>
+                        </svg>
+                      </div>
+                      <div class="code-block mb-0">
+                        <pre>&lt;svg class=&quot;icon-card-family-services-v2 text-covid-response fill-covid-response-light&quot;&gt;
+  &lt;title id=&quot;icon-card-family-services-v2-title&quot;&gt;icon card family services v2&lt;/title&gt;
+  &lt;use xlink:href=&quot;#icon-card-family-services-v2&quot;&gt;&lt;/use&gt;
+&lt;/svg&gt;</pre>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="flex flex-col justify-between items-center border border-grey-lightest p-2">
+                  <div class="w-full">
+                    <div>
+                      <h3 class="text-small capitalize mb-2">
+                        <a href="https://cdn.jsdelivr.net/gh/cityofnewyork/access-nyc-patterns@v0.14.0/dist/svg/icon-card-food-v2.svg" target="_blank">icon card food v2</a>
+                      </h3>
+                      <div class="py-4 text-center px-2 flex items-center justify-center" style="min-height: 150px">
+                        <svg class="icon-card-food-v2 text-covid-response fill-covid-response-light">
+                          <title id="icon-card-food-v2-title">icon card food v2</title>
+                          <use xlink:href="#icon-card-food-v2"></use>
+                        </svg>
+                      </div>
+                      <div class="code-block mb-0">
+                        <pre>&lt;svg class=&quot;icon-card-food-v2 text-covid-response fill-covid-response-light&quot;&gt;
+  &lt;title id=&quot;icon-card-food-v2-title&quot;&gt;icon card food v2&lt;/title&gt;
+  &lt;use xlink:href=&quot;#icon-card-food-v2&quot;&gt;&lt;/use&gt;
+&lt;/svg&gt;</pre>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="flex flex-col justify-between items-center border border-grey-lightest p-2">
+                  <div class="w-full">
+                    <div>
+                      <h3 class="text-small capitalize mb-2">
+                        <a href="https://cdn.jsdelivr.net/gh/cityofnewyork/access-nyc-patterns@v0.14.0/dist/svg/icon-card-health-v2.svg" target="_blank">icon card health v2</a>
+                      </h3>
+                      <div class="py-4 text-center px-2 flex items-center justify-center" style="min-height: 150px">
+                        <svg class="icon-card-health-v2 text-covid-response fill-covid-response-light">
+                          <title id="icon-card-health-v2-title">icon card health v2</title>
+                          <use xlink:href="#icon-card-health-v2"></use>
+                        </svg>
+                      </div>
+                      <div class="code-block mb-0">
+                        <pre>&lt;svg class=&quot;icon-card-health-v2 text-covid-response fill-covid-response-light&quot;&gt;
+  &lt;title id=&quot;icon-card-health-v2-title&quot;&gt;icon card health v2&lt;/title&gt;
+  &lt;use xlink:href=&quot;#icon-card-health-v2&quot;&gt;&lt;/use&gt;
+&lt;/svg&gt;</pre>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="flex flex-col justify-between items-center border border-grey-lightest p-2">
+                  <div class="w-full">
+                    <div>
+                      <h3 class="text-small capitalize mb-2">
+                        <a href="https://cdn.jsdelivr.net/gh/cityofnewyork/access-nyc-patterns@v0.14.0/dist/svg/icon-card-housing-v2.svg" target="_blank">icon card housing v2</a>
+                      </h3>
+                      <div class="py-4 text-center px-2 flex items-center justify-center" style="min-height: 150px">
+                        <svg class="icon-card-housing-v2 text-covid-response fill-covid-response-light">
+                          <title id="icon-card-housing-v2-title">icon card housing v2</title>
+                          <use xlink:href="#icon-card-housing-v2"></use>
+                        </svg>
+                      </div>
+                      <div class="code-block mb-0">
+                        <pre>&lt;svg class=&quot;icon-card-housing-v2 text-covid-response fill-covid-response-light&quot;&gt;
+  &lt;title id=&quot;icon-card-housing-v2-title&quot;&gt;icon card housing v2&lt;/title&gt;
+  &lt;use xlink:href=&quot;#icon-card-housing-v2&quot;&gt;&lt;/use&gt;
+&lt;/svg&gt;</pre>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="flex flex-col justify-between items-center border border-grey-lightest p-2">
+                  <div class="w-full">
+                    <div>
+                      <h3 class="text-small capitalize mb-2">
+                        <a href="https://cdn.jsdelivr.net/gh/cityofnewyork/access-nyc-patterns@v0.14.0/dist/svg/icon-card-people-with-disabilities-v2.svg" target="_blank">icon card people with disabilities v2</a>
+                      </h3>
+                      <div class="py-4 text-center px-2 flex items-center justify-center" style="min-height: 150px">
+                        <svg class="icon-card-people-with-disabilities-v2 text-covid-response fill-covid-response-light">
+                          <title id="icon-card-people-with-disabilities-v2-title">icon card people with disabilities v2</title>
+                          <use xlink:href="#icon-card-people-with-disabilities-v2"></use>
+                        </svg>
+                      </div>
+                      <div class="code-block mb-0">
+                        <pre>&lt;svg class=&quot;icon-card-people-with-disabilities-v2 text-covid-response fill-covid-response-light&quot;&gt;
+  &lt;title id=&quot;icon-card-people-with-disabilities-v2-title&quot;&gt;icon card people with disabilities v2&lt;/title&gt;
+  &lt;use xlink:href=&quot;#icon-card-people-with-disabilities-v2&quot;&gt;&lt;/use&gt;
+&lt;/svg&gt;</pre>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="flex flex-col justify-between items-center border border-grey-lightest p-2">
+                  <div class="w-full">
+                    <div>
+                      <h3 class="text-small capitalize mb-2">
+                        <a href="https://cdn.jsdelivr.net/gh/cityofnewyork/access-nyc-patterns@v0.14.0/dist/svg/icon-card-work-v2.svg" target="_blank">icon card work v2</a>
+                      </h3>
+                      <div class="py-4 text-center px-2 flex items-center justify-center" style="min-height: 150px">
+                        <svg class="icon-card-work-v2 text-covid-response fill-covid-response-light">
+                          <title id="icon-card-work-v2-title">icon card work v2</title>
+                          <use xlink:href="#icon-card-work-v2"></use>
+                        </svg>
+                      </div>
+                      <div class="code-block mb-0">
+                        <pre>&lt;svg class=&quot;icon-card-work-v2 text-covid-response fill-covid-response-light&quot;&gt;
+  &lt;title id=&quot;icon-card-work-v2-title&quot;&gt;icon card work v2&lt;/title&gt;
+  &lt;use xlink:href=&quot;#icon-card-work-v2&quot;&gt;&lt;/use&gt;
+&lt;/svg&gt;</pre>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section class="pb-4 mb-4" id="button">
+          <div class="page-wrapper px-2">
+            <header class="layout-home-body">
+              <div class="my-0 px-2 pt-1 pb-4 border-b border-grey-light">
+                <h2 class="m-0">
+                  <a class="text-grey-mid font-normal no-underline capitalize" href="#button">Button</a>
+                </h2>
+                <div class="pt-2">
+                  <p class="text-small m-0">Source: <code>
+                      <a href="https://github.com/CityOfNewYork/access-nyc-patterns/tree/v0.14.0/src/elements/buttons">src/elements/buttons/buttons-covid-response</a>
+                    </code>
+                  </p>
+                </div>
+              </div>
+            </header>
+            <div class="layout-home-body">
+              <div class="my-0 pt-4 px-2 text-small table-align-start">
+                <p>The COVID Response button is reserved for linking to content about city announcements, stimulus programs, and other information related to the New York City COVID-19 Response.</p>
+              </div>
+            </div>
+            <div class="layout-gutter screen-tablet:layout-columns justify-between pt-4">
+              <div class="screen-tablet:pe-2">
+                <button class="btn-covid-response" type="button">COVID Response Button</button>
+              </div>
+              <div>
+                <div class="code-block mb-1">
+                  <pre>&lt;button class=&quot;btn-covid-response&quot; type=&quot;button&quot;&gt;COVID Response Button&lt;/button&gt;</pre>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section class="pb-4 mb-4" id="alert-box">
+          <div class="page-wrapper px-2">
+            <header class="layout-home-body">
+              <div class="my-0 px-2 pt-1 pb-4 border-b border-grey-light">
+                <h2 class="m-0">
+                  <a class="text-grey-mid font-normal no-underline capitalize" href="#alert-box">Alert Box</a>
+                </h2>
+                <div class="pt-2">
+                  <p class="text-small m-0">Source: <code>
+                      <a href="https://github.com/CityOfNewYork/access-nyc-patterns/tree/v0.14.0/src/components/alert-box">src/components/alert-box/alert-box-covid-response</a>
+                    </code>
+                  </p>
+                </div>
+              </div>
+            </header>
+            <div class="layout-home-body">
+              <div class="my-0 pt-4 px-2 text-small table-align-start"></div>
+            </div>
+            <div class="layout-gutter screen-tablet:layout-columns justify-between pt-4">
+              <div class="screen-tablet:pe-2">
+                <article class="c-alert-box color-covid-response-status">
+                  <div class="c-alert-box__icon">
+                    <svg class="c-alert-box__svg icon icon-4 icon-info">
+                      <use xlink:href="#icon-info"></use>
+                    </svg>
+                  </div>
+                  <div class="c-alert-box__body">
+                    <p>
+                      <strong>
+                        <a href="https://access.nyc.gov/coronavirus-covid-19-updates/">COVID-19 updates related to benefits, food, housing, unemployment</a>
+                      </strong>
+                    </p>
+                  </div>
+                </article>
+              </div>
+              <div>
+                <div class="code-block mb-1">
+                  <pre>&lt;article class=&quot;c-alert-box color-covid-response-status&quot;&gt;
+  &lt;div class=&quot;c-alert-box__icon&quot;&gt;
+    &lt;svg class=&quot;c-alert-box__svg icon icon-4 icon-info&quot;&gt;
+      &lt;use xlink:href=&quot;#icon-info&quot;&gt;&lt;/use&gt;
+    &lt;/svg&gt;
+  &lt;/div&gt;
+  &lt;div class=&quot;c-alert-box__body&quot;&gt;
+    &lt;p&gt;
+      &lt;strong&gt;
+        &lt;a href=&quot;https://access.nyc.gov/coronavirus-covid-19-updates/&quot;&gt;COVID-19 updates related to benefits, food, housing, unemployment&lt;/a&gt;
+      &lt;/strong&gt;
+    &lt;/p&gt;
+  &lt;/div&gt;
+&lt;/article&gt;</pre>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section class="pb-4 mb-4" id="color-combinations">
+          <div class="page-wrapper px-2">
+            <header class="layout-home-body">
+              <div class="my-0 px-2 pt-1 pb-4 border-b border-grey-light">
+                <h2 class="m-0">
+                  <a class="text-grey-mid font-normal no-underline capitalize" href="#color-combinations">Color Combinations</a>
+                </h2>
+                <div class="pt-2">
+                  <p class="text-small m-0">Source: <code>
+                      <a href="https://github.com/CityOfNewYork/access-nyc-patterns/tree/v0.14.0/src/utilities/color">src/utilities/color/color-combinations-covid-response</a>
+                    </code>
+                  </p>
+                </div>
+              </div>
+            </header>
+            <div class="layout-home-body">
+              <div class="my-0 pt-4 px-2 text-small table-align-start"></div>
+            </div>
+            <div class="layout-gutter screen-tablet:layout-gutter justify-between pt-4">
+              <div class="layout-gutter screen-mobile:layout-two-columns-gutter screen-tablet:layout-three-columns-gutter">
+                <div class="flex flex-col justify-between items-center border border-grey-lightest p-2">
+                  <div class="w-full">
+                    <div class="text-small">
+                      <h3 class="text-small capitalize mb-2">covid response button</h3>
+                      <article class="color-covid-response-button w-full py-4 p-2 mb-2">
+                        <div class="capitalize">covid response button Text</div>
+                      </article>
+                      <p class="mb-0 flex justify-between">Selector<code>.color-covid-response-button</code>
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                <div class="flex flex-col justify-between items-center border border-grey-lightest p-2">
+                  <div class="w-full">
+                    <div class="text-small">
+                      <h3 class="text-small capitalize mb-2">covid response status</h3>
+                      <article class="color-covid-response-status w-full py-4 p-2 mb-2">
+                        <div class="capitalize">covid response status Text</div>
+                        <a href="#">Hyperlinks</a>
+                      </article>
+                      <p class="mb-0 flex justify-between">Selector<code>.color-covid-response-status</code>
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                <div>&nbsp;</div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section class="pb-4 mb-4" id="color-utilities">
+          <div class="page-wrapper px-2">
+            <header class="layout-home-body">
+              <div class="my-0 px-2 pt-1 pb-4 border-b border-grey-light">
+                <h2 class="m-0">
+                  <a class="text-grey-mid font-normal no-underline capitalize" href="#color-utilities">Color Utilities</a>
+                </h2>
+                <div class="pt-2">
+                  <p class="text-small m-0">Source: <code>
+                      <a href="https://github.com/CityOfNewYork/access-nyc-patterns/tree/v0.14.0/src/utilities/color">src/utilities/color/color-utilities-covid-response</a>
+                    </code>
+                  </p>
+                </div>
+              </div>
+            </header>
+            <div class="layout-home-body">
+              <div class="my-0 pt-4 px-2 text-small table-align-start"></div>
+            </div>
+            <div class="layout-gutter screen-tablet:layout-gutter justify-between pt-4">
+              <div class="layout-gutter screen-mobile:layout-two-columns-gutter screen-tablet:layout-three-columns-gutter">
+                <div class="flex flex-col justify-between items-center border border-grey-lightest p-2">
+                  <div class="w-full">
+                    <div class="text-small">
+                      <h3 class="text-small capitalize mb-2">covid response</h3>
+                      <div class="border border-covid-response w-full p-1 mb-2">
+                        <div class="text-covid-response pb-1 text-center capitalize">Text covid response</div>
+                        <div class="bg-covid-response w-full py-4"></div>
+                      </div>
+                      <p class="mb-1 flex justify-between">Hex<code>#803D8D</code>
+                      </p>
+                      <p class="mb-1 flex justify-between">Border<code>.border-covid-response</code>
+                      </p>
+                      <p class="mb-1 flex justify-between">Text<code>.text-covid-response</code>
+                      </p>
+                      <p class="mb-0 flex justify-between">Background<code>.bg-covid-response</code>
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                <div class="flex flex-col justify-between items-center border border-grey-lightest p-2">
+                  <div class="w-full">
+                    <div class="text-small">
+                      <h3 class="text-small capitalize mb-2">covid response light</h3>
+                      <div class="border border-covid-response-light w-full p-1 mb-2">
+                        <div class="text-covid-response-light pb-1 text-center capitalize">Text covid response light</div>
+                        <div class="bg-covid-response-light w-full py-4"></div>
+                      </div>
+                      <p class="mb-1 flex justify-between">Hex<code>#DAB7E0</code>
+                      </p>
+                      <p class="mb-1 flex justify-between">Border<code>.border-covid-response-light</code>
+                      </p>
+                      <p class="mb-1 flex justify-between">Text<code>.text-covid-response-light</code>
+                      </p>
+                      <p class="mb-0 flex justify-between">Background<code>.bg-covid-response-light</code>
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                <div>&nbsp;</div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <div class="sticky bottom-0 bg-white shadow-up relative z-10 overflow-y-scroll whitespace-no-wrap animated fadeInUp">
+          <nav class="nav-inline inline-block text-small p-2 screen-tablet:p-4">
+            <span class="me-2">Jump to:</span>
+            <a class="me-2 screen-tablet:me-4" href="#main-content">Top</a>
+            <a class="me-2 screen-tablet:me-4" href="#badge">Badge</a>
+            <a class="me-2 screen-tablet:me-4" href="#program-category-icons">Program Category Icons</a>
+            <a class="me-2 screen-tablet:me-4" href="#program-card-icons">Program Card Icons</a>
+            <a class="me-2 screen-tablet:me-4" href="#button">Button</a>
+            <a class="me-2 screen-tablet:me-4" href="#alert-box">Alert Box</a>
+            <a class="me-2 screen-tablet:me-4" href="#color-combinations">Color Combinations</a>
+            <a class="me-2 screen-tablet:me-4" href="#color-utilities">Color Utilities</a>
+          </nav>
+        </div>
+      </article>
+    </main>
+  </div>
+  <footer class="color-mid-background text-blue-dark border-solid border-t-4 border-blue-dark text-small py-4 z-20 relative">
+    <div class="layout-home-body p-2">
+      <div class="screen-tablet:px-2 mb-4">
+        <p class="mb-1">Maintained by&nbsp;<a href="https://nyc.gov/opportunity"></a>
+        </p>
+        <a class="text-blue-dark" href="https://nyc.gov/opportunity">
+          <span class="sr-only">The Mayor's Office for Economic Opportunity</span>
+          <svg class="icon-logo-secondary mb-4" style="height: 53px; width: 300px;">
+            <use xlink:href="#icon-logo-secondary"></use>
+          </svg>
+        </a>
+        <p>We are committed to sharing open source software that we use in our products. Feel free to ask questions and share feedback. Follow @nycopportunity on&nbsp;</p>
+        <div class="mb-4">
+          <nav>
+            <a class="px-1" href="https://github.com/orgs/CityOfNewYork/teams/nycopportunity">GitHub</a>
+            <a class="px-1" href="https://twitter.com/nycopportunity">Twitter</a>
+            <a class="px-1" href="https://www.facebook.com/NYCOpportunity">Facebook</a>
+            <a class="px-1" href="https://www.instagram.com/nycopportunity">Instagram</a>
+          </nav>
+        </div>
+        <small>© City of New York, 2020 All Rights Reserved. NYC is a trademark and service mark of the City of New York.</small>
+      </div>
+    </div>
+    <div class="page-wrapper">
+      <div class="screen-tablet:flex">
+        <nav class="screen-tablet:flex-1 mb-1 px-2">
+          <span class="type-h3 text-small mb-1 block screen-tablet:border-b screen-tablet:pb-2 screen-tablet:mb-1 border-white p-1">Guides</span>
+          <a class="block p-1" href="index">Home</a>
+          <a class="block p-1" href="about">About</a>
+          <a class="block p-1" href="installation">Installation</a>
+          <a class="block p-1" href="developer-tools">Developer Tools</a>
+          <a class="block p-1 screen-tablet:border-b screen-tablet:pb-2 screen-tablet:mb-1 border-white p-1" href="prototyping">Prototyping</a>
+          <span class="type-h3 text-small mb-1 block screen-tablet:border-b screen-tablet:pb-2 screen-tablet:mb-1 border-white p-1">Collections</span>
+          <a class="block p-1 screen-tablet:border-b screen-tablet:pb-2 screen-tablet:mb-1 border-white p-1" href="covid-response">COVID Response</a>
+          <span class="type-h3 text-small mb-1 block screen-tablet:border-b screen-tablet:pb-2 screen-tablet:mb-1 border-white p-1">Links</span>
+          <a class="block p-1" href="https://www.npmjs.com/package/access-nyc-patterns">NPM Package</a>
+          <a class="block p-1" href="https://github.com/CityOfNewYork/access-nyc-patterns">GitHub Repository</a>
+        </nav>
+        <nav class="screen-tablet:flex-1 mb-1 px-2 screen-desktop:ps-4">
+          <span class="type-h3 text-small mb-1 block screen-tablet:border-b screen-tablet:pb-2 screen-tablet:mb-1 border-white p-1">Elements</span>
+          <a class="block p-1" href="badge">Badge</a>
+          <a class="block p-1" href="buttons">Buttons</a>
+          <a class="block p-1" href="checkboxes">Checkboxes</a>
+          <a class="block p-1" href="dividers">Dividers</a>
+          <a class="block p-1" href="inputs">Inputs</a>
+          <a class="block p-1" href="icons">Icons</a>
+          <a class="block p-1" href="layouts">Layouts</a>
+          <a class="block p-1" href="links">Links</a>
+          <a class="block p-1" href="lists">Lists</a>
+          <a class="block p-1" href="nav">Nav</a>
+          <a class="block p-1" href="radios">Radios</a>
+          <a class="block p-1" href="tables">Tables</a>
+          <a class="block p-1" href="tooltips">Tooltips</a>
+          <a class="block p-1" href="toggles">Toggles</a>
+          <a class="block p-1" href="selects">Selects</a>
+        </nav>
+        <nav class="screen-tablet:flex-1 mb-1 px-2 screen-desktop:ps-4">
+          <span class="type-h3 text-small mb-1 block screen-tablet:border-b screen-tablet:pb-2 screen-tablet:mb-1 border-white p-1">Components</span>
+          <a class="block p-1" href="accordion">Accordion</a>
+          <a class="block p-1" href="alert-box">Alert Box</a>
+          <a class="block p-1" href="card">Card</a>
+          <a class="block p-1" href="checklist">Checklist</a>
+          <a class="block p-1" href="disclaimer">Disclaimer</a>
+          <a class="block p-1" href="filter">Filter</a>
+          <a class="block p-1" href="header">Header</a>
+          <a class="block p-1" href="member-list">Member List</a>
+          <a class="block p-1" href="nearby-stops">Nearby Stops</a>
+          <a class="block p-1" href="share-form">Share Form</a>
+          <a class="block p-1" href="side-nav">Side Nav</a>
+          <a class="block p-1" href="question">Question</a>
+        </nav>
+        <nav class="screen-tablet:flex-1 mb-1 px-2 screen-desktop:ps-4">
+          <span class="type-h3 text-small mb-1 block screen-tablet:border-b screen-tablet:pb-2 screen-tablet:mb-1 border-white p-1">Objects</span>
+          <a class="block p-1" href="alert-banner">Alert Banner</a>
+          <a class="block p-1" href="announcements">Announcements</a>
+          <a class="block p-1" href="banner">Banner</a>
+          <a class="block p-1" href="card-list">Card Lists</a>
+          <a class="block p-1" href="come-back-later">Come Back Later</a>
+          <a class="block p-1" href="content">Content</a>
+          <a class="block p-1" href="emails">Emails</a>
+          <a class="block p-1" href="footer">Footer</a>
+          <a class="block p-1" href="formstack">Formstack</a>
+          <a class="block p-1" href="mobile-nav">Mobile Nav</a>
+          <a class="block p-1" href="navigation">Navigation</a>
+          <a class="block p-1" href="newsletter">Newsletter</a>
+          <a class="block p-1" href="search-box">Search Box</a>
+          <a class="block p-1" href="text-controller">Text Controller</a>
+        </nav>
+        <nav class="screen-tablet:flex-1 mb-1 px-2 screen-desktop:ps-4">
+          <span class="type-h3 text-small mb-1 block screen-tablet:border-b screen-tablet:pb-2 screen-tablet:mb-1 border-white p-1">Utilities</span>
+          <a class="block p-1" href="animate">Animate</a>
+          <a class="block p-1" href="clearfix">Clearfix</a>
+          <a class="block p-1" href="color">Color</a>
+          <a class="block p-1" href="font">Fonts</a>
+          <a class="block p-1" href="language">Language</a>
+          <a class="block p-1" href="margin">Margin</a>
+          <a class="block p-1" href="media">Media</a>
+          <a class="block p-1" href="padding">Padding</a>
+          <a class="block p-1" href="screen-reader">Screen Reader</a>
+          <a class="block p-1" href="tailwindcss">tailwindcss</a>
+          <a class="block p-1" href="text">Text</a>
+          <a class="block p-1" href="toggle">Toggle</a>
+          <a class="block p-1" href="typography">Typography</a>
+        </nav>
+      </div>
+    </div>
+  </footer>
+  <script src="scripts/polyfills.js"></script>
+  <script src="scripts/access-nyc.js"></script>
+  <script src="scripts/vue-components.js"></script>
+  <script type="text/javascript">
+    var access = new AccessNyc();
+    var VueComponents = new VueComponents();
+    access.icons();
+    access.icons('https://cdn.jsdelivr.net/gh/cityofnewyork/nyco-patterns@v2.3.1/dist/icons.svg');
+    access.toggle();
+  </script>
+  <script src="/reload/reload.js"></script>
+</body>
+
+</html>

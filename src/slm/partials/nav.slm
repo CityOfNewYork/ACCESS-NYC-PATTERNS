@@ -1,9 +1,13 @@
 nav class='${class_nav}'
-  a class='${class_nav_heading} ${class_nav_divider}' href='index' Home
+  span class='${class_nav_heading} ${class_nav_divider}' Guides
+  a class='${class_nav_item}' href='index' Home
   a class='${class_nav_item}' href='about' About
   a class='${class_nav_item}' href='installation' Installation
   a class='${class_nav_item}' href='developer-tools' Developer Tools
   a class='${class_nav_item} ${class_nav_divider}' href='prototyping' Prototyping
+  span class='${class_nav_heading} ${class_nav_divider}' Collections
+  a class='${class_nav_item} ${class_nav_divider}' href='covid-response' COVID Response
+  span class='${class_nav_heading} ${class_nav_divider}' Links
   a class='${class_nav_item}' href='${link_npm}' NPM Package
   a class='${class_nav_item}' href='${link_source}' GitHub Repository
 

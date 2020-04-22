@@ -212,8 +212,12 @@ module.exports = {
     },
     'tertiary-button': {
       'color': 'blue-dark',
-      'font-smooth': true,
       'background-color': 'yellow-access'
+    },
+    'covid-response-button': {
+      'color': 'white',
+      'font-smooth': true,
+      'background-color': 'covid-response'
     },
     'info-status': {
       'background-color': 'blue-light',
