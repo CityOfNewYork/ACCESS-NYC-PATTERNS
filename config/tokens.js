@@ -266,15 +266,15 @@ module.exports = {
     'animate-timing-function': 'cubic-bezier(0.23, 1, 0.32, 1)'
   },
   'border-widths': {
-    0: '0',
-    default: '1px',
-    2: '2px',
-    3: '3px',
-    4: '4px',
-    5: '5px',
-    6: '6px',
-    7: '7px',
-    8: '8px'
+    '0': '0',
+    'default': '1px',
+    '2': '2px',
+    '3': '3px',
+    '4': '4px',
+    '5': '5px',
+    '6': '6px',
+    '7': '7px',
+    '8': '8px'
   },
   'padding': {
     0: '0',
