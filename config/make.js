@@ -113,7 +113,7 @@ const templates = {
       "",
       "= content('content');",
       "  = mixin('content-header', title);",
-      "  = mixin('section', 'Default Styling', '{{ type }}/{{ pattern }}/{{ pattern }}');",
+      "  = mixin('section', false, '{{ type }}/{{ pattern }}/{{ pattern }}');",
       ""
     ].join("\n"),
   'vue': [
