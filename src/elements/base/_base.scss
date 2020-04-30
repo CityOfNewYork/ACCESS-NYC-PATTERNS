@@ -57,6 +57,11 @@ a {
   word-wrap: break-word;
 }
 
+figure, figcaption {
+  margin: 0;
+  display: block
+}
+
 @mixin base-print {
   html, body {
     overflow: visible !important;
