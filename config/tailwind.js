@@ -14,6 +14,7 @@ module.exports = {
   //   important: true,
   //   separator: ':'
   // },
+  purge: false,
   important: true,
   theme: {
     colors: tokens.colors,

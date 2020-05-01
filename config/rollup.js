@@ -2,7 +2,7 @@
  * Dependencies
  */
 
-const alias = require('rollup-plugin-alias');           // Define require aliases when bundling packages with Rollup.
+const alias = require('@rollup/plugin-alias');          // Define require aliases when bundling packages with Rollup.
 const resolve = require('@rollup/plugin-node-resolve'); // Locate modules using the Node resolution algorithm, for using third party modules in node_modules.
 const commonjs = require('@rollup/plugin-commonjs');    // Convert CommonJS modules to ES6, so they can be included in a Rollup bundle
 const babel = require('rollup-plugin-babel');           // Transpile source code.

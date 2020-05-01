@@ -221,1545 +221,1545 @@
                 <h4 id="core-plugins">Core Plugins</h4>
                 <p>Example; the core plugin for padding is <code>padding</code>. Adding or removing it to the whitelist will determine wether those utilities are compiled to the global stylesheet.</p>
                 <p>
-                  <h2>ACCESS NYC × tailwindcss configuration</h2>
-                  <h3 id="config-theme">Theme</h3>
-                  <div class="p-2 color-mid-background">
+                <h2>ACCESS NYC × tailwindcss configuration</h2>
+                <h3 id="config-theme">Theme</h3>
+                <div class="p-2 color-mid-background">
+                  <b>Plugin (link to docs)</b>
+                </div>
+                <div class="mb-4">
+                  <div class="p-2 layout-two-columns items-center border-b border-grey-light" id="config-colors">
+                    <a class="capitalize" href="https://tailwindcss.com/docs/colors" target="_blank">colors</a>
+                    <div class="text-right">
+                      <button aria-controls="config-colors-details" aria-expanded="false" class="btn btn-link" data-js="toggle" type="button">show details</button>
+                    </div>
+                  </div>
+                  <div aria-hidden="true" class="color-mid-background hidden hidden:overflow animated" id="config-colors-details">
+                    <div class="p-2 layout-two-columns">
+                      <div>
+                        <b>Class</b>
+                      </div>
+                      <div class="pl-1">
+                        <b>Property Value</b>
+                      </div>
+                    </div>
+                    <div class="p-2 layout-two-columns font-code color-code small">
+                      <div>.{{ prefix }}-blue-light</div>
+                      <div class="pl-1">#C3DDFF</div>
+                    </div>
+                    <div class="p-2 layout-two-columns font-code color-code small">
+                      <div>.{{ prefix }}-blue-bright</div>
+                      <div class="pl-1">#118DF0</div>
+                    </div>
+                    <div class="p-2 layout-two-columns font-code color-code small">
+                      <div>.{{ prefix }}-blue</div>
+                      <div class="pl-1">#184E9E</div>
+                    </div>
+                    <div class="p-2 layout-two-columns font-code color-code small">
+                      <div>.{{ prefix }}-blue-dark</div>
+                      <div class="pl-1">#112E51</div>
+                    </div>
+                    <div class="p-2 layout-two-columns font-code color-code small">
+                      <div>.{{ prefix }}-yellow-light</div>
+                      <div class="pl-1">#FFE6A9</div>
+                    </div>
+                    <div class="p-2 layout-two-columns font-code color-code small">
+                      <div>.{{ prefix }}-yellow-access</div>
+                      <div class="pl-1">#FBB720</div>
+                    </div>
+                    <div class="p-2 layout-two-columns font-code color-code small">
+                      <div>.{{ prefix }}-green-light</div>
+                      <div class="pl-1">#B7ECCF</div>
+                    </div>
+                    <div class="p-2 layout-two-columns font-code color-code small">
+                      <div>.{{ prefix }}-green</div>
+                      <div class="pl-1">#05CE7C</div>
+                    </div>
+                    <div class="p-2 layout-two-columns font-code color-code small">
+                      <div>.{{ prefix }}-green-mid</div>
+                      <div class="pl-1">#0D6D3B</div>
+                    </div>
+                    <div class="p-2 layout-two-columns font-code color-code small">
+                      <div>.{{ prefix }}-green-dark</div>
+                      <div class="pl-1">#094727</div>
+                    </div>
+                    <div class="p-2 layout-two-columns font-code color-code small">
+                      <div>.{{ prefix }}-pink-light</div>
+                      <div class="pl-1">#F1B3bD</div>
+                    </div>
+                    <div class="p-2 layout-two-columns font-code color-code small">
+                      <div>.{{ prefix }}-pink</div>
+                      <div class="pl-1">#F1647C</div>
+                    </div>
+                    <div class="p-2 layout-two-columns font-code color-code small">
+                      <div>.{{ prefix }}-red</div>
+                      <div class="pl-1">#C6252b</div>
+                    </div>
+                    <div class="p-2 layout-two-columns font-code color-code small">
+                      <div>.{{ prefix }}-purple</div>
+                      <div class="pl-1">#4C2C92</div>
+                    </div>
+                    <div class="p-2 layout-two-columns font-code color-code small">
+                      <div>.{{ prefix }}-covid-response</div>
+                      <div class="pl-1">#803D8D</div>
+                    </div>
+                    <div class="p-2 layout-two-columns font-code color-code small">
+                      <div>.{{ prefix }}-covid-response-light</div>
+                      <div class="pl-1">#DAB7E0</div>
+                    </div>
+                    <div class="p-2 layout-two-columns font-code color-code small">
+                      <div>.{{ prefix }}-grey-light</div>
+                      <div class="pl-1">#D1D5D9</div>
+                    </div>
+                    <div class="p-2 layout-two-columns font-code color-code small">
+                      <div>.{{ prefix }}-grey-lightest</div>
+                      <div class="pl-1">#EEF3F7</div>
+                    </div>
+                    <div class="p-2 layout-two-columns font-code color-code small">
+                      <div>.{{ prefix }}-grey-mid</div>
+                      <div class="pl-1">#505C66</div>
+                    </div>
+                    <div class="p-2 layout-two-columns font-code color-code small">
+                      <div>.{{ prefix }}-grey-dark</div>
+                      <div class="pl-1">#172129</div>
+                    </div>
+                    <div class="p-2 layout-two-columns font-code color-code small">
+                      <div>.{{ prefix }}-black</div>
+                      <div class="pl-1">#000000</div>
+                    </div>
+                    <div class="p-2 layout-two-columns font-code color-code small">
+                      <div>.{{ prefix }}-white</div>
+                      <div class="pl-1">#FFFFFF</div>
+                    </div>
+                    <div class="p-2 layout-two-columns font-code color-code small">
+                      <div>.{{ prefix }}-transparent</div>
+                      <div class="pl-1">rgba(255, 255, 255, 0)</div>
+                    </div>
+                    <div class="p-2 layout-two-columns font-code color-code small">
+                      <div>.{{ prefix }}-inherit</div>
+                      <div class="pl-1">inherit</div>
+                    </div>
+                    <div class="p-2 layout-two-columns font-code color-code small">
+                      <div>.{{ prefix }}-eighth-avenue</div>
+                      <div class="pl-1">#2850AD</div>
+                    </div>
+                    <div class="p-2 layout-two-columns font-code color-code small">
+                      <div>.{{ prefix }}-sixth-avenue</div>
+                      <div class="pl-1">#FF6319</div>
+                    </div>
+                    <div class="p-2 layout-two-columns font-code color-code small">
+                      <div>.{{ prefix }}-crosstown</div>
+                      <div class="pl-1">#6CBE45</div>
+                    </div>
+                    <div class="p-2 layout-two-columns font-code color-code small">
+                      <div>.{{ prefix }}-canarsie</div>
+                      <div class="pl-1">#A7A9AC</div>
+                    </div>
+                    <div class="p-2 layout-two-columns font-code color-code small">
+                      <div>.{{ prefix }}-nassau</div>
+                      <div class="pl-1">#996633</div>
+                    </div>
+                    <div class="p-2 layout-two-columns font-code color-code small">
+                      <div>.{{ prefix }}-broadway</div>
+                      <div class="pl-1">#FCCC0A</div>
+                    </div>
+                    <div class="p-2 layout-two-columns font-code color-code small">
+                      <div>.{{ prefix }}-broadway-seventh-avenue</div>
+                      <div class="pl-1">#EE352E</div>
+                    </div>
+                    <div class="p-2 layout-two-columns font-code color-code small">
+                      <div>.{{ prefix }}-lexington-avenue</div>
+                      <div class="pl-1">#00933C</div>
+                    </div>
+                    <div class="p-2 layout-two-columns font-code color-code small">
+                      <div>.{{ prefix }}-flushing</div>
+                      <div class="pl-1">#B933AD</div>
+                    </div>
+                    <div class="p-2 layout-two-columns font-code color-code small">
+                      <div>.{{ prefix }}-shuttles</div>
+                      <div class="pl-1">#808183</div>
+                    </div>
+                  </div>
+                  <div class="p-2 layout-two-columns items-center border-b border-grey-light" id="config-background-color">
+                    <a class="capitalize" href="https://tailwindcss.com/docs/background-color" target="_blank">background color</a>
+                    <div class="text-right">
+                      <button aria-controls="config-background-color-details" aria-expanded="false" class="btn btn-link" data-js="toggle" type="button">show details</button>
+                    </div>
+                  </div>
+                  <div aria-hidden="true" class="color-mid-background hidden hidden:overflow animated" id="config-background-color-details">
+                    <div class="p-2 layout-two-columns">
+                      <div>
+                        <b>Class</b>
+                      </div>
+                      <div class="pl-1">
+                        <b>Property Value</b>
+                      </div>
+                    </div>
+                    <div class="p-2 layout-two-columns font-code color-code small">
+                      <div>.{{ prefix }}-blue-light</div>
+                      <div class="pl-1">#C3DDFF</div>
+                    </div>
+                    <div class="p-2 layout-two-columns font-code color-code small">
+                      <div>.{{ prefix }}-blue-bright</div>
+                      <div class="pl-1">#118DF0</div>
+                    </div>
+                    <div class="p-2 layout-two-columns font-code color-code small">
+                      <div>.{{ prefix }}-blue</div>
+                      <div class="pl-1">#184E9E</div>
+                    </div>
+                    <div class="p-2 layout-two-columns font-code color-code small">
+                      <div>.{{ prefix }}-blue-dark</div>
+                      <div class="pl-1">#112E51</div>
+                    </div>
+                    <div class="p-2 layout-two-columns font-code color-code small">
+                      <div>.{{ prefix }}-yellow-light</div>
+                      <div class="pl-1">#FFE6A9</div>
+                    </div>
+                    <div class="p-2 layout-two-columns font-code color-code small">
+                      <div>.{{ prefix }}-yellow-access</div>
+                      <div class="pl-1">#FBB720</div>
+                    </div>
+                    <div class="p-2 layout-two-columns font-code color-code small">
+                      <div>.{{ prefix }}-green-light</div>
+                      <div class="pl-1">#B7ECCF</div>
+                    </div>
+                    <div class="p-2 layout-two-columns font-code color-code small">
+                      <div>.{{ prefix }}-green</div>
+                      <div class="pl-1">#05CE7C</div>
+                    </div>
+                    <div class="p-2 layout-two-columns font-code color-code small">
+                      <div>.{{ prefix }}-green-mid</div>
+                      <div class="pl-1">#0D6D3B</div>
+                    </div>
+                    <div class="p-2 layout-two-columns font-code color-code small">
+                      <div>.{{ prefix }}-green-dark</div>
+                      <div class="pl-1">#094727</div>
+                    </div>
+                    <div class="p-2 layout-two-columns font-code color-code small">
+                      <div>.{{ prefix }}-pink-light</div>
+                      <div class="pl-1">#F1B3bD</div>
+                    </div>
+                    <div class="p-2 layout-two-columns font-code color-code small">
+                      <div>.{{ prefix }}-pink</div>
+                      <div class="pl-1">#F1647C</div>
+                    </div>
+                    <div class="p-2 layout-two-columns font-code color-code small">
+                      <div>.{{ prefix }}-red</div>
+                      <div class="pl-1">#C6252b</div>
+                    </div>
+                    <div class="p-2 layout-two-columns font-code color-code small">
+                      <div>.{{ prefix }}-purple</div>
+                      <div class="pl-1">#4C2C92</div>
+                    </div>
+                    <div class="p-2 layout-two-columns font-code color-code small">
+                      <div>.{{ prefix }}-covid-response</div>
+                      <div class="pl-1">#803D8D</div>
+                    </div>
+                    <div class="p-2 layout-two-columns font-code color-code small">
+                      <div>.{{ prefix }}-covid-response-light</div>
+                      <div class="pl-1">#DAB7E0</div>
+                    </div>
+                    <div class="p-2 layout-two-columns font-code color-code small">
+                      <div>.{{ prefix }}-grey-light</div>
+                      <div class="pl-1">#D1D5D9</div>
+                    </div>
+                    <div class="p-2 layout-two-columns font-code color-code small">
+                      <div>.{{ prefix }}-grey-lightest</div>
+                      <div class="pl-1">#EEF3F7</div>
+                    </div>
+                    <div class="p-2 layout-two-columns font-code color-code small">
+                      <div>.{{ prefix }}-grey-mid</div>
+                      <div class="pl-1">#505C66</div>
+                    </div>
+                    <div class="p-2 layout-two-columns font-code color-code small">
+                      <div>.{{ prefix }}-grey-dark</div>
+                      <div class="pl-1">#172129</div>
+                    </div>
+                    <div class="p-2 layout-two-columns font-code color-code small">
+                      <div>.{{ prefix }}-black</div>
+                      <div class="pl-1">#000000</div>
+                    </div>
+                    <div class="p-2 layout-two-columns font-code color-code small">
+                      <div>.{{ prefix }}-white</div>
+                      <div class="pl-1">#FFFFFF</div>
+                    </div>
+                    <div class="p-2 layout-two-columns font-code color-code small">
+                      <div>.{{ prefix }}-transparent</div>
+                      <div class="pl-1">rgba(255, 255, 255, 0)</div>
+                    </div>
+                    <div class="p-2 layout-two-columns font-code color-code small">
+                      <div>.{{ prefix }}-inherit</div>
+                      <div class="pl-1">inherit</div>
+                    </div>
+                    <div class="p-2 layout-two-columns font-code color-code small">
+                      <div>.{{ prefix }}-eighth-avenue</div>
+                      <div class="pl-1">#2850AD</div>
+                    </div>
+                    <div class="p-2 layout-two-columns font-code color-code small">
+                      <div>.{{ prefix }}-sixth-avenue</div>
+                      <div class="pl-1">#FF6319</div>
+                    </div>
+                    <div class="p-2 layout-two-columns font-code color-code small">
+                      <div>.{{ prefix }}-crosstown</div>
+                      <div class="pl-1">#6CBE45</div>
+                    </div>
+                    <div class="p-2 layout-two-columns font-code color-code small">
+                      <div>.{{ prefix }}-canarsie</div>
+                      <div class="pl-1">#A7A9AC</div>
+                    </div>
+                    <div class="p-2 layout-two-columns font-code color-code small">
+                      <div>.{{ prefix }}-nassau</div>
+                      <div class="pl-1">#996633</div>
+                    </div>
+                    <div class="p-2 layout-two-columns font-code color-code small">
+                      <div>.{{ prefix }}-broadway</div>
+                      <div class="pl-1">#FCCC0A</div>
+                    </div>
+                    <div class="p-2 layout-two-columns font-code color-code small">
+                      <div>.{{ prefix }}-broadway-seventh-avenue</div>
+                      <div class="pl-1">#EE352E</div>
+                    </div>
+                    <div class="p-2 layout-two-columns font-code color-code small">
+                      <div>.{{ prefix }}-lexington-avenue</div>
+                      <div class="pl-1">#00933C</div>
+                    </div>
+                    <div class="p-2 layout-two-columns font-code color-code small">
+                      <div>.{{ prefix }}-flushing</div>
+                      <div class="pl-1">#B933AD</div>
+                    </div>
+                    <div class="p-2 layout-two-columns font-code color-code small">
+                      <div>.{{ prefix }}-shuttles</div>
+                      <div class="pl-1">#808183</div>
+                    </div>
+                  </div>
+                  <div class="p-2 layout-two-columns items-center border-b border-grey-light" id="config-border-color">
+                    <a class="capitalize" href="https://tailwindcss.com/docs/border-color" target="_blank">border color</a>
+                    <div class="text-right">
+                      <button aria-controls="config-border-color-details" aria-expanded="false" class="btn btn-link" data-js="toggle" type="button">show details</button>
+                    </div>
+                  </div>
+                  <div aria-hidden="true" class="color-mid-background hidden hidden:overflow animated" id="config-border-color-details">
+                    <div class="p-2 layout-two-columns">
+                      <div>
+                        <b>Class</b>
+                      </div>
+                      <div class="pl-1">
+                        <b>Property Value</b>
+                      </div>
+                    </div>
+                    <div class="p-2 layout-two-columns font-code color-code small">
+                      <div>.{{ prefix }}-default</div>
+                      <div class="pl-1"></div>
+                    </div>
+                    <div class="p-2 layout-two-columns font-code color-code small">
+                      <div>.{{ prefix }}-blue-light</div>
+                      <div class="pl-1">#C3DDFF</div>
+                    </div>
+                    <div class="p-2 layout-two-columns font-code color-code small">
+                      <div>.{{ prefix }}-blue-bright</div>
+                      <div class="pl-1">#118DF0</div>
+                    </div>
+                    <div class="p-2 layout-two-columns font-code color-code small">
+                      <div>.{{ prefix }}-blue</div>
+                      <div class="pl-1">#184E9E</div>
+                    </div>
+                    <div class="p-2 layout-two-columns font-code color-code small">
+                      <div>.{{ prefix }}-blue-dark</div>
+                      <div class="pl-1">#112E51</div>
+                    </div>
+                    <div class="p-2 layout-two-columns font-code color-code small">
+                      <div>.{{ prefix }}-yellow-light</div>
+                      <div class="pl-1">#FFE6A9</div>
+                    </div>
+                    <div class="p-2 layout-two-columns font-code color-code small">
+                      <div>.{{ prefix }}-yellow-access</div>
+                      <div class="pl-1">#FBB720</div>
+                    </div>
+                    <div class="p-2 layout-two-columns font-code color-code small">
+                      <div>.{{ prefix }}-green-light</div>
+                      <div class="pl-1">#B7ECCF</div>
+                    </div>
+                    <div class="p-2 layout-two-columns font-code color-code small">
+                      <div>.{{ prefix }}-green</div>
+                      <div class="pl-1">#05CE7C</div>
+                    </div>
+                    <div class="p-2 layout-two-columns font-code color-code small">
+                      <div>.{{ prefix }}-green-mid</div>
+                      <div class="pl-1">#0D6D3B</div>
+                    </div>
+                    <div class="p-2 layout-two-columns font-code color-code small">
+                      <div>.{{ prefix }}-green-dark</div>
+                      <div class="pl-1">#094727</div>
+                    </div>
+                    <div class="p-2 layout-two-columns font-code color-code small">
+                      <div>.{{ prefix }}-pink-light</div>
+                      <div class="pl-1">#F1B3bD</div>
+                    </div>
+                    <div class="p-2 layout-two-columns font-code color-code small">
+                      <div>.{{ prefix }}-pink</div>
+                      <div class="pl-1">#F1647C</div>
+                    </div>
+                    <div class="p-2 layout-two-columns font-code color-code small">
+                      <div>.{{ prefix }}-red</div>
+                      <div class="pl-1">#C6252b</div>
+                    </div>
+                    <div class="p-2 layout-two-columns font-code color-code small">
+                      <div>.{{ prefix }}-purple</div>
+                      <div class="pl-1">#4C2C92</div>
+                    </div>
+                    <div class="p-2 layout-two-columns font-code color-code small">
+                      <div>.{{ prefix }}-covid-response</div>
+                      <div class="pl-1">#803D8D</div>
+                    </div>
+                    <div class="p-2 layout-two-columns font-code color-code small">
+                      <div>.{{ prefix }}-covid-response-light</div>
+                      <div class="pl-1">#DAB7E0</div>
+                    </div>
+                    <div class="p-2 layout-two-columns font-code color-code small">
+                      <div>.{{ prefix }}-grey-light</div>
+                      <div class="pl-1">#D1D5D9</div>
+                    </div>
+                    <div class="p-2 layout-two-columns font-code color-code small">
+                      <div>.{{ prefix }}-grey-lightest</div>
+                      <div class="pl-1">#EEF3F7</div>
+                    </div>
+                    <div class="p-2 layout-two-columns font-code color-code small">
+                      <div>.{{ prefix }}-grey-mid</div>
+                      <div class="pl-1">#505C66</div>
+                    </div>
+                    <div class="p-2 layout-two-columns font-code color-code small">
+                      <div>.{{ prefix }}-grey-dark</div>
+                      <div class="pl-1">#172129</div>
+                    </div>
+                    <div class="p-2 layout-two-columns font-code color-code small">
+                      <div>.{{ prefix }}-black</div>
+                      <div class="pl-1">#000000</div>
+                    </div>
+                    <div class="p-2 layout-two-columns font-code color-code small">
+                      <div>.{{ prefix }}-white</div>
+                      <div class="pl-1">#FFFFFF</div>
+                    </div>
+                    <div class="p-2 layout-two-columns font-code color-code small">
+                      <div>.{{ prefix }}-transparent</div>
+                      <div class="pl-1">rgba(255, 255, 255, 0)</div>
+                    </div>
+                    <div class="p-2 layout-two-columns font-code color-code small">
+                      <div>.{{ prefix }}-inherit</div>
+                      <div class="pl-1">inherit</div>
+                    </div>
+                    <div class="p-2 layout-two-columns font-code color-code small">
+                      <div>.{{ prefix }}-eighth-avenue</div>
+                      <div class="pl-1">#2850AD</div>
+                    </div>
+                    <div class="p-2 layout-two-columns font-code color-code small">
+                      <div>.{{ prefix }}-sixth-avenue</div>
+                      <div class="pl-1">#FF6319</div>
+                    </div>
+                    <div class="p-2 layout-two-columns font-code color-code small">
+                      <div>.{{ prefix }}-crosstown</div>
+                      <div class="pl-1">#6CBE45</div>
+                    </div>
+                    <div class="p-2 layout-two-columns font-code color-code small">
+                      <div>.{{ prefix }}-canarsie</div>
+                      <div class="pl-1">#A7A9AC</div>
+                    </div>
+                    <div class="p-2 layout-two-columns font-code color-code small">
+                      <div>.{{ prefix }}-nassau</div>
+                      <div class="pl-1">#996633</div>
+                    </div>
+                    <div class="p-2 layout-two-columns font-code color-code small">
+                      <div>.{{ prefix }}-broadway</div>
+                      <div class="pl-1">#FCCC0A</div>
+                    </div>
+                    <div class="p-2 layout-two-columns font-code color-code small">
+                      <div>.{{ prefix }}-broadway-seventh-avenue</div>
+                      <div class="pl-1">#EE352E</div>
+                    </div>
+                    <div class="p-2 layout-two-columns font-code color-code small">
+                      <div>.{{ prefix }}-lexington-avenue</div>
+                      <div class="pl-1">#00933C</div>
+                    </div>
+                    <div class="p-2 layout-two-columns font-code color-code small">
+                      <div>.{{ prefix }}-flushing</div>
+                      <div class="pl-1">#B933AD</div>
+                    </div>
+                    <div class="p-2 layout-two-columns font-code color-code small">
+                      <div>.{{ prefix }}-shuttles</div>
+                      <div class="pl-1">#808183</div>
+                    </div>
+                  </div>
+                  <div class="p-2 layout-two-columns items-center border-b border-grey-light" id="config-border-width">
+                    <a class="capitalize" href="https://tailwindcss.com/docs/border-width" target="_blank">border width</a>
+                    <div class="text-right">
+                      <div class="text-secondary-grey">Default</div>
+                    </div>
+                  </div>
+                  <div class="p-2 layout-two-columns items-center border-b border-grey-light" id="config-box-shadow">
+                    <a class="capitalize" href="https://tailwindcss.com/docs/box-shadow" target="_blank">box shadow</a>
+                    <div class="text-right">
+                      <button aria-controls="config-box-shadow-details" aria-expanded="false" class="btn btn-link" data-js="toggle" type="button">show details</button>
+                    </div>
+                  </div>
+                  <div aria-hidden="true" class="color-mid-background hidden hidden:overflow animated" id="config-box-shadow-details">
+                    <div class="p-2 layout-two-columns">
+                      <div>
+                        <b>Class</b>
+                      </div>
+                      <div class="pl-1">
+                        <b>Property Value</b>
+                      </div>
+                    </div>
+                    <div class="p-2 layout-two-columns font-code color-code small">
+                      <div>.{{ prefix }}-up</div>
+                      <div class="pl-1">0 3px 12px 2px rgba(0, 0, 0, 0.25)</div>
+                    </div>
+                  </div>
+                  <div class="p-2 layout-two-columns items-center border-b border-grey-light" id="config-fill">
+                    <a class="capitalize" href="https://tailwindcss.com/docs/fill" target="_blank">fill</a>
+                    <div class="text-right">
+                      <button aria-controls="config-fill-details" aria-expanded="false" class="btn btn-link" data-js="toggle" type="button">show details</button>
+                    </div>
+                  </div>
+                  <div aria-hidden="true" class="color-mid-background hidden hidden:overflow animated" id="config-fill-details">
+                    <div class="p-2 layout-two-columns">
+                      <div>
+                        <b>Class</b>
+                      </div>
+                      <div class="pl-1">
+                        <b>Property Value</b>
+                      </div>
+                    </div>
+                    <div class="p-2 layout-two-columns font-code color-code small">
+                      <div>.{{ prefix }}-blue-light</div>
+                      <div class="pl-1">#C3DDFF</div>
+                    </div>
+                    <div class="p-2 layout-two-columns font-code color-code small">
+                      <div>.{{ prefix }}-blue-bright</div>
+                      <div class="pl-1">#118DF0</div>
+                    </div>
+                    <div class="p-2 layout-two-columns font-code color-code small">
+                      <div>.{{ prefix }}-blue</div>
+                      <div class="pl-1">#184E9E</div>
+                    </div>
+                    <div class="p-2 layout-two-columns font-code color-code small">
+                      <div>.{{ prefix }}-blue-dark</div>
+                      <div class="pl-1">#112E51</div>
+                    </div>
+                    <div class="p-2 layout-two-columns font-code color-code small">
+                      <div>.{{ prefix }}-yellow-light</div>
+                      <div class="pl-1">#FFE6A9</div>
+                    </div>
+                    <div class="p-2 layout-two-columns font-code color-code small">
+                      <div>.{{ prefix }}-yellow-access</div>
+                      <div class="pl-1">#FBB720</div>
+                    </div>
+                    <div class="p-2 layout-two-columns font-code color-code small">
+                      <div>.{{ prefix }}-green-light</div>
+                      <div class="pl-1">#B7ECCF</div>
+                    </div>
+                    <div class="p-2 layout-two-columns font-code color-code small">
+                      <div>.{{ prefix }}-green</div>
+                      <div class="pl-1">#05CE7C</div>
+                    </div>
+                    <div class="p-2 layout-two-columns font-code color-code small">
+                      <div>.{{ prefix }}-green-mid</div>
+                      <div class="pl-1">#0D6D3B</div>
+                    </div>
+                    <div class="p-2 layout-two-columns font-code color-code small">
+                      <div>.{{ prefix }}-green-dark</div>
+                      <div class="pl-1">#094727</div>
+                    </div>
+                    <div class="p-2 layout-two-columns font-code color-code small">
+                      <div>.{{ prefix }}-pink-light</div>
+                      <div class="pl-1">#F1B3bD</div>
+                    </div>
+                    <div class="p-2 layout-two-columns font-code color-code small">
+                      <div>.{{ prefix }}-pink</div>
+                      <div class="pl-1">#F1647C</div>
+                    </div>
+                    <div class="p-2 layout-two-columns font-code color-code small">
+                      <div>.{{ prefix }}-red</div>
+                      <div class="pl-1">#C6252b</div>
+                    </div>
+                    <div class="p-2 layout-two-columns font-code color-code small">
+                      <div>.{{ prefix }}-purple</div>
+                      <div class="pl-1">#4C2C92</div>
+                    </div>
+                    <div class="p-2 layout-two-columns font-code color-code small">
+                      <div>.{{ prefix }}-covid-response</div>
+                      <div class="pl-1">#803D8D</div>
+                    </div>
+                    <div class="p-2 layout-two-columns font-code color-code small">
+                      <div>.{{ prefix }}-covid-response-light</div>
+                      <div class="pl-1">#DAB7E0</div>
+                    </div>
+                    <div class="p-2 layout-two-columns font-code color-code small">
+                      <div>.{{ prefix }}-grey-light</div>
+                      <div class="pl-1">#D1D5D9</div>
+                    </div>
+                    <div class="p-2 layout-two-columns font-code color-code small">
+                      <div>.{{ prefix }}-grey-lightest</div>
+                      <div class="pl-1">#EEF3F7</div>
+                    </div>
+                    <div class="p-2 layout-two-columns font-code color-code small">
+                      <div>.{{ prefix }}-grey-mid</div>
+                      <div class="pl-1">#505C66</div>
+                    </div>
+                    <div class="p-2 layout-two-columns font-code color-code small">
+                      <div>.{{ prefix }}-grey-dark</div>
+                      <div class="pl-1">#172129</div>
+                    </div>
+                    <div class="p-2 layout-two-columns font-code color-code small">
+                      <div>.{{ prefix }}-black</div>
+                      <div class="pl-1">#000000</div>
+                    </div>
+                    <div class="p-2 layout-two-columns font-code color-code small">
+                      <div>.{{ prefix }}-white</div>
+                      <div class="pl-1">#FFFFFF</div>
+                    </div>
+                    <div class="p-2 layout-two-columns font-code color-code small">
+                      <div>.{{ prefix }}-transparent</div>
+                      <div class="pl-1">rgba(255, 255, 255, 0)</div>
+                    </div>
+                    <div class="p-2 layout-two-columns font-code color-code small">
+                      <div>.{{ prefix }}-inherit</div>
+                      <div class="pl-1">inherit</div>
+                    </div>
+                    <div class="p-2 layout-two-columns font-code color-code small">
+                      <div>.{{ prefix }}-eighth-avenue</div>
+                      <div class="pl-1">#2850AD</div>
+                    </div>
+                    <div class="p-2 layout-two-columns font-code color-code small">
+                      <div>.{{ prefix }}-sixth-avenue</div>
+                      <div class="pl-1">#FF6319</div>
+                    </div>
+                    <div class="p-2 layout-two-columns font-code color-code small">
+                      <div>.{{ prefix }}-crosstown</div>
+                      <div class="pl-1">#6CBE45</div>
+                    </div>
+                    <div class="p-2 layout-two-columns font-code color-code small">
+                      <div>.{{ prefix }}-canarsie</div>
+                      <div class="pl-1">#A7A9AC</div>
+                    </div>
+                    <div class="p-2 layout-two-columns font-code color-code small">
+                      <div>.{{ prefix }}-nassau</div>
+                      <div class="pl-1">#996633</div>
+                    </div>
+                    <div class="p-2 layout-two-columns font-code color-code small">
+                      <div>.{{ prefix }}-broadway</div>
+                      <div class="pl-1">#FCCC0A</div>
+                    </div>
+                    <div class="p-2 layout-two-columns font-code color-code small">
+                      <div>.{{ prefix }}-broadway-seventh-avenue</div>
+                      <div class="pl-1">#EE352E</div>
+                    </div>
+                    <div class="p-2 layout-two-columns font-code color-code small">
+                      <div>.{{ prefix }}-lexington-avenue</div>
+                      <div class="pl-1">#00933C</div>
+                    </div>
+                    <div class="p-2 layout-two-columns font-code color-code small">
+                      <div>.{{ prefix }}-flushing</div>
+                      <div class="pl-1">#B933AD</div>
+                    </div>
+                    <div class="p-2 layout-two-columns font-code color-code small">
+                      <div>.{{ prefix }}-shuttles</div>
+                      <div class="pl-1">#808183</div>
+                    </div>
+                  </div>
+                  <div class="p-2 layout-two-columns items-center border-b border-grey-light" id="config-font-family">
+                    <a class="capitalize" href="https://tailwindcss.com/docs/font-family" target="_blank">font family</a>
+                    <div class="text-right">
+                      <button aria-controls="config-font-family-details" aria-expanded="false" class="btn btn-link" data-js="toggle" type="button">show details</button>
+                    </div>
+                  </div>
+                  <div aria-hidden="true" class="color-mid-background hidden hidden:overflow animated" id="config-font-family-details">
+                    <div class="p-2 layout-two-columns">
+                      <div>
+                        <b>Class</b>
+                      </div>
+                      <div class="pl-1">
+                        <b>Property Value</b>
+                      </div>
+                    </div>
+                    <div class="p-2 layout-two-columns font-code color-code small">
+                      <div>.{{ prefix }}-inherit</div>
+                      <div class="pl-1">inherit</div>
+                    </div>
+                    <div class="p-2 layout-two-columns font-code color-code small">
+                      <div>.{{ prefix }}-system</div>
+                      <div class="pl-1">-apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, Roboto, Oxygen-Sans, Ubuntu, Cantarell, &quot;Helvetica Neue&quot;, sans-serif</div>
+                    </div>
+                    <div class="p-2 layout-two-columns font-code color-code small">
+                      <div>.{{ prefix }}-sans</div>
+                      <div class="pl-1">&quot;Noto Sans&quot;, sans-serif</div>
+                    </div>
+                    <div class="p-2 layout-two-columns font-code color-code small">
+                      <div>.{{ prefix }}-serif</div>
+                      <div class="pl-1">&quot;Noto Serif&quot;, serif</div>
+                    </div>
+                    <div class="p-2 layout-two-columns font-code color-code small">
+                      <div>.{{ prefix }}-kr-sans</div>
+                      <div class="pl-1">&quot;Noto Sans CJK KR&quot;, &quot;Noto Sans&quot;, sans-serif</div>
+                    </div>
+                    <div class="p-2 layout-two-columns font-code color-code small">
+                      <div>.{{ prefix }}-kr-serif</div>
+                      <div class="pl-1">&quot;Noto Sans CJK KR&quot;, &quot;Noto Serif&quot;, serif</div>
+                    </div>
+                    <div class="p-2 layout-two-columns font-code color-code small">
+                      <div>.{{ prefix }}-tc-sans</div>
+                      <div class="pl-1">&quot;Noto Sans CJK TC&quot;, &quot;Microsoft Yahei&quot;, &quot;微软雅黑&quot;, STXihei, &quot;华文细黑&quot;, &quot;Noto Sans&quot;, sans-serif</div>
+                    </div>
+                    <div class="p-2 layout-two-columns font-code color-code small">
+                      <div>.{{ prefix }}-tc-serif</div>
+                      <div class="pl-1">&quot;Noto Sans CJK TC&quot;, &quot;Microsoft Yahei&quot;, &quot;微软雅黑&quot;, STXihei, &quot;华文细黑&quot;, &quot;Noto Serif&quot;, serif</div>
+                    </div>
+                    <div class="p-2 layout-two-columns font-code color-code small">
+                      <div>.{{ prefix }}-ar-sans</div>
+                      <div class="pl-1">&quot;Noto Naskh Arabic&quot;, &quot;Noto Sans&quot;, sans-serif</div>
+                    </div>
+                    <div class="p-2 layout-two-columns font-code color-code small">
+                      <div>.{{ prefix }}-ar-serif</div>
+                      <div class="pl-1">&quot;Noto Naskh Arabic&quot;, &quot;Noto Serif&quot;, serif</div>
+                    </div>
+                    <div class="p-2 layout-two-columns font-code color-code small">
+                      <div>.{{ prefix }}-ur-sans</div>
+                      <div class="pl-1">&quot;Noto Nastaliq Urdu&quot;, &quot;Noto Sans&quot;, sans-serif</div>
+                    </div>
+                    <div class="p-2 layout-two-columns font-code color-code small">
+                      <div>.{{ prefix }}-ur-serif</div>
+                      <div class="pl-1">&quot;Noto Nastaliq Urdu&quot;, &quot;Noto Serif&quot;, serif</div>
+                    </div>
+                    <div class="p-2 layout-two-columns font-code color-code small">
+                      <div>.{{ prefix }}-code</div>
+                      <div class="pl-1">monospace</div>
+                    </div>
+                  </div>
+                  <div class="p-2 layout-two-columns items-center border-b border-grey-light" id="config-font-size">
+                    <a class="capitalize" href="https://tailwindcss.com/docs/font-size" target="_blank">font size</a>
+                    <div class="text-right">
+                      <button aria-controls="config-font-size-details" aria-expanded="false" class="btn btn-link" data-js="toggle" type="button">show details</button>
+                    </div>
+                  </div>
+                  <div aria-hidden="true" class="color-mid-background hidden hidden:overflow animated" id="config-font-size-details">
+                    <div class="p-2 layout-two-columns">
+                      <div>
+                        <b>Class</b>
+                      </div>
+                      <div class="pl-1">
+                        <b>Property Value</b>
+                      </div>
+                    </div>
+                    <div class="p-2 layout-two-columns font-code color-code small">
+                      <div>.{{ prefix }}-inherit</div>
+                      <div class="pl-1">inherit</div>
+                    </div>
+                    <div class="p-2 layout-two-columns font-code color-code small">
+                      <div>.{{ prefix }}-xsmall</div>
+                      <div class="pl-1">0.54rem</div>
+                    </div>
+                    <div class="p-2 layout-two-columns font-code color-code small">
+                      <div>.{{ prefix }}-small</div>
+                      <div class="pl-1">0.72rem</div>
+                    </div>
+                    <div class="p-2 layout-two-columns font-code color-code small">
+                      <div>.{{ prefix }}-normal</div>
+                      <div class="pl-1">1rem</div>
+                    </div>
+                    <div class="p-2 layout-two-columns font-code color-code small">
+                      <div>.{{ prefix }}-medium</div>
+                      <div class="pl-1">1.09rem</div>
+                    </div>
+                    <div class="p-2 layout-two-columns font-code color-code small">
+                      <div>.{{ prefix }}-large</div>
+                      <div class="pl-1">1.25rem</div>
+                    </div>
+                    <div class="p-2 layout-two-columns font-code color-code small">
+                      <div>.{{ prefix }}-larger</div>
+                      <div class="pl-1">1.45rem</div>
+                    </div>
+                    <div class="p-2 layout-two-columns font-code color-code small">
+                      <div>.{{ prefix }}-largest</div>
+                      <div class="pl-1">1.81rem</div>
+                    </div>
+                    <div class="p-2 layout-two-columns font-code color-code small">
+                      <div>.{{ prefix }}-jumbo</div>
+                      <div class="pl-1">2.54rem</div>
+                    </div>
+                    <div class="p-2 layout-two-columns font-code color-code small">
+                      <div>.{{ prefix }}-print</div>
+                      <div class="pl-1">16px</div>
+                    </div>
+                  </div>
+                  <div class="p-2 layout-two-columns items-center border-b border-grey-light" id="config-font-weight">
+                    <a class="capitalize" href="https://tailwindcss.com/docs/font-weight" target="_blank">font weight</a>
+                    <div class="text-right">
+                      <button aria-controls="config-font-weight-details" aria-expanded="false" class="btn btn-link" data-js="toggle" type="button">show details</button>
+                    </div>
+                  </div>
+                  <div aria-hidden="true" class="color-mid-background hidden hidden:overflow animated" id="config-font-weight-details">
+                    <div class="p-2 layout-two-columns">
+                      <div>
+                        <b>Class</b>
+                      </div>
+                      <div class="pl-1">
+                        <b>Property Value</b>
+                      </div>
+                    </div>
+                    <div class="p-2 layout-two-columns font-code color-code small">
+                      <div>.{{ prefix }}-inherit</div>
+                      <div class="pl-1">inherit</div>
+                    </div>
+                    <div class="p-2 layout-two-columns font-code color-code small">
+                      <div>.{{ prefix }}-normal</div>
+                      <div class="pl-1">normal</div>
+                    </div>
+                    <div class="p-2 layout-two-columns font-code color-code small">
+                      <div>.{{ prefix }}-bold</div>
+                      <div class="pl-1">bold</div>
+                    </div>
+                  </div>
+                  <div class="p-2 layout-two-columns items-center border-b border-grey-light" id="config-height">
+                    <a class="capitalize" href="https://tailwindcss.com/docs/height" target="_blank">height</a>
+                    <div class="text-right">
+                      <button aria-controls="config-height-details" aria-expanded="false" class="btn btn-link" data-js="toggle" type="button">show details</button>
+                    </div>
+                  </div>
+                  <div aria-hidden="true" class="color-mid-background hidden hidden:overflow animated" id="config-height-details">
+                    <div class="p-2 layout-two-columns">
+                      <div>
+                        <b>Class</b>
+                      </div>
+                      <div class="pl-1">
+                        <b>Property Value</b>
+                      </div>
+                    </div>
+                    <div class="p-2 layout-two-columns font-code color-code small">
+                      <div>.{{ prefix }}-auto</div>
+                      <div class="pl-1">auto</div>
+                    </div>
+                    <div class="p-2 layout-two-columns font-code color-code small">
+                      <div>.{{ prefix }}-full</div>
+                      <div class="pl-1">100%</div>
+                    </div>
+                    <div class="p-2 layout-two-columns font-code color-code small">
+                      <div>.{{ prefix }}-90vh</div>
+                      <div class="pl-1">90vh</div>
+                    </div>
+                    <div class="p-2 layout-two-columns font-code color-code small">
+                      <div>.{{ prefix }}-100vh</div>
+                      <div class="pl-1">100vh</div>
+                    </div>
+                  </div>
+                  <div class="p-2 layout-two-columns items-center border-b border-grey-light" id="config-line-height">
+                    <a class="capitalize" href="https://tailwindcss.com/docs/line-height" target="_blank">line height</a>
+                    <div class="text-right">
+                      <button aria-controls="config-line-height-details" aria-expanded="false" class="btn btn-link" data-js="toggle" type="button">show details</button>
+                    </div>
+                  </div>
+                  <div aria-hidden="true" class="color-mid-background hidden hidden:overflow animated" id="config-line-height-details">
+                    <div class="p-2 layout-two-columns">
+                      <div>
+                        <b>Class</b>
+                      </div>
+                      <div class="pl-1">
+                        <b>Property Value</b>
+                      </div>
+                    </div>
+                    <div class="p-2 layout-two-columns font-code color-code small">
+                      <div>.{{ prefix }}-inherit</div>
+                      <div class="pl-1">inherit</div>
+                    </div>
+                    <div class="p-2 layout-two-columns font-code color-code small">
+                      <div>.{{ prefix }}-xsmall</div>
+                      <div class="pl-1">0.8</div>
+                    </div>
+                    <div class="p-2 layout-two-columns font-code color-code small">
+                      <div>.{{ prefix }}-small</div>
+                      <div class="pl-1">0.9</div>
+                    </div>
+                    <div class="p-2 layout-two-columns font-code color-code small">
+                      <div>.{{ prefix }}-normal</div>
+                      <div class="pl-1">1</div>
+                    </div>
+                    <div class="p-2 layout-two-columns font-code color-code small">
+                      <div>.{{ prefix }}-medium</div>
+                      <div class="pl-1">1.3</div>
+                    </div>
+                    <div class="p-2 layout-two-columns font-code color-code small">
+                      <div>.{{ prefix }}-large</div>
+                      <div class="pl-1">1.4</div>
+                    </div>
+                    <div class="p-2 layout-two-columns font-code color-code small">
+                      <div>.{{ prefix }}-larger</div>
+                      <div class="pl-1">1.5</div>
+                    </div>
+                  </div>
+                  <div class="p-2 layout-two-columns items-center border-b border-grey-light" id="config-margin">
+                    <a class="capitalize" href="https://tailwindcss.com/docs/margin" target="_blank">margin</a>
+                    <div class="text-right">
+                      <button aria-controls="config-margin-details" aria-expanded="false" class="btn btn-link" data-js="toggle" type="button">show details</button>
+                    </div>
+                  </div>
+                  <div aria-hidden="true" class="color-mid-background hidden hidden:overflow animated" id="config-margin-details">
+                    <div class="p-2 layout-two-columns">
+                      <div>
+                        <b>Class</b>
+                      </div>
+                      <div class="pl-1">
+                        <b>Property Value</b>
+                      </div>
+                    </div>
+                    <div class="p-2 layout-two-columns font-code color-code small">
+                      <div>.{{ prefix }}-0</div>
+                      <div class="pl-1">0</div>
+                    </div>
+                    <div class="p-2 layout-two-columns font-code color-code small">
+                      <div>.{{ prefix }}-1</div>
+                      <div class="pl-1">8px</div>
+                    </div>
+                    <div class="p-2 layout-two-columns font-code color-code small">
+                      <div>.{{ prefix }}-2</div>
+                      <div class="pl-1">16px</div>
+                    </div>
+                    <div class="p-2 layout-two-columns font-code color-code small">
+                      <div>.{{ prefix }}-3</div>
+                      <div class="pl-1">24px</div>
+                    </div>
+                    <div class="p-2 layout-two-columns font-code color-code small">
+                      <div>.{{ prefix }}-4</div>
+                      <div class="pl-1">32px</div>
+                    </div>
+                    <div class="p-2 layout-two-columns font-code color-code small">
+                      <div>.{{ prefix }}-auto</div>
+                      <div class="pl-1">auto</div>
+                    </div>
+                  </div>
+                  <div class="p-2 layout-two-columns items-center border-b border-grey-light" id="config-max-width">
+                    <a class="capitalize" href="https://tailwindcss.com/docs/max-width" target="_blank">max width</a>
+                    <div class="text-right">
+                      <button aria-controls="config-max-width-details" aria-expanded="false" class="btn btn-link" data-js="toggle" type="button">show details</button>
+                    </div>
+                  </div>
+                  <div aria-hidden="true" class="color-mid-background hidden hidden:overflow animated" id="config-max-width-details">
+                    <div class="p-2 layout-two-columns">
+                      <div>
+                        <b>Class</b>
+                      </div>
+                      <div class="pl-1">
+                        <b>Property Value</b>
+                      </div>
+                    </div>
+                    <div class="p-2 layout-two-columns font-code color-code small">
+                      <div>.{{ prefix }}-1/2</div>
+                      <div class="pl-1">50%</div>
+                    </div>
+                    <div class="p-2 layout-two-columns font-code color-code small">
+                      <div>.{{ prefix }}-full</div>
+                      <div class="pl-1">100%</div>
+                    </div>
+                  </div>
+                  <div class="p-2 layout-two-columns items-center border-b border-grey-light" id="config-padding">
+                    <a class="capitalize" href="https://tailwindcss.com/docs/padding" target="_blank">padding</a>
+                    <div class="text-right">
+                      <button aria-controls="config-padding-details" aria-expanded="false" class="btn btn-link" data-js="toggle" type="button">show details</button>
+                    </div>
+                  </div>
+                  <div aria-hidden="true" class="color-mid-background hidden hidden:overflow animated" id="config-padding-details">
+                    <div class="p-2 layout-two-columns">
+                      <div>
+                        <b>Class</b>
+                      </div>
+                      <div class="pl-1">
+                        <b>Property Value</b>
+                      </div>
+                    </div>
+                    <div class="p-2 layout-two-columns font-code color-code small">
+                      <div>.{{ prefix }}-0</div>
+                      <div class="pl-1">0</div>
+                    </div>
+                    <div class="p-2 layout-two-columns font-code color-code small">
+                      <div>.{{ prefix }}-1</div>
+                      <div class="pl-1">8px</div>
+                    </div>
+                    <div class="p-2 layout-two-columns font-code color-code small">
+                      <div>.{{ prefix }}-2</div>
+                      <div class="pl-1">16px</div>
+                    </div>
+                    <div class="p-2 layout-two-columns font-code color-code small">
+                      <div>.{{ prefix }}-3</div>
+                      <div class="pl-1">24px</div>
+                    </div>
+                    <div class="p-2 layout-two-columns font-code color-code small">
+                      <div>.{{ prefix }}-4</div>
+                      <div class="pl-1">32px</div>
+                    </div>
+                  </div>
+                  <div class="p-2 layout-two-columns items-center border-b border-grey-light" id="config-screens">
+                    <a class="capitalize" href="https://tailwindcss.com/docs/screens" target="_blank">screens</a>
+                    <div class="text-right">
+                      <button aria-controls="config-screens-details" aria-expanded="false" class="btn btn-link" data-js="toggle" type="button">show details</button>
+                    </div>
+                  </div>
+                  <div aria-hidden="true" class="color-mid-background hidden hidden:overflow animated" id="config-screens-details">
+                    <div class="p-2 layout-two-columns">
+                      <div>
+                        <b>Class</b>
+                      </div>
+                      <div class="pl-1">
+                        <b>Property Value</b>
+                      </div>
+                    </div>
+                    <div class="p-2 layout-two-columns font-code color-code small">
+                      <div>.{{ prefix }}-screen-desktop</div>
+                      <div class="pl-1">[object Object]</div>
+                    </div>
+                    <div class="p-2 layout-two-columns font-code color-code small">
+                      <div>.{{ prefix }}-screen-tablet</div>
+                      <div class="pl-1">[object Object]</div>
+                    </div>
+                    <div class="p-2 layout-two-columns font-code color-code small">
+                      <div>.{{ prefix }}-screen-mobile</div>
+                      <div class="pl-1">[object Object]</div>
+                    </div>
+                    <div class="p-2 layout-two-columns font-code color-code small">
+                      <div>.{{ prefix }}-screen-sm-mobile</div>
+                      <div class="pl-1">[object Object]</div>
+                    </div>
+                    <div class="p-2 layout-two-columns font-code color-code small">
+                      <div>.{{ prefix }}-print</div>
+                      <div class="pl-1">[object Object]</div>
+                    </div>
+                  </div>
+                  <div class="p-2 layout-two-columns items-center border-b border-grey-light" id="config-text-color">
+                    <a class="capitalize" href="https://tailwindcss.com/docs/text-color" target="_blank">text color</a>
+                    <div class="text-right">
+                      <button aria-controls="config-text-color-details" aria-expanded="false" class="btn btn-link" data-js="toggle" type="button">show details</button>
+                    </div>
+                  </div>
+                  <div aria-hidden="true" class="color-mid-background hidden hidden:overflow animated" id="config-text-color-details">
+                    <div class="p-2 layout-two-columns">
+                      <div>
+                        <b>Class</b>
+                      </div>
+                      <div class="pl-1">
+                        <b>Property Value</b>
+                      </div>
+                    </div>
+                    <div class="p-2 layout-two-columns font-code color-code small">
+                      <div>.{{ prefix }}-blue-light</div>
+                      <div class="pl-1">#C3DDFF</div>
+                    </div>
+                    <div class="p-2 layout-two-columns font-code color-code small">
+                      <div>.{{ prefix }}-blue-bright</div>
+                      <div class="pl-1">#118DF0</div>
+                    </div>
+                    <div class="p-2 layout-two-columns font-code color-code small">
+                      <div>.{{ prefix }}-blue</div>
+                      <div class="pl-1">#184E9E</div>
+                    </div>
+                    <div class="p-2 layout-two-columns font-code color-code small">
+                      <div>.{{ prefix }}-blue-dark</div>
+                      <div class="pl-1">#112E51</div>
+                    </div>
+                    <div class="p-2 layout-two-columns font-code color-code small">
+                      <div>.{{ prefix }}-yellow-light</div>
+                      <div class="pl-1">#FFE6A9</div>
+                    </div>
+                    <div class="p-2 layout-two-columns font-code color-code small">
+                      <div>.{{ prefix }}-yellow-access</div>
+                      <div class="pl-1">#FBB720</div>
+                    </div>
+                    <div class="p-2 layout-two-columns font-code color-code small">
+                      <div>.{{ prefix }}-green-light</div>
+                      <div class="pl-1">#B7ECCF</div>
+                    </div>
+                    <div class="p-2 layout-two-columns font-code color-code small">
+                      <div>.{{ prefix }}-green</div>
+                      <div class="pl-1">#05CE7C</div>
+                    </div>
+                    <div class="p-2 layout-two-columns font-code color-code small">
+                      <div>.{{ prefix }}-green-mid</div>
+                      <div class="pl-1">#0D6D3B</div>
+                    </div>
+                    <div class="p-2 layout-two-columns font-code color-code small">
+                      <div>.{{ prefix }}-green-dark</div>
+                      <div class="pl-1">#094727</div>
+                    </div>
+                    <div class="p-2 layout-two-columns font-code color-code small">
+                      <div>.{{ prefix }}-pink-light</div>
+                      <div class="pl-1">#F1B3bD</div>
+                    </div>
+                    <div class="p-2 layout-two-columns font-code color-code small">
+                      <div>.{{ prefix }}-pink</div>
+                      <div class="pl-1">#F1647C</div>
+                    </div>
+                    <div class="p-2 layout-two-columns font-code color-code small">
+                      <div>.{{ prefix }}-red</div>
+                      <div class="pl-1">#C6252b</div>
+                    </div>
+                    <div class="p-2 layout-two-columns font-code color-code small">
+                      <div>.{{ prefix }}-purple</div>
+                      <div class="pl-1">#4C2C92</div>
+                    </div>
+                    <div class="p-2 layout-two-columns font-code color-code small">
+                      <div>.{{ prefix }}-covid-response</div>
+                      <div class="pl-1">#803D8D</div>
+                    </div>
+                    <div class="p-2 layout-two-columns font-code color-code small">
+                      <div>.{{ prefix }}-covid-response-light</div>
+                      <div class="pl-1">#DAB7E0</div>
+                    </div>
+                    <div class="p-2 layout-two-columns font-code color-code small">
+                      <div>.{{ prefix }}-grey-light</div>
+                      <div class="pl-1">#D1D5D9</div>
+                    </div>
+                    <div class="p-2 layout-two-columns font-code color-code small">
+                      <div>.{{ prefix }}-grey-lightest</div>
+                      <div class="pl-1">#EEF3F7</div>
+                    </div>
+                    <div class="p-2 layout-two-columns font-code color-code small">
+                      <div>.{{ prefix }}-grey-mid</div>
+                      <div class="pl-1">#505C66</div>
+                    </div>
+                    <div class="p-2 layout-two-columns font-code color-code small">
+                      <div>.{{ prefix }}-grey-dark</div>
+                      <div class="pl-1">#172129</div>
+                    </div>
+                    <div class="p-2 layout-two-columns font-code color-code small">
+                      <div>.{{ prefix }}-black</div>
+                      <div class="pl-1">#000000</div>
+                    </div>
+                    <div class="p-2 layout-two-columns font-code color-code small">
+                      <div>.{{ prefix }}-white</div>
+                      <div class="pl-1">#FFFFFF</div>
+                    </div>
+                    <div class="p-2 layout-two-columns font-code color-code small">
+                      <div>.{{ prefix }}-transparent</div>
+                      <div class="pl-1">rgba(255, 255, 255, 0)</div>
+                    </div>
+                    <div class="p-2 layout-two-columns font-code color-code small">
+                      <div>.{{ prefix }}-inherit</div>
+                      <div class="pl-1">inherit</div>
+                    </div>
+                    <div class="p-2 layout-two-columns font-code color-code small">
+                      <div>.{{ prefix }}-eighth-avenue</div>
+                      <div class="pl-1">#2850AD</div>
+                    </div>
+                    <div class="p-2 layout-two-columns font-code color-code small">
+                      <div>.{{ prefix }}-sixth-avenue</div>
+                      <div class="pl-1">#FF6319</div>
+                    </div>
+                    <div class="p-2 layout-two-columns font-code color-code small">
+                      <div>.{{ prefix }}-crosstown</div>
+                      <div class="pl-1">#6CBE45</div>
+                    </div>
+                    <div class="p-2 layout-two-columns font-code color-code small">
+                      <div>.{{ prefix }}-canarsie</div>
+                      <div class="pl-1">#A7A9AC</div>
+                    </div>
+                    <div class="p-2 layout-two-columns font-code color-code small">
+                      <div>.{{ prefix }}-nassau</div>
+                      <div class="pl-1">#996633</div>
+                    </div>
+                    <div class="p-2 layout-two-columns font-code color-code small">
+                      <div>.{{ prefix }}-broadway</div>
+                      <div class="pl-1">#FCCC0A</div>
+                    </div>
+                    <div class="p-2 layout-two-columns font-code color-code small">
+                      <div>.{{ prefix }}-broadway-seventh-avenue</div>
+                      <div class="pl-1">#EE352E</div>
+                    </div>
+                    <div class="p-2 layout-two-columns font-code color-code small">
+                      <div>.{{ prefix }}-lexington-avenue</div>
+                      <div class="pl-1">#00933C</div>
+                    </div>
+                    <div class="p-2 layout-two-columns font-code color-code small">
+                      <div>.{{ prefix }}-flushing</div>
+                      <div class="pl-1">#B933AD</div>
+                    </div>
+                    <div class="p-2 layout-two-columns font-code color-code small">
+                      <div>.{{ prefix }}-shuttles</div>
+                      <div class="pl-1">#808183</div>
+                    </div>
+                  </div>
+                </div>
+                <h3 id="config-variants-and-core-plugins">Variants and Core Plugins</h3>
+                <div class="p-2 layout-three-columns items-center color-mid-background">
+                  <div>
                     <b>Plugin (link to docs)</b>
                   </div>
-                  <div class="mb-4">
-                    <div class="p-2 layout-two-columns items-center border-b border-grey-light" id="config-colors">
-                      <a class="capitalize" href="https://tailwindcss.com/docs/colors" target="_blank">colors</a>
-                      <div class="text-right">
-                        <button aria-controls="config-colors-details" aria-expanded="false" class="btn btn-link" data-js="toggle" type="button">show details</button>
-                      </div>
-                    </div>
-                    <div aria-hidden="true" class="color-mid-background hidden hidden:overflow animated" id="config-colors-details">
-                      <div class="p-2 layout-two-columns">
-                        <div>
-                          <b>Class</b>
-                        </div>
-                        <div class="pl-1">
-                          <b>Property Value</b>
-                        </div>
-                      </div>
-                      <div class="p-2 layout-two-columns font-code color-code small">
-                        <div>.{{ prefix }}-blue-light</div>
-                        <div class="pl-1">#C3DDFF</div>
-                      </div>
-                      <div class="p-2 layout-two-columns font-code color-code small">
-                        <div>.{{ prefix }}-blue-bright</div>
-                        <div class="pl-1">#118DF0</div>
-                      </div>
-                      <div class="p-2 layout-two-columns font-code color-code small">
-                        <div>.{{ prefix }}-blue</div>
-                        <div class="pl-1">#184E9E</div>
-                      </div>
-                      <div class="p-2 layout-two-columns font-code color-code small">
-                        <div>.{{ prefix }}-blue-dark</div>
-                        <div class="pl-1">#112E51</div>
-                      </div>
-                      <div class="p-2 layout-two-columns font-code color-code small">
-                        <div>.{{ prefix }}-yellow-light</div>
-                        <div class="pl-1">#FFE6A9</div>
-                      </div>
-                      <div class="p-2 layout-two-columns font-code color-code small">
-                        <div>.{{ prefix }}-yellow-access</div>
-                        <div class="pl-1">#FBB720</div>
-                      </div>
-                      <div class="p-2 layout-two-columns font-code color-code small">
-                        <div>.{{ prefix }}-green-light</div>
-                        <div class="pl-1">#B7ECCF</div>
-                      </div>
-                      <div class="p-2 layout-two-columns font-code color-code small">
-                        <div>.{{ prefix }}-green</div>
-                        <div class="pl-1">#05CE7C</div>
-                      </div>
-                      <div class="p-2 layout-two-columns font-code color-code small">
-                        <div>.{{ prefix }}-green-mid</div>
-                        <div class="pl-1">#0D6D3B</div>
-                      </div>
-                      <div class="p-2 layout-two-columns font-code color-code small">
-                        <div>.{{ prefix }}-green-dark</div>
-                        <div class="pl-1">#094727</div>
-                      </div>
-                      <div class="p-2 layout-two-columns font-code color-code small">
-                        <div>.{{ prefix }}-pink-light</div>
-                        <div class="pl-1">#F1B3bD</div>
-                      </div>
-                      <div class="p-2 layout-two-columns font-code color-code small">
-                        <div>.{{ prefix }}-pink</div>
-                        <div class="pl-1">#F1647C</div>
-                      </div>
-                      <div class="p-2 layout-two-columns font-code color-code small">
-                        <div>.{{ prefix }}-red</div>
-                        <div class="pl-1">#C6252b</div>
-                      </div>
-                      <div class="p-2 layout-two-columns font-code color-code small">
-                        <div>.{{ prefix }}-purple</div>
-                        <div class="pl-1">#4C2C92</div>
-                      </div>
-                      <div class="p-2 layout-two-columns font-code color-code small">
-                        <div>.{{ prefix }}-covid-response</div>
-                        <div class="pl-1">#803D8D</div>
-                      </div>
-                      <div class="p-2 layout-two-columns font-code color-code small">
-                        <div>.{{ prefix }}-covid-response-light</div>
-                        <div class="pl-1">#DAB7E0</div>
-                      </div>
-                      <div class="p-2 layout-two-columns font-code color-code small">
-                        <div>.{{ prefix }}-grey-light</div>
-                        <div class="pl-1">#D1D5D9</div>
-                      </div>
-                      <div class="p-2 layout-two-columns font-code color-code small">
-                        <div>.{{ prefix }}-grey-lightest</div>
-                        <div class="pl-1">#EEF3F7</div>
-                      </div>
-                      <div class="p-2 layout-two-columns font-code color-code small">
-                        <div>.{{ prefix }}-grey-mid</div>
-                        <div class="pl-1">#505C66</div>
-                      </div>
-                      <div class="p-2 layout-two-columns font-code color-code small">
-                        <div>.{{ prefix }}-grey-dark</div>
-                        <div class="pl-1">#172129</div>
-                      </div>
-                      <div class="p-2 layout-two-columns font-code color-code small">
-                        <div>.{{ prefix }}-black</div>
-                        <div class="pl-1">#000000</div>
-                      </div>
-                      <div class="p-2 layout-two-columns font-code color-code small">
-                        <div>.{{ prefix }}-white</div>
-                        <div class="pl-1">#FFFFFF</div>
-                      </div>
-                      <div class="p-2 layout-two-columns font-code color-code small">
-                        <div>.{{ prefix }}-transparent</div>
-                        <div class="pl-1">rgba(255, 255, 255, 0)</div>
-                      </div>
-                      <div class="p-2 layout-two-columns font-code color-code small">
-                        <div>.{{ prefix }}-inherit</div>
-                        <div class="pl-1">inherit</div>
-                      </div>
-                      <div class="p-2 layout-two-columns font-code color-code small">
-                        <div>.{{ prefix }}-eighth-avenue</div>
-                        <div class="pl-1">#2850AD</div>
-                      </div>
-                      <div class="p-2 layout-two-columns font-code color-code small">
-                        <div>.{{ prefix }}-sixth-avenue</div>
-                        <div class="pl-1">#FF6319</div>
-                      </div>
-                      <div class="p-2 layout-two-columns font-code color-code small">
-                        <div>.{{ prefix }}-crosstown</div>
-                        <div class="pl-1">#6CBE45</div>
-                      </div>
-                      <div class="p-2 layout-two-columns font-code color-code small">
-                        <div>.{{ prefix }}-canarsie</div>
-                        <div class="pl-1">#A7A9AC</div>
-                      </div>
-                      <div class="p-2 layout-two-columns font-code color-code small">
-                        <div>.{{ prefix }}-nassau</div>
-                        <div class="pl-1">#996633</div>
-                      </div>
-                      <div class="p-2 layout-two-columns font-code color-code small">
-                        <div>.{{ prefix }}-broadway</div>
-                        <div class="pl-1">#FCCC0A</div>
-                      </div>
-                      <div class="p-2 layout-two-columns font-code color-code small">
-                        <div>.{{ prefix }}-broadway-seventh-avenue</div>
-                        <div class="pl-1">#EE352E</div>
-                      </div>
-                      <div class="p-2 layout-two-columns font-code color-code small">
-                        <div>.{{ prefix }}-lexington-avenue</div>
-                        <div class="pl-1">#00933C</div>
-                      </div>
-                      <div class="p-2 layout-two-columns font-code color-code small">
-                        <div>.{{ prefix }}-flushing</div>
-                        <div class="pl-1">#B933AD</div>
-                      </div>
-                      <div class="p-2 layout-two-columns font-code color-code small">
-                        <div>.{{ prefix }}-shuttles</div>
-                        <div class="pl-1">#808183</div>
-                      </div>
-                    </div>
-                    <div class="p-2 layout-two-columns items-center border-b border-grey-light" id="config-background-color">
-                      <a class="capitalize" href="https://tailwindcss.com/docs/background-color" target="_blank">background color</a>
-                      <div class="text-right">
-                        <button aria-controls="config-background-color-details" aria-expanded="false" class="btn btn-link" data-js="toggle" type="button">show details</button>
-                      </div>
-                    </div>
-                    <div aria-hidden="true" class="color-mid-background hidden hidden:overflow animated" id="config-background-color-details">
-                      <div class="p-2 layout-two-columns">
-                        <div>
-                          <b>Class</b>
-                        </div>
-                        <div class="pl-1">
-                          <b>Property Value</b>
-                        </div>
-                      </div>
-                      <div class="p-2 layout-two-columns font-code color-code small">
-                        <div>.{{ prefix }}-blue-light</div>
-                        <div class="pl-1">#C3DDFF</div>
-                      </div>
-                      <div class="p-2 layout-two-columns font-code color-code small">
-                        <div>.{{ prefix }}-blue-bright</div>
-                        <div class="pl-1">#118DF0</div>
-                      </div>
-                      <div class="p-2 layout-two-columns font-code color-code small">
-                        <div>.{{ prefix }}-blue</div>
-                        <div class="pl-1">#184E9E</div>
-                      </div>
-                      <div class="p-2 layout-two-columns font-code color-code small">
-                        <div>.{{ prefix }}-blue-dark</div>
-                        <div class="pl-1">#112E51</div>
-                      </div>
-                      <div class="p-2 layout-two-columns font-code color-code small">
-                        <div>.{{ prefix }}-yellow-light</div>
-                        <div class="pl-1">#FFE6A9</div>
-                      </div>
-                      <div class="p-2 layout-two-columns font-code color-code small">
-                        <div>.{{ prefix }}-yellow-access</div>
-                        <div class="pl-1">#FBB720</div>
-                      </div>
-                      <div class="p-2 layout-two-columns font-code color-code small">
-                        <div>.{{ prefix }}-green-light</div>
-                        <div class="pl-1">#B7ECCF</div>
-                      </div>
-                      <div class="p-2 layout-two-columns font-code color-code small">
-                        <div>.{{ prefix }}-green</div>
-                        <div class="pl-1">#05CE7C</div>
-                      </div>
-                      <div class="p-2 layout-two-columns font-code color-code small">
-                        <div>.{{ prefix }}-green-mid</div>
-                        <div class="pl-1">#0D6D3B</div>
-                      </div>
-                      <div class="p-2 layout-two-columns font-code color-code small">
-                        <div>.{{ prefix }}-green-dark</div>
-                        <div class="pl-1">#094727</div>
-                      </div>
-                      <div class="p-2 layout-two-columns font-code color-code small">
-                        <div>.{{ prefix }}-pink-light</div>
-                        <div class="pl-1">#F1B3bD</div>
-                      </div>
-                      <div class="p-2 layout-two-columns font-code color-code small">
-                        <div>.{{ prefix }}-pink</div>
-                        <div class="pl-1">#F1647C</div>
-                      </div>
-                      <div class="p-2 layout-two-columns font-code color-code small">
-                        <div>.{{ prefix }}-red</div>
-                        <div class="pl-1">#C6252b</div>
-                      </div>
-                      <div class="p-2 layout-two-columns font-code color-code small">
-                        <div>.{{ prefix }}-purple</div>
-                        <div class="pl-1">#4C2C92</div>
-                      </div>
-                      <div class="p-2 layout-two-columns font-code color-code small">
-                        <div>.{{ prefix }}-covid-response</div>
-                        <div class="pl-1">#803D8D</div>
-                      </div>
-                      <div class="p-2 layout-two-columns font-code color-code small">
-                        <div>.{{ prefix }}-covid-response-light</div>
-                        <div class="pl-1">#DAB7E0</div>
-                      </div>
-                      <div class="p-2 layout-two-columns font-code color-code small">
-                        <div>.{{ prefix }}-grey-light</div>
-                        <div class="pl-1">#D1D5D9</div>
-                      </div>
-                      <div class="p-2 layout-two-columns font-code color-code small">
-                        <div>.{{ prefix }}-grey-lightest</div>
-                        <div class="pl-1">#EEF3F7</div>
-                      </div>
-                      <div class="p-2 layout-two-columns font-code color-code small">
-                        <div>.{{ prefix }}-grey-mid</div>
-                        <div class="pl-1">#505C66</div>
-                      </div>
-                      <div class="p-2 layout-two-columns font-code color-code small">
-                        <div>.{{ prefix }}-grey-dark</div>
-                        <div class="pl-1">#172129</div>
-                      </div>
-                      <div class="p-2 layout-two-columns font-code color-code small">
-                        <div>.{{ prefix }}-black</div>
-                        <div class="pl-1">#000000</div>
-                      </div>
-                      <div class="p-2 layout-two-columns font-code color-code small">
-                        <div>.{{ prefix }}-white</div>
-                        <div class="pl-1">#FFFFFF</div>
-                      </div>
-                      <div class="p-2 layout-two-columns font-code color-code small">
-                        <div>.{{ prefix }}-transparent</div>
-                        <div class="pl-1">rgba(255, 255, 255, 0)</div>
-                      </div>
-                      <div class="p-2 layout-two-columns font-code color-code small">
-                        <div>.{{ prefix }}-inherit</div>
-                        <div class="pl-1">inherit</div>
-                      </div>
-                      <div class="p-2 layout-two-columns font-code color-code small">
-                        <div>.{{ prefix }}-eighth-avenue</div>
-                        <div class="pl-1">#2850AD</div>
-                      </div>
-                      <div class="p-2 layout-two-columns font-code color-code small">
-                        <div>.{{ prefix }}-sixth-avenue</div>
-                        <div class="pl-1">#FF6319</div>
-                      </div>
-                      <div class="p-2 layout-two-columns font-code color-code small">
-                        <div>.{{ prefix }}-crosstown</div>
-                        <div class="pl-1">#6CBE45</div>
-                      </div>
-                      <div class="p-2 layout-two-columns font-code color-code small">
-                        <div>.{{ prefix }}-canarsie</div>
-                        <div class="pl-1">#A7A9AC</div>
-                      </div>
-                      <div class="p-2 layout-two-columns font-code color-code small">
-                        <div>.{{ prefix }}-nassau</div>
-                        <div class="pl-1">#996633</div>
-                      </div>
-                      <div class="p-2 layout-two-columns font-code color-code small">
-                        <div>.{{ prefix }}-broadway</div>
-                        <div class="pl-1">#FCCC0A</div>
-                      </div>
-                      <div class="p-2 layout-two-columns font-code color-code small">
-                        <div>.{{ prefix }}-broadway-seventh-avenue</div>
-                        <div class="pl-1">#EE352E</div>
-                      </div>
-                      <div class="p-2 layout-two-columns font-code color-code small">
-                        <div>.{{ prefix }}-lexington-avenue</div>
-                        <div class="pl-1">#00933C</div>
-                      </div>
-                      <div class="p-2 layout-two-columns font-code color-code small">
-                        <div>.{{ prefix }}-flushing</div>
-                        <div class="pl-1">#B933AD</div>
-                      </div>
-                      <div class="p-2 layout-two-columns font-code color-code small">
-                        <div>.{{ prefix }}-shuttles</div>
-                        <div class="pl-1">#808183</div>
-                      </div>
-                    </div>
-                    <div class="p-2 layout-two-columns items-center border-b border-grey-light" id="config-border-color">
-                      <a class="capitalize" href="https://tailwindcss.com/docs/border-color" target="_blank">border color</a>
-                      <div class="text-right">
-                        <button aria-controls="config-border-color-details" aria-expanded="false" class="btn btn-link" data-js="toggle" type="button">show details</button>
-                      </div>
-                    </div>
-                    <div aria-hidden="true" class="color-mid-background hidden hidden:overflow animated" id="config-border-color-details">
-                      <div class="p-2 layout-two-columns">
-                        <div>
-                          <b>Class</b>
-                        </div>
-                        <div class="pl-1">
-                          <b>Property Value</b>
-                        </div>
-                      </div>
-                      <div class="p-2 layout-two-columns font-code color-code small">
-                        <div>.{{ prefix }}-default</div>
-                        <div class="pl-1"></div>
-                      </div>
-                      <div class="p-2 layout-two-columns font-code color-code small">
-                        <div>.{{ prefix }}-blue-light</div>
-                        <div class="pl-1">#C3DDFF</div>
-                      </div>
-                      <div class="p-2 layout-two-columns font-code color-code small">
-                        <div>.{{ prefix }}-blue-bright</div>
-                        <div class="pl-1">#118DF0</div>
-                      </div>
-                      <div class="p-2 layout-two-columns font-code color-code small">
-                        <div>.{{ prefix }}-blue</div>
-                        <div class="pl-1">#184E9E</div>
-                      </div>
-                      <div class="p-2 layout-two-columns font-code color-code small">
-                        <div>.{{ prefix }}-blue-dark</div>
-                        <div class="pl-1">#112E51</div>
-                      </div>
-                      <div class="p-2 layout-two-columns font-code color-code small">
-                        <div>.{{ prefix }}-yellow-light</div>
-                        <div class="pl-1">#FFE6A9</div>
-                      </div>
-                      <div class="p-2 layout-two-columns font-code color-code small">
-                        <div>.{{ prefix }}-yellow-access</div>
-                        <div class="pl-1">#FBB720</div>
-                      </div>
-                      <div class="p-2 layout-two-columns font-code color-code small">
-                        <div>.{{ prefix }}-green-light</div>
-                        <div class="pl-1">#B7ECCF</div>
-                      </div>
-                      <div class="p-2 layout-two-columns font-code color-code small">
-                        <div>.{{ prefix }}-green</div>
-                        <div class="pl-1">#05CE7C</div>
-                      </div>
-                      <div class="p-2 layout-two-columns font-code color-code small">
-                        <div>.{{ prefix }}-green-mid</div>
-                        <div class="pl-1">#0D6D3B</div>
-                      </div>
-                      <div class="p-2 layout-two-columns font-code color-code small">
-                        <div>.{{ prefix }}-green-dark</div>
-                        <div class="pl-1">#094727</div>
-                      </div>
-                      <div class="p-2 layout-two-columns font-code color-code small">
-                        <div>.{{ prefix }}-pink-light</div>
-                        <div class="pl-1">#F1B3bD</div>
-                      </div>
-                      <div class="p-2 layout-two-columns font-code color-code small">
-                        <div>.{{ prefix }}-pink</div>
-                        <div class="pl-1">#F1647C</div>
-                      </div>
-                      <div class="p-2 layout-two-columns font-code color-code small">
-                        <div>.{{ prefix }}-red</div>
-                        <div class="pl-1">#C6252b</div>
-                      </div>
-                      <div class="p-2 layout-two-columns font-code color-code small">
-                        <div>.{{ prefix }}-purple</div>
-                        <div class="pl-1">#4C2C92</div>
-                      </div>
-                      <div class="p-2 layout-two-columns font-code color-code small">
-                        <div>.{{ prefix }}-covid-response</div>
-                        <div class="pl-1">#803D8D</div>
-                      </div>
-                      <div class="p-2 layout-two-columns font-code color-code small">
-                        <div>.{{ prefix }}-covid-response-light</div>
-                        <div class="pl-1">#DAB7E0</div>
-                      </div>
-                      <div class="p-2 layout-two-columns font-code color-code small">
-                        <div>.{{ prefix }}-grey-light</div>
-                        <div class="pl-1">#D1D5D9</div>
-                      </div>
-                      <div class="p-2 layout-two-columns font-code color-code small">
-                        <div>.{{ prefix }}-grey-lightest</div>
-                        <div class="pl-1">#EEF3F7</div>
-                      </div>
-                      <div class="p-2 layout-two-columns font-code color-code small">
-                        <div>.{{ prefix }}-grey-mid</div>
-                        <div class="pl-1">#505C66</div>
-                      </div>
-                      <div class="p-2 layout-two-columns font-code color-code small">
-                        <div>.{{ prefix }}-grey-dark</div>
-                        <div class="pl-1">#172129</div>
-                      </div>
-                      <div class="p-2 layout-two-columns font-code color-code small">
-                        <div>.{{ prefix }}-black</div>
-                        <div class="pl-1">#000000</div>
-                      </div>
-                      <div class="p-2 layout-two-columns font-code color-code small">
-                        <div>.{{ prefix }}-white</div>
-                        <div class="pl-1">#FFFFFF</div>
-                      </div>
-                      <div class="p-2 layout-two-columns font-code color-code small">
-                        <div>.{{ prefix }}-transparent</div>
-                        <div class="pl-1">rgba(255, 255, 255, 0)</div>
-                      </div>
-                      <div class="p-2 layout-two-columns font-code color-code small">
-                        <div>.{{ prefix }}-inherit</div>
-                        <div class="pl-1">inherit</div>
-                      </div>
-                      <div class="p-2 layout-two-columns font-code color-code small">
-                        <div>.{{ prefix }}-eighth-avenue</div>
-                        <div class="pl-1">#2850AD</div>
-                      </div>
-                      <div class="p-2 layout-two-columns font-code color-code small">
-                        <div>.{{ prefix }}-sixth-avenue</div>
-                        <div class="pl-1">#FF6319</div>
-                      </div>
-                      <div class="p-2 layout-two-columns font-code color-code small">
-                        <div>.{{ prefix }}-crosstown</div>
-                        <div class="pl-1">#6CBE45</div>
-                      </div>
-                      <div class="p-2 layout-two-columns font-code color-code small">
-                        <div>.{{ prefix }}-canarsie</div>
-                        <div class="pl-1">#A7A9AC</div>
-                      </div>
-                      <div class="p-2 layout-two-columns font-code color-code small">
-                        <div>.{{ prefix }}-nassau</div>
-                        <div class="pl-1">#996633</div>
-                      </div>
-                      <div class="p-2 layout-two-columns font-code color-code small">
-                        <div>.{{ prefix }}-broadway</div>
-                        <div class="pl-1">#FCCC0A</div>
-                      </div>
-                      <div class="p-2 layout-two-columns font-code color-code small">
-                        <div>.{{ prefix }}-broadway-seventh-avenue</div>
-                        <div class="pl-1">#EE352E</div>
-                      </div>
-                      <div class="p-2 layout-two-columns font-code color-code small">
-                        <div>.{{ prefix }}-lexington-avenue</div>
-                        <div class="pl-1">#00933C</div>
-                      </div>
-                      <div class="p-2 layout-two-columns font-code color-code small">
-                        <div>.{{ prefix }}-flushing</div>
-                        <div class="pl-1">#B933AD</div>
-                      </div>
-                      <div class="p-2 layout-two-columns font-code color-code small">
-                        <div>.{{ prefix }}-shuttles</div>
-                        <div class="pl-1">#808183</div>
-                      </div>
-                    </div>
-                    <div class="p-2 layout-two-columns items-center border-b border-grey-light" id="config-border-width">
-                      <a class="capitalize" href="https://tailwindcss.com/docs/border-width" target="_blank">border width</a>
-                      <div class="text-right">
-                        <div class="text-secondary-grey">Default</div>
-                      </div>
-                    </div>
-                    <div class="p-2 layout-two-columns items-center border-b border-grey-light" id="config-box-shadow">
-                      <a class="capitalize" href="https://tailwindcss.com/docs/box-shadow" target="_blank">box shadow</a>
-                      <div class="text-right">
-                        <button aria-controls="config-box-shadow-details" aria-expanded="false" class="btn btn-link" data-js="toggle" type="button">show details</button>
-                      </div>
-                    </div>
-                    <div aria-hidden="true" class="color-mid-background hidden hidden:overflow animated" id="config-box-shadow-details">
-                      <div class="p-2 layout-two-columns">
-                        <div>
-                          <b>Class</b>
-                        </div>
-                        <div class="pl-1">
-                          <b>Property Value</b>
-                        </div>
-                      </div>
-                      <div class="p-2 layout-two-columns font-code color-code small">
-                        <div>.{{ prefix }}-up</div>
-                        <div class="pl-1">0 3px 12px 2px rgba(0, 0, 0, 0.25)</div>
-                      </div>
-                    </div>
-                    <div class="p-2 layout-two-columns items-center border-b border-grey-light" id="config-fill">
-                      <a class="capitalize" href="https://tailwindcss.com/docs/fill" target="_blank">fill</a>
-                      <div class="text-right">
-                        <button aria-controls="config-fill-details" aria-expanded="false" class="btn btn-link" data-js="toggle" type="button">show details</button>
-                      </div>
-                    </div>
-                    <div aria-hidden="true" class="color-mid-background hidden hidden:overflow animated" id="config-fill-details">
-                      <div class="p-2 layout-two-columns">
-                        <div>
-                          <b>Class</b>
-                        </div>
-                        <div class="pl-1">
-                          <b>Property Value</b>
-                        </div>
-                      </div>
-                      <div class="p-2 layout-two-columns font-code color-code small">
-                        <div>.{{ prefix }}-blue-light</div>
-                        <div class="pl-1">#C3DDFF</div>
-                      </div>
-                      <div class="p-2 layout-two-columns font-code color-code small">
-                        <div>.{{ prefix }}-blue-bright</div>
-                        <div class="pl-1">#118DF0</div>
-                      </div>
-                      <div class="p-2 layout-two-columns font-code color-code small">
-                        <div>.{{ prefix }}-blue</div>
-                        <div class="pl-1">#184E9E</div>
-                      </div>
-                      <div class="p-2 layout-two-columns font-code color-code small">
-                        <div>.{{ prefix }}-blue-dark</div>
-                        <div class="pl-1">#112E51</div>
-                      </div>
-                      <div class="p-2 layout-two-columns font-code color-code small">
-                        <div>.{{ prefix }}-yellow-light</div>
-                        <div class="pl-1">#FFE6A9</div>
-                      </div>
-                      <div class="p-2 layout-two-columns font-code color-code small">
-                        <div>.{{ prefix }}-yellow-access</div>
-                        <div class="pl-1">#FBB720</div>
-                      </div>
-                      <div class="p-2 layout-two-columns font-code color-code small">
-                        <div>.{{ prefix }}-green-light</div>
-                        <div class="pl-1">#B7ECCF</div>
-                      </div>
-                      <div class="p-2 layout-two-columns font-code color-code small">
-                        <div>.{{ prefix }}-green</div>
-                        <div class="pl-1">#05CE7C</div>
-                      </div>
-                      <div class="p-2 layout-two-columns font-code color-code small">
-                        <div>.{{ prefix }}-green-mid</div>
-                        <div class="pl-1">#0D6D3B</div>
-                      </div>
-                      <div class="p-2 layout-two-columns font-code color-code small">
-                        <div>.{{ prefix }}-green-dark</div>
-                        <div class="pl-1">#094727</div>
-                      </div>
-                      <div class="p-2 layout-two-columns font-code color-code small">
-                        <div>.{{ prefix }}-pink-light</div>
-                        <div class="pl-1">#F1B3bD</div>
-                      </div>
-                      <div class="p-2 layout-two-columns font-code color-code small">
-                        <div>.{{ prefix }}-pink</div>
-                        <div class="pl-1">#F1647C</div>
-                      </div>
-                      <div class="p-2 layout-two-columns font-code color-code small">
-                        <div>.{{ prefix }}-red</div>
-                        <div class="pl-1">#C6252b</div>
-                      </div>
-                      <div class="p-2 layout-two-columns font-code color-code small">
-                        <div>.{{ prefix }}-purple</div>
-                        <div class="pl-1">#4C2C92</div>
-                      </div>
-                      <div class="p-2 layout-two-columns font-code color-code small">
-                        <div>.{{ prefix }}-covid-response</div>
-                        <div class="pl-1">#803D8D</div>
-                      </div>
-                      <div class="p-2 layout-two-columns font-code color-code small">
-                        <div>.{{ prefix }}-covid-response-light</div>
-                        <div class="pl-1">#DAB7E0</div>
-                      </div>
-                      <div class="p-2 layout-two-columns font-code color-code small">
-                        <div>.{{ prefix }}-grey-light</div>
-                        <div class="pl-1">#D1D5D9</div>
-                      </div>
-                      <div class="p-2 layout-two-columns font-code color-code small">
-                        <div>.{{ prefix }}-grey-lightest</div>
-                        <div class="pl-1">#EEF3F7</div>
-                      </div>
-                      <div class="p-2 layout-two-columns font-code color-code small">
-                        <div>.{{ prefix }}-grey-mid</div>
-                        <div class="pl-1">#505C66</div>
-                      </div>
-                      <div class="p-2 layout-two-columns font-code color-code small">
-                        <div>.{{ prefix }}-grey-dark</div>
-                        <div class="pl-1">#172129</div>
-                      </div>
-                      <div class="p-2 layout-two-columns font-code color-code small">
-                        <div>.{{ prefix }}-black</div>
-                        <div class="pl-1">#000000</div>
-                      </div>
-                      <div class="p-2 layout-two-columns font-code color-code small">
-                        <div>.{{ prefix }}-white</div>
-                        <div class="pl-1">#FFFFFF</div>
-                      </div>
-                      <div class="p-2 layout-two-columns font-code color-code small">
-                        <div>.{{ prefix }}-transparent</div>
-                        <div class="pl-1">rgba(255, 255, 255, 0)</div>
-                      </div>
-                      <div class="p-2 layout-two-columns font-code color-code small">
-                        <div>.{{ prefix }}-inherit</div>
-                        <div class="pl-1">inherit</div>
-                      </div>
-                      <div class="p-2 layout-two-columns font-code color-code small">
-                        <div>.{{ prefix }}-eighth-avenue</div>
-                        <div class="pl-1">#2850AD</div>
-                      </div>
-                      <div class="p-2 layout-two-columns font-code color-code small">
-                        <div>.{{ prefix }}-sixth-avenue</div>
-                        <div class="pl-1">#FF6319</div>
-                      </div>
-                      <div class="p-2 layout-two-columns font-code color-code small">
-                        <div>.{{ prefix }}-crosstown</div>
-                        <div class="pl-1">#6CBE45</div>
-                      </div>
-                      <div class="p-2 layout-two-columns font-code color-code small">
-                        <div>.{{ prefix }}-canarsie</div>
-                        <div class="pl-1">#A7A9AC</div>
-                      </div>
-                      <div class="p-2 layout-two-columns font-code color-code small">
-                        <div>.{{ prefix }}-nassau</div>
-                        <div class="pl-1">#996633</div>
-                      </div>
-                      <div class="p-2 layout-two-columns font-code color-code small">
-                        <div>.{{ prefix }}-broadway</div>
-                        <div class="pl-1">#FCCC0A</div>
-                      </div>
-                      <div class="p-2 layout-two-columns font-code color-code small">
-                        <div>.{{ prefix }}-broadway-seventh-avenue</div>
-                        <div class="pl-1">#EE352E</div>
-                      </div>
-                      <div class="p-2 layout-two-columns font-code color-code small">
-                        <div>.{{ prefix }}-lexington-avenue</div>
-                        <div class="pl-1">#00933C</div>
-                      </div>
-                      <div class="p-2 layout-two-columns font-code color-code small">
-                        <div>.{{ prefix }}-flushing</div>
-                        <div class="pl-1">#B933AD</div>
-                      </div>
-                      <div class="p-2 layout-two-columns font-code color-code small">
-                        <div>.{{ prefix }}-shuttles</div>
-                        <div class="pl-1">#808183</div>
-                      </div>
-                    </div>
-                    <div class="p-2 layout-two-columns items-center border-b border-grey-light" id="config-font-family">
-                      <a class="capitalize" href="https://tailwindcss.com/docs/font-family" target="_blank">font family</a>
-                      <div class="text-right">
-                        <button aria-controls="config-font-family-details" aria-expanded="false" class="btn btn-link" data-js="toggle" type="button">show details</button>
-                      </div>
-                    </div>
-                    <div aria-hidden="true" class="color-mid-background hidden hidden:overflow animated" id="config-font-family-details">
-                      <div class="p-2 layout-two-columns">
-                        <div>
-                          <b>Class</b>
-                        </div>
-                        <div class="pl-1">
-                          <b>Property Value</b>
-                        </div>
-                      </div>
-                      <div class="p-2 layout-two-columns font-code color-code small">
-                        <div>.{{ prefix }}-inherit</div>
-                        <div class="pl-1">inherit</div>
-                      </div>
-                      <div class="p-2 layout-two-columns font-code color-code small">
-                        <div>.{{ prefix }}-system</div>
-                        <div class="pl-1">-apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, Roboto, Oxygen-Sans, Ubuntu, Cantarell, &quot;Helvetica Neue&quot;, sans-serif</div>
-                      </div>
-                      <div class="p-2 layout-two-columns font-code color-code small">
-                        <div>.{{ prefix }}-sans</div>
-                        <div class="pl-1">&quot;Noto Sans&quot;, sans-serif</div>
-                      </div>
-                      <div class="p-2 layout-two-columns font-code color-code small">
-                        <div>.{{ prefix }}-serif</div>
-                        <div class="pl-1">&quot;Noto Serif&quot;, serif</div>
-                      </div>
-                      <div class="p-2 layout-two-columns font-code color-code small">
-                        <div>.{{ prefix }}-kr-sans</div>
-                        <div class="pl-1">&quot;Noto Sans CJK KR&quot;, &quot;Noto Sans&quot;, sans-serif</div>
-                      </div>
-                      <div class="p-2 layout-two-columns font-code color-code small">
-                        <div>.{{ prefix }}-kr-serif</div>
-                        <div class="pl-1">&quot;Noto Sans CJK KR&quot;, &quot;Noto Serif&quot;, serif</div>
-                      </div>
-                      <div class="p-2 layout-two-columns font-code color-code small">
-                        <div>.{{ prefix }}-tc-sans</div>
-                        <div class="pl-1">&quot;Noto Sans CJK TC&quot;, &quot;Microsoft Yahei&quot;, &quot;微软雅黑&quot;, STXihei, &quot;华文细黑&quot;, &quot;Noto Sans&quot;, sans-serif</div>
-                      </div>
-                      <div class="p-2 layout-two-columns font-code color-code small">
-                        <div>.{{ prefix }}-tc-serif</div>
-                        <div class="pl-1">&quot;Noto Sans CJK TC&quot;, &quot;Microsoft Yahei&quot;, &quot;微软雅黑&quot;, STXihei, &quot;华文细黑&quot;, &quot;Noto Serif&quot;, serif</div>
-                      </div>
-                      <div class="p-2 layout-two-columns font-code color-code small">
-                        <div>.{{ prefix }}-ar-sans</div>
-                        <div class="pl-1">&quot;Noto Naskh Arabic&quot;, &quot;Noto Sans&quot;, sans-serif</div>
-                      </div>
-                      <div class="p-2 layout-two-columns font-code color-code small">
-                        <div>.{{ prefix }}-ar-serif</div>
-                        <div class="pl-1">&quot;Noto Naskh Arabic&quot;, &quot;Noto Serif&quot;, serif</div>
-                      </div>
-                      <div class="p-2 layout-two-columns font-code color-code small">
-                        <div>.{{ prefix }}-ur-sans</div>
-                        <div class="pl-1">&quot;Noto Nastaliq Urdu&quot;, &quot;Noto Sans&quot;, sans-serif</div>
-                      </div>
-                      <div class="p-2 layout-two-columns font-code color-code small">
-                        <div>.{{ prefix }}-ur-serif</div>
-                        <div class="pl-1">&quot;Noto Nastaliq Urdu&quot;, &quot;Noto Serif&quot;, serif</div>
-                      </div>
-                      <div class="p-2 layout-two-columns font-code color-code small">
-                        <div>.{{ prefix }}-code</div>
-                        <div class="pl-1">monospace</div>
-                      </div>
-                    </div>
-                    <div class="p-2 layout-two-columns items-center border-b border-grey-light" id="config-font-size">
-                      <a class="capitalize" href="https://tailwindcss.com/docs/font-size" target="_blank">font size</a>
-                      <div class="text-right">
-                        <button aria-controls="config-font-size-details" aria-expanded="false" class="btn btn-link" data-js="toggle" type="button">show details</button>
-                      </div>
-                    </div>
-                    <div aria-hidden="true" class="color-mid-background hidden hidden:overflow animated" id="config-font-size-details">
-                      <div class="p-2 layout-two-columns">
-                        <div>
-                          <b>Class</b>
-                        </div>
-                        <div class="pl-1">
-                          <b>Property Value</b>
-                        </div>
-                      </div>
-                      <div class="p-2 layout-two-columns font-code color-code small">
-                        <div>.{{ prefix }}-inherit</div>
-                        <div class="pl-1">inherit</div>
-                      </div>
-                      <div class="p-2 layout-two-columns font-code color-code small">
-                        <div>.{{ prefix }}-xsmall</div>
-                        <div class="pl-1">0.54rem</div>
-                      </div>
-                      <div class="p-2 layout-two-columns font-code color-code small">
-                        <div>.{{ prefix }}-small</div>
-                        <div class="pl-1">0.72rem</div>
-                      </div>
-                      <div class="p-2 layout-two-columns font-code color-code small">
-                        <div>.{{ prefix }}-normal</div>
-                        <div class="pl-1">1rem</div>
-                      </div>
-                      <div class="p-2 layout-two-columns font-code color-code small">
-                        <div>.{{ prefix }}-medium</div>
-                        <div class="pl-1">1.09rem</div>
-                      </div>
-                      <div class="p-2 layout-two-columns font-code color-code small">
-                        <div>.{{ prefix }}-large</div>
-                        <div class="pl-1">1.25rem</div>
-                      </div>
-                      <div class="p-2 layout-two-columns font-code color-code small">
-                        <div>.{{ prefix }}-larger</div>
-                        <div class="pl-1">1.45rem</div>
-                      </div>
-                      <div class="p-2 layout-two-columns font-code color-code small">
-                        <div>.{{ prefix }}-largest</div>
-                        <div class="pl-1">1.81rem</div>
-                      </div>
-                      <div class="p-2 layout-two-columns font-code color-code small">
-                        <div>.{{ prefix }}-jumbo</div>
-                        <div class="pl-1">2.54rem</div>
-                      </div>
-                      <div class="p-2 layout-two-columns font-code color-code small">
-                        <div>.{{ prefix }}-print</div>
-                        <div class="pl-1">16px</div>
-                      </div>
-                    </div>
-                    <div class="p-2 layout-two-columns items-center border-b border-grey-light" id="config-font-weight">
-                      <a class="capitalize" href="https://tailwindcss.com/docs/font-weight" target="_blank">font weight</a>
-                      <div class="text-right">
-                        <button aria-controls="config-font-weight-details" aria-expanded="false" class="btn btn-link" data-js="toggle" type="button">show details</button>
-                      </div>
-                    </div>
-                    <div aria-hidden="true" class="color-mid-background hidden hidden:overflow animated" id="config-font-weight-details">
-                      <div class="p-2 layout-two-columns">
-                        <div>
-                          <b>Class</b>
-                        </div>
-                        <div class="pl-1">
-                          <b>Property Value</b>
-                        </div>
-                      </div>
-                      <div class="p-2 layout-two-columns font-code color-code small">
-                        <div>.{{ prefix }}-inherit</div>
-                        <div class="pl-1">inherit</div>
-                      </div>
-                      <div class="p-2 layout-two-columns font-code color-code small">
-                        <div>.{{ prefix }}-normal</div>
-                        <div class="pl-1">normal</div>
-                      </div>
-                      <div class="p-2 layout-two-columns font-code color-code small">
-                        <div>.{{ prefix }}-bold</div>
-                        <div class="pl-1">bold</div>
-                      </div>
-                    </div>
-                    <div class="p-2 layout-two-columns items-center border-b border-grey-light" id="config-height">
-                      <a class="capitalize" href="https://tailwindcss.com/docs/height" target="_blank">height</a>
-                      <div class="text-right">
-                        <button aria-controls="config-height-details" aria-expanded="false" class="btn btn-link" data-js="toggle" type="button">show details</button>
-                      </div>
-                    </div>
-                    <div aria-hidden="true" class="color-mid-background hidden hidden:overflow animated" id="config-height-details">
-                      <div class="p-2 layout-two-columns">
-                        <div>
-                          <b>Class</b>
-                        </div>
-                        <div class="pl-1">
-                          <b>Property Value</b>
-                        </div>
-                      </div>
-                      <div class="p-2 layout-two-columns font-code color-code small">
-                        <div>.{{ prefix }}-auto</div>
-                        <div class="pl-1">auto</div>
-                      </div>
-                      <div class="p-2 layout-two-columns font-code color-code small">
-                        <div>.{{ prefix }}-full</div>
-                        <div class="pl-1">100%</div>
-                      </div>
-                      <div class="p-2 layout-two-columns font-code color-code small">
-                        <div>.{{ prefix }}-90vh</div>
-                        <div class="pl-1">90vh</div>
-                      </div>
-                      <div class="p-2 layout-two-columns font-code color-code small">
-                        <div>.{{ prefix }}-100vh</div>
-                        <div class="pl-1">100vh</div>
-                      </div>
-                    </div>
-                    <div class="p-2 layout-two-columns items-center border-b border-grey-light" id="config-line-height">
-                      <a class="capitalize" href="https://tailwindcss.com/docs/line-height" target="_blank">line height</a>
-                      <div class="text-right">
-                        <button aria-controls="config-line-height-details" aria-expanded="false" class="btn btn-link" data-js="toggle" type="button">show details</button>
-                      </div>
-                    </div>
-                    <div aria-hidden="true" class="color-mid-background hidden hidden:overflow animated" id="config-line-height-details">
-                      <div class="p-2 layout-two-columns">
-                        <div>
-                          <b>Class</b>
-                        </div>
-                        <div class="pl-1">
-                          <b>Property Value</b>
-                        </div>
-                      </div>
-                      <div class="p-2 layout-two-columns font-code color-code small">
-                        <div>.{{ prefix }}-inherit</div>
-                        <div class="pl-1">inherit</div>
-                      </div>
-                      <div class="p-2 layout-two-columns font-code color-code small">
-                        <div>.{{ prefix }}-xsmall</div>
-                        <div class="pl-1">0.8</div>
-                      </div>
-                      <div class="p-2 layout-two-columns font-code color-code small">
-                        <div>.{{ prefix }}-small</div>
-                        <div class="pl-1">0.9</div>
-                      </div>
-                      <div class="p-2 layout-two-columns font-code color-code small">
-                        <div>.{{ prefix }}-normal</div>
-                        <div class="pl-1">1</div>
-                      </div>
-                      <div class="p-2 layout-two-columns font-code color-code small">
-                        <div>.{{ prefix }}-medium</div>
-                        <div class="pl-1">1.3</div>
-                      </div>
-                      <div class="p-2 layout-two-columns font-code color-code small">
-                        <div>.{{ prefix }}-large</div>
-                        <div class="pl-1">1.4</div>
-                      </div>
-                      <div class="p-2 layout-two-columns font-code color-code small">
-                        <div>.{{ prefix }}-larger</div>
-                        <div class="pl-1">1.5</div>
-                      </div>
-                    </div>
-                    <div class="p-2 layout-two-columns items-center border-b border-grey-light" id="config-margin">
-                      <a class="capitalize" href="https://tailwindcss.com/docs/margin" target="_blank">margin</a>
-                      <div class="text-right">
-                        <button aria-controls="config-margin-details" aria-expanded="false" class="btn btn-link" data-js="toggle" type="button">show details</button>
-                      </div>
-                    </div>
-                    <div aria-hidden="true" class="color-mid-background hidden hidden:overflow animated" id="config-margin-details">
-                      <div class="p-2 layout-two-columns">
-                        <div>
-                          <b>Class</b>
-                        </div>
-                        <div class="pl-1">
-                          <b>Property Value</b>
-                        </div>
-                      </div>
-                      <div class="p-2 layout-two-columns font-code color-code small">
-                        <div>.{{ prefix }}-0</div>
-                        <div class="pl-1">0</div>
-                      </div>
-                      <div class="p-2 layout-two-columns font-code color-code small">
-                        <div>.{{ prefix }}-1</div>
-                        <div class="pl-1">8px</div>
-                      </div>
-                      <div class="p-2 layout-two-columns font-code color-code small">
-                        <div>.{{ prefix }}-2</div>
-                        <div class="pl-1">16px</div>
-                      </div>
-                      <div class="p-2 layout-two-columns font-code color-code small">
-                        <div>.{{ prefix }}-3</div>
-                        <div class="pl-1">24px</div>
-                      </div>
-                      <div class="p-2 layout-two-columns font-code color-code small">
-                        <div>.{{ prefix }}-4</div>
-                        <div class="pl-1">32px</div>
-                      </div>
-                      <div class="p-2 layout-two-columns font-code color-code small">
-                        <div>.{{ prefix }}-auto</div>
-                        <div class="pl-1">auto</div>
-                      </div>
-                    </div>
-                    <div class="p-2 layout-two-columns items-center border-b border-grey-light" id="config-max-width">
-                      <a class="capitalize" href="https://tailwindcss.com/docs/max-width" target="_blank">max width</a>
-                      <div class="text-right">
-                        <button aria-controls="config-max-width-details" aria-expanded="false" class="btn btn-link" data-js="toggle" type="button">show details</button>
-                      </div>
-                    </div>
-                    <div aria-hidden="true" class="color-mid-background hidden hidden:overflow animated" id="config-max-width-details">
-                      <div class="p-2 layout-two-columns">
-                        <div>
-                          <b>Class</b>
-                        </div>
-                        <div class="pl-1">
-                          <b>Property Value</b>
-                        </div>
-                      </div>
-                      <div class="p-2 layout-two-columns font-code color-code small">
-                        <div>.{{ prefix }}-1/2</div>
-                        <div class="pl-1">50%</div>
-                      </div>
-                      <div class="p-2 layout-two-columns font-code color-code small">
-                        <div>.{{ prefix }}-full</div>
-                        <div class="pl-1">100%</div>
-                      </div>
-                    </div>
-                    <div class="p-2 layout-two-columns items-center border-b border-grey-light" id="config-padding">
-                      <a class="capitalize" href="https://tailwindcss.com/docs/padding" target="_blank">padding</a>
-                      <div class="text-right">
-                        <button aria-controls="config-padding-details" aria-expanded="false" class="btn btn-link" data-js="toggle" type="button">show details</button>
-                      </div>
-                    </div>
-                    <div aria-hidden="true" class="color-mid-background hidden hidden:overflow animated" id="config-padding-details">
-                      <div class="p-2 layout-two-columns">
-                        <div>
-                          <b>Class</b>
-                        </div>
-                        <div class="pl-1">
-                          <b>Property Value</b>
-                        </div>
-                      </div>
-                      <div class="p-2 layout-two-columns font-code color-code small">
-                        <div>.{{ prefix }}-0</div>
-                        <div class="pl-1">0</div>
-                      </div>
-                      <div class="p-2 layout-two-columns font-code color-code small">
-                        <div>.{{ prefix }}-1</div>
-                        <div class="pl-1">8px</div>
-                      </div>
-                      <div class="p-2 layout-two-columns font-code color-code small">
-                        <div>.{{ prefix }}-2</div>
-                        <div class="pl-1">16px</div>
-                      </div>
-                      <div class="p-2 layout-two-columns font-code color-code small">
-                        <div>.{{ prefix }}-3</div>
-                        <div class="pl-1">24px</div>
-                      </div>
-                      <div class="p-2 layout-two-columns font-code color-code small">
-                        <div>.{{ prefix }}-4</div>
-                        <div class="pl-1">32px</div>
-                      </div>
-                    </div>
-                    <div class="p-2 layout-two-columns items-center border-b border-grey-light" id="config-screens">
-                      <a class="capitalize" href="https://tailwindcss.com/docs/screens" target="_blank">screens</a>
-                      <div class="text-right">
-                        <button aria-controls="config-screens-details" aria-expanded="false" class="btn btn-link" data-js="toggle" type="button">show details</button>
-                      </div>
-                    </div>
-                    <div aria-hidden="true" class="color-mid-background hidden hidden:overflow animated" id="config-screens-details">
-                      <div class="p-2 layout-two-columns">
-                        <div>
-                          <b>Class</b>
-                        </div>
-                        <div class="pl-1">
-                          <b>Property Value</b>
-                        </div>
-                      </div>
-                      <div class="p-2 layout-two-columns font-code color-code small">
-                        <div>.{{ prefix }}-screen-desktop</div>
-                        <div class="pl-1">[object Object]</div>
-                      </div>
-                      <div class="p-2 layout-two-columns font-code color-code small">
-                        <div>.{{ prefix }}-screen-tablet</div>
-                        <div class="pl-1">[object Object]</div>
-                      </div>
-                      <div class="p-2 layout-two-columns font-code color-code small">
-                        <div>.{{ prefix }}-screen-mobile</div>
-                        <div class="pl-1">[object Object]</div>
-                      </div>
-                      <div class="p-2 layout-two-columns font-code color-code small">
-                        <div>.{{ prefix }}-screen-sm-mobile</div>
-                        <div class="pl-1">[object Object]</div>
-                      </div>
-                      <div class="p-2 layout-two-columns font-code color-code small">
-                        <div>.{{ prefix }}-print</div>
-                        <div class="pl-1">[object Object]</div>
-                      </div>
-                    </div>
-                    <div class="p-2 layout-two-columns items-center border-b border-grey-light" id="config-text-color">
-                      <a class="capitalize" href="https://tailwindcss.com/docs/text-color" target="_blank">text color</a>
-                      <div class="text-right">
-                        <button aria-controls="config-text-color-details" aria-expanded="false" class="btn btn-link" data-js="toggle" type="button">show details</button>
-                      </div>
-                    </div>
-                    <div aria-hidden="true" class="color-mid-background hidden hidden:overflow animated" id="config-text-color-details">
-                      <div class="p-2 layout-two-columns">
-                        <div>
-                          <b>Class</b>
-                        </div>
-                        <div class="pl-1">
-                          <b>Property Value</b>
-                        </div>
-                      </div>
-                      <div class="p-2 layout-two-columns font-code color-code small">
-                        <div>.{{ prefix }}-blue-light</div>
-                        <div class="pl-1">#C3DDFF</div>
-                      </div>
-                      <div class="p-2 layout-two-columns font-code color-code small">
-                        <div>.{{ prefix }}-blue-bright</div>
-                        <div class="pl-1">#118DF0</div>
-                      </div>
-                      <div class="p-2 layout-two-columns font-code color-code small">
-                        <div>.{{ prefix }}-blue</div>
-                        <div class="pl-1">#184E9E</div>
-                      </div>
-                      <div class="p-2 layout-two-columns font-code color-code small">
-                        <div>.{{ prefix }}-blue-dark</div>
-                        <div class="pl-1">#112E51</div>
-                      </div>
-                      <div class="p-2 layout-two-columns font-code color-code small">
-                        <div>.{{ prefix }}-yellow-light</div>
-                        <div class="pl-1">#FFE6A9</div>
-                      </div>
-                      <div class="p-2 layout-two-columns font-code color-code small">
-                        <div>.{{ prefix }}-yellow-access</div>
-                        <div class="pl-1">#FBB720</div>
-                      </div>
-                      <div class="p-2 layout-two-columns font-code color-code small">
-                        <div>.{{ prefix }}-green-light</div>
-                        <div class="pl-1">#B7ECCF</div>
-                      </div>
-                      <div class="p-2 layout-two-columns font-code color-code small">
-                        <div>.{{ prefix }}-green</div>
-                        <div class="pl-1">#05CE7C</div>
-                      </div>
-                      <div class="p-2 layout-two-columns font-code color-code small">
-                        <div>.{{ prefix }}-green-mid</div>
-                        <div class="pl-1">#0D6D3B</div>
-                      </div>
-                      <div class="p-2 layout-two-columns font-code color-code small">
-                        <div>.{{ prefix }}-green-dark</div>
-                        <div class="pl-1">#094727</div>
-                      </div>
-                      <div class="p-2 layout-two-columns font-code color-code small">
-                        <div>.{{ prefix }}-pink-light</div>
-                        <div class="pl-1">#F1B3bD</div>
-                      </div>
-                      <div class="p-2 layout-two-columns font-code color-code small">
-                        <div>.{{ prefix }}-pink</div>
-                        <div class="pl-1">#F1647C</div>
-                      </div>
-                      <div class="p-2 layout-two-columns font-code color-code small">
-                        <div>.{{ prefix }}-red</div>
-                        <div class="pl-1">#C6252b</div>
-                      </div>
-                      <div class="p-2 layout-two-columns font-code color-code small">
-                        <div>.{{ prefix }}-purple</div>
-                        <div class="pl-1">#4C2C92</div>
-                      </div>
-                      <div class="p-2 layout-two-columns font-code color-code small">
-                        <div>.{{ prefix }}-covid-response</div>
-                        <div class="pl-1">#803D8D</div>
-                      </div>
-                      <div class="p-2 layout-two-columns font-code color-code small">
-                        <div>.{{ prefix }}-covid-response-light</div>
-                        <div class="pl-1">#DAB7E0</div>
-                      </div>
-                      <div class="p-2 layout-two-columns font-code color-code small">
-                        <div>.{{ prefix }}-grey-light</div>
-                        <div class="pl-1">#D1D5D9</div>
-                      </div>
-                      <div class="p-2 layout-two-columns font-code color-code small">
-                        <div>.{{ prefix }}-grey-lightest</div>
-                        <div class="pl-1">#EEF3F7</div>
-                      </div>
-                      <div class="p-2 layout-two-columns font-code color-code small">
-                        <div>.{{ prefix }}-grey-mid</div>
-                        <div class="pl-1">#505C66</div>
-                      </div>
-                      <div class="p-2 layout-two-columns font-code color-code small">
-                        <div>.{{ prefix }}-grey-dark</div>
-                        <div class="pl-1">#172129</div>
-                      </div>
-                      <div class="p-2 layout-two-columns font-code color-code small">
-                        <div>.{{ prefix }}-black</div>
-                        <div class="pl-1">#000000</div>
-                      </div>
-                      <div class="p-2 layout-two-columns font-code color-code small">
-                        <div>.{{ prefix }}-white</div>
-                        <div class="pl-1">#FFFFFF</div>
-                      </div>
-                      <div class="p-2 layout-two-columns font-code color-code small">
-                        <div>.{{ prefix }}-transparent</div>
-                        <div class="pl-1">rgba(255, 255, 255, 0)</div>
-                      </div>
-                      <div class="p-2 layout-two-columns font-code color-code small">
-                        <div>.{{ prefix }}-inherit</div>
-                        <div class="pl-1">inherit</div>
-                      </div>
-                      <div class="p-2 layout-two-columns font-code color-code small">
-                        <div>.{{ prefix }}-eighth-avenue</div>
-                        <div class="pl-1">#2850AD</div>
-                      </div>
-                      <div class="p-2 layout-two-columns font-code color-code small">
-                        <div>.{{ prefix }}-sixth-avenue</div>
-                        <div class="pl-1">#FF6319</div>
-                      </div>
-                      <div class="p-2 layout-two-columns font-code color-code small">
-                        <div>.{{ prefix }}-crosstown</div>
-                        <div class="pl-1">#6CBE45</div>
-                      </div>
-                      <div class="p-2 layout-two-columns font-code color-code small">
-                        <div>.{{ prefix }}-canarsie</div>
-                        <div class="pl-1">#A7A9AC</div>
-                      </div>
-                      <div class="p-2 layout-two-columns font-code color-code small">
-                        <div>.{{ prefix }}-nassau</div>
-                        <div class="pl-1">#996633</div>
-                      </div>
-                      <div class="p-2 layout-two-columns font-code color-code small">
-                        <div>.{{ prefix }}-broadway</div>
-                        <div class="pl-1">#FCCC0A</div>
-                      </div>
-                      <div class="p-2 layout-two-columns font-code color-code small">
-                        <div>.{{ prefix }}-broadway-seventh-avenue</div>
-                        <div class="pl-1">#EE352E</div>
-                      </div>
-                      <div class="p-2 layout-two-columns font-code color-code small">
-                        <div>.{{ prefix }}-lexington-avenue</div>
-                        <div class="pl-1">#00933C</div>
-                      </div>
-                      <div class="p-2 layout-two-columns font-code color-code small">
-                        <div>.{{ prefix }}-flushing</div>
-                        <div class="pl-1">#B933AD</div>
-                      </div>
-                      <div class="p-2 layout-two-columns font-code color-code small">
-                        <div>.{{ prefix }}-shuttles</div>
-                        <div class="pl-1">#808183</div>
-                      </div>
-                    </div>
+                  <div>
+                    <b>Variants</b>
                   </div>
-                  <h3 id="config-variants-and-core-plugins">Variants and Core Plugins</h3>
-                  <div class="p-2 layout-three-columns items-center color-mid-background">
-                    <div>
-                      <b>Plugin (link to docs)</b>
-                    </div>
-                    <div>
-                      <b>Variants</b>
-                    </div>
+                  <div class="text-right">
+                    <b>Configuration</b>
+                  </div>
+                </div>
+                <div class="mb-4">
+                  <div class="p-2 layout-three-columns items-center border-b border-grey-light">
+                    <a class="capitalize" href="https://tailwindcss.com/docs/accessibility" target="_blank">accessibility</a>
+                    <div class="font-code">[responsive]</div>
                     <div class="text-right">
-                      <b>Configuration</b>
+                      <span class="text-secondary-grey">Default</span>
                     </div>
                   </div>
-                  <div class="mb-4">
-                    <div class="p-2 layout-three-columns items-center border-b border-grey-light">
-                      <a class="capitalize" href="https://tailwindcss.com/docs/accessibility" target="_blank">accessibility</a>
-                      <div class="font-code">[responsive]</div>
-                      <div class="text-right">
-                        <span class="text-secondary-grey">Default</span>
-                      </div>
-                    </div>
-                    <div class="p-2 layout-three-columns items-center border-b border-grey-light">
-                      <a class="capitalize" href="https://tailwindcss.com/docs/background-color" target="_blank">background color</a>
-                      <div class="font-code">[responsive]</div>
-                      <div class="text-right">
-                        <a href="#config-background-color">Themed</a>
-                      </div>
-                    </div>
-                    <div class="p-2 layout-three-columns items-center border-b border-grey-light">
-                      <a class="capitalize" href="https://tailwindcss.com/docs/border-collapse" target="_blank">border collapse</a>
-                      <div class="font-code">[]</div>
-                      <div class="text-right">
-                        <span class="text-secondary-grey">Default</span>
-                      </div>
-                    </div>
-                    <div class="p-2 layout-three-columns items-center border-b border-grey-light">
-                      <a class="capitalize" href="https://tailwindcss.com/docs/border-color" target="_blank">border color</a>
-                      <div class="font-code">[responsive]</div>
-                      <div class="text-right">
-                        <a href="#config-border-color">Themed</a>
-                      </div>
-                    </div>
-                    <div class="p-2 layout-three-columns items-center border-b border-grey-light">
-                      <a class="capitalize" href="https://tailwindcss.com/docs/border-radius" target="_blank">border radius</a>
-                      <div class="font-code">[]</div>
-                      <div class="text-right">
-                        <span class="text-secondary-grey">Default</span>
-                      </div>
-                    </div>
-                    <div class="p-2 layout-three-columns items-center border-b border-grey-light">
-                      <a class="capitalize" href="https://tailwindcss.com/docs/border-style" target="_blank">border style</a>
-                      <div class="font-code">[]</div>
-                      <div class="text-right">
-                        <span class="text-secondary-grey">Default</span>
-                      </div>
-                    </div>
-                    <div class="p-2 layout-three-columns items-center border-b border-grey-light">
-                      <a class="capitalize" href="https://tailwindcss.com/docs/border-width" target="_blank">border width</a>
-                      <div class="font-code">[responsive]</div>
-                      <div class="text-right">
-                        <span class="text-secondary-grey">Default</span>
-                      </div>
-                    </div>
-                    <div class="p-2 layout-three-columns items-center border-b border-grey-light">
-                      <a class="capitalize" href="https://tailwindcss.com/docs/cursor" target="_blank">cursor</a>
-                      <div class="font-code">[]</div>
-                      <div class="text-right">
-                        <span class="text-secondary-grey">Default</span>
-                      </div>
-                    </div>
-                    <div class="p-2 layout-three-columns items-center border-b border-grey-light">
-                      <a class="capitalize" href="https://tailwindcss.com/docs/display" target="_blank">display</a>
-                      <div class="font-code">[responsive]</div>
-                      <div class="text-right">
-                        <span class="text-secondary-grey">Default</span>
-                      </div>
-                    </div>
-                    <div class="p-2 layout-three-columns items-center border-b border-grey-light">
-                      <a class="capitalize" href="https://tailwindcss.com/docs/flex-direction" target="_blank">flex direction</a>
-                      <div class="font-code">[responsive]</div>
-                      <div class="text-right">
-                        <span class="text-secondary-grey">Default</span>
-                      </div>
-                    </div>
-                    <div class="p-2 layout-three-columns items-center border-b border-grey-light">
-                      <a class="capitalize" href="https://tailwindcss.com/docs/flex-wrap" target="_blank">flex wrap</a>
-                      <div class="font-code">[responsive]</div>
-                      <div class="text-right">
-                        <span class="text-secondary-grey">Default</span>
-                      </div>
-                    </div>
-                    <div class="p-2 layout-three-columns items-center border-b border-grey-light">
-                      <a class="capitalize" href="https://tailwindcss.com/docs/align-items" target="_blank">align items</a>
-                      <div class="font-code">[responsive]</div>
-                      <div class="text-right">
-                        <span class="text-secondary-grey">Default</span>
-                      </div>
-                    </div>
-                    <div class="p-2 layout-three-columns items-center border-b border-grey-light">
-                      <a class="capitalize" href="https://tailwindcss.com/docs/align-self" target="_blank">align self</a>
-                      <div class="font-code">[responsive]</div>
-                      <div class="text-right">
-                        <span class="text-secondary-grey">Default</span>
-                      </div>
-                    </div>
-                    <div class="p-2 layout-three-columns items-center border-b border-grey-light">
-                      <a class="capitalize" href="https://tailwindcss.com/docs/justify-content" target="_blank">justify content</a>
-                      <div class="font-code">[responsive]</div>
-                      <div class="text-right">
-                        <span class="text-secondary-grey">Default</span>
-                      </div>
-                    </div>
-                    <div class="p-2 layout-three-columns items-center border-b border-grey-light">
-                      <a class="capitalize" href="https://tailwindcss.com/docs/align-content" target="_blank">align content</a>
-                      <div class="font-code">[responsive]</div>
-                      <div class="text-right">
-                        <span class="text-secondary-grey">Default</span>
-                      </div>
-                    </div>
-                    <div class="p-2 layout-three-columns items-center border-b border-grey-light">
-                      <a class="capitalize" href="https://tailwindcss.com/docs/flex" target="_blank">flex</a>
-                      <div class="font-code">[responsive]</div>
-                      <div class="text-right">
-                        <span class="text-secondary-grey">Default</span>
-                      </div>
-                    </div>
-                    <div class="p-2 layout-three-columns items-center border-b border-grey-light">
-                      <a class="capitalize" href="https://tailwindcss.com/docs/flex-grow" target="_blank">flex grow</a>
-                      <div class="font-code">[responsive]</div>
-                      <div class="text-right">
-                        <span class="text-secondary-grey">Default</span>
-                      </div>
-                    </div>
-                    <div class="p-2 layout-three-columns items-center border-b border-grey-light">
-                      <a class="capitalize" href="https://tailwindcss.com/docs/flex-shrink" target="_blank">flex shrink</a>
-                      <div class="font-code">[responsive]</div>
-                      <div class="text-right">
-                        <span class="text-secondary-grey">Default</span>
-                      </div>
-                    </div>
-                    <div class="p-2 layout-three-columns items-center border-b border-grey-light">
-                      <a class="capitalize" href="https://tailwindcss.com/docs/order" target="_blank">order</a>
-                      <div class="font-code">[responsive]</div>
-                      <div class="text-right">
-                        <span class="text-secondary-grey">Default</span>
-                      </div>
-                    </div>
-                    <div class="p-2 layout-three-columns items-center border-b border-grey-light">
-                      <a class="capitalize" href="https://tailwindcss.com/docs/font-family" target="_blank">font family</a>
-                      <div class="font-code">[]</div>
-                      <div class="text-right">
-                        <a href="#config-font-family">Themed</a>
-                      </div>
-                    </div>
-                    <div class="p-2 layout-three-columns items-center border-b border-grey-light">
-                      <a class="capitalize" href="https://tailwindcss.com/docs/font-weight" target="_blank">font weight</a>
-                      <div class="font-code">[]</div>
-                      <div class="text-right">
-                        <a href="#config-font-weight">Themed</a>
-                      </div>
-                    </div>
-                    <div class="p-2 layout-three-columns items-center border-b border-grey-light">
-                      <a class="capitalize" href="https://tailwindcss.com/docs/height" target="_blank">height</a>
-                      <div class="font-code">[]</div>
-                      <div class="text-right">
-                        <a href="#config-height">Themed</a>
-                      </div>
-                    </div>
-                    <div class="p-2 layout-three-columns items-center border-b border-grey-light">
-                      <a class="capitalize" href="https://tailwindcss.com/docs/line-height" target="_blank">line height</a>
-                      <div class="font-code">[]</div>
-                      <div class="text-right">
-                        <a href="#config-line-height">Themed</a>
-                      </div>
-                    </div>
-                    <div class="p-2 layout-three-columns items-center border-b border-grey-light">
-                      <a class="capitalize" href="https://tailwindcss.com/docs/list-style type" target="_blank">list style type</a>
-                      <div class="font-code">[]</div>
-                      <div class="text-right">
-                        <span class="text-secondary-grey">Default</span>
-                      </div>
-                    </div>
-                    <div class="p-2 layout-three-columns items-center border-b border-grey-light">
-                      <a class="capitalize" href="https://tailwindcss.com/docs/margin" target="_blank">margin</a>
-                      <div class="font-code">[responsive]</div>
-                      <div class="text-right">
-                        <a href="#config-margin">Themed</a>
-                      </div>
-                    </div>
-                    <div class="p-2 layout-three-columns items-center border-b border-grey-light">
-                      <a class="capitalize" href="https://tailwindcss.com/docs/max-height" target="_blank">max height</a>
-                      <div class="font-code">[]</div>
-                      <div class="text-right">
-                        <span class="text-secondary-grey">Default</span>
-                      </div>
-                    </div>
-                    <div class="p-2 layout-three-columns items-center border-b border-grey-light">
-                      <a class="capitalize" href="https://tailwindcss.com/docs/max-width" target="_blank">max width</a>
-                      <div class="font-code">[responsive]</div>
-                      <div class="text-right">
-                        <a href="#config-max-width">Themed</a>
-                      </div>
-                    </div>
-                    <div class="p-2 layout-three-columns items-center border-b border-grey-light">
-                      <a class="capitalize" href="https://tailwindcss.com/docs/min-height" target="_blank">min height</a>
-                      <div class="font-code">[responsive]</div>
-                      <div class="text-right">
-                        <span class="text-secondary-grey">Default</span>
-                      </div>
-                    </div>
-                    <div class="p-2 layout-three-columns items-center border-b border-grey-light">
-                      <a class="capitalize" href="https://tailwindcss.com/docs/min-width" target="_blank">min width</a>
-                      <div class="font-code">[]</div>
-                      <div class="text-right">
-                        <span class="text-secondary-grey">Default</span>
-                      </div>
-                    </div>
-                    <div class="p-2 layout-three-columns items-center border-b border-grey-light">
-                      <a class="capitalize" href="https://tailwindcss.com/docs/opacity" target="_blank">opacity</a>
-                      <div class="font-code">[]</div>
-                      <div class="text-right">
-                        <span class="text-secondary-grey">Default</span>
-                      </div>
-                    </div>
-                    <div class="p-2 layout-three-columns items-center border-b border-grey-light">
-                      <a class="capitalize" href="https://tailwindcss.com/docs/overflow" target="_blank">overflow</a>
-                      <div class="font-code">[responsive]</div>
-                      <div class="text-right">
-                        <span class="text-secondary-grey">Default</span>
-                      </div>
-                    </div>
-                    <div class="p-2 layout-three-columns items-center border-b border-grey-light">
-                      <a class="capitalize" href="https://tailwindcss.com/docs/padding" target="_blank">padding</a>
-                      <div class="font-code">[responsive]</div>
-                      <div class="text-right">
-                        <a href="#config-padding">Themed</a>
-                      </div>
-                    </div>
-                    <div class="p-2 layout-three-columns items-center border-b border-grey-light">
-                      <a class="capitalize" href="https://tailwindcss.com/docs/pointer-events" target="_blank">pointer events</a>
-                      <div class="font-code">[]</div>
-                      <div class="text-right">
-                        <span class="text-secondary-grey">Default</span>
-                      </div>
-                    </div>
-                    <div class="p-2 layout-three-columns items-center border-b border-grey-light">
-                      <a class="capitalize" href="https://tailwindcss.com/docs/position" target="_blank">position</a>
-                      <div class="font-code">[]</div>
-                      <div class="text-right">
-                        <span class="text-secondary-grey">Default</span>
-                      </div>
-                    </div>
-                    <div class="p-2 layout-three-columns items-center border-b border-grey-light">
-                      <a class="capitalize" href="https://tailwindcss.com/docs/inset" target="_blank">inset</a>
-                      <div class="font-code">[]</div>
-                      <div class="text-right">
-                        <span class="text-secondary-grey">Default</span>
-                      </div>
-                    </div>
-                    <div class="p-2 layout-three-columns items-center border-b border-grey-light">
-                      <a class="capitalize" href="https://tailwindcss.com/docs/box-shadow" target="_blank">box shadow</a>
-                      <div class="font-code">[responsive, hover,focus]</div>
-                      <div class="text-right">
-                        <a href="#config-box-shadow">Themed</a>
-                      </div>
-                    </div>
-                    <div class="p-2 layout-three-columns items-center border-b border-grey-light">
-                      <a class="capitalize" href="https://tailwindcss.com/docs/fill" target="_blank">fill</a>
-                      <div class="font-code">[]</div>
-                      <div class="text-right">
-                        <a href="#config-fill">Themed</a>
-                      </div>
-                    </div>
-                    <div class="p-2 layout-three-columns items-center border-b border-grey-light">
-                      <a class="capitalize" href="https://tailwindcss.com/docs/stroke" target="_blank">stroke</a>
-                      <div class="font-code">[]</div>
-                      <div class="text-right">
-                        <span class="text-secondary-grey">Default</span>
-                      </div>
-                    </div>
-                    <div class="p-2 layout-three-columns items-center border-b border-grey-light">
-                      <a class="capitalize" href="https://tailwindcss.com/docs/table-layout" target="_blank">table layout</a>
-                      <div class="font-code">[]</div>
-                      <div class="text-right">
-                        <span class="text-secondary-grey">Default</span>
-                      </div>
-                    </div>
-                    <div class="p-2 layout-three-columns items-center border-b border-grey-light">
-                      <a class="capitalize" href="https://tailwindcss.com/docs/text-align" target="_blank">text align</a>
-                      <div class="font-code">[]</div>
-                      <div class="text-right">
-                        <span class="text-secondary-grey">Default</span>
-                      </div>
-                    </div>
-                    <div class="p-2 layout-three-columns items-center border-b border-grey-light">
-                      <a class="capitalize" href="https://tailwindcss.com/docs/text-color" target="_blank">text color</a>
-                      <div class="font-code">[]</div>
-                      <div class="text-right">
-                        <a href="#config-text-color">Themed</a>
-                      </div>
-                    </div>
-                    <div class="p-2 layout-three-columns items-center border-b border-grey-light">
-                      <a class="capitalize" href="https://tailwindcss.com/docs/font-size" target="_blank">font size</a>
-                      <div class="font-code">[responsive]</div>
-                      <div class="text-right">
-                        <a href="#config-font-size">Themed</a>
-                      </div>
-                    </div>
-                    <div class="p-2 layout-three-columns items-center border-b border-grey-light">
-                      <a class="capitalize" href="https://tailwindcss.com/docs/font-style" target="_blank">font style</a>
-                      <div class="font-code">[responsive]</div>
-                      <div class="text-right">
-                        <span class="text-secondary-grey">Default</span>
-                      </div>
-                    </div>
-                    <div class="p-2 layout-three-columns items-center border-b border-grey-light">
-                      <a class="capitalize" href="https://tailwindcss.com/docs/text-transform" target="_blank">text transform</a>
-                      <div class="font-code">[]</div>
-                      <div class="text-right">
-                        <span class="text-secondary-grey">Default</span>
-                      </div>
-                    </div>
-                    <div class="p-2 layout-three-columns items-center border-b border-grey-light">
-                      <a class="capitalize" href="https://tailwindcss.com/docs/text-decoration" target="_blank">text decoration</a>
-                      <div class="font-code">[]</div>
-                      <div class="text-right">
-                        <span class="text-secondary-grey">Default</span>
-                      </div>
-                    </div>
-                    <div class="p-2 layout-three-columns items-center border-b border-grey-light">
-                      <a class="capitalize" href="https://tailwindcss.com/docs/font-smoothing" target="_blank">font smoothing</a>
-                      <div class="font-code">[]</div>
-                      <div class="text-right">
-                        <span class="text-secondary-grey">Default</span>
-                      </div>
-                    </div>
-                    <div class="p-2 layout-three-columns items-center border-b border-grey-light">
-                      <a class="capitalize" href="https://tailwindcss.com/docs/user-select" target="_blank">user select</a>
-                      <div class="font-code">[]</div>
-                      <div class="text-right">
-                        <span class="text-secondary-grey">Default</span>
-                      </div>
-                    </div>
-                    <div class="p-2 layout-three-columns items-center border-b border-grey-light">
-                      <a class="capitalize" href="https://tailwindcss.com/docs/vertical-align" target="_blank">vertical align</a>
-                      <div class="font-code">[]</div>
-                      <div class="text-right">
-                        <span class="text-secondary-grey">Default</span>
-                      </div>
-                    </div>
-                    <div class="p-2 layout-three-columns items-center border-b border-grey-light">
-                      <a class="capitalize" href="https://tailwindcss.com/docs/visibility" target="_blank">visibility</a>
-                      <div class="font-code">[]</div>
-                      <div class="text-right">
-                        <span class="text-secondary-grey">Default</span>
-                      </div>
-                    </div>
-                    <div class="p-2 layout-three-columns items-center border-b border-grey-light">
-                      <a class="capitalize" href="https://tailwindcss.com/docs/whitespace" target="_blank">whitespace</a>
-                      <div class="font-code">[]</div>
-                      <div class="text-right">
-                        <span class="text-secondary-grey">Default</span>
-                      </div>
-                    </div>
-                    <div class="p-2 layout-three-columns items-center border-b border-grey-light">
-                      <a class="capitalize" href="https://tailwindcss.com/docs/width" target="_blank">width</a>
-                      <div class="font-code">[responsive]</div>
-                      <div class="text-right">
-                        <span class="text-secondary-grey">Default</span>
-                      </div>
-                    </div>
-                    <div class="p-2 layout-three-columns items-center border-b border-grey-light">
-                      <a class="capitalize" href="https://tailwindcss.com/docs/z-index" target="_blank">z index</a>
-                      <div class="font-code">[]</div>
-                      <div class="text-right">
-                        <span class="text-secondary-grey">Default</span>
-                      </div>
+                  <div class="p-2 layout-three-columns items-center border-b border-grey-light">
+                    <a class="capitalize" href="https://tailwindcss.com/docs/background-color" target="_blank">background color</a>
+                    <div class="font-code">[responsive]</div>
+                    <div class="text-right">
+                      <a href="#config-background-color">Themed</a>
                     </div>
                   </div>
+                  <div class="p-2 layout-three-columns items-center border-b border-grey-light">
+                    <a class="capitalize" href="https://tailwindcss.com/docs/border-collapse" target="_blank">border collapse</a>
+                    <div class="font-code">[]</div>
+                    <div class="text-right">
+                      <span class="text-secondary-grey">Default</span>
+                    </div>
+                  </div>
+                  <div class="p-2 layout-three-columns items-center border-b border-grey-light">
+                    <a class="capitalize" href="https://tailwindcss.com/docs/border-color" target="_blank">border color</a>
+                    <div class="font-code">[responsive]</div>
+                    <div class="text-right">
+                      <a href="#config-border-color">Themed</a>
+                    </div>
+                  </div>
+                  <div class="p-2 layout-three-columns items-center border-b border-grey-light">
+                    <a class="capitalize" href="https://tailwindcss.com/docs/border-radius" target="_blank">border radius</a>
+                    <div class="font-code">[]</div>
+                    <div class="text-right">
+                      <span class="text-secondary-grey">Default</span>
+                    </div>
+                  </div>
+                  <div class="p-2 layout-three-columns items-center border-b border-grey-light">
+                    <a class="capitalize" href="https://tailwindcss.com/docs/border-style" target="_blank">border style</a>
+                    <div class="font-code">[]</div>
+                    <div class="text-right">
+                      <span class="text-secondary-grey">Default</span>
+                    </div>
+                  </div>
+                  <div class="p-2 layout-three-columns items-center border-b border-grey-light">
+                    <a class="capitalize" href="https://tailwindcss.com/docs/border-width" target="_blank">border width</a>
+                    <div class="font-code">[responsive]</div>
+                    <div class="text-right">
+                      <span class="text-secondary-grey">Default</span>
+                    </div>
+                  </div>
+                  <div class="p-2 layout-three-columns items-center border-b border-grey-light">
+                    <a class="capitalize" href="https://tailwindcss.com/docs/cursor" target="_blank">cursor</a>
+                    <div class="font-code">[]</div>
+                    <div class="text-right">
+                      <span class="text-secondary-grey">Default</span>
+                    </div>
+                  </div>
+                  <div class="p-2 layout-three-columns items-center border-b border-grey-light">
+                    <a class="capitalize" href="https://tailwindcss.com/docs/display" target="_blank">display</a>
+                    <div class="font-code">[responsive]</div>
+                    <div class="text-right">
+                      <span class="text-secondary-grey">Default</span>
+                    </div>
+                  </div>
+                  <div class="p-2 layout-three-columns items-center border-b border-grey-light">
+                    <a class="capitalize" href="https://tailwindcss.com/docs/flex-direction" target="_blank">flex direction</a>
+                    <div class="font-code">[responsive]</div>
+                    <div class="text-right">
+                      <span class="text-secondary-grey">Default</span>
+                    </div>
+                  </div>
+                  <div class="p-2 layout-three-columns items-center border-b border-grey-light">
+                    <a class="capitalize" href="https://tailwindcss.com/docs/flex-wrap" target="_blank">flex wrap</a>
+                    <div class="font-code">[responsive]</div>
+                    <div class="text-right">
+                      <span class="text-secondary-grey">Default</span>
+                    </div>
+                  </div>
+                  <div class="p-2 layout-three-columns items-center border-b border-grey-light">
+                    <a class="capitalize" href="https://tailwindcss.com/docs/align-items" target="_blank">align items</a>
+                    <div class="font-code">[responsive]</div>
+                    <div class="text-right">
+                      <span class="text-secondary-grey">Default</span>
+                    </div>
+                  </div>
+                  <div class="p-2 layout-three-columns items-center border-b border-grey-light">
+                    <a class="capitalize" href="https://tailwindcss.com/docs/align-self" target="_blank">align self</a>
+                    <div class="font-code">[responsive]</div>
+                    <div class="text-right">
+                      <span class="text-secondary-grey">Default</span>
+                    </div>
+                  </div>
+                  <div class="p-2 layout-three-columns items-center border-b border-grey-light">
+                    <a class="capitalize" href="https://tailwindcss.com/docs/justify-content" target="_blank">justify content</a>
+                    <div class="font-code">[responsive]</div>
+                    <div class="text-right">
+                      <span class="text-secondary-grey">Default</span>
+                    </div>
+                  </div>
+                  <div class="p-2 layout-three-columns items-center border-b border-grey-light">
+                    <a class="capitalize" href="https://tailwindcss.com/docs/align-content" target="_blank">align content</a>
+                    <div class="font-code">[responsive]</div>
+                    <div class="text-right">
+                      <span class="text-secondary-grey">Default</span>
+                    </div>
+                  </div>
+                  <div class="p-2 layout-three-columns items-center border-b border-grey-light">
+                    <a class="capitalize" href="https://tailwindcss.com/docs/flex" target="_blank">flex</a>
+                    <div class="font-code">[responsive]</div>
+                    <div class="text-right">
+                      <span class="text-secondary-grey">Default</span>
+                    </div>
+                  </div>
+                  <div class="p-2 layout-three-columns items-center border-b border-grey-light">
+                    <a class="capitalize" href="https://tailwindcss.com/docs/flex-grow" target="_blank">flex grow</a>
+                    <div class="font-code">[responsive]</div>
+                    <div class="text-right">
+                      <span class="text-secondary-grey">Default</span>
+                    </div>
+                  </div>
+                  <div class="p-2 layout-three-columns items-center border-b border-grey-light">
+                    <a class="capitalize" href="https://tailwindcss.com/docs/flex-shrink" target="_blank">flex shrink</a>
+                    <div class="font-code">[responsive]</div>
+                    <div class="text-right">
+                      <span class="text-secondary-grey">Default</span>
+                    </div>
+                  </div>
+                  <div class="p-2 layout-three-columns items-center border-b border-grey-light">
+                    <a class="capitalize" href="https://tailwindcss.com/docs/order" target="_blank">order</a>
+                    <div class="font-code">[responsive]</div>
+                    <div class="text-right">
+                      <span class="text-secondary-grey">Default</span>
+                    </div>
+                  </div>
+                  <div class="p-2 layout-three-columns items-center border-b border-grey-light">
+                    <a class="capitalize" href="https://tailwindcss.com/docs/font-family" target="_blank">font family</a>
+                    <div class="font-code">[]</div>
+                    <div class="text-right">
+                      <a href="#config-font-family">Themed</a>
+                    </div>
+                  </div>
+                  <div class="p-2 layout-three-columns items-center border-b border-grey-light">
+                    <a class="capitalize" href="https://tailwindcss.com/docs/font-weight" target="_blank">font weight</a>
+                    <div class="font-code">[]</div>
+                    <div class="text-right">
+                      <a href="#config-font-weight">Themed</a>
+                    </div>
+                  </div>
+                  <div class="p-2 layout-three-columns items-center border-b border-grey-light">
+                    <a class="capitalize" href="https://tailwindcss.com/docs/height" target="_blank">height</a>
+                    <div class="font-code">[]</div>
+                    <div class="text-right">
+                      <a href="#config-height">Themed</a>
+                    </div>
+                  </div>
+                  <div class="p-2 layout-three-columns items-center border-b border-grey-light">
+                    <a class="capitalize" href="https://tailwindcss.com/docs/line-height" target="_blank">line height</a>
+                    <div class="font-code">[]</div>
+                    <div class="text-right">
+                      <a href="#config-line-height">Themed</a>
+                    </div>
+                  </div>
+                  <div class="p-2 layout-three-columns items-center border-b border-grey-light">
+                    <a class="capitalize" href="https://tailwindcss.com/docs/list-style type" target="_blank">list style type</a>
+                    <div class="font-code">[]</div>
+                    <div class="text-right">
+                      <span class="text-secondary-grey">Default</span>
+                    </div>
+                  </div>
+                  <div class="p-2 layout-three-columns items-center border-b border-grey-light">
+                    <a class="capitalize" href="https://tailwindcss.com/docs/margin" target="_blank">margin</a>
+                    <div class="font-code">[responsive]</div>
+                    <div class="text-right">
+                      <a href="#config-margin">Themed</a>
+                    </div>
+                  </div>
+                  <div class="p-2 layout-three-columns items-center border-b border-grey-light">
+                    <a class="capitalize" href="https://tailwindcss.com/docs/max-height" target="_blank">max height</a>
+                    <div class="font-code">[]</div>
+                    <div class="text-right">
+                      <span class="text-secondary-grey">Default</span>
+                    </div>
+                  </div>
+                  <div class="p-2 layout-three-columns items-center border-b border-grey-light">
+                    <a class="capitalize" href="https://tailwindcss.com/docs/max-width" target="_blank">max width</a>
+                    <div class="font-code">[responsive]</div>
+                    <div class="text-right">
+                      <a href="#config-max-width">Themed</a>
+                    </div>
+                  </div>
+                  <div class="p-2 layout-three-columns items-center border-b border-grey-light">
+                    <a class="capitalize" href="https://tailwindcss.com/docs/min-height" target="_blank">min height</a>
+                    <div class="font-code">[responsive]</div>
+                    <div class="text-right">
+                      <span class="text-secondary-grey">Default</span>
+                    </div>
+                  </div>
+                  <div class="p-2 layout-three-columns items-center border-b border-grey-light">
+                    <a class="capitalize" href="https://tailwindcss.com/docs/min-width" target="_blank">min width</a>
+                    <div class="font-code">[]</div>
+                    <div class="text-right">
+                      <span class="text-secondary-grey">Default</span>
+                    </div>
+                  </div>
+                  <div class="p-2 layout-three-columns items-center border-b border-grey-light">
+                    <a class="capitalize" href="https://tailwindcss.com/docs/opacity" target="_blank">opacity</a>
+                    <div class="font-code">[]</div>
+                    <div class="text-right">
+                      <span class="text-secondary-grey">Default</span>
+                    </div>
+                  </div>
+                  <div class="p-2 layout-three-columns items-center border-b border-grey-light">
+                    <a class="capitalize" href="https://tailwindcss.com/docs/overflow" target="_blank">overflow</a>
+                    <div class="font-code">[responsive]</div>
+                    <div class="text-right">
+                      <span class="text-secondary-grey">Default</span>
+                    </div>
+                  </div>
+                  <div class="p-2 layout-three-columns items-center border-b border-grey-light">
+                    <a class="capitalize" href="https://tailwindcss.com/docs/padding" target="_blank">padding</a>
+                    <div class="font-code">[responsive]</div>
+                    <div class="text-right">
+                      <a href="#config-padding">Themed</a>
+                    </div>
+                  </div>
+                  <div class="p-2 layout-three-columns items-center border-b border-grey-light">
+                    <a class="capitalize" href="https://tailwindcss.com/docs/pointer-events" target="_blank">pointer events</a>
+                    <div class="font-code">[]</div>
+                    <div class="text-right">
+                      <span class="text-secondary-grey">Default</span>
+                    </div>
+                  </div>
+                  <div class="p-2 layout-three-columns items-center border-b border-grey-light">
+                    <a class="capitalize" href="https://tailwindcss.com/docs/position" target="_blank">position</a>
+                    <div class="font-code">[]</div>
+                    <div class="text-right">
+                      <span class="text-secondary-grey">Default</span>
+                    </div>
+                  </div>
+                  <div class="p-2 layout-three-columns items-center border-b border-grey-light">
+                    <a class="capitalize" href="https://tailwindcss.com/docs/inset" target="_blank">inset</a>
+                    <div class="font-code">[]</div>
+                    <div class="text-right">
+                      <span class="text-secondary-grey">Default</span>
+                    </div>
+                  </div>
+                  <div class="p-2 layout-three-columns items-center border-b border-grey-light">
+                    <a class="capitalize" href="https://tailwindcss.com/docs/box-shadow" target="_blank">box shadow</a>
+                    <div class="font-code">[responsive, hover,focus]</div>
+                    <div class="text-right">
+                      <a href="#config-box-shadow">Themed</a>
+                    </div>
+                  </div>
+                  <div class="p-2 layout-three-columns items-center border-b border-grey-light">
+                    <a class="capitalize" href="https://tailwindcss.com/docs/fill" target="_blank">fill</a>
+                    <div class="font-code">[]</div>
+                    <div class="text-right">
+                      <a href="#config-fill">Themed</a>
+                    </div>
+                  </div>
+                  <div class="p-2 layout-three-columns items-center border-b border-grey-light">
+                    <a class="capitalize" href="https://tailwindcss.com/docs/stroke" target="_blank">stroke</a>
+                    <div class="font-code">[]</div>
+                    <div class="text-right">
+                      <span class="text-secondary-grey">Default</span>
+                    </div>
+                  </div>
+                  <div class="p-2 layout-three-columns items-center border-b border-grey-light">
+                    <a class="capitalize" href="https://tailwindcss.com/docs/table-layout" target="_blank">table layout</a>
+                    <div class="font-code">[]</div>
+                    <div class="text-right">
+                      <span class="text-secondary-grey">Default</span>
+                    </div>
+                  </div>
+                  <div class="p-2 layout-three-columns items-center border-b border-grey-light">
+                    <a class="capitalize" href="https://tailwindcss.com/docs/text-align" target="_blank">text align</a>
+                    <div class="font-code">[]</div>
+                    <div class="text-right">
+                      <span class="text-secondary-grey">Default</span>
+                    </div>
+                  </div>
+                  <div class="p-2 layout-three-columns items-center border-b border-grey-light">
+                    <a class="capitalize" href="https://tailwindcss.com/docs/text-color" target="_blank">text color</a>
+                    <div class="font-code">[]</div>
+                    <div class="text-right">
+                      <a href="#config-text-color">Themed</a>
+                    </div>
+                  </div>
+                  <div class="p-2 layout-three-columns items-center border-b border-grey-light">
+                    <a class="capitalize" href="https://tailwindcss.com/docs/font-size" target="_blank">font size</a>
+                    <div class="font-code">[responsive]</div>
+                    <div class="text-right">
+                      <a href="#config-font-size">Themed</a>
+                    </div>
+                  </div>
+                  <div class="p-2 layout-three-columns items-center border-b border-grey-light">
+                    <a class="capitalize" href="https://tailwindcss.com/docs/font-style" target="_blank">font style</a>
+                    <div class="font-code">[responsive]</div>
+                    <div class="text-right">
+                      <span class="text-secondary-grey">Default</span>
+                    </div>
+                  </div>
+                  <div class="p-2 layout-three-columns items-center border-b border-grey-light">
+                    <a class="capitalize" href="https://tailwindcss.com/docs/text-transform" target="_blank">text transform</a>
+                    <div class="font-code">[]</div>
+                    <div class="text-right">
+                      <span class="text-secondary-grey">Default</span>
+                    </div>
+                  </div>
+                  <div class="p-2 layout-three-columns items-center border-b border-grey-light">
+                    <a class="capitalize" href="https://tailwindcss.com/docs/text-decoration" target="_blank">text decoration</a>
+                    <div class="font-code">[]</div>
+                    <div class="text-right">
+                      <span class="text-secondary-grey">Default</span>
+                    </div>
+                  </div>
+                  <div class="p-2 layout-three-columns items-center border-b border-grey-light">
+                    <a class="capitalize" href="https://tailwindcss.com/docs/font-smoothing" target="_blank">font smoothing</a>
+                    <div class="font-code">[]</div>
+                    <div class="text-right">
+                      <span class="text-secondary-grey">Default</span>
+                    </div>
+                  </div>
+                  <div class="p-2 layout-three-columns items-center border-b border-grey-light">
+                    <a class="capitalize" href="https://tailwindcss.com/docs/user-select" target="_blank">user select</a>
+                    <div class="font-code">[]</div>
+                    <div class="text-right">
+                      <span class="text-secondary-grey">Default</span>
+                    </div>
+                  </div>
+                  <div class="p-2 layout-three-columns items-center border-b border-grey-light">
+                    <a class="capitalize" href="https://tailwindcss.com/docs/vertical-align" target="_blank">vertical align</a>
+                    <div class="font-code">[]</div>
+                    <div class="text-right">
+                      <span class="text-secondary-grey">Default</span>
+                    </div>
+                  </div>
+                  <div class="p-2 layout-three-columns items-center border-b border-grey-light">
+                    <a class="capitalize" href="https://tailwindcss.com/docs/visibility" target="_blank">visibility</a>
+                    <div class="font-code">[]</div>
+                    <div class="text-right">
+                      <span class="text-secondary-grey">Default</span>
+                    </div>
+                  </div>
+                  <div class="p-2 layout-three-columns items-center border-b border-grey-light">
+                    <a class="capitalize" href="https://tailwindcss.com/docs/whitespace" target="_blank">whitespace</a>
+                    <div class="font-code">[]</div>
+                    <div class="text-right">
+                      <span class="text-secondary-grey">Default</span>
+                    </div>
+                  </div>
+                  <div class="p-2 layout-three-columns items-center border-b border-grey-light">
+                    <a class="capitalize" href="https://tailwindcss.com/docs/width" target="_blank">width</a>
+                    <div class="font-code">[responsive]</div>
+                    <div class="text-right">
+                      <span class="text-secondary-grey">Default</span>
+                    </div>
+                  </div>
+                  <div class="p-2 layout-three-columns items-center border-b border-grey-light">
+                    <a class="capitalize" href="https://tailwindcss.com/docs/z-index" target="_blank">z index</a>
+                    <div class="font-code">[]</div>
+                    <div class="text-right">
+                      <span class="text-secondary-grey">Default</span>
+                    </div>
+                  </div>
+                </div>
                 </p>
                 <h3 id="installation">Installation</h3>
                 <p>

@@ -14,10 +14,6 @@ module.exports = {
   src: 'src',
   views: 'views',
   dist: 'dist',
-  blacklist: [
-    'partials',
-    'layouts'
-  ],
   marked: {
     gfm: true,
     headerIds: true,
