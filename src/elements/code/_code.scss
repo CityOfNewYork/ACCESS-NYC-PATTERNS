@@ -123,6 +123,10 @@ pre, .hljs {
   padding-bottom: $grid;
 }
 
+pre > code:first-of-type > .hljs-comment {
+  padding-top: 0;
+}
+
 .hljs-type, .hljs-string, .hljs-number, .hljs-selector-id,
 .hljs-selector-class, .hljs-quote, .hljs-template-tag, .hljs-deletion {
   color: $color-purple;
