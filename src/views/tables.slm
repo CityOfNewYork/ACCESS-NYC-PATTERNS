@@ -10,6 +10,7 @@
 = partial('/slm/partials/head.mixin.slm');
 = partial('/slm/partials/content-header.mixin.slm');
 = partial('/slm/section/section.mixin.slm');
+= partial('/slm/section/section-text.mixin.slm');
 = partial('/slm/section/demo-specs.mixin.slm');
 = partial('/slm/section/demo-block.mixin.slm');
 
@@ -23,3 +24,7 @@
 = content('content');
   = mixin('content-header', title);
   = mixin('section', false, 'elements/tables/tables');
+  = mixin('section', 'Numeric Tables', 'elements/tables/tables-numeric');
+  = mixin('section', 'First Column Header', 'elements/tables/tables-headers-first-column');
+  = mixin('section', 'Sticky Headers', 'elements/tables/tables-headers-sticky');
+  = mixin('section-text', 'Utilities', 'elements/tables/tables-utilities');

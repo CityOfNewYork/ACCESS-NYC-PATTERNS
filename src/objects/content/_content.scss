@@ -3,6 +3,7 @@
  */
 
 // Dependencies
+@import 'config/direction';
 @import 'elements/tables/tables';
 @import 'components/checklist/checklist';
 
@@ -13,6 +14,6 @@
   }
 
   table {
-    @include table;
+    @include table($text-direction-end);
   }
 }
