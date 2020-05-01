@@ -14,7 +14,6 @@
 .o-text-controller {
   font-size: 18px; // px value freezes the font size for the controller
 
-  .icon,
   .o-text-controller__title-full,
   .o-text-controller__title-short {
     vertical-align: middle;
@@ -24,6 +23,7 @@
 .o-text-controller__control {
   font-weight: normal;
   font-style: italic;
+  text-decoration: none;
 
   &.active {
     display: none;
@@ -32,12 +32,14 @@
   > * {
    pointer-events: none;
   }
-
-  .icon {
-    margin-#{$text-direction-end}: 0.3em;
-  }
 }
 
+.o-text-controller__icon {
+  vertical-align: middle;
+  margin-#{$text-direction-end}: $grid-base;
+}
+
+.o-text-controller__icon-full,
 .o-text-controller__title-full {
   display: none;
 
@@ -46,6 +48,7 @@
   }
 }
 
+.o-text-controller__icon-short,
 .o-text-controller__title-short {
   display: inline-block;
 
