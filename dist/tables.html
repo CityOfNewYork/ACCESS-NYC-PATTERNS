@@ -160,7 +160,6 @@
             <a class="block p-1" href="margin">Margin</a>
             <a class="block p-1" href="media">Media</a>
             <a class="block p-1" href="padding">Padding</a>
-            <a class="block p-1" href="screen-reader">Screen Reader</a>
             <a class="block p-1" href="tailwindcss">tailwindcss</a>
             <a class="block p-1" href="text">Text</a>
             <a class="block p-1" href="toggle">Toggle</a>
@@ -192,108 +191,432 @@
               </div>
             </header>
             <div class="layout-home-body">
-              <div class="my-0 pt-4 px-2 text-small table-align-start">
-                <p>Table Elements are usually used to show the income limits for applicants with different situations (like household size or marital status).</p>
-              </div>
+              <div class="my-0 pt-4 px-2 text-small table-align-start"></div>
             </div>
             <div class="layout-gutter screen-tablet:layout-columns justify-between pt-4">
               <div class="screen-tablet:pe-2">
-                <div class="table">
-                  <table>
-                    <thead>
-                      <tr>
-                        <td>
-                          <strong>Family Size</strong>
-                        </td>
-                        <td>
-                          <strong>Yearly Income</strong>
-                        </td>
-                        <td>
-                          <strong>Weekly Income</strong>
-                        </td>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      <tr>
-                        <td>1</td>
-                        <td>$27,816</td>
-                        <td>$535</td>
-                      </tr>
-                      <tr>
-                        <td>2</td>
-                        <td>$36,372</td>
-                        <td>$699</td>
-                      </tr>
-                      <tr>
-                        <td>3</td>
-                        <td>$44,928</td>
-                        <td>$864</td>
-                      </tr>
-                      <tr>
-                        <td>4</td>
-                        <td>$53,484</td>
-                        <td>$1,029</td>
-                      </tr>
-                      <tr>
-                        <td>...</td>
-                        <td>...</td>
-                        <td>...</td>
-                      </tr>
-                    </tbody>
-                  </table>
-                </div>
+                <table class="table">
+                  <thead>
+                    <tr>
+                      <th>Column A</th>
+                      <th>Column B</th>
+                      <th>Column C</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>Cell 1A</td>
+                      <td>Cell 1B</td>
+                      <td>Cell 1C</td>
+                    </tr>
+                    <tr>
+                      <td>Cell 2A</td>
+                      <td>Cell 2B</td>
+                      <td>Cell 2C</td>
+                    </tr>
+                    <tr>
+                      <td>...</td>
+                      <td>...</td>
+                      <td>...</td>
+                    </tr>
+                  </tbody>
+                </table>
               </div>
               <div>
                 <div class="code-block mb-1">
-                  <pre>&lt;div class=&quot;table&quot;&gt;
-  &lt;table&gt;
-    &lt;thead&gt;
-      &lt;tr&gt;
-        &lt;td&gt;
-          &lt;strong&gt;Family Size&lt;/strong&gt;
-        &lt;/td&gt;
-        &lt;td&gt;
-          &lt;strong&gt;Yearly Income&lt;/strong&gt;
-        &lt;/td&gt;
-        &lt;td&gt;
-          &lt;strong&gt;Weekly Income&lt;/strong&gt;
-        &lt;/td&gt;
-      &lt;/tr&gt;
-    &lt;/thead&gt;
-    &lt;tbody&gt;
-      &lt;tr&gt;
-        &lt;td&gt;1&lt;/td&gt;
-        &lt;td&gt;$27,816&lt;/td&gt;
-        &lt;td&gt;$535&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-        &lt;td&gt;2&lt;/td&gt;
-        &lt;td&gt;$36,372&lt;/td&gt;
-        &lt;td&gt;$699&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-        &lt;td&gt;3&lt;/td&gt;
-        &lt;td&gt;$44,928&lt;/td&gt;
-        &lt;td&gt;$864&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-        &lt;td&gt;4&lt;/td&gt;
-        &lt;td&gt;$53,484&lt;/td&gt;
-        &lt;td&gt;$1,029&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-        &lt;td&gt;...&lt;/td&gt;
-        &lt;td&gt;...&lt;/td&gt;
-        &lt;td&gt;...&lt;/td&gt;
-      &lt;/tr&gt;
-    &lt;/tbody&gt;
-  &lt;/table&gt;
-&lt;/div&gt;</pre>
+                  <pre>&lt;table class=&quot;table&quot;&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;Column A&lt;/th&gt;
+      &lt;th&gt;Column B&lt;/th&gt;
+      &lt;th&gt;Column C&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Cell 1A&lt;/td&gt;
+      &lt;td&gt;Cell 1B&lt;/td&gt;
+      &lt;td&gt;Cell 1C&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Cell 2A&lt;/td&gt;
+      &lt;td&gt;Cell 2B&lt;/td&gt;
+      &lt;td&gt;Cell 2C&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;...&lt;/td&gt;
+      &lt;td&gt;...&lt;/td&gt;
+      &lt;td&gt;...&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;</pre>
                 </div>
               </div>
             </div>
           </div>
         </section>
+        <section class="pb-4 mb-4" id="numeric-tables">
+          <div class="page-wrapper px-2">
+            <header class="layout-home-body">
+              <div class="my-0 px-2 pt-1 pb-4 border-b border-grey-light">
+                <h2 class="m-0">
+                  <a class="text-grey-mid font-normal no-underline capitalize" href="#numeric-tables">Numeric Tables</a>
+                </h2>
+                <div class="pt-2">
+                  <p class="text-small m-0">Source: <code>
+                      <a href="https://github.com/CityOfNewYork/access-nyc-patterns/tree/v0.14.1/src/elements/tables">src/elements/tables/tables-numeric</a>
+                    </code>
+                  </p>
+                </div>
+              </div>
+            </header>
+            <div class="layout-home-body">
+              <div class="my-0 pt-4 px-2 text-small table-align-start">
+                <p>Numerical tables are used to show the income limits for applicants with different situations (like household size or marital status).</p>
+              </div>
+            </div>
+            <div class="layout-gutter screen-tablet:layout-columns justify-between pt-4">
+              <div class="screen-tablet:pe-2">
+                <table class="table-numeric">
+                  <thead>
+                    <tr>
+                      <th>Family Size</th>
+                      <th>Yearly Income</th>
+                      <th>Weekly Income</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>1</td>
+                      <td>$27,816</td>
+                      <td>$535</td>
+                    </tr>
+                    <tr>
+                      <td>2</td>
+                      <td>$36,372</td>
+                      <td>$699</td>
+                    </tr>
+                    <tr>
+                      <td>...</td>
+                      <td>...</td>
+                      <td>...</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <div>
+                <div class="code-block mb-1">
+                  <pre>&lt;table class=&quot;table-numeric&quot;&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;Family Size&lt;/th&gt;
+      &lt;th&gt;Yearly Income&lt;/th&gt;
+      &lt;th&gt;Weekly Income&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;1&lt;/td&gt;
+      &lt;td&gt;$27,816&lt;/td&gt;
+      &lt;td&gt;$535&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;2&lt;/td&gt;
+      &lt;td&gt;$36,372&lt;/td&gt;
+      &lt;td&gt;$699&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;...&lt;/td&gt;
+      &lt;td&gt;...&lt;/td&gt;
+      &lt;td&gt;...&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;</pre>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section class="pb-4 mb-4" id="first-column-header">
+          <div class="page-wrapper px-2">
+            <header class="layout-home-body">
+              <div class="my-0 px-2 pt-1 pb-4 border-b border-grey-light">
+                <h2 class="m-0">
+                  <a class="text-grey-mid font-normal no-underline capitalize" href="#first-column-header">First Column Header</a>
+                </h2>
+                <div class="pt-2">
+                  <p class="text-small m-0">Source: <code>
+                      <a href="https://github.com/CityOfNewYork/access-nyc-patterns/tree/v0.14.1/src/elements/tables">src/elements/tables/tables-headers-first-column</a>
+                    </code>
+                  </p>
+                </div>
+              </div>
+            </header>
+            <div class="layout-home-body">
+              <div class="my-0 pt-4 px-2 text-small table-align-start"></div>
+            </div>
+            <div class="layout-gutter screen-tablet:layout-columns justify-between pt-4">
+              <div class="screen-tablet:pe-2">
+                <table class="table-headers-first-column">
+                  <thead>
+                    <tr>
+                      <th>&nbsp;</th>
+                      <th>Column A</th>
+                      <th>Column B</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <th>Row 1</th>
+                      <td>Cell 1A</td>
+                      <td>Cell 1B</td>
+                    </tr>
+                    <tr>
+                      <th>Row 2</th>
+                      <td>Cell 2A</td>
+                      <td>Cell 2B</td>
+                    </tr>
+                    <tr>
+                      <th>Row 3</th>
+                      <td>...</td>
+                      <td>...</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <div>
+                <div class="code-block mb-1">
+                  <pre>&lt;table class=&quot;table-headers-first-column&quot;&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;&amp;nbsp;&lt;/th&gt;
+      &lt;th&gt;Column A&lt;/th&gt;
+      &lt;th&gt;Column B&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;th&gt;Row 1&lt;/th&gt;
+      &lt;td&gt;Cell 1A&lt;/td&gt;
+      &lt;td&gt;Cell 1B&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;Row 2&lt;/th&gt;
+      &lt;td&gt;Cell 2A&lt;/td&gt;
+      &lt;td&gt;Cell 2B&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;Row 3&lt;/th&gt;
+      &lt;td&gt;...&lt;/td&gt;
+      &lt;td&gt;...&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;</pre>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section class="pb-4 mb-4" id="sticky-headers">
+          <div class="page-wrapper px-2">
+            <header class="layout-home-body">
+              <div class="my-0 px-2 pt-1 pb-4 border-b border-grey-light">
+                <h2 class="m-0">
+                  <a class="text-grey-mid font-normal no-underline capitalize" href="#sticky-headers">Sticky Headers</a>
+                </h2>
+                <div class="pt-2">
+                  <p class="text-small m-0">Source: <code>
+                      <a href="https://github.com/CityOfNewYork/access-nyc-patterns/tree/v0.14.1/src/elements/tables">src/elements/tables/tables-headers-sticky</a>
+                    </code>
+                  </p>
+                </div>
+              </div>
+            </header>
+            <div class="layout-home-body">
+              <div class="my-0 pt-4 px-2 text-small table-align-start"></div>
+            </div>
+            <div class="layout-gutter screen-tablet:layout-columns justify-between pt-4">
+              <div class="screen-tablet:pe-2">
+                <table class="table-headers-sticky">
+                  <thead>
+                    <tr>
+                      <th>&nbsp;</th>
+                      <th>Column A</th>
+                      <th>Column B</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <th>Row 1</th>
+                      <td>Cell 1A</td>
+                      <td>Cell 1B</td>
+                    </tr>
+                    <tr>
+                      <th>Row 2</th>
+                      <td>Cell 2A</td>
+                      <td>Cell 2B</td>
+                    </tr>
+                    <tr>
+                      <th>Row 3</th>
+                      <td>...</td>
+                      <td>...</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <div>
+                <div class="code-block mb-1">
+                  <pre>&lt;table class=&quot;table-headers-sticky&quot;&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;&amp;nbsp;&lt;/th&gt;
+      &lt;th&gt;Column A&lt;/th&gt;
+      &lt;th&gt;Column B&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;th&gt;Row 1&lt;/th&gt;
+      &lt;td&gt;Cell 1A&lt;/td&gt;
+      &lt;td&gt;Cell 1B&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;Row 2&lt;/th&gt;
+      &lt;td&gt;Cell 2A&lt;/td&gt;
+      &lt;td&gt;Cell 2B&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;Row 3&lt;/th&gt;
+      &lt;td&gt;...&lt;/td&gt;
+      &lt;td&gt;...&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;</pre>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section class="pb-2 screen-tablet:pb-4 screen-tablet:mb-4" id="utilities">
+          <div class="page-wrapper px-2 screen-desktop:px-0">
+            <header class="layout-home-body">
+              <div class="my-0 px-2 py-0 border-b border-grey-light screen-tablet:flex screen-tablet:justify-between">
+                <h2 class="m-0 pt-1 pb-4">
+                  <a class="text-grey-mid font-normal no-underline capitalize" href="#utilities">Utilities</a>
+                </h2>
+              </div>
+            </header>
+            <div class="layout-home-body">
+              <div class="my-0 pt-4 px-2 text-small table-align-start">
+                <p>The following table alignment options and table utilities are available.</p>
+                <table>
+                  <thead>
+                    <tr>
+                      <th>Utility</th>
+                      <th>Description</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>
+                        <code>.table-header-start</code>
+                      </td>
+                      <td>Align <code>th</code> elements at the start of the cell.</td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <code>.table-header-center</code>
+                      </td>
+                      <td>Align <code>th</code> elements in the center of the cell.</td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <code>.table-header-end</code>
+                      </td>
+                      <td>Align <code>th</code> elements at the end of the cell.</td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <code>.table-header-top</code>
+                      </td>
+                      <td>Align <code>th</code> elements at the top of the cell.</td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <code>.table-header-middle</code>
+                      </td>
+                      <td>Align <code>th</code> elements in the middle of the cell.</td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <code>.table-header-bottom</code>
+                      </td>
+                      <td>Align <code>th</code> elements at the bottom of the cell.</td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <code>.table-body-start</code>
+                      </td>
+                      <td>Align <code>td</code> elements at the start of the cell.</td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <code>.table-body-center</code>
+                      </td>
+                      <td>Align <code>td</code> elements in the center of the cell.</td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <code>.table-body-end</code>
+                      </td>
+                      <td>Align <code>td</code> elements at the end of the cell.</td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <code>.table-body-top</code>
+                      </td>
+                      <td>Align <code>td</code> elements at the top of the cell.</td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <code>.table-body-middle</code>
+                      </td>
+                      <td>Align <code>td</code> elements in the middle of the cell.</td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <code>.table-body-bottom</code>
+                      </td>
+                      <td>Align <code>td</code> elements at the bottom of the cell.</td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <code>.border-spacing-0</code>
+                      </td>
+                      <td>Set table border spacing to 0.</td>
+                    </tr>
+                    <tr>
+                      <td>tailwindcss</td>
+                      <td>
+                        <a href='/tailwindcss'>Additional table utilities are available through tailwindcss</a>.
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </section>
+        <div class="sticky bottom-0 bg-white shadow-up relative z-10 overflow-y-scroll whitespace-no-wrap animated fadeInUp">
+          <nav class="nav-inline inline-block text-small p-2 screen-tablet:p-4">
+            <span class="me-2">Jump to:</span>
+            <a class="me-2 screen-tablet:me-4" href="#main-content">Top</a>
+            <a class="me-2 screen-tablet:me-4" href="#numeric-tables">Numeric Tables</a>
+            <a class="me-2 screen-tablet:me-4" href="#first-column-header">First Column Header</a>
+            <a class="me-2 screen-tablet:me-4" href="#sticky-headers">Sticky Headers</a>
+            <a class="me-2 screen-tablet:me-4" href="#utilities">Utilities</a>
+          </nav>
+        </div>
       </article>
     </main>
   </div>
@@ -395,7 +718,6 @@
           <a class="block p-1" href="margin">Margin</a>
           <a class="block p-1" href="media">Media</a>
           <a class="block p-1" href="padding">Padding</a>
-          <a class="block p-1" href="screen-reader">Screen Reader</a>
           <a class="block p-1" href="tailwindcss">tailwindcss</a>
           <a class="block p-1" href="text">Text</a>
           <a class="block p-1" href="toggle">Toggle</a>
