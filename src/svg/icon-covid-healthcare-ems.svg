@@ -1,0 +1,15 @@
+<svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g fill="transparent">
+<circle cx="27.5" cy="17.5" r="8.5" fill="white" stroke="black" stroke-width="2"/>
+<circle cx="26" cy="33" r="3" fill="white" stroke="black" stroke-width="2"/>
+<rect x="26" y="12" width="3" height="11" fill="#9425A8"/>
+<rect x="26.1794" y="16.9445" width="3" height="4.74701" transform="rotate(67.6137 26.1794 16.9445)" fill="#9425A8"/>
+<rect x="32.0936" y="13.5718" width="3" height="5.32108" transform="rotate(67.6137 32.0936 13.5718)" fill="#9425A8"/>
+<rect width="3" height="6.32965" transform="matrix(0.378017 -0.925799 -0.925799 -0.378017 32.1058 21.5122)" fill="#9425A8"/>
+<rect width="3" height="5.79317" transform="matrix(0.378017 -0.925799 -0.925799 -0.378017 27.1498 18.5532)" fill="#9425A8"/>
+<path d="M5 4V12C5 14.7614 7.23858 17 10 17V17C12.7614 17 15 14.7614 15 12V4" stroke="black" stroke-width="2"/>
+<path d="M10 17.3V26.4142C10 28.9538 12.6976 30.5849 14.9465 29.4051V29.4051C17.4686 28.082 20.5496 28.4829 22.6491 30.4074L23.35 31.0499" stroke="black" stroke-width="2"/>
+<circle cx="15" cy="4" r="2" fill="black"/>
+<circle cx="5" cy="4" r="2" fill="black"/>
+</g>
+</svg>

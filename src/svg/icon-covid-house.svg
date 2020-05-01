@@ -1,0 +1,8 @@
+<svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g fill="transparent">
+<path d="M4 16.5V35H35V16.5L19.5 3L4 16.5Z" fill="#9425A8" stroke="black" stroke-width="2"/>
+<path d="M5 16V34H34V16H5Z" fill="white"/>
+<rect x="16" y="26" width="8" height="9" fill="black"/>
+<line x1="34" y1="17" x2="4" y2="17" stroke="black" stroke-width="2"/>
+</g>
+</svg>

@@ -1,0 +1,13 @@
+<svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g fill="transparent">
+<mask id="path-2-inside-1" fill="white">
+<path d="M0 12H39V34H0V12Z"/>
+</mask>
+<path d="M0 12H39V34H0V12Z" fill="white"/>
+<path d="M0 12V10H-2V12H0ZM39 12H41V10H39V12ZM39 34V36H41V34H39ZM0 34H-2V36H0V34ZM0 14H39V10H0V14ZM37 12V34H41V12H37ZM39 32H0V36H39V32ZM2 34V12H-2V34H2Z" fill="black" mask="url(#path-2-inside-1)"/>
+<rect x="10" y="5" width="19" height="28" fill="white" stroke="black" stroke-width="2"/>
+<rect x="16" y="23" width="7" height="11" fill="black"/>
+<rect x="17.8286" y="10.0286" width="3.34286" height="10.0286" fill="#9425A8"/>
+<rect x="24.5143" y="13.3714" width="3.34286" height="10.0286" transform="rotate(90 24.5143 13.3714)" fill="#9425A8"/>
+</g>
+</svg>
