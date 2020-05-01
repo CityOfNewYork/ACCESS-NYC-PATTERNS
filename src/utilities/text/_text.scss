@@ -11,11 +11,11 @@
 @mixin text($variant: '') {
 // @responsive {
   .#{$variant}text-start {
-    text-align: $text-direction-start
+    text-align: $text-direction-start !important
   }
 
   .#{$variant}text-end {
-    text-align: $text-direction-end
+    text-align: $text-direction-end !important
   }
 }
 
