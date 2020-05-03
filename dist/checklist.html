@@ -29,7 +29,7 @@
       }
     </style>
   </noscript>
-  <script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-163470527-1"></script>
+  <script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-163470527-0"></script>
   <link href="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.18.1/build/styles/default.min.css" rel="stylesheet" />
   <script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.18.1/build/highlight.min.js"></script>
   <link href="styles/site-default.css" rel="stylesheet" />
@@ -49,7 +49,7 @@
       dataLayer.push(arguments);
     }
     gtag('js', new Date());
-    gtag('config', 'UA-163470527-1');
+    gtag('config', 'UA-163470527-0');
   </script>
 </head>
 
@@ -198,39 +198,35 @@
             </div>
             <div class="layout-gutter screen-tablet:layout-columns justify-between pt-4">
               <div class="screen-tablet:pe-2">
-                <div class="c-checklist">
-                  <ul>
-                    <li class="c-checklist__item-application">Checklist item Application</li>
-                    <li class="c-checklist__item-badge">Checklist item Badge</li>
-                    <li class="c-checklist__item-flag">Checklist item Flag</li>
-                    <li class="c-checklist__item-calendar">Checklist item Calendar</li>
-                    <li class="c-checklist__item-generic">Checklist item Generic</li>
-                    <li>Checklist item Eligibility Check (default)<ul>
-                        <li>Nested checklist item</li>
-                        <li>Nested checklist item</li>
-                        <li>Nested checklist item</li>
-                      </ul>
-                    </li>
-                  </ul>
-                </div>
+                <ul class="c-checklist">
+                  <li class="c-checklist__item-application">Checklist item Application</li>
+                  <li class="c-checklist__item-badge">Checklist item Badge</li>
+                  <li class="c-checklist__item-flag">Checklist item Flag</li>
+                  <li class="c-checklist__item-calendar">Checklist item Calendar</li>
+                  <li class="c-checklist__item-generic">Checklist item Generic</li>
+                  <li>Checklist item Eligibility Check (default)<ul>
+                      <li>Nested checklist item</li>
+                      <li>Nested checklist item</li>
+                      <li>Nested checklist item</li>
+                    </ul>
+                  </li>
+                </ul>
               </div>
               <div>
                 <div class="code-block mb-1">
-                  <pre>&lt;div class=&quot;c-checklist&quot;&gt;
-  &lt;ul&gt;
-    &lt;li class=&quot;c-checklist__item-application&quot;&gt;Checklist item Application&lt;/li&gt;
-    &lt;li class=&quot;c-checklist__item-badge&quot;&gt;Checklist item Badge&lt;/li&gt;
-    &lt;li class=&quot;c-checklist__item-flag&quot;&gt;Checklist item Flag&lt;/li&gt;
-    &lt;li class=&quot;c-checklist__item-calendar&quot;&gt;Checklist item Calendar&lt;/li&gt;
-    &lt;li class=&quot;c-checklist__item-generic&quot;&gt;Checklist item Generic&lt;/li&gt;
-    &lt;li&gt;Checklist item Eligibility Check (default)&lt;ul&gt;
-        &lt;li&gt;Nested checklist item&lt;/li&gt;
-        &lt;li&gt;Nested checklist item&lt;/li&gt;
-        &lt;li&gt;Nested checklist item&lt;/li&gt;
-      &lt;/ul&gt;
-    &lt;/li&gt;
-  &lt;/ul&gt;
-&lt;/div&gt;</pre>
+                  <pre>&lt;ul class=&quot;c-checklist&quot;&gt;
+  &lt;li class=&quot;c-checklist__item-application&quot;&gt;Checklist item Application&lt;/li&gt;
+  &lt;li class=&quot;c-checklist__item-badge&quot;&gt;Checklist item Badge&lt;/li&gt;
+  &lt;li class=&quot;c-checklist__item-flag&quot;&gt;Checklist item Flag&lt;/li&gt;
+  &lt;li class=&quot;c-checklist__item-calendar&quot;&gt;Checklist item Calendar&lt;/li&gt;
+  &lt;li class=&quot;c-checklist__item-generic&quot;&gt;Checklist item Generic&lt;/li&gt;
+  &lt;li&gt;Checklist item Eligibility Check (default)&lt;ul&gt;
+      &lt;li&gt;Nested checklist item&lt;/li&gt;
+      &lt;li&gt;Nested checklist item&lt;/li&gt;
+      &lt;li&gt;Nested checklist item&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;</pre>
                 </div>
               </div>
             </div>
@@ -355,6 +351,7 @@
     access.icons('https://cdn.jsdelivr.net/gh/cityofnewyork/nyco-patterns@v2.3.1/dist/icons.svg');
     access.toggle();
   </script>
+  <script src="/reload/reload.js"></script>
 </body>
 
 </html>

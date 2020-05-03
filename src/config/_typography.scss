@@ -16,6 +16,7 @@ $leading: map-get($tokens, 'leading');
   font-size: #{$font-size-largest};
   line-height: map-get($leading, 'medium');
   font-family: $font-family-serif;
+
   @media screen and (min-width: $screen-tablet) {
     font-size: $font-size-jumbo
   }
@@ -26,6 +27,7 @@ $leading: map-get($tokens, 'leading');
   font-size: #{$font-size-larger};
   line-height: map-get($leading, 'medium');
   font-family: $font-family-serif;
+
   @media screen and (min-width: $screen-tablet) {
     font-size: $font-size-largest
   }

@@ -26,7 +26,7 @@
   = mixin('section', 'Tertiary Button', 'elements/buttons/buttons-tertiary');
   = mixin('section', 'COVID Response Button', 'elements/buttons/buttons-covid-response');
   = mixin('section', 'Small Button', 'elements/buttons/buttons-small');
-  = mixin('section', 'Normal Button', 'elements/buttons/buttons-normal');
+  = mixin('section', 'Responsive Button', 'elements/buttons/buttons-normal');
   = mixin('section', 'Tag Button', 'elements/buttons/buttons-tag');
   = mixin('section', 'Toggle Button', 'elements/buttons/buttons-toggle');
   = mixin('section', 'Link Button', 'elements/buttons/buttons-link');

@@ -15,8 +15,7 @@ $breakpoints: map-get($tokens, 'screens');
 // Mixins
 // Do not include any layouts in here that require custom responsive breakpoints
 @mixin layouts($variant: '') {
-  .#{$variant}page-wrapper,
-  .#{$variant}wrap {
+  .#{$variant}page-wrapper {
     display: flex;
     flex-direction: column;
     margin: 0 auto;
@@ -299,7 +298,7 @@ $breakpoints: map-get($tokens, 'screens');
   }
 } // END Responsive Layouts
 
-.usa-grid {
+.wrap {
   padding-left: ($spacing-base / 3) * 2;
   padding-right: ($spacing-base / 3) * 2;
   margin-left: auto;

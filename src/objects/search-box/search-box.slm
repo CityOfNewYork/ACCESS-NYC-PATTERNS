@@ -4,33 +4,31 @@
 
 div class='o-search-box active static' id='search' aria-hidden='true'
   div class='o-search-box__inner'
-    div class='usa-grid'
-      div class='usa-width-one-whole'
+    div class='wrap'
+      a class='o-search-box__close js-hide-search' href='#content'
+        svg class='icon icon-ui-x'
+          use xlink:href='#icon-ui-x'
+        span class='sr-only' Close search
 
-        a class='o-search-box__close js-hide-search' href='#content'
-          svg class='icon icon-ui-x'
-            use xlink:href='#icon-ui-x'
-          span class='sr-only' Close search
+      form class='o-search-box__form'
+        input name='lang' value='en' type='hidden'
 
-        form class='o-search-box__form'
-          input name='lang' value='en' type='hidden'
+        label class='type-small' for='search-field' Search for programs and services
+        - symbol = false;
+        - instance = 'elements/inputs/inputs-search';
+        = partial(`../../${instance}.slm`);
 
-          label class='type-small' for='search-field' Search for programs and services
-          - symbol = false;
-          - instance = 'elements/inputs/inputs-search';
-          = partial(`../../${instance}.slm`);
+      div class='o-search-box__suggestions'
+        div class='o-search-box__suggestions-header'
+          h3 Programs
+          a class='link-more hidden screen-tablet:inline-block' href='#' see all programs
 
-        div class='o-search-box__suggestions'
-          div class='o-search-box__suggestions-header'
-            h3 Programs
-            a class='link-more hidden screen-tablet:inline-block' href='#' see all programs
+        div class='o-search-box__suggestions-body'
+          div class='o-search-box__suggestions-item'
+            a href='#' Money to buy food
+          div class='o-search-box__suggestions-item'
+            a href='#' Cash help when you are in need
+          div class='o-search-box__suggestions-item'
+            a href='#' Low-cost and free health insurance
 
-          div class='o-search-box__suggestions-body'
-            div class='o-search-box__suggestions-item'
-              a href='#' Money to buy food
-            div class='o-search-box__suggestions-item'
-              a href='#' Cash help when you are in need
-            div class='o-search-box__suggestions-item'
-              a href='#' Low-cost and free health insurance
-
-          a class='link-more screen-tablet:hidden' href='#' aria-hidden='true' see all programs
+        a class='link-more screen-tablet:hidden' href='#' aria-hidden='true' see all programs

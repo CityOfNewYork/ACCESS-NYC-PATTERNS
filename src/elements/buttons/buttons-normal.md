@@ -1,1 +1,1 @@
-The `btn-normal` class allows for setting responsive button sizes for tablet and desktop screens. This button will appear smaller on screens less than desktop width using the `screen-desktop:` media query utility.
+This button will appear smaller on screens less than desktop width using the `screen-desktop:` media query utility.

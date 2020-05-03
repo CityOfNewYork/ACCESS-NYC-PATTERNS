@@ -29,7 +29,7 @@
       }
     </style>
   </noscript>
-  <script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-163470527-1"></script>
+  <script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-163470527-0"></script>
   <link href="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.18.1/build/styles/default.min.css" rel="stylesheet" />
   <script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.18.1/build/highlight.min.js"></script>
   <link href="styles/site-default.css" rel="stylesheet" />
@@ -49,7 +49,7 @@
       dataLayer.push(arguments);
     }
     gtag('js', new Date());
-    gtag('config', 'UA-163470527-1');
+    gtag('config', 'UA-163470527-0');
   </script>
 </head>
 
@@ -369,12 +369,12 @@
             </div>
           </div>
         </section>
-        <section class="pb-4 mb-4" id="normal-button">
+        <section class="pb-4 mb-4" id="responsive-button">
           <div class="page-wrapper px-2">
             <header class="layout-home-body">
               <div class="my-0 px-2 pt-1 pb-4 border-b border-grey-light">
                 <h2 class="m-0">
-                  <a class="text-grey-mid font-normal no-underline capitalize" href="#normal-button">Normal Button</a>
+                  <a class="text-grey-mid font-normal no-underline capitalize" href="#responsive-button">Responsive Button</a>
                 </h2>
                 <div class="pt-2">
                   <p class="text-small m-0">Source: <code>
@@ -386,16 +386,16 @@
             </header>
             <div class="layout-home-body">
               <div class="my-0 pt-4 px-2 text-small table-align-start">
-                <p>The <code>btn-normal</code> class allows for setting responsive button sizes for tablet and desktop screens. This button will appear smaller on screens less than desktop width using the <code>screen-desktop:</code> media query utility.</p>
+                <p>This button will appear smaller on screens less than desktop width using the <code>screen-desktop:</code> media query utility.</p>
               </div>
             </div>
             <div class="layout-gutter screen-tablet:layout-columns justify-between pt-4">
               <div class="screen-tablet:pe-2">
-                <button class="btn-primary btn-small screen-desktop:btn-normal" type="button">Normal Button</button>
+                <button class="btn-primary btn-small screen-desktop:btn" type="button">Responsive Button</button>
               </div>
               <div>
                 <div class="code-block mb-1">
-                  <pre>&lt;button class=&quot;btn-primary btn-small screen-desktop:btn-normal&quot; type=&quot;button&quot;&gt;Normal Button&lt;/button&gt;</pre>
+                  <pre>&lt;button class=&quot;btn-primary btn-small screen-desktop:btn&quot; type=&quot;button&quot;&gt;Responsive Button&lt;/button&gt;</pre>
                 </div>
               </div>
             </div>
@@ -602,7 +602,7 @@
             <a class="me-2 screen-tablet:me-4" href="#tertiary-button">Tertiary Button</a>
             <a class="me-2 screen-tablet:me-4" href="#covid-response-button">COVID Response Button</a>
             <a class="me-2 screen-tablet:me-4" href="#small-button">Small Button</a>
-            <a class="me-2 screen-tablet:me-4" href="#normal-button">Normal Button</a>
+            <a class="me-2 screen-tablet:me-4" href="#responsive-button">Responsive Button</a>
             <a class="me-2 screen-tablet:me-4" href="#tag-button">Tag Button</a>
             <a class="me-2 screen-tablet:me-4" href="#toggle-button">Toggle Button</a>
             <a class="me-2 screen-tablet:me-4" href="#link-button">Link Button</a>
@@ -730,6 +730,7 @@
     access.icons('https://cdn.jsdelivr.net/gh/cityofnewyork/nyco-patterns@v2.3.1/dist/icons.svg');
     access.toggle();
   </script>
+  <script src="/reload/reload.js"></script>
 </body>
 
 </html>

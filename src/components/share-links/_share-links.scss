@@ -12,18 +12,17 @@
 // Declarations
 .c-share {
   @include typography-nav();
-  text-align: $text-direction-end;
 
   .icon {
     display: inline-block;
     height: $spacing-base;
-    margin-#{$text-direction-end}: $spacing-base / 2;
+    margin-#{$text-direction-end}: $grid-base;
     vertical-align: middle;
   }
 
-  @media screen and (min-width: $screen-desktop) {
-    text-align: $text-direction-start;
-  }
+  // @media screen and (min-width: $screen-desktop) {
+  //   text-align: $text-direction-start;
+  // }
 }
 
 .c-share__link {

@@ -27,20 +27,21 @@ $btn-radius: 5px;
 @mixin btn-normal() {
   @include typography-h4();
   line-height: 1;
+  padding: (.6666 * $spacing-base) $spacing-base;
 }
 
 @mixin btn() {
-  appearance: none;
-  transition: background .2s ease-in, color .2s ease-in;
   @include btn-normal();
-  background-color: $color-white;
+
+  appearance: none;
+  background-color: $color-blue-light;
   border: 0;
   border-radius: $btn-radius;
   display: inline-block;
-  padding: (.6666 * $spacing-base) $spacing-base;
   text-align: center;
   text-decoration: none;
   cursor: pointer;
+  transition: background .2s ease-in, color .2s ease-in;
 
   .icon {
     vertical-align: middle;

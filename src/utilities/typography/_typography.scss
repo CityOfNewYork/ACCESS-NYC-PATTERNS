@@ -75,7 +75,7 @@ blockquote, .blockquote, .type-blockquote, .typography-blockquote {
 .exposition, .type-exposition, .typography-exposition {
   @include typography-exposition();
 
-  margin-bottom: $spacing-base * 2;
+  margin-bottom: $spacing-base * 2 !important;
 }
 
 .jumbo, .type-jumbo, .typography-jumbo {
@@ -98,7 +98,7 @@ html {
   }
 }
 
-p, ul, ol {
+ul, ol, li, p {
   margin-top: 0;
   margin-bottom: rem(strip-units($spacing-base), $em-base);
 }

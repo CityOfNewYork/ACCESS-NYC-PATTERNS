@@ -3,17 +3,31 @@
  */
 
 // Dependencies
-@import 'config/direction';
-@import 'elements/tables/tables';
-@import 'components/checklist/checklist';
+@import 'config/tokens';
+@import 'config/fonts';
+@import 'config/dimensions';
 
 // Declarations
 .o-content {
-  > ul {
-    @include checklist;
+  line-height: map-get(map-get($tokens, 'leading'), 'large');
+
+  ul, ol {
+    margin-bottom: rem(strip-units($grid-base * 5), $em-base);
   }
 
-  table {
-    @include table($text-direction-end);
+  section {
+    padding-bottom: rem(strip-units($grid-base * 6), $em-base);
+  }
+
+  p:last-child,
+  ul:last-child,
+  ol:last-child,
+  li:last-child,
+  table:last-child,
+  button:last-child,
+  figure:last-child,
+  section:last-child {
+    margin-bottom: 0;
+    padding-bottom: 0;
   }
 }

@@ -15,8 +15,13 @@ $icons: map-get($tokens, 'icons-checklist');
   list-style: none;
   padding: 0;
 
+  *:last-child {
+    margin-bottom: 0;
+    padding-bottom: 0;
+  }
+
   li {
-    padding-bottom: $spacing-base
+    padding-bottom: $spacing-base;
   }
 
   > li {
@@ -30,23 +35,27 @@ $icons: map-get($tokens, 'icons-checklist');
   // Nested lists
   ul, ol {
     margin-top: $spacing-base;
+    padding-#{$text-direction-start}: $spacing-base;
+
     padding-bottom: 0;
     margin-bottom: 0;
-    padding-#{$text-direction-start}: $spacing-base;
   }
 
   ul > li,
   ol > li {
+    list-style-type: disc;
     background-image: none !important;
-
-    &:last-of-type {
-      padding-bottom: 0
-    }
+    padding-left: 0;
+    padding-right: 0;
   }
 }
 
-.c-checklist > ul {
+.c-checklist {
   @include checklist;
+}
+
+ul.c-checklist li {
+  margin-bottom: 0;
 }
 
 .c-checklist__item-application {

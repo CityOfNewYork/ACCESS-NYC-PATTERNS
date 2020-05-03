@@ -12,6 +12,11 @@
 .c-header {
   padding: ($spacing-base / 3) * 2;
 
+  *:last-child {
+    margin-bottom: 0;
+    padding-bottom: 0;
+  }
+
   @media screen and (min-width: $screen-mobile) {
     align-items: flex-start;
     display: flex;
