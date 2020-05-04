@@ -29,6 +29,7 @@
   border-bottom: 1px solid $color-grey-light;
   font-weight: $font-weight-bold;
   padding: ($grid-base * 2) 0;
+  margin: 0;
 
   &:last-child {
     border: 0;
