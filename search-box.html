@@ -76,8 +76,8 @@
             <h2 class="text-small m-0 text-blue-dark screen-tablet:hidden">Patterns</h2>
             <h2 aria-hidden="true" class="type-h1 m-0 text-blue-dark hidden screen-tablet:inline-block">Patterns</h2>
             <nav class="text-small">
-              <a class="rounded-lg text-blue-dark border-2 no-underline px-1 ms-2 hidden screen-tablet:inline-block" href="https://github.com/CityOfNewYork/access-nyc-patterns/tree/v0.14.5">0.14.5</a>
-              <a aria-hidden="true" class="ms-1 screen-tablet:ms-2 screen-tablet:hidden" href="https://github.com/CityOfNewYork/access-nyc-patterns/tree/v0.14.5">0.14.5</a>
+              <a class="rounded-lg text-blue-dark border-2 no-underline px-1 ms-2 hidden screen-tablet:inline-block" href="https://github.com/CityOfNewYork/access-nyc-patterns/tree/v0.14.7">0.14.7</a>
+              <a aria-hidden="true" class="ms-1 screen-tablet:ms-2 screen-tablet:hidden" href="https://github.com/CityOfNewYork/access-nyc-patterns/tree/v0.14.7">0.14.7</a>
               <button aria-controls="main-menu" aria-expanded="false" class="btn-link ms-1 screen-tablet:ms-2" data-js="toggle" id="main-menu-control">Menu</button>
             </nav>
           </div>
@@ -184,7 +184,7 @@
               <div class="my-0 px-2 pt-1 pb-4 border-b border-grey-light">
                 <div>
                   <p class="text-small m-0">Source: <code>
-                      <a href="https://github.com/CityOfNewYork/access-nyc-patterns/tree/v0.14.5/src/objects/search-box">src/objects/search-box/search-box</a>
+                      <a href="https://github.com/CityOfNewYork/access-nyc-patterns/tree/v0.14.7/src/objects/search-box">src/objects/search-box/search-box</a>
                     </code>
                   </p>
                 </div>
@@ -199,44 +199,42 @@
               <div>
                 <div aria-hidden="true" class="o-search-box active static" id="search">
                   <div class="o-search-box__inner">
-                    <div class="usa-grid">
-                      <div class="usa-width-one-whole">
-                        <a class="o-search-box__close js-hide-search" href="#content">
-                          <svg class="icon icon-ui-x">
-                            <use xlink:href="#icon-ui-x"></use>
-                          </svg>
-                          <span class="sr-only">Close search</span>
-                        </a>
-                        <form class="o-search-box__form">
-                          <input name="lang" type="hidden" value="en" />
-                          <label class="type-small" for="search-field">Search for programs and services</label>
-                          <div class="input-search">
-                            <input id="search-field" name="s" placeholder="Search" type="text" value="" />
-                            <button class="btn-link input-search__submit" type="submit">
-                              <svg class="icon icon-ui-search">
-                                <use xlink:href="#icon-ui-search"></use>
-                              </svg>
-                            </button>
-                          </div>
-                        </form>
-                        <div class="o-search-box__suggestions">
-                          <div class="o-search-box__suggestions-header">
-                            <h3>Programs</h3>
-                            <a class="link-more hidden screen-tablet:inline-block" href="#">see all programs</a>
-                          </div>
-                          <div class="o-search-box__suggestions-body">
-                            <div class="o-search-box__suggestions-item">
-                              <a href="#">Money to buy food</a>
-                            </div>
-                            <div class="o-search-box__suggestions-item">
-                              <a href="#">Cash help when you are in need</a>
-                            </div>
-                            <div class="o-search-box__suggestions-item">
-                              <a href="#">Low-cost and free health insurance</a>
-                            </div>
-                          </div>
-                          <a aria-hidden="true" class="link-more screen-tablet:hidden" href="#">see all programs</a>
+                    <div class="wrap">
+                      <a class="o-search-box__close js-hide-search" href="#content">
+                        <svg class="icon icon-ui-x">
+                          <use xlink:href="#icon-ui-x"></use>
+                        </svg>
+                        <span class="sr-only">Close search</span>
+                      </a>
+                      <form class="o-search-box__form">
+                        <input name="lang" type="hidden" value="en" />
+                        <label class="type-small" for="search-field">Search for programs and services</label>
+                        <div class="input-search">
+                          <input id="search-field" name="s" placeholder="Search" type="text" value="" />
+                          <button class="btn-link input-search__submit" type="submit">
+                            <svg class="icon icon-ui-search">
+                              <use xlink:href="#icon-ui-search"></use>
+                            </svg>
+                          </button>
                         </div>
+                      </form>
+                      <div class="o-search-box__suggestions">
+                        <div class="o-search-box__suggestions-header">
+                          <h3>Programs</h3>
+                          <a class="link-more hidden screen-tablet:inline-block" href="#">see all programs</a>
+                        </div>
+                        <div class="o-search-box__suggestions-body">
+                          <div class="o-search-box__suggestions-item">
+                            <a href="#">Money to buy food</a>
+                          </div>
+                          <div class="o-search-box__suggestions-item">
+                            <a href="#">Cash help when you are in need</a>
+                          </div>
+                          <div class="o-search-box__suggestions-item">
+                            <a href="#">Low-cost and free health insurance</a>
+                          </div>
+                        </div>
+                        <a aria-hidden="true" class="link-more screen-tablet:hidden" href="#">see all programs</a>
                       </div>
                     </div>
                   </div>
@@ -246,44 +244,42 @@
                 <div class="code-block mb-1">
                   <pre>&lt;div aria-hidden=&quot;true&quot; class=&quot;o-search-box active static&quot; id=&quot;search&quot;&gt;
   &lt;div class=&quot;o-search-box__inner&quot;&gt;
-    &lt;div class=&quot;usa-grid&quot;&gt;
-      &lt;div class=&quot;usa-width-one-whole&quot;&gt;
-        &lt;a class=&quot;o-search-box__close js-hide-search&quot; href=&quot;#content&quot;&gt;
-          &lt;svg class=&quot;icon icon-ui-x&quot;&gt;
-            &lt;use xlink:href=&quot;#icon-ui-x&quot;&gt;&lt;/use&gt;
-          &lt;/svg&gt;
-          &lt;span class=&quot;sr-only&quot;&gt;Close search&lt;/span&gt;
-        &lt;/a&gt;
-        &lt;form class=&quot;o-search-box__form&quot;&gt;
-          &lt;input name=&quot;lang&quot; type=&quot;hidden&quot; value=&quot;en&quot; /&gt;
-          &lt;label class=&quot;type-small&quot; for=&quot;search-field&quot;&gt;Search for programs and services&lt;/label&gt;
-          &lt;div class=&quot;input-search&quot;&gt;
-            &lt;input id=&quot;search-field&quot; name=&quot;s&quot; placeholder=&quot;Search&quot; type=&quot;text&quot; value=&quot;&quot; /&gt;
-            &lt;button class=&quot;btn-link input-search__submit&quot; type=&quot;submit&quot;&gt;
-              &lt;svg class=&quot;icon icon-ui-search&quot;&gt;
-                &lt;use xlink:href=&quot;#icon-ui-search&quot;&gt;&lt;/use&gt;
-              &lt;/svg&gt;
-            &lt;/button&gt;
-          &lt;/div&gt;
-        &lt;/form&gt;
-        &lt;div class=&quot;o-search-box__suggestions&quot;&gt;
-          &lt;div class=&quot;o-search-box__suggestions-header&quot;&gt;
-            &lt;h3&gt;Programs&lt;/h3&gt;
-            &lt;a class=&quot;link-more hidden screen-tablet:inline-block&quot; href=&quot;#&quot;&gt;see all programs&lt;/a&gt;
-          &lt;/div&gt;
-          &lt;div class=&quot;o-search-box__suggestions-body&quot;&gt;
-            &lt;div class=&quot;o-search-box__suggestions-item&quot;&gt;
-              &lt;a href=&quot;#&quot;&gt;Money to buy food&lt;/a&gt;
-            &lt;/div&gt;
-            &lt;div class=&quot;o-search-box__suggestions-item&quot;&gt;
-              &lt;a href=&quot;#&quot;&gt;Cash help when you are in need&lt;/a&gt;
-            &lt;/div&gt;
-            &lt;div class=&quot;o-search-box__suggestions-item&quot;&gt;
-              &lt;a href=&quot;#&quot;&gt;Low-cost and free health insurance&lt;/a&gt;
-            &lt;/div&gt;
-          &lt;/div&gt;
-          &lt;a aria-hidden=&quot;true&quot; class=&quot;link-more screen-tablet:hidden&quot; href=&quot;#&quot;&gt;see all programs&lt;/a&gt;
+    &lt;div class=&quot;wrap&quot;&gt;
+      &lt;a class=&quot;o-search-box__close js-hide-search&quot; href=&quot;#content&quot;&gt;
+        &lt;svg class=&quot;icon icon-ui-x&quot;&gt;
+          &lt;use xlink:href=&quot;#icon-ui-x&quot;&gt;&lt;/use&gt;
+        &lt;/svg&gt;
+        &lt;span class=&quot;sr-only&quot;&gt;Close search&lt;/span&gt;
+      &lt;/a&gt;
+      &lt;form class=&quot;o-search-box__form&quot;&gt;
+        &lt;input name=&quot;lang&quot; type=&quot;hidden&quot; value=&quot;en&quot; /&gt;
+        &lt;label class=&quot;type-small&quot; for=&quot;search-field&quot;&gt;Search for programs and services&lt;/label&gt;
+        &lt;div class=&quot;input-search&quot;&gt;
+          &lt;input id=&quot;search-field&quot; name=&quot;s&quot; placeholder=&quot;Search&quot; type=&quot;text&quot; value=&quot;&quot; /&gt;
+          &lt;button class=&quot;btn-link input-search__submit&quot; type=&quot;submit&quot;&gt;
+            &lt;svg class=&quot;icon icon-ui-search&quot;&gt;
+              &lt;use xlink:href=&quot;#icon-ui-search&quot;&gt;&lt;/use&gt;
+            &lt;/svg&gt;
+          &lt;/button&gt;
         &lt;/div&gt;
+      &lt;/form&gt;
+      &lt;div class=&quot;o-search-box__suggestions&quot;&gt;
+        &lt;div class=&quot;o-search-box__suggestions-header&quot;&gt;
+          &lt;h3&gt;Programs&lt;/h3&gt;
+          &lt;a class=&quot;link-more hidden screen-tablet:inline-block&quot; href=&quot;#&quot;&gt;see all programs&lt;/a&gt;
+        &lt;/div&gt;
+        &lt;div class=&quot;o-search-box__suggestions-body&quot;&gt;
+          &lt;div class=&quot;o-search-box__suggestions-item&quot;&gt;
+            &lt;a href=&quot;#&quot;&gt;Money to buy food&lt;/a&gt;
+          &lt;/div&gt;
+          &lt;div class=&quot;o-search-box__suggestions-item&quot;&gt;
+            &lt;a href=&quot;#&quot;&gt;Cash help when you are in need&lt;/a&gt;
+          &lt;/div&gt;
+          &lt;div class=&quot;o-search-box__suggestions-item&quot;&gt;
+            &lt;a href=&quot;#&quot;&gt;Low-cost and free health insurance&lt;/a&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;a aria-hidden=&quot;true&quot; class=&quot;link-more screen-tablet:hidden&quot; href=&quot;#&quot;&gt;see all programs&lt;/a&gt;
       &lt;/div&gt;
     &lt;/div&gt;
   &lt;/div&gt;
