@@ -5,7 +5,8 @@
   $size: map-get($tokens, 'icons-checklist-size');
 
   .bg-#{$key} {
-    @include size($size);
+    width: nth($size, 1) !important;
+    height: nth($size, 2) !important;
     background-image: url('#{$cdn}#{$path-to-images}#{$var}');
     background-repeat: no-repeat;
     background-size: 100%;
@@ -13,6 +14,7 @@
   }
 
   .#{$key} {
-    @include size($size);
+    width: nth($size, 1) !important;
+    height: nth($size, 2) !important;
   }
 }

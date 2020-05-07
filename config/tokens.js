@@ -302,20 +302,20 @@ module.exports = {
     '--large'
   ],
   'icons-sizes': {
-    '1': '8px 8px',
-    '2': '16px 16px',
-    '3': '24px 24px',
-    '4': '32px 32px',
-    '5': '40px 40px',
-    '6': '48px 48px',
-    '7': '56px 56px',
-    '8': '64px 64px',
-    '9': '72px 72px',
-    '10': '80px 80px',
-    '11': '88px 88px',
-    '12': '96px 96px',
-    'large': '136px 136px',
-    'xlarge': '256px 256px'
+    '1': ['8px', '8px'],
+    '2': ['16px', '16px'],
+    '3': ['24px', '24px'],
+    '4': ['32px', '32px'],
+    '5': ['40px', '40px'],
+    '6': ['48px', '48px'],
+    '7': ['56px', '56px'],
+    '8': ['64px', '64px'],
+    '9': ['72px', '72px'],
+    '10': ['80px', '80px'],
+    '11': ['88px', '88px'],
+    '12': ['96px', '96px'],
+    'large': ['136px', '136px'],
+    'xlarge': ['256px', '256px']
   },
   'icons-program-category': [
     'icon-cash-expenses',
@@ -369,7 +369,7 @@ module.exports = {
     'icon-card-people-with-disabilities-v2',
     'icon-card-work-v2'
   ],
-  'icons-checklist-size': '50px 50px',
+  'icons-checklist-size': ['50px', '50px'],
   'icons-checklist': {
     'icon-application': '"headsup_application_25px-1.png"',
     'icon-badge': '"headsup_badge_30px-1.png"',
