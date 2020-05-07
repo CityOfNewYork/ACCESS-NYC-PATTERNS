@@ -5,5 +5,9 @@
 label class='checkbox'
   input name='category' value='cash-expenses' type='checkbox'
   span class='checkbox__label items-center'
-    span class='checkbox__icon bg-icon-cash-expenses'
+
+    / span class='checkbox__icon bg-icon-cash-expenses'
+    svg class='checkbox__icon icon-6 text-blue-bright fill-blue-light' aria-hidden='true'
+      use xlink:href='#icon-cash-expenses-v2'
+
     span Cash & Expenses

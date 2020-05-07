@@ -11,11 +11,15 @@ nav class='o-navigation color-dark-background'
 
   nav class='o-navigation__nav nav-inline text-align-end'
     a class='screen-desktop:hidden' href='#o-mobile-nav' Menu
+
     a class='hidden screen-desktop:inline-block active' href='#' Am I eligible?
+
     a class='hidden screen-desktop:inline-block' href='#' Programs
+
     a class='hidden screen-desktop:inline-block' href='#' Find help
-    a class='td-inherit o-navigation__search' href='#search'
-      svg class='icon icon-ui-search' aria-hidden='true'
+
+    a class='no-underline o-navigation__search' href='#search'
+      svg class='icon icon-ui icon-3' aria-hidden='true'
         use xlink:href='#icon-ui-search'
       | Search
 

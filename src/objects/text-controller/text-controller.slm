@@ -66,14 +66,11 @@ div class='o-text-controller' data-js='text-controller'
       span class='o-text-controller__sizer-text' Adjust text size
 
       button class='o-text-controller__sizer-btn btn-text' data-js='text-larger'
-        svg class='icon icon-ui-plus-circle'
+        svg class='icon icon-ui icon-3 mr-0'
           use xlink:href='#icon-ui-plus-circle'
         div class='sr-only' Larger
 
       button class='o-text-controller__sizer-btn btn-text' data-js='text-smaller'
-        svg class='icon icon-ui-minus-circle'
+        svg class='icon icon-ui icon-3 mr-0'
           use xlink:href='#icon-ui-minus-circle'
         div class='sr-only' Smaller
-
-
-

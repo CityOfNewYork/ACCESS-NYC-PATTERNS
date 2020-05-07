@@ -18,7 +18,7 @@
   }
 
   .icon {
-    margin-#{$text-direction-end}: .3em;
+    margin-#{$text-direction-end}: $grid-base;
     vertical-align: middle;
     margin-top: -2px
   }

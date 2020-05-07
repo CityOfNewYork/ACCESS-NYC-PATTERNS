@@ -1,5 +1,5 @@
 - if (typeof value !== 'undefined')
-  - classname = 'text-blue-bright fill-blue-light'
+  - classname = 'icon-6 text-blue-bright fill-blue-light'
 
   div
     h3 class='text-small capitalize mb-2'

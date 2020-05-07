@@ -10,7 +10,6 @@
 @import 'config/dimensions';
 @import 'config/fonts';
 @import 'scss/functions/str-replace';
-@import 'bourbon/app/assets/stylesheets/addons/size';
 
 // Declarations
 [class*='icon-'] {
@@ -22,23 +21,16 @@
   display: inline-block;
 }
 
-@each $key, $var in map-get($tokens, 'icons') {
+@each $key, $var in map-get($tokens, 'icons-with-dimensions') {
   $path: $key;
 
   @each $str in map-get($tokens, 'icons-variants') {
     $path: str-replace($path, $str);
   }
 
-  .bg-#{$key} {
-    @include size($var);
-    background-image: url('#{$cdn}#{$path-to-svg}#{$path}.svg');
-    background-repeat: no-repeat;
-    background-size: 100%;
-    background-position: center
-  }
-
   .#{$key} {
-    @include size($var);
+    width: nth($var, 1) !important;
+    height: nth($var, 2) !important;
   }
 }
 

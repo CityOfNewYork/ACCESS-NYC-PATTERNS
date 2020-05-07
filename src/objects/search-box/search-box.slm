@@ -6,7 +6,7 @@ div class='o-search-box active static' id='search' aria-hidden='true'
   div class='o-search-box__inner'
     div class='wrap'
       a class='o-search-box__close js-hide-search' href='#content'
-        svg class='icon icon-ui-x'
+        svg class='icon-ui icon-3'
           use xlink:href='#icon-ui-x'
         span class='sr-only' Close search
 

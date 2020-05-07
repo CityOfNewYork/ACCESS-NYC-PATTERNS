@@ -41,5 +41,5 @@ input:focus + .checkbox__label::before {
 
 .checkbox__icon {
   margin-bottom: 0;
-  margin-#{$text-direction-end}: .5 * $spacing-base;
+  margin-#{$text-direction-end}: $grid-base;
 }
