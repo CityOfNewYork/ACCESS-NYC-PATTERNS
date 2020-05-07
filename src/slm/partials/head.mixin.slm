@@ -45,12 +45,12 @@
     link href='styles/site-default.css' rel='stylesheet'
 
     javascript:
-      document.addEventListener('DOMContentLoaded', event => {
+      document.addEventListener('DOMContentLoaded', function(event) {
         hljs.configure({
           languages: ['html', 'javascript', 'css', 'sass']
         });
 
-        document.querySelectorAll('pre').forEach(block => {
+        document.querySelectorAll('pre').forEach(function(block) {
           hljs.highlightBlock(block);
         });
 
