@@ -34,11 +34,11 @@
   <script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.18.1/build/highlight.min.js"></script>
   <link href="styles/site-default.css" rel="stylesheet" />
   <script type="text/javascript">
-    document.addEventListener('DOMContentLoaded', event => {
+    document.addEventListener('DOMContentLoaded', function(event) {
       hljs.configure({
         languages: ['html', 'javascript', 'css', 'sass']
       });
-      document.querySelectorAll('pre').forEach(block => {
+      document.querySelectorAll('pre').forEach(function(block) {
         hljs.highlightBlock(block);
       });
       document.body.style.visibility = 'visible';
@@ -76,8 +76,8 @@
             <h2 class="text-small m-0 text-blue-dark screen-tablet:hidden">Patterns</h2>
             <h2 aria-hidden="true" class="type-h1 m-0 text-blue-dark hidden screen-tablet:inline-block">Patterns</h2>
             <nav class="text-small">
-              <a class="rounded-lg text-blue-dark border-2 no-underline px-1 ms-2 hidden screen-tablet:inline-block" href="https://github.com/CityOfNewYork/access-nyc-patterns/tree/v0.14.7">0.14.7</a>
-              <a aria-hidden="true" class="ms-1 screen-tablet:ms-2 screen-tablet:hidden" href="https://github.com/CityOfNewYork/access-nyc-patterns/tree/v0.14.7">0.14.7</a>
+              <a class="rounded-lg text-blue-dark border-2 no-underline px-1 ms-2 hidden screen-tablet:inline-block" href="https://github.com/CityOfNewYork/access-nyc-patterns/tree/v0.15.0">0.15.0</a>
+              <a aria-hidden="true" class="ms-1 screen-tablet:ms-2 screen-tablet:hidden" href="https://github.com/CityOfNewYork/access-nyc-patterns/tree/v0.15.0">0.15.0</a>
               <button aria-controls="main-menu" aria-expanded="false" class="btn-link ms-1 screen-tablet:ms-2" data-js="toggle" id="main-menu-control">Menu</button>
             </nav>
           </div>
@@ -130,8 +130,10 @@
             <a class="block p-1" href="member-list">Member List</a>
             <a class="block p-1" href="nearby-stops">Nearby Stops</a>
             <a class="block p-1" href="share-form">Share Form</a>
+            <a class="block p-1" href="share-links">Share Links</a>
             <a class="block p-1" href="side-nav">Side Nav</a>
             <a class="block p-1" href="question">Question</a>
+            <a class="block p-1" href="web-share">Web Share</a>
           </nav>
           <nav class="screen-tablet:flex-1 mb-1 px-2 screen-desktop:ps-4">
             <span class="type-h3 text-small mb-1 block screen-tablet:border-b screen-tablet:pb-2 screen-tablet:mb-1 border-white p-1">Objects</span>
@@ -187,7 +189,7 @@
                 </h2>
                 <div class="pt-2">
                   <p class="text-small m-0">Source: <code>
-                      <a href="https://github.com/CityOfNewYork/access-nyc-patterns/tree/v0.14.7/src/utilities/media">src/utilities/media/media-screen</a>
+                      <a href="https://github.com/CityOfNewYork/access-nyc-patterns/tree/v0.15.0/src/utilities/media">src/utilities/media/media-screen</a>
                     </code>
                   </p>
                 </div>
@@ -242,7 +244,7 @@
                 </h2>
                 <div class="pt-2">
                   <p class="text-small m-0">Source: <code>
-                      <a href="https://github.com/CityOfNewYork/access-nyc-patterns/tree/v0.14.7/src/utilities/media">src/utilities/media/media-print</a>
+                      <a href="https://github.com/CityOfNewYork/access-nyc-patterns/tree/v0.15.0/src/utilities/media">src/utilities/media/media-print</a>
                     </code>
                   </p>
                 </div>
@@ -350,8 +352,10 @@
           <a class="block p-1" href="member-list">Member List</a>
           <a class="block p-1" href="nearby-stops">Nearby Stops</a>
           <a class="block p-1" href="share-form">Share Form</a>
+          <a class="block p-1" href="share-links">Share Links</a>
           <a class="block p-1" href="side-nav">Side Nav</a>
           <a class="block p-1" href="question">Question</a>
+          <a class="block p-1" href="web-share">Web Share</a>
         </nav>
         <nav class="screen-tablet:flex-1 mb-1 px-2 screen-desktop:ps-4">
           <span class="type-h3 text-small mb-1 block screen-tablet:border-b screen-tablet:pb-2 screen-tablet:mb-1 border-white p-1">Objects</span>
@@ -397,6 +401,7 @@
     access.icons();
     access.icons('https://cdn.jsdelivr.net/gh/cityofnewyork/nyco-patterns@v2.3.1/dist/icons.svg');
     access.toggle();
+    access.copy();
   </script>
 </body>
 

@@ -34,11 +34,11 @@
   <script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.18.1/build/highlight.min.js"></script>
   <link href="styles/site-default.css" rel="stylesheet" />
   <script type="text/javascript">
-    document.addEventListener('DOMContentLoaded', event => {
+    document.addEventListener('DOMContentLoaded', function(event) {
       hljs.configure({
         languages: ['html', 'javascript', 'css', 'sass']
       });
-      document.querySelectorAll('pre').forEach(block => {
+      document.querySelectorAll('pre').forEach(function(block) {
         hljs.highlightBlock(block);
       });
       document.body.style.visibility = 'visible';
@@ -76,8 +76,8 @@
             <h2 class="text-small m-0 text-blue-dark screen-tablet:hidden">Patterns</h2>
             <h2 aria-hidden="true" class="type-h1 m-0 text-blue-dark hidden screen-tablet:inline-block">Patterns</h2>
             <nav class="text-small">
-              <a class="rounded-lg text-blue-dark border-2 no-underline px-1 ms-2 hidden screen-tablet:inline-block" href="https://github.com/CityOfNewYork/access-nyc-patterns/tree/v0.14.7">0.14.7</a>
-              <a aria-hidden="true" class="ms-1 screen-tablet:ms-2 screen-tablet:hidden" href="https://github.com/CityOfNewYork/access-nyc-patterns/tree/v0.14.7">0.14.7</a>
+              <a class="rounded-lg text-blue-dark border-2 no-underline px-1 ms-2 hidden screen-tablet:inline-block" href="https://github.com/CityOfNewYork/access-nyc-patterns/tree/v0.15.0">0.15.0</a>
+              <a aria-hidden="true" class="ms-1 screen-tablet:ms-2 screen-tablet:hidden" href="https://github.com/CityOfNewYork/access-nyc-patterns/tree/v0.15.0">0.15.0</a>
               <button aria-controls="main-menu" aria-expanded="false" class="btn-link ms-1 screen-tablet:ms-2" data-js="toggle" id="main-menu-control">Menu</button>
             </nav>
           </div>
@@ -130,8 +130,10 @@
             <a class="block p-1" href="member-list">Member List</a>
             <a class="block p-1" href="nearby-stops">Nearby Stops</a>
             <a class="block p-1" href="share-form">Share Form</a>
+            <a class="block p-1" href="share-links">Share Links</a>
             <a class="block p-1" href="side-nav">Side Nav</a>
             <a class="block p-1" href="question">Question</a>
+            <a class="block p-1" href="web-share">Web Share</a>
           </nav>
           <nav class="screen-tablet:flex-1 mb-1 px-2 screen-desktop:ps-4">
             <span class="type-h3 text-small mb-1 block screen-tablet:border-b screen-tablet:pb-2 screen-tablet:mb-1 border-white p-1">Objects</span>
@@ -184,7 +186,7 @@
               <div class="my-0 px-2 pt-1 pb-4 border-b border-grey-light">
                 <div>
                   <p class="text-small m-0">Source: <code>
-                      <a href="https://github.com/CityOfNewYork/access-nyc-patterns/tree/v0.14.7/src/objects/text-controller">src/objects/text-controller/text-controller</a>
+                      <a href="https://github.com/CityOfNewYork/access-nyc-patterns/tree/v0.15.0/src/objects/text-controller">src/objects/text-controller/text-controller</a>
                     </code>
                   </p>
                 </div>
@@ -273,13 +275,13 @@
                     <div class="o-text-controller__sizer">
                       <span class="o-text-controller__sizer-text">Adjust text size</span>
                       <button class="o-text-controller__sizer-btn btn-text" data-js="text-larger">
-                        <svg class="icon icon-ui-plus-circle">
+                        <svg class="icon icon-ui icon-3 mr-0">
                           <use xlink:href="#icon-ui-plus-circle"></use>
                         </svg>
                         <div class="sr-only">Larger</div>
                       </button>
                       <button class="o-text-controller__sizer-btn btn-text" data-js="text-smaller">
-                        <svg class="icon icon-ui-minus-circle">
+                        <svg class="icon icon-ui icon-3 mr-0">
                           <use xlink:href="#icon-ui-minus-circle"></use>
                         </svg>
                         <div class="sr-only">Smaller</div>
@@ -366,13 +368,13 @@
     &lt;div class=&quot;o-text-controller__sizer&quot;&gt;
       &lt;span class=&quot;o-text-controller__sizer-text&quot;&gt;Adjust text size&lt;/span&gt;
       &lt;button class=&quot;o-text-controller__sizer-btn btn-text&quot; data-js=&quot;text-larger&quot;&gt;
-        &lt;svg class=&quot;icon icon-ui-plus-circle&quot;&gt;
+        &lt;svg class=&quot;icon icon-ui icon-3 mr-0&quot;&gt;
           &lt;use xlink:href=&quot;#icon-ui-plus-circle&quot;&gt;&lt;/use&gt;
         &lt;/svg&gt;
         &lt;div class=&quot;sr-only&quot;&gt;Larger&lt;/div&gt;
       &lt;/button&gt;
       &lt;button class=&quot;o-text-controller__sizer-btn btn-text&quot; data-js=&quot;text-smaller&quot;&gt;
-        &lt;svg class=&quot;icon icon-ui-minus-circle&quot;&gt;
+        &lt;svg class=&quot;icon icon-ui icon-3 mr-0&quot;&gt;
           &lt;use xlink:href=&quot;#icon-ui-minus-circle&quot;&gt;&lt;/use&gt;
         &lt;/svg&gt;
         &lt;div class=&quot;sr-only&quot;&gt;Smaller&lt;/div&gt;
@@ -503,8 +505,10 @@ new TextController(element);</code></pre>
           <a class="block p-1" href="member-list">Member List</a>
           <a class="block p-1" href="nearby-stops">Nearby Stops</a>
           <a class="block p-1" href="share-form">Share Form</a>
+          <a class="block p-1" href="share-links">Share Links</a>
           <a class="block p-1" href="side-nav">Side Nav</a>
           <a class="block p-1" href="question">Question</a>
+          <a class="block p-1" href="web-share">Web Share</a>
         </nav>
         <nav class="screen-tablet:flex-1 mb-1 px-2 screen-desktop:ps-4">
           <span class="type-h3 text-small mb-1 block screen-tablet:border-b screen-tablet:pb-2 screen-tablet:mb-1 border-white p-1">Objects</span>
@@ -550,6 +554,7 @@ new TextController(element);</code></pre>
     access.icons();
     access.icons('https://cdn.jsdelivr.net/gh/cityofnewyork/nyco-patterns@v2.3.1/dist/icons.svg');
     access.toggle();
+    access.copy();
   </script>
   <script type="text/javascript">
     access.textController();

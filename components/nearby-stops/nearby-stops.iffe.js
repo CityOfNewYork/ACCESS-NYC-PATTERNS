@@ -203,7 +203,7 @@ var NearbyStops = (function () {
       } catch (e) {}
       try {
         return (func + '');
-      } catch (e) {}
+      } catch (e$1) {}
     }
     return '';
   }
@@ -2093,7 +2093,6 @@ var NearbyStops = (function () {
         this$1._render(el, this$1._locations);
       });
     });
-
     return this;
   };
   /**
@@ -2221,7 +2220,6 @@ var NearbyStops = (function () {
         '_each': forEach
       }
     });
-
     element.innerHTML = compiled({
       'stops': data
     });

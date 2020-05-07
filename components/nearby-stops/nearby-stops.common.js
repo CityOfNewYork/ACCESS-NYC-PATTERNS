@@ -202,7 +202,7 @@ function toSource(func) {
     } catch (e) {}
     try {
       return (func + '');
-    } catch (e) {}
+    } catch (e$1) {}
   }
   return '';
 }
@@ -2092,7 +2092,6 @@ var NearbyStops = function NearbyStops() {
       this$1._render(el, this$1._locations);
     });
   });
-
   return this;
 };
 /**
@@ -2220,7 +2219,6 @@ NearbyStops.prototype._render = function _render (element, data) {
       '_each': forEach
     }
   });
-
   element.innerHTML = compiled({
     'stops': data
   });

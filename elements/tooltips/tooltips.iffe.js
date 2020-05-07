@@ -1,8 +1,6 @@
 var InputAutocomplete = (function () {
   'use strict';
 
-  // import _ from 'underscore';
-
   /**
    * Creates a tooltips. The constructor is passed an HTML element that serves as
    * the trigger to show or hide the tooltips. The tooltip should have an
@@ -108,12 +106,13 @@ var InputAutocomplete = (function () {
       'left': 'auto',
       'right': 'auto',
       'top': 'auto',
+      'bottom': 'auto',
       'width': ''
     };
 
     var style = function (attrs) { return Object.keys(attrs).map(function (key) { return (key + ": " + (attrs[key])); }).join('; '); };
 
-    var g = 24; // Gutter. Minimum distance from screen edge.
+    var g = 8; // Gutter. Minimum distance from screen edge.
 
     var tt = this.tooltip;
     var tr = this.trigger;
@@ -138,15 +137,20 @@ var InputAutocomplete = (function () {
       // Align the tooltip to the left of the trigger element.
       pos.left = tr.offsetLeft + 'px';
       pos.right = 'auto';
-    } // Set styling positions, reversing left and right if this is an RTL lang.
+    } // Position TT on top if the trigger is below the middle of the window
 
 
-    pos.top = tr.offsetTop + tr.offsetHeight + 'px';
+    if (tr.offsetTop - w.scrollY > w.innerHeight / 2) {
+      pos.top = tr.offsetTop - tt.offsetHeight - g + 'px';
+    } else {
+      pos.top = tr.offsetTop + tr.offsetHeight + g + 'px';
+    }
+
     this.tooltip.setAttribute('style', style(pos));
     return this;
   };
 
-  Tooltips.selector = '[data-js*="tooltip-control"]';
+  Tooltips.selector = '[data-js*="tooltip"]';
   /**
    * Array of all the instantiated tooltips.
    * @type {Array<Tooltip>}

@@ -34,11 +34,11 @@
   <script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.18.1/build/highlight.min.js"></script>
   <link href="styles/site-default.css" rel="stylesheet" />
   <script type="text/javascript">
-    document.addEventListener('DOMContentLoaded', event => {
+    document.addEventListener('DOMContentLoaded', function(event) {
       hljs.configure({
         languages: ['html', 'javascript', 'css', 'sass']
       });
-      document.querySelectorAll('pre').forEach(block => {
+      document.querySelectorAll('pre').forEach(function(block) {
         hljs.highlightBlock(block);
       });
       document.body.style.visibility = 'visible';
@@ -76,8 +76,8 @@
             <h2 class="text-small m-0 text-blue-dark screen-tablet:hidden">Patterns</h2>
             <h2 aria-hidden="true" class="type-h1 m-0 text-blue-dark hidden screen-tablet:inline-block">Patterns</h2>
             <nav class="text-small">
-              <a class="rounded-lg text-blue-dark border-2 no-underline px-1 ms-2 hidden screen-tablet:inline-block" href="https://github.com/CityOfNewYork/access-nyc-patterns/tree/v0.14.7">0.14.7</a>
-              <a aria-hidden="true" class="ms-1 screen-tablet:ms-2 screen-tablet:hidden" href="https://github.com/CityOfNewYork/access-nyc-patterns/tree/v0.14.7">0.14.7</a>
+              <a class="rounded-lg text-blue-dark border-2 no-underline px-1 ms-2 hidden screen-tablet:inline-block" href="https://github.com/CityOfNewYork/access-nyc-patterns/tree/v0.15.0">0.15.0</a>
+              <a aria-hidden="true" class="ms-1 screen-tablet:ms-2 screen-tablet:hidden" href="https://github.com/CityOfNewYork/access-nyc-patterns/tree/v0.15.0">0.15.0</a>
               <button aria-controls="main-menu" aria-expanded="false" class="btn-link ms-1 screen-tablet:ms-2" data-js="toggle" id="main-menu-control">Menu</button>
             </nav>
           </div>
@@ -130,8 +130,10 @@
             <a class="block p-1" href="member-list">Member List</a>
             <a class="block p-1" href="nearby-stops">Nearby Stops</a>
             <a class="block p-1" href="share-form">Share Form</a>
+            <a class="block p-1" href="share-links">Share Links</a>
             <a class="block p-1" href="side-nav">Side Nav</a>
             <a class="block p-1" href="question">Question</a>
+            <a class="block p-1" href="web-share">Web Share</a>
           </nav>
           <nav class="screen-tablet:flex-1 mb-1 px-2 screen-desktop:ps-4">
             <span class="type-h3 text-small mb-1 block screen-tablet:border-b screen-tablet:pb-2 screen-tablet:mb-1 border-white p-1">Objects</span>
@@ -184,7 +186,7 @@
               <div class="my-0 px-2 pt-1 pb-4 border-b border-grey-light">
                 <div>
                   <p class="text-small m-0">Source: <code>
-                      <a href="https://github.com/CityOfNewYork/access-nyc-patterns/tree/v0.14.7/src/elements/tooltips">src/elements/tooltips/tooltips</a>
+                      <a href="https://github.com/CityOfNewYork/access-nyc-patterns/tree/v0.15.0/src/elements/tooltips">src/elements/tooltips/tooltips</a>
                     </code>
                   </p>
                 </div>
@@ -198,24 +200,26 @@
             <div class="layout-gutter screen-tablet:layout-columns justify-between pt-4">
               <div class="screen-tablet:pe-2">
                 <p>
-                  <button aria-describedby="aria-db-tooltip-age" class="c-question__info btn btn-text btn-link" data-js="tooltip-control" type="button">Here’s why we are asking.&nbsp;<svg class="icon icon-info">
+                  <button aria-describedby="aria-db-tooltip-age" class="c-question__info btn-text btn-link" data-js="tooltip" type="button">
+                    <svg aria-hidden="true" class="icon-2">
                       <use xlink:href="#icon-info"></use>
-                    </svg>
+                    </svg>Here’s why we are asking.
                   </button>
                 </p>
-                <div class="tooltip animated fadeInUp" id="aria-db-tooltip-age">
+                <div class="tooltip color-info-status animated fadeInUp" id="aria-db-tooltip-age">
                   <p>Many benefit programs are meant for people of a specific age group. Sharing your age will help us choose the programs that will be most helpful to you right now. The information you share for the purposes of public benefits screening will be anonymous.</p>
                 </div>
               </div>
               <div>
                 <div class="code-block mb-1">
                   <pre>&lt;p&gt;
-  &lt;button aria-describedby=&quot;aria-db-tooltip-age&quot; class=&quot;c-question__info btn btn-text btn-link&quot; data-js=&quot;tooltip-control&quot; type=&quot;button&quot;&gt;Here’s why we are asking.&amp;nbsp;&lt;svg class=&quot;icon icon-info&quot;&gt;
+  &lt;button aria-describedby=&quot;aria-db-tooltip-age&quot; class=&quot;c-question__info btn-text btn-link&quot; data-js=&quot;tooltip&quot; type=&quot;button&quot;&gt;
+    &lt;svg aria-hidden=&quot;true&quot; class=&quot;icon-2&quot;&gt;
       &lt;use xlink:href=&quot;#icon-info&quot;&gt;&lt;/use&gt;
-    &lt;/svg&gt;
+    &lt;/svg&gt;Here’s why we are asking.
   &lt;/button&gt;
 &lt;/p&gt;
-&lt;div class=&quot;tooltip animated fadeInUp&quot; id=&quot;aria-db-tooltip-age&quot;&gt;
+&lt;div class=&quot;tooltip color-info-status animated fadeInUp&quot; id=&quot;aria-db-tooltip-age&quot;&gt;
   &lt;p&gt;Many benefit programs are meant for people of a specific age group. Sharing your age will help us choose the programs that will be most helpful to you right now. The information you share for the purposes of public benefits screening will be anonymous.&lt;/p&gt;
 &lt;/div&gt;</pre>
                 </div>
@@ -342,8 +346,10 @@ elements.forEach(element =&gt; {
           <a class="block p-1" href="member-list">Member List</a>
           <a class="block p-1" href="nearby-stops">Nearby Stops</a>
           <a class="block p-1" href="share-form">Share Form</a>
+          <a class="block p-1" href="share-links">Share Links</a>
           <a class="block p-1" href="side-nav">Side Nav</a>
           <a class="block p-1" href="question">Question</a>
+          <a class="block p-1" href="web-share">Web Share</a>
         </nav>
         <nav class="screen-tablet:flex-1 mb-1 px-2 screen-desktop:ps-4">
           <span class="type-h3 text-small mb-1 block screen-tablet:border-b screen-tablet:pb-2 screen-tablet:mb-1 border-white p-1">Objects</span>
@@ -389,6 +395,7 @@ elements.forEach(element =&gt; {
     access.icons();
     access.icons('https://cdn.jsdelivr.net/gh/cityofnewyork/nyco-patterns@v2.3.1/dist/icons.svg');
     access.toggle();
+    access.copy();
   </script>
   <script type="text/javascript">
     access.tooltips();

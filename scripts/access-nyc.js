@@ -469,7 +469,286 @@ var AccessNyc = (function () {
   /** @type {String} The path of the icon file */
   Icons.path = 'svg/icons.svg';
 
-  // import _ from 'underscore';
+  /**
+   * Tracking bus for Google analytics and Webtrends.
+   */
+  var Track = function Track(s) {
+    var this$1 = this;
+
+    var body = document.querySelector('body');
+
+    s = (!s) ? {} : s;
+
+    this._settings = {
+      selector: (s.selector) ? s.selector : Track.selector,
+    };
+
+    this.desinations = Track.destinations;
+
+    body.addEventListener('click', function (event) {
+      if (!event.target.matches(this$1._settings.selector))
+        { return; }
+
+      var key = event.target.dataset.trackKey;
+      var data = JSON.parse(event.target.dataset.trackData);
+
+      this$1.track(key, data);
+    });
+
+    return this;
+  };
+
+  /**
+   * Tracking function wrapper
+   *
+   * @param{String}    key The key or event of the data
+   * @param{Collection}dataThe data to track
+   *
+   * @return {Object}          The final data object
+   */
+  Track.prototype.track = function track (key, data) {
+    // Set the path name based on the location
+    var d = data.map(function (el) {
+        if (el.hasOwnProperty(Track.key))
+          { el[Track.key] = (window.location.pathname) + "/" + (el[Track.key]); }
+        return el;
+      });
+
+    var wt = this.webtrends(key, d);
+    var ga = this.gtag(key, d);
+    /* eslint-enable no-console */
+
+    return d;
+  };
+  /**
+   * Data bus for tracking views in Webtrends and Google Analytics
+   *
+   * @param{String}    app The name of the Single Page Application to track
+   * @param{String}    key The key or event of the data
+   * @param{Collection}dataThe data to track
+   */
+  Track.prototype.view = function view (app, key, data) {
+    var wt = this.webtrends(key, data);
+    var ga = this.gtagView(app, key);
+    /* eslint-enable no-console */
+  };
+  /**
+   * Push Events to Webtrends
+   *
+   * @param{String}    key The key or event of the data
+   * @param{Collection}dataThe data to track
+   */
+  Track.prototype.webtrends = function webtrends (key, data) {
+    if (
+      typeof Webtrends === 'undefined' ||
+      typeof data === 'undefined' ||
+      !this.desinations.includes('webtrends')
+    ) {
+      return false;
+    }
+
+    var event = [{
+      'WT.ti': key
+    }];
+
+    if (data[0] && data[0].hasOwnProperty(Track.key)) {
+      event.push({
+        'DCS.dcsuri': data[0][Track.key]
+      });
+    } else {
+      Object.assign(event, data);
+    }
+
+    // Format data for Webtrends
+    var wtd = {argsa: event.flatMap(function (e) {
+      return Object.keys(e).flatMap(function (k) { return [k, e[k]]; });
+    })};
+
+    // If 'action' is used as the key (for gtag.js), switch it to Webtrends
+    var action = data.argsa.indexOf('action');
+
+    if (action) { data.argsa[action] = 'DCS.dcsuri'; }
+
+    // Webtrends doesn't send the page view for MultiTrack, add path to url
+    var dcsuri = data.argsa.indexOf('DCS.dcsuri');
+
+    if (dcsuri) {
+      data.argsa[dcsuri + 1] = window.location.pathname +
+        data.argsa[dcsuri + 1];
+    }
+
+    /* eslint-disable no-undef */
+    if (typeof Webtrends !== 'undefined')
+      { Webtrends.multiTrack(wtd); }
+    /* eslint-disable no-undef */
+
+    return ['Webtrends', wtd];
+  };
+  /**
+   * Push Click Events to Google Analytics
+   *
+   * @param{String}    key The key or event of the data
+   * @param{Collection}dataThe data to track
+   */
+  Track.prototype.gtag = function gtag$1 (key, data) {
+    if (
+      typeof gtag === 'undefined' ||
+      typeof data === 'undefined' ||
+      !this.desinations.includes('gtag')
+    ) {
+      return false;
+    }
+
+    var uri = data.find(function (element) { return element.hasOwnProperty(Track.key); });
+
+    var event = {
+      'event_category': key
+    };
+
+    /* eslint-disable no-undef */
+    gtag(Track.key, uri[Track.key], event);
+    /* eslint-enable no-undef */
+
+    return ['gtag', Track.key, uri[Track.key], event];
+  };
+  /**
+   * Push Screen View Events to Google Analytics
+   *
+   * @param{String}appThe name of the application
+   * @param{String}keyThe key or event of the data
+   */
+  Track.prototype.gtagView = function gtagView (app, key) {
+    if (
+      typeof gtag === 'undefined' ||
+      typeof data === 'undefined' ||
+      !this.desinations.includes('gtag')
+    ) {
+      return false;
+    }
+
+    var view = {
+      app_name: app,
+      screen_name: key
+    };
+
+    /* eslint-disable no-undef */
+    gtag('event', 'screen_view', view);
+    /* eslint-enable no-undef */
+
+    return ['gtag', Track.key, 'screen_view', view];
+  };
+
+  /** @type {String} The main selector to add the tracking function to */
+  Track.selector = '[data-js*="track"]';
+
+  /** @type {String} The main event tracking key to map to Webtrends DCS.uri */
+  Track.key = 'event';
+
+  /** @type {Array} What destinations to push data to */
+  Track.destinations = [
+    'webtrends',
+    'gtag'
+  ];
+
+  /**
+   * Copy to Clipboard Helper
+   *
+   * <input data-copy-target="web-share-url" id="web-share-url" name="web-share-url" type="text" value="https://myurl" />
+   *
+   * <button aria-pressed="false" data-copy="web-share-url" data-js="copy">
+   *   Copy to Clipboard
+   * </button>
+   */
+  var Copy = function Copy() {
+    var this$1 = this;
+
+    // Set attributes
+    this.selector = Copy.selector;
+
+    this.aria = Copy.aria;
+
+    this.notifyTimeout = Copy.notifyTimeout;
+
+    // Select the entire text when it's focused on
+    document.querySelectorAll(Copy.selectors.TARGETS).forEach(function (item) {
+      item.addEventListener('focus', function () { return this$1.select(item); });
+      item.addEventListener('click', function () { return this$1.select(item); });
+    });
+
+    // The main click event for the class
+    document.querySelector('body').addEventListener('click', function (event) {
+      if (!event.target.matches(this$1.selector))
+        { return; }
+
+      this$1.element = event.target;
+
+      this$1.element.setAttribute(this$1.aria, false);
+
+      this$1.target = this$1.element.dataset.copy;
+
+      if (this$1.copy(this$1.target)) {
+        this$1.element.setAttribute(this$1.aria, true);
+
+        clearTimeout(this$1.element['timeout']);
+
+        this$1.element['timeout'] = setTimeout(function () {
+          this$1.element.setAttribute(this$1.aria, false);
+        }, this$1.notifyTimeout);
+      }
+    });
+
+    return this;
+  };
+
+  /**
+   * The click event handler
+   *
+   * @param {String}targetContent of target data attribute
+   *
+   * @return{Boolean}       Wether copy was successful or not
+   */
+  Copy.prototype.copy = function copy (target) {
+    var selector = Copy.selectors.TARGETS.replace(']', ("=\"" + target + "\"]"));
+
+    var input = document.querySelector(selector);
+
+    this.select(input);
+
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(input.value);
+    } else if (document.execCommand) {
+      document.execCommand('copy');
+    } else {
+      return false;
+    }
+
+    return true;
+  };
+
+  /**
+   * Handler for the text selection method
+   *
+   * @param {Object}inputThe input with content to select
+   */
+  Copy.prototype.select = function select (input) {
+    input.select();
+
+    input.setSelectionRange(0, 99999);
+  };
+
+  /** The main element selector */
+  Copy.selector = '[data-js*="copy"]';
+
+  /** Class selectors */
+  Copy.selectors = {
+    TARGETS: '[data-copy-target]'
+  };
+
+  /** Button aria role to toggle */
+  Copy.aria = 'aria-pressed';
+
+  /** Timeout for the "Copied!" notification */
+  Copy.notifyTimeout = 1500;
 
   /**
    * Creates a tooltips. The constructor is passed an HTML element that serves as
@@ -576,12 +855,13 @@ var AccessNyc = (function () {
       'left': 'auto',
       'right': 'auto',
       'top': 'auto',
+      'bottom': 'auto',
       'width': ''
     };
 
     var style = function (attrs) { return Object.keys(attrs).map(function (key) { return (key + ": " + (attrs[key])); }).join('; '); };
 
-    var g = 24; // Gutter. Minimum distance from screen edge.
+    var g = 8; // Gutter. Minimum distance from screen edge.
 
     var tt = this.tooltip;
     var tr = this.trigger;
@@ -606,15 +886,20 @@ var AccessNyc = (function () {
       // Align the tooltip to the left of the trigger element.
       pos.left = tr.offsetLeft + 'px';
       pos.right = 'auto';
-    } // Set styling positions, reversing left and right if this is an RTL lang.
+    } // Position TT on top if the trigger is below the middle of the window
 
 
-    pos.top = tr.offsetTop + tr.offsetHeight + 'px';
+    if (tr.offsetTop - w.scrollY > w.innerHeight / 2) {
+      pos.top = tr.offsetTop - tt.offsetHeight - g + 'px';
+    } else {
+      pos.top = tr.offsetTop + tr.offsetHeight + g + 'px';
+    }
+
     this.tooltip.setAttribute('style', style(pos));
     return this;
   };
 
-  Tooltips.selector = '[data-js*="tooltip-control"]';
+  Tooltips.selector = '[data-js*="tooltip"]';
   /**
    * Array of all the instantiated tooltips.
    * @type {Array<Tooltip>}
@@ -954,7 +1239,7 @@ var AccessNyc = (function () {
       } catch (e) {}
       try {
         return (func + '');
-      } catch (e) {}
+      } catch (e$1) {}
     }
     return '';
   }
@@ -2345,7 +2630,7 @@ var AccessNyc = (function () {
    * _.escape('fred, barney, & pebbles');
    * // => 'fred, barney, &amp; pebbles'
    */
-  function escape(string) {
+  function escape$1(string) {
     string = toString(string);
     return (string && reHasUnescapedHtml.test(string))
       ? string.replace(reUnescapedHtml, escapeHtmlChar)
@@ -2415,7 +2700,7 @@ var AccessNyc = (function () {
        * @memberOf _.templateSettings.imports
        * @type {Function}
        */
-      '_': { 'escape': escape }
+      '_': { 'escape': escape$1 }
     }
   };
 
@@ -2844,7 +3129,6 @@ var AccessNyc = (function () {
         this$1._render(el, this$1._locations);
       });
     });
-
     return this;
   };
   /**
@@ -2972,7 +3256,6 @@ var AccessNyc = (function () {
         '_each': forEach
       }
     });
-
     element.innerHTML = compiled({
       'stops': data
     });
@@ -3110,7 +3393,6 @@ var AccessNyc = (function () {
                                    stripLeadingZeroes,
                                    prefix,
                                    signBeforePrefix,
-                                   tailPrefix,
                                    delimiter) {
       var owner = this;
 
@@ -3122,7 +3404,6 @@ var AccessNyc = (function () {
       owner.stripLeadingZeroes = stripLeadingZeroes !== false;
       owner.prefix = (prefix || prefix === '') ? prefix : '';
       owner.signBeforePrefix = !!signBeforePrefix;
-      owner.tailPrefix = !!tailPrefix;
       owner.delimiter = (delimiter || delimiter === '') ? delimiter : ',';
       owner.delimiterRE = delimiter ? new RegExp('\\' + delimiter, 'g') : '';
   };
@@ -3210,10 +3491,6 @@ var AccessNyc = (function () {
               partInteger = partInteger.replace(/(\d)(?=(\d{3})+$)/g, '$1' + owner.delimiter);
 
               break;
-          }
-
-          if (owner.tailPrefix) {
-              return partSign + partInteger.toString() + (owner.numeralDecimalScale > 0 ? partDecimal.toString() : '') + owner.prefix;
           }
 
           return partSignAndPrefix + partInteger.toString() + (owner.numeralDecimalScale > 0 ? partDecimal.toString() : '');
@@ -3757,8 +4034,8 @@ var AccessNyc = (function () {
           // starts with 4; 16 digits
           visa: /^4\d{0,15}/,
 
-          // starts with 62/81; 16 digits
-          unionPay: /^(62|81)\d{0,14}/
+          // starts with 62; 16 digits
+          unionPay: /^62\d{0,14}/
       },
 
       getStrictBlocks: function (block) {
@@ -3883,40 +4160,30 @@ var AccessNyc = (function () {
       // PREFIX-123   |   PEFIX-123     |     123
       // PREFIX-123   |   PREFIX-23     |     23
       // PREFIX-123   |   PREFIX-1234   |     1234
-      getPrefixStrippedValue: function (value, prefix, prefixLength, prevResult, delimiter, delimiters, noImmediatePrefix, tailPrefix, signBeforePrefix) {
+      getPrefixStrippedValue: function (value, prefix, prefixLength, prevResult, delimiter, delimiters, noImmediatePrefix) {
           // No prefix
           if (prefixLength === 0) {
             return value;
           }
 
-          if (signBeforePrefix && (value.slice(0, 1) == '-')) {
-              var prev = (prevResult.slice(0, 1) == '-') ? prevResult.slice(1) : prevResult;
-              return '-' + this.getPrefixStrippedValue(value.slice(1), prefix, prefixLength, prev, delimiter, delimiters, noImmediatePrefix, tailPrefix, signBeforePrefix);
-          }
-
           // Pre result prefix string does not match pre-defined prefix
-          if (prevResult.slice(0, prefixLength) !== prefix && !tailPrefix) {
-              // Check if the first time user entered something
-              if (noImmediatePrefix && !prevResult && value) { return value; }
-              return '';
-          } else if (prevResult.slice(-prefixLength) !== prefix && tailPrefix) {
-              // Check if the first time user entered something
-              if (noImmediatePrefix && !prevResult && value) { return value; }
-              return '';
+          if (prevResult.slice(0, prefixLength) !== prefix) {
+            // Check if the first time user entered something
+            if (noImmediatePrefix && !prevResult && value) { return value; }
+
+            return '';
           }
 
           var prevValue = this.stripDelimiters(prevResult, delimiter, delimiters);
 
           // New value has issue, someone typed in between prefix letters
           // Revert to pre value
-          if (value.slice(0, prefixLength) !== prefix && !tailPrefix) {
-              return prevValue.slice(prefixLength);
-          } else if (value.slice(-prefixLength) !== prefix && tailPrefix) {
-              return prevValue.slice(0, -prefixLength - 1);
+          if (value.slice(0, prefixLength) !== prefix) {
+            return prevValue.slice(prefixLength);
           }
 
           // No issue, strip prefix for new value
-          return tailPrefix ? value.slice(0, -prefixLength) : value.slice(prefixLength);
+          return value.slice(prefixLength);
       },
 
       getFirstDiffIndex: function (prev, current) {
@@ -3984,7 +4251,7 @@ var AccessNyc = (function () {
           var val = el.value,
               appendix = delimiter || (delimiters[0] || ' ');
 
-          if (!el.setSelectionRange || !prefix || (prefix.length + appendix.length) <= val.length) {
+          if (!el.setSelectionRange || !prefix || (prefix.length + appendix.length) < val.length) {
               return;
           }
 
@@ -4105,7 +4372,6 @@ var AccessNyc = (function () {
           target.numeralPositiveOnly = !!opts.numeralPositiveOnly;
           target.stripLeadingZeroes = opts.stripLeadingZeroes !== false;
           target.signBeforePrefix = !!opts.signBeforePrefix;
-          target.tailPrefix = !!opts.tailPrefix;
 
           // others
           target.numericOnly = target.creditCard || target.date || !!opts.numericOnly;
@@ -4250,7 +4516,6 @@ var AccessNyc = (function () {
               pps.stripLeadingZeroes,
               pps.prefix,
               pps.signBeforePrefix,
-              pps.tailPrefix,
               pps.delimiter
           );
       },
@@ -4428,7 +4693,10 @@ var AccessNyc = (function () {
           value = Util.stripDelimiters(value, pps.delimiter, pps.delimiters);
 
           // strip prefix
-          value = Util.getPrefixStrippedValue(value, pps.prefix, pps.prefixLength, pps.result, pps.delimiter, pps.delimiters, pps.noImmediatePrefix, pps.tailPrefix, pps.signBeforePrefix);
+          value = Util.getPrefixStrippedValue(
+              value, pps.prefix, pps.prefixLength,
+              pps.result, pps.delimiter, pps.delimiters, pps.noImmediatePrefix
+          );
 
           // strip non-numeric characters
           value = pps.numericOnly ? Util.strip(value, /[^\d]/g) : value;
@@ -4439,12 +4707,7 @@ var AccessNyc = (function () {
 
           // prevent from showing prefix when no immediate option enabled with empty input value
           if (pps.prefix && (!pps.noImmediatePrefix || value.length)) {
-              if (pps.tailPrefix) {
-                  value = value + pps.prefix;
-              } else {
-                  value = pps.prefix + value;
-              }
-
+              value = pps.prefix + value;
 
               // no blocks specified, no need to do formatting
               if (pps.blocksLength === 0) {
@@ -4535,7 +4798,6 @@ var AccessNyc = (function () {
 
           pps.onValueChanged.call(owner, {
               target: {
-                  name: owner.element.name,
                   value: pps.result,
                   rawValue: owner.getRawValue()
               }
@@ -4572,7 +4834,7 @@ var AccessNyc = (function () {
               rawValue = owner.element.value;
 
           if (pps.rawValueTrimPrefix) {
-              rawValue = Util.getPrefixStrippedValue(rawValue, pps.prefix, pps.prefixLength, pps.result, pps.delimiter, pps.delimiters, pps.noImmediatePrefix, pps.tailPrefix, pps.signBeforePrefix);
+              rawValue = Util.getPrefixStrippedValue(rawValue, pps.prefix, pps.prefixLength, pps.result, pps.delimiter, pps.delimiters);
           }
 
           if (pps.numeral) {
@@ -4954,59 +5216,125 @@ var AccessNyc = (function () {
   };
   ShareForm.sent = false;
 
-  /*! js-cookie v3.0.0-rc.0 | MIT */
-  function assign (target) {
-    var arguments$1 = arguments;
+  /**
+   * Uses the Share API to t
+   */
 
-    for (var i = 1; i < arguments.length; i++) {
-      var source = arguments$1[i];
-      for (var key in source) {
-        target[key] = source[key];
-      }
-    }
-    return target
-  }
+  var WebShare = function WebShare() {
+    var this$1 = this;
 
-  var defaultConverter = {
-    read: function (value) {
-      return value.replace(/%3B/g, ';')
-    },
-    write: function (value) {
-      return value.replace(/;/g, '%3B')
+    this.selector = WebShare.selector;
+    this.callback = WebShare.callback;
+
+    if (navigator.share) {
+      // Remove fallback aria toggling attributes
+      document.querySelectorAll(this.selector).forEach(function (item) {
+        item.removeAttribute('aria-controls');
+        item.removeAttribute('aria-expanded');
+      }); // Add event listener for the share click
+
+      document.querySelector('body').addEventListener('click', function (event) {
+        if (!event.target.matches(this$1.selector)) { return; }
+        this$1.element = event.target;
+        this$1.data = JSON.parse(this$1.element.dataset.webShare);
+        this$1.share(this$1.data);
+      });
+    } else {
+      // Convert component into a toggle for the fallback
+      this.toggle = new Toggle({
+        selector: this.selector
+      });
     }
+
+    return this;
+  };
+  /**
+   * Web Share API handler
+   *
+   * @param {Object}dataAn object containing title, url, and text.
+   *
+   * @return{Promise}     The response of the .share() method.
+   */
+
+
+  WebShare.prototype.share = function share (data) {
+      if ( data === void 0 ) data = {};
+
+    return navigator.share(data).then(function (res) {
+      WebShare.callback(data);
+    }).catch(function (err) {
+    });
+  };
+  /** The html selector for the component */
+
+
+  WebShare.selector = '[data-js*="web-share"]';
+  /** Placeholder callback for a successful send */
+
+  WebShare.callback = function () {
   };
 
-  function init (converter, defaultAttributes) {
+  /*! js-cookie v3.0.0-beta.0 | MIT */
+  function extend () {
+    var arguments$1 = arguments;
+
+    var result = {};
+    for (var i = 0; i < arguments.length; i++) {
+      var attributes = arguments$1[i];
+      for (var key in attributes) {
+        result[key] = attributes[key];
+      }
+    }
+    return result
+  }
+
+  function decode (s) {
+    return s.replace(/(%[\dA-F]{2})+/gi, decodeURIComponent)
+  }
+
+  function init (converter) {
     function set (key, value, attributes) {
       if (typeof document === 'undefined') {
         return
       }
 
-      attributes = assign({}, defaultAttributes, attributes);
+      attributes = extend(api.defaults, attributes);
 
       if (typeof attributes.expires === 'number') {
-        attributes.expires = new Date(Date.now() + attributes.expires * 864e5);
+        attributes.expires = new Date(new Date() * 1 + attributes.expires * 864e5);
       }
       if (attributes.expires) {
         attributes.expires = attributes.expires.toUTCString();
       }
 
-      key = defaultConverter.write(key).replace(/=/g, '%3D');
+      value = converter.write
+        ? converter.write(value, key)
+        : encodeURIComponent(String(value)).replace(
+          /%(23|24|26|2B|3A|3C|3E|3D|2F|3F|40|5B|5D|5E|60|7B|7D|7C)/g,
+          decodeURIComponent
+        );
 
-      value = converter.write(String(value), key);
+      key = encodeURIComponent(String(key))
+        .replace(/%(23|24|26|2B|5E|60|7C)/g, decodeURIComponent)
+        .replace(/[()]/g, escape);
 
       var stringifiedAttributes = '';
       for (var attributeName in attributes) {
         if (!attributes[attributeName]) {
           continue
         }
-
         stringifiedAttributes += '; ' + attributeName;
-
         if (attributes[attributeName] === true) {
           continue
         }
 
+        // Considers RFC 6265 section 5.2:
+        // ...
+        // 3.  If the remaining unparsed-attributes contains a %x3B (";")
+        //     character:
+        // Consume the characters of the unparsed-attributes up to,
+        // not including, the first %x3B (";") character.
+        // ...
         stringifiedAttributes += '=' + attributes[attributeName].split(';')[0];
       }
 
@@ -5024,46 +5352,48 @@ var AccessNyc = (function () {
       var jar = {};
       for (var i = 0; i < cookies.length; i++) {
         var parts = cookies[i].split('=');
-        var value = parts.slice(1).join('=');
-        var foundKey = defaultConverter.read(parts[0]).replace(/%3D/g, '=');
-        jar[foundKey] = converter.read(value, foundKey);
+        var cookie = parts.slice(1).join('=');
 
-        if (key === foundKey) {
-          break
+        if (cookie.charAt(0) === '"') {
+          cookie = cookie.slice(1, -1);
         }
+
+        try {
+          var name = decode(parts[0]);
+          jar[name] =
+            (converter.read || converter)(cookie, name) || decode(cookie);
+
+          if (key === name) {
+            break
+          }
+        } catch (e) {}
       }
 
       return key ? jar[key] : jar
     }
 
-    return Object.create(
-      {
-        set: set,
-        get: get,
-        remove: function (key, attributes) {
-          set(
-            key,
-            '',
-            assign({}, attributes, {
-              expires: -1
-            })
-          );
-        },
-        withAttributes: function (attributes) {
-          return init(this.converter, assign({}, this.attributes, attributes))
-        },
-        withConverter: function (converter) {
-          return init(assign({}, this.converter, converter), this.attributes)
-        }
+    var api = {
+      defaults: {
+        path: '/'
       },
-      {
-        attributes: { value: Object.freeze(defaultAttributes) },
-        converter: { value: Object.freeze(converter) }
-      }
-    )
+      set: set,
+      get: get,
+      remove: function (key, attributes) {
+        set(
+          key,
+          '',
+          extend(attributes, {
+            expires: -1
+          })
+        );
+      },
+      withConverter: init
+    };
+
+    return api
   }
 
-  var api = init(defaultConverter, { path: '/' });
+  var js_cookie = init(function () {});
 
   /**
    * Alert Banner module
@@ -5086,13 +5416,13 @@ var AccessNyc = (function () {
     this._toggle = new Toggle({
       selector: this.selectors.BUTTON,
       after: function () {
-        if (element.classList.contains(Toggle.inactiveClass)) { api.set(this$1.name, 'dismissed', {
+        if (element.classList.contains(Toggle.inactiveClass)) { js_cookie.set(this$1.name, 'dismissed', {
           expires: this$1.expires
-        }); }else if (element.classList.contains(Toggle.activeClass)) { api.remove(this$1.name); }
+        }); }else if (element.classList.contains(Toggle.activeClass)) { js_cookie.remove(this$1.name); }
       }
     }); // If the cookie is present and the Alert is active, hide it.
 
-    if (api.get(this.name) && element.classList.contains(Toggle.activeClass)) { this._toggle.elementToggle(this.button, element); }
+    if (js_cookie.get(this.name) && element.classList.contains(Toggle.activeClass)) { this._toggle.elementToggle(this.button, element); }
     return this;
   };
   /**
@@ -5479,8 +5809,8 @@ var AccessNyc = (function () {
     // If not, textSize initial setting remains at zero and we toggle on the
     // text sizer/language controls and add a cookie.
 
-    if (api.get('textSize')) {
-      var size = parseInt(api.get('textSize'), 10);
+    if (js_cookie.get('textSize')) {
+      var size = parseInt(js_cookie.get('textSize'), 10);
       this._textSize = size;
 
       this._adjustSize(size);
@@ -5520,7 +5850,7 @@ var AccessNyc = (function () {
 
 
   TextController.prototype._setCookie = function _setCookie () {
-    api.set('textSize', this._textSize, {
+    js_cookie.set('textSize', this._textSize, {
       expires: 1 / 24
     });
     return this;
@@ -5608,8 +5938,8 @@ var AccessNyc = (function () {
   };
   /**
    * An API for the Toggle Utility
-   * @param{object} settings Settings for the Toggle Class
-   * @return {object}        Instance of toggle
+   * @param{Object} settings Settings for the Toggle Class
+   * @return {Object}        Instance of toggle
    */
 
 
@@ -5633,7 +5963,7 @@ var AccessNyc = (function () {
   };
   /**
    * An API for the Tooltips element
-   * @param{object} settings Settings for the Tooltips Class
+   * @param{Object} settings Settings for the Tooltips Class
    * @return {nodelist}        Tooltip elements
    */
 
@@ -5648,7 +5978,7 @@ var AccessNyc = (function () {
   };
   /**
    * An API for the Filter Component
-   * @return {object} instance of Filter
+   * @return {Object} instance of Filter
    */
 
 
@@ -5657,7 +5987,7 @@ var AccessNyc = (function () {
   };
   /**
    * An API for the Accordion Component
-   * @return {object} instance of Accordion
+   * @return {Object} instance of Accordion
    */
 
 
@@ -5666,7 +5996,7 @@ var AccessNyc = (function () {
   };
   /**
    * An API for the Nearby Stops Component
-   * @return {object} instance of NearbyStops
+   * @return {Object} instance of NearbyStops
    */
 
 
@@ -5675,7 +6005,7 @@ var AccessNyc = (function () {
   };
   /**
    * An API for the Newsletter Object
-   * @return {object} instance of Newsletter
+   * @return {Object} instance of Newsletter
    */
 
 
@@ -5686,8 +6016,10 @@ var AccessNyc = (function () {
   };
   /**
    * An API for the Autocomplete Object
-   * @param {object} settings Settings for the Autocomplete Class
-   * @return {object}       Instance of Autocomplete
+   *
+   * @param{Object}settingsSettings for the Autocomplete Class
+   *
+   * @return {Object}          Instance of Autocomplete
    */
   // inputsAutocomplete(settings = {}) {
   // return new InputsAutocomplete(settings);
@@ -5695,7 +6027,8 @@ var AccessNyc = (function () {
 
   /**
    * An API for the AlertBanner Component
-   * @return {object} Instance of AlertBanner
+   *
+   * @return{Object}Instance of AlertBanner
    */
 
 
@@ -5706,7 +6039,8 @@ var AccessNyc = (function () {
   };
   /**
    * An API for the ShareForm Component
-   * @return {object} Instance of ShareForm
+   *
+   * @return{Object}Instance of ShareForm
    */
 
 
@@ -5719,8 +6053,28 @@ var AccessNyc = (function () {
     return elements.length ? elements : null;
   };
   /**
+   * An API for the WebShare Component
+   *
+   * @return{Object}Instance of WebShare
+   */
+
+
+  main.prototype.webShare = function webShare () {
+    return new WebShare();
+  };
+  /**
+   * An API for the Copy Utility
+   *
+   * @return{Object}Instance of Copy
+   */
+
+
+  main.prototype.copy = function copy () {
+    return new Copy();
+  };
+  /**
    * An API for the Disclaimer Component
-   * @return {object} Instance of Disclaimer
+   * @return{Object}Instance of Disclaimer
    */
 
 
@@ -5729,7 +6083,8 @@ var AccessNyc = (function () {
   };
   /**
    * An API for the TextController Object
-   * @return {object} Instance of TextController
+   *
+   * @return{Object}Instance of TextController
    */
 
 
@@ -5737,6 +6092,16 @@ var AccessNyc = (function () {
       if ( element === void 0 ) element = document.querySelector(TextController.selector);
 
     return element ? new TextController(element) : null;
+  };
+  /**
+   * An API for the Track Object
+   *
+   * @return{Object}Instance of Track
+   */
+
+
+  main.prototype.track = function track () {
+    return new Track();
   };
 
   return main;

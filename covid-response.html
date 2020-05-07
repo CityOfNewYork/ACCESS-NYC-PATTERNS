@@ -34,11 +34,11 @@
   <script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.18.1/build/highlight.min.js"></script>
   <link href="styles/site-default.css" rel="stylesheet" />
   <script type="text/javascript">
-    document.addEventListener('DOMContentLoaded', event => {
+    document.addEventListener('DOMContentLoaded', function(event) {
       hljs.configure({
         languages: ['html', 'javascript', 'css', 'sass']
       });
-      document.querySelectorAll('pre').forEach(block => {
+      document.querySelectorAll('pre').forEach(function(block) {
         hljs.highlightBlock(block);
       });
       document.body.style.visibility = 'visible';
@@ -76,8 +76,8 @@
             <h2 class="text-small m-0 text-blue-dark screen-tablet:hidden">Patterns</h2>
             <h2 aria-hidden="true" class="type-h1 m-0 text-blue-dark hidden screen-tablet:inline-block">Patterns</h2>
             <nav class="text-small">
-              <a class="rounded-lg text-blue-dark border-2 no-underline px-1 ms-2 hidden screen-tablet:inline-block" href="https://github.com/CityOfNewYork/access-nyc-patterns/tree/v0.14.7">0.14.7</a>
-              <a aria-hidden="true" class="ms-1 screen-tablet:ms-2 screen-tablet:hidden" href="https://github.com/CityOfNewYork/access-nyc-patterns/tree/v0.14.7">0.14.7</a>
+              <a class="rounded-lg text-blue-dark border-2 no-underline px-1 ms-2 hidden screen-tablet:inline-block" href="https://github.com/CityOfNewYork/access-nyc-patterns/tree/v0.15.0">0.15.0</a>
+              <a aria-hidden="true" class="ms-1 screen-tablet:ms-2 screen-tablet:hidden" href="https://github.com/CityOfNewYork/access-nyc-patterns/tree/v0.15.0">0.15.0</a>
               <button aria-controls="main-menu" aria-expanded="false" class="btn-link ms-1 screen-tablet:ms-2" data-js="toggle" id="main-menu-control">Menu</button>
             </nav>
           </div>
@@ -130,8 +130,10 @@
             <a class="block p-1" href="member-list">Member List</a>
             <a class="block p-1" href="nearby-stops">Nearby Stops</a>
             <a class="block p-1" href="share-form">Share Form</a>
+            <a class="block p-1" href="share-links">Share Links</a>
             <a class="block p-1" href="side-nav">Side Nav</a>
             <a class="block p-1" href="question">Question</a>
+            <a class="block p-1" href="web-share">Web Share</a>
           </nav>
           <nav class="screen-tablet:flex-1 mb-1 px-2 screen-desktop:ps-4">
             <span class="type-h3 text-small mb-1 block screen-tablet:border-b screen-tablet:pb-2 screen-tablet:mb-1 border-white p-1">Objects</span>
@@ -187,7 +189,7 @@
                 </h2>
                 <div class="pt-2">
                   <p class="text-small m-0">Source: <code>
-                      <a href="https://github.com/CityOfNewYork/access-nyc-patterns/tree/v0.14.7/src/elements/badge">src/elements/badge/badge-covid-response</a>
+                      <a href="https://github.com/CityOfNewYork/access-nyc-patterns/tree/v0.15.0/src/elements/badge">src/elements/badge/badge-covid-response</a>
                     </code>
                   </p>
                 </div>
@@ -217,7 +219,7 @@
                 </h2>
                 <div class="pt-2">
                   <p class="text-small m-0">Source: <code>
-                      <a href="https://github.com/CityOfNewYork/access-nyc-patterns/tree/v0.14.7/src/elements/icons">src/elements/icons/icons-program-category-covid-response</a>
+                      <a href="https://github.com/CityOfNewYork/access-nyc-patterns/tree/v0.15.0/src/elements/icons">src/elements/icons/icons-program-category-covid-response</a>
                     </code>
                   </p>
                 </div>
@@ -232,16 +234,16 @@
                   <div class="w-full">
                     <div>
                       <h3 class="text-small capitalize mb-2">
-                        <a href="https://cdn.jsdelivr.net/gh/cityofnewyork/access-nyc-patterns@v0.14.7/dist/svg/icon-cash-expenses-v2.svg" target="_blank">icon cash expenses v2</a>
+                        <a href="https://cdn.jsdelivr.net/gh/cityofnewyork/access-nyc-patterns@v0.15.0/dist/svg/icon-cash-expenses-v2.svg" target="_blank">icon cash expenses v2</a>
                       </h3>
                       <div class="py-4 text-center px-2 flex items-center justify-center" style="min-height: 150px">
-                        <svg class="icon-cash-expenses-v2 text-covid-response fill-covid-response-light">
+                        <svg class="icon-6 text-covid-response fill-covid-response-light">
                           <title id="icon-cash-expenses-v2-title">icon cash expenses v2</title>
                           <use xlink:href="#icon-cash-expenses-v2"></use>
                         </svg>
                       </div>
                       <div class="code-block mb-0">
-                        <pre>&lt;svg class=&quot;icon-cash-expenses-v2 text-covid-response fill-covid-response-light&quot;&gt;
+                        <pre>&lt;svg class=&quot;icon-6 text-covid-response fill-covid-response-light&quot;&gt;
   &lt;title id=&quot;icon-cash-expenses-v2-title&quot;&gt;icon cash expenses v2&lt;/title&gt;
   &lt;use xlink:href=&quot;#icon-cash-expenses-v2&quot;&gt;&lt;/use&gt;
 &lt;/svg&gt;</pre>
@@ -253,16 +255,16 @@
                   <div class="w-full">
                     <div>
                       <h3 class="text-small capitalize mb-2">
-                        <a href="https://cdn.jsdelivr.net/gh/cityofnewyork/access-nyc-patterns@v0.14.7/dist/svg/icon-child-care-v2.svg" target="_blank">icon child care v2</a>
+                        <a href="https://cdn.jsdelivr.net/gh/cityofnewyork/access-nyc-patterns@v0.15.0/dist/svg/icon-child-care-v2.svg" target="_blank">icon child care v2</a>
                       </h3>
                       <div class="py-4 text-center px-2 flex items-center justify-center" style="min-height: 150px">
-                        <svg class="icon-child-care-v2 text-covid-response fill-covid-response-light">
+                        <svg class="icon-6 text-covid-response fill-covid-response-light">
                           <title id="icon-child-care-v2-title">icon child care v2</title>
                           <use xlink:href="#icon-child-care-v2"></use>
                         </svg>
                       </div>
                       <div class="code-block mb-0">
-                        <pre>&lt;svg class=&quot;icon-child-care-v2 text-covid-response fill-covid-response-light&quot;&gt;
+                        <pre>&lt;svg class=&quot;icon-6 text-covid-response fill-covid-response-light&quot;&gt;
   &lt;title id=&quot;icon-child-care-v2-title&quot;&gt;icon child care v2&lt;/title&gt;
   &lt;use xlink:href=&quot;#icon-child-care-v2&quot;&gt;&lt;/use&gt;
 &lt;/svg&gt;</pre>
@@ -274,16 +276,16 @@
                   <div class="w-full">
                     <div>
                       <h3 class="text-small capitalize mb-2">
-                        <a href="https://cdn.jsdelivr.net/gh/cityofnewyork/access-nyc-patterns@v0.14.7/dist/svg/icon-city-id-card-v2.svg" target="_blank">icon city id card v2</a>
+                        <a href="https://cdn.jsdelivr.net/gh/cityofnewyork/access-nyc-patterns@v0.15.0/dist/svg/icon-city-id-card-v2.svg" target="_blank">icon city id card v2</a>
                       </h3>
                       <div class="py-4 text-center px-2 flex items-center justify-center" style="min-height: 150px">
-                        <svg class="icon-city-id-card-v2 text-covid-response fill-covid-response-light">
+                        <svg class="icon-6 text-covid-response fill-covid-response-light">
                           <title id="icon-city-id-card-v2-title">icon city id card v2</title>
                           <use xlink:href="#icon-city-id-card-v2"></use>
                         </svg>
                       </div>
                       <div class="code-block mb-0">
-                        <pre>&lt;svg class=&quot;icon-city-id-card-v2 text-covid-response fill-covid-response-light&quot;&gt;
+                        <pre>&lt;svg class=&quot;icon-6 text-covid-response fill-covid-response-light&quot;&gt;
   &lt;title id=&quot;icon-city-id-card-v2-title&quot;&gt;icon city id card v2&lt;/title&gt;
   &lt;use xlink:href=&quot;#icon-city-id-card-v2&quot;&gt;&lt;/use&gt;
 &lt;/svg&gt;</pre>
@@ -295,16 +297,16 @@
                   <div class="w-full">
                     <div>
                       <h3 class="text-small capitalize mb-2">
-                        <a href="https://cdn.jsdelivr.net/gh/cityofnewyork/access-nyc-patterns@v0.14.7/dist/svg/icon-education-v2.svg" target="_blank">icon education v2</a>
+                        <a href="https://cdn.jsdelivr.net/gh/cityofnewyork/access-nyc-patterns@v0.15.0/dist/svg/icon-education-v2.svg" target="_blank">icon education v2</a>
                       </h3>
                       <div class="py-4 text-center px-2 flex items-center justify-center" style="min-height: 150px">
-                        <svg class="icon-education-v2 text-covid-response fill-covid-response-light">
+                        <svg class="icon-6 text-covid-response fill-covid-response-light">
                           <title id="icon-education-v2-title">icon education v2</title>
                           <use xlink:href="#icon-education-v2"></use>
                         </svg>
                       </div>
                       <div class="code-block mb-0">
-                        <pre>&lt;svg class=&quot;icon-education-v2 text-covid-response fill-covid-response-light&quot;&gt;
+                        <pre>&lt;svg class=&quot;icon-6 text-covid-response fill-covid-response-light&quot;&gt;
   &lt;title id=&quot;icon-education-v2-title&quot;&gt;icon education v2&lt;/title&gt;
   &lt;use xlink:href=&quot;#icon-education-v2&quot;&gt;&lt;/use&gt;
 &lt;/svg&gt;</pre>
@@ -316,16 +318,16 @@
                   <div class="w-full">
                     <div>
                       <h3 class="text-small capitalize mb-2">
-                        <a href="https://cdn.jsdelivr.net/gh/cityofnewyork/access-nyc-patterns@v0.14.7/dist/svg/icon-enrichment-v2.svg" target="_blank">icon enrichment v2</a>
+                        <a href="https://cdn.jsdelivr.net/gh/cityofnewyork/access-nyc-patterns@v0.15.0/dist/svg/icon-enrichment-v2.svg" target="_blank">icon enrichment v2</a>
                       </h3>
                       <div class="py-4 text-center px-2 flex items-center justify-center" style="min-height: 150px">
-                        <svg class="icon-enrichment-v2 text-covid-response fill-covid-response-light">
+                        <svg class="icon-6 text-covid-response fill-covid-response-light">
                           <title id="icon-enrichment-v2-title">icon enrichment v2</title>
                           <use xlink:href="#icon-enrichment-v2"></use>
                         </svg>
                       </div>
                       <div class="code-block mb-0">
-                        <pre>&lt;svg class=&quot;icon-enrichment-v2 text-covid-response fill-covid-response-light&quot;&gt;
+                        <pre>&lt;svg class=&quot;icon-6 text-covid-response fill-covid-response-light&quot;&gt;
   &lt;title id=&quot;icon-enrichment-v2-title&quot;&gt;icon enrichment v2&lt;/title&gt;
   &lt;use xlink:href=&quot;#icon-enrichment-v2&quot;&gt;&lt;/use&gt;
 &lt;/svg&gt;</pre>
@@ -337,16 +339,16 @@
                   <div class="w-full">
                     <div>
                       <h3 class="text-small capitalize mb-2">
-                        <a href="https://cdn.jsdelivr.net/gh/cityofnewyork/access-nyc-patterns@v0.14.7/dist/svg/icon-family-services-v2.svg" target="_blank">icon family services v2</a>
+                        <a href="https://cdn.jsdelivr.net/gh/cityofnewyork/access-nyc-patterns@v0.15.0/dist/svg/icon-family-services-v2.svg" target="_blank">icon family services v2</a>
                       </h3>
                       <div class="py-4 text-center px-2 flex items-center justify-center" style="min-height: 150px">
-                        <svg class="icon-family-services-v2 text-covid-response fill-covid-response-light">
+                        <svg class="icon-6 text-covid-response fill-covid-response-light">
                           <title id="icon-family-services-v2-title">icon family services v2</title>
                           <use xlink:href="#icon-family-services-v2"></use>
                         </svg>
                       </div>
                       <div class="code-block mb-0">
-                        <pre>&lt;svg class=&quot;icon-family-services-v2 text-covid-response fill-covid-response-light&quot;&gt;
+                        <pre>&lt;svg class=&quot;icon-6 text-covid-response fill-covid-response-light&quot;&gt;
   &lt;title id=&quot;icon-family-services-v2-title&quot;&gt;icon family services v2&lt;/title&gt;
   &lt;use xlink:href=&quot;#icon-family-services-v2&quot;&gt;&lt;/use&gt;
 &lt;/svg&gt;</pre>
@@ -358,16 +360,16 @@
                   <div class="w-full">
                     <div>
                       <h3 class="text-small capitalize mb-2">
-                        <a href="https://cdn.jsdelivr.net/gh/cityofnewyork/access-nyc-patterns@v0.14.7/dist/svg/icon-food-v2.svg" target="_blank">icon food v2</a>
+                        <a href="https://cdn.jsdelivr.net/gh/cityofnewyork/access-nyc-patterns@v0.15.0/dist/svg/icon-food-v2.svg" target="_blank">icon food v2</a>
                       </h3>
                       <div class="py-4 text-center px-2 flex items-center justify-center" style="min-height: 150px">
-                        <svg class="icon-food-v2 text-covid-response fill-covid-response-light">
+                        <svg class="icon-6 text-covid-response fill-covid-response-light">
                           <title id="icon-food-v2-title">icon food v2</title>
                           <use xlink:href="#icon-food-v2"></use>
                         </svg>
                       </div>
                       <div class="code-block mb-0">
-                        <pre>&lt;svg class=&quot;icon-food-v2 text-covid-response fill-covid-response-light&quot;&gt;
+                        <pre>&lt;svg class=&quot;icon-6 text-covid-response fill-covid-response-light&quot;&gt;
   &lt;title id=&quot;icon-food-v2-title&quot;&gt;icon food v2&lt;/title&gt;
   &lt;use xlink:href=&quot;#icon-food-v2&quot;&gt;&lt;/use&gt;
 &lt;/svg&gt;</pre>
@@ -379,16 +381,16 @@
                   <div class="w-full">
                     <div>
                       <h3 class="text-small capitalize mb-2">
-                        <a href="https://cdn.jsdelivr.net/gh/cityofnewyork/access-nyc-patterns@v0.14.7/dist/svg/icon-health-v2.svg" target="_blank">icon health v2</a>
+                        <a href="https://cdn.jsdelivr.net/gh/cityofnewyork/access-nyc-patterns@v0.15.0/dist/svg/icon-health-v2.svg" target="_blank">icon health v2</a>
                       </h3>
                       <div class="py-4 text-center px-2 flex items-center justify-center" style="min-height: 150px">
-                        <svg class="icon-health-v2 text-covid-response fill-covid-response-light">
+                        <svg class="icon-6 text-covid-response fill-covid-response-light">
                           <title id="icon-health-v2-title">icon health v2</title>
                           <use xlink:href="#icon-health-v2"></use>
                         </svg>
                       </div>
                       <div class="code-block mb-0">
-                        <pre>&lt;svg class=&quot;icon-health-v2 text-covid-response fill-covid-response-light&quot;&gt;
+                        <pre>&lt;svg class=&quot;icon-6 text-covid-response fill-covid-response-light&quot;&gt;
   &lt;title id=&quot;icon-health-v2-title&quot;&gt;icon health v2&lt;/title&gt;
   &lt;use xlink:href=&quot;#icon-health-v2&quot;&gt;&lt;/use&gt;
 &lt;/svg&gt;</pre>
@@ -400,16 +402,16 @@
                   <div class="w-full">
                     <div>
                       <h3 class="text-small capitalize mb-2">
-                        <a href="https://cdn.jsdelivr.net/gh/cityofnewyork/access-nyc-patterns@v0.14.7/dist/svg/icon-housing-v2.svg" target="_blank">icon housing v2</a>
+                        <a href="https://cdn.jsdelivr.net/gh/cityofnewyork/access-nyc-patterns@v0.15.0/dist/svg/icon-housing-v2.svg" target="_blank">icon housing v2</a>
                       </h3>
                       <div class="py-4 text-center px-2 flex items-center justify-center" style="min-height: 150px">
-                        <svg class="icon-housing-v2 text-covid-response fill-covid-response-light">
+                        <svg class="icon-6 text-covid-response fill-covid-response-light">
                           <title id="icon-housing-v2-title">icon housing v2</title>
                           <use xlink:href="#icon-housing-v2"></use>
                         </svg>
                       </div>
                       <div class="code-block mb-0">
-                        <pre>&lt;svg class=&quot;icon-housing-v2 text-covid-response fill-covid-response-light&quot;&gt;
+                        <pre>&lt;svg class=&quot;icon-6 text-covid-response fill-covid-response-light&quot;&gt;
   &lt;title id=&quot;icon-housing-v2-title&quot;&gt;icon housing v2&lt;/title&gt;
   &lt;use xlink:href=&quot;#icon-housing-v2&quot;&gt;&lt;/use&gt;
 &lt;/svg&gt;</pre>
@@ -421,16 +423,16 @@
                   <div class="w-full">
                     <div>
                       <h3 class="text-small capitalize mb-2">
-                        <a href="https://cdn.jsdelivr.net/gh/cityofnewyork/access-nyc-patterns@v0.14.7/dist/svg/icon-people-with-disabilities-v2.svg" target="_blank">icon people with disabilities v2</a>
+                        <a href="https://cdn.jsdelivr.net/gh/cityofnewyork/access-nyc-patterns@v0.15.0/dist/svg/icon-people-with-disabilities-v2.svg" target="_blank">icon people with disabilities v2</a>
                       </h3>
                       <div class="py-4 text-center px-2 flex items-center justify-center" style="min-height: 150px">
-                        <svg class="icon-people-with-disabilities-v2 text-covid-response fill-covid-response-light">
+                        <svg class="icon-6 text-covid-response fill-covid-response-light">
                           <title id="icon-people-with-disabilities-v2-title">icon people with disabilities v2</title>
                           <use xlink:href="#icon-people-with-disabilities-v2"></use>
                         </svg>
                       </div>
                       <div class="code-block mb-0">
-                        <pre>&lt;svg class=&quot;icon-people-with-disabilities-v2 text-covid-response fill-covid-response-light&quot;&gt;
+                        <pre>&lt;svg class=&quot;icon-6 text-covid-response fill-covid-response-light&quot;&gt;
   &lt;title id=&quot;icon-people-with-disabilities-v2-title&quot;&gt;icon people with disabilities v2&lt;/title&gt;
   &lt;use xlink:href=&quot;#icon-people-with-disabilities-v2&quot;&gt;&lt;/use&gt;
 &lt;/svg&gt;</pre>
@@ -442,16 +444,16 @@
                   <div class="w-full">
                     <div>
                       <h3 class="text-small capitalize mb-2">
-                        <a href="https://cdn.jsdelivr.net/gh/cityofnewyork/access-nyc-patterns@v0.14.7/dist/svg/icon-work-v2.svg" target="_blank">icon work v2</a>
+                        <a href="https://cdn.jsdelivr.net/gh/cityofnewyork/access-nyc-patterns@v0.15.0/dist/svg/icon-work-v2.svg" target="_blank">icon work v2</a>
                       </h3>
                       <div class="py-4 text-center px-2 flex items-center justify-center" style="min-height: 150px">
-                        <svg class="icon-work-v2 text-covid-response fill-covid-response-light">
+                        <svg class="icon-6 text-covid-response fill-covid-response-light">
                           <title id="icon-work-v2-title">icon work v2</title>
                           <use xlink:href="#icon-work-v2"></use>
                         </svg>
                       </div>
                       <div class="code-block mb-0">
-                        <pre>&lt;svg class=&quot;icon-work-v2 text-covid-response fill-covid-response-light&quot;&gt;
+                        <pre>&lt;svg class=&quot;icon-6 text-covid-response fill-covid-response-light&quot;&gt;
   &lt;title id=&quot;icon-work-v2-title&quot;&gt;icon work v2&lt;/title&gt;
   &lt;use xlink:href=&quot;#icon-work-v2&quot;&gt;&lt;/use&gt;
 &lt;/svg&gt;</pre>
@@ -472,7 +474,7 @@
                 </h2>
                 <div class="pt-2">
                   <p class="text-small m-0">Source: <code>
-                      <a href="https://github.com/CityOfNewYork/access-nyc-patterns/tree/v0.14.7/src/elements/icons">src/elements/icons/icons-program-card-covid-response</a>
+                      <a href="https://github.com/CityOfNewYork/access-nyc-patterns/tree/v0.15.0/src/elements/icons">src/elements/icons/icons-program-card-covid-response</a>
                     </code>
                   </p>
                 </div>
@@ -487,16 +489,16 @@
                   <div class="w-full">
                     <div>
                       <h3 class="text-small capitalize mb-2">
-                        <a href="https://cdn.jsdelivr.net/gh/cityofnewyork/access-nyc-patterns@v0.14.7/dist/svg/icon-card-cash-expenses-v2.svg" target="_blank">icon card cash expenses v2</a>
+                        <a href="https://cdn.jsdelivr.net/gh/cityofnewyork/access-nyc-patterns@v0.15.0/dist/svg/icon-card-cash-expenses-v2.svg" target="_blank">icon card cash expenses v2</a>
                       </h3>
                       <div class="py-4 text-center px-2 flex items-center justify-center" style="min-height: 150px">
-                        <svg class="icon-card-cash-expenses-v2 text-covid-response fill-covid-response-light">
+                        <svg class="icon-6 text-covid-response fill-covid-response-light">
                           <title id="icon-card-cash-expenses-v2-title">icon card cash expenses v2</title>
                           <use xlink:href="#icon-card-cash-expenses-v2"></use>
                         </svg>
                       </div>
                       <div class="code-block mb-0">
-                        <pre>&lt;svg class=&quot;icon-card-cash-expenses-v2 text-covid-response fill-covid-response-light&quot;&gt;
+                        <pre>&lt;svg class=&quot;icon-6 text-covid-response fill-covid-response-light&quot;&gt;
   &lt;title id=&quot;icon-card-cash-expenses-v2-title&quot;&gt;icon card cash expenses v2&lt;/title&gt;
   &lt;use xlink:href=&quot;#icon-card-cash-expenses-v2&quot;&gt;&lt;/use&gt;
 &lt;/svg&gt;</pre>
@@ -508,16 +510,16 @@
                   <div class="w-full">
                     <div>
                       <h3 class="text-small capitalize mb-2">
-                        <a href="https://cdn.jsdelivr.net/gh/cityofnewyork/access-nyc-patterns@v0.14.7/dist/svg/icon-card-child-care-v2.svg" target="_blank">icon card child care v2</a>
+                        <a href="https://cdn.jsdelivr.net/gh/cityofnewyork/access-nyc-patterns@v0.15.0/dist/svg/icon-card-child-care-v2.svg" target="_blank">icon card child care v2</a>
                       </h3>
                       <div class="py-4 text-center px-2 flex items-center justify-center" style="min-height: 150px">
-                        <svg class="icon-card-child-care-v2 text-covid-response fill-covid-response-light">
+                        <svg class="icon-6 text-covid-response fill-covid-response-light">
                           <title id="icon-card-child-care-v2-title">icon card child care v2</title>
                           <use xlink:href="#icon-card-child-care-v2"></use>
                         </svg>
                       </div>
                       <div class="code-block mb-0">
-                        <pre>&lt;svg class=&quot;icon-card-child-care-v2 text-covid-response fill-covid-response-light&quot;&gt;
+                        <pre>&lt;svg class=&quot;icon-6 text-covid-response fill-covid-response-light&quot;&gt;
   &lt;title id=&quot;icon-card-child-care-v2-title&quot;&gt;icon card child care v2&lt;/title&gt;
   &lt;use xlink:href=&quot;#icon-card-child-care-v2&quot;&gt;&lt;/use&gt;
 &lt;/svg&gt;</pre>
@@ -529,16 +531,16 @@
                   <div class="w-full">
                     <div>
                       <h3 class="text-small capitalize mb-2">
-                        <a href="https://cdn.jsdelivr.net/gh/cityofnewyork/access-nyc-patterns@v0.14.7/dist/svg/icon-card-city-id-card-v2.svg" target="_blank">icon card city id card v2</a>
+                        <a href="https://cdn.jsdelivr.net/gh/cityofnewyork/access-nyc-patterns@v0.15.0/dist/svg/icon-card-city-id-card-v2.svg" target="_blank">icon card city id card v2</a>
                       </h3>
                       <div class="py-4 text-center px-2 flex items-center justify-center" style="min-height: 150px">
-                        <svg class="icon-card-city-id-card-v2 text-covid-response fill-covid-response-light">
+                        <svg class="icon-6 text-covid-response fill-covid-response-light">
                           <title id="icon-card-city-id-card-v2-title">icon card city id card v2</title>
                           <use xlink:href="#icon-card-city-id-card-v2"></use>
                         </svg>
                       </div>
                       <div class="code-block mb-0">
-                        <pre>&lt;svg class=&quot;icon-card-city-id-card-v2 text-covid-response fill-covid-response-light&quot;&gt;
+                        <pre>&lt;svg class=&quot;icon-6 text-covid-response fill-covid-response-light&quot;&gt;
   &lt;title id=&quot;icon-card-city-id-card-v2-title&quot;&gt;icon card city id card v2&lt;/title&gt;
   &lt;use xlink:href=&quot;#icon-card-city-id-card-v2&quot;&gt;&lt;/use&gt;
 &lt;/svg&gt;</pre>
@@ -550,16 +552,16 @@
                   <div class="w-full">
                     <div>
                       <h3 class="text-small capitalize mb-2">
-                        <a href="https://cdn.jsdelivr.net/gh/cityofnewyork/access-nyc-patterns@v0.14.7/dist/svg/icon-card-education-v2.svg" target="_blank">icon card education v2</a>
+                        <a href="https://cdn.jsdelivr.net/gh/cityofnewyork/access-nyc-patterns@v0.15.0/dist/svg/icon-card-education-v2.svg" target="_blank">icon card education v2</a>
                       </h3>
                       <div class="py-4 text-center px-2 flex items-center justify-center" style="min-height: 150px">
-                        <svg class="icon-card-education-v2 text-covid-response fill-covid-response-light">
+                        <svg class="icon-6 text-covid-response fill-covid-response-light">
                           <title id="icon-card-education-v2-title">icon card education v2</title>
                           <use xlink:href="#icon-card-education-v2"></use>
                         </svg>
                       </div>
                       <div class="code-block mb-0">
-                        <pre>&lt;svg class=&quot;icon-card-education-v2 text-covid-response fill-covid-response-light&quot;&gt;
+                        <pre>&lt;svg class=&quot;icon-6 text-covid-response fill-covid-response-light&quot;&gt;
   &lt;title id=&quot;icon-card-education-v2-title&quot;&gt;icon card education v2&lt;/title&gt;
   &lt;use xlink:href=&quot;#icon-card-education-v2&quot;&gt;&lt;/use&gt;
 &lt;/svg&gt;</pre>
@@ -571,16 +573,16 @@
                   <div class="w-full">
                     <div>
                       <h3 class="text-small capitalize mb-2">
-                        <a href="https://cdn.jsdelivr.net/gh/cityofnewyork/access-nyc-patterns@v0.14.7/dist/svg/icon-card-enrichment-v2.svg" target="_blank">icon card enrichment v2</a>
+                        <a href="https://cdn.jsdelivr.net/gh/cityofnewyork/access-nyc-patterns@v0.15.0/dist/svg/icon-card-enrichment-v2.svg" target="_blank">icon card enrichment v2</a>
                       </h3>
                       <div class="py-4 text-center px-2 flex items-center justify-center" style="min-height: 150px">
-                        <svg class="icon-card-enrichment-v2 text-covid-response fill-covid-response-light">
+                        <svg class="icon-6 text-covid-response fill-covid-response-light">
                           <title id="icon-card-enrichment-v2-title">icon card enrichment v2</title>
                           <use xlink:href="#icon-card-enrichment-v2"></use>
                         </svg>
                       </div>
                       <div class="code-block mb-0">
-                        <pre>&lt;svg class=&quot;icon-card-enrichment-v2 text-covid-response fill-covid-response-light&quot;&gt;
+                        <pre>&lt;svg class=&quot;icon-6 text-covid-response fill-covid-response-light&quot;&gt;
   &lt;title id=&quot;icon-card-enrichment-v2-title&quot;&gt;icon card enrichment v2&lt;/title&gt;
   &lt;use xlink:href=&quot;#icon-card-enrichment-v2&quot;&gt;&lt;/use&gt;
 &lt;/svg&gt;</pre>
@@ -592,16 +594,16 @@
                   <div class="w-full">
                     <div>
                       <h3 class="text-small capitalize mb-2">
-                        <a href="https://cdn.jsdelivr.net/gh/cityofnewyork/access-nyc-patterns@v0.14.7/dist/svg/icon-card-family-services-v2.svg" target="_blank">icon card family services v2</a>
+                        <a href="https://cdn.jsdelivr.net/gh/cityofnewyork/access-nyc-patterns@v0.15.0/dist/svg/icon-card-family-services-v2.svg" target="_blank">icon card family services v2</a>
                       </h3>
                       <div class="py-4 text-center px-2 flex items-center justify-center" style="min-height: 150px">
-                        <svg class="icon-card-family-services-v2 text-covid-response fill-covid-response-light">
+                        <svg class="icon-6 text-covid-response fill-covid-response-light">
                           <title id="icon-card-family-services-v2-title">icon card family services v2</title>
                           <use xlink:href="#icon-card-family-services-v2"></use>
                         </svg>
                       </div>
                       <div class="code-block mb-0">
-                        <pre>&lt;svg class=&quot;icon-card-family-services-v2 text-covid-response fill-covid-response-light&quot;&gt;
+                        <pre>&lt;svg class=&quot;icon-6 text-covid-response fill-covid-response-light&quot;&gt;
   &lt;title id=&quot;icon-card-family-services-v2-title&quot;&gt;icon card family services v2&lt;/title&gt;
   &lt;use xlink:href=&quot;#icon-card-family-services-v2&quot;&gt;&lt;/use&gt;
 &lt;/svg&gt;</pre>
@@ -613,16 +615,16 @@
                   <div class="w-full">
                     <div>
                       <h3 class="text-small capitalize mb-2">
-                        <a href="https://cdn.jsdelivr.net/gh/cityofnewyork/access-nyc-patterns@v0.14.7/dist/svg/icon-card-food-v2.svg" target="_blank">icon card food v2</a>
+                        <a href="https://cdn.jsdelivr.net/gh/cityofnewyork/access-nyc-patterns@v0.15.0/dist/svg/icon-card-food-v2.svg" target="_blank">icon card food v2</a>
                       </h3>
                       <div class="py-4 text-center px-2 flex items-center justify-center" style="min-height: 150px">
-                        <svg class="icon-card-food-v2 text-covid-response fill-covid-response-light">
+                        <svg class="icon-6 text-covid-response fill-covid-response-light">
                           <title id="icon-card-food-v2-title">icon card food v2</title>
                           <use xlink:href="#icon-card-food-v2"></use>
                         </svg>
                       </div>
                       <div class="code-block mb-0">
-                        <pre>&lt;svg class=&quot;icon-card-food-v2 text-covid-response fill-covid-response-light&quot;&gt;
+                        <pre>&lt;svg class=&quot;icon-6 text-covid-response fill-covid-response-light&quot;&gt;
   &lt;title id=&quot;icon-card-food-v2-title&quot;&gt;icon card food v2&lt;/title&gt;
   &lt;use xlink:href=&quot;#icon-card-food-v2&quot;&gt;&lt;/use&gt;
 &lt;/svg&gt;</pre>
@@ -634,16 +636,16 @@
                   <div class="w-full">
                     <div>
                       <h3 class="text-small capitalize mb-2">
-                        <a href="https://cdn.jsdelivr.net/gh/cityofnewyork/access-nyc-patterns@v0.14.7/dist/svg/icon-card-health-v2.svg" target="_blank">icon card health v2</a>
+                        <a href="https://cdn.jsdelivr.net/gh/cityofnewyork/access-nyc-patterns@v0.15.0/dist/svg/icon-card-health-v2.svg" target="_blank">icon card health v2</a>
                       </h3>
                       <div class="py-4 text-center px-2 flex items-center justify-center" style="min-height: 150px">
-                        <svg class="icon-card-health-v2 text-covid-response fill-covid-response-light">
+                        <svg class="icon-6 text-covid-response fill-covid-response-light">
                           <title id="icon-card-health-v2-title">icon card health v2</title>
                           <use xlink:href="#icon-card-health-v2"></use>
                         </svg>
                       </div>
                       <div class="code-block mb-0">
-                        <pre>&lt;svg class=&quot;icon-card-health-v2 text-covid-response fill-covid-response-light&quot;&gt;
+                        <pre>&lt;svg class=&quot;icon-6 text-covid-response fill-covid-response-light&quot;&gt;
   &lt;title id=&quot;icon-card-health-v2-title&quot;&gt;icon card health v2&lt;/title&gt;
   &lt;use xlink:href=&quot;#icon-card-health-v2&quot;&gt;&lt;/use&gt;
 &lt;/svg&gt;</pre>
@@ -655,16 +657,16 @@
                   <div class="w-full">
                     <div>
                       <h3 class="text-small capitalize mb-2">
-                        <a href="https://cdn.jsdelivr.net/gh/cityofnewyork/access-nyc-patterns@v0.14.7/dist/svg/icon-card-housing-v2.svg" target="_blank">icon card housing v2</a>
+                        <a href="https://cdn.jsdelivr.net/gh/cityofnewyork/access-nyc-patterns@v0.15.0/dist/svg/icon-card-housing-v2.svg" target="_blank">icon card housing v2</a>
                       </h3>
                       <div class="py-4 text-center px-2 flex items-center justify-center" style="min-height: 150px">
-                        <svg class="icon-card-housing-v2 text-covid-response fill-covid-response-light">
+                        <svg class="icon-6 text-covid-response fill-covid-response-light">
                           <title id="icon-card-housing-v2-title">icon card housing v2</title>
                           <use xlink:href="#icon-card-housing-v2"></use>
                         </svg>
                       </div>
                       <div class="code-block mb-0">
-                        <pre>&lt;svg class=&quot;icon-card-housing-v2 text-covid-response fill-covid-response-light&quot;&gt;
+                        <pre>&lt;svg class=&quot;icon-6 text-covid-response fill-covid-response-light&quot;&gt;
   &lt;title id=&quot;icon-card-housing-v2-title&quot;&gt;icon card housing v2&lt;/title&gt;
   &lt;use xlink:href=&quot;#icon-card-housing-v2&quot;&gt;&lt;/use&gt;
 &lt;/svg&gt;</pre>
@@ -676,16 +678,16 @@
                   <div class="w-full">
                     <div>
                       <h3 class="text-small capitalize mb-2">
-                        <a href="https://cdn.jsdelivr.net/gh/cityofnewyork/access-nyc-patterns@v0.14.7/dist/svg/icon-card-people-with-disabilities-v2.svg" target="_blank">icon card people with disabilities v2</a>
+                        <a href="https://cdn.jsdelivr.net/gh/cityofnewyork/access-nyc-patterns@v0.15.0/dist/svg/icon-card-people-with-disabilities-v2.svg" target="_blank">icon card people with disabilities v2</a>
                       </h3>
                       <div class="py-4 text-center px-2 flex items-center justify-center" style="min-height: 150px">
-                        <svg class="icon-card-people-with-disabilities-v2 text-covid-response fill-covid-response-light">
+                        <svg class="icon-6 text-covid-response fill-covid-response-light">
                           <title id="icon-card-people-with-disabilities-v2-title">icon card people with disabilities v2</title>
                           <use xlink:href="#icon-card-people-with-disabilities-v2"></use>
                         </svg>
                       </div>
                       <div class="code-block mb-0">
-                        <pre>&lt;svg class=&quot;icon-card-people-with-disabilities-v2 text-covid-response fill-covid-response-light&quot;&gt;
+                        <pre>&lt;svg class=&quot;icon-6 text-covid-response fill-covid-response-light&quot;&gt;
   &lt;title id=&quot;icon-card-people-with-disabilities-v2-title&quot;&gt;icon card people with disabilities v2&lt;/title&gt;
   &lt;use xlink:href=&quot;#icon-card-people-with-disabilities-v2&quot;&gt;&lt;/use&gt;
 &lt;/svg&gt;</pre>
@@ -697,16 +699,16 @@
                   <div class="w-full">
                     <div>
                       <h3 class="text-small capitalize mb-2">
-                        <a href="https://cdn.jsdelivr.net/gh/cityofnewyork/access-nyc-patterns@v0.14.7/dist/svg/icon-card-work-v2.svg" target="_blank">icon card work v2</a>
+                        <a href="https://cdn.jsdelivr.net/gh/cityofnewyork/access-nyc-patterns@v0.15.0/dist/svg/icon-card-work-v2.svg" target="_blank">icon card work v2</a>
                       </h3>
                       <div class="py-4 text-center px-2 flex items-center justify-center" style="min-height: 150px">
-                        <svg class="icon-card-work-v2 text-covid-response fill-covid-response-light">
+                        <svg class="icon-6 text-covid-response fill-covid-response-light">
                           <title id="icon-card-work-v2-title">icon card work v2</title>
                           <use xlink:href="#icon-card-work-v2"></use>
                         </svg>
                       </div>
                       <div class="code-block mb-0">
-                        <pre>&lt;svg class=&quot;icon-card-work-v2 text-covid-response fill-covid-response-light&quot;&gt;
+                        <pre>&lt;svg class=&quot;icon-6 text-covid-response fill-covid-response-light&quot;&gt;
   &lt;title id=&quot;icon-card-work-v2-title&quot;&gt;icon card work v2&lt;/title&gt;
   &lt;use xlink:href=&quot;#icon-card-work-v2&quot;&gt;&lt;/use&gt;
 &lt;/svg&gt;</pre>
@@ -727,7 +729,7 @@
                 </h2>
                 <div class="pt-2">
                   <p class="text-small m-0">Source: <code>
-                      <a href="https://github.com/CityOfNewYork/access-nyc-patterns/tree/v0.14.7/src/elements/buttons">src/elements/buttons/buttons-covid-response</a>
+                      <a href="https://github.com/CityOfNewYork/access-nyc-patterns/tree/v0.15.0/src/elements/buttons">src/elements/buttons/buttons-covid-response</a>
                     </code>
                   </p>
                 </div>
@@ -759,7 +761,7 @@
                 </h2>
                 <div class="pt-2">
                   <p class="text-small m-0">Source: <code>
-                      <a href="https://github.com/CityOfNewYork/access-nyc-patterns/tree/v0.14.7/src/components/alert-box">src/components/alert-box/alert-box-covid-response</a>
+                      <a href="https://github.com/CityOfNewYork/access-nyc-patterns/tree/v0.15.0/src/components/alert-box">src/components/alert-box/alert-box-covid-response</a>
                     </code>
                   </p>
                 </div>
@@ -815,7 +817,7 @@
                 </h2>
                 <div class="pt-2">
                   <p class="text-small m-0">Source: <code>
-                      <a href="https://github.com/CityOfNewYork/access-nyc-patterns/tree/v0.14.7/src/utilities/color">src/utilities/color/color-combinations-covid-response</a>
+                      <a href="https://github.com/CityOfNewYork/access-nyc-patterns/tree/v0.15.0/src/utilities/color">src/utilities/color/color-combinations-covid-response</a>
                     </code>
                   </p>
                 </div>
@@ -865,7 +867,7 @@
                 </h2>
                 <div class="pt-2">
                   <p class="text-small m-0">Source: <code>
-                      <a href="https://github.com/CityOfNewYork/access-nyc-patterns/tree/v0.14.7/src/utilities/color">src/utilities/color/color-utilities-covid-response</a>
+                      <a href="https://github.com/CityOfNewYork/access-nyc-patterns/tree/v0.15.0/src/utilities/color">src/utilities/color/color-utilities-covid-response</a>
                     </code>
                   </p>
                 </div>
@@ -1003,8 +1005,10 @@
           <a class="block p-1" href="member-list">Member List</a>
           <a class="block p-1" href="nearby-stops">Nearby Stops</a>
           <a class="block p-1" href="share-form">Share Form</a>
+          <a class="block p-1" href="share-links">Share Links</a>
           <a class="block p-1" href="side-nav">Side Nav</a>
           <a class="block p-1" href="question">Question</a>
+          <a class="block p-1" href="web-share">Web Share</a>
         </nav>
         <nav class="screen-tablet:flex-1 mb-1 px-2 screen-desktop:ps-4">
           <span class="type-h3 text-small mb-1 block screen-tablet:border-b screen-tablet:pb-2 screen-tablet:mb-1 border-white p-1">Objects</span>
@@ -1050,6 +1054,7 @@
     access.icons();
     access.icons('https://cdn.jsdelivr.net/gh/cityofnewyork/nyco-patterns@v2.3.1/dist/icons.svg');
     access.toggle();
+    access.copy();
   </script>
 </body>
 
