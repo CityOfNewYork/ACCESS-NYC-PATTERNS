@@ -34,6 +34,13 @@
     "vue": "/dist/scripts/vue-components.js",
     "svg": "/dist/svg/icons.svg"
   },
+  "src": {
+    "styles": "/src/scss/_imports.scss",
+    "scripts": "/src/js/main.js",
+    "polyfills": "/src/js/polyfills.js",
+    "vue-components": "/src/js/vue-components.js",
+    "vue-demo": "/src/utilities/vue-demo/vue-demo.js"
+  },
   "instantiations": {
     "scripts": "AccessNyc"
   },
@@ -48,7 +55,7 @@
     "pttrn": "node_modules/.bin/pttrn"
   },
   "devDependencies": {
-    "@nycopportunity/patterns-framework": "^1.0.0-0",
+    "@nycopportunity/patterns-framework": "^1.0.0-2",
     "@rollup/plugin-alias": "^3.1.0",
     "cross-env": "^7.0.2",
     "css-mqpacker": "^7.0.0",

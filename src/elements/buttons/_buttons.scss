@@ -23,6 +23,26 @@ button {
 .button, [class*='button-'] {
   @include btn;
   @include transition;
+
+  &[aria-pressed='false'] {
+    .icon {
+      display: inline-block;
+    }
+
+    .icon-pressed {
+      display: none;
+    }
+  }
+
+  &[aria-pressed='true'] {
+    .icon {
+      display: none;
+    }
+
+    .icon-pressed {
+      display: inline-block;
+    }
+  }
 }
 
 @mixin buttons($variant: '') {

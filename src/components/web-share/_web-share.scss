@@ -1,0 +1,51 @@
+/**
+ * Web-share
+ */
+
+// Dependencies
+@import 'config/dimensions';
+@import 'config/direction';
+@import 'config/fonts';
+@import 'config/tokens';
+
+// Declarations
+.c-web-share {
+  position: relative
+}
+
+.c-web-share__item {
+  margin-#{$text-direction-end}: $grid-base;
+  margin-bottom: $grid-base;
+
+  @media screen and (min-width: $screen-tablet) {
+    margin-#{$text-direction-end}: $grid-base * 1.5;
+    margin-bottom: $grid-base * 2;
+  }
+}
+
+.c-web-share__fallback {
+  font-size: $font-size-small;
+  position: absolute;
+
+  margin-bottom: $grid-base;
+
+  box-shadow: map-get(map-get($tokens, 'shadows'), 'up');
+
+  @media screen and (min-width: $screen-tablet) {
+    margin-bottom: $grid-base * 2;
+  }
+}
+
+.c-web-share__fallback-body {
+  padding: $grid-base * 2;
+  padding-bottom: $grid-base;
+
+  @media screen and (min-width: $screen-tablet) {
+    padding: $grid-base * 3;
+    padding-bottom: $grid-base;
+  }
+}
+
+.c-web-share__url {
+  padding: $grid-base;
+}

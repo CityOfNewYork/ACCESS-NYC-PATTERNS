@@ -5,29 +5,24 @@
 // Dependencies
 @import 'config/direction';
 @import 'config/dimensions';
-@import 'config/media';
-@import 'config/colors';
 @import 'config/typography';
 
 // Declarations
 .c-share {
-  @include typography-nav();
 
-  .icon {
-    display: inline-block;
-    height: $spacing-base;
-    margin-#{$text-direction-end}: $grid-base;
-    vertical-align: middle;
-  }
-
-  // @media screen and (min-width: $screen-desktop) {
-  //   text-align: $text-direction-start;
-  // }
 }
 
 .c-share__link {
+  @include typography-nav();
+
+  display: inline-flex;
+
+  [class*='icon'] {
+    margin-#{$text-direction-end}: $grid-base;
+  }
+
   @media screen and (min-width: $screen-desktop) {
-    display: block;
+    display: flex;
     margin-bottom: $spacing-base;
   }
 }

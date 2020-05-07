@@ -41,8 +41,10 @@ nav class='${class_nav} screen-desktop:ps-4'
   a class='${class_nav_item}' href='member-list' Member List
   a class='${class_nav_item}' href='nearby-stops' Nearby Stops
   a class='${class_nav_item}' href='share-form' Share Form
+  a class='${class_nav_item}' href='share-links' Share Links
   a class='${class_nav_item}' href='side-nav' Side Nav
   a class='${class_nav_item}' href='question' Question
+  a class='${class_nav_item}' href='web-share' Web Share
 
 nav class='${class_nav} screen-desktop:ps-4'
   span class='${class_nav_heading} ${class_nav_divider}' Objects

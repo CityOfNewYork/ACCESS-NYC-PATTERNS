@@ -2,7 +2,7 @@
 = extend('/slm/layouts/default');
 
 / Component
-- title = 'Side Nav';
+- title = 'Web Share';
 
 / Partials
 = partial('/slm/partials/styles.slm');
@@ -11,6 +11,8 @@
 = partial('/slm/partials/content-header.mixin.slm');
 = partial('/slm/section/section.mixin.slm');
 = partial('/slm/section/section-text.mixin.slm');
+= partial('/slm/section/demo-specs.mixin.slm');
+= partial('/slm/section/demo-block.mixin.slm');
 
 / Content blocks
 = content('head');
@@ -21,5 +23,8 @@
 
 = content('content');
   = mixin('content-header', title);
-  = mixin('section', 'Ordered Side Nav', 'components/side-nav/side-nav-ol');
-  = mixin('section', 'Unordered Side Nav', 'components/side-nav/side-nav-ul');
+  = mixin('section', false, 'components/web-share/web-share');
+
+= content('script');
+  javascript:
+    access.webShare();

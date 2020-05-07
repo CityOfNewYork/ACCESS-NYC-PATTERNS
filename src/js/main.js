@@ -4,6 +4,8 @@
 import Forms from '@nycopportunity/patterns-framework/src/utilities/forms/forms';
 import Toggle from '@nycopportunity/patterns-framework/src/utilities/toggle/toggle';
 import Icons from '@nycopportunity/patterns-framework/src/utilities/icons/icons';
+import Track from '@nycopportunity/patterns-framework/src/utilities/track/track';
+import Copy from '@nycopportunity/patterns-framework/src/utilities/copy/copy';
 
 // Elements
 // import InputsAutocomplete from '../elements/inputs/inputs-autocomplete';
@@ -15,6 +17,7 @@ import Disclaimer from '../components/disclaimer/disclaimer';
 import Filter from '../components/filter/filter';
 import NearbyStops from '../components/nearby-stops/nearby-stops';
 import ShareForm from '../components/share-form/share-form';
+import WebShare from '../components/web-share/web-share';
 
 // Objects
 import AlertBanner from '../objects/alert-banner/alert-banner';
@@ -30,7 +33,7 @@ class main {
   /**
    * An API for the Icons Utility
    * @param  {String} path The path of the icon file
-   * @return {object} instance of Icons
+   * @return {Object} instance of Icons
    */
   icons(path = 'svg/icons.svg') {
     return new Icons(path);
@@ -38,8 +41,8 @@ class main {
 
   /**
    * An API for the Toggle Utility
-   * @param  {object} settings Settings for the Toggle Class
-   * @return {object}          Instance of toggle
+   * @param  {Object} settings Settings for the Toggle Class
+   * @return {Object}          Instance of toggle
    */
   toggle(settings = false) {
     return (settings) ? new Toggle(settings) : new Toggle();
@@ -62,7 +65,7 @@ class main {
 
   /**
    * An API for the Tooltips element
-   * @param  {object}   settings Settings for the Tooltips Class
+   * @param  {Object}   settings Settings for the Tooltips Class
    * @return {nodelist}          Tooltip elements
    */
   tooltips(elements = document.querySelectorAll(Tooltips.selector)) {
@@ -75,7 +78,7 @@ class main {
 
   /**
    * An API for the Filter Component
-   * @return {object} instance of Filter
+   * @return {Object} instance of Filter
    */
   filter() {
     return new Filter();
@@ -83,7 +86,7 @@ class main {
 
   /**
    * An API for the Accordion Component
-   * @return {object} instance of Accordion
+   * @return {Object} instance of Accordion
    */
   accordion() {
     return new Accordion();
@@ -91,7 +94,7 @@ class main {
 
   /**
    * An API for the Nearby Stops Component
-   * @return {object} instance of NearbyStops
+   * @return {Object} instance of NearbyStops
    */
   nearbyStops() {
     return new NearbyStops();
@@ -99,7 +102,7 @@ class main {
 
   /**
    * An API for the Newsletter Object
-   * @return {object} instance of Newsletter
+   * @return {Object} instance of Newsletter
    */
   newsletter(element = document.querySelector(Newsletter.selector)) {
     return (element) ? new Newsletter(element) : null;
@@ -107,8 +110,10 @@ class main {
 
  /**
   * An API for the Autocomplete Object
-  * @param {object} settings Settings for the Autocomplete Class
-  * @return {object}         Instance of Autocomplete
+  *
+  * @param  {Object}  settings  Settings for the Autocomplete Class
+  *
+  * @return {Object}            Instance of Autocomplete
   */
   // inputsAutocomplete(settings = {}) {
   //   return new InputsAutocomplete(settings);
@@ -116,7 +121,8 @@ class main {
 
   /**
    * An API for the AlertBanner Component
-   * @return {object} Instance of AlertBanner
+   *
+   * @return  {Object}  Instance of AlertBanner
    */
   alertBanner(element = document.querySelector(AlertBanner.selector)) {
     return (element) ? new AlertBanner(element) : null;
@@ -124,7 +130,8 @@ class main {
 
   /**
    * An API for the ShareForm Component
-   * @return {object} Instance of ShareForm
+   *
+   * @return  {Object}  Instance of ShareForm
    */
   shareForm(elements = document.querySelectorAll(ShareForm.selector)) {
     elements.forEach(element => {
@@ -135,8 +142,26 @@ class main {
   }
 
   /**
+   * An API for the WebShare Component
+   *
+   * @return  {Object}  Instance of WebShare
+   */
+  webShare() {
+    return new WebShare();
+  }
+
+  /**
+   * An API for the Copy Utility
+   *
+   * @return  {Object}  Instance of Copy
+   */
+  copy() {
+    return new Copy();
+  }
+
+  /**
    * An API for the Disclaimer Component
-   * @return {object} Instance of Disclaimer
+   * @return  {Object}  Instance of Disclaimer
    */
   disclaimer() {
     return new Disclaimer();
@@ -144,10 +169,20 @@ class main {
 
   /**
    * An API for the TextController Object
-   * @return {object} Instance of TextController
+   *
+   * @return  {Object}  Instance of TextController
    */
   textController(element = document.querySelector(TextController.selector)) {
     return (element) ? new TextController(element) : null;
+  }
+
+  /**
+   * An API for the Track Object
+   *
+   * @return  {Object}  Instance of Track
+   */
+  track() {
+    return new Track();
   }
 }
 

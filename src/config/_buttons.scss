@@ -37,14 +37,19 @@ $btn-radius: 5px;
   background-color: $color-blue-light;
   border: 0;
   border-radius: $btn-radius;
-  display: inline-block;
+
+  // display: inline-block;
+  display: inline-flex;
+  align-items: center;
+
   text-align: center;
   text-decoration: none;
   cursor: pointer;
   transition: background .2s ease-in, color .2s ease-in;
 
-  .icon {
-    vertical-align: middle;
+  > [class*='icon']:first-child {
+    // vertical-align: middle;
+    margin-#{$text-direction-end}: $grid-base;
   }
 }
 

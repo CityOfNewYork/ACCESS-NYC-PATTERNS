@@ -34,6 +34,7 @@ html lang='en' class='bg-white' dir='ltr'
       access.icons();
       access.icons('https://cdn.jsdelivr.net/gh/cityofnewyork/nyco-patterns@v2.3.1/dist/icons.svg');
       access.toggle();
+      access.copy();
 
     = content('script');
 
