@@ -76,8 +76,8 @@
             <h2 class="text-small m-0 text-blue-dark screen-tablet:hidden">Patterns</h2>
             <h2 aria-hidden="true" class="type-h1 m-0 text-blue-dark hidden screen-tablet:inline-block">Patterns</h2>
             <nav class="text-small">
-              <a class="rounded-lg text-blue-dark border-2 no-underline px-1 ms-2 hidden screen-tablet:inline-block" href="https://github.com/CityOfNewYork/access-nyc-patterns/tree/v0.15.0">0.15.0</a>
-              <a aria-hidden="true" class="ms-1 screen-tablet:ms-2 screen-tablet:hidden" href="https://github.com/CityOfNewYork/access-nyc-patterns/tree/v0.15.0">0.15.0</a>
+              <a class="rounded-lg text-blue-dark border-2 no-underline px-1 ms-2 hidden screen-tablet:inline-block" href="https://github.com/CityOfNewYork/access-nyc-patterns/tree/v0.15.1">0.15.1</a>
+              <a aria-hidden="true" class="ms-1 screen-tablet:ms-2 screen-tablet:hidden" href="https://github.com/CityOfNewYork/access-nyc-patterns/tree/v0.15.1">0.15.1</a>
               <button aria-controls="main-menu" aria-expanded="false" class="btn-link ms-1 screen-tablet:ms-2" data-js="toggle" id="main-menu-control">Menu</button>
             </nav>
           </div>
@@ -186,7 +186,7 @@
               <div class="my-0 px-2 pt-1 pb-4 border-b border-grey-light">
                 <div>
                   <p class="text-small m-0">Source: <code>
-                      <a href="https://github.com/CityOfNewYork/access-nyc-patterns/tree/v0.15.0/src/components/web-share">src/components/web-share/web-share</a>
+                      <a href="https://github.com/CityOfNewYork/access-nyc-patterns/tree/v0.15.1/src/components/web-share">src/components/web-share/web-share</a>
                     </code>
                   </p>
                 </div>
@@ -199,12 +199,12 @@
               <div class="screen-tablet:pe-2">
                 <nav class="c-web-share">
                   <button aria-controls="web-share-fallback" aria-expanded="false" class="c-web-share__item btn btn-small btn-primary" data-js="web-share" data-web-share="{&quot;title&quot;:&quot;ACCESS NYC&quot;,&quot;text&quot;:&quot;Find help with food, money, housing, and more on ACCESS NYC&quot;,&quot;url&quot;:&quot;https://access.nyc.gov&quot;}">
-                    <svg class="icon-ui icon-2">
+                    <svg class="c-web-share__icon icon-ui">
                       <use xlink:href="#icon-ui-share-2"></use>
                     </svg>Share this URL
                   </button>
                   <a class="c-web-share__item btn btn-small btn-primary mb-0">
-                    <svg class="icon-ui icon-2">
+                    <svg class="c-web-share__icon icon-ui">
                       <use xlink:href="#icon-ui-mail"></use>
                     </svg>Subscribe
                   </a>
@@ -215,20 +215,20 @@
                       </label>
                       <input class="c-web-share__url p-1 w-full mb-2" data-copy-target="web-share-url" id="web-share-url" name="web-share-url" type="text" value="https://access.nyc.gov" />
                       <button aria-pressed="false" class="c-web-share__item c-web-share__copy btn btn-small btn-primary" data-copy="web-share-url" data-js="copy">
-                        <svg class="icon icon-ui icon-2">
+                        <svg class="c-web-share__icon icon icon-ui">
                           <use xlink:href="#icon-ui-copy"></use>
                         </svg>
-                        <svg class="icon-pressed icon-ui icon-2 me-1">
+                        <svg class="c-web-share__icon icon-pressed icon-ui me-1">
                           <use xlink:href="#icon-ui-check"></use>
                         </svg>Copy URL
                       </button>
                       <a class="c-web-share__item btn btn-small btn-primary" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Faccess.nyc.gov" target="_blank">
-                        <svg class="icon-ui icon-2">
+                        <svg class="c-web-share__icon icon-ui">
                           <use xlink:href="#icon-ui-facebook"></use>
                         </svg>Facebook
                       </a>
                       <a class="c-web-share__item btn btn-small btn-primary" href="https://twitter.com/intent/tweet?text=Find%20help%20with%20food%2C%20money%2C%20housing%2C%20and%20more%20on%20ACCESS%20NYC%20https%3A%2F%2Faccess.nyc.gov" target="_blank">
-                        <svg class="icon-ui icon-2">
+                        <svg class="c-web-share__icon icon-ui">
                           <use xlink:href="#icon-ui-twitter"></use>
                         </svg>Twitter
                       </a>
@@ -240,12 +240,12 @@
                 <div class="code-block mb-1">
                   <pre>&lt;nav class=&quot;c-web-share&quot;&gt;
   &lt;button aria-controls=&quot;web-share-fallback&quot; aria-expanded=&quot;false&quot; class=&quot;c-web-share__item btn btn-small btn-primary&quot; data-js=&quot;web-share&quot; data-web-share=&quot;{&amp;quot;title&amp;quot;:&amp;quot;ACCESS NYC&amp;quot;,&amp;quot;text&amp;quot;:&amp;quot;Find help with food, money, housing, and more on ACCESS NYC&amp;quot;,&amp;quot;url&amp;quot;:&amp;quot;https://access.nyc.gov&amp;quot;}&quot;&gt;
-    &lt;svg class=&quot;icon-ui icon-2&quot;&gt;
+    &lt;svg class=&quot;c-web-share__icon icon-ui&quot;&gt;
       &lt;use xlink:href=&quot;#icon-ui-share-2&quot;&gt;&lt;/use&gt;
     &lt;/svg&gt;Share this URL
   &lt;/button&gt;
   &lt;a class=&quot;c-web-share__item btn btn-small btn-primary mb-0&quot;&gt;
-    &lt;svg class=&quot;icon-ui icon-2&quot;&gt;
+    &lt;svg class=&quot;c-web-share__icon icon-ui&quot;&gt;
       &lt;use xlink:href=&quot;#icon-ui-mail&quot;&gt;&lt;/use&gt;
     &lt;/svg&gt;Subscribe
   &lt;/a&gt;
@@ -256,20 +256,20 @@
       &lt;/label&gt;
       &lt;input class=&quot;c-web-share__url p-1 w-full mb-2&quot; data-copy-target=&quot;web-share-url&quot; id=&quot;web-share-url&quot; name=&quot;web-share-url&quot; type=&quot;text&quot; value=&quot;https://access.nyc.gov&quot; /&gt;
       &lt;button aria-pressed=&quot;false&quot; class=&quot;c-web-share__item c-web-share__copy btn btn-small btn-primary&quot; data-copy=&quot;web-share-url&quot; data-js=&quot;copy&quot;&gt;
-        &lt;svg class=&quot;icon icon-ui icon-2&quot;&gt;
+        &lt;svg class=&quot;c-web-share__icon icon icon-ui&quot;&gt;
           &lt;use xlink:href=&quot;#icon-ui-copy&quot;&gt;&lt;/use&gt;
         &lt;/svg&gt;
-        &lt;svg class=&quot;icon-pressed icon-ui icon-2 me-1&quot;&gt;
+        &lt;svg class=&quot;c-web-share__icon icon-pressed icon-ui me-1&quot;&gt;
           &lt;use xlink:href=&quot;#icon-ui-check&quot;&gt;&lt;/use&gt;
         &lt;/svg&gt;Copy URL
       &lt;/button&gt;
       &lt;a class=&quot;c-web-share__item btn btn-small btn-primary&quot; href=&quot;https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Faccess.nyc.gov&quot; target=&quot;_blank&quot;&gt;
-        &lt;svg class=&quot;icon-ui icon-2&quot;&gt;
+        &lt;svg class=&quot;c-web-share__icon icon-ui&quot;&gt;
           &lt;use xlink:href=&quot;#icon-ui-facebook&quot;&gt;&lt;/use&gt;
         &lt;/svg&gt;Facebook
       &lt;/a&gt;
       &lt;a class=&quot;c-web-share__item btn btn-small btn-primary&quot; href=&quot;https://twitter.com/intent/tweet?text=Find%20help%20with%20food%2C%20money%2C%20housing%2C%20and%20more%20on%20ACCESS%20NYC%20https%3A%2F%2Faccess.nyc.gov&quot; target=&quot;_blank&quot;&gt;
-        &lt;svg class=&quot;icon-ui icon-2&quot;&gt;
+        &lt;svg class=&quot;c-web-share__icon icon-ui&quot;&gt;
           &lt;use xlink:href=&quot;#icon-ui-twitter&quot;&gt;&lt;/use&gt;
         &lt;/svg&gt;Twitter
       &lt;/a&gt;
