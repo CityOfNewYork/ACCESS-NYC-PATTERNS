@@ -13,7 +13,7 @@
   font-size: $font-size-base;
   font-weight: $font-weight-bold;
 
-  transition: all .2s;
+  transition: all 0.2s;
   background: $color-white;
   border: 1px solid $color-grey-mid;
   border-radius: map-get(map-get($tokens, 'inputs'), 'checkbox-radius');
@@ -42,7 +42,7 @@
 
   @if $text-direction == 'rtl' { right: 8px; } @else { left: 8px; }
 
-  transition: all 2s;
+  transition: all 0.2s;
 }
 
 @mixin toggles-btn-toggled() {
