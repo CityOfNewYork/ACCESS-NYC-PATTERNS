@@ -4,12 +4,12 @@
 
 nav class='c-web-share'
   button data-js='web-share' aria-controls='web-share-fallback' aria-expanded='false' class='c-web-share__item btn btn-small btn-primary' data-web-share='${JSON.stringify(data)}'
-    svg class='icon-ui icon-2'
+    svg class='c-web-share__icon icon-ui'
       use xlink:href='#icon-ui-share-2'
     | Share this URL
 
   a class='c-web-share__item btn btn-small btn-primary mb-0'
-    svg class='icon-ui icon-2'
+    svg class='c-web-share__icon icon-ui'
       use xlink:href='#icon-ui-mail'
     | Subscribe
 
@@ -21,18 +21,18 @@ nav class='c-web-share'
       input id='web-share-url' name='web-share-url' data-copy-target='web-share-url' class='c-web-share__url p-1 w-full mb-2' type='text' value='${data.url}'
 
       button data-js='copy' data-copy='web-share-url' class='c-web-share__item c-web-share__copy btn btn-small btn-primary' aria-pressed='false'
-        svg class='icon icon-ui icon-2'
+        svg class='c-web-share__icon icon icon-ui'
           use xlink:href='#icon-ui-copy'
-        svg class='icon-pressed icon-ui icon-2 me-1'
+        svg class='c-web-share__icon icon-pressed icon-ui me-1'
           use xlink:href='#icon-ui-check'
         | Copy URL
 
       a href='https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(data.url)}' target='_blank' class='c-web-share__item btn btn-small btn-primary'
-        svg class='icon-ui icon-2'
+        svg class='c-web-share__icon icon-ui'
           use xlink:href='#icon-ui-facebook'
         | Facebook
 
       a href='https://twitter.com/intent/tweet?text=${encodeURIComponent(data.text + ' ' + data.url)}' target='_blank' class='c-web-share__item btn btn-small btn-primary'
-        svg class='icon-ui icon-2'
+        svg class='c-web-share__icon icon-ui'
           use xlink:href='#icon-ui-twitter'
         | Twitter

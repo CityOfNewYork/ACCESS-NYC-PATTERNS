@@ -16,13 +16,33 @@
   @include typography-nav();
 
   display: inline-flex;
+  align-items: center;
+  margin-#{$text-direction-end}: $grid-base;
+  margin-bottom: $grid-base * 2;
 
-  [class*='icon'] {
-    margin-#{$text-direction-end}: $grid-base;
-  }
-
-  @media screen and (min-width: $screen-desktop) {
+  @media screen and (min-width: $screen-tablet) {
     display: flex;
     margin-bottom: $spacing-base;
+  }
+}
+
+.c-share__icon {
+  width: $grid-base * 3;
+  height: $grid-base * 3;
+  margin-#{$text-direction-end}: $grid-base;
+
+  @media screen and (min-width: $screen-tablet) {
+    width: $grid-base * 4;
+    height: $grid-base * 4;
+  }
+}
+
+.c-share__input {
+  @include typography-nav();
+  padding: $grid-base;
+  margin-bottom: $grid-base * 3;
+
+  @media screen and (min-width: $screen-tablet) {
+    padding: $grid-base * 1.5;
   }
 }

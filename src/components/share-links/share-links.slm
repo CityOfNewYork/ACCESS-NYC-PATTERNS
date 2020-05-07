@@ -4,12 +4,12 @@
 
 nav class='c-share hide-for-print'
   a class='c-share__link' href='#'
-    svg class='icon-ui icon-4'
+    svg class='c-share__icon icon-ui'
       use xlink:href='#icon-ui-printer'
     | Print the whole guide
 
   button class='c-share__link btn-link' data-js='web-share' data-web-share='${JSON.stringify(data)}' aria-controls='web-share-fallback' aria-expanded='false'
-    svg class='icon-ui icon-4'
+    svg class='c-share__icon icon-ui'
       use xlink:href='#icon-ui-share-2'
     | Share the guide
 
@@ -17,26 +17,26 @@ nav class='c-share hide-for-print'
     label for='web-share-url' class='block mb-1 sr-only'
       b Share the Guide
 
-    input id='web-share-url' name='web-share-url' data-copy-target='web-share-url' class='text-small p-1 mb-3' type='text' value='${data.url}'
+    input class='c-share__input' id='web-share-url' name='web-share-url' data-copy-target='web-share-url' type='text' value='${data.url}'
 
     button data-js='copy' data-copy='web-share-url' class='c-share__link btn-link' aria-pressed='false'
-      svg class='icon icon-ui icon-4'
+      svg class='c-share__icon icon icon-ui'
         use xlink:href='#icon-ui-copy'
-      svg class='icon-pressed icon-ui icon-4 me-1'
+      svg class='c-share__icon icon-pressed icon-ui me-1'
         use xlink:href='#icon-ui-check'
       | Copy URL
 
     a class='c-share__link' href='https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(data.url)}' target='_blank'
-      svg class='icon-ui icon-4'
+      svg class='c-share__icon icon-ui'
         use xlink:href='#icon-ui-facebook'
       | Share on Facebook
 
     a class='c-share__link' href='https://twitter.com/intent/tweet?text=${encodeURIComponent(data.text + ' ' + data.url)}' target='_blank'
-      svg class='icon-ui icon-4'
+      svg class='c-share__icon icon-ui'
         use xlink:href='#icon-ui-twitter'
       | Share on Twitter
 
   a class='c-share__link' href='#' target='_blank'
-    svg class='icon-ui icon-4'
+    svg class='c-share__icon icon-ui'
       use xlink:href='#icon-ui-mail'
     | Subscribe for more
