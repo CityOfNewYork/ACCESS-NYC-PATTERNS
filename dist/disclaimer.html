@@ -29,16 +29,16 @@
       }
     </style>
   </noscript>
-  <script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-163470527-1"></script>
+  <script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-163470527-0"></script>
   <link href="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.18.1/build/styles/default.min.css" rel="stylesheet" />
   <script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.18.1/build/highlight.min.js"></script>
   <link href="styles/site-default.css" rel="stylesheet" />
   <script type="text/javascript">
-    document.addEventListener('DOMContentLoaded', event => {
+    document.addEventListener('DOMContentLoaded', function(event) {
       hljs.configure({
         languages: ['html', 'javascript', 'css', 'sass']
       });
-      document.querySelectorAll('pre').forEach(block => {
+      document.querySelectorAll('pre').forEach(function(block) {
         hljs.highlightBlock(block);
       });
       document.body.style.visibility = 'visible';
@@ -49,7 +49,7 @@
       dataLayer.push(arguments);
     }
     gtag('js', new Date());
-    gtag('config', 'UA-163470527-1');
+    gtag('config', 'UA-163470527-0');
   </script>
 </head>
 
@@ -130,8 +130,10 @@
             <a class="block p-1" href="member-list">Member List</a>
             <a class="block p-1" href="nearby-stops">Nearby Stops</a>
             <a class="block p-1" href="share-form">Share Form</a>
+            <a class="block p-1" href="share-links">Share Links</a>
             <a class="block p-1" href="side-nav">Side Nav</a>
             <a class="block p-1" href="question">Question</a>
+            <a class="block p-1" href="web-share">Web Share</a>
           </nav>
           <nav class="screen-tablet:flex-1 mb-1 px-2 screen-desktop:ps-4">
             <span class="type-h3 text-small mb-1 block screen-tablet:border-b screen-tablet:pb-2 screen-tablet:mb-1 border-white p-1">Objects</span>
@@ -240,9 +242,8 @@
                 <div class="c-disclaimer">
                   <p>
                     <small>
-                      <svg class="c-disclaimer__icon c-disclaimer__icon--pre icon icon-ui-info" role="img">
-                        <title>Information Alert</title>
-                        <use xlink:href="#icon-ui-info"></use>
+                      <svg aria-hidden="true" class="c-disclaimer__icon c-disclaimer__icon--pre">
+                        <use xlink:href="#icon-info"></use>
                       </svg>By providing your email address or phone number, you agree to be contacted by the City of New York regarding your ACCESS NYC public benefit screening results. Your activity on ACCESS NYC is anonymous, but providing your phone number may identify you and reveal that you used the website. To find out more about how the City might use the data you share with ACCESS NYC, visit the <a href="http://www1.nyc.gov/home/terms-of-use.page" target="_blank" rel="noopener noreferrer"> Terms of Use for NYC.gov</a>, and <a href="http://www1.nyc.gov/home/privacy-policy.page" target="_blank" rel="noopener noreferrer"> Privacy Policy for NYC.gov</a>.
                     </small>
                   </p>
@@ -253,9 +254,8 @@
                   <pre>&lt;div class=&quot;c-disclaimer&quot;&gt;
   &lt;p&gt;
     &lt;small&gt;
-      &lt;svg class=&quot;c-disclaimer__icon c-disclaimer__icon--pre icon icon-ui-info&quot; role=&quot;img&quot;&gt;
-        &lt;title&gt;Information Alert&lt;/title&gt;
-        &lt;use xlink:href=&quot;#icon-ui-info&quot;&gt;&lt;/use&gt;
+      &lt;svg aria-hidden=&quot;true&quot; class=&quot;c-disclaimer__icon c-disclaimer__icon--pre&quot;&gt;
+        &lt;use xlink:href=&quot;#icon-info&quot;&gt;&lt;/use&gt;
       &lt;/svg&gt;By providing your email address or phone number, you agree to be contacted by the City of New York regarding your ACCESS NYC public benefit screening results. Your activity on ACCESS NYC is anonymous, but providing your phone number may identify you and reveal that you used the website. To find out more about how the City might use the data you share with ACCESS NYC, visit the &lt;a href=&quot;http://www1.nyc.gov/home/terms-of-use.page&quot; target=&quot;_blank&quot; rel=&quot;noopener noreferrer&quot;&gt; Terms of Use for NYC.gov&lt;/a&gt;, and &lt;a href=&quot;http://www1.nyc.gov/home/privacy-policy.page&quot; target=&quot;_blank&quot; rel=&quot;noopener noreferrer&quot;&gt; Privacy Policy for NYC.gov&lt;/a&gt;.
     &lt;/small&gt;
   &lt;/p&gt;
@@ -300,9 +300,8 @@
                   <div class="c-disclaimer">
                     <p>
                       <small>
-                        <svg class="c-disclaimer__icon c-disclaimer__icon--pre icon icon-ui-info" role="img">
-                          <title>Information Alert</title>
-                          <use xlink:href="#icon-ui-info"></use>
+                        <svg aria-hidden="true" class="c-disclaimer__icon c-disclaimer__icon--pre">
+                          <use xlink:href="#icon-info"></use>
                         </svg>By providing your email address or phone number, you agree to be contacted by the City of New York regarding your ACCESS NYC public benefit screening results. Your activity on ACCESS NYC is anonymous, but providing your phone number may identify you and reveal that you used the website. To find out more about how the City might use the data you share with ACCESS NYC, visit the <a href="http://www1.nyc.gov/home/terms-of-use.page" target="_blank" rel="noopener noreferrer"> Terms of Use for NYC.gov</a>, and <a href="http://www1.nyc.gov/home/privacy-policy.page" target="_blank" rel="noopener noreferrer"> Privacy Policy for NYC.gov</a>.
                       </small>
                     </p>
@@ -324,9 +323,8 @@
   &lt;div class=&quot;c-disclaimer&quot;&gt;
     &lt;p&gt;
       &lt;small&gt;
-        &lt;svg class=&quot;c-disclaimer__icon c-disclaimer__icon--pre icon icon-ui-info&quot; role=&quot;img&quot;&gt;
-          &lt;title&gt;Information Alert&lt;/title&gt;
-          &lt;use xlink:href=&quot;#icon-ui-info&quot;&gt;&lt;/use&gt;
+        &lt;svg aria-hidden=&quot;true&quot; class=&quot;c-disclaimer__icon c-disclaimer__icon--pre&quot;&gt;
+          &lt;use xlink:href=&quot;#icon-info&quot;&gt;&lt;/use&gt;
         &lt;/svg&gt;By providing your email address or phone number, you agree to be contacted by the City of New York regarding your ACCESS NYC public benefit screening results. Your activity on ACCESS NYC is anonymous, but providing your phone number may identify you and reveal that you used the website. To find out more about how the City might use the data you share with ACCESS NYC, visit the &lt;a href=&quot;http://www1.nyc.gov/home/terms-of-use.page&quot; target=&quot;_blank&quot; rel=&quot;noopener noreferrer&quot;&gt; Terms of Use for NYC.gov&lt;/a&gt;, and &lt;a href=&quot;http://www1.nyc.gov/home/privacy-policy.page&quot; target=&quot;_blank&quot; rel=&quot;noopener noreferrer&quot;&gt; Privacy Policy for NYC.gov&lt;/a&gt;.
       &lt;/small&gt;
     &lt;/p&gt;
@@ -463,8 +461,10 @@ new Disclaimer();</code></pre>
           <a class="block p-1" href="member-list">Member List</a>
           <a class="block p-1" href="nearby-stops">Nearby Stops</a>
           <a class="block p-1" href="share-form">Share Form</a>
+          <a class="block p-1" href="share-links">Share Links</a>
           <a class="block p-1" href="side-nav">Side Nav</a>
           <a class="block p-1" href="question">Question</a>
+          <a class="block p-1" href="web-share">Web Share</a>
         </nav>
         <nav class="screen-tablet:flex-1 mb-1 px-2 screen-desktop:ps-4">
           <span class="type-h3 text-small mb-1 block screen-tablet:border-b screen-tablet:pb-2 screen-tablet:mb-1 border-white p-1">Objects</span>
@@ -510,10 +510,12 @@ new Disclaimer();</code></pre>
     access.icons();
     access.icons('https://cdn.jsdelivr.net/gh/cityofnewyork/nyco-patterns@v2.3.1/dist/icons.svg');
     access.toggle();
+    access.copy();
   </script>
   <script type="text/javascript">
     access.disclaimer();
   </script>
+  <script src="/reload/reload.js"></script>
 </body>
 
 </html>

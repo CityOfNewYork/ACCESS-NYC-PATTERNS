@@ -202,7 +202,7 @@ function toSource(func) {
     } catch (e) {}
     try {
       return (func + '');
-    } catch (e) {}
+    } catch (e$1) {}
   }
   return '';
 }
@@ -2092,7 +2092,6 @@ var NearbyStops = function NearbyStops() {
       this$1._render(el, this$1._locations);
     });
   });
-
   return this;
 };
 /**
@@ -2144,9 +2143,13 @@ NearbyStops.prototype._fetch = function _fetch (el, callback) {
   };
   return fetch(this._opt(el, 'ENDPOINT'), headers).then(function (response) {
     if (response.ok) { return response.json(); }else {
+      // eslint-disable-next-line no-console
+      { console.dir(response); }
       callback('error', response);
     }
   }).catch(function (error) {
+    // eslint-disable-next-line no-console
+    { console.dir(error); }
     callback('error', error);
   }).then(function (data) { return callback('success', data); });
 };
@@ -2220,7 +2223,6 @@ NearbyStops.prototype._render = function _render (element, data) {
       '_each': forEach
     }
   });
-
   element.innerHTML = compiled({
     'stops': data
   });

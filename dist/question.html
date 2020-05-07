@@ -29,16 +29,16 @@
       }
     </style>
   </noscript>
-  <script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-163470527-1"></script>
+  <script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-163470527-0"></script>
   <link href="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.18.1/build/styles/default.min.css" rel="stylesheet" />
   <script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.18.1/build/highlight.min.js"></script>
   <link href="styles/site-default.css" rel="stylesheet" />
   <script type="text/javascript">
-    document.addEventListener('DOMContentLoaded', event => {
+    document.addEventListener('DOMContentLoaded', function(event) {
       hljs.configure({
         languages: ['html', 'javascript', 'css', 'sass']
       });
-      document.querySelectorAll('pre').forEach(block => {
+      document.querySelectorAll('pre').forEach(function(block) {
         hljs.highlightBlock(block);
       });
       document.body.style.visibility = 'visible';
@@ -49,7 +49,7 @@
       dataLayer.push(arguments);
     }
     gtag('js', new Date());
-    gtag('config', 'UA-163470527-1');
+    gtag('config', 'UA-163470527-0');
   </script>
 </head>
 
@@ -130,8 +130,10 @@
             <a class="block p-1" href="member-list">Member List</a>
             <a class="block p-1" href="nearby-stops">Nearby Stops</a>
             <a class="block p-1" href="share-form">Share Form</a>
+            <a class="block p-1" href="share-links">Share Links</a>
             <a class="block p-1" href="side-nav">Side Nav</a>
             <a class="block p-1" href="question">Question</a>
+            <a class="block p-1" href="web-share">Web Share</a>
           </nav>
           <nav class="screen-tablet:flex-1 mb-1 px-2 screen-desktop:ps-4">
             <span class="type-h3 text-small mb-1 block screen-tablet:border-b screen-tablet:pb-2 screen-tablet:mb-1 border-white p-1">Objects</span>
@@ -216,12 +218,13 @@
                   <div class="c-question">
                     <label class="c-question__label" for="person-0-age">How old are you?</label>
                     <p>
-                      <button aria-describedby="aria-db-tooltip-age" class="c-question__info btn btn-text btn-link" data-js="tooltip-control" type="button">Here’s why we are asking.&nbsp;<svg class="icon icon-info">
+                      <button aria-describedby="aria-db-tooltip-age" class="c-question__info btn btn-text btn-link" data-js="tooltip-control" type="button">
+                        <svg class="icon icon-2">
                           <use xlink:href="#icon-info"></use>
-                        </svg>
+                        </svg>Here’s why we are asking.
                       </button>
                     </p>
-                    <div class="tooltip animated fadeInUp" id="aria-db-tooltip-age">
+                    <div class="tooltip color-info-status animated fadeInUp" id="aria-db-tooltip-age">
                       <p>Many benefit programs are meant for people of a specific age group. Sharing your age will help us choose the programs that will be most helpful to you right now. The information you share for the purposes of public benefits screening will be anonymous.</p>
                     </div>
                     <div class="c-question__container">
@@ -236,12 +239,13 @@
                     <pre>&lt;div class=&quot;c-question&quot;&gt;
   &lt;label class=&quot;c-question__label&quot; for=&quot;person-0-age&quot;&gt;How old are you?&lt;/label&gt;
   &lt;p&gt;
-    &lt;button aria-describedby=&quot;aria-db-tooltip-age&quot; class=&quot;c-question__info btn btn-text btn-link&quot; data-js=&quot;tooltip-control&quot; type=&quot;button&quot;&gt;Here’s why we are asking.&amp;nbsp;&lt;svg class=&quot;icon icon-info&quot;&gt;
+    &lt;button aria-describedby=&quot;aria-db-tooltip-age&quot; class=&quot;c-question__info btn btn-text btn-link&quot; data-js=&quot;tooltip-control&quot; type=&quot;button&quot;&gt;
+      &lt;svg class=&quot;icon icon-2&quot;&gt;
         &lt;use xlink:href=&quot;#icon-info&quot;&gt;&lt;/use&gt;
-      &lt;/svg&gt;
+      &lt;/svg&gt;Here’s why we are asking.
     &lt;/button&gt;
   &lt;/p&gt;
-  &lt;div class=&quot;tooltip animated fadeInUp&quot; id=&quot;aria-db-tooltip-age&quot;&gt;
+  &lt;div class=&quot;tooltip color-info-status animated fadeInUp&quot; id=&quot;aria-db-tooltip-age&quot;&gt;
     &lt;p&gt;Many benefit programs are meant for people of a specific age group. Sharing your age will help us choose the programs that will be most helpful to you right now. The information you share for the purposes of public benefits screening will be anonymous.&lt;/p&gt;
   &lt;/div&gt;
   &lt;div class=&quot;c-question__container&quot;&gt;
@@ -725,8 +729,10 @@
           <a class="block p-1" href="member-list">Member List</a>
           <a class="block p-1" href="nearby-stops">Nearby Stops</a>
           <a class="block p-1" href="share-form">Share Form</a>
+          <a class="block p-1" href="share-links">Share Links</a>
           <a class="block p-1" href="side-nav">Side Nav</a>
           <a class="block p-1" href="question">Question</a>
+          <a class="block p-1" href="web-share">Web Share</a>
         </nav>
         <nav class="screen-tablet:flex-1 mb-1 px-2 screen-desktop:ps-4">
           <span class="type-h3 text-small mb-1 block screen-tablet:border-b screen-tablet:pb-2 screen-tablet:mb-1 border-white p-1">Objects</span>
@@ -772,6 +778,7 @@
     access.icons();
     access.icons('https://cdn.jsdelivr.net/gh/cityofnewyork/nyco-patterns@v2.3.1/dist/icons.svg');
     access.toggle();
+    access.copy();
   </script>
   <script type="text/javascript">
     access.tooltips();
@@ -780,6 +787,7 @@
       return false;
     });
   </script>
+  <script src="/reload/reload.js"></script>
 </body>
 
 </html>

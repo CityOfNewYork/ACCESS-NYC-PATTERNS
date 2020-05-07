@@ -29,16 +29,16 @@
       }
     </style>
   </noscript>
-  <script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-163470527-1"></script>
+  <script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-163470527-0"></script>
   <link href="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.18.1/build/styles/default.min.css" rel="stylesheet" />
   <script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.18.1/build/highlight.min.js"></script>
   <link href="styles/site-default.css" rel="stylesheet" />
   <script type="text/javascript">
-    document.addEventListener('DOMContentLoaded', event => {
+    document.addEventListener('DOMContentLoaded', function(event) {
       hljs.configure({
         languages: ['html', 'javascript', 'css', 'sass']
       });
-      document.querySelectorAll('pre').forEach(block => {
+      document.querySelectorAll('pre').forEach(function(block) {
         hljs.highlightBlock(block);
       });
       document.body.style.visibility = 'visible';
@@ -49,7 +49,7 @@
       dataLayer.push(arguments);
     }
     gtag('js', new Date());
-    gtag('config', 'UA-163470527-1');
+    gtag('config', 'UA-163470527-0');
   </script>
 </head>
 
@@ -130,8 +130,10 @@
             <a class="block p-1" href="member-list">Member List</a>
             <a class="block p-1" href="nearby-stops">Nearby Stops</a>
             <a class="block p-1" href="share-form">Share Form</a>
+            <a class="block p-1" href="share-links">Share Links</a>
             <a class="block p-1" href="side-nav">Side Nav</a>
             <a class="block p-1" href="question">Question</a>
+            <a class="block p-1" href="web-share">Web Share</a>
           </nav>
           <nav class="screen-tablet:flex-1 mb-1 px-2 screen-desktop:ps-4">
             <span class="type-h3 text-small mb-1 block screen-tablet:border-b screen-tablet:pb-2 screen-tablet:mb-1 border-white p-1">Objects</span>
@@ -233,15 +235,21 @@
                               </div>
                             </div>
                           </th>
-                          <th class="border-white" colspan="3" id="b1" style="height: 53px">Paid Safe and Sick Leave</th>
+                          <th class="border-white" colspan="3" id="b1" style="height: 53px">
+                            <a href="https://access.nyc.gov/programs/safe-and-sick-leave/">Paid Safe and Sick Leave</a>
+                          </th>
                           <th id="b2" rowspan="2">
                             <a href="https://access.nyc.gov/programs/nys-unemployment-insurance/">NYS Unemployment Insurance</a>
                           </th>
                           <th id="b3" rowspan="2">
                             <a href="https://access.nyc.gov/programs/supplemental-nutrition-assistance-program-snap/">Supplemental Nutrition Assistance Program or SNAP</a>
                           </th>
-                          <th id="b4" rowspan="2">Medicaid</th>
-                          <th id="b5" rowspan="2">Health Insurance</th>
+                          <th id="b4" rowspan="2">
+                            <a href="https://access.nyc.gov/programs/health-insurance-assistance/">Medicaid</a>
+                          </th>
+                          <th id="b5" rowspan="2">
+                            <a href="https://access.nyc.gov/programs/health-insurance-assistance/">Health Insurance</a>
+                          </th>
                           <th id="b6" rowspan="2">Disability Insurance</th>
                           <th id="b7" rowspan="2">Cash</th>
                           <th id="b8" rowspan="2">Pandemic Unemployment Compensation</th>
@@ -1277,15 +1285,21 @@
               &lt;/div&gt;
             &lt;/div&gt;
           &lt;/th&gt;
-          &lt;th class=&quot;border-white&quot; colspan=&quot;3&quot; id=&quot;b1&quot; style=&quot;height: 53px&quot;&gt;Paid Safe and Sick Leave&lt;/th&gt;
+          &lt;th class=&quot;border-white&quot; colspan=&quot;3&quot; id=&quot;b1&quot; style=&quot;height: 53px&quot;&gt;
+            &lt;a href=&quot;https://access.nyc.gov/programs/safe-and-sick-leave/&quot;&gt;Paid Safe and Sick Leave&lt;/a&gt;
+          &lt;/th&gt;
           &lt;th id=&quot;b2&quot; rowspan=&quot;2&quot;&gt;
             &lt;a href=&quot;https://access.nyc.gov/programs/nys-unemployment-insurance/&quot;&gt;NYS Unemployment Insurance&lt;/a&gt;
           &lt;/th&gt;
           &lt;th id=&quot;b3&quot; rowspan=&quot;2&quot;&gt;
             &lt;a href=&quot;https://access.nyc.gov/programs/supplemental-nutrition-assistance-program-snap/&quot;&gt;Supplemental Nutrition Assistance Program or SNAP&lt;/a&gt;
           &lt;/th&gt;
-          &lt;th id=&quot;b4&quot; rowspan=&quot;2&quot;&gt;Medicaid&lt;/th&gt;
-          &lt;th id=&quot;b5&quot; rowspan=&quot;2&quot;&gt;Health Insurance&lt;/th&gt;
+          &lt;th id=&quot;b4&quot; rowspan=&quot;2&quot;&gt;
+            &lt;a href=&quot;https://access.nyc.gov/programs/health-insurance-assistance/&quot;&gt;Medicaid&lt;/a&gt;
+          &lt;/th&gt;
+          &lt;th id=&quot;b5&quot; rowspan=&quot;2&quot;&gt;
+            &lt;a href=&quot;https://access.nyc.gov/programs/health-insurance-assistance/&quot;&gt;Health Insurance&lt;/a&gt;
+          &lt;/th&gt;
           &lt;th id=&quot;b6&quot; rowspan=&quot;2&quot;&gt;Disability Insurance&lt;/th&gt;
           &lt;th id=&quot;b7&quot; rowspan=&quot;2&quot;&gt;Cash&lt;/th&gt;
           &lt;th id=&quot;b8&quot; rowspan=&quot;2&quot;&gt;Pandemic Unemployment Compensation&lt;/th&gt;
@@ -2356,8 +2370,10 @@
           <a class="block p-1" href="member-list">Member List</a>
           <a class="block p-1" href="nearby-stops">Nearby Stops</a>
           <a class="block p-1" href="share-form">Share Form</a>
+          <a class="block p-1" href="share-links">Share Links</a>
           <a class="block p-1" href="side-nav">Side Nav</a>
           <a class="block p-1" href="question">Question</a>
+          <a class="block p-1" href="web-share">Web Share</a>
         </nav>
         <nav class="screen-tablet:flex-1 mb-1 px-2 screen-desktop:ps-4">
           <span class="type-h3 text-small mb-1 block screen-tablet:border-b screen-tablet:pb-2 screen-tablet:mb-1 border-white p-1">Objects</span>
@@ -2403,7 +2419,9 @@
     access.icons();
     access.icons('https://cdn.jsdelivr.net/gh/cityofnewyork/nyco-patterns@v2.3.1/dist/icons.svg');
     access.toggle();
+    access.copy();
   </script>
+  <script src="/reload/reload.js"></script>
 </body>
 
 </html>

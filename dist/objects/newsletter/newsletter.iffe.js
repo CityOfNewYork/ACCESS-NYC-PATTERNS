@@ -333,6 +333,8 @@ var Newsletter = (function () {
 
 
   Newsletter.prototype._onerror = function _onerror (error) {
+    // eslint-disable-next-line no-console
+    { console.dir(error); }
     return this;
   };
   /**
@@ -345,6 +347,9 @@ var Newsletter = (function () {
   Newsletter.prototype._callback = function _callback (data) {
     if (this[("_" + (data[this._key('MC_RESULT')]))]) {
       this[("_" + (data[this._key('MC_RESULT')]))](data.msg);
+    } else {
+      // eslint-disable-next-line no-console
+      { console.dir(data); }
     }
 
     return this;

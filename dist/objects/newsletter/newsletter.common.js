@@ -332,6 +332,8 @@ Newsletter.prototype._onload = function _onload (event) {
 
 
 Newsletter.prototype._onerror = function _onerror (error) {
+  // eslint-disable-next-line no-console
+  { console.dir(error); }
   return this;
 };
 /**
@@ -344,6 +346,9 @@ Newsletter.prototype._onerror = function _onerror (error) {
 Newsletter.prototype._callback = function _callback (data) {
   if (this[("_" + (data[this._key('MC_RESULT')]))]) {
     this[("_" + (data[this._key('MC_RESULT')]))](data.msg);
+  } else {
+    // eslint-disable-next-line no-console
+    { console.dir(data); }
   }
 
   return this;
