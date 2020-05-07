@@ -1,7 +1,7 @@
 'use strict';
 
-import {default as _template} from 'lodash-es/template';
-import {default as _forEach} from 'lodash-es/forEach';
+import template from 'lodash-es/template';
+import forEach from 'lodash-es/forEach';
 
 /**
  * The NearbyStops Module
@@ -23,7 +23,7 @@ class NearbyStops {
     this._locations = [];
 
     // Loop through DOM Components.
-    _forEach(this._elements, (el) => {
+    forEach(this._elements, (el) => {
       // Fetch the data for the element.
       this._fetch(el, (status, data) => {
         if (status !== 'success') return;
@@ -170,9 +170,9 @@ class NearbyStops {
    * @return {object}         The NearbyStops class
    */
   _render(element, data) {
-    let compiled = _template(NearbyStops.templates.SUBWAY, {
+    let compiled = template(NearbyStops.templates.SUBWAY, {
       'imports': {
-        '_each': _forEach
+        '_each': forEach
       }
     });
 

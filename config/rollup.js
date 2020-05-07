@@ -52,7 +52,12 @@ const plugins = {
     'SCREEN_MOBILE': 480,
     'SCREEM_SM_MOBILE': 400
   }),
-  common: commonjs(),
+  common: commonjs({
+    // Prevents https://github.com/rollup/plugins/issues/304
+    exclude: [
+      'node_modules/lodash-es/*.js'
+    ]
+  }),
   vue: vue(),
   buble: buble({
     transforms: {
