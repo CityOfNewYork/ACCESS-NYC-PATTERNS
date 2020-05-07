@@ -35,13 +35,12 @@
             div class='bg-status-info mb-4 p-2 screen-desktop:p-4'
               h2#features Features
 
-              div class='c-checklist'
-                ul class='mb-0'
-                  li class='c-checklist__item-generic' Web Content Accessibility Guidelines (WCAG) AA Compliant typography and color contrast.
-                  li class='c-checklist__item-generic' Multi-lingual stylesheets with right-to-left and left-to-right reading orientations.
-                  li class='c-checklist__item-generic' Mobile-first stylesheets with support for modern browsers back to Internet Explorer 11.
-                  li class='c-checklist__item-generic' Module-based design patterns with CSS and JavaScript included for each pattern.
-                  li class='c-checklist__item-generic pb-1' <a href='utility'>Tailwind.css Utility Framework</a> integration.
+              ul class='c-checklist mb-0'
+                li class='c-checklist__item-generic' Web Content Accessibility Guidelines (WCAG) AA Compliant typography and color contrast.
+                li class='c-checklist__item-generic' Multi-lingual stylesheets with right-to-left and left-to-right reading orientations.
+                li class='c-checklist__item-generic' Mobile-first stylesheets with support for modern browsers back to Internet Explorer 11.
+                li class='c-checklist__item-generic' Module-based design patterns with CSS and JavaScript included for each pattern.
+                li class='c-checklist__item-generic pb-1' <a href='tailwindcss'>tailwindcss</a> integration.
 
             div
               div class='px-2 screen-desktop:px-4'
