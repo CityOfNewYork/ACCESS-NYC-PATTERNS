@@ -165,6 +165,11 @@ let modules = [
     outFile: 'nearby-stops.css'
   },
   {
+    file: './src/components/web-share/_web-share.scss',
+    outDir: './dist/components/web-share/',
+    outFile: 'web-share.css'
+  },
+  {
     file: './src/objects/text-controller/_text-controller.scss',
     outDir: './dist/objects/text-controller/',
     outFile: 'text-controller.css'

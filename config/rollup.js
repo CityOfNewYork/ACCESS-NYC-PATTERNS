@@ -290,6 +290,24 @@ module.exports = [
     ]
   },
   {
+    input: './src/components/web-share/web-share.js',
+    plugins: rollup.dist,
+    output: [
+      {
+        name: 'WebShare',
+        file: `./dist/components/web-share/web-share.iffe.js`,
+        format: 'iife',
+        strict: rollup.strict
+      },
+      {
+        name: 'WebShare',
+        file: `./dist/components/web-share/web-share.common.js`,
+        format: 'cjs',
+        strict: rollup.strict
+      }
+    ]
+  },
+  {
     input: './src/objects/alert-banner/alert-banner.js',
     plugins: rollup.dist,
     output: [
