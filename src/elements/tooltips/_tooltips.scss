@@ -10,18 +10,22 @@
 
 // Declarations
 .tooltip {
-  background-color: $color-blue-light;
   font-size: $font-size-small;
-  padding: $spacing-base;
-  margin-top: .5 * $spacing-base;
-  max-width: 100%;
-  width: $tooltip-width;
-
+  background-color: $color-white;
   box-shadow: map-get(map-get($tokens, 'shadows'), 'up');
 
   z-index: 3;
 
-  :last-child {
+  max-width: 100%;
+  width: $tooltip-width;
+  padding: $grid-base * 2;
+
+  @media screen and (min-width: $screen-tablet) {
+    padding: $grid-base * 3;
+  }
+
+  *:last-child {
     margin-bottom: 0;
+    padding-bottom: 0;
   }
 }

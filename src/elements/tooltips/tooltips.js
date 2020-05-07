@@ -1,8 +1,5 @@
 'use strict';
 
-// import $ from 'jquery';
-// import _ from 'underscore';
-
 /**
  * Creates a tooltips. The constructor is passed an HTML element that serves as
  * the trigger to show or hide the tooltips. The tooltip should have an
@@ -61,11 +58,14 @@ class Tooltips {
     Tooltips.hideAll();
 
     this.tooltip.classList.remove(Tooltips.CssClass.HIDDEN);
+
     this.tooltip.setAttribute('aria-hidden', 'false');
 
     let body = document.querySelector('body');
+
     let hideTooltipOnce = () => {
       this.hide();
+
       body.removeEventListener('click', hideTooltipOnce);
     };
 
@@ -89,6 +89,7 @@ class Tooltips {
    */
   hide() {
     this.tooltip.classList.add(Tooltips.CssClass.HIDDEN);
+
     this.tooltip.setAttribute('aria-hidden', 'true');
 
     this.active = false;
@@ -122,13 +123,14 @@ class Tooltips {
       'left': 'auto',
       'right': 'auto',
       'top': 'auto',
+      'bottom': 'auto',
       'width': ''
     };
 
     let style = (attrs) => Object.keys(attrs)
       .map(key => `${key}: ${attrs[key]}`).join('; ');
 
-    let g = 24; // Gutter. Minimum distance from screen edge.
+    let g = 8; // Gutter. Minimum distance from screen edge.
     let tt = this.tooltip;
     let tr = this.trigger;
     let w = window;
@@ -156,8 +158,12 @@ class Tooltips {
       pos.right = 'auto';
     }
 
-    // Set styling positions, reversing left and right if this is an RTL lang.
-    pos.top = tr.offsetTop + tr.offsetHeight + 'px';
+    // Position TT on top if the trigger is below the middle of the window
+    if (tr.offsetTop - w.scrollY > w.innerHeight / 2) {
+      pos.top = tr.offsetTop - tt.offsetHeight - (g) + 'px';
+    } else {
+      pos.top = tr.offsetTop + tr.offsetHeight + g + 'px';
+    }
 
     this.tooltip.setAttribute('style', style(pos));
 
@@ -165,7 +171,7 @@ class Tooltips {
   }
 }
 
-Tooltips.selector = '[data-js*="tooltip-control"]';
+Tooltips.selector = '[data-js*="tooltip"]';
 
 /**
  * Array of all the instantiated tooltips.
