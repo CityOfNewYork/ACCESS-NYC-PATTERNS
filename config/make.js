@@ -4,6 +4,7 @@
 
 const Path = require('path');
 const alerts = require('../node_modules/@nycopportunity/patterns-framework/config/alerts');
+const package = require('../package.json');
 
 /**
  * Config
@@ -35,7 +36,7 @@ const templates = {
       "/ {{ Pattern }}",
       "/",
       "",
-      "div class=\"{{ prefix }}{{ pattern }}\""
+      "div class='{{ prefix }}{{ pattern }}'"
     ].join("\n"),
   'markdown': "",
   'styles': [
@@ -61,17 +62,29 @@ const templates = {
       "",
       "class {{ Pattern }} {",
       "  /**",
-      "   * @param  {object} settings This could be some configuration options.",
-      "   *                           for the pattern module.",
-      "   * @param  {object} data     This could be a set of data that is needed",
-      "   *                           for the pattern module to render.",
+      "   * @param  {Object}  settings  This could be some configuration",
+      "   *                             options. for the pattern module.",
+      "   * @param  {Object}  data      This could be a set of data needed",
+      "   *                             for the pattern module to render.",
+      "",
+      "   * @return {Object}            The instantiated pattern",
       "   * @constructor",
       "   */",
-      "  constructor(settings, data) {",
+      "  constructor(settings = {}, data = {}) {",
       "    this.data = data;",
+      "",
       "    this.settings = settings;",
+      "",
+      "    this.selector = {{ Pattern }}.selector;",
+      "",
+      "    this.el = document.querySelector(this.selector);",
+      "",
+      "    return this",
       "  }",
       "}",
+      "",
+      "/**  */",
+      "{{ Pattern }}.selector = '[data-js*=\"{{ pattern }}\"]'",
       "",
       "export default {{ Pattern }};",
     ].join("\n"),
@@ -162,7 +175,7 @@ const files = {
   'markup': '{{ pattern }}.slm',
   'markdown': '{{ pattern }}.md',
   'styles': '_{{ pattern }}.scss',
-  'scripts': '{{ Pattern }}.js',
+  'scripts': '{{ pattern }}.js',
   'readme': 'readme.md',
   'config': '_{{ pattern }}.scss',
   'views': '{{ pattern }}.slm',
@@ -231,38 +244,38 @@ const paths = {
   'config': Path.join(dirs.src, dirs.config),
   'views': Path.join(dirs.src, dirs.views),
   'pattern': Path.join(dirs.src, '{{ type }}', '{{ pattern }}'), // covers default markup, markdown, and style templates as well as any custom templates defined in the patterns constant above.
-  'styles_global': 'src/scss/_imports.scss',
-  'styles_modules': 'config/modules.js',
-  'scripts_global': 'src/js/main.js',
-  'scripts_modules': 'config/rollup.js',
-  'vue_demo': 'src/js/modules/VueDemo.js'
+  'sass': '/config/sass.js',
+  'rollup': '/config/rollup.js'
 };
 
 const messages = {
   'styles': [
     '\n',
-    `${alerts.styles} Import the ${alerts.str.string('{{ pattern }}')} stylesheet `,
-    `into the ${alerts.str.path(paths.scss)} file (recommended). Add the `,
-    `${alerts.str.string('{{ pattern }}')} stylesheet to ${alerts.str.path(paths.sass)} `,
-    'to create an independent distribution (optional).',
+    `${alerts.styles} Import the ${alerts.str.string('{{ pattern }}')} `,
+    `stylesheet into the main stylesheet file (recommended). Add the `,
+    `${alerts.str.string('{{ pattern }}')} stylesheet to `,
+    `${alerts.str.path(paths.sass)} to create an independent distribution `,
+    '(optional).',
     '\n'
   ],
   'scripts': [
     '\n',
-    `${alerts.scripts} Import the ${alerts.str.string('{{ pattern }}')} script `,
-    `into the ${alerts.str.path(paths.js)} file and create a public function `,
-    `for it in the main class (recommended). Add the `,
-    `${alerts.str.string('{{ pattern }}')} script to ${alerts.str.path(paths.rollup)} `,
-    `to create an independent distribution (optional).`,
+    `${alerts.scripts} Import the ${alerts.str.string('{{ pattern }}')} `,
+    'script into the main scripts file and create a public function for ',
+    'it in the main class (recommended). Add the ',
+    `${alerts.str.string('{{ pattern }}')} script to `,
+    `${alerts.str.path(paths.rollup)} to create an independent distribution `,
+    '(optional).',
     '\n'
   ],
   'vue': [
     '\n',
-    `Use the Vue Demo app module (${paths.vue_demo}) in ${paths.styles_global} `,
-    'to create a parent application to display the Vue component. You will also ',
-    'be asked to create a Vue markup file where the reference to the application ',
-    'will be created. Also, you will be asked if you would like to create a data ',
-    'file where you can store data needed for the Vue Component to display properly.',
+    `Use the VueDemo module in ${package.src['vue-components']} to create `,
+    'a parent application to display the Vue component. You will also ',
+    'be asked to create a Vue markup file where the reference to the ',
+    'application will be created. Also, you will be asked if you would ',
+    'like to create a data file where you can store data needed for ',
+    'the Vue Component to display properly.',
     '\n',
   ]
 };
