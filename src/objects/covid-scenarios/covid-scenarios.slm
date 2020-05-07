@@ -44,15 +44,21 @@ div class='border-2 border-grey-lightest border-t-0 overflow-auto scrolling-touc
                 = mixin('icon-not-eligible')
                 div No/TBD
 
-          th id='b1' colspan='3' class='border-white' style='height: 53px' Paid Safe and Sick Leave
+          th id='b1' colspan='3' class='border-white' style='height: 53px'
+            a href='https://access.nyc.gov/programs/safe-and-sick-leave/' Paid Safe and Sick Leave
+
           th id='b2' rowspan='2'
             a href='https://access.nyc.gov/programs/nys-unemployment-insurance/' NYS Unemployment Insurance
 
           th id='b3' rowspan='2'
             a href='https://access.nyc.gov/programs/supplemental-nutrition-assistance-program-snap/' Supplemental Nutrition Assistance Program or SNAP
 
-          th id='b4' rowspan='2' Medicaid
-          th id='b5' rowspan='2' Health Insurance
+          th id='b4' rowspan='2'
+            a href='https://access.nyc.gov/programs/health-insurance-assistance/' Medicaid
+
+          th id='b5' rowspan='2'
+            a href='https://access.nyc.gov/programs/health-insurance-assistance/' Health Insurance
+
           th id='b6' rowspan='2' Disability Insurance
           th id='b7' rowspan='2' Cash
           th id='b8' rowspan='2' Pandemic Unemployment Compensation
