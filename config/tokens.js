@@ -419,6 +419,8 @@ module.exports = {
     'icon-ui-settings',
     'icon-ui-share',
     'icon-ui-share-2',
+    'icon-ui-thumbs-down',
+    'icon-ui-thumbs-up',
     'icon-ui-translate',
     'icon-ui-twitter',
     'icon-ui-user-check',
