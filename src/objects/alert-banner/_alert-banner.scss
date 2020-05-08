@@ -61,10 +61,11 @@
 }
 
 .c-alert-banner__body {
+  padding-top: 4px;
   flex: 1 1 auto;
 
   @media screen and (min-width: $screen-tablet) {
-    padding-top: 2px;
+    padding-top: 1px;
   }
 
   > *:last-child {
@@ -84,9 +85,10 @@
     pointer-events: none
   }
 
-  margin-#{$text-direction-end}: $grid-base;
+  margin-#{$text-direction-start}: $grid-base;
 
   @media screen and (min-width: $screen-tablet) {
-    margin-#{$text-direction-end}: $grid-base * 2;
+    margin-top: 4px;
+    margin-#{$text-direction-start}: $grid-base * 2;
   }
 }
