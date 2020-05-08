@@ -11,7 +11,9 @@
 
 // Declarations
 .c-web-share {
-  position: relative
+  position: relative;
+  text-align: $text-direction-start;
+  pointer-events: auto;
 }
 
 .c-web-share__item {
@@ -28,11 +30,13 @@
   font-size: $font-size-small;
   position: absolute;
 
+  margin-top: $grid-base;
   margin-bottom: $grid-base;
 
   box-shadow: map-get(map-get($tokens, 'shadows'), 'up');
 
   @media screen and (min-width: $screen-tablet) {
+    margin-top: $grid-base * 2;
     margin-bottom: $grid-base * 2;
   }
 }
@@ -45,10 +49,22 @@
     padding: $grid-base * 3;
     padding-bottom: $grid-base;
   }
+
+  > *:last-child {
+    margin-#{$text-direction-end}: 0;
+  }
 }
 
-.c-web-share__url {
+.c-web-share__label {
+  font-weight: bold;
+  display: block;
+  margin-bottom: $grid-base;
+}
+
+.c-web-share__input {
+  width: 100%;
   padding: $grid-base;
+  margin-bottom: $grid-base * 2;
 }
 
 .c-web-share__icon {

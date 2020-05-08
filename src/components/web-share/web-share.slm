@@ -3,22 +3,16 @@
 - data = {"title": "ACCESS NYC", "text": "Find help with food, money, housing, and more on ACCESS NYC", "url": "https://access.nyc.gov"};
 
 nav class='c-web-share'
-  button data-js='web-share' aria-controls='web-share-fallback' aria-expanded='false' class='c-web-share__item btn btn-small btn-primary' data-web-share='${JSON.stringify(data)}'
+  button data-js='web-share' aria-controls='web-share-fallback' aria-expanded='false' class='btn btn-small btn-primary' data-web-share='${JSON.stringify(data)}'
     svg class='c-web-share__icon icon-ui'
       use xlink:href='#icon-ui-share-2'
-    | Share this URL
-
-  a class='c-web-share__item btn btn-small btn-primary mb-0'
-    svg class='c-web-share__icon icon-ui'
-      use xlink:href='#icon-ui-mail'
-    | Subscribe
+    | Share
 
   div id='web-share-fallback' role='region' aria-hidden='true' class='c-web-share__fallback color-info-status hidden:fadeInUp animated hidden'
     div class='c-web-share__fallback-body'
-      label for='web-share-url' class='block mb-1 sr-only'
-        b Share this URL
+      label for='web-share-url' class='c-web-share__label' Share this URL
 
-      input id='web-share-url' name='web-share-url' data-copy-target='web-share-url' class='c-web-share__url p-1 w-full mb-2' type='text' value='${data.url}'
+      input id='web-share-url' name='web-share-url' data-copy-target='web-share-url' class='c-web-share__input' type='text' value='${data.url}'
 
       button data-js='copy' data-copy='web-share-url' class='c-web-share__item c-web-share__copy btn btn-small btn-primary' aria-pressed='false'
         svg class='c-web-share__icon icon icon-ui'
