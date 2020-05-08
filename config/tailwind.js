@@ -9,18 +9,18 @@ const tokens = require('./tokens.js');
  */
 
 module.exports = {
-  // options: {
-  //   prefix: '',
-  //   important: true,
-  //   separator: ':'
-  // },
   purge: false,
   important: true,
   theme: {
     colors: tokens.colors,
     backgroundColor: tokens.colors,
-    borderColor: global.Object.assign({ default: '' }, tokens.colors),
+    borderColor: global.Object.assign({default: ''}, tokens.colors),
     borderWidth: tokens['border-Widths'],
+    inset: {
+      '0': 0,
+      'auto': 'auto',
+      '100': '100%'
+    },
     boxShadow: tokens.shadows,
     fill: tokens.colors,
     fontFamily: tokens.fonts,
