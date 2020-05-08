@@ -6,11 +6,11 @@
 // @responsive {
   @each $token, $value in map-get($tokens, 'padding') {
     .#{$variant}pe-#{$token} {
-      padding-#{$text-direction-end}: $value
+      padding-#{$text-direction-end}: $value !important
     }
 
     .#{$variant}ps-#{$token} {
-      padding-#{$text-direction-start}: $value
+      padding-#{$text-direction-start}: $value !important
     }
   }
 }

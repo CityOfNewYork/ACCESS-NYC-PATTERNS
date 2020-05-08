@@ -6,11 +6,11 @@
 // @responsive {
   @each $token, $value in map-get($tokens, 'margin') {
     .#{$variant}me-#{$token} {
-      margin-#{$text-direction-end}: $value
+      margin-#{$text-direction-end}: $value !important
     }
 
     .#{$variant}ms-#{$token} {
-      margin-#{$text-direction-start}: $value
+      margin-#{$text-direction-start}: $value !important
     }
   }
 }
