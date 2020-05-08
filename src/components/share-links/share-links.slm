@@ -13,7 +13,7 @@ nav class='c-share hide-for-print'
       use xlink:href='#icon-ui-share-2'
     | Share the guide
 
-  div id='web-share-fallback' role='region' aria-hidden='true' class='hidden:fadeInUp animated hidden'
+  div class='c-share__section hidden:fadeInUp animated hidden' id='web-share-fallback' role='region' aria-hidden='true'
     label for='web-share-url' class='block mb-1 sr-only'
       b Share the Guide
 
@@ -40,3 +40,15 @@ nav class='c-share hide-for-print'
     svg class='c-share__icon icon-ui'
       use xlink:href='#icon-ui-mail'
     | Subscribe for more
+
+  h4 class='c-share__heading' Was this page helpful?
+
+  a class='c-share__link' href='#' target='_blank'
+    svg class='c-share__icon icon-ui'
+      use xlink:href='#icon-ui-thumbs-up'
+    | Yes
+
+  a class='c-share__link' href='#' target='_blank'
+    svg class='c-share__icon icon-ui'
+      use xlink:href='#icon-ui-thumbs-down'
+    | No

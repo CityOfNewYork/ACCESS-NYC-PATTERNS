@@ -6,10 +6,14 @@
 @import 'config/direction';
 @import 'config/dimensions';
 @import 'config/typography';
+@import 'config/fonts';
 
 // Declarations
-.c-share {
-
+.c-share, .c-share__section {
+  @media screen and (min-width: $screen-tablet) {
+    display: flex;
+    flex-direction: column;
+  }
 }
 
 .c-share__link {
@@ -21,19 +25,18 @@
   margin-bottom: $grid-base * 2;
 
   @media screen and (min-width: $screen-tablet) {
-    display: flex;
-    margin-bottom: $spacing-base;
+    margin-bottom: $grid-base * 3;
   }
 }
 
 .c-share__icon {
-  width: $grid-base * 3;
-  height: $grid-base * 3;
+  width: $grid-base * 2;
+  height: $grid-base * 2;
   margin-#{$text-direction-end}: $grid-base;
 
   @media screen and (min-width: $screen-tablet) {
-    width: $grid-base * 4;
-    height: $grid-base * 4;
+    width: $grid-base * 3;
+    height: $grid-base * 3;
   }
 }
 
@@ -44,5 +47,15 @@
 
   @media screen and (min-width: $screen-tablet) {
     padding: $grid-base * 1.5;
+  }
+}
+
+.c-share__heading {
+  font-size: $font-size-small;
+  margin-bottom: $grid-base;
+
+  @media screen and (min-width: $screen-tablet) {
+    @include typography-h4();
+    margin-bottom: $grid-base * 3;
   }
 }
