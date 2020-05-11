@@ -29,11 +29,6 @@
       - else
         = this.title;
 
-    / Do not show the body until everything is loaded
-    noscript
-      style
-        = 'body { visibility: visible !important; }';
-
     / Google Analytics
     - this.GOOGLE_ANALYTICS = (this.process.env.NODE_ENV === 'production') ? 'UA-163470527-1' : 'UA-163470527-0'
 
@@ -50,11 +45,10 @@
           languages: ['html', 'javascript', 'css', 'sass']
         });
 
-        document.querySelectorAll('pre').forEach(function(block) {
-          hljs.highlightBlock(block);
-        });
-
-        document.body.style.visibility = 'visible';
+        document.querySelectorAll('pre')
+          .forEach(function(block) {
+            hljs.highlightBlock(block);
+          });
       });
 
       window.dataLayer = window.dataLayer || [];
@@ -64,4 +58,5 @@
       }
 
       gtag('js', new Date());
+
       gtag('config', '${this.GOOGLE_ANALYTICS}');

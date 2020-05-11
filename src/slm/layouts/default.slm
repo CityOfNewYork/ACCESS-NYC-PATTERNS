@@ -1,25 +1,24 @@
 doctype html
-html lang='en' class='bg-white' dir='ltr'
+html lang='en' dir='ltr'
   = content('head');
 
-  body class='bg-blue-dark' style='visibility: hidden;'
+  body class='bg-white'
     a class='sr-only' href='#main-content' Skip to main content
 
-    div class='bg-white'
-      = partial('../partials/header.slm');
+    = partial('../partials/header.slm');
 
-      aside#main-menu role='region' aria-labelledby='main-menu-control' aria-hidden='true' class='color-mid-background text-small hidden hidden:overflowFadeInUp animated relative' style='top: -1px'
-        div class='page-wrapper py-4 animated'
-          div class='screen-tablet:flex'
-            = partial('../partials/nav.slm');
+    aside#main-menu role='navigation' aria-labelledby='main-menu-control' aria-hidden='true' class='color-mid-background text-small hidden hidden:overflowFadeInUp animated relative' style='top: -1px'
+      div class='page-wrapper py-4 animated'
+        div class='screen-tablet:flex'
+          = partial('../partials/nav.slm');
 
-          div class='text-center'
-            button class='btn-link' aria-controls='main-menu' aria-expanded='false' data-js='toggle' Close Menu
+        div class='text-center'
+          button class='btn-link' aria-controls='main-menu' aria-expanded='false' data-js='toggle' Close Menu
 
-      main#main-content class='color-light-background screen-tablet:pt-4'
-        article class='screen-tablet:pt-4 clearfix'
-          = content('content');
-          = partial('../section/nav.slm');
+    main#main-content role='main' class='color-light-background screen-tablet:pt-4'
+      article class='screen-tablet:pt-4 clearfix'
+        = content('content');
+        = partial('../section/nav.slm');
 
     = partial('../partials/footer.slm');
 

@@ -3,10 +3,10 @@
     nav class='nav-inline inline-block text-small p-2 screen-tablet:p-4'
       span class='me-2' Jump to:
 
-      a href='#main-content' class='me-2 screen-tablet:me-4' Top
+      a href='#main-content' class='me-2' Top
 
       - for (let i in this.navigation)
-        a href='#${this.navigation[i].id}' class='me-2 screen-tablet:me-4'
+        a href='#${this.navigation[i].id}' class='me-2'
           = this.navigation[i].title
 
 - this.navigation = false;

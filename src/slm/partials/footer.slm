@@ -1,9 +1,8 @@
-footer class='color-mid-background text-blue-dark border-solid border-t-4 border-blue-dark text-small py-4 z-20 relative'
+footer role='contentinfo' class='color-mid-background text-blue-dark border-solid border-t-4 border-blue-dark text-small py-4 z-20 relative'
   div class='layout-home-body p-2'
     div class='screen-tablet:px-2 mb-4'
       p class='mb-1'
         | Maintained by&nbsp;
-        a href='${link_nycopportunity}'
 
       a href='${link_nycopportunity}' class='text-blue-dark'
         span class='sr-only'
