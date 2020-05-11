@@ -18,8 +18,6 @@
   left: 0;
   bottom: 0;
 
-  box-shadow: map-get(map-get($tokens, 'shadows'), 'up');
-
   @include typography-dislaimer-small;
 
   @media screen and (min-width: $screen-tablet) {
