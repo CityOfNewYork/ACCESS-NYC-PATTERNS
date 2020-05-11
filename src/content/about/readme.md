@@ -34,10 +34,6 @@ To further the purpose of ACCESS NYC as a digital product, we realized the need 
 
 The first step we took to creating the Patterns was to perform an audit of the existing ACCESS NYC modules and grouped them according to a naming convention influenced by “[BEMIT: Taking the BEM Naming Convention a Step Further](https://csswizardry.com/2015/08/bemit-taking-the-bem-naming-convention-a-step-further/).” Our four buckets included Elements, Components, Objects, and Utilities. If you are familiar with Brad Frost’s [Atomic Design Methodology](http://atomicdesign.bradfrost.com/chapter-2/), this structure will sound very familiar. As a team we picked names that resonated with us for each of the Patterns and assigned them to each group. The hope is that developing a common language will enable us work together more effectively to focus on the users we are serve.
 
-The first step we took to create the Patterns was performing an audit of the existing ACCESS NYC modules and grouping them according to a naming convention influenced by “[BEMIT: Taking the BEM Naming Convention a Step Further](https://csswizardry.com/2015/08/bemit-taking-the-bem-naming-convention-a-step-further/).” Our four buckets included Elements, Components, Objects, and Utilities. This structure will sound very familiar to those familiar with Brad Frost’s [Atomic Design Methodology](http://atomicdesign.bradfrost.com/chapter-2/).
-
-As a team, we picked names that resonated with us for each of the Patterns and assigned them to each group. The hope was to develop a common language that would  enable us to work together more effectively to focus on the users we serve.
-
 ![Image with graphics representing elements, components, and objects.](images/naming-01.png "Elements, Components, and Objects")
 
 #### Elements
