@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html class="bg-white" dir="ltr" lang="en">
+<html dir="ltr" lang="en">
 
 <head>
   <meta charset="utf-8" />
@@ -22,13 +22,6 @@
   <meta content="images/ms-icon-144x144.png" name="msapplication-TileImage" />
   <link href="images/favicon.ico" rel="icon" type="image/x-icon" />
   <title>ACCESS NYC Patterns</title>
-  <noscript>
-    <style>
-      body {
-        visibility: visible !important;
-      }
-    </style>
-  </noscript>
   <script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-163470527-1"></script>
   <link href="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.18.1/build/styles/default.min.css" rel="stylesheet" />
   <script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.18.1/build/highlight.min.js"></script>
@@ -41,7 +34,6 @@
       document.querySelectorAll('pre').forEach(function(block) {
         hljs.highlightBlock(block);
       });
-      document.body.style.visibility = 'visible';
     });
     window.dataLayer = window.dataLayer || [];
 
@@ -53,238 +45,235 @@
   </script>
 </head>
 
-<body class="bg-blue-dark" style="visibility: hidden;">
+<body class="bg-white">
   <a class="sr-only" href="#main-content">Skip to main content</a>
-  <div class="bg-white">
-    <header class="color-light-background px-2">
-      <div class="border-b border-grey-light">
-        <div class="flex items-center justify-between p-2 screen-tablet:py-4 screen-tablet:px-2">
+  <header class="color-light-background px-2" role="banner">
+    <div class="border-b border-grey-light">
+      <div class="flex items-center justify-between p-2 screen-tablet:py-4 screen-tablet:px-2">
+        <div>
+          <h1 aria-level="1" class="m-0 p-0 leading-normal" role="heading">
+            <a href="index">
+              <span class="sr-only">ACCESS NYC</span>
+              <svg aria-hidden="true" class="icon-logo-mark screen-tablet:hidden">
+                <use xlink:href="#icon-logo-mark"></use>
+              </svg>
+              <svg aria-hidden="true" class="icon-logo-full--large text-blue-dark hidden screen-tablet:inline-block">
+                <use xlink:href="#icon-logo-full"></use>
+              </svg>
+            </a>
+          </h1>
+        </div>
+        <div class="flex items-center">
+          <h2 class="text-small m-0 text-blue-dark screen-tablet:hidden">Patterns</h2>
+          <h2 aria-hidden="true" class="type-h1 m-0 text-blue-dark hidden screen-tablet:inline-block">Patterns</h2>
+          <nav class="text-small">
+            <a class="rounded-lg text-blue-dark border-2 no-underline px-1 ms-2 hidden screen-tablet:inline-block" href="https://github.com/CityOfNewYork/access-nyc-patterns/tree/v0.15.5">0.15.5</a>
+            <a aria-hidden="true" class="ms-1 screen-tablet:ms-2 screen-tablet:hidden" href="https://github.com/CityOfNewYork/access-nyc-patterns/tree/v0.15.5">0.15.5</a>
+            <button aria-controls="main-menu" aria-expanded="false" class="btn-link ms-1 screen-tablet:ms-2" data-js="toggle" id="main-menu-control">Menu</button>
+          </nav>
+        </div>
+      </div>
+    </div>
+  </header>
+  <aside aria-hidden="true" aria-labelledby="main-menu-control" class="color-mid-background text-small hidden hidden:overflowFadeInUp animated relative" id="main-menu" role="navigation" style="top: -1px">
+    <div class="page-wrapper py-4 animated">
+      <div class="screen-tablet:flex">
+        <nav class="screen-tablet:flex-1 mb-1 px-2">
+          <span class="type-h3 text-small mb-1 block screen-tablet:border-b screen-tablet:pb-2 screen-tablet:mb-1 border-white p-1">Guides</span>
+          <a class="block p-1" href="index">Home</a>
+          <a class="block p-1" href="about">About</a>
+          <a class="block p-1" href="installation">Installation</a>
+          <a class="block p-1" href="developer-tools">Developer Tools</a>
+          <a class="block p-1 screen-tablet:border-b screen-tablet:pb-2 screen-tablet:mb-1 border-white p-1" href="prototyping">Prototyping</a>
+          <span class="type-h3 text-small mb-1 block screen-tablet:border-b screen-tablet:pb-2 screen-tablet:mb-1 border-white p-1">Collections</span>
+          <a class="block p-1 screen-tablet:border-b screen-tablet:pb-2 screen-tablet:mb-1 border-white p-1" href="covid-response">COVID Response</a>
+          <span class="type-h3 text-small mb-1 block screen-tablet:border-b screen-tablet:pb-2 screen-tablet:mb-1 border-white p-1">Links</span>
+          <a class="block p-1" href="https://www.npmjs.com/package/access-nyc-patterns">NPM Package</a>
+          <a class="block p-1" href="https://github.com/CityOfNewYork/access-nyc-patterns">GitHub Repository</a>
+        </nav>
+        <nav class="screen-tablet:flex-1 mb-1 px-2 screen-desktop:ps-4">
+          <span class="type-h3 text-small mb-1 block screen-tablet:border-b screen-tablet:pb-2 screen-tablet:mb-1 border-white p-1">Elements</span>
+          <a class="block p-1" href="badge">Badge</a>
+          <a class="block p-1" href="buttons">Buttons</a>
+          <a class="block p-1" href="checkboxes">Checkboxes</a>
+          <a class="block p-1" href="dividers">Dividers</a>
+          <a class="block p-1" href="inputs">Inputs</a>
+          <a class="block p-1" href="icons">Icons</a>
+          <a class="block p-1" href="layouts">Layouts</a>
+          <a class="block p-1" href="links">Links</a>
+          <a class="block p-1" href="lists">Lists</a>
+          <a class="block p-1" href="nav">Nav</a>
+          <a class="block p-1" href="radios">Radios</a>
+          <a class="block p-1" href="tables">Tables</a>
+          <a class="block p-1" href="tooltips">Tooltips</a>
+          <a class="block p-1" href="toggles">Toggles</a>
+          <a class="block p-1" href="selects">Selects</a>
+        </nav>
+        <nav class="screen-tablet:flex-1 mb-1 px-2 screen-desktop:ps-4">
+          <span class="type-h3 text-small mb-1 block screen-tablet:border-b screen-tablet:pb-2 screen-tablet:mb-1 border-white p-1">Components</span>
+          <a class="block p-1" href="accordion">Accordion</a>
+          <a class="block p-1" href="alert-box">Alert Box</a>
+          <a class="block p-1" href="card">Card</a>
+          <a class="block p-1" href="checklist">Checklist</a>
+          <a class="block p-1" href="disclaimer">Disclaimer</a>
+          <a class="block p-1" href="filter">Filter</a>
+          <a class="block p-1" href="header">Header</a>
+          <a class="block p-1" href="member-list">Member List</a>
+          <a class="block p-1" href="nearby-stops">Nearby Stops</a>
+          <a class="block p-1" href="share-form">Share Form</a>
+          <a class="block p-1" href="share-links">Share Links</a>
+          <a class="block p-1" href="side-nav">Side Nav</a>
+          <a class="block p-1" href="question">Question</a>
+          <a class="block p-1" href="web-share">Web Share</a>
+        </nav>
+        <nav class="screen-tablet:flex-1 mb-1 px-2 screen-desktop:ps-4">
+          <span class="type-h3 text-small mb-1 block screen-tablet:border-b screen-tablet:pb-2 screen-tablet:mb-1 border-white p-1">Objects</span>
+          <a class="block p-1" href="alert-banner">Alert Banner</a>
+          <a class="block p-1" href="announcements">Announcements</a>
+          <a class="block p-1" href="banner">Banner</a>
+          <a class="block p-1" href="card-list">Card Lists</a>
+          <a class="block p-1" href="come-back-later">Come Back Later</a>
+          <a class="block p-1" href="content">Content</a>
+          <a class="block p-1" href="emails">Emails</a>
+          <a class="block p-1" href="footer">Footer</a>
+          <a class="block p-1" href="formstack">Formstack</a>
+          <a class="block p-1" href="mobile-nav">Mobile Nav</a>
+          <a class="block p-1" href="navigation">Navigation</a>
+          <a class="block p-1" href="newsletter">Newsletter</a>
+          <a class="block p-1" href="search-box">Search Box</a>
+          <a class="block p-1" href="text-controller">Text Controller</a>
+        </nav>
+        <nav class="screen-tablet:flex-1 mb-1 px-2 screen-desktop:ps-4">
+          <span class="type-h3 text-small mb-1 block screen-tablet:border-b screen-tablet:pb-2 screen-tablet:mb-1 border-white p-1">Utilities</span>
+          <a class="block p-1" href="animate">Animate</a>
+          <a class="block p-1" href="clearfix">Clearfix</a>
+          <a class="block p-1" href="color">Color</a>
+          <a class="block p-1" href="font">Fonts</a>
+          <a class="block p-1" href="language">Language</a>
+          <a class="block p-1" href="margin">Margin</a>
+          <a class="block p-1" href="media">Media</a>
+          <a class="block p-1" href="padding">Padding</a>
+          <a class="block p-1" href="tailwindcss">tailwindcss</a>
+          <a class="block p-1" href="text">Text</a>
+          <a class="block p-1" href="toggle">Toggle</a>
+          <a class="block p-1" href="typography">Typography</a>
+        </nav>
+      </div>
+      <div class="text-center">
+        <button aria-controls="main-menu" aria-expanded="false" class="btn-link" data-js="toggle">Close Menu</button>
+      </div>
+    </div>
+  </aside>
+  <main class="color-light-background screen-tablet:pt-4" id="main-content" role="main">
+    <article class="screen-tablet:pt-4 clearfix">
+      <section>
+        <div class="page-wrapper layout-home-body px-2">
           <div>
-            <h1 class="m-0 p-0 leading-normal">
-              <a href="index">
-                <span class="hidden">ACCESS NYC</span>
-                <svg aria-hidden="true" class="icon-logo-mark screen-tablet:hidden">
-                  <use xlink:href="#icon-logo-mark"></use>
-                </svg>
-                <svg aria-hidden="true" class="icon-logo-full--large text-blue-dark hidden screen-tablet:inline-block">
-                  <use xlink:href="#icon-logo-full"></use>
-                </svg>
-              </a>
-            </h1>
-          </div>
-          <div class="flex items-center">
-            <h2 class="text-small m-0 text-blue-dark screen-tablet:hidden">Patterns</h2>
-            <h2 aria-hidden="true" class="type-h1 m-0 text-blue-dark hidden screen-tablet:inline-block">Patterns</h2>
-            <nav class="text-small">
-              <a class="rounded-lg text-blue-dark border-2 no-underline px-1 ms-2 hidden screen-tablet:inline-block" href="https://github.com/CityOfNewYork/access-nyc-patterns/tree/v0.15.4">0.15.4</a>
-              <a aria-hidden="true" class="ms-1 screen-tablet:ms-2 screen-tablet:hidden" href="https://github.com/CityOfNewYork/access-nyc-patterns/tree/v0.15.4">0.15.4</a>
-              <button aria-controls="main-menu" aria-expanded="false" class="btn-link ms-1 screen-tablet:ms-2" data-js="toggle" id="main-menu-control">Menu</button>
-            </nav>
-          </div>
-        </div>
-      </div>
-    </header>
-    <aside aria-hidden="true" aria-labelledby="main-menu-control" class="color-mid-background text-small hidden hidden:overflowFadeInUp animated relative" id="main-menu" role="region" style="top: -1px">
-      <div class="page-wrapper py-4 animated">
-        <div class="screen-tablet:flex">
-          <nav class="screen-tablet:flex-1 mb-1 px-2">
-            <span class="type-h3 text-small mb-1 block screen-tablet:border-b screen-tablet:pb-2 screen-tablet:mb-1 border-white p-1">Guides</span>
-            <a class="block p-1" href="index">Home</a>
-            <a class="block p-1" href="about">About</a>
-            <a class="block p-1" href="installation">Installation</a>
-            <a class="block p-1" href="developer-tools">Developer Tools</a>
-            <a class="block p-1 screen-tablet:border-b screen-tablet:pb-2 screen-tablet:mb-1 border-white p-1" href="prototyping">Prototyping</a>
-            <span class="type-h3 text-small mb-1 block screen-tablet:border-b screen-tablet:pb-2 screen-tablet:mb-1 border-white p-1">Collections</span>
-            <a class="block p-1 screen-tablet:border-b screen-tablet:pb-2 screen-tablet:mb-1 border-white p-1" href="covid-response">COVID Response</a>
-            <span class="type-h3 text-small mb-1 block screen-tablet:border-b screen-tablet:pb-2 screen-tablet:mb-1 border-white p-1">Links</span>
-            <a class="block p-1" href="https://www.npmjs.com/package/access-nyc-patterns">NPM Package</a>
-            <a class="block p-1" href="https://github.com/CityOfNewYork/access-nyc-patterns">GitHub Repository</a>
-          </nav>
-          <nav class="screen-tablet:flex-1 mb-1 px-2 screen-desktop:ps-4">
-            <span class="type-h3 text-small mb-1 block screen-tablet:border-b screen-tablet:pb-2 screen-tablet:mb-1 border-white p-1">Elements</span>
-            <a class="block p-1" href="badge">Badge</a>
-            <a class="block p-1" href="buttons">Buttons</a>
-            <a class="block p-1" href="checkboxes">Checkboxes</a>
-            <a class="block p-1" href="dividers">Dividers</a>
-            <a class="block p-1" href="inputs">Inputs</a>
-            <a class="block p-1" href="icons">Icons</a>
-            <a class="block p-1" href="layouts">Layouts</a>
-            <a class="block p-1" href="links">Links</a>
-            <a class="block p-1" href="lists">Lists</a>
-            <a class="block p-1" href="nav">Nav</a>
-            <a class="block p-1" href="radios">Radios</a>
-            <a class="block p-1" href="tables">Tables</a>
-            <a class="block p-1" href="tooltips">Tooltips</a>
-            <a class="block p-1" href="toggles">Toggles</a>
-            <a class="block p-1" href="selects">Selects</a>
-          </nav>
-          <nav class="screen-tablet:flex-1 mb-1 px-2 screen-desktop:ps-4">
-            <span class="type-h3 text-small mb-1 block screen-tablet:border-b screen-tablet:pb-2 screen-tablet:mb-1 border-white p-1">Components</span>
-            <a class="block p-1" href="accordion">Accordion</a>
-            <a class="block p-1" href="alert-box">Alert Box</a>
-            <a class="block p-1" href="card">Card</a>
-            <a class="block p-1" href="checklist">Checklist</a>
-            <a class="block p-1" href="disclaimer">Disclaimer</a>
-            <a class="block p-1" href="filter">Filter</a>
-            <a class="block p-1" href="header">Header</a>
-            <a class="block p-1" href="member-list">Member List</a>
-            <a class="block p-1" href="nearby-stops">Nearby Stops</a>
-            <a class="block p-1" href="share-form">Share Form</a>
-            <a class="block p-1" href="share-links">Share Links</a>
-            <a class="block p-1" href="side-nav">Side Nav</a>
-            <a class="block p-1" href="question">Question</a>
-            <a class="block p-1" href="web-share">Web Share</a>
-          </nav>
-          <nav class="screen-tablet:flex-1 mb-1 px-2 screen-desktop:ps-4">
-            <span class="type-h3 text-small mb-1 block screen-tablet:border-b screen-tablet:pb-2 screen-tablet:mb-1 border-white p-1">Objects</span>
-            <a class="block p-1" href="alert-banner">Alert Banner</a>
-            <a class="block p-1" href="announcements">Announcements</a>
-            <a class="block p-1" href="banner">Banner</a>
-            <a class="block p-1" href="card-list">Card Lists</a>
-            <a class="block p-1" href="come-back-later">Come Back Later</a>
-            <a class="block p-1" href="content">Content</a>
-            <a class="block p-1" href="emails">Emails</a>
-            <a class="block p-1" href="footer">Footer</a>
-            <a class="block p-1" href="formstack">Formstack</a>
-            <a class="block p-1" href="mobile-nav">Mobile Nav</a>
-            <a class="block p-1" href="navigation">Navigation</a>
-            <a class="block p-1" href="newsletter">Newsletter</a>
-            <a class="block p-1" href="search-box">Search Box</a>
-            <a class="block p-1" href="text-controller">Text Controller</a>
-          </nav>
-          <nav class="screen-tablet:flex-1 mb-1 px-2 screen-desktop:ps-4">
-            <span class="type-h3 text-small mb-1 block screen-tablet:border-b screen-tablet:pb-2 screen-tablet:mb-1 border-white p-1">Utilities</span>
-            <a class="block p-1" href="animate">Animate</a>
-            <a class="block p-1" href="clearfix">Clearfix</a>
-            <a class="block p-1" href="color">Color</a>
-            <a class="block p-1" href="font">Fonts</a>
-            <a class="block p-1" href="language">Language</a>
-            <a class="block p-1" href="margin">Margin</a>
-            <a class="block p-1" href="media">Media</a>
-            <a class="block p-1" href="padding">Padding</a>
-            <a class="block p-1" href="tailwindcss">tailwindcss</a>
-            <a class="block p-1" href="text">Text</a>
-            <a class="block p-1" href="toggle">Toggle</a>
-            <a class="block p-1" href="typography">Typography</a>
-          </nav>
-        </div>
-        <div class="text-center">
-          <button aria-controls="main-menu" aria-expanded="false" class="btn-link" data-js="toggle">Close Menu</button>
-        </div>
-      </div>
-    </aside>
-    <main class="color-light-background screen-tablet:pt-4" id="main-content">
-      <article class="screen-tablet:pt-4 clearfix">
-        <section>
-          <div class="page-wrapper layout-home-body px-2">
-            <div>
-              <div class="o-banner my-0 w-full color-light-background p-0">
-                <div class="o-banner__inner max-w-full">
-                  <h1 class="o-banner__title px-2 screen-desktop:px-4">The Patterns of ACCESS NYC are a shared vocabulary between the code, design, and user interface (UI) of <a href='https://access.nyc.gov'>ACCESS NYC</a>.</h1>
-                  <hr class="divider border-blue" />
-                  <p class="px-2 screen-desktop:px-4">ACCESS NYC aims to increase the accessibility and convenience of discovering and enrolling in government benefits. The Patterns support this work by defining the UI and behavior that New Yorkers experience as they use the site.</p>
-                  <p class="text-center">
-                    <button aria-controls="main-menu" class="btn btn-primary mb-2" data-js="toggle">Browse the patterns</button>
-                  </p>
-                  <div class="bg-status-info mb-4 p-2 screen-desktop:p-4">
-                    <h2 id="features">Features</h2>
-                    <ul class="c-checklist mb-0">
-                      <li class="c-checklist__item-generic">Web Content Accessibility Guidelines (WCAG) AA Compliant typography and color contrast.</li>
-                      <li class="c-checklist__item-generic">Multi-lingual stylesheets with right-to-left and left-to-right reading orientations.</li>
-                      <li class="c-checklist__item-generic">Mobile-first stylesheets with support for modern browsers back to Internet Explorer 11.</li>
-                      <li class="c-checklist__item-generic">Module-based design patterns with CSS and JavaScript included for each pattern.</li>
-                      <li class="c-checklist__item-generic pb-1">
-                        <a href='tailwindcss'>tailwindcss</a> integration.
-                      </li>
-                    </ul>
-                  </div>
-                  <div>
-                    <div class="px-2 screen-desktop:px-4">
-                      <h3>Installation</h3>
-                      <p>The Patterns are available as an NPM package and can be installed with the following command.</p>
-                      <div class="code-block">
-                        <pre>npm install @nycopportunity/access-patterns</pre>
-                      </div>
-                      <p>All of the source code is publicly available and can also be integrated via cdn. See the intallation docs for more details and usage.</p>
-                      <div class="text-center">
-                        <a class="btn btn-secondary btn-next" href="installation">Get started</a>
-                      </div>
+            <div class="o-banner my-0 w-full color-light-background p-0">
+              <div class="o-banner__inner max-w-full">
+                <h1 class="o-banner__title px-2 screen-desktop:px-4">The Patterns of ACCESS NYC are a shared vocabulary between the code, design, and user interface (UI) of <a href='https://access.nyc.gov'>ACCESS NYC</a>.</h1>
+                <hr class="divider border-blue" />
+                <p class="px-2 screen-desktop:px-4">ACCESS NYC aims to increase the accessibility and convenience of discovering and enrolling in government benefits. The Patterns support this work by defining the UI and behavior that New Yorkers experience as they use the site.</p>
+                <p class="text-center">
+                  <button aria-controls="main-menu" class="btn btn-primary mb-2" data-js="toggle">Browse the patterns</button>
+                </p>
+                <div class="bg-status-info mb-4 p-2 screen-desktop:p-4">
+                  <h2 id="features">Features</h2>
+                  <ul class="c-checklist mb-0">
+                    <li class="c-checklist__item-generic">Web Content Accessibility Guidelines (WCAG) AA Compliant typography and color contrast.</li>
+                    <li class="c-checklist__item-generic">Multi-lingual stylesheets with right-to-left and left-to-right reading orientations.</li>
+                    <li class="c-checklist__item-generic">Mobile-first stylesheets with support for modern browsers back to Internet Explorer 11.</li>
+                    <li class="c-checklist__item-generic">Module-based design patterns with CSS and JavaScript included for each pattern.</li>
+                    <li class="c-checklist__item-generic pb-1">
+                      <a href='tailwindcss'>tailwindcss</a> integration.
+                    </li>
+                  </ul>
+                </div>
+                <div>
+                  <div class="px-2 screen-desktop:px-4">
+                    <h3>Installation</h3>
+                    <p>The Patterns are available as an NPM package and can be installed with the following command.</p>
+                    <div class="code-block">
+                      <pre>npm install @nycopportunity/access-patterns</pre>
+                    </div>
+                    <p>All of the source code is publicly available and can also be integrated via cdn. See the intallation docs for more details and usage.</p>
+                    <div class="text-center">
+                      <a class="btn btn-secondary btn-next" href="installation">Get started</a>
                     </div>
                   </div>
                 </div>
               </div>
             </div>
           </div>
-        </section>
-        <section class="pb-4 color-mid-background">
-          <div class="page-wrapper layout-home-body px-4">
-            <div class="w-full pb-0">
-              <h4 id="links">Links</h4>
-              <div class="layout-gutter screen-tablet:layout-columns-gutter">
-                <article class="c-card">
-                  <div class="c-card__body">
-                    <a href="about">
-                      <h3 class="c-card__title mb-3">About</h3>
-                    </a>
-                    <div class="c-card__summary">Learn more about ACCESS NYC Patterns.</div>
-                  </div>
-                </article>
-                <article class="c-card">
-                  <div class="c-card__body">
-                    <a href="icons">
-                      <h3 class="c-card__title mb-3">Icons</h3>
-                    </a>
-                    <div class="c-card__summary">The Icon Pattern set reference and usage.</div>
-                  </div>
-                </article>
-                <article class="c-card">
-                  <div class="c-card__body">
-                    <a href="typography">
-                      <h3 class="c-card__title mb-3">Typography</h3>
-                    </a>
-                    <div class="c-card__summary">The Typography Pattern reference.</div>
-                  </div>
-                </article>
-                <article class="c-card">
-                  <div class="c-card__body">
-                    <a href="color">
-                      <h3 class="c-card__title mb-3">Colors</h3>
-                    </a>
-                    <div class="c-card__summary">The Color Pattern reference.</div>
-                  </div>
-                </article>
-              </div>
+        </div>
+      </section>
+      <section class="pb-4 color-mid-background">
+        <div class="page-wrapper layout-home-body px-4">
+          <div class="w-full pb-0">
+            <h4 id="links">Links</h4>
+            <div class="layout-gutter screen-tablet:layout-columns-gutter">
+              <article class="c-card">
+                <div class="c-card__body">
+                  <a href="about">
+                    <h3 class="c-card__title mb-3">About</h3>
+                  </a>
+                  <div class="c-card__summary">Learn more about ACCESS NYC Patterns.</div>
+                </div>
+              </article>
+              <article class="c-card">
+                <div class="c-card__body">
+                  <a href="icons">
+                    <h3 class="c-card__title mb-3">Icons</h3>
+                  </a>
+                  <div class="c-card__summary">The Icon Pattern set reference and usage.</div>
+                </div>
+              </article>
+              <article class="c-card">
+                <div class="c-card__body">
+                  <a href="typography">
+                    <h3 class="c-card__title mb-3">Typography</h3>
+                  </a>
+                  <div class="c-card__summary">The Typography Pattern reference.</div>
+                </div>
+              </article>
+              <article class="c-card">
+                <div class="c-card__body">
+                  <a href="color">
+                    <h3 class="c-card__title mb-3">Colors</h3>
+                  </a>
+                  <div class="c-card__summary">The Color Pattern reference.</div>
+                </div>
+              </article>
             </div>
           </div>
-        </section>
-        <section class="py-4">
-          <div class="page-wrapper layout-home-body px-2">
-            <div class="px-2">
-              <h3 id="nyc-civic-service-design">NYC Civic Service Design</h3>
-              <p>ACCESS NYC was built using <a href='http://nyc.gov/servicedesign'>NYC Civic Service Design</a> principles. The corresponding site is an introduction to service design for public servants, and a set of practical ways to include design methods in your work. Use this collection of tools and tactics to see your service in context, talk with people who use it, and try out ideas in low-risk ways. Additionally, you can <a href='http://eepurl.com/dJmW5X'>contact the Service Design Studio</a> to find out how you can implement service design in your work.</p>
-              <div class="text-center mb-4">
-                <a class="btn btn-secondary btn-next" href="https://civicservicedesign.com/service-design-principles-c763f64ac950">Read the Principles</a>
-              </div>
-              <h4 id="more-nyc-design-resources">More NYC Design and Technology Resources</h4>
-              <ul>
-                <li>
-                  <a href="http://nyc.gov/nyc-core-framework">NYC Core Framework</a> - New York City's accessible open source website framework.
-                </li>
-                <li>
-                  <a href="https://blueprint.cityofnewyork.us">NYC Digital Blueprint</a> - A guide for building trustworthy and accessible digital products that help New Yorkers.
-                </li>
-              </ul>
+        </div>
+      </section>
+      <section class="py-4">
+        <div class="page-wrapper layout-home-body px-2">
+          <div class="px-2">
+            <h3 id="nyc-civic-service-design">NYC Civic Service Design</h3>
+            <p>ACCESS NYC was built using <a href='http://nyc.gov/servicedesign'>NYC Civic Service Design</a> principles. The corresponding site is an introduction to service design for public servants, and a set of practical ways to include design methods in your work. Use this collection of tools and tactics to see your service in context, talk with people who use it, and try out ideas in low-risk ways. Additionally, you can <a href='http://eepurl.com/dJmW5X'>contact the Service Design Studio</a> to find out how you can implement service design in your work.</p>
+            <div class="text-center mb-4">
+              <a class="btn btn-secondary btn-next" href="https://civicservicedesign.com/service-design-principles-c763f64ac950">Read the Principles</a>
             </div>
+            <h4 id="more-nyc-design-resources">More NYC Design and Technology Resources</h4>
+            <ul>
+              <li>
+                <a href="http://nyc.gov/nyc-core-framework">NYC Core Framework</a> - New York City's accessible open source website framework.
+              </li>
+              <li>
+                <a href="https://blueprint.cityofnewyork.us">NYC Digital Blueprint</a> - A guide for building trustworthy and accessible digital products that help New Yorkers.
+              </li>
+            </ul>
           </div>
-        </section>
-      </article>
-    </main>
-  </div>
-  <footer class="color-mid-background text-blue-dark border-solid border-t-4 border-blue-dark text-small py-4 z-20 relative">
+        </div>
+      </section>
+    </article>
+  </main>
+  <footer class="color-mid-background text-blue-dark border-solid border-t-4 border-blue-dark text-small py-4 z-20 relative" role="contentinfo">
     <div class="layout-home-body p-2">
       <div class="screen-tablet:px-2 mb-4">
-        <p class="mb-1">Maintained by&nbsp;<a href="https://nyc.gov/opportunity"></a>
-        </p>
+        <p class="mb-1">Maintained by&nbsp;</p>
         <a class="text-blue-dark" href="https://nyc.gov/opportunity">
           <span class="sr-only">The Mayor's Office for Economic Opportunity</span>
           <svg class="icon-logo-secondary mb-4" style="height: 53px; width: 300px;">

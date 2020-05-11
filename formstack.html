@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html class="bg-white" dir="ltr" lang="en">
+<html dir="ltr" lang="en">
 
 <head>
   <meta charset="utf-8" />
@@ -22,13 +22,6 @@
   <meta content="images/ms-icon-144x144.png" name="msapplication-TileImage" />
   <link href="images/favicon.ico" rel="icon" type="image/x-icon" />
   <title>Formstack | ACCESS NYC Patterns</title>
-  <noscript>
-    <style>
-      body {
-        visibility: visible !important;
-      }
-    </style>
-  </noscript>
   <script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-163470527-1"></script>
   <link href="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.18.1/build/styles/default.min.css" rel="stylesheet" />
   <script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.18.1/build/highlight.min.js"></script>
@@ -41,7 +34,6 @@
       document.querySelectorAll('pre').forEach(function(block) {
         hljs.highlightBlock(block);
       });
-      document.body.style.visibility = 'visible';
     });
     window.dataLayer = window.dataLayer || [];
 
@@ -53,158 +45,157 @@
   </script>
 </head>
 
-<body class="bg-blue-dark" style="visibility: hidden;">
+<body class="bg-white">
   <a class="sr-only" href="#main-content">Skip to main content</a>
-  <div class="bg-white">
-    <header class="color-light-background px-2">
-      <div class="border-b border-grey-light">
-        <div class="flex items-center justify-between p-2 screen-tablet:py-4 screen-tablet:px-2">
-          <div>
-            <h1 class="m-0 p-0 leading-normal">
-              <a href="index">
-                <span class="hidden">ACCESS NYC</span>
-                <svg aria-hidden="true" class="icon-logo-mark screen-tablet:hidden">
-                  <use xlink:href="#icon-logo-mark"></use>
-                </svg>
-                <svg aria-hidden="true" class="icon-logo-full--large text-blue-dark hidden screen-tablet:inline-block">
-                  <use xlink:href="#icon-logo-full"></use>
-                </svg>
-              </a>
-            </h1>
-          </div>
-          <div class="flex items-center">
-            <h2 class="text-small m-0 text-blue-dark screen-tablet:hidden">Patterns</h2>
-            <h2 aria-hidden="true" class="type-h1 m-0 text-blue-dark hidden screen-tablet:inline-block">Patterns</h2>
-            <nav class="text-small">
-              <a class="rounded-lg text-blue-dark border-2 no-underline px-1 ms-2 hidden screen-tablet:inline-block" href="https://github.com/CityOfNewYork/access-nyc-patterns/tree/v0.15.4">0.15.4</a>
-              <a aria-hidden="true" class="ms-1 screen-tablet:ms-2 screen-tablet:hidden" href="https://github.com/CityOfNewYork/access-nyc-patterns/tree/v0.15.4">0.15.4</a>
-              <button aria-controls="main-menu" aria-expanded="false" class="btn-link ms-1 screen-tablet:ms-2" data-js="toggle" id="main-menu-control">Menu</button>
-            </nav>
-          </div>
+  <header class="color-light-background px-2" role="banner">
+    <div class="border-b border-grey-light">
+      <div class="flex items-center justify-between p-2 screen-tablet:py-4 screen-tablet:px-2">
+        <div>
+          <h1 aria-level="1" class="m-0 p-0 leading-normal" role="heading">
+            <a href="index">
+              <span class="sr-only">ACCESS NYC</span>
+              <svg aria-hidden="true" class="icon-logo-mark screen-tablet:hidden">
+                <use xlink:href="#icon-logo-mark"></use>
+              </svg>
+              <svg aria-hidden="true" class="icon-logo-full--large text-blue-dark hidden screen-tablet:inline-block">
+                <use xlink:href="#icon-logo-full"></use>
+              </svg>
+            </a>
+          </h1>
+        </div>
+        <div class="flex items-center">
+          <h2 class="text-small m-0 text-blue-dark screen-tablet:hidden">Patterns</h2>
+          <h2 aria-hidden="true" class="type-h1 m-0 text-blue-dark hidden screen-tablet:inline-block">Patterns</h2>
+          <nav class="text-small">
+            <a class="rounded-lg text-blue-dark border-2 no-underline px-1 ms-2 hidden screen-tablet:inline-block" href="https://github.com/CityOfNewYork/access-nyc-patterns/tree/v0.15.5">0.15.5</a>
+            <a aria-hidden="true" class="ms-1 screen-tablet:ms-2 screen-tablet:hidden" href="https://github.com/CityOfNewYork/access-nyc-patterns/tree/v0.15.5">0.15.5</a>
+            <button aria-controls="main-menu" aria-expanded="false" class="btn-link ms-1 screen-tablet:ms-2" data-js="toggle" id="main-menu-control">Menu</button>
+          </nav>
         </div>
       </div>
-    </header>
-    <aside aria-hidden="true" aria-labelledby="main-menu-control" class="color-mid-background text-small hidden hidden:overflowFadeInUp animated relative" id="main-menu" role="region" style="top: -1px">
-      <div class="page-wrapper py-4 animated">
-        <div class="screen-tablet:flex">
-          <nav class="screen-tablet:flex-1 mb-1 px-2">
-            <span class="type-h3 text-small mb-1 block screen-tablet:border-b screen-tablet:pb-2 screen-tablet:mb-1 border-white p-1">Guides</span>
-            <a class="block p-1" href="index">Home</a>
-            <a class="block p-1" href="about">About</a>
-            <a class="block p-1" href="installation">Installation</a>
-            <a class="block p-1" href="developer-tools">Developer Tools</a>
-            <a class="block p-1 screen-tablet:border-b screen-tablet:pb-2 screen-tablet:mb-1 border-white p-1" href="prototyping">Prototyping</a>
-            <span class="type-h3 text-small mb-1 block screen-tablet:border-b screen-tablet:pb-2 screen-tablet:mb-1 border-white p-1">Collections</span>
-            <a class="block p-1 screen-tablet:border-b screen-tablet:pb-2 screen-tablet:mb-1 border-white p-1" href="covid-response">COVID Response</a>
-            <span class="type-h3 text-small mb-1 block screen-tablet:border-b screen-tablet:pb-2 screen-tablet:mb-1 border-white p-1">Links</span>
-            <a class="block p-1" href="https://www.npmjs.com/package/access-nyc-patterns">NPM Package</a>
-            <a class="block p-1" href="https://github.com/CityOfNewYork/access-nyc-patterns">GitHub Repository</a>
-          </nav>
-          <nav class="screen-tablet:flex-1 mb-1 px-2 screen-desktop:ps-4">
-            <span class="type-h3 text-small mb-1 block screen-tablet:border-b screen-tablet:pb-2 screen-tablet:mb-1 border-white p-1">Elements</span>
-            <a class="block p-1" href="badge">Badge</a>
-            <a class="block p-1" href="buttons">Buttons</a>
-            <a class="block p-1" href="checkboxes">Checkboxes</a>
-            <a class="block p-1" href="dividers">Dividers</a>
-            <a class="block p-1" href="inputs">Inputs</a>
-            <a class="block p-1" href="icons">Icons</a>
-            <a class="block p-1" href="layouts">Layouts</a>
-            <a class="block p-1" href="links">Links</a>
-            <a class="block p-1" href="lists">Lists</a>
-            <a class="block p-1" href="nav">Nav</a>
-            <a class="block p-1" href="radios">Radios</a>
-            <a class="block p-1" href="tables">Tables</a>
-            <a class="block p-1" href="tooltips">Tooltips</a>
-            <a class="block p-1" href="toggles">Toggles</a>
-            <a class="block p-1" href="selects">Selects</a>
-          </nav>
-          <nav class="screen-tablet:flex-1 mb-1 px-2 screen-desktop:ps-4">
-            <span class="type-h3 text-small mb-1 block screen-tablet:border-b screen-tablet:pb-2 screen-tablet:mb-1 border-white p-1">Components</span>
-            <a class="block p-1" href="accordion">Accordion</a>
-            <a class="block p-1" href="alert-box">Alert Box</a>
-            <a class="block p-1" href="card">Card</a>
-            <a class="block p-1" href="checklist">Checklist</a>
-            <a class="block p-1" href="disclaimer">Disclaimer</a>
-            <a class="block p-1" href="filter">Filter</a>
-            <a class="block p-1" href="header">Header</a>
-            <a class="block p-1" href="member-list">Member List</a>
-            <a class="block p-1" href="nearby-stops">Nearby Stops</a>
-            <a class="block p-1" href="share-form">Share Form</a>
-            <a class="block p-1" href="share-links">Share Links</a>
-            <a class="block p-1" href="side-nav">Side Nav</a>
-            <a class="block p-1" href="question">Question</a>
-            <a class="block p-1" href="web-share">Web Share</a>
-          </nav>
-          <nav class="screen-tablet:flex-1 mb-1 px-2 screen-desktop:ps-4">
-            <span class="type-h3 text-small mb-1 block screen-tablet:border-b screen-tablet:pb-2 screen-tablet:mb-1 border-white p-1">Objects</span>
-            <a class="block p-1" href="alert-banner">Alert Banner</a>
-            <a class="block p-1" href="announcements">Announcements</a>
-            <a class="block p-1" href="banner">Banner</a>
-            <a class="block p-1" href="card-list">Card Lists</a>
-            <a class="block p-1" href="come-back-later">Come Back Later</a>
-            <a class="block p-1" href="content">Content</a>
-            <a class="block p-1" href="emails">Emails</a>
-            <a class="block p-1" href="footer">Footer</a>
-            <a class="block p-1" href="formstack">Formstack</a>
-            <a class="block p-1" href="mobile-nav">Mobile Nav</a>
-            <a class="block p-1" href="navigation">Navigation</a>
-            <a class="block p-1" href="newsletter">Newsletter</a>
-            <a class="block p-1" href="search-box">Search Box</a>
-            <a class="block p-1" href="text-controller">Text Controller</a>
-          </nav>
-          <nav class="screen-tablet:flex-1 mb-1 px-2 screen-desktop:ps-4">
-            <span class="type-h3 text-small mb-1 block screen-tablet:border-b screen-tablet:pb-2 screen-tablet:mb-1 border-white p-1">Utilities</span>
-            <a class="block p-1" href="animate">Animate</a>
-            <a class="block p-1" href="clearfix">Clearfix</a>
-            <a class="block p-1" href="color">Color</a>
-            <a class="block p-1" href="font">Fonts</a>
-            <a class="block p-1" href="language">Language</a>
-            <a class="block p-1" href="margin">Margin</a>
-            <a class="block p-1" href="media">Media</a>
-            <a class="block p-1" href="padding">Padding</a>
-            <a class="block p-1" href="tailwindcss">tailwindcss</a>
-            <a class="block p-1" href="text">Text</a>
-            <a class="block p-1" href="toggle">Toggle</a>
-            <a class="block p-1" href="typography">Typography</a>
-          </nav>
-        </div>
-        <div class="text-center">
-          <button aria-controls="main-menu" aria-expanded="false" class="btn-link" data-js="toggle">Close Menu</button>
-        </div>
+    </div>
+  </header>
+  <aside aria-hidden="true" aria-labelledby="main-menu-control" class="color-mid-background text-small hidden hidden:overflowFadeInUp animated relative" id="main-menu" role="navigation" style="top: -1px">
+    <div class="page-wrapper py-4 animated">
+      <div class="screen-tablet:flex">
+        <nav class="screen-tablet:flex-1 mb-1 px-2">
+          <span class="type-h3 text-small mb-1 block screen-tablet:border-b screen-tablet:pb-2 screen-tablet:mb-1 border-white p-1">Guides</span>
+          <a class="block p-1" href="index">Home</a>
+          <a class="block p-1" href="about">About</a>
+          <a class="block p-1" href="installation">Installation</a>
+          <a class="block p-1" href="developer-tools">Developer Tools</a>
+          <a class="block p-1 screen-tablet:border-b screen-tablet:pb-2 screen-tablet:mb-1 border-white p-1" href="prototyping">Prototyping</a>
+          <span class="type-h3 text-small mb-1 block screen-tablet:border-b screen-tablet:pb-2 screen-tablet:mb-1 border-white p-1">Collections</span>
+          <a class="block p-1 screen-tablet:border-b screen-tablet:pb-2 screen-tablet:mb-1 border-white p-1" href="covid-response">COVID Response</a>
+          <span class="type-h3 text-small mb-1 block screen-tablet:border-b screen-tablet:pb-2 screen-tablet:mb-1 border-white p-1">Links</span>
+          <a class="block p-1" href="https://www.npmjs.com/package/access-nyc-patterns">NPM Package</a>
+          <a class="block p-1" href="https://github.com/CityOfNewYork/access-nyc-patterns">GitHub Repository</a>
+        </nav>
+        <nav class="screen-tablet:flex-1 mb-1 px-2 screen-desktop:ps-4">
+          <span class="type-h3 text-small mb-1 block screen-tablet:border-b screen-tablet:pb-2 screen-tablet:mb-1 border-white p-1">Elements</span>
+          <a class="block p-1" href="badge">Badge</a>
+          <a class="block p-1" href="buttons">Buttons</a>
+          <a class="block p-1" href="checkboxes">Checkboxes</a>
+          <a class="block p-1" href="dividers">Dividers</a>
+          <a class="block p-1" href="inputs">Inputs</a>
+          <a class="block p-1" href="icons">Icons</a>
+          <a class="block p-1" href="layouts">Layouts</a>
+          <a class="block p-1" href="links">Links</a>
+          <a class="block p-1" href="lists">Lists</a>
+          <a class="block p-1" href="nav">Nav</a>
+          <a class="block p-1" href="radios">Radios</a>
+          <a class="block p-1" href="tables">Tables</a>
+          <a class="block p-1" href="tooltips">Tooltips</a>
+          <a class="block p-1" href="toggles">Toggles</a>
+          <a class="block p-1" href="selects">Selects</a>
+        </nav>
+        <nav class="screen-tablet:flex-1 mb-1 px-2 screen-desktop:ps-4">
+          <span class="type-h3 text-small mb-1 block screen-tablet:border-b screen-tablet:pb-2 screen-tablet:mb-1 border-white p-1">Components</span>
+          <a class="block p-1" href="accordion">Accordion</a>
+          <a class="block p-1" href="alert-box">Alert Box</a>
+          <a class="block p-1" href="card">Card</a>
+          <a class="block p-1" href="checklist">Checklist</a>
+          <a class="block p-1" href="disclaimer">Disclaimer</a>
+          <a class="block p-1" href="filter">Filter</a>
+          <a class="block p-1" href="header">Header</a>
+          <a class="block p-1" href="member-list">Member List</a>
+          <a class="block p-1" href="nearby-stops">Nearby Stops</a>
+          <a class="block p-1" href="share-form">Share Form</a>
+          <a class="block p-1" href="share-links">Share Links</a>
+          <a class="block p-1" href="side-nav">Side Nav</a>
+          <a class="block p-1" href="question">Question</a>
+          <a class="block p-1" href="web-share">Web Share</a>
+        </nav>
+        <nav class="screen-tablet:flex-1 mb-1 px-2 screen-desktop:ps-4">
+          <span class="type-h3 text-small mb-1 block screen-tablet:border-b screen-tablet:pb-2 screen-tablet:mb-1 border-white p-1">Objects</span>
+          <a class="block p-1" href="alert-banner">Alert Banner</a>
+          <a class="block p-1" href="announcements">Announcements</a>
+          <a class="block p-1" href="banner">Banner</a>
+          <a class="block p-1" href="card-list">Card Lists</a>
+          <a class="block p-1" href="come-back-later">Come Back Later</a>
+          <a class="block p-1" href="content">Content</a>
+          <a class="block p-1" href="emails">Emails</a>
+          <a class="block p-1" href="footer">Footer</a>
+          <a class="block p-1" href="formstack">Formstack</a>
+          <a class="block p-1" href="mobile-nav">Mobile Nav</a>
+          <a class="block p-1" href="navigation">Navigation</a>
+          <a class="block p-1" href="newsletter">Newsletter</a>
+          <a class="block p-1" href="search-box">Search Box</a>
+          <a class="block p-1" href="text-controller">Text Controller</a>
+        </nav>
+        <nav class="screen-tablet:flex-1 mb-1 px-2 screen-desktop:ps-4">
+          <span class="type-h3 text-small mb-1 block screen-tablet:border-b screen-tablet:pb-2 screen-tablet:mb-1 border-white p-1">Utilities</span>
+          <a class="block p-1" href="animate">Animate</a>
+          <a class="block p-1" href="clearfix">Clearfix</a>
+          <a class="block p-1" href="color">Color</a>
+          <a class="block p-1" href="font">Fonts</a>
+          <a class="block p-1" href="language">Language</a>
+          <a class="block p-1" href="margin">Margin</a>
+          <a class="block p-1" href="media">Media</a>
+          <a class="block p-1" href="padding">Padding</a>
+          <a class="block p-1" href="tailwindcss">tailwindcss</a>
+          <a class="block p-1" href="text">Text</a>
+          <a class="block p-1" href="toggle">Toggle</a>
+          <a class="block p-1" href="typography">Typography</a>
+        </nav>
       </div>
-    </aside>
-    <main class="color-light-background screen-tablet:pt-4" id="main-content">
-      <article class="screen-tablet:pt-4 clearfix">
-        <header class="page-wrapper px-2 screen-desktop:px-0 layout-home-body">
-          <div class="my-0 w-full">
-            <h1 class="text-blue-dark px-2 mb-0 screen-tablet:pb-4 screen-tablet:mb-4">Formstack</h1>
-          </div>
-        </header>
-        <section class="pb-2 screen-tablet:pb-4 screen-tablet:mb-4">
-          <div class="page-wrapper px-2 screen-desktop:px-0">
-            <header class="layout-home-body">
-              <div class="my-0 px-2 py-0 border-b border-grey-light screen-tablet:flex screen-tablet:justify-between"></div>
-            </header>
-            <div class="layout-home-body">
-              <div class="my-0 pt-4 px-2 text-small table-align-start">
-                <p>
-                  <a href="https://www.formstack.com">Formstack</a> is an cloud based service for custom form building and publishing of online forms. Forms hosted on their platform can be styled using <a href="https://www.formstack.com/features/themes-css">themes</a> and the ACCESS NYC Patterns includes a stylesheet for integrating form styling for Formstack Themes.
-                </p>
-                <p>include{{ objects/formstack/formstack-theme-demo.slm }}</p>
-                <h3 id="usage">Usage</h3>
-                <ol>
-                  <li>Create a new Formstack Theme following <a href="https://help.formstack.com/hc/en-us/articles/360019204492-Themes">this tutorial</a>. You can name the theme <strong>ACCESS NYC Patterns</strong>.</li>
-                  <li>Under <em>Quick Styles</em>, change the form font to <strong>Noto Sans</strong>. You do not need to modify any of the other settings.</li>
-                  <li>Under <em>Advanced Code Editor</em>, copy and paste the following code into the css editor and save your changes.</li>
-                </ol>
-                <p>
-                <div class="code-block">
-                  <pre>@import url(&quot;https://fonts.googleapis.com/css?family=Noto+Serif:400&quot;);
+      <div class="text-center">
+        <button aria-controls="main-menu" aria-expanded="false" class="btn-link" data-js="toggle">Close Menu</button>
+      </div>
+    </div>
+  </aside>
+  <main class="color-light-background screen-tablet:pt-4" id="main-content" role="main">
+    <article class="screen-tablet:pt-4 clearfix">
+      <header class="page-wrapper px-2 screen-desktop:px-0 layout-home-body">
+        <div class="my-0 w-full">
+          <h1 class="text-blue-dark px-2 mb-0 screen-tablet:pb-4 screen-tablet:mb-4">Formstack</h1>
+        </div>
+      </header>
+      <section class="pb-2 screen-tablet:pb-4 screen-tablet:mb-4">
+        <div class="page-wrapper px-2 screen-desktop:px-0">
+          <header class="layout-home-body">
+            <div class="my-0 px-2 py-0 border-b border-grey-light screen-tablet:flex screen-tablet:justify-between"></div>
+          </header>
+          <div class="layout-home-body">
+            <div class="my-0 pt-4 px-2 text-small table-align-start">
+              <p>
+                <a href="https://www.formstack.com">Formstack</a> is an cloud based service for custom form building and publishing of online forms. Forms hosted on their platform can be styled using <a href="https://www.formstack.com/features/themes-css">themes</a> and the ACCESS NYC Patterns includes a stylesheet for integrating form styling for Formstack Themes.
+              </p>
+              <p>include{{ objects/formstack/formstack-theme-demo.slm }}</p>
+              <h3 id="usage">Usage</h3>
+              <ol>
+                <li>Create a new Formstack Theme following <a href="https://help.formstack.com/hc/en-us/articles/360019204492-Themes">this tutorial</a>. You can name the theme <strong>ACCESS NYC Patterns</strong>.</li>
+                <li>Under <em>Quick Styles</em>, change the form font to <strong>Noto Sans</strong>. You do not need to modify any of the other settings.</li>
+                <li>Under <em>Advanced Code Editor</em>, copy and paste the following code into the css editor and save your changes.</li>
+              </ol>
+              <p>
+              <div class="code-block">
+                <pre>@import url(&quot;https://fonts.googleapis.com/css?family=Noto+Serif:400&quot;);
 /**
- * ACCESS NYC Patterns v0.15.4
+ * ACCESS NYC Patterns v0.15.5
  * Formstack Object
  * Documentation: https://accesspatterns.cityofnewyork.us/formstack
- * Source: https://github.com/CityOfNewYork/ACCESS-NYC-PATTERNS/blob/v0.15.4/dist/objects/formstack/formstack.css
+ * Source: https://github.com/CityOfNewYork/ACCESS-NYC-PATTERNS/blob/v0.15.5/dist/objects/formstack/formstack.css
  *
  * Below is compiled css copied and pasted from
  * ACCESS NYC Patterns. See details above. Do not
@@ -213,28 +204,26 @@
  * styling of this theme. Please update the version
  * number and this description if it is to be changed.
  */
-.fsBody,html{font-size:22px;line-height:1.4;font-family:Noto Sans,sans-serif}.fsBody{color:initial;background-color:#fff;padding:8px 0 0}.fsBody ol,.fsBody p,.fsBody ul{margin-top:0;margin-bottom:.3636363636rem}.fsBody .fsPage{min-width:auto}.fsBody .fsForm{font-size:.72rem;background-color:#fff;margin:0;max-width:1200px;min-height:100%;min-width:320px;width:auto;padding:0 24px 24px}.fsBody .fsForm .fsSectionHeader{margin:0;padding:0;background-color:transparent}.fsBody .fsForm .fsSectionHeading{font-weight:400;line-height:1.3;font-family:&quot;Noto Serif&quot;,serif;color:#112e51;font-size:1.45rem;text-align:left;border-bottom:1px solid;border-color:#505c66;padding-bottom:32px;margin-bottom:24px;padding-top:32px}.fsBody .fsForm input:not([type=checkbox]):not([type=radio]).fsField,.fsBody .fsForm input:not([type=checkbox]):not([type=radio]).fsOtherField,.fsBody .fsForm textarea.fsField{color:initial;font-family:inherit;font-size:inherit;line-height:normal;-webkit-appearance:none;-moz-appearance:none;appearance:none;border:1px solid #505c66;border-radius:0;display:block;max-width:100%;min-width:200px;width:100%;margin:0;cursor:pointer;color:#505c66;padding:18px;max-width:100%!important;min-width:200px!important;height:auto}.fsBody .fsForm input:not([type=checkbox]):not([type=radio]).fsField::-webkit-input-placeholder,.fsBody .fsForm input:not([type=checkbox]):not([type=radio]).fsOtherField::-webkit-input-placeholder,.fsBody .fsForm textarea.fsField::-webkit-input-placeholder{color:#505c66}.fsBody .fsForm input:not([type=checkbox]):not([type=radio]).fsField::-moz-placeholder,.fsBody .fsForm input:not([type=checkbox]):not([type=radio]).fsOtherField::-moz-placeholder,.fsBody .fsForm textarea.fsField::-moz-placeholder{color:#505c66}.fsBody .fsForm input:not([type=checkbox]):not([type=radio]).fsField:-ms-input-placeholder,.fsBody .fsForm input:not([type=checkbox]):not([type=radio]).fsOtherField:-ms-input-placeholder,.fsBody .fsForm textarea.fsField:-ms-input-placeholder{color:#505c66}.fsBody .fsForm input:not([type=checkbox]):not([type=radio]).fsField::-ms-input-placeholder,.fsBody .fsForm input:not([type=checkbox]):not([type=radio]).fsOtherField::-ms-input-placeholder,.fsBody .fsForm textarea.fsField::-ms-input-placeholder{color:#505c66}.fsBody .fsForm input:not([type=checkbox]):not([type=radio]).fsField::placeholder,.fsBody .fsForm input:not([type=checkbox]):not([type=radio]).fsOtherField::placeholder,.fsBody .fsForm textarea.fsField::placeholder{color:#505c66}.fsBody .fsForm input:not([type=checkbox]):not([type=radio]).fsFieldName{width:100%!important}.fsBody .fsForm select.fsField,.fsBody .fsForm select.fsField:not([multiple=multiple]){color:initial;font-family:inherit;font-size:inherit;line-height:normal;-webkit-appearance:none;-moz-appearance:none;appearance:none;border:1px solid #505c66;border-radius:0;display:block;max-width:100%;min-width:200px;width:100%;margin:0;cursor:pointer;background-color:#fff;background-image:url(https://cdn.jsdelivr.net/gh/cityofnewyork/access-nyc-patterns@v0.15.3/dist/svg/icon-ui-chevron-down.svg);background-position:right .5rem center;background-repeat:no-repeat;background-size:24px 24px;padding:18px 2.8rem 18px 18px;display:inline-block;float:none;height:auto;width:auto}.fsBody .fsForm select.fsField::-ms-expand,.fsBody .fsForm select.fsField:not([multiple=multiple])::-ms-expand{display:none}.fsBody .fsForm .fsFieldRow{margin-bottom:24px!important}.fsBody .fsForm [fs-field-type=checkbox] .fsOptionLabel.vertical,.fsBody .fsForm [fs-field-type=radio] .fsOptionLabel.vertical{display:-webkit-box;display:-ms-flexbox;display:flex}.fsBody .fsForm [fs-field-type=checkbox] .fsOptionLabel.horizontal,.fsBody .fsForm [fs-field-type=radio] .fsOptionLabel.horizontal{font-size:22px;font-weight:700;-webkit-transition:all .2s;-o-transition:all .2s;transition:all .2s;background:#fff;border:1px solid #505c66;border-radius:8px;cursor:pointer;line-height:30px;margin-right:12px;position:relative;display:inline-block;padding:8px;margin-bottom:0}.fsBody .fsForm [fs-field-type=datetime] .fieldset-content,.fsBody .fsForm [fs-field-type=datetime] .fsSubFieldGroup{display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-orient:vertical;-webkit-box-direction:normal;-ms-flex-direction:column;flex-direction:column}.fsBody .fsForm [fs-field-type=datetime] .fieldset-content select.fsField,.fsBody .fsForm [fs-field-type=datetime] .fieldset-content select.fsField:not([multiple=multiple]),.fsBody .fsForm [fs-field-type=datetime] .fsSubFieldGroup select.fsField,.fsBody .fsForm [fs-field-type=datetime] .fsSubFieldGroup select.fsField:not([multiple=multiple]){width:100%;margin-bottom:8px}.fsBody .fsForm [fs-field-type=datetime] .fieldset-content .fsCalendarPickerLink,.fsBody .fsForm [fs-field-type=datetime] .fsSubFieldGroup .fsCalendarPickerLink{-webkit-box-ordinal-group:0;-ms-flex-order:-1;order:-1}.fsBody .fsForm [fs-field-type=datetime] .fieldset-content .ui-datepicker-trigger,.fsBody .fsForm [fs-field-type=datetime] .fsSubFieldGroup .ui-datepicker-trigger{display:none}.fsBody .fsForm .fsLabel{display:inline-block;font-size:22px;font-weight:700;vertical-align:top;color:initial;margin-bottom:18px;display:block;max-width:100%}.fsBody .fsForm .fsRequiredMarker{color:#c6252b}.fsBody .fsForm .fieldset-content&gt;:last-child,.fsBody .fsForm .fsSubFieldGroup&gt;:last-child{margin-bottom:0}.fsBody .fsForm .fsSupporting{font-size:medium;font-weight:400;font-style:normal;line-height:normal;color:initial}.fsBody .fsForm .fsCurrency~input.fsField{max-width:100%!important;min-width:200px!important;width:100%!important}.fsBody .fsForm .fsCurrencyPrefix{color:#0d6d3b;font-size:22px;font-weight:700;position:absolute;line-height:57px;margin-left:10px!important;pointer-events:none;width:auto}.fsBody .fsForm .fsCurrencyPrefix+input:not([type=checkbox]):not([type=radio]).fsField{padding-left:30px!important}.fsBody .fsForm .fsOptionLabel{font-size:22px;font-weight:700;padding-left:6px;padding-top:6px;padding-bottom:6px;cursor:pointer;display:block;margin-bottom:24px;display:-webkit-box;display:-ms-flexbox;display:flex;line-height:30px;color:initial;border:none;background:none!important}.fsBody .fsForm .fsOptionLabel input[type=checkbox],.fsBody .fsForm .fsOptionLabel input[type=radio]{top:auto;border:none;width:30px;height:30px;min-width:30px;margin-right:12px;overflow:visible}.fsBody .fsForm .fsOptionLabel input[type=radio]:before{-webkit-transition:all .2s;-o-transition:all .2s;transition:all .2s;background:#fff;border:1px solid #505c66;border-radius:50%;content:&quot;&quot;;display:inline-block;width:30px;height:30px;min-width:30px;margin-right:12px;display:block}.fsBody .fsForm .fsOptionLabel input[type=radio]:checked:before{background-color:#184e9e}.fsBody .fsForm .fsOptionLabel input[type=radio]:checked:before,.fsBody .fsForm .fsOptionLabel input[type=radio]:focus:before{-webkit-box-shadow:0 0 0 2px #184e9e inset,0 0 0 4px #fff inset;box-shadow:inset 0 0 0 2px #184e9e,inset 0 0 0 4px #fff;border:0}.fsBody .fsForm .fsOptionLabel input[type=checkbox]:before{-webkit-transition:all .2s;-o-transition:all .2s;transition:all .2s;background:#fff;border:1px solid #505c66;border-radius:8px;content:&quot;&quot;;display:inline-block;width:30px;height:30px;min-width:30px;margin-right:12px;display:block}.fsBody .fsForm .fsOptionLabel input[type=checkbox]:checked:before{background:#184e9e url(https://cdn.jsdelivr.net/gh/cityofnewyork/access-nyc-patterns@v0.15.3/dist//svg/icon-checkmark-white.svg) no-repeat;background-size:cover;border:0}.fsBody .fsForm .fsOptionLabel input[type=checkbox]:focus:before{border:0;-webkit-box-shadow:0 0 0 1px #fff,0 0 0 3px #184e9e;box-shadow:0 0 0 1px #fff,0 0 0 3px #184e9e}.fsBody .fsForm .fsValidationError{background-color:initial;-webkit-box-shadow:none;box-shadow:none}.fsBody .fsForm .fsValidationError .fieldset-content,.fsBody .fsForm .fsValidationError .fsSubFieldGroup{position:relative}.fsBody .fsForm .fsValidationError .fieldset-content:before,.fsBody .fsForm .fsValidationError .fsSubFieldGroup:before{position:absolute;top:-12px;bottom:-24px;left:-19px;border-left:3px solid #c6252b;content:&quot;&quot;;display:block;width:0}.fsBody .fsForm .fsValidationError select.fsField,.fsBody .fsForm .fsValidationError select.fsField:not([multiple=multiple]){color:initial!important;border-color:#c6252b!important;background-image:url(https://cdn.jsdelivr.net/gh/cityofnewyork/access-nyc-patterns@v0.15.3/dist/svg/icon-ui-chevron-down.svg)!important}.fsBody .fsForm .fsValidationError input:not([type=checkbox]):not([type=radio]).fsField,.fsBody .fsForm .fsValidationError input:not([type=checkbox]):not([type=radio]).fsOtherField,.fsBody .fsForm .fsValidationError textarea.fsField{color:initial!important;border-color:#c6252b!important}.fsBody .fsForm .fsValidationError input[type=checkbox]:before,.fsBody .fsForm .fsValidationError input[type=radio]:before{border-color:#505c66!important}.fsBody .fsForm .fsValidationError .fsLabel,.fsBody .fsForm .fsValidationError .fsOptionLabel{color:initial!important}.fsBody .fsForm .fsFieldFocused:not(.fsValidationError).fsSpan100{margin:0;padding:0}.fsBody .fsForm [fs-field-type=richtext]{font-size:.72rem;background:#eef3f7;border:1px solid #d1d5d9;padding:24px}.fsBody .fsForm [fs-field-type=richtext]&gt;p:last-child{margin-bottom:0}.fsBody .fsForm [fs-field-type=richtext] small{font-size:.54rem;line-height:1.4;margin:0;display:inline-block}.fsBody .fsForm .fsNextButton,.fsBody .fsForm .fsPreviousButton,.fsBody .fsForm .fsSubmitButton{font-weight:700;font-size:1.09rem;line-height:1.3;font-family:Noto Sans,sans-serif;line-height:1;padding:15.9984px 24px;-webkit-appearance:none;-moz-appearance:none;appearance:none;background-color:#c3ddff;border:0;border-radius:5px;display:-webkit-inline-box;display:-ms-inline-flexbox;display:inline-flex;-webkit-box-align:center;-ms-flex-align:center;align-items:center;text-align:center;text-decoration:none;cursor:pointer;-webkit-transition:background .2s ease-in,color .2s ease-in;-o-transition:background .2s ease-in,color .2s ease-in;transition:background .2s ease-in,color .2s ease-in;border-radius:5px!important;font-size:1.09rem!important;width:auto;height:auto}.fsBody .fsForm .fsNextButton&gt;[class*=icon]:first-child,.fsBody .fsForm .fsPreviousButton&gt;[class*=icon]:first-child,.fsBody .fsForm .fsSubmitButton&gt;[class*=icon]:first-child{margin-right:8px}.fsBody .fsForm .fsNextButton .fsFull,.fsBody .fsForm .fsPreviousButton .fsFull,.fsBody .fsForm .fsSubmitButton .fsFull{display:block}.fsBody .fsForm .fsNextButton:before,.fsBody .fsForm .fsPreviousButton:before,.fsBody .fsForm .fsSubmitButton:before{content:&quot;&quot;}.fsBody .fsForm .fsSubmitButton{-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;margin-top:0!important;clear:both}.fsBody .fsForm .fsSubmitButton,.fsBody .fsForm .fsSubmitButton:link,.fsBody .fsForm .fsSubmitButton:visited{color:#fff!important;background-color:#184e9e!important}.fsBody .fsForm .fsSubmitButton:active,.fsBody .fsForm .fsSubmitButton:focus,.fsBody .fsForm .fsSubmitButton:hover{color:#fff!important;background-color:#1658b9!important}.fsBody .fsForm .fsPreviousButton{-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;position:relative;padding-left:40px;margin-bottom:32px}.fsBody .fsForm .fsPreviousButton,.fsBody .fsForm .fsPreviousButton:link,.fsBody .fsForm .fsPreviousButton:visited{color:#fff!important;background-color:#184e9e!important}.fsBody .fsForm .fsPreviousButton:active,.fsBody .fsForm .fsPreviousButton:focus,.fsBody .fsForm .fsPreviousButton:hover{color:#fff!important;background-color:#1658b9!important}.fsBody .fsForm .fsPreviousButton:before{content:&quot;&quot;;position:absolute;display:inline-block;border-bottom:.3em solid transparent;border-right:.4em solid;border-right-color:inherit;border-top:.3em solid transparent;top:50%;margin-top:-.3em;margin-left:24px;left:-.3em}.fsBody .fsForm .fsNextButton{-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;position:relative;padding-right:40px;margin-bottom:32px}.fsBody .fsForm .fsNextButton,.fsBody .fsForm .fsNextButton:link,.fsBody .fsForm .fsNextButton:visited{color:#fff!important;background-color:#184e9e!important}.fsBody .fsForm .fsNextButton:active,.fsBody .fsForm .fsNextButton:focus,.fsBody .fsForm .fsNextButton:hover{color:#fff!important;background-color:#1658b9!important}.fsBody .fsForm .fsNextButton:after{content:&quot;&quot;;position:absolute;display:inline-block;border-bottom:.3em solid transparent;border-left:.4em solid;border-left-color:inherit;border-top:.3em solid transparent;top:50%;margin-top:-.3em;margin-right:24px;right:-.3em}.fsBody .fsForm .fsCalendarPickerLink{display:none!important;color:initial;font-family:inherit;font-size:inherit;line-height:normal;-webkit-appearance:none;-moz-appearance:none;appearance:none;border-radius:0;display:block;max-width:100%;min-width:200px;width:100%;color:#505c66;padding:18px;color:transparent;background-image:url(https://cdn.jsdelivr.net/gh/cityofnewyork/access-nyc-patterns@v0.15.3/dist//svg/icon-ui-calendar.svg);background-repeat:no-repeat;background-position:50%;background-size:24px 24px;border-radius:5px;border:2px solid #184e9e;cursor:pointer;height:auto;margin:0 0 8px}.fsBody .fsForm .fsCalendarPickerLink::-webkit-input-placeholder{color:#505c66}.fsBody .fsForm .fsCalendarPickerLink::-moz-placeholder{color:#505c66}.fsBody .fsForm .fsCalendarPickerLink:-ms-input-placeholder{color:#505c66}.fsBody .fsForm .fsCalendarPickerLink::-ms-input-placeholder{color:#505c66}.fsBody .fsForm .fsCalendarPickerLink::placeholder{color:#505c66}.fsBody .fsForm .ui-datepicker-trigger{display:none}.fsBody .fsForm div.fsProgress{margin:0;position:fixed;top:0;left:0;width:100%}.fsBody .fsForm div.fsProgress .fsProgressBarContainer{background-color:#fff;height:8px}.fsBody .fsForm div.fsProgress .fsProgressText{display:none}.fsBody .fsForm div.fsProgress .fsProgressBar{background-color:#118df0}.fsBody .fsForm .fsPagination{margin-top:0;padding-top:16px;padding-bottom:0}.fsBody .fsForm #fsSubmissionCheckmark{background-image:url(https://cdn.jsdelivr.net/gh/cityofnewyork/access-nyc-patterns@v0.15.3/dist//svg/icon-success-green.svg);margin:24px 0}.fsBody .fsForm #fsSubmissionCheckmark+.fsSectionHeading{text-align:center;border:none}@media screen and (min-width:480px){.fsBody .fsForm [fs-field-type=name] .fieldset-content,.fsBody .fsForm [fs-field-type=name] .fsSubFieldGroup{width:100%;display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-pack:justify;-ms-flex-pack:justify;justify-content:space-between}.fsBody .fsForm [fs-field-type=name] .fieldset-content .fsSubField,.fsBody .fsForm [fs-field-type=name] .fsSubFieldGroup .fsSubField{-webkit-box-flex:1;-ms-flex:1;flex:1;width:calc(50% - 16px)!important;max-width:calc(50% - 16px);-ms-flex-preferred-size:calc(50% - 16px);flex-basis:calc(50% - 16px);margin:0}.fsBody .fsForm [fs-field-type=datetime] .fieldset-content,.fsBody .fsForm [fs-field-type=datetime] .fsSubFieldGroup{-webkit-box-orient:horizontal;-webkit-box-direction:normal;-ms-flex-direction:row;flex-direction:row;-webkit-box-align:center;-ms-flex-align:center;align-items:center;-webkit-box-pack:justify;-ms-flex-pack:justify;justify-content:space-between}.fsBody .fsForm [fs-field-type=datetime] .fieldset-content select.fsField,.fsBody .fsForm [fs-field-type=datetime] .fieldset-content select.fsField:not([multiple=multiple]),.fsBody .fsForm [fs-field-type=datetime] .fsSubFieldGroup select.fsField,.fsBody .fsForm [fs-field-type=datetime] .fsSubFieldGroup select.fsField:not([multiple=multiple]){-webkit-box-flex:1;-ms-flex:1;flex:1;-ms-flex-preferred-size:calc(33.33% - 16px);flex-basis:calc(33.33% - 16px);width:calc(33.33% - 16px);max-width:calc(33.33% - 16px);min-width:inherit;margin-right:0}.fsBody .fsForm [fs-field-type=datetime] .fieldset-content .fsCalendarPickerLink,.fsBody .fsForm [fs-field-type=datetime] .fsSubFieldGroup .fsCalendarPickerLink{margin-top:-8px}.fsBody .fsForm [fs-field-type=datetime] .fieldset-content .ui-datepicker-trigger,.fsBody .fsForm [fs-field-type=datetime] .fsSubFieldGroup .ui-datepicker-trigger{display:none}.fsBody .fsForm .fsCalendarPickerLink{width:24px;min-width:24px;height:24px;border:0;padding:0}}@media screen and (min-width:768px){.fsBody .fsForm .fsSectionHeading{font-size:1.81rem}.fsBody .fsForm input:not([type=checkbox]):not([type=radio]).fsField,.fsBody .fsForm input:not([type=checkbox]):not([type=radio]).fsOtherField,.fsBody .fsForm textarea.fsField{width:auto!important}.fsBody .fsForm input:not([type=checkbox]):not([type=radio]).fsFieldName{width:100%!important}.fsBody .fsForm [fs-field-type=name] .fieldset-content,.fsBody .fsForm [fs-field-type=name] .fsSubFieldGroup{max-width:100%;width:447px}}@media screen and (min-width:960px){.fsBody{background-color:#eef3f7;padding-left:96px;padding-right:96px}.fsBody .fsForm{border:1px solid #d1d5d9;padding-left:32px;padding-right:32px;padding-bottom:32px;margin:64px auto}.fsBody .fsForm [fs-field-type=datetime] .fieldset-content,.fsBody .fsForm [fs-field-type=datetime] .fsSubFieldGroup{width:447px}}@media screen and (max-width:480px){.fsBody .fsForm .fsSubmitButton{width:100%;display:block;float:none}}</pre>
-                </div>
-                </p>
-                <p>The comment will let other users know where the code source is coming from and what version of the ACCESS NYC Patterns are being used in the theme.</p>
-                <h3 id="development">Development</h3>
-                <p>If you are modifying the theme for Formstack you should create a new theme and import the development url of the distributed stylesheet into it. It helps to use <a href="https://semver.org">semantic versioning</a> in the name of the theme when developing so you know which one is the most up to date.</p>
-                <p>Once you have created a new theme, copy and paste the following snippet into the <em>Advanced Code Editor</em>.</p>
-                <pre><code>@import url(&#39;https://fonts.googleapis.com/css?family=Noto+Serif:400&#39;);
-@import url(&#39;http://localhost:7000/objects/formstack/formstack.css&#39;);</code></pre>
-                <p>It is also good practice to apply themes in development to sample forms. You can either copy an existing form or use a “development” form that utilizes all of the fields Formstack provides. Once the development theme is applied to the development form, you can use the <em>View Live Form</em> link to view changes you are making.</p>
+.fsBody,html{font-size:22px;line-height:1.4;font-family:Noto Sans,sans-serif}.fsBody{color:initial;background-color:#fff;padding:8px 0 0}.fsBody ol,.fsBody p,.fsBody ul{margin-top:0;margin-bottom:.3636363636rem}.fsBody .fsPage{min-width:auto}.fsBody .fsForm{font-size:.72rem;background-color:#fff;margin:0;max-width:1200px;min-height:100%;min-width:320px;width:auto;padding:0 24px 24px}.fsBody .fsForm .fsSectionHeader{margin:0;padding:0;background-color:transparent}.fsBody .fsForm .fsSectionHeading{font-weight:400;line-height:1.3;font-family:&quot;Noto Serif&quot;,serif;color:#112e51;font-size:1.45rem;text-align:left;border-bottom:1px solid;border-color:#505c66;padding-bottom:32px;margin-bottom:24px;padding-top:32px}.fsBody .fsForm input:not([type=checkbox]):not([type=radio]).fsField,.fsBody .fsForm input:not([type=checkbox]):not([type=radio]).fsOtherField,.fsBody .fsForm textarea.fsField{color:initial;font-family:inherit;font-size:inherit;line-height:normal;-webkit-appearance:none;-moz-appearance:none;appearance:none;border:1px solid #505c66;border-radius:0;display:block;max-width:100%;min-width:200px;width:100%;margin:0;cursor:pointer;color:#505c66;padding:18px;max-width:100%!important;min-width:200px!important;height:auto}.fsBody .fsForm input:not([type=checkbox]):not([type=radio]).fsField::-webkit-input-placeholder,.fsBody .fsForm input:not([type=checkbox]):not([type=radio]).fsOtherField::-webkit-input-placeholder,.fsBody .fsForm textarea.fsField::-webkit-input-placeholder{color:#505c66}.fsBody .fsForm input:not([type=checkbox]):not([type=radio]).fsField::-moz-placeholder,.fsBody .fsForm input:not([type=checkbox]):not([type=radio]).fsOtherField::-moz-placeholder,.fsBody .fsForm textarea.fsField::-moz-placeholder{color:#505c66}.fsBody .fsForm input:not([type=checkbox]):not([type=radio]).fsField:-ms-input-placeholder,.fsBody .fsForm input:not([type=checkbox]):not([type=radio]).fsOtherField:-ms-input-placeholder,.fsBody .fsForm textarea.fsField:-ms-input-placeholder{color:#505c66}.fsBody .fsForm input:not([type=checkbox]):not([type=radio]).fsField::-ms-input-placeholder,.fsBody .fsForm input:not([type=checkbox]):not([type=radio]).fsOtherField::-ms-input-placeholder,.fsBody .fsForm textarea.fsField::-ms-input-placeholder{color:#505c66}.fsBody .fsForm input:not([type=checkbox]):not([type=radio]).fsField::placeholder,.fsBody .fsForm input:not([type=checkbox]):not([type=radio]).fsOtherField::placeholder,.fsBody .fsForm textarea.fsField::placeholder{color:#505c66}.fsBody .fsForm input:not([type=checkbox]):not([type=radio]).fsFieldName{width:100%!important}.fsBody .fsForm select.fsField,.fsBody .fsForm select.fsField:not([multiple=multiple]){color:initial;font-family:inherit;font-size:inherit;line-height:normal;-webkit-appearance:none;-moz-appearance:none;appearance:none;border:1px solid #505c66;border-radius:0;display:block;max-width:100%;min-width:200px;width:100%;margin:0;cursor:pointer;background-color:#fff;background-image:url(https://cdn.jsdelivr.net/gh/cityofnewyork/access-nyc-patterns@v0.15.4/dist/svg/icon-ui-chevron-down.svg);background-position:right .5rem center;background-repeat:no-repeat;background-size:24px 24px;padding:18px 2.8rem 18px 18px;display:inline-block;float:none;height:auto;width:auto}.fsBody .fsForm select.fsField::-ms-expand,.fsBody .fsForm select.fsField:not([multiple=multiple])::-ms-expand{display:none}.fsBody .fsForm .fsFieldRow{margin-bottom:24px!important}.fsBody .fsForm [fs-field-type=checkbox] .fsOptionLabel.vertical,.fsBody .fsForm [fs-field-type=radio] .fsOptionLabel.vertical{display:-webkit-box;display:-ms-flexbox;display:flex}.fsBody .fsForm [fs-field-type=checkbox] .fsOptionLabel.horizontal,.fsBody .fsForm [fs-field-type=radio] .fsOptionLabel.horizontal{font-size:22px;font-weight:700;-webkit-transition:all .2s;-o-transition:all .2s;transition:all .2s;background:#fff;border:1px solid #505c66;border-radius:8px;cursor:pointer;line-height:30px;margin-right:12px;position:relative;display:inline-block;padding:8px;margin-bottom:0}.fsBody .fsForm [fs-field-type=datetime] .fieldset-content,.fsBody .fsForm [fs-field-type=datetime] .fsSubFieldGroup{display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-orient:vertical;-webkit-box-direction:normal;-ms-flex-direction:column;flex-direction:column}.fsBody .fsForm [fs-field-type=datetime] .fieldset-content select.fsField,.fsBody .fsForm [fs-field-type=datetime] .fieldset-content select.fsField:not([multiple=multiple]),.fsBody .fsForm [fs-field-type=datetime] .fsSubFieldGroup select.fsField,.fsBody .fsForm [fs-field-type=datetime] .fsSubFieldGroup select.fsField:not([multiple=multiple]){width:100%;margin-bottom:8px}.fsBody .fsForm [fs-field-type=datetime] .fieldset-content .fsCalendarPickerLink,.fsBody .fsForm [fs-field-type=datetime] .fsSubFieldGroup .fsCalendarPickerLink{-webkit-box-ordinal-group:0;-ms-flex-order:-1;order:-1}.fsBody .fsForm [fs-field-type=datetime] .fieldset-content .ui-datepicker-trigger,.fsBody .fsForm [fs-field-type=datetime] .fsSubFieldGroup .ui-datepicker-trigger{display:none}.fsBody .fsForm .fsLabel{display:inline-block;font-size:22px;font-weight:700;vertical-align:top;color:initial;margin-bottom:18px;display:block;max-width:100%}.fsBody .fsForm .fsRequiredMarker{color:#c6252b}.fsBody .fsForm .fieldset-content&gt;:last-child,.fsBody .fsForm .fsSubFieldGroup&gt;:last-child{margin-bottom:0}.fsBody .fsForm .fsSupporting{font-size:medium;font-weight:400;font-style:normal;line-height:normal;color:initial}.fsBody .fsForm .fsCurrency~input.fsField{max-width:100%!important;min-width:200px!important;width:100%!important}.fsBody .fsForm .fsCurrencyPrefix{color:#0d6d3b;font-size:22px;font-weight:700;position:absolute;line-height:57px;margin-left:10px!important;pointer-events:none;width:auto}.fsBody .fsForm .fsCurrencyPrefix+input:not([type=checkbox]):not([type=radio]).fsField{padding-left:30px!important}.fsBody .fsForm .fsOptionLabel{font-size:22px;font-weight:700;padding-left:6px;padding-top:6px;padding-bottom:6px;cursor:pointer;display:block;margin-bottom:24px;display:-webkit-box;display:-ms-flexbox;display:flex;line-height:30px;color:initial;border:none;background:none!important}.fsBody .fsForm .fsOptionLabel input[type=checkbox],.fsBody .fsForm .fsOptionLabel input[type=radio]{top:auto;border:none;width:30px;height:30px;min-width:30px;margin-right:12px;overflow:visible}.fsBody .fsForm .fsOptionLabel input[type=radio]:before{-webkit-transition:all .2s;-o-transition:all .2s;transition:all .2s;background:#fff;border:1px solid #505c66;border-radius:50%;content:&quot;&quot;;display:inline-block;width:30px;height:30px;min-width:30px;margin-right:12px;display:block}.fsBody .fsForm .fsOptionLabel input[type=radio]:checked:before{background-color:#184e9e}.fsBody .fsForm .fsOptionLabel input[type=radio]:checked:before,.fsBody .fsForm .fsOptionLabel input[type=radio]:focus:before{-webkit-box-shadow:0 0 0 2px #184e9e inset,0 0 0 4px #fff inset;box-shadow:inset 0 0 0 2px #184e9e,inset 0 0 0 4px #fff;border:0}.fsBody .fsForm .fsOptionLabel input[type=checkbox]:before{-webkit-transition:all .2s;-o-transition:all .2s;transition:all .2s;background:#fff;border:1px solid #505c66;border-radius:8px;content:&quot;&quot;;display:inline-block;width:30px;height:30px;min-width:30px;margin-right:12px;display:block}.fsBody .fsForm .fsOptionLabel input[type=checkbox]:checked:before{background:#184e9e url(https://cdn.jsdelivr.net/gh/cityofnewyork/access-nyc-patterns@v0.15.4/dist//svg/icon-checkmark-white.svg) no-repeat;background-size:cover;border:0}.fsBody .fsForm .fsOptionLabel input[type=checkbox]:focus:before{border:0;-webkit-box-shadow:0 0 0 1px #fff,0 0 0 3px #184e9e;box-shadow:0 0 0 1px #fff,0 0 0 3px #184e9e}.fsBody .fsForm .fsValidationError{background-color:initial;-webkit-box-shadow:none;box-shadow:none}.fsBody .fsForm .fsValidationError .fieldset-content,.fsBody .fsForm .fsValidationError .fsSubFieldGroup{position:relative}.fsBody .fsForm .fsValidationError .fieldset-content:before,.fsBody .fsForm .fsValidationError .fsSubFieldGroup:before{position:absolute;top:-12px;bottom:-24px;left:-19px;border-left:3px solid #c6252b;content:&quot;&quot;;display:block;width:0}.fsBody .fsForm .fsValidationError select.fsField,.fsBody .fsForm .fsValidationError select.fsField:not([multiple=multiple]){color:initial!important;border-color:#c6252b!important;background-image:url(https://cdn.jsdelivr.net/gh/cityofnewyork/access-nyc-patterns@v0.15.4/dist/svg/icon-ui-chevron-down.svg)!important}.fsBody .fsForm .fsValidationError input:not([type=checkbox]):not([type=radio]).fsField,.fsBody .fsForm .fsValidationError input:not([type=checkbox]):not([type=radio]).fsOtherField,.fsBody .fsForm .fsValidationError textarea.fsField{color:initial!important;border-color:#c6252b!important}.fsBody .fsForm .fsValidationError input[type=checkbox]:before,.fsBody .fsForm .fsValidationError input[type=radio]:before{border-color:#505c66!important}.fsBody .fsForm .fsValidationError .fsLabel,.fsBody .fsForm .fsValidationError .fsOptionLabel{color:initial!important}.fsBody .fsForm .fsFieldFocused:not(.fsValidationError).fsSpan100{margin:0;padding:0}.fsBody .fsForm [fs-field-type=richtext]{font-size:.72rem;background:#eef3f7;border:1px solid #d1d5d9;padding:24px}.fsBody .fsForm [fs-field-type=richtext]&gt;p:last-child{margin-bottom:0}.fsBody .fsForm [fs-field-type=richtext] small{font-size:.54rem;line-height:1.4;margin:0;display:inline-block}.fsBody .fsForm .fsNextButton,.fsBody .fsForm .fsPreviousButton,.fsBody .fsForm .fsSubmitButton{font-weight:700;font-size:1.09rem;line-height:1.3;font-family:Noto Sans,sans-serif;line-height:1;padding:15.9984px 24px;-webkit-appearance:none;-moz-appearance:none;appearance:none;background-color:#c3ddff;border:0;border-radius:5px;display:-webkit-inline-box;display:-ms-inline-flexbox;display:inline-flex;-webkit-box-align:center;-ms-flex-align:center;align-items:center;text-align:center;text-decoration:none;cursor:pointer;-webkit-transition:background .2s ease-in,color .2s ease-in;-o-transition:background .2s ease-in,color .2s ease-in;transition:background .2s ease-in,color .2s ease-in;border-radius:5px!important;font-size:1.09rem!important;width:auto;height:auto}.fsBody .fsForm .fsNextButton&gt;[class*=icon]:first-child,.fsBody .fsForm .fsPreviousButton&gt;[class*=icon]:first-child,.fsBody .fsForm .fsSubmitButton&gt;[class*=icon]:first-child{margin-right:8px}.fsBody .fsForm .fsNextButton .fsFull,.fsBody .fsForm .fsPreviousButton .fsFull,.fsBody .fsForm .fsSubmitButton .fsFull{display:block}.fsBody .fsForm .fsNextButton:before,.fsBody .fsForm .fsPreviousButton:before,.fsBody .fsForm .fsSubmitButton:before{content:&quot;&quot;}.fsBody .fsForm .fsSubmitButton{-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;margin-top:0!important;clear:both}.fsBody .fsForm .fsSubmitButton,.fsBody .fsForm .fsSubmitButton:link,.fsBody .fsForm .fsSubmitButton:visited{color:#fff!important;background-color:#184e9e!important}.fsBody .fsForm .fsSubmitButton:active,.fsBody .fsForm .fsSubmitButton:focus,.fsBody .fsForm .fsSubmitButton:hover{color:#fff!important;background-color:#1658b9!important}.fsBody .fsForm .fsPreviousButton{-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;position:relative;padding-left:40px;margin-bottom:32px}.fsBody .fsForm .fsPreviousButton,.fsBody .fsForm .fsPreviousButton:link,.fsBody .fsForm .fsPreviousButton:visited{color:#fff!important;background-color:#184e9e!important}.fsBody .fsForm .fsPreviousButton:active,.fsBody .fsForm .fsPreviousButton:focus,.fsBody .fsForm .fsPreviousButton:hover{color:#fff!important;background-color:#1658b9!important}.fsBody .fsForm .fsPreviousButton:before{content:&quot;&quot;;position:absolute;display:inline-block;border-bottom:.3em solid transparent;border-right:.4em solid;border-right-color:inherit;border-top:.3em solid transparent;top:50%;margin-top:-.3em;margin-left:24px;left:-.3em}.fsBody .fsForm .fsNextButton{-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;position:relative;padding-right:40px;margin-bottom:32px}.fsBody .fsForm .fsNextButton,.fsBody .fsForm .fsNextButton:link,.fsBody .fsForm .fsNextButton:visited{color:#fff!important;background-color:#184e9e!important}.fsBody .fsForm .fsNextButton:active,.fsBody .fsForm .fsNextButton:focus,.fsBody .fsForm .fsNextButton:hover{color:#fff!important;background-color:#1658b9!important}.fsBody .fsForm .fsNextButton:after{content:&quot;&quot;;position:absolute;display:inline-block;border-bottom:.3em solid transparent;border-left:.4em solid;border-left-color:inherit;border-top:.3em solid transparent;top:50%;margin-top:-.3em;margin-right:24px;right:-.3em}.fsBody .fsForm .fsCalendarPickerLink{display:none!important;color:initial;font-family:inherit;font-size:inherit;line-height:normal;-webkit-appearance:none;-moz-appearance:none;appearance:none;border-radius:0;display:block;max-width:100%;min-width:200px;width:100%;color:#505c66;padding:18px;color:transparent;background-image:url(https://cdn.jsdelivr.net/gh/cityofnewyork/access-nyc-patterns@v0.15.4/dist//svg/icon-ui-calendar.svg);background-repeat:no-repeat;background-position:50%;background-size:24px 24px;border-radius:5px;border:2px solid #184e9e;cursor:pointer;height:auto;margin:0 0 8px}.fsBody .fsForm .fsCalendarPickerLink::-webkit-input-placeholder{color:#505c66}.fsBody .fsForm .fsCalendarPickerLink::-moz-placeholder{color:#505c66}.fsBody .fsForm .fsCalendarPickerLink:-ms-input-placeholder{color:#505c66}.fsBody .fsForm .fsCalendarPickerLink::-ms-input-placeholder{color:#505c66}.fsBody .fsForm .fsCalendarPickerLink::placeholder{color:#505c66}.fsBody .fsForm .ui-datepicker-trigger{display:none}.fsBody .fsForm div.fsProgress{margin:0;position:fixed;top:0;left:0;width:100%}.fsBody .fsForm div.fsProgress .fsProgressBarContainer{background-color:#fff;height:8px}.fsBody .fsForm div.fsProgress .fsProgressText{display:none}.fsBody .fsForm div.fsProgress .fsProgressBar{background-color:#118df0}.fsBody .fsForm .fsPagination{margin-top:0;padding-top:16px;padding-bottom:0}.fsBody .fsForm #fsSubmissionCheckmark{background-image:url(https://cdn.jsdelivr.net/gh/cityofnewyork/access-nyc-patterns@v0.15.4/dist//svg/icon-success-green.svg);margin:24px 0}.fsBody .fsForm #fsSubmissionCheckmark+.fsSectionHeading{text-align:center;border:none}@media screen and (min-width:480px){.fsBody .fsForm [fs-field-type=name] .fieldset-content,.fsBody .fsForm [fs-field-type=name] .fsSubFieldGroup{width:100%;display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-pack:justify;-ms-flex-pack:justify;justify-content:space-between}.fsBody .fsForm [fs-field-type=name] .fieldset-content .fsSubField,.fsBody .fsForm [fs-field-type=name] .fsSubFieldGroup .fsSubField{-webkit-box-flex:1;-ms-flex:1;flex:1;width:calc(50% - 16px)!important;max-width:calc(50% - 16px);-ms-flex-preferred-size:calc(50% - 16px);flex-basis:calc(50% - 16px);margin:0}.fsBody .fsForm [fs-field-type=datetime] .fieldset-content,.fsBody .fsForm [fs-field-type=datetime] .fsSubFieldGroup{-webkit-box-orient:horizontal;-webkit-box-direction:normal;-ms-flex-direction:row;flex-direction:row;-webkit-box-align:center;-ms-flex-align:center;align-items:center;-webkit-box-pack:justify;-ms-flex-pack:justify;justify-content:space-between}.fsBody .fsForm [fs-field-type=datetime] .fieldset-content select.fsField,.fsBody .fsForm [fs-field-type=datetime] .fieldset-content select.fsField:not([multiple=multiple]),.fsBody .fsForm [fs-field-type=datetime] .fsSubFieldGroup select.fsField,.fsBody .fsForm [fs-field-type=datetime] .fsSubFieldGroup select.fsField:not([multiple=multiple]){-webkit-box-flex:1;-ms-flex:1;flex:1;-ms-flex-preferred-size:calc(33.33% - 16px);flex-basis:calc(33.33% - 16px);width:calc(33.33% - 16px);max-width:calc(33.33% - 16px);min-width:inherit;margin-right:0}.fsBody .fsForm [fs-field-type=datetime] .fieldset-content .fsCalendarPickerLink,.fsBody .fsForm [fs-field-type=datetime] .fsSubFieldGroup .fsCalendarPickerLink{margin-top:-8px}.fsBody .fsForm [fs-field-type=datetime] .fieldset-content .ui-datepicker-trigger,.fsBody .fsForm [fs-field-type=datetime] .fsSubFieldGroup .ui-datepicker-trigger{display:none}.fsBody .fsForm .fsCalendarPickerLink{width:24px;min-width:24px;height:24px;border:0;padding:0}}@media screen and (min-width:768px){.fsBody .fsForm .fsSectionHeading{font-size:1.81rem}.fsBody .fsForm input:not([type=checkbox]):not([type=radio]).fsField,.fsBody .fsForm input:not([type=checkbox]):not([type=radio]).fsOtherField,.fsBody .fsForm textarea.fsField{width:auto!important}.fsBody .fsForm input:not([type=checkbox]):not([type=radio]).fsFieldName{width:100%!important}.fsBody .fsForm [fs-field-type=name] .fieldset-content,.fsBody .fsForm [fs-field-type=name] .fsSubFieldGroup{max-width:100%;width:447px}}@media screen and (min-width:960px){.fsBody{background-color:#eef3f7;padding-left:96px;padding-right:96px}.fsBody .fsForm{border:1px solid #d1d5d9;padding-left:32px;padding-right:32px;padding-bottom:32px;margin:64px auto}.fsBody .fsForm [fs-field-type=datetime] .fieldset-content,.fsBody .fsForm [fs-field-type=datetime] .fsSubFieldGroup{width:447px}}@media screen and (max-width:480px){.fsBody .fsForm .fsSubmitButton{width:100%;display:block;float:none}}</pre>
               </div>
+              </p>
+              <p>The comment will let other users know where the code source is coming from and what version of the ACCESS NYC Patterns are being used in the theme.</p>
+              <h3 id="development">Development</h3>
+              <p>If you are modifying the theme for Formstack you should create a new theme and import the development url of the distributed stylesheet into it. It helps to use <a href="https://semver.org">semantic versioning</a> in the name of the theme when developing so you know which one is the most up to date.</p>
+              <p>Once you have created a new theme, copy and paste the following snippet into the <em>Advanced Code Editor</em>.</p>
+              <pre><code>@import url(&#39;https://fonts.googleapis.com/css?family=Noto+Serif:400&#39;);
+@import url(&#39;http://localhost:7000/objects/formstack/formstack.css&#39;);</code></pre>
+              <p>It is also good practice to apply themes in development to sample forms. You can either copy an existing form or use a “development” form that utilizes all of the fields Formstack provides. Once the development theme is applied to the development form, you can use the <em>View Live Form</em> link to view changes you are making.</p>
             </div>
           </div>
-        </section>
-      </article>
-    </main>
-  </div>
-  <footer class="color-mid-background text-blue-dark border-solid border-t-4 border-blue-dark text-small py-4 z-20 relative">
+        </div>
+      </section>
+    </article>
+  </main>
+  <footer class="color-mid-background text-blue-dark border-solid border-t-4 border-blue-dark text-small py-4 z-20 relative" role="contentinfo">
     <div class="layout-home-body p-2">
       <div class="screen-tablet:px-2 mb-4">
-        <p class="mb-1">Maintained by&nbsp;<a href="https://nyc.gov/opportunity"></a>
-        </p>
+        <p class="mb-1">Maintained by&nbsp;</p>
         <a class="text-blue-dark" href="https://nyc.gov/opportunity">
           <span class="sr-only">The Mayor's Office for Economic Opportunity</span>
           <svg class="icon-logo-secondary mb-4" style="height: 53px; width: 300px;">
