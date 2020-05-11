@@ -11,10 +11,8 @@
 @import 'config/media';
 
 .c-alert-banner {
-  width: 100vw;
   background: $color-grey-lightest;
   padding: $spacing-base;
-  position: fixed;
   left: 0;
   bottom: 0;
 

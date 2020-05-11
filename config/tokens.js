@@ -445,6 +445,7 @@ module.exports = {
     'toggle-size': '25px'
   },
   'shadows': {
-    'up': '0 3px 12px 2px rgba(0, 0, 0, 0.25)'
+    'up': '0 3px 12px 2px rgba(0, 0, 0, 0.25)',
+    'none': 'none'
   }
 };
