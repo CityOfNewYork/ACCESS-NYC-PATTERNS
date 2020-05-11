@@ -9,10 +9,10 @@ class WebShare {
   /**
    * @constructor
    */
-  constructor() {
-    this.selector = WebShare.selector;
+  constructor(s = {}) {
+    this.selector = (s.selector) ? s.selector : WebShare.selector;
 
-    this.callback = WebShare.callback;
+    this.callback = (s.callback) ? s.callback : WebShare.callback;
 
     if (navigator.share) {
       // Remove fallback aria toggling attributes
@@ -52,7 +52,7 @@ class WebShare {
   share(data = {}) {
     return navigator.share(data)
       .then(res => {
-        WebShare.callback(data);
+        this.callback(data);
       }).catch(err => {
         if (process.env.NODE_ENV !== 'production') {
           console.dir(err);
