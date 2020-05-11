@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html class="bg-white" dir="ltr" lang="en">
+<html dir="ltr" lang="en">
 
 <head>
   <meta charset="utf-8" />
@@ -22,13 +22,6 @@
   <meta content="images/ms-icon-144x144.png" name="msapplication-TileImage" />
   <link href="images/favicon.ico" rel="icon" type="image/x-icon" />
   <title>Checkboxes | ACCESS NYC Patterns</title>
-  <noscript>
-    <style>
-      body {
-        visibility: visible !important;
-      }
-    </style>
-  </noscript>
   <script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-163470527-1"></script>
   <link href="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.18.1/build/styles/default.min.css" rel="stylesheet" />
   <script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.18.1/build/highlight.min.js"></script>
@@ -41,7 +34,6 @@
       document.querySelectorAll('pre').forEach(function(block) {
         hljs.highlightBlock(block);
       });
-      document.body.style.visibility = 'visible';
     });
     window.dataLayer = window.dataLayer || [];
 
@@ -53,199 +45,198 @@
   </script>
 </head>
 
-<body class="bg-blue-dark" style="visibility: hidden;">
+<body class="bg-white">
   <a class="sr-only" href="#main-content">Skip to main content</a>
-  <div class="bg-white">
-    <header class="color-light-background px-2">
-      <div class="border-b border-grey-light">
-        <div class="flex items-center justify-between p-2 screen-tablet:py-4 screen-tablet:px-2">
-          <div>
-            <h1 class="m-0 p-0 leading-normal">
-              <a href="index">
-                <span class="hidden">ACCESS NYC</span>
-                <svg aria-hidden="true" class="icon-logo-mark screen-tablet:hidden">
-                  <use xlink:href="#icon-logo-mark"></use>
-                </svg>
-                <svg aria-hidden="true" class="icon-logo-full--large text-blue-dark hidden screen-tablet:inline-block">
-                  <use xlink:href="#icon-logo-full"></use>
-                </svg>
-              </a>
-            </h1>
-          </div>
-          <div class="flex items-center">
-            <h2 class="text-small m-0 text-blue-dark screen-tablet:hidden">Patterns</h2>
-            <h2 aria-hidden="true" class="type-h1 m-0 text-blue-dark hidden screen-tablet:inline-block">Patterns</h2>
-            <nav class="text-small">
-              <a class="rounded-lg text-blue-dark border-2 no-underline px-1 ms-2 hidden screen-tablet:inline-block" href="https://github.com/CityOfNewYork/access-nyc-patterns/tree/v0.15.4">0.15.4</a>
-              <a aria-hidden="true" class="ms-1 screen-tablet:ms-2 screen-tablet:hidden" href="https://github.com/CityOfNewYork/access-nyc-patterns/tree/v0.15.4">0.15.4</a>
-              <button aria-controls="main-menu" aria-expanded="false" class="btn-link ms-1 screen-tablet:ms-2" data-js="toggle" id="main-menu-control">Menu</button>
-            </nav>
-          </div>
+  <header class="color-light-background px-2" role="banner">
+    <div class="border-b border-grey-light">
+      <div class="flex items-center justify-between p-2 screen-tablet:py-4 screen-tablet:px-2">
+        <div>
+          <h1 aria-level="1" class="m-0 p-0 leading-normal" role="heading">
+            <a href="index">
+              <span class="sr-only">ACCESS NYC</span>
+              <svg aria-hidden="true" class="icon-logo-mark screen-tablet:hidden">
+                <use xlink:href="#icon-logo-mark"></use>
+              </svg>
+              <svg aria-hidden="true" class="icon-logo-full--large text-blue-dark hidden screen-tablet:inline-block">
+                <use xlink:href="#icon-logo-full"></use>
+              </svg>
+            </a>
+          </h1>
+        </div>
+        <div class="flex items-center">
+          <h2 class="text-small m-0 text-blue-dark screen-tablet:hidden">Patterns</h2>
+          <h2 aria-hidden="true" class="type-h1 m-0 text-blue-dark hidden screen-tablet:inline-block">Patterns</h2>
+          <nav class="text-small">
+            <a class="rounded-lg text-blue-dark border-2 no-underline px-1 ms-2 hidden screen-tablet:inline-block" href="https://github.com/CityOfNewYork/access-nyc-patterns/tree/v0.15.4">0.15.4</a>
+            <a aria-hidden="true" class="ms-1 screen-tablet:ms-2 screen-tablet:hidden" href="https://github.com/CityOfNewYork/access-nyc-patterns/tree/v0.15.4">0.15.4</a>
+            <button aria-controls="main-menu" aria-expanded="false" class="btn-link ms-1 screen-tablet:ms-2" data-js="toggle" id="main-menu-control">Menu</button>
+          </nav>
         </div>
       </div>
-    </header>
-    <aside aria-hidden="true" aria-labelledby="main-menu-control" class="color-mid-background text-small hidden hidden:overflowFadeInUp animated relative" id="main-menu" role="region" style="top: -1px">
-      <div class="page-wrapper py-4 animated">
-        <div class="screen-tablet:flex">
-          <nav class="screen-tablet:flex-1 mb-1 px-2">
-            <span class="type-h3 text-small mb-1 block screen-tablet:border-b screen-tablet:pb-2 screen-tablet:mb-1 border-white p-1">Guides</span>
-            <a class="block p-1" href="index">Home</a>
-            <a class="block p-1" href="about">About</a>
-            <a class="block p-1" href="installation">Installation</a>
-            <a class="block p-1" href="developer-tools">Developer Tools</a>
-            <a class="block p-1 screen-tablet:border-b screen-tablet:pb-2 screen-tablet:mb-1 border-white p-1" href="prototyping">Prototyping</a>
-            <span class="type-h3 text-small mb-1 block screen-tablet:border-b screen-tablet:pb-2 screen-tablet:mb-1 border-white p-1">Collections</span>
-            <a class="block p-1 screen-tablet:border-b screen-tablet:pb-2 screen-tablet:mb-1 border-white p-1" href="covid-response">COVID Response</a>
-            <span class="type-h3 text-small mb-1 block screen-tablet:border-b screen-tablet:pb-2 screen-tablet:mb-1 border-white p-1">Links</span>
-            <a class="block p-1" href="https://www.npmjs.com/package/access-nyc-patterns">NPM Package</a>
-            <a class="block p-1" href="https://github.com/CityOfNewYork/access-nyc-patterns">GitHub Repository</a>
-          </nav>
-          <nav class="screen-tablet:flex-1 mb-1 px-2 screen-desktop:ps-4">
-            <span class="type-h3 text-small mb-1 block screen-tablet:border-b screen-tablet:pb-2 screen-tablet:mb-1 border-white p-1">Elements</span>
-            <a class="block p-1" href="badge">Badge</a>
-            <a class="block p-1" href="buttons">Buttons</a>
-            <a class="block p-1" href="checkboxes">Checkboxes</a>
-            <a class="block p-1" href="dividers">Dividers</a>
-            <a class="block p-1" href="inputs">Inputs</a>
-            <a class="block p-1" href="icons">Icons</a>
-            <a class="block p-1" href="layouts">Layouts</a>
-            <a class="block p-1" href="links">Links</a>
-            <a class="block p-1" href="lists">Lists</a>
-            <a class="block p-1" href="nav">Nav</a>
-            <a class="block p-1" href="radios">Radios</a>
-            <a class="block p-1" href="tables">Tables</a>
-            <a class="block p-1" href="tooltips">Tooltips</a>
-            <a class="block p-1" href="toggles">Toggles</a>
-            <a class="block p-1" href="selects">Selects</a>
-          </nav>
-          <nav class="screen-tablet:flex-1 mb-1 px-2 screen-desktop:ps-4">
-            <span class="type-h3 text-small mb-1 block screen-tablet:border-b screen-tablet:pb-2 screen-tablet:mb-1 border-white p-1">Components</span>
-            <a class="block p-1" href="accordion">Accordion</a>
-            <a class="block p-1" href="alert-box">Alert Box</a>
-            <a class="block p-1" href="card">Card</a>
-            <a class="block p-1" href="checklist">Checklist</a>
-            <a class="block p-1" href="disclaimer">Disclaimer</a>
-            <a class="block p-1" href="filter">Filter</a>
-            <a class="block p-1" href="header">Header</a>
-            <a class="block p-1" href="member-list">Member List</a>
-            <a class="block p-1" href="nearby-stops">Nearby Stops</a>
-            <a class="block p-1" href="share-form">Share Form</a>
-            <a class="block p-1" href="share-links">Share Links</a>
-            <a class="block p-1" href="side-nav">Side Nav</a>
-            <a class="block p-1" href="question">Question</a>
-            <a class="block p-1" href="web-share">Web Share</a>
-          </nav>
-          <nav class="screen-tablet:flex-1 mb-1 px-2 screen-desktop:ps-4">
-            <span class="type-h3 text-small mb-1 block screen-tablet:border-b screen-tablet:pb-2 screen-tablet:mb-1 border-white p-1">Objects</span>
-            <a class="block p-1" href="alert-banner">Alert Banner</a>
-            <a class="block p-1" href="announcements">Announcements</a>
-            <a class="block p-1" href="banner">Banner</a>
-            <a class="block p-1" href="card-list">Card Lists</a>
-            <a class="block p-1" href="come-back-later">Come Back Later</a>
-            <a class="block p-1" href="content">Content</a>
-            <a class="block p-1" href="emails">Emails</a>
-            <a class="block p-1" href="footer">Footer</a>
-            <a class="block p-1" href="formstack">Formstack</a>
-            <a class="block p-1" href="mobile-nav">Mobile Nav</a>
-            <a class="block p-1" href="navigation">Navigation</a>
-            <a class="block p-1" href="newsletter">Newsletter</a>
-            <a class="block p-1" href="search-box">Search Box</a>
-            <a class="block p-1" href="text-controller">Text Controller</a>
-          </nav>
-          <nav class="screen-tablet:flex-1 mb-1 px-2 screen-desktop:ps-4">
-            <span class="type-h3 text-small mb-1 block screen-tablet:border-b screen-tablet:pb-2 screen-tablet:mb-1 border-white p-1">Utilities</span>
-            <a class="block p-1" href="animate">Animate</a>
-            <a class="block p-1" href="clearfix">Clearfix</a>
-            <a class="block p-1" href="color">Color</a>
-            <a class="block p-1" href="font">Fonts</a>
-            <a class="block p-1" href="language">Language</a>
-            <a class="block p-1" href="margin">Margin</a>
-            <a class="block p-1" href="media">Media</a>
-            <a class="block p-1" href="padding">Padding</a>
-            <a class="block p-1" href="tailwindcss">tailwindcss</a>
-            <a class="block p-1" href="text">Text</a>
-            <a class="block p-1" href="toggle">Toggle</a>
-            <a class="block p-1" href="typography">Typography</a>
-          </nav>
-        </div>
-        <div class="text-center">
-          <button aria-controls="main-menu" aria-expanded="false" class="btn-link" data-js="toggle">Close Menu</button>
-        </div>
+    </div>
+  </header>
+  <aside aria-hidden="true" aria-labelledby="main-menu-control" class="color-mid-background text-small hidden hidden:overflowFadeInUp animated relative" id="main-menu" role="navigation" style="top: -1px">
+    <div class="page-wrapper py-4 animated">
+      <div class="screen-tablet:flex">
+        <nav class="screen-tablet:flex-1 mb-1 px-2">
+          <span class="type-h3 text-small mb-1 block screen-tablet:border-b screen-tablet:pb-2 screen-tablet:mb-1 border-white p-1">Guides</span>
+          <a class="block p-1" href="index">Home</a>
+          <a class="block p-1" href="about">About</a>
+          <a class="block p-1" href="installation">Installation</a>
+          <a class="block p-1" href="developer-tools">Developer Tools</a>
+          <a class="block p-1 screen-tablet:border-b screen-tablet:pb-2 screen-tablet:mb-1 border-white p-1" href="prototyping">Prototyping</a>
+          <span class="type-h3 text-small mb-1 block screen-tablet:border-b screen-tablet:pb-2 screen-tablet:mb-1 border-white p-1">Collections</span>
+          <a class="block p-1 screen-tablet:border-b screen-tablet:pb-2 screen-tablet:mb-1 border-white p-1" href="covid-response">COVID Response</a>
+          <span class="type-h3 text-small mb-1 block screen-tablet:border-b screen-tablet:pb-2 screen-tablet:mb-1 border-white p-1">Links</span>
+          <a class="block p-1" href="https://www.npmjs.com/package/access-nyc-patterns">NPM Package</a>
+          <a class="block p-1" href="https://github.com/CityOfNewYork/access-nyc-patterns">GitHub Repository</a>
+        </nav>
+        <nav class="screen-tablet:flex-1 mb-1 px-2 screen-desktop:ps-4">
+          <span class="type-h3 text-small mb-1 block screen-tablet:border-b screen-tablet:pb-2 screen-tablet:mb-1 border-white p-1">Elements</span>
+          <a class="block p-1" href="badge">Badge</a>
+          <a class="block p-1" href="buttons">Buttons</a>
+          <a class="block p-1" href="checkboxes">Checkboxes</a>
+          <a class="block p-1" href="dividers">Dividers</a>
+          <a class="block p-1" href="inputs">Inputs</a>
+          <a class="block p-1" href="icons">Icons</a>
+          <a class="block p-1" href="layouts">Layouts</a>
+          <a class="block p-1" href="links">Links</a>
+          <a class="block p-1" href="lists">Lists</a>
+          <a class="block p-1" href="nav">Nav</a>
+          <a class="block p-1" href="radios">Radios</a>
+          <a class="block p-1" href="tables">Tables</a>
+          <a class="block p-1" href="tooltips">Tooltips</a>
+          <a class="block p-1" href="toggles">Toggles</a>
+          <a class="block p-1" href="selects">Selects</a>
+        </nav>
+        <nav class="screen-tablet:flex-1 mb-1 px-2 screen-desktop:ps-4">
+          <span class="type-h3 text-small mb-1 block screen-tablet:border-b screen-tablet:pb-2 screen-tablet:mb-1 border-white p-1">Components</span>
+          <a class="block p-1" href="accordion">Accordion</a>
+          <a class="block p-1" href="alert-box">Alert Box</a>
+          <a class="block p-1" href="card">Card</a>
+          <a class="block p-1" href="checklist">Checklist</a>
+          <a class="block p-1" href="disclaimer">Disclaimer</a>
+          <a class="block p-1" href="filter">Filter</a>
+          <a class="block p-1" href="header">Header</a>
+          <a class="block p-1" href="member-list">Member List</a>
+          <a class="block p-1" href="nearby-stops">Nearby Stops</a>
+          <a class="block p-1" href="share-form">Share Form</a>
+          <a class="block p-1" href="share-links">Share Links</a>
+          <a class="block p-1" href="side-nav">Side Nav</a>
+          <a class="block p-1" href="question">Question</a>
+          <a class="block p-1" href="web-share">Web Share</a>
+        </nav>
+        <nav class="screen-tablet:flex-1 mb-1 px-2 screen-desktop:ps-4">
+          <span class="type-h3 text-small mb-1 block screen-tablet:border-b screen-tablet:pb-2 screen-tablet:mb-1 border-white p-1">Objects</span>
+          <a class="block p-1" href="alert-banner">Alert Banner</a>
+          <a class="block p-1" href="announcements">Announcements</a>
+          <a class="block p-1" href="banner">Banner</a>
+          <a class="block p-1" href="card-list">Card Lists</a>
+          <a class="block p-1" href="come-back-later">Come Back Later</a>
+          <a class="block p-1" href="content">Content</a>
+          <a class="block p-1" href="emails">Emails</a>
+          <a class="block p-1" href="footer">Footer</a>
+          <a class="block p-1" href="formstack">Formstack</a>
+          <a class="block p-1" href="mobile-nav">Mobile Nav</a>
+          <a class="block p-1" href="navigation">Navigation</a>
+          <a class="block p-1" href="newsletter">Newsletter</a>
+          <a class="block p-1" href="search-box">Search Box</a>
+          <a class="block p-1" href="text-controller">Text Controller</a>
+        </nav>
+        <nav class="screen-tablet:flex-1 mb-1 px-2 screen-desktop:ps-4">
+          <span class="type-h3 text-small mb-1 block screen-tablet:border-b screen-tablet:pb-2 screen-tablet:mb-1 border-white p-1">Utilities</span>
+          <a class="block p-1" href="animate">Animate</a>
+          <a class="block p-1" href="clearfix">Clearfix</a>
+          <a class="block p-1" href="color">Color</a>
+          <a class="block p-1" href="font">Fonts</a>
+          <a class="block p-1" href="language">Language</a>
+          <a class="block p-1" href="margin">Margin</a>
+          <a class="block p-1" href="media">Media</a>
+          <a class="block p-1" href="padding">Padding</a>
+          <a class="block p-1" href="tailwindcss">tailwindcss</a>
+          <a class="block p-1" href="text">Text</a>
+          <a class="block p-1" href="toggle">Toggle</a>
+          <a class="block p-1" href="typography">Typography</a>
+        </nav>
       </div>
-    </aside>
-    <main class="color-light-background screen-tablet:pt-4" id="main-content">
-      <article class="screen-tablet:pt-4 clearfix">
-        <header class="page-wrapper px-2 screen-desktop:px-0 layout-home-body">
-          <div class="my-0 w-full">
-            <h1 class="text-blue-dark px-2 mb-0 screen-tablet:pb-4 screen-tablet:mb-4">Checkboxes</h1>
-          </div>
-        </header>
-        <section class="pb-4 mb-4">
-          <div class="page-wrapper px-2">
-            <header class="layout-home-body">
-              <div class="my-0 px-2 pt-1 pb-4 border-b border-grey-light">
-                <div>
-                  <p class="text-small m-0">Source: <code>
-                      <a href="https://github.com/CityOfNewYork/access-nyc-patterns/tree/v0.15.4/src/elements/checkboxes">src/elements/checkboxes/checkboxes</a>
-                    </code>
-                  </p>
-                </div>
-              </div>
-            </header>
-            <div class="layout-home-body">
-              <div class="my-0 pt-4 px-2 text-small table-align-start"></div>
-            </div>
-            <div class="layout-gutter screen-tablet:layout-columns justify-between pt-4">
-              <div class="screen-tablet:pe-2">
-                <label class="checkbox" for="">
-                  <input id="" name="" type="checkbox" value="" />
-                  <span class="checkbox__label"></span>
-                </label>
-              </div>
+      <div class="text-center">
+        <button aria-controls="main-menu" aria-expanded="false" class="btn-link" data-js="toggle">Close Menu</button>
+      </div>
+    </div>
+  </aside>
+  <main class="color-light-background screen-tablet:pt-4" id="main-content" role="main">
+    <article class="screen-tablet:pt-4 clearfix">
+      <header class="page-wrapper px-2 screen-desktop:px-0 layout-home-body">
+        <div class="my-0 w-full">
+          <h1 class="text-blue-dark px-2 mb-0 screen-tablet:pb-4 screen-tablet:mb-4">Checkboxes</h1>
+        </div>
+      </header>
+      <section class="pb-4 mb-4">
+        <div class="page-wrapper px-2">
+          <header class="layout-home-body">
+            <div class="my-0 px-2 pt-1 pb-4 border-b border-grey-light">
               <div>
-                <div class="code-block mb-1">
-                  <pre>&lt;label class=&quot;checkbox&quot; for=&quot;&quot;&gt;
+                <p class="text-small m-0">Source: <code>
+                    <a href="https://github.com/CityOfNewYork/access-nyc-patterns/tree/v0.15.4/src/elements/checkboxes">src/elements/checkboxes/checkboxes</a>
+                  </code>
+                </p>
+              </div>
+            </div>
+          </header>
+          <div class="layout-home-body">
+            <div class="my-0 pt-4 px-2 text-small table-align-start"></div>
+          </div>
+          <div class="layout-gutter screen-tablet:layout-columns justify-between pt-4">
+            <div class="screen-tablet:pe-2">
+              <label class="checkbox" for="">
+                <input id="" name="" type="checkbox" value="" />
+                <span class="checkbox__label"></span>
+              </label>
+            </div>
+            <div>
+              <div class="code-block mb-1">
+                <pre>&lt;label class=&quot;checkbox&quot; for=&quot;&quot;&gt;
   &lt;input id=&quot;&quot; name=&quot;&quot; type=&quot;checkbox&quot; value=&quot;&quot; /&gt;
   &lt;span class=&quot;checkbox__label&quot;&gt;&lt;/span&gt;
 &lt;/label&gt;</pre>
-                </div>
               </div>
             </div>
           </div>
-        </section>
-        <section class="pb-4 mb-4" id="checkboxes-with-icons">
-          <div class="page-wrapper px-2">
-            <header class="layout-home-body">
-              <div class="my-0 px-2 pt-1 pb-4 border-b border-grey-light">
-                <h2 class="m-0">
-                  <a class="text-grey-mid font-normal no-underline capitalize" href="#checkboxes-with-icons">Checkboxes With Icons</a>
-                </h2>
-                <div class="pt-2">
-                  <p class="text-small m-0">Source: <code>
-                      <a href="https://github.com/CityOfNewYork/access-nyc-patterns/tree/v0.15.4/src/elements/checkboxes">src/elements/checkboxes/checkboxes-with-icons</a>
-                    </code>
-                  </p>
-                </div>
+        </div>
+      </section>
+      <section class="pb-4 mb-4" id="checkboxes-with-icons">
+        <div class="page-wrapper px-2">
+          <header class="layout-home-body">
+            <div class="my-0 px-2 pt-1 pb-4 border-b border-grey-light">
+              <h2 class="m-0">
+                <a class="text-grey-mid font-normal no-underline capitalize" href="#checkboxes-with-icons">Checkboxes With Icons</a>
+              </h2>
+              <div class="pt-2">
+                <p class="text-small m-0">Source: <code>
+                    <a href="https://github.com/CityOfNewYork/access-nyc-patterns/tree/v0.15.4/src/elements/checkboxes">src/elements/checkboxes/checkboxes-with-icons</a>
+                  </code>
+                </p>
               </div>
-            </header>
-            <div class="layout-home-body">
-              <div class="my-0 pt-4 px-2 text-small table-align-start"></div>
             </div>
-            <div class="layout-gutter screen-tablet:layout-columns justify-between pt-4">
-              <div class="screen-tablet:pe-2">
-                <label class="checkbox">
-                  <input name="category" type="checkbox" value="cash-expenses" />
-                  <span class="checkbox__label items-center">
-                    <svg aria-hidden="true" class="checkbox__icon icon-6 text-blue-bright fill-blue-light">
-                      <use xlink:href="#icon-cash-expenses-v2"></use>
-                    </svg>
-                    <span>Cash & Expenses</span>
-                  </span>
-                </label>
-              </div>
-              <div>
-                <div class="code-block mb-1">
-                  <pre>&lt;label class=&quot;checkbox&quot;&gt;
+          </header>
+          <div class="layout-home-body">
+            <div class="my-0 pt-4 px-2 text-small table-align-start"></div>
+          </div>
+          <div class="layout-gutter screen-tablet:layout-columns justify-between pt-4">
+            <div class="screen-tablet:pe-2">
+              <label class="checkbox">
+                <input name="category" type="checkbox" value="cash-expenses" />
+                <span class="checkbox__label items-center">
+                  <svg aria-hidden="true" class="checkbox__icon icon-6 text-blue-bright fill-blue-light">
+                    <use xlink:href="#icon-cash-expenses-v2"></use>
+                  </svg>
+                  <span>Cash & Expenses</span>
+                </span>
+              </label>
+            </div>
+            <div>
+              <div class="code-block mb-1">
+                <pre>&lt;label class=&quot;checkbox&quot;&gt;
   &lt;input name=&quot;category&quot; type=&quot;checkbox&quot; value=&quot;cash-expenses&quot; /&gt;
   &lt;span class=&quot;checkbox__label items-center&quot;&gt;
     &lt;svg aria-hidden=&quot;true&quot; class=&quot;checkbox__icon icon-6 text-blue-bright fill-blue-light&quot;&gt;
@@ -254,26 +245,24 @@
     &lt;span&gt;Cash &amp; Expenses&lt;/span&gt;
   &lt;/span&gt;
 &lt;/label&gt;</pre>
-                </div>
               </div>
             </div>
           </div>
-        </section>
-        <div class="sticky bottom-0 bg-white shadow-up relative z-10 overflow-y-scroll whitespace-no-wrap animated fadeInUp">
-          <nav class="nav-inline inline-block text-small p-2 screen-tablet:p-4">
-            <span class="me-2">Jump to:</span>
-            <a class="me-2 screen-tablet:me-4" href="#main-content">Top</a>
-            <a class="me-2 screen-tablet:me-4" href="#checkboxes-with-icons">Checkboxes With Icons</a>
-          </nav>
         </div>
-      </article>
-    </main>
-  </div>
-  <footer class="color-mid-background text-blue-dark border-solid border-t-4 border-blue-dark text-small py-4 z-20 relative">
+      </section>
+      <div class="sticky bottom-0 bg-white shadow-up relative z-10 overflow-y-scroll whitespace-no-wrap animated fadeInUp">
+        <nav class="nav-inline inline-block text-small p-2 screen-tablet:p-4">
+          <span class="me-2">Jump to:</span>
+          <a class="me-2" href="#main-content">Top</a>
+          <a class="me-2" href="#checkboxes-with-icons">Checkboxes With Icons</a>
+        </nav>
+      </div>
+    </article>
+  </main>
+  <footer class="color-mid-background text-blue-dark border-solid border-t-4 border-blue-dark text-small py-4 z-20 relative" role="contentinfo">
     <div class="layout-home-body p-2">
       <div class="screen-tablet:px-2 mb-4">
-        <p class="mb-1">Maintained by&nbsp;<a href="https://nyc.gov/opportunity"></a>
-        </p>
+        <p class="mb-1">Maintained by&nbsp;</p>
         <a class="text-blue-dark" href="https://nyc.gov/opportunity">
           <span class="sr-only">The Mayor's Office for Economic Opportunity</span>
           <svg class="icon-logo-secondary mb-4" style="height: 53px; width: 300px;">

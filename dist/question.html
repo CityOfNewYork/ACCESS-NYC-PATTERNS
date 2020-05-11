@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html class="bg-white" dir="ltr" lang="en">
+<html dir="ltr" lang="en">
 
 <head>
   <meta charset="utf-8" />
@@ -22,13 +22,6 @@
   <meta content="images/ms-icon-144x144.png" name="msapplication-TileImage" />
   <link href="images/favicon.ico" rel="icon" type="image/x-icon" />
   <title>Question | ACCESS NYC Patterns</title>
-  <noscript>
-    <style>
-      body {
-        visibility: visible !important;
-      }
-    </style>
-  </noscript>
   <script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-163470527-1"></script>
   <link href="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.18.1/build/styles/default.min.css" rel="stylesheet" />
   <script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.18.1/build/highlight.min.js"></script>
@@ -41,7 +34,6 @@
       document.querySelectorAll('pre').forEach(function(block) {
         hljs.highlightBlock(block);
       });
-      document.body.style.visibility = 'visible';
     });
     window.dataLayer = window.dataLayer || [];
 
@@ -53,190 +45,189 @@
   </script>
 </head>
 
-<body class="bg-blue-dark" style="visibility: hidden;">
+<body class="bg-white">
   <a class="sr-only" href="#main-content">Skip to main content</a>
-  <div class="bg-white">
-    <header class="color-light-background px-2">
-      <div class="border-b border-grey-light">
-        <div class="flex items-center justify-between p-2 screen-tablet:py-4 screen-tablet:px-2">
-          <div>
-            <h1 class="m-0 p-0 leading-normal">
-              <a href="index">
-                <span class="hidden">ACCESS NYC</span>
-                <svg aria-hidden="true" class="icon-logo-mark screen-tablet:hidden">
-                  <use xlink:href="#icon-logo-mark"></use>
-                </svg>
-                <svg aria-hidden="true" class="icon-logo-full--large text-blue-dark hidden screen-tablet:inline-block">
-                  <use xlink:href="#icon-logo-full"></use>
-                </svg>
-              </a>
-            </h1>
-          </div>
-          <div class="flex items-center">
-            <h2 class="text-small m-0 text-blue-dark screen-tablet:hidden">Patterns</h2>
-            <h2 aria-hidden="true" class="type-h1 m-0 text-blue-dark hidden screen-tablet:inline-block">Patterns</h2>
-            <nav class="text-small">
-              <a class="rounded-lg text-blue-dark border-2 no-underline px-1 ms-2 hidden screen-tablet:inline-block" href="https://github.com/CityOfNewYork/access-nyc-patterns/tree/v0.15.4">0.15.4</a>
-              <a aria-hidden="true" class="ms-1 screen-tablet:ms-2 screen-tablet:hidden" href="https://github.com/CityOfNewYork/access-nyc-patterns/tree/v0.15.4">0.15.4</a>
-              <button aria-controls="main-menu" aria-expanded="false" class="btn-link ms-1 screen-tablet:ms-2" data-js="toggle" id="main-menu-control">Menu</button>
-            </nav>
-          </div>
+  <header class="color-light-background px-2" role="banner">
+    <div class="border-b border-grey-light">
+      <div class="flex items-center justify-between p-2 screen-tablet:py-4 screen-tablet:px-2">
+        <div>
+          <h1 aria-level="1" class="m-0 p-0 leading-normal" role="heading">
+            <a href="index">
+              <span class="sr-only">ACCESS NYC</span>
+              <svg aria-hidden="true" class="icon-logo-mark screen-tablet:hidden">
+                <use xlink:href="#icon-logo-mark"></use>
+              </svg>
+              <svg aria-hidden="true" class="icon-logo-full--large text-blue-dark hidden screen-tablet:inline-block">
+                <use xlink:href="#icon-logo-full"></use>
+              </svg>
+            </a>
+          </h1>
+        </div>
+        <div class="flex items-center">
+          <h2 class="text-small m-0 text-blue-dark screen-tablet:hidden">Patterns</h2>
+          <h2 aria-hidden="true" class="type-h1 m-0 text-blue-dark hidden screen-tablet:inline-block">Patterns</h2>
+          <nav class="text-small">
+            <a class="rounded-lg text-blue-dark border-2 no-underline px-1 ms-2 hidden screen-tablet:inline-block" href="https://github.com/CityOfNewYork/access-nyc-patterns/tree/v0.15.4">0.15.4</a>
+            <a aria-hidden="true" class="ms-1 screen-tablet:ms-2 screen-tablet:hidden" href="https://github.com/CityOfNewYork/access-nyc-patterns/tree/v0.15.4">0.15.4</a>
+            <button aria-controls="main-menu" aria-expanded="false" class="btn-link ms-1 screen-tablet:ms-2" data-js="toggle" id="main-menu-control">Menu</button>
+          </nav>
         </div>
       </div>
-    </header>
-    <aside aria-hidden="true" aria-labelledby="main-menu-control" class="color-mid-background text-small hidden hidden:overflowFadeInUp animated relative" id="main-menu" role="region" style="top: -1px">
-      <div class="page-wrapper py-4 animated">
-        <div class="screen-tablet:flex">
-          <nav class="screen-tablet:flex-1 mb-1 px-2">
-            <span class="type-h3 text-small mb-1 block screen-tablet:border-b screen-tablet:pb-2 screen-tablet:mb-1 border-white p-1">Guides</span>
-            <a class="block p-1" href="index">Home</a>
-            <a class="block p-1" href="about">About</a>
-            <a class="block p-1" href="installation">Installation</a>
-            <a class="block p-1" href="developer-tools">Developer Tools</a>
-            <a class="block p-1 screen-tablet:border-b screen-tablet:pb-2 screen-tablet:mb-1 border-white p-1" href="prototyping">Prototyping</a>
-            <span class="type-h3 text-small mb-1 block screen-tablet:border-b screen-tablet:pb-2 screen-tablet:mb-1 border-white p-1">Collections</span>
-            <a class="block p-1 screen-tablet:border-b screen-tablet:pb-2 screen-tablet:mb-1 border-white p-1" href="covid-response">COVID Response</a>
-            <span class="type-h3 text-small mb-1 block screen-tablet:border-b screen-tablet:pb-2 screen-tablet:mb-1 border-white p-1">Links</span>
-            <a class="block p-1" href="https://www.npmjs.com/package/access-nyc-patterns">NPM Package</a>
-            <a class="block p-1" href="https://github.com/CityOfNewYork/access-nyc-patterns">GitHub Repository</a>
-          </nav>
-          <nav class="screen-tablet:flex-1 mb-1 px-2 screen-desktop:ps-4">
-            <span class="type-h3 text-small mb-1 block screen-tablet:border-b screen-tablet:pb-2 screen-tablet:mb-1 border-white p-1">Elements</span>
-            <a class="block p-1" href="badge">Badge</a>
-            <a class="block p-1" href="buttons">Buttons</a>
-            <a class="block p-1" href="checkboxes">Checkboxes</a>
-            <a class="block p-1" href="dividers">Dividers</a>
-            <a class="block p-1" href="inputs">Inputs</a>
-            <a class="block p-1" href="icons">Icons</a>
-            <a class="block p-1" href="layouts">Layouts</a>
-            <a class="block p-1" href="links">Links</a>
-            <a class="block p-1" href="lists">Lists</a>
-            <a class="block p-1" href="nav">Nav</a>
-            <a class="block p-1" href="radios">Radios</a>
-            <a class="block p-1" href="tables">Tables</a>
-            <a class="block p-1" href="tooltips">Tooltips</a>
-            <a class="block p-1" href="toggles">Toggles</a>
-            <a class="block p-1" href="selects">Selects</a>
-          </nav>
-          <nav class="screen-tablet:flex-1 mb-1 px-2 screen-desktop:ps-4">
-            <span class="type-h3 text-small mb-1 block screen-tablet:border-b screen-tablet:pb-2 screen-tablet:mb-1 border-white p-1">Components</span>
-            <a class="block p-1" href="accordion">Accordion</a>
-            <a class="block p-1" href="alert-box">Alert Box</a>
-            <a class="block p-1" href="card">Card</a>
-            <a class="block p-1" href="checklist">Checklist</a>
-            <a class="block p-1" href="disclaimer">Disclaimer</a>
-            <a class="block p-1" href="filter">Filter</a>
-            <a class="block p-1" href="header">Header</a>
-            <a class="block p-1" href="member-list">Member List</a>
-            <a class="block p-1" href="nearby-stops">Nearby Stops</a>
-            <a class="block p-1" href="share-form">Share Form</a>
-            <a class="block p-1" href="share-links">Share Links</a>
-            <a class="block p-1" href="side-nav">Side Nav</a>
-            <a class="block p-1" href="question">Question</a>
-            <a class="block p-1" href="web-share">Web Share</a>
-          </nav>
-          <nav class="screen-tablet:flex-1 mb-1 px-2 screen-desktop:ps-4">
-            <span class="type-h3 text-small mb-1 block screen-tablet:border-b screen-tablet:pb-2 screen-tablet:mb-1 border-white p-1">Objects</span>
-            <a class="block p-1" href="alert-banner">Alert Banner</a>
-            <a class="block p-1" href="announcements">Announcements</a>
-            <a class="block p-1" href="banner">Banner</a>
-            <a class="block p-1" href="card-list">Card Lists</a>
-            <a class="block p-1" href="come-back-later">Come Back Later</a>
-            <a class="block p-1" href="content">Content</a>
-            <a class="block p-1" href="emails">Emails</a>
-            <a class="block p-1" href="footer">Footer</a>
-            <a class="block p-1" href="formstack">Formstack</a>
-            <a class="block p-1" href="mobile-nav">Mobile Nav</a>
-            <a class="block p-1" href="navigation">Navigation</a>
-            <a class="block p-1" href="newsletter">Newsletter</a>
-            <a class="block p-1" href="search-box">Search Box</a>
-            <a class="block p-1" href="text-controller">Text Controller</a>
-          </nav>
-          <nav class="screen-tablet:flex-1 mb-1 px-2 screen-desktop:ps-4">
-            <span class="type-h3 text-small mb-1 block screen-tablet:border-b screen-tablet:pb-2 screen-tablet:mb-1 border-white p-1">Utilities</span>
-            <a class="block p-1" href="animate">Animate</a>
-            <a class="block p-1" href="clearfix">Clearfix</a>
-            <a class="block p-1" href="color">Color</a>
-            <a class="block p-1" href="font">Fonts</a>
-            <a class="block p-1" href="language">Language</a>
-            <a class="block p-1" href="margin">Margin</a>
-            <a class="block p-1" href="media">Media</a>
-            <a class="block p-1" href="padding">Padding</a>
-            <a class="block p-1" href="tailwindcss">tailwindcss</a>
-            <a class="block p-1" href="text">Text</a>
-            <a class="block p-1" href="toggle">Toggle</a>
-            <a class="block p-1" href="typography">Typography</a>
-          </nav>
-        </div>
-        <div class="text-center">
-          <button aria-controls="main-menu" aria-expanded="false" class="btn-link" data-js="toggle">Close Menu</button>
-        </div>
+    </div>
+  </header>
+  <aside aria-hidden="true" aria-labelledby="main-menu-control" class="color-mid-background text-small hidden hidden:overflowFadeInUp animated relative" id="main-menu" role="navigation" style="top: -1px">
+    <div class="page-wrapper py-4 animated">
+      <div class="screen-tablet:flex">
+        <nav class="screen-tablet:flex-1 mb-1 px-2">
+          <span class="type-h3 text-small mb-1 block screen-tablet:border-b screen-tablet:pb-2 screen-tablet:mb-1 border-white p-1">Guides</span>
+          <a class="block p-1" href="index">Home</a>
+          <a class="block p-1" href="about">About</a>
+          <a class="block p-1" href="installation">Installation</a>
+          <a class="block p-1" href="developer-tools">Developer Tools</a>
+          <a class="block p-1 screen-tablet:border-b screen-tablet:pb-2 screen-tablet:mb-1 border-white p-1" href="prototyping">Prototyping</a>
+          <span class="type-h3 text-small mb-1 block screen-tablet:border-b screen-tablet:pb-2 screen-tablet:mb-1 border-white p-1">Collections</span>
+          <a class="block p-1 screen-tablet:border-b screen-tablet:pb-2 screen-tablet:mb-1 border-white p-1" href="covid-response">COVID Response</a>
+          <span class="type-h3 text-small mb-1 block screen-tablet:border-b screen-tablet:pb-2 screen-tablet:mb-1 border-white p-1">Links</span>
+          <a class="block p-1" href="https://www.npmjs.com/package/access-nyc-patterns">NPM Package</a>
+          <a class="block p-1" href="https://github.com/CityOfNewYork/access-nyc-patterns">GitHub Repository</a>
+        </nav>
+        <nav class="screen-tablet:flex-1 mb-1 px-2 screen-desktop:ps-4">
+          <span class="type-h3 text-small mb-1 block screen-tablet:border-b screen-tablet:pb-2 screen-tablet:mb-1 border-white p-1">Elements</span>
+          <a class="block p-1" href="badge">Badge</a>
+          <a class="block p-1" href="buttons">Buttons</a>
+          <a class="block p-1" href="checkboxes">Checkboxes</a>
+          <a class="block p-1" href="dividers">Dividers</a>
+          <a class="block p-1" href="inputs">Inputs</a>
+          <a class="block p-1" href="icons">Icons</a>
+          <a class="block p-1" href="layouts">Layouts</a>
+          <a class="block p-1" href="links">Links</a>
+          <a class="block p-1" href="lists">Lists</a>
+          <a class="block p-1" href="nav">Nav</a>
+          <a class="block p-1" href="radios">Radios</a>
+          <a class="block p-1" href="tables">Tables</a>
+          <a class="block p-1" href="tooltips">Tooltips</a>
+          <a class="block p-1" href="toggles">Toggles</a>
+          <a class="block p-1" href="selects">Selects</a>
+        </nav>
+        <nav class="screen-tablet:flex-1 mb-1 px-2 screen-desktop:ps-4">
+          <span class="type-h3 text-small mb-1 block screen-tablet:border-b screen-tablet:pb-2 screen-tablet:mb-1 border-white p-1">Components</span>
+          <a class="block p-1" href="accordion">Accordion</a>
+          <a class="block p-1" href="alert-box">Alert Box</a>
+          <a class="block p-1" href="card">Card</a>
+          <a class="block p-1" href="checklist">Checklist</a>
+          <a class="block p-1" href="disclaimer">Disclaimer</a>
+          <a class="block p-1" href="filter">Filter</a>
+          <a class="block p-1" href="header">Header</a>
+          <a class="block p-1" href="member-list">Member List</a>
+          <a class="block p-1" href="nearby-stops">Nearby Stops</a>
+          <a class="block p-1" href="share-form">Share Form</a>
+          <a class="block p-1" href="share-links">Share Links</a>
+          <a class="block p-1" href="side-nav">Side Nav</a>
+          <a class="block p-1" href="question">Question</a>
+          <a class="block p-1" href="web-share">Web Share</a>
+        </nav>
+        <nav class="screen-tablet:flex-1 mb-1 px-2 screen-desktop:ps-4">
+          <span class="type-h3 text-small mb-1 block screen-tablet:border-b screen-tablet:pb-2 screen-tablet:mb-1 border-white p-1">Objects</span>
+          <a class="block p-1" href="alert-banner">Alert Banner</a>
+          <a class="block p-1" href="announcements">Announcements</a>
+          <a class="block p-1" href="banner">Banner</a>
+          <a class="block p-1" href="card-list">Card Lists</a>
+          <a class="block p-1" href="come-back-later">Come Back Later</a>
+          <a class="block p-1" href="content">Content</a>
+          <a class="block p-1" href="emails">Emails</a>
+          <a class="block p-1" href="footer">Footer</a>
+          <a class="block p-1" href="formstack">Formstack</a>
+          <a class="block p-1" href="mobile-nav">Mobile Nav</a>
+          <a class="block p-1" href="navigation">Navigation</a>
+          <a class="block p-1" href="newsletter">Newsletter</a>
+          <a class="block p-1" href="search-box">Search Box</a>
+          <a class="block p-1" href="text-controller">Text Controller</a>
+        </nav>
+        <nav class="screen-tablet:flex-1 mb-1 px-2 screen-desktop:ps-4">
+          <span class="type-h3 text-small mb-1 block screen-tablet:border-b screen-tablet:pb-2 screen-tablet:mb-1 border-white p-1">Utilities</span>
+          <a class="block p-1" href="animate">Animate</a>
+          <a class="block p-1" href="clearfix">Clearfix</a>
+          <a class="block p-1" href="color">Color</a>
+          <a class="block p-1" href="font">Fonts</a>
+          <a class="block p-1" href="language">Language</a>
+          <a class="block p-1" href="margin">Margin</a>
+          <a class="block p-1" href="media">Media</a>
+          <a class="block p-1" href="padding">Padding</a>
+          <a class="block p-1" href="tailwindcss">tailwindcss</a>
+          <a class="block p-1" href="text">Text</a>
+          <a class="block p-1" href="toggle">Toggle</a>
+          <a class="block p-1" href="typography">Typography</a>
+        </nav>
       </div>
-    </aside>
-    <main class="color-light-background screen-tablet:pt-4" id="main-content">
-      <article class="screen-tablet:pt-4 clearfix">
-        <form id="question-demo">
-          <header class="page-wrapper px-2 screen-desktop:px-0 layout-home-body">
-            <div class="my-0 w-full">
-              <h1 class="text-blue-dark px-2 mb-0 screen-tablet:pb-4 screen-tablet:mb-4">Question</h1>
-            </div>
-          </header>
-          <section class="pb-2 screen-tablet:pb-4 screen-tablet:mb-4">
-            <div class="page-wrapper px-2 screen-desktop:px-0">
-              <header class="layout-home-body">
-                <div class="my-0 px-2 py-0 border-b border-grey-light screen-tablet:flex screen-tablet:justify-between"></div>
-              </header>
-              <div class="layout-home-body">
-                <div class="my-0 pt-4 px-2 text-small table-align-start">
-                  <p>The Question Component allows a user to enter information into a form. This pattern follows the styling and usage guidelines of the <a href="https://designsystem.digital.gov/components/form-controls/">U.S. Web Design System’s Form Control</a>. The ACCESS NYC Patterns include a <a href="tooltips">Tooltip Element</a> which can provide clarification on why a question is being asked.</p>
-                  <h4 id="validation-and-accessibility">Validation and Accessibility</h4>
-                  <p>Question Components require JavaScript for validation and use the <a href="https://github.com/CityOfNewYork/nyco-patterns-framework">Form Utility from the NYCO Patterns Framework</a>. This script will display visual feedback regarding missing and invalid answers to the user as well as toggle appropriate aria attributes for announcing feedback to screen readers. The <code>aria-live=”polite”</code> attribute on the message announces a new element that was not previously visible in the default Question Component state. Additionally, the <code>aria-invalid=”true”</code> attribute illustrates to screen readers that the input is not valid and the <code>aria-describedby</code> attribute indicates the input’s error description.</p>
-                </div>
+      <div class="text-center">
+        <button aria-controls="main-menu" aria-expanded="false" class="btn-link" data-js="toggle">Close Menu</button>
+      </div>
+    </div>
+  </aside>
+  <main class="color-light-background screen-tablet:pt-4" id="main-content" role="main">
+    <article class="screen-tablet:pt-4 clearfix">
+      <form id="question-demo">
+        <header class="page-wrapper px-2 screen-desktop:px-0 layout-home-body">
+          <div class="my-0 w-full">
+            <h1 class="text-blue-dark px-2 mb-0 screen-tablet:pb-4 screen-tablet:mb-4">Question</h1>
+          </div>
+        </header>
+        <section class="pb-2 screen-tablet:pb-4 screen-tablet:mb-4">
+          <div class="page-wrapper px-2 screen-desktop:px-0">
+            <header class="layout-home-body">
+              <div class="my-0 px-2 py-0 border-b border-grey-light screen-tablet:flex screen-tablet:justify-between"></div>
+            </header>
+            <div class="layout-home-body">
+              <div class="my-0 pt-4 px-2 text-small table-align-start">
+                <p>The Question Component allows a user to enter information into a form. This pattern follows the styling and usage guidelines of the <a href="https://designsystem.digital.gov/components/form-controls/">U.S. Web Design System’s Form Control</a>. The ACCESS NYC Patterns include a <a href="tooltips">Tooltip Element</a> which can provide clarification on why a question is being asked.</p>
+                <h4 id="validation-and-accessibility">Validation and Accessibility</h4>
+                <p>Question Components require JavaScript for validation and use the <a href="https://github.com/CityOfNewYork/nyco-patterns-framework">Form Utility from the NYCO Patterns Framework</a>. This script will display visual feedback regarding missing and invalid answers to the user as well as toggle appropriate aria attributes for announcing feedback to screen readers. The <code>aria-live=”polite”</code> attribute on the message announces a new element that was not previously visible in the default Question Component state. Additionally, the <code>aria-invalid=”true”</code> attribute illustrates to screen readers that the input is not valid and the <code>aria-describedby</code> attribute indicates the input’s error description.</p>
               </div>
             </div>
-          </section>
-          <section class="pb-4 mb-4" id="number-question">
-            <div class="page-wrapper px-2">
-              <header class="layout-home-body">
-                <div class="my-0 px-2 pt-1 pb-4 border-b border-grey-light">
-                  <h2 class="m-0">
-                    <a class="text-grey-mid font-normal no-underline capitalize" href="#number-question">Number Question</a>
-                  </h2>
-                  <div class="pt-2">
-                    <p class="text-small m-0">Source: <code>
-                        <a href="https://github.com/CityOfNewYork/access-nyc-patterns/tree/v0.15.4/src/components/question">src/components/question/question-number</a>
-                      </code>
-                    </p>
+          </div>
+        </section>
+        <section class="pb-4 mb-4" id="number-question">
+          <div class="page-wrapper px-2">
+            <header class="layout-home-body">
+              <div class="my-0 px-2 pt-1 pb-4 border-b border-grey-light">
+                <h2 class="m-0">
+                  <a class="text-grey-mid font-normal no-underline capitalize" href="#number-question">Number Question</a>
+                </h2>
+                <div class="pt-2">
+                  <p class="text-small m-0">Source: <code>
+                      <a href="https://github.com/CityOfNewYork/access-nyc-patterns/tree/v0.15.4/src/components/question">src/components/question/question-number</a>
+                    </code>
+                  </p>
+                </div>
+              </div>
+            </header>
+            <div class="layout-home-body">
+              <div class="my-0 pt-4 px-2 text-small table-align-start"></div>
+            </div>
+            <div class="layout-gutter screen-tablet:layout-columns justify-between pt-4">
+              <div class="screen-tablet:pe-2">
+                <div class="c-question">
+                  <label class="c-question__label" for="person-0-age">How old are you?</label>
+                  <p>
+                    <button aria-describedby="aria-db-tooltip-age" class="c-question__info btn btn-text btn-link" data-js="tooltip-control" type="button">
+                      <svg class="icon icon-2">
+                        <use xlink:href="#icon-info"></use>
+                      </svg>Here’s why we are asking.
+                    </button>
+                  </p>
+                  <div class="tooltip color-info-status animated fadeInUp" id="aria-db-tooltip-age">
+                    <p>Many benefit programs are meant for people of a specific age group. Sharing your age will help us choose the programs that will be most helpful to you right now. The information you share for the purposes of public benefits screening will be anonymous.</p>
                   </div>
-                </div>
-              </header>
-              <div class="layout-home-body">
-                <div class="my-0 pt-4 px-2 text-small table-align-start"></div>
-              </div>
-              <div class="layout-gutter screen-tablet:layout-columns justify-between pt-4">
-                <div class="screen-tablet:pe-2">
-                  <div class="c-question">
-                    <label class="c-question__label" for="person-0-age">How old are you?</label>
-                    <p>
-                      <button aria-describedby="aria-db-tooltip-age" class="c-question__info btn btn-text btn-link" data-js="tooltip-control" type="button">
-                        <svg class="icon icon-2">
-                          <use xlink:href="#icon-info"></use>
-                        </svg>Here’s why we are asking.
-                      </button>
-                    </p>
-                    <div class="tooltip color-info-status animated fadeInUp" id="aria-db-tooltip-age">
-                      <p>Many benefit programs are meant for people of a specific age group. Sharing your age will help us choose the programs that will be most helpful to you right now. The information you share for the purposes of public benefits screening will be anonymous.</p>
-                    </div>
-                    <div class="c-question__container">
-                      <div>
-                        <input id="person-0-age" max="200" maxlength="3" min="0" required="true" step="1" type="number" />
-                      </div>
+                  <div class="c-question__container">
+                    <div>
+                      <input id="person-0-age" max="200" maxlength="3" min="0" required="true" step="1" type="number" />
                     </div>
                   </div>
                 </div>
-                <div>
-                  <div class="code-block mb-1">
-                    <pre>&lt;div class=&quot;c-question&quot;&gt;
+              </div>
+              <div>
+                <div class="code-block mb-1">
+                  <pre>&lt;div class=&quot;c-question&quot;&gt;
   &lt;label class=&quot;c-question__label&quot; for=&quot;person-0-age&quot;&gt;How old are you?&lt;/label&gt;
   &lt;p&gt;
     &lt;button aria-describedby=&quot;aria-db-tooltip-age&quot; class=&quot;c-question__info btn btn-text btn-link&quot; data-js=&quot;tooltip-control&quot; type=&quot;button&quot;&gt;
@@ -254,44 +245,44 @@
     &lt;/div&gt;
   &lt;/div&gt;
 &lt;/div&gt;</pre>
-                  </div>
                 </div>
               </div>
             </div>
-          </section>
-          <section class="pb-4 mb-4" id="text-question">
-            <div class="page-wrapper px-2">
-              <header class="layout-home-body">
-                <div class="my-0 px-2 pt-1 pb-4 border-b border-grey-light">
-                  <h2 class="m-0">
-                    <a class="text-grey-mid font-normal no-underline capitalize" href="#text-question">Text Question</a>
-                  </h2>
-                  <div class="pt-2">
-                    <p class="text-small m-0">Source: <code>
-                        <a href="https://github.com/CityOfNewYork/access-nyc-patterns/tree/v0.15.4/src/components/question">src/components/question/question-text</a>
-                      </code>
-                    </p>
-                  </div>
+          </div>
+        </section>
+        <section class="pb-4 mb-4" id="text-question">
+          <div class="page-wrapper px-2">
+            <header class="layout-home-body">
+              <div class="my-0 px-2 pt-1 pb-4 border-b border-grey-light">
+                <h2 class="m-0">
+                  <a class="text-grey-mid font-normal no-underline capitalize" href="#text-question">Text Question</a>
+                </h2>
+                <div class="pt-2">
+                  <p class="text-small m-0">Source: <code>
+                      <a href="https://github.com/CityOfNewYork/access-nyc-patterns/tree/v0.15.4/src/components/question">src/components/question/question-text</a>
+                    </code>
+                  </p>
                 </div>
-              </header>
-              <div class="layout-home-body">
-                <div class="my-0 pt-4 px-2 text-small table-align-start"></div>
               </div>
-              <div class="layout-gutter screen-tablet:layout-columns justify-between pt-4">
-                <div class="screen-tablet:pe-2">
-                  <div class="c-question">
-                    <label class="c-question__label" for="client-0-email-address">What is your email?</label>
-                    <p>We can send you a link to this page to help you get back to it when you’re ready.</p>
-                    <div class="c-question__container">
-                      <div>
-                        <input id="client-0-email-address" name="Client[0].emailAddress" required="true" type="email" />
-                      </div>
+            </header>
+            <div class="layout-home-body">
+              <div class="my-0 pt-4 px-2 text-small table-align-start"></div>
+            </div>
+            <div class="layout-gutter screen-tablet:layout-columns justify-between pt-4">
+              <div class="screen-tablet:pe-2">
+                <div class="c-question">
+                  <label class="c-question__label" for="client-0-email-address">What is your email?</label>
+                  <p>We can send you a link to this page to help you get back to it when you’re ready.</p>
+                  <div class="c-question__container">
+                    <div>
+                      <input id="client-0-email-address" name="Client[0].emailAddress" required="true" type="email" />
                     </div>
                   </div>
                 </div>
-                <div>
-                  <div class="code-block mb-1">
-                    <pre>&lt;div class=&quot;c-question&quot;&gt;
+              </div>
+              <div>
+                <div class="code-block mb-1">
+                  <pre>&lt;div class=&quot;c-question&quot;&gt;
   &lt;label class=&quot;c-question__label&quot; for=&quot;client-0-email-address&quot;&gt;What is your email?&lt;/label&gt;
   &lt;p&gt;We can send you a link to this page to help you get back to it when you’re ready.&lt;/p&gt;
   &lt;div class=&quot;c-question__container&quot;&gt;
@@ -300,69 +291,69 @@
     &lt;/div&gt;
   &lt;/div&gt;
 &lt;/div&gt;</pre>
-                  </div>
                 </div>
               </div>
             </div>
-          </section>
-          <section class="pb-4 mb-4" id="multiple-choice-question">
-            <div class="page-wrapper px-2">
-              <header class="layout-home-body">
-                <div class="my-0 px-2 pt-1 pb-4 border-b border-grey-light">
-                  <h2 class="m-0">
-                    <a class="text-grey-mid font-normal no-underline capitalize" href="#multiple-choice-question">Multiple Choice Question</a>
-                  </h2>
-                  <div class="pt-2">
-                    <p class="text-small m-0">Source: <code>
-                        <a href="https://github.com/CityOfNewYork/access-nyc-patterns/tree/v0.15.4/src/components/question">src/components/question/question-multiple-choice</a>
-                      </code>
-                    </p>
-                  </div>
+          </div>
+        </section>
+        <section class="pb-4 mb-4" id="multiple-choice-question">
+          <div class="page-wrapper px-2">
+            <header class="layout-home-body">
+              <div class="my-0 px-2 pt-1 pb-4 border-b border-grey-light">
+                <h2 class="m-0">
+                  <a class="text-grey-mid font-normal no-underline capitalize" href="#multiple-choice-question">Multiple Choice Question</a>
+                </h2>
+                <div class="pt-2">
+                  <p class="text-small m-0">Source: <code>
+                      <a href="https://github.com/CityOfNewYork/access-nyc-patterns/tree/v0.15.4/src/components/question">src/components/question/question-multiple-choice</a>
+                    </code>
+                  </p>
                 </div>
-              </header>
-              <div class="layout-home-body">
-                <div class="my-0 pt-4 px-2 text-small table-align-start"></div>
               </div>
-              <div class="layout-gutter screen-tablet:layout-columns justify-between pt-4">
-                <div class="screen-tablet:pe-2">
-                  <fieldset class="c-question">
-                    <legend class="c-question__label">Do any of these apply to you?</legend>
-                    <p>It’s OK to pick more than one. You can also leave this blank if none of these apply to you.</p>
-                    <div class="c-question__container screen-tablet:layout-columns">
-                      <label class="checkbox" for="person-0-student">
-                        <input id="person-0-student" name="Person[0].student" type="checkbox" value="student" />
-                        <span class="checkbox__label">Student</span>
-                      </label>
-                      <label class="checkbox" for="person-0-pregnant">
-                        <input id="person-0-pregnant" name="Person[0].pregnant" type="checkbox" value="pregnant" />
-                        <span class="checkbox__label">Pregnant</span>
-                      </label>
-                      <label class="checkbox" for="person-0-unemployed">
-                        <input id="person-0-unemployed" name="Person[0].unemployed" type="checkbox" value="unemployed" />
-                        <span class="checkbox__label">Unemployed</span>
-                      </label>
-                      <label class="checkbox" for="person-0-blind">
-                        <input id="person-0-blind" name="Person[0].blind" type="checkbox" value="blind" />
-                        <span class="checkbox__label">Blind or visually impaired</span>
-                      </label>
-                      <label class="checkbox" for="person-0-disabled">
-                        <input id="person-0-disabled" name="Person[0].disabled" type="checkbox" value="disabled" />
-                        <span class="checkbox__label">Have any disabilities</span>
-                      </label>
-                      <label class="checkbox" for="person-0-military">
-                        <input id="person-0-military" name="Person[0].military" type="checkbox" value="military" />
-                        <span class="checkbox__label">Served in the U.S. Armed Forces, National Guard or Reserves</span>
-                      </label>
-                      <label class="checkbox">
-                        <input data-js="clear" type="checkbox" />
-                        <span class="checkbox__label">None of these apply</span>
-                      </label>
-                    </div>
-                  </fieldset>
-                </div>
-                <div>
-                  <div class="code-block mb-1">
-                    <pre>&lt;fieldset class=&quot;c-question&quot;&gt;
+            </header>
+            <div class="layout-home-body">
+              <div class="my-0 pt-4 px-2 text-small table-align-start"></div>
+            </div>
+            <div class="layout-gutter screen-tablet:layout-columns justify-between pt-4">
+              <div class="screen-tablet:pe-2">
+                <fieldset class="c-question">
+                  <legend class="c-question__label">Do any of these apply to you?</legend>
+                  <p>It’s OK to pick more than one. You can also leave this blank if none of these apply to you.</p>
+                  <div class="c-question__container screen-tablet:layout-columns">
+                    <label class="checkbox" for="person-0-student">
+                      <input id="person-0-student" name="Person[0].student" type="checkbox" value="student" />
+                      <span class="checkbox__label">Student</span>
+                    </label>
+                    <label class="checkbox" for="person-0-pregnant">
+                      <input id="person-0-pregnant" name="Person[0].pregnant" type="checkbox" value="pregnant" />
+                      <span class="checkbox__label">Pregnant</span>
+                    </label>
+                    <label class="checkbox" for="person-0-unemployed">
+                      <input id="person-0-unemployed" name="Person[0].unemployed" type="checkbox" value="unemployed" />
+                      <span class="checkbox__label">Unemployed</span>
+                    </label>
+                    <label class="checkbox" for="person-0-blind">
+                      <input id="person-0-blind" name="Person[0].blind" type="checkbox" value="blind" />
+                      <span class="checkbox__label">Blind or visually impaired</span>
+                    </label>
+                    <label class="checkbox" for="person-0-disabled">
+                      <input id="person-0-disabled" name="Person[0].disabled" type="checkbox" value="disabled" />
+                      <span class="checkbox__label">Have any disabilities</span>
+                    </label>
+                    <label class="checkbox" for="person-0-military">
+                      <input id="person-0-military" name="Person[0].military" type="checkbox" value="military" />
+                      <span class="checkbox__label">Served in the U.S. Armed Forces, National Guard or Reserves</span>
+                    </label>
+                    <label class="checkbox">
+                      <input data-js="clear" type="checkbox" />
+                      <span class="checkbox__label">None of these apply</span>
+                    </label>
+                  </div>
+                </fieldset>
+              </div>
+              <div>
+                <div class="code-block mb-1">
+                  <pre>&lt;fieldset class=&quot;c-question&quot;&gt;
   &lt;legend class=&quot;c-question__label&quot;&gt;Do any of these apply to you?&lt;/legend&gt;
   &lt;p&gt;It’s OK to pick more than one. You can also leave this blank if none of these apply to you.&lt;/p&gt;
   &lt;div class=&quot;c-question__container screen-tablet:layout-columns&quot;&gt;
@@ -396,51 +387,51 @@
     &lt;/label&gt;
   &lt;/div&gt;
 &lt;/fieldset&gt;</pre>
-                  </div>
                 </div>
               </div>
             </div>
-          </section>
-          <section class="pb-4 mb-4" id="toggle-question">
-            <div class="page-wrapper px-2">
-              <header class="layout-home-body">
-                <div class="my-0 px-2 pt-1 pb-4 border-b border-grey-light">
-                  <h2 class="m-0">
-                    <a class="text-grey-mid font-normal no-underline capitalize" href="#toggle-question">Toggle Question</a>
-                  </h2>
-                  <div class="pt-2">
-                    <p class="text-small m-0">Source: <code>
-                        <a href="https://github.com/CityOfNewYork/access-nyc-patterns/tree/v0.15.4/src/components/question">src/components/question/question-toggle</a>
-                      </code>
-                    </p>
-                  </div>
+          </div>
+        </section>
+        <section class="pb-4 mb-4" id="toggle-question">
+          <div class="page-wrapper px-2">
+            <header class="layout-home-body">
+              <div class="my-0 px-2 pt-1 pb-4 border-b border-grey-light">
+                <h2 class="m-0">
+                  <a class="text-grey-mid font-normal no-underline capitalize" href="#toggle-question">Toggle Question</a>
+                </h2>
+                <div class="pt-2">
+                  <p class="text-small m-0">Source: <code>
+                      <a href="https://github.com/CityOfNewYork/access-nyc-patterns/tree/v0.15.4/src/components/question">src/components/question/question-toggle</a>
+                    </code>
+                  </p>
                 </div>
-              </header>
-              <div class="layout-home-body">
-                <div class="my-0 pt-4 px-2 text-small table-align-start"></div>
               </div>
-              <div class="layout-gutter screen-tablet:layout-columns justify-between pt-4">
-                <div class="screen-tablet:pe-2">
-                  <fieldset class="c-question">
-                    <legend class="c-question__label">Do you have an income?</legend>
-                    <p>This includes money from jobs, alimony, investments, or gifts.</p>
-                    <div class="c-question__container">
-                      <div>
-                        <label class="toggle">
-                          <input data-type="boolean" name="application" type="radio" value="1" />
-                          <span class="toggle__label">Yes</span>
-                        </label>
-                        <label class="toggle">
-                          <input checked="true" data-type="boolean" name="application" type="radio" value="0" />
-                          <span class="toggle__label">No</span>
-                        </label>
-                      </div>
+            </header>
+            <div class="layout-home-body">
+              <div class="my-0 pt-4 px-2 text-small table-align-start"></div>
+            </div>
+            <div class="layout-gutter screen-tablet:layout-columns justify-between pt-4">
+              <div class="screen-tablet:pe-2">
+                <fieldset class="c-question">
+                  <legend class="c-question__label">Do you have an income?</legend>
+                  <p>This includes money from jobs, alimony, investments, or gifts.</p>
+                  <div class="c-question__container">
+                    <div>
+                      <label class="toggle">
+                        <input data-type="boolean" name="application" type="radio" value="1" />
+                        <span class="toggle__label">Yes</span>
+                      </label>
+                      <label class="toggle">
+                        <input checked="true" data-type="boolean" name="application" type="radio" value="0" />
+                        <span class="toggle__label">No</span>
+                      </label>
                     </div>
-                  </fieldset>
-                </div>
-                <div>
-                  <div class="code-block mb-1">
-                    <pre>&lt;fieldset class=&quot;c-question&quot;&gt;
+                  </div>
+                </fieldset>
+              </div>
+              <div>
+                <div class="code-block mb-1">
+                  <pre>&lt;fieldset class=&quot;c-question&quot;&gt;
   &lt;legend class=&quot;c-question__label&quot;&gt;Do you have an income?&lt;/legend&gt;
   &lt;p&gt;This includes money from jobs, alimony, investments, or gifts.&lt;/p&gt;
   &lt;div class=&quot;c-question__container&quot;&gt;
@@ -456,65 +447,65 @@
     &lt;/div&gt;
   &lt;/div&gt;
 &lt;/fieldset&gt;</pre>
-                  </div>
                 </div>
               </div>
             </div>
-          </section>
-          <section class="pb-4 mb-4" id="select-question">
-            <div class="page-wrapper px-2">
-              <header class="layout-home-body">
-                <div class="my-0 px-2 pt-1 pb-4 border-b border-grey-light">
-                  <h2 class="m-0">
-                    <a class="text-grey-mid font-normal no-underline capitalize" href="#select-question">Select Question</a>
-                  </h2>
-                  <div class="pt-2">
-                    <p class="text-small m-0">Source: <code>
-                        <a href="https://github.com/CityOfNewYork/access-nyc-patterns/tree/v0.15.4/src/components/question">src/components/question/question-select</a>
-                      </code>
-                    </p>
-                  </div>
+          </div>
+        </section>
+        <section class="pb-4 mb-4" id="select-question">
+          <div class="page-wrapper px-2">
+            <header class="layout-home-body">
+              <div class="my-0 px-2 pt-1 pb-4 border-b border-grey-light">
+                <h2 class="m-0">
+                  <a class="text-grey-mid font-normal no-underline capitalize" href="#select-question">Select Question</a>
+                </h2>
+                <div class="pt-2">
+                  <p class="text-small m-0">Source: <code>
+                      <a href="https://github.com/CityOfNewYork/access-nyc-patterns/tree/v0.15.4/src/components/question">src/components/question/question-select</a>
+                    </code>
+                  </p>
                 </div>
-              </header>
-              <div class="layout-home-body">
-                <div class="my-0 pt-4 px-2 text-small table-align-start"></div>
               </div>
-              <div class="layout-gutter screen-tablet:layout-columns justify-between pt-4">
-                <div class="screen-tablet:pe-2">
-                  <div class="c-question">
-                    <label class="c-question__label" for="person-0-incomes-0-type">What type of income have you had most recently?</label>
-                    <p>Answer the best you can. You will be able to include additional types of income. The more you include, the more accurate your results will be.</p>
-                    <div class="c-question__container">
-                      <select class="select" id="person-0-incomes-0" name="Person[0].incomes[0].type">
-                        <option selected="true" value="">Click to add an income type</option>
-                        <option value="Wages">wages, salaries, tips</option>
-                        <option value="SelfEmployment">self-employment Income</option>
-                        <option value="Unemployment">unemployment benefits</option>
-                        <option value="CashAssistance">Cash Assistance grant</option>
-                        <option value="ChildSupport">child support (received)</option>
-                        <option value="DisabilityMedicaid">disability-related Medicaid</option>
-                        <option value="SSI">Supplemental Security Income (SSI)</option>
-                        <option value="SSDependent">Social Security Dependent Benefits</option>
-                        <option value="SSDisability">Social Security Disability Benefits</option>
-                        <option value="SSSurvivor">Social Security Survivor’s Benefits</option>
-                        <option value="SSRetirement">Social Security Retirement Benefits</option>
-                        <option value="NYSDisability">New York State Disability Benefits</option>
-                        <option value="Veteran">Veteran’s Pension or Benefits</option>
-                        <option value="Pension">Government or Private Pension</option>
-                        <option value="DeferredComp">Withdrawals from Deferred Compensation (IRA, Keogh, etc.)</option>
-                        <option value="WorkersComp">Worker’s Compensation</option>
-                        <option value="Alimony">alimony (received)</option>
-                        <option value="Boarder">boarder or lodger</option>
-                        <option value="Gifts">gifts/contributions (received)</option>
-                        <option value="Rental">rental income</option>
-                        <option value="Investment">investment income (interest, dividends, and profit from selling stocks)</option>
-                      </select>
-                    </div>
+            </header>
+            <div class="layout-home-body">
+              <div class="my-0 pt-4 px-2 text-small table-align-start"></div>
+            </div>
+            <div class="layout-gutter screen-tablet:layout-columns justify-between pt-4">
+              <div class="screen-tablet:pe-2">
+                <div class="c-question">
+                  <label class="c-question__label" for="person-0-incomes-0-type">What type of income have you had most recently?</label>
+                  <p>Answer the best you can. You will be able to include additional types of income. The more you include, the more accurate your results will be.</p>
+                  <div class="c-question__container">
+                    <select class="select" id="person-0-incomes-0" name="Person[0].incomes[0].type">
+                      <option selected="true" value="">Click to add an income type</option>
+                      <option value="Wages">wages, salaries, tips</option>
+                      <option value="SelfEmployment">self-employment Income</option>
+                      <option value="Unemployment">unemployment benefits</option>
+                      <option value="CashAssistance">Cash Assistance grant</option>
+                      <option value="ChildSupport">child support (received)</option>
+                      <option value="DisabilityMedicaid">disability-related Medicaid</option>
+                      <option value="SSI">Supplemental Security Income (SSI)</option>
+                      <option value="SSDependent">Social Security Dependent Benefits</option>
+                      <option value="SSDisability">Social Security Disability Benefits</option>
+                      <option value="SSSurvivor">Social Security Survivor’s Benefits</option>
+                      <option value="SSRetirement">Social Security Retirement Benefits</option>
+                      <option value="NYSDisability">New York State Disability Benefits</option>
+                      <option value="Veteran">Veteran’s Pension or Benefits</option>
+                      <option value="Pension">Government or Private Pension</option>
+                      <option value="DeferredComp">Withdrawals from Deferred Compensation (IRA, Keogh, etc.)</option>
+                      <option value="WorkersComp">Worker’s Compensation</option>
+                      <option value="Alimony">alimony (received)</option>
+                      <option value="Boarder">boarder or lodger</option>
+                      <option value="Gifts">gifts/contributions (received)</option>
+                      <option value="Rental">rental income</option>
+                      <option value="Investment">investment income (interest, dividends, and profit from selling stocks)</option>
+                    </select>
                   </div>
                 </div>
-                <div>
-                  <div class="code-block mb-1">
-                    <pre>&lt;div class=&quot;c-question&quot;&gt;
+              </div>
+              <div>
+                <div class="code-block mb-1">
+                  <pre>&lt;div class=&quot;c-question&quot;&gt;
   &lt;label class=&quot;c-question__label&quot; for=&quot;person-0-incomes-0-type&quot;&gt;What type of income have you had most recently?&lt;/label&gt;
   &lt;p&gt;Answer the best you can. You will be able to include additional types of income. The more you include, the more accurate your results will be.&lt;/p&gt;
   &lt;div class=&quot;c-question__container&quot;&gt;
@@ -544,52 +535,52 @@
     &lt;/select&gt;
   &lt;/div&gt;
 &lt;/div&gt;</pre>
-                  </div>
                 </div>
               </div>
             </div>
-          </section>
-          <section class="pb-4 mb-4" id="radio-question">
-            <div class="page-wrapper px-2">
-              <header class="layout-home-body">
-                <div class="my-0 px-2 pt-1 pb-4 border-b border-grey-light">
-                  <h2 class="m-0">
-                    <a class="text-grey-mid font-normal no-underline capitalize" href="#radio-question">Radio Question</a>
-                  </h2>
-                  <div class="pt-2">
-                    <p class="text-small m-0">Source: <code>
-                        <a href="https://github.com/CityOfNewYork/access-nyc-patterns/tree/v0.15.4/src/components/question">src/components/question/question-radio</a>
-                      </code>
-                    </p>
-                  </div>
+          </div>
+        </section>
+        <section class="pb-4 mb-4" id="radio-question">
+          <div class="page-wrapper px-2">
+            <header class="layout-home-body">
+              <div class="my-0 px-2 pt-1 pb-4 border-b border-grey-light">
+                <h2 class="m-0">
+                  <a class="text-grey-mid font-normal no-underline capitalize" href="#radio-question">Radio Question</a>
+                </h2>
+                <div class="pt-2">
+                  <p class="text-small m-0">Source: <code>
+                      <a href="https://github.com/CityOfNewYork/access-nyc-patterns/tree/v0.15.4/src/components/question">src/components/question/question-radio</a>
+                    </code>
+                  </p>
                 </div>
-              </header>
-              <div class="layout-home-body">
-                <div class="my-0 pt-4 px-2 text-small table-align-start"></div>
               </div>
-              <div class="layout-gutter screen-tablet:layout-columns justify-between pt-4">
-                <div class="screen-tablet:pe-2">
-                  <fieldset class="c-question">
-                    <legend class="c-question__label">Phone Type</legend>
-                    <div class="c-question__container">
-                      <label class="radio" for="client-phone-type-home">
-                        <input id="client-phone-type-home" name="Client.phoneType" type="radio" value="home" />
-                        <span class="radio__label">Home</span>
-                      </label>
-                      <label class="radio" for="client-phone-type-pregnant">
-                        <input id="client-phone-type-pregnant" name="Client.phoneType" type="radio" value="pregnant" />
-                        <span class="radio__label">Work</span>
-                      </label>
-                      <label class="radio" for="client-phone-type-unemployed">
-                        <input id="client-phone-type-unemployed" name="Client.phoneType" type="radio" value="unemployed" />
-                        <span class="radio__label">Cell Phone</span>
-                      </label>
-                    </div>
-                  </fieldset>
-                </div>
-                <div>
-                  <div class="code-block mb-1">
-                    <pre>&lt;fieldset class=&quot;c-question&quot;&gt;
+            </header>
+            <div class="layout-home-body">
+              <div class="my-0 pt-4 px-2 text-small table-align-start"></div>
+            </div>
+            <div class="layout-gutter screen-tablet:layout-columns justify-between pt-4">
+              <div class="screen-tablet:pe-2">
+                <fieldset class="c-question">
+                  <legend class="c-question__label">Phone Type</legend>
+                  <div class="c-question__container">
+                    <label class="radio" for="client-phone-type-home">
+                      <input id="client-phone-type-home" name="Client.phoneType" type="radio" value="home" />
+                      <span class="radio__label">Home</span>
+                    </label>
+                    <label class="radio" for="client-phone-type-pregnant">
+                      <input id="client-phone-type-pregnant" name="Client.phoneType" type="radio" value="pregnant" />
+                      <span class="radio__label">Work</span>
+                    </label>
+                    <label class="radio" for="client-phone-type-unemployed">
+                      <input id="client-phone-type-unemployed" name="Client.phoneType" type="radio" value="unemployed" />
+                      <span class="radio__label">Cell Phone</span>
+                    </label>
+                  </div>
+                </fieldset>
+              </div>
+              <div>
+                <div class="code-block mb-1">
+                  <pre>&lt;fieldset class=&quot;c-question&quot;&gt;
   &lt;legend class=&quot;c-question__label&quot;&gt;Phone Type&lt;/legend&gt;
   &lt;div class=&quot;c-question__container&quot;&gt;
     &lt;label class=&quot;radio&quot; for=&quot;client-phone-type-home&quot;&gt;
@@ -606,25 +597,25 @@
     &lt;/label&gt;
   &lt;/div&gt;
 &lt;/fieldset&gt;</pre>
-                  </div>
                 </div>
               </div>
             </div>
-          </section>
-          <section class="pb-2 screen-tablet:pb-4 screen-tablet:mb-4" id="question-usage">
-            <div class="page-wrapper px-2 screen-desktop:px-0">
-              <header class="layout-home-body">
-                <div class="my-0 px-2 py-0 border-b border-grey-light screen-tablet:flex screen-tablet:justify-between">
-                  <h2 class="m-0 pt-1 pb-4">
-                    <a class="text-grey-mid font-normal no-underline capitalize" href="#question-usage">Question Usage</a>
-                  </h2>
-                </div>
-              </header>
-              <div class="layout-home-body">
-                <div class="my-0 pt-4 px-2 text-small table-align-start">
-                  <h4 id="global-script">Global Script</h4>
-                  <p>The Question Component requires JavaScript for <a href="https://github.com/CityOfNewYork/nyco-patterns-framework">form validation</a> and displaying <a href="/tooltips">Tooltip Elements</a>. To use the validation and tooltips through the global ACCESS NYC Patterns script use the following code. A selector targeting the form should be supplied as the first argument to the <code>.valid()</code> method. The second argument should be a function which handles the form data when it passes validation.</p>
-                  <pre><code>&lt;!-- Global Script --&gt;
+          </div>
+        </section>
+        <section class="pb-2 screen-tablet:pb-4 screen-tablet:mb-4" id="question-usage">
+          <div class="page-wrapper px-2 screen-desktop:px-0">
+            <header class="layout-home-body">
+              <div class="my-0 px-2 py-0 border-b border-grey-light screen-tablet:flex screen-tablet:justify-between">
+                <h2 class="m-0 pt-1 pb-4">
+                  <a class="text-grey-mid font-normal no-underline capitalize" href="#question-usage">Question Usage</a>
+                </h2>
+              </div>
+            </header>
+            <div class="layout-home-body">
+              <div class="my-0 pt-4 px-2 text-small table-align-start">
+                <h4 id="global-script">Global Script</h4>
+                <p>The Question Component requires JavaScript for <a href="https://github.com/CityOfNewYork/nyco-patterns-framework">form validation</a> and displaying <a href="/tooltips">Tooltip Elements</a>. To use the validation and tooltips through the global ACCESS NYC Patterns script use the following code. A selector targeting the form should be supplied as the first argument to the <code>.valid()</code> method. The second argument should be a function which handles the form data when it passes validation.</p>
+                <pre><code>&lt;!-- Global Script --&gt;
 &lt;script src=&quot;dist/scripts/AccessNyc.js&quot;&gt;&lt;/script&gt;
 
 &lt;script&gt;
@@ -637,35 +628,33 @@
   access.valid(selector, submit); // Instantiate validation with selector and submit function
   access.tooltips(); // Instantiate tooltips
 &lt;/script&gt;</code></pre>
-                  <p>This will instantiate form validation and tooltips. Validation messages will appear when the user leaves a required question blank, enters an incorrectly formatted answer, or tries to submit the form without filling out any required fields.</p>
-                  <h4 id="cherry-picked-module-import">Cherry-picked Module Import</h4>
-                  <p>The form validation source exisits in the <a href="https://github.com/CityOfNewYork/nyco-patterns-framework">NYCO Patterns Framework</a>. Install the <code>@nycopportunity/patterns-framework</code> module to import that script. Follow the <a href="/tooltips">Tooltip Elements</a> documentation for importing the Tooltips module script.</p>
-                </div>
+                <p>This will instantiate form validation and tooltips. Validation messages will appear when the user leaves a required question blank, enters an incorrectly formatted answer, or tries to submit the form without filling out any required fields.</p>
+                <h4 id="cherry-picked-module-import">Cherry-picked Module Import</h4>
+                <p>The form validation source exisits in the <a href="https://github.com/CityOfNewYork/nyco-patterns-framework">NYCO Patterns Framework</a>. Install the <code>@nycopportunity/patterns-framework</code> module to import that script. Follow the <a href="/tooltips">Tooltip Elements</a> documentation for importing the Tooltips module script.</p>
               </div>
             </div>
-          </section>
-        </form>
-        <div class="sticky bottom-0 bg-white shadow-up relative z-10 overflow-y-scroll whitespace-no-wrap animated fadeInUp">
-          <nav class="nav-inline inline-block text-small p-2 screen-tablet:p-4">
-            <span class="me-2">Jump to:</span>
-            <a class="me-2 screen-tablet:me-4" href="#main-content">Top</a>
-            <a class="me-2 screen-tablet:me-4" href="#number-question">Number Question</a>
-            <a class="me-2 screen-tablet:me-4" href="#text-question">Text Question</a>
-            <a class="me-2 screen-tablet:me-4" href="#multiple-choice-question">Multiple Choice Question</a>
-            <a class="me-2 screen-tablet:me-4" href="#toggle-question">Toggle Question</a>
-            <a class="me-2 screen-tablet:me-4" href="#select-question">Select Question</a>
-            <a class="me-2 screen-tablet:me-4" href="#radio-question">Radio Question</a>
-            <a class="me-2 screen-tablet:me-4" href="#question-usage">Question Usage</a>
-          </nav>
-        </div>
-      </article>
-    </main>
-  </div>
-  <footer class="color-mid-background text-blue-dark border-solid border-t-4 border-blue-dark text-small py-4 z-20 relative">
+          </div>
+        </section>
+      </form>
+      <div class="sticky bottom-0 bg-white shadow-up relative z-10 overflow-y-scroll whitespace-no-wrap animated fadeInUp">
+        <nav class="nav-inline inline-block text-small p-2 screen-tablet:p-4">
+          <span class="me-2">Jump to:</span>
+          <a class="me-2" href="#main-content">Top</a>
+          <a class="me-2" href="#number-question">Number Question</a>
+          <a class="me-2" href="#text-question">Text Question</a>
+          <a class="me-2" href="#multiple-choice-question">Multiple Choice Question</a>
+          <a class="me-2" href="#toggle-question">Toggle Question</a>
+          <a class="me-2" href="#select-question">Select Question</a>
+          <a class="me-2" href="#radio-question">Radio Question</a>
+          <a class="me-2" href="#question-usage">Question Usage</a>
+        </nav>
+      </div>
+    </article>
+  </main>
+  <footer class="color-mid-background text-blue-dark border-solid border-t-4 border-blue-dark text-small py-4 z-20 relative" role="contentinfo">
     <div class="layout-home-body p-2">
       <div class="screen-tablet:px-2 mb-4">
-        <p class="mb-1">Maintained by&nbsp;<a href="https://nyc.gov/opportunity"></a>
-        </p>
+        <p class="mb-1">Maintained by&nbsp;</p>
         <a class="text-blue-dark" href="https://nyc.gov/opportunity">
           <span class="sr-only">The Mayor's Office for Economic Opportunity</span>
           <svg class="icon-logo-secondary mb-4" style="height: 53px; width: 300px;">
