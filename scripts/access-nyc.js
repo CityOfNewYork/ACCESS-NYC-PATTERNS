@@ -5220,11 +5220,12 @@ var AccessNyc = (function () {
    * Uses the Share API to t
    */
 
-  var WebShare = function WebShare() {
+  var WebShare = function WebShare(s) {
     var this$1 = this;
+    if ( s === void 0 ) s = {};
 
-    this.selector = WebShare.selector;
-    this.callback = WebShare.callback;
+    this.selector = s.selector ? s.selector : WebShare.selector;
+    this.callback = s.callback ? s.callback : WebShare.callback;
 
     if (navigator.share) {
       // Remove fallback aria toggling attributes
@@ -5258,10 +5259,11 @@ var AccessNyc = (function () {
 
 
   WebShare.prototype.share = function share (data) {
+      var this$1 = this;
       if ( data === void 0 ) data = {};
 
     return navigator.share(data).then(function (res) {
-      WebShare.callback(data);
+      this$1.callback(data);
     }).catch(function (err) {
     });
   };
