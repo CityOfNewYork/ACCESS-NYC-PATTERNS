@@ -67,8 +67,8 @@
           <h2 class="text-small m-0 text-blue-dark screen-tablet:hidden">Patterns</h2>
           <h2 aria-hidden="true" class="type-h1 m-0 text-blue-dark hidden screen-tablet:inline-block">Patterns</h2>
           <nav class="text-small">
-            <a class="rounded-lg text-blue-dark border-2 no-underline px-1 ms-2 hidden screen-tablet:inline-block" href="https://github.com/CityOfNewYork/access-nyc-patterns/tree/v0.15.6">0.15.6</a>
-            <a aria-hidden="true" class="ms-1 screen-tablet:ms-2 screen-tablet:hidden" href="https://github.com/CityOfNewYork/access-nyc-patterns/tree/v0.15.6">0.15.6</a>
+            <a class="rounded-lg text-blue-dark border-2 no-underline px-1 ms-2 hidden screen-tablet:inline-block" href="https://github.com/CityOfNewYork/access-nyc-patterns/tree/v0.15.7">0.15.7</a>
+            <a aria-hidden="true" class="ms-1 screen-tablet:ms-2 screen-tablet:hidden" href="https://github.com/CityOfNewYork/access-nyc-patterns/tree/v0.15.7">0.15.7</a>
             <button aria-controls="main-menu" aria-expanded="false" class="btn-link ms-1 screen-tablet:ms-2" data-js="toggle" id="main-menu-control">Menu</button>
           </nav>
         </div>
@@ -185,23 +185,23 @@
               <pre><code>$ npm install @nycopportunity/access-patterns</code></pre>
               <h2 id="cdn">CDN</h2>
               <p>Compiled styles and scripts in the <strong>/dist</strong> folder of the GitHub repository can be imported on the page using a CDN such as <a href="https://www.jsdelivr.com">JsDelivr</a>. The following global stylesheet link can be copied and pasted into the the <code>&lt;head&gt;</code> of your html document.</p>
-              <pre><code>&lt;link href=&quot;https://cdn.jsdelivr.net/gh/cityofnewyork/access-nyc-patterns@v0.15.6/dist/styles/site-default.css&quot; rel=&quot;stylesheet&quot;&gt;</code></pre>
+              <pre><code>&lt;link href=&quot;https://cdn.jsdelivr.net/gh/cityofnewyork/access-nyc-patterns@v0.15.7/dist/styles/site-default.css&quot; rel=&quot;stylesheet&quot;&gt;</code></pre>
               <p>The following global script source can copied and pasted before the closing <code>&lt;/body&gt;</code> tag of your html document.</p>
-              <pre><code>&lt;script src=&quot;https://cdn.jsdelivr.net/gh/cityofnewyork/access-nyc-patterns@v0.15.6/dist/scripts/access-nyc.js&quot;&gt;&lt;/script&gt;</code></pre>
+              <pre><code>&lt;script src=&quot;https://cdn.jsdelivr.net/gh/cityofnewyork/access-nyc-patterns@v0.15.7/dist/scripts/access-nyc.js&quot;&gt;&lt;/script&gt;</code></pre>
               <p>With the script integrated, SVG icons can be added with the following snippet.</p>
               <pre><code>&lt;script&gt;
   var patterns = new AccessNyc();
 
-  patterns.icons(&#39;https://cdn.jsdelivr.net/gh/cityofnewyork/access-nyc-patterns@v0.15.6/dist/svg/icons.svg&#39;);
+  patterns.icons(&#39;https://cdn.jsdelivr.net/gh/cityofnewyork/access-nyc-patterns@v0.15.7/dist/svg/icons.svg&#39;);
 &lt;/script&gt;</code></pre>
               <p>The following url is the base url for all distributed files available via a CDN.</p>
-              <pre><code>https://cdn.jsdelivr.net/gh/cityofnewyork/access-nyc-patterns@v0.15.6/dist/</code></pre>
+              <pre><code>https://cdn.jsdelivr.net/gh/cityofnewyork/access-nyc-patterns@v0.15.7/dist/</code></pre>
               <p>
-                <a href="https://github.com/cityofnewyork/access-nyc-patterns/tree/v0.15.6/dist/">Visit the GitHub repository to browse all available files</a>. All Patterns are distributed with their own styles and script dependencies in the <strong>/dist</strong> folder. For example, all of the “Accordion” dependencies would live in the <strong>/dist/components/accordion</strong> folder.
+                <a href="https://github.com/cityofnewyork/access-nyc-patterns/tree/v0.15.7/dist/">Visit the GitHub repository to browse all available files</a>. All Patterns are distributed with their own styles and script dependencies in the <strong>/dist</strong> folder. For example, all of the “Accordion” dependencies would live in the <strong>/dist/components/accordion</strong> folder.
               </p>
               <p>There are regular releases to the patterns which follow semantic versioning. You can keep up-to-date with <a href="https://help.github.com/en/github/receiving-notifications-about-activity-on-github/watching-and-unwatching-releases-for-a-repository">new releases on each repository’s releases page</a>.</p>
               <h2 id="download">Download</h2>
-              <p>You may also download an archive of the repository to include in your project; <a href="https://github.com/cityofnewyork/access-nyc-patterns/archive/v0.15.6.zip">Download v0.15.6.zip</a>
+              <p>You may also download an archive of the repository to include in your project; <a href="https://github.com/cityofnewyork/access-nyc-patterns/archive/v0.15.7.zip">Download v0.15.7.zip</a>
               </p>
               <h2 id="usage">Usage</h2>
               <h3 id="sass">Sass</h3>
@@ -214,7 +214,7 @@
               <p>Importing tailwindcss is an exception because it is compiled to a Sass file in the <em>dist</em> directory…</p>
               <pre><code>@import &#39;node_modules/@nycopportunity/access-patterns/dist/styles/_tailwindcss.scss&#39;;</code></pre>
               <p>… and a CSS file in the distribution folder:</p>
-              <pre><code>&lt;link href=&quot;https://cdn.jsdelivr.net/gh/cityofnewyork/access-nyc-patterns@v0.15.6/dist/styles/tailwindcss.css&quot; rel=&quot;stylesheet&quot;&gt;</code></pre>
+              <pre><code>&lt;link href=&quot;https://cdn.jsdelivr.net/gh/cityofnewyork/access-nyc-patterns@v0.15.7/dist/styles/tailwindcss.css&quot; rel=&quot;stylesheet&quot;&gt;</code></pre>
               <h4 id="asset-paths-and-cdn">Asset Paths and CDN</h4>
               <p>The styles use the <code>url()</code> for loading webfonts, images, and svgs. By default, it is set to look for asset directories one directory up from the distributed stylesheet so the directory structure of your application is expected to look like so:</p>
               <pre><code>styles/site-default.scss
