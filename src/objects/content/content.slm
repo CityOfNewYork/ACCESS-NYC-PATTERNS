@@ -3,56 +3,58 @@
 /
 
 div class='o-content'
-  h3 1. How it Works
+  section
+    h3 1. How it Works
 
-  p class='exposition' Get help paying for groceries with SNAP. SNAP benefits are sometimes called food stamps. They come on a debit card that you can use at many grocery stores and farmers markets.
+    p class='exposition' Get help paying for groceries with SNAP. SNAP benefits are sometimes called food stamps. They come on a debit card that you can use at many grocery stores and farmers markets.
 
-  ul class='c-checklist'
-    li class='c-checklist__item-generic' Shop for groceries online with your <a href='https://www1.nyc.gov/site/hra/help/snap-online-shopping.page' target='_blank' rel='noopener noreferrer'>SNAP Benefits (EBT Card)</a> at Amazon, ShopRite and Walmart. Visit these online retailers to order your groceries online! <strong>Note</strong>: SNAP benefits cannot be used to pay delivery fees.
-    li class='c-checklist__item-calendar' If you are eligible, you will receive your benefits within 30 days
-    li class='c-checklist__item-flag' You must be a US citizen or have satisfactory immigration status to receive SNAP; a worker will help you determine your status when you apply
-    li class='c-checklist__item-badge' Requires proof of identity, where you live, and income
-    li class='c-checklist__item-badge' You can allow someone who knows your household situation apply for you
-    li class='c-checklist__item-application' Apply online, in person, by fax, or by mail
-    li class='c-checklist__item-generic' You will have to complete an interview after you submit your application
-    li class='c-checklist__item-generic' SNAP recipients in New York City ages 16 and over are eligible for discounted Citi Bike memberships. For $5 per month, you’ll get unlimited 45-minute rides and access to thousands of bikes across Manhattan, Brooklyn, Queens and Jersey City. <a href='https://try.citibikenyc.com/snap-nyc/' target='_blank' rel='noopener noreferrer'>Enter your EBT card number to verify your eligibility</a>.
+    ul class='c-checklist'
+      li class='c-checklist__item-generic' Shop for groceries online with your <a href='https://www1.nyc.gov/site/hra/help/snap-online-shopping.page' target='_blank' rel='noopener noreferrer'>SNAP Benefits (EBT Card)</a> at Amazon, ShopRite and Walmart. Visit these online retailers to order your groceries online! <strong>Note</strong>: SNAP benefits cannot be used to pay delivery fees.
+      li class='c-checklist__item-calendar' If you are eligible, you will receive your benefits within 30 days
+      li class='c-checklist__item-flag' You must be a US citizen or have satisfactory immigration status to receive SNAP; a worker will help you determine your status when you apply
+      li class='c-checklist__item-badge' Requires proof of identity, where you live, and income
+      li class='c-checklist__item-badge' You can allow someone who knows your household situation apply for you
+      li class='c-checklist__item-application' Apply online, in person, by fax, or by mail
+      li class='c-checklist__item-generic' You will have to complete an interview after you submit your application
+      li class='c-checklist__item-generic' SNAP recipients in New York City ages 16 and over are eligible for discounted Citi Bike memberships. For $5 per month, you’ll get unlimited 45-minute rides and access to thousands of bikes across Manhattan, Brooklyn, Queens and Jersey City. <a href='https://try.citibikenyc.com/snap-nyc/' target='_blank' rel='noopener noreferrer'>Enter your EBT card number to verify your eligibility</a>.
 
-  h3 2. Determine your eligibility
+  section
+    h3 2. Determine your eligibility
 
-  p This program looks at several things to decide if you are eligible. They include:
+    p This program looks at several things to decide if you are eligible. They include:
 
-  ul class='c-checklist'
-    li how much money you earn
-    li how much money you receive from benefits
-    li how many people are in your house
-    li your citizenship or immigration status
+    ul class='c-checklist'
+      li how much money you earn
+      li how much money you receive from benefits
+      li how many people are in your house
+      li your citizenship or immigration status
 
-  p With a few questions, we can help you <a href='http://nyc.gov/accessnyc' target='_blank' rel='noopener noreferrer'>find out if you may be eligible</a>.
+    p With a few questions, we can help you <a href='http://nyc.gov/accessnyc' target='_blank' rel='noopener noreferrer'>find out if you may be eligible</a>.
 
-  table class='table-numeric'
-    thead
-      tr
-        th Family Size
-        th Yearly Income
-        th Weekly Income
-    tbody
-      tr
-        td 1
-        td $27,816
-        td $535
-      tr
-        td 2
-        td $36,372
-        td $699
-      tr
-        td 3
-        td $44,928
-        td $864
-      tr
-        td 4
-        td $53,484
-        td $1,029
-      tr
-        td ...
-        td ...
-        td ...
+    table class='table-numeric'
+      thead
+        tr
+          th Family Size
+          th Yearly Income
+          th Weekly Income
+      tbody
+        tr
+          td 1
+          td $27,816
+          td $535
+        tr
+          td 2
+          td $36,372
+          td $699
+        tr
+          td 3
+          td $44,928
+          td $864
+        tr
+          td 4
+          td $53,484
+          td $1,029
+        tr
+          td ...
+          td ...
+          td ...

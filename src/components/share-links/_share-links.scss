@@ -10,18 +10,19 @@
 
 // Declarations
 .c-share, .c-share__section {
+  @include typography-nav();
+
   @media screen and (min-width: $screen-tablet) {
     display: flex;
     flex-direction: column;
+    align-items: baseline;
   }
 }
 
 .c-share__link {
-  @include typography-nav();
-
   display: inline-flex;
   align-items: center;
-  margin-#{$text-direction-end}: $grid-base;
+  margin-#{$text-direction-end}: $grid-base * 2;
   margin-bottom: $grid-base * 2;
 
   @media screen and (min-width: $screen-tablet) {
@@ -41,21 +42,26 @@
 }
 
 .c-share__input {
-  @include typography-nav();
+  font-size: $font-size-small;
+  text-overflow: ellipsis;
   padding: $grid-base;
-  margin-bottom: $grid-base * 3;
+  width: 100%;
+  max-width: 100%;
+  margin-bottom: $grid-base * 2;
 
   @media screen and (min-width: $screen-tablet) {
+    width: 275px;
     padding: $grid-base * 1.5;
+    margin-bottom: $grid-base * 3;
   }
 }
 
 .c-share__heading {
-  font-size: $font-size-small;
+  display: block;
+  margin-top: $grid-base;
   margin-bottom: $grid-base;
 
   @media screen and (min-width: $screen-tablet) {
-    @include typography-h4();
     margin-bottom: $grid-base * 3;
   }
 }

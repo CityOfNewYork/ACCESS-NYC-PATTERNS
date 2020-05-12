@@ -8,7 +8,7 @@ nav class='c-share hide-for-print'
       use xlink:href='#icon-ui-printer'
     | Print the whole guide
 
-  button class='c-share__link btn-link' data-js='web-share' data-web-share='${JSON.stringify(data)}' aria-controls='web-share-fallback' aria-expanded='false'
+  button class='c-share__link btn-link font-normal' data-js='web-share' data-web-share='${JSON.stringify(data)}' aria-controls='web-share-fallback' aria-expanded='false'
     svg class='c-share__icon icon-ui'
       use xlink:href='#icon-ui-share-2'
     | Share the guide
@@ -19,7 +19,7 @@ nav class='c-share hide-for-print'
 
     input class='c-share__input' id='web-share-url' name='web-share-url' data-copy-target='web-share-url' type='text' value='${data.url}'
 
-    button data-js='copy' data-copy='web-share-url' class='c-share__link btn-link' aria-pressed='false'
+    button data-js='copy' data-copy='web-share-url' class='c-share__link btn-link font-normal ' aria-pressed='false'
       svg class='c-share__icon icon icon-ui'
         use xlink:href='#icon-ui-copy'
       svg class='c-share__icon icon-pressed icon-ui me-1'
@@ -41,7 +41,7 @@ nav class='c-share hide-for-print'
       use xlink:href='#icon-ui-mail'
     | Subscribe for more
 
-  h4 class='c-share__heading' Was this page helpful?
+  b class='c-share__heading' Was this page helpful?
 
   a class='c-share__link' href='#' target='_blank'
     svg class='c-share__icon icon-ui'
