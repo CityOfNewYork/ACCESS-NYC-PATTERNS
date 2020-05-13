@@ -25,11 +25,11 @@ $icons: map-get($tokens, 'icons-checklist');
   }
 
   > li {
-    padding-#{$text-direction-start}: $spacing-base * 2;
+    padding-#{$text-direction-start}: 30px + ($grid-base * 1.5);
     background-image: url('#{$cdn}#{$path-to-images}#{map-get($icons, 'icon-check')}');
     background-position: $text-direction-start top;
     background-repeat: no-repeat;
-    background-size: map-get($tokens, 'em-base') * 1.5 + px auto;
+    background-size: auto 30px;
   }
 
   // Nested lists
