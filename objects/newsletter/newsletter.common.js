@@ -247,16 +247,16 @@ var Newsletter = function Newsletter(element) {
   this._el = element;
   this.keys = Newsletter.keys;
   this.endpoints = Newsletter.endpoints;
-  this.callback = Newsletter.callback;
   this.selectors = Newsletter.selectors;
   this.selector = Newsletter.selector;
   this.stringKeys = Newsletter.stringKeys;
   this.strings = Newsletter.strings;
   this.templates = Newsletter.templates;
-  this.classes = Newsletter.classes; // This sets the script callback function to a global function that
+  this.classes = Newsletter.classes;
+  this.callback = [Newsletter.callback, Math.random().toString().replace('0.', '')].join(''); // This sets the script callback function to a global function that
   // can be accessed by the the requested script.
 
-  window[Newsletter.callback] = function (data) {
+  window[this.callback] = function (data) {
     this$1._callback(data);
   };
 
@@ -302,7 +302,7 @@ Newsletter.prototype._submit = function _submit (event) {
   }); // Append the callback reference. Mailchimp will wrap the JSON response in
   // our callback method. Once we load the script the callback will execute.
 
-  action = action + "&c=window." + (Newsletter.callback); // Create a promise that appends the script response of the post-json method
+  action = action + "&c=window." + (this.callback); // Create a promise that appends the script response of the post-json method
 
   return new Promise(function (resolve, reject) {
     var script = document.createElement('script');
@@ -486,7 +486,7 @@ Newsletter.endpoints = {
 };
 /** @type {String} The Mailchimp callback reference. */
 
-Newsletter.callback = 'AccessNycNewsletterCallback';
+Newsletter.callback = 'NewsletterCallback';
 /** @type {Object} DOM selectors for the instance's concerns */
 
 Newsletter.selectors = {
