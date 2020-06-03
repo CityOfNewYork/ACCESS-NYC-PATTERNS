@@ -22,8 +22,8 @@ div class='screen-tablet:flex justify-between items-center border-b border-grey-
 
   p class='color__alt text-small mb-0' Last Updated April 10th, 2020
 
-div class='border-2 border-grey-lightest border-t-0 overflow-auto scrolling-touch'
-  figure style='min-width: 1600px; max-height: 1000px; height: 80vh'
+div class='border-2 border-grey-lightest border-t-0 overflow-auto scrolling-touch mb-3'
+  figure style='min-width: 1600px; height: 80vh'
     table class='text-xsmall table-fixed table-headers-center table-body-center table-headers-first-column screen-tablet:table-headers-sticky m-0'
       caption class='sr-only'
         | I've been affected by Coronavirus (COVID-19). What Benefits might I be eligible for? Last Updated April 10th, 2020.
@@ -44,38 +44,18 @@ div class='border-2 border-grey-lightest border-t-0 overflow-auto scrolling-touc
                 = mixin('icon-not-eligible')
                 div No/TBD
 
-          th id='b1' colspan='3' class='border-white' style='height: 53px'
-            a href='https://access.nyc.gov/programs/safe-and-sick-leave/' Paid Safe and Sick Leave
+          th id='b1a' City<br>Paid Safe and Sick Leave
+          th id='b1b' State<br>Paid Safe and Sick Leave
+          th id='b1c' Federal<br>Paid Safe and Sick Leave
 
-          th id='b2' rowspan='2'
-            a href='https://access.nyc.gov/programs/nys-unemployment-insurance/' NYS Unemployment Insurance
-
-          th id='b3' rowspan='2'
-            a href='https://access.nyc.gov/programs/supplemental-nutrition-assistance-program-snap/' Supplemental Nutrition Assistance Program or SNAP
-
-          th id='b4' rowspan='2'
-            a href='https://access.nyc.gov/programs/health-insurance-assistance/' Medicaid
-
-          th id='b5' rowspan='2'
-            a href='https://access.nyc.gov/programs/health-insurance-assistance/' Health Insurance
-
+          th id='b2' rowspan='2' NYS Unemployment Insurance
+          th id='b3' rowspan='2' Supplemental Nutrition Assistance Program or SNAP
+          th id='b4' rowspan='2' Medicaid
+          th id='b5' rowspan='2' Health Insurance
           th id='b6' rowspan='2' Disability Insurance
           th id='b7' rowspan='2' Cash
           th id='b8' rowspan='2' Pandemic Unemployment Compensation
           th id='b9' rowspan='2' Pandemic Unemployment Assistance
-
-        tr
-          th style='top: 53px' id='b1a'
-            | City
-            span class='sr-only' Paid Safe and Sick Leave
-
-          th style='top: 53px' id='b1b'
-            | State
-            span class='sr-only' Paid Safe and Sick Leave
-
-          th style='top: 53px' id='b1c'
-            | Federal
-            span class='sr-only' Paid Safe and Sick Leave
 
       tbody
         tr
@@ -337,3 +317,18 @@ div class='border-2 border-grey-lightest border-t-0 overflow-auto scrolling-touc
           td headers='s13 b7' = mixin('icon-case-by-case')
           td headers='s13 b8' = mixin('icon-eligible')
           td headers='s13 b9' = mixin('icon-case-by-case')
+
+p See links to programs mentioned in the table;
+
+ul
+  li
+    a href='https://access.nyc.gov/programs/safe-and-sick-leave/' Paid Safe and Sick Leave
+
+  li
+    a href='https://access.nyc.gov/programs/nys-unemployment-insurance/' NYS Unemployment Insurance
+
+  li
+    a href='https://access.nyc.gov/programs/supplemental-nutrition-assistance-program-snap/' Supplemental Nutrition Assistance Program or Snap
+
+  li
+    a href='https://access.nyc.gov/programs/health-insurance-assistance/' Health Insurance Assistance
