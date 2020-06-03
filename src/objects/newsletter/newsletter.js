@@ -21,8 +21,6 @@ class Newsletter {
 
     this.endpoints = Newsletter.endpoints;
 
-    this.callback = Newsletter.callback;
-
     this.selectors = Newsletter.selectors;
 
     this.selector = Newsletter.selector;
@@ -35,9 +33,14 @@ class Newsletter {
 
     this.classes = Newsletter.classes;
 
+    this.callback = [
+      Newsletter.callback,
+      Math.random().toString().replace('0.', '')
+    ].join('');
+
     // This sets the script callback function to a global function that
     // can be accessed by the the requested script.
-    window[Newsletter.callback] = (data) => {
+    window[this.callback] = (data) => {
       this._callback(data);
     };
 
@@ -86,7 +89,7 @@ class Newsletter {
 
     // Append the callback reference. Mailchimp will wrap the JSON response in
     // our callback method. Once we load the script the callback will execute.
-    action = `${action}&c=window.${Newsletter.callback}`;
+    action = `${action}&c=window.${this.callback}`;
 
     // Create a promise that appends the script response of the post-json method
     return new Promise((resolve, reject) => {
@@ -278,7 +281,7 @@ Newsletter.endpoints = {
 };
 
 /** @type {String} The Mailchimp callback reference. */
-Newsletter.callback = 'AccessNycNewsletterCallback';
+Newsletter.callback = 'NewsletterCallback';
 
 /** @type {Object} DOM selectors for the instance's concerns */
 Newsletter.selectors = {
