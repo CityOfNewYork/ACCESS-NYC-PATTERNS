@@ -32,51 +32,51 @@ module.exports = {
       'serif'
     ],
     'kr-sans': [
-      '"Noto Sans CJK KR"',
       '"Noto Sans"',
+      '"Noto Sans CJK KR"',
       'sans-serif'
     ],
     'kr-serif': [
-      '"Noto Sans CJK KR"',
       '"Noto Serif"',
+      '"Noto Sans CJK KR"',
       'serif'
     ],
     'tc-sans': [
+      '"Noto Sans"',
       '"Noto Sans CJK TC"',
       '"Microsoft Yahei"',
       '"微软雅黑"',
       'STXihei',
       '"华文细黑"',
-      '"Noto Sans"',
       'sans-serif'
     ],
     'tc-serif': [
+      '"Noto Serif"',
       '"Noto Sans CJK TC"',
       '"Microsoft Yahei"',
       '"微软雅黑"',
       'STXihei',
       '"华文细黑"',
-      '"Noto Serif"',
       'serif'
     ],
     'ar-sans': [
-      '"Noto Naskh Arabic"',
       '"Noto Sans"',
+      '"Noto Naskh Arabic"',
       'sans-serif'
     ],
     'ar-serif': [
-      '"Noto Naskh Arabic"',
       '"Noto Serif"',
+      '"Noto Naskh Arabic"',
       'serif'
     ],
     'ur-sans': [
-      '"Noto Nastaliq Urdu"',
       '"Noto Sans"',
+      '"Noto Nastaliq Urdu"',
       'sans-serif'
     ],
     'ur-serif': [
-      '"Noto Nastaliq Urdu"',
       '"Noto Serif"',
+      '"Noto Nastaliq Urdu"',
       'serif'
     ],
     'code': [
