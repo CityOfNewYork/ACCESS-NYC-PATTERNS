@@ -212,7 +212,7 @@
               <pre><code>&lt;div class=&quot;screen-desktop:p-1&quot;&gt;&lt;/div&gt;</code></pre>
               <p>The plugin table below describes the available variants for each utility. An empty array <code>[]</code> means only the default state is available. The <a href="#config-screens">screens theme configuration</a> describes the avaliable break points for the <a href="#config-variants-and-core-plugins">responsive variants</a>.</p>
               <h4 id="core-plugins">Core Plugins</h4>
-              <p>Example; the core plugin for padding is <code>padding</code>. Adding or removing it to the whitelist will determine wether those utilities are compiled to the global stylesheet.</p>
+              <p>Example; the core plugin for padding is <code>padding</code>. Adding or removing it to the array will determine wether those utilities are compiled to the global stylesheet.</p>
               <p>
               <h2>ACCESS NYC × tailwindcss configuration</h2>
               <h3 id="config-theme">Theme</h3>
@@ -923,35 +923,35 @@
                   </div>
                   <div class="p-2 layout-two-columns font-code color-code small">
                     <div>.{{ prefix }}-kr-sans</div>
-                    <div class="pl-1">&quot;Noto Sans CJK KR&quot;, &quot;Noto Sans&quot;, sans-serif</div>
+                    <div class="pl-1">&quot;Noto Sans&quot;, &quot;Noto Sans CJK KR&quot;, sans-serif</div>
                   </div>
                   <div class="p-2 layout-two-columns font-code color-code small">
                     <div>.{{ prefix }}-kr-serif</div>
-                    <div class="pl-1">&quot;Noto Sans CJK KR&quot;, &quot;Noto Serif&quot;, serif</div>
+                    <div class="pl-1">&quot;Noto Serif&quot;, &quot;Noto Sans CJK KR&quot;, serif</div>
                   </div>
                   <div class="p-2 layout-two-columns font-code color-code small">
                     <div>.{{ prefix }}-tc-sans</div>
-                    <div class="pl-1">&quot;Noto Sans CJK TC&quot;, &quot;Microsoft Yahei&quot;, &quot;微软雅黑&quot;, STXihei, &quot;华文细黑&quot;, &quot;Noto Sans&quot;, sans-serif</div>
+                    <div class="pl-1">&quot;Noto Sans&quot;, &quot;Noto Sans CJK TC&quot;, &quot;Microsoft Yahei&quot;, &quot;微软雅黑&quot;, STXihei, &quot;华文细黑&quot;, sans-serif</div>
                   </div>
                   <div class="p-2 layout-two-columns font-code color-code small">
                     <div>.{{ prefix }}-tc-serif</div>
-                    <div class="pl-1">&quot;Noto Sans CJK TC&quot;, &quot;Microsoft Yahei&quot;, &quot;微软雅黑&quot;, STXihei, &quot;华文细黑&quot;, &quot;Noto Serif&quot;, serif</div>
+                    <div class="pl-1">&quot;Noto Serif&quot;, &quot;Noto Sans CJK TC&quot;, &quot;Microsoft Yahei&quot;, &quot;微软雅黑&quot;, STXihei, &quot;华文细黑&quot;, serif</div>
                   </div>
                   <div class="p-2 layout-two-columns font-code color-code small">
                     <div>.{{ prefix }}-ar-sans</div>
-                    <div class="pl-1">&quot;Noto Naskh Arabic&quot;, &quot;Noto Sans&quot;, sans-serif</div>
+                    <div class="pl-1">&quot;Noto Sans&quot;, &quot;Noto Naskh Arabic&quot;, sans-serif</div>
                   </div>
                   <div class="p-2 layout-two-columns font-code color-code small">
                     <div>.{{ prefix }}-ar-serif</div>
-                    <div class="pl-1">&quot;Noto Naskh Arabic&quot;, &quot;Noto Serif&quot;, serif</div>
+                    <div class="pl-1">&quot;Noto Serif&quot;, &quot;Noto Naskh Arabic&quot;, serif</div>
                   </div>
                   <div class="p-2 layout-two-columns font-code color-code small">
                     <div>.{{ prefix }}-ur-sans</div>
-                    <div class="pl-1">&quot;Noto Nastaliq Urdu&quot;, &quot;Noto Sans&quot;, sans-serif</div>
+                    <div class="pl-1">&quot;Noto Sans&quot;, &quot;Noto Nastaliq Urdu&quot;, sans-serif</div>
                   </div>
                   <div class="p-2 layout-two-columns font-code color-code small">
                     <div>.{{ prefix }}-ur-serif</div>
-                    <div class="pl-1">&quot;Noto Nastaliq Urdu&quot;, &quot;Noto Serif&quot;, serif</div>
+                    <div class="pl-1">&quot;Noto Serif&quot;, &quot;Noto Nastaliq Urdu&quot;, serif</div>
                   </div>
                   <div class="p-2 layout-two-columns font-code color-code small">
                     <div>.{{ prefix }}-code</div>
