@@ -17,8 +17,8 @@ header role='banner' class='color-light-background px-2'
         h2 class='type-h1 m-0 text-blue-dark hidden screen-tablet:inline-block' aria-hidden='true'
           | Patterns
         nav class='text-small'
-          a href='${link_source}/tree/v${this.tokens.version}' class='rounded-lg text-blue-dark border-2 no-underline px-1 ms-2 hidden screen-tablet:inline-block'
+          a href='${link_source}/releases/tag/v${this.tokens.version}' class='rounded-lg text-blue-dark border-2 no-underline px-1 ms-2 hidden screen-tablet:inline-block'
             = this.tokens.version;
-          a href='${link_source}/tree/v${this.tokens.version}' class='ms-1 screen-tablet:ms-2 screen-tablet:hidden' aria-hidden='true'
+          a href='${link_source}/releases/tag/v${this.tokens.version}' class='ms-1 screen-tablet:ms-2 screen-tablet:hidden' aria-hidden='true'
             = this.tokens.version;
           button#main-menu-control class='btn-link ms-1 screen-tablet:ms-2' aria-controls='main-menu' aria-expanded='false' data-js='toggle' Menu
