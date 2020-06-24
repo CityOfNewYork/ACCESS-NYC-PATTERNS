@@ -63,7 +63,7 @@
     "vue-template-compiler": "^2.6.9"
   },
   "dependencies": {
-    "bourbon": "^4.3.4",
+    "bourbon": "^7.0.0",
     "cleave.js": "^1.6.0",
     "for-cerial": "^1.0.0",
     "js-cookie": "^3.0.0-beta.0",
