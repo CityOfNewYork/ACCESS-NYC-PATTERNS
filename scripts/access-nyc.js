@@ -267,11 +267,11 @@ var AccessNyc = (function () {
 
     this.element = (s.element) ? s.element : false;
 
-    if (this.element) {
-      this.element.addEventListener('click', function (event) {
+    if (this.element)
+      { this.element.addEventListener('click', function (event) {
         this$1.toggle(event);
-      });
-    } else {
+      }); }
+    else
       // If there isn't an existing instantiated toggle, add the event listener.
       if (!window.ACCESS_TOGGLES.hasOwnProperty(this.settings.selector))
         { document.querySelector('body').addEventListener('click', function (event) {
@@ -280,7 +280,6 @@ var AccessNyc = (function () {
 
           this$1.toggle(event);
         }); }
-    }
 
     // Record that a toggle using this selector has been instantiated. This
     // prevents double toggling.
@@ -543,21 +542,19 @@ var AccessNyc = (function () {
       typeof Webtrends === 'undefined' ||
       typeof data === 'undefined' ||
       !this.desinations.includes('webtrends')
-    ) {
-      return false;
-    }
+    )
+      { return false; }
 
     var event = [{
       'WT.ti': key
     }];
 
-    if (data[0] && data[0].hasOwnProperty(Track.key)) {
-      event.push({
+    if (data[0] && data[0].hasOwnProperty(Track.key))
+      { event.push({
         'DCS.dcsuri': data[0][Track.key]
-      });
-    } else {
-      Object.assign(event, data);
-    }
+      }); }
+    else
+      { Object.assign(event, data); }
 
     // Format data for Webtrends
     var wtd = {argsa: event.flatMap(function (e) {
@@ -572,10 +569,8 @@ var AccessNyc = (function () {
     // Webtrends doesn't send the page view for MultiTrack, add path to url
     var dcsuri = data.argsa.indexOf('DCS.dcsuri');
 
-    if (dcsuri) {
-      data.argsa[dcsuri + 1] = window.location.pathname +
-        data.argsa[dcsuri + 1];
-    }
+    if (dcsuri)
+      { data.argsa[dcsuri + 1] = window.location.pathname + data.argsa[dcsuri + 1]; }
 
     /* eslint-disable no-undef */
     if (typeof Webtrends !== 'undefined')
@@ -595,9 +590,8 @@ var AccessNyc = (function () {
       typeof gtag === 'undefined' ||
       typeof data === 'undefined' ||
       !this.desinations.includes('gtag')
-    ) {
-      return false;
-    }
+    )
+      { return false; }
 
     var uri = data.find(function (element) { return element.hasOwnProperty(Track.key); });
 
@@ -622,9 +616,8 @@ var AccessNyc = (function () {
       typeof gtag === 'undefined' ||
       typeof data === 'undefined' ||
       !this.desinations.includes('gtag')
-    ) {
-      return false;
-    }
+    )
+      { return false; }
 
     var view = {
       app_name: app,
@@ -652,12 +645,6 @@ var AccessNyc = (function () {
 
   /**
    * Copy to Clipboard Helper
-   *
-   * <input data-copy-target="web-share-url" id="web-share-url" name="web-share-url" type="text" value="https://myurl" />
-   *
-   * <button aria-pressed="false" data-copy="web-share-url" data-js="copy">
-   *   Copy to Clipboard
-   * </button>
    */
   var Copy = function Copy() {
     var this$1 = this;
@@ -714,13 +701,12 @@ var AccessNyc = (function () {
 
     this.select(input);
 
-    if (navigator.clipboard && navigator.clipboard.writeText) {
-      navigator.clipboard.writeText(input.value);
-    } else if (document.execCommand) {
-      document.execCommand('copy');
-    } else {
-      return false;
-    }
+    if (navigator.clipboard && navigator.clipboard.writeText)
+      { navigator.clipboard.writeText(input.value); }
+    else if (document.execCommand)
+      { document.execCommand('copy'); }
+    else
+      { return false; }
 
     return true;
   };
@@ -751,104 +737,186 @@ var AccessNyc = (function () {
   Copy.notifyTimeout = 1500;
 
   /**
+   * Uses the Share API to t
+   */
+  var WebShare = function WebShare(s) {
+    var this$1 = this;
+    if ( s === void 0 ) s = {};
+
+    this.selector = (s.selector) ? s.selector : WebShare.selector;
+
+    this.callback = (s.callback) ? s.callback : WebShare.callback;
+
+    this.fallback = (s.fallback) ? s.fallback : WebShare.fallback;
+
+    if (navigator.share) {
+      // Remove fallback aria toggling attributes
+      document.querySelectorAll(this.selector).forEach(function (item) {
+        item.removeAttribute('aria-controls');
+        item.removeAttribute('aria-expanded');
+      });
+
+      // Add event listener for the share click
+      document.querySelector('body').addEventListener('click', function (event) {
+        if (!event.target.matches(this$1.selector))
+          { return; }
+
+        this$1.element = event.target;
+
+        this$1.data = JSON.parse(this$1.element.dataset.webShare);
+
+        this$1.share(this$1.data);
+      });
+    } else
+      { this.fallback(); } // Execute the fallback
+
+    return this;
+  };
+
+  /**
+   * Web Share API handler
+   *
+   * @param {Object}dataAn object containing title, url, and text.
+   *
+   * @return{Promise}     The response of the .share() method.
+   */
+  WebShare.prototype.share = function share (data) {
+      var this$1 = this;
+      if ( data === void 0 ) data = {};
+
+    return navigator.share(data)
+      .then(function (res) {
+        this$1.callback(data);
+      }).catch(function (err) {
+      });
+  };
+
+  /** The html selector for the component */
+  WebShare.selector = '[data-js*="web-share"]';
+
+  /** Placeholder callback for a successful send */
+  WebShare.callback = function () {
+  };
+
+  /** Placeholder for the WebShare fallback */
+  WebShare.fallback = function () {
+  };
+
+  /**
    * Creates a tooltips. The constructor is passed an HTML element that serves as
    * the trigger to show or hide the tooltips. The tooltip should have an
    * `aria-describedby` attribute, the value of which is the ID of the tooltip
    * content to show or hide.
    */
-
   var Tooltips = function Tooltips(el) {
     var this$1 = this;
 
     this.trigger = el;
+
     this.tooltip = document.getElementById(el.getAttribute('aria-describedby'));
+
     this.active = false;
+
     this.tooltip.classList.add(Tooltips.CssClass.TOOLTIP);
     this.tooltip.classList.add(Tooltips.CssClass.HIDDEN);
-    this.tooltip.setAttribute('aria-hidden', 'true');
-    this.tooltip.setAttribute('role', 'tooltip'); // Stop click propagation so clicking on the tip doesn't trigger a
-    // click on body, which would close the tooltips.
 
+    this.tooltip.setAttribute('aria-hidden', 'true');
+    this.tooltip.setAttribute('role', 'tooltip');
+
+    // Stop click propagation so clicking on the tip doesn't trigger a
+    // click on body, which would close the tooltips.
     this.tooltip.addEventListener('click', function (event) {
       event.stopPropagation();
     });
+
     document.querySelector('body').appendChild(this.tooltip);
+
     this.trigger.addEventListener('click', function (event) {
       event.preventDefault();
       event.stopPropagation();
+
       this$1.toggle();
     });
+
     window.addEventListener('hashchange', function () {
       this$1.hide();
     });
+
     Tooltips.AllTips.push(this);
+
     return this;
   };
+
   /**
    * Displays the tooltips. Sets a one-time listener on the body to close the
    * tooltip when a click event bubbles up to it.
    * @method
    * @return {this} Tooltip
    */
-
-
   Tooltips.prototype.show = function show () {
       var this$1 = this;
 
     Tooltips.hideAll();
+
     this.tooltip.classList.remove(Tooltips.CssClass.HIDDEN);
+
     this.tooltip.setAttribute('aria-hidden', 'false');
+
     var body = document.querySelector('body');
 
     var hideTooltipOnce = function () {
       this$1.hide();
+
       body.removeEventListener('click', hideTooltipOnce);
     };
 
     body.addEventListener('click', hideTooltipOnce);
+
     window.addEventListener('resize', function () {
       this$1.reposition();
     });
+
     this.reposition();
+
     this.active = true;
+
     return this;
   };
+
   /**
    * Hides the tooltip and removes the click event listener on the body.
    * @method
    * @return {this} Tooltip
    */
-
-
   Tooltips.prototype.hide = function hide () {
     this.tooltip.classList.add(Tooltips.CssClass.HIDDEN);
+
     this.tooltip.setAttribute('aria-hidden', 'true');
+
     this.active = false;
+
     return this;
   };
+
   /**
    * Toggles the state of the tooltips.
    * @method
    * @return {this} Tooltip
    */
-
-
   Tooltips.prototype.toggle = function toggle () {
-    if (this.active) {
-      this.hide();
-    } else {
-      this.show();
-    }
+    if (this.active)
+      { this.hide(); }
+    else
+      { this.show(); }
 
     return this;
   };
+
   /**
    * Positions the tooltip beneath the triggering element.
    * @method
    * @return {this} Tooltip
    */
-
-
   Tooltips.prototype.reposition = function reposition () {
     var pos = {
       'position': 'absolute',
@@ -859,17 +927,19 @@ var AccessNyc = (function () {
       'width': ''
     };
 
-    var style = function (attrs) { return Object.keys(attrs).map(function (key) { return (key + ": " + (attrs[key])); }).join('; '); };
+    var style = function (attrs) { return Object.keys(attrs)
+      .map(function (key) { return (key + ": " + (attrs[key])); }).join('; '); };
 
     var g = 8; // Gutter. Minimum distance from screen edge.
-
     var tt = this.tooltip;
     var tr = this.trigger;
-    var w = window; // Reset
+    var w = window;
 
-    this.tooltip.setAttribute('style', style(pos)); // Determine left or right alignment.
+    // Reset
+    this.tooltip.setAttribute('style', style(pos));
 
-    if (tt.offsetWidth >= w.innerWidth - 2 * g) {
+    // Determine left or right alignment.
+    if (tt.offsetWidth >= w.innerWidth - (2 * g)) {
       // If the tooltip is wider than the screen minus gutters, then position
       // the tooltip to extend to the gutters.
       pos.left = g + 'px';
@@ -886,42 +956,41 @@ var AccessNyc = (function () {
       // Align the tooltip to the left of the trigger element.
       pos.left = tr.offsetLeft + 'px';
       pos.right = 'auto';
-    } // Position TT on top if the trigger is below the middle of the window
-
-
-    if (tr.offsetTop - w.scrollY > w.innerHeight / 2) {
-      pos.top = tr.offsetTop - tt.offsetHeight - g + 'px';
-    } else {
-      pos.top = tr.offsetTop + tr.offsetHeight + g + 'px';
     }
 
+    // Position TT on top if the trigger is below the middle of the window
+    if (tr.offsetTop - w.scrollY > w.innerHeight / 2)
+      { pos.top = tr.offsetTop - tt.offsetHeight - (g) + 'px'; }
+    else
+      { pos.top = tr.offsetTop + tr.offsetHeight + g + 'px'; }
+
     this.tooltip.setAttribute('style', style(pos));
+
     return this;
   };
 
   Tooltips.selector = '[data-js*="tooltip"]';
+
   /**
    * Array of all the instantiated tooltips.
    * @type {Array<Tooltip>}
    */
-
   Tooltips.AllTips = [];
+
   /**
    * Hide all Tooltips.
    * @public
    */
-
-  Tooltips.hideAll = function () {
+  Tooltips.hideAll = function() {
     Tooltips.AllTips.forEach(function (element) {
       element.hide();
     });
   };
+
   /**
    * CSS classes used by this component.
    * @enum {string}
    */
-
-
   Tooltips.CssClass = {
     HIDDEN: 'hidden',
     TOOLTIP: 'tooltip-bubble'
@@ -5216,66 +5285,6 @@ var AccessNyc = (function () {
   };
   ShareForm.sent = false;
 
-  /**
-   * Uses the Share API to t
-   */
-
-  var WebShare = function WebShare(s) {
-    var this$1 = this;
-    if ( s === void 0 ) s = {};
-
-    this.selector = s.selector ? s.selector : WebShare.selector;
-    this.callback = s.callback ? s.callback : WebShare.callback;
-
-    if (navigator.share) {
-      // Remove fallback aria toggling attributes
-      document.querySelectorAll(this.selector).forEach(function (item) {
-        item.removeAttribute('aria-controls');
-        item.removeAttribute('aria-expanded');
-      }); // Add event listener for the share click
-
-      document.querySelector('body').addEventListener('click', function (event) {
-        if (!event.target.matches(this$1.selector)) { return; }
-        this$1.element = event.target;
-        this$1.data = JSON.parse(this$1.element.dataset.webShare);
-        this$1.share(this$1.data);
-      });
-    } else {
-      // Convert component into a toggle for the fallback
-      this.toggle = new Toggle({
-        selector: this.selector
-      });
-    }
-
-    return this;
-  };
-  /**
-   * Web Share API handler
-   *
-   * @param {Object}dataAn object containing title, url, and text.
-   *
-   * @return{Promise}     The response of the .share() method.
-   */
-
-
-  WebShare.prototype.share = function share (data) {
-      var this$1 = this;
-      if ( data === void 0 ) data = {};
-
-    return navigator.share(data).then(function (res) {
-      this$1.callback(data);
-    }).catch(function (err) {
-    });
-  };
-  /** The html selector for the component */
-
-
-  WebShare.selector = '[data-js*="web-share"]';
-  /** Placeholder callback for a successful send */
-
-  WebShare.callback = function () {
-  };
-
   /*! js-cookie v3.0.0-beta.0 | MIT */
   function extend () {
     var arguments$1 = arguments;
@@ -6062,7 +6071,13 @@ var AccessNyc = (function () {
 
 
   main.prototype.webShare = function webShare () {
-    return new WebShare();
+    return new WebShare({
+      fallback: function () {
+        new Toggle({
+          selector: WebShare.selector
+        });
+      }
+    });
   };
   /**
    * An API for the Copy Utility

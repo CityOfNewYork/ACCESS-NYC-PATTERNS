@@ -154,11 +154,11 @@ var AlertBanner = (function () {
 
     this.element = (s.element) ? s.element : false;
 
-    if (this.element) {
-      this.element.addEventListener('click', function (event) {
+    if (this.element)
+      { this.element.addEventListener('click', function (event) {
         this$1.toggle(event);
-      });
-    } else {
+      }); }
+    else
       // If there isn't an existing instantiated toggle, add the event listener.
       if (!window.ACCESS_TOGGLES.hasOwnProperty(this.settings.selector))
         { document.querySelector('body').addEventListener('click', function (event) {
@@ -167,7 +167,6 @@ var AlertBanner = (function () {
 
           this$1.toggle(event);
         }); }
-    }
 
     // Record that a toggle using this selector has been instantiated. This
     // prevents double toggling.
