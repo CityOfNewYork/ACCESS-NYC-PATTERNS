@@ -63,7 +63,6 @@
     "vue-template-compiler": "^2.6.9"
   },
   "dependencies": {
-    "animate.scss": "0.0.6",
     "bourbon": "^4.3.4",
     "cleave.js": "^1.6.0",
     "for-cerial": "^1.0.0",

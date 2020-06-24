@@ -48,12 +48,6 @@ View the source (link at the top of this page) for defaults. See the property se
       {{ MY_CUSTOM_STRINGS }}
     };
 
-#### Dependencies
-
-The share form depends on [Cleave.js](https://github.com/nosir/cleave.js) for telephone numer input masking and [for-cerial](https://github.com/kjkta/for-cerial) for form serialization. If using the ES Module import those modules need to be installed.
-
-    npm install cleave.js && npm install for-cerial
-
 #### Polyfills
 
 This script uses the [Toggle Utility](/toggle) as a dependency and reqiures the same polyfills for IE11 support. See the ["Toggle Usage" section](toggle#toggle-usage) for more details. In addition, it uses the `Element.prototype.closest` method and `fetch` API. See the ["Polyfills" section in the Installation docs](/installation#polyfills) for a full recommendation on polyfills.

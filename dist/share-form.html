@@ -331,9 +331,6 @@ let shareForm = new ShareForm(element);
 shareForm.strings = {
   {{ MY_CUSTOM_STRINGS }}
 };</code></pre>
-              <h4 id="dependencies">Dependencies</h4>
-              <p>The share form depends on <a href="https://github.com/nosir/cleave.js">Cleave.js</a> for telephone numer input masking and <a href="https://github.com/kjkta/for-cerial">for-cerial</a> for form serialization. If using the ES Module import those modules need to be installed.</p>
-              <pre><code>npm install cleave.js &amp;&amp; npm install for-cerial</code></pre>
               <h4 id="polyfills">Polyfills</h4>
               <p>This script uses the <a href="/toggle">Toggle Utility</a> as a dependency and reqiures the same polyfills for IE11 support. See the <a href="toggle#toggle-usage">“Toggle Usage” section</a> for more details. In addition, it uses the <code>Element.prototype.closest</code> method and <code>fetch</code> API. See the <a href="/installation#polyfills">“Polyfills” section in the Installation docs</a> for a full recommendation on polyfills.</p>
             </div>
