@@ -12,7 +12,7 @@ The Text Controller Object requires JavaScript for showing and hiding the text c
 
 This will instantiate the Text Controller Object and attach event listeners for toggling the options and text resize controls.
 
-#### Cherry-picked Module Import
+#### Module Import
 
 The ES6, CommonJS, and IFFE modules all require importing and object instantiation in your main script. You must pass a dom selection of the Text Controller Object to the instantiated class. A selector reference is stored in the class.
 

@@ -22,7 +22,7 @@
   <meta content="images/ms-icon-144x144.png" name="msapplication-TileImage" />
   <link href="images/favicon.ico" rel="icon" type="image/x-icon" />
   <title>Question | ACCESS NYC Patterns</title>
-  <script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-163470527-1"></script>
+  <script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-163470527-0"></script>
   <link href="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.18.1/build/styles/default.min.css" rel="stylesheet" />
   <script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.18.1/build/highlight.min.js"></script>
   <link href="styles/site-default.css" rel="stylesheet" />
@@ -41,7 +41,7 @@
       dataLayer.push(arguments);
     }
     gtag('js', new Date());
-    gtag('config', 'UA-163470527-1');
+    gtag('config', 'UA-163470527-0');
   </script>
 </head>
 
@@ -181,7 +181,7 @@
               <div class="my-0 pt-4 px-2 text-small table-align-start">
                 <p>The Question Component allows a user to enter information into a form. This pattern follows the styling and usage guidelines of the <a href="https://designsystem.digital.gov/components/form-controls/">U.S. Web Design System’s Form Control</a>. The ACCESS NYC Patterns include a <a href="tooltips">Tooltip Element</a> which can provide clarification on why a question is being asked.</p>
                 <h4 id="validation-and-accessibility">Validation and Accessibility</h4>
-                <p>Question Components require JavaScript for validation and use the <a href="https://github.com/CityOfNewYork/nyco-patterns-framework">Form Utility from the NYCO Patterns Framework</a>. This script will display visual feedback regarding missing and invalid answers to the user as well as toggle appropriate aria attributes for announcing feedback to screen readers. The <code>aria-live=”polite”</code> attribute on the message announces a new element that was not previously visible in the default Question Component state. Additionally, the <code>aria-invalid=”true”</code> attribute illustrates to screen readers that the input is not valid and the <code>aria-describedby</code> attribute indicates the input’s error description.</p>
+                <p>Question Components require JavaScript for validation and use the <a href="https://github.com/CityOfNewYork/nyco-patterns-framework/tree/main/src/utilities/forms">Form Utility from the NYCO Patterns Framework</a>. This script will display visual feedback regarding missing and invalid answers to the user as well as toggle appropriate aria attributes for announcing feedback to screen readers. The <code>aria-live=”polite”</code> attribute on the message announces a new element that was not previously visible in the default Question Component state. Additionally, the <code>aria-invalid=”true”</code> attribute illustrates to screen readers that the input is not valid and the <code>aria-describedby</code> attribute indicates the input’s error description.</p>
               </div>
             </div>
           </div>
@@ -614,23 +614,39 @@
             <div class="layout-home-body">
               <div class="my-0 pt-4 px-2 text-small table-align-start">
                 <h4 id="global-script">Global Script</h4>
-                <p>The Question Component requires JavaScript for <a href="https://github.com/CityOfNewYork/nyco-patterns-framework">form validation</a> and displaying <a href="/tooltips">Tooltip Elements</a>. To use the validation and tooltips through the global ACCESS NYC Patterns script use the following code. A selector targeting the form should be supplied as the first argument to the <code>.valid()</code> method. The second argument should be a function which handles the form data when it passes validation.</p>
+                <p>The Question Component requires JavaScript for <a href="https://github.com/CityOfNewYork/nyco-patterns-framework/tree/main/src/utilities/forms">form validation</a> and displaying <a href="/tooltips">Tooltip Elements</a>. To use the validation and tooltips through the global ACCESS NYC Patterns script use the following code. A selector targeting the form should be supplied as the first argument to the <code>.valid()</code> method. The second argument should be a function which handles the form data when it passes validation.</p>
                 <pre><code>&lt;!-- Global Script --&gt;
 &lt;script src=&quot;dist/scripts/AccessNyc.js&quot;&gt;&lt;/script&gt;
 
 &lt;script&gt;
-  var selector = &#39;#question-demo&#39;;
-  var submit = function(event) {
+  // Instantiate validation with a selector and submit function
+  access.valid(&#39;#your-form-selector&#39;, function(event) {
     event.preventDefault();
-    // Submission handler
-  };
 
-  access.valid(selector, submit); // Instantiate validation with selector and submit function
+    // Add your submission handler here
+
+  });
+
   access.tooltips(); // Instantiate tooltips
 &lt;/script&gt;</code></pre>
                 <p>This will instantiate form validation and tooltips. Validation messages will appear when the user leaves a required question blank, enters an incorrectly formatted answer, or tries to submit the form without filling out any required fields.</p>
-                <h4 id="cherry-picked-module-import">Cherry-picked Module Import</h4>
-                <p>The form validation source exisits in the <a href="https://github.com/CityOfNewYork/nyco-patterns-framework">NYCO Patterns Framework</a>. Install the <code>@nycopportunity/patterns-framework</code> module to import that script. Follow the <a href="/tooltips">Tooltip Elements</a> documentation for importing the Tooltips module script.</p>
+                <h4 id="module-import">Module Import</h4>
+                <p>The form validation source exisits in the <a href="https://github.com/CityOfNewYork/nyco-patterns-framework/tree/main/src/utilities/forms">NYCO Patterns Framework</a>. Install the <code>@nycopportunity/patterns-framework</code> module to import the module.</p>
+                <pre><code>import Forms from &#39;@nycopportunity/patterns-framework/src/utilities/forms/forms&#39;;
+
+let form = new Forms(document.querySelector(&#39;#your-form-selector&#39;));
+
+form.submit = (event) =&gt; {
+  event.preventDefault();
+
+  // Add your submission handler here
+
+};
+
+form.selectors.ERROR_MESSAGE_PARENT = &#39;.c-question__container&#39;;
+
+form.watch();</code></pre>
+                <p>Follow the <a href="/tooltips">Tooltip Elements</a> documentation for importing the Tooltips module script.</p>
               </div>
             </div>
           </div>
@@ -765,7 +781,6 @@
     var access = new AccessNyc();
     var VueComponents = new VueComponents();
     access.icons();
-    access.icons('https://cdn.jsdelivr.net/gh/cityofnewyork/nyco-patterns@v2.3.1/dist/icons.svg');
     access.toggle();
     access.copy();
   </script>
@@ -776,6 +791,7 @@
       return false;
     });
   </script>
+  <script src="/reload/reload.js"></script>
 </body>
 
 </html>

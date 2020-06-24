@@ -12,7 +12,7 @@ The Alert Banner Object requires JavaScript for showing and hiding the alert. It
 
 This will instantiate the Alert Banner Object and attach event listeners for the close option.
 
-#### Cherry-picked Module Import
+#### Module Import
 
 The ES6, CommonJS, and IFFE modules all require importing and object instantiation in your main script. You must pass a dom selection of the Alert Banner Object to the instantiated class. A selector reference is stored in the class.
 

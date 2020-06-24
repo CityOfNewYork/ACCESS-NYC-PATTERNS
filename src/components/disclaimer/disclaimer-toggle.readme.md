@@ -13,7 +13,7 @@ The Disclaimer Component Toggle requires JavaScript for showing and hiding the D
 
 This will instantiate the Disclaimer Component and Toggle Utility, attaching event listeners for toggling the disclaimer visible.
 
-#### Cherry-picked Module Import
+#### Module Import
 
 The ES6, CommonJS, and IFFE modules all require importing and object instantiation in your main script.
 

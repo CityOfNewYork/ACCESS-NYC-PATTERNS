@@ -62,7 +62,7 @@ The InputAutocomplete class accepts an object `{}` with the following properties
 * `selector` (`String` optional) The selector for the input element. If no selector is provided the default
 value will be set to `[data-js="inputs-autocomplete__input"]`.
 
-#### Cherry-picked Module Import
+#### Module Import
 
 The ES6, CommonJS, and IFFE modules all require importing and object instantiation in your main script. The methods and configurations described above will work with the dedicated module.
 

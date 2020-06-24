@@ -19,7 +19,7 @@
   padding: $spacing-base;
 
   flex-direction: column;
-  align-items: start;
+  align-items: flex-start;
 
   @media screen and (min-width: $screen-tablet) {
     flex-direction: row;

@@ -31,7 +31,6 @@ html lang='en' dir='ltr'
       var VueComponents = new VueComponents();
 
       access.icons();
-      access.icons('https://cdn.jsdelivr.net/gh/cityofnewyork/nyco-patterns@v2.3.1/dist/icons.svg');
       access.toggle();
       access.copy();
 

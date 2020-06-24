@@ -22,7 +22,7 @@
   <meta content="images/ms-icon-144x144.png" name="msapplication-TileImage" />
   <link href="images/favicon.ico" rel="icon" type="image/x-icon" />
   <title>Web Share | ACCESS NYC Patterns</title>
-  <script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-163470527-1"></script>
+  <script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-163470527-0"></script>
   <link href="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.18.1/build/styles/default.min.css" rel="stylesheet" />
   <script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.18.1/build/highlight.min.js"></script>
   <link href="styles/site-default.css" rel="stylesheet" />
@@ -41,7 +41,7 @@
       dataLayer.push(arguments);
     }
     gtag('js', new Date());
-    gtag('config', 'UA-163470527-1');
+    gtag('config', 'UA-163470527-0');
   </script>
 </head>
 
@@ -184,7 +184,9 @@
             </div>
           </header>
           <div class="layout-home-body">
-            <div class="my-0 pt-4 px-2 text-small table-align-start"></div>
+            <div class="my-0 pt-4 px-2 text-small table-align-start">
+              <p>The Web Share Component invokes the native sharing mechanism of a device if it is supported. This allows users to share on the platform of their choice or copy the link. For browsers that do not support the Web Share API a fallback is shown to allow users to copy the link, sharing on Facebook, or sharing on Twitter.</p>
+            </div>
           </div>
           <div class="layout-gutter screen-tablet:layout-columns justify-between pt-4">
             <div class="screen-tablet:pe-2">
@@ -258,6 +260,58 @@
           </div>
         </div>
       </section>
+      <section class="pb-2 screen-tablet:pb-4 screen-tablet:mb-4" id="web-share-usage">
+        <div class="page-wrapper px-2 screen-desktop:px-0">
+          <header class="layout-home-body">
+            <div class="my-0 px-2 py-0 border-b border-grey-light screen-tablet:flex screen-tablet:justify-between">
+              <h2 class="m-0 pt-1 pb-4">
+                <a class="text-grey-mid font-normal no-underline capitalize" href="#web-share-usage">Web Share Usage</a>
+              </h2>
+            </div>
+          </header>
+          <div class="layout-home-body">
+            <div class="my-0 pt-4 px-2 text-small table-align-start">
+              <h4 id="global-script">Global Script</h4>
+              <p>The Web Share Component requires JavaScript for calling the <code>navigator.share()</code> api in supported browsers and showing/hiding the fallback for unsupported browsers. It also uses a Copy-to-clipboard Utility in the sharing fallback dialogue. To use the Web Share Component through the global ACCESS NYC Patterns script use the following code:</p>
+              <pre><code>&lt;!-- Global Script --&gt;
+&lt;script src=&quot;dist/scripts/AccessNyc.js&quot;&gt;&lt;/script&gt;
+
+&lt;script&gt;
+  var access = new AccessNyc();
+
+  access.webShare();
+  access.copy();
+&lt;/script&gt;</code></pre>
+              <p>This will instantiate the Web Share Component and Copy-to-clipboard Utility.</p>
+              <h4 id="module-import">Module Import</h4>
+              <p>The Web Share source exisits in the <a href="https://github.com/CityOfNewYork/nyco-patterns-framework">NYCO Patterns Framework</a>. Install the <code>@nycopportunity/patterns-framework</code> module to import the module. This method allows the specification of a callback method for a successful share and the fallback method. The <code>Toggle</code> and <code>Copy</code> modules are optional but required for the fallback in the demo.</p>
+              <pre><code>import WebShare from &#39;@nycopportunity/patterns-framework/src/web-share/web-share&#39;;
+import Toggle from &#39;@nycopportunity/patterns-framework/src/utilities/toggle/toggle&#39;;
+import Copy from &#39;@nycopportunity/patterns-framework/src/utilities/copy/copy&#39;;
+
+new WebShare({
+  callback: () =&gt; {
+    // Designate a callback function for a successful share here
+  },
+  fallback: () =&gt; {
+    new Toggle({
+      selector: WebShare.selector
+    });
+  }
+});
+
+new Copy();</code></pre>
+            </div>
+          </div>
+        </div>
+      </section>
+      <div class="sticky bottom-0 bg-white shadow-up relative z-10 overflow-y-scroll whitespace-no-wrap animated fadeInUp">
+        <nav class="nav-inline inline-block text-small p-2 screen-tablet:p-4">
+          <span class="me-2">Jump to:</span>
+          <a class="me-2" href="#main-content">Top</a>
+          <a class="me-2" href="#web-share-usage">Web Share Usage</a>
+        </nav>
+      </div>
     </article>
   </main>
   <footer class="color-mid-background text-blue-dark border-solid border-t-4 border-blue-dark text-small py-4 z-20 relative" role="contentinfo">
@@ -374,13 +428,13 @@
     var access = new AccessNyc();
     var VueComponents = new VueComponents();
     access.icons();
-    access.icons('https://cdn.jsdelivr.net/gh/cityofnewyork/nyco-patterns@v2.3.1/dist/icons.svg');
     access.toggle();
     access.copy();
   </script>
   <script type="text/javascript">
     access.webShare();
   </script>
+  <script src="/reload/reload.js"></script>
 </body>
 
 </html>

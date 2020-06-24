@@ -1,0 +1,1 @@
+The Web Share Component invokes the native sharing mechanism of a device if it is supported. This allows users to share on the platform of their choice or copy the link. For browsers that do not support the Web Share API a fallback is shown to allow users to copy the link, sharing on Facebook, or sharing on Twitter.

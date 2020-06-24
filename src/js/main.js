@@ -6,10 +6,11 @@ import Toggle from '@nycopportunity/patterns-framework/src/utilities/toggle/togg
 import Icons from '@nycopportunity/patterns-framework/src/utilities/icons/icons';
 import Track from '@nycopportunity/patterns-framework/src/utilities/track/track';
 import Copy from '@nycopportunity/patterns-framework/src/utilities/copy/copy';
+import WebShare from '@nycopportunity/patterns-framework/src/utilities/web-share/web-share';
+import Tooltips from '@nycopportunity/patterns-framework/src/utilities/tooltips/tooltips';
 
 // Elements
 // import InputsAutocomplete from '../elements/inputs/inputs-autocomplete';
-import Tooltips from '../elements/tooltips/tooltips';
 
 // Components
 import Accordion from '../components/accordion/accordion';
@@ -17,7 +18,6 @@ import Disclaimer from '../components/disclaimer/disclaimer';
 import Filter from '../components/filter/filter';
 import NearbyStops from '../components/nearby-stops/nearby-stops';
 import ShareForm from '../components/share-form/share-form';
-import WebShare from '../components/web-share/web-share';
 
 // Objects
 import AlertBanner from '../objects/alert-banner/alert-banner';
@@ -147,7 +147,13 @@ class main {
    * @return  {Object}  Instance of WebShare
    */
   webShare() {
-    return new WebShare();
+    return new WebShare({
+      fallback: () => {
+        new Toggle({
+          selector: WebShare.selector
+        });
+      }
+    });
   }
 
   /**

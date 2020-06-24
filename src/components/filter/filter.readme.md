@@ -12,7 +12,7 @@ The Filter and Filter Multi Components require the Filter JavaScript for togglin
 
 This function will attach the filter toggling event to the body of the document.
 
-#### Cherry-picked Module Import
+#### Module Import
 
 The ES6, CommonJS, and IFFE modules all require importing and object instantiation in your main script:
 

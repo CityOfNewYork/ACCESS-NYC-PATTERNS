@@ -119,8 +119,8 @@ pre, .hljs {
 .hljs-comment {
   color: $color-grey-mid;
   display: inline-block;
-  padding-top: $grid * 3;
-  padding-bottom: $grid;
+  // padding-top: $grid * 3;
+  // padding-bottom: $grid;
 }
 
 pre > code:first-of-type > .hljs-comment {

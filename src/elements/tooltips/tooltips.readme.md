@@ -7,23 +7,17 @@ The Tooltip Element requires JavaScript for showing and hiding the tooltip. To u
 
     <script>
       var access = new AccessNyc();
+
       access.tooltips();
     </script>
 
 This will instantiate each Tooltip Element and attach event listeners for toggling.
 
-#### Cherry-picked Module Import
+#### Module Import
 
-The ES6, CommonJS, and IFFE modules all require importing and object instantiation in your main script. You must pass a dom selection of the Tooltip Element to the instantiated class. A selector reference is stored in the class.
+The Tooltip source exisits in the [NYCO Patterns Framework](https://github.com/CityOfNewYork/nyco-patterns-framework). Install the `@nycopportunity/patterns-framework` module to import the module.
 
-    // ES6
-    import Tooltips from 'src/objects/text-controller/text-controller';
-
-    // CommonJS
-    let Tooltips = require('dist/objects/text-controller/text-controller.common');
-
-    <!-- IFFE -->
-    <script src="dist/objects/text-controller/text-controller.iffe.js"></script>
+    import Tooltips from '@nycopportunity/patterns-framework/src/tooltips/tooltips';
 
     let elements = document.querySelectorAll(Tooltips.selector);
 

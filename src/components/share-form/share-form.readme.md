@@ -12,7 +12,7 @@ The Share Form Component requires JavaScript for showing and hiding the SMS or e
 
 This will instantiate the Share Form Component and attach event listeners for toggling the form open and handling the form submission.
 
-#### Cherry-picked Module Import
+#### Module Import
 
 The ES6, CommonJS, and IFFE modules all require importing and object instantiation in your main script. You must pass a DOM selection of each Share Form Component to a new instance of the class. A selector reference is stored in the class.
 

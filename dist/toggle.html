@@ -22,7 +22,7 @@
   <meta content="images/ms-icon-144x144.png" name="msapplication-TileImage" />
   <link href="images/favicon.ico" rel="icon" type="image/x-icon" />
   <title>Toggle | ACCESS NYC Patterns</title>
-  <script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-163470527-1"></script>
+  <script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-163470527-0"></script>
   <link href="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.18.1/build/styles/default.min.css" rel="stylesheet" />
   <script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.18.1/build/highlight.min.js"></script>
   <link href="styles/site-default.css" rel="stylesheet" />
@@ -41,7 +41,7 @@
       dataLayer.push(arguments);
     }
     gtag('js', new Date());
-    gtag('config', 'UA-163470527-1');
+    gtag('config', 'UA-163470527-0');
   </script>
 </head>
 
@@ -553,7 +553,7 @@
                   </tr>
                 </tbody>
               </table>
-              <h4 id="cherry-picked-module-import">Cherry-picked Module Import</h4>
+              <h4 id="module-import">Module Import</h4>
               <p>The ES6, CommonJS, and IFFE modules all require importing and object instantiation in your main script. The methods and configurations described above will work with the dedicated module.</p>
               <pre><code>// ES6
 import Toggle from &#39;@nycopportunity/patterns-framework/src/utilities/toggle/toggle&#39;;
@@ -701,10 +701,10 @@ new Toggle();</code></pre>
     var access = new AccessNyc();
     var VueComponents = new VueComponents();
     access.icons();
-    access.icons('https://cdn.jsdelivr.net/gh/cityofnewyork/nyco-patterns@v2.3.1/dist/icons.svg');
     access.toggle();
     access.copy();
   </script>
+  <script src="/reload/reload.js"></script>
 </body>
 
 </html>

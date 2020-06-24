@@ -24,6 +24,7 @@
 = content('content');
   = mixin('content-header', title);
   = mixin('section', false, 'components/web-share/web-share');
+  = mixin('section-text', 'Web Share Usage', 'components/web-share/web-share.readme');
 
 = content('script');
   javascript:
