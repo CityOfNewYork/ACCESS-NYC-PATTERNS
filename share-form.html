@@ -67,8 +67,8 @@
           <h2 class="text-small m-0 text-blue-dark screen-tablet:hidden">Patterns</h2>
           <h2 aria-hidden="true" class="type-h1 m-0 text-blue-dark hidden screen-tablet:inline-block">Patterns</h2>
           <nav class="text-small">
-            <a class="rounded-lg text-blue-dark border-2 no-underline px-1 ms-2 hidden screen-tablet:inline-block" href="https://github.com/CityOfNewYork/access-nyc-patterns/releases/tag/v0.15.12">0.15.12</a>
-            <a aria-hidden="true" class="ms-1 screen-tablet:ms-2 screen-tablet:hidden" href="https://github.com/CityOfNewYork/access-nyc-patterns/releases/tag/v0.15.12">0.15.12</a>
+            <a class="rounded-lg text-blue-dark border-2 no-underline px-1 ms-2 hidden screen-tablet:inline-block" href="https://github.com/CityOfNewYork/access-nyc-patterns/releases/tag/v0.15.13">0.15.13</a>
+            <a aria-hidden="true" class="ms-1 screen-tablet:ms-2 screen-tablet:hidden" href="https://github.com/CityOfNewYork/access-nyc-patterns/releases/tag/v0.15.13">0.15.13</a>
             <button aria-controls="main-menu" aria-expanded="false" class="btn-link ms-1 screen-tablet:ms-2" data-js="toggle" id="main-menu-control">Menu</button>
           </nav>
         </div>
@@ -177,7 +177,7 @@
             <div class="my-0 px-2 pt-1 pb-4 border-b border-grey-light">
               <div>
                 <p class="text-small m-0">Source: <code>
-                    <a href="https://github.com/CityOfNewYork/access-nyc-patterns/releases/tag/v0.15.12/src/components/share-form">src/components/share-form/share-form</a>
+                    <a href="https://github.com/CityOfNewYork/access-nyc-patterns/releases/tag/v0.15.13/src/components/share-form">src/components/share-form/share-form</a>
                   </code>
                 </p>
               </div>
@@ -262,19 +262,13 @@
 
 &lt;script&gt;
   var access = new AccessNyc();
+
   access.shareForm();
 &lt;/script&gt;</code></pre>
               <p>This will instantiate the Share Form Component and attach event listeners for toggling the form open and handling the form submission.</p>
               <h4 id="module-import">Module Import</h4>
-              <p>The ES6, CommonJS, and IFFE modules all require importing and object instantiation in your main script. You must pass a DOM selection of each Share Form Component to a new instance of the class. A selector reference is stored in the class.</p>
-              <pre><code>// ES6
-import ShareForm from &#39;src/components/share-form/share-form&#39;;
-
-// CommonJS
-let ShareForm = require(&#39;dist/components/share-form/share-form.common&#39;);
-
-&lt;!-- IFFE --&gt;
-&lt;script src=&quot;dist/components/share-form/share-form.iffe.js&quot;&gt;&lt;/script&gt;
+              <p>The ES module requires importing and object instantiation in your main script. You must pass a DOM selection of each Share Form Component to a new instance of the class. A selector reference is stored in the class.</p>
+              <pre><code>import ShareForm from &#39;src/components/share-form/share-form&#39;;
 
 let elements = document.querySelectorAll(ShareForm.selector);
 
@@ -331,11 +325,15 @@ elements.forEach(element =&gt; {
               </table>
               <p>View the source (link at the top of this page) for defaults. See the property setting example below for property setting;</p>
               <pre><code>let element = document.querySelector(ShareForm.selector);
+
 let shareForm = new ShareForm(element);
 
 shareForm.strings = {
   {{ MY_CUSTOM_STRINGS }}
 };</code></pre>
+              <h4 id="dependencies">Dependencies</h4>
+              <p>The share form depends on <a href="https://github.com/nosir/cleave.js">Cleave.js</a> for telephone numer input masking and <a href="https://github.com/kjkta/for-cerial">for-cerial</a> for form serialization. If using the ES Module import those modules need to be installed.</p>
+              <pre><code>npm install cleave.js &amp;&amp; npm install for-cerial</code></pre>
               <h4 id="polyfills">Polyfills</h4>
               <p>This script uses the <a href="/toggle">Toggle Utility</a> as a dependency and reqiures the same polyfills for IE11 support. See the <a href="toggle#toggle-usage">“Toggle Usage” section</a> for more details. In addition, it uses the <code>Element.prototype.closest</code> method and <code>fetch</code> API. See the <a href="/installation#polyfills">“Polyfills” section in the Installation docs</a> for a full recommendation on polyfills.</p>
             </div>
