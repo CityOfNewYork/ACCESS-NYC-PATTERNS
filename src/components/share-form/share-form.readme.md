@@ -7,6 +7,7 @@ The Share Form Component requires JavaScript for showing and hiding the SMS or e
 
     <script>
       var access = new AccessNyc();
+
       access.shareForm();
     </script>
 
@@ -14,16 +15,9 @@ This will instantiate the Share Form Component and attach event listeners for to
 
 #### Module Import
 
-The ES6, CommonJS, and IFFE modules all require importing and object instantiation in your main script. You must pass a DOM selection of each Share Form Component to a new instance of the class. A selector reference is stored in the class.
+The ES module requires importing and object instantiation in your main script. You must pass a DOM selection of each Share Form Component to a new instance of the class. A selector reference is stored in the class.
 
-    // ES6
     import ShareForm from 'src/components/share-form/share-form';
-
-    // CommonJS
-    let ShareForm = require('dist/components/share-form/share-form.common');
-
-    <!-- IFFE -->
-    <script src="dist/components/share-form/share-form.iffe.js"></script>
 
     let elements = document.querySelectorAll(ShareForm.selector);
 
@@ -47,11 +41,18 @@ Property    | Description
 View the source (link at the top of this page) for defaults. See the property setting example below for property setting;
 
     let element = document.querySelector(ShareForm.selector);
+
     let shareForm = new ShareForm(element);
 
     shareForm.strings = {
       {{ MY_CUSTOM_STRINGS }}
     };
+
+#### Dependencies
+
+The share form depends on [Cleave.js](https://github.com/nosir/cleave.js) for telephone numer input masking and [for-cerial](https://github.com/kjkta/for-cerial) for form serialization. If using the ES Module import those modules need to be installed.
+
+    npm install cleave.js && npm install for-cerial
 
 #### Polyfills
 

@@ -6,7 +6,7 @@ import Toggle from '@nycopportunity/patterns-framework/src/utilities/toggle/togg
 
 // Input masking
 import Cleave from 'cleave.js';
-import 'cleave.js/dist/addons/cleave-phone.us';
+import 'cleave.js/src/addons/phone-type-formatter.us';
 
 import serialize from 'for-cerial';
 

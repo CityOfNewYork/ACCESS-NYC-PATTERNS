@@ -65,7 +65,7 @@
   "dependencies": {
     "animate.scss": "0.0.6",
     "bourbon": "^4.3.4",
-    "cleave.js": "^1.5.3",
+    "cleave.js": "^1.6.0",
     "for-cerial": "^1.0.0",
     "js-cookie": "^3.0.0-beta.0",
     "lodash-es": "^4.17.15",
