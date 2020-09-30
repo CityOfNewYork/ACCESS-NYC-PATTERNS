@@ -24,4 +24,3 @@
   CharacterData.prototype,
   DocumentType.prototype
 ]);
-/* eslint-enable no-undef */
