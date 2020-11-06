@@ -82,6 +82,10 @@
     visibility: visible;
     max-height: 2000px;
   }
+
+  > li {
+    margin-bottom: 0;
+  }
 }
 
 .c-filter__item {
