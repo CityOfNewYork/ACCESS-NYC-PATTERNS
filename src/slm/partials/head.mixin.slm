@@ -4,6 +4,21 @@
     meta http-equiv='X-UA-Compatible' content='IE=edge'
     meta name='viewport' content='width=device-width, initial-scale=1'
 
+    link rel='preload' href='fonts/noto-serif/NotoSerif.woff2' as='font' crossorigin=true
+    link rel='preload' href='fonts/noto-serif/NotoSerif-Bold.woff2' as='font' crossorigin=true
+    link rel='preload' href='fonts/noto-sans/NotoSans.woff2' as='font' crossorigin=true
+    link rel='preload' href='fonts/noto-sans/NotoSans-Italic.woff2' as='font' crossorigin=true
+    link rel='preload' href='fonts/noto-sans/NotoSans-Bold.woff2' as='font' crossorigin=true
+    link rel='preload' href='fonts/noto-sans/NotoSans-BoldItalic.woff2' as='font' crossorigin=true
+
+    / link rel='preload' href='fonts/noto-cjk-kr/NotoSansCJKkr-Regular.otf' as='font' crossorigin=true
+    / link rel='preload' href='fonts/noto-cjk-kr/NotoSansCJKkr-Bold.otf' as='font' crossorigin=true
+    / link rel='preload' href='fonts/noto-cjk-tc/NotoSansCJKtc-Regular.otf' as='font' crossorigin=true
+    / link rel='preload' href='fonts/noto-cjk-tc/NotoSansCJKtc-Bold.otf' as='font' crossorigin=true
+    / link rel='preload' href='fonts/noto-ar/NotoNaskhArabic-Regular.ttf' as='font' crossorigin=true
+    / link rel='preload' href='fonts/noto-ar/NotoNaskhArabic-Bold.ttf' as='font' crossorigin=true
+    / link rel='preload' href='fonts/noto-ur/NotoNastaliqUrdu-Regular.ttf' as='font' crossorigin=true
+
     link rel='apple-touch-icon' sizes='57x57' href='images/apple-icon-57x57.png'
     link rel='apple-touch-icon' sizes='60x60' href='images/apple-icon-60x60.png'
     link rel='apple-touch-icon' sizes='72x72' href='images/apple-icon-72x72.png'
