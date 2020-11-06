@@ -81,7 +81,6 @@ $leading: map-get($tokens, 'leading');
 @mixin typography-base() {
   font-size: #{$font-size-base};
   line-height: map-get($leading, 'large');
-  font-family: $font-family-sans
 }
 
 @mixin typography-supplemental() {

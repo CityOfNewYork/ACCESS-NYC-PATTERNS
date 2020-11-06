@@ -14,11 +14,16 @@
 
 // Declarations
 html {
+  font-family: sans-serif;
   @include typography-base();
 
   @if $text-direction == 'rtl' {
     direction: rtl;
   }
+}
+
+body {
+  font-family: $font-family-sans
 }
 
 h1, .h1, .type-h1, .typography-h1 {
