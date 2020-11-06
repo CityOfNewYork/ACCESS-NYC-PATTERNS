@@ -171,7 +171,7 @@ module.exports = {
     // 'objectFit',
     // 'objectPosition',
     'opacity',
-    // 'outline',
+    'outline',
     'overflow',
     'padding',
     // 'placeholderColor',

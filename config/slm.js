@@ -4,7 +4,7 @@
 
 const package = require('../package.json');
 const tokens = require('./tokens');
-const tailwind = require('./tailwind');
+const tailwind = require('./tailwindcss');
 
 /**
  * Config
