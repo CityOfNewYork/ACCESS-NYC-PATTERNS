@@ -2367,7 +2367,6 @@ var ShareForm = (function () {
       this$1.sanitize().processing().submit(event).then(function (response) { return response.json(); }).then(function (response) {
         this$1.response(response);
       }).catch(function (data) {
-        { console.dir(data); }
       });
     });
     /**
@@ -2447,7 +2446,6 @@ var ShareForm = (function () {
 
   ShareForm.prototype.response = function response (data) {
     if (data.success) { this.success(); }else if (data.error === 21211) { this.feedback('SERVER_TEL_INVALID').enable(); }else { this.feedback('SERVER').enable(); }
-    { console.dir(data); }
     return this;
   };
   /**
@@ -2478,7 +2476,6 @@ var ShareForm = (function () {
 
   ShareForm.prototype.error = function error (response) {
     this.feedback('SERVER').enable();
-    { console.dir(response); }
     return this;
   };
   /**
