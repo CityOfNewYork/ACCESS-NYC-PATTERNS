@@ -4,13 +4,10 @@
 import Forms from '@nycopportunity/patterns-framework/src/utilities/forms/forms';
 import Toggle from '@nycopportunity/patterns-framework/src/utilities/toggle/toggle';
 import Icons from '@nycopportunity/patterns-framework/src/utilities/icons/icons';
-import Track from '@nycopportunity/patterns-framework/src/utilities/track/track';
 import Copy from '@nycopportunity/patterns-framework/src/utilities/copy/copy';
 import WebShare from '@nycopportunity/patterns-framework/src/utilities/web-share/web-share';
 import Tooltips from '@nycopportunity/patterns-framework/src/utilities/tooltips/tooltips';
-
-// Elements
-// import InputsAutocomplete from '../elements/inputs/inputs-autocomplete';
+import Newsletter from '@nycopportunity/patterns-framework/src/utilities/newsletter/newsletter';
 
 // Components
 import Accordion from '../components/accordion/accordion';
@@ -21,7 +18,6 @@ import ShareForm from '../components/share-form/share-form';
 
 // Objects
 import AlertBanner from '../objects/alert-banner/alert-banner';
-import Newsletter from '../objects/newsletter/newsletter';
 import TextController from '../objects/text-controller/text-controller';
 /** import components here as they are written. */
 
@@ -180,15 +176,6 @@ class main {
    */
   textController(element = document.querySelector(TextController.selector)) {
     return (element) ? new TextController(element) : null;
-  }
-
-  /**
-   * An API for the Track Object
-   *
-   * @return  {Object}  Instance of Track
-   */
-  track() {
-    return new Track();
   }
 }
 

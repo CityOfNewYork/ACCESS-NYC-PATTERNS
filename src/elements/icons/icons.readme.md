@@ -18,6 +18,15 @@ Or use a cdn path;
 
     patterns.icons('{{ this.package.cdn.url }}@v{{ this.package.version }}{{ this.package.cdn.svg }}');
 
+#### Module Import
+
+The Icon source exists in the [NYCO Patterns Framework](https://github.com/CityOfNewYork/nyco-patterns-framework). Install the `@nycopportunity/patterns-framework` module to import the module.
+
+    // ES6
+    import Icons from '@nycopportunity/patterns-framework/src/utilities/icons/icons';
+
+    new Icons();
+
 #### Polyfills
 
 The script uses the `Fetch` method which requires a polyfill for IE11 support. See the ["Polyfills" section in the Installation docs](/installation) for recommendations.

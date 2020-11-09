@@ -27,9 +27,10 @@ The list of strings below are used for validation and alert messaging. They can 
 
 #### Module Import
 
-The ES6 and CommonJS modules require importing and object instantiation in your main script. The methods and configurations described above will work with the dedicated module.
+The Newsletter source exists in the [NYCO Patterns Framework](https://github.com/CityOfNewYork/nyco-patterns-framework). Install the `@nycopportunity/patterns-framework` module to import the module.
 
-    import Newsletter from '../objects/newsletter/newsletter';
+    import Newsletter from '@nycopportunity/patterns-framework/src/utilities/newsletter/newsletter';
+
     let element = document.querySelector(Newsletter.selector);
 
     if (element)

@@ -21,7 +21,7 @@ This will instantiate form validation and tooltips. Validation messages will app
 
 #### Module Import
 
-The form validation source exisits in the [NYCO Patterns Framework](https://github.com/CityOfNewYork/nyco-patterns-framework/tree/main/src/utilities/forms). Install the `@nycopportunity/patterns-framework` module to import the module.
+The form validation source exists in the [NYCO Patterns Framework](https://github.com/CityOfNewYork/nyco-patterns-framework/tree/main/src/utilities/forms). Install the `@nycopportunity/patterns-framework` module to import the module.
 
     import Forms from '@nycopportunity/patterns-framework/src/utilities/forms/forms';
 

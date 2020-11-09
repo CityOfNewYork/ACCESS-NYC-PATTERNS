@@ -9,6 +9,7 @@ import Toggle from '@nycopportunity/patterns-framework/src/utilities/toggle/togg
 class Accordion {
   /**
    * @constructor
+   *
    * @return {object} The class
    */
   constructor() {

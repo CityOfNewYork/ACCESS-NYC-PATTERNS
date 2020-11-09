@@ -139,48 +139,6 @@ module.exports = [
     plugins: rollup.local,
     devModule: true
   },
-  {
-    input: './src/elements/inputs/inputs-autocomplete.js',
-    plugins: rollup.dist,
-    output: [
-      {
-        name: 'InputAutocomplete',
-        file: `./dist/elements/inputs/inputs-autocomplete.iffe.js`,
-        format: 'iife',
-        strict: rollup.strict
-      },
-      {
-        name: 'InputAutocomplete',
-        file: `./dist/elements/inputs/inputs-autocomplete.common.js`,
-        format: 'cjs',
-        strict: rollup.strict
-      }
-    ]
-  },
-  // {
-  //   input: './src/components/accordion/accordion.js',
-  //   plugins: rollup.dist,
-  //   // This enables us to declare peer dependencies and
-  //   // avoid packaging them with our module libraries!
-  //   external: ['vue/dist/vue.common'],
-  //   output: [
-  //     {
-  //       name: 'Accordion',
-  //       file: `./dist/components/accordion/accordion.iffe.js`,
-  //       format: 'iife',
-  //       strict: rollup.strict,
-  //       globals: { // This suppressess a warning regarding using a global peer
-  //         'vue/dist/vue.common': 'Vue'
-  //       }
-  //     },
-  //     {
-  //       name: 'Accordion',
-  //       file: `./dist/components/accordion/accordion.common.js`,
-  //       format: 'cjs',
-  //       strict: rollup.strict
-  //     }
-  //   ]
-  // },
  {
     input: './src/components/accordion/accordion.js',
     plugins: rollup.dist,
@@ -284,24 +242,6 @@ module.exports = [
       {
         name: 'AlertBanner',
         file: `./dist/objects/alert-banner/alert-banner.common.js`,
-        format: 'cjs',
-        strict: rollup.strict
-      }
-    ]
-  },
-  {
-    input: './src/objects/newsletter/newsletter.js',
-    plugins: rollup.dist,
-    output: [
-      {
-        name: 'Newsletter',
-        file: `./dist/objects/newsletter/newsletter.iffe.js`,
-        format: 'iife',
-        strict: rollup.strict
-      },
-      {
-        name: 'Newsletter',
-        file: `./dist/objects/newsletter/newsletter.common.js`,
         format: 'cjs',
         strict: rollup.strict
       }

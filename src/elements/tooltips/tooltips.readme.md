@@ -15,7 +15,7 @@ This will instantiate each Tooltip Element and attach event listeners for toggli
 
 #### Module Import
 
-The Tooltip source exisits in the [NYCO Patterns Framework](https://github.com/CityOfNewYork/nyco-patterns-framework). Install the `@nycopportunity/patterns-framework` module to import the module.
+The Tooltip source exists in the [NYCO Patterns Framework](https://github.com/CityOfNewYork/nyco-patterns-framework). Install the `@nycopportunity/patterns-framework` module to import the module.
 
     import Tooltips from '@nycopportunity/patterns-framework/src/tooltips/tooltips';
 

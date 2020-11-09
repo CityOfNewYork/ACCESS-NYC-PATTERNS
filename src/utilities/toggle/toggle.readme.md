@@ -52,20 +52,12 @@ Option          | Type             | Importance | Description
 
 #### Module Import
 
-The ES6, CommonJS, and IFFE modules all require importing and object instantiation in your main script. The methods and configurations described above will work with the dedicated module.
+The Icon source exists in the [NYCO Patterns Framework](https://github.com/CityOfNewYork/nyco-patterns-framework). Install the `@nycopportunity/patterns-framework` module to import the module.
 
     // ES6
     import Toggle from '@nycopportunity/patterns-framework/src/utilities/toggle/toggle';
 
-    // CommonJS
-    let Toggle = require('@nycopportunity/patterns-framework/dist/utilities/toggle/toggle.common');
-
-    <!-- IFFE -->
-    <script src="@nycopportunity/patterns-framework/dist/utilities/toggle/toggle.iffe.js"></script>
-
     new Toggle();
-
-**Note**: The Icon Utility source and distribution scripts in the ACCESS NYC Patterns has been deprecated and moved to the [NYCO Patterns Framework](https://github.com/CityOfNewYork/nyco-patterns-framework). Install the `@nycopportunity/patterns-framework` module to use this script.
 
 #### Polyfills
 
