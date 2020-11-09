@@ -4,7 +4,6 @@
 
 const alias = require('@rollup/plugin-alias');          // Define require aliases when bundling packages with Rollup.
 const resolve = require('@rollup/plugin-node-resolve'); // Locate modules using the Node resolution algorithm, for using third party modules in node_modules.
-const commonjs = require('@rollup/plugin-commonjs');    // Convert CommonJS modules to ES6, so they can be included in a Rollup bundle
 const babel = require('rollup-plugin-babel');           // Transpile source code.
 const buble = require('@rollup/plugin-buble');          // Convert ES2015 with buble.
 const replace = require('@rollup/plugin-replace');      // Replace content while bundling.
@@ -51,12 +50,6 @@ const plugins = {
     'SCREEN_TABLET': 768,
     'SCREEN_MOBILE': 480,
     'SCREEM_SM_MOBILE': 400
-  }),
-  common: commonjs({
-    // Prevents https://github.com/rollup/plugins/issues/304
-    exclude: [
-      'node_modules/lodash-es/*.js'
-    ]
   }),
   vue: vue(),
   buble: buble({
@@ -148,12 +141,6 @@ module.exports = [
         file: `./dist/components/accordion/accordion.iffe.js`,
         format: 'iife',
         strict: rollup.strict
-      },
-      {
-        name: 'Accordion',
-        file: `./dist/components/accordion/accordion.common.js`,
-        format: 'cjs',
-        strict: rollup.strict
       }
     ]
   },
@@ -165,12 +152,6 @@ module.exports = [
         name: 'Filter',
         file: `./dist/components/filter/filter.iffe.js`,
         format: 'iife',
-        strict: rollup.strict
-      },
-      {
-        name: 'Filter',
-        file: `./dist/components/filter/filter.common.js`,
-        format: 'cjs',
         strict: rollup.strict
       }
     ]
@@ -184,12 +165,6 @@ module.exports = [
         file: `./dist/components/nearby-stops/nearby-stops.iffe.js`,
         format: 'iife',
         strict: rollup.strict
-      },
-      {
-        name: 'NearbyStops',
-        file: `./dist/components/nearby-stops/nearby-stops.common.js`,
-        format: 'cjs',
-        strict: rollup.strict
       }
     ]
   },
@@ -201,12 +176,6 @@ module.exports = [
         name: 'ShareForm',
         file: `./dist/components/share-form/share-form.iffe.js`,
         format: 'iife',
-        strict: rollup.strict
-      },
-      {
-        name: 'ShareForm',
-        file: `./dist/components/share-form/share-form.common.js`,
-        format: 'cjs',
         strict: rollup.strict
       }
     ]
@@ -220,12 +189,6 @@ module.exports = [
         file: `./dist/components/disclaimer/disclaimer.iffe.js`,
         format: 'iife',
         strict: rollup.strict
-      },
-      {
-        name: 'Disclaimer',
-        file: `./dist/components/disclaimer/disclaimer.common.js`,
-        format: 'cjs',
-        strict: rollup.strict
       }
     ]
   },
@@ -238,12 +201,6 @@ module.exports = [
         file: `./dist/objects/alert-banner/alert-banner.iffe.js`,
         format: 'iife',
         strict: rollup.strict
-      },
-      {
-        name: 'AlertBanner',
-        file: `./dist/objects/alert-banner/alert-banner.common.js`,
-        format: 'cjs',
-        strict: rollup.strict
       }
     ]
   },
@@ -255,12 +212,6 @@ module.exports = [
         name: 'TextController',
         file: `./dist/objects/text-controller/text-controller.iffe.js`,
         format: 'iife',
-        strict: rollup.strict
-      },
-      {
-        name: 'TextController',
-        file: `./dist/objects/text-controller/text-controller.common.js`,
-        format: 'cjs',
         strict: rollup.strict
       }
     ]

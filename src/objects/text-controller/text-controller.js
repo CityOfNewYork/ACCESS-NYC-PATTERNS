@@ -58,9 +58,8 @@ class TextController {
 
       const newSize = this._textSize - 1;
 
-      if (newSize >= TextController.min) {
+      if (newSize >= TextController.min)
         this._adjustSize(newSize);
-      }
     });
 
     btnLarger.addEventListener('click', event => {
@@ -68,9 +67,8 @@ class TextController {
 
       const newSize = this._textSize + 1;
 
-      if (newSize <= TextController.max) {
+      if (newSize <= TextController.max)
         this._adjustSize(newSize);
-      }
     });
 
     // If there is a text size cookie, set the textSize variable to the setting.

@@ -48,7 +48,7 @@
   "scripts": {
     "start": "cross-env NODE_ENV=development cross-env PORT=7000 concurrently \"pttrn default -w -np\" \"pttrn serve -w\" -p \"none\"",
     "production": "cross-env NODE_ENV=production cross-env PORT=7000 concurrently \"pttrn default -w -np\" \"pttrn serve -w\" -p \"none\"",
-    "default": "cross-env NODE_ENV=production pttrn default -np -nl",
+    "default": "cross-env NODE_ENV=production pttrn default -np",
     "version": "npm run default && git add .",
     "prepublishOnly": "git push && git push --tags",
     "publish": "cross-env NODE_ENV=production pttrn publish",
@@ -63,6 +63,7 @@
     "vue-template-compiler": "^2.6.11"
   },
   "dependencies": {
+    "animate.scss": "0.0.6",
     "bourbon": "^4.3.4",
     "cleave.js": "^1.6.0",
     "for-cerial": "^1.0.0",

@@ -14,13 +14,10 @@ This function will attach the filter toggling event to the body of the document.
 
 #### Module Import
 
-The ES6, CommonJS, and IFFE modules all require importing and object instantiation in your main script:
+The ES6 and IFFE modules all require importing and object instantiation in your main script:
 
     // ES6
     import Filter from 'src/components/filter/filter';
-
-    // CommonJS
-    let Filter = require('dist/components/filter/filter.common');
 
     <!-- IFFE -->
     <script src="dist/components/filter/filter.iffe.js"></script>

@@ -64,13 +64,10 @@ value will be set to `[data-js="inputs-autocomplete__input"]`.
 
 #### Module Import
 
-The ES6, CommonJS, and IFFE modules all require importing and object instantiation in your main script. The methods and configurations described above will work with the dedicated module.
+The ES6 and IFFE modules all require importing and object instantiation in your main script. The methods and configurations described above will work with the dedicated module.
 
     // ES6
     import InputAutocomplete from 'src/elements/inputs/inputs-autocomplete';
-
-    // CommonJS
-    let InputAutocomplete = require('dist/elements/inputs/inputs-autocomplete.common');
 
     <!-- IFFE -->
     <script src="dist/elements/inputs/inputs-autocomplete.iffe.js"></script>

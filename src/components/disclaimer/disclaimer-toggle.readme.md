@@ -15,15 +15,11 @@ This will instantiate the Disclaimer Component and Toggle Utility, attaching eve
 
 #### Module Import
 
-The ES6, CommonJS, and IFFE modules all require importing and object instantiation in your main script.
+The ES6 and IFFE modules all require importing and object instantiation in your main script.
 
     // ES6
     import Disclaimer from 'src/components/disclaimer/disclaimer';
     import Toggle from 'src/utilities/toggle/toggle';
-
-    // CommonJS
-    let Disclaimer = require('dist/components/disclaimer/disclaimer.common');
-    let Toggle = require('dist/utilities/toggle/toggle.common');
 
     <!-- IFFE -->
     <script src="dist/components/disclaimer/disclaimer.iffe.js"></script>

@@ -7,9 +7,10 @@ This component requires JavaScript to function. To use it from the global ACCESS
 
 #### Module
 
-The ES6, CommonJS, and IFFE modules all require importing and object instantiation in your main script:
+The ES6 and IFFE modules all require importing and object instantiation in your main script:
 
     import NearbyStops from '../components/nearby-stops/nearby-stops';
+
     new NearbyStops();
 
 The class will select any DOM element with the `data-js="nearby-stops"` attribute and look up the closest stops to the location embedded in the `data-nearby-stops-location` attribute. The location attribute accepts an array of latitude and longitude.

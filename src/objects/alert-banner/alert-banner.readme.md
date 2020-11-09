@@ -14,13 +14,10 @@ This will instantiate the Alert Banner Object and attach event listeners for the
 
 #### Module Import
 
-The ES6, CommonJS, and IFFE modules all require importing and object instantiation in your main script. You must pass a dom selection of the Alert Banner Object to the instantiated class. A selector reference is stored in the class.
+The ES6 and IFFE modules all require importing and object instantiation in your main script. You must pass a dom selection of the Alert Banner Object to the instantiated class. A selector reference is stored in the class.
 
     // ES6
     import AlertBanner from 'src/objects/alert-banner/alert-banner';
-
-    // CommonJS
-    let AlertBanner = require('dist/objects/alert-banner/alert-banner.common');
 
     <!-- IFFE -->
     <script src="dist/objects/alert-banner/alert-banner.iffe.js"></script>

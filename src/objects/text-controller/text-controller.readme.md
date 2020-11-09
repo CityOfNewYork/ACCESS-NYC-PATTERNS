@@ -14,13 +14,10 @@ This will instantiate the Text Controller Object and attach event listeners for 
 
 #### Module Import
 
-The ES6, CommonJS, and IFFE modules all require importing and object instantiation in your main script. You must pass a dom selection of the Text Controller Object to the instantiated class. A selector reference is stored in the class.
+The ES6 and IFFE modules all require importing and object instantiation in your main script. You must pass a dom selection of the Text Controller Object to the instantiated class. A selector reference is stored in the class.
 
     // ES6
     import TextController from 'src/objects/text-controller/text-controller';
-
-    // CommonJS
-    let TextController = require('dist/objects/text-controller/text-controller.common');
 
     <!-- IFFE -->
     <script src="dist/objects/text-controller/text-controller.iffe.js"></script>

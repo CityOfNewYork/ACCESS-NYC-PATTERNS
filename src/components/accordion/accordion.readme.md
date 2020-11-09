@@ -14,13 +14,10 @@ This function will attach the accordion toggling event to the body of the docume
 
 ### Module
 
-The ES6, CommonJS, and IFFE modules all require importing and object instantiation in your main script:
+The ES6 and IFFE modules all require importing and object instantiation in your main script:
 
     // ES6
     import Filter from 'src/components/accordion/accordion';
-
-    // CommonJS
-    let Filter = require('dist/components/accordion/accordion.common');
 
     <!-- IFFE -->
     <script src="dist/components/accordion/accordion.iffe.js"></script>

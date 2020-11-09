@@ -54,9 +54,8 @@ class ShareForm {
       this.phone.setAttribute('pattern', this.patterns.PHONE);
 
       this.type = 'text';
-    } else {
+    } else
       this.type = 'email';
-    }
 
     /**
      * Configure the validation for the form using the form utility
@@ -153,9 +152,8 @@ class ShareForm {
 
     let html = document.querySelector('html');
 
-    if (html.hasAttribute('lang')) {
+    if (html.hasAttribute('lang'))
       formData.append('lang', html.getAttribute('lang'));
-    }
 
     return fetch(this.form.FORM.getAttribute('action'), {
       method: this.form.FORM.getAttribute('method'),
@@ -169,15 +167,13 @@ class ShareForm {
    * @return  {Object}        The instantiated class
    */
   response(data) {
-    if (data.success) {
+    if (data.success)
       this.success();
-    } else {
-      if (data.error === 21211) {
+    else
+      if (data.error === 21211)
         this.feedback('SERVER_TEL_INVALID').enable();
-      } else {
+      else
         this.feedback('SERVER').enable();
-      }
-    }
 
     if (process.env.NODE_ENV !== 'production')
       console.dir(data);
