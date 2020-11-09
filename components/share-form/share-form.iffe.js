@@ -251,8 +251,8 @@ var ShareForm = (function () {
     var this$1 = this;
 
     // Create an object to store existing toggle listeners (if it doesn't exist)
-    if (!window.hasOwnProperty('ACCESS_TOGGLES'))
-      { window.ACCESS_TOGGLES = []; }
+    if (!window.hasOwnProperty(Toggle.callback))
+      { window[Toggle.callback] = []; }
 
     s = (!s) ? {} : s;
 
@@ -262,66 +262,156 @@ var ShareForm = (function () {
       inactiveClass: (s.inactiveClass) ? s.inactiveClass : Toggle.inactiveClass,
       activeClass: (s.activeClass) ? s.activeClass : Toggle.activeClass,
       before: (s.before) ? s.before : false,
-      after: (s.after) ? s.after : false
+      after: (s.after) ? s.after : false,
+      valid: (s.valid) ? s.valid : false,
+      focusable: (s.hasOwnProperty('focusable')) ? s.focusable : true,
+      jump: (s.hasOwnProperty('jump')) ? s.jump : true
     };
 
+    // Store the element for potential use in callbacks
     this.element = (s.element) ? s.element : false;
 
-    if (this.element)
-      { this.element.addEventListener('click', function (event) {
+    if (this.element) {
+      this.element.addEventListener('click', function (event) {
         this$1.toggle(event);
-      }); }
-    else
+      });
+    } else {
       // If there isn't an existing instantiated toggle, add the event listener.
-      if (!window.ACCESS_TOGGLES.hasOwnProperty(this.settings.selector))
-        { document.querySelector('body').addEventListener('click', function (event) {
-          if (!event.target.matches(this$1.settings.selector))
-            { return; }
+      if (!window[Toggle.callback].hasOwnProperty(this.settings.selector)) {
+        var body = document.querySelector('body');
 
-          this$1.toggle(event);
-        }); }
+        for (var i = 0; i < Toggle.events.length; i++) {
+          var tggleEvent = Toggle.events[i];
 
-    // Record that a toggle using this selector has been instantiated. This
-    // prevents double toggling.
-    window.ACCESS_TOGGLES[this.settings.selector] = true;
+          body.addEventListener(tggleEvent, function (event) {
+            if (!event.target.matches(this$1.settings.selector))
+              { return; }
+
+            this$1.event = event;
+
+            var type = event.type.toUpperCase();
+
+            if (
+              this$1[event.type] &&
+              Toggle.elements[type] &&
+              Toggle.elements[type].includes(event.target.tagName)
+            ) { this$1[event.type](event); }
+          });
+        }
+      }
+    }
+
+    // Record that a toggle using this selector has been instantiated.
+    // This prevents double toggling.
+    window[Toggle.callback][this.settings.selector] = true;
 
     return this;
   };
 
   /**
-   * Logs constants to the debugger
-   * @param{object} eventThe main click event
-   * @return {object}      The class
+   * Click event handler
+   *
+   * @param{Event}eventThe original click event
+   */
+  Toggle.prototype.click = function click (event) {
+    this.toggle(event);
+  };
+
+  /**
+   * Input/select/textarea change event handler. Checks to see if the
+   * event.target is valid then toggles accordingly.
+   *
+   * @param{Event}eventThe original input change event
+   */
+  Toggle.prototype.change = function change (event) {
+    var valid = event.target.checkValidity();
+
+    if (valid && !this.isActive(event.target)) {
+      this.toggle(event); // show
+    } else if (!valid && this.isActive(event.target)) {
+      this.toggle(event); // hide
+    }
+  };
+
+  /**
+   * Check to see if the toggle is active
+   *
+   * @param{Object}elementThe toggle element (trigger)
+   */
+  Toggle.prototype.isActive = function isActive (element) {
+    var active = false;
+
+    if (this.settings.activeClass) {
+      active = element.classList.contains(this.settings.activeClass);
+    }
+
+    // if () {
+      // Toggle.elementAriaRoles
+      // TODO: Add catch to see if element aria roles are toggled
+    // }
+
+    // if () {
+      // Toggle.targetAriaRoles
+      // TODO: Add catch to see if target aria roles are toggled
+    // }
+
+    return active;
+  };
+
+  /**
+   * Get the target of the toggle element (trigger)
+   *
+   * @param{Object}elThe toggle element (trigger)
+   */
+  Toggle.prototype.getTarget = function getTarget (element) {
+    var target = false;
+
+    /** Anchor Links */
+    target = (element.hasAttribute('href')) ?
+      document.querySelector(element.getAttribute('href')) : target;
+
+    /** Toggle Controls */
+    target = (element.hasAttribute('aria-controls')) ?
+      document.querySelector(("#" + (element.getAttribute('aria-controls')))) : target;
+
+    return target;
+  };
+
+  /**
+   * The toggle event proxy for getting and setting the element/s and target
+   *
+   * @param{Object}eventThe main click event
+   *
+   * @return {Object}       The Toggle instance
    */
   Toggle.prototype.toggle = function toggle (event) {
       var this$1 = this;
 
-    var el = event.target;
+    var element = event.target;
     var target = false;
+    var focusable = [];
 
     event.preventDefault();
 
-    /** Anchor Links */
-    target = (el.hasAttribute('href')) ?
-      document.querySelector(el.getAttribute('href')) : target;
+    target = this.getTarget(element);
 
-    /** Toggle Controls */
-    target = (el.hasAttribute('aria-controls')) ?
-      document.querySelector(("#" + (el.getAttribute('aria-controls')))) : target;
+    /** Focusable Children */
+    focusable = (target) ?
+      target.querySelectorAll(Toggle.elFocusable.join(', ')) : focusable;
 
     /** Main Functionality */
     if (!target) { return this; }
-    this.elementToggle(el, target);
+    this.elementToggle(element, target, focusable);
 
     /** Undo */
-    if (el.dataset[((this.settings.namespace) + "Undo")]) {
+    if (element.dataset[((this.settings.namespace) + "Undo")]) {
       var undo = document.querySelector(
-        el.dataset[((this.settings.namespace) + "Undo")]
+        element.dataset[((this.settings.namespace) + "Undo")]
       );
 
       undo.addEventListener('click', function (event) {
         event.preventDefault();
-        this$1.elementToggle(el, target);
+        this$1.elementToggle(element, target);
         undo.removeEventListener('click');
       });
     }
@@ -330,38 +420,136 @@ var ShareForm = (function () {
   };
 
   /**
-   * The main toggling method
-   * @param{object} el   The current element to toggle active
-   * @param{object} target The target element to toggle active/hidden
-   * @return {object}      The class
+   * Get other toggles that might control the same element
+   *
+   * @param {Object}  elementThe toggling element
+   *
+   * @return{NodeList}         List of other toggling elements
+   *                             that control the target
    */
-  Toggle.prototype.elementToggle = function elementToggle (el, target) {
+  Toggle.prototype.getOthers = function getOthers (element) {
+    var selector = false;
+
+    if (element.hasAttribute('href')) {
+      selector = "[href=\"" + (element.getAttribute('href')) + "\"]";
+    } else if (element.hasAttribute('aria-controls')) {
+      selector = "[aria-controls=\"" + (element.getAttribute('aria-controls')) + "\"]";
+    }
+
+    return (selector) ? document.querySelectorAll(selector) : [];
+  };
+
+  /**
+   * Hide the Toggle Target's focusable children from focus.
+   * If an element has the data-attribute `data-toggle-tabindex`
+   * it will use that as the default tab index of the element.
+   *
+   * @param {NodeList}elementsList of focusable elements
+   *
+   * @return{Object}            The Toggle Instance
+   */
+  Toggle.prototype.toggleFocusable = function toggleFocusable (elements) {
+    elements.forEach(function (element) {
+      var tabindex = element.getAttribute('tabindex');
+
+      if (tabindex === '-1') {
+        var dataDefault = element
+          .getAttribute(("data-" + (Toggle.namespace) + "-tabindex"));
+
+        if (dataDefault) {
+          element.setAttribute('tabindex', dataDefault);
+        } else {
+          element.removeAttribute('tabindex');
+        }
+      } else {
+        element.setAttribute('tabindex', '-1');
+      }
+    });
+
+    return this;
+  };
+
+  /**
+   * Jumps to Element visibly and shifts focus
+   * to the element by setting the tabindex
+   *
+   * @param {Object}elementThe Toggling Element
+   * @param {Object}target The Target Element
+   *
+   * @return{Object}         The Toggle instance
+   */
+  Toggle.prototype.jumpTo = function jumpTo (element, target) {
+    // Reset the history state. This will clear out
+    // the hash when the target is toggled closed
+    history.pushState('', '',
+      window.location.pathname + window.location.search);
+
+    // Focus if active
+    if (target.classList.contains(this.settings.activeClass)) {
+      window.location.hash = element.getAttribute('href');
+
+      target.setAttribute('tabindex', '0');
+      target.focus({preventScroll: true});
+    } else {
+      target.removeAttribute('tabindex');
+    }
+
+    return this;
+  };
+
+  /**
+   * The main toggling method for attributes
+   *
+   * @param{Object}  element  The Toggle element
+   * @param{Object}  target   The Target element to toggle active/hidden
+   * @param{NodeList}focusableAny focusable children in the target
+   *
+   * @return {Object}             The Toggle instance
+   */
+  Toggle.prototype.elementToggle = function elementToggle (element, target, focusable) {
       var this$1 = this;
+      if ( focusable === void 0 ) focusable = [];
 
     var i = 0;
     var attr = '';
     var value = '';
 
-    // Get other toggles that might control the same element
-    var others = document.querySelectorAll(
-      ("[aria-controls=\"" + (el.getAttribute('aria-controls')) + "\"]"));
+    /**
+     * Store elements for potential use in callbacks
+     */
+
+    this.element = element;
+    this.target = target;
+    this.others = this.getOthers(element);
+    this.focusable = focusable;
 
     /**
-     * Toggling before hook.
+     * Validity method property that will cancel the toggle if it returns false
      */
-    if (this.settings.before) { this.settings.before(this); }
+
+    if (this.settings.valid && !this.settings.valid(this))
+      { return this; }
+
+    /**
+     * Toggling before hook
+     */
+
+    if (this.settings.before)
+      { this.settings.before(this); }
 
     /**
      * Toggle Element and Target classes
      */
+
     if (this.settings.activeClass) {
-      el.classList.toggle(this.settings.activeClass);
-      target.classList.toggle(this.settings.activeClass);
+      this.element.classList.toggle(this.settings.activeClass);
+      this.target.classList.toggle(this.settings.activeClass);
 
       // If there are other toggles that control the same element
-      if (others) { others.forEach(function (other) {
-        if (other !== el) { other.classList.toggle(this$1.settings.activeClass); }
-      }); }
+      this.others.forEach(function (other) {
+        if (other !== this$1.element)
+          { other.classList.toggle(this$1.settings.activeClass); }
+      });
     }
 
     if (this.settings.inactiveClass)
@@ -370,75 +558,93 @@ var ShareForm = (function () {
     /**
      * Target Element Aria Attributes
      */
+
     for (i = 0; i < Toggle.targetAriaRoles.length; i++) {
       attr = Toggle.targetAriaRoles[i];
-      value = target.getAttribute(attr);
+      value = this.target.getAttribute(attr);
 
       if (value != '' && value)
-        { target.setAttribute(attr, (value === 'true') ? 'false' : 'true'); }
+        { this.target.setAttribute(attr, (value === 'true') ? 'false' : 'true'); }
     }
 
     /**
-     * Jump Links
+     * Toggle the target's focusable children tabindex
      */
-    if (el.hasAttribute('href')) {
-      // Reset the history state, this will clear out
-      // the hash when the jump item is toggled closed.
-      history.pushState('', '',
-        window.location.pathname + window.location.search);
 
-      // Target element toggle.
-      if (target.classList.contains(this.settings.activeClass)) {
-        window.location.hash = el.getAttribute('href');
+    if (this.settings.focusable)
+      { this.toggleFocusable(this.focusable); }
 
-        target.setAttribute('tabindex', '-1');
-        target.focus({preventScroll: true});
-      } else
-        { target.removeAttribute('tabindex'); }
-    }
+    /**
+     * Jump to Target Element if Toggle Element is an anchor link
+     */
+
+    if (this.settings.jump && this.element.hasAttribute('href'))
+      { this.jumpTo(this.element, this.target); }
 
     /**
      * Toggle Element (including multi toggles) Aria Attributes
      */
+
     for (i = 0; i < Toggle.elAriaRoles.length; i++) {
       attr = Toggle.elAriaRoles[i];
-      value = el.getAttribute(attr);
+      value = this.element.getAttribute(attr);
 
       if (value != '' && value)
-        { el.setAttribute(attr, (value === 'true') ? 'false' : 'true'); }
+        { this.element.setAttribute(attr, (value === 'true') ? 'false' : 'true'); }
 
       // If there are other toggles that control the same element
-      if (others) { others.forEach(function (other) {
-        if (other !== el && other.getAttribute(attr))
+      this.others.forEach(function (other) {
+        if (other !== this$1.element && other.getAttribute(attr))
           { other.setAttribute(attr, (value === 'true') ? 'false' : 'true'); }
-      }); }
+      });
     }
 
     /**
-     * Toggling complete hook.
+     * Toggling complete hook
      */
-    if (this.settings.after) { this.settings.after(this); }
+
+    if (this.settings.after)
+      { this.settings.after(this); }
 
     return this;
   };
 
-  /** @type {String} The main selector to add the toggling function to */
+  /** @type  {String}  The main selector to add the toggling function to */
   Toggle.selector = '[data-js*="toggle"]';
 
-  /** @type {String} The namespace for our data attribute settings */
+  /** @type  {String}  The namespace for our data attribute settings */
   Toggle.namespace = 'toggle';
 
-  /** @type {String} The hide class */
+  /** @type  {String}  The hide class */
   Toggle.inactiveClass = 'hidden';
 
-  /** @type {String} The active class */
+  /** @type  {String}  The active class */
   Toggle.activeClass = 'active';
 
-  /** @type {Array} Aria roles to toggle true/false on the toggling element */
+  /** @type  {Array}  Aria roles to toggle true/false on the toggling element */
   Toggle.elAriaRoles = ['aria-pressed', 'aria-expanded'];
 
-  /** @type {Array} Aria roles to toggle true/false on the target element */
+  /** @type  {Array}  Aria roles to toggle true/false on the target element */
   Toggle.targetAriaRoles = ['aria-hidden'];
+
+  /** @type  {Array}  Focusable elements to hide within the hidden target element */
+  Toggle.elFocusable = [
+    'a', 'button', 'input', 'select', 'textarea', 'object', 'embed', 'form',
+    'fieldset', 'legend', 'label', 'area', 'audio', 'video', 'iframe', 'svg',
+    'details', 'table', '[tabindex]', '[contenteditable]', '[usemap]'
+  ];
+
+  /** @type  {Array}  Key attribute for storing toggles in the window */
+  Toggle.callback = ['TogglesCallback'];
+
+  /** @type  {Array}  Default events to to watch for toggling. Each must have a handler in the class and elements to look for in Toggle.elements */
+  Toggle.events = ['click', 'change'];
+
+  /** @type  {Array}  Elements to delegate to each event handler */
+  Toggle.elements = {
+    CLICK: ['A', 'BUTTON'],
+    CHANGE: ['SELECT', 'INPUT', 'TEXTAREA']
+  };
 
   var commonjsGlobal = typeof window !== 'undefined' ? window : typeof global !== 'undefined' ? global : typeof self !== 'undefined' ? self : {};
 
@@ -1997,8 +2203,6 @@ var ShareForm = (function () {
   // CommonJS
   var Cleave_1 = Cleave;
 
-  var commonjsGlobal$1 = typeof globalThis !== 'undefined' ? globalThis : typeof window !== 'undefined' ? window : typeof global !== 'undefined' ? global : typeof self !== 'undefined' ? self : {};
-
   !function(){var aa=this;function h(a,c){var b=a.split("."),d=aa;b[0]in d||!d.execScript||d.execScript("var "+b[0]);for(var f;b.length&&(f=b.shift());){ b.length||void 0===c?d[f]?d=d[f]:d=d[f]={}:d[f]=c; }}function l(a,c){function b(){}b.prototype=c.prototype;a.M=c.prototype;a.prototype=new b;a.prototype.constructor=a;a.N=function(a,b,e){
   var arguments$1 = arguments;
   for(var g=Array(arguments.length-2),k=2;k<arguments.length;k++){ g[k-2]=arguments$1[k]; }return c.prototype[b].apply(a,g)};}function n(a,c){null!=a&&this.a.apply(this,arguments);}n.prototype.b="";n.prototype.set=function(a){this.b=""+a;};n.prototype.a=function(a,c,b){
@@ -2106,7 +2310,7 @@ var ShareForm = (function () {
   function ya(a){var c=a.a.toString(),b=0,d;1!=w(a.g,10)?d=!1:(d=a.a.toString(),d="1"==d.charAt(0)&&"0"!=d.charAt(1)&&"1"!=d.charAt(1));d?(b=1,a.b.a("1").a(" "),a.o=!0):null!=a.g.a[15]&&(d=new RegExp("^(?:"+w(a.g,15)+")"),d=c.match(d),null!=d&&null!=d[0]&&0<d[0].length&&(a.o=!0,b=d[0].length,a.b.a(c.substring(0,b))));p(a.a);a.a.a(c.substring(b));return c.substring(0,b)}
   function W(a){var c=a.u.toString(),b=new RegExp("^(?:\\+|"+w(a.g,11)+")"),b=c.match(b);return null!=b&&null!=b[0]&&0<b[0].length?(a.o=!0,b=b[0].length,p(a.a),a.a.a(c.substring(b)),p(a.b),a.b.a(c.substring(0,b)),"+"!=c.charAt(0)&&a.b.a(" "),!0):!1}
   function X(a){if(0==a.a.b.length){ return !1; }var c=new n,b;a:{b=a.a.toString();if(0!=b.length&&"0"!=b.charAt(0)){ for(var d,f=b.length,e=1;3>=e&&e<=f;++e){ if(d=parseInt(b.substring(0,e),10),d in K){c.a(b.substring(e));b=d;break a} } }b=0;}if(0==b){ return !1; }p(a.a);a.a.a(c.toString());c=P(b);"001"==c?a.g=O(a.G,""+b):c!=a.D&&(a.g=R(a,c));a.b.a(""+b).a(" ");a.h="";return !0}
-  function za(a,c){var b=a.m.toString();if(0<=b.substring(a.s).search(a.H)){var d=b.search(a.H),b=b.replace(a.H,c);p(a.m);a.m.a(b);a.s=d;return b.substring(0,a.s+1)}1==a.f.length&&(a.l=!1);a.w="";return a.i.toString()}h("Cleave.AsYouTypeFormatter",Q);h("Cleave.AsYouTypeFormatter.prototype.inputDigit",Q.prototype.L);h("Cleave.AsYouTypeFormatter.prototype.clear",Q.prototype.K);}.call((typeof commonjsGlobal$1==="object"&&commonjsGlobal$1)?commonjsGlobal$1:window);
+  function za(a,c){var b=a.m.toString();if(0<=b.substring(a.s).search(a.H)){var d=b.search(a.H),b=b.replace(a.H,c);p(a.m);a.m.a(b);a.s=d;return b.substring(0,a.s+1)}1==a.f.length&&(a.l=!1);a.w="";return a.i.toString()}h("Cleave.AsYouTypeFormatter",Q);h("Cleave.AsYouTypeFormatter.prototype.inputDigit",Q.prototype.L);h("Cleave.AsYouTypeFormatter.prototype.clear",Q.prototype.K);}.call((typeof global==="object"&&global)?global:window);
 
   var e=/^(?:submit|button|image|reset|file)$/i,t=/^(?:input|select|textarea|keygen)/i,n=/(\[[^\[\]]*\])/g;function a(e,t,a){if(t.match(n)){ !function e(t,n,a){if(0===n.length){ return a; }var r=n.shift(),i=r.match(/^\[(.+?)\]$/);if("[]"===r){ return t=t||[],Array.isArray(t)?t.push(e(null,n,a)):(t._values=t._values||[],t._values.push(e(null,n,a))),t; }if(i){var l=i[1],u=+l;isNaN(u)?(t=t||{})[l]=e(t[l],n,a):(t=t||[])[u]=e(t[u],n,a);}else { t[r]=e(t[r],n,a); }return t}(e,function(e){var t=[],a=new RegExp(n),r=/^([^\[\]]*)/.exec(e);for(r[1]&&t.push(r[1]);null!==(r=a.exec(e));){ t.push(r[1]); }return t}(t),a); }else {var r=e[t];r?(Array.isArray(r)||(e[t]=[r]),e[t].push(a)):e[t]=a;}return e}function r(e,t,n){return n=(n=String(n)).replace(/(\r)?\n/g,"\r\n"),n=(n=encodeURIComponent(n)).replace(/%20/g,"+"),e+(e?"&":"")+encodeURIComponent(t)+"="+n}function serialize(n,i){"object"!=typeof i?i={hash:!!i}:void 0===i.hash&&(i.hash=!0);for(var l=i.hash?{}:"",u=i.serializer||(i.hash?a:r),s=n&&n.elements?n.elements:[],c=Object.create(null),o=0;o<s.length;++o){var h=s[o];if((i.disabled||!h.disabled)&&h.name&&t.test(h.nodeName)&&!e.test(h.type)){var p=h.name,f=h.value;if("checkbox"!==h.type&&"radio"!==h.type||h.checked||(f=void 0),i.empty){if("checkbox"!==h.type||h.checked||(f=!1),"radio"===h.type&&(c[h.name]||h.checked?h.checked&&(c[h.name]=!0):c[h.name]=!1),null==f&&"radio"==h.type){ continue }}else if(!f){ continue; }if("select-multiple"!==h.type){ l=u(l,p,f); }else {f=[];for(var v=h.options,m=!1,d=0;d<v.length;++d){var y=v[d];y.selected&&(y.value||i.empty&&!y.value)&&(m=!0,l=i.hash&&"[]"!==p.slice(p.length-2)?u(l,p+"[]",y.value):u(l,p,y.value));}!m&&i.empty&&(l=u(l,p,""));}}}if(i.empty){ for(var p in c){ c[p]||(l=u(l,p,"")); } }return l}
 
@@ -2145,9 +2349,7 @@ var ShareForm = (function () {
       });
       this.phone.setAttribute('pattern', this.patterns.PHONE);
       this.type = 'text';
-    } else {
-      this.type = 'email';
-    }
+    } else { this.type = 'email'; }
     /**
      * Configure the validation for the form using the form utility
      */
@@ -2229,11 +2431,7 @@ var ShareForm = (function () {
       formData.append(k, this$1._data[k]);
     });
     var html = document.querySelector('html');
-
-    if (html.hasAttribute('lang')) {
-      formData.append('lang', html.getAttribute('lang'));
-    }
-
+    if (html.hasAttribute('lang')) { formData.append('lang', html.getAttribute('lang')); }
     return fetch(this.form.FORM.getAttribute('action'), {
       method: this.form.FORM.getAttribute('method'),
       body: formData
@@ -2247,15 +2445,7 @@ var ShareForm = (function () {
 
 
   ShareForm.prototype.response = function response (data) {
-    if (data.success) {
-      this.success();
-    } else {
-      if (data.error === 21211) {
-        this.feedback('SERVER_TEL_INVALID').enable();
-      } else {
-        this.feedback('SERVER').enable();
-      }
-    }
+    if (data.success) { this.success(); }else if (data.error === 21211) { this.feedback('SERVER_TEL_INVALID').enable(); }else { this.feedback('SERVER').enable(); }
     return this;
   };
   /**
