@@ -23,4 +23,5 @@ footer role='contentinfo' class='color-mid-background text-blue-dark border-soli
 
   div class='page-wrapper'
     div class='screen-tablet:flex'
+      - this.nav.focusable = false
       = partial('../partials/nav.slm');

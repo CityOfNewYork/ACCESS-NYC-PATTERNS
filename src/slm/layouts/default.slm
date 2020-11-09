@@ -10,10 +10,11 @@ html lang='en' dir='ltr'
     aside#main-menu role='navigation' aria-labelledby='main-menu-control' aria-hidden='true' class='color-mid-background text-small hidden hidden:overflowFadeInUp animated relative' style='top: -1px'
       div class='page-wrapper py-4 animated'
         div class='screen-tablet:flex'
+          - this.nav.focusable = true
           = partial('../partials/nav.slm');
 
         div class='text-center'
-          button class='btn-link' aria-controls='main-menu' aria-expanded='false' data-js='toggle' Close Menu
+          button tabindex='-1' class='btn-link' aria-controls='main-menu' aria-expanded='false' data-js='toggle' Close Menu
 
     main#main-content role='main' class='color-light-background screen-tablet:pt-4'
       article class='screen-tablet:pt-4 clearfix'

@@ -122,5 +122,6 @@ module.exports = {
         label: 'Served in the U.S. Armed Forces, National Guard or Reserves'
       }
     ]
-  }
+  },
+  nav: {}
 };

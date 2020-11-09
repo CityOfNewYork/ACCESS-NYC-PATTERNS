@@ -55,7 +55,7 @@
     "pttrn": "node_modules/.bin/pttrn"
   },
   "devDependencies": {
-    "@nycopportunity/patterns-framework": "^1.0.0-6",
+    "@nycopportunity/patterns-framework": "^1.0.0-15",
     "@rollup/plugin-alias": "^3.1.1",
     "cross-env": "^7.0.2",
     "css-mqpacker": "^7.0.0",

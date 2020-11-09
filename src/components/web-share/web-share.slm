@@ -10,23 +10,23 @@ nav class='c-web-share'
 
   div id='web-share-fallback' role='region' aria-hidden='true' class='c-web-share__fallback color-info-status hidden:fadeInUp animated hidden'
     div class='c-web-share__fallback-body'
-      label for='web-share-url' class='c-web-share__label' Share this URL
+      label for='web-share-url' class='c-web-share__label' tabindex='-1' Share this URL
 
-      input id='web-share-url' name='web-share-url' data-copy-target='web-share-url' class='c-web-share__input' type='text' value='${data.url}'
+      input id='web-share-url' name='web-share-url' data-copy-target='web-share-url' class='c-web-share__input' type='text' value='${data.url}' tabindex='-1'
 
-      button data-js='copy' data-copy='web-share-url' class='c-web-share__item c-web-share__copy btn btn-small btn-primary' aria-pressed='false'
-        svg class='c-web-share__icon icon icon-ui'
+      button data-js='copy' data-copy='web-share-url' class='c-web-share__item c-web-share__copy btn btn-small btn-primary' aria-pressed='false' tabindex='-1'
+        svg class='c-web-share__icon icon icon-ui' tabindex='-1'
           use xlink:href='#icon-ui-copy'
-        svg class='c-web-share__icon icon-pressed icon-ui me-1'
+        svg class='c-web-share__icon icon-pressed icon-ui me-1' tabindex='-1'
           use xlink:href='#icon-ui-check'
         | Copy URL
 
-      a href='https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(data.url)}' target='_blank' class='c-web-share__item btn btn-small btn-primary'
+      a href='https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(data.url)}' target='_blank' class='c-web-share__item btn btn-small btn-primary' tabindex='-1'
         svg class='c-web-share__icon icon-ui'
           use xlink:href='#icon-ui-facebook'
         | Facebook
 
-      a href='https://twitter.com/intent/tweet?text=${encodeURIComponent(data.text + ' ' + data.url)}' target='_blank' class='c-web-share__item btn btn-small btn-primary'
+      a href='https://twitter.com/intent/tweet?text=${encodeURIComponent(data.text + ' ' + data.url)}' target='_blank' class='c-web-share__item btn btn-small btn-primary' tabindex='-1'
         svg class='c-web-share__icon icon-ui'
           use xlink:href='#icon-ui-twitter'
         | Twitter

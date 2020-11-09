@@ -8,27 +8,29 @@ import Toggle from '@nycopportunity/patterns-framework/src/utilities/toggle/togg
  * This controls the text sizer module at the top of page. A text-size-X class
  * is added to the html root element. X is an integer to indicate the scale of
  * text adjustment with 0 being neutral.
+ *
  * @class
  */
 class TextController {
   /**
-   * @param {HTMLElement} el - The html element for the component.
+   * @param {Object} el  The html element for the component
+   *
    * @constructor
    */
   constructor(el) {
-    /** @private {HTMLElement} The component element. */
+    /** @var {Object} el  The component element. */
     this.el = el;
 
-    /** @private {Number} The relative scale of text adjustment. */
+    /** @var {Number} _textSize  The relative scale of text adjustment. */
     this._textSize = 0;
 
-    /** @private {boolean} Whether the textSizer is displayed. */
+    /** @var {Boolean} _active  Whether the textSizer is displayed. */
     this._active = false;
 
-    /** @private {boolean} Whether the map has been initialized. */
+    /** @var {Boolean} _initialized  Whether the map has been initialized. */
     this._initialized = false;
 
-    /** @private {object} The toggle instance for the Text Controller */
+    /** @var {Object} _toggle  The toggle instance for the Text Controller */
     this._toggle = new Toggle({
       selector: TextController.selectors.TOGGLE
     });
@@ -41,7 +43,8 @@ class TextController {
   /**
    * Attaches event listeners to controller. Checks for textSize cookie and
    * sets the text size class appropriately.
-   * @return {this} TextSizer
+   *
+   * @return {Object}  Instance of the TextController
    */
   init() {
     if (this._initialized)
@@ -93,7 +96,8 @@ class TextController {
 
   /**
    * Shows the text sizer controls.
-   * @return {this} TextSizer
+   *
+   * @return {Object}  Instance of the TextController
    */
   show() {
     this._active = true;
@@ -102,9 +106,10 @@ class TextController {
     let el = this.el.querySelector(TextController.selectors.TOGGLE);
     let targetSelector = `#${el.getAttribute('aria-controls')}`;
     let target = this.el.querySelector(targetSelector);
+    let focusable = target.querySelectorAll(Toggle.elFocusable.join(', '));
 
     // Invoke main toggling method from toggle.js
-    this._toggle.elementToggle(el, target);
+    this._toggle.elementToggle(el, target, focusable);
 
     return this;
   }
@@ -112,18 +117,22 @@ class TextController {
   /**
    * Sets the `textSize` cookie to store the value of this._textSize. Expires
    * in 1 hour (1/24 of a day).
-   * @return {this} TextSizer
+   *
+   * @return {Object}  Instance of the TextController
    */
   _setCookie() {
     Cookies.set('textSize', this._textSize, {expires: (1/24)});
+
     return this;
   }
 
   /**
    * Sets the text-size-X class on the html root element. Updates the cookie
    * if necessary.
-   * @param {Number} size - new size to set.
-   * @return {this} TextSizer
+   *
+   * @param  {Number}  size  New size to set.
+   *
+   * @return {Object}        Instance of the TextController
    */
   _adjustSize(size) {
     const originalSize = this._textSize;
@@ -146,7 +155,8 @@ class TextController {
   /**
    * Checks the current text size against the min and max. If the limits are
    * reached, disable the controls for going smaller/larger as appropriate.
-   * @return {this} TextSizer
+   *
+   * @return {Object}  Instance of the TextController
    */
   _checkForMinMax() {
     const btnSmaller = this.el.querySelector(TextController.selectors.SMALLER);

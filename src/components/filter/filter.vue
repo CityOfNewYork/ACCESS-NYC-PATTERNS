@@ -6,23 +6,23 @@
     </button>
 
     <nav v-if="nav" role="region" class="c-filter__list" :aria-labelledby="ariaLabelledBy" :class="classActive" :id="ariaControls" :aria-hidden="ariaActive(!this.terms.active)">
-      <a class="c-filter__item" @click="reset" v-html="[strings.ALL, terms.name].join(' ')">
+      <a class="c-filter__item" @click="reset" v-html="[strings.ALL, terms.name].join(' ')" :tabindex="tabindex(terms.active)">
         {{ [strings.ALL, terms.name].join(' ') }}
       </a>
 
-      <a v-for="t in terms.filters" :key="t.id" class="c-filter__item" :href="t.href" @click="fetch({'event': $event, 'data': t})" v-html="t.name">
+      <a v-for="t in terms.filters" :key="t.id" class="c-filter__item" :href="t.href" @click="fetch({'event': $event, 'data': t})" v-html="t.name" :tabindex="tabindex(terms.active)">
         {{ t.name }}
       </a>
     </nav>
     <ul v-else role="region" class="c-filter__list" :aria-labelledby="ariaLabelledBy" :class="classActive" :id="ariaControls" :aria-hidden="ariaActive(!this.terms.active)">
       <li>
-        <button type="button" class="c-filter__item" :aria-pressed="ariaPressed(terms.name)" @click="reset" v-html="[strings.ALL, terms.name].join(' ')">
+        <button type="button" class="c-filter__item" :aria-pressed="ariaPressed(terms.name)" @click="reset" v-html="[strings.ALL, terms.name].join(' ')" :tabindex="tabindex(terms.active)">
           {{ [strings.ALL, terms.name].join(' ') }}
         </button>
       </li>
 
       <li v-for="t in terms.filters" :key="t.id">
-        <button type="button" class="c-filter__item" :aria-pressed="ariaPressed(t.name)" :href="'#' + t.slug" @click="fetch({'event': $event, 'data': t})" v-html="t.name">
+        <button type="button" class="c-filter__item" :aria-pressed="ariaPressed(t.name)" :href="'#' + t.slug" @click="fetch({'event': $event, 'data': t})" v-html="t.name" :tabindex="tabindex(terms.active)">
           {{ t.name }}
         </button>
       </li>
@@ -70,6 +70,9 @@
     methods: {
       ariaActive: function(active) {
         return (active) ? 'true' : 'false';
+      },
+      tabindex: function(active) {
+        return (active) ? false : '-1';
       },
       ariaPressed: function(name) {
         return (this.terms.current === name) ? 'true' : 'false';

@@ -23,12 +23,12 @@
         <div role="region" :aria-labelledby="ariaLabelledBy(t.slug)" class="c-filter-multi__item-group" :aria-hidden="ariaActive(!t.active)" :class="classActive(t)" :id="ariaControls(t.slug)">
           <ul class="c-filter-multi__item-group-list">
             <li class='c-filter-multi__item-group-subitem' v-if="t.toggle">
-              <button type='button' class='btn-link' @click="reset({'event': $event, 'data': {'parent': t.slug}})" v-html="strings.TOGGLE_ALL">Toggle All</button>
+              <button type='button' class='btn-link' @click="reset({'event': $event, 'data': {'parent': t.slug}})" v-html="strings.TOGGLE_ALL" :aria-hidden="ariaActive(!t.active)" :tabindex="tabindex(t.active)">Toggle All</button>
             </li>
 
             <li class="c-filter-multi__item-group-subitem" v-for="f in t.filters" :key="f.slug">
-              <label class="checkbox">
-                <input type="checkbox" :value="f.slug" :checked="f.checked" @change="fetch({'event': $event, 'data': f})" />
+              <label class="checkbox" :tabindex="tabindex(t.active)">
+                <input type="checkbox" :value="f.slug" :checked="f.checked" @change="fetch({'event': $event, 'data': f})" :tabindex="tabindex(t.active)"/>
 
                 <span class="checkbox__label text-small font-normal" v-html="f.name">{{ f.name }}</span>
               </label>
@@ -66,6 +66,9 @@
       },
       ariaActive: function(active) {
         return (active) ? 'true' : 'false';
+      },
+      tabindex: function(active) {
+        return (active) ? false : '-1';
       },
       ariaLabelledBy: function(slug) {
         return 'aria-l-' + slug;
