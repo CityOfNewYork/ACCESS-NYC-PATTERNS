@@ -22,7 +22,7 @@ div class='screen-tablet:flex justify-between items-center border-b border-grey-
 
   p class='color__alt text-small mb-0' Last Updated April 10th, 2020
 
-div class='border-2 border-grey-lightest border-t-0 overflow-auto scrolling-touch mb-3'
+div class='border-2 border-grey-lightest overflow-auto scrolling-touch mb-3'
   figure style='min-width: 1600px; height: 80vh'
     table class='text-xsmall table-fixed table-headers-center table-body-center table-headers-first-column screen-tablet:table-headers-sticky m-0'
       caption class='sr-only'
