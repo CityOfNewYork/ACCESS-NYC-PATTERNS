@@ -11,5 +11,7 @@ updates:
     target-branch: main
     schedule:
       interval: monthly
+    allow:
+      - dependency-type: production
     ignore:
       - dependency-name: bourbon
