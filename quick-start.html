@@ -27,7 +27,7 @@
   <meta content="#112E51" name="msapplication-TileColor" />
   <meta content="images/ms-icon-144x144.png" name="msapplication-TileImage" />
   <link href="images/favicon.ico" rel="icon" type="image/x-icon" />
-  <title>Typography | ACCESS NYC Patterns</title>
+  <title>Quick Start | ACCESS NYC Patterns</title>
   <script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-163470527-1"></script>
   <link href="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.18.1/build/styles/default.min.css" rel="stylesheet" />
   <script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.18.1/build/highlight.min.js"></script>
@@ -176,325 +176,81 @@
     <article class="screen-tablet:pt-4 clearfix">
       <header class="page-wrapper px-2 screen-desktop:px-0 layout-home-body">
         <div class="my-0 w-full">
-          <h1 class="text-blue-dark px-2 mb-0 screen-tablet:pb-4 screen-tablet:mb-4">Typography</h1>
+          <h1 class="text-blue-dark px-2 mb-0 screen-tablet:pb-4 screen-tablet:mb-4">Quick Start</h1>
         </div>
       </header>
-      <section class="pb-4 mb-4" id="heading-1">
-        <div class="page-wrapper px-2">
+      <section class="pb-2 screen-tablet:pb-4 screen-tablet:mb-4">
+        <div class="page-wrapper px-2 screen-desktop:px-0">
           <header class="layout-home-body">
-            <div class="my-0 px-2 pt-1 pb-4 border-b border-grey-light">
-              <h2 class="m-0">
-                <a class="text-grey-mid font-normal no-underline capitalize" href="#heading-1">Heading 1</a>
-              </h2>
-              <div class="pt-2">
-                <p class="text-small m-0">Source: <code>
-                    <a href="https://github.com/CityOfNewYork/access-nyc-patterns/releases/tag/v0.16.0/src/utilities/typography">src/utilities/typography/typography-h1</a>
-                  </code>
-                </p>
-              </div>
-            </div>
+            <div class="my-0 px-2 py-0 border-b border-grey-light screen-tablet:flex screen-tablet:justify-between"></div>
           </header>
           <div class="layout-home-body">
-            <div class="my-0 pt-4 px-2 text-small table-align-start"></div>
-          </div>
-          <div class="layout-gutter screen-tablet:layout-columns justify-between pt-4">
-            <div class="screen-tablet:pe-2">
-              <h1 class="h1">Find help in NYC with food, money, housing, work and more on ACCESS NYC.</h1>
-            </div>
-            <div>
-              <div class="code-block mb-1">
-                <pre>&lt;h1 class=&quot;h1&quot;&gt;Find help in NYC with food, money, housing, work and more on ACCESS NYC.&lt;/h1&gt;</pre>
-              </div>
+            <div class="my-0 pt-4 px-2 text-small table-align-start">
+              <p>The following is a static page sample that integrates ACCESS NYC Patterns using the <em>CDN method</em>. This is the quickest way to get started developing or prototyping. However, the <em>NPM method</em> of installation is preferable for most long-term projects. View the <a href="installation">installation documentation</a> for more details.</p>
+              <h2>Markup</h2>
+              <pre>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+
+&lt;head&gt;
+  &lt;title&gt;Hello ACCESS NYC Patterns&lt;/title&gt;
+  &lt;link href=&quot;https://cdn.jsdelivr.net/gh/cityofnewyork/access-nyc-patterns@v0.16.0/dist/images/favicon.ico&quot; rel=&quot;shortcut icon&quot; /&gt;
+  &lt;link href=&quot;https://cdn.jsdelivr.net/gh/cityofnewyork/access-nyc-patterns@v0.16.0/dist/styles/site-default.css&quot; rel=&quot;stylesheet&quot; /&gt;
+&lt;/head&gt;
+
+&lt;body class=&quot;color-light-background&quot;&gt;
+  &lt;header class=&quot;layout-content px-3 p-2 screen-tablet:py-4&quot;&gt;
+    &lt;div class=&quot;mx-auto&quot;&gt;
+      &lt;svg class=&quot;icon-logo-full--large text-blue-dark mb-3&quot;&gt;
+        &lt;use xlink:href=&quot;#icon-logo-full&quot;&gt;&lt;/use&gt;
+      &lt;/svg&gt;
+      &lt;h1 class=&quot;mb-0&quot;&gt;Hello ACCESS NYC Patterns!&lt;/h1&gt;
+    &lt;/div&gt;
+  &lt;/header&gt;
+  &lt;main class=&quot;layout-content p-3&quot;&gt;
+    &lt;div class=&quot;mx-auto&quot;&gt;
+      &lt;p&gt;This demo uses the CDN method of installation including the CSS, Google Fonts, JavaScript, and SVGs. Sample pattern HTML can be copied and pasted into this page and they should work without any extra steps!&lt;/p&gt;
+      &lt;p&gt;
+        &lt;a class='btn btn-primary inline-block' href='https://accesspatterns.cityofnewyork.us'&gt;View Patterns&lt;/a&gt;
+      &lt;/p&gt;
+    &lt;/div&gt;
+  &lt;/main&gt;
+  &lt;footer class=&quot;layout-content px-3&quot;&gt;
+    &lt;div class=&quot;mx-auto&quot;&gt;
+      &lt;p&gt;
+        &lt;small&gt;© City of New York, 2022 All Rights Reserved.&lt;/small&gt;
+        &lt;br&gt;
+        &lt;small&gt;NYC is a trademark and service mark of the City of New York.&lt;/small&gt;
+      &lt;p&gt;
+        &lt;small class=&quot;flex items-center&quot;&gt;
+          &lt;svg class=&quot;icon-ui icon-4 text-blue-dark&quot;&gt;
+            &lt;use xlink:href=&quot;#icon-ui-type&quot;&gt;&lt;/use&gt;
+          &lt;/svg&gt;Font-families used include&amp;nbsp;&lt;a href='https://fonts.google.com/noto'&gt;Google Noto&lt;/a&gt;.
+        &lt;/small&gt;
+      &lt;/p&gt;
+      &lt;p&gt;
+        &lt;small class=&quot;flex items-center&quot;&gt;
+          &lt;svg class=&quot;icon-ui icon-4 text-blue-dark&quot;&gt;
+            &lt;use xlink:href=&quot;#icon-ui-feather&quot;&gt;&lt;/use&gt;
+          &lt;/svg&gt;UI Icons are sourced from the&amp;nbsp;&lt;a href='https://feathericons.com/'&gt;Feather Icon set&lt;/a&gt;.
+        &lt;/small&gt;
+      &lt;/p&gt;
+      &lt;/p&gt;
+    &lt;/div&gt;
+  &lt;/footer&gt;
+  &lt;script src=&quot;https://cdn.jsdelivr.net/gh/cityofnewyork/access-nyc-patterns@v0.16.0/dist/scripts/access-nyc.js&quot;&gt;&lt;/script&gt;
+  &lt;script type=&quot;text/javascript&quot;&gt;
+    var access = new AccessNyc();
+    access.icons('https://cdn.jsdelivr.net/gh/cityofnewyork/access-nyc-patterns@v0.16.0/dist/svg/icons.svg');
+  &lt;/script&gt;
+&lt;/body&gt;
+
+&lt;/html&gt;</pre>
+              <h2>Preview</h2>
+              <iframe class="border" height="778" src="quick-start-demo.html" width="100%"></iframe>
             </div>
           </div>
         </div>
       </section>
-      <section class="pb-4 mb-4" id="heading-2">
-        <div class="page-wrapper px-2">
-          <header class="layout-home-body">
-            <div class="my-0 px-2 pt-1 pb-4 border-b border-grey-light">
-              <h2 class="m-0">
-                <a class="text-grey-mid font-normal no-underline capitalize" href="#heading-2">Heading 2</a>
-              </h2>
-              <div class="pt-2">
-                <p class="text-small m-0">Source: <code>
-                    <a href="https://github.com/CityOfNewYork/access-nyc-patterns/releases/tag/v0.16.0/src/utilities/typography">src/utilities/typography/typography-h2</a>
-                  </code>
-                </p>
-              </div>
-            </div>
-          </header>
-          <div class="layout-home-body">
-            <div class="my-0 pt-4 px-2 text-small table-align-start"></div>
-          </div>
-          <div class="layout-gutter screen-tablet:layout-columns justify-between pt-4">
-            <div class="screen-tablet:pe-2">
-              <h2 class="h2">Find help in NYC with food, money, housing, work and more on ACCESS NYC.</h2>
-            </div>
-            <div>
-              <div class="code-block mb-1">
-                <pre>&lt;h2 class=&quot;h2&quot;&gt;Find help in NYC with food, money, housing, work and more on ACCESS NYC.&lt;/h2&gt;</pre>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-      <section class="pb-4 mb-4" id="heading-3">
-        <div class="page-wrapper px-2">
-          <header class="layout-home-body">
-            <div class="my-0 px-2 pt-1 pb-4 border-b border-grey-light">
-              <h2 class="m-0">
-                <a class="text-grey-mid font-normal no-underline capitalize" href="#heading-3">Heading 3</a>
-              </h2>
-              <div class="pt-2">
-                <p class="text-small m-0">Source: <code>
-                    <a href="https://github.com/CityOfNewYork/access-nyc-patterns/releases/tag/v0.16.0/src/utilities/typography">src/utilities/typography/typography-h3</a>
-                  </code>
-                </p>
-              </div>
-            </div>
-          </header>
-          <div class="layout-home-body">
-            <div class="my-0 pt-4 px-2 text-small table-align-start"></div>
-          </div>
-          <div class="layout-gutter screen-tablet:layout-columns justify-between pt-4">
-            <div class="screen-tablet:pe-2">
-              <h3 class="h3">Find help in NYC with food, money, housing, work and more on ACCESS NYC.</h3>
-            </div>
-            <div>
-              <div class="code-block mb-1">
-                <pre>&lt;h3 class=&quot;h3&quot;&gt;Find help in NYC with food, money, housing, work and more on ACCESS NYC.&lt;/h3&gt;</pre>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-      <section class="pb-4 mb-4" id="heading-4">
-        <div class="page-wrapper px-2">
-          <header class="layout-home-body">
-            <div class="my-0 px-2 pt-1 pb-4 border-b border-grey-light">
-              <h2 class="m-0">
-                <a class="text-grey-mid font-normal no-underline capitalize" href="#heading-4">Heading 4</a>
-              </h2>
-              <div class="pt-2">
-                <p class="text-small m-0">Source: <code>
-                    <a href="https://github.com/CityOfNewYork/access-nyc-patterns/releases/tag/v0.16.0/src/utilities/typography">src/utilities/typography/typography-h4</a>
-                  </code>
-                </p>
-              </div>
-            </div>
-          </header>
-          <div class="layout-home-body">
-            <div class="my-0 pt-4 px-2 text-small table-align-start"></div>
-          </div>
-          <div class="layout-gutter screen-tablet:layout-columns justify-between pt-4">
-            <div class="screen-tablet:pe-2">
-              <h4 class="h4">Find help in NYC with food, money, housing, work and more on ACCESS NYC.</h4>
-            </div>
-            <div>
-              <div class="code-block mb-1">
-                <pre>&lt;h4 class=&quot;h4&quot;&gt;Find help in NYC with food, money, housing, work and more on ACCESS NYC.&lt;/h4&gt;</pre>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-      <section class="pb-4 mb-4" id="heading-5">
-        <div class="page-wrapper px-2">
-          <header class="layout-home-body">
-            <div class="my-0 px-2 pt-1 pb-4 border-b border-grey-light">
-              <h2 class="m-0">
-                <a class="text-grey-mid font-normal no-underline capitalize" href="#heading-5">Heading 5</a>
-              </h2>
-              <div class="pt-2">
-                <p class="text-small m-0">Source: <code>
-                    <a href="https://github.com/CityOfNewYork/access-nyc-patterns/releases/tag/v0.16.0/src/utilities/typography">src/utilities/typography/typography-h5</a>
-                  </code>
-                </p>
-              </div>
-            </div>
-          </header>
-          <div class="layout-home-body">
-            <div class="my-0 pt-4 px-2 text-small table-align-start"></div>
-          </div>
-          <div class="layout-gutter screen-tablet:layout-columns justify-between pt-4">
-            <div class="screen-tablet:pe-2">
-              <h5 class="h5">Find help in NYC with food, money, housing, work and more on ACCESS NYC.</h5>
-            </div>
-            <div>
-              <div class="code-block mb-1">
-                <pre>&lt;h5 class=&quot;h5&quot;&gt;Find help in NYC with food, money, housing, work and more on ACCESS NYC.&lt;/h5&gt;</pre>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-      <section class="pb-4 mb-4" id="jumbo">
-        <div class="page-wrapper px-2">
-          <header class="layout-home-body">
-            <div class="my-0 px-2 pt-1 pb-4 border-b border-grey-light">
-              <h2 class="m-0">
-                <a class="text-grey-mid font-normal no-underline capitalize" href="#jumbo">Jumbo</a>
-              </h2>
-              <div class="pt-2">
-                <p class="text-small m-0">Source: <code>
-                    <a href="https://github.com/CityOfNewYork/access-nyc-patterns/releases/tag/v0.16.0/src/utilities/typography">src/utilities/typography/typography-jumbo</a>
-                  </code>
-                </p>
-              </div>
-            </div>
-          </header>
-          <div class="layout-home-body">
-            <div class="my-0 pt-4 px-2 text-small table-align-start"></div>
-          </div>
-          <div class="layout-gutter screen-tablet:layout-columns justify-between pt-4">
-            <div class="screen-tablet:pe-2">
-              <h1 class="jumbo">Find help in NYC with food, money, housing, work and more on ACCESS NYC.</h1>
-            </div>
-            <div>
-              <div class="code-block mb-1">
-                <pre>&lt;h1 class=&quot;jumbo&quot;&gt;Find help in NYC with food, money, housing, work and more on ACCESS NYC.&lt;/h1&gt;</pre>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-      <section class="pb-4 mb-4" id="small">
-        <div class="page-wrapper px-2">
-          <header class="layout-home-body">
-            <div class="my-0 px-2 pt-1 pb-4 border-b border-grey-light">
-              <h2 class="m-0">
-                <a class="text-grey-mid font-normal no-underline capitalize" href="#small">Small</a>
-              </h2>
-              <div class="pt-2">
-                <p class="text-small m-0">Source: <code>
-                    <a href="https://github.com/CityOfNewYork/access-nyc-patterns/releases/tag/v0.16.0/src/utilities/typography">src/utilities/typography/typography-small</a>
-                  </code>
-                </p>
-              </div>
-            </div>
-          </header>
-          <div class="layout-home-body">
-            <div class="my-0 pt-4 px-2 text-small table-align-start"></div>
-          </div>
-          <div class="layout-gutter screen-tablet:layout-columns justify-between pt-4">
-            <div class="screen-tablet:pe-2">
-              <small class="small">Find help in NYC with food, money, housing, work and more on ACCESS NYC.</small>
-            </div>
-            <div>
-              <div class="code-block mb-1">
-                <pre>&lt;small class=&quot;small&quot;&gt;Find help in NYC with food, money, housing, work and more on ACCESS NYC.&lt;/small&gt;</pre>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-      <section class="pb-4 mb-4" id="blockquote">
-        <div class="page-wrapper px-2">
-          <header class="layout-home-body">
-            <div class="my-0 px-2 pt-1 pb-4 border-b border-grey-light">
-              <h2 class="m-0">
-                <a class="text-grey-mid font-normal no-underline capitalize" href="#blockquote">Blockquote</a>
-              </h2>
-              <div class="pt-2">
-                <p class="text-small m-0">Source: <code>
-                    <a href="https://github.com/CityOfNewYork/access-nyc-patterns/releases/tag/v0.16.0/src/utilities/typography">src/utilities/typography/typography-blockquote</a>
-                  </code>
-                </p>
-              </div>
-            </div>
-          </header>
-          <div class="layout-home-body">
-            <div class="my-0 pt-4 px-2 text-small table-align-start"></div>
-          </div>
-          <div class="layout-gutter screen-tablet:layout-columns justify-between pt-4">
-            <div class="screen-tablet:pe-2">
-              <blockquote class="blockquote">Find help in NYC with food, money, housing, work and more on ACCESS NYC.</blockquote>
-            </div>
-            <div>
-              <div class="code-block mb-1">
-                <pre>&lt;blockquote class=&quot;blockquote&quot;&gt;Find help in NYC with food, money, housing, work and more on ACCESS NYC.&lt;/blockquote&gt;</pre>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-      <section class="pb-4 mb-4" id="exposition">
-        <div class="page-wrapper px-2">
-          <header class="layout-home-body">
-            <div class="my-0 px-2 pt-1 pb-4 border-b border-grey-light">
-              <h2 class="m-0">
-                <a class="text-grey-mid font-normal no-underline capitalize" href="#exposition">Exposition</a>
-              </h2>
-              <div class="pt-2">
-                <p class="text-small m-0">Source: <code>
-                    <a href="https://github.com/CityOfNewYork/access-nyc-patterns/releases/tag/v0.16.0/src/utilities/typography">src/utilities/typography/typography-exposition</a>
-                  </code>
-                </p>
-              </div>
-            </div>
-          </header>
-          <div class="layout-home-body">
-            <div class="my-0 pt-4 px-2 text-small table-align-start"></div>
-          </div>
-          <div class="layout-gutter screen-tablet:layout-columns justify-between pt-4">
-            <div class="screen-tablet:pe-2">
-              <p class="exposition">Find help in NYC with food, money, housing, work and more on ACCESS NYC.</p>
-            </div>
-            <div>
-              <div class="code-block mb-1">
-                <pre>&lt;p class=&quot;exposition&quot;&gt;Find help in NYC with food, money, housing, work and more on ACCESS NYC.&lt;/p&gt;</pre>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-      <section class="pb-4 mb-4" id="supplemental">
-        <div class="page-wrapper px-2">
-          <header class="layout-home-body">
-            <div class="my-0 px-2 pt-1 pb-4 border-b border-grey-light">
-              <h2 class="m-0">
-                <a class="text-grey-mid font-normal no-underline capitalize" href="#supplemental">Supplemental</a>
-              </h2>
-              <div class="pt-2">
-                <p class="text-small m-0">Source: <code>
-                    <a href="https://github.com/CityOfNewYork/access-nyc-patterns/releases/tag/v0.16.0/src/utilities/typography">src/utilities/typography/typography-supplemental</a>
-                  </code>
-                </p>
-              </div>
-            </div>
-          </header>
-          <div class="layout-home-body">
-            <div class="my-0 pt-4 px-2 text-small table-align-start"></div>
-          </div>
-          <div class="layout-gutter screen-tablet:layout-columns justify-between pt-4">
-            <div class="screen-tablet:pe-2">
-              <p class="supplemental">Find help in NYC with food, money, housing, work and more on ACCESS NYC.</p>
-            </div>
-            <div>
-              <div class="code-block mb-1">
-                <pre>&lt;p class=&quot;supplemental&quot;&gt;Find help in NYC with food, money, housing, work and more on ACCESS NYC.&lt;/p&gt;</pre>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-      <div class="sticky bottom-0 bg-white shadow-up relative z-10 overflow-y-scroll whitespace-no-wrap animated fadeInUp">
-        <nav class="nav-inline inline-block text-small p-2 screen-tablet:p-4">
-          <span class="me-2">Jump to:</span>
-          <a class="me-2" href="#main-content">Top</a>
-          <a class="me-2" href="#heading-1">Heading 1</a>
-          <a class="me-2" href="#heading-2">Heading 2</a>
-          <a class="me-2" href="#heading-3">Heading 3</a>
-          <a class="me-2" href="#heading-4">Heading 4</a>
-          <a class="me-2" href="#heading-5">Heading 5</a>
-          <a class="me-2" href="#jumbo">Jumbo</a>
-          <a class="me-2" href="#small">Small</a>
-          <a class="me-2" href="#blockquote">Blockquote</a>
-          <a class="me-2" href="#exposition">Exposition</a>
-          <a class="me-2" href="#supplemental">Supplemental</a>
-        </nav>
-      </div>
     </article>
   </main>
   <footer class="color-mid-background text-blue-dark border-solid border-t-4 border-blue-dark text-small py-4 z-20 relative" role="contentinfo">
