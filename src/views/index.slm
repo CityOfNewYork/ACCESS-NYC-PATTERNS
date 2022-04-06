@@ -48,14 +48,22 @@
 
                 p The Patterns are available as an NPM package and can be installed with the following command.
 
-                div class='code-block'
-                  pre npm install @nycopportunity/access-patterns
+                div class='code-block w-full'
+                  input value='npm install ${this.package.name}' class='font-code text-code p-3 bg-transparent w-full border-none' data-copy-target='installation'
 
-                p All of the source code is publicly available and can also be integrated via cdn. See the intallation docs for more details and usage.
+                div class='text-center screen-tablet:flex items-center justify-center'
+                  button class='btn-primary mb-3' data-js='copy' data-copy='installation'
+                    svg class="icon-ui icon-3"
+                      use xlink:href="#icon-ui-copy"
 
-                div class='text-center'
-                  a class='btn btn-secondary btn-next' href='installation'
-                    | Get started
+                    | Copy the command
+
+                  | &nbsp;
+
+                  a class='btn btn-secondary btn-next mb-3' href='installation'
+                    | Read the installation guide
+
+                p Alternatively, view the <a href="/quick-start">quick start documentation</a> to use the CDN method of installation.
 
   section class='pb-4 color-mid-background'
     div class='page-wrapper layout-home-body px-4'

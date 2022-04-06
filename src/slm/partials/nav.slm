@@ -4,11 +4,12 @@ nav class='${class_nav}'
   span class='${class_nav_heading} ${class_nav_divider}' Guides
   a tabindex=this.nav.tabindex class='${class_nav_item}' href='index' Home
   a tabindex=this.nav.tabindex class='${class_nav_item}' href='about' About
+  a tabindex=this.nav.tabindex class='${class_nav_item}' href='quick-start' Quick Start
   a tabindex=this.nav.tabindex class='${class_nav_item}' href='installation' Installation
   a tabindex=this.nav.tabindex class='${class_nav_item}' href='developer-tools' Developer Tools
   a tabindex=this.nav.tabindex class='${class_nav_item} ${class_nav_divider}' href='prototyping' Prototyping
   span class='${class_nav_heading} ${class_nav_divider}' Collections
-  a tabindex=this.nav.tabindex class='${class_nav_item} ${class_nav_divider}' href='covid-response' COVID Response
+  a tabindex=this.nav.tabindex class='${class_nav_item}' href='covid-response' COVID Response
   a tabindex=this.nav.tabindex class='${class_nav_item} ${class_nav_divider}' href='covid-scenarios' COVID Scenarios
   span class='${class_nav_heading} ${class_nav_divider}' Links
   a tabindex=this.nav.tabindex class='${class_nav_item}' href='${link_npm}' NPM Package

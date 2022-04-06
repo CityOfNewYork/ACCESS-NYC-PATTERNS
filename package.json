@@ -32,7 +32,8 @@
     "scripts": "/dist/scripts/access-nyc.js",
     "polyfills": "/dist/scripts/polyfills.js",
     "vue": "/dist/scripts/vue-components.js",
-    "svg": "/dist/svg/icons.svg"
+    "svg": "/dist/svg/icons.svg",
+    "favicon": "/dist/images/favicon.ico"
   },
   "src": {
     "styles": "/src/scss/_imports.scss",
@@ -41,12 +42,16 @@
     "vue-components": "/src/js/vue-components.js",
     "vue-demo": "/src/utilities/vue-demo/vue-demo.js"
   },
+  "svgs": {
+    "primary": "icon-logo-full"
+  },
   "instantiations": {
     "scripts": "AccessNyc"
   },
   "main": "npm start",
   "scripts": {
     "start": "cross-env NODE_ENV=development cross-env PORT=7000 concurrently \"pttrn default -w -np\" \"pttrn serve -w\" -p \"none\"",
+    "build": "cross-env NODE_ENV=development pttrn default -np",
     "production": "cross-env NODE_ENV=production cross-env PORT=7000 concurrently \"pttrn default -w -np\" \"pttrn serve -w\" -p \"none\"",
     "default": "cross-env NODE_ENV=production pttrn default -np",
     "version": "npm run default && git add .",
@@ -60,6 +65,7 @@
     "cross-env": "^7.0.2",
     "css-mqpacker": "^7.0.0",
     "rollup-plugin-vue": "^5.1.9",
+    "tailwindcss-logical": "^3.0.0",
     "vue-template-compiler": "^2.6.11"
   },
   "dependencies": {

@@ -17,7 +17,7 @@ This function will attach the accordion toggling event to the body of the docume
 The ES6 and IFFE modules all require importing and object instantiation in your main script:
 
     // ES6
-    import Filter from 'src/components/accordion/accordion';
+    import Accordion from 'src/components/accordion/accordion';
 
     <!-- IFFE -->
     <script src="dist/components/accordion/accordion.iffe.js"></script>
