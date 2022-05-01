@@ -75,7 +75,7 @@
     "for-cerial": "^1.0.0",
     "js-cookie": "^3.0.0-rc.0",
     "lodash-es": "^4.17.15",
-    "vue": "^2.6.11",
+    "vue": "^3.2.33",
     "whatwg-fetch": "^3.0.0"
   }
 }
