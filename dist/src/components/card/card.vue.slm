@@ -1,0 +1,4 @@
+div id='app-c-card' class='bg-grey-lightest p-2'
+
+  /! Component Start
+  c-card v-bind='card'

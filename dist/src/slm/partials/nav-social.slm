@@ -1,0 +1,5 @@
+nav
+  a class='px-1' href='${link_social_github}' GitHub
+  a class='px-1' href='${link_social_twitter}' Twitter
+  a class='px-1' href='${link_social_facebook}' Facebook
+  a class='px-1' href='${link_social_instagram}' Instagram

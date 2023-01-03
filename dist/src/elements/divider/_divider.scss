@@ -1,0 +1,53 @@
+/**
+ * Divider
+ */
+
+// Dependencies
+@import 'canyc/colors';
+@import 'canyc/dimensions';
+@import 'canyc/media';
+@import 'canyc/direction';
+
+// Declarations
+.divider {
+  border: none;
+  margin: 0;
+
+  display: block;
+  width: 100%;
+  border-bottom: 1px solid;
+  border-color: currentColor;
+  border-color: inherit;
+}
+
+.divider-access {
+  position: relative;
+
+  &::after {
+    content: '';
+    display: block;
+    position: absolute;
+    width: 130px;
+    height: 5px;
+
+    #{$text-direction-start}: 0;
+    background: $color-yellow-access;
+    bottom: -3px;
+  }
+}
+
+@mixin divider($variant: '') {
+  .#{$variant}divider {
+    margin-top: 1.5 * $spacing-base;
+    margin-bottom: 1.5 * $spacing-base;
+  }
+
+  .#{$variant}divider-large {
+    margin-top: 2.5 * $spacing-base;
+    margin-bottom: 2.5 * $spacing-base;
+  }
+}
+
+@include screens {
+  @include divider($variant);
+}

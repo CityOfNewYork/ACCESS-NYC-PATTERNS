@@ -1,0 +1,120 @@
+/**
+ * Typography
+ */
+
+// Dependencies
+@use 'canyc/fonts';
+@use 'canyc/dimensions';
+@use 'canyc/direction';
+@use 'scss/functions/rem';
+@use 'scss/functions/strip-units';
+@use 'canyc/typography';
+
+// Declarations
+html {
+  font-family: sans-serif;
+
+  @include typography.set('base');
+
+  @if direction.$text-direction == 'rtl' {
+    direction: rtl;
+  }
+
+  $text-increment: 2;
+  $min-text-step: -3;
+  $max-text-step: 3;
+
+  @for $i from $min-text-step through $max-text-step {
+    &.text-size-#{$i} {
+      font-size: #{fonts.$em-base + ($text-increment * $i)}px;
+    }
+  }
+}
+
+body {
+  font-family: fonts.$font-family-sans
+}
+
+h1, .h1, .type-h1, .typography-h1 {
+  @include typography.set('h1');
+}
+
+h2, .h2, .type-h2, .typography-h2 {
+  @include typography.set('h2');
+}
+
+h3, .h3, .type-h3, .typography-h3 {
+  @include typography.set('h3');
+}
+
+h4, .h4, .type-h4, .typography-h4 {
+  @include typography.set('h4');
+}
+
+h5, .h5, .type-h5, .typography-h5 {
+  @include typography.set('h5');
+}
+
+small, .small .type-small, .typography-small {
+  @include typography.set('small');
+}
+
+blockquote, .blockquote, .type-blockquote, .typography-blockquote {
+  @include typography.set('blockquote');
+
+  // margin-top: rem((.5 * dimensions.$spacing-base), fonts.$em-base);
+  // margin-bottom: rem((1.5 * dimensions.$spacing-base), fonts.$em-base);
+  margin: 0;
+  margin-top: calc(var(--nyco-typography-margin-bottom) / 2);
+  margin-bottom: calc(var(--nyco-typography-margin-bottom) * 1.5);
+}
+
+.exposition, .type-exposition, .typography-exposition {
+  @include typography.set('exposition');
+
+  margin-bottom: calc(var(--nyco-spacing-DEFAULT) * 2) !important;
+}
+
+.jumbo, .type-jumbo, .typography-jumbo {
+  @include typography.set('jumbo');
+}
+
+.supplemental, .type-supplemental, .typography-supplemental {
+  @include typography.set('supplemental');
+}
+
+ul, ol, li, p,
+h1, .h1, .type-h1, .typography-h1,
+h2, .h2, .type-h2, .typography-h2,
+h3, .h3, .type-h3, .typography-h3,
+h4, .h4, .type-h4, .typography-h4,
+h5, .h5, .type-h5, .typography-h5 {
+  margin-top: 0;
+  margin-bottom: var(--nyco-typography-margin-bottom);
+  // margin-bottom: calc(calc(var(--nyco-spacing-DEFAULT) / var(--nyco-em-base)) * 1rem);
+  // rem(dimensions.$spacing-base, fonts.$em-base);
+  // math.div($pxval, $base) * 1rem;
+}
+
+// html {
+//   $text-increment: 2;
+//   $min-text-step: -3;
+//   $max-text-step: 3;
+
+//   @for $i from $min-text-step through $max-text-step {
+//     &.text-size-#{$i} {
+//       font-size: #{fonts.$em-base + ($text-increment * $i)}px;
+//     }
+//   }
+// }
+
+// ul, ol, li, p {
+//   margin-top: 0;
+//   margin-bottom: rem(strip-units(dimensions.$spacing-base), fonts.$em-base);
+// }
+
+@media print {
+  html {
+    @include typography.set('print');
+  }
+}

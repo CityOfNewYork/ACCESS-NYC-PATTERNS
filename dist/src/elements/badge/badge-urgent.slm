@@ -1,0 +1,6 @@
+/
+/ Badge Urgent
+/
+
+mark class='badge color-urgent-status'
+  | New

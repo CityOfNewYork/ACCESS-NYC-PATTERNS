@@ -1,0 +1,8 @@
+//
+// Config
+//
+
+@mixin disable-pointer-events {
+  pointer-events: none;
+  display: inline-block; // for PE: none to work with Windows Edge and inline elements, this must be set
+}

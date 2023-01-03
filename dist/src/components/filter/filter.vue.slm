@@ -1,0 +1,2 @@
+div id='app-c-filter'
+  c-filter :terms='termsFilter' :strings='strings' :nav='true' @fetch='fetch' @reset='reset'

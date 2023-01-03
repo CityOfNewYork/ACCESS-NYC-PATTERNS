@@ -1,0 +1,15 @@
+//
+// Variables
+//
+
+// Dependencies
+@use 'canyc/tokens';
+
+// Variables
+$grid-base: map-get(map-get(tokens.$tokens, 'dimensions'), 'grid-base');
+$spacing-base: map-get(map-get(tokens.$tokens, 'dimensions'), 'spacing-base');
+$homepage-max-width: map-get(map-get(tokens.$tokens, 'dimensions'), 'homepage-max-width');
+$site-max-width: map-get(map-get(tokens.$tokens, 'dimensions'), 'site-max-width');
+$site-margins: map-get(map-get(tokens.$tokens, 'dimensions'), 'site-margins');
+$site-margins-mobile: map-get(map-get(tokens.$tokens, 'dimensions'), 'site-margins-mobile');
+$site-min-width: map-get(map-get(tokens.$tokens, 'dimensions'), 'site-min-width');

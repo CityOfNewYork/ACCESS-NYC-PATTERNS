@@ -1,0 +1,32 @@
+/ Layout
+= extend('/slm/layouts/default');
+
+/ Component
+- title = 'Card';
+
+/ Partials
+= partial('/slm/partials/styles.slm');
+= partial('/slm/partials/links.slm');
+= partial('/slm/partials/head.mixin.slm');
+= partial('/slm/partials/content-header.mixin.slm');
+= partial('/slm/section/section.mixin.slm');
+= partial('/slm/section/section-text.mixin.slm');
+
+/ Content blocks
+= content('head');
+  = mixin('head', title);
+
+= content('header');
+  = mixin('header', title);
+
+= content('content');
+  = mixin('content-header', title);
+  = mixin('section', false, 'components/card/card', 'gutter');
+  = mixin('section', 'Simple Card', 'components/card/card-simple');
+
+  = mixin('section', 'Vue Card', 'components/card/card.vue');
+  = mixin('section-text', 'Vue Component Usage', 'components/card/card.readme.vue');
+
+= content('script');
+  javascript:
+    VueComponents.card();

@@ -10,7 +10,7 @@
 div class='c-question'
   label class='c-question__label' for='client-0-email-address' What is your email?
 
-  p = 'We can send you a link to this page to help you get back to it when you’re ready.'
+  p = 'We can send you a link to this page to help you get back to it when you\'re ready.'
 
   div class='c-question__container'
     - symbol = false;

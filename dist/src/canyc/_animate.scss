@@ -1,0 +1,22 @@
+//
+// Mixins
+//
+
+// Dependencies
+@use 'canyc/tokens';
+
+// Declarations
+@mixin animate($animation: none, $speed: map-get(map-get(tokens.$tokens, 'animate'), 'animate-scss-speed')) {
+  @if $animation != none {
+    animation-name: $animation;
+  }
+  animation-duration: $speed;
+  animation-fill-mode: both;
+  animation-timing-function: map-get(map-get(tokens.$tokens, 'animate'), 'animate-timing-function');
+}
+
+@mixin transition() {
+  transition-property: opacity, background, color, border, box-shadow, transform, stroke, stroke-dashoffset, fill;
+  transition-duration: 0.25s;
+  backface-visibility: hidden;
+}

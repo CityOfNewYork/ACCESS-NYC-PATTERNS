@@ -1,0 +1,134 @@
+//
+// Variables
+//
+
+// Dependencies
+@use 'canyc/tokens';
+
+// $screen-desktop: #{map-get(map-get(tokens.$tokens, 'screens'), 'screen-desktop')}px;
+// $screen-tablet: #{map-get(map-get(tokens.$tokens, 'screens'), 'screen-tablet')}px;
+// $screen-mobile: #{map-get(map-get(tokens.$tokens, 'screens'), 'screen-mobile')}px;
+// $screen-sm-mobile: #{map-get(map-get(tokens.$tokens, 'screens'), 'screen-sm-mobile')}px;
+
+// @mixin screens($screens: map-get(tokens.$tokens, 'screens')) {
+//   $variant: '' !global; // !global allows us to "pass" $variant to the @content
+
+//   @content; // mobile first... then other breakpoints
+
+//   @each $screen, $s in $screens {
+//     @media (min-width: #{$s}px) {
+//       $variant: $screen + '\\:' !global;
+
+//       @content;
+//     }
+//   }
+
+//   $variant: '' !global;
+// }
+
+//
+// Variables, Functions, and Mixins
+//
+
+// Dependencies
+@use 'canyc/tokens' as *;
+
+// Configuration
+$screens: map-get($tokens, 'screen');
+
+/**
+ * Get a token value from the media set
+ *
+ * @param   {String}  $token  The tokens obj attr as described in tokens.js
+ *
+ * @return  {Mixed}           The token value
+ */
+@function get($token) {
+  @return map-get($screens, $token);
+}
+
+/**
+ * Create a max-width media query via screen token value. Accounts for the 1px
+ * screen jank for max-width queries by default.
+ *
+ * @param   {String}   $token  The tokens obj attr as described in tokens.js
+ * @param   {Boolean}  $sub    Wether to subtract 1px from the value
+ */
+@mixin screen-and-max-width($token, $sub: true) {
+  $value: get($token);
+
+  @if $sub == true {
+    $value: get($token) - get('max-width-offset');
+  }
+
+  @media screen and (max-width: $value) {
+    @content;
+  }
+}
+
+/**
+ * Create a min-width media query via screen token value.
+ *
+ * @param  {String}  $token  The tokens obj attr as described in tokens.js
+ */
+@mixin screen-and-min-width($token) {
+  @media screen and (min-width: get($token)) {
+    @content;
+  }
+}
+
+/**
+ * Create all min-width media queries using screen tokens. Usage requires
+ * `use ($variant)` so the variant is passed in the loop. Ex;
+ *
+ * @include screens-and-min-width($screens: $screens) using ($variant) { ...
+ *
+ * @param  {Map}  $screens  Map of screen token => value pairs.
+ */
+@mixin screens-and-min-width($screens: $screens) {
+  $variant: '';
+
+  @content($variant); // mobile first... then other breakpoints
+
+  @each $token, $value in $screens {
+    @media screen and (min-width: $value) {
+      $variant: $token + '\\:';
+
+      @content($variant);
+    }
+  }
+}
+
+/**
+ * Mixin for prefers reduced motion
+ */
+@mixin screens-and-prefers-motion($preference: no-preference) {
+  @media screen and (prefers-reduced-motion: $preference) {
+    @content;
+  }
+}
+
+/**
+ * Mixin for color scheme
+ */
+@mixin screens-and-prefers-scheme($scheme, $contrast: false) {
+  @if ($contrast) {
+    @media screen and (prefers-color-scheme: $scheme) and (prefers-contrast: $contrast) {
+      @content('#{$scheme}');
+    }
+  } @else {
+    html.#{$scheme} {
+    // @media screen and (prefers-color-scheme: $scheme) {
+      @content('#{$scheme}');
+    }
+  }
+}
+
+/**
+ * Mixin for print media
+ */
+@mixin print() {
+  @media print {
+    @content;
+  }
+}

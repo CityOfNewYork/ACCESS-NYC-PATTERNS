@@ -1,0 +1,197 @@
+/**
+ * Tables
+ */
+
+// Dependencies
+@import 'canyc/media';
+@import 'canyc/dimensions';
+@import 'canyc/fonts';
+@import 'canyc/direction';
+@import 'canyc/colors';
+@import 'canyc/media';
+
+// Declarations
+@mixin table($alignment: $text-direction-start) {
+  font-size: $font-size-small;
+  text-align: $alignment;
+  width: 100%;
+  max-width: 100%;
+  margin-bottom: $spacing-base;
+
+  @media screen and (min-width: $screen-tablet) {
+    font-size: inherit;
+  }
+
+  thead {
+    tr {
+      background-color: none;
+    }
+  }
+
+  tbody {
+    tr {
+      &:nth-child(odd) {
+        background-color: $color-grey-lightest
+      }
+    }
+  }
+
+  th {
+    color: $color-blue;
+    font-weight: bold;
+    vertical-align: top;
+  }
+
+  th, td {
+    padding: ($spacing-base * .5) $grid-base
+  }
+}
+
+@mixin table-headers-first-column {
+  border-collapse: separate;
+  border-spacing: 0;
+
+  th, td {
+    border-bottom: 2px solid $color-white;
+    border-#{$text-direction-end}: 2px solid $color-white;
+  }
+
+  td:last-of-type {
+    border-#{$text-direction-end}: none
+  }
+
+  tbody tr:last-of-type th,
+  tbody tr:last-of-type td {
+    border-bottom: none
+  }
+
+  thead th {
+    vertical-align: bottom;
+    background-color: $color-white;
+    border-bottom-color: $color-grey-lightest;
+  }
+
+  tbody {
+    tr:nth-child(even) th {
+      background-color: $color-white;
+      border-#{$text-direction-end}-color: $color-grey-lightest;
+    }
+
+    tr:nth-child(odd) th {
+      background-color: $color-grey-lightest
+    }
+  }
+
+  // Top Left Corner
+  thead > tr:first-of-type > th:first-of-type {
+    vertical-align: middle;
+    border-#{$text-direction-end}-color: $color-grey-lightest;
+  }
+}
+
+@mixin table-headers-sticky {
+  thead th,
+  tbody th {
+    position: sticky
+  }
+
+  thead th {
+    top: 0;
+    z-index: 1;
+  }
+
+  tbody th,
+  thead > tr:first-of-type > th:first-of-type {
+    #{$text-direction-start}: 0
+  }
+
+  // Top Left Corner
+  thead > tr:first-of-type > th:first-of-type {
+    top: 0;
+    #{$text-direction-start}: 0;
+    z-index: 2;
+  }
+}
+
+/**
+ * Default Tables
+ */
+
+table {
+  @include table
+}
+
+@mixin tables($variant: '') {
+  .#{$variant}table {
+    @include table
+  }
+
+  .#{$variant}table-numeric {
+    @include table($text-direction-end)
+  }
+
+  .#{$variant}table-headers-first-column {
+    @include table-headers-first-column
+  }
+
+  .#{$variant}table-headers-sticky {
+    @include table-headers-sticky;
+    @include table-headers-first-column
+  }
+
+  .#{$variant}table-headers-start th {
+    text-align: $text-direction-start
+  }
+
+  .#{$variant}table-headers-center th {
+    text-align: center
+  }
+
+  .#{$variant}table-headers-end th {
+    text-align: $text-direction-end
+  }
+
+  .#{$variant}table-headers-top th {
+    vertical-align: top
+  }
+
+  .#{$variant}table-headers-middle th {
+    vertical-align: middle
+  }
+
+  .#{$variant}table-headers-bottom th {
+    vertical-align: bottom
+  }
+
+  .#{$variant}table-body-start td {
+    text-align: $text-direction-start
+  }
+
+  .#{$variant}table-body-center td {
+    text-align: center
+  }
+
+  .#{$variant}table-body-end td {
+    text-align: $text-direction-end
+  }
+
+  .#{$variant}table-body-top td {
+    vertical-align: top
+  }
+
+  .#{$variant}table-body-middle td {
+    vertical-align: middle
+  }
+
+  .#{$variant}table-body-bottom td {
+    vertical-align: bottom
+  }
+
+  .#{$variant}border-spacing-0 {
+    border-spacing: 0;
+  }
+}
+
+@include screens {
+  @include tables($variant);
+}

@@ -1,0 +1,170 @@
+/**
+ * Buttons
+ */
+
+// Dependencies
+@import 'canyc/animate';
+@import 'canyc/colors';
+@import 'canyc/fonts';
+@import 'canyc/dimensions';
+@import 'canyc/direction';
+@import 'canyc/buttons';
+@import 'canyc/typography';
+@import 'canyc/media';
+// @import 'bourbon/app/assets/stylesheets/addons/triangle';
+// @import 'bourbon/app/assets/stylesheets/addons/size';
+
+// Declarations
+button {
+  @include btn-reset;
+}
+
+.btn, [class*='btn-'],
+.button, [class*='button-'] {
+  @include btn;
+  @include transition;
+
+  &[aria-pressed='false'] {
+    .icon {
+      display: inline-block;
+    }
+
+    .icon-pressed {
+      display: none;
+    }
+  }
+
+  &[aria-pressed='true'] {
+    .icon {
+      display: none;
+    }
+
+    .icon-pressed {
+      display: inline-block;
+    }
+  }
+}
+
+@mixin buttons($variant: '') {
+  .#{$variant}btn {
+    @include btn-normal();
+  }
+
+  // Types
+
+  .#{$variant}btn-tag, .#{$variant}button-tag {
+    font-size: .727rem;
+    line-height: 1.2;
+    border-radius: 50px;
+    padding: $grid-base ($grid-base * 2);
+  }
+
+  .#{$variant}btn-toggle, .#{$variant}button-toggle {
+    text-align: $text-direction-start;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    &::after {
+      content: '';
+      position: relative;
+
+      height: 0;
+      width: 0;
+      border-left: .4em solid transparent;
+      border-right: .4em solid transparent;
+
+      border-top: .6em solid;
+      border-top-color: inherit;
+
+      display: inline-block;
+      margin-inline-start: .5em;
+    }
+
+    &.active {
+      &::after {
+        border-top: 0;
+        border-bottom: .6em solid;
+        border-bottom-color: inherit;
+      }
+    }
+  }
+
+  .#{$variant}btn-small, .#{$variant}button-small {
+    font-size: .727rem;
+    padding: ($grid-base * 1.5) ($grid-base * 2);
+  }
+
+  .#{$variant}btn-link, .#{$variant}button-link {
+    font-size: inherit;
+    text-align: inherit;
+    appearance: none;
+    border: none;
+    background: transparent;
+    padding: 0;
+  }
+
+  .#{$variant}btn-text, .#{$variant}button-text {
+    text-align: inherit;
+    background: none;
+    border: 0;
+    border-radius: 0;
+    padding: 0;
+  }
+}
+
+@include screens {
+  @include buttons($variant);
+}
+
+// Responsive types for button size
+
+// .screen-tablet\:btn-normal,
+// .screen-tablet\:button-normal {
+//   @media screen and (min-width: $screen-tablet) {
+//     @include btn-normal();
+//   }
+// }
+
+// .screen-desktop\:btn-normal,
+// .screen-desktop\:button-normal {
+//   @media screen and (min-width: $screen-desktop) {
+//     @include btn-normal();
+//   }
+// }
+
+// Button types that should override top level styling
+
+.btn-primary,
+.button-primary {
+  @include btn-primary;
+}
+
+.btn-secondary,
+.button-secondary {
+  @include btn-secondary;
+}
+
+.btn-tertiary,
+.button-tertiary {
+  @include btn-tertiary;
+}
+
+.btn-covid-response,
+.button-covid-response {
+  @include btn-covid-response;
+}
+
+.btn-next,
+.btn-previous,
+.button-next,
+.button-previous {
+  &[class*='-next'] {
+    @include btn-next;
+  }
+
+  &[class*='-previous'] {
+    @include btn-previous;
+  }
+}

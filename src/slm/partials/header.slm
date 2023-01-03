@@ -22,3 +22,12 @@ header role='banner' class='color-light-background px-2'
           a href='${link_source}/releases/tag/v${this.tokens.version}' class='ms-1 screen-tablet:ms-2 screen-tablet:hidden' aria-hidden='true'
             = this.tokens.version;
           button#main-menu-control class='btn-link ms-1 screen-tablet:ms-2' aria-controls='main-menu' aria-expanded='false' data-js='toggle' Menu
+
+  div class='border-b border-grey-light py-2'
+    article class='c-alert-box color-info-status' role='alert' aria-labelledby='aria-lb-site-alert'
+      div class='c-alert-box__icon'
+        svg class='c-alert-box__svg icon icon-4 icon-info'
+          use xlink:href='#icon-info'
+
+      div class='c-alert-box__body' id='aria-lb-site-alert'
+        p As of January 3rd, 2023 the <b>ACCESS NYC Pattern library package is deprecated</b> in favor of the <a href="https://nycopportunity.github.io/standard" target="_blank" rel="noopener">NYC Opportunity Standard</a> which contains updated user interface elements and usability guidance.

@@ -1,0 +1,1 @@
+ACCESS NYC integrates the [Feather](https://feathericons.com/) open source icons. By default these icons are `24px` by `24px`. The primary color can be set by a text color utility. For example; `text-blue-dark`.

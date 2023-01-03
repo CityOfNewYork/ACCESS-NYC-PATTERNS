@@ -1,0 +1,5 @@
+<svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M42.2254 26.5514L24 45L5.7746 26.5514C0.741798 21.457 0.7418 13.1973 5.7746 8.10285C10.8074 3.00841 18.9672 4.63622 24 9.73065C29.0328 4.63622 37.1926 3.00841 42.2254 8.10285C47.2582 13.1973 47.2582 21.457 42.2254 26.5514Z" fill="currentColor"/>
+<rect x="21" y="16" width="6" height="16" fill="#FFFFFF"/>
+<rect x="32" y="21" width="6" height="16" transform="rotate(90 32 21)" fill="#FFFFFF"/>
+</svg>

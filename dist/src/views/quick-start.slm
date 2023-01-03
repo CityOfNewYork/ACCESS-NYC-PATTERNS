@@ -1,0 +1,53 @@
+/ Layout
+= extend('/slm/layouts/default');
+
+/ Component
+- title = 'Quick Start';
+
+/ Partials
+= partial('/slm/partials/styles.slm');
+= partial('/slm/partials/links.slm');
+= partial('/slm/partials/head.mixin.slm');
+= partial('/slm/partials/content-header.mixin.slm');
+= partial('/slm/section/section.mixin.slm');
+= partial('/slm/section/section-text.mixin.slm');
+
+/ Partials
+= partial('/slm/partials/styles.slm');
+= partial('/slm/partials/links.slm');
+= partial('/slm/partials/head.mixin.slm');
+= partial('/slm/partials/content-header.mixin.slm');
+= partial('/slm/section/section.mixin.slm');
+= partial('/slm/section/section-text.mixin.slm');
+
+/ Content blocks
+= content('head');
+  = mixin('head', title);
+
+= content('header');
+  = mixin('header');
+
+= content('content');
+  / = mixin('content-header', title);
+  header class="page-wrapper px-2 screen-desktop:px-0 layout-home-body"
+    div class="my-0 w-full"
+      h1 class="text-blue-dark px-2 mb-0 screen-tablet:pb-4 screen-tablet:mb-4" = title
+
+  section class='pb-2 screen-tablet:pb-4 screen-tablet:mb-4'
+    div class='page-wrapper px-2 screen-desktop:px-0'
+      header class='layout-home-body'
+        div class="my-0 px-2 py-0 border-b border-grey-light screen-tablet:flex screen-tablet:justify-between"
+
+      div class='layout-home-body'
+        div class='my-0 pt-4 px-2 text-small table-align-start'
+
+          p The following is a static page sample that integrates ${this.package.nice} using the <em>CDN method</em>. This is the quickest way to get started developing or prototyping. However, the <em>NPM method</em> of installation is preferable for most long-term projects. View the <a href="installation">installation documentation</a> for more details.
+
+          h2 Markup
+
+          pre
+            = this.include('views/quick-start-demo.slm');
+
+          h2 Preview
+
+          iframe width='100%' height='778' src='quick-start-demo.html' class='border'

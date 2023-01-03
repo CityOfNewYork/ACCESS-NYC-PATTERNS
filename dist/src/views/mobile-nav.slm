@@ -1,0 +1,25 @@
+/ Layout
+= extend('/slm/layouts/default');
+
+/ Component
+- title = 'Mobile Nav';
+
+/ Partials
+= partial('/slm/partials/styles.slm');
+= partial('/slm/partials/links.slm');
+= partial('/slm/partials/head.mixin.slm');
+= partial('/slm/partials/content-header.mixin.slm');
+= partial('/slm/section/section.mixin.slm');
+= partial('/slm/section/demo-specs.mixin.slm');
+= partial('/slm/section/demo-block.mixin.slm');
+
+/ Content blocks
+= content('head');
+  = mixin('head', title);
+
+= content('header');
+  = mixin('header', title);
+
+= content('content');
+  = mixin('content-header', title);
+  = mixin('section', false, 'objects/mobile-nav/mobile-nav', 'gutter');

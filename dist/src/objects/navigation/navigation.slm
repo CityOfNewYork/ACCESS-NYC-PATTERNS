@@ -1,0 +1,28 @@
+/
+/ Navigation
+/
+
+nav class='o-navigation color-dark-background'
+  div class='logo-access'
+    a href='/'
+      svg class='icon icon-logo-full'
+        use xlink:href='#icon-logo-full'
+      span class='sr-only' Access NYC
+
+  nav class='o-navigation__nav nav-inline text-align-end'
+    a class='screen-desktop:hidden' href='#o-mobile-nav' Menu
+
+    a class='hidden screen-desktop:inline-block active' href='#' Am I eligible?
+
+    a class='hidden screen-desktop:inline-block' href='#' Programs
+
+    a class='hidden screen-desktop:inline-block' href='#' Find help
+
+    a class='no-underline o-navigation__search' href='#search'
+      svg class='icon icon-ui icon-3' aria-hidden='true'
+        use xlink:href='#icon-ui-search'
+      | Search
+
+- symbol = false;
+- instance = 'objects/mobile-nav/mobile-nav';
+= partial('../mobile-nav/mobile-nav');

@@ -1,0 +1,33 @@
+/ Layout
+= extend('/slm/layouts/default');
+
+/ Component
+- title = 'Icons';
+
+/ Partials
+= partial('/slm/partials/styles.slm');
+= partial('/slm/partials/links.slm');
+= partial('/slm/partials/head.mixin.slm');
+= partial('/slm/partials/content-header.mixin.slm');
+= partial('/slm/section/section.mixin.slm');
+= partial('/slm/section/section-text.mixin.slm');
+
+/ Content blocks
+= content('head');
+  = mixin('head', title);
+
+= content('header');
+  = mixin('header', title);
+
+= content('content');
+  = mixin('content-header', title);
+  / = mixin('section', 'Program Category Icons', 'elements/icons/icons-program-category', 'gutter', this.tokens['icons-program-category']);
+  = mixin('section', 'Program Category Icons', 'elements/icons/icons-program-category', 'gutter', this.tokens['icons-program-category-v2']);
+  / = mixin('section', 'Program Card Icons', 'elements/icons/icons-program-card', 'gutter', this.tokens['icons-program-card']);
+  = mixin('section', 'Program Card Icons', 'elements/icons/icons-program-card', 'gutter', this.tokens['icons-program-card-v2']);
+  = mixin('section', 'Checklist Category Icons', 'elements/icons/icons-checklist', 'gutter', this.tokens['icons-checklist']);
+  = mixin('section', 'Logos', 'elements/icons/icons-logo', 'gutter', this.tokens['icons-logo']);
+  = mixin('section', 'Status Icons', 'elements/icons/icons-status', 'gutter', this.tokens['icons-status']);
+  = mixin('section', 'UI Icons', 'elements/icons/icons-ui', 'gutter', this.tokens['icons-ui']);
+  = mixin('section-text', 'Icon Usage', 'elements/icons/icons.readme');
+  = mixin('section', 'Subway Icons', 'elements/icons/icons-subway', 'gutter', this.tokens['icons-subway']);

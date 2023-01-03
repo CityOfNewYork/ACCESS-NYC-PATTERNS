@@ -1,0 +1,39 @@
+/ Layout
+= extend('/slm/layouts/default');
+
+/ Component
+- title = 'COVID Response';
+
+/ Partials
+= partial('/slm/partials/styles.slm');
+= partial('/slm/partials/links.slm');
+= partial('/slm/partials/head.mixin.slm');
+= partial('/slm/partials/content-header.mixin.slm');
+= partial('/slm/section/section.mixin.slm');
+
+/ Content blocks
+= content('head');
+  = mixin('head', title);
+
+= content('header');
+  = mixin('header', title);
+
+= content('content');
+  = mixin('content-header', title);
+
+  / Elements
+  = mixin('section', 'Badge', 'elements/badge/badge-covid-response');
+  = mixin('section', 'Program Category Icons', 'elements/icons/icons-program-category-covid-response', 'gutter', this.tokens['icons-program-category-v2']);
+  = mixin('section', 'Program Card Icons', 'elements/icons/icons-program-card-covid-response', 'gutter', this.tokens['icons-program-card-v2']);
+  = mixin('section', 'Button', 'elements/buttons/buttons-covid-response');
+
+  / Components
+  = mixin('section', 'Alert Box', 'components/alert-box/alert-box-covid-response');
+
+  / Utilities
+  - key = 'covid-response'
+  - combination = {'covid-response-button': this.tokens['color-combinations'][`${key}-button`], 'covid-response-status': this.tokens['color-combinations'][`${key}-status`]}
+  - utilities = {'covid-response': this.tokens['colors'][key], 'covid-response-light': this.tokens['colors'][`${key}-light`]}
+
+  = mixin('section', 'Color Combinations', 'utilities/color/color-combinations-covid-response', 'gutter', combination);
+  = mixin('section', 'Color Utilities', 'utilities/color/color-utilities-covid-response', 'gutter', utilities);

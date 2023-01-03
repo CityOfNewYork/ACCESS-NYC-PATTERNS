@@ -1,0 +1,20 @@
+@use 'canyc/colors';
+@use 'canyc/fonts';
+@use 'canyc/typography';
+
+@mixin disclaimer() {
+  font-size: var(--nyco-font-sizes-small);
+  background: var(--nyco-color-grey-lightest);
+  border: 1px solid var(--nyco-color-grey-light);
+  padding: 24px;
+
+  > p:last-child {
+    margin-bottom: 0;
+  }
+
+  small {
+    @include typography.typography-disclaimer-small();
+    margin: 0;
+    display: inline-block;
+  }
+}

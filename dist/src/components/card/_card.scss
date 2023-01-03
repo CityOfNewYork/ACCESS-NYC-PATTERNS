@@ -1,0 +1,90 @@
+/**
+ * Card
+ */
+
+// Dependencies
+@import 'canyc/colors';
+@import 'canyc/dimensions';
+@import 'canyc/direction';
+@import 'canyc/media';
+@import 'canyc/typography';
+
+// Declarations
+.c-card {
+  background: $color-white;
+  padding: calc(calc(#{$spacing-base} / 3) * 2);
+
+  @media screen and (min-width: $screen-mobile) {
+    align-items: stretch;
+    display: flex;
+  }
+
+  @media screen and (min-width: $screen-tablet) {
+    padding: $spacing-base;
+  }
+}
+
+.c-card.screen-tablet\:p {
+  padding: 0;
+  padding-top: $spacing-base;
+  padding-bottom: $spacing-base;
+}
+
+[class*='c-card__icon'] {
+  $icon-height: $spacing-base * 2;
+  $icon-width: $spacing-base * 2;
+
+  margin-bottom: calc(#{$spacing-base} / 3);
+
+  .icon {
+    width: $icon-width;
+    height: $icon-height;
+
+    display: inline-block;
+    vertical-align: middle;
+  }
+
+  @media screen and (min-width: $screen-mobile) {
+    margin-bottom: 0;
+    margin-inline-end: $spacing-base;
+    min-width: $icon-width; // Fixes an iOS 9 flexbox bug.
+    width: $icon-width;
+  }
+}
+
+.c-card__icon-large {
+  $icon-height: 80px;
+  $icon-width: 80px;
+
+  .icon {
+    width: $icon-width;
+    height: $icon-height;
+  }
+
+  @media screen and (min-width: $screen-mobile) {
+    min-width: $icon-width; // Fixes an iOS 9 flexbox bug.
+    width: $icon-width;
+  }
+}
+
+.c-card__body {
+  flex-basis: 100%
+}
+
+.c-card__title {
+  color: $color-black;
+  @include typography-h4();
+
+  margin-top: $grid-base - 1;
+  margin-bottom: $grid-base;
+}
+
+.c-card__subtitle {
+  @include typography-base();
+}
+
+.c-card__summary {
+  > :last-child {
+    margin-bottom: 0;
+  }
+}

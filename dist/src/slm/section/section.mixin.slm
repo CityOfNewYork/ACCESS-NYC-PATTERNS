@@ -1,0 +1,37 @@
+= partial('demo-specs.mixin.slm');
+= partial('demo-block.mixin.slm');
+- this.navigation = (this.navigation) ? this.navigation : [];
+
+= mixin('section', 'title', 'path', 'layout = columns', 'grid = false', 'specs = true', 'code = true');
+  - id = (this.title && this.title !== '') ? this.title.toLowerCase().split(' ').join('-') : false;
+  - if (this.title)
+    - let navitem = {'title': this.title, 'id': id};
+    - this.navigation.push(navitem);
+
+  section id=id class='pb-4 mb-4'
+    div class='page-wrapper px-2'
+      header class='layout-home-body'
+        div class='my-0 px-2 pt-1 pb-4 border-b border-grey-light'
+          - let srcPadding = false
+          - if (this.title)
+            - srcPadding = 'pt-2'
+            h2 class='m-0'
+              a href='#${id}' class='text-grey-mid font-normal no-underline capitalize'
+                = this.title;
+
+          div class=srcPadding
+            - let source = this.path.split('/')
+            - source.splice(source.length - 1, 1)
+            - source = source.join('/');
+
+            p class='text-small m-0'
+              = 'Source: ';
+              code
+                a href='${link_source}/releases/tag/v${this.tokens.version}/src/${source}'
+                  = 'src/' + this.path
+
+      - if (this.specs != 'false')
+        = mixin('demo-specs', this.path + '.md');
+
+      - if (this.code != 'false')
+        = mixin('demo-block', this.path + '.slm', this.layout, this.grid);

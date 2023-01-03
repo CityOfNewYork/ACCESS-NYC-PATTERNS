@@ -1,0 +1,1 @@
+Primary Button Elements are used for functional actions and in some cases have an icon to the left of the call-to-action.

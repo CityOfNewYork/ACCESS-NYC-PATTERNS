@@ -1,0 +1,1 @@
+These icons are used inside of [Card Component](/card#card-with-icon) to categorize different types of programs. The duotone color palette can be set by a text color utility (primary) and fill color utility (secondary). For example; `text-blue-bright fill-blue-light`.

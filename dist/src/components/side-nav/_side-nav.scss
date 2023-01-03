@@ -1,0 +1,72 @@
+/**
+ * Side-nav
+ */
+
+// Dependencies
+@import 'canyc/direction';
+@import 'canyc/dimensions';
+@import 'canyc/media';
+@import 'canyc/colors';
+@import 'canyc/typography';
+
+// Declarations
+.c-side-nav {
+  @include typography-nav();
+  margin-bottom: $spacing-base;
+
+  border-bottom: 4px solid $color-blue-dark;
+
+  ol, ul {
+    list-style-type: none;
+    list-style-position: inside;
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  ol {
+    counter-reset: li;
+  }
+
+  li {
+    display: flex;
+    margin-bottom: 14px;
+
+    @media screen and (min-width: $screen-desktop) {
+      border-bottom: 1px solid $color-grey-light;
+      margin-bottom: $spacing-base;
+      padding-bottom: $spacing-base;
+
+      &:last-of-type {
+        border-bottom: 0;
+        margin-bottom: 0;
+        padding-bottom: 0;
+      }
+    }
+  }
+
+  ol > li {
+    &:before {
+      content: '' counter(li) '. ';
+      counter-increment: li;
+      flex-shrink: 0;
+      width: $grid-base * 4;
+      padding-#{$text-direction-end}: $grid-base;
+      text-align: $text-direction-end;
+
+      @media screen and (min-width: $screen-tablet) {
+        width: $grid-base * 6;
+      }
+    }
+  }
+
+  ul > li {
+    // padding-#{$text-direction-start}: $grid-base * 2;
+    padding-left: $grid-base * 2;
+    padding-right: $grid-base * 2;
+  }
+
+  .active {
+    font-weight: bold;
+    text-decoration: none;
+  }
+}

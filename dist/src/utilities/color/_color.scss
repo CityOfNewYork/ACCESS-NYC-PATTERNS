@@ -1,0 +1,15 @@
+/**
+ * Colors
+ */
+
+// Dependencies
+@use 'canyc/colors';
+
+// Declarations
+@each $combo, $c in colors.$combinations {
+  $selector: '.color-#{$combo}';
+
+  #{$selector} {
+    @include colors.combination($selector, $c, colors.$colors, map-get($c, 'font-smooth'));
+  }
+}

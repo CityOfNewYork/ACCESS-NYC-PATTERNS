@@ -1,0 +1,52 @@
+/**
+ * Fonts
+ */
+
+// Dependencies
+@import 'canyc/fonts';
+@import 'canyc/cdn';
+@import 'canyc/language';
+@import 'scss/functions/font-face';
+
+// Declarations
+
+// Base Language. Latin, Greek and Cyrillic
+@include font-face('Noto Sans', '#{$cdn}#{$path-to-fonts}noto-sans/NotoSans', normal, normal, (eot woff2 woff ttf));
+@include font-face('Noto Sans', '#{$cdn}#{$path-to-fonts}noto-sans/NotoSans-Italic', normal, italic, (eot woff2 woff ttf));
+@include font-face('Noto Sans', '#{$cdn}#{$path-to-fonts}noto-sans/NotoSans-Bold', bold, normal, (eot woff2 woff ttf));
+@include font-face('Noto Sans', '#{$cdn}#{$path-to-fonts}noto-sans/NotoSans-BoldItalic', bold, italic, (eot woff2 woff ttf));
+
+@include font-face('Noto Serif', '#{$cdn}#{$path-to-fonts}noto-serif/NotoSerif', normal, normal, (eot woff2 woff ttf));
+@include font-face('Noto Serif', '#{$cdn}#{$path-to-fonts}noto-serif/NotoSerif-Italic', normal, italic, (eot woff2 woff ttf));
+@include font-face('Noto Serif', '#{$cdn}#{$path-to-fonts}noto-serif/NotoSerif-Bold', bold, normal, (eot woff2 woff ttf));
+@include font-face('Noto Serif', '#{$cdn}#{$path-to-fonts}noto-serif/NotoSerif-BoldItalic', bold, italic, (eot woff2 woff ttf));
+
+// For Korean
+@if $language == 'kr' {
+  @include font-face('Noto Sans CJK KR', '#{$cdn}#{$path-to-fonts}noto-cjk-kr/NotoSansCJKkr-Regular', normal, normal, (otf));
+  @include font-face('Noto Sans CJK KR', '#{$cdn}#{$path-to-fonts}noto-cjk-kr/NotoSansCJKkr-Regular', normal, italic, (otf));
+  @include font-face('Noto Sans CJK KR', '#{$cdn}#{$path-to-fonts}noto-cjk-kr/NotoSansCJKkr-Bold', bold, normal, (otf));
+  @include font-face('Noto Sans CJK KR', '#{$cdn}#{$path-to-fonts}noto-cjk-kr/NotoSansCJKkr-Bold', bold, italic, (otf));
+}
+
+// For Chinese
+@if $language == 'tc' {
+  @include font-face('Noto Sans CJK TC', '#{$cdn}#{$path-to-fonts}noto-cjk-tc/NotoSansCJKtc-Regular', normal, normal, (otf));
+  @include font-face('Noto Sans CJK TC', '#{$cdn}#{$path-to-fonts}noto-cjk-tc/NotoSansCJKtc-Regular', normal, italic, (otf));
+  @include font-face('Noto Sans CJK TC', '#{$cdn}#{$path-to-fonts}noto-cjk-tc/NotoSansCJKtc-Bold', bold, normal, (otf));
+  @include font-face('Noto Sans CJK TC', '#{$cdn}#{$path-to-fonts}noto-cjk-tc/NotoSansCJKtc-Bold', bold, italic, (otf));
+}
+
+// For Arabic
+@if $language == 'ar' {
+  @include font-face('Noto Naskh Arabic', '#{$cdn}#{$path-to-fonts}noto-ar/NotoNaskhArabic-Regular', normal, normal, (ttf));
+  @include font-face('Noto Naskh Arabic', '#{$cdn}#{$path-to-fonts}noto-ar/NotoNaskhArabic-Regular', normal, italic, (ttf));
+  @include font-face('Noto Naskh Arabic', '#{$cdn}#{$path-to-fonts}noto-ar/NotoNaskhArabic-Bold', bold, normal, (ttf));
+  @include font-face('Noto Naskh Arabic', '#{$cdn}#{$path-to-fonts}noto-ar/NotoNaskhArabic-Bold', bold, italic, (ttf));
+}
+
+// For Urdu
+@if $language == 'ur' {
+  @include font-face('Noto Nastaliq Urdu', '#{$cdn}#{$path-to-fonts}noto-ur/NotoNastaliqUrdu-Regular', normal, normal, (ttf));
+  @include font-face('Noto Nastaliq Urdu', '#{$cdn}#{$path-to-fonts}noto-ur/NotoNastaliqUrdu-Regular', normal, italic, (ttf));
+}

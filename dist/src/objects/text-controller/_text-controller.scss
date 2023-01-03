@@ -1,0 +1,163 @@
+/**
+ * Text-controller
+ */
+
+// Dependencies
+@use 'canyc/colors';
+@use 'canyc/fonts';
+@use 'canyc/direction';
+@use 'canyc/media';
+@use 'canyc/dimensions';
+@use 'canyc/accessibility';
+
+// Declarations
+.o-text-controller {
+  font-size: 18px; // px value freezes the font size for the controller
+
+  .o-text-controller__title-full,
+  .o-text-controller__title-short {
+    vertical-align: middle;
+  }
+}
+
+.o-text-controller__control {
+  font-weight: normal;
+  font-style: italic;
+  text-decoration: none;
+
+  &.active {
+    display: none;
+  }
+
+  > * {
+   pointer-events: none;
+  }
+}
+
+.o-text-controller__icon {
+  vertical-align: middle;
+  margin-inline-end: var(--nyco-grid);
+}
+
+.o-text-controller__icon-full,
+.o-text-controller__title-full {
+  display: none;
+
+  @media screen and (min-width: media.$screen-desktop) {
+    display: inline-block;
+  }
+}
+
+.o-text-controller__icon-short,
+.o-text-controller__title-short {
+  display: inline-block;
+
+  @media screen and (min-width: media.$screen-desktop) {
+    display: none;
+  }
+}
+
+.o-text-controller__options {
+  width: 100%;
+}
+
+.o-text-controller__languages .wpml-ls {
+  padding: 0;
+  border: none;
+
+  ul {
+    list-style-type: none;
+    display: inline;
+    margin: 0;
+    padding: 0;
+  }
+
+  li {
+    list-style-type: none;
+    line-height: normal;
+    margin-bottom: calc(var(--nyco-margin-DEFAULT) * 0.5);
+    display: inline-block;
+    padding: 0;
+
+    margin-inline-end: calc(var(--nyco-grid) * 2);
+    margin-bottom: calc(var(--nyco-margin-DEFAULT) / 2);
+
+    &:first-of-type {
+      margin-inline-start: 0;
+    }
+
+    &:last-of-type {
+      margin-inline-end: 0;
+    }
+  }
+
+  .text-start & li { // based on utilities/text/text
+    margin-inline-end: calc(var(--nyco-grid) * 2);
+    margin-inline-start: 0;
+  }
+
+  .text-end & li { // based on utilities/text/text
+    margin-inline-end: 0;
+    margin-inline-start: calc(var(--nyco-grid) * 2);
+  }
+
+  a {
+    padding: 0;
+    line-height: 1;
+  }
+}
+
+.o-text-controller__sizer {
+  display: none;
+
+  @media screen and (min-width: media.$screen-desktop) {
+    color: var(--nyco-colors-grey-mid);
+    display: flex;
+  }
+
+  .text-start & {
+    justify-content: flex-start
+  }
+
+  .text-end & {
+    justify-content: flex-end
+  }
+}
+
+.o-text-controller__sizer-text {
+  font-style: italic;
+  margin-inline-end: calc(var(--nyco-margin-DEFAULT) / 3);
+}
+
+.o-text-controller__sizer-btn {
+  color: var(--nyco-colors-blue);
+  margin-left: 0.15em;
+  margin-right: 0.15em;
+  font-size: inherit;
+
+  > * {
+    pointer-events: none
+  }
+
+  &:first-of-type {
+    margin-inline-start: 0
+  }
+
+  &:last-of-type {
+    margin-inline-end: 0
+  }
+
+  &:disabled {
+    color: var(--nyco-colors-grey-light)
+  }
+}
+
+// ====================================
+// WPML Language Switcher Styles
+// ====================================
+
+// Hides the current language translation in the language switcher
+.o-text-controller__languages .wpml-ls .wpml-ls-current-language,
+.o-text-controller__languages .wpml-ls .wpml-ls-display {
+  @include accessibility.only();
+}

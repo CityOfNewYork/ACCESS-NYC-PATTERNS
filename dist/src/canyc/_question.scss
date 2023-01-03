@@ -1,0 +1,50 @@
+//
+// Variables
+//
+
+// Dependencies
+@use 'canyc/fonts';
+@use 'canyc/dimensions';
+@use 'canyc/direction';
+@use 'canyc/colors';
+
+// Declarations
+@mixin question() {
+  margin-bottom: dimensions.$spacing-base;
+}
+
+@mixin question-label() {
+  display: inline-block;
+  font-size: fonts.$font-size-base;
+  font-weight: fonts.$font-weight-bold;
+  vertical-align: top;
+  margin-bottom: calc(#{dimensions.$spacing-base} / 3);
+}
+
+@mixin question-error() {
+  position: relative;
+
+  &::before {
+    position: absolute;
+    top: .5 * -dimensions.$spacing-base;
+    bottom: -dimensions.$spacing-base;
+
+    @if direction.$text-direction == 'rtl' {
+      right: -19px;
+    } @else {
+      left: -19px;
+    }
+
+    border-left: 3px solid colors.$color-red;
+    content: '';
+    display: block;
+    width: 0;
+  }
+}
+
+@mixin question-error-message() {
+  color: colors.$color-red;
+  font-size: fonts.$font-size-small;
+  margin-bottom: (.5 * dimensions.$spacing-base);
+  width: 100%;
+}

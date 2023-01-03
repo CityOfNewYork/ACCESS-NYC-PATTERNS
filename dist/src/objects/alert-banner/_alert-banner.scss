@@ -1,0 +1,87 @@
+/**
+ * Alert-Banner
+ */
+
+// Dependencies
+// @import 'config/';
+@use 'canyc/typography';
+@use 'canyc/media';
+
+.c-alert-banner {
+  background: var(--nyco-color-grey-lightest);
+  padding: calc(var(--nyco-grid) * 3);
+  left: 0;
+  bottom: 0;
+
+  @include typography.typography-disclaimer-small;
+
+  @media screen and (min-width: media.$screen-tablet) {
+    font-size: var(--nyco-font-sizes-normal);
+    line-height: var(--nyco-leading-medium);
+  }
+}
+
+.c-alert-banner-wrapper {
+  max-width: 1200px;
+  margin: 0 auto;
+
+  display: flex;
+}
+
+.c-alert-banner__content {
+  flex: 1
+}
+
+.c-alert-banner__icon {
+  display: inline;
+  float: inline-start;
+  margin-inline-end: var(--nyco-grid);
+
+  position: relative;
+  bottom: -3px;
+
+  @media screen and (min-width: media.$screen-tablet) {
+    margin-inline-end: calc(var(--nyco-grid) * 2);
+    bottom: 0;
+  }
+}
+
+.c-alert-banner__svg {
+  @media screen and (max-width: media.$screen-tablet) {
+    width: calc(var(--nyco-grid) * 3) !important;
+    height: calc(var(--nyco-grid) * 3) !important;
+  }
+}
+
+.c-alert-banner__body {
+  padding-top: 4px;
+  flex: 1 1 auto;
+
+  @media screen and (min-width: media.$screen-tablet) {
+    padding-top: 1px;
+  }
+
+  > *:last-child {
+    margin-bottom: 0
+  }
+}
+
+.c-alert-banner__closing button {
+  width: 24px;
+  height: 24px;
+  background: transparent;
+  border: none;
+  text-align: right;
+  padding: 0;
+
+  svg {
+    pointer-events: none
+  }
+
+  margin-inline-end: var(--nyco-grid);
+
+  @media screen and (min-width: media.$screen-tablet) {
+    margin-top: 4px;
+    margin-inline-end: calc(var(--nyco-grid) * 2);
+  }
+}

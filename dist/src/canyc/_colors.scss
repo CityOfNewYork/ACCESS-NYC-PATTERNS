@@ -1,0 +1,84 @@
+//
+// Variables
+//
+
+// Dependencies
+@use 'canyc/tokens';
+@use 'canyc/fonts';
+
+$colors: map-get(tokens.$tokens, colors);
+$statuses: map-get(tokens.$tokens, color-statuses);
+$combinations: map-get(tokens.$tokens, color-combinations);
+
+// Variables
+$color-black: map-get($colors, black);
+$color-blue: map-get($colors, blue);
+$color-blue-bright: map-get($colors, blue-bright);
+$color-blue-dark: map-get($colors, blue-dark);
+$color-blue-light: map-get($colors, blue-light);
+$color-green: map-get($colors, green);
+$color-green-dark: map-get($colors, green-dark);
+$color-green-mid: map-get($colors, green-mid);
+$color-green-light: map-get($colors, green-light);
+$color-grey-dark: map-get($colors, grey-dark);
+$color-grey-light: map-get($colors, grey-light);
+$color-grey-lightest: map-get($colors, grey-lightest);
+$color-grey-mid: map-get($colors, grey-mid);
+$color-pink: map-get($colors, pink);
+$color-pink-light: map-get($colors, pink-light);
+$color-purple: map-get($colors, purple);
+$color-red: map-get($colors, red);
+$color-yellow-access: map-get($colors, yellow-access);
+$color-yellow-light: map-get($colors, yellow-light);
+$color-white: map-get($colors, white);
+$color-transparent: map-get($colors, transparent);
+
+$color-covid-response: map-get($colors, covid-response);
+$color-covid-response-light: map-get($colors, covid-response-light);
+
+// Mixins
+@mixin combination($selector, $combination, $colors, $smoothing: false) {
+  color: map-get($colors, map-get($combination, 'color'));
+  background-color: map-get($colors, map-get($combination, 'background-color'));
+
+  @if $smoothing {
+    @include fonts.font-smooth;
+  }
+
+  #{$selector}__alt, .color__alt {
+    color: map-get($colors, map-get($combination, 'color-alt'));
+  }
+
+  a:not(.btn), .btn-link, .button-link {
+    color: map-get($colors, map-get($combination, 'hyperlinks'));
+
+    &:visited {
+      color: map-get($colors, map-get($combination, 'visited'));
+    }
+
+    &:hover, &:active, &:focus {
+      color: map-get($colors, map-get($combination, 'hover'));
+    }
+  }
+
+  h1, h3, h5,
+  .h1, .h2, .h3,
+  .type-h1, .type-h2, .type-h3,
+  .typography-h1, .typography-h2, .typography-h3 {
+    color: map-get($colors, map-get($combination, 'headings'));
+  }
+
+  .o-banner__title a:after {
+    background-color: map-get($colors, map-get($combination, 'hyperlinks-banner-underline'));
+  }
+
+  .o-banner__title {
+    a {
+      color: inherit
+    }
+
+    a:hover {
+      color: map-get($colors, map-get($combination, 'hyperlinks-banner-hover'));
+    }
+  }
+}

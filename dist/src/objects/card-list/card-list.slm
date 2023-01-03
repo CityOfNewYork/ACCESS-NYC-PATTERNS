@@ -1,0 +1,11 @@
+/
+/ Card List
+/
+
+div class='p-4 bg-grey-lightest'
+  div class='layout-gutter'
+    - symbol = false
+    - instance = 'components/card/card'
+    = partial(`../../${instance}.slm`)
+    = partial(`../../${instance}.slm`)
+    = partial(`../../${instance}.slm`)

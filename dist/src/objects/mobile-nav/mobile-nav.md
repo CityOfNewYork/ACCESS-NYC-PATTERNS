@@ -1,0 +1,1 @@
+The Mobile Nav Object is a custom module with specific classes to define its elements, including the close link, header, and navigation. It is not seen on desktop browsers but you can see it by scaling the browser down to tablet width. [Click here to see a full page demonstration](demos/mobile-nav).

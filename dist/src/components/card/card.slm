@@ -1,0 +1,29 @@
+div class='bg-grey-lightest p-4'
+
+  /! Component Start
+  article class='c-card'
+    div class='c-card__icon'
+      svg role='img' class='icon icon-card-cash-expenses-v2 text-blue-bright fill-blue-light'
+        title id='icon-card-cash-expenses_title' Cash & Expenses
+        use xlink:href='#icon-card-cash-expenses-v2' xmlns:xlink='https://www.w3.org/1999/xlink'
+
+    div class='c-card__body'
+      h3 class='c-card__title'
+        mark class='badge bg-status-info' New
+
+        a href='https://access.nyc.gov/programs/home-energy-assistance-program-heap/' class='text-inherit'
+          | Money for heat and utility expenses
+
+      p class='c-card__subtitle type-small color__alt' Home Energy Assistance Program (HEAP)
+
+      div class='c-card__summary'
+        p HEAP can help you pay for the costs of heating your home during the winter months.
+
+        p class='hide-for-print'
+          a href='https://access.nyc.gov/programs/home-energy-assistance-program-heap/'
+            | Learn more
+            span class='sr-only'
+              |: Home Energy Assistance Program
+
+        p class='hide-for-print'
+          a class='btn btn-secondary btn-next' href='#' Apply

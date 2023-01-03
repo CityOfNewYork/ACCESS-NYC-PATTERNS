@@ -1,0 +1,18 @@
+/
+/ Question Text
+/
+
+/ - question__label = 'What is your email?';
+/ - question__description = 'We can send you a link to this page to help you get back to it when you’re ready.';
+/ - question__id = 'client-email-address';
+/ - question__name = 'Client[0].emailAddress';
+
+div class='c-question'
+  label class='c-question__label' for='client-0-email-address' What is your email?
+
+  p = 'We can send you a link to this page to help you get back to it when you’re ready.'
+
+  div class='c-question__container'
+    - symbol = false;
+    - instance = 'elements/inputs/inputs-email';
+    = partial(`../../${instance}.slm`);

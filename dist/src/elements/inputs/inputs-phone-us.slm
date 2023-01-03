@@ -1,0 +1,6 @@
+/
+/ Input Phone
+/
+
+div class='input-phone-us'
+  input type='text'

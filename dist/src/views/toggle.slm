@@ -1,0 +1,31 @@
+/ Layout
+= extend('/slm/layouts/default');
+
+/ Component
+- title = 'Toggle';
+
+/ Partials
+= partial('/slm/partials/styles.slm');
+= partial('/slm/partials/links.slm');
+= partial('/slm/partials/head.mixin.slm');
+= partial('/slm/partials/content-header.mixin.slm');
+= partial('/slm/section/section.mixin.slm');
+= partial('/slm/section/section-text.mixin.slm');
+= partial('/slm/section/demo-specs.mixin.slm');
+= partial('/slm/section/demo-block.mixin.slm');
+
+/ Content blocks
+= content('head');
+  = mixin('head', title);
+
+= content('header');
+  = mixin('header', title);
+
+= content('content');
+  = mixin('content-header', title);
+  = mixin('section', false, 'utilities/toggle/toggle');
+  = mixin('section', 'Anchor Toggle', 'utilities/toggle/toggle-anchor');
+  = mixin('section', 'Toggle Fade In Up', 'utilities/toggle/toggle-fade-in-up');
+  = mixin('section', 'Toggle Overflow', 'utilities/toggle/toggle-overflow');
+  = mixin('section', 'Toggle Overflow Fade In Up', 'utilities/toggle/toggle-overflow-fade-in-up');
+  = mixin('section-text', 'Toggle Usage', 'utilities/toggle/toggle.readme');

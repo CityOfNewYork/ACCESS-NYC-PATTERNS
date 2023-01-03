@@ -1,0 +1,28 @@
+/**
+ * Toggles
+ */
+
+// Dependencies
+@import 'canyc/toggles';
+@import 'canyc/accessibility';
+
+// Declarations
+.toggle {
+  @include toggles();
+
+  input {
+    @include sr-only()
+  }
+}
+
+.toggle__label::before {
+  @include toggles-btn()
+}
+
+.toggle input:checked + .toggle__label::before {
+  @include toggles-btn-toggled()
+}
+
+.toggle input:focus + .toggle__label::before {
+  @include toggles-btn-focused()
+}

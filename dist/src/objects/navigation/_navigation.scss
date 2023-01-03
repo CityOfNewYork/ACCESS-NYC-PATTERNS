@@ -1,0 +1,59 @@
+/**
+ * Navigation
+ */
+
+// Dependencies
+@import 'canyc/colors';
+@import 'canyc/fonts';
+@import 'canyc/direction';
+@import 'canyc/dimensions';
+@import 'canyc/fonts';
+@import 'canyc/media';
+@import 'canyc/typography';
+
+// Declarations
+.o-navigation {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  @include font-smooth;
+  padding: (.5 * $spacing-base) $spacing-base;
+
+  .logo-access {
+    .icon-logo-full {
+      width: 135px;
+      height: 23px;
+      display: block;
+
+      @media screen and (min-width: $screen-desktop) {
+        .home & {
+          width: 270px;
+          height: 45px;
+        }
+      }
+    }
+  }
+}
+
+.o-navigation__toggle,
+.o-navigation__search-toggle {
+  @include typography-nav();
+  margin-#{$text-direction-start}: 1em;
+
+  a:link {
+    text-decoration: none
+  }
+
+  .icon {
+    margin-#{$text-direction-end}: .3em
+  }
+}
+
+.o-navigation__toggle {
+  flex: 1 1 auto;
+  text-align: $text-direction-end;
+
+  @media screen and (min-width: $screen-desktop) {
+    display: none
+  }
+}

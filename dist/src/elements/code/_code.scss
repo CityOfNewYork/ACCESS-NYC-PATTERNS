@@ -1,0 +1,137 @@
+/**
+ * Code
+ */
+
+// Dependencies
+@import 'config/';
+@import 'canyc/colors';
+@import 'canyc/fonts';
+@import 'canyc/typography';
+
+$grid: map-get(map-get($tokens, 'dimensions'), 'grid-base');
+
+// Declarations
+code, pre, .hljs {
+  display: inline-block;
+}
+
+.code,
+.code-block {
+  font-weight: $font-weight-normal;
+  font-size: $font-size-small;
+  line-height: 1.8;
+  font-family: monospace;
+
+  background-color: $color-grey-lightest;
+  border: 1px solid $color-grey-light;
+  border-radius: 3px;
+}
+
+.code {
+  color: $color-purple;
+  padding: 4px 8px;
+  display: inline-block;
+  overflow: initial;
+  line-height: inherit;
+  max-width: 100%;
+  text-overflow: ellipsis;
+}
+
+p code, li code, td code {
+  color: $color-purple;
+  font-size: 85%;
+  font-family: inherit;
+  letter-spacing: 0.01em;
+  background-color: $color-grey-lightest;
+  border-radius: 3px;
+  padding: 0.2em 0.4em;
+  margin: 0;
+  display: inline;
+  white-space: nowrap;
+}
+
+td > code {
+  display: inline-block
+}
+
+pre, .hljs {
+  color: $color-pink;
+  background-color: $color-grey-lightest;
+  display: block;
+  padding: 16px 16px;
+  border: 1px solid $color-grey-light;
+  border-radius: 3px;
+  max-width: 100%;
+  overflow: hidden;
+  overflow-x: auto;
+  margin-bottom: $grid * 3;
+}
+
+.code-block {
+  color: $color-pink;
+  display: inline-block;
+  display: block;
+  max-width: 100%;
+  overflow: hidden;
+  overflow-x: auto;
+  margin-bottom: $grid * 3;
+
+  pre, .hljs {
+    color: inherit;
+    background-color: transparent;
+    margin: 0;
+    padding: 16px 16px;
+    border: none;
+    margin-bottom: 0;
+  }
+}
+
+/**
+ * Highlight.js Overrides
+ */
+
+/*.code-block .hljs,*/
+.hljs-subst {
+  color: $color-grey-mid;
+}
+
+.hljs-tag {
+  color: $color-pink-light;
+}
+
+.hljs-name, .hljs-attr {
+  font-weight: normal;
+  color: $color-pink;
+}
+
+// .css {
+//   color: $color-yellow-access;
+// }
+
+.javascript {
+  color: $color-blue-bright;
+}
+
+.hljs-keyword {
+  color: $color-purple;
+}
+
+.hljs-comment {
+  color: $color-grey-mid;
+  display: inline-block;
+  // padding-top: $grid * 3;
+  // padding-bottom: $grid;
+}
+
+pre > code:first-of-type > .hljs-comment {
+  padding-top: 0;
+}
+
+.hljs-type, .hljs-string, .hljs-number, .hljs-selector-id,
+.hljs-selector-class, .hljs-quote, .hljs-template-tag, .hljs-deletion {
+  color: $color-purple;
+}
+
+.hljs-built_in {
+  color: $color-grey-dark;
+}

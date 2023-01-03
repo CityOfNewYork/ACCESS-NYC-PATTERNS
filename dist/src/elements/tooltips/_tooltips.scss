@@ -1,0 +1,31 @@
+/**
+ * Tooltips
+ */
+
+// Dependencies
+@import 'canyc/tooltips';
+@import 'canyc/colors';
+@import 'canyc/fonts';
+@import 'canyc/dimensions';
+
+// Declarations
+.tooltip {
+  font-size: $font-size-small;
+  background-color: $color-white;
+  box-shadow: map-get(map-get($tokens, 'shadows'), 'up');
+
+  z-index: 3;
+
+  max-width: 100%;
+  width: $tooltip-width;
+  padding: $grid-base * 2;
+
+  @media screen and (min-width: $screen-tablet) {
+    padding: $grid-base * 3;
+  }
+
+  *:last-child {
+    margin-bottom: 0;
+    padding-bottom: 0;
+  }
+}

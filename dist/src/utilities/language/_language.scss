@@ -1,0 +1,13 @@
+/**
+ * Language
+ */
+
+// Dependencies
+@use 'config/tokens';
+
+// Declarations
+@each $lang in map-get(tokens.$tokens, 'rtl-languages') {
+  :lang(#{$lang}) {
+    direction: rtl;
+  }
+}

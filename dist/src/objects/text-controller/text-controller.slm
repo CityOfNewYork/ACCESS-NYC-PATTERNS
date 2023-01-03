@@ -1,0 +1,78 @@
+/
+/ Text Controller
+/
+
+div class='o-text-controller' data-js='text-controller'
+  button type='button' class='o-text-controller__control mb-1 btn-link' data-js='text-controller__control' aria-controls='aria-c-text-controller__options' aria-expanded='false'
+    svg class='o-text-controller__icon o-text-controller__icon-full icon-ui icon-3' aria-hidden='true'
+      use xlink:href='#icon-ui-settings'
+
+    svg class='o-text-controller__icon o-text-controller__icon-short icon-ui icon-3' aria-hidden='true'
+      use xlink:href='#icon-ui-translate'
+
+    span class='o-text-controller__title-full' Translate & Adjust Text
+
+    span class='o-text-controller__title-short' Translate Text
+
+  div#aria-c-text-controller__options class='o-text-controller__options hidden' aria-hidden='true'
+    div class='o-text-controller__languages'
+      div class='wpml-ls-statics-shortcode_actions wpml-ls wpml-ls-legacy-list-horizontal'
+        ul
+          li class='wpml-ls-slot-shortcode_actions wpml-ls-item wpml-ls-item-en wpml-ls-current-language wpml-ls-first-item wpml-ls-item-legacy-list-horizontal'
+            a href='#' class='wpml-ls-link' tabindex='-1'
+              span class='wpml-ls-native' English
+
+          li class='wpml-ls-slot-shortcode_actions wpml-ls-item wpml-ls-item-es wpml-ls-item-legacy-list-horizontal'
+            a href='#' class='wpml-ls-link' tabindex='-1'
+              span class='wpml-ls-native' Español
+
+          li class='wpml-ls-slot-shortcode_actions wpml-ls-item wpml-ls-item-ru wpml-ls-item-legacy-list-horizontal'
+            a href='#' class='wpml-ls-link' tabindex='-1'
+              span class='wpml-ls-native' Русский
+
+          li class='wpml-ls-slot-shortcode_actions wpml-ls-item wpml-ls-item-ko wpml-ls-item-legacy-list-horizontal'
+            a href='#' class='wpml-ls-link' tabindex='-1'
+              span class='wpml-ls-native' 한국어
+
+          li class='wpml-ls-slot-shortcode_actions wpml-ls-item wpml-ls-item-ar wpml-ls-item-legacy-list-horizontal'
+            a href='#' class='wpml-ls-link' tabindex='-1'
+              span class='wpml-ls-native' العربية
+
+          li class='wpml-ls-slot-shortcode_actions wpml-ls-item wpml-ls-item-ht wpml-ls-item-legacy-list-horizontal'
+            a href='#' class='wpml-ls-link' tabindex='-1'
+              span class='wpml-ls-native' Kreyol
+
+          li class='wpml-ls-slot-shortcode_actions wpml-ls-item wpml-ls-item-zh-hant wpml-ls-item-legacy-list-horizontal'
+            a href='#' class='wpml-ls-link' tabindex='-1'
+              span class='wpml-ls-native' 繁體中文
+
+          li class='wpml-ls-slot-shortcode_actions wpml-ls-item wpml-ls-item-fr wpml-ls-item-legacy-list-horizontal'
+            a href='#' class='wpml-ls-link' tabindex='-1'
+              span class='wpml-ls-native' Français
+
+          li class='wpml-ls-slot-shortcode_actions wpml-ls-item wpml-ls-item-pl wpml-ls-item-legacy-list-horizontal'
+            a href='#' class='wpml-ls-link' tabindex='-1'
+              span class='wpml-ls-native' polski
+
+          li class='wpml-ls-slot-shortcode_actions wpml-ls-item wpml-ls-item-ur wpml-ls-item-legacy-list-horizontal'
+            a href='#' class='wpml-ls-link' tabindex='-1'
+              span class='wpml-ls-native' اردو
+
+          li class='wpml-ls-slot-shortcode_actions wpml-ls-item wpml-ls-item-bn wpml-ls-last-item wpml-ls-item-legacy-list-horizontal'
+            a href='#' class='wpml-ls-link' tabindex='-1'
+              span class='wpml-ls-native' বাংলা
+
+    div class='o-text-controller__sizer'
+      span class='o-text-controller__sizer-text' Adjust text size
+
+      button class='o-text-controller__sizer-btn btn-text' data-js='text-larger' tabindex='-1'
+        svg class='icon icon-ui icon-3 mr-0' tabindex='-1'
+          use xlink:href='#icon-ui-plus-circle'
+
+        div class='sr-only' Larger
+
+      button class='o-text-controller__sizer-btn btn-text' data-js='text-smaller' tabindex='-1'
+        svg class='icon icon-ui icon-3 mr-0' tabindex='-1'
+          use xlink:href='#icon-ui-minus-circle'
+
+        div class='sr-only' Smaller

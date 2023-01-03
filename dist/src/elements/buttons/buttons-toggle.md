@@ -1,0 +1,1 @@
+Toggle Button Elements are used to change the state or appearance of another target element. This example uses the JavaScript [Toggle Utility](/toggle) for interactivity and accessibility. Additionally, refer to the [Toggle Utility documentation](/toggle) for different toggling animation options.

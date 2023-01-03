@@ -1,0 +1,1 @@
+The Vue Card is a packaged Card Component for Vue.js applications. It encapselates markup, accessibility, and data-binding for a fully functional component. See [Vue Component Usage](#vue-component-usage) below for details on content and configuration that can be passed as properties to the component.

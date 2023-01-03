@@ -1,0 +1,1 @@
+Tag Button Elements are associated with related programs. Clicking on a tag should bring up the programs page filtered to the appropriate tag.

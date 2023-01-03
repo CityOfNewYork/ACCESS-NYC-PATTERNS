@@ -1,0 +1,1 @@
+The Disclaimer Component's visibility can be toggled based on the visibility of another component on the page. It uses the `aria-describedby` attribute to select the disclaimer and reveal it.

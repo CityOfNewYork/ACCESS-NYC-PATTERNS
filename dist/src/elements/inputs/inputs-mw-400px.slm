@@ -1,0 +1,6 @@
+/
+/ Inputs 400px
+/
+
+div class='screen-tablet:input-w-400px'
+  input type='text'

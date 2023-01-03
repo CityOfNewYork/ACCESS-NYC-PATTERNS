@@ -1,0 +1,20 @@
+<svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g fill="transparent">
+<circle cx="18.5" cy="19.5" r="15.5" fill="#EDEDF0"/>
+<path d="M10.75 32.9234C8.98722 31.9057 7.44215 30.5507 6.20302 28.9358C4.9639 27.3209 4.05497 25.4778 3.52815 23.5117C3.00133 21.5456 2.86692 19.4949 3.13261 17.4768C3.39829 15.4588 4.05886 13.5128 5.07661 11.75C6.09435 9.98721 7.44934 8.44215 9.0642 7.20302C10.6791 5.9639 12.5222 5.05497 14.4883 4.52815C16.4544 4.00133 18.5051 3.86692 20.5232 4.13261C22.5412 4.39829 24.4872 5.05886 26.25 6.07661L10.75 32.9234Z" fill="white"/>
+<rect width="1" height="10.3489" transform="matrix(-0.948741 -0.316056 -0.316056 0.948741 22.2196 10.3161)" fill="#9425A8"/>
+<circle cx="18.5" cy="19.5" r="14.5" stroke="black" stroke-width="2"/>
+<rect x="26.1726" y="13.8205" width="1.63459" height="9.72054" transform="rotate(54.2071 26.1726 13.8205)" fill="black"/>
+<rect x="18.4379" y="19.4479" width="1.63459" height="5.27388" transform="rotate(117.195 18.4379 19.4479)" fill="black"/>
+<circle cx="18.5256" cy="20.0301" r="1.64014" fill="black"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M19 7L19 10L18 10L18 7L19 7Z" fill="black"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M18 32L18 29L19 29L19 32L18 32Z" fill="black"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M31 20L28 20L28 19L31 19L31 20Z" fill="black"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M6 19L9 19L9 20L6 20L6 19Z" fill="black"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M10.0147 10.3076L12.136 12.4289L11.4289 13.136L9.3076 11.0147L10.0147 10.3076Z" fill="black"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M9.30762 27.9853L11.4289 25.864L12.136 26.5711L10.0147 28.6924L9.30762 27.9853Z" fill="black"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M27.6924 11.0147L25.5711 13.136L24.864 12.4289L26.9853 10.3076L27.6924 11.0147Z" fill="black"/>
+<rect x="26.8" y="19" width="8.4" height="10.0588" fill="#9425A8"/>
+<path d="M31 38L23.2058 27.1029L38.7942 27.1029L31 38Z" fill="#9425A8"/>
+</g>
+</svg>

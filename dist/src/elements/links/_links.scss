@@ -1,0 +1,52 @@
+/**
+ * Links
+ */
+
+// Dependencies
+@import 'config/';
+@import 'canyc/cdn';
+@import 'canyc/colors';
+@import 'canyc/direction';
+// @import 'bourbon/app/assets/stylesheets/addons/triangle';
+
+// Declarations
+a, .btn-link, .button-link {
+  text-decoration: underline;
+  transition: color .2s ease-in;
+}
+
+.link-more {
+  &:after {
+    content: '';
+    display: inline-block;
+    // @include triangle(.6em .4em, $color-blue-dark, $text-direction-end);
+    margin-inline-start: .3em;
+  }
+}
+
+.link-back {
+  &:before {
+    content: '';
+    display: inline-block;
+    // @include triangle(.6em .4em, $color-blue-dark, $text-direction-start);
+    margin-inline-end: .3em;
+  }
+}
+
+.links-invert a,
+.links-invert .btn-link {
+  text-decoration: underline;
+  transition: color .2s ease-in;
+}
+
+.links-invert .link-more {
+  &:after {
+    // @include triangle(.6em .4em, $color-white, $text-direction-end);
+  }
+}
+
+.links-invert .link-back {
+  &:before {
+    // @include triangle(.6em .4em, $color-white, $text-direction-start);
+  }
+}

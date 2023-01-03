@@ -1,0 +1,12 @@
+/
+/ Checkboxes
+/
+
+/ Set the value to the default sitewide value
+- if (typeof value === 'undefined' || !value)
+  - value = this.defaults.checkboxes;
+
+label class='checkbox' for='${value.id}'
+  input type='checkbox' id='${value.id}' value='${value.value}' name='${value.name}'
+  span class='checkbox__label'
+    = value.label;

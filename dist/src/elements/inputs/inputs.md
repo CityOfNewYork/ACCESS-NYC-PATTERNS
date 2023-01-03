@@ -1,0 +1,1 @@
+The Input Element follows the styling and usage guidelines of the [U.S. Web Design System’s Form Control](https://designsystem.digital.gov/components/form-controls/).

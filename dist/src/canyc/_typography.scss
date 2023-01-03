@@ -1,0 +1,245 @@
+// //
+// // Mixins
+// //
+
+// // Dependencies
+// @use 'canyc/tokens';
+// @use 'canyc/fonts';
+// @use 'canyc/media';
+// @use 'canyc/direction';
+
+// $leading: map-get(tokens.$tokens, 'leading');
+
+// // Declarations
+// @mixin typography-jumbo() {
+//   font-weight: fonts.$font-weight-normal;
+//   font-size: #{fonts.$font-size-largest};
+//   line-height: map-get($leading, 'medium');
+//   font-family: fonts.$font-family-serif;
+
+//   // @media screen and (min-width: media.$screen-tablet) {
+//   @include media.screen-and-min-width('screen-tablet') {
+//     font-size: fonts.$font-size-jumbo
+//   }
+// }
+
+// @mixin typography-h1() {
+//   font-weight: fonts.$font-weight-normal;
+//   font-size: #{fonts.$font-size-larger};
+//   line-height: map-get($leading, 'medium');
+//   font-family: fonts.$font-family-serif;
+
+//   // @media screen and (min-width: media.$screen-tablet) {
+//   @include media.screen-and-min-width('screen-tablet') {
+//     font-size: fonts.$font-size-largest
+//   }
+// }
+
+// @mixin typography-h2() {
+//   font-weight: fonts.$font-weight-bold;
+//   font-size: #{fonts.$font-size-larger};
+//   line-height: map-get($leading, 'medium');
+//   font-family: fonts.$font-family-serif
+// }
+
+// @mixin typography-h3() {
+//   font-weight: fonts.$font-weight-bold;
+//   font-size: #{fonts.$font-size-large};
+//   line-height: map-get($leading, 'medium');
+//   font-family: fonts.$font-family-serif
+// }
+
+// @mixin typography-h4() {
+//   font-weight: fonts.$font-weight-bold;
+//   font-size: #{fonts.$font-size-medium};
+//   line-height: map-get($leading, 'medium');
+//   font-family: fonts.$font-family-sans
+// }
+
+// @mixin typography-h5() {
+//   font-weight: fonts.$font-weight-normal;
+//   font-size: #{fonts.$font-size-normal};
+//   line-height: map-get($leading, 'medium');
+//   font-family: fonts.$font-family-sans
+// }
+
+// @mixin typography-lead() {
+//   font: #{fonts.$font-size-normal}/#{map-get($leading, 'medium')} fonts.$font-family-serif;
+
+//   // @media screen and (min-width: media.$screen-tablet) {
+//   @include media.screen-and-min-width('screen-tablet') {
+//     font-size: fonts.$font-size-larger;
+//   }
+// }
+
+// @mixin typography-exposition() {
+//   font-size: #{fonts.$font-size-base};
+//   line-height: map-get($leading, 'medium');
+//   font-family: fonts.$font-family-serif;
+
+//   // @media screen and (min-width: media.$screen-tablet) {
+//   @include media.screen-and-min-width('screen-tablet') {
+//     font-size: fonts.$font-size-larger
+//   }
+// }
+
+// @mixin typography-base() {
+//   font-size: #{fonts.$font-size-base};
+//   line-height: map-get($leading, 'large');
+// }
+
+// @mixin typography-supplemental() {
+//   font-weight: fonts.$font-weight-normal;
+//   font-size: #{fonts.$font-size-normal};
+//   line-height: map-get($leading, 'medium');
+//   font-family: fonts.$font-family-sans;
+// }
+
+// @mixin typography-nav() {
+//   font-weight: fonts.$font-weight-normal;
+//   font-size: #{fonts.$font-size-small};
+//   line-height: map-get($leading, 'medium');
+//   font-family: fonts.$font-family-sans;
+
+//   // @media screen and (min-width: media.$screen-tablet) {
+//   @include media.screen-and-min-width('screen-tablet') {
+//     font-size: fonts.$font-size-normal
+//   }
+// }
+
+// @mixin typography-blockquote() {
+//   font-size: #{fonts.$font-size-large};
+//   line-height: map-get($leading, 'medium');
+//   font-family: fonts.$font-family-serif;
+// }
+
+// @mixin typography-program-subheading() {
+//   font-weight: fonts.$font-weight-normal;
+//   font-size: #{fonts.$font-size-small};
+//   line-height: map-get($leading, 'medium');
+//   font-family: fonts.$font-family-sans
+// }
+
+// @mixin typography-disclaimer-small() {
+//   font-size: fonts.$font-size-xsmall;
+//   line-height: map-get($leading, 'large');
+// }
+
+// @mixin typography-print() {
+//   font-size: fonts.$font-size-print;
+// }
+
+//
+// Variables, Functions, and Mixins
+//
+
+// Dependencies
+@use 'config/tokens' as *;
+@use 'config/language';
+
+// Declarations
+$typography: map-get($tokens, 'typography');
+
+$font-family: map-get($tokens, 'fontFamily');
+$font-size: map-get($tokens, 'fontSize');
+$font-weight: map-get($tokens, 'fontWeight');
+$font-style: map-get($tokens, 'fontStyle');
+$line-height: map-get($tokens, 'lineHeight');
+
+/**
+ * Get a token value from the $typography set
+ *
+ * @param   {String}  $token  A token within the typography set
+ *
+ * @return  {Mixed}           The token value
+ */
+@function get($token) {
+  @return map-get($typography, $token);
+}
+
+/**
+ * Get font family value by token in tokens config
+ *
+ * @param   {String}  $key  The font family token
+ *
+ * @return  {String}        The font family value
+ */
+@function get-font-family($key: 'body') {
+  $font-family-key: '--nyco-fontFamily-#{$key}-#{language.$language}';
+
+  @if language.$language == '' {
+    $font-family-key: '--nyco-fontFamily-#{$key}';
+  }
+
+  @return var(#{$font-family-key});
+}
+
+/**
+ * Render the font family using get-font-family by token
+ *
+ * @param  {String}  $key  The font family token
+ */
+@mixin font-family($token: 'body') {
+  font-family: get-font-family($token);
+}
+
+/**
+ * Render all font attributes by token
+ *
+ * @param  {String}  $key  The font set token
+ */
+@mixin set($key: 'body') {
+  @include font-family($key);
+
+  font-size: map-get($font-size, $key);
+  font-weight: map-get($font-weight, $key);
+  font-style: map-get($font-style, $key);
+  line-height: map-get($line-height, $key);
+}
+
+/**
+ * Render all font attributes by token
+ *
+ * @param  {String}  $key  The font set token
+ */
+@mixin features($key: 'body') {
+  font-size: map-get($font-size, $key);
+  font-weight: map-get($font-weight, $key);
+  font-style: map-get($font-style, $key);
+  line-height: map-get($line-height, $key);
+}
+
+
+/**
+ * Render styling within body type element selectors
+ */
+@mixin selector-body-elements() {
+  p, ul, ol, li, th, td {
+    @content;
+  }
+}
+
+/**
+ * Render styling within list type element selectors
+ */
+@mixin selector-lists() {
+  ul, ol {
+    @content;
+  }
+}
+
+/**
+ * Render font smoothing attributes
+ */
+@mixin font-smooth() {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/**
+ * Render default font smoothing (unset font smoothing) attributes
+ */
+@mixin font-smooth-auto() {
+  -webkit-font-smoothing: auto;
+  -moz-osx-font-smoothing: auto;
+}

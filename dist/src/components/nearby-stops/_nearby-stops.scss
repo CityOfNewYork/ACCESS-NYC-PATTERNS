@@ -1,0 +1,44 @@
+/**
+ * Nearby-stops
+ */
+
+// Dependencies
+@import 'canyc/dimensions';
+@import 'canyc/fonts';
+@import 'canyc/media';
+
+// Declarations
+.c-nearby-stops { }
+
+.c-nearby-stops__stop {
+  margin-bottom: $grid-base;
+  display: block;
+
+  @media screen and (min-width: $screen-mobile) {
+    display: flex;
+    align-items: center;
+  }
+}
+
+.c-nearby-stops__subway {
+  margin-right: calc(#{$grid-base} / 2);
+}
+
+.c-nearby-stops__description {
+  font-size: $font-size-small;
+  display: block;
+  margin-top: calc(#{$grid-base} / 2);
+
+  @media screen and (min-width: $screen-mobile) {
+    margin-left: auto;
+    margin-top: 0;
+  }
+}
+
+a.c-nearby-stops__stop {
+  text-decoration: none;
+}
+
+a .c-nearby-stops__description {
+  text-decoration: underline;
+}

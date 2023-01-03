@@ -1,0 +1,6 @@
+/
+/ Input Currency Error
+/
+
+div class='error input-currency-usd'
+  input type='text' aria-invalid='true'

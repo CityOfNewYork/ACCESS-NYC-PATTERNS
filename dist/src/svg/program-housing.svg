@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="100%" height="100%" viewBox="0 0 42 44" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 51.3 (57544) - http://www.bohemiancoding.com/sketch -->
+    <title>icon-housing-v2</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="icon-housing-v2" transform="translate(-4.000000, -2.000000)" fill-rule="nonzero">
+            <rect id="Rectangle" x="0" y="0" width="48" height="48"></rect>
+            <polygon id="Shape" fill="currentColor" points="27 46 4 46 4 31.1685 15.5 23 26.8544 31.0124 27 31.1685"></polygon>
+            <polygon id="Shape" fill="#FFFFFF" points="10 39 10 43 14 43 14 39"></polygon>
+            <polygon id="Shape" fill="#FFFFFF" points="10 32 10 36 14 36 14 32"></polygon>
+            <polygon id="Shape" fill="#FFFFFF" points="17 39 17 43 21 43 21 39"></polygon>
+            <polygon id="Shape" fill="#FFFFFF" points="17 32 17 36 21 36 21 32"></polygon>
+            <polygon id="Shape" fill="currentColor" points="44 4 25 4 25 46 44 46"></polygon>
+            <polygon id="Shape" fill="#FFFFFF" points="40 39 36 39 36 43 40 43"></polygon>
+            <polygon id="Shape" fill="#FFFFFF" points="33 39 29 39 29 43 33 43"></polygon>
+            <polygon id="Shape" fill="#FFFFFF" points="40 31 36 31 36 35 40 35"></polygon>
+            <polygon id="Shape" fill="#FFFFFF" points="33 31 29 31 29 35 33 35"></polygon>
+            <polygon id="Shape" fill="#FFFFFF" points="40 23 36 23 36 27 40 27"></polygon>
+            <polygon id="Shape" fill="#FFFFFF" points="33 23 29 23 29 27 33 27"></polygon>
+            <polygon id="Shape" fill="#FFFFFF" points="40 15 36 15 36 19 40 19"></polygon>
+            <polygon id="Shape" fill="#FFFFFF" points="33 15 29 15 29 19 33 19"></polygon>
+            <polygon id="Shape" fill="#FFFFFF" points="40 7 36 7 36 11 40 11"></polygon>
+            <polygon id="Shape" fill="#FFFFFF" points="33 7 29 7 29 11 33 11"></polygon>
+            <rect id="Rectangle-path" fill="currentColor" x="23" y="2" width="23" height="2"></rect>
+        </g>
+    </g>
+</svg>

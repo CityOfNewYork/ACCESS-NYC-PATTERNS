@@ -1,0 +1,20 @@
+/**
+ * Select
+ */
+
+// Dependencies
+@import 'config/';
+@import 'canyc/selects';
+
+// Declarations
+.select {
+  @include selects();
+
+  @media screen and (min-width: $screen-tablet) {
+    width: auto;
+  }
+
+  .c-question__container.error & {
+    border-color: $color-red;
+  }
+}

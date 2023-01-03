@@ -1,0 +1,5 @@
+/
+/ Track
+/
+
+a data-js='track' data-track-key='Click' data-track-data='[{"event": "sample-event"}]' Track Click

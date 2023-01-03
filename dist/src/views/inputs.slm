@@ -1,0 +1,61 @@
+/ Layout
+= extend('/slm/layouts/default');
+
+/ Component
+- title = 'Inputs';
+
+/ Partials
+= partial('/slm/partials/styles.slm');
+= partial('/slm/partials/links.slm');
+= partial('/slm/partials/head.mixin.slm');
+= partial('/slm/partials/content-header.mixin.slm');
+= partial('/slm/section/section.mixin.slm');
+= partial('/slm/section/section-text.mixin.slm');
+
+/ Content blocks
+= content('head');
+  = mixin('head', title);
+
+= content('header');
+  = mixin('header', title);
+
+= content('content');
+  = mixin('content-header', title);
+
+  - input__id = false;
+  - input__name = false;
+
+  = mixin('section', false, 'elements/inputs/inputs');
+  = mixin('section', 'Input Error', 'elements/inputs/inputs-error');
+  = mixin('section', 'Min-width 400px', 'elements/inputs/inputs-mw-400px');
+  = mixin('section', 'Number', 'elements/inputs/inputs-number');
+  = mixin('section', 'US Currency', 'elements/inputs/inputs-currency-usd');
+  = mixin('section', 'US Currency Error', 'elements/inputs/inputs-currency-usd-error');
+  = mixin('section', 'US Phone', 'elements/inputs/inputs-phone-us');
+  = mixin('section', 'US Phone Error', 'elements/inputs/inputs-phone-us-error');
+  = mixin('section', 'Search', 'elements/inputs/inputs-search');
+  / = mixin('section', 'Autocomplete', 'elements/inputs/inputs-autocomplete');
+  / = mixin('section-text', 'Autocomplete Usage', 'elements/inputs/inputs-autocomplete.readme');
+
+= content('script');
+  / javascript:
+  /   var autocomplete = access.inputsAutocomplete({
+  /       // Providing a callback for the selected event.
+  /       selected: function(value) {
+  /           console.dir('Selected ' + value + '!');
+  /         }
+  /     });
+
+  /   // Updating dropdown options post instantiation.
+  /   autocomplete.options([
+  /     ['Bronx', 'Hunts Point', 'Arthur Avenue', 'Riverside', 'Mott Haven'],
+  /     ['Queens', 'Corona', 'East Elmhurst', 'Forest Hills', 'Fresh Pond'],
+  /     ['Brooklyn', 'Flatbush', 'Bay Ridge', 'DUMBO', 'Williamsburg'],
+  /     ['Staten Island', 'South Beach', 'Fort Wadsworth', 'Todt Hill', 'Great Kills'],
+  /     ['Manhattan', 'Lower', 'Midtown', 'Chinatown', 'SoHo']
+  /   ]);
+
+  /   // Updating strings used by the
+  /   autocomplete.strings({
+  /     'OPTION_SELECTED': '{{ VALUE }} is selected!'
+  /   });

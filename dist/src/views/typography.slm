@@ -1,0 +1,33 @@
+/ Layout
+= extend('/slm/layouts/default');
+
+/ Component
+- title = 'Typography';
+
+/ Partials
+= partial('/slm/partials/styles.slm');
+= partial('/slm/partials/links.slm');
+= partial('/slm/partials/head.mixin.slm');
+= partial('/slm/partials/content-header.mixin.slm');
+= partial('/slm/section/section.mixin.slm');
+= partial('/slm/section/section-text.mixin.slm');
+
+/ Content blocks
+= content('head');
+  = mixin('head', title);
+
+= content('header');
+  = mixin('header', title);
+
+= content('content');
+  = mixin('content-header', title);
+  = mixin('section', 'Heading 1', 'utilities/typography/typography-h1');
+  = mixin('section', 'Heading 2', 'utilities/typography/typography-h2');
+  = mixin('section', 'Heading 3', 'utilities/typography/typography-h3');
+  = mixin('section', 'Heading 4', 'utilities/typography/typography-h4');
+  = mixin('section', 'Heading 5', 'utilities/typography/typography-h5');
+  = mixin('section', 'Jumbo', 'utilities/typography/typography-jumbo');
+  = mixin('section', 'Small', 'utilities/typography/typography-small');
+  = mixin('section', 'Blockquote', 'utilities/typography/typography-blockquote');
+  = mixin('section', 'Exposition', 'utilities/typography/typography-exposition');
+  = mixin('section', 'Supplemental', 'utilities/typography/typography-supplemental');

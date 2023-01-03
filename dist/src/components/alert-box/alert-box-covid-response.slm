@@ -1,0 +1,8 @@
+article class='c-alert-box color-covid-response-status'
+  div class='c-alert-box__icon'
+    svg class='c-alert-box__svg icon icon-4 icon-info'
+      use xlink:href='#icon-info'
+
+  div class='c-alert-box__body'
+    p
+      | <strong><a href="https://access.nyc.gov/coronavirus-covid-19-updates/">COVID-19 updates related to benefits, food, housing, unemployment</a></strong>
