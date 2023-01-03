@@ -1,0 +1,44 @@
+/**
+ * Icons
+ */
+
+// Dependencies
+@import 'config/';
+@import 'canyc/cdn';
+@import 'canyc/icons';
+@import 'canyc/media';
+@import 'canyc/dimensions';
+@import 'canyc/fonts';
+@import 'scss/functions/str-replace';
+
+// Declarations
+[class*='icon-'] {
+  overflow: visible !important;
+  max-width: 100%;
+}
+
+[class*='bg-icon-'] {
+  display: inline-block;
+}
+
+@each $key, $var in map-get($tokens, 'icons-with-dimensions') {
+  $path: $key;
+
+  @each $str in map-get($tokens, 'icons-variants') {
+    $path: str-replace($path, $str);
+  }
+
+  .#{$key} {
+    width: nth($var, 1) !important;
+    height: nth($var, 2) !important;
+  }
+}
+
+@import 'elements/icons/icons-checklist';
+@import 'elements/icons/icons-subway';
+@import 'elements/icons/icons-ui';
+
+// Create our responsive icon size utilty
+@include screens {
+  @include iconSizes($variant);
+}

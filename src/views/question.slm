@@ -1,0 +1,40 @@
+/ Layout
+= extend('/slm/layouts/default');
+
+/ Component
+- title = 'Question';
+
+/ Partials
+= partial('/slm/partials/styles.slm');
+= partial('/slm/partials/links.slm');
+= partial('/slm/partials/head.mixin.slm');
+= partial('/slm/partials/content-header.mixin.slm');
+= partial('/slm/section/section.mixin.slm');
+= partial('/slm/section/section-text.mixin.slm');
+
+/ Content blocks
+= content('head');
+  = mixin('head', title);
+
+= content('header');
+  = mixin('header', title);
+
+= content('content');
+  form id='question-demo'
+    = mixin('content-header', title);
+    = mixin('section-text', false, 'components/question/question');
+    = mixin('section', 'Number Question', 'components/question/question-number');
+    = mixin('section', 'Text Question', 'components/question/question-text');
+    = mixin('section', 'Multiple Choice Question', 'components/question/question-multiple-choice');
+    = mixin('section', 'Toggle Question', 'components/question/question-toggle');
+    = mixin('section', 'Select Question', 'components/question/question-select');
+    = mixin('section', 'Radio Question', 'components/question/question-radio');
+    = mixin('section-text', 'Question Usage', 'components/question/question.readme');
+
+= content('script');
+  javascript:
+    access.tooltips();
+    access.valid('#question-demo', function(event) {
+      event.preventDefault();
+      return false;
+    });

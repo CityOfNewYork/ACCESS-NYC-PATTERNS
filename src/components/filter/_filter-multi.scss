@@ -1,0 +1,134 @@
+/**
+ * Filter Multi
+ */
+
+// Dependencies
+@import 'config/';
+@import 'canyc/accessibility';
+@import 'canyc/colors';
+@import 'canyc/buttons';
+@import 'canyc/dimensions';
+@import 'canyc/direction';
+@import 'canyc/fonts';
+@import 'canyc/media';
+// @import 'bourbon/app/assets/stylesheets/addons/triangle';
+
+// Declarations
+.c-filter-multi {
+
+}
+
+.c-filter-multi__list {
+  padding: 0;
+  // padding-inline-start: 3px; // accomodate checkbox
+  list-style: none;
+  margin: 0
+}
+
+.c-filter-multi__item {
+  border-bottom: 1px solid $color-grey-light;
+  font-weight: $font-weight-bold;
+  padding: ($grid-base * 2) 0;
+  margin: 0;
+
+  &:last-child {
+    border: 0;
+  }
+
+  @media screen and (min-width: $screen-tablet) {
+    padding: $spacing-base 0;
+  }
+}
+
+@mixin c-filter-multi__item-header-toggle {
+  // @include triangle(.6em .4em, $color-blue, up);
+  border-top: 0
+}
+
+.c-filter-multi__item-header {
+  &[type='button'] {
+    appearance: none;
+    background: transparent;
+    color: inherit;
+    font-size: inherit;
+    font-family: inherit;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+
+    .c-filter-multi__item-header-toggle {
+      pointer-events: none;
+    }
+  }
+
+  font-weight: bold;
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+
+  .c-filter-multi__item-header-collapse {
+    display: none
+  }
+
+  &.active {
+    .c-filter-multi__item-header-toggle::after {
+      @include c-filter-multi__item-header-toggle
+    }
+  }
+}
+
+.c-filter-multi__item-header-toggle {
+  font-size: inherit;
+  padding: .5 * $spacing-base;
+  border: none;
+  cursor: pointer;
+
+  &::after {
+    width: 0;
+    height: 0;
+    content: '';
+    float: $text-direction-end;
+    // @include triangle(.6em .4em, $color-blue, down);
+  }
+
+  &.active::after {
+    @include c-filter-multi__item-header-toggle
+  }
+}
+
+.c-filter-multi__item-header-expand,
+.c-filter-multi__item-header-collapse {
+  @include sr-only
+}
+
+.c-filter-multi__item-group {
+  transition: max-height .4s ease-in;
+  max-height: 0;
+  overflow: hidden;
+
+  &.active {
+    max-height: 3000px
+  }
+}
+
+.c-filter-multi__item-group-list {
+  list-style: none;
+  margin: 0;
+  padding: 0
+}
+
+.c-filter-multi__item-group-subitem {
+  font-size: $font-size-small;
+  font-weight: $font-weight-normal;
+  margin: (.5 * $spacing-base) 0;
+  min-height: map-get(map-get($tokens, 'inputs'), 'checkbox-size');
+
+  a {
+    cursor: pointer
+  }
+
+  &:last-child {
+    margin-bottom: 0
+  }
+}

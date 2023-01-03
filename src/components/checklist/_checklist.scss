@@ -1,0 +1,77 @@
+/**
+ * Checklist
+ */
+
+// Dependencies
+@use 'canyc/tokens';
+@use 'canyc/cdn';
+
+$icons: map-get(tokens.$tokens, 'icons-checklist');
+
+// Declarations
+@mixin checklist {
+  list-style: none;
+  padding: 0;
+
+  *:last-child {
+    margin-bottom: 0;
+    padding-bottom: 0;
+  }
+
+  li {
+    padding-bottom: calc(var(--nyco-grid) * 3);
+  }
+
+  > li {
+    padding-inline-start: calc(30px + calc(var(--nyco-grid) * 1.5));
+    background-image: url('#{cdn.$cdn}#{cdn.$path-to-images}#{map-get($icons, 'icon-check')}');
+    background-position: $text-direction-start top;
+    background-repeat: no-repeat;
+    background-size: auto 30px;
+  }
+
+  // Nested lists
+  ul, ol {
+    margin-top: calc(var(--nyco-grid) * 3);
+    padding-inline-start: calc(var(--nyco-grid) * 3);
+
+    padding-bottom: 0;
+    margin-bottom: 0;
+  }
+
+  ul > li,
+  ol > li {
+    list-style-type: disc;
+    background-image: none !important;
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+
+.c-checklist {
+  @include checklist;
+}
+
+ul.c-checklist li {
+  margin-bottom: 0;
+}
+
+.c-checklist__item-application {
+  background-image: url('#{cdn.$cdn}#{cdn.$path-to-images}#{map-get($icons, 'icon-application')}') !important
+}
+
+.c-checklist__item-badge {
+  background-image: url('#{cdn.$cdn}#{cdn.$path-to-images}#{map-get($icons, 'icon-badge')}') !important
+}
+
+.c-checklist__item-flag {
+  background-image: url('#{cdn.$cdn}#{cdn.$path-to-images}#{map-get($icons, 'icon-flag')}') !important
+}
+
+.c-checklist__item-calendar {
+  background-image: url('#{cdn.$cdn}#{cdn.$path-to-images}#{map-get($icons, 'icon-calendar')}') !important
+}
+
+.c-checklist__item-generic {
+  background-image: url('#{cdn.$cdn}#{cdn.$path-to-images}#{map-get($icons, 'icon-generic')}') !important
+}

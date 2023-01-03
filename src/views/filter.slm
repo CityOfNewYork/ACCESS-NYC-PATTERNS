@@ -1,0 +1,37 @@
+/ Layout
+= extend('/slm/layouts/default');
+
+/ Component
+- title = 'Filter';
+
+/ Partials
+= partial('/slm/partials/styles.slm');
+= partial('/slm/partials/links.slm');
+= partial('/slm/partials/head.mixin.slm');
+= partial('/slm/partials/content-header.mixin.slm');
+= partial('/slm/section/section.mixin.slm');
+= partial('/slm/section/section-text.mixin.slm');
+
+/ Content blocks
+= content('head');
+  = mixin('head', title);
+
+= content('header');
+  = mixin('header', title);
+
+= content('content');
+  = mixin('content-header', title);
+
+  = mixin('section', false, 'components/filter/filter');
+  = mixin('section', 'Multi Filter', 'components/filter/filter-multi');
+  = mixin('section-text', 'Filter Usage', 'components/filter/filter.readme');
+
+  = mixin('section', 'Vue Filter', 'components/filter/filter.vue');
+  = mixin('section', 'Vue Multi Filter', 'components/filter/filter-multi.vue');
+  = mixin('section-text', 'Vue Component Usage', 'components/filter/filter.readme.vue');
+
+= content('script');
+  javascript:
+    access.filter();
+    VueComponents.filter();
+    VueComponents.filter('c-filter-multi');

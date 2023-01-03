@@ -1,0 +1,118 @@
+/ Layout
+= extend('/slm/layouts/default');
+
+/ Partials
+= partial('/slm/partials/styles.slm');
+= partial('/slm/partials/links.slm');
+= partial('/slm/partials/head.mixin.slm');
+= partial('/slm/section/demo-specs.mixin.slm');
+= partial('/slm/section/demo-block.mixin.slm');
+
+/ Content blocks
+= content('head');
+  = mixin('head');
+
+= content('header');
+  = mixin('header', 'Welcome to the ACCESS NYC Patterns Guide');
+
+= content('content');
+  section
+    div class='page-wrapper layout-home-body px-2'
+      div
+        div class='o-banner my-0 w-full color-light-background p-0'
+          div class='o-banner__inner max-w-full'
+            h1 class='o-banner__title px-2 screen-desktop:px-4'
+              | The Patterns of ACCESS NYC are a shared vocabulary between the code, design, and user interface (UI) of <a href='https://access.nyc.gov'>ACCESS NYC</a>.
+
+            hr class='divider border-blue'
+
+            p class='px-2 screen-desktop:px-4'
+              | ACCESS NYC aims to increase the accessibility and convenience of discovering and enrolling in government benefits. The Patterns support this work by defining the UI and behavior that New Yorkers experience as they use the site.
+
+            p class='text-center'
+              button class='btn btn-primary mb-2' aria-controls='main-menu' data-js='toggle' Browse the patterns
+
+            div class='bg-status-info mb-4 p-2 screen-desktop:p-4'
+              h2#features Features
+
+              ul class='c-checklist mb-0'
+                li class='c-checklist__item-generic' Web Content Accessibility Guidelines (WCAG) AA Compliant typography and color contrast.
+                li class='c-checklist__item-generic' Multi-lingual stylesheets with right-to-left and left-to-right reading orientations.
+                li class='c-checklist__item-generic' Mobile-first stylesheets with support for modern browsers back to Internet Explorer 11.
+                li class='c-checklist__item-generic' Module-based design patterns with CSS and JavaScript included for each pattern.
+                li class='c-checklist__item-generic pb-1' <a href='tailwindcss'>tailwindcss</a> integration.
+
+            div
+              div class='px-2 screen-desktop:px-4'
+                h3 Installation
+
+                p The Patterns are available as an NPM package and can be installed with the following command.
+
+                div class='code-block w-full'
+                  input value='npm install ${this.package.name}' class='font-code text-code p-3 bg-transparent w-full border-none' data-copy-target='installation'
+
+                div class='text-center screen-tablet:flex items-center justify-center'
+                  button class='btn-primary mb-3' data-js='copy' data-copy='installation'
+                    svg class="icon-ui icon-3"
+                      use xlink:href="#icon-ui-copy"
+
+                    | Copy the command
+
+                  | &nbsp;
+
+                  a class='btn btn-secondary btn-next mb-3' href='installation'
+                    | Read the installation guide
+
+                p Alternatively, view the <a href="/quick-start">quick start documentation</a> to use the CDN method of installation.
+
+  section class='pb-4 color-mid-background'
+    div class='page-wrapper layout-home-body px-4'
+      div class='w-full pb-0'
+        h4#links Links
+
+        div class='layout-gutter screen-tablet:layout-columns-gutter'
+          article class='c-card'
+            div class='c-card__body'
+              a href='about'
+                h3 class='c-card__title mb-3' About
+              div class='c-card__summary' Learn more about ACCESS NYC Patterns.
+
+          article class='c-card'
+            div class='c-card__body'
+              a href='icons'
+                h3 class='c-card__title mb-3' Icons
+              div class='c-card__summary' The Icon Pattern set reference and usage.
+
+          article class='c-card'
+            div class='c-card__body'
+              a href='typography'
+                h3 class='c-card__title mb-3' Typography
+              div class='c-card__summary' The Typography Pattern reference.
+
+          article class='c-card'
+            div class='c-card__body'
+              a href='color'
+                h3 class='c-card__title mb-3' Colors
+              div class='c-card__summary' The Color Pattern reference.
+
+  section class='py-4'
+    div class='page-wrapper layout-home-body px-2'
+      div class='px-2'
+        h3#nyc-civic-service-design NYC Civic Service Design
+
+        p ACCESS NYC was built using <a href='http://nyc.gov/servicedesign'>NYC Civic Service Design</a> principles. The corresponding site is an introduction to service design for public servants, and a set of practical ways to include design methods in your work. Use this collection of tools and tactics to see your service in context, talk with people who use it, and try out ideas in low-risk ways. Additionally, you can <a href='http://eepurl.com/dJmW5X'>contact the Service Design Studio</a> to find out how you can implement service design in your work.
+
+        div class='text-center mb-4'
+          a class='btn btn-secondary btn-next' href='https://civicservicedesign.com/service-design-principles-c763f64ac950'
+            | Read the Principles
+
+        h4#more-nyc-design-resources More NYC Design and Technology Resources
+
+        ul
+          li
+            a href='http://nyc.gov/nyc-core-framework' NYC Core Framework
+            |  - New York City's accessible open source website framework.
+
+          li
+            a href='https://blueprint.cityofnewyork.us' NYC Digital Blueprint
+            |  - A guide for building trustworthy and accessible digital products that help New Yorkers.

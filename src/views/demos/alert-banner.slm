@@ -1,0 +1,25 @@
+/ Layout
+= extend('/slm/layouts/demos');
+
+/ Partials
+= partial('/slm/partials/styles.slm');
+= partial('/slm/partials/links.slm');
+= partial('/slm/partials/head-demos.mixin.slm');
+
+/ Content blocks
+= content('head');
+  = mixin('head', 'Alert Banner Demo');
+
+= content('content');
+  = partial('../../objects/alert-banner/alert-banner');
+
+  div class='min-h-screen min-w-screen flex items-center justify-center flex-col color-mid-background'
+    button class='btn btn-primary mb-4 active' data-js='alert-controller' aria-controls='aria-c-alert-banner' aria-expanded='true'
+      | Toggle Alert Banner
+
+    a href='/alert-banner'
+      | Back to documentation
+
+= content('script');
+    javascript:
+      access.alertBanner();

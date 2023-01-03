@@ -1,0 +1,10 @@
+div class='bg-grey-lightest p-2'
+
+  /! Component Start
+  article class='c-card'
+    div class='c-card__body'
+      h3 class='c-card__title mt-0 mb-3'
+        a href='#' class='text-blue-dark' Tax relief for dependent care
+
+      div class='c-card__summary hide-for-print'
+        a href='#' Learn more

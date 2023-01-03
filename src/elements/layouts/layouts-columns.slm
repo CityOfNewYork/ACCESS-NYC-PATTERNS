@@ -1,0 +1,6 @@
+
+div class='layout-columns flex text-center'
+  div class='bg-grey-light p-4'
+    | Column A
+  div class='bg-grey-lightest p-4'
+    | Column B

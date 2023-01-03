@@ -1,0 +1,12 @@
+- if (typeof key !== 'undefined')
+  div
+    h3 class='text-small capitalize mb-2'
+      a target='_blank' href='${this.package.cdn.url}@v${this.package.version}/dist/images/${value.replace(/"/g, '')}'
+        | ${key.replace(/-/g, ' ')}
+
+    div class='py-4 text-center px-2 flex items-center justify-center' style='min-height: 150px'
+      == this.include('elements/icons/bg.slm', {key: key})
+
+    div class='code-block mb-0'
+      pre
+        = this.include('elements/icons/bg.slm', {key: key})

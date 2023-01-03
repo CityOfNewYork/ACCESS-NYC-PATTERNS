@@ -1,0 +1,38 @@
+/ Layout
+= extend('/slm/layouts/default');
+
+/ Component
+- title = 'Layouts';
+
+/ Partials
+= partial('/slm/partials/styles.slm');
+= partial('/slm/partials/links.slm');
+= partial('/slm/partials/head.mixin.slm');
+= partial('/slm/partials/content-header.mixin.slm');
+= partial('/slm/section/section.mixin.slm');
+= partial('/slm/section/demo-specs.mixin.slm');
+= partial('/slm/section/demo-block.mixin.slm');
+
+/ Content blocks
+= content('head');
+  = mixin('head', title);
+
+= content('header');
+  = mixin('header', title);
+
+= content('content');
+  = mixin('content-header', title);
+  = mixin('section', 'Columns', 'elements/layouts/layouts-columns');
+  = mixin('section', 'Rows', 'elements/layouts/layouts-rows');
+  = mixin('section', 'Gutter', 'elements/layouts/layouts-gutter');
+  = mixin('section', 'Columns with Gutter', 'elements/layouts/layouts-columns-gutter');
+  = mixin('section', 'Two Columns with Gutter', 'elements/layouts/layouts-two-columns-gutter');
+  = mixin('section', 'Three Columns with Gutter', 'elements/layouts/layouts-three-columns-gutter');
+  = mixin('section', 'Four Columns with Gutter', 'elements/layouts/layouts-four-columns-gutter', 'gutter');
+  = mixin('section', 'Sidebar', 'elements/layouts/layouts-sidebar', 'gutter');
+  = mixin('section', 'Sidebar Small', 'elements/layouts/layouts-sidebar-small', 'gutter');
+  = mixin('section', 'Sidebar with Gutter', 'elements/layouts/layouts-sidebar-gutter', 'gutter');
+  = mixin('section', 'Sidebar Small with Gutter', 'elements/layouts/layouts-sidebar-small-gutter', 'gutter');
+  = mixin('section', 'Home Body', 'elements/layouts/layouts-home-body', 'gutter');
+  = mixin('section', 'Topbar', 'elements/layouts/layouts-topbar', 'gutter');
+  = mixin('section', 'Map', 'elements/layouts/layouts-map', 'gutter');

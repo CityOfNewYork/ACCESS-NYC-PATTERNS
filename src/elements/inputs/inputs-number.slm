@@ -1,0 +1,6 @@
+/
+/ Input Number
+/
+
+div
+  input id='person-0-age' type='number' min='0' max='200' maxlength='3' step='1' required='true'

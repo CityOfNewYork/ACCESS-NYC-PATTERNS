@@ -1,0 +1,46 @@
+/**
+ * Alert-box
+ */
+
+// Dependencies
+@use 'canyc/media';
+
+// Declarations
+.c-alert-box {
+  background: var(--nyco-colors-grey-lightest);
+  padding: calc(var(--nyco-grid) * 3);
+
+  @media screen and (min-width: media.$screen-mobile) {
+    align-items: stretch;
+    display: flex;
+  }
+}
+
+.c-alert-box__icon {
+  margin-bottom: var(--nyco-grid);
+
+  @media screen and (min-width: media.$screen-mobile) {
+    padding-inline-end: calc(var(--nyco-grid) * 2);
+    margin-bottom: 0;
+  }
+}
+
+.c-alert-box__svg,
+[class*='icon-'].c-alert-box__svg,
+[class*='bg-icon-'].c-alert-box__svg {
+  display: block;
+  max-width: inherit;
+}
+
+.c-alert-box__body {
+  flex: 1 1 auto;
+
+  p:last-child {
+    margin-bottom: 0
+  }
+}
+
+.c-alert-box__body h1 {
+  color: initial !important;
+}
+

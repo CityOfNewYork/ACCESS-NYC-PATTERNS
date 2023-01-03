@@ -1,0 +1,19 @@
+/
+/ Question Multiple Choice
+/
+
+fieldset class='c-question'
+  legend class='c-question__label' Do any of these apply to you?
+  p It’s OK to pick more than one. You can also leave this blank if none of these apply to you.
+
+  div class='c-question__container screen-tablet:layout-columns'
+    - symbol = false;
+    - instance = 'elements/checkboxes/checkboxes';
+    - for (index in this.question.programs)
+      - value = this.question.programs[index];
+      = partial(`../../${instance}.slm`);
+      - value = null;
+
+    label class='checkbox'
+      input type='checkbox' data-js='clear'
+      span class='checkbox__label' None of these apply

@@ -1,0 +1,22 @@
+table class='table'
+  thead
+    tr
+      th Column A
+      th Column B
+      th Column C
+
+  tbody
+    tr
+      td Cell 1A
+      td Cell 1B
+      td Cell 1C
+
+    tr
+      td Cell 2A
+      td Cell 2B
+      td Cell 2C
+
+    tr
+      td ...
+      td ...
+      td ...

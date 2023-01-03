@@ -1,0 +1,17 @@
+// Dependencies
+@use 'canyc/animate';
+@use 'animate.scss/vendor/assets/stylesheets/animate/fadeInUp';
+@use 'animate.scss/vendor/assets/stylesheets/animate/fadeIn';
+
+// Declarations
+body {
+  backface-visibility: hidden;
+}
+
+.animated {
+  @include animate.animate();
+}
+
+a, input, textarea, select, path, rect {
+  @include animate.transition();
+}

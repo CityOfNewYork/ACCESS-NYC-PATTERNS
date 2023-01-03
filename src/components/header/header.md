@@ -1,0 +1,1 @@
+The Header Component displays the title of the page content within a view.

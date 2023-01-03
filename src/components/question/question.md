@@ -1,0 +1,5 @@
+The Question Component allows a user to enter information into a form. This pattern follows the styling and usage guidelines of the [U.S. Web Design System’s Form Control](https://designsystem.digital.gov/components/form-controls/). The ACCESS NYC Patterns include a [Tooltip Element](tooltips) which can provide clarification on why a question is being asked.
+
+#### Validation and Accessibility
+
+Question Components require JavaScript for validation and use the [Form Utility from the NYCO Patterns Framework](https://github.com/CityOfNewYork/nyco-patterns-framework/tree/main/src/utilities/forms). This script will display visual feedback regarding missing and invalid answers to the user as well as toggle appropriate aria attributes for announcing feedback to screen readers. The `aria-live=”polite”` attribute on the message announces a new element that was not previously visible in the default Question Component state. Additionally, the `aria-invalid=”true”` attribute illustrates to screen readers that the input is not valid and the `aria-describedby` attribute indicates the input’s error description.

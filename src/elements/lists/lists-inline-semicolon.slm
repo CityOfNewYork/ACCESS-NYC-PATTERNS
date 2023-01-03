@@ -1,0 +1,13 @@
+/
+/ Lists
+/
+
+ul class='list-inline-semicolon'
+  li Student
+  li Full-time student
+  li Pregnant
+  li Unemployed
+  li Worked in the last 18 months
+  li Blind or visually impaired
+  li Has disabilities
+  li Served in the U.S. Armed Forces, National Guard or Reserves

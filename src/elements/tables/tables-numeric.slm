@@ -1,0 +1,22 @@
+table class='table-numeric'
+  thead
+    tr
+      th Family Size
+      th Yearly Income
+      th Weekly Income
+
+  tbody
+    tr
+      td 1
+      td $27,816
+      td $535
+
+    tr
+      td 2
+      td $36,372
+      td $699
+
+    tr
+      td ...
+      td ...
+      td ...

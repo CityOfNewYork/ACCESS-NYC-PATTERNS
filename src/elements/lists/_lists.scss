@@ -1,0 +1,39 @@
+/**
+ * Lists
+ */
+
+// Dependencies
+@import 'canyc/direction';
+
+// Declarations
+.list-inline-comma {
+  margin: 0;
+  padding: 0;
+  display: inline-block;
+
+  > * {
+    display: inline;
+    &::after {
+      content: ', '
+    }
+    &:last-of-type::after {
+      content: none
+    }
+  }
+}
+
+.list-inline-semicolon {
+  margin: 0;
+  padding: 0;
+  display: inline-block;
+
+  > * {
+    display: inline;
+    &::after {
+      content: '; '
+    }
+    &:last-of-type::after {
+      content: none
+    }
+  }
+}

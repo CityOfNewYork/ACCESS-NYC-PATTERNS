@@ -1,0 +1,15 @@
+/
+/ Alert Box Urgent
+/
+
+article class='c-alert-box color-urgent-status'
+  div class='c-alert-box__icon'
+    svg class='c-alert-box__svg icon icon-4 icon-urgent' role='img'
+      title Urgent Alert
+      use xlink:href='#icon-urgent'
+
+  div class='c-alert-box__body'
+    header
+      h1 class='type-h4 m-0' Something went wrong.
+    p
+      | Try refreshing the page or <a href="#">contact our help desk</a> so we can help.

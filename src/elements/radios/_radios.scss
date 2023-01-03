@@ -1,0 +1,42 @@
+/**
+ * Radios
+ */
+
+// Dependencies
+@import 'canyc/direction';
+@import 'canyc/options';
+@import 'canyc/radios';
+@import 'canyc/dimensions';
+@import 'canyc/fonts';
+@import 'canyc/colors';
+@import 'canyc/accessibility';
+@import 'canyc/media';
+
+// Declarations
+.radio {
+  @include options;
+
+  &:last-of-type {
+    margin-bottom: 0
+  }
+
+  > input {
+    @include sr-only()
+  }
+}
+
+.radio__label {
+  @include options-labels;
+}
+
+input + .radio__label::before {
+  @include radios-btn;
+}
+
+input:checked + .radio__label::before {
+  @include radios-btn-checked;
+}
+
+input:focus + .radio__label::before {
+  @include radios-btn-focused;
+}

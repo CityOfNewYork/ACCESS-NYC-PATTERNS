@@ -1,0 +1,78 @@
+= mixin('head', 'title = ACCESS NYC Patterns');
+  head
+    meta charset='utf-8'
+    meta http-equiv='X-UA-Compatible' content='IE=edge'
+    meta name='viewport' content='width=device-width, initial-scale=1'
+
+    link rel='preload' href='fonts/noto-serif/NotoSerif.woff2' as='font' crossorigin=true
+    link rel='preload' href='fonts/noto-serif/NotoSerif-Bold.woff2' as='font' crossorigin=true
+    link rel='preload' href='fonts/noto-sans/NotoSans.woff2' as='font' crossorigin=true
+    link rel='preload' href='fonts/noto-sans/NotoSans-Italic.woff2' as='font' crossorigin=true
+    link rel='preload' href='fonts/noto-sans/NotoSans-Bold.woff2' as='font' crossorigin=true
+    link rel='preload' href='fonts/noto-sans/NotoSans-BoldItalic.woff2' as='font' crossorigin=true
+
+    / link rel='preload' href='fonts/noto-cjk-kr/NotoSansCJKkr-Regular.otf' as='font' crossorigin=true
+    / link rel='preload' href='fonts/noto-cjk-kr/NotoSansCJKkr-Bold.otf' as='font' crossorigin=true
+    / link rel='preload' href='fonts/noto-cjk-tc/NotoSansCJKtc-Regular.otf' as='font' crossorigin=true
+    / link rel='preload' href='fonts/noto-cjk-tc/NotoSansCJKtc-Bold.otf' as='font' crossorigin=true
+    / link rel='preload' href='fonts/noto-ar/NotoNaskhArabic-Regular.ttf' as='font' crossorigin=true
+    / link rel='preload' href='fonts/noto-ar/NotoNaskhArabic-Bold.ttf' as='font' crossorigin=true
+    / link rel='preload' href='fonts/noto-ur/NotoNastaliqUrdu-Regular.ttf' as='font' crossorigin=true
+
+    link rel='apple-touch-icon' sizes='57x57' href='images/apple-icon-57x57.png'
+    link rel='apple-touch-icon' sizes='60x60' href='images/apple-icon-60x60.png'
+    link rel='apple-touch-icon' sizes='72x72' href='images/apple-icon-72x72.png'
+    link rel='apple-touch-icon' sizes='76x76' href='images/apple-icon-76x76.png'
+    link rel='apple-touch-icon' sizes='114x114' href='images/apple-icon-114x114.png'
+    link rel='apple-touch-icon' sizes='120x120' href='images/apple-icon-120x120.png'
+    link rel='apple-touch-icon' sizes='144x144' href='images/apple-icon-144x144.png'
+    link rel='apple-touch-icon' sizes='152x152' href='images/apple-icon-152x152.png'
+    link rel='apple-touch-icon' sizes='180x180' href='images/apple-icon-180x180.png'
+    link rel='icon' type='image/png' sizes='192x192' href='images/android-icon-192x192.png'
+    link rel='icon' type='image/png' sizes='32x32' href='images/favicon-32x32.png'
+    link rel='icon' type='image/png' sizes='96x96' href='images/favicon-96x96.png'
+    link rel='icon' type='image/png' sizes='16x16' href='images/favicon-16x16.png'
+
+    meta name='msapplication-TileColor' content='#112E51'
+    meta name='msapplication-TileImage' content='images/ms-icon-144x144.png'
+    link rel='icon' type='image/x-icon' href='images/favicon.ico'
+
+    title
+      - if (this.title != 'ACCESS NYC Patterns')
+        = this.title;
+        = ' | ACCESS NYC Patterns';
+      - else
+        = this.title;
+
+    / Google Analytics
+    - this.GOOGLE_ANALYTICS = (this.process.env.NODE_ENV === 'production') ? 'UA-163470527-1' : 'UA-163470527-0'
+
+    script(async src='https://www.googletagmanager.com/gtag/js?id=${this.GOOGLE_ANALYTICS}')
+
+    link href='//cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.18.1/build/styles/default.min.css' rel='stylesheet'
+    script src='//cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.18.1/build/highlight.min.js'
+
+    link href='styles/tokens-default.css' rel='stylesheet'
+    link href='styles/site-default.css' rel='stylesheet'
+
+    javascript:
+      document.addEventListener('DOMContentLoaded', function(event) {
+        hljs.configure({
+          languages: ['html', 'javascript', 'css', 'sass']
+        });
+
+        document.querySelectorAll('pre')
+          .forEach(function(block) {
+            hljs.highlightBlock(block);
+          });
+      });
+
+      window.dataLayer = window.dataLayer || [];
+
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+
+      gtag('js', new Date());
+
+      gtag('config', '${this.GOOGLE_ANALYTICS}');

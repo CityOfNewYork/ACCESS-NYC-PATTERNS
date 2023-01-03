@@ -1,0 +1,35 @@
+/**
+ * Content
+ */
+
+// Dependencies
+// @import 'config/';
+// @import 'canyc/fonts';
+// @import 'canyc/dimensions';
+
+// Declarations
+.o-content {
+  line-height: var(--nyco-leading-large);
+
+  // TODO:
+  // ul, ol {
+  //   margin-bottom: rem(strip-units($grid-base * 5), $em-base);
+  // }
+
+  // TODO:
+  // section {
+  //   padding-bottom: rem(strip-units($grid-base * 7), $em-base);
+  // }
+
+  p:last-child,
+  ul:last-child,
+  ol:last-child,
+  li:last-child,
+  table:last-child,
+  button:last-child,
+  figure:last-child,
+  section:last-child {
+    margin-bottom: 0;
+    padding-bottom: 0;
+  }
+}

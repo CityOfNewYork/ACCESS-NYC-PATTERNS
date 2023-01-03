@@ -1,0 +1,28 @@
+//
+// Variables
+//
+
+// Dependencies
+@use 'canyc/language';
+@use 'canyc/tokens';
+
+// Variables
+$text-direction: ltr;
+$text-direction-start: left;
+$text-direction-end: right;
+
+$default-layout-direction: null;
+$layout-direction: null;
+
+@each $lang in map-get(tokens.$tokens, 'rtl-languages') {
+  @if language.$language == $lang {
+    $default-layout-direction: RTL !global;
+    // Below variable is used for the USWDS grid which built on an old
+    // version of Neat where $layout-direction is used rather than the
+    // current name above.
+    $layout-direction: $default-layout-direction !global;
+    $text-direction: rtl;
+    $text-direction-start: right;
+    $text-direction-end: left;
+  }
+}

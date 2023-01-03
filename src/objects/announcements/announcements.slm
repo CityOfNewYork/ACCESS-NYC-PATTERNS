@@ -1,0 +1,36 @@
+/
+/ Announcements
+/
+
+div class='py-4'
+  div class='screen-tablet:flex justify-between items-center'
+    h2 class='color__alt font-normal no-underline capitalize mb-0' Announcements
+
+    p class='color__alt text-small mb-0' Latest Update Thursday, April 30th
+
+  hr class='divider color__alt mb-3'
+
+  div class='screen-tablet:layout-columns-gutter'
+    div class='c-card p-0 pb-4'
+      div class='c-card__body'
+        h3 class='c-card__title mt-0'
+          mark class='badge color-covid-response-status' New
+
+          a class='text-blue-dark' href='https://access.nyc.gov/coronavirus-covid-19-updates/' target='_blank' rel='noopener noreferrer'
+            | Coronavirus (COVID-19) Updates
+
+        p class='c-card__subtitle color__alt' Updated Thursday, April 30th, 4:33pm
+
+        div class='c-card__summary' Resources that can help guide you, your family, and your community with up-to-date and accurate information and support.
+
+    div class='c-card p-0 pb-4'
+      div class='c-card__body'
+        h3 class='c-card__title mt-0'
+          mark class='badge color-covid-response-status' New
+
+          a class='text-blue-dark' href='https://access.nyc.gov/coronavirus-covid-19-updates/' target='_blank' rel='noopener noreferrer'
+            | Summer Youth Employment Program (SYEP)
+
+        p class='c-card__subtitle color__alt' Updated Thursday, April 30th, 4:36pm
+
+        div class='c-card__summary' Because of COVID-19 pandemic and concern for the health and safety of New Yorkers, DYCD has suspended SYEP this summer. The program will re-launch in Summer 2021.

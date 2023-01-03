@@ -1,0 +1,21 @@
+/
+/ Side Nav
+/
+
+nav class='c-side-nav hide-for-print'
+  ol
+    li
+      a class='active' href='#'
+        | How It Works
+    li
+      a href='#'
+        | Determine Your Eligibility
+    li
+      a href='#'
+        | What You Need to Include
+    li
+      a href='#'
+        | How to Apply
+    li
+      a href='#'
+        | Determine Your Eligibility

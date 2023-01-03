@@ -1,0 +1,36 @@
+/**
+ * Disclaimer
+ */
+
+// Dependencies
+@import 'canyc/disclaimer';
+@import 'canyc/dimensions';
+@import 'canyc/fonts';
+@import 'canyc/typography';
+@import 'canyc/direction';
+
+// Declarations
+.c-disclaimer {
+  @include disclaimer;
+}
+
+.c-disclaimer__icon {
+  width: ($grid-base * 3) !important;
+  height: ($grid-base * 3) !important
+}
+
+.c-disclaimer__icon--pre {
+  float: #{$text-direction-start};
+  margin-#{$text-direction-end}: $grid-base;
+  position: relative;
+  bottom: -3px
+}
+
+.c-disclaimer-instruction {
+  @include typography-supplemental();
+  font-size: $font-size-small;
+}
+
+.c-disclaimer-acknowledgment {
+  margin-bottom: 20px;
+}

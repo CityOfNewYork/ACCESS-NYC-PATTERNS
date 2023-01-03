@@ -1,0 +1,24 @@
+/ Layout
+= extend('/slm/layouts/default');
+
+- title = 'About';
+
+/ Partials
+= partial('/slm/partials/styles.slm');
+= partial('/slm/partials/links.slm');
+= partial('/slm/partials/head.mixin.slm');
+= partial('/slm/partials/content-header.mixin.slm');
+= partial('/slm/section/section.mixin.slm');
+= partial('/slm/section/section-text.mixin.slm');
+
+/ Content blocks
+= content('head');
+  = mixin('head', title);
+
+= content('header');
+  = mixin('header');
+
+= content('content');
+  = mixin('content-header', title);
+  = mixin('section-text', false, 'content/about/readme');
+  = mixin('section-text', 'NYCO Patterns Framework', 'content/developer-tools/readme');

@@ -1,0 +1,1 @@
+The Member List Component is an illustration of a household using colored dots to represent individual members.

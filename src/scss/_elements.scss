@@ -1,0 +1,31 @@
+/**********
+* Elements
+***********/
+
+// Elements include universal styles, atomic patterns, and css systems. Examples
+// include classes that assign color, modify the display of elements, or set up
+// scaffolding like typography or grid systems. Utilities will have their own
+// namespace prefixes based on their attributes.
+
+@forward '@nycopportunity/pattern-elements/src/elements/base/base';
+@forward '@nycopportunity/pattern-elements/src/elements/badge/badge';
+@forward '@nycopportunity/pattern-elements/src/elements/buttons/buttons';
+@forward '@nycopportunity/pattern-elements/src/elements/code/code';
+@forward '@nycopportunity/pattern-elements/src/elements/description-lists/description-lists';
+@forward '@nycopportunity/pattern-elements/src/elements/dividers/dividers';
+@forward '@nycopportunity/pattern-elements/src/elements/forms/forms';
+@forward '@nycopportunity/pattern-elements/src/elements/icons/icons';
+@forward '@nycopportunity/pattern-elements/src/elements/inputs/inputs';
+@forward '@nycopportunity/pattern-elements/src/elements/labels/labels';
+@forward '@nycopportunity/pattern-elements/src/elements/layouts/layouts';   // TODO: update with conditional layouts
+@forward '@nycopportunity/pattern-elements/src/elements/links/links';
+@forward '@nycopportunity/pattern-elements/src/elements/lists/lists';       // TODO: Not accessible, sort of a misnomer?... might need to deprecate
+@forward '@nycopportunity/pattern-elements/src/elements/navs/navs';
+@forward '@nycopportunity/pattern-elements/src/elements/options/options';
+@forward '@nycopportunity/pattern-elements/src/elements/overlays/overlays'; // TODO: update
+@forward '@nycopportunity/pattern-elements/src/elements/selects/selects';
+@forward 'elements/spinner/spinner';
+@forward '@nycopportunity/pattern-elements/src/elements/tables/tables';
+@forward '@nycopportunity/pattern-elements/src/elements/toggles/toggles';   // TODO: update?
+@forward '@nycopportunity/pattern-elements/src/elements/tooltips/tooltips'; // TODO: update
+// elements - end

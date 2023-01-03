@@ -1,0 +1,12 @@
+/
+/ Toggle
+/
+
+div
+  label class='toggle'
+    input value='1' type='radio' name='application' data-type='boolean'
+    span class='toggle__label' Yes
+
+  label class='toggle'
+    input value='0' type='radio' name='application' data-type='boolean' checked='true'
+    span class='toggle__label' No

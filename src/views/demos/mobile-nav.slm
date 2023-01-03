@@ -1,0 +1,15 @@
+/ Layout
+= extend('/slm/layouts/demos');
+
+/ Partials
+= partial('/slm/partials/styles.slm');
+= partial('/slm/partials/links.slm');
+= partial('/slm/partials/head-demos.mixin.slm');
+
+/ Content blocks
+= content('head');
+  = mixin('head', 'Navigation Demo');
+
+= content('content');
+  div class='overlay active:overlay'
+    = partial('../../objects/mobile-nav/mobile-nav.slm')

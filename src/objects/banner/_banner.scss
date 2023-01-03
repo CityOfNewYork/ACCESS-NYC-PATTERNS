@@ -1,0 +1,94 @@
+/**
+ * Banner
+ */
+
+// Dependencies
+@import 'canyc/fonts';
+@import 'canyc/colors';
+@import 'canyc/dimensions';
+@import 'canyc/direction';
+@import 'canyc/media';
+
+// Declarations
+.o-banner {
+  padding: $spacing-base;
+}
+
+.o-banner__inner {
+  margin: auto;
+  max-width: $homepage-max-width;
+}
+
+.o-banner__title {
+  margin-bottom: 0;
+
+  a {
+    color: inherit;
+    position: relative;
+    text-decoration: none;
+    z-index: 1;
+    white-space: nowrap;
+
+    &:after {
+      content: ' ';
+      position: absolute;
+      width: calc(100% + 4px);
+      left: -2px;
+      z-index: -1;
+      transition: opacity 0.15s, bottom 0.15s;
+
+      height: 10px;
+      bottom: 2px;
+
+      @media screen and (min-width: $screen-tablet) {
+        height: 11px;
+        bottom: 4px;
+      }
+
+      @media screen and (min-width: $screen-desktop) {
+        height: 12px;
+        bottom: 4px;
+      }
+    }
+
+    &:hover {
+      &:after {
+        opacity: 0;
+        bottom: 2px;
+      }
+    }
+  }
+}
+
+// .o-banner__touts {
+//   @media screen and (min-width: $screen-tablet) {
+//     display: flex;
+//   }
+// }
+
+.o-banner__tout {
+  margin-bottom: $spacing-base;
+
+  @media screen and (min-width: $screen-tablet) {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+.o-banner__tout-title {
+  color: $color-white;
+}
+
+.o-banner__tout-body {
+  @media screen and (min-width: $screen-tablet) {
+    flex: 1 1 auto;
+  }
+}
+
+// Make the cta buttons the same height
+.o-banner__tout-cta {
+  .btn {
+    min-height: 60px;
+    line-height: 30px;
+  }
+}

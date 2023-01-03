@@ -1,0 +1,89 @@
+/**
+ * Search Box
+ */
+
+// Dependencies
+@import 'canyc/colors';
+@import 'canyc/direction';
+@import 'canyc/dimensions';
+@import 'canyc/fonts';
+@import 'canyc/media';
+
+// Declarations
+.o-search-box {
+  position: absolute;
+  left: 0;
+  right: 0;
+  width: 100%;
+  visibility: hidden;
+  z-index: 8;
+
+  &.active {
+    visibility: visible;
+  }
+}
+
+.o-search-box__inner {
+  transition: all .2s ease-out;
+  background: $color-grey-lightest;
+  max-height: 0px;
+  overflow: hidden;
+
+  .active & {
+    border-bottom: 3px solid $color-grey-light;
+    max-height: 1000px;
+    padding: $spacing-base 0;
+  }
+}
+
+.o-search-box__close {
+  float: $text-direction-end;
+
+  svg {
+    pointer-events: none
+  }
+}
+
+.o-search-box__form,
+.o-search-box__suggestions {
+  clear: both;
+  margin: (2 * $spacing-base) auto;
+  max-width: 800px;
+}
+
+.o-search-box__form label {
+  display: block;
+  margin-bottom: (.5 * $spacing-base);
+}
+
+.o-search-box__suggestions-header {
+  margin-bottom: $spacing-base;
+
+  h3 {
+    margin-bottom: 0;
+  }
+
+  @media screen and (min-width: $screen-tablet) {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+  }
+}
+
+.o-search-box__suggestions-body {
+  @media screen and (min-width: $screen-tablet) {
+    align-items: flex-start;
+    display: flex;
+    flex-wrap: wrap;
+  }
+}
+
+.o-search-box__suggestions-item {
+  font-weight: $font-weight-bold;
+  padding-#{$text-direction-end}: $spacing-base;
+  margin-bottom: $spacing-base;
+
+  @media screen and (min-width: $screen-tablet) {
+    width: 33.33%;
+  }
+}

@@ -1,0 +1,49 @@
+doctype html
+html
+  head
+    title Hello ${this.package.nice}
+
+    link rel='shortcut icon' href="${this.package.cdn.url}@v${this.package.version}${this.package.cdn.favicon}"
+
+    link href='${this.package.cdn.url}@v${this.package.version}${this.package.cdn.styles}' rel='stylesheet'
+
+  body class='color-light-background'
+    header class='layout-content px-3 p-2 screen-tablet:py-4'
+      div class='mx-auto'
+        svg class='${this.package.svgs.primary}--large text-blue-dark mb-3'
+          use xlink:href='#${this.package.svgs.primary}'
+
+        h1 class='mb-0' Hello ${this.package.nice}!
+
+    main class='layout-content p-3'
+      div class='mx-auto'
+        p This demo uses the CDN method of installation including the CSS, Google Fonts, JavaScript, and SVGs. Sample pattern HTML can be copied and pasted into this page and they should work without any extra steps!
+
+        p <a class='btn btn-primary inline-block' href='https://accesspatterns.cityofnewyork.us'>View Patterns</a>
+
+    footer class='layout-content px-3'
+      div class='mx-auto'
+        p
+          | <small>© City of New York, 2022 All Rights Reserved.</small><br>
+          | <small>NYC is a trademark and service mark of the City of New York.</small>
+
+          p
+            small class='flex items-center'
+              svg class='icon-ui icon-4 text-blue-dark'
+                use xlink:href='#icon-ui-type'
+              | &nbsp;&nbsp;
+              | Font-families used include&nbsp;<a href='https://fonts.google.com/noto'>Google Noto</a>.
+
+          p
+            small class='flex items-center'
+              svg class='icon-ui icon-4 text-blue-dark'
+                use xlink:href='#icon-ui-feather'
+              | &nbsp;&nbsp;
+              | UI Icons are sourced from the&nbsp;<a href='https://feathericons.com/'>Feather Icon set</a>.
+
+    script src='${this.package.cdn.url}@v${this.package.version}${this.package.cdn.scripts}'
+
+    javascript:
+      var access = new ${this.package.instantiations.scripts}();
+
+      access.icons('${this.package.cdn.url}@v${this.package.version}${this.package.cdn.svg}');

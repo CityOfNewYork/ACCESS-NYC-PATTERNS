@@ -1,0 +1,1 @@
+The Share Form Component uses JavaScript to share a page url via SMS or email. It will post the request to the action attributed to the form for backend processing but it will not submit directly to any messaging service. The url to be shared is defined in a hidden field in the form markup.

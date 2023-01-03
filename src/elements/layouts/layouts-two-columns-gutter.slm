@@ -1,0 +1,13 @@
+
+div class='layout-two-columns-gutter bg-grey-lightest p-4 text-center'
+  div class='bg-grey-light p-4'
+    | Cell A
+  div class='bg-grey-light p-4'
+    | Cell B
+  div class='bg-grey-light p-4'
+    | Cell C
+  div class='bg-grey-light p-4'
+    | Cell D
+  div class='bg-grey-light p-4'
+    | Cell E
+  div

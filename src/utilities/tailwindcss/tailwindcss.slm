@@ -1,0 +1,74 @@
+h2 ACCESS NYC × tailwindcss configuration
+
+h3#config-theme Theme
+
+div class='p-2 color-mid-background'
+  b Plugin (link to docs)
+
+div class='mb-4'
+  - for (plugin in this.tailwind.theme)
+    - name = plugin.replace(/[\w]([A-Z])/g, (m) => m[0] + ' ' + m[1]).toLowerCase();
+    - link = name.replace(' ', '-');
+
+    - config = (this.tailwind.theme.hasOwnProperty(plugin)) ? this.tailwind.theme[plugin] : false;
+    - variants = (this.tailwind.variants.hasOwnProperty(plugin)) ? this.tailwind.variants[plugin] : false;
+
+    div id='config-${link}' class='p-2 layout-two-columns items-center border-b border-grey-light'
+      a href='https://tailwindcss.com/docs/${link}' class='capitalize' target='_blank' = `${name}`;
+
+      div class='text-right'
+        - if (config)
+          button class='btn btn-link' type='button' aria-controls='config-${link}-details' aria-expanded='false' data-js='toggle' show details
+        - else
+          div class='text-secondary-grey' Default
+
+    - if (config)
+      div class='color-mid-background hidden hidden:overflow animated' id='config-${link}-details' aria-hidden='true'
+        div class='p-2 layout-two-columns'
+          div
+            b Class
+          div class='pl-1'
+            b Property Value
+
+        - for (i in config)
+          div class='p-2 layout-two-columns font-code color-code small'
+            div = `.{{ prefix }}-${i}`;
+            div class='pl-1'
+              - if (Array.isArray(config[i]))
+                = `${config[i].join(', ')}`;
+              - else
+                = `${config[i]}`;
+
+h3#config-variants-and-core-plugins Variants and Core Plugins
+
+div class='p-2 layout-three-columns items-center color-mid-background'
+  div
+    b Plugin (link to docs)
+  div
+    b Variants
+  div class='text-right'
+    b Configuration
+
+div class='mb-4'
+  - for (i in this.tailwind.corePlugins)
+    - plugin = this.tailwind.corePlugins[i];
+    - name = plugin.replace(/[\w]([A-Z])/g, (m) => m[0] + ' ' + m[1]).toLowerCase();
+    - link = name.replace(' ', '-');
+
+    - config = (this.tailwind.theme.hasOwnProperty(plugin)) ? this.tailwind.theme[plugin] : false;
+    - variants = (this.tailwind.variants.hasOwnProperty(plugin)) ? this.tailwind.variants[plugin] : false;
+
+    div class='p-2 layout-three-columns items-center border-b border-grey-light'
+      a href='https://tailwindcss.com/docs/${link}' class='capitalize' target='_blank' = `${name}`;
+
+      div class='font-code'
+        - if (variants)
+          = '[';
+          = `${variants.toString().replace(',', ', ')}`;
+          = ']';
+
+      div class='text-right'
+        - if (config)
+          a href='#config-${link}' Themed
+        - else
+          span class='text-secondary-grey' Default

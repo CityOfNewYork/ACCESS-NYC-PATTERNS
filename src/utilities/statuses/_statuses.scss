@@ -1,0 +1,23 @@
+/**
+ * Statuses
+ */
+
+// Dependencies
+@use 'canyc/colors';
+
+// Declarations
+.bg-status-success {
+  background-color: map-get(colors.$colors, map-get(colors.$statuses, 'success'));
+}
+
+.bg-status-info {
+  background-color: map-get(colors.$colors, map-get(colors.$statuses, 'info'));
+}
+
+.bg-status-warning {
+  background-color: map-get(colors.$colors, map-get(colors.$statuses, 'warning'));
+}
+
+.bg-status-urgent {
+  background-color: map-get(colors.$colors, map-get(colors.$statuses, 'urgent'));
+}

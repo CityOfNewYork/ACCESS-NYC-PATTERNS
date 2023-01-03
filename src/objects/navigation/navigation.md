@@ -1,0 +1,1 @@
+The Navigation Object is a custom module with specific classes to define its elements, including the logo and nav. When a user is in a section of ACCESS NYC, the navigation item for that section gets a bolder type treatment. The Home page of ACCESS NYC features a larger logo size than the inner pages.

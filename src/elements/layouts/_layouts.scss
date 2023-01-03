@@ -1,0 +1,397 @@
+/**
+ * Layouts
+ */
+
+// Dependencies
+@import 'config/';
+@import 'canyc/layouts';
+@import 'canyc/dimensions';
+@import 'canyc/direction';
+@import 'canyc/media';
+@import 'scss/functions/strip-units';
+
+$breakpoints: map-get($tokens, 'screens');
+
+// Mixins
+// Do not include any layouts in here that require custom responsive breakpoints
+@mixin layouts($variant: '') {
+  .#{$variant}page-wrapper {
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    max-width: $site-max-width;
+    min-height: 100%;
+    min-width: $site-min-width;
+  }
+
+  .#{$variant}layout-columns {
+    display: flex;
+    flex-wrap: wrap;
+
+    > * {
+      width: 50%;
+      max-width: 50%
+    }
+  }
+
+  .#{$variant}layout-rows {
+    display: flex;
+    flex-wrap: wrap;
+
+    > * {
+      height: 50%;
+      width: 100%;
+      max-width: 100%;
+      flex-basis: 100%
+    }
+  }
+
+  .#{$variant}layout-gutter {
+    > * {
+      width: 100%;
+      margin-bottom: $spacing-base
+    }
+
+    > *:last-child {
+      margin-bottom: 0
+    }
+  }
+
+  .#{$variant}layout-columns-gutter {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+
+    > * {
+      margin-bottom: $spacing-base;
+      width: calc(50% - calc(#{$spacing-base} / 2));
+      max-width: calc(50% - calc(#{$spacing-base} / 2));
+      flex-basis: calc(50% - calc(#{$spacing-base} / 2))
+    }
+
+    > *:nth-last-child(1),
+    > *:nth-last-child(2) {
+      margin-bottom: 0
+    }
+  }
+
+  .#{$variant}layout-four-columns {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+
+    > * {
+      width: 25%;
+      max-width: 25%;
+      flex-basis: 25%
+    }
+
+    > * {
+      margin-bottom: $spacing-base
+    }
+  }
+
+  .#{$variant}layout-four-columns-gutter {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+
+    > * {
+      width: calc(25% - calc(#{$spacing-base} / 2));
+      max-width: calc(25% - calc(#{$spacing-base} / 2));
+      flex-basis: calc(25% - calc(#{$spacing-base} / 2))
+    }
+
+    > * {
+      margin-bottom: $spacing-base
+    }
+  }
+
+  .#{$variant}layout-three-columns {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+
+    > * {
+      width: 33.33%;
+      max-width: 33.33%;
+      flex-basis: 33.33%
+    }
+  }
+
+  .#{$variant}layout-three-columns-gutter {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+
+    > * {
+      width: calc(33.33% - calc(#{$spacing-base} / 2));
+      max-width: calc(33.33% - calc(#{$spacing-base} / 2));
+      flex-basis: calc(33.33% - calc(#{$spacing-base} / 2))
+    }
+
+    > * {
+      margin-bottom: $spacing-base;
+    }
+  }
+
+  .#{$variant}layout-two-columns {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+
+    > *, &:after {
+      width: 50%;
+      max-width: 50%;
+      flex-basis: 50%
+    }
+
+    &:after {
+      content: '';
+      margin-bottom: 0;
+    }
+  }
+
+  .#{$variant}layout-two-columns-gutter {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+
+    > *, &:after {
+      width: calc(50% - calc(#{$spacing-base} / 2));
+      max-width: calc(50% - calc(#{$spacing-base} / 2));
+      flex-basis: calc(50% - calc(#{$spacing-base} / 2))
+    }
+
+    > * {
+      margin-bottom: $spacing-base;
+    }
+
+    &:after {
+      content: '';
+      margin-bottom: 0;
+    }
+  }
+
+  .#{$variant}layout-sidebar {
+    display: flex;
+    align-items: stretch;
+
+    > *:first-child {
+      width: 18.5rem;
+      max-width: 18.5rem;
+      flex-basis: 18.5rem
+    }
+
+    > *:first-child + * {
+      width: calc(100% - 18.5rem);
+      max-width: calc(100% - 18.5rem);
+      flex-basis: calc(100% - 18.5rem)
+    }
+  }
+
+  .#{$variant}layout-sidebar-small {
+    display: flex;
+    align-items: stretch;
+
+    > *:first-child {
+      width: 12.5rem;
+      max-width: 12.5rem;
+      flex-basis: 12.5rem
+    }
+
+    > *:first-child + * {
+      width: calc(100% - 12.5rem);
+      max-width: calc(100% - 12.5rem);
+      flex-basis: calc(100% - 12.5rem)
+    }
+  }
+
+  .#{$variant}layout-sidebar-gutter {
+    display: flex;
+    align-items: stretch;
+
+    > * {
+      margin-bottom: 0
+    }
+
+    > *:first-child {
+      width: 18.5rem;
+      max-width: 18.5rem;
+      flex-basis: 18.5rem;
+      margin-inline-end: $spacing-base;
+    }
+
+    > *:first-child + * {
+      width: calc(100% - 18.5rem - #{$spacing-base});
+      max-width: calc(100% - 18.5rem - #{$spacing-base});
+      flex-basis: calc(100% - 18.5rem - #{$spacing-base})
+    }
+  }
+
+  .#{$variant}layout-sidebar-small-gutter {
+    display: flex;
+    align-items: stretch;
+
+    > * {
+      margin-bottom: 0
+    }
+
+    > *:first-child {
+      width: 12.5rem;
+      max-width: 12.5rem;
+      flex-basis: 12.5rem;
+      margin-inline-end: $spacing-base;
+    }
+
+    > *:first-child + * {
+      width: calc(100% - 12.5rem - #{$spacing-base});
+      max-width: calc(100% - 12.5rem - #{$spacing-base});
+      flex-basis: calc(100% - 12.5rem - #{$spacing-base})
+    }
+  }
+
+  .#{$variant}layout-home-body {
+    align-items: center;
+
+    > *:first-child {
+      margin-left: auto;
+      margin-right: auto;
+      padding-top: (1.5 * $spacing-base);
+      padding-bottom: (1.5 * $spacing-base);
+      max-width: $homepage-max-width + ($spacing-base * 2)
+    }
+  }
+
+  .#{$variant}layout-topbar {
+    > *:first-child {
+      height: 90px
+    }
+  }
+
+  .#{$variant}layout-topbar {
+    > *:first-child + * {
+      position: relative;
+      height: calc(100vh - 90px);
+      overflow: hidden
+    }
+  }
+
+  .#{$variant}layout-topbar {
+    > *:first-child + * > *:first-child {
+      width: 100%;
+      position: absolute;
+      top: 0;
+      right: 0;
+      height: 100%;
+      overflow: scroll;
+      -webkit-overflow-scrolling: touch
+    }
+  }
+
+  .#{$variant}layout-topbar {
+    > *:first-child + * > *:first-child:after {
+      content: '';
+      height: 100%;
+      display: block
+    }
+  }
+} // END Responsive Layouts
+
+.wrap {
+  padding-left: calc(calc(#{$spacing-base} / 3) * 2);
+  padding-right: calc(calc(#{$spacing-base} / 3) * 2);
+  margin-left: auto;
+  margin-right: auto;
+
+  @media screen and (min-width: $screen-tablet) {
+    padding-left: $spacing-base;
+    padding-right: $spacing-base
+  }
+}
+
+//
+// Layout for the map
+//
+//  .------------------.
+//  |.----------------.|
+//  ||                ||
+//  |.----------------.|
+//  ||                ||
+//  ||                ||
+//  ||                ||
+//  |.----------------.|
+//  .------------------.
+//
+.layout-map {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column-reverse;
+
+  @media screen and (min-width: $screen-desktop) {
+    height: 90vh;
+    flex-direction: row
+  }
+
+  .layout-map__sidebar {
+    width: 100%;
+    max-width: 100%;
+
+    @media screen and (min-width: $screen-desktop) {
+      height: 90vh;
+      overflow: hidden;
+      overflow-y: auto
+    }
+  }
+
+  .layout-map__map {
+    height: 50vh;
+    width: 100%;
+    max-width: 100%;
+
+    @media screen and (min-width: $screen-desktop) {
+      height: 100%
+    }
+  }
+}
+
+@mixin layout-print {
+  .page-wrapper {
+    display: block
+  }
+
+  .layout-topbar {
+    > *:first-child + * {
+      position: static;
+      height: auto;
+    }
+  }
+
+  .layout-topbar {
+    > *:first-child + * > *:first-child {
+      position: static
+    }
+  }
+}
+
+// Declarations
+
+// the layout execution
+@include layouts;
+
+// the layout breakpoint execution
+@each $breakpoint, $b in $breakpoints {
+  @media screen and (min-width: #{$b}px) {
+    $variant: $breakpoint + '\\:';
+    @include layouts($variant);
+  }
+}
+
+.print-view {
+  @include layout-print
+}
+
+@media print {
+  @include layout-print
+}

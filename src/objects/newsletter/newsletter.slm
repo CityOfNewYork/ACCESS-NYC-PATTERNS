@@ -1,0 +1,41 @@
+/
+/ Newsletter
+/
+
+div class='mb-4 p-3 screen-desktop:p-4 bg-white' data-js='newsletter'
+
+  div class='type-h3' Get Updates
+
+  form action='${this.newsletter.action}' id='mc-embedded-subscribe-form' method='post' target='_blank' novalidate='true'
+    div class='c-question'
+      label class='c-question__label' Receive benefits news and reminders about upcoming open enrollment periods.
+
+      div class='c-question__container'
+        input type='email' class='w-full' placeholder='Email address' name='EMAIL' required='true'
+
+    div class='c-question mt-3'
+      fieldset class='c-question'
+        legend class='c-question__label' Which borough(s) would you like to recieve updates for?
+
+        div class='c-question__container screen-tablet:layout-columns'
+          - symbol = false;
+          - instance = 'elements/checkboxes/checkboxes';
+          - for (index in this.newsletter.boroughs)
+            - value = this.newsletter.boroughs[index];
+            = partial(`../../${instance}.slm`);
+            - value = null;
+
+    div style='position: absolute; left: -5000px;' aria-hidden='true'
+      input type='text' name='b_d04b7b607bddbd338b416fa89_98ff3f3900' tabindex='-1' value=''
+
+    button type='submit' class='btn-primary btn-small' Sign Up
+
+    article class='c-alert-box bg-status-warning mt-3 text-small hidden' data-js-newsletter='alert-box-warning' aria-hidden='true'
+      div class='c-alert-box__icon'
+        div class='c-alert-box__svg bg-icon-warning'
+      div class='c-alert-box__body' data-js-newsletter='alert-box__text'
+
+    article class='c-alert-box bg-status-success mt-3 text-small hidden' data-js-newsletter='alert-box-success' aria-hidden='true'
+      div class='c-alert-box__icon'
+        div class='c-alert-box__svg bg-icon-success'
+      div class='c-alert-box__body' data-js-newsletter='alert-box__text'

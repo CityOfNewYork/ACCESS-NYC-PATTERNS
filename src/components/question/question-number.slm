@@ -1,0 +1,20 @@
+/
+/ Question Number
+/
+
+div class='c-question'
+  label class='c-question__label' for='person-0-age' How old are you?
+
+  p
+    button type='button' class='c-question__info btn btn-text btn-link' data-js='tooltip-control' aria-describedby='aria-db-tooltip-age'
+      svg class='icon icon-2'
+        use xlink:href='#icon-info'
+      | Here’s why we are asking.
+
+  div id='aria-db-tooltip-age' class='tooltip color-info-status animated fadeInUp'
+    p Many benefit programs are meant for people of a specific age group. Sharing your age will help us choose the programs that will be most helpful to you right now. The information you share for the purposes of public benefits screening will be anonymous.
+
+  div class='c-question__container'
+    - symbol = false;
+    - instance = 'elements/inputs/inputs-number';
+    = partial(`../../${instance}.slm`);

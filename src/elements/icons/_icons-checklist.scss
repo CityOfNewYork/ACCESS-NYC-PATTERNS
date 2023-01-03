@@ -1,0 +1,20 @@
+@import 'config/';
+@import 'canyc/cdn';
+
+@each $key, $var in map-get($tokens, 'icons-checklist') {
+  $size: map-get($tokens, 'icons-checklist-size');
+
+  .bg-#{$key} {
+    width: nth($size, 1) !important;
+    height: nth($size, 2) !important;
+    background-image: url('#{$cdn}#{$path-to-images}#{$var}');
+    background-repeat: no-repeat;
+    background-size: 100%;
+    background-position: center
+  }
+
+  .#{$key} {
+    width: nth($size, 1) !important;
+    height: nth($size, 2) !important;
+  }
+}

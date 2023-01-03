@@ -1,0 +1,25 @@
+/
+/ Come Back Later
+/
+
+article class='c-alert-box bg-status-info mb-4'
+  div class='c-alert-box__icon'
+    svg class='c-alert-box__svg icon icon-4 icon-ui-info' role='img'
+      title Information Alert
+      use xlink:href='#icon-ui-info'
+
+  div class='c-alert-box__body'
+    header
+      h1 class='type-h4 m-0' Come back to it later.
+    p We can send you a link to this page to help you get back to it when you’re ready.
+
+    div class='layout-gutter screen-tablet:layout-columns-gutter'
+      - symbol = false;
+      - instance = 'components/share-form/share-form-email';
+      = partial(`../../${instance}.slm`);
+      - instance = 'components/share-form/share-form';
+      = partial(`../../${instance}.slm`);
+
+    div id='share-disclaimer' class='mt-3 screen-tablet:m-0 hidden' aria-hidden='true'
+      - instance = 'components/disclaimer/disclaimer-small';
+      = partial(`../../${instance}.slm`);

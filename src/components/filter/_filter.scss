@@ -1,0 +1,147 @@
+/**
+ * Filter
+ */
+
+// Dependencies
+// @import 'config/';
+@use 'canyc/accessibility';
+@use 'canyc/colors';
+@use 'canyc/buttons';
+@use 'canyc/dimensions';
+@use 'canyc/direction';
+@use 'canyc/fonts';
+@use 'canyc/media';
+// @import 'bourbon/app/assets/stylesheets/addons/triangle';
+
+// Declarations
+.c-filter {
+
+}
+
+.c-filter__header {
+  appearance: none;
+
+  color: var(--nyco-colors-white);
+  font-size: inherit;
+  font-family: inherit;
+  font-weight: $font-weight-bold;
+  @include font-smooth;
+  text-decoration: none;
+  text-align: $text-direction-start;
+
+  &:link,
+  &:visited,
+  &:hover,
+  &:active,
+  &:focus {
+    color: $color-white;
+  }
+
+  border: none;
+  background: $color-blue-bright;
+  border-radius: $btn-radius;
+  display: block;
+  width: 100%;
+  padding: (.75 * $spacing-base) $spacing-base;
+
+  cursor: pointer;
+
+  &::after {
+    // @include triangle(.6em .4em, $color-white, down);
+    content: '';
+    // display: inline-block;
+    float: $text-direction-end;
+    margin-top: .5em;
+  }
+
+  &.active {
+    border-radius: $btn-radius $btn-radius 0 0;
+
+    &::after {
+      // @include triangle(.6em .4em, $color-white, up);
+      border-top: 0;
+      content: '';
+      // display: inline-block;
+      float: $text-direction-end;
+      margin-top: .5em;
+    }
+  }
+}
+
+.c-filter__list {
+  transition: all .3s ease-out;
+  list-style: none;
+  margin: 20 20;
+  max-height: 0;
+  overflow: hidden;
+  padding: 0;
+  visibility: hidden;
+  backface-visibility: hidden; // prevents glitch on Win7 Chrome
+
+  &.active {
+    visibility: visible;
+    max-height: 2000px;
+  }
+
+  > li {
+    margin-bottom: 0;
+  }
+}
+
+.c-filter__item {
+  appearance: none;
+  border: none;
+  font-size: inherit;
+  font-family: inherit;
+  text-align: $text-direction-start;
+  cursor: pointer;
+
+  color: $color-white;
+  @include font-smooth;
+  background: $color-blue-dark;
+  display: block;
+  width: 100%;
+  margin: 0;
+  padding: ($grid-base * 2) $spacing-base;
+  text-decoration: none;
+
+  // @media screen and (min-width: $screen-tablet) {
+  //   padding: $spacing-base;
+  // }
+
+  .c-filter-list li:last-child & {
+    border-radius: 0 0 $btn-radius $btn-radius;
+  }
+}
+
+.c-filter a.c-filter__item:not(.btn),
+.c-filter label.c-filter__item,
+.c-filter button.c-filter__item {
+  color: $color-white;
+  text-decoration: none;
+  transition: background .2s ease-in;
+
+  &:visited {
+    color: $color-white;
+    text-decoration: none;
+  }
+
+  &:hover,
+  &:active,
+  &:focus,
+  &.focused {
+    color: $color-white;
+    background: $color-blue;
+    cursor: pointer;
+  }
+
+  &.active {
+    &:hover,
+    &:active,
+    &:focus,
+    &.focused {
+      background: $color-blue-dark;
+      cursor: default;
+    }
+  }
+}

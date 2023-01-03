@@ -1,0 +1,1 @@
+The Content Object is a wrapper class to style elements that can't easily be marked up individually with element classnames. This is mostly for content formatted and displayed from a WYSIWYG editor. To use it, add the `.o-content` class to the parent element of the content being encased.  Currently it only includes definitions for tables and lists.

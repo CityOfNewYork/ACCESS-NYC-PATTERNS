@@ -1,0 +1,45 @@
+/**
+ * Checkboxes
+ */
+
+// Dependencies
+@import 'config/';
+@import 'canyc/options';
+@import 'canyc/checkboxes';
+@import 'canyc/direction';
+@import 'canyc/dimensions';
+@import 'canyc/accessibility';
+
+// Declarations
+.checkbox {
+  @include options;
+
+  &:last-of-type {
+    margin-bottom: 0
+  }
+
+  > input {
+    @include sr-only()
+  }
+}
+
+.checkbox__label {
+  @include options-labels;
+}
+
+.checkbox__label::before {
+  @include checkboxes-btn;
+}
+
+input:checked + .checkbox__label::before {
+  @include checkboxes-btn-checked;
+}
+
+input:focus + .checkbox__label::before {
+  @include checkboxes-btn-focused;
+}
+
+.checkbox__icon {
+  margin-bottom: 0;
+  margin-#{$text-direction-end}: $grid-base;
+}

@@ -1,0 +1,21 @@
+/
+/ Formstack
+/
+
+div class='code-block'
+  pre
+    = '@import url("https://fonts.googleapis.com/css?family=Noto+Serif:400");\n';
+    = '/**\n';
+    = ' * ACCESS NYC Patterns v' + this.package.version + '\n';
+    = ' * Formstack Object\n';
+    = ' * Documentation: https://accesspatterns.cityofnewyork.us/formstack\n';
+    = ' * Source: https://github.com/CityOfNewYork/ACCESS-NYC-PATTERNS/blob/v' + this.package.version + '/dist/objects/formstack/formstack.css\n';
+    = ' *\n';
+    = ' * Below is compiled css copied and pasted from\n';
+    = ' * ACCESS NYC Patterns. See details above. Do not\n';
+    = ' * try to modify the code below. Follow ACCESS NYC\n';
+    = ' * Patterns development process for updating the\n';
+    = ' * styling of this theme. Please update the version\n';
+    = ' * number and this description if it is to be changed.\n';
+    = ' */\n';
+    = this.include('../dist/objects/formstack/formstack.css');

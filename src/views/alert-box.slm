@@ -1,0 +1,29 @@
+/ Layout
+= extend('/slm/layouts/default');
+
+/ Component
+- title = 'Alert Box';
+
+/ Partials
+= partial('/slm/partials/styles.slm');
+= partial('/slm/partials/links.slm');
+= partial('/slm/partials/head.mixin.slm');
+= partial('/slm/partials/content-header.mixin.slm');
+= partial('/slm/section/section.mixin.slm');
+= partial('/slm/section/section-text.mixin.slm');
+
+/ Content blocks
+= content('head');
+  = mixin('head', title);
+
+= content('header');
+  = mixin('header', title);
+
+= content('content');
+  = mixin('content-header', title);
+  = mixin('section-text', false, 'components/alert-box/alert-box');
+  = mixin('section', 'Information', 'components/alert-box/alert-box-info');
+  = mixin('section', 'Success', 'components/alert-box/alert-box-success');
+  = mixin('section', 'Urgent', 'components/alert-box/alert-box-urgent');
+  = mixin('section', 'Warning', 'components/alert-box/alert-box-warning');
+  = mixin('section', 'COVID Response', 'components/alert-box/alert-box-covid-response');

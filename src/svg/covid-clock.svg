@@ -1,0 +1,19 @@
+<svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g fill="transparent">
+<circle cx="19.5" cy="19.5" r="15.5" fill="#EDEDF0"/>
+<path d="M11.75 32.9234C9.98722 31.9057 8.44215 30.5507 7.20302 28.9358C5.9639 27.3209 5.05497 25.4778 4.52815 23.5117C4.00133 21.5456 3.86692 19.4949 4.13261 17.4768C4.39829 15.4588 5.05886 13.5128 6.07661 11.75C7.09435 9.98721 8.44934 8.44215 10.0642 7.20302C11.6791 5.9639 13.5222 5.05497 15.4883 4.52815C17.4544 4.00133 19.5051 3.86692 21.5232 4.13261C23.5412 4.39829 25.4872 5.05886 27.25 6.07661L11.75 32.9234Z" fill="white"/>
+<rect width="1" height="10.3489" transform="matrix(-0.948741 -0.316056 -0.316056 0.948741 23.2196 10.3161)" fill="#9425A8"/>
+<circle cx="19.5" cy="19.5" r="14.5" stroke="black" stroke-width="2" fill="transparent"/>
+<rect x="27.1726" y="13.8205" width="1.63459" height="9.72054" transform="rotate(54.2071 27.1726 13.8205)" fill="black"/>
+<rect x="19.4379" y="19.4479" width="1.63459" height="5.27388" transform="rotate(117.195 19.4379 19.4479)" fill="black"/>
+<circle cx="19.5256" cy="20.0301" r="1.64014" fill="black"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M20 7L20 10L19 10L19 7L20 7Z" fill="black"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M19 32L19 29L20 29L20 32L19 32Z" fill="black"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M32 20L29 20L29 19L32 19L32 20Z" fill="black"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M7 19L10 19L10 20L7 20L7 19Z" fill="black"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M27.9853 28.6924L25.864 26.5711L26.5711 25.864L28.6924 27.9853L27.9853 28.6924Z" fill="black"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M11.0147 10.3076L13.136 12.4289L12.4289 13.136L10.3076 11.0147L11.0147 10.3076Z" fill="black"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M10.3076 27.9853L12.4289 25.864L13.136 26.5711L11.0147 28.6924L10.3076 27.9853Z" fill="black"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M28.6924 11.0147L26.5711 13.136L25.864 12.4289L27.9853 10.3076L28.6924 11.0147Z" fill="black"/>
+</g>
+</svg>

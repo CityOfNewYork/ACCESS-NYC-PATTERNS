@@ -1,0 +1,25 @@
+/**
+ * Font
+ */
+
+// Dependencies
+// @import 'config/';
+@use 'canyc/tokens';
+@use 'canyc/language';
+
+// Declarations
+.font-serif {
+  @if language.$language == '' {
+    font-family: map-get(map-get(tokens.$tokens, 'fonts'), 'serif');
+  } @else {
+    font-family: map-get(map-get(tokens.$tokens, 'fonts'), '#{language.$language}-serif');
+  }
+}
+
+.font-sans {
+  @if language.$language == '' {
+    font-family: map-get(map-get(tokens.$tokens, 'fonts'), 'sans');
+  } @else {
+    font-family: map-get(map-get(tokens.$tokens, 'fonts'), '#{language.$language}-sans');
+  }
+}

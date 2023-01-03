@@ -1,0 +1,73 @@
+/**
+ * Web-share
+ */
+
+// Dependencies
+@import 'canyc/dimensions';
+@import 'canyc/direction';
+@import 'canyc/fonts';
+@import 'canyc/media';
+@import 'config/';
+
+// Declarations
+.c-web-share {
+  position: relative;
+  text-align: $text-direction-start;
+  pointer-events: auto;
+}
+
+.c-web-share__item {
+  margin-#{$text-direction-end}: $grid-base;
+  margin-bottom: $grid-base;
+
+  @media screen and (min-width: $screen-tablet) {
+    margin-#{$text-direction-end}: $grid-base * 1.5;
+    margin-bottom: $grid-base * 2;
+  }
+}
+
+.c-web-share__fallback {
+  font-size: $font-size-small;
+  position: absolute;
+
+  margin-top: $grid-base;
+  margin-bottom: $grid-base;
+
+  box-shadow: map-get(map-get($tokens, 'shadows'), 'up');
+
+  @media screen and (min-width: $screen-tablet) {
+    margin-top: $grid-base * 2;
+    margin-bottom: $grid-base * 2;
+  }
+}
+
+.c-web-share__fallback-body {
+  padding: $grid-base * 2;
+  padding-bottom: $grid-base;
+
+  @media screen and (min-width: $screen-tablet) {
+    padding: $grid-base * 3;
+    padding-bottom: $grid-base;
+  }
+
+  > *:last-child {
+    margin-#{$text-direction-end}: 0;
+  }
+}
+
+.c-web-share__label {
+  font-weight: bold;
+  display: block;
+  margin-bottom: $grid-base;
+}
+
+.c-web-share__input {
+  width: 100%;
+  padding: $grid-base;
+  margin-bottom: $grid-base * 2;
+}
+
+.c-web-share__icon {
+  width: $grid-base * 2;
+  height: $grid-base * 2;
+}

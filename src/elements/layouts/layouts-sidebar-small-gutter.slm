@@ -1,0 +1,6 @@
+
+div class='screen-tablet:layout-sidebar-small-gutter layout-gutter bg-grey-lightest text-center p-4'
+  aside class='bg-grey-light p-4'
+    | Sidebar
+  article class='bg-grey-light p-4'
+    | Content

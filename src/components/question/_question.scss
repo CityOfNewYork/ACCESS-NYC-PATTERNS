@@ -1,0 +1,43 @@
+/**
+ * Question
+ */
+
+// Dependencies
+@import 'canyc/question';
+@import 'canyc/direction';
+@import 'canyc/fonts';
+@import 'canyc/dimensions';
+@import 'canyc/colors';
+
+// Declarations
+.c-question {
+  @include question;
+}
+
+.c-question__container {
+  margin-top: 10px;
+
+  &.error {
+    @include question-error;
+  }
+
+  .error-message {
+    @include question-error-message;
+  }
+}
+
+.c-question__label {
+  @include question-label;
+}
+
+.c-question__info {
+  font-size: $font-size-xsmall;
+  text-decoration: none;
+  vertical-align: middle;
+
+  [class*='icon'] {
+    use {
+      fill: currentColor;
+    }
+  }
+}

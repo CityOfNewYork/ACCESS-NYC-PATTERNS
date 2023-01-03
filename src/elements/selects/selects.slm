@@ -1,0 +1,27 @@
+/
+/ Select
+/
+
+select class='select' id="person-0-incomes-0" name="Person[0].incomes[0].type"
+  option value='' selected='true' Click to add an income type
+  option value='Wages' wages, salaries, tips
+  option value='SelfEmployment' self-employment Income
+  option value='Unemployment' unemployment benefits
+  option value='CashAssistance' Cash Assistance grant
+  option value='ChildSupport' child support (received)
+  option value='DisabilityMedicaid' disability-related Medicaid
+  option value='SSI' Supplemental Security Income (SSI)
+  option value='SSDependent' Social Security Dependent Benefits
+  option value='SSDisability' Social Security Disability Benefits
+  option value='SSSurvivor' Social Security Survivor’s Benefits
+  option value='SSRetirement' Social Security Retirement Benefits
+  option value='NYSDisability' New York State Disability Benefits
+  option value='Veteran' Veteran’s Pension or Benefits
+  option value='Pension' Government or Private Pension
+  option value='DeferredComp' Withdrawals from Deferred Compensation (IRA, Keogh, etc.)
+  option value='WorkersComp' Worker’s Compensation
+  option value='Alimony' alimony (received)
+  option value='Boarder' boarder or lodger
+  option value='Gifts' gifts/contributions (received)
+  option value='Rental' rental income
+  option value='Investment' investment income (interest, dividends, and profit from selling stocks)

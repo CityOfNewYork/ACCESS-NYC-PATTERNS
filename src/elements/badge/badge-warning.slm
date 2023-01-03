@@ -1,0 +1,6 @@
+/
+/ Badge Warning
+/
+
+mark class='badge color-warning-status'
+  | New
